@@ -5,7 +5,7 @@ import { Feed } from 'feed'
 import { getAllPosts } from '@/utils/getAllPosts'
 import { mdxComponents } from '@/utils/mdxComponents'
 
-const baseUrl = 'https://tailwindcss.com'
+const baseUrl = 'https://illafamily.com'
 const blogUrl = `${baseUrl}/blog`
 
 const feed = new Feed({

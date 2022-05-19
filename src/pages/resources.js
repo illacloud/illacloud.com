@@ -253,7 +253,7 @@ export default function Resources() {
               },
               {
                 title: 'GitHub Discussions',
-                href: 'https://github.com/illa-family/discussions',
+                href: '/community',
                 description:
                   'Have an issue with your project? Connect with other members of the Tailwind community to get some assistance.',
                 icon: (

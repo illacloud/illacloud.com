@@ -57,7 +57,7 @@ export function Footer({ children, previous, next }) {
         ) : (
           <div className="flex space-x-10 text-slate-400 dark:text-slate-500">
             <a
-              href="https://github.com/illa-family"
+              href="/github"
               className="hover:text-slate-500 dark:hover:text-slate-400"
             >
               <span className="sr-only">GitHub</span>

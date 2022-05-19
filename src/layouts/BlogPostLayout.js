@@ -176,22 +176,22 @@ function Metadata({ meta }) {
       {meta.image ? (
         <>
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content={`https://tailwindcss.com${meta.image}`} />
+          <meta name="twitter:image" content={`https://illafamily.com${meta.image}`} />
         </>
       ) : (
         <>
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://tailwindcss.com${require('@/img/social-square.jpg').default}`}
+            content={`https://illafamily.com${require('@/img/social-square.jpg').default}`}
           />
         </>
       )}
-      <meta property="og:url" content={`https://tailwindcss.com${router.pathname}`} />
+      <meta property="og:url" content={`https://illafamily.com${router.pathname}`} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={`${meta.title} – Tailwind CSS`} />
       <meta property="og:description" content={meta.description} />
-      <meta property="og:image" content={`https://tailwindcss.com${meta.image}`} />
+      <meta property="og:image" content={`https://illafamily.com${meta.image}`} />
       <meta name="description" content={meta.description}></meta>
     </Head>
   )

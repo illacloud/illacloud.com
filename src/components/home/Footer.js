@@ -4,8 +4,8 @@ import {Logo} from '@/components/Logo'
 const footerNav = [
   {
     Community: [
-      { title: 'GitHub', href: 'https://github.com/illa-family' },
-      { title: 'Discord', href: 'https://discord.gg/2tGBuJkgd6' },
+      { title: 'GitHub', href: '/github' },
+      { title: 'Discord', href: '/discord' },
     ],
   },
 ]

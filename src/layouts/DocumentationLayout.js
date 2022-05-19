@@ -18,7 +18,7 @@ export function DocumentationLayout(props) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://tailwindcss.com${socialSquare}`}
+          content={`https://illafamily.com${socialSquare}`}
         />
       </Head>
       <SidebarLayout nav={documentationNav} {...props} />
