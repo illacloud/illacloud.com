@@ -53,9 +53,9 @@ let steps = [
 >   <script>
 >     tailwind.config = {
 >       theme: {
->         extend: {
->           colors: {
->             clifford: '#da373d',
+>         {
+>           {
+>             '#da373d',
 >           }
 >         }
 >       }

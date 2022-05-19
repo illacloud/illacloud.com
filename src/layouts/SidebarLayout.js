@@ -286,7 +286,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://tailwindui.com/components?utm_source=tailwindcss&utm_medium=navigation"
+        href="https://design.illafamily.com"
         className="mb-4"
         shadow="group-hover:shadow-indigo-200 dark:group-hover:bg-indigo-500"
         icon={
@@ -315,39 +315,11 @@ function TopLevelNav({ mobile }) {
           </>
         }
       >
-        Components
+        Storybook
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://www.youtube.com/tailwindlabs"
-        className="mb-4"
-        shadow="group-hover:shadow-pink-200 dark:group-hover:bg-pink-500"
-        icon={
-          <>
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-              className={clsx(
-                'fill-pink-400 group-hover:fill-pink-500 dark:group-hover:fill-pink-300',
-                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600'
-              )}
-            />
-            <path
-              d="M11.082 9.107a.685.685 0 0 0-.72-.01.757.757 0 0 0-.362.653v4.5c0 .27.138.52.362.653.224.133.5.13.72-.01l3.571-2.25A.758.758 0 0 0 15 12a.758.758 0 0 0-.347-.643l-3.571-2.25Z"
-              className={clsx(
-                'fill-pink-50 group-hover:fill-pink-100 dark:group-hover:fill-white',
-                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400'
-              )}
-            />
-          </>
-        }
-      >
-        Screencasts
-      </TopLevelLink>
-      <TopLevelLink
-        mobile={mobile}
-        href="https://play.tailwindcss.com"
+        href="https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/illa-design-demo-r1qyy2?fontsize=14&hidenavigation=1&theme=dark"
         className="mb-4"
         shadow="group-hover:shadow-blue-200 dark:group-hover:bg-blue-500"
         icon={
@@ -382,58 +354,11 @@ function TopLevelNav({ mobile }) {
           </>
         }
       >
-        Playground
+        CodeSandBox
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="/resources"
-        isActive={pathname === '/resources'}
-        className="mb-4"
-        shadow="group-hover:shadow-purple-200 dark:group-hover:bg-purple-400"
-        activeBackground="dark:bg-purple-400"
-        icon={
-          <>
-            <path
-              d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
-              className={clsx(
-                'fill-purple-400 group-hover:fill-purple-500 dark:group-hover:fill-purple-300',
-                pathname === '/resources'
-                  ? 'dark:fill-purple-300 dark:group-hover:fill-purple-300'
-                  : mobile
-                  ? 'dark:fill-slate-500'
-                  : 'dark:fill-slate-600'
-              )}
-            />
-            <path
-              d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
-              className={clsx(
-                'fill-purple-200 group-hover:fill-purple-300 dark:group-hover:fill-white',
-                pathname === '/resources'
-                  ? 'dark:fill-white dark:group-hover:fill-white'
-                  : mobile
-                  ? 'dark:fill-slate-300'
-                  : 'dark:fill-slate-400'
-              )}
-            />
-            <path
-              d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z"
-              className={clsx(
-                'fill-purple-400 group-hover:fill-purple-500 dark:group-hover:fill-purple-300',
-                pathname === '/resources'
-                  ? 'dark:fill-purple-300 dark:group-hover:fill-purple-300'
-                  : mobile
-                  ? 'dark:fill-slate-500'
-                  : 'dark:fill-slate-600'
-              )}
-            />
-          </>
-        }
-      >
-        <span className={pathname === '/resources' ? 'dark:text-purple-400' : ''}>Resources</span>
-      </TopLevelLink>
-      <TopLevelLink
-        mobile={mobile}
-        href="https://github.com/tailwindlabs/tailwindcss/discussions"
+        href="https://github.com/illa-family/discussions"
         className="mb-8"
         shadow="group-hover:shadow-violet-200 dark:group-hover:bg-violet-500"
         icon={

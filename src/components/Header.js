@@ -10,9 +10,9 @@ import { ThemeSelect, ThemeToggle } from './ThemeToggle'
 
 function Featured() {
   return (
-    <Link href="/blog/tailwindcss-v3">
+    <Link href="/blog/illa-on-github">
       <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
-        <strong className="font-semibold">Tailwind CSS v3.0</strong>
+        <strong className="font-semibold">ILLA on Github</strong>
         <svg
           width="2"
           height="2"
@@ -23,7 +23,7 @@ function Featured() {
           <circle cx="1" cy="1" r="1" />
         </svg>
         <span className="ml-2">
-          Just-in-Time all the time, colored shadows, scroll snap and more
+          released
         </span>
         <svg
           width="3"
@@ -105,7 +105,7 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
             <NavItems />
             <li>
               <a
-                href="https://github.com/tailwindlabs/tailwindcss"
+                href="https://github.com/illa-family"
                 className="hover:text-sky-500 dark:hover:text-sky-400"
               >
                 GitHub
@@ -128,11 +128,6 @@ export function NavItems() {
         <Link href="/docs/installation">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Docs</a>
         </Link>
-      </li>
-      <li>
-        <a href="https://tailwindui.com" className="hover:text-sky-500 dark:hover:text-sky-400">
-          Components
-        </a>
       </li>
       <li>
         <Link href="/blog">
@@ -201,14 +196,8 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
           >
             <div className="relative flex items-center">
               <Link href="/">
-                <a
-                  className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
-                  onContextMenu={(e) => {
-                    e.preventDefault()
-                    Router.push('/brand')
-                  }}
-                >
-                  <span className="sr-only">Tailwind CSS home page</span>
+                <a className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto">
+                  <span className="sr-only">ILLA home page</span>
                   <Logo className="w-auto h-5" />
                 </a>
               </Link>
@@ -223,10 +212,10 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                 <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
                   <ThemeToggle panelClassName="mt-8" />
                   <a
-                    href="https://github.com/tailwindlabs/tailwindcss"
+                    href="https://github.com/illa-family"
                     className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                   >
-                    <span className="sr-only">Tailwind CSS on GitHub</span>
+                    <span className="sr-only">ILLA on GitHub</span>
                     <svg
                       viewBox="0 0 16 16"
                       className="w-5 h-5"
@@ -238,22 +227,6 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   </a>
                 </div>
               </div>
-              <SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300">
-                <span className="sr-only">Search</span>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="m19 19-3.5-3.5" />
-                  <circle cx="11" cy="11" r="6" />
-                </svg>
-              </SearchButton>
               <NavPopover className="ml-2 -my-1" display="lg:hidden" />
             </div>
           </div>

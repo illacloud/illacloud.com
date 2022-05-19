@@ -1,17 +1,17 @@
-# Tailwind CSS Documentation
+# ILLA Documentation
 
-Tailwind CSS uses [Next.js](https://nextjs.org/) for its documentation. Here is how you can run the project locally:
+Thanks for [tailwindcss.com](https://github.com/illa-family.com). ILLA uses [Next.js](https://nextjs.org/) for its documentation. Here is how you can run the project locally:
 
 1. Clone this repo
 
     ```sh
-    git clone https://github.com/tailwindlabs/tailwindcss.com.git
+    git clone https://github.com/illa-family/illafamily.com.git
     ```
 
 2. Go into the project root directory
 
     ```sh
-    cd tailwindcss.com
+    cd illafamily.com
     ```
 
 3. Install JS dependencies

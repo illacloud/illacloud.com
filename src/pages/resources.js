@@ -121,29 +121,6 @@ export default function Resources() {
                   </>
                 ),
               },
-              {
-                title: 'Tailwind UI',
-                description: 'Beautiful UI components, crafted by the creators of Tailwind CSS',
-                images: [
-                  require('@/img/resources/tailwindui-small@75.jpg').default,
-                  require('@/img/resources/tailwindui@75.jpg').default,
-                ],
-                color: 'text-sky-500',
-                href: 'https://tailwindui.com',
-                body: (
-                  <>
-                    <p>
-                      Tailwind UI is a collection of professionally designed, pre-built, fully
-                      responsive HTML snippets you can drop into your Tailwind projects.
-                    </p>
-                    <p>
-                      There are currently over 550 components available in three different
-                      categories (Marketing, Application UI and E-commerce) and we’re always adding
-                      more.
-                    </p>
-                  </>
-                ),
-              },
             ].map(({ title, description, images, color, body, href }) => (
               <li
                 key={title}
@@ -249,67 +226,6 @@ export default function Resources() {
 
         <section className="border-t border-slate-100 pt-16 dark:border-slate-200/5">
           <h2 className="mb-2 text-xl tracking-tight text-slate-900 font-bold dark:text-slate-200">
-            Screencasts
-          </h2>
-          <div className="mb-10 prose prose-slate text-slate-600 max-w-3xl dark:prose-dark">
-            <p>
-              Head over to our official YouTube channel and dive into dozens of videos that will
-              teach you everything from Tailwind basics to advanced concepts.
-            </p>
-          </div>
-
-          <CardGroup className="mb-10">
-            {[
-              {
-                superTitle: 'Fundamentals',
-                title: 'Translating a Custom Design System to Tailwind CSS',
-                body: (
-                  <p>
-                    Learn how to configure Tailwind to create your own utility framework tuned
-                    specifically for your project.
-                  </p>
-                ),
-                href: 'https://www.youtube.com/watch?v=cZc4Jn5nK3k',
-                image: require('@/img/resources/translating-design-system@75.jpg').default,
-                color: 'text-sky-500',
-              },
-              {
-                superTitle: 'Fundamentals',
-                title: 'Adding Tailwind CSS to an Existing Project',
-                body: (
-                  <p>
-                    Learn how to add Tailwind CSS to an existing project without running into naming
-                    collisions or specificity issues.
-                  </p>
-                ),
-                href: 'https://www.youtube.com/watch?v=oG6XPy1t1KA',
-                image: require('@/img/resources/existing-project@75.jpg').default,
-                color: 'text-pink-500',
-              },
-              {
-                superTitle: 'How we’d build it',
-                title:
-                  'Building a Headless Ecommerce Store with Tailwind CSS, Shopify, and Next.js',
-                body: (
-                  <p>
-                    Fetch products from a Shopify store using the GraphQL API and assemble the pages
-                    using Tailwind UI.
-                  </p>
-                ),
-                href: 'https://www.youtube.com/watch?v=xNMYz74zNHM',
-                image: require('@/img/resources/ecommerce-store@75.jpg').default,
-                color: 'text-indigo-500',
-              },
-            ].map((card) => (
-              <Card key={card.title} {...card} />
-            ))}
-          </CardGroup>
-
-          <Button href="https://www.youtube.com/tailwindlabs">See all our screencasts</Button>
-        </section>
-
-        <section className="border-t border-slate-100 pt-16 dark:border-slate-200/5">
-          <h2 className="mb-2 text-xl tracking-tight text-slate-900 font-bold dark:text-slate-200">
             Connect and contribute
           </h2>
           <div className="mb-10 prose prose-slate text-slate-600 max-w-3xl dark:prose-dark">
@@ -337,7 +253,7 @@ export default function Resources() {
               },
               {
                 title: 'GitHub Discussions',
-                href: 'https://github.com/tailwindlabs/tailwindcss/discussions',
+                href: 'https://github.com/illa-family/discussions',
                 description:
                   'Have an issue with your project? Connect with other members of the Tailwind community to get some assistance.',
                 icon: (

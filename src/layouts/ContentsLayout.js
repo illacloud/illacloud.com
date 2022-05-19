@@ -206,7 +206,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
 
       <Footer previous={prev} next={next}>
         <Link
-          href={`https://github.com/tailwindlabs/tailwindcss.com/edit/master/src/pages${router.pathname}.mdx`}
+          href={`https://github.com/illa-family.com/edit/master/src/pages${router.pathname}.mdx`}
         >
           <a className="hover:text-slate-900 dark:hover:text-slate-400">Edit this page on GitHub</a>
         </Link>
