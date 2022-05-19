@@ -15,11 +15,7 @@ let readNext = [
   {
     title: 'Test',
     href: 'https://google.com',
-    body: () => (
-      <p>
-        Test
-      </p>
-    ),
+    body: () => <p>Test</p>,
     icon: {
       className: 'dark:bg-indigo-500 dark:highlight-white/20',
       light: require('@/img/avatars/owen_chen.png').default,
@@ -41,12 +37,8 @@ export function InstallationLayout({ children }) {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
             Get started with ILLA
           </h1>
-          <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">
-            Description
-          </p>
-          <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">
-            End Message
-          </p>
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">Description</p>
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">End Message</p>
         </div>
       </header>
     </BasicLayout>

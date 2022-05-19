@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 import { mdxComponents } from '@/utils/mdxComponents'
-import { getAllPosts } from '@/utils/getAllPosts'
 import clsx from 'clsx'
 import { NewsletterForm } from '@/components/NewsletterForm'
 import { Button } from '@/components/Button'
@@ -149,18 +148,6 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
       </div>
     </div>
   )
-}
-
-export function getStaticProps() {
-  return {
-    props: {
-      latestPosts: getAllPosts()
-        .slice(0, 3)
-        .map(({ slug, module: { meta } }) => {
-          return { slug, title: meta.title, description: meta.description, date: meta.date }
-        }),
-    },
-  }
 }
 
 function Metadata({ meta }) {

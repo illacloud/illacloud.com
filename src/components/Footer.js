@@ -56,10 +56,7 @@ export function Footer({ children, previous, next }) {
           children
         ) : (
           <div className="flex space-x-10 text-slate-400 dark:text-slate-500">
-            <a
-              href="/github"
-              className="hover:text-slate-500 dark:hover:text-slate-400"
-            >
+            <a href="/github" className="hover:text-slate-500 dark:hover:text-slate-400">
               <span className="sr-only">GitHub</span>
               <svg width="25" height="24" fill="currentColor">
                 <path

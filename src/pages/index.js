@@ -1,12 +1,12 @@
-import {SearchButton} from '@/components/Search'
-import {Logo} from '@/components/Logo'
-import {Footer} from '@/components/home/Footer'
+import { SearchButton } from '@/components/Search'
+import { Logo } from '@/components/Logo'
+import { Footer } from '@/components/home/Footer'
 import NextLink from 'next/link'
 import Head from 'next/head'
-import {NavItems, NavPopover} from '@/components/Header'
+import { NavItems, NavPopover } from '@/components/Header'
 import styles from './index.module.css'
 import clsx from 'clsx'
-import {ThemeToggle} from '@/components/ThemeToggle'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 function Header() {
   return (
@@ -78,11 +78,15 @@ function Header() {
           </h1>
           <p className="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
             Consists of{' '}
-            <code className="font-mono font-medium text-sky-500 dark:text-sky-400">ILLA Design</code>,{' '}
-            <code className="font-mono font-medium text-sky-500 dark:text-sky-400">ILLA Builder</code>,{' '}and{' '}
             <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
-              ILLA CLI
-            </code>{' '}
+              ILLA Design
+            </code>
+            ,{' '}
+            <code className="font-mono font-medium text-sky-500 dark:text-sky-400">
+              ILLA Builder
+            </code>
+            , and{' '}
+            <code className="font-mono font-medium text-sky-500 dark:text-sky-400">ILLA CLI</code>{' '}
           </p>
           <div className="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
             <NextLink href="/docs/installation">

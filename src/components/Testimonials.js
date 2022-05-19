@@ -15,7 +15,7 @@ let testimonials = [
         avatar: require('@/img/avatars/owen_chen.png').default,
       },
     },
-  ]
+  ],
 ]
 
 function Testimonial({ author, content, url, expanded }) {

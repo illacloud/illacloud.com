@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import { VersionSwitcher } from '@/components/VersionSwitcher'
-import { SearchButton } from '@/components/Search'
+import {VersionSwitcher} from '@/components/VersionSwitcher'
 import Router from 'next/router'
-import { Logo } from '@/components/Logo'
-import { Dialog } from '@headlessui/react'
-import { useEffect, useState } from 'react'
+import {Logo} from '@/components/Logo'
+import {Dialog} from '@headlessui/react'
+import {useEffect, useState} from 'react'
 import clsx from 'clsx'
-import { ThemeSelect, ThemeToggle } from './ThemeToggle'
+import {ThemeSelect, ThemeToggle} from './ThemeToggle'
 
 function Featured() {
   return (
@@ -22,9 +21,7 @@ function Featured() {
         >
           <circle cx="1" cy="1" r="1" />
         </svg>
-        <span className="ml-2">
-          released
-        </span>
+        <span className="ml-2">released</span>
         <svg
           width="3"
           height="6"
@@ -104,10 +101,7 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
           <ul className="space-y-6">
             <NavItems />
             <li>
-              <a
-                href="/github"
-                className="hover:text-sky-500 dark:hover:text-sky-400"
-              >
+              <a href="/github" className="hover:text-sky-500 dark:hover:text-sky-400">
                 GitHub
               </a>
             </li>

@@ -3,11 +3,8 @@ const svgToDataUri = require('mini-svg-data-uri')
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 
 module.exports = {
-  experimental: {
-    optimizeUniversalDefaults: true,
-  },
-  content: ['./src/**/*.{js,jsx,mdx,html}', './remark/**/*.js'],
   darkMode: 'class',
+  content: ['./src/**/*.{js,jsx,mdx,html}', './remark/**/*.js'],
   theme: {
     // `demo-*` screens are used for the "mobile-first" responsive demo
     screens: {

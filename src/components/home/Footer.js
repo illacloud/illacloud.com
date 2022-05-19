@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import {Logo} from '@/components/Logo'
+import { Logo } from '@/components/Logo'
 
 const footerNav = [
   {
     Community: [
-      { title: 'GitHub', href: '/github' },
+      { title: 'GitHub', href: 'https://google.com' },
       { title: 'Discord', href: '/discord' },
     ],
   },

@@ -80,11 +80,7 @@ export default function App({ Component, pageProps, router }) {
           content={`https://illafamily.com${socialCardLarge}`}
         />
         <meta key="twitter:creator" name="twitter:creator" content="@tailwindcss" />
-        <meta
-          key="og:url"
-          property="og:url"
-          content={`https://illafamily.com${router.pathname}`}
-        />
+        <meta key="og:url" property="og:url" content={`https://illafamily.com${router.pathname}`} />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />
         <meta

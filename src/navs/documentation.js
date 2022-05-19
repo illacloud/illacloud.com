@@ -13,10 +13,10 @@ export const documentationNav = {
       match: /^\/docs\/installation/,
     },
   ],
-  'Test': [
+  Test: [
     {
       title: 'Test',
-      href: 'https://google.com'
+      href: 'https://google.com',
     },
   ],
 }

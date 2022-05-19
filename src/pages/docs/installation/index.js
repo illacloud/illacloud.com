@@ -1,6 +1,6 @@
-import {DocumentationLayout} from '@/layouts/DocumentationLayout'
-import {InstallationLayout} from '@/layouts/InstallationLayout'
-import {Steps} from '@/components/Steps'
+import { DocumentationLayout } from '@/layouts/DocumentationLayout'
+import { InstallationLayout } from '@/layouts/InstallationLayout'
+import { Steps } from '@/components/Steps'
 
 let steps = [
   {
@@ -96,8 +96,8 @@ export default function TailwindCli({ code }) {
       >
         <h3 className="sr-only">Installing Tailwind CLI</h3>
         <p>
-          The simplest and fastest way to get up and running with ILLA from scratch is with
-          the Tailwind CLI tool.
+          The simplest and fastest way to get up and running with ILLA from scratch is with the
+          Tailwind CLI tool.
         </p>
       </div>
       <Steps level={4} steps={steps} code={code} />

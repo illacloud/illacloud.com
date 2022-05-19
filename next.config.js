@@ -22,16 +22,16 @@ const dlv = require('dlv')
 const Prism = require('prismjs')
 
 const fallbackLayouts = {
-  'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout'],
+  'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout']
 }
 
 const fallbackDefaultExports = {
   'src/pages/{docs,components}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
-  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
+  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout']
 }
 
 const fallbackGetStaticProps = {
-  'src/pages/blog/**/*': '@/layouts/BlogPostLayout',
+  'src/pages/blog/**/*': '@/layouts/BlogPostLayout'
 }
 
 module.exports = withBundleAnalyzer({
