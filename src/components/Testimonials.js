@@ -7,11 +7,11 @@ let testimonials = [
   // Column 1
   [
     {
-      content: 'I feel like an idiot for not using Tailwind CSS until now.',
-      url: 'https://twitter.com/ryanflorence/status/1187951799442886656',
+      content: 'Test',
+      url: 'https://google.com',
       author: {
-        name: 'Ryan Florence',
-        role: 'Remix & React Training',
+        name: 'Test',
+        role: 'Test',
         avatar: require('@/img/avatars/owen_chen.png').default,
       },
     },

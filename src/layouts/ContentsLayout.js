@@ -180,7 +180,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
         title={meta.title}
         description={meta.description}
         repo={meta.repo}
-        badge={{ key: 'Tailwind CSS version', value: meta.featureVersion }}
+        badge={{ key: 'ILLA version', value: meta.featureVersion }}
         section={section}
       />
       <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>

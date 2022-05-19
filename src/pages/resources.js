@@ -75,7 +75,7 @@ export default function Resources() {
           Resources
         </p>
         <h1 className="mb-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200">
-          Everything else you need to build awesome Tailwind CSS websites
+          Everything else you need to build awesome ILLA websites
         </h1>
         <p className="text-lg text-slate-700 dark:text-slate-400">
           We think Tailwind is an amazing CSS framework, but you need more than just a CSS framework
@@ -177,7 +177,7 @@ export default function Resources() {
                 body: (
                   <p>
                     Completely unstyled, fully accessible UI components, designed to integrate
-                    beautifully with Tailwind CSS.
+                    beautifully with ILLA.
                   </p>
                 ),
                 href: 'https://headlessui.dev',
@@ -186,7 +186,7 @@ export default function Resources() {
               },
               {
                 superTitle: 'Heroicons',
-                title: 'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.',
+                title: 'Beautiful hand-crafted SVG icons, by the makers of ILLA.',
                 body: (
                   <p>
                     A set of 450+ free MIT-licensed SVG icons. Available as basic SVG icons and via
@@ -199,7 +199,7 @@ export default function Resources() {
               },
               {
                 superTitle: 'Hero Patterns',
-                title: 'Seamless SVG background patterns by the makers of Tailwind CSS.',
+                title: 'Seamless SVG background patterns by the makers of ILLA.',
                 body: (
                   <p>
                     A collection of over 100 free MIT-licensed high-quality SVG patterns for you to

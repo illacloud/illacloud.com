@@ -1,11 +1,10 @@
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { InstallationLayout } from '@/layouts/InstallationLayout'
-import { Cta } from '@/components/Cta'
-import { Steps } from '@/components/Steps'
+import {DocumentationLayout} from '@/layouts/DocumentationLayout'
+import {InstallationLayout} from '@/layouts/InstallationLayout'
+import {Steps} from '@/components/Steps'
 
 let steps = [
   {
-    title: 'Install Tailwind CSS',
+    title: 'Install ILLA',
     body: () => (
       <p>
         Install <code>tailwindcss</code> via npm, and create your <code>tailwind.config.js</code>{' '}
@@ -97,7 +96,7 @@ export default function TailwindCli({ code }) {
       >
         <h3 className="sr-only">Installing Tailwind CLI</h3>
         <p>
-          The simplest and fastest way to get up and running with Tailwind CSS from scratch is with
+          The simplest and fastest way to get up and running with ILLA from scratch is with
           the Tailwind CLI tool.
         </p>
       </div>

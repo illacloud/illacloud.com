@@ -9,8 +9,8 @@ const baseUrl = 'https://illafamily.com'
 const blogUrl = `${baseUrl}/blog`
 
 const feed = new Feed({
-  title: 'Tailwind CSS Blog',
-  description: 'All the latest Tailwind CSS news, straight from the team.',
+  title: 'ILLA Blog',
+  description: 'All the latest ILLA news, straight from the team.',
   id: blogUrl,
   link: blogUrl,
   language: 'en',
@@ -35,7 +35,7 @@ getAllPosts().forEach(({ slug, module: { meta, default: Content } }) => {
     </MDXProvider>
   )
   const html = ReactDOMServer.renderToStaticMarkup(mdx)
-  const postText = `<p><em>(The post <a href="${blogUrl}/${slug}">${meta.title}</a> appeared first on <a href="${blogUrl}">Tailwind CSS Blog</a>.)</em></p>`
+  const postText = `<p><em>(The post <a href="${blogUrl}/${slug}">${meta.title}</a> appeared first on <a href="${blogUrl}">ILLA Blog</a>.)</em></p>`
   feed.addItem({
     title: meta.title,
     id: meta.title,
