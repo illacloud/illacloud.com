@@ -114,7 +114,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   <NewsletterForm action="https://app.convertkit.com/forms/3181881/subscriptions" />
                 </div>
               </section>
-              <section className="relative pt-16 border-t border-slate-200 dark:border-slate-200/5">
+              {latestPosts && <section className="relative pt-16 border-t border-slate-200 dark:border-slate-200/5">
                 <h2 className="mb-6 font-semibold text-slate-900 dark:text-slate-200">
                   Latest articles
                 </h2>
@@ -141,7 +141,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       </article>
                     ))}
                 </div>
-              </section>
+              </section>}
             </div>
           </footer>
         </div>
