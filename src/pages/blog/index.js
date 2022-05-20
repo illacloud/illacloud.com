@@ -19,7 +19,7 @@ export default function Blog() {
         </p>
         <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
           <h2 className="sr-only">Sign up for our newsletter</h2>
-          <NewsletterForm action="https://app.convertkit.com/forms/3181837/subscriptions" />
+          <NewsletterForm action="https://app.convertkit.com/forms/3286143/subscriptions" />
         </section>
       </header>
       <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
