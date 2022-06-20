@@ -11,6 +11,7 @@ import socialCardLarge from '@/img/social-card-large.jpg'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import { SearchProvider } from '@/components/Search'
+import { appWithTranslation } from "next-i18next"
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -34,7 +35,7 @@ Router.events.on('routeChangeStart', () => progress.start())
 Router.events.on('routeChangeComplete', () => progress.finish())
 Router.events.on('routeChangeError', () => progress.finish())
 
-export default function App({ Component, pageProps, router }) {
+function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
 
   useEffect(() => {
@@ -109,3 +110,5 @@ export default function App({ Component, pageProps, router }) {
     </>
   )
 }
+
+export default appWithTranslation(App)

@@ -7,6 +7,7 @@ import { NavItems, NavPopover } from '@/components/Header'
 import styles from './index.module.css'
 import clsx from 'clsx'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { LanguageToggle } from "@/components/LanguageToggle"
 
 function Header() {
   return (
@@ -53,6 +54,7 @@ function Header() {
                 </ul>
               </nav>
               <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+                <LanguageToggle />
                 <ThemeToggle />
                 <a
                   href="/github"

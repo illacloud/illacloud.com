@@ -20,6 +20,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const defaultConfig = require('tailwindcss/resolveConfig')(require('tailwindcss/defaultConfig'))
 const dlv = require('dlv')
 const Prism = require('prismjs')
+const { i18n } = require("./next-i18next.config")
 
 const fallbackLayouts = {
   'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout']
@@ -35,6 +36,7 @@ const fallbackGetStaticProps = {
 }
 
 module.exports = withBundleAnalyzer({
+  i18n,
   swcMinify: true,
   pageExtensions: ['js', 'jsx', 'mdx'],
   images: {
@@ -101,10 +103,10 @@ module.exports = withBundleAnalyzer({
             example:
               Object.keys(utilities).length > 0
                 ? Object.keys(utilities)
-                    [Math.floor((Object.keys(utilities).length - 1) / 2)].split(/[>:]/)[0]
-                    .trim()
-                    .substr(1)
-                    .replace(/\\/g, '')
+                [Math.floor((Object.keys(utilities).length - 1) / 2)].split(/[>:]/)[0]
+                  .trim()
+                  .substr(1)
+                  .replace(/\\/g, '')
                 : undefined,
           }
         })
@@ -365,9 +367,9 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
   }
 
   plugin({
-    addBase: () => {},
-    addDefaults: () => {},
-    addComponents: () => {},
+    addBase: () => { },
+    addDefaults: () => { },
+    addComponents: () => { },
     corePlugins: () => true,
     prefix: (x) => x,
     config: (option, defaultValue) => defaultValue,

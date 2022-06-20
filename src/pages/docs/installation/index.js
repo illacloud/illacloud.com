@@ -1,6 +1,8 @@
 import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 import { InstallationLayout } from '@/layouts/InstallationLayout'
 import { Steps } from '@/components/Steps'
+import { Cta } from '@/components/Cta'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 let steps = [
   {
@@ -101,29 +103,30 @@ export default function TailwindCli({ code }) {
         </p>
       </div>
       <Steps level={4} steps={steps} code={code} />
-      {/*
-        <Cta
-          label="Read the documentation"
-          href="/docs/tailwind-cli"
-          description={
-            <>
-              <strong className="text-slate-900 font-semibold">
-                This is only the beginning of what’s possible with the Tailwind CLI.
-              </strong>{' '}
-              To learn more about everything it can do, check out the Tailwind CLI documentation.
-            </>
-          }
-        />
-      */}
+
+      <Cta
+        label="Read the documentation"
+        href="/docs/tailwind-cli"
+        description={
+          <>
+            <strong className="text-slate-900 font-semibold">
+              This is only the beginning of what’s possible with the Tailwind CLI.
+            </strong>{' '}
+            To learn more about everything it can do, check out the Tailwind CLI documentation.
+          </>
+        }
+      />
+
     </InstallationLayout>
   )
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
   let { highlightCode } = require('../../../../remark/utils')
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common', 'navs'])),
       code: steps.map(({ code }) => {
         let isArray = Array.isArray(code)
         code = isArray ? code : [code]

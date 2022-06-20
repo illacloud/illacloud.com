@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import {VersionSwitcher} from '@/components/VersionSwitcher'
+import { VersionSwitcher } from '@/components/VersionSwitcher'
 import Router from 'next/router'
-import {Logo} from '@/components/Logo'
-import {Dialog} from '@headlessui/react'
-import {useEffect, useState} from 'react'
+import { Logo } from '@/components/Logo'
+import { Dialog } from '@headlessui/react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
-import {ThemeSelect, ThemeToggle} from './ThemeToggle'
+import { ThemeSelect, ThemeToggle } from './ThemeToggle'
+import { LanguageToggle } from './LanguageToggle'
 
 function Featured() {
   return (
@@ -118,14 +119,19 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
 export function NavItems() {
   return (
     <>
-      <li>
+      {/* <li>
         <Link href="/docs/installation">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Docs</a>
         </Link>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <Link href="/blog">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Blog</a>
+        </Link>
+      </li> */}
+      <li>
+        <Link href="/">
+          <a className="hover:text-sky-500 dark:hover:text-sky-400">Career</a>
         </Link>
       </li>
     </>
@@ -204,7 +210,8 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   </ul>
                 </nav>
                 <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
-                  <ThemeToggle panelClassName="mt-8" />
+                  <LanguageToggle />
+                  <ThemeToggle />
                   <a
                     href="/github"
                     className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"

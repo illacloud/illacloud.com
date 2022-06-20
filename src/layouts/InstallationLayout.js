@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { IconContainer } from '@/components/home/common'
+import { useTranslation } from 'next-i18next'
 
 let tabs = {
   'Tailwind CLI': '/docs/installation',
@@ -26,6 +27,7 @@ let readNext = [
 
 export function InstallationLayout({ children }) {
   let router = useRouter()
+  const { t } = useTranslation("navs")
 
   return (
     <BasicLayout>
@@ -39,6 +41,7 @@ export function InstallationLayout({ children }) {
           </h1>
           <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">Description</p>
           <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">End Message</p>
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">{t("left_side.overview")}</p>
         </div>
       </header>
     </BasicLayout>

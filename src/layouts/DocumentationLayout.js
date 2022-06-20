@@ -3,7 +3,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import socialSquare from '@/img/social-square.jpg'
 import { Title } from '@/components/Title'
-import { documentationNav } from '@/navs/documentation'
+// import { documentationNav } from '@/navs/documentation'
+import { ILLADocumentationNav } from '@/navs/documentation'
 
 export function DocumentationLayout(props) {
   let router = useRouter()
@@ -21,9 +22,11 @@ export function DocumentationLayout(props) {
           content={`https://illafamily.com${socialSquare}`}
         />
       </Head>
-      <SidebarLayout nav={documentationNav} {...props} />
+      {/* <SidebarLayout nav={documentationNav} {...props} /> */}
+      <SidebarLayout nav={ILLADocumentationNav(router.pathname)} {...props} />
     </>
   )
 }
 
-DocumentationLayout.nav = documentationNav
+// DocumentationLayout.nav = documentationNav
+DocumentationLayout.nav = ILLADocumentationNav()
