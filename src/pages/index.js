@@ -8,6 +8,11 @@ import styles from './index.module.css'
 import clsx from 'clsx'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { LanguageToggle } from "@/components/LanguageToggle"
+import { AppBackground } from '@/pages/home/bg'
+import { Nav } from '@/pages/home/nav'
+import { Content } from '@/pages/home/content'
+import { Cover } from '@/pages/home/cover'
+
 
 function Header() {
   return (
@@ -119,10 +124,15 @@ export default function Home() {
         />
         <title>ILLA - Help developers build Business Tools more efficiently.</title>
       </Head>
-      <div className="mb-20 space-y-20 overflow-hidden sm:mb-32 sm:space-y-32 md:mb-40 md:space-y-40">
-        <Header />
+             <div className="w-full bg-[#000000] ">
+               <div className=" absolute w-full z-50">
+                 <Nav />
+                 <Content />
+               </div>
+               <AppBackground />
+               <div className="w-full  h-96  bg-[#000000]" />
+               <div className="w-full h-96  bg-[#000000]" />
       </div>
-      <Footer />
     </>
   )
 }
