@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from 'react'
-import {useWindowScroll} from 'react-use'
 import {Cover} from "@/pages/home/cover";
+import {useWindowScroll, useWindowSize} from 'react-use'
 
 export function AppBackground() {
   const svgRef = useRef()
@@ -8,14 +8,20 @@ export function AppBackground() {
   const {y} = useWindowScroll()
   const pathLen = useRef()
   const [innerHeight,setInnerHeight] = useState()
+  const {width, height} = useWindowSize();
+
 
   useEffect(()=>{
     if (window) {
       setInnerHeight( window.innerHeight)
-      console.log("setInnerHeight",window.innerHeight)
 
     }
   },[])
+
+  useEffect(()=>{
+    setInnerHeight(height)
+  },[height])
+
 
   useEffect(() => {
     const next = pathLen.current - 12 * y
@@ -38,7 +44,7 @@ export function AppBackground() {
 
 
   return (
-    <div  style={{height:`${664.5 + 80+1329}px`}} className={`w-full flex reactive flex-col justify-between items-center bg-[#ffffff] `}>
+    <div  style={{height:`${664.5 + 80+1329}px`}} className={`w-full  bg-[#fafafa]  flex reactive flex-col justify-between items-center  `}>
       <svg
         className={'z-40'}
         ref={svgRef}

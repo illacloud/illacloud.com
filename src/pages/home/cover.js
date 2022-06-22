@@ -1,56 +1,75 @@
-import {useEffect, useMemo, useRef, useState} from "react";
-import {useWindowScroll} from 'react-use'
+import {useEffect, useRef, useState} from "react";
+import {useWindowScroll, useWindowSize} from 'react-use'
 
+
+const COVER_HEIGHT = 400
+
+const BUFFER_HEIGHT = 160
 
 export function Cover() {
 
-
-  const [size, setSize] = useState(400)
+  const [size, setSize] = useState(COVER_HEIGHT)
   const scrollRef = useRef(null);
   const {y} = useWindowScroll()
 
 
-  const [innerSize, setInnerHeight] = useState()
   const [top, setTop] = useState()
   const [radius, setRadius] = useState(0)
+  const [_width,setWidth] = useState(0)
+  const [_height,setHeight] = useState(0)
 
-  const bgRef = useRef()
+  const {width, height} = useWindowSize();
 
-  useEffect(() => {
-    if (window) {
-      setInnerHeight({w: window.innerWidth, h: window.innerHeight,})
-      setRadius(0)
+  useEffect(()=>{
+    if (window){
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
     }
-  }, [])
+  },[])
+
+  useEffect(()=>{
+    setWidth(width)
+    console.log("useEffect width",width)
+  },[width])
+
+  useEffect(()=>{
+    setHeight(height)
+  },[height])
+
+
 
   useEffect(() => {
-    if (innerSize?.w && innerSize?.h) {
-      const _size = ((innerSize.h - 200) - scrollRef.current.getBoundingClientRect().top) / innerSize.h * (innerSize.w + 1000) * 2 + 400
+   if (scrollRef.current.getBoundingClientRect().top > 0){
+     setTop(scrollRef.current.getBoundingClientRect().top)
+   }
+  }
+  , [y,_height,_width])
+
+  useEffect(() => {
+    if (_width && _height && top) {
+      const _size = ((_height - COVER_HEIGHT / 2) - top) /_height * (_width + 1000) * 2 + COVER_HEIGHT
       setSize(_size)
-      setTop(scrollRef.current.getBoundingClientRect().top)
-      console.log(window.innerHeight, window.innerWidth, scrollRef.current.getBoundingClientRect().top, _size, y)
+      console.log("top", _size)
     }
-  }, [y])
-
-  useEffect(() => {
-    if (top -464.5 >= 80 ){
-      setRadius(top -464.5 )
+    if (top - (_height - COVER_HEIGHT) / 2 >= BUFFER_HEIGHT / 2) {
+      setRadius(top - (_height - COVER_HEIGHT) / 2)
     }
-    console.log("top",top)
-  }, [top])
+    console.log("top", window.innerHeight, top)
+  }, [top,_height,_width])
 
 
   return <div style={{
-    height: `${innerSize?.h+160}px`,
+    height: `${_height + BUFFER_HEIGHT}px`,
     position: "absolute",
-    top: `${664.5-80}px`,
-    overflow: `${top && top < 464.5 ? "hidden" : "visible"}`,
+    top: `${(_height - BUFFER_HEIGHT) / 2}px`,
+    overflow: `${top && top < (_height - COVER_HEIGHT) / 2 ? "hidden" : "visible"}`,
     borderBottomLeftRadius: `${radius}px`,
     borderBottomRightRadius: `${radius}px`,
   }
   } className='w-full flex justify-center items-center z-30'>
     <div style={{height: size, width: size}} className={`bg-[#654aec] flex justify-center items-center  rounded-full `}>
-      <img style={{objectFit:"cover"}} ref={scrollRef} src={require('./video-placeholder.png').default}  className={"w-[400px] h-[400px] bg-[#fdf1c0]  rounded-full"} />
+      <img style={{objectFit: "cover"}} ref={scrollRef} src={require('./video-placeholder.png').default}
+           className={"w-[400px] h-[400px] bg-[#fdf1c0]  rounded-full"} alt={"video"}/>
     </div>
   </div>
 }

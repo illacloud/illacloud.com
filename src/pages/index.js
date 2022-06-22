@@ -1,6 +1,5 @@
 import { SearchButton } from '@/components/Search'
 import { Logo } from '@/components/Logo'
-import { Footer } from '@/components/home/Footer'
 import NextLink from 'next/link'
 import Head from 'next/head'
 import { NavItems, NavPopover } from '@/components/Header'
@@ -10,8 +9,8 @@ import { ThemeToggle } from '@/components/ThemeToggle'
 import { LanguageToggle } from "@/components/LanguageToggle"
 import { AppBackground } from '@/pages/home/bg'
 import { Nav } from '@/pages/home/nav'
-import { Content } from '@/pages/home/content'
-import { Cover } from '@/pages/home/cover'
+import { Title } from '@/pages/home/title'
+import {Content} from "@/pages/home/content";
 
 
 function Header() {
@@ -124,14 +123,17 @@ export default function Home() {
         />
         <title>ILLA - Help developers build Business Tools more efficiently.</title>
       </Head>
-             <div className="w-full bg-[#000000] ">
-               <div className=" absolute w-full z-50">
-                 <Nav />
-                 <Content />
+             <div className="w-full bg-[#fafafa]">
+              <Nav />
+               <div className=" absolute w-full z-40">
+                 <Title />
                </div>
                <AppBackground />
-               <div className="w-full  h-96  bg-[#000000]" />
-               <div className="w-full h-96  bg-[#000000]" />
+               <div  className="w-full  bg-[#000000]" >
+                 <Content/>
+               </div>
+
+
       </div>
     </>
   )

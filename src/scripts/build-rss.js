@@ -28,10 +28,10 @@ const feed = new Feed({
   },
 })
 
-getAllPosts().forEach(({ slug, module: { meta, default: Content } }) => {
+getAllPosts().forEach(({ slug, module: { meta, default: Title } }) => {
   const mdx = (
     <MDXProvider components={mdxComponents}>
-      <Content />
+      <Title />
     </MDXProvider>
   )
   const html = ReactDOMServer.renderToStaticMarkup(mdx)
