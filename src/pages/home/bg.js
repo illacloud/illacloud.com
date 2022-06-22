@@ -2,13 +2,17 @@ import {useEffect, useMemo, useRef, useState} from 'react'
 import {Cover} from "@/pages/home/cover";
 import {useWindowScroll, useWindowSize} from 'react-use'
 
+const COVER_HEIGHT = 400
+
+const BUFFER_HEIGHT = 160
+
 export function AppBackground() {
   const svgRef = useRef()
   const [len, setLen] = useState()
   const {y} = useWindowScroll()
   const pathLen = useRef()
   const [innerHeight,setInnerHeight] = useState()
-  const {width, height} = useWindowSize();
+  const {height} = useWindowSize();
 
 
   useEffect(()=>{
@@ -41,15 +45,13 @@ export function AppBackground() {
   }, [svgRef.current])
 
 
-
-
   return (
-    <div  style={{height:`${664.5 + 80+1329}px`}} className={`w-full  bg-[#fafafa]  flex reactive flex-col justify-between items-center  `}>
+    <div  style={{height:`${innerHeight * 1.5 + BUFFER_HEIGHT}px`}} className={`w-full  bg-[#fafafa]  flex reactive flex-col justify-between items-center  `}>
       <svg
         className={'z-40'}
         ref={svgRef}
         width="1186"
-        height="1746"
+        height={innerHeight* 1.25 }
         viewBox="0 0 1186 1746"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

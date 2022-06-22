@@ -29,7 +29,6 @@ export function Cover() {
 
   useEffect(()=>{
     setWidth(width)
-    console.log("useEffect width",width)
   },[width])
 
   useEffect(()=>{
