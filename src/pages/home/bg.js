@@ -1,34 +1,29 @@
-import {useEffect, useMemo, useRef, useState} from 'react'
-import {Cover} from "@/pages/home/cover";
-import {useWindowScroll, useWindowSize} from 'react-use'
-
-const COVER_HEIGHT = 400
+import { useEffect, useRef, useState, forwardRef } from 'react'
+import { Cover } from '@/pages/home/cover'
+import { useWindowScroll, useWindowSize } from 'react-use'
 
 const BUFFER_HEIGHT = 160
 
-export function AppBackground() {
+export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   const svgRef = useRef()
   const [len, setLen] = useState()
-  const {y} = useWindowScroll()
+  const { y } = useWindowScroll()
   const pathLen = useRef()
-  const [innerHeight,setInnerHeight] = useState()
-  const {height} = useWindowSize();
-
-
-  useEffect(()=>{
-    if (window) {
-      setInnerHeight( window.innerHeight)
-
-    }
-  },[])
-
-  useEffect(()=>{
-    setInnerHeight(height)
-  },[height])
-
+  const [innerHeight, setInnerHeight] = useState()
+  const { height } = useWindowSize()
 
   useEffect(() => {
-    const next = pathLen.current - 12 * y
+    if (window) {
+      setInnerHeight(window.innerHeight)
+    }
+  }, [])
+
+  useEffect(() => {
+    setInnerHeight(height)
+  }, [height])
+
+  useEffect(() => {
+    const next = pathLen.current - 6 * y
     if (next >= 0) {
       setLen(next)
     } else {
@@ -44,17 +39,19 @@ export function AppBackground() {
     }
   }, [svgRef.current])
 
-
   return (
-    <div  style={{height:`${innerHeight * 1.5 + BUFFER_HEIGHT}px`}} className={`w-full  bg-[#fafafa]  flex reactive flex-col justify-between items-center  `}>
+    <div
+      style={{ height: innerHeight * 1.5 + BUFFER_HEIGHT / 2 }}
+      className={`w-full  bg-[#fafafa] flex reactive flex-col justify-between items-center  `}
+    >
       <svg
-        className={'z-40'}
+        className={'z-40 opacity-50'}
         ref={svgRef}
-        width="1186"
-        height={innerHeight* 1.25 }
+        height="100%"
         viewBox="0 0 1186 1746"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none meet"
       >
         <path
           id="path"
@@ -64,8 +61,10 @@ export function AppBackground() {
           stroke="#DADEE6"
         />
       </svg>
-      <div className='grow w-full bg-[#000000]'/>
-      <Cover/>
+      <div className="bg-black relative bottom-0  w-full">
+        <div className="bg-black absolute bottom-0 h-[200px] w-full" />
+      </div>
+      <Cover changeButtonColor={changeButtonColor} />
     </div>
   )
-}
+})
