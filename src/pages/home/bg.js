@@ -42,10 +42,10 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   return (
     <div
       style={{ height: innerHeight * 1.5 + BUFFER_HEIGHT / 2 }}
-      className={`w-full  bg-[#fafafa] flex reactive flex-col justify-between items-center  `}
+      className={`w-full top-0 flex reactive flex-col justify-between items-center `}
     >
       <svg
-        className={'z-40 opacity-50'}
+        className={'z-40 h-0 sm:h-full'}
         ref={svgRef}
         height="100%"
         viewBox="0 0 1186 1746"

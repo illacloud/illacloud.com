@@ -53,32 +53,33 @@ export function Content() {
   }, [])
 
   return (
-    <div>
+    <div className="w-full">
       {/*page 01*/}
       <div
         style={{ height: innerHeight }}
-        className="flex items-center bg-black justify-center text-[48px] font-bold text-white"
+        className="flex flex-col sm:flex-row items-center bg-black justify-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0"
       >
         <div>
-          <div className="leading-[58px] ">
+          <div className="leading-[29px] sm: leading-[58px]">
             A
             <span className="text-[#000000] bg-[#d4fcca] px-[16px] ml-[16px] rounded-full ">
               Fully
             </span>
           </div>
-          <span className="leading-[58px] ">responsive UI library</span>
-          <div className="text-[16px] opacity-90 w-[520px] font-normal">
+          <span className="leading-[29px] sm:leading-[58px] ">responsive UI library</span>
+          <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] font-normal">
             We have built dozens of components in ILLA Builder to meet the needs of developers in
             different scenarios.Developers can drag and drop to boost their productivity, which
             greatly saves the time on building internal tools.
           </div>
-          <div className="text-[16px] text-[#bca6f7] opacity-90  font-normal">
+          <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px]  font-normal">
             View all components 👍 →
           </div>
         </div>
         <img
+          style={{ objectFit: 'cover' }}
           src={require('./images/4.png').default}
-          className="rounded-[40px] h-[740px] w-[558px] object-none"
+          className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0"
           alt={'video'}
         />
       </div>

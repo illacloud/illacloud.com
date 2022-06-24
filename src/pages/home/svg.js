@@ -118,3 +118,14 @@ export const WaysIcon = () => (
     />
   </svg>
 )
+
+export const MenuIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.5 9.375c0-1.036.84-1.875 1.875-1.875h31.25a1.875 1.875 0 0 1 0 3.75H4.375A1.875 1.875 0 0 1 2.5 9.375zM2.5 20c0-1.035.84-1.875 1.875-1.875h31.25a1.875 1.875 0 0 1 0 3.75H4.375A1.875 1.875 0 0 1 2.5 20zm1.875 8.75a1.875 1.875 0 0 0 0 3.75h31.25a1.875 1.875 0 0 0 0-3.75H4.375z"
+      fill="#1D2129"
+    />
+  </svg>
+)

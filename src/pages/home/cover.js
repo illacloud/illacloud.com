@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
+import { isMobile } from '@/pages/utils'
 
 const COVER_HEIGHT = 400
 
@@ -38,6 +39,7 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
     if (scrollRef.current.getBoundingClientRect().top > 0) {
       setTop(scrollRef.current.getBoundingClientRect().top)
     }
+    console.log('changeButtonColor  --- ', scrollRef.current.getBoundingClientRect().top)
   }, [y, _height, _width])
 
   useEffect(() => {
@@ -64,19 +66,29 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
       }}
       className=" w-full flex justify-center items-center z-30"
     >
-      <div
-        ref={bgRef}
-        style={{ height: size, width: size }}
-        className={`bg-[#654aec] flex justify-center items-center rounded-full `}
-      >
+      {isMobile() ? (
         <img
           style={{ objectFit: 'cover' }}
           ref={scrollRef}
           src={require('./images/video-placeholder.png').default}
-          className={'w-[400px] h-[400px] bg-[#fdf1c0]  rounded-full'}
+          className={' w-[200px]  h-[200px]  bg-[#fdf1c0]  rounded-full'}
           alt={'video'}
         />
-      </div>
+      ) : (
+        <div
+          ref={bgRef}
+          style={{ height: size, width: size }}
+          className={`sm:bg-[#654aec] flex justify-center items-center rounded-full `}
+        >
+          <img
+            style={{ objectFit: 'cover' }}
+            ref={scrollRef}
+            src={require('./images/video-placeholder.png').default}
+            className={' w-[200px] sm:w-[400px] h-[200px] sm:h-[400px]  bg-[#fdf1c0]  rounded-full'}
+            alt={'video'}
+          />
+        </div>
+      )}
     </div>
   )
 })

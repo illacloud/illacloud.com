@@ -4,20 +4,18 @@ import { Nav } from '@/pages/home/nav'
 import { Title } from '@/pages/home/title'
 import { Content } from '@/pages/home/content'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useEffect, useRef, useState } from 'react'
-import { useWindowSize } from 'react-use'
+import { useRef, useState } from 'react'
+import { useWindowScroll, useWindowSize } from 'react-use'
 import { Footer } from '@/pages/home/footer'
+import { isMobile } from '@/pages/utils'
 
 const Home = () => {
   const titleRef = useRef(null)
   const [buttonColorChange, setButtonColorChange] = useState(false)
   const [navColorChange, setNavColorChange] = useState(false)
-  const { width } = useWindowSize()
+  const { width, height } = useWindowSize()
+  const { y } = useWindowScroll()
   const _target = useRef(null)
-
-  useEffect(() => {
-    console.log('buttonRef --title', titleRef.current?.getBoundingClientRect().bottom)
-  }, [titleRef.current])
 
   return (
     <>
@@ -34,23 +32,39 @@ const Home = () => {
         />
         <title>ILLA - Help developers build Business Tools more efficiently.</title>
       </Head>
-      <div className="w-full bg-[#fafafa]">
-        <Nav buttonColorChange={navColorChange} />
-        <div ref={titleRef} className=" absolute w-full z-40">
-          <Title buttonColorChange={buttonColorChange} showButton={!navColorChange} />
-        </div>
-        <AppBackground
-          changeButtonColor={(position, w, top) => {
-            if (
-              Math.pow(width / 2 - 40, 2) + Math.pow(top + 200, 2) <= Math.pow(w / 2, 2) &&
-              !_target.current
-            ) {
-              _target.current = w
-            }
-            setNavColorChange(_target.current && _target.current < w)
-            setButtonColorChange(position <= titleRef.current?.getBoundingClientRect().bottom)
-          }}
+      <div className="overflow-hidden  w-full bg-[#fafafa] flex flex-col items-center ">
+        <Nav
+          buttonColorChange={navColorChange}
+          cloudButtonColorChange={y > height * 1.5 + 80 - 40}
         />
+        <div ref={titleRef} className="relative  sm:absolute flex justify-center w-full z-40">
+          <Title
+            buttonColorChange={!isMobile() && buttonColorChange}
+            showButton={!navColorChange}
+          />
+        </div>
+        {isMobile() ? (
+          <img
+            style={{ objectFit: 'cover' }}
+            src={require('../pages/home/images/video-placeholder.png').default}
+            className={' w-[200px]  h-[200px]  bg-[#fdf1c0]  rounded-full my-[40px]'}
+            alt={'video'}
+          />
+        ) : (
+          <AppBackground
+            changeButtonColor={(position, w, top) => {
+              if (
+                Math.pow(width / 2 - 40, 2) + Math.pow(top + 200, 2) <= Math.pow(w / 2, 2) &&
+                !_target.current
+              ) {
+                _target.current = w
+              }
+              setNavColorChange(_target.current && _target.current < w)
+              setButtonColorChange(position <= titleRef.current?.getBoundingClientRect().bottom)
+            }}
+          />
+        )}
+
         <Content />
         <Footer />
       </div>
