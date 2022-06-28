@@ -19,7 +19,7 @@ export const Title = forwardRef(({ buttonColorChange = false, showButton = true 
   return (
     <div
       ref={ref}
-      className="text-title sm:text-6xl text-[#0b0c0f] pt-[96px] sm:pt-[123px] text-center  flex flex-col justify-center items-center font-bold"
+      className="text-title z-40 grow sm:text-6xl text-[#0b0c0f] pt-[96px] sm:pt-[123px] text-center  flex flex-col justify-center items-center font-bold"
     >
       <span>{t('slogan-1')}</span>
       <span> {t('slogan-2')}</span>

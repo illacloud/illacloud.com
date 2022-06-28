@@ -31,6 +31,10 @@ module.exports = {
       title: '2.5rem',
       titleWeb: '5rem',
     },
+    height: (theme) => ({
+      ...theme('spacing'),
+      screen: '100vh',
+    }),
     aspectRatio: {
       auto: 'auto',
       square: '1 / 1',
@@ -52,6 +56,7 @@ module.exports = {
       15: '15',
       16: '16',
     },
+
     extend: {
       colors: {
         code: {

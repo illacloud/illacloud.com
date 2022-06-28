@@ -18,14 +18,14 @@ export const ProductSelect = forwardRef(({ buttonColorChange }) => {
   })
 
   return (
-    <div className="flex  flex-col  bg-transparent items-center w-[121px] h-[48px] cursor-pointer  justify-between ">
+    <div className="flex flex-col px-[16px]  bg-transparent  items-center h-[48px] cursor-pointer  justify-between ">
       <div
         className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
         onClick={() => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        products
+        <span className="mr-[8px]">products</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div
