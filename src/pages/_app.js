@@ -11,7 +11,7 @@ import socialCardLarge from '@/img/social-card-large.jpg'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import { SearchProvider } from '@/components/Search'
-import { appWithTranslation } from "next-i18next"
+import { appWithTranslation } from 'next-i18next'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -44,16 +44,17 @@ function App({ Component, pageProps, router }) {
       setNavIsOpen(false)
     }
     Router.events.on('routeChangeComplete', handleRouteChange)
+
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [navIsOpen])
+  }, [navIsOpen, router.pathname])
 
   const Layout = Component.layoutProps?.Layout || Fragment
   const layoutProps = Component.layoutProps?.Layout
     ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
-  const showHeader = router.pathname !== '/'
+  const showHeader = router.pathname !== '/' && router.pathname !== '/hire'
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || 'Documentation for the ILLA framework.'

@@ -45,7 +45,7 @@ const comunity = [
 
 export function Footer() {
   return (
-    <div className="flex flex-wrap items-center px-[20px] py-[80px]">
+    <div className="flex flex-wrap items-center px-[20px] py-[80px] w-full">
       <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
         <ILLA_LOGO />
         <span className="text-[#1d2129] grow-1 text-[12px]">Creat with ❤️ by ILLA</span>

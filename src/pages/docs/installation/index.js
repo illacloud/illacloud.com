@@ -2,7 +2,7 @@ import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 import { InstallationLayout } from '@/layouts/InstallationLayout'
 import { Steps } from '@/components/Steps'
 import { Cta } from '@/components/Cta'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 let steps = [
   {
@@ -116,12 +116,11 @@ export default function TailwindCli({ code }) {
           </>
         }
       />
-
     </InstallationLayout>
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   let { highlightCode } = require('../../../../remark/utils')
 
   return {
