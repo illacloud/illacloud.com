@@ -156,3 +156,34 @@ export const GitHubIconGray = () => (
     />
   </svg>
 )
+
+export const CloseIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.733 5.731a2.5 2.5 0 0 1 3.535 0L20 16.464 30.733 5.73a2.5 2.5 0 0 1 3.535 3.536L23.536 19.999l10.732 10.732a2.5 2.5 0 1 1-3.535 3.536L20 23.535 9.268 34.267a2.5 2.5 0 0 1-3.535-3.536L16.465 20 5.733 9.267a2.5 2.5 0 0 1 0-3.536z"
+      fill="#0B0C0F"
+    />
+  </svg>
+)
+
+export const CloseWhiteIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.733 5.731a2.5 2.5 0 0 1 3.535 0L20 16.464 30.733 5.73a2.5 2.5 0 0 1 3.535 3.536L23.536 19.999l10.732 10.732a2.5 2.5 0 1 1-3.535 3.536L20 23.535 9.268 34.267a2.5 2.5 0 0 1-3.535-3.536L16.465 20 5.733 9.267a2.5 2.5 0 0 1 0-3.536z"
+      fill="#ffffff"
+    />
+  </svg>
+)
+
+export const PlayIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M10.18 26.692A1.44 1.44 0 0 1 8 25.457V6.543a1.44 1.44 0 0 1 2.18-1.234l15.076 9.045c1.243.745 1.243 2.547 0 3.292l-15.075 9.046z"
+      fill="#000"
+    />
+  </svg>
+)

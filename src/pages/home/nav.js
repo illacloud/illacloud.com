@@ -1,9 +1,17 @@
-import { GIT_LOGO, GIT_LOGO_WHITE, ILLA_LOGO, ILLA_LOGO_WHITE, MenuIcon } from '@/pages/home/svg'
+import {
+  CloseIcon,
+  GIT_LOGO,
+  GIT_LOGO_WHITE,
+  ILLA_LOGO,
+  ILLA_LOGO_WHITE,
+  MenuIcon,
+} from '@/pages/home/svg'
 import { LanguageSelect } from '@/pages/home/language-select'
 import { ProductSelect } from '@/pages/home/product-select'
 import NextLink from 'next/link'
-import { forwardRef, useMemo } from 'react'
+import { forwardRef, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'next-i18next'
+import { Menu } from '@/pages/home/menu'
 
 export const Nav = forwardRef(
   ({ buttonColorChange = false, cloudButtonColorChange = false }, ref) => {
@@ -21,12 +29,24 @@ export const Nav = forwardRef(
         : { bg: '#ffffff', text: '#654aec' }
     }, [cloudButtonColorChange])
 
+    const [menuExpand, setMenuExpand] = useState(false)
+    useEffect(() => {
+      document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
+    }, [menuExpand])
+
     return (
       <>
-        <div className="relative h-[64px] sm:h-0 overflow-hidden justify-between px-[20px] w-full flex items-end block sm:hidden">
+        <div className=" justify-between  px-[20px] w-full h-[64px] flex items-end sm:hidden">
           <ILLA_LOGO />
-          <MenuIcon />
+          <span
+            onClick={() => {
+              setMenuExpand(() => !menuExpand)
+            }}
+          >
+            {menuExpand ? <CloseIcon /> : <MenuIcon />}
+          </span>
         </div>
+        <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
         <div className="h-[88px] w-full flex justify-between items-end fixed z-50  hidden sm:inline-flex">
           <div
             className="w-1/3 h-[48px] items-center flex  h-full items-end  flex-row z-50 pl-[40px]"

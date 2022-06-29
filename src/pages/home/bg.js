@@ -4,7 +4,7 @@ import { useWindowScroll, useWindowSize } from 'react-use'
 
 const BUFFER_HEIGHT = 160
 
-export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
+export const AppBackground = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
   const svgRef = useRef()
   const [len, setLen] = useState()
   const { y } = useWindowScroll()
@@ -45,7 +45,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
     <div
       className={`w-full top-0 flex absolute flex-col  justify-center items-center hidden sm:block `}
     >
-      <div className={'z-40 relative top-0  w-full flex justify-center'}>
+      <div className={'pointer-events-none z-40 relative top-0  w-full flex justify-center '}>
         <svg
           ref={svgRef}
           viewBox="0 0 1186 1746"
@@ -63,7 +63,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
           />
         </svg>
       </div>
-      <Cover changeButtonColor={changeButtonColor} />
+      <Cover changeButtonColor={changeButtonColor} openPlayer={openPlayer} />
     </div>
   )
 })

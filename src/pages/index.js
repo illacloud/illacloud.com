@@ -4,9 +4,11 @@ import { Nav } from '@/pages/home/nav'
 import { Title } from '@/pages/home/title'
 import { Content } from '@/pages/home/content'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
 import { Footer } from '@/pages/home/footer'
+import clsx from 'clsx'
+import { Player } from '@/pages/home/player'
 
 const Home = () => {
   const titleRef = useRef(null)
@@ -15,17 +17,7 @@ const Home = () => {
   const { width, height } = useWindowSize()
   const { y } = useWindowScroll()
   const _target = useRef(null)
-
-  const [_height, setHeight] = useState(height)
-  useEffect(() => {
-    setHeight(height)
-  }, [height])
-
-  useEffect(() => {
-    if (typeof window.innerHeight != 'undefined') {
-      setHeight(window.innerHeight)
-    }
-  }, [])
+  const [playing, setPlaying] = useState(false)
 
   return (
     <>
@@ -43,24 +35,27 @@ const Home = () => {
         <title>ILLA - Help developers build Business Tools more efficiently.</title>
       </Head>
       <div>
-        <div className="h-screen  w-full flex flex-col items-center">
+        <div className="h-screen w-full flex flex-col items-center justify-between sm:items-center bg-[#fafafa]">
           <Nav
             buttonColorChange={navColorChange}
             cloudButtonColorChange={y > height * 1.5 + 80 - 40}
           />
           <Title buttonColorChange={buttonColorChange} />
-          <img
-            style={{ objectFit: 'cover' }}
-            src={require('../pages/home/images/video-placeholder.png').default}
-            className="rounded-full h-[200px] w-[200px] mt-[40px] mb-[92px] block sm:hidden"
-            alt={'video'}
-          />
+          <div className="grow sm:grow-0  flex items-center block sm:hidden">
+            <img
+              style={{ objectFit: 'cover' }}
+              src={require('../pages/home/images/video-placeholder.png').default}
+              className="rounded-full h-[200px] w-[200px]  "
+              alt={'video'}
+            />
+          </div>
         </div>
-        <div
-          style={{ height: _height > 0 ? _height / 2 + 80 : '100vh' }}
-          className="w-full bg-black"
-        />
+        <div className={clsx('w-full h-[calc(50vh+80px+50px)]  flex flex-col hidden sm:flex ')}>
+          <div className="grow bg-[#fafafa]" />
+          <div className="bg-black w-full block h-[80px]" />
+        </div>
         <AppBackground
+          openPlayer={() => setPlaying(true)}
           changeButtonColor={(position, w, top) => {
             if (
               Math.pow(width / 2 - 40, 2) + Math.pow(top + 200, 2) <= Math.pow(w / 2, 2) &&

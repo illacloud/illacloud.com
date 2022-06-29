@@ -6,7 +6,6 @@ import { useClickAway } from 'react-use'
 import { forwardRef } from 'react'
 
 export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
-  let [setting, setSetting] = useState('en')
   const options = [
     { label: '简体中文', value: 'ch' },
     { label: 'English', value: 'en' },
@@ -46,7 +45,6 @@ export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
             <div
               className="leading-[40px] text-center w-full hover:bg-[#f2f3f5]"
               onClick={() => {
-                setSetting(option.value)
                 setExpandPanel(() => !expandPanel)
               }}
             >

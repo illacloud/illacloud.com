@@ -136,14 +136,7 @@ export function Testimonials() {
           </ul>
         ))}
       </div>
-      <div
-        className={clsx(
-          'inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white pt-32 pb-8 pointer-events-none dark:from-slate-900',
-          expanded ? 'sticky -mt-52' : 'absolute',
-          transition && 'transition-opacity duration-300',
-          expanded && (showCollapseButton ? 'opacity-100' : 'opacity-0')
-        )}
-      >
+      <div className={clsx(expanded ? 'sticky -mt-52' : 'absolute')}>
         <button
           type="button"
           className={clsx(
