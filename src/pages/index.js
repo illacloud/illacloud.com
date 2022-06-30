@@ -8,7 +8,6 @@ import { useRef, useState } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
 import { Footer } from '@/pages/home/footer'
 import clsx from 'clsx'
-import { Player } from '@/pages/home/player'
 
 const Home = () => {
   const titleRef = useRef(null)
@@ -36,6 +35,7 @@ const Home = () => {
       </Head>
       <div>
         <div className="h-screen w-full flex flex-col items-center justify-between sm:items-center bg-[#fafafa]">
+          <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
           <Nav
             buttonColorChange={navColorChange}
             cloudButtonColorChange={y > height * 1.5 + 80 - 40}
@@ -67,6 +67,7 @@ const Home = () => {
             setButtonColorChange(position <= titleRef.current?.getBoundingClientRect().bottom)
           }}
         />
+
         <Content />
         <Footer />
       </div>

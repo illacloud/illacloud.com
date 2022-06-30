@@ -2,12 +2,11 @@ import clsx from 'clsx'
 import { CloseWhiteIcon } from './svg'
 import { forwardRef } from 'react'
 
-export const Player = forwardRef(({ menuExpand, closeMenu, top }, ref) => {
+export const Player = forwardRef(({ menuExpand, closeMenu }, ref) => {
   return (
     <div
-      style={{ top: `${top}px` }}
       className={clsx(
-        'h-screen w-full flex-col top-0  absolute left-0 px-[200px]  items-end justify-center   z-50 font-bold text-[16px] bg-black/[0.64]',
+        'h-screen w-full flex-col  absolute left-0 px-[200px]  items-end justify-center z-50 font-bold text-[16px] bg-black/[0.64]',
         'overflow-y-hidden',
         menuExpand ? 'flex' : 'hidden'
       )}

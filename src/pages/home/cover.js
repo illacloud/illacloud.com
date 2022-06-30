@@ -2,10 +2,26 @@ import { useEffect, useRef, useState, forwardRef } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
 import { PlayIcon } from '@/pages/home/svg'
 import { Player } from '@/pages/home/player'
+import * as ReactDOM from 'react-dom'
 
 const COVER_HEIGHT = 400
 const BUFFER_HEIGHT = 160
 const OFFSET = 50
+
+const Modal = ({ isOpen, onClose }) => {
+  let modalRoot
+  if (typeof document != 'undefined') {
+    modalRoot = document.getElementById('modal')
+  }
+
+  if (!isOpen || !modalRoot) return null
+  return ReactDOM.createPortal(
+    <div className="modal">
+      <Player menuExpand closeMenu={onClose} />
+    </div>,
+    modalRoot
+  )
+}
 
 export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
   const [size, setSize] = useState(COVER_HEIGHT)
@@ -40,11 +56,12 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
     if (scrollRef.current.getBoundingClientRect().top > 0) {
       setTop(scrollRef.current.getBoundingClientRect().top)
     }
-    console.log('changeButtonColor  --- ', scrollRef.current.getBoundingClientRect().top)
+    console.log('containerRef', containerRef.current.getBoundingClientRect().bottom)
   }, [y, _height, _width])
 
   useEffect(() => {
     let _size = 0
+    console.log('top', top)
     if (_width && _height && top) {
       _size =
         ((_height - COVER_HEIGHT / 2 + OFFSET - top) / _height) * (_width + 1000) * 2.5 +
@@ -59,13 +76,17 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
 
+  const containerRef = useRef(null)
+
   useEffect(() => {
-    document.body.style.overflow = playMaskShow ? 'hidden' : 'auto'
+    ReactDOM.createPortal(<Player />, document.body)
   }, [playMaskShow])
 
+  const [open, setOpen] = useState(false)
   return (
     <>
       <div
+        ref={containerRef}
         style={{
           height: `${_height + BUFFER_HEIGHT}px`,
           position: 'absolute',
@@ -88,24 +109,22 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
             style={{ objectFit: 'cover' }}
             ref={scrollRef}
             src={require('./images/video-placeholder.png').default}
-            className={' w-[200px] sm:w-[400px] h-[200px] sm:h-[400px]  bg-[#fdf1c0]  rounded-full'}
+            className={' w-[400px] h-[400px]  bg-[#fdf1c0]  rounded-full'}
             alt={'video'}
           />
           <span
             className="absolute bg-white rounded-full w-[120px] h-[120px] flex items-center justify-center"
             onClick={() => {
               setPlayMaskShow(true)
+              setOpen(true)
             }}
           >
             <PlayIcon />
           </span>
         </div>
+        <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
+        {/*<Player menuExpand={playMaskShow} closeMenu={() => setPlayMaskShow(false)} />*/}
       </div>
-      <Player
-        menuExpand={playMaskShow}
-        closeMenu={() => setPlayMaskShow(false)}
-        top={_height / 2}
-      />
     </>
   )
 })

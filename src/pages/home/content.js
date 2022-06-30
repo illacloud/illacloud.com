@@ -44,7 +44,7 @@ const waysData = [
 
 export function Content() {
   return (
-    <div className="w-full  bg-black">
+    <div className="w-full">
       {/*page 01*/}
       <div className="flex sm:h-screen py-[40px] flex-col sm:flex-row items-center bg-black justify-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0">
         <div>

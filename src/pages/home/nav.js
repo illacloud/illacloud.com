@@ -47,7 +47,7 @@ export const Nav = forwardRef(
           </span>
         </div>
         <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
-        <div className="h-[88px] w-full flex justify-between items-end fixed z-50  hidden sm:inline-flex">
+        <div className="h-[88px] w-full flex justify-between items-end fixed z-40  hidden sm:inline-flex">
           <div
             className="w-1/3 h-[48px] items-center flex  h-full items-end  flex-row z-50 pl-[40px]"
             style={{ color: navColor.text }}
