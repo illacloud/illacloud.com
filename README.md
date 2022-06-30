@@ -7,13 +7,13 @@ ILLA uses [Next.js](https://nextjs.org/) for its documentation. Here is how you 
 1. Clone this repo
 
     ```sh
-    git clone https://github.com/illa-family/illafamily.com.git
+    git clone https://github.com/illa-family/illacloud.com.git
     ```
 
 2. Go into the project root directory
 
     ```sh
-    cd illafamily.com
+    cd illacloud.com
     ```
 
 3. Install JS dependencies
