@@ -1,4 +1,6 @@
 import { ILLA_LOGO } from '@/pages/home/svg'
+import {useEffect, useState} from "react";
+import {useWindowScroll} from "react-use";
 
 function renderItem(title, items) {
   return (
@@ -33,13 +35,24 @@ const waysData = [
 ]
 
 export function Footer() {
+
+  const {y} = useWindowScroll()
+  useEffect(()=>{
+    if (y-5411 < 785){
+      setHeight(10+y-5411 )
+    }
+  },[y])
+
+  const [height,setHeight]= useState(10)
   return (
-    <div className="flex h-[600px] items-center px-[120px] py-[185px]">
-      <div style={{ width: '1208px' }} className="mr-[40px]">
+    <div style={{height:height}} className="w-full  flex items-center overflow-y-hidden">
+      <div className='w-full flex items-center  px-[120px] transition-all'>
+      <div  className="mr-[40px] w-full">
         <ILLA_LOGO />
         <span className="text-[#1d2129] w-full text-[12px]">Creat with ❤️ by ILLA</span>
       </div>
       {waysData.map((item) => renderItem(item.title, item.items))}
+      </div>
     </div>
   )
 }
