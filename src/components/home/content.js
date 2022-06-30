@@ -1,5 +1,8 @@
 import NextLink from 'next/link'
 import { WaysIcon } from '@/img/home/svg'
+import { useEffect, useRef, useState } from 'react'
+import clsx from 'clsx'
+import { useWindowScroll } from 'react-use'
 
 function renderItem(icon, title, des, href) {
   return (
@@ -43,11 +46,28 @@ const waysData = [
 ]
 
 export function Content() {
+  const [imgHeight, setImageHeigh] = useState(370)
+
+  const { y } = useWindowScroll()
+
+  const _offset = window.innerHeight / 2 - 133
+
+  const ref = useRef(null)
+  useEffect(() => {
+    console.log(
+      'useEffect',
+      ref.current.getBoundingClientRect().y,
+      window.innerHeight,
+      ref.current.getBoundingClientRect().height,
+      _offset
+    )
+  }, [y])
+
   return (
     <div className="w-full">
       {/*page 01*/}
       <div className="flex sm:h-screen py-[40px] flex-col sm:flex-row items-center bg-black justify-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0">
-        <div>
+        <div ref={ref}>
           <div className="leading-[29px] sm:leading-[58px]">
             A
             <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] ml-[8px] sm:ml-[16px] rounded-full ">
@@ -67,7 +87,10 @@ export function Content() {
         <img
           style={{ objectFit: 'cover' }}
           src={require('../../img/home/4.png').default}
-          className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]"
+          className={clsx(
+            'rounded-[40px] w-[279px] h-[279px] sm:w-[558px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]',
+            `sm:h-[${imgHeight}px]`
+          )}
           alt={'video'}
         />
       </div>
@@ -143,7 +166,7 @@ export function Content() {
         />
       </div>
       {/*page 05*/}
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center bg-black rounded-b-[80px]">
         <div className="flex sm:h-screen py-[40px] flex-col w-full  sm:w-3/5  justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
           <div className="leading-[29px] w-full sm:leading-[58px] ">Flexible Deployment</div>
           <div className="text-[16px] opacity-90 w-full sm:w-full mt-[8px] font-normal opacity-90">
