@@ -95,7 +95,7 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
         <div
           ref={bgRef}
           style={{ height: size - 1, width: size - 1 }}
-          className="bg-[#654aec] z-30 flex justify-center  items-center rounded-full "
+          className="bg-[#654aec] z-20 flex justify-center  items-center rounded-full "
           onClick={() => {
             console.log('playMaskShow')
           }}

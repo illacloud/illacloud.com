@@ -33,7 +33,7 @@ const Home = () => {
         <title>ILLA - Help developers build Business Tools more efficiently.</title>
       </Head>
       <div>
-        <div className="h-screen w-full flex flex-col items-center justify-between sm:items-center bg-[#fafafa]">
+        <div className="h-screen w-full flex flex-col items-center justify-start sm:items-center bg-[#fafafa]">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
           <Nav
             buttonColorChange={navColorChange}
