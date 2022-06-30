@@ -5,13 +5,13 @@ import {
   ILLA_LOGO,
   ILLA_LOGO_WHITE,
   MenuIcon,
-} from '@/pages/home/svg'
-import { LanguageSelect } from '@/pages/home/language-select'
-import { ProductSelect } from '@/pages/home/product-select'
+} from '@/img/home/svg'
+import { LanguageSelect } from '@/components/home/language-select'
+import { ProductSelect } from '@/components/home/product-select'
 import NextLink from 'next/link'
 import { forwardRef, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'next-i18next'
-import { Menu } from '@/pages/home/menu'
+import { Menu } from '@/components/home/menu'
 
 export const Nav = forwardRef(
   ({ buttonColorChange = false, cloudButtonColorChange = false }, ref) => {

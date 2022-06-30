@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
-import { Cover } from '@/pages/home/cover'
+import { Cover } from '@/components/home/cover'
 import { useWindowScroll, useWindowSize } from 'react-use'
 
 export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
@@ -41,6 +41,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
 
   return (
     <div
+      ref={ref}
       className={`w-full top-0 flex absolute flex-col  justify-center items-center hidden sm:block `}
     >
       <div className={'pointer-events-none z-40 relative top-0  w-full flex justify-center '}>
@@ -48,9 +49,9 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
           ref={svgRef}
           viewBox="0 0 1186 1746"
           fill="none"
-          height={innerHeight * 1.5 + 80}
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none meet"
+          className="h-[calc(150vh+80px)]"
         >
           <path
             id="path"

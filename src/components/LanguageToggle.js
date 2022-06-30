@@ -3,17 +3,17 @@ import clsx from 'clsx'
 import { Fragment } from 'react'
 import create from 'zustand'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 
 const languages = [
   {
     value: 'zh-CN',
-    label: '简体中文'
+    label: '简体中文',
   },
   {
     value: 'en-US',
-    label: 'English'
-  }
+    label: 'English',
+  },
 ]
 
 const useDefaultLanguage = create((set) => ({
@@ -23,9 +23,10 @@ const useDefaultLanguage = create((set) => ({
 
 function useLanguage() {
   let { curLanguage, setCurLanguage } = useDefaultLanguage()
+  const route = useRouter()
 
   useIsomorphicLayoutEffect(() => {
-    const pathname = location.pathname
+    const pathname = route.pathname
     const cnReg = /\/zh-CN\//
     const urlLanguage = () => {
       if (cnReg.test(pathname)) {
@@ -34,7 +35,7 @@ function useLanguage() {
         return 'en-US'
       }
     }
-    Router.push(location.pathname.replace(urlLanguage(), curLanguage))
+    Router.push(route.pathname.replace(urlLanguage(), curLanguage))
   }, [curLanguage])
 
   return [curLanguage, setCurLanguage]
@@ -57,13 +58,16 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
     <Listbox value={curLanguage} onChange={setCurLanguage}>
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
-        <span className='text-slate-700 text-sm font-semibold hover:text-sky-500'>{languageLabel}</span>
+        <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
+          {languageLabel}
+        </span>
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
           'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300',
           panelClassName
-        )}>
+        )}
+      >
         {languages.map(({ value, label }) => (
           <Listbox.Option key={value} value={value} as={Fragment}>
             {({ active, selected }) => (

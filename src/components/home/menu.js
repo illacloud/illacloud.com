@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { CloseIcon, ILLA_LOGO, MenuIcon, SelectIconBlack } from './svg'
+import { CloseIcon, ILLA_LOGO, MenuIcon, SelectIconBlack } from '../../img/home/svg'
 import { useState, forwardRef } from 'react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'

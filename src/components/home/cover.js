@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
-import { PlayIcon } from '@/pages/home/svg'
-import { Player } from '@/pages/home/player'
+import { PlayIcon } from '@/img/home/svg'
+import { Player } from '@/components/home/player'
 import * as ReactDOM from 'react-dom'
 
 const COVER_HEIGHT = 400
@@ -103,7 +103,7 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
           <img
             style={{ objectFit: 'cover' }}
             ref={scrollRef}
-            src={require('./images/video-placeholder.png').default}
+            src={require('../../img/home/video-placeholder.png').default}
             className={' w-[400px] h-[400px]  bg-[#fdf1c0]  rounded-full'}
             alt={'video'}
           />

@@ -1,4 +1,4 @@
-import { DiscordIcon, GitHubIconGray, ILLA_LOGO, TwitterIcon } from '@/pages/home/svg'
+import { DiscordIcon, GitHubIconGray, ILLA_LOGO, TwitterIcon } from '@/img/home/svg'
 
 function renderItem(title, items) {
   return (

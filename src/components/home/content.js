@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { WaysIcon } from '@/pages/home/svg'
+import { WaysIcon } from '@/img/home/svg'
 
 function renderItem(icon, title, des, href) {
   return (
@@ -66,7 +66,7 @@ export function Content() {
         </div>
         <img
           style={{ objectFit: 'cover' }}
-          src={require('./images/4.png').default}
+          src={require('../../img/home/4.png').default}
           className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]"
           alt={'video'}
         />
@@ -91,7 +91,7 @@ export function Content() {
         </div>
         <img
           style={{ objectFit: 'cover' }}
-          src={require('./images/4.png').default}
+          src={require('../../img/home/4.png').default}
           className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]"
           alt={'video'}
         />
@@ -114,7 +114,7 @@ export function Content() {
         </div>
         <img
           style={{ objectFit: 'cover' }}
-          src={require('./images/4.png').default}
+          src={require('../../img/home/4.png').default}
           className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]"
           alt={'video'}
         />
@@ -137,7 +137,7 @@ export function Content() {
         </div>
         <img
           style={{ objectFit: 'cover' }}
-          src={require('./images/4.png').default}
+          src={require('../../img/home/4.png').default}
           className="rounded-[40px] w-[279px] h-[279px] sm:w-[558px] sm:h-[740px] object-none mt-[20px] sm:mt-0 sm:ml-[42px]"
           alt={'video'}
         />

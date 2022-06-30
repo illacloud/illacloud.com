@@ -20,19 +20,19 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const defaultConfig = require('tailwindcss/resolveConfig')(require('tailwindcss/defaultConfig'))
 const dlv = require('dlv')
 const Prism = require('prismjs')
-const { i18n } = require("./next-i18next.config")
+const { i18n } = require('./next-i18next.config')
 
 const fallbackLayouts = {
-  'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout']
+  'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout'],
 }
 
 const fallbackDefaultExports = {
   'src/pages/{docs,components}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
-  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout']
+  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
 }
 
 const fallbackGetStaticProps = {
-  'src/pages/blog/**/*': '@/layouts/BlogPostLayout'
+  'src/pages/blog/**/*': '@/layouts/BlogPostLayout',
 }
 
 module.exports = withBundleAnalyzer({
@@ -46,6 +46,7 @@ module.exports = withBundleAnalyzer({
     return require('./redirects.json')
   },
   webpack(config, options) {
+    config.resolve.fallback = { fs: false, path: false, stream: false, constants: false }
     if (!options.dev && options.isServer) {
       let originalEntry = config.entry
 
@@ -103,10 +104,10 @@ module.exports = withBundleAnalyzer({
             example:
               Object.keys(utilities).length > 0
                 ? Object.keys(utilities)
-                [Math.floor((Object.keys(utilities).length - 1) / 2)].split(/[>:]/)[0]
-                  .trim()
-                  .substr(1)
-                  .replace(/\\/g, '')
+                    [Math.floor((Object.keys(utilities).length - 1) / 2)].split(/[>:]/)[0]
+                    .trim()
+                    .substr(1)
+                    .replace(/\\/g, '')
                 : undefined,
           }
         })
@@ -332,7 +333,6 @@ module.exports = withBundleAnalyzer({
         }),
       ],
     })
-
     return config
   },
 })
@@ -367,9 +367,9 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
   }
 
   plugin({
-    addBase: () => { },
-    addDefaults: () => { },
-    addComponents: () => { },
+    addBase: () => {},
+    addDefaults: () => {},
+    addComponents: () => {},
     corePlugins: () => true,
     prefix: (x) => x,
     config: (option, defaultValue) => defaultValue,

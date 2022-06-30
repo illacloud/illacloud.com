@@ -1,8 +1,7 @@
-import { Nav } from '@/pages/home/nav'
-import { Footer } from '@/pages/home/footer'
-import { useTranslation } from 'next-i18next'
+import { Nav } from '@/components/home/nav'
+import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { AddressIcon } from '@/pages/hire/images/svg'
+import { AddressIcon } from '@/img/hire/svg'
 import clsx from 'clsx'
 
 const renderImageItem = (item, index) => {
@@ -105,36 +104,35 @@ const jobList = [
 ]
 
 const benefitList = [
-  { image: require('./images/01.jpg').default, des: '💻 入职提供苹果笔记本、台式机' },
+  { image: require('../../img/hire/01.jpg').default, des: '💻 入职提供苹果笔记本、台式机' },
   {
-    image: require('./images/01.jpg').default,
+    image: require('../../img/hire/01.jpg').default,
     des: '💰每日提供餐食补贴 & 每月福利金助员工提升自我',
   },
-  { image: require('./images/01.jpg').default, des: '☀️ 在节假日外为员工提供福利年假、病假' },
-  { image: require('./images/01.jpg').default, des: '☕️ 免费咖啡、每周举办不同主题活动' },
+  { image: require('../../img/hire/01.jpg').default, des: '☀️ 在节假日外为员工提供福利年假、病假' },
+  { image: require('../../img/hire/01.jpg').default, des: '☕️ 免费咖啡、每周举办不同主题活动' },
 ]
 const addressLit = [
   {
     images: [
-      require('./images/02.png').default,
-      require('./images/02.png').default,
-      require('./images/02.png').default,
+      require('../../img/hire/02.png').default,
+      require('../../img/hire/02.png').default,
+      require('../../img/hire/02.png').default,
     ],
     des: '北京市东城区王府井219淘汇新天7层',
   },
 
   {
     images: [
-      require('./images/02.png').default,
-      require('./images/02.png').default,
-      require('./images/02.png').default,
+      require('../../img/hire/02.png').default,
+      require('../../img/hire/02.png').default,
+      require('../../img/hire/02.png').default,
     ],
     des: '广东省深圳市南山区高新南一道6号TCL大厦B座9层',
   },
 ]
 
 const Hire = () => {
-  const { t } = useTranslation('common')
   return (
     <>
       <div>
@@ -144,7 +142,7 @@ const Hire = () => {
             <div className="px-[48px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
               <img
                 style={{ objectFit: 'cover' }}
-                src={require('./images/logo.png').default}
+                src={require('../../img/hire/logo.png').default}
                 className={' w-[300px] sm:w-[600px] h-[140px] sm:h-[280px] mt-[80px]  '}
                 alt={'logo'}
               />

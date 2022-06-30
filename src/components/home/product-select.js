@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRef, useState } from 'react'
-import { SelectIcon, SelectIconBlack } from '@/pages/home/svg'
+import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import { useClickAway } from 'react-use'
 import { forwardRef } from 'react'
 

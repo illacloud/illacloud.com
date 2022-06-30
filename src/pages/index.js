@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import { AppBackground } from '@/pages/home/bg'
-import { Nav } from '@/pages/home/nav'
-import { Title } from '@/pages/home/title'
-import { Content } from '@/pages/home/content'
+import { AppBackground } from '@/components/home/bg'
+import { Nav } from '@/components/home/nav'
+import { Title } from '@/components/home/title'
+import { Content } from '@/components/home/content'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRef, useState } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
-import { Footer } from '@/pages/home/footer'
+import { Footer } from '@/components/home/home-footer'
 import clsx from 'clsx'
 
 const Home = () => {
@@ -43,7 +43,7 @@ const Home = () => {
           <div className="grow sm:grow-0  flex items-center block sm:hidden">
             <img
               style={{ objectFit: 'cover' }}
-              src={require('../pages/home/images/video-placeholder.png').default}
+              src={require('../img/home/video-placeholder.png').default}
               className="rounded-full h-[200px] w-[200px]  "
               alt={'video'}
             />
