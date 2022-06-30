@@ -23,13 +23,12 @@ const Modal = ({ isOpen, onClose }) => {
   )
 }
 
-export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
+export const Cover = forwardRef(({ changeButtonColor }, ref) => {
   const [size, setSize] = useState(COVER_HEIGHT)
   const scrollRef = useRef(null)
   const { y } = useWindowScroll()
 
   const [top, setTop] = useState()
-  const [radius, setRadius] = useState(0)
   const [_width, setWidth] = useState(0)
   const [_height, setHeight] = useState(0)
 
@@ -68,9 +67,6 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
         COVER_HEIGHT
       setSize(_size)
     }
-    if (top - (_height - COVER_HEIGHT) / 2 >= BUFFER_HEIGHT / 2) {
-      setRadius(top - (_height - COVER_HEIGHT) / 2)
-    }
     changeButtonColor && changeButtonColor(bgRef.current?.getBoundingClientRect()?.top, _size, top)
   }, [top, _height, _width])
 
@@ -82,7 +78,6 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
     ReactDOM.createPortal(<Player />, document.body)
   }, [playMaskShow])
 
-  const [open, setOpen] = useState(false)
   return (
     <>
       <div
@@ -116,14 +111,12 @@ export const Cover = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
             className="absolute bg-white rounded-full w-[120px] h-[120px] flex items-center justify-center"
             onClick={() => {
               setPlayMaskShow(true)
-              setOpen(true)
             }}
           >
             <PlayIcon />
           </span>
         </div>
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
-        {/*<Player menuExpand={playMaskShow} closeMenu={() => setPlayMaskShow(false)} />*/}
       </div>
     </>
   )

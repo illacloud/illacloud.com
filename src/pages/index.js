@@ -16,7 +16,6 @@ const Home = () => {
   const { width, height } = useWindowSize()
   const { y } = useWindowScroll()
   const _target = useRef(null)
-  const [playing, setPlaying] = useState(false)
 
   return (
     <>
@@ -55,7 +54,6 @@ const Home = () => {
           <div className="bg-black w-full block h-[80px]" />
         </div>
         <AppBackground
-          openPlayer={() => setPlaying(true)}
           changeButtonColor={(position, w, top) => {
             if (
               Math.pow(width / 2 - 40, 2) + Math.pow(top + 200, 2) <= Math.pow(w / 2, 2) &&

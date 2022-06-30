@@ -2,9 +2,7 @@ import { useEffect, useRef, useState, forwardRef } from 'react'
 import { Cover } from '@/pages/home/cover'
 import { useWindowScroll, useWindowSize } from 'react-use'
 
-const BUFFER_HEIGHT = 160
-
-export const AppBackground = forwardRef(({ changeButtonColor, openPlayer }, ref) => {
+export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   const svgRef = useRef()
   const [len, setLen] = useState()
   const { y } = useWindowScroll()
@@ -63,7 +61,7 @@ export const AppBackground = forwardRef(({ changeButtonColor, openPlayer }, ref)
           />
         </svg>
       </div>
-      <Cover changeButtonColor={changeButtonColor} openPlayer={openPlayer} />
+      <Cover changeButtonColor={changeButtonColor} />
     </div>
   )
 })
