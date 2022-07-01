@@ -39,7 +39,7 @@ export const ProductSelect = forwardRef(({ buttonColorChange }) => {
         }}
       >
         {options.map((option) => (
-          <Link key={option.value} href={option.value}>
+          <Link key={option.label} href={option.value}>
             <div
               className="leading-[40px] text-center w-full hover:bg-[#f2f3f5]"
               onClick={() => {
