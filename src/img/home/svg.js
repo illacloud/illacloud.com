@@ -208,19 +208,7 @@ export const Mask = () => (
 export const CLIIcon = () => (
   <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="4" y="4" width="56" height="56" rx="8" fill="#654AEC" />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M21.647 24h4.141v15.059h-4.14V24zM16 29.647h4.141v9.412H16v-9.412zM31.435 24h-4.14v15.059h4.14V24z"
-      fill="#fff"
-    />
-    <path fill="#FF58BE" d="M16 24h4.141v4.141H16z" />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M43.859 31.53a3.388 3.388 0 1 1-6.777 0 3.388 3.388 0 0 1 6.777 0zm0 6.725A7.53 7.53 0 1 1 48 31.53v7.53h-4.141v-.804z"
-      fill="#fff"
-    />
+    <path d="m16 22.5 9.5 9.5-9.5 9.5M32 41h16" stroke="#fff" strokeWidth="4" />
   </svg>
 )
 

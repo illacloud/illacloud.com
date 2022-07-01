@@ -32,7 +32,7 @@ export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
       </div>
       <div
         ref={ref}
-        className="bg-white top-[88px] flex flex-col items-center justify-center w-[108px] text-[#000000] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]"
+        className="bg-white text-[14px] top-[88px] flex flex-col items-center justify-center w-[108px] text-[#000000] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]"
         style={{
           height: `${expandPanel ? 96 : 0}px `,
           transition: 'height 200ms',

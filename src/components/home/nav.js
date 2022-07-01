@@ -36,7 +36,7 @@ export const Nav = forwardRef(
 
     return (
       <>
-        <div className=" justify-between  px-[20px] w-full h-[64px] flex items-end sm:hidden">
+        <div className="justify-between  px-[20px] w-full h-[64px] flex items-end sm:hidden">
           <ILLA_LOGO />
           <span
             onClick={() => {
@@ -76,7 +76,7 @@ export const Nav = forwardRef(
           </div>
           <div
             style={{ visibility: buttonColorChange ? 'visible' : 'hidden' }}
-            className=" w-1/3  text-[20px] font-normal gap-[16px] flex justify-end  pr-[40px]"
+            className=" w-1/3  text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]"
           >
             <div className="w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] leading-[48px] box-border rounded-full ">
               {t('self-Hosted')}

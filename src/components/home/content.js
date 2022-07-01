@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { CloudIcon, KubernetesIcon, WaysIcon } from '@/img/home/svg'
+import { CLIIcon, CloudIcon, KubernetesIcon, WaysIcon } from '@/img/home/svg'
 import { ContentItem } from '@/components/home/content-item'
 import { useTranslation } from 'next-i18next'
 
@@ -9,8 +9,10 @@ function renderItem(icon, title, des, href) {
       <NextLink href={href ?? '/'}>
         <div className="bg-white/[0.12] w-full sm:w-auto flex flex-col items-start justify-center p-[16px] sm:p-[32px] mt-[16px] mr-4  rounded-[32px]">
           {icon}
-          <div className="text-[16px] mt-[12px] mb-[8px]">{title}</div>
-          <div className="text-[12px]">{des}</div>
+          <div className="text-[16px] sm:text-[24px] mt-[12px] mb-[8px]">{title}</div>
+          <div className="text-[12px] sm:text-[16px] font-normal h-[32px] sm:text-[48px] ">
+            {des}
+          </div>
         </div>
       </NextLink>
     </a>
@@ -22,7 +24,7 @@ export function Content() {
   const waysData = [
     {
       icon: (
-        <span className="h-[32px] w-[32px] sm:h-[64px] sm:w-[64px]">
+        <span className="h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]">
           <CloudIcon />
         </span>
       ),
@@ -32,8 +34,8 @@ export function Content() {
     },
     {
       icon: (
-        <span className="h-[32px] w-[32px]">
-          <CloudIcon />
+        <span className="h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]">
+          <CLIIcon />
         </span>
       ),
       title: t('deployment.illa-CLI.title'),
@@ -42,7 +44,7 @@ export function Content() {
     },
     {
       icon: (
-        <span className="h-[32px] w-[32px] sm:h-[64px] sm:w-[64px]">
+        <span className="h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]">
           <KubernetesIcon />
         </span>
       ),
@@ -52,7 +54,7 @@ export function Content() {
     },
     {
       icon: (
-        <span className="h-[32px] w-[32px] sm:h-[64px] sm:w-[64px]">
+        <span className="h-[32px] w-[32px] sm:h-[40px] sm:w-[40px]">
           <WaysIcon />
         </span>
       ),

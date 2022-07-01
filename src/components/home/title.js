@@ -25,7 +25,7 @@ export const Title = forwardRef(({ buttonColorChange = false, showButton = true 
       <span className="font-normal text-[16px] mt-[40px] px-[20px] sm:w-[520px]  sm:px-0">
         {t('description')}
       </span>
-      <div className="text-[16px] sm:[20px] font-normal flex  mt-[40px] sm:mt-[64px]  box-border">
+      <div className="text-[16px] sm:text-[20px] font-normal flex  mt-[40px] sm:mt-[64px]  box-border">
         <div
           style={{ backgroundColor: selfButtonColor.bg, color: selfButtonColor.text }}
           className="px-12  leading-[64px] box-border mr-2 sm:mr-4 rounded-full"

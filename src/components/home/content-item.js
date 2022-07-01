@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { Mask } from '@/img/home/svg'
 
-export function ContentItem({ contentNode, img }) {
+export function ContentItem({ contentNode, img, maskColor }) {
   const ref = useRef(null)
   const [bgTop, setBgTop] = useState(336)
 

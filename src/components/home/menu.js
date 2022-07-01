@@ -13,7 +13,7 @@ export const Menu = forwardRef(({ menuExpand, closeMenu }, ref) => {
   return (
     <div
       className={clsx(
-        'h-screen w-full bg-white absolute top-0 left-0 px-[20px]  z-50 font-bold text-[16px] bg-white',
+        'h-screen w-full bg-white absolute top-0 left-0 px-[20px]  z-50 font-medium text-[16px] bg-white',
         'overflow-x-hidden',
         menuExpand ? 'block' : 'hidden'
       )}
