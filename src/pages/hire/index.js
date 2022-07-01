@@ -187,7 +187,7 @@ const Hire = () => {
               {jobList?.map((item) => renderJobItem(item))}
             </div>
           </div>
-          <Footer />
+          <Footer noHome />
         </div>
       </div>
     </>

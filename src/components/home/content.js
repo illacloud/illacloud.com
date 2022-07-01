@@ -45,7 +45,7 @@ const waysData = [
 
 export function Content() {
   return (
-    <div className="w-full  bg-black">
+    <div className="w-full ">
       {/*page 01*/}
       <ContentItem
         img={require('@/img/home/4.png').default}
@@ -135,7 +135,7 @@ export function Content() {
         }
       />
       {/*page 05*/}
-      <div className="w-full flex justify-center bg-black rounded-b-[80px]">
+      <div className="w-full flex justify-center bg-black rounded-b-[80px] ">
         <div className="flex sm:h-screen py-[40px] flex-col w-full  sm:w-3/5  justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
           <div className="leading-[29px] w-full sm:leading-[58px] ">Flexible Deployment</div>
           <div className="text-[16px] opacity-90 w-full sm:w-full mt-[8px] font-normal opacity-90">

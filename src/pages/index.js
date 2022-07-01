@@ -8,6 +8,7 @@ import { useRef, useState } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
 import { Footer } from '@/components/home/home-footer'
 import clsx from 'clsx'
+import { useTranslation } from 'next-i18next'
 
 const Home = () => {
   const titleRef = useRef(null)
@@ -16,6 +17,7 @@ const Home = () => {
   const { width, height } = useWindowSize()
   const { y } = useWindowScroll()
   const _target = useRef(null)
+  const { t } = useTranslation('home')
 
   return (
     <>
@@ -30,7 +32,7 @@ const Home = () => {
           property="og:title"
           content="ILLA - Help developers build Business Tools more efficiently."
         />
-        <title>ILLA - Help developers build Business Tools more efficiently.</title>
+        <title>{t('slogan-1')}</title>
       </Head>
       <div>
         <div className="h-screen w-full flex flex-col items-center justify-start sm:items-center bg-[#fafafa]">

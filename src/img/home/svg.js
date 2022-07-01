@@ -187,3 +187,20 @@ export const PlayIcon = () => (
     />
   </svg>
 )
+
+export const Mask = () => (
+  <svg
+    width="558"
+    height="740"
+    viewBox="0 0 558 740"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M40 0H0V40C0 17.9086 17.9086 0 40 0ZM518 0C540.091 0 558 17.9086 558 40V0H518ZM558 700C558 722.091 540.091 740 518 740H558V700ZM40 740C17.9086 740 0 722.091 0 700V740H40Z"
+      fill="black"
+    />
+  </svg>
+)

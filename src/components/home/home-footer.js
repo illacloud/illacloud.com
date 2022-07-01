@@ -5,9 +5,9 @@ import clsx from 'clsx'
 
 function renderItem(title, items) {
   return (
-    <div className="w-1/2  sm:w-1/5  h-[212px]   flex flex-col items-start justify-center rounded-[32px]">
+    <div className="w-1/2  sm:w-1/5  flex flex-col items-start  justify-center ">
       <div className="text-[16px] text-[#1d2129] font-semibold mb-[16px]">{title}</div>
-      <div className="flex flex-col text-[14px] font-normal ">
+      <div className="flex flex-col text-[14px]  font-normal ">
         {items?.map((item) => (
           <span className="mb-[12px]">{item}</span>
         ))}
@@ -46,9 +46,9 @@ const comunity = [
   },
 ]
 
-const HEIGHT = 785
+const HEIGHT = 580
 
-export function Footer() {
+export function Footer({ noHome = false }) {
   const { y } = useWindowScroll()
   const ref = useRef(null)
   const flag = useRef(false)
@@ -70,15 +70,15 @@ export function Footer() {
     <>
       <div
         ref={ref}
-        style={{ height: height }}
-        className=" flex-wrap items-center px-[20px] py-[80px] w-full hidden sm:flex"
+        style={{ height: noHome ? HEIGHT : height }}
+        className=" flex-wrap items-center overflow-y-hidden px-[120px]  w-full hidden sm:flex"
       >
-        <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
+        <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
           <ILLA_LOGO />
           <span className="text-[#1d2129] grow-1 text-[12px]">Creat with ❤️ by ILLA</span>
         </div>
         {waysData.map((item) => renderItem(item.title, item.items))}
-        <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
+        <div className="w-full sm:w-1/5  flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
           <div className="text-[16px] text-[#1d2129] font-semibold mb-[16px] hidden sm:block">
             comunity
           </div>
@@ -86,12 +86,12 @@ export function Footer() {
             <span className="mx-[10px] sm:mb-[12px]">{item.icon}</span>
           ))}
         </div>
-        <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
+        <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[16px]">
           © ILLA, Inc.
         </span>
       </div>
-      <div className="flex flex-wrap items-center px-[20px] py-[80px] w-full">
-        <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
+      <div className="flex flex-wrap items-center px-[20px] py-[80px] w-full sm:hidden">
+        <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between ">
           <ILLA_LOGO />
           <span className="text-[#1d2129] grow-1 text-[12px]">Creat with ❤️ by ILLA</span>
         </div>
