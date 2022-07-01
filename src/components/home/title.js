@@ -23,8 +23,7 @@ export const Title = forwardRef(({ buttonColorChange = false, showButton = true 
     >
       <span className="leading-[48px] sm:leading-[96px]">{t('slogan-1')}</span>
       <span className="font-normal text-[16px] mt-[40px] px-[20px] sm:w-[520px]  sm:px-0">
-        ILLA is a low-code platform that lets developers build internal tools in minutes, spend less
-        time on website design and integrations.
+        {t('description')}
       </span>
       <div className="text-[16px] sm:[20px] font-normal flex  mt-[40px] sm:mt-[64px]  box-border">
         <div

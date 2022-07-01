@@ -23,8 +23,6 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   useEffect(() => {
     const next = pathLen.current - 6 * y
     if (next >= 0) {
-      console.log('next', next)
-
       setLen(next)
     } else {
       setLen(0)

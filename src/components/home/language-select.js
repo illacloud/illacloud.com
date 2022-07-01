@@ -41,7 +41,7 @@ export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
         }}
       >
         {options.map((option) => (
-          <Link key={option.value} href="/" locale={option.value}>
+          <Link key={option.value} href={router.pathname} locale={option.value}>
             <div
               className="leading-[40px] text-center w-full hover:bg-[#f2f3f5]"
               onClick={() => {

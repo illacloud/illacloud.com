@@ -55,12 +55,10 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
     if (scrollRef.current.getBoundingClientRect().top > 0) {
       setTop(scrollRef.current.getBoundingClientRect().top)
     }
-    console.log('containerRef', containerRef.current.getBoundingClientRect().bottom)
   }, [y, _height, _width])
 
   useEffect(() => {
     let _size = 0
-    console.log('top', top)
     if (_width && _height && top) {
       _size =
         ((_height - COVER_HEIGHT / 2 + OFFSET - top) / _height) * (_width + 1000) * 2.5 +
@@ -96,9 +94,6 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
           ref={bgRef}
           style={{ height: size - 1, width: size - 1 }}
           className="bg-[#654aec] z-20 flex justify-center  items-center rounded-full "
-          onClick={() => {
-            console.log('playMaskShow')
-          }}
         >
           <img
             style={{ objectFit: 'cover' }}
