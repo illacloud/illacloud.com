@@ -1,24 +1,12 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { Cover } from '@/components/home/cover'
-import { useWindowScroll, useWindowSize } from 'react-use'
+import { useWindowScroll } from 'react-use'
 
 export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   const svgRef = useRef()
   const [len, setLen] = useState()
   const { y } = useWindowScroll()
   const pathLen = useRef()
-  const [innerHeight, setInnerHeight] = useState()
-  const { height } = useWindowSize()
-
-  useEffect(() => {
-    if (window) {
-      setInnerHeight(window.innerHeight)
-    }
-  }, [])
-
-  useEffect(() => {
-    setInnerHeight(height)
-  }, [height])
 
   useEffect(() => {
     const next = pathLen.current - 6 * y

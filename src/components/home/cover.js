@@ -55,6 +55,7 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
     if (scrollRef.current.getBoundingClientRect().top > 0) {
       setTop(scrollRef.current.getBoundingClientRect().top)
     }
+    changeButtonColor && changeButtonColor(bgRef.current?.getBoundingClientRect()?.top, size, top)
   }, [y, _height, _width])
 
   useEffect(() => {
@@ -65,7 +66,6 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
         COVER_HEIGHT
       setSize(_size)
     }
-    changeButtonColor && changeButtonColor(bgRef.current?.getBoundingClientRect()?.top, _size, top)
   }, [top, _height, _width])
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
@@ -92,7 +92,7 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
       >
         <div
           ref={bgRef}
-          style={{ height: size - 1, width: size - 1 }}
+          style={{ height: size - 2, width: size - 2 }}
           className="bg-[#654aec] z-20 flex justify-center  items-center rounded-full "
         >
           <img

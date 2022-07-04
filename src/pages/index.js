@@ -38,10 +38,10 @@ const Home = () => {
         <div className="h-screen w-full flex flex-col items-center justify-start sm:items-center bg-[#fafafa]">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
           <Nav
-            buttonColorChange={navColorChange}
+            navColorChange={navColorChange}
             cloudButtonColorChange={y > height * 1.5 + 80 - 40}
           />
-          <Title buttonColorChange={buttonColorChange} />
+          <Title ref={titleRef} buttonColorChange={buttonColorChange} />
           <div className="grow sm:grow-0  flex items-center block sm:hidden">
             <img
               style={{ objectFit: 'cover' }}
@@ -64,7 +64,16 @@ const Home = () => {
               _target.current = w
             }
             setNavColorChange(_target.current && _target.current < w)
-            setButtonColorChange(position <= titleRef.current?.getBoundingClientRect().bottom)
+            console.log(
+              'setButtonColorChange',
+              y,
+              position,
+              titleRef.current?.getBoundingClientRect().bottom,
+              y > 0 && position < titleRef.current?.getBoundingClientRect().bottom
+            )
+            setButtonColorChange(
+              y > 0 && position < titleRef.current?.getBoundingClientRect().bottom
+            )
           }}
         />
 
