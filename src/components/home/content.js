@@ -1,23 +1,8 @@
-import NextLink from 'next/link'
 import { CLIIcon, CloudIcon, KubernetesIcon, WaysIcon } from '@/img/home/svg'
 import { ContentItem } from '@/components/home/content-item'
 import { useTranslation } from 'next-i18next'
-
-function renderItem(icon, title, des, href) {
-  return (
-    <a className="sm:w-1/2 " href="/">
-      <NextLink href={href ?? '/'}>
-        <div className="bg-white/[0.12] w-full sm:w-auto flex flex-col items-start justify-center p-[16px] sm:p-[32px] mt-[16px] mr-4  rounded-[32px]">
-          {icon}
-          <div className="text-[16px] sm:text-[24px] mt-[12px] mb-[8px]">{title}</div>
-          <div className="text-[12px] sm:text-[16px] font-normal h-[32px] sm:text-[48px] ">
-            {des}
-          </div>
-        </div>
-      </NextLink>
-    </a>
-  )
-}
+import React from 'react'
+import { Card } from '@/components/home/card'
 
 export function Content() {
   const { t } = useTranslation('home')
@@ -89,7 +74,7 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px] sm:mt-[16px]  font-normal">
+            <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px] sm:mt-[16px] cursor-pointer  font-normal">
               {t('content.ui-library.goto')} 👍 →
             </div>
           </>
@@ -119,7 +104,7 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px]  font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] mt-[16px] opacity-90  font-normal">
+            <div className="text-[16px] text-[#bca6f7] mt-[16px] opacity-90  font-normal cursor-pointer">
               {t('content.date-integrate.goto')} 😀 →
             </div>
           </>
@@ -139,7 +124,7 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90  font-normal  pt-[8px] sm:pt-[16px]">
+            <div className="text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer  pt-[8px] sm:pt-[16px]">
               {t('content.for-developer.goto')} 😋 →
             </div>
           </>
@@ -169,7 +154,7 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px] font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90  font-normal pt-[8px] sm:pt-[16px]">
+            <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.goto')} 🤠 →
             </div>
           </>
@@ -177,13 +162,15 @@ export function Content() {
       />
       {/*page 05*/}
       <div className="w-full flex justify-center bg-black rounded-b-[40px] sm:rounded-b-[80px]">
-        <div className="flex sm:h-screen py-[40px] flex-col w-full   sm:w-[1040px]  sm:w-3/5  justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
+        <div className="flex sm:h-screen py-[40px] flex-col w-full   sm:w-[1040px]   justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
           <div className="leading-[29px] w-full sm:leading-[58px] "> {t('deployment.title')}</div>
-          <div className="text-[16px] opacity-90 w-full sm:w-full mt-[8px] font-normal opacity-90">
+          <div className="text-[16px] opacity-90 w-full sm:w-full mt-[8px] sm:mt-[16px] font-normal opacity-90">
             {t('deployment.introduction')}
           </div>
-          <div className="mt-[16px] flex flex-wrap sm:justify-between ">
-            {waysData.map((item) => renderItem(item.icon, item.title, item.des, item.href))}
+          <div className="mt-[20px] sm:mt-[40px] flex flex-wrap sm:justify-between ">
+            {waysData.map((item, index) => (
+              <Card title={item.title} icon={item.icon} des={item.des} index={index} />
+            ))}
           </div>
         </div>
       </div>

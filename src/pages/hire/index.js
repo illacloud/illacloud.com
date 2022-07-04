@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { AddressIcon } from '@/img/hire/svg'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
+import Head from 'next/head'
 
 const renderImageItem = (item, index) => {
   return (
@@ -13,14 +14,14 @@ const renderImageItem = (item, index) => {
         index % 2 === 0 ? 'sm:items-end sm:pr-[10px]' : 'sm:items-start sm:pl-[20px]'
       )}
     >
-      <div className="sm:flex flex-col sm:justify-center ">
+      <div className="sm:flex flex-col sm:justify-center">
         <img
           style={{ objectFit: 'cover' }}
           src={item.image}
-          className={'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] '}
+          className={'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px] mb-[12px] '}
           alt={'video'}
         />
-        <span className="text-[12px] sm:text-[16px] text-[#1d2129] text-start font-bold sm:h-[48px]   mt-[12px] mb-[24px] sm:mt-[24px] sm:mb-[32px]">
+        <span className="text-[12px] sm:text-[16px] text-[#1d2129] text-start font-medium sm:h-[48px] mt-[12px] mb-[64px] sm:mt-[24px] sm:mb-0">
           {item.des}
         </span>
       </div>
@@ -30,8 +31,8 @@ const renderImageItem = (item, index) => {
 
 const renderItem = (item) => {
   return (
-    <div className="flex flex-col items-start justify-start overflow-x-scroll sm:w-full sm:overflow-x-hidden sm:items-center ">
-      <div className="flex  gap-[20px] justify-between">
+    <div className="flex flex-col items-start justify-start sm:w-full overflow-x-scroll sm:overflow-x-hidden sm:items-center ">
+      <div className="flex  gap-[20px] justify-between  ">
         {item.images?.map((image) => (
           <div className={'w-[279px] sm:w-1/3 '}>
             <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
@@ -139,9 +140,12 @@ const Hire = () => {
 
   return (
     <>
+      <Head>
+        <title>{t('slogan')}</title>
+      </Head>
       <div>
-        <div className=" w-full items-center flex flex-col  bg-[#fafafa]">
-          <div className="h-screen flex flex-col items-start sm:items-center   ">
+        <div className=" w-full items-center flex flex-col bg-[#ffffff] sm:bg-[#fafafa]">
+          <div className="sm:h-screen mb-[40px] sm:mb-0 flex flex-col items-start sm:items-center   ">
             <Nav />
             <div className="px-[48px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
               <img
@@ -151,10 +155,10 @@ const Hire = () => {
                 alt={'logo'}
               />
               <div className=" sm:w-[508px]">
-                <div className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
+                <div className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold mt-[40px] sm:mt-[80px]">
                   {t('title')}
                 </div>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#713bf9] to-[#ff3ea6] mt-[16px] text-[16px] sm:text-[20px]">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r font-medium from-[#713bf9]  to-[#ff3ea6] mt-[16px] text-[16px] sm:text-[20px]">
                   {t('slogan')}
                 </span>
                 <div className="text-[#1d2129] text-[14px] sm:text-[16px] mt-[12px] leading-[20px] sm:leading-[24px] ">
@@ -163,27 +167,27 @@ const Hire = () => {
               </div>
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] w-full px-[48px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px]  ">
+          <div className=" bg-[#e5e4ff] w-full px-[48px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>
-            <span className="text-[#1d2129] text-[20px] sm:text-[16px]  mt-[12px] sm:mt-[24px] mb-[24px] mb-[48px]">
-              我们提供温馨的工作环境
+            <span className="text-[#1d2129] text-[14px] sm:text-[16px]  mt-[12px] sm:mt-[24px] ">
+              {t('life.des')}
             </span>
             <div className="flex flex-wrap justify-center">
               {benefitList?.map((item, index) => renderImageItem(item, index))}
             </div>
           </div>
-          <div className=" w-full px-[48px] flex flex-col items-center sm:bg-[#e5e4ff]">
-            <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px] sm:mb-[48px]">
+          <div className=" w-full pl-[48px] sm:px-[48px]  flex flex-col items-center sm:bg-[#e5e4ff] py-[40px] sm:py-[80px]">
+            <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold mb-[24px] sm:mb-[48px]">
               {t('address.title')}
             </span>
             <div className="flex flex-col justify-start  w-full">
               {addressLit?.map((item) => renderItem(item))}
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[48px] flex flex-col items-center">
-            <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px] mb-[24px] sm:mb-[48px] ">
+          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[48px] py-[40px] sm:py-[80px] flex flex-col items-center">
+            <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mb-[24px] sm:mb-[48px] ">
               {t('recruiting.title')}
             </span>
             <div className="flex flex-col justify-start w-full text-[#0b0c0f]  sm:w-[600px] ">
@@ -206,7 +210,7 @@ const Hire = () => {
 }
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['hire'])),
+    ...(await serverSideTranslations(locale, ['hire', 'home'])),
   },
 })
 

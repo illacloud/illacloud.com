@@ -4,11 +4,13 @@ import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import { useClickAway } from 'react-use'
 import { forwardRef } from 'react'
 import NextLink from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 export const ProductSelect = forwardRef(({ buttonColorChange }) => {
+  const { t } = useTranslation('home')
   const options = [
     { label: 'ILLA Builder', value: 'https://github.com/illa-family/illa-builder' },
-    { label: 'ILLA design', value: 'https://github.com/illa-family/illa-design' },
+    { label: 'ILLA Design', value: 'https://github.com/illa-family/illa-design' },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
 
@@ -21,7 +23,7 @@ export const ProductSelect = forwardRef(({ buttonColorChange }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col px-[16px] relative  bg-transparent  items-center h-[48px] cursor-pointer  justify-between "
+      className="flex flex-col relative  bg-transparent  items-center h-[48px] cursor-pointer  justify-between "
     >
       <div
         className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
@@ -29,7 +31,7 @@ export const ProductSelect = forwardRef(({ buttonColorChange }) => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[8px]">products</span>
+        <span className="mr-[8px]">{t('nav.product')}</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div

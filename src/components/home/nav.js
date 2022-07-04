@@ -14,14 +14,8 @@ import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
 import clsx from 'clsx'
 
-export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange = false }, ref) => {
+export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange }, ref) => {
   const { t } = useTranslation('home')
-
-  const cloudButtonColor = useMemo(() => {
-    return cloudButtonColorChange
-      ? { bg: '#654aec', text: '#ffffff' }
-      : { bg: '#ffffff', text: '#654aec' }
-  }, [cloudButtonColorChange])
 
   const [menuExpand, setMenuExpand] = useState(false)
   useEffect(() => {
@@ -31,7 +25,11 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
   return (
     <>
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-end sm:hidden">
-        <ILLA_LOGO />
+        <NextLink href="/">
+          <span>
+            <ILLA_LOGO />
+          </span>
+        </NextLink>
         <span
           onClick={() => {
             setMenuExpand(() => !menuExpand)
@@ -72,12 +70,12 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
             <ProductSelect buttonColorChange={navColorChange} />
             <NextLink href="/docs/installation">
               <a href="/" className="px-[16px] text-center leading-[48px] ">
-                Doc
+                {t('nav.doc')}
               </a>
             </NextLink>
             <NextLink href="/hire">
               <a href="/" className="px-[16px] text-center leading-[48px] ">
-                Careers
+                {t('nav.career')}
               </a>
             </NextLink>
           </div>
@@ -94,9 +92,8 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
             {t('self-Hosted')}
           </div>
           <span
-            style={{ backgroundColor: cloudButtonColor.bg, color: cloudButtonColor.text }}
             className={clsx(
-              'w-[160px] text-center bg-[#ffffff] text-[#654aec] leading-[48px] box-border  rounded-full',
+              'w-[160px] text-center leading-[48px] box-border rounded-full',
               navColorChange ? 'visible' : 'hidden',
               cloudButtonColorChange ? 'bg-[#654aec] text-[#ffffff]' : 'bg-[#ffffff] text-[#654aec]'
             )}

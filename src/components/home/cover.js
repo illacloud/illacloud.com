@@ -8,21 +8,6 @@ const COVER_HEIGHT = 400
 const BUFFER_HEIGHT = 160
 const OFFSET = 50
 
-const Modal = ({ isOpen, onClose }) => {
-  let modalRoot
-  if (typeof document != 'undefined') {
-    modalRoot = document.getElementById('modal')
-  }
-
-  if (!isOpen || !modalRoot) return null
-  return ReactDOM.createPortal(
-    <div className="modal">
-      <Player menuExpand closeMenu={onClose} />
-    </div>,
-    modalRoot
-  )
-}
-
 export const Cover = forwardRef(({ changeButtonColor }, ref) => {
   const [size, setSize] = useState(COVER_HEIGHT)
   const scrollRef = useRef(null)
@@ -70,8 +55,6 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
 
-  const containerRef = useRef(null)
-
   useEffect(() => {
     ReactDOM.createPortal(<Player />, document.body)
   }, [playMaskShow])
@@ -79,7 +62,6 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
   return (
     <>
       <div
-        ref={containerRef}
         style={{
           height: `${_height + BUFFER_HEIGHT}px`,
           position: 'absolute',
@@ -93,25 +75,14 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
         <div
           ref={bgRef}
           style={{ height: size - 2, width: size - 2 }}
-          className="bg-[#654aec] z-20 flex justify-center  items-center rounded-full "
+          className="bg-[#654aec] z-20 flex justify-center  items-center rounded-[99999px] "
         >
-          <img
+          <span
             style={{ objectFit: 'cover' }}
             ref={scrollRef}
-            src={require('../../img/home/video-placeholder.png').default}
-            className={' w-[400px] h-[400px]  bg-[#fdf1c0]  rounded-full'}
-            alt={'video'}
+            className=" w-[400px] h-[400px]  bg-[#fdf1c0]  rounded-full  opacity-0"
           />
-          <span
-            className="absolute bg-white rounded-full w-[120px] h-[120px] flex items-center justify-center"
-            onClick={() => {
-              setPlayMaskShow(true)
-            }}
-          >
-            <PlayIcon />
-          </span>
         </div>
-        <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
       </div>
     </>
   )

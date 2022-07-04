@@ -1,37 +1,28 @@
 import { DiscordIcon, GitHubIconGray, ILLA_LOGO, TwitterIcon } from '@/img/home/svg'
 import { useEffect, useRef, useState } from 'react'
 import { useWindowScroll } from 'react-use'
-import clsx from 'clsx'
+import NextLink from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 function renderItem(title, items) {
   return (
-    <div className="w-1/2  sm:w-1/5  flex flex-col items-start  justify-center mt-[32px] sm:mt-0 ">
-      <div className="text-[16px] text-[#1d2129] font-semibold mb-[16px]">{title}</div>
-      <div className="flex flex-col text-[14px]  font-normal ">
+    <div
+      key={title}
+      className="w-1/2  sm:w-1/5  flex flex-col items-start  justify-center mt-[32px] sm:mt-0 "
+    >
+      <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">{title}</div>
+      <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
         {items?.map((item) => (
-          <span className="mb-[12px]">{item}</span>
+          <NextLink key={item.title} href={item.href ?? '/'}>
+            <span className="mb-[12px]">{item.title}</span>
+          </NextLink>
         ))}
       </div>
     </div>
   )
 }
 
-const waysData = [
-  {
-    title: 'Product',
-    items: ['ILLA Builder', 'ILLA cloud', 'ILLA design'],
-  },
-  {
-    title: 'Resources',
-    items: ['Postgres', 'Redis', 'Rest API'],
-  },
-  {
-    title: 'company',
-    items: ['Blog', 'Careers', 'About uS'],
-  },
-]
-
-const comunity = [
+const community = [
   {
     icon: <TwitterIcon />,
     href: '/',
@@ -49,51 +40,72 @@ const comunity = [
 const HEIGHT = 580
 
 export function Footer({ noHome = false }) {
+  const { t } = useTranslation('home')
   const { y } = useWindowScroll()
   const ref = useRef(null)
-  const flag = useRef(false)
   const [height, setHeight] = useState(10)
 
   useEffect(() => {
-    if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT && !flag.current) {
+    if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT) {
       setHeight(y + 10 - (window.innerHeight * 5.5 + 130))
     }
   }, [y])
-
-  useEffect(() => {
-    if (height >= HEIGHT) {
-      flag.current = true
-    }
-  }, [height])
+  const waysData = [
+    {
+      title: t('footer.product'),
+      items: [
+        { title: 'ILLA Builder', href: 'https://github.com/illa-family/illa-builder' },
+        { title: 'ILLA Cloud', href: 'https://github.com/illa-family/illa' },
+        { title: 'ILLA Design', href: 'https://github.com/illa-family/illa-design' },
+      ],
+    },
+    {
+      title: t('footer.resources'),
+      items: [
+        { title: 'Postgres', href: '' },
+        { title: 'Redis', href: '' },
+        { title: 'Rest API', href: '' },
+      ],
+    },
+    {
+      title: t('footer.company'),
+      items: [
+        { title: t('footer.blog'), href: '/' },
+        { title: t('footer.career'), href: '/' },
+        { title: t('footer.about'), href: '/' },
+      ],
+    },
+  ]
 
   return (
     <>
-      <div style={{ height: HEIGHT }}>
+      <div style={{ height: HEIGHT }} className="w-full flex flex-col items-center">
         <div
           ref={ref}
           style={{ height: noHome ? HEIGHT : height }}
           className=" flex-col items-center justify-center  overflow-y-hidden  px-[120px]  w-full hidden sm:flex"
         >
           <div className="flex w-full grow ">
-            <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
-              <ILLA_LOGO />
-              <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
-                Creat with ❤️ by ILLA
-              </span>
-            </div>
-            {waysData.map((item) => renderItem(item.title, item.items))}
-            <div className="w-full sm:w-1/5  flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
-              <div className="text-[16px] text-[#1d2129] font-semibold mb-[16px] hidden sm:block">
-                comunity
+            <NextLink href={'/'}>
+              <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
+                <ILLA_LOGO />
+                <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
+                  Creat with ❤️ by ILLA
+                </span>
               </div>
-              {comunity?.map((item) => (
-                <span className="mx-[10px] sm:mb-[12px]">{item.icon}</span>
+            </NextLink>
+            {waysData.map((item) => renderItem(item.title, item.items))}
+            <div className="w-full sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
+              <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
+                {t('footer.community')}
+              </div>
+              {community?.map((item, index) => (
+                <span key={'comunity' + index} className="mx-[10px] sm:mb-[12px]">
+                  {item.icon}
+                </span>
               ))}
             </div>
           </div>
-          <span className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]">
-            © ILLA, Inc.
-          </span>
         </div>
         <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full sm:hidden">
           <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
@@ -102,14 +114,19 @@ export function Footer({ noHome = false }) {
           </div>
           {waysData.map((item) => renderItem(item.title, item.items))}
           <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px] mt-[32px]">
-            {comunity?.map((item) => (
-              <span className="mx-[10px] sm:mb-[12px]">{item.icon}</span>
+            {community?.map((item, index) => (
+              <span key={'icon' + index} className="mx-[10px] sm:mb-[12px]">
+                {item.icon}
+              </span>
             ))}
           </div>
           <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
             © ILLA, Inc.
           </span>
         </div>
+        <span className="text-[#a9aeb8]   w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]  hidden sm:block">
+          © ILLA, Inc.
+        </span>
       </div>
     </>
   )
