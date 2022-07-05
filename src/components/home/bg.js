@@ -27,6 +27,14 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   const pathLen = useRef()
 
   useEffect(() => {
+    const path = svgRef.current?.getElementById('path')
+    if (path && !pathLen.current) {
+      pathLen.current = path?.getTotalLength() * 1.04
+      setLen(pathLen.current)
+    }
+  }, [svgRef.current])
+
+  useEffect(() => {
     const next = pathLen.current - 6 * y
     if (next >= 0) {
       setLen(next)
@@ -34,15 +42,6 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
       setLen(0)
     }
   }, [y])
-
-  useEffect(() => {
-    if (svgRef.current) {
-      const path = svgRef.current.getElementById('path')
-      pathLen.current = path.getTotalLength() * 1.04
-      setLen(pathLen.current)
-      console.log('AppBackground', path.getTotalLength(), 1336 / (window.innerHeight * 1.5 + 130))
-    }
-  }, [svgRef?.current])
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
 
@@ -56,7 +55,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
       className={`w-full top-0 flex absolute flex-col  justify-center items-center hidden sm:block `}
     >
       <div className={' z-30 relative top-0  w-full flex justify-center  '}>
-        <div className=" w-[400px] h-[400px]  absolute top-[calc(100vh-200px)] ">
+        <div className=" w-[400px] h-[400px] absolute top-[calc(100vh-150px)] ">
           <img
             style={{ objectFit: 'cover' }}
             src={require('../../img/home/video-placeholder.png').default}

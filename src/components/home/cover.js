@@ -3,87 +3,71 @@ import { useWindowScroll, useWindowSize } from 'react-use'
 import { PlayIcon } from '@/img/home/svg'
 import { Player } from '@/components/home/player'
 import * as ReactDOM from 'react-dom'
-
-const COVER_HEIGHT = 400
-const BUFFER_HEIGHT = 160
-const OFFSET = 50
+import {
+  AppState,
+  BUFFER_HEIGHT,
+  COVER_HEIGHT,
+  getBgSize,
+  getCoverPosition,
+  OFFSET,
+  scale,
+} from '@/components/home/utils'
 
 export const Cover = forwardRef(({ changeButtonColor }, ref) => {
   const [size, setSize] = useState(COVER_HEIGHT)
-  const scrollRef = useRef(null)
   const { y } = useWindowScroll()
-
-  const [top, setTop] = useState()
-  const [_width, setWidth] = useState(0)
-  const [_height, setHeight] = useState(0)
-
   const bgRef = useRef(null)
-
   const { width, height } = useWindowSize()
 
   useEffect(() => {
-    if (window) {
-      setWidth(window.innerWidth)
-      setHeight(window.innerHeight)
+    AppState.w = width
+    AppState.h = height
+    setSize(getBgSize(y))
+  }, [width, height])
+
+  useEffect(() => {
+    if (getCoverPosition(y) > 0) {
+      setSize(getBgSize(y))
     }
-  }, [])
+  }, [y])
 
-  useEffect(() => {
-    setWidth(width)
-  }, [width])
-
-  useEffect(() => {
-    setHeight(height)
-  }, [height])
-
-  useEffect(() => {
-    if (scrollRef.current.getBoundingClientRect().top > 0) {
-      setTop(scrollRef.current.getBoundingClientRect().top)
-    }
-    changeButtonColor && changeButtonColor(bgRef.current?.getBoundingClientRect()?.top, size, top)
-  }, [y, _height, _width])
-
-  useEffect(() => {
-    let _size = 0
-    if (_width && _height && top) {
-      _size =
-        ((_height - COVER_HEIGHT / 2 + OFFSET - top) / _height) * (_width + 1000) * 2.5 +
-        COVER_HEIGHT
-      setSize(_size)
-    }
-  }, [top, _height, _width])
-
-  const [playMaskShow, setPlayMaskShow] = useState(false)
-
-  useEffect(() => {
-    ReactDOM.createPortal(<Player />, document.body)
-  }, [playMaskShow])
+  const coverHeight = AppState.h + BUFFER_HEIGHT
+  const coverPosition = (AppState.h - BUFFER_HEIGHT) / 2 + OFFSET
 
   return (
     <>
       <div
         style={{
-          height: `${_height + BUFFER_HEIGHT}px`,
+          height: coverHeight + coverPosition,
           position: 'absolute',
-          top: `${(_height - BUFFER_HEIGHT) / 2 + OFFSET}px`,
-          overflow: `${top && top < (_height - COVER_HEIGHT) / 2 ? 'hidden' : 'visible'}`,
+          top: 0,
+          overflow: 'hidden',
+          overflowX: 'auto',
           borderBottomLeftRadius: 80,
           borderBottomRightRadius: 80,
         }}
-        className=" w-full flex justify-center items-center "
+        className=" w-full  flex justify-center items-end "
       >
         <div
-          ref={bgRef}
-          style={{ height: size - 2, width: size - 2 }}
-          className="bg-[#654aec] z-20 flex justify-center  items-center rounded-[99999px] "
+          style={{
+            height: coverHeight,
+            position: 'relative',
+            top: 0,
+          }}
+          className=" w-full flex justify-center items-center "
         >
-          <span
-            style={{ objectFit: 'cover' }}
-            ref={scrollRef}
-            className=" w-[400px] h-[400px]  bg-[#fdf1c0]  rounded-full  opacity-0"
+          <div
+            ref={bgRef}
+            style={{
+              width: size,
+              height: size,
+              top: 0,
+            }}
+            className="bg-[#654aec]  flex-none relative z-20 rounded-full "
           />
         </div>
       </div>
     </>
   )
 })
+Cover.displayName = 'Cover'

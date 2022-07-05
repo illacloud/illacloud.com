@@ -100,7 +100,7 @@ const Hire = () => {
     },
     {
       image: require('../../img/hire/01.jpg').default,
-      des: '☀ ️' + t('life.benefit.holiday'),
+      des: '☀️' + t('life.benefit.holiday'),
     },
     { image: require('../../img/hire/01.jpg').default, des: '☕️ ' + t('life.benefit.office') },
   ]
