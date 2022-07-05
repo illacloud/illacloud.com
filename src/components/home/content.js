@@ -50,7 +50,7 @@ export function Content() {
     },
   ]
   return (
-    <div className="w-full bg-black ">
+    <div className="w-full bg-black rounded-b-[40px] sm:rounded-b-[80px]">
       {/*page 01*/}
       <ContentItem
         img={require('@/img/home/1.svg').default}
