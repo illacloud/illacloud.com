@@ -2,6 +2,7 @@ import { CLIIcon, CloudIcon, KubernetesIcon, WaysIcon } from '@/img/home/svg'
 import { ContentItem } from '@/components/home/content-item'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
+import NextLink from 'next/link'
 import { Card } from '@/components/home/card'
 
 export function Content() {
@@ -52,34 +53,27 @@ export function Content() {
     <div className="w-full ">
       {/*page 01*/}
       <ContentItem
-        img={require('@/img/home/4.png').default}
+        img={require('@/img/home/1.svg').default}
         contentNode={
           <>
-            <div className="leading-[29px] sm:leading-[58px]">
-              {t('content.ui-library.title-1')}
-              {t('content.ui-library.title-2') && (
-                <span className="text-[#000000] bg-[#d4fcca] px-[16px] ml-[16px] rounded-full ">
-                  {t('content.ui-library.title-2')}
-                </span>
-              )}
-            </div>
-            {t('content.ui-library.title-3') && (
-              <span className="text-[#000000] bg-[#d4fcca] px-[16px] mr-[16px] rounded-full ">
-                {t('content.ui-library.title-3')}
+            <div className="leading-[29px] sm:leading-[58px] flex flex-wrap gap-[8px] sm:gap-[16px]">
+              {t('content.for-developer.title-1')}
+              <span className="text-[#000000] bg-[#fdf1c0] px-[8px] sm:px-[16px] rounded-full ">
+                {t('content.for-developer.title-2')}
               </span>
-            )}
-            <span className="leading-[29px] sm:leading-[58px] ">
-              {t('content.ui-library.title-4')}
-            </span>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
-              {t('content.ui-library.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px] sm:mt-[16px] cursor-pointer  font-normal">
-              {t('content.ui-library.goto')} 👍 →
+            <div className="text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
+              {t('content.for-developer.introduction')}
             </div>
+            <NextLink href="/docs/installation">
+              <div className="text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer  pt-[8px] sm:pt-[16px]">
+                {t('content.for-developer.goto')} 😋 →
+              </div>
+            </NextLink>
           </>
         }
       />
+
       {/*page 02*/}
       <ContentItem
         img={require('@/img/home/2.png').default}
@@ -87,13 +81,13 @@ export function Content() {
           <>
             {t('content.date-integrate.title-1')}
             {t('content.date-integrate.title-2') && (
-              <span className="text-[#000000] bg-[#fbded5] px-[16px] ml-[16px] rounded-full ">
+              <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] sm:ml-[16px] ml-[8px] rounded-full ">
                 {t('content.date-integrate.title-2')}
               </span>
             )}
             <div className="leading-[29px] sm:leading-[58px]">
               {t('content.date-integrate.title-3') && (
-                <span className="text-[#000000] bg-[#fbded5] px-[16px] mr-[16px] rounded-full ">
+                <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] sm:mr-[16px] mr-[8px] rounded-full ">
                   {t('content.date-integrate.title-3')}
                 </span>
               )}
@@ -104,46 +98,28 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px]  font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] mt-[16px] opacity-90  font-normal cursor-pointer">
-              {t('content.date-integrate.goto')} 😀 →
-            </div>
+            <NextLink href="/docs/installation">
+              <div className="text-[16px] text-[#bca6f7] mt-[16px] opacity-90  font-normal cursor-pointer">
+                {t('content.date-integrate.goto')} 😀 →
+              </div>
+            </NextLink>
           </>
         }
       />
       {/*page 03*/}
-      <ContentItem
-        img={require('@/img/home/1.png').default}
-        contentNode={
-          <>
-            <div className="leading-[29px] sm:leading-[58px] flex flex-wrap gap-[8px] sm:gap-[16px]">
-              {t('content.for-developer.title-1')}
-              <span className="text-[#000000] bg-[#fdf1c0] px-[16px] rounded-full ">
-                {t('content.for-developer.title-2')}
-              </span>
-            </div>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
-              {t('content.for-developer.introduction')}
-            </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer  pt-[8px] sm:pt-[16px]">
-              {t('content.for-developer.goto')} 😋 →
-            </div>
-          </>
-        }
-      />
-      {/*page 04*/}
       <ContentItem
         img={require('@/img/home/3.png').default}
         contentNode={
           <>
             {t('content.collaborative-develop.title-1')}
             {t('content.collaborative-develop.title-2') && (
-              <span className="text-[#000000] bg-[#fbded5] px-[16px] ml-[16px] rounded-full ">
+              <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] ml-[16px] rounded-full ">
                 {t('content.collaborative-develop.title-2')}
               </span>
             )}
             <div className="leading-[29px] sm:leading-[58px]">
               {t('content.collaborative-develop.title-3') && (
-                <span className="text-[#000000] bg-[#fbded5] px-[16px] mr-[16px] rounded-full ">
+                <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
                   {t('content.collaborative-develop.title-3')}
                 </span>
               )}
@@ -154,12 +130,45 @@ export function Content() {
             <div className="text-[16px] opacity-90 w-full sm:w-[520px] font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal pt-[8px] sm:pt-[16px]">
-              {t('content.collaborative-develop.goto')} 🤠 →
-            </div>
+            <NextLink href="/docs/installation">
+              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal pt-[8px] sm:pt-[16px]">
+                {t('content.collaborative-develop.goto')} 🤠 →
+              </div>
+            </NextLink>
           </>
         }
       />
+      {/*page 04*/}
+      <ContentItem
+        img={require('@/img/home/4.svg').default}
+        contentNode={
+          <>
+            <div className="leading-[29px] sm:leading-[58px]">
+              {t('content.ui-library.title-1')}
+              {t('content.ui-library.title-2') && (
+                <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] sm:ml-[16px] ml-[8px] rounded-full ">
+                  {t('content.ui-library.title-2')}
+                </span>
+              )}
+            </div>
+            {t('content.ui-library.title-3') && (
+              <span className="text-[#000000] bg-[#d4fcca]px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
+                {t('content.ui-library.title-3')}
+              </span>
+            )}
+            <span className="leading-[29px] sm:leading-[58px] ">responsive UI library</span>
+            <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
+              {t('content.ui-library.introduction')}
+            </div>
+            <NextLink href="/docs/installation">
+              <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px] sm:mt-[16px] cursor-pointer  font-normal">
+                {t('content.ui-library.goto')} 👍 →
+              </div>
+            </NextLink>
+          </>
+        }
+      />
+
       {/*page 05*/}
       <div className="w-full flex justify-center bg-black rounded-b-[40px] sm:rounded-b-[80px]">
         <div className="flex sm:h-screen py-[40px] flex-col w-full   sm:w-[1040px]   justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">

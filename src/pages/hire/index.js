@@ -18,7 +18,7 @@ const renderImageItem = (item, index) => {
         <img
           style={{ objectFit: 'cover' }}
           src={item.image}
-          className={'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px] mb-[12px] '}
+          className={'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px]  '}
           alt={'video'}
         />
         <span className="text-[12px] sm:text-[16px] text-[#1d2129] text-start font-medium sm:h-[48px] mt-[12px] mb-[64px] sm:mt-[24px] sm:mb-0">
@@ -39,7 +39,7 @@ const renderItem = (item) => {
           </div>
         ))}
       </div>
-      <span className="text-[12px] text-[#1d2129]  sm:w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px] items-center ">
+      <span className="text-[12px] sm:text-[16px] text-[#1d2129]  sm:w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px] items-center ">
         <AddressIcon />
         {item.des}
       </span>
@@ -108,17 +108,17 @@ const Hire = () => {
     {
       images: [
         require('../../img/hire/02.png').default,
-        require('../../img/hire/02.png').default,
-        require('../../img/hire/02.png').default,
+        require('../../img/hire/address01-02.jpg').default,
+        require('../../img/hire/address01-03.jpg').default,
       ],
       des: t('address.beijing'),
     },
 
     {
       images: [
-        require('../../img/hire/02.png').default,
-        require('../../img/hire/02.png').default,
-        require('../../img/hire/02.png').default,
+        require('../../img/hire/address02-01.jpg').default,
+        require('../../img/hire/address02-02.jpg').default,
+        require('../../img/hire/address02-03.png').default,
       ],
       des: t('address.shenzhen'),
     },
@@ -178,7 +178,7 @@ const Hire = () => {
               {benefitList?.map((item, index) => renderImageItem(item, index))}
             </div>
           </div>
-          <div className=" w-full pl-[48px] sm:px-[48px]  flex flex-col items-center sm:bg-[#e5e4ff] py-[40px] sm:py-[80px]">
+          <div className=" w-full pl-[48px] sm:px-[48px]  flex flex-col items-center sm:bg-[#e5e4ff] py-[40px] sm:pt-[80px] ">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold mb-[24px] sm:mb-[48px]">
               {t('address.title')}
             </span>

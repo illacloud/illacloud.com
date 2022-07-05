@@ -23,7 +23,7 @@ export function Card({ icon, title, des, index }) {
     >
       <div
         ref={ref}
-        className=" bg-white/[0.12] w-full  sm:w-auto flex flex-col items-start justify-center p-[16px] sm:p-[32px] mt-[16px] mr-4  rounded-[32px]"
+        className=" bg-white/[0.12] w-full  sm:w-auto flex flex-col items-start justify-center p-[16px] sm:p-[32px] mt-[16px] mr-4 rounded-[16px]  sm:rounded-[32px]"
       >
         {icon}
         <div className="text-[16px] sm:text-[24px] mt-[12px] mb-[8px]">{title}</div>

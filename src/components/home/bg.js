@@ -54,26 +54,9 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
       ref={ref}
       className={`w-full top-0 flex absolute flex-col  justify-center items-center hidden sm:block `}
     >
-      <div className={' z-30 relative top-0  w-full flex justify-center  '}>
-        <div className=" w-[400px] h-[400px] absolute top-[calc(100vh-150px)] ">
-          <img
-            style={{ objectFit: 'cover' }}
-            src={require('../../img/home/video-placeholder.png').default}
-            className=" w-[400px] h-[400px]  rounded-full"
-            alt={'video'}
-          />
-          <div className="absolute top-0 rounded-full w-[400px] h-[400px] rounded-full flex justify-center items-center">
-            <span
-              className="bg-white rounded-full w-[120px] h-[120px] flex items-center justify-center"
-              onClick={() => {
-                setPlayMaskShow(true)
-              }}
-            >
-              <PlayIcon />
-            </span>
-          </div>
-        </div>
-
+      <div
+        className={' z-30 relative top-0  w-full flex justify-center pointer pointer-events-none '}
+      >
         <svg
           ref={svgRef}
           height="calc(150vh)"

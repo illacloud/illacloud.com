@@ -18,13 +18,13 @@ export function ContentItem({ contentNode, img, maskColor }) {
   }, [ref.current, ref?.current && ref.current.getBoundingClientRect().top])
 
   return (
-    <div className="flex sm:h-[100vh] sm:overflow-y-hidden flex-col sm:flex-row items-center bg-black justify-center pt-[40px] sm:pt-0 text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0">
+    <div className="flex sm:h-[100vh] sm:overflow-y-hidden flex-col sm:flex-row items-start sm:items-center bg-black justify-center pt-[40px] sm:pt-0 text-[28px] sm:text-[48px] font-bold text-white px-[40px] sm:px-0">
       <div ref={ref}>{contentNode}</div>
-      <div className=" relative sm:h-[1110px] flex flex-col   items-center sm:ml-[42px]  ">
+      <div className=" relative sm:h-[1110px]  flex flex-col  items-center sm:ml-[42px]  ">
         <img
           style={{ objectFit: 'cover' }}
           src={img}
-          className="rounded-[40px]  w-[279px] h-[279px]  z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
+          className="rounded-[40px]  w-[283px] h-[283px] bg-white/[0.12] rounded-[16px] sm:bg-transparent sm:rounded-none  z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
           alt={'video'}
         />
         <div
@@ -36,7 +36,7 @@ export function ContentItem({ contentNode, img, maskColor }) {
           <div className={clsx('hidden sm:block h-[740px] w-full bg-white/[0.12] border-1')}>
             <Mask />
           </div>
-          <div className={clsx('grow w-full    bg-black   ')} />
+          <div className={clsx('grow w-full   bg-black   ')} />
         </div>
       </div>
     </div>

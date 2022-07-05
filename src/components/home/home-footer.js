@@ -71,7 +71,7 @@ export function Footer({ noHome = false }) {
       title: t('footer.company'),
       items: [
         { title: t('footer.blog'), href: '/' },
-        { title: t('footer.career'), href: '/' },
+        { title: t('footer.career'), href: '/hire' },
         { title: t('footer.about'), href: '/' },
       ],
     },
@@ -100,7 +100,7 @@ export function Footer({ noHome = false }) {
                 {t('footer.community')}
               </div>
               {community?.map((item, index) => (
-                <span key={'comunity' + index} className="mx-[10px] sm:mb-[12px]">
+                <span key={'community' + index} className="cursor-pointer mx-[10px] sm:mb-[12px]">
                   {item.icon}
                 </span>
               ))}

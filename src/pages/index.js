@@ -103,6 +103,27 @@ const Home = () => {
           <div className="grow bg-[#fafafa]" />
           <div className="bg-black w-full block h-[80px]" />
         </div>
+        <div
+          style={{ zIndex: 35 }}
+          className="w-full h-[400px] absolute justify-center   top-[calc(100vh-150px)]  hidden sm:flex "
+        >
+          <img
+            style={{ objectFit: 'cover' }}
+            src={require('../img/home/video-placeholder.png').default}
+            className=" w-[400px] h-[400px]   rounded-full pointer-events-auto"
+            alt={'video'}
+          />
+          <div className="absolute top-0 rounded-full w-[400px] h-[400px] rounded-full flex justify-center items-center">
+            <span
+              className="bg-white rounded-full w-[120px] h-[120px] flex items-center justify-center cursor-pointer"
+              onClick={() => {
+                setPlayMaskShow(true)
+              }}
+            >
+              <PlayIcon />
+            </span>
+          </div>
+        </div>
         <AppBackground />
         <Content />
         <Footer />

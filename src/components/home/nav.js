@@ -83,23 +83,29 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
         <div
           className={clsx(' w-1/3  text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
         >
-          <div
-            className={clsx(
-              'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
-              navColorChange ? 'visible' : 'hidden'
-            )}
-          >
-            {t('self-Hosted')}
-          </div>
-          <span
-            className={clsx(
-              'w-[160px] text-center leading-[48px] box-border rounded-full',
-              navColorChange ? 'visible' : 'hidden',
-              cloudButtonColorChange ? 'bg-[#654aec] text-[#ffffff]' : 'bg-[#ffffff] text-[#654aec]'
-            )}
-          >
-            {t('illa-Cloud')}
-          </span>
+          <NextLink href={''}>
+            <div
+              className={clsx(
+                'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff]  cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
+                navColorChange ? 'visible' : 'hidden'
+              )}
+            >
+              {t('self-Hosted')}
+            </div>
+          </NextLink>
+          <NextLink href={''}>
+            <span
+              className={clsx(
+                'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
+                navColorChange ? 'visible' : 'hidden',
+                cloudButtonColorChange
+                  ? 'bg-[#654aec] text-[#ffffff]'
+                  : 'bg-[#ffffff] text-[#654aec]'
+              )}
+            >
+              {t('illa-Cloud')}
+            </span>
+          </NextLink>
         </div>
       </div>
     </>
