@@ -22,9 +22,9 @@ export function ContentItem({ contentNode, img, maskColor }) {
       <div ref={ref}>{contentNode}</div>
       <div className=" relative sm:h-[1110px]  flex flex-col  items-center sm:ml-[42px]  ">
         <img
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', backgroundColor: maskColor ?? 'rgba(255,255,255,0.12)' }}
           src={img}
-          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] bg-white/[0.12] rounded-[16px] sm:bg-transparent sm:rounded-none z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
+          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] rounded-[16px]  sm:rounded-none z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
           alt={'video'}
         />
         <div
@@ -33,7 +33,7 @@ export function ContentItem({ contentNode, img, maskColor }) {
           )}
         >
           <div style={{ height: bgTop }} className={clsx(' w-full  bg-black ')} />
-          <div className={clsx('hidden sm:block h-[740px] w-full bg-white/[0.12] border-1')}>
+          <div className={clsx('hidden sm:block h-[740px] w-full  border-1')}>
             <Mask />
           </div>
           <div className={clsx('grow w-full   bg-black   ')} />

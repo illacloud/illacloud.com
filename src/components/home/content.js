@@ -76,6 +76,7 @@ export function Content() {
 
       {/*page 02*/}
       <ContentItem
+        maskColor={'#251F21'}
         img={require('@/img/home/2.png').default}
         contentNode={
           <>
@@ -108,6 +109,7 @@ export function Content() {
       />
       {/*page 03*/}
       <ContentItem
+        maskColor={'#252525'}
         img={require('@/img/home/3.png').default}
         contentNode={
           <>
