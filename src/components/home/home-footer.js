@@ -46,7 +46,6 @@ export function Footer({ noHome = false }) {
   const [height, setHeight] = useState(10)
 
   useEffect(() => {
-    console.log(y, y, window.innerHeight, HEIGHT)
     if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT - 10) {
       setHeight(y + 10 - (window.innerHeight * 5.5 + 130))
     } else {

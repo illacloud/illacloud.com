@@ -17,7 +17,7 @@ export function Card({ icon, title, des, index }) {
     <a
       key={title}
       className={clsx(
-        'ease-in-out w-full sm:w-1/2  scale-95 origin-top-left scale-100  opacity-1 transition-all duration-[400ms]',
+        'ease-in-out w-full sm:w-1/2  origin-top-left scale-100  opacity-1 transition-all duration-[400ms]',
         show ? 'sm:opacity-1 sm:scale-100' : 'sm:opacity-0 sm:scale-95'
       )}
     >

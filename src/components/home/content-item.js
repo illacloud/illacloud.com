@@ -24,12 +24,12 @@ export function ContentItem({ contentNode, img, maskColor }) {
         <img
           style={{ objectFit: 'cover' }}
           src={img}
-          className="rounded-[40px]  w-[283px] h-[283px] bg-white/[0.12] rounded-[16px] sm:bg-transparent sm:rounded-none  z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
+          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] bg-white/[0.12] rounded-[16px] sm:bg-transparent sm:rounded-none z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
           alt={'video'}
         />
         <div
           className={clsx(
-            'hidden sm:flex h-[1110px] top-0 w-full  z-20   rounded-[40px]   absolute flex-col  justify-center '
+            'hidden sm:flex h-[1110px] top-0 w-full  z-20  rounded-[40px]   absolute flex-col  justify-center '
           )}
         >
           <div style={{ height: bgTop }} className={clsx(' w-full  bg-black ')} />
