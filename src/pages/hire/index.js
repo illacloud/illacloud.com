@@ -33,9 +33,9 @@ const renderImageItem = (item, index) => {
 
 const renderItem = (item) => {
   return (
-    <div className="flex flex-col items-start justify-start sm:w-full  sm:items-center ">
-      <div className="w-full  overflow-x-scroll ">
-        <div className="flex  justify-between w-[925px]  sm:w-full gap-0 sm:gap-[20px] sm:px-[126px] px-0 pr-[40px]">
+    <div className="flex flex-col items-start justify-start sm:w-full sm:items-center ">
+      <div className="w-full  overflow-x-scroll scrollbar-hide ">
+        <div className="flex  justify-between w-[965px]  sm:w-full gap-0 sm:gap-[20px] sm:px-[126px]  px-[40px]">
           {item.images?.map((image) => (
             <div className={'w-[279px] sm:w-1/3 '}>
               <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
@@ -43,11 +43,11 @@ const renderItem = (item) => {
           ))}
         </div>
       </div>
-      <span className="text-[12px] sm:text-[16px] text-[#1d2129]  w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px]  ">
-        <span className="flex-none">
+      <span className="text-[12px] sm:text-[16px]  px-[40px] sm:px-0 text-[#1d2129] items-center  w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px]  ">
+        <span className="h-[16px] w-[16px] ">
           <AddressIcon />
         </span>
-        <span className="whitespace-pre-line pr-[40px] sm:pr-0 ">{item.des}</span>
+        <span className="whitespace-pre-line">{item.des}</span>
       </span>
     </div>
   )
@@ -184,7 +184,7 @@ const Hire = () => {
               {benefitList?.map((item, index) => renderImageItem(item, index))}
             </div>
           </div>
-          <div className=" w-full pl-[48px] sm:px-[48px]  flex flex-col items-center sm:bg-[#e5e4ff] py-[40px] sm:pt-[80px] ">
+          <div className=" w-full  sm:px-[48px]  flex flex-col items-center sm:bg-[#e5e4ff] py-[40px] sm:pt-[80px] ">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold mb-[24px] sm:mb-[48px]">
               {t('address.title')}
             </span>

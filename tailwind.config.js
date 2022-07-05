@@ -273,6 +273,7 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar-hide'),
     function ({ addVariant }) {
       addVariant(
         'supports-backdrop-blur',
