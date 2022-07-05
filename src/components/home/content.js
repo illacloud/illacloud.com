@@ -50,7 +50,7 @@ export function Content() {
     },
   ]
   return (
-    <div className="w-full ">
+    <div className="w-full bg-black ">
       {/*page 01*/}
       <ContentItem
         img={require('@/img/home/1.svg').default}
@@ -62,11 +62,11 @@ export function Content() {
                 {t('content.for-developer.title-2')}
               </span>
             </div>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
+            <div className="text-[14px] sm:text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
             <NextLink href="/docs/installation">
-              <div className="text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer  pt-[8px] sm:pt-[16px]">
+              <div className="text-[14px] sm:text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer mt-[12px] sm:mt-[16px]">
                 {t('content.for-developer.goto')} 😋 →
               </div>
             </NextLink>
@@ -95,11 +95,11 @@ export function Content() {
                 {t('content.date-integrate.title-4')}
               </span>
             </div>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px]  font-normal pt-[16px]">
+            <div className="text-[14px] sm:text-[16px]  sm:text-[16px] opacity-90 w-full sm:w-[520px]  font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
             <NextLink href="/docs/installation">
-              <div className="text-[16px] text-[#bca6f7] mt-[16px] opacity-90  font-normal cursor-pointer">
+              <div className="text-[14px] sm:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] sm:mt-[16px]">
                 {t('content.date-integrate.goto')} 😀 →
               </div>
             </NextLink>
@@ -127,11 +127,11 @@ export function Content() {
                 {t('content.collaborative-develop.title-4')}
               </span>
             </div>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px] font-normal pt-[8px] sm:pt-[16px]">
+            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full sm:w-[520px] font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
             <NextLink href="/docs/installation">
-              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal pt-[8px] sm:pt-[16px]">
+              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
                 {t('content.collaborative-develop.goto')} 🤠 →
               </div>
             </NextLink>
@@ -159,11 +159,11 @@ export function Content() {
             <span className="leading-[29px] sm:leading-[58px] ">
               {t('content.ui-library.title-4')}
             </span>
-            <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
+            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
             <NextLink href="/docs/installation">
-              <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px] sm:mt-[16px] cursor-pointer  font-normal">
+              <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px]  cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
                 {t('content.ui-library.goto')} 👍 →
               </div>
             </NextLink>
@@ -175,7 +175,7 @@ export function Content() {
       <div className="w-full flex justify-center bg-black rounded-b-[40px] sm:rounded-b-[80px]">
         <div className="flex sm:h-screen py-[40px] flex-col w-full   sm:w-[1040px]   justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
           <div className="leading-[29px] w-full sm:leading-[58px] "> {t('deployment.title')}</div>
-          <div className="text-[16px] opacity-90 w-full sm:w-full mt-[8px] sm:mt-[16px] font-normal opacity-90">
+          <div className="text-[14px] sm:text-[16px] opacity-90 w-full sm:w-full mt-[8px] sm:mt-[16px] font-normal opacity-90">
             {t('deployment.introduction')}
           </div>
           <div className="mt-[20px] sm:mt-[40px] flex flex-wrap sm:justify-between ">
