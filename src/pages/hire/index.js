@@ -19,7 +19,7 @@ const renderImageItem = (item, index) => {
           style={{ objectFit: 'cover' }}
           src={item.image}
           className={
-            'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px] mb-[12px] sm:mb-0  '
+            'w-[calc(100vw-80px)] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px] mb-[12px] sm:mb-0  '
           }
           alt={'video'}
         />
@@ -35,7 +35,7 @@ const renderItem = (item) => {
   return (
     <div className="flex flex-col items-start justify-start sm:w-full  sm:items-center ">
       <div className="w-full  overflow-x-scroll ">
-        <div className="flex  justify-between w-[925px]   sm:w-full sm:px-[126px] px-0 pr-[48px]">
+        <div className="flex  justify-between w-[925px]  sm:w-full gap-0 sm:gap-[20px] sm:px-[126px] px-0 pr-[40px]">
           {item.images?.map((image) => (
             <div className={'w-[279px] sm:w-1/3 '}>
               <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
@@ -43,9 +43,11 @@ const renderItem = (item) => {
           ))}
         </div>
       </div>
-      <span className="text-[12px] sm:text-[16px] text-[#1d2129]  sm:w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px] items-center ">
-        <AddressIcon />
-        {item.des}
+      <span className="text-[12px] sm:text-[16px] text-[#1d2129]  w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px]  ">
+        <span className="flex-none">
+          <AddressIcon />
+        </span>
+        <span className="whitespace-pre-line pr-[40px] sm:pr-0 ">{item.des}</span>
       </span>
     </div>
   )
@@ -87,7 +89,7 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
           hr@illasoft.com
         </span>
       </a>
-      <span className=" text-[16px] sm:text-[16px] bg-[#654aec] text-white px-[48px] py-[17px] rounded-full">
+      <span className=" text-[16px] sm:text-[16px] bg-[#654aec] text-white px-[40px] py-[17px] rounded-full">
         {cv}
       </span>
     </div>
@@ -151,7 +153,7 @@ const Hire = () => {
         <div className=" w-full items-center flex flex-col bg-[#ffffff] sm:bg-[#fafafa]">
           <div className="sm:h-screen mb-[40px] sm:mb-0 flex flex-col items-start sm:items-center   ">
             <Nav />
-            <div className="px-[48px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
+            <div className="px-[40px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
               <img
                 style={{ objectFit: 'cover' }}
                 src={require('../../img/hire/logo.png').default}
@@ -171,7 +173,7 @@ const Hire = () => {
               </div>
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] w-full px-[48px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
+          <div className=" bg-[#e5e4ff] w-full px-[40px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>
@@ -190,7 +192,7 @@ const Hire = () => {
               {addressLit?.map((item) => renderItem(item))}
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[48px] py-[40px] sm:py-[80px] flex flex-col items-center">
+          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[40px] py-[40px] sm:py-[80px] flex flex-col items-center">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mb-[24px] sm:mb-[48px] ">
               {t('recruiting.title')}
             </span>
