@@ -14,14 +14,16 @@ const renderImageItem = (item, index) => {
         index % 2 === 0 ? 'sm:items-end sm:pr-[10px]' : 'sm:items-start sm:pl-[20px]'
       )}
     >
-      <div className="sm:flex flex-col sm:justify-center">
+      <div className="flex flex-col sm:justify-center ">
         <img
           style={{ objectFit: 'cover' }}
           src={item.image}
-          className={'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px]  '}
+          className={
+            'w-[279px] sm:w-[373px] h-[179.5px] sm:h-[240px] mt-[24px] mb-[12px] sm:mb-0  '
+          }
           alt={'video'}
         />
-        <span className="text-[12px] sm:text-[16px] text-[#1d2129] text-start font-medium sm:h-[48px] mt-[12px] mb-[64px] sm:mt-[24px] sm:mb-0">
+        <span className="text-[12px] w-full sm:text-[16px] text-[#1d2129] sm:text-start text-start font-medium sm:h-[48px] mt-[12px]   sm:mt-[24px] mb-0">
           {item.des}
         </span>
       </div>
@@ -31,13 +33,15 @@ const renderImageItem = (item, index) => {
 
 const renderItem = (item) => {
   return (
-    <div className="flex flex-col items-start justify-start sm:w-full overflow-x-scroll sm:overflow-x-hidden sm:items-center ">
-      <div className="flex  gap-[20px] justify-between  ">
-        {item.images?.map((image) => (
-          <div className={'w-[279px] sm:w-1/3 '}>
-            <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
-          </div>
-        ))}
+    <div className="flex flex-col items-start justify-start sm:w-full  sm:items-center ">
+      <div className="w-full  overflow-x-scroll ">
+        <div className="flex  justify-between w-[925px]   sm:w-full sm:px-[126px] px-0 pr-[48px]">
+          {item.images?.map((image) => (
+            <div className={'w-[279px] sm:w-1/3 '}>
+              <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
+            </div>
+          ))}
+        </div>
       </div>
       <span className="text-[12px] sm:text-[16px] text-[#1d2129]  sm:w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px] items-center ">
         <AddressIcon />
@@ -167,7 +171,7 @@ const Hire = () => {
               </div>
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] w-full px-[48px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px]">
+          <div className=" bg-[#e5e4ff] w-full px-[48px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>

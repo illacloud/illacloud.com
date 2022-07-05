@@ -152,11 +152,13 @@ export function Content() {
               )}
             </div>
             {t('content.ui-library.title-3') && (
-              <span className="text-[#000000] bg-[#d4fcca]px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
+              <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] sm:mr-[16px] mr-[8px] rounded-full ">
                 {t('content.ui-library.title-3')}
               </span>
             )}
-            <span className="leading-[29px] sm:leading-[58px] ">responsive UI library</span>
+            <span className="leading-[29px] sm:leading-[58px] ">
+              {t('content.ui-library.title-4')}
+            </span>
             <div className="text-[16px] opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>

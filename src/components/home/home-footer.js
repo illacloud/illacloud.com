@@ -25,15 +25,15 @@ function renderItem(title, items) {
 const community = [
   {
     icon: <TwitterIcon />,
-    href: '/',
+    href: 'https://twitter.com/illafamily',
   },
   {
     icon: <DiscordIcon />,
-    href: '/',
+    href: 'https://discord.com/invite/2tGBuJkgd6',
   },
   {
     icon: <GitHubIconGray />,
-    href: '/',
+    href: 'https://github.com/orgs/illa-family/discussions\n',
   },
 ]
 
@@ -46,10 +46,14 @@ export function Footer({ noHome = false }) {
   const [height, setHeight] = useState(10)
 
   useEffect(() => {
-    if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT) {
+    console.log(y, y, window.innerHeight, HEIGHT)
+    if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT - 10) {
       setHeight(y + 10 - (window.innerHeight * 5.5 + 130))
+    } else {
+      setHeight(HEIGHT + 10)
     }
   }, [y])
+
   const waysData = [
     {
       title: t('footer.product'),
@@ -100,9 +104,11 @@ export function Footer({ noHome = false }) {
                 {t('footer.community')}
               </div>
               {community?.map((item, index) => (
-                <span key={'community' + index} className="cursor-pointer mx-[10px] sm:mb-[12px]">
-                  {item.icon}
-                </span>
+                <NextLink href={item.href}>
+                  <span key={'community' + index} className="cursor-pointer sm:mb-[12px]">
+                    {item.icon}
+                  </span>
+                </NextLink>
               ))}
             </div>
           </div>
@@ -115,9 +121,11 @@ export function Footer({ noHome = false }) {
           {waysData.map((item) => renderItem(item.title, item.items))}
           <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px] mt-[32px]">
             {community?.map((item, index) => (
-              <span key={'icon' + index} className="mx-[10px] sm:mb-[12px]">
-                {item.icon}
-              </span>
+              <NextLink href={item.href}>
+                <span key={'icon' + index} className="mx-[10px] mx-[10px] sm:mb-[12px]">
+                  {item.icon}
+                </span>
+              </NextLink>
             ))}
           </div>
           <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
