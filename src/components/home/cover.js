@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { useWindowScroll, useWindowSize } from 'react-use'
-import { PlayIcon } from '@/img/home/svg'
-import { Player } from '@/components/home/player'
-import * as ReactDOM from 'react-dom'
 import {
   AppState,
   BUFFER_HEIGHT,
@@ -10,7 +7,6 @@ import {
   getBgSize,
   getCoverPosition,
   OFFSET,
-  scale,
 } from '@/components/home/utils'
 
 export const Cover = forwardRef(({ changeButtonColor }, ref) => {

@@ -5,10 +5,12 @@ import { AddressIcon } from '@/img/hire/svg'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
 import Head from 'next/head'
+import NextLink from 'next/link'
 
 const renderImageItem = (item, index) => {
   return (
     <div
+      key={item.des}
       className={clsx(
         'flex flex-col justify-center sm:w-1/2 ',
         index % 2 === 0 ? 'sm:items-end sm:pr-[10px]' : 'sm:items-start sm:pl-[20px]'
@@ -33,17 +35,20 @@ const renderImageItem = (item, index) => {
 
 const renderItem = (item) => {
   return (
-    <div className="flex flex-col items-start justify-start sm:w-full sm:items-center ">
+    <div
+      key={item.des}
+      className="flex flex-col items-start justify-start sm:w-full sm:items-center "
+    >
       <div className="w-full  overflow-x-scroll scrollbar-hide ">
-        <div className="flex  justify-between w-[965px]  sm:w-full gap-0 sm:gap-[20px] sm:px-[126px]  px-[40px]">
+        <div className="flex  justify-between sm:justify-center w-[965px]  sm:w-full gap-0 sm:gap-[20px] sm:px-[126px] px-[40px]">
           {item.images?.map((image) => (
-            <div className={'w-[279px] sm:w-1/3 '}>
+            <div className={'w-[279px] '}>
               <img style={{ objectFit: 'cover' }} src={image} alt={'video'} />
             </div>
           ))}
         </div>
       </div>
-      <span className="text-[12px] sm:text-[16px]  px-[40px] sm:px-0 text-[#1d2129] items-center  w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px]  ">
+      <span className="text-[12px] sm:text-[16px] px-[40px] sm:px-0 text-[#1d2129] items-center  w-full  truncate mt-[12px] mb-[24px] sm:mt-[24px] flex  sm:justify-center flex-nowrap sm:mb-[48px]  ">
         <span className="h-[16px] w-[16px] ">
           <AddressIcon />
         </span>
@@ -55,7 +60,10 @@ const renderItem = (item) => {
 
 const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
   return (
-    <div className="flex flex-col items-start justify-start overflow-x-scroll mb-[20px] sm:mb-[40px]">
+    <div
+      key={item.title}
+      className="flex flex-col items-start justify-start overflow-x-scroll mb-[20px] sm:mb-[40px]"
+    >
       <span className="font-medium text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
         {item.title}
       </span>
@@ -89,9 +97,17 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
           hr@illasoft.com
         </span>
       </a>
-      <span className=" text-[16px] sm:text-[16px] bg-[#654aec] text-white px-[40px] py-[17px] rounded-full">
-        {cv}
-      </span>
+      <NextLink
+        href={
+          'https://www.zhipin.com/gongsi/dd4d92a12e758f551XR43dm4FVc~.html?ka=search_rcmd_company_name_dd4d92a12e758f551XR43dm4FVc%7E_custompage'
+        }
+      >
+        <a className=" text-[14px] sm:text-[28px] text-[#1e6fff] mb-[20px] sm:mb-[40px]">
+          <span className="cursor-pointer text-[16px] sm:text-[16px] bg-[#654aec] text-white px-[40px] py-[17px] rounded-full">
+            {cv}
+          </span>
+        </a>
+      </NextLink>
     </div>
   )
 }

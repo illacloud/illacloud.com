@@ -8,7 +8,7 @@ function renderItem(title, items) {
   return (
     <div
       key={title}
-      className="w-1/2  sm:w-1/5  flex flex-col items-start  justify-center mt-[32px] sm:mt-0 "
+      className="w-1/2   sm:w-1/5  flex flex-col items-start  justify-center mt-[32px] sm:mt-0 "
     >
       <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">{title}</div>
       <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
@@ -65,17 +65,17 @@ export function Footer({ noHome = false }) {
     {
       title: t('footer.resources'),
       items: [
-        { title: 'Postgres', href: '' },
-        { title: 'Redis', href: '' },
-        { title: 'Rest API', href: '' },
+        { title: 'MySQL', href: 'https://www.mysql.com/' },
+        { title: 'Postgres', href: 'https://www.postgresql.org/' },
+        { title: 'Redis', href: 'https://redis.io/' },
+        { title: 'Rest API', href: 'https://restfulapi.net/' },
       ],
     },
     {
       title: t('footer.company'),
       items: [
-        { title: t('footer.blog'), href: '/' },
+        { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
         { title: t('footer.career'), href: '/hire' },
-        { title: t('footer.about'), href: '/' },
       ],
     },
   ]
@@ -97,18 +97,22 @@ export function Footer({ noHome = false }) {
                 </span>
               </div>
             </NextLink>
-            {waysData.map((item) => renderItem(item.title, item.items))}
-            <div className="w-full sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
-              <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
-                {t('footer.community')}
+            <div className=" w-full justify-center items-center flex ">
+              <div className=" w-full justify-center items-start flex ">
+                {waysData.map((item) => renderItem(item.title, item.items))}
+                <div className="w-full  sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
+                  <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
+                    {t('footer.community')}
+                  </div>
+                  {community?.map((item, index) => (
+                    <NextLink href={item.href}>
+                      <span key={'community' + index} className="cursor-pointer sm:mb-[12px]">
+                        {item.icon}
+                      </span>
+                    </NextLink>
+                  ))}
+                </div>
               </div>
-              {community?.map((item, index) => (
-                <NextLink href={item.href}>
-                  <span key={'community' + index} className="cursor-pointer sm:mb-[12px]">
-                    {item.icon}
-                  </span>
-                </NextLink>
-              ))}
             </div>
           </div>
         </div>
