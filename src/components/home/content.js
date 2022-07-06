@@ -56,13 +56,13 @@ export function Content() {
         img={require('@/img/home/1.svg').default}
         contentNode={
           <>
-            <div className="leading-[29px] sm:leading-[58px] flex flex-wrap gap-[8px] sm:gap-[16px]">
-              {t('content.for-developer.title-1')}
+            <div className="leading-[29px] sm:leading-[58px] flex flex-wrap gap-[8px] sm:gap-[16px] ">
+              <span>{t('content.for-developer.title-1')}</span>
               <span className="text-[#000000] bg-[#fdf1c0] px-[8px] sm:px-[16px] rounded-full ">
                 {t('content.for-developer.title-2')}
               </span>
             </div>
-            <div className="text-[14px] sm:text-[16px] opacity-90 w-full sm:w-[520px] ] font-normal pt-[8px] sm:pt-[16px]">
+            <div className="text-[14px] sm:text-[16px] opacity-90 w-full  font-normal pt-[8px] sm:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
             <NextLink href="/docs/installation">
@@ -96,7 +96,7 @@ export function Content() {
                 {t('content.date-integrate.title-4')}
               </span>
             </div>
-            <div className="text-[14px] sm:text-[16px]  sm:text-[16px] opacity-90 w-full sm:w-[520px]  font-normal pt-[16px]">
+            <div className="text-[14px] sm:text-[16px]  sm:text-[16px] opacity-90 w-full font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
             <NextLink href="/docs/installation">
@@ -129,7 +129,7 @@ export function Content() {
                 {t('content.collaborative-develop.title-4')}
               </span>
             </div>
-            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full sm:w-[520px] font-normal pt-[8px] sm:pt-[16px]">
+            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
             <NextLink href="/docs/installation">
@@ -161,7 +161,7 @@ export function Content() {
             <span className="leading-[29px] sm:leading-[58px] ">
               {t('content.ui-library.title-4')}
             </span>
-            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full sm:w-[520px] mt-[8px] sm:mt-[16px]  font-normal">
+            <div className="text-[14px] sm:text-[16px]  opacity-90 w-full mt-[8px] sm:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
             <NextLink href="/docs/installation">

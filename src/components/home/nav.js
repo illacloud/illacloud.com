@@ -24,7 +24,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
 
   return (
     <>
-      <div className="justify-between  px-[20px] w-full h-[64px] flex items-end sm:hidden">
+      <div className="justify-between  px-[20px] w-full h-[64px] flex items-end lg:hidden">
         <NextLink href="/">
           <span>
             <ILLA_LOGO />
@@ -39,7 +39,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
         </span>
       </div>
       <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
-      <div className="h-[88px]  w-full flex justify-between items-end fixed z-40  hidden sm:inline-flex">
+      <div className="h-[88px]  w-full flex justify-between items-end fixed z-40  hidden lg:inline-flex">
         <div
           className={clsx(
             'w-1/3 h-[48px] items-center flex  h-full items-end   flex-row z-50 pl-[40px]',

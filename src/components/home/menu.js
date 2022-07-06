@@ -20,7 +20,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         menuExpand ? 'block' : 'hidden'
       )}
     >
-      <div className="justify-between  w-full h-[64px] flex items-end sm:hidden">
+      <div className="justify-between  w-full h-[64px] flex items-end ">
         <NextLink href="/">
           <span>
             <ILLA_LOGO />
@@ -39,7 +39,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         onClick={() => {
           setProductListExpand(() => !productListExpand)
         }}
-        className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] mt-[40px]"
+        className="w-full cursor-pointer flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] mt-[40px]"
       >
         {t('nav.product')} <SelectIconBlack />
       </span>
@@ -48,23 +48,23 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         className="transition-height duration-200"
       >
         <NextLink href="https://github.com/illa-family/illa-builder">
-          <span className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]">
-            ILLA builder
+          <span className="w-full flex flex-row flex-nowrap cursor-pointer items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]">
+            ILLA Builder
           </span>
         </NextLink>
         <NextLink href="https://github.com/illa-family/illa-design">
-          <span className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]">
+          <span className="w-full flex flex-row flex-nowrap items-center cursor-pointer h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]">
             ILLA Design
           </span>
         </NextLink>
       </div>
       <NextLink href="/docs/installation">
-        <span className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f]">
+        <span className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f]">
           {t('nav.doc')}
         </span>
       </NextLink>
       <NextLink href="/hire">
-        <span className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f]">
+        <span className="w-full flex cursor-pointer flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f]">
           {t('nav.career')}
         </span>
       </NextLink>
@@ -73,7 +73,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         onClick={() => {
           setLanguageListExpand(() => !languageListExpand)
         }}
-        className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] "
+        className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] "
       >
         {router.locale === 'en' ? 'English' : '简体中文'} <SelectIconBlack />
       </span>
@@ -81,7 +81,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         <NextLink href={router.pathname} locale={router.locale === 'en' ? 'ch' : 'en'}>
           <span
             style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
-            className="transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]"
+            className="transition-height cursor-pointer duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]"
             onClick={() => {}}
           >
             {router.locale === 'en' ? '简体中文' : 'English'}

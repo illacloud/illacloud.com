@@ -25,7 +25,7 @@ const renderImageItem = (item, index) => {
           }
           alt={'video'}
         />
-        <span className="text-[12px] w-full sm:text-[16px] text-[#1d2129] sm:text-start text-start font-medium sm:h-[48px] mt-[12px]   sm:mt-[24px] mb-0">
+        <span className="text-[12px] w-full sm:text-[16px] text-[#1d2129] sm:text-start text-center font-medium sm:h-[48px] mt-[12px]   sm:mt-[24px] mb-0">
           {item.des}
         </span>
       </div>
@@ -163,30 +163,32 @@ const Hire = () => {
         <title>{t('slogan')}</title>
       </Head>
       <div>
-        <div className=" w-full items-center flex flex-col bg-[#ffffff] sm:bg-[#fafafa]">
-          <div className="sm:h-screen  mb-[40px] sm:mb-0 flex flex-col items-start sm:items-center   ">
+        <div className=" w-full items-center flex flex-col  bg-[#ffffff] lg:bg-[#fafafa]">
+          <div className="lg:h-screen  mb-[40px] lg:mb-0 flex flex-col  items-center lg:items-start  w-full ">
             <Nav />
-            <div className="px-[40px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
+            <div className="px-[40px] flex flex-col justify-center items-center lg:flex-row-reverse  lg:px-[96px] lg:gap-[80px] lg:h-full ">
               <img
                 style={{ objectFit: 'cover' }}
                 src={require('../../img/hire/logo.png').default}
-                className={' w-[300px] sm:w-[600px] h-[140px] sm:h-[280px] mt-[80px]  '}
+                className={' w-[300px] lg:w-[508px] h-[140px] lg:h-[auto] mt-[80px] '}
                 alt={'logo'}
               />
-              <div className=" sm:w-[508px]">
-                <div className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold mt-[40px] sm:mt-[80px]">
+              <div className="lg:w-[508px]  ">
+                <div className="text-[#0b0c0f] text-[40px] lg:text-[48px] font-bold mt-[40px] lg:mt-[80px]">
                   {t('title')}
                 </div>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r font-medium from-[#713bf9]  to-[#ff3ea6] mt-[16px] text-[16px] sm:text-[20px]">
-                  {t('slogan')}
-                </span>
-                <div className="text-[#1d2129] text-[14px] sm:text-[16px] mt-[12px] leading-[20px] sm:leading-[24px] ">
+                <div>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r font-medium from-[#713bf9]  to-[#ff3ea6] mt-[16px] text-[16px] lg:text-[20px]">
+                    {t('slogan')}
+                  </span>
+                </div>
+                <div className="text-[#1d2129] text-[14px] lg:text-[16px] mt-[12px] leading-[20px] lg:leading-[24px] ">
                   {t('description')}
                 </div>
               </div>
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] w-full px-[40px] flex flex-col items-center sm:bg-[#fafafa] sm:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
+          <div className="bg-[#e5e4ff]  w-full px-[40px] flex flex-col items-center sm:bg-[#fafafa] lg:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>

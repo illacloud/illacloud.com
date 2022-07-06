@@ -18,13 +18,15 @@ export function ContentItem({ contentNode, img, maskColor }) {
   }, [ref.current, ref?.current && ref.current.getBoundingClientRect().top])
 
   return (
-    <div className="flex sm:h-[100vh] sm:overflow-y-hidden flex-col sm:flex-row items-start sm:items-center bg-black justify-center pt-[40px] sm:pt-0 text-[28px] sm:text-[48px] font-bold text-white px-[40px] sm:px-0">
-      <div ref={ref}>{contentNode}</div>
-      <div className=" relative sm:h-[1110px]  flex flex-col  items-center sm:ml-[42px]  ">
+    <div className="flex sm:h-[100vh] sm:overflow-y-hidden flex-col sm:flex-row items-start sm:items-center bg-black justify-center xl:gap-[46px] gap-0 pt-[40px] sm:pt-0 text-[28px] sm:text-[48px] font-bold text-white  sm:px-0">
+      <div ref={ref} className={'w-auto sm:w-[calc(100vw-558px)] xl:w-[520px]'}>
+        {contentNode}
+      </div>
+      <div className="relative sm:h-[1110px]  flex flex-col  items-center w-[calc(100vw-80px)]  sm:w-[558px] ">
         <img
           style={{ objectFit: 'cover', backgroundColor: maskColor ?? 'rgba(255,255,255,0.12)' }}
           src={img}
-          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] rounded-[16px]  sm:rounded-none z-10 sm:w-[558px] sm:h-[1110px] object-none mt-[20px] sm:mt-0"
+          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] rounded-[16px]  sm:rounded-none z-10 sm:w-full sm:h-[1110px] object-none mt-[20px] sm:mt-0"
           alt={'video'}
         />
         <div
@@ -33,7 +35,7 @@ export function ContentItem({ contentNode, img, maskColor }) {
           )}
         >
           <div style={{ height: bgTop }} className={clsx(' w-full  bg-black ')} />
-          <div className={clsx('hidden sm:block h-[740px] w-full  border-1')}>
+          <div className={clsx('hidden sm:block h-[740px] w-full  ')}>
             <Mask />
           </div>
           <div className={clsx('grow w-full   bg-black   ')} />

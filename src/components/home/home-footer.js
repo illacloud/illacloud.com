@@ -93,7 +93,7 @@ export function Footer({ noHome = false }) {
               <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
                 <ILLA_LOGO />
                 <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
-                  Creat with ❤️ by ILLA
+                  Create with ❤️ by ILLA
                 </span>
               </div>
             </NextLink>
