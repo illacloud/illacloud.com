@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { Cover } from '@/components/home/cover'
 import { useWindowScroll } from 'react-use'
-import { PlayIcon } from '@/img/home/svg'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
 
@@ -60,7 +59,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
         <svg
           ref={svgRef}
           height="calc(150vh)"
-          width={'100wh'}
+          width={'100vw'}
           viewBox="0 0 1283 1336"
           fill="none"
           preserveAspectRatio="none"

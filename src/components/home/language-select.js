@@ -3,10 +3,9 @@ import { useRef, useState } from 'react'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import { useRouter } from 'next/router'
 import { useClickAway } from 'react-use'
-import { forwardRef } from 'react'
 import clsx from 'clsx'
 
-export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
+export const LanguageSelect = ({ buttonColorChange }) => {
   const options = [
     { label: '简体中文', value: 'ch' },
     { label: 'English', value: 'en' },
@@ -56,4 +55,4 @@ export const LanguageSelect = forwardRef(({ buttonColorChange }) => {
       </div>
     </div>
   )
-})
+}

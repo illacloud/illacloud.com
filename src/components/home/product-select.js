@@ -1,12 +1,10 @@
-import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import { useClickAway } from 'react-use'
-import { forwardRef } from 'react'
 import NextLink from 'next/link'
 import { useTranslation } from 'next-i18next'
 
-export const ProductSelect = forwardRef(({ buttonColorChange }) => {
+export const ProductSelect = ({ buttonColorChange }) => {
   const { t } = useTranslation('home')
   const options = [
     { label: 'ILLA Builder', value: 'https://github.com/illa-family/illa-builder' },
@@ -56,4 +54,4 @@ export const ProductSelect = forwardRef(({ buttonColorChange }) => {
       </div>
     </div>
   )
-})
+}

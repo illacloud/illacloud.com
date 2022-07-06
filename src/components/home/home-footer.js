@@ -8,13 +8,13 @@ function renderItem(title, items) {
   return (
     <div
       key={title}
-      className="w-1/2   sm:w-1/5  flex flex-col items-start  justify-center mt-[32px] sm:mt-0 "
+      className="w-1/2   sm:w-1/5  flex flex-col  items-start  justify-center mt-[32px] sm:mt-0 "
     >
       <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">{title}</div>
       <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
         {items?.map((item) => (
           <NextLink key={item.title} href={item.href ?? '/'}>
-            <span className="mb-[12px]">{item.title}</span>
+            <a className="mb-[12px]">{item.title}</a>
           </NextLink>
         ))}
       </div>
@@ -105,10 +105,8 @@ export function Footer({ noHome = false }) {
                     {t('footer.community')}
                   </div>
                   {community?.map((item, index) => (
-                    <NextLink href={item.href}>
-                      <span key={'community' + index} className="cursor-pointer sm:mb-[12px]">
-                        {item.icon}
-                      </span>
+                    <NextLink key={item.href} href={item.href}>
+                      <a className="cursor-pointer sm:mb-[12px]">{item.icon}</a>
                     </NextLink>
                   ))}
                 </div>
@@ -121,13 +119,15 @@ export function Footer({ noHome = false }) {
             <ILLA_LOGO />
             <span className="text-[#a9aeb8] grow-1 text-[12px]">Creat with ❤️ by ILLA</span>
           </div>
-          {waysData.map((item) => renderItem(item.title, item.items))}
+          <div className=" w-full justify-center items-center flex ">
+            <div className=" w-full flex-wrap justify-start items-start flex ">
+              {waysData.map((item) => renderItem(item.title, item.items))}
+            </div>
+          </div>
           <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px] mt-[32px]">
             {community?.map((item, index) => (
-              <NextLink href={item.href}>
-                <span key={'icon' + index} className="mx-[10px] mx-[10px] sm:mb-[12px]">
-                  {item.icon}
-                </span>
+              <NextLink key={'icon' + index} href={item.href}>
+                <a className="mx-[10px] mx-[10px] sm:mb-[12px]">{item.icon}</a>
               </NextLink>
             ))}
           </div>

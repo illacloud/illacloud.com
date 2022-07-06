@@ -29,7 +29,7 @@ export const Title = forwardRef(({ buttonColorChange = false, showButton = true 
         </div>
         <span
           className={clsx(
-            ' w-[163.5px] sm:w-[200px]  sm:leading-[64px]  leading-[48px]  box-border mr-2 sm:mr-4 rounded-full bg-[#654aec] text-[#ffffff]',
+            ' w-[163.5px] sm:w-[200px] cursor-pointer  sm:leading-[64px]  leading-[48px]  box-border mr-2 sm:mr-4 rounded-full bg-[#654aec] text-[#ffffff]',
             buttonColorChange
               ? 'sm:bg-[#ffffff] sm:text-[#654aec]'
               : 'sm:bg-[#654aec] sm:text-[#ffffff] sm:hover:bg-[#775ff2] sm:active:bg-[#5343d0]'

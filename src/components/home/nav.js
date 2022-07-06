@@ -9,12 +9,12 @@ import {
 import { LanguageSelect } from '@/components/home/language-select'
 import { ProductSelect } from '@/components/home/product-select'
 import NextLink from 'next/link'
-import { forwardRef, useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
 import clsx from 'clsx'
 
-export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange }, ref) => {
+export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
@@ -52,9 +52,11 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
             </span>
           </NextLink>
           <NextLink href="https://github.com/illa-family/illa-builder/stargazers">
-            <span className="cursor-pointer">
-              {navColorChange ? <GIT_LOGO_WHITE /> : <GIT_LOGO />}
-            </span>
+            <a>
+              <span className="cursor-pointer">
+                {navColorChange ? <GIT_LOGO_WHITE /> : <GIT_LOGO />}
+              </span>
+            </a>
           </NextLink>
           <LanguageSelect buttonColorChange={navColorChange} />
         </div>
@@ -110,4 +112,4 @@ export const Nav = forwardRef(({ navColorChange = false, cloudButtonColorChange 
       </div>
     </>
   )
-})
+}

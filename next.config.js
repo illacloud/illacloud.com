@@ -42,6 +42,10 @@ module.exports = withBundleAnalyzer({
   images: {
     disableStaticImages: true,
   },
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
   async redirects() {
     return require('./redirects.json')
   },

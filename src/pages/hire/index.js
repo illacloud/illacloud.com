@@ -89,25 +89,22 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
           </span>
         </>
       )}
-      <a
-        href={'mailto:hr@illasoft.com'}
-        className=" text-[14px] sm:text-[28px] text-[#1e6fff] mb-[20px] sm:mb-[40px]"
-      >
-        <span className=" text-[14px] sm:text-[16px] text-[#1e6fff] mb-[20px] sm:mb-[34px] ">
+      <div className=" text-[#1e6fff]  mb-[20px] sm:mb-[32px] ">
+        <a href={'mailto:hr@illasoft.com'} className="block text-[14px] sm:text-[16px]">
           hr@illasoft.com
-        </span>
-      </a>
-      <NextLink
-        href={
-          'https://www.zhipin.com/gongsi/dd4d92a12e758f551XR43dm4FVc~.html?ka=search_rcmd_company_name_dd4d92a12e758f551XR43dm4FVc%7E_custompage'
-        }
-      >
-        <a className=" text-[14px] sm:text-[28px] text-[#1e6fff] mb-[20px] sm:mb-[40px]">
-          <span className="cursor-pointer text-[16px] sm:text-[16px] bg-[#654aec] text-white px-[40px] py-[17px] rounded-full">
-            {cv}
-          </span>
         </a>
-      </NextLink>
+      </div>
+      <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
+        <NextLink
+          href={
+            'https://www.zhipin.com/gongsi/dd4d92a12e758f551XR43dm4FVc~.html?ka=search_rcmd_company_name_dd4d92a12e758f551XR43dm4FVc%7E_custompage'
+          }
+        >
+          <a className=" text-[14px] sm:text-[28px] text-white ">
+            <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">{cv}</span>
+          </a>
+        </NextLink>
+      </div>
     </div>
   )
 }
@@ -167,7 +164,7 @@ const Hire = () => {
       </Head>
       <div>
         <div className=" w-full items-center flex flex-col bg-[#ffffff] sm:bg-[#fafafa]">
-          <div className="sm:h-screen mb-[40px] sm:mb-0 flex flex-col items-start sm:items-center   ">
+          <div className="sm:h-screen  mb-[40px] sm:mb-0 flex flex-col items-start sm:items-center   ">
             <Nav />
             <div className="px-[40px] sm:flex sm:flex-row-reverse items-center sm:px-[96px] sm:gap-[80px] sm:h-full">
               <img
@@ -208,7 +205,7 @@ const Hire = () => {
               {addressLit?.map((item) => renderItem(item))}
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[40px] py-[40px] sm:py-[80px] flex flex-col items-center">
+          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[40px] pt-[40px] pb-[20px] sm:py-[80px] flex flex-col items-center">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mb-[24px] sm:mb-[48px] ">
               {t('recruiting.title')}
             </span>

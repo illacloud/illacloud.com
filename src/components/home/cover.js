@@ -9,7 +9,7 @@ import {
   OFFSET,
 } from '@/components/home/utils'
 
-export const Cover = forwardRef(({ changeButtonColor }, ref) => {
+export const Cover = () => {
   const [size, setSize] = useState(COVER_HEIGHT)
   const { y } = useWindowScroll()
   const bgRef = useRef(null)
@@ -65,5 +65,6 @@ export const Cover = forwardRef(({ changeButtonColor }, ref) => {
       </div>
     </>
   )
-})
+}
+
 Cover.displayName = 'Cover'

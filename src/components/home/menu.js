@@ -1,11 +1,11 @@
 import clsx from 'clsx'
-import { CloseIcon, ILLA_LOGO, MenuIcon, SelectIconBlack } from '../../img/home/svg'
+import { CloseIcon, ILLA_LOGO, SelectIconBlack } from '../../img/home/svg'
 import { useState, forwardRef } from 'react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-export const Menu = forwardRef(({ menuExpand, closeMenu }, ref) => {
+export const Menu = ({ menuExpand, closeMenu }) => {
   const [productListExpand, setProductListExpand] = useState(false)
   const [languageListExpand, setLanguageListExpand] = useState(false)
 
@@ -90,4 +90,4 @@ export const Menu = forwardRef(({ menuExpand, closeMenu }, ref) => {
       </div>
     </div>
   )
-})
+}
