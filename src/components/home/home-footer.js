@@ -117,7 +117,7 @@ export function Footer({ noHome = false }) {
         <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full sm:hidden">
           <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
             <ILLA_LOGO />
-            <span className="text-[#a9aeb8] grow-1 text-[12px]">Creat with ❤️ by ILLA</span>
+            <span className="text-[#a9aeb8] grow-1 text-[12px]">Create with ❤️ by ILLA</span>
           </div>
           <div className=" w-full justify-center items-center flex ">
             <div className=" w-full flex-wrap justify-start items-start flex ">
