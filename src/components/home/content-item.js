@@ -18,8 +18,8 @@ export function ContentItem({ contentNode, img, maskColor }) {
   }, [ref.current, ref?.current && ref.current.getBoundingClientRect().top])
 
   return (
-    <div className="flex lg:h-[100vh] lg:overflow-y-hidden flex-col lg:flex-row items-start lg:items-center bg-black px-[40px] justify-center xl:gap-[46px] gap-0 pt-[40px] lg:pt-0 text-[28px] lg:text-[48px] font-bold text-white  lg:px-0">
-      <div ref={ref} className={'w-auto  lg:w-[calc(100vw-558px)] xl:w-[520px]'}>
+    <div className="flex lg:h-[100vh] lg:overflow-y-hidden flex-col lg:flex-row items-start lg:items-center bg-black px-[40px] justify-center lg:gap-[46px] gap-0 pt-[40px] lg:pt-0 text-[28px]  lg:text-[48px] font-bold text-white  ">
+      <div ref={ref} className={'w-auto  lg:w-[calc(100vw-696px)] xl:w-[520px]'}>
         {contentNode}
       </div>
       <div className="relative lg:h-[1110px]  flex flex-col  items-center w-[calc(100vw-80px)]  lg:w-[558px] ">
