@@ -50,7 +50,7 @@ const Home = () => {
       Math.pow(width / 2 - 100, 2) + Math.pow(getCoverPosition(0) - y + 200, 2) <
         Math.pow(_size / 2, 2)
     )
-    setButtonColorChange(_position < titleRef.current?.getBoundingClientRect().bottom)
+    setButtonColorChange(y > 0 && _position < titleRef.current?.getBoundingClientRect().bottom)
   }, [y])
 
   useEffect(() => {
@@ -73,8 +73,8 @@ const Home = () => {
         />
         <title>{t('slogan-1')}</title>
       </Head>
-      <div>
-        <div className="h-screen w-full flex overflow-scroll scrollbar-hide flex-col items-center justify-start sm:items-center bg-[#ffffff] sm:bg-[#fafafa] ">
+      <div className={'bg-[#ffffff] sm:bg-[#fafafa] '}>
+        <div className="h-screen w-full flex overflow-scroll scrollbar-hide flex-col items-center justify-start sm:items-center ">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
           <Nav
             navColorChange={navColorChange}

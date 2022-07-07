@@ -50,7 +50,7 @@ export function Content() {
     },
   ]
   return (
-    <div className="w-full bg-black rounded-b-[40px] sm:rounded-b-[80px]">
+    <div className="w-full bg-black rounded-b-[40px]  sm:rounded-b-[80px]">
       {/*page 01*/}
       <ContentItem
         img={require('@/img/home/1.svg').default}
@@ -121,7 +121,7 @@ export function Content() {
             )}
             <div className="leading-[29px] sm:leading-[58px]">
               {t('content.collaborative-develop.title-3') && (
-                <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
+                <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
                   {t('content.collaborative-develop.title-3')}
                 </span>
               )}

@@ -55,8 +55,8 @@ export const Cover = () => {
           <div
             ref={bgRef}
             style={{
-              width: size,
-              height: size,
+              width: size - 1,
+              height: size - 1,
               top: 0,
             }}
             className="bg-[#654aec]  flex-none relative z-20 rounded-full "

@@ -160,11 +160,11 @@ const Hire = () => {
   return (
     <>
       <Head>
-        <title>{t('slogan')}</title>
+        <title>{t('desc')}</title>
       </Head>
       <div>
         <div className=" w-full items-center flex flex-col  bg-[#ffffff] lg:bg-[#fafafa]">
-          <div className="lg:h-screen  mb-[40px] lg:mb-0 flex flex-col  items-center lg:items-start  w-full ">
+          <div className="lg:h-screen  mb-[40px] lg:mb-0 flex flex-col  items-center  lg:items-center  w-full ">
             <Nav />
             <div className="px-[40px] flex flex-col justify-center items-center lg:flex-row-reverse  lg:px-[96px] lg:gap-[80px] lg:h-full ">
               <img

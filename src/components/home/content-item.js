@@ -18,24 +18,24 @@ export function ContentItem({ contentNode, img, maskColor }) {
   }, [ref.current, ref?.current && ref.current.getBoundingClientRect().top])
 
   return (
-    <div className="flex sm:h-[100vh] sm:overflow-y-hidden flex-col sm:flex-row items-start sm:items-center bg-black justify-center xl:gap-[46px] gap-0 pt-[40px] sm:pt-0 text-[28px] sm:text-[48px] font-bold text-white  sm:px-0">
-      <div ref={ref} className={'w-auto sm:w-[calc(100vw-558px)] xl:w-[520px]'}>
+    <div className="flex lg:h-[100vh] lg:overflow-y-hidden flex-col lg:flex-row items-start lg:items-center bg-black px-[40px] justify-center xl:gap-[46px] gap-0 pt-[40px] lg:pt-0 text-[28px] lg:text-[48px] font-bold text-white  lg:px-0">
+      <div ref={ref} className={'w-auto  lg:w-[calc(100vw-558px)] xl:w-[520px]'}>
         {contentNode}
       </div>
-      <div className="relative sm:h-[1110px]  flex flex-col  items-center w-[calc(100vw-80px)]  sm:w-[558px] ">
+      <div className="relative lg:h-[1110px]  flex flex-col  items-center w-[calc(100vw-80px)]  lg:w-[558px] ">
         <img
           style={{ objectFit: 'cover', backgroundColor: maskColor ?? 'rgba(255,255,255,0.12)' }}
           src={img}
-          className="w-[calc(100vw-80px)] h-[calc(100vw-80px)] rounded-[16px]  sm:rounded-none z-10 sm:w-full sm:h-[1110px] object-none mt-[20px] sm:mt-0"
+          className="w-full h-[calc(100vw-80px)] rounded-[16px]  lg:rounded-none z-10 lg:w-full lg:h-[1110px] object-none mt-[20px] lg:mt-0"
           alt={'video'}
         />
         <div
           className={clsx(
-            'hidden sm:flex h-[1110px] top-0 w-full  z-20  rounded-[40px]   absolute flex-col  justify-center '
+            'hidden lg:flex h-[1110px] top-0 w-full  z-20  rounded-[40px]   absolute flex-col  justify-center '
           )}
         >
           <div style={{ height: bgTop }} className={clsx(' w-full  bg-black ')} />
-          <div className={clsx('hidden sm:block h-[740px] w-full  ')}>
+          <div className={clsx('hidden lg:block h-[740px] w-full  ')}>
             <Mask />
           </div>
           <div className={clsx('grow w-full   bg-black   ')} />

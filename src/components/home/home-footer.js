@@ -82,7 +82,7 @@ export function Footer({ noHome = false }) {
 
   return (
     <>
-      <div style={{ height: HEIGHT }} className="w-full flex flex-col items-center">
+      <div style={{ height: HEIGHT }} className="w-full flex flex-col items-center bg-[#fafafa]">
         <div
           ref={ref}
           style={{ height: noHome ? HEIGHT : height }}
