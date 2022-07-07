@@ -38,7 +38,7 @@ export const Cover = () => {
           position: 'absolute',
           top: 0,
           overflow: 'hidden',
-          overflowX: 'auto',
+          overflowX: 'hidden',
           borderBottomLeftRadius: 80,
           borderBottomRightRadius: 80,
         }}
