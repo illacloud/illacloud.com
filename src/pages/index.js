@@ -13,6 +13,7 @@ import { PlayIcon } from '@/img/home/svg'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
 import { AppState, getBgSize, getCoverPosition } from '@/components/home/utils'
+import Script from 'next/script'
 
 const Modal = ({ isOpen, onClose }) => {
   let modalRoot
@@ -74,6 +75,16 @@ const Home = () => {
         <title>{t('slogan-1')}</title>
       </Head>
       <div className={'bg-[#ffffff] sm:bg-[#fafafa] '}>
+        {/*Global site tag (gtag.js) - Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4VKRNGN7GE');
+        `}
+        </Script>
         <div className="h-screen w-full flex overflow-scroll scrollbar-hide flex-col items-center justify-start sm:items-center ">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
           <Nav
