@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 export const LanguageSelect = ({ buttonColorChange }) => {
   const options = [
-    { label: '简体中文', value: 'ch' },
+    { label: '简体中文', value: 'zh' },
     { label: 'English', value: 'en' },
   ]
   const [expandPanel, setExpandPanel] = useState(false)

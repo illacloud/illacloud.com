@@ -76,8 +76,11 @@ const Home = () => {
       </Head>
       <div className={'bg-[#ffffff] sm:bg-[#fafafa] '}>
         {/*Global site tag (gtag.js) - Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE" />
-        <Script id="google-analytics">
+        <Script
+          strategy="beforeInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
+        />
+        <Script strategy="beforeInteractive" id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
