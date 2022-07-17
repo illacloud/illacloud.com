@@ -33,7 +33,8 @@ export const ILLADocumentationNav = (pathname) => {
   if (cnReg.test(pathname)) {
     return {
       'ILLA Builder': [
-        pagesCN['overview']
+        pagesCN['overview'],
+        pagesCN['quick-start']
       ],
       '安装ILLA Builder': [
         pagesCN['deploy-introduction'],
@@ -48,7 +49,8 @@ export const ILLADocumentationNav = (pathname) => {
   } else {
     return {
       'ILLA Builder': [
-        pagesUS['overview']
+        pagesUS['overview'],
+        pagesUS['quick-start']
       ],
       'Install ILLA Builder': [
         pagesUS['deploy-introduction'],
