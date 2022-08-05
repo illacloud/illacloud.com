@@ -90,14 +90,16 @@ export function Footer({ noHome = false }) {
         >
           <div className="flex w-full grow justify-center items-center flex ">
             <div className=" w-full justify-center items-start flex ">
-              <NextLink href={'/'}>
-                <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
-                  <ILLA_LOGO />
-                  <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
-                    Create with ❤️ by ILLA
-                  </span>
-                </div>
-              </NextLink>
+              <div className="mr-[20px]  w-full sm:w-1/5 flex sm:flex-col  justify-center">
+                <NextLink href={'/'}>
+                  <a className="cursor-pointer">
+                    <ILLA_LOGO />
+                  </a>
+                </NextLink>
+                <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
+                  Create with ❤️ by ILLA
+                </span>
+              </div>
               {waysData.map((item) => renderItem(item.title, item.items))}
               <div className="w-full  sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
                 <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
