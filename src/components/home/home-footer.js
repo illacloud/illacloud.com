@@ -66,15 +66,15 @@ export function Footer({ noHome = false }) {
       title: t('footer.resources'),
       items: [
         { title: 'MySQL', href: 'https://www.mysql.com/' },
-        { title: 'Postgres', href: 'https://www.postgresql.org/' },
-        { title: 'Redis', href: 'https://redis.io/' },
+        // { title: 'Postgres', href: 'https://www.postgresql.org/' },
+        // { title: 'Redis', href: 'https://redis.io/' },
         { title: 'Rest API', href: 'https://restfulapi.net/' },
       ],
     },
     {
       title: t('footer.company'),
       items: [
-        { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
+        // { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
         { title: t('footer.career'), href: '/hire' },
       ],
     },

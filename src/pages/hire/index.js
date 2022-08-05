@@ -95,11 +95,7 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
         </a>
       </div>
       <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
-        <NextLink
-          href={
-            'https://www.zhipin.com/gongsi/dd4d92a12e758f551XR43dm4FVc~.html?ka=search_rcmd_company_name_dd4d92a12e758f551XR43dm4FVc%7E_custompage'
-          }
-        >
+        <NextLink href="https://www.linkedin.com/company/illacloud/jobs/">
           <a className=" text-[14px] sm:text-[28px] text-white ">
             <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">{cv}</span>
           </a>

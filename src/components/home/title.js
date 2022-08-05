@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import { forwardRef, useMemo } from 'react'
 import clsx from 'clsx'
+import NextLink from 'next/link'
 
 export const Title = forwardRef(({ buttonColorChange = false, showButton = true }, ref) => {
   const { t } = useTranslation('home')
@@ -17,16 +18,18 @@ export const Title = forwardRef(({ buttonColorChange = false, showButton = true 
         ref={ref}
         className="text-[16px] sm:text-[20px] font-normal flex mt-[20px] sm:mt-[64px]  box-border"
       >
-        <div
-          className={clsx(
-            'leading-[48px] sm:leading-[64px]  w-[163.5px] sm:w-[200px] cursor-pointer  box-border mr-2 sm:mr-4 rounded-full bg-[#e5e6eb] text-[#1d2129] ',
-            buttonColorChange
-              ? 'sm:bg-[#ffffff]/[.12] sm:text-[#ffffff]'
-              : 'sm:bg-[#f2f3f5] sm:text-[#1d2129] sm:hover:bg-[#ebebeb] sm:active:bg-[#c9cdd4]'
-          )}
-        >
-          {t('self-Hosted')}
-        </div>
+        <NextLink href="https://github.com/illa-family/illa-builder">
+          <div
+            className={clsx(
+              'leading-[48px] sm:leading-[64px]  w-[163.5px] sm:w-[200px] cursor-pointer  box-border mr-2 sm:mr-4 rounded-full bg-[#e5e6eb] text-[#1d2129] ',
+              buttonColorChange
+                ? 'sm:bg-[#ffffff]/[.12] sm:text-[#ffffff]'
+                : 'sm:bg-[#f2f3f5] sm:text-[#1d2129] sm:hover:bg-[#ebebeb] sm:active:bg-[#c9cdd4]'
+            )}
+          >
+            {t('self-Hosted')}
+          </div>
+        </NextLink>
         <span
           className={clsx(
             ' w-[163.5px] sm:w-[200px] cursor-pointer  sm:leading-[64px]  leading-[48px]  box-border mr-2 sm:mr-4 rounded-full bg-[#654aec] text-[#ffffff]',

@@ -22,7 +22,7 @@ export const LanguageSelect = ({ buttonColorChange }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col bg-transparent items-center w-[108px] h-[48px] cursor-pointer  justify-between "
+      className="flex flex-col bg-transparent items-center h-[48px] cursor-pointer  justify-between "
     >
       <div
         className={clsx(
@@ -33,7 +33,7 @@ export const LanguageSelect = ({ buttonColorChange }) => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        {router.locale === 'en' ? 'English' : '简体中文'}
+        <span className="mr-[10px]">{router.locale === 'en' ? 'English' : '简体中文'}</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div

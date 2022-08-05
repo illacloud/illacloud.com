@@ -42,7 +42,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
       <div className="h-[88px]  w-full flex justify-between items-end fixed z-40  hidden lg:inline-flex">
         <div
           className={clsx(
-            'w-1/3 h-[48px] items-center flex  h-full items-end   flex-row z-50 pl-[40px]',
+            'w-1/3 h-[48px] items-center flex  h-full items-end flex-row z-50 pl-[40px]',
             navColorChange ? 'text-[#ffffff]' : 'text-[#1d2129]'
           )}
         >
@@ -51,7 +51,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
               {navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}
             </span>
           </NextLink>
-          <NextLink href="https://github.com/illa-family/illa-builder/stargazers">
+          <NextLink href="https://github.com/illa-family/illa-builder">
             <a>
               <span className="cursor-pointer">
                 {navColorChange ? <GIT_LOGO_WHITE /> : <GIT_LOGO />}
@@ -63,7 +63,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
         <div className="w-1/3  flex   justify-center font-medium text-[#1d2129]">
           <div
             className={clsx(
-              'flex justify-center rounded-full px-[24px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.02)]',
+              'flex justify-center rounded-full px-[24px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.02)] transition-background',
               navColorChange
                 ? 'bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur '
                 : 'bg-[#ffffff] text-[#1d2129]'
@@ -85,7 +85,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
         <div
           className={clsx(' w-1/3  text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
         >
-          <NextLink href={''}>
+          <NextLink href="https://github.com/illa-family/illa-builder">
             <div
               className={clsx(
                 'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff]  cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',

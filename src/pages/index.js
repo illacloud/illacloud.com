@@ -119,7 +119,7 @@ const Home = () => {
         </div>
         <div
           style={{ zIndex: 35 }}
-          className="w-full h-[400px] absolute justify-center   top-[calc(100vh-150px)]  hidden sm:flex "
+          className="w-full h-[400px] absolute justify-center  top-[calc(100vh-150px)]  hidden sm:flex "
         >
           <img
             style={{ objectFit: 'cover' }}
