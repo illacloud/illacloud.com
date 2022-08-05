@@ -4,8 +4,6 @@ import { getAllPostPreviews } from '@/utils/getAllPosts'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { formatDate } from '@/utils/formatDate'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { highlightCode } from '../../../remark/utils'
 
 let posts = getAllPostPreviews()
 
