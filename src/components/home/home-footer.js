@@ -24,16 +24,16 @@ function renderItem(title, items) {
 
 const community = [
   {
+    icon: <GitHubIconGray />,
+    href: 'https://github.com/orgs/illa-family/discussions\n',
+  },
+  {
     icon: <TwitterIcon />,
     href: 'https://twitter.com/illafamily',
   },
   {
     icon: <DiscordIcon />,
     href: 'https://discord.com/invite/2tGBuJkgd6',
-  },
-  {
-    icon: <GitHubIconGray />,
-    href: 'https://github.com/orgs/illa-family/discussions\n',
   },
 ]
 
@@ -88,28 +88,26 @@ export function Footer({ noHome = false }) {
           style={{ height: noHome ? HEIGHT : height }}
           className=" flex-col items-center justify-center  overflow-y-hidden  px-[120px]  w-full hidden sm:flex"
         >
-          <div className="flex w-full grow ">
-            <NextLink href={'/'}>
-              <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
-                <ILLA_LOGO />
-                <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
-                  Create with ❤️ by ILLA
-                </span>
-              </div>
-            </NextLink>
-            <div className=" w-full justify-center items-center flex ">
-              <div className=" w-full justify-center items-start flex ">
-                {waysData.map((item) => renderItem(item.title, item.items))}
-                <div className="w-full  sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
-                  <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
-                    {t('footer.community')}
-                  </div>
-                  {community?.map((item, index) => (
-                    <NextLink key={item.href} href={item.href}>
-                      <a className="cursor-pointer sm:mb-[12px]">{item.icon}</a>
-                    </NextLink>
-                  ))}
+          <div className="flex w-full grow justify-center items-center flex ">
+            <div className=" w-full justify-center items-start flex ">
+              <NextLink href={'/'}>
+                <div className="mr-[20px]  w-full sm:w-1/6 flex sm:flex-col  justify-center">
+                  <ILLA_LOGO />
+                  <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
+                    Create with ❤️ by ILLA
+                  </span>
                 </div>
+              </NextLink>
+              {waysData.map((item) => renderItem(item.title, item.items))}
+              <div className="w-full  sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
+                <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
+                  {t('footer.community')}
+                </div>
+                {community?.map((item, index) => (
+                  <NextLink key={item.href} href={item.href}>
+                    <a className="cursor-pointer sm:mb-[12px]">{item.icon}</a>
+                  </NextLink>
+                ))}
               </div>
             </div>
           </div>
@@ -132,12 +130,14 @@ export function Footer({ noHome = false }) {
             ))}
           </div>
           <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
-            © ILLA, Inc.
+            <span className="mr-[24px]">京ICP备2022010464号-2</span>
+            <span>版权所有©️ 北京艾拉云科科技有限公司</span>
           </span>
         </div>
-        <span className="text-[#a9aeb8]   w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]  hidden sm:block">
-          © ILLA, Inc.
-        </span>
+        <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]  hidden sm:block">
+          <span className="mr-[24px]">京ICP备2022010464号-2</span>
+          <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+        </div>
       </div>
     </>
   )
