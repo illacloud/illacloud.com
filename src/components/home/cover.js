@@ -41,6 +41,7 @@ export const Cover = () => {
           overflowX: 'hidden',
           borderBottomLeftRadius: 80,
           borderBottomRightRadius: 80,
+          visibility: coverPosition > 0 ? 'unset' :'hidden'
         }}
         className=" w-full  flex justify-center items-end "
       >

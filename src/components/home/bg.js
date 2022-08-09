@@ -53,7 +53,7 @@ export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
       ref={ref}
       className={`w-full top-0 flex absolute flex-col  justify-center pointer-events-none items-center hidden sm:block `}
     >
-      <div className={' z-30 relative top-0  w-full flex justify-center pointer  '}>
+      <div className={'z-30 relative top-0  w-full flex justify-center pointer'}>
         <svg
           ref={svgRef}
           height="calc(150vh)"
