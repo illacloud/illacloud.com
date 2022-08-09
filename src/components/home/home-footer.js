@@ -133,15 +133,19 @@ export function Footer({ noHome = false }) {
               </NextLink>
             ))}
           </div>
-          <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
-            <span className="mr-[24px]">{t('footer.record')}</span>
-            <span>{t('footer.copyright')}</span>
-          </span>
+          {router.locale === 'zh' ? (
+            <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
+              <span className="mr-[24px]">京ICP备2022010464号-2</span>
+              <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+            </span>
+          ) : null}
         </div>
-        <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]  hidden sm:block">
-          <span className="mr-[24px]">{t('footer.record')}</span>
-          <span>{t('footer.copyright')}</span>
-        </div>
+        {router.locale === 'zh' ? (
+          <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[12px] mb-[40px]  hidden sm:block">
+            <span className="mr-[24px]">京ICP备2022010464号-2</span>
+            <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+          </div>
+        ) : null}
       </div>
     </>
   )
