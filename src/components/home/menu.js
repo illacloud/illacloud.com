@@ -78,7 +78,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         {router.locale === 'en' ? 'English' : '简体中文'} <SelectIconBlack />
       </span>
       <div>
-        <NextLink href={router.pathname} locale={router.locale === 'en' ? 'ch' : 'en'}>
+        <NextLink href={router.pathname} locale={router.locale === 'en' ? 'zh' : 'en'}>
           <span
             style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
             className="transition-height cursor-pointer duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]"
