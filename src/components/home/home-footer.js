@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useWindowScroll } from 'react-use'
 import NextLink from 'next/link'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 
 function renderItem(title, items) {
   return (
@@ -44,6 +45,7 @@ export function Footer({ noHome = false }) {
   const { y } = useWindowScroll()
   const ref = useRef(null)
   const [height, setHeight] = useState(10)
+  const router = useRouter()
 
   useEffect(() => {
     if (y - (window.innerHeight * 5.5 + 130) <= HEIGHT - 10) {
@@ -132,13 +134,13 @@ export function Footer({ noHome = false }) {
             ))}
           </div>
           <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
-            <span className="mr-[24px]">京ICP备2022010464号-2</span>
-            <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+            <span className="mr-[24px]">{t('footer.record')}</span>
+            <span>{t('footer.copyright')}</span>
           </span>
         </div>
         <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[16px] mb-[40px]  hidden sm:block">
-          <span className="mr-[24px]">京ICP备2022010464号-2</span>
-          <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+          <span className="mr-[24px]">{t('footer.record')}</span>
+          <span>{t('footer.copyright')}</span>
         </div>
       </div>
     </>
