@@ -13,11 +13,14 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
 import clsx from 'clsx'
+import { SubscribeModal } from '@/components/home/Subscribe'
 
 export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
+  const [modalVisible, setModalVisible] = useState()
+
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
@@ -83,7 +86,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
           </div>
         </div>
         <div
-          className={clsx(' w-1/3  text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
+          className={clsx('w-1/3 text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
         >
           <NextLink href="https://github.com/illa-family/illa-builder">
             <div
@@ -95,19 +98,17 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
               {t('self-Hosted')}
             </div>
           </NextLink>
-          <NextLink href={''}>
-            <span
-              className={clsx(
-                'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
-                navColorChange ? 'visible' : 'hidden',
-                cloudButtonColorChange
-                  ? 'bg-[#654aec] text-[#ffffff]'
-                  : 'bg-[#ffffff] text-[#654aec]'
-              )}
-            >
-              {t('illa-Cloud')}
-            </span>
-          </NextLink>
+          <span
+            className={clsx(
+              'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
+              navColorChange ? 'visible' : 'hidden',
+              cloudButtonColorChange ? 'bg-[#654aec] text-[#ffffff]' : 'bg-[#ffffff] text-[#654aec]'
+            )}
+            onClick={() => setModalVisible(true)}
+          >
+            {t('illa-Cloud')}
+          </span>
+          <SubscribeModal visible={modalVisible} onClose={() => setModalVisible(false)} />
         </div>
       </div>
     </>
