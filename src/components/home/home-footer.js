@@ -135,15 +135,23 @@ export function Footer({ noHome = false }) {
           </div>
           {router.locale === 'zh' ? (
             <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
-              <span className="mr-[24px]">京ICP备2022010464号-2</span>
-              <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+              <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">
+                京ICP备2022010464号-2
+              </a>
+              <a href="https://beian.miit.gov.cn/" target="_blank">
+                版权所有©️ 北京艾拉云科科技有限公司
+              </a>
             </span>
           ) : null}
         </div>
         {router.locale === 'zh' ? (
           <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[12px] mb-[40px]  hidden sm:block">
-            <span className="mr-[24px]">京ICP备2022010464号-2</span>
-            <span>版权所有©️ 北京艾拉云科科技有限公司</span>
+            <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">
+              京ICP备2022010464号-2
+            </a>
+            <a href="https://beian.miit.gov.cn/" target="_blank">
+              版权所有©️ 北京艾拉云科科技有限公司
+            </a>
           </div>
         ) : null}
       </div>
