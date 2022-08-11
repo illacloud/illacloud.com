@@ -4,9 +4,15 @@
 }
 
 .container {
-  @apply flex bg-[#FFFFFF] rounded-[16px] overflow-hidden w-[100%];
+  @apply flex bg-[#FFFFFF] rounded-[16px] overflow-hidden w-[100%] relative;
   @apply flex-col;
   @apply sm:flex-row sm:max-w-[687px]  ;
+}
+
+.closeIcon {
+  @apply absolute cursor-pointer;
+  @apply w-[12px] top-[16.5px] right-[12px] m-[4px];
+  @apply sm:w-[14px] sm:top-[16px] sm:right-[16px] sm:m-[5px];
 }
 
 .content {

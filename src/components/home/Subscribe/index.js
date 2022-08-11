@@ -44,6 +44,12 @@ export const SubscribeModal = ({ visible, onClose }) => {
     <RemoveScroll>
       <div className={clsx(styles.modalBg, visible ? 'visible' : 'hidden')} onCancel={onClose}>
         <div className={styles.container}>
+          <img
+            className={styles.closeIcon}
+            src={require('@/img/home/close.png').default}
+            alt="closeIcon"
+            onClick={onClose}
+          />
           <div>
             <SubscribeCover className={'hidden sm:block'} />
             <img
@@ -74,9 +80,9 @@ export const SubscribeModal = ({ visible, onClose }) => {
                   control={control}
                   name="email"
                 />
-                {errors?.email && <div>{errors?.email.message}</div>}
               </div>
               <Button
+                className={'mt-[20px] sm:mt-[40px]'}
                 colorScheme="techPurple"
                 onClick={() => {
                   formRef?.current?.requestSubmit()

@@ -13,13 +13,11 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
 import clsx from 'clsx'
-import { SubscribeModal } from '@/components/home/Subscribe'
 
-export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
+export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscribe }) => {
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
-  const [modalVisible, setModalVisible] = useState()
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
@@ -104,11 +102,12 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange }) => {
               navColorChange ? 'visible' : 'hidden',
               cloudButtonColorChange ? 'bg-[#654aec] text-[#ffffff]' : 'bg-[#ffffff] text-[#654aec]'
             )}
-            onClick={() => setModalVisible(true)}
+            onClick={() => {
+              onSubscribe?.()
+            }}
           >
             {t('illa-Cloud')}
           </span>
-          <SubscribeModal visible={modalVisible} onClose={() => setModalVisible(false)} />
         </div>
       </div>
     </>
