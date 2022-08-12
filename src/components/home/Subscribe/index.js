@@ -8,20 +8,8 @@ import { Input } from '@illa-design/input'
 import { Button } from '@illa-design/button'
 import { ReactComponent as SubscribeCover } from '@/img/home/subscribe-cover.svg'
 import styles from './style.module.css'
-
-const subscribe = async (form) => {
-  await fetch('https://email.dev.illasoft.com/v1/subscribe', {
-    method: 'POST',
-    body: JSON.stringify(form),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((res) => {
-      console.log(res, 'res')
-    })
-    .catch(() => {})
-}
+import { Toast } from '@/components/home/Toast'
+import { wait } from '@/utils/wait'
 
 export const SubscribeModal = ({ visible, onClose }) => {
   const { t } = useTranslation('home')
@@ -33,6 +21,32 @@ export const SubscribeModal = ({ visible, onClose }) => {
   } = useForm({
     mode: 'onSubmit',
   })
+
+  const subscribe = async (form) => {
+    await fetch('https://email.dev.illasoft.com/v1/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(form),
+      headers: {
+        'Accept-Language': 'en-US',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          if (res.status === 201) {
+            Toast.info(`😊 ${t('subscribe.message.check-email')}`, 2)
+          } else if (res.status === 200) {
+            Toast.info(`😊 ${t('subscribe.message.repeat')}`, 2)
+          }
+          setTimeout(() => {
+            onClose?.()
+          }, 300)
+        } else {
+          Toast.info(`😣 ${t('subscribe.message.failed')}`, 2)
+        }
+      })
+      .catch(() => {})
+  }
 
   if (!visible) return null
   let container
@@ -61,17 +75,28 @@ export const SubscribeModal = ({ visible, onClose }) => {
           <div className={styles.content}>
             <div className={styles.title}>{t('subscribe.title')}</div>
             <div className={styles.description}>{t('subscribe.description')}</div>
-            <form ref={formRef} onSubmit={handleSubmit(subscribe)}>
+            <form
+              autoComplete="off"
+              className="w-[100%]"
+              ref={formRef}
+              onSubmit={handleSubmit(subscribe, (errors) => {
+                Toast.info(`😣 ${t('subscribe.form.email.required')}`, 1)
+              })}
+            >
               <div>
                 <div className={styles.formLabel}>{t('subscribe.form.email.label')}</div>
                 <Controller
                   render={({ field }) => (
                     <Input
                       {...field}
+                      size="large"
+                      type="email"
+                      autoComplete="off"
                       placeholder={t('subscribe.form.email.placeholder')}
                       error={!!errors?.email}
                       maxLength={200}
                       borderColor="techPurple"
+                      variant="fill"
                     />
                   )}
                   rules={{
@@ -81,13 +106,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
                   name="email"
                 />
               </div>
-              <Button
-                className={'mt-[20px] sm:mt-[40px]'}
-                colorScheme="techPurple"
-                onClick={() => {
-                  formRef?.current?.requestSubmit()
-                }}
-              >
+              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large">
                 Subscribe
               </Button>
             </form>

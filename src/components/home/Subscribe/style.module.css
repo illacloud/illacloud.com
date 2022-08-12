@@ -18,7 +18,7 @@
 .content {
   @apply flex flex-col justify-center items-start;
   @apply px-[20px] py-[24px];
-  @apply sm:px-[20px] sm:py-0;
+  @apply sm:px-[40px] sm:py-0;
 }
 
 .title {
@@ -36,6 +36,12 @@
 .formLabel {
   @apply text-[16px] mb-[16px];
   @apply sm:text-[14px] sm:mb-[8px];
+}
+
+.formSubmitButton {
+  @apply w-[100%] justify-center;
+  @apply mt-[20px] !rounded-[4px];
+  @apply sm:!rounded-[8px] sm:mt-[40px];
 }
 
 .errorMessage {
