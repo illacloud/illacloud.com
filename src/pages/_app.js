@@ -40,9 +40,11 @@ function App({ Component, pageProps, router }) {
 
   useEffect(() => {
     if (!navIsOpen) return
+
     function handleRouteChange() {
       setNavIsOpen(false)
     }
+
     Router.events.on('routeChangeComplete', handleRouteChange)
 
     return () => {
@@ -54,7 +56,11 @@ function App({ Component, pageProps, router }) {
   const layoutProps = Component.layoutProps?.Layout
     ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
-  const showHeader = router.pathname !== '/' && router.pathname !== '/hire'
+  const showHeader =
+    router.pathname !== '/' &&
+    router.pathname !== '/hire' &&
+    router.pathname !== '/subscribed' &&
+    router.pathname !== '/subscribe-failed'
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || 'Documentation for the ILLA framework.'

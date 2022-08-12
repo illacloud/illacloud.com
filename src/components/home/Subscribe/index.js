@@ -9,7 +9,6 @@ import { Button } from '@illa-design/button'
 import { ReactComponent as SubscribeCover } from '@/img/home/subscribe-cover.svg'
 import styles from './style.module.css'
 import { Toast } from '@/components/home/Toast'
-import { wait } from '@/utils/wait'
 
 export const SubscribeModal = ({ visible, onClose }) => {
   const { t } = useTranslation('home')
