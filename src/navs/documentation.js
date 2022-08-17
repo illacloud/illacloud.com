@@ -38,12 +38,22 @@ export const ILLADocumentationNav = (pathname) => {
       ],
       '安装ILLA Builder': [
         pagesCN['deploy-introduction'],
-        pagesCN['illa-cli'],
-        pagesCN['docker-compose'],
-        pagesCN['k8s-helm'],
+        // pagesCN['illa-cli'],
+        // pagesCN['docker-compose'],
+        // pagesCN['k8s-helm'],
       ],
-      '构建APPs': [
-        pagesCN['create-resources']
+      '数据接入': [
+        pagesCN['resource'],
+        // pagesCN['query'],
+        // pagesCN['transformer']
+      ],
+      '构建Apps': [
+        // pagesCN['app-editor'],
+        // pagesCN['event-handler'],
+        // pagesCN['javascript']
+      ],
+      '组件库':[
+
       ]
     }
   } else {
@@ -53,13 +63,20 @@ export const ILLADocumentationNav = (pathname) => {
         pagesUS['quick-start']
       ],
       'Install ILLA Builder': [
-        pagesUS['deploy-introduction'],
-        pagesUS['illa-cli'],
-        pagesUS['docker-compose'],
-        pagesUS['k8s-helm'],
+        // pagesUS['deploy-introduction'],
+        // pagesUS['illa-cli'],
+        // pagesUS['docker-compose'],
+        // pagesUS['k8s-helm'],
       ],
-      'ILLA University': [
-        pagesUS['create-resources']
+      'Data access':[
+        //   pagesUS['resource'],
+        //   pagesUS['query'],
+        //   pagesUS['transformer']
+      ],
+      'Build Apps': [
+        // pagesUS['app-editor'],
+        // pagesUS['event-handler'],
+        // pagesUS['javascript']
       ]
     }
   }
