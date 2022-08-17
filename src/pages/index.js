@@ -14,6 +14,7 @@ import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
 import { AppState, getBgSize, getCoverPosition } from '@/components/home/utils'
 import Script from 'next/script'
+import { SubscribeModal } from '@/components/home/Subscribe'
 
 const Modal = ({ isOpen, onClose }) => {
   let modalRoot
@@ -38,6 +39,7 @@ const Home = () => {
   const { y } = useWindowScroll()
   const { t } = useTranslation('home')
   const [playMaskShow, setPlayMaskShow] = useState(false)
+  const [modalVisible, setModalVisible] = useState()
 
   useEffect(() => {
     AppState.h = height
@@ -90,11 +92,17 @@ const Home = () => {
         </Script>
         <div className="h-screen w-full flex overflow-scroll scrollbar-hide flex-col items-center justify-start sm:items-center ">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
+          <SubscribeModal visible={modalVisible} onClose={() => setModalVisible(false)} />
           <Nav
             navColorChange={navColorChange}
             cloudButtonColorChange={y > height * 1.5 + 80 - 40}
+            onSubscribe={() => setModalVisible(true)}
           />
-          <Title ref={titleRef} buttonColorChange={buttonColorChange} />
+          <Title
+            ref={titleRef}
+            buttonColorChange={buttonColorChange}
+            onSubscribe={() => setModalVisible(true)}
+          />
           <div className="grow sm:grow-0  flex items-center justify-center block sm:hidden">
             <img
               style={{ objectFit: 'cover' }}

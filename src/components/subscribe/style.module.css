@@ -1,0 +1,54 @@
+.box {
+  @apply flex w-full h-full px-[40px] flex-col items-center justify-center;
+  /*@apply sm:justify-center;*/
+}
+
+.container {
+  @apply flex bg-[#FFFFFF] rounded-[16px] overflow-hidden w-[100%] relative;
+  @apply flex-col;
+  @apply sm:flex-row sm:max-w-[687px]  ;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.04);
+}
+
+.mobileMode {
+  @apply block sm:hidden;
+}
+
+.pcMode {
+  @apply hidden sm:block;
+}
+
+.closeIcon {
+  @apply absolute cursor-pointer;
+  @apply w-[12px] top-[16.5px] right-[12px] m-[4px];
+  @apply sm:w-[14px] sm:top-[16px] sm:right-[16px] sm:m-[5px];
+}
+
+.content {
+  @apply flex flex-col justify-center items-center grow;
+  @apply px-[20px] py-[24px];
+  @apply sm:px-[40px] sm:py-0;
+}
+
+.title {
+  @apply text-[24px] font-bold;
+  @apply mb-[12px];
+  @apply sm:mb-[8px];
+}
+
+.description {
+  @apply text-[14px] font-normal;
+  @apply mb-[80px];
+  @apply sm:mb-[24px];
+}
+
+.formLabel {
+  @apply text-[16px] mb-[16px];
+  @apply sm:text-[14px] sm:mb-[8px];
+}
+
+.formSubmitButton {
+  @apply w-[100%] justify-center;
+  @apply mt-[20px] !rounded-[4px];
+  @apply sm:!rounded-[8px] sm:mt-[40px];
+}

@@ -1,0 +1,49 @@
+.modalBg {
+  @apply flex h-screen w-full flex-col  absolute left-0 items-center justify-center z-50 font-bold text-[16px] bg-black/[0.64];
+  @apply px-[35.5px];
+}
+
+.container {
+  @apply flex bg-[#FFFFFF] rounded-[16px] overflow-hidden w-[100%] relative;
+  @apply flex-col;
+  @apply sm:flex-row sm:max-w-[687px]  ;
+}
+
+.closeIcon {
+  @apply absolute cursor-pointer;
+  @apply w-[12px] top-[16.5px] right-[12px] m-[4px];
+  @apply sm:w-[14px] sm:top-[16px] sm:right-[16px] sm:m-[5px];
+}
+
+.content {
+  @apply flex flex-col justify-center items-start;
+  @apply px-[20px] py-[24px];
+  @apply sm:px-[40px] sm:py-0;
+}
+
+.title {
+  @apply text-[24px] font-bold;
+  @apply mb-[12px];
+  @apply sm:mb-[8px];
+}
+
+.description {
+  @apply text-[14px] font-normal;
+  @apply mb-[20px];
+  @apply sm:mb-[40px];
+}
+
+.formLabel {
+  @apply text-[16px] mb-[16px];
+  @apply sm:text-[14px] sm:mb-[8px];
+}
+
+.formSubmitButton {
+  @apply w-[100%] justify-center;
+  @apply mt-[20px] !rounded-[4px];
+  @apply sm:!rounded-[8px] sm:mt-[40px];
+}
+
+.errorMessage {
+
+}

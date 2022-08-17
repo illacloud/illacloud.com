@@ -1,9 +1,10 @@
-import { DiscordIcon, GitHubIconGray, ILLA_LOGO, TwitterIcon } from '@/img/home/svg'
+import { ILLA_LOGO } from '@/img/home/svg'
 import { useEffect, useRef, useState } from 'react'
 import { useWindowScroll } from 'react-use'
 import NextLink from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
+import { Community } from '@/constants/concat'
 
 function renderItem(title, items) {
   return (
@@ -22,21 +23,6 @@ function renderItem(title, items) {
     </div>
   )
 }
-
-const community = [
-  {
-    icon: <GitHubIconGray />,
-    href: 'https://github.com/orgs/illa-family/discussions\n',
-  },
-  {
-    icon: <TwitterIcon />,
-    href: 'https://twitter.com/illafamily',
-  },
-  {
-    icon: <DiscordIcon />,
-    href: 'https://discord.com/invite/2tGBuJkgd6',
-  },
-]
 
 const HEIGHT = 580
 
@@ -107,9 +93,9 @@ export function Footer({ noHome = false }) {
                 <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
                   {t('footer.community')}
                 </div>
-                {community?.map((item, index) => (
+                {Community?.map((item, index) => (
                   <NextLink key={item.href} href={item.href}>
-                    <a className="cursor-pointer sm:mb-[12px]">{item.icon}</a>
+                    <a className="cursor-pointer sm:mb-[12px] text-[#787E85]">{item.icon}</a>
                   </NextLink>
                 ))}
               </div>
@@ -127,9 +113,9 @@ export function Footer({ noHome = false }) {
             </div>
           </div>
           <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px] mt-[32px]">
-            {community?.map((item, index) => (
+            {Community?.map((item, index) => (
               <NextLink key={'icon' + index} href={item.href}>
-                <a className="mx-[10px] mx-[10px] sm:mb-[12px]">{item.icon}</a>
+                <a className="mx-[10px] mx-[10px] sm:mb-[12px] text-[#787E85]">{item.icon}</a>
               </NextLink>
             ))}
           </div>
