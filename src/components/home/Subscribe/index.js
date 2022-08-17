@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { createPortal } from 'react-dom'
 import { RemoveScroll } from 'react-remove-scroll'
@@ -9,9 +9,11 @@ import { Button } from '@illa-design/button'
 import { ReactComponent as SubscribeCover } from '@/img/home/subscribe-cover.svg'
 import styles from './style.module.css'
 import { Toast } from '@/components/home/Toast'
+import { useRouter } from "next/router";
 
 export const SubscribeModal = ({ visible, onClose }) => {
   const { t } = useTranslation('home')
+  const router = useRouter()
   const formRef = useRef()
   const {
     handleSubmit,
@@ -21,16 +23,21 @@ export const SubscribeModal = ({ visible, onClose }) => {
     mode: 'onSubmit',
   })
 
+  const [loading, setLoading] = useState()
+
   const subscribe = async (form) => {
+    if (loading) return
+    setLoading(true)
     await fetch('https://email.dev.illasoft.com/v1/subscribe', {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
-        'Accept-Language': 'en-US',
+        'Accept-Language': router.locale === 'zh' ? 'zh-CN' : 'en-US',
         'Content-Type': 'application/json',
       },
     })
       .then((res) => {
+        setLoading(false)
         if (res.ok) {
           if (res.status === 201) {
             Toast.info(`😊 ${t('subscribe.message.check-email')}`, 2)
@@ -105,7 +112,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
                   name="email"
                 />
               </div>
-              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large">
+              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large" loading={loading}>
                 Subscribe
               </Button>
             </form>
