@@ -113,7 +113,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
                 />
               </div>
               <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large" loading={loading}>
-                Subscribe
+                {t('subscribe.button')}
               </Button>
             </form>
           </div>
