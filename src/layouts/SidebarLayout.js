@@ -319,7 +319,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/illa-design-demo-r1qyy2?fontsize=14&hidenavigation=1&theme=dark"
+        href="https://codesandbox.io/s/illa-design-demo-r1qyy2"
         className="mb-4"
         shadow="group-hover:shadow-blue-200 dark:group-hover:bg-blue-500"
         icon={
