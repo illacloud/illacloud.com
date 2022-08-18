@@ -21,7 +21,8 @@ const Modal = ({ isOpen, onClose }) => {
 
 export const AppBackground = forwardRef(({ changeButtonColor }, ref) => {
   const svgRef = useRef()
-  const [len, setLen] = useState()
+  // Set the initial value to avoid displaying the image if the value is undefined
+  const [len, setLen] = useState(4000)
   const { y } = useWindowScroll()
   const pathLen = useRef()
 
