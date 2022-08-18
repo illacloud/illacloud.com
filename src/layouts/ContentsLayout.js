@@ -204,13 +204,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
         )}
       </ContentsContext.Provider>
 
-      <Footer previous={prev} next={next}>
-        <Link
-          href={`https://github.com/illa-family.com/edit/master/src/pages${router.pathname}.mdx`}
-        >
-          <a className="hover:text-slate-900 dark:hover:text-slate-400">Edit this page on GitHub</a>
-        </Link>
-      </Footer>
+      <Footer previous={prev} next={next} />
 
       <div className="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 px-8 overflow-y-auto hidden xl:block">
         {toc.length > 0 && (
