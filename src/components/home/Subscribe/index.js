@@ -32,7 +32,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
-        'Accept-Language': router.locale === 'zh' ? 'zh-CN' : 'en-US',
+        'Accept-Language': router.locale,
         'Content-Type': 'application/json',
       },
     })

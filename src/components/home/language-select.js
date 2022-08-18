@@ -7,8 +7,8 @@ import clsx from 'clsx'
 
 export const LanguageSelect = ({ buttonColorChange }) => {
   const options = [
-    { label: '简体中文', value: 'zh' },
-    { label: 'English', value: 'en' },
+    { label: '简体中文', value: 'zh-CN' },
+    { label: 'English', value: 'en-US' },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
 
@@ -33,7 +33,7 @@ export const LanguageSelect = ({ buttonColorChange }) => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[10px]">{router.locale === 'en' ? 'English' : '简体中文'}</span>
+        <span className="mr-[10px]">{router.locale === 'en-US' ? 'English' : '简体中文'}</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div

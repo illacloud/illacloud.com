@@ -1,9 +1,7 @@
 import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
-import create from 'zustand'
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 const languages = [
   {
@@ -16,50 +14,18 @@ const languages = [
   },
 ]
 
-const useDefaultLanguage = create((set) => ({
-  curLanguage: 'en-US',
-  setCurLanguage: (curLanguage) => set({ curLanguage }),
-}))
-
-function useLanguage() {
-  let { curLanguage, setCurLanguage } = useDefaultLanguage()
-  const route = useRouter()
-
-  useIsomorphicLayoutEffect(() => {
-    const pathname = route.pathname
-    const cnReg = /\/zh-CN\//
-    const urlLanguage = () => {
-      if (cnReg.test(pathname)) {
-        return 'zh-CN'
-      } else {
-        return 'en-US'
-      }
-    }
-    Router.push(route.pathname.replace(urlLanguage(), curLanguage))
-  }, [curLanguage])
-
-  return [curLanguage, setCurLanguage]
-}
-
 export function LanguageToggle({ panelClassName = 'mt-4' }) {
-  const [curLanguage, setCurLanguage] = useLanguage()
-
-  let languageLabel = ''
-  switch (curLanguage) {
-    case 'en-US':
-      languageLabel = 'English'
-      break
-    case 'zh-CN':
-      languageLabel = '简体中文'
-      break
-  }
+  const router = useRouter()
+  const curLanguage = router.locale
 
   return (
-    <Listbox value={curLanguage} onChange={setCurLanguage}>
+    <Listbox value={curLanguage} onChange={(value) => {
+      router.push(router.pathname, router.pathname, { locale: value })
+    }}>
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
         <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
-          {languageLabel}
+          {router.locale === 'en-US' ? 'English' : '简体中文'}
         </span>
       </Listbox.Button>
       <Listbox.Options

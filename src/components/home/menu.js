@@ -75,16 +75,16 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         }}
         className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] "
       >
-        {router.locale === 'en' ? 'English' : '简体中文'} <SelectIconBlack />
+        {router.locale === 'en-US' ? 'English' : '简体中文'} <SelectIconBlack />
       </span>
       <div>
-        <NextLink href={router.pathname} locale={router.locale === 'en' ? 'zh' : 'en'}>
+        <NextLink href={router.pathname} locale={router.locale === 'en-US' ? 'zh-CN' : 'en-US'}>
           <span
             style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
             className="transition-height cursor-pointer duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f] pl-[32px]"
             onClick={() => {}}
           >
-            {router.locale === 'en' ? '简体中文' : 'English'}
+            {router.locale === 'en-US' ? '简体中文' : 'English'}
           </span>
         </NextLink>
       </div>

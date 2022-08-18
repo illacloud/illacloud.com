@@ -119,7 +119,7 @@ export function Footer({ noHome = false }) {
               </NextLink>
             ))}
           </div>
-          {router.locale === 'zh' ? (
+          {router.locale === 'zh-CN' ? (
             <span className="text-[#a9aeb8] w-full text-center mt-[20px] text-[12px]">
               <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">
                 京ICP备2022010464号-2
@@ -130,7 +130,7 @@ export function Footer({ noHome = false }) {
             </span>
           ) : null}
         </div>
-        {router.locale === 'zh' ? (
+        {router.locale === 'zh-CN' ? (
           <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[12px] mb-[40px]  hidden sm:block">
             <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">
               京ICP备2022010464号-2
