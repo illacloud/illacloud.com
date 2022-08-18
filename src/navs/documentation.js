@@ -45,12 +45,12 @@ export const ILLADocumentationNav = (pathname) => {
       '数据接入': [
         pagesCN['resource'],
         pagesCN['query'],
-        // pagesCN['transformer']
+        pagesCN['transformer']
       ],
       '构建Apps': [
-        // pagesCN['app-editor'],
-        // pagesCN['event-handler'],
-        // pagesCN['javascript']
+        pagesCN['app-editor'],
+        pagesCN['event-handler'],
+        pagesCN['javascript']
       ],
       '组件库':[
 
