@@ -44,7 +44,7 @@ export const ILLADocumentationNav = (pathname) => {
       ],
       '数据接入': [
         pagesCN['resource'],
-        // pagesCN['query'],
+        pagesCN['query'],
         // pagesCN['transformer']
       ],
       '构建Apps': [
