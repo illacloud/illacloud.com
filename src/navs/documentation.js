@@ -44,13 +44,13 @@ export const ILLADocumentationNav = (pathname) => {
       ],
       '数据接入': [
         pagesCN['resource'],
-        // pagesCN['query'],
-        // pagesCN['transformer']
+        pagesCN['query'],
+        pagesCN['transformer']
       ],
       '构建Apps': [
-        // pagesCN['app-editor'],
-        // pagesCN['event-handler'],
-        // pagesCN['javascript']
+        pagesCN['app-editor'],
+        pagesCN['event-handler'],
+        pagesCN['javascript']
       ],
       '组件库':[
 
@@ -63,20 +63,20 @@ export const ILLADocumentationNav = (pathname) => {
         pagesUS['quick-start']
       ],
       'Install ILLA Builder': [
-        // pagesUS['deploy-introduction'],
+        pagesUS['deploy-introduction'],
         // pagesUS['illa-cli'],
         // pagesUS['docker-compose'],
         // pagesUS['k8s-helm'],
       ],
       'Data access':[
-        //   pagesUS['resource'],
-        //   pagesUS['query'],
-        //   pagesUS['transformer']
+        pagesUS['resource'],
+        pagesUS['query'],
+        pagesUS['transformer']
       ],
       'Build Apps': [
-        // pagesUS['app-editor'],
-        // pagesUS['event-handler'],
-        // pagesUS['javascript']
+        pagesUS['app-editor'],
+        pagesUS['event-handler'],
+        pagesUS['javascript']
       ]
     }
   }

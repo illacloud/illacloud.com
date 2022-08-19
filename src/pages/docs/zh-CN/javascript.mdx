@@ -1,0 +1,39 @@
+---
+title: JavaScript 指南
+---
+---
+
+## <Heading hidden>JavaScript 指南</Heading>
+
+JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说，掌握JavaScript的调用方式，您就已经掌握了ILLA Builder的使用方法。
+
+当您在ILLA Builder中搭建项目时，可以使用{{模版语法}}书写自定义的JavaScript语句，用于调用、操作数据，或是在Transformer中直接书写JS代码
+### 操作数据
+#### 访问对象中的数据
+在ILLA Builder中，您可以用模版语法在任意文字输入框中输入JavaScript表达式。数据对象具有可引用的特性，您可以通过JavaScript操作所有组件、查询以及Transformer的数据。例如，您可以用{{textInput.data}}访问文字输入组件的内容，可以用{{query.data}}访问查询数据库得到的数据，可以用{{transformer.value}}访问Transformer得到的数据。
+我们在产品中加入了code mirror组件并加以修改，适配了ILLA Builder的编程环境，支持语法高亮与自动缩进，对编程过程中出现的变量与函数补充了详细的说明，让您可以低成本学会如何使用ILLA Builder。当您想访问一个对象中特定的属性时，在您输入了对象名称后，输入一个点号 . 就会触发补全提示，提示会包含该对象的所有属性名，数据类型以及部分文字说明，让您能在短时间内确定访问的属性。
+#### 访问数组中的数据
+当您需要访问具体数组中的值时，您可以通过需要访问的数据位置或下标获取数值。例如：
+```javascript
+const alist = ['a', 'b', 'c']
+return alist[0] // Return the first value in alist 'a'
+```
+### 查看数据
+在ILLA Builder中，一共有四处位置可以查看数据，分别是：左侧面板的数据工作区，文本框中输入JavaScript表达式后下方数据提示，通过数据展示组件显示数据。
+#### 数据工作区展示
+您可以在编辑器中打开左侧面板找到数据工作区，所以数据在其中以结构化JSON的形式展示，每一个属性与列表都可以展开，所有数据都在工作区中直观展示。
+
+[//]: # ([图片])
+
+#### 数据输入实时预览
+当您在输入框中调用了一个查询或Transformer时，输入框下方会自动弹出该Action的数据展示，您可以根据此处的信息确认调用的数据是否正确。
+
+[//]: # ([图片])
+
+#### 数据展示组件
+数据展示组件可以让您最直观的查看数据，您只需要将相应的组件拖拽至画布中，在其数据栏中输入对应的数据源名称，加以筛选和排列，就可以获得数据展示的信息了
+
+[//]: # ([图片])
+
+### Transformer
+您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法
