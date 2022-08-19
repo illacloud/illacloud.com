@@ -28,9 +28,8 @@ export const documentationNav = {
   ],
 }
 
-export const ILLADocumentationNav = (pathname) => {
-  const cnReg = /\/zh-CN\//
-  if (cnReg.test(pathname)) {
+export const ILLADocumentationNav = (locale) => {
+  if (locale=== 'zh-CN') {
     return {
       'ILLA Builder': [
         pagesCN['overview'],

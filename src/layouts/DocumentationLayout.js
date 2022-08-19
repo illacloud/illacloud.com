@@ -23,7 +23,7 @@ export function DocumentationLayout(props) {
         />
       </Head>
       {/* <SidebarLayout nav={documentationNav} {...props} /> */}
-      <SidebarLayout nav={ILLADocumentationNav(router.pathname)} {...props} />
+      <SidebarLayout nav={ILLADocumentationNav(router.locale)} {...props} />
     </>
   )
 }
