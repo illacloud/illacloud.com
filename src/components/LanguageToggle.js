@@ -19,9 +19,14 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
   const curLanguage = router.locale
 
   return (
-    <Listbox value={curLanguage} onChange={(value) => {
-      router.push(router.pathname, router.pathname, { locale: value })
-    }}>
+    <Listbox
+      value={curLanguage}
+      onChange={(value) => {
+        router.push(router.pathname.replace('zh-CN', value).replace('en-US', value), undefined, {
+          locale: value,
+        })
+      }}
+    >
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
         <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
