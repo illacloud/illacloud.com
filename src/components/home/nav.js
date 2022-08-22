@@ -61,7 +61,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
           </NextLink>
           <LanguageSelect buttonColorChange={navColorChange} />
         </div>
-        <div className="w-1/3  flex   justify-center font-medium text-[#1d2129]">
+        <div className="w-1/3 flex justify-center font-medium text-[#1d2129] text-[16px]">
           <div
             className={clsx(
               'flex justify-center rounded-full px-[24px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.02)] transition-background',
@@ -72,14 +72,14 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
           >
             <ProductSelect buttonColorChange={navColorChange} />
             <NextLink href="/docs/installation">
-              <a href="/" className="px-[16px] text-center leading-[48px] ">
+              <span className="px-[16px] text-center leading-[48px] cursor-pointer">
                 {t('nav.doc')}
-              </a>
+              </span>
             </NextLink>
             <NextLink href="/hire">
-              <a href="/" className="px-[16px] text-center leading-[48px] ">
+              <span className="px-[16px] text-center leading-[48px] cursor-pointer">
                 {t('nav.career')}
-              </a>
+              </span>
             </NextLink>
           </div>
         </div>
@@ -89,7 +89,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
           <NextLink href="https://github.com/illa-family/illa-builder">
             <div
               className={clsx(
-                'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff]  cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
+                'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
                 navColorChange ? 'visible' : 'hidden'
               )}
             >
