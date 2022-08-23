@@ -46,7 +46,7 @@ export function Footer({ noHome = false }) {
       title: t('footer.product'),
       items: [
         { title: 'ILLA Builder', href: 'https://github.com/illa-family/illa-builder' },
-        { title: 'ILLA Cloud', href: 'https://github.com/illa-family/illa' },
+        // { title: 'ILLA Cloud', href: 'https://github.com/illa-family/illa' },
         { title: 'ILLA Design', href: 'https://github.com/illa-family/illa-design' },
       ],
     },

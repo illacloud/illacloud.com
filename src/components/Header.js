@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { ThemeSelect, ThemeToggle } from './ThemeToggle'
 import { LanguageToggle } from './LanguageToggle'
+import NextLink from "next/link"
 
 function Featured() {
   return (
@@ -130,9 +131,9 @@ export function NavItems() {
         </Link>
       </li> */}
       <li>
-        <Link href="/">
+        <NextLink href="/hire">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Career</a>
-        </Link>
+        </NextLink>
       </li>
     </>
   )
