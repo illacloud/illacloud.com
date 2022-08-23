@@ -121,7 +121,7 @@ export function NavItems() {
   return (
     <>
       {/* <li>
-        <Link href="/docs/installation">
+        <Link href="//docs/overview">
           <a className="hover:text-sky-500 dark:hover:text-sky-400">Docs</a>
         </Link>
       </li> */}

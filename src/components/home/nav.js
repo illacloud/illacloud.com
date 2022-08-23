@@ -71,7 +71,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
             )}
           >
             <ProductSelect buttonColorChange={navColorChange} />
-            <NextLink href="/docs/installation">
+            <NextLink href="/docs/overview">
               <span className="px-[16px] text-center leading-[48px] cursor-pointer">
                 {t('nav.doc')}
               </span>

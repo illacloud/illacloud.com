@@ -58,7 +58,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           </span>
         </NextLink>
       </div>
-      <NextLink href="/docs/installation">
+      <NextLink href="//docs/overview">
         <span className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px] text-[#0b0c0f]">
           {t('nav.doc')}
         </span>
