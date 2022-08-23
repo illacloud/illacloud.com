@@ -6,11 +6,11 @@ const pages = createPageList(
 )
 const pagesUS = createPageList(
   require.context(`../pages/docs/en-US/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'docs/en-US'
+  'en-US/docs'
 )
 const pagesCN = createPageList(
   require.context(`../pages/docs/zh-CN/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'docs/zh-CN'
+  'zh-CN/docs'
 )
 
 export const documentationNav = {

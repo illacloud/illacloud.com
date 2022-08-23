@@ -49,6 +49,20 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return require('./redirects.json')
   },
+  async rewrites() {
+    return [
+      {
+        source: '/zh-CN/docs/:slug*',
+        destination: '/zh-CN/docs/zh-CN/:slug*',
+        locale: false,
+      },
+      {
+        source: '/en-US/docs/:slug*',
+        destination: '/en-US/docs/en-US/:slug*',
+        locale: false,
+      }
+    ]
+  },
   webpack(config, options) {
     config.resolve.fallback = { fs: false, path: false, stream: false, constants: false }
     if (!options.dev && options.isServer) {
