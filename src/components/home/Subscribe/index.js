@@ -24,9 +24,10 @@ export const SubscribeModal = ({ visible, onClose }) => {
   })
 
   const [loading, setLoading] = useState()
+  const [sent, setSent] = useState()
 
   const subscribe = async (form) => {
-    if (loading) return
+    if (loading||sent) return
     setLoading(true)
     await fetch('https://email.dev.illasoft.com/v1/subscribe', {
       method: 'POST',
@@ -39,14 +40,16 @@ export const SubscribeModal = ({ visible, onClose }) => {
       .then((res) => {
         setLoading(false)
         if (res.ok) {
+          setSent(true)
           if (res.status === 201) {
-            Toast.info(`😊 ${t('subscribe.message.check-email')}`, 2)
+            Toast.info(`😊 ${t('subscribe.message.check-email')}`, 3)
           } else if (res.status === 200) {
-            Toast.info(`😊 ${t('subscribe.message.repeat')}`, 2)
+            Toast.info(`😊 ${t('subscribe.message.repeat')}`, 3)
           }
           setTimeout(() => {
+            setSent(false)
             onClose?.()
-          }, 300)
+          }, 3000)
         } else {
           Toast.info(`😣 ${t('subscribe.message.failed')}`, 2)
         }
@@ -112,8 +115,8 @@ export const SubscribeModal = ({ visible, onClose }) => {
                   name="email"
                 />
               </div>
-              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large" loading={loading}>
-                {t('subscribe.button')}
+              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large" loading={loading} disabled={sent}>
+                {sent ? t('subscribe.sent') : t('subscribe.button')}
               </Button>
             </form>
           </div>
