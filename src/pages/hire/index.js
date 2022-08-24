@@ -108,16 +108,16 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
 const Hire = () => {
   const { t } = useTranslation('hire')
   const benefitList = [
-    { image: require('../../img/hire/01.jpg').default, des: '💻 ' + t('life.benefit.newcomer') },
+    { image: require('../../img/hire/play.png').default, des: '☕️ ' + t('life.benefit.play') },
     {
-      image: require('../../img/hire/01.jpg').default,
+      image: require('../../img/hire/welfare.png').default,
       des: '💰 ' + t('life.benefit.welfare'),
     },
     {
-      image: require('../../img/hire/01.jpg').default,
+      image: require('../../img/hire/holiday.png').default,
       des: '☀️' + t('life.benefit.holiday'),
     },
-    { image: require('../../img/hire/01.jpg').default, des: '☕️ ' + t('life.benefit.office') },
+    { image: require('../../img/hire/newcomer.png').default, des: '💻 ' + t('life.benefit.newcomer') },
   ]
   const addressLit = [
     {
@@ -191,7 +191,7 @@ const Hire = () => {
             <span className="text-[#1d2129] text-[14px] sm:text-[16px]  mt-[12px] sm:mt-[24px] ">
               {t('life.des')}
             </span>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center sm:mt-[24px]">
               {benefitList?.map((item, index) => renderImageItem(item, index))}
             </div>
           </div>
