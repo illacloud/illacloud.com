@@ -86,6 +86,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
             <div className={styles.description}>{t('subscribe.description')}</div>
             <form
               autoComplete="off"
+              noValidate
               className="w-[100%]"
               ref={formRef}
               onSubmit={handleSubmit(subscribe, (errors) => {
@@ -99,7 +100,8 @@ export const SubscribeModal = ({ visible, onClose }) => {
                     <Input
                       {...field}
                       size="large"
-                      autoComplete="off"
+                      type="email"
+                      autoComplete="email"
                       placeholder={t('subscribe.form.email.placeholder')}
                       error={!!errors?.email}
                       maxLength={200}
