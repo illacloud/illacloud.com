@@ -80,14 +80,14 @@ function App({ Component, pageProps, router }) {
       <Title suffix="ILLA">{meta.metaTitle || meta.title}</Title>
       <Head>
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
-        <meta key="twitter:site" name="twitter:site" content="@tailwindcss" />
+        <meta key="twitter:site" name="twitter:site" content="@illaCloud" />
         <meta key="twitter:description" name="twitter:description" content={description} />
         <meta
           key="twitter:image"
           name="twitter:image"
           content={`https://illafamily.com${socialCardLarge}`}
         />
-        <meta key="twitter:creator" name="twitter:creator" content="@tailwindcss" />
+        <meta key="twitter:creator" name="twitter:creator" content="@illaCloud" />
         <meta key="og:url" property="og:url" content={`https://illafamily.com${router.pathname}`} />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />

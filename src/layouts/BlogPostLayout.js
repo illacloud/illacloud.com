@@ -156,8 +156,8 @@ function Metadata({ meta }) {
   return (
     <Head>
       <title>{meta.title} – ILLA</title>
-      <meta name="twitter:site" content="@tailwindcss" />
-      <meta name="twitter:creator" content="@tailwindcss" />
+      <meta name="twitter:site" content="@illaCloud" />
+      <meta name="twitter:creator" content="@illaCloud" />
       <meta name="twitter:title" content={`${meta.title} – ILLA`} />
       <meta name="twitter:description" content={meta.description} />
       {meta.image ? (
