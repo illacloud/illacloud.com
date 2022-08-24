@@ -110,7 +110,7 @@ const Hire = () => {
   const benefitList = [
     { image: require('../../img/hire/play.png').default, des: '☕️ ' + t('life.benefit.play') },
     {
-      image: require('../../img/hire/welfare.png').default,
+      image: require('../../img/hire/welfare.jpeg').default,
       des: '💰 ' + t('life.benefit.welfare'),
     },
     {
