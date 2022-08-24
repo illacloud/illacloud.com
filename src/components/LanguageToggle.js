@@ -42,7 +42,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
             {({ active, selected }) => (
               <li
                 className={clsx(
-                  'py-1 px-2 flex items-center cursor-pointer',
+                  'lg:py-1 lg:px-2 py-2 px-3 flex items-center cursor-pointer',
                   selected && 'text-sky-500',
                   active && 'bg-slate-50 dark:bg-slate-600/30'
                 )}

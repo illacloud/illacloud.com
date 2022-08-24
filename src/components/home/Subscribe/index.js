@@ -89,7 +89,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
               className="w-[100%]"
               ref={formRef}
               onSubmit={handleSubmit(subscribe, (errors) => {
-                Toast.info(`😣 ${t('subscribe.form.email.required')}`, 1)
+                Toast.info(`😣 ${errors.email.message}`, 1)
               })}
             >
               <div>
@@ -99,7 +99,6 @@ export const SubscribeModal = ({ visible, onClose }) => {
                     <Input
                       {...field}
                       size="large"
-                      type="email"
                       autoComplete="off"
                       placeholder={t('subscribe.form.email.placeholder')}
                       error={!!errors?.email}
@@ -110,6 +109,10 @@ export const SubscribeModal = ({ visible, onClose }) => {
                   )}
                   rules={{
                     required: t('subscribe.form.email.required'),
+                    pattern: {
+                      value: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+                      message: t('subscribe.form.email.pattern'),
+                    },
                   }}
                   control={control}
                   name="email"
