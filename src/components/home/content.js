@@ -65,7 +65,7 @@ export function Content() {
             <div className="text-[14px] sm:text-[16px] opacity-90 w-full  font-normal pt-[8px] sm:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
-            <NextLink href="//docs/overview">
+            <NextLink href="/docs/overview">
               <div className="text-[14px] sm:text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer mt-[12px] sm:mt-[16px]">
                 {t('content.for-developer.goto')} 😋 →
               </div>
@@ -99,7 +99,7 @@ export function Content() {
             <div className="text-[14px] sm:text-[16px]  sm:text-[16px] opacity-90 w-full font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
-            <NextLink href="//docs/overview">
+            <NextLink href="/docs/overview">
               <div className="text-[14px] sm:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] sm:mt-[16px]">
                 {t('content.date-integrate.goto')} 😀 →
               </div>
@@ -132,7 +132,7 @@ export function Content() {
             <div className="text-[14px] sm:text-[16px]  opacity-90 w-full font-normal pt-[8px] sm:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <NextLink href="//docs/overview">
+            <NextLink href="/docs/overview">
               <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
                 {t('content.collaborative-develop.goto')} 🤠 →
               </div>
@@ -164,7 +164,7 @@ export function Content() {
             <div className="text-[14px] sm:text-[16px]  opacity-90 w-full mt-[8px] sm:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
-            <NextLink href="//docs/overview">
+            <NextLink href="/docs/overview">
               <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px]  cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
                 {t('content.ui-library.goto')} 👍 →
               </div>

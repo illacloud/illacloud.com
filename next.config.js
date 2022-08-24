@@ -54,12 +54,12 @@ module.exports = withBundleAnalyzer({
       {
         source: '/zh-CN/docs/:slug*',
         destination: '/zh-CN/docs/zh-CN/:slug*',
-        locale: false,
+        locale: false
       },
       {
         source: '/en-US/docs/:slug*',
         destination: '/en-US/docs/en-US/:slug*',
-        locale: false,
+        locale: false
       }
     ]
   },
