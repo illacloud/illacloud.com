@@ -197,7 +197,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
           >
             <div className="relative flex items-center">
               <Link href="/">
-                <a className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto">
+                <a className="mr-3 flex-none  overflow-hidden md:w-auto">
                   <span className="sr-only">ILLA home page</span>
                   <Logo className="w-auto h-5" />
                 </a>
@@ -229,7 +229,10 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   </a>
                 </div>
               </div>
-              <NavPopover className="ml-2 -my-1" display="lg:hidden" />
+              <div className="lg:hidden flex ml-auto">
+                <LanguageToggle />
+                <NavPopover className="-my-1" display="lg:hidden" />
+              </div>
             </div>
           </div>
           {hasNav && (
