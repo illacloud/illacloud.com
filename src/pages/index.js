@@ -74,7 +74,7 @@ const Home = () => {
           property="og:title"
           content="ILLA - Help developers build Business Tools more efficiently."
         />
-        <title>{t("slogan-1")}</title>
+        <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />
         <meta name="keywords" content="illa,illacloud,illa cloud,艾拉云,艾拉云科,艾拉" />
       </Head>
