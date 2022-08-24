@@ -75,8 +75,8 @@ const Home = () => {
           content="ILLA - Help developers build Business Tools more efficiently."
         />
         <title>{t("meta.title")}</title>
-        <meta name="description" content={t("meta.description")} />
-        {/*<meta name="keywords" content="illa,illacloud,illa cloud,艾拉云,艾拉云科,艾拉" />*/}
+        {/*<meta name="description" content={t("meta.description")} />*/}
+        <meta name="keywords" content="illa,illacloud,illa cloud,艾拉云,艾拉云科,艾拉" />
       </Head>
       <div className={"bg-[#ffffff] sm:bg-[#fafafa] "}>
         {/*Global site tag (gtag.js) - Google Analytics */}
