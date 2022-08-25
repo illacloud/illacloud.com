@@ -90,7 +90,8 @@ function App({ Component, pageProps, router }) {
         />
         <meta key="twitter:creator" name="twitter:creator" content="@illaCloud" />
         <meta key="og:url" property="og:url" content={`https://illa.cloud${router.pathname}`} />
-        <meta key="og:type" property="og:type" content="article" />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta key="og:title" content={t("meta.title")} />
         <meta key="og:description" property="og:description" content={description} />
         <meta
           key="og:image"
