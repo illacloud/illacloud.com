@@ -11,7 +11,7 @@ import socialCardLarge from '@/img/social-card-large.jpg'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import { SearchProvider } from '@/components/Search'
-import { appWithTranslation } from 'next-i18next'
+import { appWithTranslation, useTranslation } from "next-i18next"
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -37,6 +37,7 @@ Router.events.on('routeChangeError', () => progress.finish())
 
 function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
+  const { t } = useTranslation("home")
 
   useEffect(() => {
     if (!navIsOpen) return
@@ -63,7 +64,7 @@ function App({ Component, pageProps, router }) {
     router.pathname !== '/subscribe-failed'
   const meta = Component.layoutProps?.meta || {}
   const description =
-    meta.metaDescription || meta.description || 'Documentation for the ILLA framework.'
+    meta.metaDescription || meta.description || t("meta.description")
 
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
@@ -85,16 +86,16 @@ function App({ Component, pageProps, router }) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://illafamily.com${socialCardLarge}`}
+          content={`https://illa.cloud${socialCardLarge}`}
         />
         <meta key="twitter:creator" name="twitter:creator" content="@illaCloud" />
-        <meta key="og:url" property="og:url" content={`https://illafamily.com${router.pathname}`} />
+        <meta key="og:url" property="og:url" content={`https://illa.cloud${router.pathname}`} />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />
         <meta
           key="og:image"
           property="og:image"
-          content={`https://illafamily.com${socialCardLarge}`}
+          content={`https://illa.cloud${socialCardLarge}`}
         />
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feeds/feed.xml" />
         <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/atom.xml" />

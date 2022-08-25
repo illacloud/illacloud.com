@@ -19,7 +19,7 @@ export function DocumentationLayout(props) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://illafamily.com${socialSquare}`}
+          content={`https://illa.cloud${socialSquare}`}
         />
       </Head>
       {/* <SidebarLayout nav={documentationNav} {...props} /> */}

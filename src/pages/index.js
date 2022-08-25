@@ -67,12 +67,12 @@ const Home = () => {
         <meta
           key="twitter:title"
           name="twitter:title"
-          content="ILLA - Help developers build Business Tools more efficiently."
+          content="ILLA Cloud - Accelerate your internal tools development."
         />
         <meta
           key="og:title"
           property="og:title"
-          content="ILLA - Help developers build Business Tools more efficiently."
+          content="ILLA Cloud - Accelerate your internal tools development."
         />
         <title>{t("meta.title")}</title>
         {/*<meta name="description" content={t("meta.description")} />*/}
