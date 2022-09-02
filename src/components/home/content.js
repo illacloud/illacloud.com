@@ -115,17 +115,17 @@ export function Content() {
           <>
             {t('content.collaborative-develop.title-1')}
             {t('content.collaborative-develop.title-2') && (
-              <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] ml-[16px] rounded-full ">
+              <span className="text-[#000000] bg-[#fbded5] px-[8px] sm:px-[16px] ml-[16px] rounded-full">
                 {t('content.collaborative-develop.title-2')}
               </span>
             )}
             <div className="leading-[29px] sm:leading-[58px]">
               {t('content.collaborative-develop.title-3') && (
-                <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] mr-[16px] rounded-full ">
+                <span className="text-[#000000] bg-[#d4fcca] px-[8px] sm:px-[16px] sm:mr-[16px] mr-[8px] rounded-full">
                   {t('content.collaborative-develop.title-3')}
                 </span>
               )}
-              <span className="leading-[29px] sm:leading-[58px] ">
+              <span className="leading-[29px] sm:leading-[58px]">
                 {t('content.collaborative-develop.title-4')}
               </span>
             </div>
@@ -165,7 +165,7 @@ export function Content() {
               {t('content.ui-library.introduction')}
             </div>
             <NextLink href="/docs/overview">
-              <div className="text-[16px] text-[#bca6f7] opacity-90 mt-[8px]  cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
+              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] sm:mt-[16px]">
                 {t('content.ui-library.goto')} 👍 →
               </div>
             </NextLink>
