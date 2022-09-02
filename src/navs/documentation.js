@@ -37,7 +37,7 @@ export const ILLADocumentationNav = (locale) => {
       ],
       '安装ILLA Builder': [
         pagesCN['deploy-introduction'],
-        // pagesCN['illa-cli'],
+        pagesCN['illa-cli'],
         // pagesCN['docker-compose'],
         // pagesCN['k8s-helm'],
       ],
@@ -63,7 +63,7 @@ export const ILLADocumentationNav = (locale) => {
       ],
       'Install ILLA Builder': [
         pagesUS['deploy-introduction'],
-        // pagesUS['illa-cli'],
+        pagesUS['illa-cli'],
         // pagesUS['docker-compose'],
         // pagesUS['k8s-helm'],
       ],

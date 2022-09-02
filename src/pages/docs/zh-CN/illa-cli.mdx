@@ -1,6 +1,70 @@
 ---
-title: ILLA CLI搭建
-description: .
+title: ILLA CLI 搭建
+description: The ILLA CLI help deploys the ILLA Builder as fast as you can imagine.
 ---
 
-en-US overview
+**You must have Docker before using the ILLA CLI to deploy a self-hosted installation.**
+
+## Downloading ILLA CLI
+If you have Rust installed, you can easily build+install the latest ILLA CLI release with `cargo`
+``` 
+> cargo install illa
+```
+The `cargo` tool will do the work of downloading ILLA CLI and its source dependencies, building it, and installing it into the cargo bin path so we can run it.
+
+Once installed, we can run ILLA CLI using the `illa` command.
+
+Alternatively, you can just download the ILLA CLI for your operating system here:
+
+* [Windows](https://github.com/illa-family/illa)
+* [Linux](https://github.com/illa-family/illa)
+* [Mac](https://github.com/illa-family/illa)
+
+If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from `cargo`. After downloading the CLI, you will have to make it executable. Let's take the cli-linux for example:
+
+***TODO*** 还没发CD，暂无地址
+
+## Checking the prerequisites of self-hosted installation
+
+**These ports 5432, 9999 and 8000 should remain for the ILLA Builder**
+
+The following command will check the prerequisites of self-hosted installation on your operating system:
+```
+> illa doctor
+```
+
+## Deploying ILLA Builder
+Once the ILLA CLI is installed, users can run a self-hosted or cloud installation.
+
+**The cloud installation of ILLA Builder is coming soon**
+
+Just simply run the following command to deploy a self-hosted ILLA Builder:
+
+```
+> illa deploy --self --port=10000 #the port which ILLA Builder can be accessed on can be changed
+```
+Now, you can access the ILLA Builder: http://localhost:10000
+
+## Updating ILLA Builder
+To update the ILLA Builder with the latest docker images, use the following command:
+```shell
+> illa update --self
+```
+
+## Other operations
+```
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --id=<ILLA_BUILDER_CONTAINER_ID> --self
+
+# remove the ILLA Builder and the persistent data
+> illa remove --id=<ILLA_BUILDER_CONTAINER_ID> --self
+
+# restart the ILLA Builder
+> illa restart --id=<ILLA_BUILDER_CONTAINER_ID> --self
+
+# help information
+> illa help
+```
