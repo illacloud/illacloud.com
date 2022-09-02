@@ -1,70 +1,71 @@
 ---
 title: ILLA CLI 搭建
-description: The ILLA CLI help deploys the ILLA Builder as fast as you can imagine.
+description: ILLA CLI以超越想象的速度为用户部署 ILLA Builder.
 ---
 
-**You must have Docker before using the ILLA CLI to deploy a self-hosted installation.**
+**在使用 ILLA CLI 进行本地化部署前，需先安装 docker**
 
-## Downloading ILLA CLI
-If you have Rust installed, you can easily build+install the latest ILLA CLI release with `cargo`
+## 下载ILLA CLI
+如果已经安装了Rust，你可以轻松通过`cargo`下载并安装ILLA CLI: 
 ``` 
 > cargo install illa
 ```
-The `cargo` tool will do the work of downloading ILLA CLI and its source dependencies, building it, and installing it into the cargo bin path so we can run it.
+`cargo`将会下载ILLA CLI及其依赖，并将ILLA CLI编译安装到cargo执行文件目录下，以便我们使用它.
 
-Once installed, we can run ILLA CLI using the `illa` command.
+安装完成后，我们可以通过`illa`命令使用ILLA CLI.
 
-Alternatively, you can just download the ILLA CLI for your operating system here:
+当然，你也可以通过以下链接下载对应操作系统的ILLA CLI可执行文件:
 
 * [Windows](https://github.com/illa-family/illa)
 * [Linux](https://github.com/illa-family/illa)
 * [Mac](https://github.com/illa-family/illa)
 
-If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from `cargo`. After downloading the CLI, you will have to make it executable. Let's take the cli-linux for example:
+通过上述链接下载的ILLA CLI不同于通过`cargo`安装的ILLA CLI. 安装CLI后，你需要让它可执行. 以cli_linux为例:
 
 ***TODO*** 还没发CD，暂无地址
 
-## Checking the prerequisites of self-hosted installation
+## 检查本地化部署的前置依赖
 
-**These ports 5432, 9999 and 8000 should remain for the ILLA Builder**
+**端口5432, 9999和8000需要为ILLA Builder保留，以免出现安装错误**
 
-The following command will check the prerequisites of self-hosted installation on your operating system:
+此命令将检查不同操作系统下ILLA Builder的前置依赖是否符合要求:
 ```
 > illa doctor
 ```
 
-## Deploying ILLA Builder
-Once the ILLA CLI is installed, users can run a self-hosted or cloud installation.
+## 部署ILLA Builder
+ILLA CLI安装完成后，你可以通过其进行本地化部署和艾拉云部署.
 
-**The cloud installation of ILLA Builder is coming soon**
+**艾拉云期待为您服务**
 
-Just simply run the following command to deploy a self-hosted ILLA Builder:
+只需要运行此命令即可在本地部署ILLA Builder: 
 
 ```
-> illa deploy --self --port=10000 #the port which ILLA Builder can be accessed on can be changed
+# ILLA Builder的访问端口可以更改
+> illa deploy --self --port=10000 
 ```
-Now, you can access the ILLA Builder: http://localhost:10000
+现在你可以通过 http://localhost:10000 访问ILLA Builder.
 
-## Updating ILLA Builder
-To update the ILLA Builder with the latest docker images, use the following command:
+## 更新 ILLA Builder
+使用此命令可将ILLA Builder更新至最新发布版本:
 ```shell
 > illa update --self
 ```
 
-## Other operations
+## 其他操作
 ```
-# list the ILLA Builder
+# 列出ILLA Builder相关信息
 > illa list --self
 
-# stop the ILLA Builder
+# 停止指定ILLA Builder
 > illa stop --id=<ILLA_BUILDER_CONTAINER_ID> --self
 
-# remove the ILLA Builder and the persistent data
+# 移除指定ILLA Builder并删除对应持久化数据
 > illa remove --id=<ILLA_BUILDER_CONTAINER_ID> --self
 
-# restart the ILLA Builder
+# 重启指定ILLA Builder
 > illa restart --id=<ILLA_BUILDER_CONTAINER_ID> --self
 
-# help information
+# 帮助信息
 > illa help
 ```
