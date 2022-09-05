@@ -86,7 +86,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
         <div
           className={clsx('w-1/3 text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
         >
-          <NextLink href="https://github.com/illa-family/illa-builder">
+          <NextLink href="/docs/illa-cli">
             <div
               className={clsx(
                 'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',

@@ -19,7 +19,7 @@ export const Title = forwardRef(
           ref={ref}
           className="text-[16px] sm:text-[20px] font-normal flex mt-[20px] sm:mt-[64px]  box-border"
         >
-          <NextLink href="https://github.com/illa-family/illa-builder">
+          <NextLink href="/docs/illa-cli">
             <div
               className={clsx(
                 'leading-[48px] sm:leading-[64px]  w-[163.5px] sm:w-[200px] cursor-pointer  box-border mr-2 sm:mr-4 rounded-full bg-[#e5e6eb] text-[#1d2129] ',
