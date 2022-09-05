@@ -192,7 +192,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
           <div
             className={clsx(
               'py-4 border-b border-slate-900/10 lg:px-8 lg:border-0 dark:border-slate-300/10',
-              hasNav ? 'mx-4 lg:mx-0' : 'px-4'
+              hasNav ? 'px-4 lg:mx-0' : 'px-4'
             )}
           >
             <div className="relative flex items-center">
@@ -202,7 +202,8 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   <Logo className="w-auto h-5" />
                 </a>
               </Link>
-              <VersionSwitcher />
+              {/*TODO: version*/}
+              {/*<VersionSwitcher />*/}
               <Featured />
               <div className="relative hidden lg:flex items-center ml-auto">
                 <nav className="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
