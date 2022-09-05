@@ -20,10 +20,10 @@ export const Player = forwardRef(({ menuExpand, closeMenu }, ref) => {
       >
         <CloseWhiteIcon />
       </span>
-      <video className="w-full  bg-blue-100" controls autoPlay>
-        <source src={require('../../img/home/video.mp4').default} type="video/mp4" />
-        <object data={require('../../img/home/video.mp4').default} width="320" height="240">
-          <embed width="320" height="240" src={require('../../img/home/video.mp4').default} />
+      <video className="w-full bg-blue-100" controls autoPlay>
+        <source src="https://cdn.illafamily.com/official-site%2Fvideo.mp4" type="video/mp4" />
+        <object data="https://cdn.illafamily.com/official-site%2Fvideo.mp4" width="320" height="240">
+          <embed width="320" height="240" src="https://cdn.illafamily.com/official-site%2Fvideo.mp4" />
         </object>
       </video>
     </div>
