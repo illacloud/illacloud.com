@@ -43,7 +43,7 @@ export const ILLADocumentationNav = (locale) => {
       ],
       '数据接入': [
         pagesCN['resource'],
-        pagesCN['query'],
+        pagesCN['action'],
         pagesCN['transformer']
       ],
       '构建Apps': [
@@ -69,7 +69,7 @@ export const ILLADocumentationNav = (locale) => {
       ],
       'Data access':[
         pagesUS['resource'],
-        pagesUS['query'],
+        pagesUS['action'],
         pagesUS['transformer']
       ],
       'Build Apps': [
