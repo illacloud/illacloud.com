@@ -3,7 +3,7 @@ title: ILLA CLI 搭建
 description: ILLA CLI以超越想象的速度为用户部署 ILLA Builder.
 ---
 
-**在使用 ILLA CLI 进行本地化部署前，需先安装 docker**
+**在使用 ILLA CLI 进行本地化部署前，需先安装 docker. 在使用 ILLA CLI 时请将用户加入docker用户组或以root权限运行 ILLA CLI**
 
 ## 下载ILLA CLI
 如果已经安装了Rust，你可以轻松通过`cargo`下载并安装ILLA CLI: 
@@ -56,7 +56,7 @@ ILLA CLI安装完成后，你可以通过其进行本地化部署和艾拉云部
 
 ```
 # ILLA Builder的访问端口可以更改
-> illa deploy --self --port=10000 
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
 ```
 现在你可以通过 http://localhost:10000 访问ILLA Builder.
 

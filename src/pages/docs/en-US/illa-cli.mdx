@@ -3,7 +3,7 @@ title: ILLA CLI
 description: The ILLA CLI enables you to deploy ILLA Builder faster than your imagination.
 ---
 
-**You must have Docker before using the ILLA CLI to deploy a self-hosted installation.**
+**You must have Docker before using the ILLA CLI to deploy a self-hosted installation. When you use ILLA CLI, you should add current user to docker group or use in root.**
 
 ## Downloading ILLA CLI
 If you have Rust installed, you can easily build+install the latest ILLA CLI release with `cargo`:
@@ -55,7 +55,8 @@ You can simply deploy a self-hosted ILA Builder by running the following command
 
 ```
 # the port which ILLA Builder can be accessed on can be changed
-> illa deploy --self --port=10000 
+# the <SERVER_ADDRESS> should be your cloud server public ip, default localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
 ```
 Now, you can access the ILLA Builder: http://localhost:10000
 
