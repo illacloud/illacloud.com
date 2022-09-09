@@ -92,6 +92,22 @@ const Home = () => {
           gtag('config', 'G-4VKRNGN7GE');
         `}
         </Script>
+        <Script>
+          {`(function (d, t) {
+            var BASE_URL = "https://app.chatwoot.com";
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = BASE_URL + "/packs/js/sdk.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+            g.onload = function () {
+              window.chatwootSDK.run({
+                websiteToken: 'ECxzx85niyQqKpnUytwMjpUM',
+                baseUrl: BASE_URL
+              })
+            }
+          })(document, "script");`}
+        </Script>
         <div
           className="h-screen w-full flex overflow-scroll scrollbar-hide flex-col items-center justify-start sm:items-center ">
           <div id="modal" className="fixed  top-0 left-0 w-full z-50 " />
