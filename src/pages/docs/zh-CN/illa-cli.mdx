@@ -75,8 +75,11 @@ ILLA CLI安装完成后，你可以通过其进行本地化部署和艾拉云部
 # 停止ILLA Builder
 > illa stop --self
 
-# 移除ILLA Builder并删除对应持久化数据
+# 移除ILLA Builder
 > illa remove --self
+
+# 强制删除运行中的ILLA Builder和持久化数据
+> sudo illa remove --force --self --data
 
 # 重启ILLA Builder
 > illa restart --self

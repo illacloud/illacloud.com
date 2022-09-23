@@ -74,8 +74,11 @@ To update the ILLA Builder with the latest docker images, use the following comm
 # stop the ILLA Builder
 > illa stop --self
 
-# remove the ILLA Builder and the persistent data
+# remove the ILLA Builder
 > illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
 
 # restart the ILLA Builder
 > illa restart --self
