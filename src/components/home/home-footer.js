@@ -119,27 +119,27 @@ export function Footer({ noHome = false }) {
               </NextLink>
             ))}
           </div>
-          {router.locale === 'zh-CN' ? (
-            <span className="text-[#a9aeb8] w-full text-center mt-[32px] text-[12px]">
-              <a className="block mb-[8px]" href="https://beian.miit.gov.cn/" target="_blank">
-                京ICP备2022010464号-2
-              </a>
-              <a href="https://beian.miit.gov.cn/" target="_blank">
-                版权所有&copy;  北京艾拉云科科技有限公司
-              </a>
-            </span>
-          ) : null}
+          {/*{router.locale === 'zh-CN' ? (*/}
+          {/*  <span className="text-[#a9aeb8] w-full text-center mt-[32px] text-[12px]">*/}
+          {/*    <a className="block mb-[8px]" href="https://beian.miit.gov.cn/" target="_blank">*/}
+          {/*      京ICP备2022010464号-2*/}
+          {/*    </a>*/}
+          {/*    <a href="https://beian.miit.gov.cn/" target="_blank">*/}
+          {/*      版权所有&copy;  北京艾拉云科科技有限公司*/}
+          {/*    </a>*/}
+          {/*  </span>*/}
+          {/*) : null}*/}
         </div>
-        {router.locale === 'zh-CN' ? (
-          <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[12px] mb-[40px]  hidden sm:block">
-            <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">
-              京ICP备2022010464号-2
-            </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank">
-              版权所有&copy; 北京艾拉云科科技有限公司
-            </a>
-          </div>
-        ) : null}
+        {/*{router.locale === 'zh-CN' ? (*/}
+        {/*  <div className="text-[#a9aeb8] w-full text-center mt-[20px] h-[48px]  text-[12px] mb-[40px]  hidden sm:block">*/}
+        {/*    <a className="mr-[24px]" href="https://beian.miit.gov.cn/" target="_blank">*/}
+        {/*      京ICP备2022010464号-2*/}
+        {/*    </a>*/}
+        {/*    <a href="https://beian.miit.gov.cn/" target="_blank">*/}
+        {/*      版权所有&copy; 北京艾拉云科科技有限公司*/}
+        {/*    </a>*/}
+        {/*  </div>*/}
+        {/*) : null}*/}
       </div>
     </>
   )
