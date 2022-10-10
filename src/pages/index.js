@@ -8,6 +8,7 @@ import { Footer } from '@/components/home/home-footer'
 import { Title } from '@/components/home/title'
 import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
+import Script from 'next/script'
 
 const Home = (props) => {
   const { stargazers_count } = props
@@ -47,40 +48,43 @@ const Home = (props) => {
         />
 
         {/*Global site tag (gtag.js) - Google Analytics */}
-        {/*<Script*/}
-        {/*  strategy="beforeInteractive"*/}
-        {/*  src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"*/}
-        {/*/>*/}
-        {/*<Script strategy="beforeInteractive" id="google-analytics">*/}
-        {/*  {`*/}
-        {/*  window.dataLayer = window.dataLayer || [];*/}
-        {/*  function gtag(){window.dataLayer.push(arguments);}*/}
-        {/*  gtag('js', new Date());*/}
-        {/*  gtag('config', 'G-4VKRNGN7GE');*/}
-        {/*`}*/}
-        {/*</Script>*/}
-        {/*<Script>*/}
-        {/*  {`(function (d, t) {*/}
-        {/*    var BASE_URL = "https://app.chatwoot.com";*/}
-        {/*    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];*/}
-        {/*    g.src = BASE_URL + "/packs/js/sdk.js";*/}
-        {/*    g.defer = true;*/}
-        {/*    g.async = true;*/}
-        {/*    s.parentNode.insertBefore(g, s);*/}
-        {/*    g.onload = function () {*/}
-        {/*      window.chatwootSDK.run({*/}
-        {/*        websiteToken: 'ECxzx85niyQqKpnUytwMjpUM',*/}
-        {/*        baseUrl: BASE_URL*/}
-        {/*      })*/}
-        {/*    }*/}
-        {/*  })(document, "script");`}*/}
-        {/*</Script>*/}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
+        />
+        <Script strategy="afterInteractive" id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4VKRNGN7GE');
+        `}
+        </Script>
+        <Script>
+          {`(function (d, t) {
+            var BASE_URL = "https://app.chatwoot.com";
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = BASE_URL + "/packs/js/sdk.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+            g.onload = function () {
+              window.chatwootSDK.run({
+                websiteToken: 'ECxzx85niyQqKpnUytwMjpUM',
+                baseUrl: BASE_URL
+              })
+            }
+          })(document, "script");`}
+        </Script>
         <Title
           githubStarts={stargazers_count}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
-        <MobileTitle setPlayMaskShow={setPlayMaskShow} />
+        <MobileTitle
+          setPlayMaskShow={setPlayMaskShow}
+          githubStarts={stargazers_count}
+        />
         <Content />
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
         <SubscribeModal

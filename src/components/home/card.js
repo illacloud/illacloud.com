@@ -9,7 +9,7 @@ export function Card({ icon, title, des, index }) {
   const { scrollYProgress } = useViewportScroll()
 
   useEffect(() => {
-    return scrollYProgress.onChange(() => {
+    return scrollYProgress.onRenderRequest(() => {
       if (
         !show &&
         ref.current.getBoundingClientRect().top + 72 <= window.innerHeight

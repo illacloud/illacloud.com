@@ -8,6 +8,8 @@ import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
+import { GithubIcon } from '@/img/public/github'
+import { DiscordIcon } from '@/img/public/discord'
 
 export const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -22,13 +24,13 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand, setMenuExpand] = useState(false)
-  const { setPlayMaskShow } = props
+  const { setPlayMaskShow, githubStarts } = props
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
   return (
-    <div className="w-full h-[100vh] bg-mobileHeader bg-no-repeat xl:hidden">
+    <div className="w-full bg-mobileHeader bg-no-repeat xl:hidden">
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xl:hidden">
         <NextLink href="/">
           <span>
@@ -44,23 +46,37 @@ export const MobileTitle = (props) => {
         </span>
       </div>
       <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
-      <div className="px-[40px] h-full flex flex-col items-center justify-center w-full">
-        <div className="text-white-01 text-[40px] text-center font-bold">
+      <div className="px-[20px] h-full flex flex-col items-center justify-center w-full">
+        <div className="text-white-01 text-[40px] text-center font-bold pt-[20px]">
           {t('slogan-1')}
         </div>
-        <div className="mt-[80px] text-white-01 text-[14px] text-center">
+        <div className="mt-[32px] text-white-01 text-[14px] text-center">
           {t('description')}
         </div>
-        <div className="mt-[80px] w-full flex gap-[16px]">
+        <div className="mt-[32px] w-full flex gap-[16px]">
           <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01">
-            Self-hosted
+            {t('self-Hosted')}
           </button>
           <button className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01">
-            ILLA Cloud
+            {t('illa-Cloud')}
           </button>
         </div>
+        <div className="flex items-center mt-[32px] gap-[40px]">
+          <div className="flex items-center">
+            <GithubIcon />
+            <span className="text-white-01 text-[16px]">
+              {githubStarts} {t('stars')}
+            </span>
+          </div>
+          <div className="flex items-center">
+            <DiscordIcon />
+            <span className="text-white-01 text-[16px]">
+              {t('join-community')}
+            </span>
+          </div>
+        </div>
         <div
-          className="mt-[80px] relative"
+          className="mt-[32px] relative"
           onClick={() => {
             setPlayMaskShow(true)
           }}
