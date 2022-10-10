@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Nav } from '@/components/home/nav'
+import { Nav } from '@/components/home/nav/index'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
