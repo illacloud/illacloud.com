@@ -128,7 +128,10 @@ export const Title = (props) => {
             <div
               className="flex gap-[16px] cursor-pointer items-center"
               onClick={() => {
-                window.open('https://github.com/illa-family', '__blank')
+                window.open(
+                  'https://github.com/illa-family/illa-builder',
+                  '__blank',
+                )
               }}
             >
               <GithubIcon />

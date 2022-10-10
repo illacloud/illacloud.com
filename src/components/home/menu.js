@@ -81,7 +81,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         style={{ height: communityListExpand ? 192 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        <NextLink href="https://github.com/orgs/illa-family/discussions">
+        <NextLink href="https://github.com/illa-family/illa-builder">
           <span className="w-full flex flex-row flex-nowrap cursor-pointer items-center h-[40px] gap-[8px]  pl-[32px]">
             Github
           </span>

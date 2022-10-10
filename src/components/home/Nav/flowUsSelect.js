@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 const options = [
   {
     label: 'Github',
-    value: 'https://github.com/orgs/illa-family/discussions',
+    value: 'https://github.com/illa-family/illa-builder',
   },
   {
     label: 'Twitter',
