@@ -11,6 +11,6 @@ export const Community = [
   },
   {
     icon: <DiscordIcon />,
-    href: 'https://discord.com/invite/2tGBuJkgd6',
+    href: 'https://discord.gg/zKf3WKCufR',
   },
 ]
