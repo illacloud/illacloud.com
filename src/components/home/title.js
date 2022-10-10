@@ -124,9 +124,9 @@ export const Title = (props) => {
               </button>
             </NextLink>
           </div>
-          <div className="flex mt-[40px] gap-[48px]">
+          <div className="flex mt-[40px] gap-[48px] ">
             <div
-              className="flex gap-[16px] cursor-pointer"
+              className="flex gap-[16px] cursor-pointer items-center"
               onClick={() => {
                 window.open('https://github.com/illa-family', '__blank')
               }}
@@ -140,7 +140,7 @@ export const Title = (props) => {
               </div>
             </div>
             <div
-              className="flex gap-[16px] cursor-pointer"
+              className="flex gap-[16px] cursor-pointer items-center"
               onClick={() => {
                 window.open('https://discord.gg/zKf3WKCufR', '__blank')
               }}
