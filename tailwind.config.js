@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const svgToDataUri = require('mini-svg-data-uri')
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: 'class',
@@ -56,7 +57,111 @@ module.exports = {
       15: '15',
       16: '16',
     },
-
+    colors:{
+      ...colors,
+      "white-01":"#fff",
+      "white-02":"rgba(255, 255, 255, 0.9)",
+      "white-03":"rgba(255, 255, 255, 0.75)",
+      "white-04":"rgba(255, 255, 255, 0.5)",
+      "white-05":"rgba(255, 255, 255, 0.3)",
+      "white-06":"rgba(255, 255, 255, 0.2)",
+      "white-07":"rgba(255, 255, 255, 0.12)",
+      "white-08":"rgba(255, 255, 255, 0.08)",
+      "white-09":"rgba(255, 255, 255, 0.04)",
+      "gray-01":"#000",
+      "gray-02":"#1f1f1f",
+      "gray-03":"#5c5c5c",
+      "gray-04":"#999",
+      "gray-05":"#c2c2c2",
+      "gray-06":"#d6d6d6",
+      "gray-07":"#e0e0e0",
+      "gray-08":"#ebebeb",
+      "gray-09":"#f5f5f5",
+      "garyBlue-01":"#0b0c0f",
+      "garyBlue-02":"#1d2129",
+      "garyBlue-03":"#787e85",
+      "garyBlue-04":"#a9aeb8",
+      "garyBlue-06":"#c9cdd4",
+      "garyBlue-08":"#e5e6eb",
+      "garyBlue-09":"#f2f3f5",
+      "tech-purple-01":"#654aec",
+      "tech-purple-02":"#775ff2",
+      "tech-purple-03":"#a087f4",
+      "tech-purple-04":"#bca6f7",
+      "tech-purple-05":"#d6c7fb",
+      "tech-purple-07":"#f8f5ff",
+      "tech-purple-06":"#eadeff",
+      "tech-purple-n-01":"#5343d0",
+      "tech-pink-01":"#ff58be",
+      "tech-pink-02":"#ff75c5",
+      "tech-pink-03":"#ff92ce",
+      "tech-pink-05":"#ffcbe4",
+      "tech-pink-04":"#ffaed8",
+      "tech-pink-06":"#ffe8f2",
+      "tech-pink-07":"#fff5f9",
+      "tech-pink-n-01":"#c24499",
+      "blackAlpha-01":"rgba(0, 0, 0, 0.88)",
+      "blackAlpha-02":"rgba(0, 0, 0, 0.64)",
+      "blackAlpha-03":"rgba(0, 0, 0, 0.4)",
+      "blackAlpha-04":"rgba(0, 0, 0, 0.24)",
+      "blackAlpha-06":"rgba(0, 0, 0, 0.12)",
+      "blackAlpha-05":"rgba(0, 0, 0, 0.16)",
+      "blackAlpha-07":"rgba(0, 0, 0, 0.08)",
+      "blackAlpha-08":"rgba(0, 0, 0, 0.04)",
+      "blue-01":"#134ae0",
+      "blue-02":"#175ceb",
+      "blue-03":"#1e6fff",
+      "blue-04":"#5c99ff",
+      "blue-05":"#99beff",
+      "blue-06":"#c2d8ff",
+      "blue-07":"#edf4ff",
+      "blue-n-01":"#083bc7",
+      "purple-02":"#8e4be0",
+      "purple-01":"#833fdf",
+      "purple-03":"#a55bf5",
+      "purple-04":"#c87ffa",
+      "purple-05":"#dfb2fc",
+      "purple-06":"#f0d6fe",
+      "purple-07":"#fbf2fe",
+      "purple-n-01":"#6f2fc4",
+      "red-01":"#e02424",
+      "red-02":"#eb3639",
+      "red-03":"#ff4747",
+      "red-04":"#ff7272",
+      "red-05":"#ffa3a3",
+      "red-07":"#fee",
+      "red-06":"#fcc",
+      "green-01":"#007a41",
+      "green-02":"#118f58",
+      "green-04":"#00d689",
+      "green-03":"#00aa5b",
+      "red-n-01":"#c21f1f",
+      "green-05":"#66dfb0",
+      "green-06":"#d9ffea",
+      "green-07":"#ecfbf5",
+      "green-n-01":"#006134",
+      "yellow-01":"#e07800",
+      "yellow-02":"#eb9000",
+      "yellow-04":"#ffcd00",
+      "yellow-03":"#ffab00",
+      "yellow-05":"#ffe266",
+      "yellow-07":"#fffceb",
+      "yellow-06":"#fff2a3",
+      "yellow-n-01":"#c76b00",
+      "orange-02":"#eb4825",
+      "orange-01":"#e03118",
+      "orange-03":"#ff5e2f",
+      "orange-04":"#ff8246",
+      "orange-05":"#ffb490",
+      "orange-06":"#ffd7bf",
+      "orange-07":"#fff5f0",
+      "orange-n-01":"#c72c15",
+      "cyan-02":"#08a7cc",
+      "cyan-01":"#069fcc",
+      "cyan-03":"#0cc1e2",
+      "garyBlue-05":"#bbc0c9",
+      "garyBlue-07":"#dadee5",
+    },
     extend: {
       colors: {
         code: {
@@ -255,10 +360,36 @@ module.exports = {
           '0%': { backgroundColor: 'rgb(125 211 252 / 0.1)' },
           '100%': { backgroundColor: 'transparent' },
         },
+        "title-opacity":{
+          "0%":{
+            opacity: 0,
+          },
+          "100%":{
+            opacity:1,
+          }
+        },
+        "title-position-y":{
+          "0%":{
+            transform:"translateY(64px)"
+          },
+          "100%":{
+            transform: "translateY(56px)"
+          }
+        },
+        "cover-image-position-y":{
+          "0%":{
+            transform:"translateY(190px)"
+          },
+          "100%":{
+            transform:"translateY(0)"
+          }
+        }
       },
       animation: {
         'flash-code': 'flash-code 1s forwards',
         'flash-code-slow': 'flash-code 2s forwards',
+        "title-visible":"title-opacity 800ms ease-in-out forwards,title-position-y 800ms ease-in-out forwards",
+        "coverage-visible":"title-opacity 800ms ease-in-out 50ms forwards,cover-image-position-y 800ms ease-in-out 50ms forwards"
       },
       backgroundImage: (theme) => ({
         squiggle: `url("${svgToDataUri(
