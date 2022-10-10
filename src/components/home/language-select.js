@@ -10,7 +10,7 @@ const options = [
   { label: 'English', value: 'en-US' },
 ]
 
-export const LanguageSelect = ({ buttonColorChange }) => {
+export const LanguageSelect = ({ buttonColorChange = true }) => {
   const [expandPanel, setExpandPanel] = useState(false)
 
   const ref = useRef(null)
