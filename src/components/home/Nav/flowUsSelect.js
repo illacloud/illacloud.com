@@ -66,7 +66,12 @@ export const FlowUsSelect = ({ buttonColorChange }) => {
         }}
       >
         {options.map((option) => (
-          <a href={option.value} target="_blank" className="w-full">
+          <a
+            href={option.value}
+            target="_blank"
+            className="w-full"
+            key={option.label}
+          >
             <div
               className="h-[40px] leading-[40px] text-center w-full hover:bg-white-09"
               onClick={() => {

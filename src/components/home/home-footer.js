@@ -8,7 +8,7 @@ function renderItem(title, items) {
   return (
     <div
       key={title}
-      className="w-1/2   sm:w-1/5  flex flex-col  items-start  justify-center mt-[32px] sm:mt-0 "
+      className="w-1/2   xs:w-1/5  flex flex-col  items-start  justify-center mt-[32px] xs:mt-0 "
     >
       <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">
         {title}
@@ -64,7 +64,7 @@ export function Footer({ noHome = false }) {
 
   return (
     <>
-      <div className="w-full flex flex-col items-center bg-[#fafafa] h-[440px] px-[120px]">
+      <div className="w-full flex-col items-center bg-[#fafafa] h-[440px] px-[120px] hidden xs:flex">
         <motion.div
           className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1]"
           style={{
@@ -72,7 +72,7 @@ export function Footer({ noHome = false }) {
           }}
         >
           <div className=" w-full justify-center items-start flex ">
-            <div className="mr-[20px]  w-full sm:w-1/5 flex sm:flex-col  justify-center">
+            <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center">
               <NextLink href={'/'}>
                 <a className="cursor-pointer">
                   <ILLA_LOGO />
@@ -83,13 +83,13 @@ export function Footer({ noHome = false }) {
               </span>
             </div>
             {waysData.map((item) => renderItem(item.title, item.items))}
-            <div className="w-full  sm:w-1/5 flex flex-row sm:flex-col items-start justify-center rounded-[32px]">
-              <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden sm:block">
+            <div className="w-full  xs:w-1/5 flex flex-row xs:flex-col items-start justify-center rounded-[32px]">
+              <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden xs:block">
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
                 <NextLink key={item.href} href={item.href}>
-                  <a className="cursor-pointer sm:mb-[12px] text-[#787E85]">
+                  <a className="cursor-pointer xs:mb-[12px] text-[#787E85]">
                     {item.icon}
                   </a>
                 </NextLink>
@@ -98,8 +98,8 @@ export function Footer({ noHome = false }) {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full sm:hidden">
-        <div className="mr-[20px] w-full sm:w-1/6 flex sm:flex-col items-baseline justify-between">
+      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden">
+        <div className="mr-[20px] w-full xs:w-1/6 flex xs:flex-col items-baseline justify-between">
           <ILLA_LOGO />
           <span className="text-[#a9aeb8] grow-1 text-[12px]">
             Create with ❤️ by ILLA
@@ -110,10 +110,10 @@ export function Footer({ noHome = false }) {
             {waysData.map((item) => renderItem(item.title, item.items))}
           </div>
         </div>
-        <div className="w-full sm:w-1/5 sm:h-[212px] flex flex-row sm:flex-col items-start justify-center rounded-[32px] mt-[32px]">
+        <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
           {Community?.map((item, index) => (
             <NextLink key={'icon' + index} href={item.href}>
-              <a className="mx-[10px] mx-[10px] sm:mb-[12px] text-[#787E85]">
+              <a className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]">
                 {item.icon}
               </a>
             </NextLink>

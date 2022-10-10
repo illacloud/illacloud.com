@@ -1,17 +1,13 @@
 import { useTranslation } from 'next-i18next'
-import { forwardRef, useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import NextLink from 'next/link'
-import ImageTest from '@/img/home/img.png'
-import {
-  AnimatePresence,
-  motion,
-  useTransform,
-  useViewportScroll,
-} from 'framer-motion'
+import playVideoCover from '@/img/home/playVideoCover.png'
+import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { DiscordIcon } from '@/img/public/discord'
 import { GithubIcon } from '@/img/public/github'
 
-export const Title = forwardRef(() => {
+export const Title = (props) => {
+  const { githubStarts, setPlayMaskShow, onSubscribe } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
 
@@ -86,7 +82,7 @@ export const Title = forwardRef(() => {
 
   return (
     <div
-      className="fixed z-40 top-[80px] bg-black text-title sm:grow grow-0 text-[40px] sm:text-[80px] text-white-01 sm:px-[40px] flex flex-col  items-center font-bold relative overflow-hidden"
+      className="hidden xl:flex z-40 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative overflow-hidden"
       ref={containerRef}
       id="firstPageCover"
       style={{
@@ -102,60 +98,66 @@ export const Title = forwardRef(() => {
       onMouseMove={mousemoveHandler}
       onMouseLeave={mouseleaveHandler}
     >
-      <AnimatePresence initial={false} exitBeforeEnter>
-        <motion.div
-          style={{ opacity: opacity, translateY: titlePositionY }}
-          className="fixed left-0 top-[10vh] w-full"
-        >
-          <div className="h-full flex flex-col items-center animate-title-visible">
-            <span className="leading-[48px] px-[20px] sm:px-0 sm:leading-[96px] sm:whitespace-pre-line text-center">
-              {t('slogan-1')}
-            </span>
-            <span className="font-normal text-[16px] mt-[24px] px-[20px] sm:w-[520px] sm:px-0 text-center">
-              {t('description')}
-            </span>
-            <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
-              <button className="h-[48px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-purple-n-01">
-                {t('illa-Cloud')}
+      <motion.div
+        style={{ opacity: opacity, translateY: titlePositionY }}
+        className="fixed left-0 top-[10vh] w-full"
+      >
+        <div className="h-full flex flex-col items-center animate-title-visible">
+          <span className="leading-[48px] px-[20px] sm:px-0 sm:leading-[96px] sm:whitespace-pre-line text-center">
+            {t('slogan-1')}
+          </span>
+          <span className="font-normal text-[16px] mt-[24px] px-[20px] sm:w-[520px] sm:px-0 text-center">
+            {t('description')}
+          </span>
+          <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
+            <button
+              onClick={() => {
+                onSubscribe(true)
+              }}
+              className="h-[48px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-purple-n-01"
+            >
+              {t('illa-Cloud')}
+            </button>
+            <NextLink href="/docs/illa-cli">
+              <button className="h-[48px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01">
+                {t('self-Hosted')}
               </button>
-              <NextLink href="/docs/illa-cli">
-                <button className="h-[48px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01">
-                  {t('self-Hosted')}
-                </button>
-              </NextLink>
-            </div>
-            <div className="flex mt-[40px] gap-[48px]">
-              <div className="flex gap-[16px]">
-                <GithubIcon />
-                <div className="flex flex-col">
-                  <span className="text-white-01 text-[16px]">400</span>
-                  <span className="text-white-04 text-[14px]">Starts</span>
-                </div>
+            </NextLink>
+          </div>
+          <div className="flex mt-[40px] gap-[48px]">
+            <div className="flex gap-[16px]">
+              <GithubIcon />
+              <div className="flex flex-col">
+                <span className="text-white-01 text-[16px]">
+                  {githubStarts}
+                </span>
+                <span className="text-white-04 text-[14px]">{t('stars')}</span>
               </div>
-              <div className="flex gap-[16px]">
-                <DiscordIcon />
-                <div className="flex flex-col">
-                  <span className="text-white-01 text-[16px]">
-                    join community
-                  </span>
-                  <span className="text-white-04 text-[14px]">Discord</span>
-                </div>
+            </div>
+            <div className="flex gap-[16px]">
+              <DiscordIcon />
+              <div className="flex flex-col">
+                <span className="text-white-01 text-[16px]">
+                  {t('join-community')}
+                </span>
+                <span className="text-white-04 text-[14px]">Discord</span>
               </div>
             </div>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      </motion.div>
       <div className="w-full flex items-center justify-center  absolute top-[50vh]">
-        <AnimatePresence initial={false} exitBeforeEnter>
-          <motion.img
-            src={ImageTest}
-            className=" animate-coverage-visible  flex items-center justify-center "
-            style={{
-              width: width,
-            }}
-          ></motion.img>
-        </AnimatePresence>
+        <motion.img
+          src={playVideoCover}
+          className=" animate-coverage-visible  flex items-center justify-center "
+          style={{
+            width: width,
+          }}
+          onClick={() => {
+            setPlayMaskShow(true)
+          }}
+        />
       </div>
     </div>
   )
-})
+}
