@@ -1,21 +1,25 @@
 import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { Mask } from '@/img/home/svg'
+import { useViewportScroll } from 'framer-motion'
 
 export function ContentItem({ contentNode, img, maskColor }) {
   const ref = useRef(null)
   const [bgTop, setBgTop] = useState(336)
+  const { scrollYProgress } = useViewportScroll()
 
   useEffect(() => {
-    if (ref.current.getBoundingClientRect().top < window.innerHeight) {
-      const top =
-        336 -
-        ((window.innerHeight - ref.current.getBoundingClientRect().top) /
-          (window.innerHeight + 266)) *
-          336
-      setBgTop(top)
-    }
-  }, [ref.current, ref?.current && ref.current.getBoundingClientRect().top])
+    return scrollYProgress.onChange(() => {
+      if (ref.current.getBoundingClientRect().top < window.innerHeight) {
+        const top =
+          336 -
+          ((window.innerHeight - ref.current.getBoundingClientRect().top) /
+            (window.innerHeight + 266)) *
+            336
+        setBgTop(top)
+      }
+    })
+  }, [scrollYProgress])
 
   return (
     <div className="flex xs:h-[100vh] xs:overflow-y-hidden flex-col xs:flex-row items-start xs:items-center bg-black px-[40px] justify-center xs:gap-[46px] gap-0 pt-[40px] xs:pt-0 text-[28px]  xs:text-[48px] font-bold text-white  ">

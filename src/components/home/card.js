@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
+import { useViewportScroll } from 'framer-motion'
 
 export function Card({ icon, title, des, index }) {
   const ref = useRef(null)
   const [show, setShow] = useState(false)
 
+  const { scrollYProgress } = useViewportScroll()
+
   useEffect(() => {
-    console.log('window.innerHeight', window.innerHeight)
-    console.log(
-      'ref.current.getBoundingClientRect()',
-      ref.current.getBoundingClientRect(),
-    )
-    if (
-      !show &&
-      ref.current.getBoundingClientRect().top + 72 <= window.innerHeight
-    ) {
-      setTimeout(() => {
-        setShow(true)
-      }, index * 100)
-    }
-  }, [index, show])
+    return scrollYProgress.onChange(() => {
+      if (
+        !show &&
+        ref.current.getBoundingClientRect().top + 72 <= window.innerHeight
+      ) {
+        setTimeout(() => {
+          setShow(true)
+        }, index * 100)
+      }
+    })
+  }, [index, scrollYProgress, show])
 
   return (
     <a

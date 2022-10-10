@@ -13,14 +13,19 @@ export const Title = (props) => {
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
 
-  const { scrollYProgress } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
-  const titlePositionY = useTransform(scrollYProgress, [0, 0.1], [0, -24])
-  const width = useTransform(scrollYProgress, [0, 0.1], [1040, 1200])
+  const { scrollYProgress, scrollY } = useViewportScroll()
+  const opacity = useTransform(scrollYProgress, [0, 0.038], [1, 0])
+  const titlePositionY = useTransform(scrollYProgress, [0, 0.038], [0, -24])
+  const width = useTransform(scrollYProgress, [0, 0.038], [1040, 1200])
+  const imgPositionY = useTransform(
+    scrollYProgress,
+    [0, 0.07],
+    ['0vh', '-70vh'],
+  )
 
   useEffect(() => {
     return scrollYProgress.onChange((leatest) => {
-      if (leatest >= 0.1) {
+      if (leatest >= 0.038) {
         setCanClcik(false)
       } else {
         setCanClcik(true)
@@ -28,15 +33,27 @@ export const Title = (props) => {
     })
   }, [scrollYProgress])
 
-  const mouseenterHandler = useCallback(function (e) {
-    containerRef.current.style.setProperty('--mouse-x', e.clientX)
-    containerRef.current.style.setProperty('--mouse-y', e.clientY - 80)
-  }, [])
+  const mouseenterHandler = useCallback(
+    function (e) {
+      containerRef.current.style.setProperty('--mouse-x', e.clientX)
+      containerRef.current.style.setProperty(
+        '--mouse-y',
+        e.clientY - 80 + scrollY.current,
+      )
+    },
+    [scrollY],
+  )
 
-  const mousemoveHandler = useCallback(function (e) {
-    containerRef.current.style.setProperty('--mouse-x', e.clientX)
-    containerRef.current.style.setProperty('--mouse-y', e.clientY - 80)
-  }, [])
+  const mousemoveHandler = useCallback(
+    function (e) {
+      containerRef.current.style.setProperty('--mouse-x', e.clientX)
+      containerRef.current.style.setProperty(
+        '--mouse-y',
+        e.clientY - 80 + scrollY.current,
+      )
+    },
+    [scrollY],
+  )
 
   const mouseleaveHandler = useCallback(function (e) {
     containerRef.current.style.setProperty('--mouse-x', -999)
@@ -98,7 +115,7 @@ export const Title = (props) => {
       ref={containerRef}
       id="firstPageCover"
       style={{
-        height: '120vh',
+        height: '100vh',
         '--magnet-color': 'rgb(97, 123, 255)',
         '--magnet-size': '1',
         '--magnet-gap': '32',
@@ -173,10 +190,15 @@ export const Title = (props) => {
           </div>
         </div>
       </motion.div>
-      <div className="w-full flex items-center justify-center  absolute top-[50vh]">
+      <motion.div
+        className="w-full flex items-center justify-center absolute top-[70vh]"
+        style={{
+          translateY: imgPositionY,
+        }}
+      >
         <motion.img
           src={playVideoCover}
-          className=" animate-coverage-visible  flex items-center justify-center "
+          className="animate-coverage-visible  flex items-center justify-center "
           style={{
             width: width,
           }}
@@ -184,7 +206,7 @@ export const Title = (props) => {
             setPlayMaskShow(true)
           }}
         />
-      </div>
+      </motion.div>
     </div>
   )
 }

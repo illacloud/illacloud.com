@@ -15,7 +15,7 @@ export const Nav = (props) => {
   const { t } = useTranslation('home')
 
   const { scrollYProgress } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0.033, 0.054], [0, 1])
+  const opacity = useTransform(scrollYProgress, [0.01, 0.02], [0, 1])
 
   return (
     <>
