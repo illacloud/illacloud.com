@@ -1,6 +1,6 @@
 import Head from "next/head"
 import { AppBackground } from "@/components/home/bg"
-import { Nav } from "@/components/home/nav"
+import { Nav } from "@/components/home/Nav"
 import { Title } from "@/components/home/title"
 import { Content } from "@/components/home/content"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
