@@ -62,13 +62,13 @@ export const MobileTitle = (props) => {
           </button>
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
-          <div className="flex items-center">
+          <div className="flex items-center gap-[8px]">
             <GithubIcon />
             <span className="text-white-01 text-[16px]">
               {githubStarts} {t('stars')}
             </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-[8px]">
             <DiscordIcon />
             <span className="text-white-01 text-[16px]">
               {t('join-community')}
