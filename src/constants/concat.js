@@ -1,4 +1,5 @@
 import { DiscordIcon, GitHubIconGray, TwitterIcon } from '@/img/home/svg'
+import { ProductHuntIcon } from '@/img/public/productHunt'
 
 export const Community = [
   {
@@ -12,5 +13,9 @@ export const Community = [
   {
     icon: <DiscordIcon />,
     href: 'https://discord.gg/zKf3WKCufR',
+  },
+  {
+    icon: <ProductHuntIcon />,
+    href: 'https://www.producthunt.com/posts/illa',
   },
 ]

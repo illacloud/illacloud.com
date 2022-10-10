@@ -2,18 +2,28 @@ import { useRef, useState } from 'react'
 import { useClickAway } from 'react-use'
 import { useTranslation } from 'next-i18next'
 
-export const ProductSelect = () => {
+const options = [
+  {
+    label: 'Github',
+    value: 'https://github.com/orgs/illa-family/discussions',
+  },
+  {
+    label: 'Twitter',
+    value: 'https://twitter.com/illafamily',
+  },
+  {
+    label: 'Discord',
+    value: 'https://discord.gg/zKf3WKCufR',
+  },
+  {
+    label: 'ProductHunt',
+    value: 'https://www.producthunt.com/posts/illa',
+  },
+]
+
+export const FlowUsSelect = ({ buttonColorChange }) => {
   const { t } = useTranslation('home')
-  const options = [
-    {
-      label: 'ILLA Builder',
-      value: 'https://github.com/illa-family/illa-builder',
-    },
-    {
-      label: 'ILLA Design',
-      value: 'https://github.com/illa-family/illa-design',
-    },
-  ]
+
   const [expandPanel, setExpandPanel] = useState(false)
 
   const ref = useRef(null)
@@ -33,7 +43,7 @@ export const ProductSelect = () => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[8px]">{t('nav.product')}</span>
+        <span className="mr-[8px]">{t('nav.community')}</span>
         <svg
           width="12"
           height="12"
@@ -52,7 +62,7 @@ export const ProductSelect = () => {
       <div
         className="bg-gray-02 text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center justify-center w-[121px] text-white-01 rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)] overflow-y-hidden"
         style={{
-          height: `${expandPanel ? 96 : 0}px `,
+          height: `${expandPanel ? 192 : 0}px `,
         }}
       >
         {options.map((option) => (

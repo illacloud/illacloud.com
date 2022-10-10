@@ -176,7 +176,9 @@ export function Content() {
       {/*page 05*/}
       <div className="w-full flex justify-center bg-black rounded-b-[40px] sm:rounded-b-[80px]">
         <div className="flex sm:h-screen py-[40px] flex-col w-full   sm:w-[1040px]   justify-center sm:items-center text-[28px] sm:text-[48px] font-bold text-white px-[48px] sm:px-0 rounded-b-[40px] sm:rounded-b-[80px]">
-          <div className="leading-[29px] w-full sm:leading-[58px] "> {t('deployment.title')}</div>
+          <div className="leading-[29px] w-full sm:leading-[58px] ">
+            {t('deployment.title')}
+          </div>
           <div className="text-[14px] sm:text-[16px] opacity-90 w-full sm:w-full mt-[8px] sm:mt-[16px] font-normal opacity-90">
             {t('deployment.introduction')}
           </div>
