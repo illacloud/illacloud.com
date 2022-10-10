@@ -35,8 +35,13 @@ export const Nav = (props) => {
               <SocialButton
                 icon={<GithubIcon />}
                 text={`${githubStarts} ${t('stars')}`}
+                href="https://github.com/illa-family"
               />
-              <SocialButton icon={<DiscordIcon />} text="discord" />
+              <SocialButton
+                icon={<DiscordIcon />}
+                text="discord"
+                href="https://discord.gg/zKf3WKCufR"
+              />
             </motion.div>
           </div>
         </div>

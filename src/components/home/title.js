@@ -125,16 +125,26 @@ export const Title = (props) => {
             </NextLink>
           </div>
           <div className="flex mt-[40px] gap-[48px]">
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px] cursor-pointer"
+              onClick={() => {
+                window.open('https://github.com/illa-family', '__blank')
+              }}
+            >
               <GithubIcon />
-              <div className="flex flex-col">
+              <div className="flex flex-col ">
                 <span className="text-white-01 text-[16px]">
                   {githubStarts}
                 </span>
                 <span className="text-white-04 text-[14px]">{t('stars')}</span>
               </div>
             </div>
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px] cursor-pointer"
+              onClick={() => {
+                window.open('https://discord.gg/zKf3WKCufR', '__blank')
+              }}
+            >
               <DiscordIcon />
               <div className="flex flex-col">
                 <span className="text-white-01 text-[16px]">
