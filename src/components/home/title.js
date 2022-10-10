@@ -32,7 +32,7 @@ export const Title = (props) => {
   }, [])
 
   useEffect(() => {
-    if (document) {
+    if (document && CSS && CSS.paintWorklet) {
       CSS.paintWorklet.addModule(
         `data:application/javascript;charset=utf8,${encodeURIComponent(`
   class MagnetMatrixPaintWorklet {
