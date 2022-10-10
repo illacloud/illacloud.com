@@ -2,13 +2,15 @@ import NextLink from 'next/link'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useClickAway } from 'react-use'
+import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
+import clsx from 'clsx'
 
 const options = [
   { label: '简体中文', value: 'zh-CN' },
   { label: 'English', value: 'en-US' },
 ]
 
-export const LanguageSelect = () => {
+export const LanguageSelect = ({ buttonColorChange }) => {
   const [expandPanel, setExpandPanel] = useState(false)
 
   const ref = useRef(null)
@@ -24,7 +26,13 @@ export const LanguageSelect = () => {
       className="flex flex-col bg-transparent items-center h-[48px] cursor-pointer  justify-between relative"
     >
       <div
-        className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px] text-white-01"
+        className={clsx(
+          'text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]',
+          {
+            'text-white-01': buttonColorChange,
+            'text-gray-01': !buttonColorChange,
+          },
+        )}
         onClick={() => {
           setExpandPanel(() => !expandPanel)
         }}
@@ -32,23 +40,16 @@ export const LanguageSelect = () => {
         <span className="mr-[10px]">
           {router.locale === 'en-US' ? 'English' : '简体中文'}
         </span>
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 12 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M9.76 4.2a.75.75 0 0 0-1.06.04L6 7.148 3.3 4.24a.75.75 0 1 0-1.1 1.02l3.25 3.5a.75.75 0 0 0 1.1 0l3.25-3.5a.75.75 0 0 0-.04-1.06z"
-            fill="#fff"
-          />
-        </svg>
+        {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div
-        className="bg-gray-02 text-[14px] absolute top-[48px] flex flex-col items-center justify-center w-[108px] text-white-01 rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)] transition-height overflow-y-hidden duration-200"
+        className={clsx(
+          'text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center justify-center w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)] overflow-y-hidden',
+          {
+            'bg-gray-02 text-white-01': buttonColorChange,
+            'bg-white text-gray-01': !buttonColorChange,
+          },
+        )}
         style={{
           height: `${expandPanel ? 96 : 0}px `,
         }}
@@ -59,7 +60,15 @@ export const LanguageSelect = () => {
             href={router.pathname}
             locale={option.value}
           >
-            <div className="h-[40px] leading-[40px] text-center w-full hover:bg-white-09">
+            <div
+              className={clsx(
+                'h-[40px] leading-[40px] text-center w-full hover:bg-white-09',
+                {
+                  'hover:bg-white-09': buttonColorChange,
+                  'hover:bg-[#f2f3f5]': !buttonColorChange,
+                },
+              )}
+            >
               {option.label}
             </div>
           </NextLink>

@@ -1,4 +1,4 @@
-import { Nav } from '@/components/home/nav'
+import { Nav } from '@/components/home/oldNav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { AddressIcon } from '@/img/hire/svg'
@@ -13,7 +13,9 @@ const renderImageItem = (item, index) => {
       key={item.des}
       className={clsx(
         'flex flex-col justify-center sm:w-1/2 ',
-        index % 2 === 0 ? 'sm:items-end sm:pr-[10px]' : 'sm:items-start sm:pl-[20px]'
+        index % 2 === 0
+          ? 'sm:items-end sm:pr-[10px]'
+          : 'sm:items-start sm:pl-[20px]',
       )}
     >
       <div className="flex flex-col sm:justify-center ">
@@ -90,14 +92,19 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
         </>
       )}
       <div className=" text-[#1e6fff]  mb-[20px] sm:mb-[32px] ">
-        <a href={'mailto:hr@illasoft.com'} className="block text-[14px] sm:text-[16px]">
+        <a
+          href={'mailto:hr@illasoft.com'}
+          className="block text-[14px] sm:text-[16px]"
+        >
           hr@illasoft.com
         </a>
       </div>
       <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
         <NextLink href="https://www.linkedin.com/company/illacloud/jobs/">
           <a className=" text-[14px] sm:text-[28px] text-white ">
-            <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">{cv}</span>
+            <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">
+              {cv}
+            </span>
           </a>
         </NextLink>
       </div>
@@ -108,7 +115,10 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
 const Hire = () => {
   const { t } = useTranslation('hire')
   const benefitList = [
-    { image: require('../../img/hire/play.png').default, des: '☕️ ' + t('life.benefit.play') },
+    {
+      image: require('../../img/hire/play.png').default,
+      des: '☕️ ' + t('life.benefit.play'),
+    },
     {
       image: require('../../img/hire/welfare.jpeg').default,
       des: '💰 ' + t('life.benefit.welfare'),
@@ -117,7 +127,10 @@ const Hire = () => {
       image: require('../../img/hire/holiday.png').default,
       des: '☀️' + t('life.benefit.holiday'),
     },
-    { image: require('../../img/hire/newcomer.png').default, des: '💻 ' + t('life.benefit.newcomer') },
+    {
+      image: require('../../img/hire/newcomer.png').default,
+      des: '💻 ' + t('life.benefit.newcomer'),
+    },
   ]
   const addressLit = [
     {
@@ -166,7 +179,9 @@ const Hire = () => {
               <img
                 style={{ objectFit: 'cover' }}
                 src={require('../../img/hire/logo.png').default}
-                className={' w-[300px] lg:w-[508px] h-[140px] lg:h-[auto] mt-[80px] '}
+                className={
+                  ' w-[300px] lg:w-[508px] h-[140px] lg:h-[auto] mt-[80px] '
+                }
                 alt={'logo'}
               />
               <div className="lg:w-[508px]  ">
@@ -214,8 +229,8 @@ const Hire = () => {
                   t('recruiting.responsibilities'),
                   t('recruiting.requirements'),
                   t('recruiting.pluses'),
-                  t('recruiting.cv')
-                )
+                  t('recruiting.cv'),
+                ),
               )}
             </div>
           </div>
