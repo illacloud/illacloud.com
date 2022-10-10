@@ -1,20 +1,32 @@
 import { useTranslation } from 'next-i18next'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import NextLink from 'next/link'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { DiscordIcon } from '@/img/public/discord'
 import { GithubIcon } from '@/img/public/github'
+import clsx from 'clsx'
 
 export const Title = (props) => {
   const { githubStarts, setPlayMaskShow, onSubscribe } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
+  const [canClick, setCanClcik] = useState(true)
 
   const { scrollYProgress } = useViewportScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
   const titlePositionY = useTransform(scrollYProgress, [0, 0.1], [0, -24])
   const width = useTransform(scrollYProgress, [0, 0.1], [1040, 1200])
+
+  useEffect(() => {
+    return scrollYProgress.onChange((leatest) => {
+      if (leatest >= 0.1) {
+        setCanClcik(false)
+      } else {
+        setCanClcik(true)
+      }
+    })
+  }, [scrollYProgress])
 
   const mouseenterHandler = useCallback(function (e) {
     containerRef.current.style.setProperty('--mouse-x', e.clientX)
@@ -82,7 +94,7 @@ export const Title = (props) => {
 
   return (
     <div
-      className="hidden xl:flex z-40 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative overflow-hidden"
+      className="hidden xl:flex z-30 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative overflow-hidden"
       ref={containerRef}
       id="firstPageCover"
       style={{
@@ -100,7 +112,9 @@ export const Title = (props) => {
     >
       <motion.div
         style={{ opacity: opacity, translateY: titlePositionY }}
-        className="fixed left-0 top-[10vh] w-full"
+        className={clsx('fixed left-0 top-[10vh] w-full', {
+          'pointer-events-none': !canClick,
+        })}
       >
         <div className="h-full flex flex-col items-center animate-title-visible">
           <span className="leading-[48px] px-[20px] sm:px-0 sm:leading-[96px] sm:whitespace-pre-line text-center">
