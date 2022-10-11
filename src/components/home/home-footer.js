@@ -3,6 +3,7 @@ import NextLink from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Community } from '@/constants/concat'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
+import { IllaLogo } from '@/img/public/illa-logo'
 
 function renderItem(title, items) {
   return (
@@ -100,7 +101,7 @@ export function Footer({ noHome = false }) {
       </div>
       <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden bg-[#fafafa]">
         <div className="mr-[20px] w-full xs:w-1/6 flex xs:flex-col items-baseline justify-between">
-          <ILLA_LOGO />
+          <IllaLogo />
           <span className="text-[#a9aeb8] grow-1 text-[12px]">
             Create with ❤️ by ILLA
           </span>
