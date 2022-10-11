@@ -86,7 +86,12 @@ export const MobileTitle = (props) => {
             setPlayMaskShow(true)
           }}
         >
-          <Image src={playVideoCover} width="2080" height="1294" />
+          <Image
+            src={playVideoCover}
+            width="2080"
+            height="1294"
+            alt="play video"
+          />
         </div>
       </div>
     </div>

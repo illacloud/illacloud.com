@@ -194,7 +194,9 @@ const Hire = () => {
                   </span>
                 </div>
                 <div className="text-[#1d2129] text-[14px] lg:text-[16px] mt-[12px] leading-[20px] lg:leading-[24px] ">
-                  {t('description')}
+                  <span>{t('description-1')}</span>
+                  <br />
+                  <span>{t('description-2')}</span>
                 </div>
               </div>
             </div>

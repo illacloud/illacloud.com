@@ -122,9 +122,9 @@ export function Footer({ noHome = false }) {
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
           {Community?.map((item, index) => (
             <NextLink key={'icon' + index} href={item.href}>
-              <a className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]">
+              <span className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]">
                 {item.icon}
-              </a>
+              </span>
             </NextLink>
           ))}
         </div>
