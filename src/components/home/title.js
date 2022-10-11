@@ -116,7 +116,7 @@ export const Title = (props) => {
       id="firstPageCover"
       style={{
         height: '100vh',
-        '--magnet-color': 'rgb(97, 123, 255)',
+        '--magnet-color': 'rgb(101, 74, 236)',
         '--magnet-size': '1',
         '--magnet-gap': '32',
         '--magnet-radius': '200',
