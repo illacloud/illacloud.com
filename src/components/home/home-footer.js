@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next'
 import { Community } from '@/constants/concat'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { IllaLogo } from '@/img/public/illa-logo'
+import clsx from 'clsx'
 
 function renderItem(title, items) {
   return (
@@ -65,7 +66,12 @@ export function Footer({ noHome = false }) {
 
   return (
     <>
-      <div className="w-full flex-col items-center bg-[#fafafa] h-[440px] px-[120px] hidden xs:flex">
+      <div
+        className={clsx(
+          'w-full flex-col items-center  h-[440px] px-[120px] hidden xs:flex',
+          noHome ? 'bg-[#fafafa]' : 'bg-white-01',
+        )}
+      >
         <motion.div
           className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1]"
           style={{
@@ -100,8 +106,10 @@ export function Footer({ noHome = false }) {
         </motion.div>
       </div>
       <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden bg-[#fafafa]">
-        <div className="mr-[20px] w-full xs:w-1/6 flex xs:flex-col items-baseline justify-between">
-          <IllaLogo />
+        <div className="w-full xs:w-1/6 flex xs:flex-col items-center justify-between">
+          <span className="flex  w-[34px] h-[16px] items-center">
+            <IllaLogo />
+          </span>
           <span className="text-[#a9aeb8] grow-1 text-[12px]">
             Create with ❤️ by ILLA
           </span>

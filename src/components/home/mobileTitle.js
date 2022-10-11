@@ -30,24 +30,9 @@ export const MobileTitle = (props) => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
   return (
-    <div className="w-full bg-mobileHeader bg-no-repeat xl:hidden">
-      <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xl:hidden">
-        <NextLink href="/">
-          <span>
-            <IllaLogoWhiteIcon />
-          </span>
-        </NextLink>
-        <span
-          onClick={() => {
-            setMenuExpand(() => !menuExpand)
-          }}
-        >
-          {menuExpand ? <CloseIcon /> : <MenuWhiteIcon />}
-        </span>
-      </div>
-      <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
+    <div className="w-full xl:hidden	">
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full">
-        <div className="text-white-01 text-[40px] text-center font-bold pt-[20px]">
+        <div className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
           {t('slogan-1')}
         </div>
         <div className="mt-[32px] text-white-01 text-[14px] text-center">
@@ -55,12 +40,12 @@ export const MobileTitle = (props) => {
         </div>
         <div className="mt-[32px] w-full flex gap-[16px]">
           <NextLink href="/docs/illa-cli">
-            <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01">
+            <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]">
               {t('self-Hosted')}
             </button>
           </NextLink>
           <button
-            className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01"
+            className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
             onClick={() => {
               onSubscribe(true)
             }}
@@ -79,7 +64,7 @@ export const MobileTitle = (props) => {
             }}
           >
             <GithubIcon />
-            <span className="text-white-01 text-[16px]">
+            <span className="text-white-01 text-[13px]">
               {githubStarts} {t('stars')}
             </span>
           </div>
@@ -90,7 +75,7 @@ export const MobileTitle = (props) => {
             }}
           >
             <DiscordIcon />
-            <span className="text-white-01 text-[16px]">
+            <span className="text-white-01 text-[13px]">
               {t('join-community')}
             </span>
           </div>

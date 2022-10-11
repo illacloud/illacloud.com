@@ -22,7 +22,7 @@ export function ContentItem({ contentNode, img, maskColor }) {
   }, [scrollYProgress])
 
   return (
-    <div className="flex xl:h-[100vh] xl:overflow-y-hidden flex-col xl:flex-row items-start xl:items-center bg-black px-[20px] justify-center xl:gap-[46px] gap-0 pt-[40px] xl:pt-0 text-[28px]  xl:text-[48px] font-bold text-white  ">
+    <div className="flex xl:h-[100vh] xl:overflow-y-hidden flex-col xl:flex-row items-start xl:items-center bg-black px-[48px] justify-center xl:gap-[46px] gap-0 pt-[40px] xl:pt-0 text-[28px]  xl:text-[48px] font-bold text-white  ">
       <div ref={ref} className={'w-auto lg:w-[calc(100vw-696px)] xl:w-[520px]'}>
         {contentNode}
       </div>

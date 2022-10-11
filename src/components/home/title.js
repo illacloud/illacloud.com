@@ -19,8 +19,8 @@ export const Title = (props) => {
   const width = useTransform(scrollYProgress, [0, 0.038], [1040, 1200])
   const imgPositionY = useTransform(
     scrollYProgress,
-    [0, 0.07],
-    ['0vh', '-70vh'],
+    [0, 0.04],
+    ['0vh', '-60vh'],
   )
 
   useEffect(() => {
@@ -129,15 +129,15 @@ export const Title = (props) => {
     >
       <motion.div
         style={{ opacity: opacity, translateY: titlePositionY }}
-        className={clsx('fixed left-0 top-[10vh] w-full', {
+        className={clsx('fixed left-0 top-[20vh] w-full flex justify-center', {
           'pointer-events-none': !canClick,
         })}
       >
-        <div className="h-full flex flex-col items-center animate-title-visible">
-          <span className="leading-[48px] px-[20px] sm:px-0 sm:leading-[96px] sm:whitespace-pre-line text-center">
+        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px]">
+          <span className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
             {t('slogan-1')}
           </span>
-          <span className="font-normal text-[16px] mt-[24px] px-[20px] sm:w-[520px] sm:px-0 text-center">
+          <span className="font-normal text-[20px] mt-[24px] px-[20px] sm:px-0 text-center">
             {t('description')}
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
@@ -170,7 +170,9 @@ export const Title = (props) => {
                 <span className="text-white-01 text-[16px]">
                   {githubStarts}
                 </span>
-                <span className="text-white-04 text-[14px]">{t('stars')}</span>
+                <span className="text-white-04 text-[14px] font-normal">
+                  {t('stars')}
+                </span>
               </div>
             </div>
             <div
@@ -184,7 +186,9 @@ export const Title = (props) => {
                 <span className="text-white-01 text-[16px]">
                   {t('join-community')}
                 </span>
-                <span className="text-white-04 text-[14px]">Discord</span>
+                <span className="text-white-04 text-[14px] font-normal">
+                  Discord
+                </span>
               </div>
             </div>
           </div>

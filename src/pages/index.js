@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Nav } from '@/components/home/Nav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Content } from '@/components/home/content'
 import { Footer } from '@/components/home/home-footer'
@@ -14,7 +14,6 @@ const Home = (props) => {
   const { stargazers_count } = props
   const { t } = useTranslation('home')
 
-  const containerRef = useRef(null)
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
 
@@ -38,13 +37,11 @@ const Home = (props) => {
           content="illa,illacloud,illa cloud,艾拉云,艾拉云科,艾拉"
         />
       </Head>
-      <div
-        className="bg-gray-01  w-full overflow-y-scroll xs:rounded-b-[80px] z-[2]"
-        ref={containerRef}
-      >
+      <div className="bg-gray-01 w-full overflow-y-scroll xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
           githubStarts={stargazers_count}
           onSubscribe={() => setModalVisible(true)}
+          whiteTheme={false}
         />
 
         {/*Global site tag (gtag.js) - Google Analytics */}

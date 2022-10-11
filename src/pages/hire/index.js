@@ -1,4 +1,4 @@
-import { Nav } from '@/components/home/oldNav'
+import { Nav } from '@/components/home/Nav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { AddressIcon } from '@/img/hire/svg'
@@ -66,16 +66,16 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
       key={item.title}
       className="flex flex-col items-start justify-start overflow-x-scroll mb-[20px] sm:mb-[40px]"
     >
-      <span className="font-medium text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
+      <span className="font-semibold text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
         {item.title}
       </span>
-      <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+      <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
         {responsibilities}
       </span>
       <span className="whitespace-pre-line  mb-[20px] sm:mb-[40px]  text-[14px] sm:text-[16px]">
         {item.responsibilities}
       </span>
-      <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+      <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
         {requirements}
       </span>
       <span className="whitespace-pre-line  text-[14px]  mb-[20px] sm:mb-[40px]  sm:text-[16px]">
@@ -83,7 +83,7 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
       </span>
       {item.pluses && (
         <>
-          <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+          <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
             {pluses}
           </span>
           <span className="whitespace-pre-line  mb-[20px] sm:mb-[40px]  text-[14px] sm:text-[16px]">
@@ -172,9 +172,9 @@ const Hire = () => {
         <title>{t('desc')}</title>
       </Head>
       <div>
-        <div className=" w-full items-center flex flex-col  bg-[#ffffff] lg:bg-[#fafafa]">
+        <div className=" w-full items-center flex flex-col  bg-[#ffffff]">
           <div className="lg:h-screen  mb-[40px] lg:mb-0 flex flex-col  items-center  lg:items-center  w-full ">
-            <Nav />
+            <Nav whiteTheme hasButton={false} />
             <div className="px-[40px] flex flex-col justify-center items-center lg:flex-row-reverse  lg:px-[96px] lg:gap-[80px] lg:h-full ">
               <img
                 style={{ objectFit: 'cover' }}
@@ -199,7 +199,7 @@ const Hire = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#e5e4ff]  w-full px-[40px] flex flex-col items-center sm:bg-[#fafafa] lg:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
+          <div className="bg-[#e5e4ff]  w-full px-[40px] flex flex-col items-center sm:bg-white-01 lg:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>
@@ -218,7 +218,7 @@ const Hire = () => {
               {addressLit?.map((item) => renderItem(item))}
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[40px] pt-[40px] pb-[20px] sm:py-[80px] flex flex-col items-center">
+          <div className=" bg-[#e5e4ff] sm:bg-white-01 w-full px-[40px] pt-[40px] pb-[20px] sm:py-[80px] flex flex-col items-center">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mb-[24px] sm:mb-[48px] ">
               {t('recruiting.title')}
             </span>

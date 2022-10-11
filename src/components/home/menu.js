@@ -23,7 +23,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
     >
       <div className="justify-between  w-full h-[64px] flex items-center ">
         <NextLink href="/">
-          <span>
+          <span className="flex items-center w-[42.5px] h-[20px]">
             <IllaLogoWhiteIcon />
           </span>
         </NextLink>

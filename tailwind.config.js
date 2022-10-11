@@ -402,16 +402,20 @@ module.exports = {
             'colors.yellow.400',
           )}"><polygon points="5.5,0 2.5,3 1.1,3 4.1,0"/><polygon points="4,0 6,2 6,0.6 5.4,0"/><polygon points="0,2 1,3 2.4,3 0,0.6"/></svg>`,
         )}")`,
-        mobileHeader: `url("${svgToDataUri(`<svg width="750" height="1198" viewBox="0 0 750 1198" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.3" filter="url(#filter0_f_1189_1266)">
-<ellipse cx="150.5" cy="222" rx="545.5" ry="499" fill="#654AEC"/>
+        mobileHeader: `url("${svgToDataUri(`<svg width="375" height="494" viewBox="0 0 375 494" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.3" filter="url(#filter0_f_1411_27360)">
+<path d="M398.453 258.91C393.25 373.434 252.039 460.05 83.0507 452.371C-85.9376 444.692 -218.711 345.627 -213.507 231.103C-208.303 116.579 -209.636 67.0591 101.896 37.6421C535 48.5001 403.657 144.386 398.453 258.91Z" fill="url(#paint0_radial_1411_27360)"/>
 </g>
 <defs>
-<filter id="filter0_f_1189_1266" x="-871.25" y="-753.25" width="2043.5" height="1950.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_1411_27360" x="-263.655" y="-12.3579" width="734.8" height="515.203" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="238.125" result="effect1_foregroundBlur_1189_1266"/>
+<feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_1411_27360"/>
 </filter>
+<radialGradient id="paint0_radial_1411_27360" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(92.1928 244.994) rotate(34.3606) scale(274.087 381.64)">
+<stop stop-color="#654AEC"/>
+<stop offset="1" stop-color="#654AEC" stop-opacity="0"/>
+</radialGradient>
 </defs>
 </svg>
 `)}")`,

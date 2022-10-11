@@ -175,7 +175,7 @@ export function Content() {
 
       {/*page 05*/}
       <div className="w-full flex justify-center bg-black rounded-b-[40px]">
-        <div className="flex xl:h-screen py-[40px] flex-col w-full   xl:w-[1040px]   justify-center xl:items-center text-[28px] xl:text-[48px] font-bold text-white px-[20px] xl:px-0 rounded-b-[40px] xl:rounded-b-[80px]">
+        <div className="flex xl:h-screen py-[40px] flex-col w-full   xl:w-[1040px]   justify-center xl:items-center text-[28px] xl:text-[48px] font-bold text-white px-[48px] xl:px-0 rounded-b-[40px] xl:rounded-b-[80px]">
           <div className="leading-[29px] w-full xl:leading-[58px] ">
             {t('deployment.title')}
           </div>
