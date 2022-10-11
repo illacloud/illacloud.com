@@ -98,7 +98,7 @@ export function Footer({ noHome = false }) {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden">
+      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden bg-[#fafafa]">
         <div className="mr-[20px] w-full xs:w-1/6 flex xs:flex-col items-baseline justify-between">
           <ILLA_LOGO />
           <span className="text-[#a9aeb8] grow-1 text-[12px]">
