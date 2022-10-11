@@ -62,13 +62,26 @@ export const MobileTitle = (props) => {
           </button>
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
-          <div className="flex items-center gap-[8px]">
+          <div
+            className="flex items-center gap-[8px]"
+            onClick={() => {
+              window.open(
+                'https://github.com/illa-family/illa-builder',
+                '__blank',
+              )
+            }}
+          >
             <GithubIcon />
             <span className="text-white-01 text-[16px]">
               {githubStarts} {t('stars')}
             </span>
           </div>
-          <div className="flex items-center gap-[8px]">
+          <div
+            className="flex items-center gap-[8px]"
+            onClick={() => {
+              window.open('https://discord.gg/zKf3WKCufR', '__blank')
+            }}
+          >
             <DiscordIcon />
             <span className="text-white-01 text-[16px]">
               {t('join-community')}
