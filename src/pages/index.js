@@ -84,6 +84,7 @@ const Home = (props) => {
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
           githubStarts={stargazers_count}
+          onSubscribe={() => setModalVisible(true)}
         />
         <Content />
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />

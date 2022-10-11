@@ -24,7 +24,7 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand, setMenuExpand] = useState(false)
-  const { setPlayMaskShow, githubStarts } = props
+  const { setPlayMaskShow, githubStarts, onSubscribe } = props
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
@@ -54,10 +54,17 @@ export const MobileTitle = (props) => {
           {t('description')}
         </div>
         <div className="mt-[32px] w-full flex gap-[16px]">
-          <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01">
-            {t('self-Hosted')}
-          </button>
-          <button className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01">
+          <NextLink href="/docs/illa-cli">
+            <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01">
+              {t('self-Hosted')}
+            </button>
+          </NextLink>
+          <button
+            className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01"
+            onClick={() => {
+              onSubscribe(true)
+            }}
+          >
             {t('illa-Cloud')}
           </button>
         </div>
