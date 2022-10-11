@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import Script from "next/script"
 
 const FAVICON_VERSION = 3
 
@@ -52,6 +53,20 @@ export default class Document extends NextDocument {
             content={v('/favicons/browserconfig.xml')}
           />
           <meta name="theme-color" content="#000000" />
+          <Script>{`(function(w, d, s, l, i) {
+            w[l] = w[l] || []
+            w[l].push({
+              "gtm.start": new Date().getTime(),
+               "event": "gtm.js",
+            })
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""
+            j.async = true
+            j.src =
+              "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+            f.parentNode.insertBefore(j, f)
+          })(window, document, "script", "dataLayer", "GTM-NRT4JCB");`}
+          </Script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -72,6 +87,10 @@ export default class Document extends NextDocument {
               !this.props.dangerousAsPath.startsWith('/examples/'),
           })}
         >
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRT4JCB"
+                  height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+        </noscript>
           <Main />
           <NextScript />
           <script> </script>
