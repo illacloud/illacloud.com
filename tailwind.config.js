@@ -1,6 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const svgToDataUri = require('mini-svg-data-uri')
-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
+const {
+  default: flattenColorPalette,
+} = require('tailwindcss/lib/util/flattenColorPalette')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: 'class',
@@ -13,6 +16,7 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+      xs: '1440px',
       '2xl': '1536px',
     },
     fontSize: {
@@ -56,7 +60,111 @@ module.exports = {
       15: '15',
       16: '16',
     },
-
+    colors: {
+      ...colors,
+      'white-01': '#fff',
+      'white-02': 'rgba(255, 255, 255, 0.9)',
+      'white-03': 'rgba(255, 255, 255, 0.75)',
+      'white-04': 'rgba(255, 255, 255, 0.5)',
+      'white-05': 'rgba(255, 255, 255, 0.3)',
+      'white-06': 'rgba(255, 255, 255, 0.2)',
+      'white-07': 'rgba(255, 255, 255, 0.12)',
+      'white-08': 'rgba(255, 255, 255, 0.08)',
+      'white-09': 'rgba(255, 255, 255, 0.04)',
+      'gray-01': '#000',
+      'gray-02': '#1f1f1f',
+      'gray-03': '#5c5c5c',
+      'gray-04': '#999',
+      'gray-05': '#c2c2c2',
+      'gray-06': '#d6d6d6',
+      'gray-07': '#e0e0e0',
+      'gray-08': '#ebebeb',
+      'gray-09': '#f5f5f5',
+      'garyBlue-01': '#0b0c0f',
+      'garyBlue-02': '#1d2129',
+      'garyBlue-03': '#787e85',
+      'garyBlue-04': '#a9aeb8',
+      'garyBlue-06': '#c9cdd4',
+      'garyBlue-08': '#e5e6eb',
+      'garyBlue-09': '#f2f3f5',
+      'tech-purple-01': '#654aec',
+      'tech-purple-02': '#775ff2',
+      'tech-purple-03': '#a087f4',
+      'tech-purple-04': '#bca6f7',
+      'tech-purple-05': '#d6c7fb',
+      'tech-purple-07': '#f8f5ff',
+      'tech-purple-06': '#eadeff',
+      'tech-purple-n-01': '#5343d0',
+      'tech-pink-01': '#ff58be',
+      'tech-pink-02': '#ff75c5',
+      'tech-pink-03': '#ff92ce',
+      'tech-pink-05': '#ffcbe4',
+      'tech-pink-04': '#ffaed8',
+      'tech-pink-06': '#ffe8f2',
+      'tech-pink-07': '#fff5f9',
+      'tech-pink-n-01': '#c24499',
+      'blackAlpha-01': 'rgba(0, 0, 0, 0.88)',
+      'blackAlpha-02': 'rgba(0, 0, 0, 0.64)',
+      'blackAlpha-03': 'rgba(0, 0, 0, 0.4)',
+      'blackAlpha-04': 'rgba(0, 0, 0, 0.24)',
+      'blackAlpha-06': 'rgba(0, 0, 0, 0.12)',
+      'blackAlpha-05': 'rgba(0, 0, 0, 0.16)',
+      'blackAlpha-07': 'rgba(0, 0, 0, 0.08)',
+      'blackAlpha-08': 'rgba(0, 0, 0, 0.04)',
+      'blue-01': '#134ae0',
+      'blue-02': '#175ceb',
+      'blue-03': '#1e6fff',
+      'blue-04': '#5c99ff',
+      'blue-05': '#99beff',
+      'blue-06': '#c2d8ff',
+      'blue-07': '#edf4ff',
+      'blue-n-01': '#083bc7',
+      'purple-02': '#8e4be0',
+      'purple-01': '#833fdf',
+      'purple-03': '#a55bf5',
+      'purple-04': '#c87ffa',
+      'purple-05': '#dfb2fc',
+      'purple-06': '#f0d6fe',
+      'purple-07': '#fbf2fe',
+      'purple-n-01': '#6f2fc4',
+      'red-01': '#e02424',
+      'red-02': '#eb3639',
+      'red-03': '#ff4747',
+      'red-04': '#ff7272',
+      'red-05': '#ffa3a3',
+      'red-07': '#fee',
+      'red-06': '#fcc',
+      'green-01': '#007a41',
+      'green-02': '#118f58',
+      'green-04': '#00d689',
+      'green-03': '#00aa5b',
+      'red-n-01': '#c21f1f',
+      'green-05': '#66dfb0',
+      'green-06': '#d9ffea',
+      'green-07': '#ecfbf5',
+      'green-n-01': '#006134',
+      'yellow-01': '#e07800',
+      'yellow-02': '#eb9000',
+      'yellow-04': '#ffcd00',
+      'yellow-03': '#ffab00',
+      'yellow-05': '#ffe266',
+      'yellow-07': '#fffceb',
+      'yellow-06': '#fff2a3',
+      'yellow-n-01': '#c76b00',
+      'orange-02': '#eb4825',
+      'orange-01': '#e03118',
+      'orange-03': '#ff5e2f',
+      'orange-04': '#ff8246',
+      'orange-05': '#ffb490',
+      'orange-06': '#ffd7bf',
+      'orange-07': '#fff5f0',
+      'orange-n-01': '#c72c15',
+      'cyan-02': '#08a7cc',
+      'cyan-01': '#069fcc',
+      'cyan-03': '#0cc1e2',
+      'garyBlue-05': '#bbc0c9',
+      'garyBlue-07': '#dadee5',
+    },
     extend: {
       colors: {
         code: {
@@ -255,17 +363,62 @@ module.exports = {
           '0%': { backgroundColor: 'rgb(125 211 252 / 0.1)' },
           '100%': { backgroundColor: 'transparent' },
         },
+        'title-opacity': {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
+          },
+        },
+        'title-position-y': {
+          '0%': {
+            transform: 'translateY(64px)',
+          },
+          '100%': {
+            transform: 'translateY(56px)',
+          },
+        },
+        'cover-image-position-y': {
+          '0%': {
+            transform: 'translateY(190px)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'flash-code': 'flash-code 1s forwards',
         'flash-code-slow': 'flash-code 2s forwards',
+        'title-visible':
+          'title-opacity 800ms ease-in-out forwards,title-position-y 800ms ease-in-out forwards',
+        'coverage-visible':
+          'title-opacity 800ms ease-in-out 50ms forwards,cover-image-position-y 800ms ease-in-out 50ms forwards',
       },
       backgroundImage: (theme) => ({
         squiggle: `url("${svgToDataUri(
           `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" enable-background="new 0 0 6 3" width="6" height="3" fill="${theme(
-            'colors.yellow.400'
-          )}"><polygon points="5.5,0 2.5,3 1.1,3 4.1,0"/><polygon points="4,0 6,2 6,0.6 5.4,0"/><polygon points="0,2 1,3 2.4,3 0,0.6"/></svg>`
+            'colors.yellow.400',
+          )}"><polygon points="5.5,0 2.5,3 1.1,3 4.1,0"/><polygon points="4,0 6,2 6,0.6 5.4,0"/><polygon points="0,2 1,3 2.4,3 0,0.6"/></svg>`,
         )}")`,
+        mobileHeader: `url("${svgToDataUri(`<svg width="375" height="494" viewBox="0 0 375 494" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.3" filter="url(#filter0_f_1411_27360)">
+<path d="M398.453 258.91C393.25 373.434 252.039 460.05 83.0507 452.371C-85.9376 444.692 -218.711 345.627 -213.507 231.103C-208.303 116.579 -209.636 67.0591 101.896 37.6421C535 48.5001 403.657 144.386 398.453 258.91Z" fill="url(#paint0_radial_1411_27360)"/>
+</g>
+<defs>
+<filter id="filter0_f_1411_27360" x="-263.655" y="-12.3579" width="734.8" height="515.203" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_1411_27360"/>
+</filter>
+<radialGradient id="paint0_radial_1411_27360" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(92.1928 244.994) rotate(34.3606) scale(274.087 381.64)">
+<stop stop-color="#654AEC"/>
+<stop offset="1" stop-color="#654AEC" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
+`)}")`,
       }),
     },
   },
@@ -277,9 +430,12 @@ module.exports = {
     function ({ addVariant }) {
       addVariant(
         'supports-backdrop-blur',
-        '@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))'
+        '@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))',
       )
-      addVariant('supports-scrollbars', '@supports selector(::-webkit-scrollbar)')
+      addVariant(
+        'supports-scrollbars',
+        '@supports selector(::-webkit-scrollbar)',
+      )
       addVariant('children', '& > *')
       addVariant('scrollbar', '&::-webkit-scrollbar')
       addVariant('scrollbar-track', '&::-webkit-scrollbar-track')
@@ -291,18 +447,24 @@ module.exports = {
         {
           'bg-grid': (value) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
             )}")`,
           }),
         },
-        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+        {
+          values: flattenColorPalette(theme('backgroundColor')),
+          type: 'color',
+        },
       )
 
       matchUtilities(
         {
           highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}` }),
         },
-        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+        {
+          values: flattenColorPalette(theme('backgroundColor')),
+          type: 'color',
+        },
       )
     },
     function ({ addUtilities, theme }) {
@@ -310,7 +472,7 @@ module.exports = {
       let backgroundImage = (color) =>
         `linear-gradient(135deg, ${color} 10%, transparent 10%, transparent 50%, ${color} 50%, ${color} 60%, transparent 60%, transparent 100%)`
       let colors = Object.entries(theme('backgroundColor')).filter(
-        ([, value]) => typeof value === 'object' && value[400] && value[500]
+        ([, value]) => typeof value === 'object' && value[400] && value[500],
       )
 
       addUtilities(
@@ -327,8 +489,8 @@ module.exports = {
                 backgroundSize,
               },
             ]
-          })
-        )
+          }),
+        ),
       )
 
       addUtilities({

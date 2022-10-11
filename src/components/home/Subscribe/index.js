@@ -9,7 +9,7 @@ import { Button } from '@illa-design/button'
 import { ReactComponent as SubscribeCover } from '@/img/home/subscribe-cover.svg'
 import styles from './style.module.css'
 import { Toast } from '@/components/home/Toast'
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 
 export const SubscribeModal = ({ visible, onClose }) => {
   const { t } = useTranslation('home')
@@ -27,7 +27,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
   const [sent, setSent] = useState()
 
   const subscribe = async (form) => {
-    if (loading||sent) return
+    if (loading || sent) return
     setLoading(true)
     await fetch('https://email.dev.illasoft.com/v1/subscribe', {
       method: 'POST',
@@ -58,76 +58,88 @@ export const SubscribeModal = ({ visible, onClose }) => {
   }
 
   if (!visible) return null
-  let container
-  if (document) {
-    container = document.getElementById('modal')
-  }
 
   return createPortal(
-    <RemoveScroll>
-      <div className={clsx(styles.modalBg, visible ? 'visible' : 'hidden')} onCancel={onClose}>
-        <div className={styles.container}>
-          <img
-            className={styles.closeIcon}
-            src={require('@/img/home/close.png').default}
-            alt="closeIcon"
-            onClick={onClose}
-          />
-          <div>
-            <SubscribeCover className={'hidden sm:block'} />
+    <div className="fixed top-0 left-0 w-full z-50">
+      <RemoveScroll>
+        <div
+          className={clsx(styles.modalBg, visible ? 'visible' : 'hidden')}
+          onCancel={onClose}
+        >
+          <div className={styles.container}>
             <img
-              className={'block sm:hidden'}
-              src={require('@/img/home/m-subscribe-cover.png').default}
-              alt=""
+              className={styles.closeIcon}
+              src={require('@/img/home/close.png').default}
+              alt="closeIcon"
+              onClick={onClose}
             />
-          </div>
-          <div className={styles.content}>
-            <div className={styles.title}>{t('subscribe.title')}</div>
-            <div className={styles.description}>{t('subscribe.description')}</div>
-            <form
-              autoComplete="off"
-              noValidate
-              className="w-[100%]"
-              ref={formRef}
-              onSubmit={handleSubmit(subscribe, (errors) => {
-                Toast.info(`😣 ${errors.email.message}`, 1)
-              })}
-            >
-              <div>
-                <div className={styles.formLabel}>{t('subscribe.form.email.label')}</div>
-                <Controller
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      size="large"
-                      type="email"
-                      autoComplete="email"
-                      placeholder={t('subscribe.form.email.placeholder')}
-                      error={!!errors?.email}
-                      maxLength={200}
-                      borderColor="techPurple"
-                      variant="fill"
-                    />
-                  )}
-                  rules={{
-                    required: t('subscribe.form.email.required'),
-                    pattern: {
-                      value: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
-                      message: t('subscribe.form.email.pattern'),
-                    },
-                  }}
-                  control={control}
-                  name="email"
-                />
+            <div>
+              <SubscribeCover className={'hidden sm:block'} />
+              <img
+                className={'block sm:hidden'}
+                src={require('@/img/home/m-subscribe-cover.png').default}
+                alt=""
+              />
+            </div>
+            <div className={styles.content}>
+              <div className={styles.title}>{t('subscribe.title')}</div>
+              <div className={styles.description}>
+                {t('subscribe.description')}
               </div>
-              <Button className={styles.formSubmitButton} colorScheme="techPurple" size="large" loading={loading} disabled={sent}>
-                {sent ? t('subscribe.sent') : t('subscribe.button')}
-              </Button>
-            </form>
+              <form
+                autoComplete="off"
+                noValidate
+                className="w-[100%]"
+                ref={formRef}
+                onSubmit={handleSubmit(subscribe, (errors) => {
+                  Toast.info(`😣 ${errors.email.message}`, 1)
+                })}
+              >
+                <div>
+                  <div className={styles.formLabel}>
+                    {t('subscribe.form.email.label')}
+                  </div>
+                  <Controller
+                    render={({ field }) => (
+                      <Input
+                        {...field}
+                        size="large"
+                        type="email"
+                        autoComplete="email"
+                        placeholder={t('subscribe.form.email.placeholder')}
+                        error={!!errors?.email}
+                        maxLength={200}
+                        borderColor="techPurple"
+                        variant="fill"
+                      />
+                    )}
+                    rules={{
+                      required: t('subscribe.form.email.required'),
+                      pattern: {
+                        value:
+                          /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+                        message: t('subscribe.form.email.pattern'),
+                      },
+                    }}
+                    control={control}
+                    name="email"
+                  />
+                </div>
+                <Button
+                  className={styles.formSubmitButton}
+                  colorScheme="techPurple"
+                  size="large"
+                  loading={loading}
+                  disabled={sent}
+                >
+                  {sent ? t('subscribe.sent') : t('subscribe.button')}
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </RemoveScroll>,
-    container
+      </RemoveScroll>
+    </div>,
+    document.body,
   )
 }

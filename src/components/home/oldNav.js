@@ -14,7 +14,11 @@ import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
 import clsx from 'clsx'
 
-export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscribe }) => {
+export const Nav = ({
+  navColorChange = false,
+  cloudButtonColorChange,
+  onSubscribe,
+}) => {
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
@@ -44,7 +48,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
         <div
           className={clsx(
             'w-1/3 h-[48px] items-center flex  h-full items-end flex-row z-50 pl-[40px]',
-            navColorChange ? 'text-[#ffffff]' : 'text-[#1d2129]'
+            navColorChange ? 'text-[#ffffff]' : 'text-[#1d2129]',
           )}
         >
           <NextLink href="/">
@@ -67,7 +71,7 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
               'flex justify-center rounded-full px-[24px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.02)] transition-background',
               navColorChange
                 ? 'bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur '
-                : 'bg-[#ffffff] text-[#1d2129]'
+                : 'bg-[#ffffff] text-[#1d2129]',
             )}
           >
             <ProductSelect buttonColorChange={navColorChange} />
@@ -84,13 +88,15 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
           </div>
         </div>
         <div
-          className={clsx('w-1/3 text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]')}
+          className={clsx(
+            'w-1/3 text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]',
+          )}
         >
           <NextLink href="/docs/illa-cli">
             <div
               className={clsx(
                 'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
-                navColorChange ? 'visible' : 'hidden'
+                navColorChange ? 'visible' : 'hidden',
               )}
             >
               {t('self-Hosted')}
@@ -100,7 +106,9 @@ export const Nav = ({ navColorChange = false, cloudButtonColorChange, onSubscrib
             className={clsx(
               'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
               navColorChange ? 'visible' : 'hidden',
-              cloudButtonColorChange ? 'bg-[#654aec] text-[#ffffff]' : 'bg-[#ffffff] text-[#654aec]'
+              cloudButtonColorChange
+                ? 'bg-[#654aec] text-[#ffffff]'
+                : 'bg-[#ffffff] text-[#654aec]',
             )}
             onClick={() => {
               onSubscribe?.()

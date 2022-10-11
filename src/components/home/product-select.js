@@ -1,14 +1,20 @@
-import { useRef, useState } from "react"
-import { SelectIcon, SelectIconBlack } from "@/img/home/svg"
-import { useClickAway } from "react-use"
-import NextLink from "next/link"
-import { useTranslation } from "next-i18next"
+import { useRef, useState } from 'react'
+import { useClickAway } from 'react-use'
+import { useTranslation } from 'next-i18next'
+import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
+import clsx from 'clsx'
 
-export const ProductSelect = ({ buttonColorChange }) => {
-  const { t } = useTranslation("home")
+export const ProductSelect = ({ buttonColorChange = true }) => {
+  const { t } = useTranslation('home')
   const options = [
-    { id: "illa-builder-nav", label: "ILLA Builder", value: "https://github.com/illa-family/illa-builder" },
-    { id: "illa-design-nav", label: "ILLA Design", value: "https://github.com/illa-family/illa-design" },
+    {
+      label: 'ILLA Builder',
+      value: 'https://github.com/illa-family/illa-builder',
+    },
+    {
+      label: 'ILLA Design',
+      value: 'https://github.com/illa-family/illa-design',
+    },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
 
@@ -29,28 +35,43 @@ export const ProductSelect = ({ buttonColorChange }) => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[8px]">{t("nav.product")}</span>
+        <span className="mr-[8px]">{t('nav.product')}</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div
-        className="bg-white text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center justify-center w-[121px] text-[#000000] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]"
+        className={clsx(
+          'text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center justify-center w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)] overflow-y-hidden',
+          {
+            'bg-gray-02 text-white-01': buttonColorChange,
+            'bg-white text-gray-01': !buttonColorChange,
+          },
+        )}
         style={{
           height: `${expandPanel ? 96 : 0}px `,
-          overflowY: "hidden",
         }}
       >
         {options.map((option) => (
-          <NextLink key={option.label} href={option.value}>
+          <a
+            href={option.value}
+            target="_blank"
+            className="w-full"
+            key={option.label}
+          >
             <div
-              id={option.id}
-              className="leading-[40px] text-center w-full hover:bg-[#f2f3f5]"
+              className={clsx(
+                'h-[40px] leading-[40px] text-center w-full hover:bg-white-09',
+                {
+                  'hover:bg-white-09': buttonColorChange,
+                  'hover:bg-[#f2f3f5]': !buttonColorChange,
+                },
+              )}
               onClick={() => {
                 setExpandPanel(() => !expandPanel)
               }}
             >
               {option.label}
             </div>
-          </NextLink>
+          </a>
         ))}
       </div>
     </div>

@@ -81,7 +81,13 @@ export const GIT_LOGO_WHITE = () => (
 )
 
 export const SelectIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -92,7 +98,13 @@ export const SelectIcon = () => (
 )
 
 export const SelectIconBlack = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -120,7 +132,13 @@ export const WaysIcon = () => (
 )
 
 export const MenuIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -130,8 +148,31 @@ export const MenuIcon = () => (
   </svg>
 )
 
+export const MenuWhiteIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.5 9.375c0-1.036.84-1.875 1.875-1.875h31.25a1.875 1.875 0 0 1 0 3.75H4.375A1.875 1.875 0 0 1 2.5 9.375zM2.5 20c0-1.035.84-1.875 1.875-1.875h31.25a1.875 1.875 0 0 1 0 3.75H4.375A1.875 1.875 0 0 1 2.5 20zm1.875 8.75a1.875 1.875 0 0 0 0 3.75h31.25a1.875 1.875 0 0 0 0-3.75H4.375z"
+      fill="#fff"
+    />
+  </svg>
+)
+
 export const DiscordIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M18.56 4.119a.055.055 0 0 0-.028-.026 17.93 17.93 0 0 0-4.424-1.372.067.067 0 0 0-.071.034c-.203.367-.387.745-.551 1.131a16.554 16.554 0 0 0-4.969 0 11.442 11.442 0 0 0-.56-1.131.07.07 0 0 0-.07-.034 17.878 17.878 0 0 0-4.424 1.372.063.063 0 0 0-.03.025C.617 8.326-.155 12.43.224 16.483a.074.074 0 0 0 .028.051 18.024 18.024 0 0 0 5.427 2.742.07.07 0 0 0 .076-.025c.42-.57.79-1.174 1.11-1.805a.068.068 0 0 0-.037-.096 11.877 11.877 0 0 1-1.695-.807.07.07 0 0 1-.028-.09.07.07 0 0 1 .02-.026c.115-.085.227-.173.337-.264a.067.067 0 0 1 .07-.01c3.558 1.624 7.408 1.624 10.923 0a.068.068 0 0 1 .071.01c.11.09.223.179.338.264a.07.07 0 0 1-.006.116c-.542.316-1.11.586-1.696.806a.07.07 0 0 0-.045.07c0 .009.003.018.008.027.325.628.695 1.23 1.109 1.804a.069.069 0 0 0 .076.026 17.963 17.963 0 0 0 5.436-2.742.07.07 0 0 0 .028-.05c.454-4.686-.759-8.757-3.213-12.365zM7.396 14.015c-1.071 0-1.953-.982-1.953-2.19 0-1.206.865-2.19 1.953-2.19 1.096 0 1.97.992 1.953 2.19 0 1.208-.865 2.19-1.953 2.19zm7.221 0c-1.07 0-1.953-.982-1.953-2.19 0-1.206.866-2.19 1.954-2.19 1.096 0 1.97.992 1.953 2.19 0 1.208-.857 2.19-1.954 2.19z"
       fill="currentColor"
@@ -140,7 +181,13 @@ export const DiscordIcon = () => (
 )
 
 export const TwitterIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M21.924 4.233a8.98 8.98 0 0 1-2.579.693 4.467 4.467 0 0 0 1.97-2.468 8.84 8.84 0 0 1-2.842 1.082 4.467 4.467 0 0 0-3.272-1.415 4.476 4.476 0 0 0-4.477 4.48c0 .346.042.692.11 1.026a12.725 12.725 0 0 1-9.232-4.687 4.446 4.446 0 0 0-.61 2.26 4.48 4.48 0 0 0 1.996 3.732 4.516 4.516 0 0 1-2.024-.57v.055a4.478 4.478 0 0 0 3.59 4.396 4.74 4.74 0 0 1-1.18.152c-.291 0-.567-.028-.845-.068a4.486 4.486 0 0 0 4.186 3.107 8.974 8.974 0 0 1-5.56 1.914c-.375 0-.722-.013-1.081-.055a12.68 12.68 0 0 0 6.877 2.008c8.235 0 12.74-6.822 12.74-12.743 0-.194 0-.389-.012-.583a9.645 9.645 0 0 0 2.245-2.316z"
       fill="currentColor"
@@ -149,7 +196,13 @@ export const TwitterIcon = () => (
 )
 
 export const GitHubIconGray = () => (
-  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M0 10.821c0 4.726 3.078 8.745 7.369 10.22.578.144.49-.262.49-.536V18.63c-3.336.384-3.47-1.788-3.695-2.15-.453-.761-1.521-.955-1.203-1.317.76-.385 1.534.097 2.43 1.402.648.945 1.914.785 2.557.627a3.05 3.05 0 0 1 .853-1.471c-3.455-.609-4.897-2.684-4.897-5.154 0-1.197.402-2.297 1.188-3.186-.5-1.464.047-2.716.12-2.902 1.43-.127 2.912 1.006 3.028 1.095.812-.216 1.737-.33 2.773-.33 1.042 0 1.973.118 2.79.336.275-.207 1.653-1.18 2.982-1.06.07.185.605 1.409.134 2.852.798.89 1.203 2.001 1.203 3.202 0 2.473-1.45 4.55-4.915 5.151.297.288.533.63.693 1.009.16.378.243.784.243 1.194v2.722c.02.218 0 .433.37.433C18.866 19.64 22 15.592 22 10.823 22 4.843 17.074 0 11.001 0 4.921-.003 0 4.84 0 10.821z"
       fill="currentColor"
@@ -158,7 +211,13 @@ export const GitHubIconGray = () => (
 )
 
 export const CloseIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -169,7 +228,13 @@ export const CloseIcon = () => (
 )
 
 export const CloseWhiteIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -180,7 +245,13 @@ export const CloseWhiteIcon = () => (
 )
 
 export const PlayIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M10.18 26.692A1.44 1.44 0 0 1 8 25.457V6.543a1.44 1.44 0 0 1 2.18-1.234l15.076 9.045c1.243.745 1.243 2.547 0 3.292l-15.075 9.046z"
       fill="#000"
@@ -245,3 +316,42 @@ export const KubernetesIcon = () => (
     />
   </svg>
 )
+
+export const MobileTitleBgIcon = () => {
+  return (
+    <svg
+      width="750"
+      height="1198"
+      viewBox="0 0 750 1198"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g opacity="0.3" filter="url(#filter0_f_1189_1266)">
+        <ellipse cx="150.5" cy="222" rx="545.5" ry="499" fill="#654AEC" />
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_1189_1266"
+          x="-871.25"
+          y="-753.25"
+          width="2043.5"
+          height="1950.5"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="238.125"
+            result="effect1_foregroundBlur_1189_1266"
+          />
+        </filter>
+      </defs>
+    </svg>
+  )
+}

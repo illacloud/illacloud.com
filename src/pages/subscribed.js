@@ -1,4 +1,4 @@
-import { Nav } from '@/components/home/nav'
+import { Nav } from '@/components/home/oldNav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import Head from 'next/head'

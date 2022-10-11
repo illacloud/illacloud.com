@@ -1,4 +1,4 @@
-import { Nav } from '@/components/home/nav'
+import { Nav } from '@/components/home/Nav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { AddressIcon } from '@/img/hire/svg'
@@ -13,7 +13,9 @@ const renderImageItem = (item, index) => {
       key={item.des}
       className={clsx(
         'flex flex-col justify-center sm:w-1/2 ',
-        index % 2 === 0 ? 'sm:items-end sm:pr-[10px]' : 'sm:items-start sm:pl-[20px]'
+        index % 2 === 0
+          ? 'sm:items-end sm:pr-[10px]'
+          : 'sm:items-start sm:pl-[20px]',
       )}
     >
       <div className="flex flex-col sm:justify-center ">
@@ -64,16 +66,16 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
       key={item.title}
       className="flex flex-col items-start justify-start overflow-x-scroll mb-[20px] sm:mb-[40px]"
     >
-      <span className="font-medium text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
+      <span className="font-semibold text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
         {item.title}
       </span>
-      <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+      <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
         {responsibilities}
       </span>
       <span className="whitespace-pre-line  mb-[20px] sm:mb-[40px]  text-[14px] sm:text-[16px]">
         {item.responsibilities}
       </span>
-      <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+      <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
         {requirements}
       </span>
       <span className="whitespace-pre-line  text-[14px]  mb-[20px] sm:mb-[40px]  sm:text-[16px]">
@@ -81,7 +83,7 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
       </span>
       {item.pluses && (
         <>
-          <span className="font-medium text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
+          <span className="font-semibold text-[16px] sm:text-[20px] mb-[8px] sm:mb-[16px]">
             {pluses}
           </span>
           <span className="whitespace-pre-line  mb-[20px] sm:mb-[40px]  text-[14px] sm:text-[16px]">
@@ -90,14 +92,19 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
         </>
       )}
       <div className=" text-[#1e6fff]  mb-[20px] sm:mb-[32px] ">
-        <a href={'mailto:hr@illasoft.com'} className="block text-[14px] sm:text-[16px]">
+        <a
+          href={'mailto:hr@illasoft.com'}
+          className="block text-[14px] sm:text-[16px]"
+        >
           hr@illasoft.com
         </a>
       </div>
       <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
         <NextLink href="https://www.linkedin.com/company/illacloud/jobs/">
           <a className=" text-[14px] sm:text-[28px] text-white ">
-            <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">{cv}</span>
+            <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">
+              {cv}
+            </span>
           </a>
         </NextLink>
       </div>
@@ -108,7 +115,10 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
 const Hire = () => {
   const { t } = useTranslation('hire')
   const benefitList = [
-    { image: require('../../img/hire/play.png').default, des: '☕️ ' + t('life.benefit.play') },
+    {
+      image: require('../../img/hire/play.png').default,
+      des: '☕️ ' + t('life.benefit.play'),
+    },
     {
       image: require('../../img/hire/welfare.jpeg').default,
       des: '💰 ' + t('life.benefit.welfare'),
@@ -117,7 +127,10 @@ const Hire = () => {
       image: require('../../img/hire/holiday.png').default,
       des: '☀️' + t('life.benefit.holiday'),
     },
-    { image: require('../../img/hire/newcomer.png').default, des: '💻 ' + t('life.benefit.newcomer') },
+    {
+      image: require('../../img/hire/newcomer.png').default,
+      des: '💻 ' + t('life.benefit.newcomer'),
+    },
   ]
   const addressLit = [
     {
@@ -159,14 +172,16 @@ const Hire = () => {
         <title>{t('desc')}</title>
       </Head>
       <div>
-        <div className=" w-full items-center flex flex-col  bg-[#ffffff] lg:bg-[#fafafa]">
+        <div className=" w-full items-center flex flex-col  bg-[#ffffff]">
           <div className="lg:h-screen  mb-[40px] lg:mb-0 flex flex-col  items-center  lg:items-center  w-full ">
-            <Nav />
+            <Nav whiteTheme hasButton={false} />
             <div className="px-[40px] flex flex-col justify-center items-center lg:flex-row-reverse  lg:px-[96px] lg:gap-[80px] lg:h-full ">
               <img
                 style={{ objectFit: 'cover' }}
                 src={require('../../img/hire/logo.png').default}
-                className={' w-[300px] lg:w-[508px] h-[140px] lg:h-[auto] mt-[80px] '}
+                className={
+                  ' w-[300px] lg:w-[508px] h-[140px] lg:h-[auto] mt-[80px] '
+                }
                 alt={'logo'}
               />
               <div className="lg:w-[508px]  ">
@@ -179,12 +194,14 @@ const Hire = () => {
                   </span>
                 </div>
                 <div className="text-[#1d2129] text-[14px] lg:text-[16px] mt-[12px] leading-[20px] lg:leading-[24px] ">
-                  {t('description')}
+                  <span>{t('description-1')}</span>
+                  <br />
+                  <span>{t('description-2')}</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-[#e5e4ff]  w-full px-[40px] flex flex-col items-center sm:bg-[#fafafa] lg:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
+          <div className="bg-[#e5e4ff]  w-full px-[40px] flex flex-col items-center sm:bg-white-01 lg:w-[800px] pb-[40px] sm:pb-[48px] pb-[40px]">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mt-[40px] sm:mt-[80px]">
               {t('life.title')}
             </span>
@@ -203,7 +220,7 @@ const Hire = () => {
               {addressLit?.map((item) => renderItem(item))}
             </div>
           </div>
-          <div className=" bg-[#e5e4ff] sm:bg-[#fafafa] w-full px-[40px] pt-[40px] pb-[20px] sm:py-[80px] flex flex-col items-center">
+          <div className=" bg-[#e5e4ff] sm:bg-white-01 w-full px-[40px] pt-[40px] pb-[20px] sm:py-[80px] flex flex-col items-center">
             <span className="text-[#0b0c0f] text-[40px] sm:text-[48px] font-bold  mb-[24px] sm:mb-[48px] ">
               {t('recruiting.title')}
             </span>
@@ -214,8 +231,8 @@ const Hire = () => {
                   t('recruiting.responsibilities'),
                   t('recruiting.requirements'),
                   t('recruiting.pluses'),
-                  t('recruiting.cv')
-                )
+                  t('recruiting.cv'),
+                ),
               )}
             </div>
           </div>

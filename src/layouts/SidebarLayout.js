@@ -8,25 +8,29 @@ import { Dialog } from '@headlessui/react'
 
 export const SidebarContext = createContext()
 
-const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHref }, ref) => {
-  return (
-    <li ref={ref}>
-      <Link href={isPublished ? href : fallbackHref}>
-        <a
-          className={clsx('block border-l pl-4 -ml-px', {
-            'text-sky-500 border-current font-semibold dark:text-sky-400': isActive,
-            'border-transparent hover:border-slate-400 dark:hover:border-slate-500': !isActive,
-            'text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300':
-              !isActive && isPublished,
-            'text-slate-400': !isActive && !isPublished,
-          })}
-        >
-          {children}
-        </a>
-      </Link>
-    </li>
-  )
-})
+const NavItem = forwardRef(
+  ({ href, children, isActive, isPublished, fallbackHref }, ref) => {
+    return (
+      <li ref={ref}>
+        <Link href={isPublished ? href : fallbackHref}>
+          <a
+            className={clsx('block border-l pl-4 -ml-px', {
+              'text-sky-500 border-current font-semibold dark:text-sky-400':
+                isActive,
+              'border-transparent hover:border-slate-400 dark:hover:border-slate-500':
+                !isActive,
+              'text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300':
+                !isActive && isPublished,
+              'text-slate-400': !isActive && !isPublished,
+            })}
+          >
+            {children}
+          </a>
+        </Link>
+      </li>
+    )
+  },
+)
 
 /**
  * Find the nearst scrollable ancestor (or self if scrollable)
@@ -49,8 +53,10 @@ function nearestScrollableContainer(el) {
     const canScrollY = el.clientHeight < el.scrollHeight
     const canScrollX = el.clientWidth < el.scrollWidth
 
-    const isScrollableY = canScrollY && (overflowY === 'auto' || overflowY === 'scroll')
-    const isScrollableX = canScrollX && (overflowX === 'auto' || overflowX === 'scroll')
+    const isScrollableY =
+      canScrollY && (overflowY === 'auto' || overflowY === 'scroll')
+    const isScrollableX =
+      canScrollX && (overflowX === 'auto' || overflowX === 'scroll')
 
     return isScrollableY || isScrollableX
   }
@@ -90,7 +96,8 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
       const bottom = top - scrollRect.height + activeItemRect.height
 
       if (scrollable.scrollTop > top || scrollable.scrollTop < bottom) {
-        scrollable.scrollTop = top - scrollRect.height / 2 + activeItemRect.height / 2
+        scrollable.scrollTop =
+          top - scrollRect.height / 2 + activeItemRect.height / 2
       }
     }
   }, [router.pathname])
@@ -140,7 +147,9 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
             }}
           </SearchButton>
         </div>
-        {!mobile && <div className="h-8 bg-gradient-to-b from-white dark:from-slate-900" />}
+        {!mobile && (
+          <div className="h-8 bg-gradient-to-b from-white dark:from-slate-900" />
+        )}
       </div>
       <ul>
         <TopLevelNav mobile={mobile} />
@@ -148,13 +157,16 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
         {nav &&
           Object.keys(nav)
             .map((category) => {
-              let publishedItems = nav[category].filter((item) => item.published !== false)
+              let publishedItems = nav[category].filter(
+                (item) => item.published !== false,
+              )
               if (publishedItems.length === 0 && !fallbackHref) return null
               return (
                 <li key={category} className="mt-12 lg:mt-8">
                   <h5
                     className={clsx('mb-8 lg:mb-3 font-semibold', {
-                      'text-slate-900 dark:text-slate-200': publishedItems.length > 0,
+                      'text-slate-900 dark:text-slate-200':
+                        publishedItems.length > 0,
                       'text-slate-400': publishedItems.length === 0,
                     })}
                   >
@@ -163,26 +175,30 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                   <ul
                     className={clsx(
                       'space-y-6 lg:space-y-2 border-l border-slate-100',
-                      mobile ? 'dark:border-slate-700' : 'dark:border-slate-800'
+                      mobile
+                        ? 'dark:border-slate-700'
+                        : 'dark:border-slate-800',
                     )}
                   >
-                    {(fallbackHref ? nav[category] : publishedItems).map((item, i) => {
-                      let isActive = item.match
-                        ? item.match.test(router.asPath)
-                        : item.href === router.pathname
-                      return (
-                        <NavItem
-                          key={i}
-                          href={item.href}
-                          isActive={isActive}
-                          ref={isActive ? activeItemRef : undefined}
-                          isPublished={item.published !== false}
-                          fallbackHref={fallbackHref}
-                        >
-                          {item.shortTitle || item.title}
-                        </NavItem>
-                      )
-                    })}
+                    {(fallbackHref ? nav[category] : publishedItems).map(
+                      (item, i) => {
+                        let isActive = item.match
+                          ? item.match.test(router.asPath)
+                          : item.href === router.pathname
+                        return (
+                          <NavItem
+                            key={i}
+                            href={item.href}
+                            isActive={isActive}
+                            ref={isActive ? activeItemRef : undefined}
+                            isPublished={item.published !== false}
+                            fallbackHref={fallbackHref}
+                          >
+                            {item.shortTitle || item.title}
+                          </NavItem>
+                        )
+                      },
+                    )}
                   </ul>
                 </li>
               )
@@ -195,8 +211,18 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
 
 const TopLevelAnchor = forwardRef(
   (
-    { children, href, className, icon, isActive, onClick, shadow, activeBackground, mobile },
-    ref
+    {
+      children,
+      href,
+      className,
+      icon,
+      isActive,
+      onClick,
+      shadow,
+      activeBackground,
+      mobile,
+    },
+    ref,
   ) => {
     return (
       <li>
@@ -209,7 +235,7 @@ const TopLevelAnchor = forwardRef(
             className,
             isActive
               ? 'font-semibold text-sky-500 dark:text-sky-400'
-              : 'font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300'
+              : 'font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300',
           )}
         >
           <div
@@ -220,7 +246,7 @@ const TopLevelAnchor = forwardRef(
                 ? [activeBackground, 'dark:highlight-white/10']
                 : mobile
                 ? 'dark:bg-slate-700 dark:highlight-white/5'
-                : 'dark:bg-slate-800 dark:highlight-white/5'
+                : 'dark:bg-slate-800 dark:highlight-white/5',
             )}
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
@@ -231,7 +257,7 @@ const TopLevelAnchor = forwardRef(
         </a>
       </li>
     )
-  }
+  },
 )
 
 function TopLevelLink({ href, as, ...props }) {
@@ -268,7 +294,7 @@ function TopLevelNav({ mobile }) {
                 'fill-sky-200 group-hover:fill-sky-500',
                 pathname.startsWith('/docs')
                   ? 'dark:fill-sky-300 dark:group-hover:fill-sky-300'
-                  : 'dark:fill-slate-400 dark:group-hover:fill-sky-300'
+                  : 'dark:fill-slate-400 dark:group-hover:fill-sky-300',
               )}
             />
             <path
@@ -279,7 +305,7 @@ function TopLevelNav({ mobile }) {
                 'fill-sky-400 group-hover:fill-sky-500',
                 pathname.startsWith('/docs')
                   ? 'dark:fill-sky-200 dark:group-hover:fill-sky-200'
-                  : 'dark:fill-slate-600 dark:group-hover:fill-sky-200'
+                  : 'dark:fill-slate-600 dark:group-hover:fill-sky-200',
               )}
             />
           </>
@@ -298,21 +324,21 @@ function TopLevelNav({ mobile }) {
               d="m6 9 6-3 6 3v6l-6 3-6-3V9Z"
               className={clsx(
                 'fill-indigo-100 group-hover:fill-indigo-200',
-                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400'
+                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400',
               )}
             />
             <path
               d="m6 9 6 3v7l-6-3V9Z"
               className={clsx(
                 'fill-indigo-300 group-hover:fill-indigo-400 dark:group-hover:fill-indigo-300',
-                mobile ? 'dark:fill-slate-400' : 'dark:fill-slate-500'
+                mobile ? 'dark:fill-slate-400' : 'dark:fill-slate-500',
               )}
             />
             <path
               d="m18 9-6 3v7l6-3V9Z"
               className={clsx(
                 'fill-indigo-400 group-hover:fill-indigo-500 dark:group-hover:fill-indigo-400',
-                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600'
+                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600',
               )}
             />
           </>
@@ -331,7 +357,7 @@ function TopLevelNav({ mobile }) {
               d="M4 12a7 7 0 0 1 7-7h2a7 7 0 1 1 0 14h-2a7 7 0 0 1-7-7Z"
               className={clsx(
                 'fill-blue-400 group-hover:fill-blue-500 dark:group-hover:fill-blue-400',
-                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600'
+                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600',
               )}
             />
             <path
@@ -341,7 +367,7 @@ function TopLevelNav({ mobile }) {
               strokeLinejoin="round"
               className={clsx(
                 'stroke-blue-50 dark:stroke-slate-400 dark:group-hover:stroke-white',
-                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400'
+                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400',
               )}
             />
             <path
@@ -351,7 +377,7 @@ function TopLevelNav({ mobile }) {
               strokeLinejoin="round"
               className={clsx(
                 'stroke-blue-200 dark:group-hover:stroke-white',
-                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400'
+                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400',
               )}
             />
           </>
@@ -361,7 +387,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="/community"
+        href="https://github.com/illa-family/illa-builder"
         className="mb-8"
         shadow="group-hover:shadow-violet-200 dark:group-hover:bg-violet-500"
         icon={
@@ -372,7 +398,7 @@ function TopLevelNav({ mobile }) {
               d="M11 5a6 6 0 0 0-4.687 9.746c.215.27.315.62.231.954l-.514 2.058a1 1 0 0 0 1.485 1.1l2.848-1.71c.174-.104.374-.15.576-.148H13a6 6 0 0 0 0-12h-2Z"
               className={clsx(
                 'fill-violet-400 group-hover:fill-violet-500 dark:group-hover:fill-violet-300',
-                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600'
+                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600',
               )}
             />
             <circle
@@ -381,7 +407,7 @@ function TopLevelNav({ mobile }) {
               r="1"
               className={clsx(
                 'fill-white dark:group-hover:fill-white',
-                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400'
+                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400',
               )}
             />
             <circle
@@ -390,7 +416,7 @@ function TopLevelNav({ mobile }) {
               r="1"
               className={clsx(
                 'fill-violet-200 dark:group-hover:fill-white',
-                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400'
+                mobile ? 'dark:fill-slate-300' : 'dark:fill-slate-400',
               )}
             />
             <circle
@@ -399,7 +425,7 @@ function TopLevelNav({ mobile }) {
               r="1"
               className={clsx(
                 'fill-violet-200 dark:fill-slate-400 dark:group-hover:fill-white',
-                mobile ? '' : ''
+                mobile ? '' : '',
               )}
             />
           </>
@@ -412,7 +438,11 @@ function TopLevelNav({ mobile }) {
 }
 
 function Wrapper({ allowOverflow, children }) {
-  return <div className={allowOverflow ? undefined : 'overflow-hidden'}>{children}</div>
+  return (
+    <div className={allowOverflow ? undefined : 'overflow-hidden'}>
+      {children}
+    </div>
+  )
 }
 
 export function SidebarLayout({

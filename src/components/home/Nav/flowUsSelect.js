@@ -1,21 +1,35 @@
-import NextLink from 'next/link'
 import { useRef, useState } from 'react'
-import { useRouter } from 'next/router'
 import { useClickAway } from 'react-use'
+import { useTranslation } from 'next-i18next'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
 
 const options = [
-  { label: '简体中文', value: 'zh-CN' },
-  { label: 'English', value: 'en-US' },
+  {
+    label: 'Github',
+    value: 'https://github.com/illa-family/illa-builder',
+  },
+  {
+    label: 'Twitter',
+    value: 'https://twitter.com/illafamily',
+  },
+  {
+    label: 'Discord',
+    value: 'https://discord.gg/zKf3WKCufR',
+  },
+  {
+    label: 'ProductHunt',
+    value: 'https://www.producthunt.com/posts/illa',
+  },
 ]
 
-export const LanguageSelect = ({ buttonColorChange = true }) => {
+export const FlowUsSelect = ({ buttonColorChange = true }) => {
+  const { t } = useTranslation('home')
+
   const [expandPanel, setExpandPanel] = useState(false)
 
   const ref = useRef(null)
 
-  const router = useRouter()
   useClickAway(ref, () => {
     setExpandPanel(false)
   })
@@ -23,23 +37,15 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col bg-transparent items-center h-[48px] cursor-pointer  justify-between relative"
+      className="flex flex-col relative  bg-transparent  items-center h-[48px] cursor-pointer  justify-between "
     >
       <div
-        className={clsx(
-          'text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]',
-          {
-            'text-white-01': buttonColorChange,
-            'text-gray-01': !buttonColorChange,
-          },
-        )}
+        className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
         onClick={() => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[10px]">
-          {router.locale === 'en-US' ? 'English' : '简体中文'}
-        </span>
+        <span className="mr-[8px]">{t('nav.community')}</span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div
@@ -51,14 +57,15 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           },
         )}
         style={{
-          height: `${expandPanel ? 96 : 0}px `,
+          height: `${expandPanel ? 176 : 0}px `,
         }}
       >
         {options.map((option) => (
-          <NextLink
-            key={option.value}
-            href={router.pathname}
-            locale={option.value}
+          <a
+            href={option.value}
+            target="_blank"
+            className="w-full"
+            key={option.label}
           >
             <div
               className={clsx(
@@ -68,10 +75,13 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
                   'hover:bg-[#f2f3f5]': !buttonColorChange,
                 },
               )}
+              onClick={() => {
+                setExpandPanel(() => !expandPanel)
+              }}
             >
               {option.label}
             </div>
-          </NextLink>
+          </a>
         ))}
       </div>
     </div>
