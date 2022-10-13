@@ -1,15 +1,15 @@
-import { useState, useCallback, useRef, createContext, useContext, useEffect } from 'react'
-import { createPortal } from 'react-dom'
-import Link from 'next/link'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { DocSearchModal } from '@docsearch/react'
-import clsx from 'clsx'
-import { useActionKey } from '@/hooks/useActionKey'
+import { useState, useCallback, useRef, createContext, useContext, useEffect } from "react"
+import { createPortal } from "react-dom"
+import Link from "next/link"
+import Head from "next/head"
+import { useRouter } from "next/router"
+import { DocSearchModal } from "@docsearch/react"
+import clsx from "clsx"
+import { useActionKey } from "@/hooks/useActionKey"
 
-const INDEX_NAME = 'illa'
-const API_KEY = '014113e7aad7db02a15e0aa4f9422338'
-const APP_ID = 'POULYAT54V'
+const INDEX_NAME = "illa"
+const API_KEY = "014113e7aad7db02a15e0aa4f9422338"
+const APP_ID = "POULYAT54V"
 
 const SearchContext = createContext()
 
@@ -17,6 +17,7 @@ export function SearchProvider({ children }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [initialQuery, setInitialQuery] = useState(null)
+  const curLanguage = router.locale
 
   const onOpen = useCallback(() => {
     setIsOpen(true)
@@ -31,7 +32,7 @@ export function SearchProvider({ children }) {
       setIsOpen(true)
       setInitialQuery(e.key)
     },
-    [setIsOpen, setInitialQuery]
+    [setIsOpen, setInitialQuery],
   )
 
   useDocSearchKeyboardEvents({
@@ -72,34 +73,37 @@ export function SearchProvider({ children }) {
                 router.push(itemUrl)
               },
             }}
+            searchParameters={{
+              facetFilters: [[`lang:${curLanguage}`]],
+            }}
             hitComponent={Hit}
             transformItems={(items) => {
               return items.map((item, index) => {
                 // We transform the absolute URL into a relative URL to
                 // leverage Next's preloading.
-                const a = document.createElement('a')
+                const a = document.createElement("a")
                 a.href = item.url
 
-                const hash = a.hash === '#content-wrapper' || a.hash === '#header' ? '' : a.hash
+                const hash = a.hash === "#content-wrapper" || a.hash === "#header" ? "" : a.hash
 
                 if (item.hierarchy?.lvl0) {
-                  item.hierarchy.lvl0 = item.hierarchy.lvl0.replace(/&amp;/g, '&')
+                  item.hierarchy.lvl0 = item.hierarchy.lvl0.replace(/&amp;/g, "&")
                 }
 
                 if (item._highlightResult?.hierarchy?.lvl0?.value) {
                   item._highlightResult.hierarchy.lvl0.value =
-                    item._highlightResult.hierarchy.lvl0.value.replace(/&amp;/g, '&')
+                    item._highlightResult.hierarchy.lvl0.value.replace(/&amp;/g, "&")
                 }
 
                 return {
                   ...item,
                   url: `${a.pathname}${hash}`,
                   __is_result: () => true,
-                  __is_parent: () => item.type === 'lvl1' && items.length > 1 && index === 0,
+                  __is_parent: () => item.type === "lvl1" && items.length > 1 && index === 0,
                   __is_child: () =>
-                    item.type !== 'lvl1' &&
+                    item.type !== "lvl1" &&
                     items.length > 1 &&
-                    items[0].type === 'lvl1' &&
+                    items[0].type === "lvl1" &&
                     index !== 0,
                   __is_first: () => index === 1,
                   __is_last: () => index === items.length - 1 && index !== 0,
@@ -107,7 +111,7 @@ export function SearchProvider({ children }) {
               })
             }}
           />,
-          document.body
+          document.body,
         )}
     </>
   )
@@ -118,11 +122,11 @@ function Hit({ hit, children }) {
     <Link href={hit.url}>
       <a
         className={clsx({
-          'DocSearch-Hit--Result': hit.__is_result?.(),
-          'DocSearch-Hit--Parent': hit.__is_parent?.(),
-          'DocSearch-Hit--FirstChild': hit.__is_first?.(),
-          'DocSearch-Hit--LastChild': hit.__is_last?.(),
-          'DocSearch-Hit--Child': hit.__is_child?.(),
+          "DocSearch-Hit--Result": hit.__is_result?.(),
+          "DocSearch-Hit--Parent": hit.__is_parent?.(),
+          "DocSearch-Hit--FirstChild": hit.__is_first?.(),
+          "DocSearch-Hit--LastChild": hit.__is_last?.(),
+          "DocSearch-Hit--Child": hit.__is_child?.(),
         })}
       >
         {children}
@@ -144,15 +148,16 @@ export function SearchButton({ children, ...props }) {
         }
       }
     }
-    window.addEventListener('keydown', onKeyDown)
+
+    window.addEventListener("keydown", onKeyDown)
     return () => {
-      window.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener("keydown", onKeyDown)
     }
   }, [onInput, searchButtonRef])
 
   return (
     <button type="button" ref={searchButtonRef} onClick={onOpen} {...props}>
-      {typeof children === 'function' ? children({ actionKey }) : children}
+      {typeof children === "function" ? children({ actionKey }) : children}
     </button>
   )
 }
@@ -163,29 +168,29 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
       function open() {
         // We check that no other DocSearch modal is showing before opening
         // another one.
-        if (!document.body.classList.contains('DocSearch--active')) {
+        if (!document.body.classList.contains("DocSearch--active")) {
           onOpen()
         }
       }
 
       if (
         (event.keyCode === 27 && isOpen) ||
-        (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
-        (!isEditingContent(event) && event.key === '/' && !isOpen)
+        (event.key === "k" && (event.metaKey || event.ctrlKey)) ||
+        (!isEditingContent(event) && event.key === "/" && !isOpen)
       ) {
         event.preventDefault()
 
         if (isOpen) {
           onClose()
-        } else if (!document.body.classList.contains('DocSearch--active')) {
+        } else if (!document.body.classList.contains("DocSearch--active")) {
           open()
         }
       }
     }
 
-    window.addEventListener('keydown', onKeyDown)
+    window.addEventListener("keydown", onKeyDown)
     return () => {
-      window.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener("keydown", onKeyDown)
     }
   }, [isOpen, onOpen, onClose])
 }
@@ -195,8 +200,8 @@ function isEditingContent(event) {
   let tagName = element.tagName
   return (
     element.isContentEditable ||
-    tagName === 'INPUT' ||
-    tagName === 'SELECT' ||
-    tagName === 'TEXTAREA'
+    tagName === "INPUT" ||
+    tagName === "SELECT" ||
+    tagName === "TEXTAREA"
   )
 }
