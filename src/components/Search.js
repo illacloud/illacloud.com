@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import { useActionKey } from '@/hooks/useActionKey'
 
 const INDEX_NAME = 'illa'
-const API_KEY = 'f6ab724a61385fe99d73bdb12cb67b7e'
+const API_KEY = '014113e7aad7db02a15e0aa4f9422338'
 const APP_ID = 'POULYAT54V'
 
 const SearchContext = createContext()
@@ -61,10 +61,6 @@ export function SearchProvider({ children }) {
           <DocSearchModal
             initialQuery={initialQuery}
             initialScrollY={window.scrollY}
-            searchParameters={{
-              facetFilters: 'version:v3',
-              distinct: 1,
-            }}
             placeholder="Search documentation"
             onClose={onClose}
             indexName={INDEX_NAME}
