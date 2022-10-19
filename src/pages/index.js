@@ -23,6 +23,9 @@ const Home = () => {
     ).then((res) => res.json()).then((data) => {
       const { stargazers_count = 0 } = data
       setStarCounts(stargazers_count)
+    }).catch((e) => {
+      console.error(e);
+      setStarCounts("unknown")
     })
   }, [])
 
