@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Nav } from '@/components/home/Nav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Content } from '@/components/home/content'
 import { Footer } from '@/components/home/home-footer'
@@ -10,12 +10,24 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import Script from 'next/script'
 
-const Home = (props) => {
-  const { stargazers_count } = props
+const Home = () => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
+  const [starCounts, setStarCounts] = useState(0);
+
+  useEffect(() => {
+    fetch(
+      'https://api.github.com/repos/illa-family/illa-builder',
+    ).then((res) => res.json()).then((data) => {
+      const { stargazers_count = 0 } = data
+      setStarCounts(stargazers_count)
+    }).catch((e) => {
+      console.error(e);
+      setStarCounts("unknown")
+    })
+  }, [])
 
   return (
     <>
@@ -39,7 +51,7 @@ const Home = (props) => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-scroll xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={stargazers_count}
+          githubStarts={starCounts}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
         />
@@ -74,13 +86,13 @@ const Home = (props) => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={stargazers_count}
+          githubStarts={starCounts}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={stargazers_count}
+          githubStarts={starCounts}
           onSubscribe={() => setModalVisible(true)}
         />
         <Content />
@@ -96,15 +108,9 @@ const Home = (props) => {
 }
 
 export const getStaticProps = async ({ locale }) => {
-  const data = await fetch(
-    'https://api.github.com/repos/illa-family/illa-builder',
-  ).then((res) => res.json())
-  const { stargazers_count = 0 } = data
-
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'navs'])),
-      stargazers_count,
     },
   }
 }
