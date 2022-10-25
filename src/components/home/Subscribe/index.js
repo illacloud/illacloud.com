@@ -54,7 +54,11 @@ export const SubscribeModal = ({ visible, onClose }) => {
           Toast.info(`😣 ${t('subscribe.message.failed')}`, 2)
         }
       })
-      .catch(() => {})
+      .catch((e) => {
+        console.error(e)
+        setLoading(false)
+        Toast.info(`😣 ${t('subscribe.message.failed')}`, 2)
+      })
   }
 
   if (!visible) return null
