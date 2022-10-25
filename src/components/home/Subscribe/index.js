@@ -29,7 +29,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
   const subscribe = async (form) => {
     if (loading || sent) return
     setLoading(true)
-    await fetch('https://email.dev.illasoft.com/v1/subscribe', {
+    await fetch('http://email.illasoft.com/v1/subscribe', {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
