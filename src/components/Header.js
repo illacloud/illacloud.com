@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { ThemeSelect, ThemeToggle } from './ThemeToggle'
 import { LanguageToggle } from './LanguageToggle'
-import NextLink from "next/link"
+import NextLink from 'next/link'
 
 function Featured() {
   return (
-    <Link href="/blog/illa-on-github">
+    <Link href="https://github.com/illa-family">
       <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
         <strong className="font-semibold">ILLA on Github</strong>
         <svg
@@ -90,7 +90,11 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
             onClick={() => setIsOpen(false)}
           >
             <span className="sr-only">Close navigation</span>
-            <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+            <svg
+              viewBox="0 0 10 10"
+              className="w-2.5 h-2.5 overflow-visible"
+              aria-hidden="true"
+            >
               <path
                 d="M0 0L10 10M10 0L0 10"
                 fill="none"
@@ -103,7 +107,10 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
           <ul className="space-y-6">
             <NavItems />
             <li>
-              <a href="/github" className="hover:text-sky-500 dark:hover:text-sky-400">
+              <a
+                href="/github"
+                className="hover:text-sky-500 dark:hover:text-sky-400"
+              >
                 GitHub
               </a>
             </li>
@@ -139,7 +146,13 @@ export function NavItems() {
   )
 }
 
-export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section }) {
+export function Header({
+  hasNav = false,
+  navIsOpen,
+  onNavToggle,
+  title,
+  section,
+}) {
   let [isOpaque, setIsOpaque] = useState(false)
 
   useEffect(() => {
@@ -163,7 +176,10 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
       <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
         <div className="w-[108rem] flex-none flex justify-end">
           <picture>
-            <source srcSet={require('@/img/beams/docs@30.avif').default} type="image/avif" />
+            <source
+              srcSet={require('@/img/beams/docs@30.avif').default}
+              type="image/avif"
+            />
             <img
               src={require('@/img/beams/docs@tinypng.png').default}
               alt=""
@@ -171,7 +187,10 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
             />
           </picture>
           <picture>
-            <source srcSet={require('@/img/beams/docs-dark@30.avif').default} type="image/avif" />
+            <source
+              srcSet={require('@/img/beams/docs-dark@30.avif').default}
+              type="image/avif"
+            />
             <img
               src={require('@/img/beams/docs-dark@tinypng.png').default}
               alt=""
@@ -185,14 +204,14 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
           'sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06]',
           isOpaque
             ? 'bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75'
-            : 'bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'
+            : 'bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent',
         )}
       >
         <div className="max-w-8xl mx-auto">
           <div
             className={clsx(
               'py-4 border-b border-slate-900/10 lg:px-8 lg:border-0 dark:border-slate-300/10',
-              hasNav ? 'px-4 lg:mx-0' : 'px-4'
+              hasNav ? 'px-4 lg:mx-0' : 'px-4',
             )}
           >
             <div className="relative flex items-center">
