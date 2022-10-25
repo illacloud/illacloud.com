@@ -41,7 +41,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
               <Metadata meta={meta} />
               <h1
                 className={clsx(
-                  'text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl'
+                  'text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl',
                 )}
               >
                 <Widont>{meta.title}</Widont>
@@ -50,7 +50,9 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                 <dl>
                   <dt className="sr-only">Date</dt>
                   <dd
-                    className={clsx('absolute top-0 inset-x-0 text-slate-700 dark:text-slate-400')}
+                    className={clsx(
+                      'absolute top-0 inset-x-0 text-slate-700 dark:text-slate-400',
+                    )}
                   >
                     <time dateTime={meta.date}>
                       {formatDate(meta.date, '{dddd}, {MMMM} {DD}, {YYYY}')}
@@ -59,7 +61,11 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                 </dl>
               </div>
               <div className="mt-6">
-                <ul className={clsx('flex flex-wrap text-sm leading-6 -mt-6 -mx-5')}>
+                <ul
+                  className={clsx(
+                    'flex flex-wrap text-sm leading-6 -mt-6 -mx-5',
+                  )}
+                >
                   {meta.authors.map((author) => (
                     <li
                       key={author.twitter}
@@ -71,7 +77,9 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                         className="mr-3 w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-800"
                       />
                       <div className="text-sm leading-4">
-                        <div className="text-slate-900 dark:text-slate-200">{author.name}</div>
+                        <div className="text-slate-900 dark:text-slate-200">
+                          {author.name}
+                        </div>
                         <div className="mt-1">
                           <a
                             href={`https://twitter.com/${author.twitter}`}
@@ -114,34 +122,43 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   <NewsletterForm action="https://app.convertkit.com/forms/3286143/subscriptions" />
                 </div>
               </section>
-              {latestPosts && <section className="relative pt-16 border-t border-slate-200 dark:border-slate-200/5">
-                <h2 className="mb-6 font-semibold text-slate-900 dark:text-slate-200">
-                  Latest articles
-                </h2>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
-                  {latestPosts
-                    .filter((post) => post.slug !== slug)
-                    .slice(0, 2)
-                    .map((post) => (
-                      <article key={post.slug} className="flex flex-col items-start">
-                        <h3 className="order-1 text-lg text-slate-900 font-semibold dark:text-slate-200">
-                          <Link href={`/blog/${post.slug}`}>
-                            <a>{post.title}</a>
-                          </Link>
-                        </h3>
-                        <time
-                          dateTime={post.date}
-                          className="text-sm leading-7 dark:text-slate-400"
+              {latestPosts && (
+                <section className="relative pt-16 border-t border-slate-200 dark:border-slate-200/5">
+                  <h2 className="mb-6 font-semibold text-slate-900 dark:text-slate-200">
+                    Latest articles
+                  </h2>
+                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
+                    {latestPosts
+                      .filter((post) => post.slug !== slug)
+                      .slice(0, 2)
+                      .map((post) => (
+                        <article
+                          key={post.slug}
+                          className="flex flex-col items-start"
                         >
-                          {formatDate(post.date, '{MMMM} {DD}, {YYYY}')}
-                        </time>
-                        <Button href={`/blog/${post.slug}`} className="order-1 mt-6">
-                          Read more<span className="sr-only">, {post.title}</span>
-                        </Button>
-                      </article>
-                    ))}
-                </div>
-              </section>}
+                          <h3 className="order-1 text-lg text-slate-900 font-semibold dark:text-slate-200">
+                            <Link href={`/blog/${post.slug}`}>
+                              <a>{post.title}</a>
+                            </Link>
+                          </h3>
+                          <time
+                            dateTime={post.date}
+                            className="text-sm leading-7 dark:text-slate-400"
+                          >
+                            {formatDate(post.date, '{MMMM} {DD}, {YYYY}')}
+                          </time>
+                          <Button
+                            href={`/blog/${post.slug}`}
+                            className="order-1 mt-6"
+                          >
+                            Read more
+                            <span className="sr-only">, {post.title}</span>
+                          </Button>
+                        </article>
+                      ))}
+                  </div>
+                </section>
+              )}
             </div>
           </footer>
         </div>
@@ -163,23 +180,34 @@ function Metadata({ meta }) {
       {meta.image ? (
         <>
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content={`https://illa.cloud${meta.image}`} />
+          <meta
+            name="twitter:image"
+            content={`https://illa.cloud${meta.image}`}
+          />
         </>
       ) : (
         <>
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${require('@/img/social-square.jpg').default}`}
+            content={`https://illa.cloud${
+              require('@/img/social-square.jpg').default
+            }`}
           />
         </>
       )}
-      <meta property="og:url" content={`https://illa.cloud${router.pathname}`} />
+      <meta
+        property="og:url"
+        content={`https://illa.cloud${router.pathname}`}
+      />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={`${meta.title} – ILLA`} />
       <meta property="og:description" content={meta.description} />
       <meta property="og:image" content={`https://illa.cloud${meta.image}`} />
       <meta name="description" content={meta.description}></meta>
+      {meta.keywords ? (
+        <meta name="keywords" content={meta.keywords?.toString()}></meta>
+      ) : null}
     </Head>
   )
 }
