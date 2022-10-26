@@ -95,14 +95,11 @@ export const Nav = (props) => {
                 {t('self-Hosted')}
               </button>
             </NextLink>
-            <button
-              onClick={() => {
-                onSubscribe(true)
-              }}
-              className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-purple-n-01"
-            >
-              {t('illa-Cloud')}
-            </button>
+            <NextLink href="http://fast-try.illacloud.com/">
+              <button className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-purple-n-01">
+                {t('illa-Cloud')}
+              </button>
+            </NextLink>
           </motion.div>
         )}
       </div>

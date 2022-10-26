@@ -44,14 +44,11 @@ export const MobileTitle = (props) => {
               {t('self-Hosted')}
             </button>
           </NextLink>
-          <button
-            className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
-            onClick={() => {
-              onSubscribe(true)
-            }}
-          >
-            {t('illa-Cloud')}
-          </button>
+          <NextLink href="http://fast-try.illacloud.com/">
+            <button className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]">
+              {t('illa-Cloud')}
+            </button>
+          </NextLink>
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
           <div

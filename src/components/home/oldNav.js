@@ -102,20 +102,19 @@ export const Nav = ({
               {t('self-Hosted')}
             </div>
           </NextLink>
-          <span
-            className={clsx(
-              'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
-              navColorChange ? 'visible' : 'hidden',
-              cloudButtonColorChange
-                ? 'bg-[#654aec] text-[#ffffff]'
-                : 'bg-[#ffffff] text-[#654aec]',
-            )}
-            onClick={() => {
-              onSubscribe?.()
-            }}
-          >
-            {t('illa-Cloud')}
-          </span>
+          <NextLink href="http://fast-try.illacloud.com/">
+            <span
+              className={clsx(
+                'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
+                navColorChange ? 'visible' : 'hidden',
+                cloudButtonColorChange
+                  ? 'bg-[#654aec] text-[#ffffff]'
+                  : 'bg-[#ffffff] text-[#654aec]',
+              )}
+            >
+              {t('illa-Cloud')}
+            </span>
+          </NextLink>
         </div>
       </div>
     </>
