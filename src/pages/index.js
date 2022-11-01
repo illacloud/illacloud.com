@@ -15,18 +15,19 @@ const Home = () => {
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
-  const [starCounts, setStarCounts] = useState(0);
+  const [starCounts, setStarCounts] = useState(0)
 
   useEffect(() => {
-    fetch(
-      'https://api.github.com/repos/illa-family/illa-builder',
-    ).then((res) => res.json()).then((data) => {
-      const { stargazers_count = 0 } = data
-      setStarCounts(stargazers_count)
-    }).catch((e) => {
-      console.error(e);
-      setStarCounts("unknown")
-    })
+    fetch('https://api.github.com/repos/illa-family/illa-builder')
+      .then((res) => res.json())
+      .then((data) => {
+        const { stargazers_count = 0 } = data
+        setStarCounts(stargazers_count)
+      })
+      .catch((e) => {
+        console.error(e)
+        setStarCounts('unknown')
+      })
   }, [])
 
   return (
@@ -44,10 +45,7 @@ const Home = () => {
         />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
-        <meta
-          name="keywords"
-          content="illa,illacloud,illa cloud,艾拉云,艾拉云科,艾拉"
-        />
+        <meta name="keywords" content="illa,illacloud,illa cloud,艾拉云科" />
       </Head>
       <div className="bg-gray-01 w-full overflow-y-scroll xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
