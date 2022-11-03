@@ -77,6 +77,11 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       >
         {t('nav.community')} <SelectIcon />
       </span>
+      <NextLink href="/blog">
+        <span className="w-full flex cursor-pointer flex-row flex-nowrap items-center h-[40px] gap-[8px] ">
+          {t('nav.blog')}
+        </span>
+      </NextLink>
       <div
         style={{ height: communityListExpand ? 192 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"

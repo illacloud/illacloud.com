@@ -81,6 +81,11 @@ export const Nav = (props) => {
               </span>
             </NextLink>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
+            <NextLink href="/blog">
+              <span className="px-[16px] text-center cursor-pointer">
+                {t('nav.blog')}
+              </span>
+            </NextLink>
           </div>
         </div>
         {hasButton && (
