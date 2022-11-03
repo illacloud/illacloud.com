@@ -315,7 +315,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://design.illafamily.com"
+        href="http://fast-try.illacloud.com"
         className="mb-4"
         shadow="group-hover:shadow-indigo-200 dark:group-hover:bg-indigo-500"
         icon={
@@ -344,46 +344,7 @@ function TopLevelNav({ mobile }) {
           </>
         }
       >
-        Storybook
-      </TopLevelLink>
-      <TopLevelLink
-        mobile={mobile}
-        href="https://codesandbox.io/s/illa-design-demo-r1qyy2"
-        className="mb-4"
-        shadow="group-hover:shadow-blue-200 dark:group-hover:bg-blue-500"
-        icon={
-          <>
-            <path
-              d="M4 12a7 7 0 0 1 7-7h2a7 7 0 1 1 0 14h-2a7 7 0 0 1-7-7Z"
-              className={clsx(
-                'fill-blue-400 group-hover:fill-blue-500 dark:group-hover:fill-blue-400',
-                mobile ? 'dark:fill-slate-500' : 'dark:fill-slate-600',
-              )}
-            />
-            <path
-              d="M10.25 9.75 7.75 12l2.5 2.25"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={clsx(
-                'stroke-blue-50 dark:stroke-slate-400 dark:group-hover:stroke-white',
-                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400',
-              )}
-            />
-            <path
-              d="m13.75 9.75 2.5 2.25-2.5 2.25"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={clsx(
-                'stroke-blue-200 dark:group-hover:stroke-white',
-                mobile ? 'dark:stroke-slate-300' : 'dark:stroke-slate-400',
-              )}
-            />
-          </>
-        }
-      >
-        CodeSandBox
+        Fast Try
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
