@@ -9,17 +9,17 @@ title: 事件处理器
 
 在您设定的事件发生之后，事件处理器可以帮您执行多种操作：控制查询语句、控制组件、运行脚本等。您还可以在触发条件的基础上添加更详细的JavaScript触发条件。
 
-[//]: # (<img alt="event-handler" src="https://cdn.illafamily.com/official-site%2Fdocs%2Fevent-handler-01.png" width="400" />)
+[//]: # (<img alt="event-handler" src="require('@/img/official-site/event-handler-01.png').default" width="400" />)
 
 ### 查询事件处理器
 在查询操作中，您可以根据查询结果失败与否设定事件处理结果。您可以在响应（Response）选项卡中设置查询失败条件，让触发逻辑更加完整。
 
-[//]: # (<img alt="event-handler" src="https://cdn.illafamily.com/official-site%2Fdocs%2Fevent-handler-02.png" width="600" />)
+[//]: # (<img alt="event-handler" src="require('@/img/official-site/event-handler-02.png').default" width="400" />)
 
 ### 组件事件处理器
 我们为每个可交互的组件设置了触发条件，您可以在处理器的事件列表中选择一个事件作为触发条件。例如，您可以在数据输入框的事件处理器中，将“提交”作为触发条件，当用户“提交”输入内容时，自动把输入的内容插入到数据库中，这样就实现了一个简单的数据插入功能。
 
-[//]: # (<img alt="event-handler" src="https://cdn.illafamily.com/official-site%2Fdocs%2Fevent-handler-03.png" width="400" />)
+[//]: # (<img alt="event-handler" src="require('@/img/official-site/event-handler-03.png').default" width="400" />)
 
 ### 临时状态
 在处理数据时，您可能会遇到处理后的数据不会马上调用的情况。为此，我们设定了临时状态用于储存数据处理的中间态。您可以在事件处理器的响应事件选项中选择设置临时状态，点击创建新状态，即可将当前的数据存储在临时状态，任何属性的数据都可以放入临时状态中。
