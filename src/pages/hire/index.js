@@ -64,7 +64,7 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
   return (
     <div
       key={item.title}
-      className="flex flex-col items-start justify-start overflow-x-scroll mb-[20px] sm:mb-[40px]"
+      className="flex flex-col items-start justify-start overflow-x-auto mb-[20px] sm:mb-[40px]"
     >
       <span className="font-semibold text-[18px] sm:text-[36px] mb-[20px] sm:mb-[40px]">
         {item.title}
