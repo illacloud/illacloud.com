@@ -64,6 +64,17 @@ export function Footer({ noHome = false }) {
     },
   ]
 
+  const Business= [
+    {
+      title: t('footer.business'),
+      items: [
+        {
+          title: t('footer.media'), href: 'https://illa.s3.ap-northeast-1.amazonaws.com/utils/illa-media-kit.zip'
+        }
+      ]
+    }
+  ]
+
   return (
     <>
       <div
@@ -102,6 +113,7 @@ export function Footer({ noHome = false }) {
                 </NextLink>
               ))}
             </div>
+            {Business.map((item) => renderItem(item.title, item.items))}
           </div>
         </motion.div>
       </div>
