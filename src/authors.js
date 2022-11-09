@@ -1,5 +1,6 @@
 import owenAvatar from './img/authors/owen_chen.png'
 import illaAvatar from './img/authors/illa.png'
+import jerryAvatar from './img/authors/jerry.jpeg'
 
 export const owenchen = {
   name: 'Owen Chen',
@@ -10,7 +11,7 @@ export const owenchen = {
 export const jerry = {
   name: 'Jerry',
   twitter: 'Jerrxuy',
-  avatar: illaAvatar,
+  avatar: jerryAvatar,
 }
 
 export const vincent = {

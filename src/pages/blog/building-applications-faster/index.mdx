@@ -1,0 +1,177 @@
+import { jerry } from '@/authors'
+import header from './img/building_faster_header.png'
+
+export const meta = {
+  title: `Building Applications Faster with TiDB and ILLA Builder`,
+  description: `ILLA, the low code open source platform for developers, is proud to announce a partnership with PingCAP.`,
+  date: '2022-11-09T14:30:00.000Z',
+  authors: [jerry],
+  image: header,
+  keywords: ['illa', 'open source', 'open-source', 'lowcode', 'low-code', 'retool', 'appsmith'],
+}
+
+<img
+  src={require('./img/building_faster_header.png').default}
+  alt="building_faster_header"
+/>
+
+[ILLA](https://www.illacloud.com/), the low code open source platform for developers, is proud to announce a collaboration with PingCAP’s [TiDB](https://www.pingcap.com/tidb/), an open-source distributed NewSQL database that features horizontal scalability, high availability, real-time Hybrid Transactional and Analytical Processing (HTAP), and MySQL compatibility. This partnership aims to simplify application development by providing a database that meets data consistency, reliability, availability, scalability, and disaster tolerance requirements.
+
+Today, organizations have to store, process, and manage more and more data; single-machine databases are hitting their physical limits. Traditional sharding mechanisms are unwieldy and hard to maintain as the business grows. TiDB solves these problems transparently through its distributed architecture while maintaining MySQL compatibility. TiDB Cloud, the fully managed TiDB service, can also simplify deployment, management, and maintenance through a web-based management interface in the cloud.
+
+This tutorial will show you how to set up a TiDB cluster and build an administration panel that allows you to create, read, update, and delete entries. We’ll display the data in a table and use a panel to tab between creating and editing forms. We’ll do all this in less than 10 minutes.
+
+## Create a free cluster on TiDB Cloud
+To create a cluster on TiDB Cloud:
+
+1. [Sign in](https://tidbcloud.com/) with your TiDB Cloud account. If you are a new user, [sign up](https://tidbcloud.com/free-trial/) for an account.
+2. Create a free cluster and connect to it. Click [Quick Start TiDB](https://docs.pingcap.com/tidb/dev/dev-guide-build-cluster-in-cloud) to learn how to use it. After running the sample application, you will get the TiDB connection information, including the server name, port number, database name, user name, and password. Be sure to note these; you’ll be using them in later steps.
+
+
+## Connect to TiDB with ILLA Builder
+Now that you have a free TiDB Cluster, it’s time to connect it to the [ILLA Builder](https://github.com/illa-family/illa-builder).
+
+1. Create a free account and sign in on the ILLA Builder welcome page.
+
+2. Create a new application.
+
+3. Connect to TiDB as an ILLA resource. Do one of the following:
+  <ul>
+    <li>If you already have a PingCAP resource in ILLA Builder, you can click + <strong>New</strong>  to select it.</li>
+    <li>If you don’t have a TiDB resource in the ILLA builder, you need to click + <strong>New Resource</strong> to set up a new connection.</li>
+  </ul>
+
+Test the new connection. If the connection is successful, save the connection as a new resource.
+
+4. Use actions to execute basic create, read, update, and delete (CRUD) operations in the TiDB database. Actions bridge data and ILLA components and are essential to building an application.
+
+  a. Choose a TiDB resource and create actions.
+  
+  b. In the input box, enter the SQL statement, save it as a new action
+  
+  c. Click **Run** to execute the statement.
+  
+  d. Run a query action to see if the insert action runs successfully.
+
+You can create multiple actions and use different components to control their execution
+
+## Connect the component to the action
+Components in ILLA Builder are built-in front-end UI libraries such as buttons and input boxes. To connect a component to an action:
+
+1. Under the component inspect panel on the right, select and drag the “text” and “input” components to the canvas in the middle.
+
+<img
+  src={require('./img/building_faster_0.gif').default}
+  alt="building_faster_0"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Select & Drag
+  </figcaption>
+</center>
+<br />
+
+2. Create and save the required actions. You can refer to the component or action data by typing “{{”
+
+Here we will create two actions, tidb_query_data and tidb_insert_data, for later use.
+
+<img
+  src={require('./img/building_faster_1.jpg').default}
+  alt="building_faster_1"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Query data from the person table
+  </figcaption>
+</center>
+<img
+  src={require('./img/building_faster_2.jpg').default}
+  alt="building_faster_2"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Insert data into the person table
+  </figcaption>
+</center>
+<br />
+
+You have successfully connected the component to the action.
+
+## Implement a simple web application with TiDB Cloud
+Now that we have everything ready let’s build a simple web application with the basic components to add, delete, modify, or query the data from a TiDB table.
+
+## Create and configure an Insert button
+1. Click on the **Insert** button component you just added to enter the **Inspect** panel on the right.
+2. Under the **Inspect** panel, add an event handler, and configure the event handler as:
+    - Event: **Click**
+    - Action: **Trigger query**
+    - Query: **tidb_insert_data**
+
+<img
+  src={require('./img/building_faster_3.gif').default}
+  alt="building_faster_3"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Insert Button Setup
+  </figcaption>
+</center>
+
+## Query data from a table
+1. Click on the **Query new data** button you just created. This displays the **Inspect** panel on the right side of the screen.
+2. In the **Inspect** panel, add an event handler, and configure it as follows:
+    - Event: **Click**
+    - Action: **Trigger query**
+    - Query: **tidb_query_data**
+
+<img
+  src={require('./img/building_faster_4.gif').default}
+  alt="building_faster_4"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Query Date Setup
+  </figcaption>
+</center>
+<br />
+
+Now you can execute the query action against the specified table in TiDB.
+
+## Visualize the query as a chart
+1. In the Inspect panel on the right side, specify the dataset of the chart component to {{tidb_query_data.data}}.
+2. Adjust the chart component settings, such as the chart type, location, and size.
+3. Adjust the dataset settings, such as dataset values and aggregation method. The chart will update as you go.
+
+<img
+  src={require('./img/building_faster_5.gif').default}
+  alt="building_faster_5"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Data Visualization
+  </figcaption>
+</center>
+
+## Summary
+In this article, we implemented a simple TiDB application that inserts new data, executes queries, and displays the query results as a chart. Integrating TiDB Cloud and ILLA builder can make developing your applications much faster and more efficient.
+
+<img
+  src={require('./img/building_faster_6.gif').default}
+  alt="building_faster_6"
+/>
+<center style={{whiteSpace: 'break-spaces'}}>
+  <figcaption>
+    Preview of the tool
+  </figcaption>
+</center>
+
+<br />
+
+We believe the key to a successful open-source project is not only to code but also to collaborate through code. You are welcome to join our project. Check [ILLA’s website](https://www.illacloud.com) or join the [Discord community](https://discord.com/invite/illafamily) for more information.
+
+
+> #### You can check ILLA’s website here at https://illacloud.com
+> #### GitHub page: https://github.com/illa-family
+> #### Join Discord community: https://discord.com/invite/illafamily
+
+  
