@@ -8,10 +8,14 @@ import clsx from 'clsx'
 import { NewsletterForm } from '@/components/NewsletterForm'
 import { Button } from '@/components/Button'
 import { formatDate } from '@/utils/formatDate'
+import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
+import { ReactComponent as TelegramShare } from '@/img/share/telegram.svg'
+import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
+  const title = encodeURIComponent(meta.title)
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden relative">
       <div className="max-w-8xl mx-auto">
         <div className="flex px-4 pt-8 pb-10 lg:px-8">
           <Link href="/blog">
@@ -35,7 +39,45 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
         </div>
       </div>
       <div className="px-4 sm:px-6 md:px-8">
-        <div className="max-w-3xl mx-auto pb-28">
+        <div className="relative max-w-3xl mx-auto pb-28">
+          <aside
+            class="fixed top-1/3 hidden lg:block z-50"
+            style={{ left: 'calc(50% - 472px)' }}
+            id="share"
+            aria-label="Share this article."
+          >
+            <ul>
+              <li class="cursor-pointer">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
+                >
+                  <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2]" />
+                </a>
+              </li>
+              <li class="cursor-pointer my-5">
+                <a
+                  rel="noreferrer"
+                  class="share__link shadow"
+                  target="_blank"
+                  href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                >
+                  <TelegramShare class="text-grayBlue-02 hover:text-[#0088CC]" />
+                </a>
+              </li>
+              <li class="cursor-pointer my-5">
+                <a
+                  class="share__link shadow"
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/sharer.php?u=https://www.illacloud.com/blog/"
+                >
+                  <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5]" />
+                </a>
+              </li>
+            </ul>
+          </aside>
           <main>
             <article className="relative pt-10">
               <Metadata meta={meta} />
@@ -93,7 +135,47 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   ))}
                 </ul>
               </div>
-              <div className={clsx('mt-12 prose prose-slate dark:prose-dark')}>
+              <aside
+                class="flex flex-row mt-6 lg:hidden mb-5"
+                id="share"
+                aria-label="Share this article."
+              >
+                <ul class="flex flex-row">
+                  <li class="cursor-pointer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      class="cursor-pointer hover:text-cyan-400"
+                      href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
+                    >
+                      <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2]" />
+                    </a>
+                  </li>
+                  <li class="cursor-pointer ml-5">
+                    <a
+                      rel="noreferrer"
+                      class="share__link shadow"
+                      target="_blank"
+                      href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                    >
+                      <TelegramShare class="text-grayBlue-02 hover:text-[#0088CC]" />
+                    </a>
+                  </li>
+                  <li class="cursor-pointer ml-5">
+                    <a
+                      class="share__link shadow"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.facebook.com/sharer.php?u=https://www.illacloud.com/blog/"
+                    >
+                      <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5]" />
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <div
+                className={clsx('md:mt-12 prose prose-slate dark:prose-dark')}
+              >
                 <MDXProvider components={mdxComponents}>{children}</MDXProvider>
               </div>
             </article>
