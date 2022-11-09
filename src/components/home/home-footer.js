@@ -128,7 +128,7 @@ export function Footer({ noHome = false }) {
         </div>
         <div className=" w-full justify-center items-center flex ">
           <div className=" w-full flex-wrap justify-start items-start flex ">
-            {waysData.map((item) => renderItem(item.title, item.items))}
+            {[...waysData, ...Business].map((item) => renderItem(item.title, item.items))}
           </div>
         </div>
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
