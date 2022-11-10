@@ -194,16 +194,16 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                 className="absolute top-px -left-1/4 sm:left-0 hidden dark:block max-w-none"
                 width="1429"
               />
-              <section className="relative py-16 border-t border-slate-200 dark:border-slate-200/5">
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
-                  Get all of our updates directly to your&nbsp;inbox.
-                  <br />
-                  Sign up for our newsletter.
-                </h2>
-                <div className="mt-5 max-w-md">
-                  <NewsletterForm action="https://app.convertkit.com/forms/3286143/subscriptions" />
-                </div>
-              </section>
+              {/*<section className="relative py-16 border-t border-slate-200 dark:border-slate-200/5">*/}
+              {/*  <h2 className="text-xl font-semibold text-slate-900 dark:text-white">*/}
+              {/*    Get all of our updates directly to your&nbsp;inbox.*/}
+              {/*    <br />*/}
+              {/*    Sign up for our newsletter.*/}
+              {/*  </h2>*/}
+              {/*  <div className="mt-5 max-w-md">*/}
+              {/*    <NewsletterForm action="https://app.convertkit.com/forms/3286143/subscriptions" />*/}
+              {/*  </div>*/}
+              {/*</section>*/}
               {latestPosts && (
                 <section className="relative pt-16 border-t border-slate-200 dark:border-slate-200/5">
                   <h2 className="mb-6 font-semibold text-slate-900 dark:text-slate-200">

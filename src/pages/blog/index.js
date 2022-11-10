@@ -14,13 +14,13 @@ export default function Blog() {
         <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
           Latest Updates
         </h1>
-        <p className="text-lg text-slate-700 dark:text-slate-400">
-          <Widont>All the latest ILLA news, straight from the team.</Widont>
-        </p>
-        <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
-          <h2 className="sr-only">Sign up for our newsletter</h2>
-          <NewsletterForm action="http://email.illasoft.com/v1/subscribe" />
-        </section>
+        {/*<p className="text-lg text-slate-700 dark:text-slate-400">*/}
+        {/*  <Widont>All the latest ILLA news, straight from the team.</Widont>*/}
+        {/*</p>*/}
+        {/*<section className="mt-3 max-w-sm sm:mx-auto sm:px-4">*/}
+        {/*  <h2 className="sr-only">Sign up for our newsletter</h2>*/}
+        {/*  <NewsletterForm action="http://email.illasoft.com/v1/subscribe" />*/}
+        {/*</section>*/}
       </header>
       <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
         <div className="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
