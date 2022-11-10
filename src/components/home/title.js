@@ -142,7 +142,7 @@ export const Title = (props) => {
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
             <NextLink href="http://fast-try.illacloud.com/">
-              <button className="h-[48px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-purple-n-01">
+              <button className="h-[48px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01">
                 {t('illa-Cloud')}
               </button>
             </NextLink>

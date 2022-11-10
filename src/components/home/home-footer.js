@@ -60,19 +60,12 @@ export function Footer({ noHome = false }) {
       items: [
         // { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
         { title: t('footer.career'), href: '/hire' },
+        {
+          title: t('footer.media'),
+          href: 'https://illa.s3.ap-northeast-1.amazonaws.com/utils/illa-media-kit.zip',
+        },
       ],
     },
-  ]
-
-  const businessData= [
-    {
-      title: t('footer.business'),
-      items: [
-        {
-          title: t('footer.media'), href: 'https://illa.s3.ap-northeast-1.amazonaws.com/utils/illa-media-kit.zip'
-        }
-      ]
-    }
   ]
 
   return (
@@ -113,7 +106,6 @@ export function Footer({ noHome = false }) {
                 </NextLink>
               ))}
             </div>
-            {businessData.map((item) => renderItem(item.title, item.items))}
           </div>
         </motion.div>
       </div>
@@ -128,7 +120,7 @@ export function Footer({ noHome = false }) {
         </div>
         <div className=" w-full justify-center items-center flex ">
           <div className=" w-full flex-wrap justify-start items-start flex ">
-            {[...waysData, ...businessData].map((item) => renderItem(item.title, item.items))}
+            {waysData.map((item) => renderItem(item.title, item.items))}
           </div>
         </div>
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
