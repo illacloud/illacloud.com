@@ -148,7 +148,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       class="cursor-pointer hover:text-cyan-400"
                       href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
                     >
-                      <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2]" />
+                      <TwitterShare class="text-[#1DA1F2]" />
                     </a>
                   </li>
                   <li class="cursor-pointer ml-5">
@@ -158,7 +158,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       target="_blank"
                       href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
                     >
-                      <RedditShare class="text-grayBlue-02 hover:text-[#FF4500]" />
+                      <RedditShare class="text-[#FF4500]" />
                     </a>
                   </li>
                   <li class="cursor-pointer ml-5">
@@ -168,7 +168,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       target="_blank"
                       href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
                     >
-                      <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5]" />
+                      <LinkedinShare class="text-[#0077B5]" />
                     </a>
                   </li>
                 </ul>
