@@ -9,7 +9,7 @@ import { NewsletterForm } from '@/components/NewsletterForm'
 import { Button } from '@/components/Button'
 import { formatDate } from '@/utils/formatDate'
 import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
-import { ReactComponent as TelegramShare } from '@/img/share/telegram.svg'
+import { ReactComponent as RedditShare } from '@/img/share/reddit.svg'
 import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
@@ -61,9 +61,9 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   class="share__link shadow"
                   rel="noreferrer"
                   target="_blank"
-                  href={`https://t.me/share?url=https://www.illacloud.com/blog/&text=${title}`}
+                  href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
                 >
-                  <TelegramShare class="text-grayBlue-02 hover:text-[#0088CC] transition duration-200 ease-in-out" />
+                  <RedditShare class="text-grayBlue-02 hover:text-[#FF4500] transition duration-200 ease-in-out" />
                 </a>
               </li>
               <li class="cursor-pointer my-5">
@@ -156,9 +156,9 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       rel="noreferrer"
                       class="share__link shadow"
                       target="_blank"
-                      href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                      href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
                     >
-                      <TelegramShare class="text-grayBlue-02 hover:text-[#0088CC]" />
+                      <RedditShare class="text-grayBlue-02 hover:text-[#FF4500]" />
                     </a>
                   </li>
                   <li class="cursor-pointer ml-5">
@@ -166,7 +166,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       class="share__link shadow"
                       rel="noreferrer"
                       target="_blank"
-                      href="https://www.facebook.com/sharer.php?u=https://www.illacloud.com/blog/"
+                      href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
                     >
                       <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5]" />
                     </a>
