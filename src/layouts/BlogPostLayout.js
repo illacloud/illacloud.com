@@ -11,12 +11,15 @@ import { formatDate } from '@/utils/formatDate'
 import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
 import { ReactComponent as RedditShare } from '@/img/share/reddit.svg'
 import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
-import { useLocation } from 'react-use'
+import { useEffect, useState } from 'react'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
-  const location = useLocation()
-  const url = location.href
+  const [url, setUrl] = useState('')
+
+  useEffect(() => {
+    setUrl(window.location.href)
+  }, [])
 
   return (
     <div className="overflow-hidden relative">
@@ -45,37 +48,40 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
       <div className="px-4 sm:px-6 md:px-8">
         <div className="relative max-w-3xl mx-auto pb-28">
           <aside
-            class="fixed top-1/3 hidden lg:block z-50"
+            className="fixed top-1/3 hidden lg:block z-50"
             style={{ left: 'calc(50% - 472px)' }}
             id="share"
             aria-label="Share this article."
           >
             <ul>
-              <li class="cursor-pointer">
+              <li className="cursor-pointer">
                 <a
                   rel="noreferrer"
                   target="_blank"
+                  className="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out"
                   href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
                 >
-                  <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out" />
+                  <TwitterShare />
                 </a>
               </li>
-              <li class="cursor-pointer my-5">
+              <li className="cursor-pointer my-5">
                 <a
                   rel="noreferrer"
                   target="_blank"
+                  className="text-grayBlue-02 hover:text-[#FF4500] transition duration-200 ease-in-out"
                   href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                 >
-                  <RedditShare class="text-grayBlue-02 hover:text-[#FF4500] transition duration-200 ease-in-out" />
+                  <RedditShare />
                 </a>
               </li>
-              <li class="cursor-pointer my-5">
+              <li className="cursor-pointer my-5">
                 <a
                   rel="noreferrer"
                   target="_blank"
+                  className="text-grayBlue-02 hover:text-[#0077B5] transition duration-200 ease-in-out"
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                 >
-                  <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5] transition duration-200 ease-in-out" />
+                  <LinkedinShare />
                 </a>
               </li>
             </ul>
@@ -138,37 +144,39 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                 </ul>
               </div>
               <aside
-                class="flex flex-row mt-6 lg:hidden mb-5"
+                className="flex flex-row mt-6 lg:hidden mb-5"
                 id="share"
                 aria-label="Share this article."
               >
-                <ul class="flex flex-row">
-                  <li class="cursor-pointer">
+                <ul className="flex flex-row">
+                  <li className="cursor-pointer">
                     <a
                       rel="noreferrer"
                       target="_blank"
-                      class="cursor-pointer hover:text-cyan-400"
+                      className="cursor-pointer text-[#1DA1F2]"
                       href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
                     >
-                      <TwitterShare class="text-[#1DA1F2]" />
+                      <TwitterShare />
                     </a>
                   </li>
-                  <li class="cursor-pointer ml-5">
+                  <li className="cursor-pointer ml-5">
                     <a
                       rel="noreferrer"
                       target="_blank"
+                      className="text-[#FF4500]"
                       href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                     >
-                      <RedditShare class="text-[#FF4500]" />
+                      <RedditShare />
                     </a>
                   </li>
-                  <li class="cursor-pointer ml-5">
+                  <li className="cursor-pointer ml-5">
                     <a
                       rel="noreferrer"
                       target="_blank"
+                      className="text-[#0077B5]"
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                     >
-                      <LinkedinShare class="text-[#0077B5]" />
+                      <LinkedinShare />
                     </a>
                   </li>
                 </ul>
