@@ -14,10 +14,8 @@ import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
-  const globalObj = global || window
-  const url = globalObj.location?.href
-  const twitterLink = `https://twitter.com/share?url=${url}&text=${title}&via=illafamily`
-  console.log({ url, twitterLink})
+  const url =
+    window.location.origin + encodeURIComponent(window.location.pathname);
 
   return (
     <div className="overflow-hidden relative">
@@ -53,7 +51,11 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
           >
             <ul>
               <li class="cursor-pointer">
-                <a rel="noreferrer" target="_blank" href={twitterLink}>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
+                >
                   <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out" />
                 </a>
               </li>
@@ -72,7 +74,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   rel="noreferrer"
                   class="share__link shadow"
                   target="_blank"
-                  href={`https://www.linkedin.com/shareArticle?url=${url}&title=${title}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                 >
                   <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5] transition duration-200 ease-in-out" />
                 </a>
@@ -147,7 +149,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       rel="noreferrer"
                       target="_blank"
                       class="cursor-pointer hover:text-cyan-400"
-                      href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
+                      href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
                     >
                       <TwitterShare class="text-[#1DA1F2]" />
                     </a>
@@ -157,7 +159,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       rel="noreferrer"
                       class="share__link shadow"
                       target="_blank"
-                      href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
+                      href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                     >
                       <RedditShare class="text-[#FF4500]" />
                     </a>
@@ -167,7 +169,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       class="share__link shadow"
                       rel="noreferrer"
                       target="_blank"
-                      href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                     >
                       <LinkedinShare class="text-[#0077B5]" />
                     </a>
