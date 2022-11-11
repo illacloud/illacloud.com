@@ -15,7 +15,7 @@ import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
   const router = useRouter()
-  const url = 'https://www.illacloud.com' + encodeURIComponent(router.pathname);
+  const url = 'https://www.illacloud.com' + encodeURIComponent(router.pathname)
 
   return (
     <div className="overflow-hidden relative">
@@ -254,10 +254,30 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
 
 function Metadata({ meta }) {
   let router = useRouter()
-
   return (
     <Head>
       <title>{meta.title} – ILLA</title>
+      <meta
+        property="og:url"
+        content={`https://illa.cloud.com${router.pathname}`}
+      />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={`${meta.title} – ILLA`} />
+      <meta
+        name="image"
+        property="og:image"
+        content={`https://illa.cloud${meta.image}`}
+      />
+      <meta
+        name="description"
+        property="og:description"
+        content={meta.description}
+      />
+      <meta name="description" content={meta.description}></meta>
+      {meta.keywords ? (
+        <meta name="keywords" content={meta.keywords?.toString()}></meta>
+      ) : null}
+
       <meta name="twitter:site" content="@illaCloud" />
       <meta name="twitter:creator" content="@illaCloud" />
       <meta name="twitter:title" content={`${meta.title} – ILLA`} />
@@ -281,18 +301,6 @@ function Metadata({ meta }) {
           />
         </>
       )}
-      <meta
-        property="og:url"
-        content={`https://illa.cloud${router.pathname}`}
-      />
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content={`${meta.title} – ILLA`} />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:image" content={`https://illa.cloud${meta.image}`} />
-      <meta name="description" content={meta.description}></meta>
-      {meta.keywords ? (
-        <meta name="keywords" content={meta.keywords?.toString()}></meta>
-      ) : null}
     </Head>
   )
 }
