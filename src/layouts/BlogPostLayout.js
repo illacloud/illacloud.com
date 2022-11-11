@@ -11,10 +11,12 @@ import { formatDate } from '@/utils/formatDate'
 import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
 import { ReactComponent as RedditShare } from '@/img/share/reddit.svg'
 import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
+import { useLocation } from 'react-use'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
-  const url = typeof window !== 'undefined' ? window.location.href : ""
+  const location = useLocation()
+  const url = location.href
 
   return (
     <div className="overflow-hidden relative">
