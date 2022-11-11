@@ -61,7 +61,6 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
               </li>
               <li class="cursor-pointer my-5">
                 <a
-                  // class="share__link shadow"
                   rel="noreferrer"
                   target="_blank"
                   href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
@@ -72,7 +71,6 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
               <li class="cursor-pointer my-5">
                 <a
                   rel="noreferrer"
-                  // class="share__link shadow"
                   target="_blank"
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                 >
@@ -157,7 +155,6 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   <li class="cursor-pointer ml-5">
                     <a
                       rel="noreferrer"
-                      // class="share__link shadow"
                       target="_blank"
                       href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                     >
@@ -166,7 +163,6 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   </li>
                   <li class="cursor-pointer ml-5">
                     <a
-                      // class="share__link shadow"
                       rel="noreferrer"
                       target="_blank"
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
@@ -268,27 +264,13 @@ function Metadata({ meta }) {
         property="og:title"
         content={`${meta.title} – ILLA`}
       />
-      {meta.image ? (
-        <>
-          <meta
-            key="og:image"
-            name="image"
-            property="og:image"
-            content={`https://illa.cloud${meta.image}`}
-          />
-        </>
-      ) : (
-        <>
-          <meta
-            key="og:image"
-            name="image"
-            property="og:image"
-            content={`https://illa.cloud${
-              require('@/img/social-square.jpg').default
-            }`}
-          />
-        </>
-      )}
+      <meta
+        key="og:image"
+        name="image"
+        property="og:image"
+        content={`https://illa.cloud${meta.image}`}
+      />
+
       <meta
         key="og:description"
         name="description"
