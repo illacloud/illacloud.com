@@ -61,7 +61,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
               </li>
               <li class="cursor-pointer my-5">
                 <a
-                  class="share__link shadow"
+                  // class="share__link shadow"
                   rel="noreferrer"
                   target="_blank"
                   href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
@@ -72,7 +72,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
               <li class="cursor-pointer my-5">
                 <a
                   rel="noreferrer"
-                  class="share__link shadow"
+                  // class="share__link shadow"
                   target="_blank"
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                 >
@@ -157,7 +157,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   <li class="cursor-pointer ml-5">
                     <a
                       rel="noreferrer"
-                      class="share__link shadow"
+                      // class="share__link shadow"
                       target="_blank"
                       href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                     >
@@ -166,7 +166,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   </li>
                   <li class="cursor-pointer ml-5">
                     <a
-                      class="share__link shadow"
+                      // class="share__link shadow"
                       rel="noreferrer"
                       target="_blank"
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
@@ -258,21 +258,44 @@ function Metadata({ meta }) {
     <Head>
       <title>{meta.title} – ILLA</title>
       <meta
+        key="og:url"
         property="og:url"
         content={`https://illa.cloud.com${router.pathname}`}
       />
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content={`${meta.title} – ILLA`} />
+      <meta key="og:type" property="og:type" content="article" />
       <meta
-        name="image"
-        property="og:image"
-        content={`https://illa.cloud${meta.image}`}
+        key="og:title"
+        property="og:title"
+        content={`${meta.title} – ILLA`}
       />
+      {meta.image ? (
+        <>
+          <meta
+            key="og:image"
+            name="image"
+            property="og:image"
+            content={`https://illa.cloud${meta.image}`}
+          />
+        </>
+      ) : (
+        <>
+          <meta
+            key="og:image"
+            name="image"
+            property="og:image"
+            content={`https://illa.cloud${
+              require('@/img/social-square.jpg').default
+            }`}
+          />
+        </>
+      )}
       <meta
+        key="og:description"
         name="description"
         property="og:description"
         content={meta.description}
       />
+
       <meta name="description" content={meta.description}></meta>
       {meta.keywords ? (
         <meta name="keywords" content={meta.keywords?.toString()}></meta>

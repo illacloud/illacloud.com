@@ -89,7 +89,7 @@ function App({ Component, pageProps, router }) {
           content={`https://illa.cloud${socialCardLarge}`}
         />
         <meta key="twitter:creator" name="twitter:creator" content="@illaCloud" />
-        <meta key="og:url" property="og:url" content={`https://illa.cloud${router.pathname}`} />
+        {/* <meta key="og:url" property="og:url" content={`https://illa.cloud${router.pathname}`} />
         <meta key="og:type" property="og:type" content="website" />
         <meta key="og:title" content={t("meta.title")} />
         <meta key="og:description" property="og:description" content={description} />
@@ -97,7 +97,7 @@ function App({ Component, pageProps, router }) {
           key="og:image"
           property="og:image"
           content={`https://illa.cloud${socialCardLarge}`}
-        />
+        /> */}
         <meta name="google-site-verification" content="Jsfwfmzu_AE4NZCHQuCT2F9dMHj6MdOPBIlaNf1H8fU" />
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feeds/feed.xml" />
         <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/atom.xml" />
