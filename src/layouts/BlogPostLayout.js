@@ -14,8 +14,8 @@ import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
-  const url =
-    window.location.origin + encodeURIComponent(window.location.pathname);
+  const router = useRouter()
+  const url = 'https://www.illacloud.com' + encodeURIComponent(router.pathname);
 
   return (
     <div className="overflow-hidden relative">
