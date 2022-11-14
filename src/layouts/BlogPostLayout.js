@@ -11,9 +11,16 @@ import { formatDate } from '@/utils/formatDate'
 import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
 import { ReactComponent as RedditShare } from '@/img/share/reddit.svg'
 import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
+import { useEffect, useState } from 'react'
 
 export function BlogPostLayout({ children, meta, slug, latestPosts }) {
   const title = encodeURIComponent(meta.title)
+  const [url, setUrl] = useState('')
+
+  useEffect(() => {
+    setUrl(window.location.href)
+  }, [])
+
   return (
     <div className="overflow-hidden relative">
       <div className="max-w-8xl mx-auto">
@@ -41,39 +48,40 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
       <div className="px-4 sm:px-6 md:px-8">
         <div className="relative max-w-3xl mx-auto pb-28">
           <aside
-            class="fixed top-1/3 hidden lg:block z-50"
+            className="fixed top-1/3 hidden lg:block z-50"
             style={{ left: 'calc(50% - 472px)' }}
             id="share"
             aria-label="Share this article."
           >
             <ul>
-              <li class="cursor-pointer">
+              <li className="cursor-pointer">
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
+                  className="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out"
+                  href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
                 >
-                  <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out" />
+                  <TwitterShare />
                 </a>
               </li>
-              <li class="cursor-pointer my-5">
+              <li className="cursor-pointer my-5">
                 <a
-                  class="share__link shadow"
                   rel="noreferrer"
                   target="_blank"
-                  href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
+                  className="text-grayBlue-02 hover:text-[#FF4500] transition duration-200 ease-in-out"
+                  href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                 >
-                  <RedditShare class="text-grayBlue-02 hover:text-[#FF4500] transition duration-200 ease-in-out" />
+                  <RedditShare />
                 </a>
               </li>
-              <li class="cursor-pointer my-5">
+              <li className="cursor-pointer my-5">
                 <a
                   rel="noreferrer"
-                  class="share__link shadow"
                   target="_blank"
-                  href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                  className="text-grayBlue-02 hover:text-[#0077B5] transition duration-200 ease-in-out"
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                 >
-                  <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5] transition duration-200 ease-in-out" />
+                  <LinkedinShare />
                 </a>
               </li>
             </ul>
@@ -136,39 +144,39 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                 </ul>
               </div>
               <aside
-                class="flex flex-row mt-6 lg:hidden mb-5"
+                className="flex flex-row mt-6 lg:hidden mb-5"
                 id="share"
                 aria-label="Share this article."
               >
-                <ul class="flex flex-row">
-                  <li class="cursor-pointer">
+                <ul className="flex flex-row">
+                  <li className="cursor-pointer">
                     <a
                       rel="noreferrer"
                       target="_blank"
-                      class="cursor-pointer hover:text-cyan-400"
-                      href={`https://twitter.com/share?url=https://www.illacloud.com/blog/&text=${title}&via=illafamily`}
+                      className="cursor-pointer text-[#1DA1F2]"
+                      href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
                     >
-                      <TwitterShare class="text-grayBlue-02 hover:text-[#1DA1F2]" />
+                      <TwitterShare />
                     </a>
                   </li>
-                  <li class="cursor-pointer ml-5">
+                  <li className="cursor-pointer ml-5">
                     <a
                       rel="noreferrer"
-                      class="share__link shadow"
                       target="_blank"
-                      href={`http://www.reddit.com/submit?url=https://www.illacloud.com/blog/&title=${title}`}
+                      className="text-[#FF4500]"
+                      href={`http://www.reddit.com/submit?url=${url}&title=${title}`}
                     >
-                      <RedditShare class="text-grayBlue-02 hover:text-[#FF4500]" />
+                      <RedditShare />
                     </a>
                   </li>
-                  <li class="cursor-pointer ml-5">
+                  <li className="cursor-pointer ml-5">
                     <a
-                      class="share__link shadow"
                       rel="noreferrer"
                       target="_blank"
-                      href={`https://www.linkedin.com/shareArticle?url=https://www.illacloud.com/blog/&title=${title}`}
+                      className="text-[#0077B5]"
+                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`}
                     >
-                      <LinkedinShare class="text-grayBlue-02 hover:text-[#0077B5]" />
+                      <LinkedinShare />
                     </a>
                   </li>
                 </ul>
@@ -251,10 +259,39 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
 
 function Metadata({ meta }) {
   let router = useRouter()
-
   return (
     <Head>
       <title>{meta.title} – ILLA</title>
+      <meta
+        key="og:url"
+        property="og:url"
+        content={`https://illa.cloud.com${router.pathname}`}
+      />
+      <meta key="og:type" property="og:type" content="article" />
+      <meta
+        key="og:title"
+        property="og:title"
+        content={`${meta.title} – ILLA`}
+      />
+      <meta
+        key="og:image"
+        name="image"
+        property="og:image"
+        content={`https://illa.cloud${meta.image}`}
+      />
+
+      <meta
+        key="og:description"
+        name="description"
+        property="og:description"
+        content={meta.description}
+      />
+
+      <meta name="description" content={meta.description}></meta>
+      {meta.keywords ? (
+        <meta name="keywords" content={meta.keywords?.toString()}></meta>
+      ) : null}
+
       <meta name="twitter:site" content="@illaCloud" />
       <meta name="twitter:creator" content="@illaCloud" />
       <meta name="twitter:title" content={`${meta.title} – ILLA`} />
@@ -278,18 +315,6 @@ function Metadata({ meta }) {
           />
         </>
       )}
-      <meta
-        property="og:url"
-        content={`https://illa.cloud${router.pathname}`}
-      />
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content={`${meta.title} – ILLA`} />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:image" content={`https://illa.cloud${meta.image}`} />
-      <meta name="description" content={meta.description}></meta>
-      {meta.keywords ? (
-        <meta name="keywords" content={meta.keywords?.toString()}></meta>
-      ) : null}
     </Head>
   )
 }
