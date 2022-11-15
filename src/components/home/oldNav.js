@@ -56,7 +56,7 @@ export const Nav = ({
               {navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}
             </span>
           </NextLink>
-          <NextLink href="https://github.com/illa-family/illa-builder">
+          <NextLink href="https://github.com/illacloud/illa-builder">
             <a>
               <span className="cursor-pointer">
                 {navColorChange ? <GIT_LOGO_WHITE /> : <GIT_LOGO />}

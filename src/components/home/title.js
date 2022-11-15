@@ -157,7 +157,7 @@ export const Title = (props) => {
               className="flex gap-[16px] cursor-pointer items-center"
               onClick={() => {
                 window.open(
-                  'https://github.com/illa-family/illa-builder',
+                  'https://github.com/illacloud/illa-builder',
                   '__blank',
                 )
               }}

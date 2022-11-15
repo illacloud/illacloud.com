@@ -11,7 +11,7 @@ import NextLink from 'next/link'
 
 function Featured() {
   return (
-    <Link href="https://github.com/illa-family">
+    <Link href="https://github.com/illacloud">
       <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
         <strong className="font-semibold">ILLA on Github</strong>
         <svg

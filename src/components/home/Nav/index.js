@@ -51,7 +51,7 @@ export const Nav = (props) => {
                 <SocialButton
                   icon={<GithubIcon />}
                   text={`${githubStarts} ${t('stars')}`}
-                  href="https://github.com/illa-family/illa-builder"
+                  href="https://github.com/illacloud/illa-builder"
                 />
                 <SocialButton
                   icon={<DiscordIcon />}

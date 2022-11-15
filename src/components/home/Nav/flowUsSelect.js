@@ -7,7 +7,7 @@ import clsx from 'clsx'
 const options = [
   {
     label: 'Github',
-    value: 'https://github.com/illa-family/illa-builder',
+    value: 'https://github.com/illacloud/illa-builder',
   },
   {
     label: 'Twitter',

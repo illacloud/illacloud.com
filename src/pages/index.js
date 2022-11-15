@@ -18,7 +18,7 @@ const Home = () => {
   const [starCounts, setStarCounts] = useState(0)
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/illa-family/illa-builder')
+    fetch('https://api.github.com/repos/illacloud/illa-builder')
       .then((res) => res.json())
       .then((data) => {
         const { stargazers_count = 0 } = data

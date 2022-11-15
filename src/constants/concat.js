@@ -4,7 +4,7 @@ import { ProductHuntIcon } from '@/img/public/productHunt'
 export const Community = [
   {
     icon: <GitHubIconGray />,
-    href: 'https://github.com/illa-family/illa-builder',
+    href: 'https://github.com/illacloud/illa-builder',
   },
   {
     icon: <TwitterIcon />,

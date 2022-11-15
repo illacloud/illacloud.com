@@ -48,12 +48,12 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         style={{ height: productListExpand ? 80 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        <NextLink href="https://github.com/illa-family/illa-builder">
+        <NextLink href="https://github.com/illacloud/illa-builder">
           <span className="w-full flex flex-row flex-nowrap cursor-pointer items-center h-[40px] gap-[8px]  pl-[32px]">
             ILLA Builder
           </span>
         </NextLink>
-        <NextLink href="https://github.com/illa-family/illa-design">
+        <NextLink href="https://github.com/illacloud/illa-design">
           <span className="w-full flex flex-row flex-nowrap items-center cursor-pointer h-[40px] gap-[8px]  pl-[32px]">
             ILLA Design
           </span>
@@ -81,7 +81,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         style={{ height: communityListExpand ? 192 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        <NextLink href="https://github.com/illa-family/illa-builder">
+        <NextLink href="https://github.com/illacloud/illa-builder">
           <span className="w-full flex flex-row flex-nowrap cursor-pointer items-center h-[40px] gap-[8px]  pl-[32px]">
             Github
           </span>

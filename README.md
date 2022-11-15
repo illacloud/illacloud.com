@@ -7,7 +7,7 @@ ILLA uses [Next.js](https://nextjs.org/) for its documentation. Here is how you 
 1. Clone this repo
 
     ```sh
-    git clone https://github.com/illa-family/illacloud.com.git
+    git clone https://github.com/illacloud/illacloud.com.git
     ```
 
 2. Go into the project root directory

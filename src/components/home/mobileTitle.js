@@ -55,7 +55,7 @@ export const MobileTitle = (props) => {
             className="flex items-center gap-[8px]"
             onClick={() => {
               window.open(
-                'https://github.com/illa-family/illa-builder',
+                'https://github.com/illacloud/illa-builder',
                 '__blank',
               )
             }}

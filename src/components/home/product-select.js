@@ -9,11 +9,11 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
   const options = [
     {
       label: 'ILLA Builder',
-      value: 'https://github.com/illa-family/illa-builder',
+      value: 'https://github.com/illacloud/illa-builder',
     },
     {
       label: 'ILLA Design',
-      value: 'https://github.com/illa-family/illa-design',
+      value: 'https://github.com/illacloud/illa-design',
     },
   ]
   const [expandPanel, setExpandPanel] = useState(false)

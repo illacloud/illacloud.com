@@ -37,12 +37,12 @@ export function Footer({ noHome = false }) {
       items: [
         {
           title: 'ILLA Builder',
-          href: 'https://github.com/illa-family/illa-builder',
+          href: 'https://github.com/illacloud/illa-builder',
         },
-        // { title: 'ILLA Cloud', href: 'https://github.com/illa-family/illa' },
+        // { title: 'ILLA Cloud', href: 'https://github.com/illacloud/illa' },
         {
           title: 'ILLA Design',
-          href: 'https://github.com/illa-family/illa-design',
+          href: 'https://github.com/illacloud/illa-design',
         },
       ],
     },
