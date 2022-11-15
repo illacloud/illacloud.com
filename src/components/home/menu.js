@@ -86,7 +86,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
             Github
           </span>
         </NextLink>
-        <NextLink href="https://twitter.com/illafamily">
+        <NextLink href="https://twitter.com/illacloudhq">
           <span className="w-full flex flex-row flex-nowrap items-center cursor-pointer h-[40px] gap-[8px]  pl-[32px]">
             Twitter
           </span>

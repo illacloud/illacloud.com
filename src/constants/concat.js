@@ -8,7 +8,7 @@ export const Community = [
   },
   {
     icon: <TwitterIcon />,
-    href: 'https://twitter.com/illafamily',
+    href: 'https://twitter.com/illacloudhq',
   },
   {
     icon: <DiscordIcon />,

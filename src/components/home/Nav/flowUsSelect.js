@@ -11,7 +11,7 @@ const options = [
   },
   {
     label: 'Twitter',
-    value: 'https://twitter.com/illafamily',
+    value: 'https://twitter.com/illacloudhq',
   },
   {
     label: 'Discord',

@@ -59,7 +59,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                   rel="noreferrer"
                   target="_blank"
                   className="text-grayBlue-02 hover:text-[#1DA1F2] transition duration-200 ease-in-out"
-                  href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
+                  href={`https://twitter.com/share?url=${url}&text=${title}&via=illacloudhq`}
                 >
                   <TwitterShare />
                 </a>
@@ -154,7 +154,7 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
                       rel="noreferrer"
                       target="_blank"
                       className="cursor-pointer text-[#1DA1F2]"
-                      href={`https://twitter.com/share?url=${url}&text=${title}&via=illafamily`}
+                      href={`https://twitter.com/share?url=${url}&text=${title}&via=illacloudhq`}
                     >
                       <TwitterShare />
                     </a>
