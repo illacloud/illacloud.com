@@ -11,7 +11,8 @@ import socialCardLarge from '@/img/social-card-large.png'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import { SearchProvider } from '@/components/Search'
-import { appWithTranslation, useTranslation } from "next-i18next"
+import { appWithTranslation, useTranslation } from 'next-i18next'
+import Script from 'next/script'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -37,7 +38,7 @@ Router.events.on('routeChangeError', () => progress.finish())
 
 function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
-  const { t } = useTranslation("home")
+  const { t } = useTranslation('home')
 
   useEffect(() => {
     if (!navIsOpen) return
@@ -64,7 +65,7 @@ function App({ Component, pageProps, router }) {
     router.pathname !== '/subscribe-failed'
   const meta = Component.layoutProps?.meta || {}
   const description =
-    meta.metaDescription || meta.description || t("meta.description")
+    meta.metaDescription || meta.description || t('meta.description')
 
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
@@ -73,36 +74,99 @@ function App({ Component, pageProps, router }) {
   let section =
     meta.section ||
     Object.entries(Component.layoutProps?.Layout?.nav ?? {}).find(([, items]) =>
-      items.find(({ href }) => href === router.pathname)
+      items.find(({ href }) => href === router.pathname),
     )?.[0]
 
   return (
     <>
       <Title suffix="ILLA">{meta.metaTitle || meta.title}</Title>
       <Head>
-        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta
+          key="twitter:card"
+          name="twitter:card"
+          content="summary_large_image"
+        />
         <meta key="twitter:site" name="twitter:site" content="@illaCloud" />
-        <meta key="twitter:description" name="twitter:description" content={description} />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={description}
+        />
         <meta
           key="twitter:image"
           name="twitter:image"
           content={`https://illa.cloud${socialCardLarge}`}
         />
-        <meta key="twitter:creator" name="twitter:creator" content="@illaCloud" />
-        <meta key="og:url" property="og:url" content={`https://illa.cloud${router.pathname}`} />
+        <meta
+          key="twitter:creator"
+          name="twitter:creator"
+          content="@illaCloud"
+        />
+        <meta
+          key="og:url"
+          property="og:url"
+          content={`https://illa.cloud${router.pathname}`}
+        />
         <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:title" content={t("meta.title")} />
-        <meta key="og:description" property="og:description" content={description} />
+        <meta key="og:title" content={t('meta.title')} />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={description}
+        />
         <meta
           key="og:image"
           property="og:image"
           content={`https://illa.cloud${socialCardLarge}`}
         />
-        <meta name="google-site-verification" content="Jsfwfmzu_AE4NZCHQuCT2F9dMHj6MdOPBIlaNf1H8fU" />
-        <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feeds/feed.xml" />
-        <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/atom.xml" />
-        <link rel="alternate" type="application/json" title="JSON Feed" href="/feeds/feed.json" />
+        <meta
+          name="google-site-verification"
+          content="Jsfwfmzu_AE4NZCHQuCT2F9dMHj6MdOPBIlaNf1H8fU"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS 2.0"
+          href="/feeds/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          title="Atom 1.0"
+          href="/feeds/atom.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          title="JSON Feed"
+          href="/feeds/feed.json"
+        />
       </Head>
+      <Script>
+        {`(function(w, d, s, l, i) {
+            w[l] = w[l] || []
+            w[l].push({
+              "gtm.start": new Date().getTime(),
+               "event": "gtm.js",
+            })
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""
+            j.async = true
+            j.src =
+              "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+            f.parentNode.insertBefore(j, f)
+          })(window, document, "script", "dataLayer", "GTM-NRT4JCB");`}
+      </Script>
+      {/*Google Tag Manager (noscript)*/}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NRT4JCB"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
+      {/*End Google Tag Manager (noscript)*/}
       <SearchProvider>
         {showHeader && (
           <Header
