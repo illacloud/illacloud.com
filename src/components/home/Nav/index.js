@@ -100,7 +100,7 @@ export const Nav = (props) => {
                 {t('self-Hosted')}
               </button>
             </NextLink>
-            <NextLink href="http://fast-try.illacloud.com/">
+            <NextLink href="https://fast-try.illacloud.com/">
               <button className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01">
                 {t('illa-Cloud')}
               </button>

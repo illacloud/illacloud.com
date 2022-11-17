@@ -102,7 +102,7 @@ export const Nav = ({
               {t('self-Hosted')}
             </div>
           </NextLink>
-          <NextLink href="http://fast-try.illacloud.com/">
+          <NextLink href="https://fast-try.illacloud.com/">
             <span
               className={clsx(
                 'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
