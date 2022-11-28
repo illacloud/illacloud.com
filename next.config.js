@@ -76,7 +76,7 @@ module.exports = withBundleAnalyzer({
     }
 
     config.module.rules.push({
-      test: /\.(png|jpe?g|gif|webp|avif|mp4)$/i,
+      test: /\.(png|jpe?g|gif|webp|avif|mp4|zip)$/i,
       issuer: /\.(jsx?|tsx?|mdx)$/,
       use: [
         {

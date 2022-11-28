@@ -6,6 +6,18 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { IllaLogo } from '@/img/public/illa-logo'
 import clsx from 'clsx'
 
+const download = (file, name) => {
+  let blob = new Blob([file], { type: `application/zip;` })
+  let downloadElement = document.createElement('a')
+  let href = window.URL.createObjectURL(blob)
+  downloadElement.href = href
+  downloadElement.download = name
+  document.body.appendChild(downloadElement)
+  downloadElement.click()
+  document.body.removeChild(downloadElement)
+  window.URL.revokeObjectURL(href)
+}
+
 function renderItem(title, items) {
   return (
     <div
@@ -16,11 +28,25 @@ function renderItem(title, items) {
         {title}
       </div>
       <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
-        {items?.map((item) => (
-          <NextLink key={item.title} href={item.href ?? '/'}>
-            <a className="mb-[12px]">{item.title}</a>
-          </NextLink>
-        ))}
+        {items?.map((item) => {
+          if (item.downloadName) {
+            return (
+              <span
+                className="mb-[12px]"
+                onClick={() => {
+                  download(item.href, item.downloadName)
+                }}
+              >
+                {item.title}
+              </span>
+            )
+          }
+          return (
+            <NextLink key={item.title} href={item.href ?? '/'}>
+              <a className="mb-[12px]">{item.title}</a>
+            </NextLink>
+          )
+        })}
       </div>
     </div>
   )
@@ -62,7 +88,8 @@ export function Footer({ noHome = false }) {
         { title: t('footer.career'), href: '/hire' },
         {
           title: t('footer.media'),
-          href: 'https://illa.s3.ap-northeast-1.amazonaws.com/utils/illa-media-kit.zip',
+          href: require('../../img/home/illa_media_kit.zip').default,
+          downloadName: 'ILLA Media Kit.zip',
         },
       ],
     },
