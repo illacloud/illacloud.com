@@ -13,6 +13,7 @@ import { IllaLogo } from '@/img/public/illa-logo'
 import { CloseIcon, MenuIcon, MenuWhiteIcon } from '@/img/home/svg'
 import { useState } from 'react'
 import { Menu } from '@/components/home/menu'
+import { sendTagEvent } from '@/utils/gtag'
 
 export const Nav = (props) => {
   const {
@@ -52,11 +53,27 @@ export const Nav = (props) => {
                   icon={<GithubIcon />}
                   text={`${githubStarts} ${t('stars')}`}
                   href="https://github.com/illacloud/illa-builder"
+                  onClick={() => {
+                    sendTagEvent({
+                      action: 'click',
+                      category: 'homepage_slide_menu_github_click',
+                      label: `${githubStarts} ${t('stars')}`,
+                      value: 'https://github.com/illacloud/illa-builder',
+                    })
+                  }}
                 />
                 <SocialButton
                   icon={<DiscordIcon />}
                   text="Discord"
                   href="https://discord.gg/zKf3WKCufR"
+                  onClick={() => {
+                    sendTagEvent({
+                      action: 'click',
+                      category: 'homepage_slide_menu_discord_click',
+                      label: 'Discord',
+                      value: 'https://discord.gg/zKf3WKCufR',
+                    })
+                  }}
                 />
               </motion.div>
             )}
@@ -71,18 +88,45 @@ export const Nav = (props) => {
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/docs/overview">
-              <span className="px-[16px] text-center cursor-pointer">
+              <span
+                className="px-[16px] text-center cursor-pointer"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_menu_doc_click',
+                    label: t('nav.doc'),
+                  })
+                }}
+              >
                 {t('nav.doc')}
               </span>
             </NextLink>
             <NextLink href="/hire">
-              <span className="px-[16px] text-center cursor-pointer">
+              <span
+                className="px-[16px] text-center cursor-pointer"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_menu_career_click',
+                    label: t('nav.career'),
+                  })
+                }}
+              >
                 {t('nav.career')}
               </span>
             </NextLink>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/blog">
-              <span className="px-[16px] text-center cursor-pointer">
+              <span
+                className="px-[16px] text-center cursor-pointer"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_menu_blog_click',
+                    label: t('nav.blog'),
+                  })
+                }}
+              >
                 {t('nav.blog')}
               </span>
             </NextLink>
@@ -96,12 +140,31 @@ export const Nav = (props) => {
             style={{ opacity: opacity }}
           >
             <NextLink href="/docs/illa-cli">
-              <button className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01">
+              <button
+                className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_slide_menu_self_hosted_click',
+                    label: t('self-Hosted'),
+                  })
+                }}
+              >
                 {t('self-Hosted')}
               </button>
             </NextLink>
             <NextLink href="https://fast-try.illacloud.com/">
-              <button className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01">
+              <button
+                className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_slide_menu_live_demo_click',
+                    label: t('illa-Cloud'),
+                    value: 'https://fast-try.illacloud.com/',
+                  })
+                }}
+              >
                 {t('illa-Cloud')}
               </button>
             </NextLink>

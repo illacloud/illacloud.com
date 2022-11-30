@@ -4,10 +4,19 @@ import { useRouter } from 'next/router'
 import { useClickAway } from 'react-use'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
+import { sendTagEvent } from '@/utils/gtag'
 
 const options = [
-  { label: '简体中文', value: 'zh-CN' },
-  { label: 'English', value: 'en-US' },
+  {
+    label: '简体中文',
+    value: 'zh-CN',
+    tagCategory: 'homepage_menu_language_zh_click',
+  },
+  {
+    label: 'English',
+    value: 'en-US',
+    tagCategory: 'homepage_menu_language_en_click',
+  },
 ]
 
 export const LanguageSelect = ({ buttonColorChange = true }) => {
@@ -34,6 +43,11 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           },
         )}
         onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_menu_language_click',
+            label: router.locale === 'en-US' ? 'English' : '简体中文',
+          })
           setExpandPanel(() => !expandPanel)
         }}
       >
@@ -68,6 +82,13 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
                   'hover:bg-[#f2f3f5]': !buttonColorChange,
                 },
               )}
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: option.tagCategory,
+                  label: option.label,
+                })
+              }}
             >
               {option.label}
             </div>

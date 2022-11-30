@@ -3,23 +3,28 @@ import { useClickAway } from 'react-use'
 import { useTranslation } from 'next-i18next'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
+import { sendTagEvent } from '@/utils/gtag'
 
 const options = [
   {
     label: 'Github',
     value: 'https://github.com/illacloud/illa-builder',
+    tagCategory: 'homepage_menu_community_github_click',
   },
   {
     label: 'Twitter',
     value: 'https://twitter.com/illacloudhq',
+    tagCategory: 'homepage_menu_community_twitter_click',
   },
   {
     label: 'Discord',
     value: 'https://discord.gg/zKf3WKCufR',
+    tagCategory: 'homepage_menu_community_discord_click',
   },
   {
     label: 'ProductHunt',
     value: 'https://www.producthunt.com/posts/illa',
+    tagCategory: 'homepage_menu_community_producthunt_click',
   },
 ]
 
@@ -42,6 +47,11 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
       <div
         className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
         onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_menu_community_click',
+            label: t('nav.community'),
+          })
           setExpandPanel(() => !expandPanel)
         }}
       >
@@ -76,6 +86,12 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
                 },
               )}
               onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: option.tagCategory,
+                  label: option.label,
+                  value: option.value,
+                })
                 setExpandPanel(() => !expandPanel)
               }}
             >
