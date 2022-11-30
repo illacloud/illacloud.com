@@ -63,7 +63,7 @@ export const MobileTitle = (props) => {
             }}
           >
             <LinearGithubIcon />
-            <div className="text-white-01 text-[16px] flex mt-[16px] font-medium items-center">
+            <div className="text-white-01 text-[14px] flex mt-[16px] font-medium items-center">
               <StarIcon />
               <div className="ml-[10px]">
                 {githubStarts} {t('stars')}
@@ -77,7 +77,7 @@ export const MobileTitle = (props) => {
             }}
           >
             <LinearDiscordIcon />
-            <div className="text-white-01 text-[16px] flex mt-[16px] font-medium items-center">
+            <div className="text-white-01 text-[14px] flex mt-[16px] font-medium items-center">
               <GoIcon />
               <div className="ml-[10px]">{t('join-community')}</div>
             </div>
