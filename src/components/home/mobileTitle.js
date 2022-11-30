@@ -8,8 +8,10 @@ import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
-import { GithubIcon } from '@/img/public/github'
-import { DiscordIcon } from '@/img/public/discord'
+import { StarIcon } from '@/img/public/star'
+import { GoIcon } from '@/img/public/go'
+import { LinearGithubIcon } from '@/img/public/linearGithub'
+import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 
 export const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -52,7 +54,7 @@ export const MobileTitle = (props) => {
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
           <div
-            className="flex items-center gap-[8px]"
+            className="flex flex-col items-center gap-[8px]"
             onClick={() => {
               window.open(
                 'https://github.com/illacloud/illa-builder',
@@ -60,21 +62,25 @@ export const MobileTitle = (props) => {
               )
             }}
           >
-            <GithubIcon />
-            <span className="text-white-01 text-[13px]">
-              {githubStarts} {t('stars')}
-            </span>
+            <LinearGithubIcon />
+            <div className="text-white-01 text-[16px] flex mt-[16px] font-medium items-center">
+              <StarIcon />
+              <div className="ml-[10px]">
+                {githubStarts} {t('stars')}
+              </div>
+            </div>
           </div>
           <div
-            className="flex items-center gap-[8px]"
+            className="flex flex-col items-center gap-[8px]"
             onClick={() => {
               window.open('https://discord.gg/zKf3WKCufR', '__blank')
             }}
           >
-            <DiscordIcon />
-            <span className="text-white-01 text-[13px]">
-              {t('join-community')}
-            </span>
+            <LinearDiscordIcon />
+            <div className="text-white-01 text-[16px] flex mt-[16px] font-medium items-center">
+              <GoIcon />
+              <div className="ml-[10px]">{t('join-community')}</div>
+            </div>
           </div>
         </div>
         <div
