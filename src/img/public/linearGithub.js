@@ -2,8 +2,8 @@ import React from 'react'
 
 export const LinearGithubIcon = () => (
   <svg
-    width="88"
-    height="88"
+    width="44"
+    height="44"
     viewBox="0 0 88 88"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
