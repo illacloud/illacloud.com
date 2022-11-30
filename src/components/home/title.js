@@ -157,7 +157,7 @@ export const Title = (props) => {
           </div>
           <div className="flex mt-[40px] gap-[16px]">
             <div
-              className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]"
+              className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2]"
               onClick={() => {
                 window.open(
                   'https://github.com/illacloud/illa-builder',
@@ -184,7 +184,7 @@ export const Title = (props) => {
               </div>
             </div>
             <div
-              className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]"
+              className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2]"
               onClick={() => {
                 window.open('https://discord.gg/zKf3WKCufR', '__blank')
               }}

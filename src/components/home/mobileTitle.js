@@ -66,7 +66,7 @@ export const MobileTitle = (props) => {
             <div className="text-white-01 text-[14px] flex mt-[16px] font-medium items-center">
               <StarIcon />
               <div className="ml-[10px]">
-                {githubStarts} {t('stars')}
+                {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
               </div>
             </div>
           </div>
