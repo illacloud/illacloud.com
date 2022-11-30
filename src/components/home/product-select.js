@@ -11,10 +11,12 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
     {
       label: 'ILLA Builder',
       value: 'https://github.com/illacloud/illa-builder',
+      tagCategory: 'homepage_menu_product_builder_click',
     },
     {
       label: 'ILLA Design',
       value: 'https://github.com/illacloud/illa-design',
+      tagCategory: 'homepage_menu_product_design_click',
     },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
@@ -74,10 +76,7 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
-                  category:
-                    option.label === 'ILLA Builder'
-                      ? 'homepage_menu_product_builder_click'
-                      : 'homepage_menu_product_design_click',
+                  category: option.tagCategory,
                   label: option.label,
                   value: option.value,
                 })

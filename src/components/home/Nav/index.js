@@ -179,6 +179,11 @@ export const Nav = (props) => {
         </NextLink>
         <span
           onClick={() => {
+            sendTagEvent({
+              action: 'click',
+              category: 'homepage_menu_unfold_mob_click',
+              value: 'unfold',
+            })
             setMenuExpand(() => !menuExpand)
           }}
         >
@@ -191,7 +196,17 @@ export const Nav = (props) => {
           )}
         </span>
       </div>
-      <Menu menuExpand={menuExpand} closeMenu={() => setMenuExpand(false)} />
+      <Menu
+        menuExpand={menuExpand}
+        closeMenu={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_menu_fold_mob_click',
+            value: 'fold'
+          })
+          setMenuExpand(false)
+        }}
+      />
     </>
   )
 }
