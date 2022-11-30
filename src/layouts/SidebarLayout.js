@@ -5,11 +5,12 @@ import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { SearchButton } from '@/components/Search'
 import { Dialog } from '@headlessui/react'
+import { sendTagEvent } from '@/utils/gtag'
 
 export const SidebarContext = createContext()
 
 const NavItem = forwardRef(
-  ({ href, children, isActive, isPublished, fallbackHref }, ref) => {
+  ({ href, children, isActive, isPublished, fallbackHref, onClick }, ref) => {
     return (
       <li ref={ref}>
         <Link href={isPublished ? href : fallbackHref}>
@@ -23,6 +24,7 @@ const NavItem = forwardRef(
                 !isActive && isPublished,
               'text-slate-400': !isActive && !isPublished,
             })}
+            onClick={onClick}
           >
             {children}
           </a>
@@ -185,6 +187,7 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                         let isActive = item.match
                           ? item.match.test(router.asPath)
                           : item.href === router.pathname
+                        // console.log(item, 'item')
                         return (
                           <NavItem
                             key={i}
@@ -193,6 +196,16 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                             ref={isActive ? activeItemRef : undefined}
                             isPublished={item.published !== false}
                             fallbackHref={fallbackHref}
+                            onClick={() => {
+                              console.log(item.tagCategory, window.gtag, 'item')
+                              item.tagCategory &&
+                                sendTagEvent({
+                                  action: 'click',
+                                  category: item.tagCategory,
+                                  label: item.shortTitle || item.title,
+                                  value: item.href,
+                                })
+                            }}
                           >
                             {item.shortTitle || item.title}
                           </NavItem>
@@ -214,6 +227,7 @@ const TopLevelAnchor = forwardRef(
     {
       children,
       href,
+      target,
       className,
       icon,
       isActive,
@@ -229,6 +243,7 @@ const TopLevelAnchor = forwardRef(
         <a
           ref={ref}
           href={href}
+          target={target}
           onClick={onClick}
           className={clsx(
             'group flex items-center lg:text-sm lg:leading-6',
@@ -245,8 +260,8 @@ const TopLevelAnchor = forwardRef(
               isActive
                 ? [activeBackground, 'dark:highlight-white/10']
                 : mobile
-                  ? 'dark:bg-slate-700 dark:highlight-white/5'
-                  : 'dark:bg-slate-800 dark:highlight-white/5',
+                ? 'dark:bg-slate-700 dark:highlight-white/5'
+                : 'dark:bg-slate-800 dark:highlight-white/5',
             )}
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
@@ -262,7 +277,7 @@ const TopLevelAnchor = forwardRef(
 
 function TopLevelLink({ href, as, ...props }) {
   if (/^https?:\/\//.test(href)) {
-    return <TopLevelAnchor href={href} {...props} />
+    return <TopLevelAnchor href={href} target="_blank" {...props} />
   }
 
   return (
@@ -343,6 +358,13 @@ function TopLevelNav({ mobile }) {
             />
           </>
         }
+        onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'doc_menu_fast_try_click',
+            label: 'Fast Try',
+          })
+        }}
       >
         Fast Try
       </TopLevelLink>
@@ -391,6 +413,13 @@ function TopLevelNav({ mobile }) {
             />
           </>
         }
+        onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'doc_menu_community_click',
+            label: 'Community',
+          })
+        }}
       >
         Community
       </TopLevelLink>

@@ -73,7 +73,7 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
         {options.map((option) => (
           <a
             href={option.value}
-            target="_blank"
+
             className="w-full"
             key={option.label}
           >

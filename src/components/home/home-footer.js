@@ -33,6 +33,7 @@ function renderItem(title, items) {
           if (item.downloadName) {
             return (
               <span
+                key={item.title}
                 className="mb-[12px]"
                 onClick={() => {
                   sendTagEvent({
@@ -160,7 +161,7 @@ export function Footer({ noHome = false }) {
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
-                <NextLink key={item.href} href={item.href}>
+                <NextLink key={item.tagCategory} href={item.href}>
                   <a
                     className="cursor-pointer xs:mb-[12px] text-[#787E85]"
                     onClick={() => {

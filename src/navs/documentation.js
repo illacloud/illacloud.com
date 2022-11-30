@@ -1,16 +1,28 @@
 import { createPageList } from '@/utils/createPageList'
 
 const pages = createPageList(
-  require.context(`../pages/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'docs'
+  require.context(
+    `../pages/docs/?meta=title,shortTitle,published`,
+    false,
+    /\.mdx$/,
+  ),
+  'docs',
 )
 const pagesUS = createPageList(
-  require.context(`../pages/docs/en-US/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'en-US/docs'
+  require.context(
+    `../pages/docs/en-US/?meta=title,shortTitle,description,published,tagCategory`,
+    false,
+    /\.mdx$/,
+  ),
+  'en-US/docs',
 )
 const pagesCN = createPageList(
-  require.context(`../pages/docs/zh-CN/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'zh-CN/docs'
+  require.context(
+    `../pages/docs/zh-CN/?meta=title,shortTitle,description,published,tagCategory`,
+    false,
+    /\.mdx$/,
+  ),
+  'zh-CN/docs',
 )
 
 export const documentationNav = {
@@ -29,54 +41,46 @@ export const documentationNav = {
 }
 
 export const ILLADocumentationNav = (locale) => {
-  if (locale=== 'zh-CN') {
+  if (locale === 'zh-CN') {
     return {
-      'ILLA Builder': [
-        pagesCN['overview'],
-        pagesCN['quick-start']
-      ],
+      'ILLA Builder': [pagesCN['overview'], pagesCN['quick-start']],
       '安装ILLA Builder': [
         pagesCN['deploy-introduction'],
         pagesCN['illa-cli'],
         // pagesCN['docker-compose'],
         // pagesCN['k8s-helm'],
       ],
-      '数据接入': [
+      数据接入: [
         pagesCN['resource'],
         pagesCN['action'],
-        pagesCN['transformer']
+        pagesCN['transformer'],
       ],
-      '构建Apps': [
+      构建Apps: [
         pagesCN['app-editor'],
         pagesCN['event-handler'],
-        pagesCN['javascript']
+        pagesCN['javascript'],
       ],
-      '组件库':[
-
-      ]
+      组件库: [],
     }
   } else {
     return {
-      'ILLA Builder': [
-        pagesUS['overview'],
-        pagesUS['quick-start']
-      ],
+      'ILLA Builder': [pagesUS['overview'], pagesUS['quick-start']],
       'Install ILLA Builder': [
         pagesUS['deploy-introduction'],
         pagesUS['illa-cli'],
         // pagesUS['docker-compose'],
         // pagesUS['k8s-helm'],
       ],
-      'Data access':[
+      'Data access': [
         pagesUS['resource'],
         pagesUS['action'],
-        pagesUS['transformer']
+        pagesUS['transformer'],
       ],
       'Build Apps': [
         pagesUS['app-editor'],
         pagesUS['event-handler'],
-        pagesUS['javascript']
-      ]
+        pagesUS['javascript'],
+      ],
     }
   }
 }
