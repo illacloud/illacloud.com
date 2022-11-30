@@ -202,7 +202,7 @@ export const Title = (props) => {
                 <span className="flex justify-center">
                   <GoIcon />
                 </span>
-                <span className="text-white-01 text-[14px] font-bold">
+                <span className="text-white-01 text-[14px] font-bold text-center">
                   {t('go')}
                 </span>
               </div>
