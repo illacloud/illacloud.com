@@ -276,7 +276,13 @@ export function Header({
             <div className="flex items-center p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
               <button
                 type="button"
-                onClick={() => onNavToggle(!navIsOpen)}
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'doc_left_menu_unfold_mob_click',
+                  })
+                  onNavToggle(!navIsOpen)
+                }}
                 className="text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
               >
                 <span className="sr-only">Navigation</span>

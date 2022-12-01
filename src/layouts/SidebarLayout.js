@@ -466,7 +466,13 @@ export function SidebarLayout({
         <div className="relative bg-white w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800">
           <button
             type="button"
-            onClick={() => setNavIsOpen(false)}
+            onClick={() => {
+              sendTagEvent({
+                action: 'click',
+                category: 'doc_left_menu_fold_mob_click',
+              })
+              setNavIsOpen(false)
+            }}
             className="absolute z-10 top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
           >
             <span className="sr-only">Close navigation</span>
