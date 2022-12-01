@@ -6,18 +6,7 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { IllaLogo } from '@/img/public/illa-logo'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
-
-const download = (file, name) => {
-  let blob = new Blob([file], { type: `application/zip;` })
-  let downloadElement = document.createElement('a')
-  let href = window.URL.createObjectURL(blob)
-  downloadElement.href = href
-  downloadElement.download = name
-  document.body.appendChild(downloadElement)
-  downloadElement.click()
-  document.body.removeChild(downloadElement)
-  window.URL.revokeObjectURL(href)
-}
+import { saveAs } from 'file-saver';
 
 function renderItem(title, items) {
   return (
@@ -42,7 +31,7 @@ function renderItem(title, items) {
                     label: item.title,
                     value: item.href,
                   })
-                  download(item.href, item.downloadName)
+                  saveAs(item.href, item.downloadName)
                 }}
               >
                 {item.title}
