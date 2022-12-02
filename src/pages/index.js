@@ -29,7 +29,6 @@ const Home = () => {
         setStarCounts('unknown')
       })
   }, [])
-
   return (
     <>
       <Head>
@@ -45,7 +44,10 @@ const Home = () => {
         />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
-        <meta name="keywords" content="illa,illacloud,illa cloud,艾拉云科" />
+        <meta
+          name="keywords"
+          content="illa,illacloud,illa cloud,艾拉云科,Retool,Budibase,Tooljet,UIBakery, Low-code,open-source, developers, developer tool, internal, rust,illa, illabuilder, illa-builder, retool alternative, Appsmith, Appsmith alternative, open-source alternative, budibase alternative"
+        />
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
