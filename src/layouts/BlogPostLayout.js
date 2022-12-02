@@ -12,8 +12,47 @@ import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
 import { ReactComponent as RedditShare } from '@/img/share/reddit.svg'
 import { ReactComponent as TwitterShare } from '@/img/share/twitter.svg'
 import { useEffect, useState } from 'react'
+import { StructuredData } from '@/components/StructuredData'
 
-export function BlogPostLayout({ children, meta, slug, latestPosts }) {
+const blogBaseStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  publisher: {
+    '@type': 'Organization',
+    name: 'ILLA Cloud Blog',
+    url: 'https://www.illacloud.com/blog',
+    logo: {
+      '@type': 'ImageObject',
+      url: `https://www.illacloud.com${require('@/img/illa_logo.png').default}`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://www.illacloud.com/blog/',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Jerry',
+    image: {
+      '@type': 'ImageObject',
+      url: `https://www.illacloud.com${
+        require('@/img/authors/jerry.jpeg').default
+      }`,
+      width: 512,
+      height: 512,
+    },
+    url: 'https://twitter.com/Jerrxuy',
+    sameAs: [],
+  },
+}
+
+export function BlogPostLayout({
+  children,
+  meta,
+  slug,
+  latestPosts,
+  structuredData,
+}) {
   const title = encodeURIComponent(meta.title)
   const [url, setUrl] = useState('')
 
@@ -89,6 +128,12 @@ export function BlogPostLayout({ children, meta, slug, latestPosts }) {
           <main>
             <article className="relative pt-10">
               <Metadata meta={meta} />
+              <StructuredData
+                data={{
+                  ...blogBaseStructuredData,
+                  ...structuredData,
+                }}
+              />
               <h1
                 className={clsx(
                   'text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl',
