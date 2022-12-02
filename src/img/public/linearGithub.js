@@ -28,8 +28,8 @@ export const LinearGithubIcon = () => (
         y2="87.9991"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.2" />
-        <stop offset="1" stop-color="white" stop-opacity="0.02" />
+        <stop stopColor="white" stopOpacity="0.2" />
+        <stop offset="1" stopColor="white" stopOpacity="0.02" />
       </linearGradient>
     </defs>
   </svg>
