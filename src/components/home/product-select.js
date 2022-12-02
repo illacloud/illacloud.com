@@ -3,6 +3,7 @@ import { useClickAway } from 'react-use'
 import { useTranslation } from 'next-i18next'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
+import { sendTagEvent } from '@/utils/gtag'
 
 export const ProductSelect = ({ buttonColorChange = true }) => {
   const { t } = useTranslation('home')
@@ -10,10 +11,12 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
     {
       label: 'ILLA Builder',
       value: 'https://github.com/illacloud/illa-builder',
+      tagCategory: 'homepage_menu_product_builder_click',
     },
     {
       label: 'ILLA Design',
       value: 'https://github.com/illacloud/illa-design',
+      tagCategory: 'homepage_menu_product_design_click',
     },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
@@ -32,6 +35,11 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
       <div
         className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
         onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_menu_product_click',
+            label: t('nav.product'),
+          })
           setExpandPanel(() => !expandPanel)
         }}
       >
@@ -66,6 +74,12 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
                 },
               )}
               onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: option.tagCategory,
+                  label: option.label,
+                  value: option.value,
+                })
                 setExpandPanel(() => !expandPanel)
               }}
             >

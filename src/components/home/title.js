@@ -9,6 +9,7 @@ import { StarIcon } from '@/img/public/star'
 import { GoIcon } from '@/img/public/go'
 
 import clsx from 'clsx'
+import { sendTagEvent } from '@/utils/gtag'
 
 export const Title = (props) => {
   const { githubStarts, setPlayMaskShow, onSubscribe } = props
@@ -145,12 +146,25 @@ export const Title = (props) => {
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
             <NextLink href="https://fast-try.illacloud.com/">
-              <button className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01">
+              <button className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01" onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_live_demo_click',
+                  label: t('illa-Cloud'),
+                  value: 'https://fast-try.illacloud.com/',
+                })
+              }}>
                 {t('illa-Cloud')}
               </button>
             </NextLink>
             <NextLink href="/docs/illa-cli">
-              <button className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01">
+              <button className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01" onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_self_hosted_click',
+                  label: t('self-Hosted'),
+                })
+              }}>
                 {t('self-Hosted')}
               </button>
             </NextLink>
@@ -159,6 +173,12 @@ export const Title = (props) => {
             <div
               className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2]"
               onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_github_click',
+                  label: `${githubStarts} ${t('stars')}`,
+                  value: 'https://github.com/illacloud/illa-builder',
+                })
                 window.open(
                   'https://github.com/illacloud/illa-builder',
                   '__blank',
@@ -186,6 +206,12 @@ export const Title = (props) => {
             <div
               className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2]"
               onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_discord_click',
+                  label: t('join-community'),
+                  value: 'https://discord.gg/zKf3WKCufR',
+                })
                 window.open('https://discord.gg/zKf3WKCufR', '__blank')
               }}
             >
@@ -223,6 +249,10 @@ export const Title = (props) => {
             width: width,
           }}
           onClick={() => {
+            sendTagEvent({
+              action: 'click',
+              category: 'homepage_body_video_click',
+            })
             setPlayMaskShow(true)
           }}
         />

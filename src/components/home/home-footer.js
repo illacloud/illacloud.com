@@ -5,18 +5,8 @@ import { Community } from '@/constants/concat'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { IllaLogo } from '@/img/public/illa-logo'
 import clsx from 'clsx'
-
-const download = (file, name) => {
-  let blob = new Blob([file], { type: `application/zip;` })
-  let downloadElement = document.createElement('a')
-  let href = window.URL.createObjectURL(blob)
-  downloadElement.href = href
-  downloadElement.download = name
-  document.body.appendChild(downloadElement)
-  downloadElement.click()
-  document.body.removeChild(downloadElement)
-  window.URL.revokeObjectURL(href)
-}
+import { sendTagEvent } from '@/utils/gtag'
+import { saveAs } from 'file-saver';
 
 function renderItem(title, items) {
   return (
@@ -32,9 +22,16 @@ function renderItem(title, items) {
           if (item.downloadName) {
             return (
               <span
+                key={item.title}
                 className="mb-[12px]"
                 onClick={() => {
-                  download(item.href, item.downloadName)
+                  sendTagEvent({
+                    action: 'click',
+                    category: item.tagCategory,
+                    label: item.title,
+                    value: item.href,
+                  })
+                  saveAs(item.href, item.downloadName)
                 }}
               >
                 {item.title}
@@ -43,7 +40,19 @@ function renderItem(title, items) {
           }
           return (
             <NextLink key={item.title} href={item.href ?? '/'}>
-              <a className="mb-[12px]">{item.title}</a>
+              <a
+                className="mb-[12px]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: item.tagCategory,
+                    label: item.title,
+                    value: item.href,
+                  })
+                }}
+              >
+                {item.title}
+              </a>
             </NextLink>
           )
         })}
@@ -64,32 +73,47 @@ export function Footer({ noHome = false }) {
         {
           title: 'ILLA Builder',
           href: 'https://github.com/illacloud/illa-builder',
+          tagCategory: 'homepage_footer_builder_click',
         },
         // { title: 'ILLA Cloud', href: 'https://github.com/illacloud/illa' },
         {
           title: 'ILLA Design',
           href: 'https://github.com/illacloud/illa-design',
+          tagCategory: 'homepage_footer_design_click',
         },
       ],
     },
     {
       title: t('footer.resources'),
       items: [
-        { title: 'MySQL', href: 'https://www.mysql.com/' },
+        {
+          title: 'MySQL',
+          href: 'https://www.mysql.com/',
+          tagCategory: 'homepage_footer_mysql_click',
+        },
         // { title: 'Postgres', href: 'https://www.postgresql.org/' },
         // { title: 'Redis', href: 'https://redis.io/' },
-        { title: 'Rest API', href: 'https://restfulapi.net/' },
+        {
+          title: 'Rest API',
+          href: 'https://restfulapi.net/',
+          tagCategory: 'homepage_footer_restapi_click',
+        },
       ],
     },
     {
       title: t('footer.company'),
       items: [
         // { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
-        { title: t('footer.career'), href: '/hire' },
+        {
+          title: t('footer.career'),
+          href: '/hire',
+          tagCategory: 'homepage_footer_career_click',
+        },
         {
           title: t('footer.media'),
           href: require('../../img/home/illa_media_kit.zip').default,
           downloadName: 'ILLA Media Kit.zip',
+          tagCategory: 'homepage_footer_mediakit_click',
         },
       ],
     },
@@ -126,8 +150,17 @@ export function Footer({ noHome = false }) {
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
-                <NextLink key={item.href} href={item.href}>
-                  <a className="cursor-pointer xs:mb-[12px] text-[#787E85]">
+                <NextLink key={item.tagCategory} href={item.href}>
+                  <a
+                    className="cursor-pointer xs:mb-[12px] text-[#787E85]"
+                    onClick={() => {
+                      sendTagEvent({
+                        action: 'click',
+                        category: item.tagCategory,
+                        value: item.href,
+                      })
+                    }}
+                  >
                     {item.icon}
                   </a>
                 </NextLink>
@@ -153,7 +186,16 @@ export function Footer({ noHome = false }) {
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
           {Community?.map((item, index) => (
             <NextLink key={'icon' + index} href={item.href}>
-              <span className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]">
+              <span
+                className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: item.tagCategory,
+                    value: item.href,
+                  })
+                }}
+              >
                 {item.icon}
               </span>
             </NextLink>

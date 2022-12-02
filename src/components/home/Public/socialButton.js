@@ -1,9 +1,10 @@
 export const SocialButton = (props) => {
-  const { icon, text, href } = props
+  const { icon, text, href, onClick } = props
   return (
     <div
       className="flex px-[8px] py-[5px] gap-[8px] cursor-pointer"
       onClick={() => {
+        onClick && onClick()
         window.open(href, '__blank')
       }}
     >

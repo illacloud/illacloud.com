@@ -167,6 +167,18 @@ function App({ Component, pageProps, router }) {
         />
       </noscript>
       {/*End Google Tag Manager (noscript)*/}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
+      />
+      <Script strategy="afterInteractive" id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4VKRNGN7GE');
+        `}
+      </Script>
       <SearchProvider>
         {showHeader && (
           <Header

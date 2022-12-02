@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import { ThemeSelect, ThemeToggle } from './ThemeToggle'
 import { LanguageToggle } from './LanguageToggle'
 import NextLink from 'next/link'
+import { sendTagEvent } from '@/utils/gtag'
 
 function Featured() {
   return (
@@ -49,9 +50,11 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
 
   useEffect(() => {
     if (!isOpen) return
+
     function handleRouteChange() {
       setIsOpen(false)
     }
+
     Router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange)
@@ -63,7 +66,13 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
       <button
         type="button"
         className="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'doc_menu_unfold_mob_click',
+          })
+          setIsOpen(true)
+        }}
       >
         <span className="sr-only">Navigation</span>
         <svg width="24" height="24" fill="none" aria-hidden="true">
@@ -87,7 +96,13 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
           <button
             type="button"
             className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              sendTagEvent({
+                action: 'click',
+                category: 'doc_menu_fold_mob_click',
+              })
+              setIsOpen(false)
+            }}
           >
             <span className="sr-only">Close navigation</span>
             <svg
@@ -157,6 +172,7 @@ export function Header({
 
   useEffect(() => {
     let offset = 50
+
     function onScroll() {
       if (!isOpaque && window.scrollY > offset) {
         setIsOpaque(true)
@@ -164,6 +180,7 @@ export function Header({
         setIsOpaque(false)
       }
     }
+
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
@@ -259,7 +276,13 @@ export function Header({
             <div className="flex items-center p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
               <button
                 type="button"
-                onClick={() => onNavToggle(!navIsOpen)}
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'doc_left_menu_unfold_mob_click',
+                  })
+                  onNavToggle(!navIsOpen)
+                }}
                 className="text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
               >
                 <span className="sr-only">Navigation</span>

@@ -1,8 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import { CloseIcon, MenuWhiteIcon, MobileTitleBgIcon } from '@/img/home/svg'
 import NextLink from 'next/link'
-import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
-import { Menu } from '@/components/home/menu'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
@@ -12,6 +9,7 @@ import { StarIcon } from '@/img/public/star'
 import { GoIcon } from '@/img/public/go'
 import { LinearGithubIcon } from '@/img/public/linearGithub'
 import { LinearDiscordIcon } from '@/img/public/linearDiscord'
+import { sendTagEvent } from '@/utils/gtag'
 
 export const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -42,12 +40,31 @@ export const MobileTitle = (props) => {
         </div>
         <div className="mt-[32px] w-full flex gap-[16px]">
           <NextLink href="/docs/illa-cli">
-            <button className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]">
+            <button
+              className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_self_hosted_click',
+                  label: t('self-Hosted'),
+                })
+              }}
+            >
               {t('self-Hosted')}
             </button>
           </NextLink>
           <NextLink href="https://fast-try.illacloud.com/">
-            <button className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]">
+            <button
+              className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_live_demo_click',
+                  label: t('illa-Cloud'),
+                  value: 'https://fast-try.illacloud.com/',
+                })
+              }}
+            >
               {t('illa-Cloud')}
             </button>
           </NextLink>
@@ -56,6 +73,12 @@ export const MobileTitle = (props) => {
           <div
             className="flex flex-col items-center gap-[8px]"
             onClick={() => {
+              sendTagEvent({
+                action: 'click',
+                category: 'homepage_body_github_mob_click',
+                label: `${githubStarts} ${t('stars')}`,
+                value: 'https://github.com/illacloud/illa-builder',
+              })
               window.open(
                 'https://github.com/illacloud/illa-builder',
                 '__blank',
@@ -73,6 +96,12 @@ export const MobileTitle = (props) => {
           <div
             className="flex flex-col items-center gap-[8px]"
             onClick={() => {
+              sendTagEvent({
+                action: 'click',
+                category: 'homepage_body_discord_mob_click',
+                label: t('join-community'),
+                value: 'https://discord.gg/zKf3WKCufR',
+              })
               window.open('https://discord.gg/zKf3WKCufR', '__blank')
             }}
           >
@@ -86,6 +115,10 @@ export const MobileTitle = (props) => {
         <div
           className="mt-[32px] relative"
           onClick={() => {
+            sendTagEvent({
+              action: 'click',
+              category: 'homepage_body_video_click',
+            })
             setPlayMaskShow(true)
           }}
         >

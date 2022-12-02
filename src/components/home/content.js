@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next'
 import React from 'react'
 import NextLink from 'next/link'
 import { Card } from '@/components/home/card'
+import { sendTagEvent } from '@/utils/gtag'
 
 export function Content() {
   const { t } = useTranslation('home')
@@ -66,7 +67,16 @@ export function Content() {
               {t('content.for-developer.introduction')}
             </div>
             <NextLink href="/docs/overview">
-              <div className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90   font-normal cursor-pointer mt-[12px] xl:mt-[16px]">
+              <div
+                className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90 font-normal cursor-pointer mt-[12px] xl:mt-[16px]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_write_javascript_click',
+                    label: `${t('content.for-developer.goto')} 😋 →`,
+                  })
+                }}
+              >
                 {t('content.for-developer.goto')} 😋 →
               </div>
             </NextLink>
@@ -100,7 +110,16 @@ export function Content() {
               {t('content.date-integrate.introduction')}
             </div>
             <NextLink href="/docs/overview">
-              <div className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] xl:mt-[16px]">
+              <div
+                className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] xl:mt-[16px]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_view_support_click',
+                    label: `${t('content.date-integrate.goto')} 😀 →`,
+                  })
+                }}
+              >
                 {t('content.date-integrate.goto')} 😀 →
               </div>
             </NextLink>
@@ -133,7 +152,16 @@ export function Content() {
               {t('content.collaborative-develop.introduction')}
             </div>
             <NextLink href="/docs/overview">
-              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]">
+              <div
+                className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_learn_how_click',
+                    label: `${t('content.collaborative-develop.goto')} 🤠 →`,
+                  })
+                }}
+              >
                 {t('content.collaborative-develop.goto')} 🤠 →
               </div>
             </NextLink>
@@ -165,7 +193,16 @@ export function Content() {
               {t('content.ui-library.introduction')}
             </div>
             <NextLink href="/docs/overview">
-              <div className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]">
+              <div
+                className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_view_all_click',
+                    label: `${t('content.ui-library.goto')} 👍 →`,
+                  })
+                }}
+              >
                 {t('content.ui-library.goto')} 👍 →
               </div>
             </NextLink>
