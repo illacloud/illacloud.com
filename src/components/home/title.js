@@ -5,6 +5,9 @@ import playVideoCover from '@/img/home/playVideoCover.png'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { DiscordIcon } from '@/img/public/discord'
 import { GithubIcon } from '@/img/public/github'
+import { StarIcon } from '@/img/public/star'
+import { GoIcon } from '@/img/public/go'
+
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 
@@ -144,7 +147,7 @@ export const Title = (props) => {
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
             <NextLink href="https://fast-try.illacloud.com/">
               <button
-                className="h-[48px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+                className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -152,29 +155,27 @@ export const Title = (props) => {
                     label: t('illa-Cloud'),
                     value: 'https://fast-try.illacloud.com/',
                   })
-                }}
-              >
+              }}>
                 {t('illa-Cloud')}
               </button>
             </NextLink>
             <NextLink href="/docs/illa-cli">
               <button
-                className="h-[48px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01"
+                className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
                     category: 'homepage_body_self_hosted_click',
                     label: t('self-Hosted'),
                   })
-                }}
-              >
+              }}>
                 {t('self-Hosted')}
               </button>
             </NextLink>
           </div>
-          <div className="flex mt-[40px] gap-[48px] ">
+          <div className="flex mt-[40px] gap-[16px]">
             <div
-              className="flex gap-[16px] cursor-pointer items-center"
+              className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2]"
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -189,17 +190,25 @@ export const Title = (props) => {
               }}
             >
               <GithubIcon />
-              <div className="flex flex-col ">
-                <span className="text-white-01 text-[16px]">
-                  {githubStarts}
+              <div className="flex flex-col">
+                <span className="text-white-01 text-[10px] font-medium">
+                  {t('join-github')}
                 </span>
-                <span className="text-white-04 text-[14px] font-normal">
-                  {t('stars')}
+                <span className="text-white-01 text-[16px] font-bold">
+                  {t('github')}
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="flex justify-center">
+                  <StarIcon />
+                </span>
+                <span className="text-white-01 text-[14px] font-bold text-center">
+                  {githubStarts}
                 </span>
               </div>
             </div>
             <div
-              className="flex gap-[16px] cursor-pointer items-center"
+              className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2]"
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -212,11 +221,19 @@ export const Title = (props) => {
             >
               <DiscordIcon />
               <div className="flex flex-col">
-                <span className="text-white-01 text-[16px]">
-                  {t('join-community')}
+                <span className="text-white-01 text-[10px] font-medium">
+                  {t('join-discord')}
                 </span>
-                <span className="text-white-04 text-[14px] font-normal">
-                  Discord
+                <span className="text-white-01 text-[16px] font-bold">
+                  {t('discord')}
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="flex justify-center">
+                  <GoIcon />
+                </span>
+                <span className="text-white-01 text-[14px] font-bold text-center">
+                  {t('go')}
                 </span>
               </div>
             </div>

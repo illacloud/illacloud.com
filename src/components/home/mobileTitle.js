@@ -5,8 +5,10 @@ import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
-import { GithubIcon } from '@/img/public/github'
-import { DiscordIcon } from '@/img/public/discord'
+import { StarIcon } from '@/img/public/star'
+import { GoIcon } from '@/img/public/go'
+import { LinearGithubIcon } from '@/img/public/linearGithub'
+import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 import { sendTagEvent } from '@/utils/gtag'
 
 export const Modal = ({ isOpen, onClose }) => {
@@ -69,7 +71,7 @@ export const MobileTitle = (props) => {
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
           <div
-            className="flex items-center gap-[8px]"
+            className="flex flex-col items-center gap-[8px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',
@@ -83,13 +85,16 @@ export const MobileTitle = (props) => {
               )
             }}
           >
-            <GithubIcon />
-            <span className="text-white-01 text-[13px]">
-              {githubStarts} {t('stars')}
-            </span>
+            <LinearGithubIcon />
+            <div className="text-white-01 text-[13px] flex items-center font-medium">
+              <StarIcon />
+              <span className="ml-[5px]">
+                {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
+              </span>
+            </div>
           </div>
           <div
-            className="flex items-center gap-[8px]"
+            className="flex flex-col items-center gap-[8px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',
@@ -100,10 +105,11 @@ export const MobileTitle = (props) => {
               window.open('https://discord.gg/zKf3WKCufR', '__blank')
             }}
           >
-            <DiscordIcon />
-            <span className="text-white-01 text-[13px]">
-              {t('join-community')}
-            </span>
+            <LinearDiscordIcon />
+            <div className="text-white-01 text-[13px] flex items-center font-medium items-center">
+              <GoIcon />
+              <span className="ml-[5px] align-middle">{t('join-community')}</span>
+            </div>
           </div>
         </div>
         <div
