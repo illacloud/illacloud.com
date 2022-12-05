@@ -79,6 +79,12 @@ export const MobileTitle = (props) => {
                 label: `${githubStarts} ${t('stars')}`,
                 value: 'https://github.com/illacloud/illa-builder',
               })
+              sendTagEvent({
+                action: 'click',
+                category: 'homepage_body_github_mob_click',
+                label: `${githubStarts} ${t('stars')}`,
+                value: 'https://github.com/illacloud/illa-builder',
+              })
               window.open(
                 'https://github.com/illacloud/illa-builder',
                 '__blank',
