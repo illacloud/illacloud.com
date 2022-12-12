@@ -38,9 +38,9 @@ export const Nav = (props) => {
       >
         <div className="flex absolute left-[40px] items-center">
           <NextLink href="/">
-            <span className="cursor-pointer w-[51px] h-[24px] flex items-center">
+            <a className="cursor-pointer w-[51px] h-[24px] flex items-center">
               {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
-            </span>
+            </a>
           </NextLink>
           <div className="flex items-center gap-[4px] ml-[24px]">
             <LanguageSelect buttonColorChange={!whiteTheme} />
@@ -88,7 +88,7 @@ export const Nav = (props) => {
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/docs/overview">
-              <span
+              <a
                 className="px-[16px] text-center cursor-pointer"
                 onClick={() => {
                   sendTagEvent({
@@ -99,10 +99,10 @@ export const Nav = (props) => {
                 }}
               >
                 {t('nav.doc')}
-              </span>
+              </a>
             </NextLink>
             <NextLink href="/hire">
-              <span
+              <a
                 className="px-[16px] text-center cursor-pointer"
                 onClick={() => {
                   sendTagEvent({
@@ -113,11 +113,11 @@ export const Nav = (props) => {
                 }}
               >
                 {t('nav.career')}
-              </span>
+              </a>
             </NextLink>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/blog">
-              <span
+              <a
                 className="px-[16px] text-center cursor-pointer"
                 onClick={() => {
                   sendTagEvent({
@@ -128,7 +128,7 @@ export const Nav = (props) => {
                 }}
               >
                 {t('nav.blog')}
-              </span>
+              </a>
             </NextLink>
           </div>
         </div>
@@ -140,7 +140,7 @@ export const Nav = (props) => {
             style={{ opacity: opacity }}
           >
             <NextLink href="/docs/illa-cli">
-              <button
+              <a
                 className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01"
                 onClick={() => {
                   sendTagEvent({
@@ -151,10 +151,10 @@ export const Nav = (props) => {
                 }}
               >
                 {t('self-Hosted')}
-              </button>
+              </a>
             </NextLink>
             <NextLink href="https://fast-try.illacloud.com/">
-              <button
+              <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
                   sendTagEvent({
@@ -166,16 +166,16 @@ export const Nav = (props) => {
                 }}
               >
                 {t('illa-Cloud')}
-              </button>
+              </a>
             </NextLink>
           </motion.div>
         )}
       </div>
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xl:hidden">
         <NextLink href="/">
-          <span className="flex items-center w-[42.5px] h-[20px]">
+          <a className="flex items-center w-[42.5px] h-[20px]">
             {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
-          </span>
+          </a>
         </NextLink>
         <span
           onClick={() => {

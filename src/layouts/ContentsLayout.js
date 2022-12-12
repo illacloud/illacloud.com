@@ -2,7 +2,6 @@ import { useState, useEffect, createContext, Fragment, useCallback, useContext }
 import { ClassTable } from '@/components/ClassTable'
 import { useRouter } from 'next/router'
 import { usePrevNext } from '@/hooks/usePrevNext'
-import Link from 'next/link'
 import { SidebarLayout, SidebarContext } from '@/layouts/SidebarLayout'
 import { PageHeader } from '@/components/PageHeader'
 import clsx from 'clsx'

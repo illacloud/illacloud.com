@@ -31,9 +31,9 @@ export const Nav = ({
     <>
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-end lg:hidden">
         <NextLink href="/">
-          <span>
+          <a>
             <ILLA_LOGO />
-          </span>
+          </a>
         </NextLink>
         <span
           onClick={() => {
@@ -52,9 +52,9 @@ export const Nav = ({
           )}
         >
           <NextLink href="/">
-            <span className="cursor-pointer">
+            <a className="cursor-pointer">
               {navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}
-            </span>
+            </a>
           </NextLink>
           <NextLink href="https://github.com/illacloud/illa-builder">
             <a>
@@ -76,14 +76,14 @@ export const Nav = ({
           >
             <ProductSelect buttonColorChange={navColorChange} />
             <NextLink href="/docs/overview">
-              <span className="px-[16px] text-center leading-[48px] cursor-pointer">
+              <a className="px-[16px] text-center leading-[48px] cursor-pointer">
                 {t('nav.doc')}
-              </span>
+              </a>
             </NextLink>
             <NextLink href="/hire">
-              <span className="px-[16px] text-center leading-[48px] cursor-pointer">
+              <a className="px-[16px] text-center leading-[48px] cursor-pointer">
                 {t('nav.career')}
-              </span>
+              </a>
             </NextLink>
           </div>
         </div>
@@ -93,17 +93,17 @@ export const Nav = ({
           )}
         >
           <NextLink href="/docs/illa-cli">
-            <div
+            <a
               className={clsx(
                 'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] cursor-pointer supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
                 navColorChange ? 'visible' : 'hidden',
               )}
             >
               {t('self-Hosted')}
-            </div>
+            </a>
           </NextLink>
           <NextLink href="https://fast-try.illacloud.com/">
-            <span
+            <a
               className={clsx(
                 'w-[160px] text-center leading-[48px] box-border cursor-pointer rounded-full',
                 navColorChange ? 'visible' : 'hidden',
@@ -113,7 +113,7 @@ export const Nav = ({
               )}
             >
               {t('illa-Cloud')}
-            </span>
+            </a>
           </NextLink>
         </div>
       </div>
