@@ -40,8 +40,8 @@ export const MobileTitle = (props) => {
         </div>
         <div className="mt-[32px] w-full flex gap-[16px]">
           <NextLink href="/docs/illa-cli">
-            <button
-              className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
+            <a
+              className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -51,11 +51,11 @@ export const MobileTitle = (props) => {
               }}
             >
               {t('self-Hosted')}
-            </button>
+            </a>
           </NextLink>
           <NextLink href="https://fast-try.illacloud.com/">
-            <button
-              className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px]"
+            <a
+              className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -66,51 +66,53 @@ export const MobileTitle = (props) => {
               }}
             >
               {t('illa-Cloud')}
-            </button>
+            </a>
           </NextLink>
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
-          <div
-            className="flex flex-col items-center gap-[8px]"
-            onClick={() => {
-              sendTagEvent({
-                action: 'click',
-                category: 'homepage_body_github_mob_click',
-                label: `${githubStarts} ${t('stars')}`,
-                value: 'https://github.com/illacloud/illa-builder',
-              })
-              window.open(
-                'https://github.com/illacloud/illa-builder',
-                '__blank',
-              )
-            }}
-          >
-            <LinearGithubIcon />
-            <div className="text-white-01 text-[13px] flex items-center font-medium">
-              <StarIcon />
-              <span className="ml-[5px]">
+          <NextLink href="https://github.com/illacloud/illa-builder">
+            <a
+              target="__blank"
+              className="flex flex-col items-center gap-[8px] inline-block"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_github_mob_click',
+                  label: `${githubStarts} ${t('stars')}`,
+                  value: 'https://github.com/illacloud/illa-builder',
+                })
+
+              }}
+            >
+              <LinearGithubIcon />
+              <div className="text-white-01 text-[13px] flex items-center font-medium">
+                <StarIcon />
+                <span className="ml-[5px]">
                 {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
               </span>
-            </div>
-          </div>
-          <div
-            className="flex flex-col items-center gap-[8px]"
-            onClick={() => {
-              sendTagEvent({
-                action: 'click',
-                category: 'homepage_body_discord_mob_click',
-                label: t('join-community'),
-                value: 'https://discord.gg/zKf3WKCufR',
-              })
-              window.open('https://discord.gg/zKf3WKCufR', '__blank')
-            }}
-          >
-            <LinearDiscordIcon />
-            <div className="text-white-01 text-[13px] flex items-center font-medium items-center">
-              <GoIcon />
-              <span className="ml-[5px] align-middle">{t('join-community')}</span>
-            </div>
-          </div>
+              </div>
+            </a>
+          </NextLink>
+          <NextLink href="https://discord.gg/zKf3WKCufR">
+            <a
+              target="__blank"
+              className="flex flex-col items-center gap-[8px] inline-block"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_discord_mob_click',
+                  label: t('join-community'),
+                  value: 'https://discord.gg/zKf3WKCufR',
+                })
+              }}
+            >
+              <LinearDiscordIcon />
+              <div className="text-white-01 text-[13px] flex items-center font-medium items-center">
+                <GoIcon />
+                <span className="ml-[5px] align-middle">{t('join-community')}</span>
+              </div>
+            </a>
+          </NextLink>
         </div>
         <div
           className="mt-[32px] relative"

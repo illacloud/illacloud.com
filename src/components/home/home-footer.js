@@ -136,7 +136,7 @@ export function Footer({ noHome = false }) {
           <div className=" w-full justify-center items-start flex ">
             <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center">
               <NextLink href={'/'}>
-                <a className="cursor-pointer">
+                <a>
                   <ILLA_LOGO />
                 </a>
               </NextLink>
@@ -152,7 +152,7 @@ export function Footer({ noHome = false }) {
               {Community?.map((item, index) => (
                 <NextLink key={item.tagCategory} href={item.href}>
                   <a
-                    className="cursor-pointer xs:mb-[12px] text-[#787E85]"
+                    className="xs:mb-[12px] text-[#787E85]"
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',
@@ -186,7 +186,7 @@ export function Footer({ noHome = false }) {
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
           {Community?.map((item, index) => (
             <NextLink key={'icon' + index} href={item.href}>
-              <span
+              <a
                 className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]"
                 onClick={() => {
                   sendTagEvent({
@@ -197,7 +197,7 @@ export function Footer({ noHome = false }) {
                 }}
               >
                 {item.icon}
-              </span>
+              </a>
             </NextLink>
           ))}
         </div>

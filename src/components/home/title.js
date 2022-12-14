@@ -146,8 +146,8 @@ export const Title = (props) => {
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
             <NextLink href="https://fast-try.illacloud.com/">
-              <button
-                className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+              <a
+                className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -157,11 +157,11 @@ export const Title = (props) => {
                   })
               }}>
                 {t('illa-Cloud')}
-              </button>
+              </a>
             </NextLink>
             <NextLink href="/docs/illa-cli">
-              <button
-                className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[64px] py-[8px] text-white-01"
+              <a
+                className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] font-normal	 border-white-01 text-center	rounded-[8px] px-[64px] py-[8px] text-white-01"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -170,73 +170,74 @@ export const Title = (props) => {
                   })
               }}>
                 {t('self-Hosted')}
-              </button>
+              </a>
             </NextLink>
           </div>
           <div className="flex mt-[40px] gap-[16px]">
-            <div
-              className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2]"
-              onClick={() => {
-                sendTagEvent({
-                  action: 'click',
-                  category: 'homepage_body_github_click',
-                  label: `${githubStarts} ${t('stars')}`,
-                  value: 'https://github.com/illacloud/illa-builder',
-                })
-                window.open(
-                  'https://github.com/illacloud/illa-builder',
-                  '__blank',
-                )
-              }}
-            >
-              <GithubIcon />
-              <div className="flex flex-col">
+            <NextLink href="https://github.com/illacloud/illa-builder">
+              <a
+                target="__blank"
+                className="flex gap-[12px] items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_github_click',
+                    label: `${githubStarts} ${t('stars')}`,
+                    value: 'https://github.com/illacloud/illa-builder',
+                  })
+                }}
+              >
+                <GithubIcon />
+                <div className="flex flex-col">
                 <span className="text-white-01 text-[10px] font-medium">
                   {t('join-github')}
                 </span>
-                <span className="text-white-01 text-[16px] font-bold">
+                  <span className="text-white-01 text-[16px] font-bold">
                   {t('github')}
                 </span>
-              </div>
-              <div className="flex flex-col">
+                </div>
+                <div className="flex flex-col">
                 <span className="flex justify-center">
                   <StarIcon />
                 </span>
-                <span className="text-white-01 text-[14px] font-bold text-center">
+                  <span className="text-white-01 text-[14px] font-bold text-center">
                   {githubStarts}
                 </span>
-              </div>
-            </div>
-            <div
-              className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2]"
-              onClick={() => {
-                sendTagEvent({
-                  action: 'click',
-                  category: 'homepage_body_discord_click',
-                  label: t('join-community'),
-                  value: 'https://discord.gg/zKf3WKCufR',
-                })
-                window.open('https://discord.gg/zKf3WKCufR', '__blank')
-              }}
-            >
-              <DiscordIcon />
-              <div className="flex flex-col">
+                </div>
+              </a>
+            </NextLink>
+            <NextLink href="https://discord.gg/zKf3WKCufR">
+              <a
+                target="__blank"
+                className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_body_discord_click',
+                    label: t('join-community'),
+                    value: 'https://discord.gg/zKf3WKCufR',
+                  })
+                }}
+              >
+                <DiscordIcon />
+                <div className="flex flex-col">
                 <span className="text-white-01 text-[10px] font-medium">
                   {t('join-discord')}
                 </span>
-                <span className="text-white-01 text-[16px] font-bold">
+                  <span className="text-white-01 text-[16px] font-bold">
                   {t('discord')}
                 </span>
-              </div>
-              <div className="flex flex-col">
+                </div>
+                <div className="flex flex-col">
                 <span className="flex justify-center">
                   <GoIcon />
                 </span>
-                <span className="text-white-01 text-[14px] font-bold text-center">
+                  <span className="text-white-01 text-[14px] font-bold text-center">
                   {t('go')}
                 </span>
-              </div>
-            </div>
+                </div>
+              </a>
+            </NextLink>
           </div>
         </div>
       </motion.div>
