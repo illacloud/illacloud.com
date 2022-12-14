@@ -177,7 +177,7 @@ export const Title = (props) => {
             <NextLink href="https://github.com/illacloud/illa-builder">
               <a
                 target="__blank"
-                className="flex gap-[12px] cursor-pointer items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"
+                className="flex gap-[12px] items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -209,7 +209,7 @@ export const Title = (props) => {
             <NextLink href="https://discord.gg/zKf3WKCufR">
               <a
                 target="__blank"
-                className="flex gap-[12px] cursor-pointer items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
+                className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',

@@ -38,7 +38,7 @@ export const Nav = (props) => {
       >
         <div className="flex absolute left-[40px] items-center">
           <NextLink href="/">
-            <a className="cursor-pointer w-[51px] h-[24px] flex items-center">
+            <a className=" w-[51px] h-[24px] flex items-center">
               {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
             </a>
           </NextLink>
@@ -89,7 +89,7 @@ export const Nav = (props) => {
             <ProductSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/docs/overview">
               <a
-                className="px-[16px] text-center cursor-pointer"
+                className="px-[16px] text-center"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -103,7 +103,7 @@ export const Nav = (props) => {
             </NextLink>
             <NextLink href="/hire">
               <a
-                className="px-[16px] text-center cursor-pointer"
+                className="px-[16px] text-center"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -118,7 +118,7 @@ export const Nav = (props) => {
             <FlowUsSelect buttonColorChange={!whiteTheme} />
             <NextLink href="/blog">
               <a
-                className="px-[16px] text-center cursor-pointer"
+                className="px-[16px] text-center"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',

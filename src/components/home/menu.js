@@ -79,7 +79,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       >
         <NextLink href="https://github.com/illacloud/illa-builder">
           <a
-            className="w-full flex flex-row flex-nowrap cursor-pointer items-center h-[40px] gap-[8px]  pl-[32px]"
+            className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',
@@ -93,7 +93,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         </NextLink>
         <NextLink href="https://github.com/illacloud/illa-design">
           <a
-            className="w-full flex flex-row flex-nowrap items-center cursor-pointer h-[40px] gap-[8px]  pl-[32px]"
+            className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',
@@ -108,7 +108,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       </div>
       <NextLink href="/docs/overview">
         <a
-          className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px]"
+          className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
             sendTagEvent({
               action: 'click',
@@ -122,7 +122,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       </NextLink>
       <NextLink href="/hire">
         <a
-          className="w-full flex cursor-pointer flex-row flex-nowrap items-center h-[40px] gap-[8px]"
+          className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
             sendTagEvent({
               action: 'click',
@@ -178,7 +178,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       </div>
       <NextLink href="/blog">
         <a
-          className="w-full flex cursor-pointer flex-row flex-nowrap items-center h-[40px] gap-[8px]"
+          className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
             sendTagEvent({
               action: 'click',
@@ -211,7 +211,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         >
           <a
             style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
-            className="transition-height cursor-pointer duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
+            className="transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',

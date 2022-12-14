@@ -2,7 +2,7 @@ export const SocialButton = (props) => {
   const { icon, text, href, onClick } = props
   return (
     <a
-      className="flex px-[8px] py-[5px] gap-[8px] cursor-pointer"
+      className="flex px-[8px] py-[5px] gap-[8px]"
       href={href}
       target="__blank"
       onClick={() => {
