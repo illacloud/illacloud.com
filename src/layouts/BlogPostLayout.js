@@ -355,7 +355,7 @@ function Metadata({ meta }) {
           <meta
             name="twitter:image"
             content={`https://illa.cloud${
-              require('@/img/social-square.jpg').default
+              require('@/img/illa_logo.png').default
             }`}
           />
         </>
