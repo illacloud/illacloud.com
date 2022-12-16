@@ -22,6 +22,10 @@ export const Player = forwardRef(({ menuExpand, closeMenu }, ref) => {
       </span>
       <video className="w-full bg-blue-100" controls autoPlay>
         <source
+          src={require('../../img/home/video.webm').default}
+          type="video/webm"
+        />
+        <source
           src={require('../../img/home/video.mp4').default}
           type="video/mp4"
         />

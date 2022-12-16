@@ -17,17 +17,25 @@ const {
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const defaultConfig = require('tailwindcss/resolveConfig')(require('tailwindcss/defaultConfig'))
+const defaultConfig = require('tailwindcss/resolveConfig')(
+  require('tailwindcss/defaultConfig'),
+)
 const dlv = require('dlv')
 const Prism = require('prismjs')
 const { i18n } = require('./next-i18next.config')
 
 const fallbackLayouts = {
-  'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout'],
+  'src/pages/docs/**/*': [
+    '@/layouts/DocumentationLayout',
+    'DocumentationLayout',
+  ],
 }
 
 const fallbackDefaultExports = {
-  'src/pages/{docs,components}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
+  'src/pages/{docs,components}/**/*': [
+    '@/layouts/ContentsLayout',
+    'ContentsLayout',
+  ],
   'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
 }
 
@@ -54,17 +62,22 @@ module.exports = withBundleAnalyzer({
       {
         source: '/zh-CN/docs/:slug*',
         destination: '/zh-CN/docs/zh-CN/:slug*',
-        locale: false
+        locale: false,
       },
       {
         source: '/en-US/docs/:slug*',
         destination: '/en-US/docs/en-US/:slug*',
-        locale: false
-      }
+        locale: false,
+      },
     ]
   },
   webpack(config, options) {
-    config.resolve.fallback = { fs: false, path: false, stream: false, constants: false }
+    config.resolve.fallback = {
+      fs: false,
+      path: false,
+      stream: false,
+      constants: false,
+    }
     if (!options.dev && options.isServer) {
       let originalEntry = config.entry
 
@@ -76,7 +89,7 @@ module.exports = withBundleAnalyzer({
     }
 
     config.module.rules.push({
-      test: /\.(png|jpe?g|gif|webp|avif|mp4|zip)$/i,
+      test: /\.(png|jpe?g|gif|webp|avif|mp4|webm|zip)$/i,
       issuer: /\.(jsx?|tsx?|mdx)$/,
       use: [
         {
@@ -89,7 +102,9 @@ module.exports = withBundleAnalyzer({
       ],
     })
 
-    config.resolve.alias['defaultConfig$'] = require.resolve('tailwindcss/defaultConfig')
+    config.resolve.alias['defaultConfig$'] = require.resolve(
+      'tailwindcss/defaultConfig',
+    )
     config.module.rules.push({
       test: require.resolve('tailwindcss/defaultConfig'),
       use: createLoader(function (_source) {
@@ -97,7 +112,9 @@ module.exports = withBundleAnalyzer({
       }),
     })
 
-    config.resolve.alias['utilities$'] = require.resolve('tailwindcss/lib/corePlugins.js')
+    config.resolve.alias['utilities$'] = require.resolve(
+      'tailwindcss/lib/corePlugins.js',
+    )
 
     // import utilities from 'utilities?plugin=backgroundColor'
     config.module.rules.push({
@@ -105,7 +122,9 @@ module.exports = withBundleAnalyzer({
       test: require.resolve('tailwindcss/lib/corePlugins.js'),
       use: createLoader(function (_source) {
         let pluginName = new URLSearchParams(this.resourceQuery).get('plugin')
-        let plugin = require('tailwindcss/lib/corePlugins.js').corePlugins[pluginName]
+        let plugin = require('tailwindcss/lib/corePlugins.js').corePlugins[
+          pluginName
+        ]
         return `export default ${JSON.stringify(getUtilities(plugin))}`
       }),
     })
@@ -122,7 +141,9 @@ module.exports = withBundleAnalyzer({
             example:
               Object.keys(utilities).length > 0
                 ? Object.keys(utilities)
-                    [Math.floor((Object.keys(utilities).length - 1) / 2)].split(/[>:]/)[0]
+                    [Math.floor((Object.keys(utilities).length - 1) / 2)].split(
+                      /[>:]/,
+                    )[0]
                     .trim()
                     .substr(1)
                     .replace(/\\/g, '')
@@ -136,7 +157,10 @@ module.exports = withBundleAnalyzer({
     config.module.rules.push({
       test: /\.svg$/,
       use: [
-        { loader: '@svgr/webpack', options: { svgoConfig: { plugins: { removeViewBox: false } } } },
+        {
+          loader: '@svgr/webpack',
+          options: { svgoConfig: { plugins: { removeViewBox: false } } },
+        },
         {
           loader: 'file-loader',
           options: {
@@ -153,7 +177,7 @@ module.exports = withBundleAnalyzer({
       use: createLoader(function (source) {
         return source.replace(
           /var isDistancePastThreshold = .*?$/m,
-          'var isDistancePastThreshold = true'
+          'var isDistancePastThreshold = true',
         )
       }),
     })
@@ -161,7 +185,9 @@ module.exports = withBundleAnalyzer({
     config.module.rules.push({
       resourceQuery: /fields/,
       use: createLoader(function (source) {
-        let fields = new URLSearchParams(this.resourceQuery).get('fields').split(',')
+        let fields = new URLSearchParams(this.resourceQuery)
+          .get('fields')
+          .split(',')
         return JSON.stringify(JSON.parse(source), (key, value) => {
           return ['', ...fields].includes(key) ? value : undefined
         })
@@ -189,7 +215,9 @@ module.exports = withBundleAnalyzer({
             export const tokens = ${JSON.stringify(tokens.map(simplifyToken))}
             export const lines = ${JSON.stringify(normalizeTokens(tokens))}
             export const code = ${JSON.stringify(source)}
-            export const highlightedCode = ${JSON.stringify(highlightCode(source, lang))}
+            export const highlightedCode = ${JSON.stringify(
+              highlightCode(source, lang),
+            )}
           `
         }),
       ],
@@ -251,7 +279,9 @@ module.exports = withBundleAnalyzer({
         }),
         ...mdx([
           () => (tree) => {
-            let firstParagraphIndex = tree.children.findIndex((child) => child.type === 'paragraph')
+            let firstParagraphIndex = tree.children.findIndex(
+              (child) => child.type === 'paragraph',
+            )
             if (firstParagraphIndex > -1) {
               tree.children = tree.children.filter((child, index) => {
                 if (child.type === 'import' || child.type === 'export') {
@@ -272,16 +302,21 @@ module.exports = withBundleAnalyzer({
         options.defaultLoaders.babel,
         createLoader(function (source) {
           if (source.includes('/*START_META*/')) {
-            const [meta] = source.match(/\/\*START_META\*\/(.*?)\/\*END_META\*\//s)
+            const [meta] = source.match(
+              /\/\*START_META\*\/(.*?)\/\*END_META\*\//s,
+            )
             return 'export default ' + meta
           }
           return (
-            source.replace(/export const/gs, 'const') + `\nMDXContent.layoutProps = layoutProps\n`
+            source.replace(/export const/gs, 'const') +
+            `\nMDXContent.layoutProps = layoutProps\n`
           )
         }),
         ...mdx(),
         createLoader(function (source) {
-          let fields = new URLSearchParams(this.resourceQuery.substr(1)).get('meta') ?? undefined
+          let fields =
+            new URLSearchParams(this.resourceQuery.substr(1)).get('meta') ??
+            undefined
           let { attributes: meta, body } = frontMatter(source)
           if (fields) {
             for (let field in meta) {
@@ -299,19 +334,23 @@ module.exports = withBundleAnalyzer({
               if (minimatch(resourcePath, glob)) {
                 extra.push(
                   `import { ${fallbackLayouts[glob][1]} as _Layout } from '${fallbackLayouts[glob][0]}'`,
-                  'export const Layout = _Layout'
+                  'export const Layout = _Layout',
                 )
                 break
               }
             }
           }
 
-          if (!/^\s*export\s+default\s+/m.test(source.replace(/```(.*?)```/gs, ''))) {
+          if (
+            !/^\s*export\s+default\s+/m.test(
+              source.replace(/```(.*?)```/gs, ''),
+            )
+          ) {
             for (let glob in fallbackDefaultExports) {
               if (minimatch(resourcePath, glob)) {
                 extra.push(
                   `import { ${fallbackDefaultExports[glob][1]} as _Default } from '${fallbackDefaultExports[glob][0]}'`,
-                  'export default _Default'
+                  'export default _Default',
                 )
                 break
               }
@@ -320,12 +359,14 @@ module.exports = withBundleAnalyzer({
 
           if (
             !/^\s*export\s+(async\s+)?function\s+getStaticProps\s+/m.test(
-              source.replace(/```(.*?)```/gs, '')
+              source.replace(/```(.*?)```/gs, ''),
             )
           ) {
             for (let glob in fallbackGetStaticProps) {
               if (minimatch(resourcePath, glob)) {
-                extra.push(`export { getStaticProps } from '${fallbackGetStaticProps[glob]}'`)
+                extra.push(
+                  `export { getStaticProps } from '${fallbackGetStaticProps[glob]}'`,
+                )
                 break
               }
             }
@@ -336,7 +377,9 @@ module.exports = withBundleAnalyzer({
             metaExport =
               typeof fields === 'undefined'
                 ? `export const meta = ${JSON.stringify(meta)}`
-                : `export const meta = /*START_META*/${JSON.stringify(meta || {})}/*END_META*/`
+                : `export const meta = /*START_META*/${JSON.stringify(
+                    meta || {},
+                  )}/*END_META*/`
           }
 
           return [
@@ -361,7 +404,9 @@ function normalizeProperties(input) {
   return Object.keys(input).reduce((newObj, key) => {
     let val = input[key]
     let newVal = typeof val === 'object' ? normalizeProperties(val) : val
-    newObj[key.replace(/([a-z])([A-Z])/g, (m, p1, p2) => `${p1}-${p2.toLowerCase()}`)] = newVal
+    newObj[
+      key.replace(/([a-z])([A-Z])/g, (m, p1, p2) => `${p1}-${p2.toLowerCase()}`)
+    ] = newVal
     return newObj
   }, {})
 }
@@ -401,7 +446,8 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
       if (includeNegativeValues && supportsNegativeValues) {
         let negativeValues = []
         for (let [key, value] of modifierValues) {
-          let negatedValue = require('tailwindcss/lib/util/negateValue').default(value)
+          let negatedValue =
+            require('tailwindcss/lib/util/negateValue').default(value)
           if (negatedValue) {
             negativeValues.push([`-${key}`, negatedValue])
           }
@@ -409,25 +455,30 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
         modifierValues.push(...negativeValues)
       }
 
-      let result = Object.entries(matches).flatMap(([name, utilityFunction]) => {
-        return modifierValues
-          .map(([modifier, value]) => {
-            let declarations = utilityFunction(value, {
-              includeRules(rules) {
-                addUtilities(rules)
-              },
+      let result = Object.entries(matches).flatMap(
+        ([name, utilityFunction]) => {
+          return modifierValues
+            .map(([modifier, value]) => {
+              let declarations = utilityFunction(value, {
+                includeRules(rules) {
+                  addUtilities(rules)
+                },
+              })
+
+              if (!declarations) {
+                return null
+              }
+
+              return {
+                [require('tailwindcss/lib/util/nameClass').default(
+                  name,
+                  modifier,
+                )]: declarations,
+              }
             })
-
-            if (!declarations) {
-              return null
-            }
-
-            return {
-              [require('tailwindcss/lib/util/nameClass').default(name, modifier)]: declarations,
-            }
-          })
-          .filter(Boolean)
-      })
+            .filter(Boolean)
+        },
+      )
 
       for (let obj of result) {
         for (let key in obj) {
