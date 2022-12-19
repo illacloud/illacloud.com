@@ -1,0 +1,50 @@
+---
+title: Table
+description: Display and interact with data using the Table component.
+tagCategory: doc_menu_table_click
+---
+---
+
+## <Heading hidden>Table</Heading>
+
+Tables are a common way to view and interact with your data. You can sort, filter, paginate, and download rows of information. Tables also support row selection and custom columns.
+
+![table_demo](https://github.com/illacloud/illacloud.com/blob/main/src/img/docs/table_demo.png)
+
+### Load data in a table
+
+When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
+![table_load_data](https://github.com/illacloud/illacloud.com/blob/main/src/img/docs/table_load_data.png)
+
+You can also set the data source by inputing an array. 
+
+# Column settings
+
+## Set aliases for data columns
+
+When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+
+## Change column types
+
+When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown. 
+
+The column types include: 
+
+1. Text
+2. Date, you can set the display format of the date in the date type.
+3. Number, you can set the decimal places in the number type. 
+4. Percent, you can set the decimal places in the percent type.
+5. Link
+6. Button, you can add event handlers in the button type.
+
+## Mapped value of custom columns
+
+You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+
+In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
+
+
+# Access data of table
+
+Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0. 
+
