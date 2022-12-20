@@ -55,7 +55,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesCN['event-handler'],
         pagesCN['javascript'],
       ],
-      '🧬 Assemble components': [pagesUS['table'], pagesUS['list']],
+      '🧬 Assemble components': [pagesUS['table'], pagesUS['list'], pagesUS['container']],
       '📎 Contributing Guide': [pagesUS['beyond-coding']]
     }
   } else {
@@ -73,7 +73,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['event-handler'],
         pagesUS['javascript'],
       ],
-      '🧬 Assemble components': [pagesUS['table'], pagesUS['list']],
+      '🧬 Assemble components': [pagesUS['table'], pagesUS['list'], pagesUS['container']],
       '📎 Contributing Guide': [pagesUS['beyond-coding']]
     }
 

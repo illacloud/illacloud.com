@@ -14,7 +14,7 @@ ILLA allows you to connect and integrate a wide range of data sources, including
 
 Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
 
-### **Integrations**
+### Integrations
 
 ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using Retool. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
 
@@ -32,7 +32,7 @@ A resource in ILLA is a saved configuration that specifies how ILLA connects to 
 
 Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
 
-### **How resources work**
+### How resources work
 
 ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, Retool uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only Retool has direct access to the data source.
 

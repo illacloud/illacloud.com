@@ -8,7 +8,7 @@ tagCategory: doc_menu_container_click
 
 Group components into cards that support multiple views.
 
-You can group related components together in a card using the Container component. Containers also support multiple views that allow you to separate content into distinct views that users can switch between.
+You can group related components together in a card using the Container component. Containers also support multiple views that allow you to separate content into distinct views that users can switch between.
 
 Containers function like any other component. Once added, you can group components within it by pressing D or K and dragging them onto the Container.
 
@@ -29,7 +29,7 @@ Containers contain three sections in which you can place components:
 
 ![https://d3399nw8s4ngfo.cloudfront.net/docs/container/b0e206fb-6991-4d25-840e-6358e981580e.jpg](https://d3399nw8s4ngfo.cloudfront.net/docs/container/b0e206fb-6991-4d25-840e-6358e981580e.jpg)
 
-You can show or hide each section by either manually toggling the relevant option in the **Layout** section of the **Inspect** tab or dynamically using a *truthy value*.
+You can show or hide each section by either manually toggling the relevant option in the **Layout** section of the **Inspect** tab or dynamically using a *truthy value*.
 
 ![https://d3399nw8s4ngfo.cloudfront.net/docs/container/214ac122-d175-4eb6-9a9a-42a39303c724.jpg](https://d3399nw8s4ngfo.cloudfront.net/docs/container/214ac122-d175-4eb6-9a9a-42a39303c724.jpg)
 
@@ -37,26 +37,26 @@ You can show or hide each section by either manually toggling the relevant optio
 
 ### Width and height
 
-You have manual control over the width of a Container. You can configure its **Height** to either **Auto** or **Fixed**:
+You have manual control over the width of a Container. You can configure its **Height** to either **Auto** or **Fixed**:
 
 - **Auto**: The height grows automatically based on the content.
 - **Fixed**: The height is a fixed size that you manually control. Scroll bars appear if the content exceeds the height.
 
 ### Disable interaction
 
-You can disable interaction with a Container by setting **Disabled** to a truthy value. Disabling a Container also prevents user interaction with any nested components it contains.
+You can disable interaction with a Container by setting **Disabled** to a truthy value. Disabling a Container also prevents user interaction with any nested components it contains.
 
 ## Multiple views
 
 Containers support multiple views for grouping content. Only one view is visible at a time and users switch between them by changing the current view of the Container component. Switching views applies only to the body of a Container—the header and footer areas are shared across all views.
 
-Select or drag a Container on the Canvas and click **+ Enable multiple views** in the **Views** section of the **Inspect** tab. Once enabled, you manage views and select which view is visible using the option list editor.
+Select or drag a Container on the Canvas and click **+ Enable multiple views** in the **Views** section of the **Inspect** tab. Once enabled, you manage views and select which view is visible using the option list editor.
 
 To add components to the selected view, drag them onto the Container as normal. Each component is associated with the view in which it's contained. As you switch between views, only components associated with the current view appear.
 
 ### Stepped Containers
 
-The **Stepped Container** combines the [Steps](https://retool.com/components/steps) component with a Container, allowing you to create a step-by-step flow through the Container's views. This is useful if you have a multi-step process that users must complete.
+The **Stepped Container** combines the Steps component with a Container, allowing you to create a step-by-step flow through the Container's views. This is useful if you have a multi-step process that users must complete.
 
 You can drag Stepped Containers directly to the Canvas. The Container automatically includes a Steps component that maps to views. As you make changes to views, the steps update automatically.
 
@@ -64,7 +64,7 @@ You can use conditional logic to prevent users from progressing to the next step
 
 ### Tabbed Container
 
-The **Tabbed Container** combines the [Tabs](https://retool.com/components/tabs) component with a Container, allowing you to create tabbed navigation for the Container's views.
+The **Tabbed Container** combines the Tabs component with a Container, allowing you to create tabbed navigation for the Container's views.
 
 You can drag Tabbed Containers directly to the Canvas. The Container automatically includes a Tabs component that maps to views. As you make changes to views, navigation options update automatically.
 
@@ -74,7 +74,7 @@ In addition to using Stepped or Tabbed Containers, you can select a Container's 
 
 ### Event handler
 
-Use the **Control component** action and select either the **Set current view key** or **Set current view index** method.
+Use the **Control component** action and select either the **Set current view key** or **Set current view index** method.
 
 ![https://d3399nw8s4ngfo.cloudfront.net/docs/container/1fccef60-ca23-4403-982a-5547b62f4c60.jpg](https://d3399nw8s4ngfo.cloudfront.net/docs/container/1fccef60-ca23-4403-982a-5547b62f4c60.jpg)
 
@@ -82,7 +82,7 @@ Use the **Control component** action and select either the **Set current view
 
 ### JavaScript
 
-You can write JavaScript (e.g., **JavaScript queries** or **Run script** *[event handlers](https://docs.retool.com/docs/event-handlers)*) to select a view using `setCurrentView()` with the key for the view or `setCurrentViewIndex()` with the index of the view:
+You can write JavaScript (e.g., **JavaScript queries** or **Run script** *event handlers*) to select a view using `setCurrentView()` with the key for the view or `setCurrentViewIndex()` with the index of the view:
 
 ```
 container1.setCurrentView("View 1");
@@ -92,34 +92,10 @@ container1.setCurrentViewIndex(0);
 
 ### Link to Steps or Tabs
 
-You can link a Steps or Tabs component to a Container with multiple views, creating a Stepped or Tabbed Container Toggle the **Link to a Container** setting and select a Container to link with. To unlink, toggle the option off.
+You can link a Steps or Tabs component to a Container with multiple views, creating a Stepped or Tabbed Container Toggle the **Link to a Container** setting and select a Container to link with. To unlink, toggle the option off.
 
 ![https://d3399nw8s4ngfo.cloudfront.net/docs/8940f640-0505-4f43-952e-1de995305b55.png](https://d3399nw8s4ngfo.cloudfront.net/docs/8940f640-0505-4f43-952e-1de995305b55.png)
 
 ![https://d3399nw8s4ngfo.cloudfront.net/docs/8940f640-0505-4f43-952e-1de995305b55.png](https://d3399nw8s4ngfo.cloudfront.net/docs/8940f640-0505-4f43-952e-1de995305b55.png)
 
 In general, Retool recommends using the preconfigured Stepped or Tabbed Containers.
-
-**Updated 4 months ago**
-
----
-
-[Display images](https://docs.retool.com/docs/display-images)[Forms](https://docs.retool.com/docs/forms)
-
-Did this page help you?
-
-Yes
-
-No
-
-• **[TABLE OF CONTENTS](https://docs.retool.com/docs/containers#)**
-•
-◦ [Layout](https://docs.retool.com/docs/containers#layout)
-▪ [Width and height](https://docs.retool.com/docs/containers#width-and-height)
-▪ [Disable interaction](https://docs.retool.com/docs/containers#disable-interaction)
-◦ [Multiple views](https://docs.retool.com/docs/containers#multiple-views)
-▪ [Stepped Containers](https://docs.retool.com/docs/containers#stepped-containers)
-▪ [Tabbed Container](https://docs.retool.com/docs/containers#tabbed-container)
-▪ [Switch between views](https://docs.retool.com/docs/containers#switch-between-views)
-
-![https://grow.clearbitjs.com/api/c.gif?r=https%3A%2F%2Fdocs.retool.com%2Fdocs&c=](https://grow.clearbitjs.com/api/c.gif?r=https%3A%2F%2Fdocs.retool.com%2Fdocs&c=)
