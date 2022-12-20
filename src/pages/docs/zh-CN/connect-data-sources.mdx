@@ -1,41 +1,40 @@
 ---
-title: Connect to your data sources
+title: 连接到你的数据源
 tagCategory: doc_menu_data_source_connect_click
 ---
 ---
 
-# <Heading hidden>Connect to your data sources （Action)</Heading>
+# <Heading hidden>连接到你的数据源</Heading>
+通过此篇，了解如何使用ILLA连接到您的数据源，并且在ILLA中调用这些数据。
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+ILLA允许您连接合整合多种的数据源，包括数据库和API，作为您团队的资源使用。
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+## 数据源
 
-## Data sources
+数据源是存储和处理数据的位置。数据源的例子包括PostgreSQL数据库、Twilio REST APIs和Amazon S3桶。在ILLA中，您可以添加多个数据源，并通过前端页面让用户可以访问这些数据源进行数据查询。
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+### 集成
 
-### Integrations
+ILLA为许多热门的数据源提供了内置的集成，如MySQL数据库等。这些集成，也被称为资源，您可以通过这些资源，连接和查询你的数据源。如果一个特定类型的数据源不被内置集成所支持，你可以使用REST、GraphQL或SOAP集成来连接到几乎所有的API。这使得您可以从ILLA中访问广泛的数据源。
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using Retool. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+### 连接到数据库
 
-### Connect to databases
+ILLA支持数十种常用数据库，可以使用ILLA连接并访问。
 
-Connect to most databases and data stores
+### 连接到APIs
 
-### Connect to APIs
+ILLA支持REST API、GraphQL等常用API，可以通过ILLA页面输入连接信息，连接到API。
 
-Connect to REST and GraphQL.
+## 资源
 
-## Resources
+ILLA中的资源配置会保存在ILLA服务器（如果您使用本地部署，那这些数据只会存储在您的本地数据库，ILLA不会通过任何方式访问这些信息）。ILLA的资源指定了ILLA与数据源的连接方式。要在ILLA中使用一个数据源，你必须为它创建一个资源。在编写查询（Action）时，您可以选择适当的资源，以进行进一步的查询操作。
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+ILLA中的每个资源都有自己的配置选项，决定ILLA如何连接到相应的数据源。这些选项可能包括认证凭证和流程、数据库连接设置、API设置等，如Base URL、Header等。
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+### 资源（Resource）如何工作
 
-### How resources work
+ILLA资源会将必要的设置存储下来，以安全地连接到您的数据源（同样的，使用本地部署时，这些配置将存到您的本地数据库，ILLA不会以任何方式存储或访问这些内容）。这使您可以轻松地查询数据，而不需要将您的数据源直接暴露给您的用户。当对一个资源进行查询时，ILLA使用该资源的配置设置来代理服务器上的数据源请求。这确保只有ILLA可以直接访问数据源。
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, Retool uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only Retool has direct access to the data source.
+ILLA简化了用户连接到数据源的过程。用户只需要在编写查询时选择相关的资源，而不需要担心数据源的细节问题。您还可以添加多个相同类型的资源，如多个Amazon S3桶，通过重命名来区分它们。
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
-
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+这种方法使你的数据源不被用户发现，并确保与数据源的所有互动都得到安全处理。ILLA避免了对数据源进行客户端连接，以免暴露敏感信息，并对所有互动使用相同的条件。此外，资源支持查询缓存，这可以减少对数据源的请求次数，并有可能降低成本。
