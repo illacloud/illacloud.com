@@ -87,7 +87,7 @@ export const Nav = (props) => {
             )}
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {

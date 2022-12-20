@@ -16,7 +16,7 @@ Tables are a common way to view and interact with your data. You can sort, filte
 When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
 ![table_load_data](https://github.com/illacloud/illacloud.com/blob/main/src/img/docs/table_load_data.png)
 
-You can also set the data source by inputing an array. 
+You can also set the data source by inputing an array.
 
 ### Column settings
 
@@ -26,13 +26,13 @@ When you set the data source of tables, the column name will be automatically se
 
 **Change column types**
 
-When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown. 
+When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
 
-The column types include: 
+The column types include:
 
 1. Text
 2. Date, you can set the display format of the date in the date type.
-3. Number, you can set the decimal places in the number type. 
+3. Number, you can set the decimal places in the number type.
 4. Percent, you can set the decimal places in the percent type.
 5. Link
 6. Button, you can add event handlers in the button type.
@@ -49,14 +49,14 @@ In addition, after calculating, you can set the column type to number or percent
 
 ### Access data of table
 
-Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0. 
+Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0.
 
 ![table_use_data](https://github.com/illacloud/illacloud.com/blob/main/src/img/docs/table_use_data.png)
 
 **Update the table data**
 
-1. Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`. 
-2. Use `{{ input1.value }}` in Update actions to get selected values and updated values. 
+1. Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`.
+2. Use `{{ input1.value }}` in Update actions to get selected values and updated values.
 3. Add an event handler to Update Button to run the Update Action when clicked.
 4. Update the data of selected row by changing the input value and clicking the Update Button.
 
@@ -64,8 +64,8 @@ Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows
 
 **Insert a new row into table**
 
-1. Use `{{ input1.value }}` in insert actions get values. 
-2. Add an event handler to Insert Button to run the Insert Action when clicked. 
+1. Use `{{ input1.value }}` in insert actions get values.
+2. Add an event handler to Insert Button to run the Insert Action when clicked.
 3. Insert new data by inputing values in input components and clicking the Insert Button.
 
 ![table_insert](https://github.com/illacloud/illacloud.com/blob/main/src/img/docs/table_insert.png)

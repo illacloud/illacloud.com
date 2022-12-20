@@ -294,7 +294,7 @@ function TopLevelNav({ mobile }) {
     <>
       <TopLevelLink
         mobile={mobile}
-        href="/docs/overview"
+        href="/docs/about-illa"
         isActive={pathname.startsWith('/docs')}
         className="mb-4"
         shadow="group-hover:shadow-sky-200 dark:group-hover:bg-sky-500"

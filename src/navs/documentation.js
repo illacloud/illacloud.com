@@ -43,44 +43,38 @@ export const documentationNav = {
 export const ILLADocumentationNav = (locale) => {
   if (locale === 'zh-CN') {
     return {
-      'ILLA Builder': [pagesCN['overview'], pagesCN['quick-start']],
-      '安装ILLA Builder': [
-        pagesCN['deploy-introduction'],
+      '👋 Introduction': [pagesCN['about-illa'], pagesCN['connect-data-sources'], pagesCN['build-your-apps'], pagesCN['deploy-on-premise']],
+      '👷 Deploy ILLA': [
         pagesCN['illa-cli'],
-        // pagesCN['docker-compose'],
-        // pagesCN['k8s-helm'],
       ],
-      数据接入: [
-        pagesCN['resource'],
-        pagesCN['action'],
-        pagesCN['transformer'],
-      ],
-      构建Apps: [
+      "🔨 Integrations": [pagesCN['integration-list']],
+      "📲 Connect to Database and API": [pagesCN['connect-to-a-database'], pagesCN['connect-to-an-api'],pagesCN['api-authentication'], pagesCN['custom-api-authentication']],
+      "🌀 构建Apps": [
         pagesCN['app-editor'],
+        pagesCN['transformer'],
         pagesCN['event-handler'],
         pagesCN['javascript'],
       ],
-      组件库: [],
+      '🧬 Assemble components': [pagesCN['table'], pagesCN['list'], pagesCN['chart'], pagesCN['container']],
+      '📎 Contributing Guide': [pagesCN['beyond-coding']]
     }
   } else {
     return {
-      'ILLA Builder': [pagesUS['overview'], pagesUS['quick-start']],
-      'Install ILLA Builder': [
-        pagesUS['deploy-introduction'],
+      '👋 Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
+      '👷 Deploy ILLA': [
         pagesUS['illa-cli'],
-        // pagesUS['docker-compose'],
-        // pagesUS['k8s-helm'],
       ],
-      'Data access': [
-        pagesUS['resource'],
-        pagesUS['action'],
-        pagesUS['transformer'],
-      ],
-      'Build Apps': [
+      "🔨 Integrations": [pagesUS['integration-list']],
+      "📲 Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
+      '🌀 BUILD YOUR APPS': [
         pagesUS['app-editor'],
+        pagesUS['transformer'],
         pagesUS['event-handler'],
         pagesUS['javascript'],
       ],
+      '🧬 Assemble components': [pagesUS['table'], pagesUS['list'], pagesUS['chart'], pagesUS['container']],
+      '📎 Contributing Guide': [pagesUS['beyond-coding']]
     }
+
   }
 }

@@ -106,7 +106,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           </a>
         </NextLink>
       </div>
-      <NextLink href="/docs/overview">
+      <NextLink href="/docs/about-illa">
         <a
           className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {

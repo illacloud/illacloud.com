@@ -5,7 +5,7 @@ module.exports = {
   // optional
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://www.illacloud.com/docs/overview.xml',
+      'https://www.illacloud.com/docs/about-illa.xml',
       'https://www.illacloud.com/docs/github.xml',
     ],
   },
