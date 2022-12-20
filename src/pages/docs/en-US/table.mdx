@@ -16,7 +16,7 @@ Tables are a common way to view and interact with your data. You can sort, filte
 
 # Load data in a table
 
-When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the **Data source** property. Use the `{{ actionName.data }}` format to choose the action.
+When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the **Data source** property. Use the `{{ actionName.data }}` format to choose the action.
 <img
   src={require('@/img/docs/assemble/table1.png').default}
   alt=""
@@ -26,11 +26,11 @@ When you drag a Table component to the Frame, it automatically displays the te
 
 ## Set aliases for data columns
 
-When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
 
 ## Change column types
 
-When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
+When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
 
 The column types include:
 
@@ -48,7 +48,7 @@ The column types include:
 
 ## Mapped value of custom columns
 
-You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
 
 In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
 
