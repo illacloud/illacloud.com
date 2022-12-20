@@ -45,7 +45,6 @@ export const ILLADocumentationNav = (locale) => {
     return {
       '👋 Introduction': [pagesCN['about-illa'], pagesCN['connect-data-sources'], pagesCN['build-your-apps'], pagesCN['deploy-on-premise']],
       '👷 Deploy ILLA': [
-        pagesCN['deploy-introduction'],
         pagesCN['illa-cli'],
       ],
       "🔨 Integrations": [pagesCN['integration-list']],
@@ -63,7 +62,6 @@ export const ILLADocumentationNav = (locale) => {
     return {
       '👋 Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
       '👷 Deploy ILLA': [
-        pagesUS['deploy-introduction'],
         pagesUS['illa-cli'],
       ],
       "🔨 Integrations": [pagesUS['integration-list']],
