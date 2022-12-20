@@ -1,41 +1,21 @@
 ---
 title: Chart
+description: The Chart component allows you to visualize data as graphs and charts. It's built using Chart.js.
 tagCategory: doc_menu_chart_click
 ---
----
 
-## <Heading hidden>Chart</Heading>
+### Choose your data
 
-### Learn how to use your data to create charts and graphs.
-
-The Chart component allows you to visualize data as graphs and charts. It's built using Chart.js.
-
-<img
-  src={require('@/img/docs/assemble/chart.png').default}
-  alt=""
-/>
-
-## Choose your data
-
-You can use actions and transformers to build charts. You can reference an array or an object in the **Data source** field for a chart.
+You can use actions and transformers to build charts. You can reference an array or an object in the **Data source** field for a chart. 
 
 After you select a data source, ILLA parses the data and populates the chart. By default, the first non-numeric column populates the **X-axis** but you can change this and other properties like **Chart type**, **Group by**, etc.
 
-<img
-  src={require('@/img/docs/assemble/chart1.png').default}
-  alt=""
-/>
 
-<img
-  src={require('@/img/docs/assemble/chart2.png').default}
-  alt=""
-/>
-
-## Supported data structures
+### Supported data structures
 
 The Chart component requires data in a tabular format. This can either be an array of objects, where every object field is a column, or as an object where each key represents a column and the value is an array of values for that column.
 
-## Group data
+### Group data
 
 One common use case is to chart time series data for a dynamic number of groups. For example, grouping revenue by product or headcount by team. Use the **Group by** property to choose a field from your data source to group and display this kind of data.
 
@@ -47,11 +27,11 @@ Add a Chart component to the Canvas and set its **Data source**
  to `animal`
 . The chart now shows the number of animals over time. If you add more data points to the transformer, the chart updates automatically.
 
-## Transformation types
+### Transformation types
 
 ILLA supports two transformation types:
 
 - **Group by**: Group the **data** by a specific column.
 - **Aggregation**: Summarize the values for a group.
-
-You can use the following methods to aggregate data.
+    
+    You can use the following methods to aggregate data.
