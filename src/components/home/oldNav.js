@@ -75,7 +75,7 @@ export const Nav = ({
             )}
           >
             <ProductSelect buttonColorChange={navColorChange} />
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <a className="px-[16px] text-center leading-[48px]">
                 {t('nav.doc')}
               </a>

@@ -43,44 +43,39 @@ export const documentationNav = {
 export const ILLADocumentationNav = (locale) => {
   if (locale === 'zh-CN') {
     return {
-      'ILLA Builder': [pagesCN['overview'], pagesCN['quick-start']],
-      '安装ILLA Builder': [
-        pagesCN['deploy-introduction'],
-        pagesCN['illa-cli'],
-        // pagesCN['docker-compose'],
-        // pagesCN['k8s-helm'],
+      'Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
+      'Deploy ILLA': [
+        pagesUS['deploy-introduction'],
+        pagesUS['illa-cli'],
       ],
-      数据接入: [
-        pagesCN['resource'],
-        pagesCN['action'],
-        pagesCN['transformer'],
-      ],
+      "Integrations": [pagesUS['integration-list']],
+      "Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'],pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
       构建Apps: [
         pagesCN['app-editor'],
         pagesCN['event-handler'],
         pagesCN['javascript'],
       ],
-      组件库: [],
+      'Assemble components': [pagesUS['table'], pagesUS['list']],
+      'Contributing Guide': [pagesUS['beyond-coding']]
     }
   } else {
     return {
-      'ILLA Builder': [pagesUS['overview'], pagesUS['quick-start']],
-      'Install ILLA Builder': [
+      'Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
+      'Deploy ILLA': [
         pagesUS['deploy-introduction'],
         pagesUS['illa-cli'],
-        // pagesUS['docker-compose'],
-        // pagesUS['k8s-helm'],
       ],
-      'Data access': [
-        pagesUS['resource'],
-        pagesUS['action'],
-        pagesUS['transformer'],
-      ],
-      'Build Apps': [
+      "Integrations": [pagesUS['integration-list']],
+      "Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
+      'BUILD YOUR APPS': [
         pagesUS['app-editor'],
+        pagesUS['transformer'],
         pagesUS['event-handler'],
         pagesUS['javascript'],
       ],
+      'Assemble components': [pagesUS['table'], pagesUS['list']],
+      'Contributing Guide': [pagesUS['beyond-coding']]
     }
+
   }
 }

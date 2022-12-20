@@ -66,7 +66,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px] opacity-90 w-full  font-normal pt-[8px] xl:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <div
                 className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90 font-normal cursor-pointer mt-[12px] xl:mt-[16px]"
                 onClick={() => {
@@ -109,7 +109,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  xl:text-[16px] opacity-90 w-full font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <div
                 className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] xl:mt-[16px]"
                 onClick={() => {
@@ -151,7 +151,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full font-normal pt-[8px] xl:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <div
                 className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
                 onClick={() => {
@@ -192,7 +192,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full mt-[8px] xl:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
-            <NextLink href="/docs/overview">
+            <NextLink href="/docs/about-illa">
               <div
                 className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
                 onClick={() => {

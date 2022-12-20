@@ -1,0 +1,52 @@
+---
+title: List
+tagCategory: doc_menu_list_click
+---
+---
+
+# <Heading hidden>List</Heading>
+
+The [List View](https://retool.com/components/list-view) component allows you to create repeatable rows of data whose look and feel are defined by you.
+
+The List View component is similar to a [Container](https://retool.com/components/container) in that you can nest other components inside of it. You control the number of rows, which determines the number of times a component appears in a list view
+
+<img
+  src={require('@/img/docs/assemble/list.png').default}
+  alt=""
+/>
+
+## Drag components to list
+
+When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list.
+
+Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+
+<img
+  src={require('@/img/docs/assemble/list1.png').default}
+  alt=""
+/>
+
+## Display query results in a list
+
+When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`.
+
+After setting the data source, you can change the data of components:
+
+1. Select the component in the first item.
+2. If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+
+<img
+  src={require('@/img/docs/assemble/list2.png').default}
+  alt=""
+/>
+
+You can use  `{{ currentItem.columnName }}` only when the components are in the list.
+
+## Use the data of list
+
+You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src={require('@/img/docs/assemble/list3.png').default}
+  alt=""
+/>
