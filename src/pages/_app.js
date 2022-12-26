@@ -1,17 +1,17 @@
 import '../css/fonts.css'
 import '../css/main.css'
 import 'focus-visible'
-import {useState, useEffect, Fragment} from 'react'
-import {Header} from '@/components/Header'
-import {Title} from '@/components/Title'
+import { useState, useEffect, Fragment } from 'react'
+import { Header } from '@/components/Header'
+import { Title } from '@/components/Title'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
 import Head from 'next/head'
 import socialCardLarge from '@/img/social-card-large.png'
-import {ResizeObserver} from '@juggle/resize-observer'
+import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
-import {SearchProvider} from '@/components/Search'
-import {appWithTranslation, useTranslation} from 'next-i18next'
+import { SearchProvider } from '@/components/Search'
+import { appWithTranslation, useTranslation } from 'next-i18next'
 import Script from 'next/script'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
@@ -36,9 +36,9 @@ Router.events.on('routeChangeStart', () => progress.start())
 Router.events.on('routeChangeComplete', () => progress.finish())
 Router.events.on('routeChangeError', () => progress.finish())
 
-function App({Component, pageProps, router}) {
+function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
-  const {t} = useTranslation('home')
+  const { t } = useTranslation('home')
 
   useEffect(() => {
     if (!navIsOpen) return
@@ -56,7 +56,7 @@ function App({Component, pageProps, router}) {
 
   const Layout = Component.layoutProps?.Layout || Fragment
   const layoutProps = Component.layoutProps?.Layout
-    ? {layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen}
+    ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
   const showHeader =
     router.pathname !== '/' &&
@@ -75,7 +75,7 @@ function App({Component, pageProps, router}) {
     meta.section ||
     Object.entries(Component.layoutProps?.Layout?.nav ?? {}).find(([, items]) =>
       items.find(({ href }) => {
-        return href === router.pathname;
+        return href === router.pathname
       }),
     )?.[0]
 
@@ -88,7 +88,7 @@ function App({Component, pageProps, router}) {
           name="twitter:card"
           content="summary_large_image"
         />
-        <meta key="twitter:site" name="twitter:site" content="@illaCloud"/>
+        <meta key="twitter:site" name="twitter:site" content="@illaCloud" />
         <meta
           key="twitter:description"
           name="twitter:description"
@@ -109,8 +109,15 @@ function App({Component, pageProps, router}) {
           property="og:url"
           content={`https://illa.cloud${router.pathname}`}
         />
-        <meta key="og:type" property="og:type" content="website"/>
-        <meta key="og:title" content={t('meta.title')}/>
+        <meta key="og:type" property="og:type" content="website" />
+        {router.locale === 'zh-CN' ? (
+          <meta key="og:title" content="ILLA - 分钟级开发 轻松搭建内部工具" />
+        ) : (
+          <meta
+            key="og:title"
+            content="ILLA Cloud | Accelerate your internal tools development"
+          />
+        )}
         <meta
           key="og:description"
           property="og:description"
@@ -165,7 +172,7 @@ function App({Component, pageProps, router}) {
           src="https://www.googletagmanager.com/ns.html?id=GTM-NRT4JCB"
           height="0"
           width="0"
-          style={{display: 'none', visibility: 'hidden'}}
+          style={{ display: 'none', visibility: 'hidden' }}
         />
       </noscript>
       {/*End Google Tag Manager (noscript)*/}
