@@ -60,13 +60,13 @@ module.exports = withBundleAnalyzer({
   async rewrites() {
     return [
       {
-        source: '/zh-CN/docs/:slug*',
-        destination: '/zh-CN/docs/zh-CN/:slug*',
+        source: '/en-US/docs/:slug*',
+        destination: '/en-US/docs/en-US/:slug*',
         locale: false,
       },
       {
-        source: '/en-US/docs/:slug*',
-        destination: '/en-US/docs/en-US/:slug*',
+        source: '/zh-CN/docs/:slug*',
+        destination: '/zh-CN/docs/zh-CN/:slug*',
         locale: false,
       },
     ]
