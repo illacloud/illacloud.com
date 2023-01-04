@@ -337,8 +337,8 @@ function Metadata({ meta }) {
         <meta name="keywords" content={meta.keywords?.toString()}></meta>
       ) : null}
 
-      <meta name="twitter:site" content="@illaCloud" />
-      <meta name="twitter:creator" content="@illaCloud" />
+      <meta name="twitter:site" content="@illaCloudHQ" />
+      <meta name="twitter:creator" content="@illaCloudHQ" />
       <meta name="twitter:title" content={`${meta.title} – ILLA`} />
       <meta name="twitter:description" content={meta.description} />
       {meta.image ? (

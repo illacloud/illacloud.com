@@ -88,7 +88,7 @@ function App({ Component, pageProps, router }) {
           name="twitter:card"
           content="summary_large_image"
         />
-        <meta key="twitter:site" name="twitter:site" content="@illaCloud" />
+        <meta key="twitter:site" name="twitter:site" content="@illaCloudHQ" />
         <meta
           key="twitter:description"
           name="twitter:description"
@@ -102,7 +102,7 @@ function App({ Component, pageProps, router }) {
         <meta
           key="twitter:creator"
           name="twitter:creator"
-          content="@illaCloud"
+          content="@illaCloudHQ"
         />
         <meta
           key="og:url"
