@@ -222,7 +222,7 @@ export function Content() {
           <div className="mt-[20px] xl:mt-[40px] flex flex-wrap xl:justify-between ">
             {waysData.map((item, index) => (
               <Card
-                key={item.title + index}
+                key={item.title}
                 title={item.title}
                 icon={item.icon}
                 des={item.des}

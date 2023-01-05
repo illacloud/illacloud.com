@@ -4,11 +4,25 @@ import { getAllPostPreviews } from '@/utils/getAllPosts'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { formatDate } from '@/utils/formatDate'
+import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 let posts = getAllPostPreviews()
 
 export default function Blog() {
+  const { t } = useTranslation('blog')
+
   return (
+    <>
+    <Head>
+      <title>{t('meta.title')}</title>
+      <meta name="description" content={t('meta.description')} />
+      <meta
+        name="keywords"
+        content="illa,illacloud,illa cloud,艾拉云科,Retool,Budibase,Tooljet,UIBakery, Low-code,open-source, developers, developer tool, internal, rust,illa, illabuilder, illa-builder, retool alternative, Appsmith, Appsmith alternative, open-source alternative, budibase alternative,ローコード,低代码,开发者工具,낮은 코드,오픈 소스,オープンソース"
+      />
+    </Head>
     <main className="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
       <header className="py-16 sm:text-center">
         <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
@@ -87,12 +101,16 @@ export default function Blog() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 
-export async function getStaticProps({ locale }) {
+
+export const getStaticProps = async ({ locale }) => {
   return {
-    props: {},
+    props: {
+      ...(await serverSideTranslations(locale, ['blog'])),
+    },
   }
 }
 

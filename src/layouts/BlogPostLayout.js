@@ -302,7 +302,7 @@ export function BlogPostLayout({
   )
 }
 
-function Metadata({ meta }) {
+export function Metadata({ meta }) {
   let router = useRouter()
   return (
     <Head>
@@ -327,7 +327,7 @@ function Metadata({ meta }) {
 
       <meta
         key="og:description"
-        name="description"
+        name="og:description"
         property="og:description"
         content={meta.description}
       />

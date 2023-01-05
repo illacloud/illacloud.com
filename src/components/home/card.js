@@ -22,7 +22,7 @@ export function Card({ icon, title, des, index }) {
   }, [index, scrollYProgress, show])
 
   return (
-    <a
+    <span
       key={title}
       className={clsx(
         'ease-in-out w-full sm:w-1/2  origin-top-left scale-100  opacity-1 transition-all duration-[400ms]',
@@ -41,6 +41,6 @@ export function Card({ icon, title, des, index }) {
           {des}
         </div>
       </div>
-    </a>
+    </span>
   )
 }

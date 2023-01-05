@@ -32,9 +32,9 @@ export const MobileTitle = (props) => {
   return (
     <div className="w-full xl:hidden	">
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full">
-        <div className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
+        <h1 className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
           {t('slogan-1')}
-        </div>
+        </h1>
         <div className="mt-[32px] text-white-01 text-[14px] text-center">
           {t('description')}
         </div>
@@ -128,7 +128,7 @@ export const MobileTitle = (props) => {
             src={playVideoCover}
             width="2080"
             height="1294"
-            alt="play video"
+            alt="Screenshot of ILLA Cloud app editor"
           />
         </div>
       </div>

@@ -138,9 +138,9 @@ export const Title = (props) => {
         })}
       >
         <div className="h-full flex flex-col items-center animate-title-visible w-[1040px]">
-          <span className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
+          <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
             {t('slogan-1')}
-          </span>
+          </h1>
           <span className="font-normal text-[20px] mt-[24px] px-[20px] sm:px-0 text-center">
             {t('description')}
           </span>
@@ -250,6 +250,7 @@ export const Title = (props) => {
         <motion.img
           src={playVideoCover}
           className="animate-coverage-visible  flex items-center justify-center "
+          alt="Screenshot of ILLA Cloud app editor"
           style={{
             width: width,
           }}

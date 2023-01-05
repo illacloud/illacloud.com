@@ -17,7 +17,7 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html
-        lang="en-US"
+        lang="en-us"
         className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>
@@ -48,6 +48,7 @@ export default class Document extends NextDocument {
           <meta name="apple-mobile-web-app-title" content="ILLA" />
           <meta name="application-name" content="ILLA" />
           <meta name="msapplication-TileColor" content="#38bdf8" />
+          <meta httpEquiv="content-language" content="en-us" />
           <meta
             name="msapplication-config"
             content={v('/favicons/browserconfig.xml')}
