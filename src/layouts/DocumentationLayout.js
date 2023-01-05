@@ -8,8 +8,6 @@ import { ILLADocumentationNav } from '@/navs/documentation'
 
 export function DocumentationLayout(props) {
   let router = useRouter()
-  const { meta } = props
-  console.log("props",props)
   return (
     <>
       <Title suffix={router.pathname === '/' ? undefined : 'ILLA'}>
@@ -26,7 +24,6 @@ export function DocumentationHeader(props){
   let router = useRouter()
 
   const {meta} = props;
-  console.log("meta",meta)
   return <Head>
     <meta
       key="og:url"
