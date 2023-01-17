@@ -6,7 +6,7 @@ export const getServerSideProps = async (ctx) => {
   const fields = paths.data.map(({ path }) => {
     const alternateRefs = i18n.locales.map((language) => {
       let href = 'https://illacloud.com/' + language + path;
-      if (language === 'zh-CN' ) {
+      if (language === 'en-US' ) {
         href = 'https://illacloud.com' + path;
       }
       return {
