@@ -82,6 +82,7 @@ function App({ Component, pageProps, router }) {
   return (
     <>
       <Title suffix="ILLA">{meta.metaTitle || meta.title}</Title>
+      <meta name="google-site-verification" content="OUXmcu0vZKXsDme_4ycUDM3OdGhf_wH6_gxaDixI9Ng" />
       <Head>
         <meta
           key="twitter:card"
