@@ -8,14 +8,14 @@ import { sendTagEvent } from '@/utils/gtag'
 
 const options = [
   {
-    label: '简体中文',
-    value: 'zh-CN',
-    tagCategory: 'homepage_menu_language_zh_click',
-  },
-  {
     label: 'English',
     value: 'en-US',
     tagCategory: 'homepage_menu_language_en_click',
+  },
+  {
+    label: '简体中文',
+    value: 'zh-CN',
+    tagCategory: 'homepage_menu_language_zh_click',
   },
 ]
 
