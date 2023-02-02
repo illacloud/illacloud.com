@@ -206,7 +206,7 @@ export const Title = (props) => {
                 </div>
               </a>
             </NextLink>
-            <NextLink href="https://discord.gg/zKf3WKCufR">
+            <NextLink href="https://discord.com/invite/illacloud">
               <a
                 target="__blank"
                 className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
@@ -215,7 +215,7 @@ export const Title = (props) => {
                     action: 'click',
                     category: 'homepage_body_discord_click',
                     label: t('join-community'),
-                    value: 'https://discord.gg/zKf3WKCufR',
+                    value: 'https://discord.com/invite/illacloud',
                   })
                 }}
               >

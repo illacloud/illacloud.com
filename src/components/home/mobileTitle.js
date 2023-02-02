@@ -93,7 +93,7 @@ export const MobileTitle = (props) => {
               </div>
             </a>
           </NextLink>
-          <NextLink href="https://discord.gg/zKf3WKCufR">
+          <NextLink href="https://discord.com/invite/illacloud">
             <a
               target="__blank"
               className="flex flex-col items-center gap-[8px] inline-block"
@@ -102,7 +102,7 @@ export const MobileTitle = (props) => {
                   action: 'click',
                   category: 'homepage_body_discord_mob_click',
                   label: t('join-community'),
-                  value: 'https://discord.gg/zKf3WKCufR',
+                  value: 'https://discord.com/invite/illacloud',
                 })
               }}
             >
