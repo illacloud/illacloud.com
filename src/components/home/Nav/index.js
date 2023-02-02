@@ -65,13 +65,13 @@ export const Nav = (props) => {
                 <SocialButton
                   icon={<DiscordIcon />}
                   text="Discord"
-                  href="https://discord.gg/zKf3WKCufR"
+                  href="https://discord.com/invite/illacloud"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
                       category: 'homepage_slide_menu_discord_click',
                       label: 'Discord',
-                      value: 'https://discord.gg/zKf3WKCufR',
+                      value: 'https://discord.com/invite/illacloud',
                     })
                   }}
                 />

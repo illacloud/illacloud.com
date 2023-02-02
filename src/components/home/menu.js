@@ -20,7 +20,7 @@ const communityOptions = [
   },
   {
     label: 'Discord',
-    value: 'https://discord.gg/zKf3WKCufR',
+    value: 'https://discord.com/invite/illacloud',
     tagCategory: 'homepage_menu_community_discord_mob_click',
   },
   {

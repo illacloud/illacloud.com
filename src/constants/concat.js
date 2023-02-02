@@ -14,7 +14,7 @@ export const Community = [
   },
   {
     icon: <DiscordIcon />,
-    href: 'https://discord.gg/zKf3WKCufR',
+    href: 'https://discord.com/invite/illacloud',
     tagCategory: 'homepage_footer_discord_click',
   },
   {
