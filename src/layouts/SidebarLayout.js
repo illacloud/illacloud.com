@@ -369,7 +369,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://github.com/illacloud/illa-builder"
+        href="https://discord.com/invite/illacloud"
         className="mb-8"
         shadow="group-hover:shadow-violet-200 dark:group-hover:bg-violet-500"
         icon={
