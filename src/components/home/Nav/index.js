@@ -116,7 +116,7 @@ export const Nav = (props) => {
               </a>
             </NextLink>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
-            <NextLink href="/blog">
+            <NextLink href="https://blog.illacloud.com/">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {

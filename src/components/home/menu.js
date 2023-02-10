@@ -176,7 +176,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           )
         })}
       </div>
-      <NextLink href="/blog">
+      <NextLink href="https://blog.illacloud.com/">
         <a
           className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
