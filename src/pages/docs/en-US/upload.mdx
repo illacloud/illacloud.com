@@ -1,0 +1,77 @@
+---
+title: Upload
+metaTitle: ILLA Cloud Upload component doc
+description: Use the upload component to upload files from the local machines to any cloud storage
+tagCategory: doc_menu_upload_click
+---
+---
+
+## <Heading hidden>Upload</Heading>
+
+The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+
+<img src={require('@/img/docs/assemble/upload1.png').default} alt="" />
+
+### Properties
+
+### Method
+
+You can use other components to control the Upload component. We support the following three methods:
+
+### Event handler
+
+To trigger actions when the selected files change
+
+### Data of Uploader
+
+The upload component has some commonly used data, which can be called in the app.
+
+`value` an array consisting of the base64 data of files. 
+
+`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+
+### Upload files to a cloud storage service
+
+<img src={require('@/img/docs/assemble/upload2.gif').default} alt="" />
+
+#### Upload a single file through an S3 resource
+
+The configuration of action is as follows. 
+
+Upload object name
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Upload data
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src={require('@/img/docs/assemble/upload3.png').default} alt="" />
+
+#### Upload multiple files through an S3 resource
+
+Upload object name list
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Upload data list
+
+```jsx
+{{upload1.value}}
+```
+
+<img src={require('@/img/docs/assemble/upload4.png').default} alt="" />
+
+Upload an image and display it on the image component
+Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src={require('@/img/docs/assemble/upload5.gif').default} alt="" />
