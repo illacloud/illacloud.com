@@ -145,7 +145,7 @@ export const Title = (props) => {
             {t('description')}
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
-            <NextLink href="https://cloud.illacloud.com">
+            <NextLink href="https://cloud.illacloud.com/">
               <a
                 className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -153,7 +153,7 @@ export const Title = (props) => {
                     action: 'click',
                     category: 'homepage_body_live_demo_click',
                     label: t('illa-Cloud'),
-                    value: 'https://cloud.illacloud.com',
+                    value: 'https://cloud.illacloud.com/',
                   })
               }}>
                 {t('illa-Cloud')}

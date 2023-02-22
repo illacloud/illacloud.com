@@ -329,7 +329,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://cloud.illacloud.com"
+        href="https://cloud.illacloud.com/"
         className="mb-4"
         shadow="group-hover:shadow-indigo-200 dark:group-hover:bg-indigo-500"
         icon={
@@ -361,7 +361,7 @@ function TopLevelNav({ mobile }) {
           sendTagEvent({
             action: 'click',
             category: 'doc_menu_fast_try_click',
-            label: 'Fast Try',
+            label: 'ILLA Cloud',
           })
         }}
       >

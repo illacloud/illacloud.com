@@ -153,7 +153,7 @@ export const Nav = (props) => {
                 {t('self-Hosted')}
               </a>
             </NextLink>
-            <NextLink href="https://cloud.illacloud.com">
+            <NextLink href="https://cloud.illacloud.com/">
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -161,7 +161,7 @@ export const Nav = (props) => {
                     action: 'click',
                     category: 'homepage_slide_menu_live_demo_click',
                     label: t('illa-Cloud'),
-                    value: 'https://cloud.illacloud.com',
+                    value: 'https://cloud.illacloud.com/',
                   })
                 }}
               >
