@@ -53,7 +53,7 @@ export const MobileTitle = (props) => {
               {t('self-Hosted')}
             </a>
           </NextLink>
-          <NextLink href="https://fast-try.illacloud.com/">
+          <NextLink href="https://cloud.illacloud.com/">
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -61,7 +61,7 @@ export const MobileTitle = (props) => {
                   action: 'click',
                   category: 'homepage_body_live_demo_click',
                   label: t('illa-Cloud'),
-                  value: 'https://fast-try.illacloud.com/',
+                  value: 'https://cloud.illacloud.com/',
                 })
               }}
             >
