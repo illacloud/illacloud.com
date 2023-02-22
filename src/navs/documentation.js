@@ -72,7 +72,15 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['event-handler'],
         pagesUS['javascript'],
       ],
-      '🧬 Assemble components': [pagesUS['table'], pagesUS['list'], pagesUS['chart'], pagesUS['container']],
+      '🧬 Assemble components': [
+        pagesUS['table'], 
+        pagesUS['list'], 
+        pagesUS['chart'], 
+        pagesUS['container'],
+        pagesUS['page'],
+        pagesUS['upload'],
+        pagesUS['text']
+      ],
       '📎 Contributing Guide': [pagesUS['beyond-coding']]
     }
 
