@@ -1,5 +1,6 @@
 ---
 title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
 description: The ILLA CLI enables you to deploy ILLA Builder faster than your imagination.
 tagCategory: doc_menu_illa_cli_click
 ---
@@ -23,22 +24,22 @@ Alternatively, you can just download the ILLA CLI for your operating system here
 If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from **cargo**. After downloading the CLI, you will have to make it executable. Let's take the illa-linux for example:
 
 ```
-# download illa cli binary file
+## download illa cli binary file
 > wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz
 
-# unpack the file
+## unpack the file
 > tar -zxvf illa-x86_64-linux.tar.gz
 
 > cd illa-x86_64-linux
 
 > chmod +x illa
 
-# run the illa cli
+## run the illa cli
 > ./illa
 
 ```
 
-## Checking the prerequisites of self-hosted installation
+### Checking the prerequisites of self-hosted installation
 
 **These ports 5432, 9999 and 8000 should remain for the ILLA Builder**
 
@@ -47,17 +48,22 @@ The following command will check the prerequisites of self-hosted installation o
 > illa doctor
 ```
 
-## Deploying ILLA Builder
-Once the ILLA CLI has been installed, you can run a self-hosted or cloud installation.
+### Deploying ILLA Builder
+Once the ILLA CLI has been installed, you can run a self-hosted or [cloud installation](https://cloud.illacloud.com/).
 
-**The cloud installation of ILLA Builder is coming soon**
+Quickstart
+
+```
+> illa deploy --self --port=10000
+```
 
 You can simply deploy a self-hosted ILA Builder by running the following command:
 
 ```
 # the port which ILLA Builder can be accessed on can be changed
 # the <SERVER_ADDRESS> should be your cloud server public ip, default localhost
-> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+# the <MOUNT_PATH> is the custom mount path of ILLA Builder, the default value is a path under the system temporary directory if not filled
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS> --mount=<MOUNT_PATH>
 ```
 Now, you can access the ILLA Builder: http://localhost:10000
 

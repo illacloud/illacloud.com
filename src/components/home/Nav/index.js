@@ -65,13 +65,13 @@ export const Nav = (props) => {
                 <SocialButton
                   icon={<DiscordIcon />}
                   text="Discord"
-                  href="https://discord.gg/zKf3WKCufR"
+                  href="https://discord.com/invite/illacloud"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
                       category: 'homepage_slide_menu_discord_click',
                       label: 'Discord',
-                      value: 'https://discord.gg/zKf3WKCufR',
+                      value: 'https://discord.com/invite/illacloud',
                     })
                   }}
                 />
@@ -116,7 +116,7 @@ export const Nav = (props) => {
               </a>
             </NextLink>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
-            <NextLink href="/blog">
+            <NextLink href="https://blog.illacloud.com/">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {
@@ -153,7 +153,7 @@ export const Nav = (props) => {
                 {t('self-Hosted')}
               </a>
             </NextLink>
-            <NextLink href="https://fast-try.illacloud.com/">
+            <NextLink href="https://cloud.illacloud.com/">
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -161,7 +161,7 @@ export const Nav = (props) => {
                     action: 'click',
                     category: 'homepage_slide_menu_live_demo_click',
                     label: t('illa-Cloud'),
-                    value: 'https://fast-try.illacloud.com/',
+                    value: 'https://cloud.illacloud.com/',
                   })
                 }}
               >

@@ -138,14 +138,14 @@ export const Title = (props) => {
         })}
       >
         <div className="h-full flex flex-col items-center animate-title-visible w-[1040px]">
-          <span className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
+          <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
             {t('slogan-1')}
-          </span>
+          </h1>
           <span className="font-normal text-[20px] mt-[24px] px-[20px] sm:px-0 text-center">
             {t('description')}
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
-            <NextLink href="https://fast-try.illacloud.com/">
+            <NextLink href="https://cloud.illacloud.com/">
               <a
                 className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -153,7 +153,7 @@ export const Title = (props) => {
                     action: 'click',
                     category: 'homepage_body_live_demo_click',
                     label: t('illa-Cloud'),
-                    value: 'https://fast-try.illacloud.com/',
+                    value: 'https://cloud.illacloud.com/',
                   })
               }}>
                 {t('illa-Cloud')}
@@ -206,7 +206,7 @@ export const Title = (props) => {
                 </div>
               </a>
             </NextLink>
-            <NextLink href="https://discord.gg/zKf3WKCufR">
+            <NextLink href="https://discord.com/invite/illacloud">
               <a
                 target="__blank"
                 className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
@@ -215,7 +215,7 @@ export const Title = (props) => {
                     action: 'click',
                     category: 'homepage_body_discord_click',
                     label: t('join-community'),
-                    value: 'https://discord.gg/zKf3WKCufR',
+                    value: 'https://discord.com/invite/illacloud',
                   })
                 }}
               >
@@ -250,6 +250,7 @@ export const Title = (props) => {
         <motion.img
           src={playVideoCover}
           className="animate-coverage-visible  flex items-center justify-center "
+          alt="Screenshot of ILLA Cloud app editor"
           style={{
             width: width,
           }}

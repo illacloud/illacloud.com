@@ -302,7 +302,7 @@ export function BlogPostLayout({
   )
 }
 
-function Metadata({ meta }) {
+export function Metadata({ meta }) {
   let router = useRouter()
   return (
     <Head>
@@ -327,7 +327,7 @@ function Metadata({ meta }) {
 
       <meta
         key="og:description"
-        name="description"
+        name="og:description"
         property="og:description"
         content={meta.description}
       />
@@ -337,8 +337,8 @@ function Metadata({ meta }) {
         <meta name="keywords" content={meta.keywords?.toString()}></meta>
       ) : null}
 
-      <meta name="twitter:site" content="@illaCloud" />
-      <meta name="twitter:creator" content="@illaCloud" />
+      <meta name="twitter:site" content="@illaCloudHQ" />
+      <meta name="twitter:creator" content="@illaCloudHQ" />
       <meta name="twitter:title" content={`${meta.title} – ILLA`} />
       <meta name="twitter:description" content={meta.description} />
       {meta.image ? (

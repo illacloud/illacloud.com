@@ -32,9 +32,9 @@ export const MobileTitle = (props) => {
   return (
     <div className="w-full xl:hidden	">
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full">
-        <div className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
+        <h1 className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
           {t('slogan-1')}
-        </div>
+        </h1>
         <div className="mt-[32px] text-white-01 text-[14px] text-center">
           {t('description')}
         </div>
@@ -53,7 +53,7 @@ export const MobileTitle = (props) => {
               {t('self-Hosted')}
             </a>
           </NextLink>
-          <NextLink href="https://fast-try.illacloud.com/">
+          <NextLink href="https://cloud.illacloud.com/">
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -61,7 +61,7 @@ export const MobileTitle = (props) => {
                   action: 'click',
                   category: 'homepage_body_live_demo_click',
                   label: t('illa-Cloud'),
-                  value: 'https://fast-try.illacloud.com/',
+                  value: 'https://cloud.illacloud.com/',
                 })
               }}
             >
@@ -93,7 +93,7 @@ export const MobileTitle = (props) => {
               </div>
             </a>
           </NextLink>
-          <NextLink href="https://discord.gg/zKf3WKCufR">
+          <NextLink href="https://discord.com/invite/illacloud">
             <a
               target="__blank"
               className="flex flex-col items-center gap-[8px] inline-block"
@@ -102,7 +102,7 @@ export const MobileTitle = (props) => {
                   action: 'click',
                   category: 'homepage_body_discord_mob_click',
                   label: t('join-community'),
-                  value: 'https://discord.gg/zKf3WKCufR',
+                  value: 'https://discord.com/invite/illacloud',
                 })
               }}
             >
@@ -128,7 +128,7 @@ export const MobileTitle = (props) => {
             src={playVideoCover}
             width="2080"
             height="1294"
-            alt="play video"
+            alt="Screenshot of ILLA Cloud app editor"
           />
         </div>
       </div>

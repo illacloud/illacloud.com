@@ -111,7 +111,6 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
         <div className="bg-white dark:bg-slate-900 relative pointer-events-auto">
           <SearchButton className="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700">
             {({ actionKey }) => {
-              console.log(actionKey, 'actionKey')
               return (
                 <>
                   <svg
@@ -330,7 +329,7 @@ function TopLevelNav({ mobile }) {
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://fast-try.illacloud.com"
+        href="https://cloud.illacloud.com/"
         className="mb-4"
         shadow="group-hover:shadow-indigo-200 dark:group-hover:bg-indigo-500"
         icon={
@@ -362,15 +361,15 @@ function TopLevelNav({ mobile }) {
           sendTagEvent({
             action: 'click',
             category: 'doc_menu_fast_try_click',
-            label: 'Fast Try',
+            label: 'ILLA Cloud',
           })
         }}
       >
-        Fast Try
+        ILLA Cloud
       </TopLevelLink>
       <TopLevelLink
         mobile={mobile}
-        href="https://github.com/illacloud/illa-builder"
+        href="https://discord.com/invite/illacloud"
         className="mb-8"
         shadow="group-hover:shadow-violet-200 dark:group-hover:bg-violet-500"
         icon={

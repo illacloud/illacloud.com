@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=4000 next dev",
     "build": "next build",
-    "postbuild": "if [ -f './.next/serverless/scripts/build-rss.js' ]; then node ./.next/serverless/scripts/build-rss.js; else node ./.next/server/scripts/build-rss.js; fi",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next build && next export",
     "format": "prettier '{src,remark,scripts}/**/*.{css,js,mdx}' --write"

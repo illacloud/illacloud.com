@@ -47,7 +47,7 @@ export const ILLADocumentationNav = (locale) => {
       '👷 Deploy ILLA': [
         pagesCN['illa-cli'],
       ],
-      "🔨 Integrations": [pagesCN['integration-list']],
+      "🔨 Integrations": [pagesCN['integration-list'],pagesCN['supabase']],
       "📲 Connect to Database and API": [pagesCN['connect-to-a-database'], pagesCN['connect-to-an-api'],pagesCN['api-authentication'], pagesCN['custom-api-authentication']],
       "🌀 构建Apps": [
         pagesCN['app-editor'],
@@ -64,7 +64,7 @@ export const ILLADocumentationNav = (locale) => {
       '👷 Deploy ILLA': [
         pagesUS['illa-cli'],
       ],
-      "🔨 Integrations": [pagesUS['integration-list']],
+      "🔨 Integrations": [pagesUS['integration-list'],pagesUS['supabase']],
       "📲 Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
       '🌀 BUILD YOUR APPS': [
         pagesUS['app-editor'],
@@ -72,7 +72,15 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['event-handler'],
         pagesUS['javascript'],
       ],
-      '🧬 Assemble components': [pagesUS['table'], pagesUS['list'], pagesUS['chart'], pagesUS['container']],
+      '🧬 Assemble components': [
+        pagesUS['table'], 
+        pagesUS['list'], 
+        pagesUS['chart'], 
+        pagesUS['container'],
+        pagesUS['page'],
+        pagesUS['upload'],
+        pagesUS['text']
+      ],
       '📎 Contributing Guide': [pagesUS['beyond-coding']]
     }
 

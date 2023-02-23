@@ -1,5 +1,6 @@
 ---
 title: ILLA CLI 搭建
+metaTitle: ILLA Cloud CLI doc
 description: ILLA CLI以超越想象的速度为用户部署 ILLA Builder.
 tagCategory: doc_menu_illa_cli_click
 ---
@@ -24,17 +25,17 @@ tagCategory: doc_menu_illa_cli_click
 通过上述链接下载的ILLA CLI不同于通过**cargo**安装的ILLA CLI. 安装CLI后，你需要让它可执行. 以illa-linux为例:
 
 ```
-# 下载illa命令行工具可执行文件
+## 下载illa命令行工具可执行文件
 > wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz
 
-# 解压缩
+## 解压缩
 > tar -zxvf illa-x86_64-linux.tar.gz
 
 > cd illa-x86_64-linux
 
 > chmod +x illa
 
-# 运行illa命令行工具
+## 运行illa命令行工具
 > ./illa
 
 ```
@@ -49,16 +50,21 @@ tagCategory: doc_menu_illa_cli_click
 ```
 
 ## 部署ILLA Builder
-ILLA CLI安装完成后，你可以通过其进行本地化部署和ILLA云服务部署.
+ILLA CLI安装完成后，你可以通过其进行本地化部署和[ILLA云服务部署](https://cloud.illacloud.com/).
 
-**ILLA期待为您服务**
+快速部署
+
+```
+> illa deploy --self --port=10000
+```
 
 只需要运行此命令即可在本地部署ILLA Builder: 
 
 ```
-# ILLA Builder的访问端口可以更改
-# 可将SERVER_ADDRESS设置为云服务器的公网ip(其默认值为localhost)以实现云服务器部署
-> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+## ILLA Builder的访问端口可以更改
+## 可将SERVER_ADDRESS设置为云服务器的公网ip(其默认值为localhost)以实现云服务器部署
+## 可将MOUNT_PATH设置为自定义的ILLA Builder mount路径, 如若不填其值为系统临时文件夹下的illa-builder文件夹路径
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS> --mount=<MOUNT_PATH>
 ```
 现在你可以通过 http://localhost:10000 访问ILLA Builder.
 
@@ -70,7 +76,7 @@ ILLA CLI安装完成后，你可以通过其进行本地化部署和ILLA云服�
 
 ## 其他操作
 ```
-# 列出ILLA Builder相关信息
+## 列出ILLA Builder相关信息
 > illa list --self
 
 # 停止ILLA Builder
