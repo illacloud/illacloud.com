@@ -111,7 +111,7 @@ export function Footer({ noHome = false }) {
         },
         {
           title: t('footer.media'),
-          href: require('../../img/home/illa_media_kit.zip').default,
+          href: require('https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip').default,
           downloadName: 'ILLA Media Kit.zip',
           tagCategory: 'homepage_footer_mediakit_click',
         },
