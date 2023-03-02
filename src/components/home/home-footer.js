@@ -6,7 +6,7 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { IllaLogo } from '@/img/public/illa-logo'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
-import { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver'
 
 function renderItem(title, items) {
   return (
@@ -111,7 +111,7 @@ export function Footer({ noHome = false }) {
         },
         {
           title: t('footer.media'),
-          href: require('https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip').default,
+          href: 'https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip',
           downloadName: 'ILLA Media Kit.zip',
           tagCategory: 'homepage_footer_mediakit_click',
         },
