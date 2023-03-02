@@ -1,6 +1,7 @@
 /** @type {import("next-sitemap").IConfig} */
+const site = process.env.SITE_URL || 'https://www.illacloud.com'
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.illacloud.com',
+  siteUrl: site,
   generateRobotsTxt: true,
   transform: async (config, path) => {
     return {
@@ -10,7 +11,7 @@ module.exports = {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: [
         {
-          href: 'https://www.illacloud.com' + path,
+          href: site + path,
           hreflang: path.includes('zh-CN') ? 'zh' : 'en',
           hrefIsAbsolute: true,
         },
