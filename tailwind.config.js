@@ -1,13 +1,17 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const svgToDataUri = require('mini-svg-data-uri')
+const colors = require('tailwindcss/colors')
 const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette')
-const colors = require('tailwindcss/colors')
 
 module.exports = {
-  darkMode: 'class',
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
   content: ['./src/**/*.{js,jsx,mdx,html}', './remark/**/*.js'],
+  blocklist: ['[html:has(&)]:bg-blue-500'],
+  darkMode: 'class',
   theme: {
     // `demo-*` screens are used for the "mobile-first" responsive demo
     screens: {
@@ -253,6 +257,18 @@ module.exports = {
               color: 'inherit',
               fontWeight: 'inherit',
             },
+            kbd: {
+              background: theme('colors.slate.100'),
+              borderWidth: '1px',
+              borderColor: theme('colors.slate.200'),
+              padding: '0.125em 0.25em',
+              color: theme('colors.slate.700'),
+              fontWeight: 500,
+              fontSize: '0.875em',
+              fontVariantLigatures: 'none',
+              borderRadius: '4px',
+              margin: '0 1px',
+            },
             code: {
               fontWeight: theme('fontWeight.medium'),
               fontVariantLigatures: 'none',
@@ -314,6 +330,11 @@ module.exports = {
             },
             'h2 small, h3 small, h4 small': {
               color: theme('colors.slate.400'),
+            },
+            kbd: {
+              background: theme('colors.slate.700'),
+              borderColor: theme('colors.slate.600'),
+              color: theme('colors.slate.200'),
             },
             code: {
               color: theme('colors.slate.200'),
@@ -426,7 +447,7 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/forms')({ strategy: 'class' }),
     function ({ addVariant }) {
       addVariant(
         'supports-backdrop-blur',

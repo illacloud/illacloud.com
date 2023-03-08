@@ -14,6 +14,7 @@ const {
   simplifyToken,
   normalizeTokens,
 } = require('./remark/utils')
+const { withPrevalInstructions } = require('./remark/withPrevalInstructions')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -32,15 +33,7 @@ const fallbackLayouts = {
 }
 
 const fallbackDefaultExports = {
-  'src/pages/{docs,components}/**/*': [
-    '@/layouts/ContentsLayout',
-    'ContentsLayout',
-  ],
-  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
-}
-
-const fallbackGetStaticProps = {
-  'src/pages/blog/**/*': '@/layouts/BlogPostLayout',
+  'src/pages/{docs}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
 }
 
 module.exports = withBundleAnalyzer({
@@ -51,8 +44,7 @@ module.exports = withBundleAnalyzer({
     disableStaticImages: true,
   },
   experimental: {
-    // Enables the styled-components SWC transform
-    styledComponents: true,
+    esmExternals: false,
   },
   async redirects() {
     return require('./redirects.json')
@@ -72,22 +64,6 @@ module.exports = withBundleAnalyzer({
     ]
   },
   webpack(config, options) {
-    config.resolve.fallback = {
-      fs: false,
-      path: false,
-      stream: false,
-      constants: false,
-    }
-    if (!options.dev && options.isServer) {
-      let originalEntry = config.entry
-
-      config.entry = async () => {
-        let entries = { ...(await originalEntry()) }
-        entries['scripts/build-rss'] = './src/scripts/build-rss.js'
-        return entries
-      }
-    }
-
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|webp|avif|mp4|webm|zip)$/i,
       issuer: /\.(jsx?|tsx?|mdx)$/,
@@ -173,7 +149,7 @@ module.exports = withBundleAnalyzer({
 
     // Remove the 3px deadzone for drag gestures in Framer Motion
     config.module.rules.push({
-      test: /framer-motion/,
+      test: /node_modules\/framer-motion/,
       use: createLoader(function (source) {
         return source.replace(
           /var isDistancePastThreshold = .*?$/m,
@@ -226,17 +202,21 @@ module.exports = withBundleAnalyzer({
     let mdx = (plugins = []) => [
       {
         loader: '@mdx-js/loader',
-        options: {
-          remarkPlugins: [
-            withExamples,
-            withTableOfContents,
-            withSyntaxHighlighting,
-            withNextLinks,
-            withSmartQuotes,
-            ...plugins,
-          ],
-          rehypePlugins: [withLinkRoles],
-        },
+        options:
+          plugins === null
+            ? {}
+            : {
+                remarkPlugins: [
+                  withPrevalInstructions,
+                  withExamples,
+                  withTableOfContents,
+                  withSyntaxHighlighting,
+                  withNextLinks,
+                  withSmartQuotes,
+                  ...plugins,
+                ],
+                rehypePlugins: [withLinkRoles],
+              },
       },
       createLoader(function (source) {
         let pathSegments = this.resourcePath.split(path.sep)
@@ -295,10 +275,8 @@ module.exports = withBundleAnalyzer({
       ],
     })
 
-    config.module.rules.push({
-      test: { and: [/\.mdx$/], not: [/snippets/] },
-      resourceQuery: { not: [/rss/, /preview/] },
-      use: [
+    function mainMdxLoader(plugins) {
+      return [
         options.defaultLoaders.babel,
         createLoader(function (source) {
           if (source.includes('/*START_META*/')) {
@@ -312,7 +290,7 @@ module.exports = withBundleAnalyzer({
             `\nMDXContent.layoutProps = layoutProps\n`
           )
         }),
-        ...mdx(),
+        ...mdx(plugins),
         createLoader(function (source) {
           let fields =
             new URLSearchParams(this.resourceQuery.substr(1)).get('meta') ??
@@ -357,21 +335,6 @@ module.exports = withBundleAnalyzer({
             }
           }
 
-          if (
-            !/^\s*export\s+(async\s+)?function\s+getStaticProps\s+/m.test(
-              source.replace(/```(.*?)```/gs, ''),
-            )
-          ) {
-            for (let glob in fallbackGetStaticProps) {
-              if (minimatch(resourcePath, glob)) {
-                extra.push(
-                  `export { getStaticProps } from '${fallbackGetStaticProps[glob]}'`,
-                )
-                break
-              }
-            }
-          }
-
           let metaExport
           if (!/export\s+(const|let|var)\s+meta\s*=/.test(source)) {
             metaExport =
@@ -392,8 +355,22 @@ module.exports = withBundleAnalyzer({
             .filter(Boolean)
             .join('\n\n')
         }),
-      ],
+      ]
+    }
+
+    config.module.rules.push({
+      test: { and: [/\.mdx$/], not: [/snippets/] },
+      resourceQuery: { not: [/rss/, /preview/] },
+      exclude: [path.join(__dirname, 'src/pages/showcase/')],
+      use: mainMdxLoader(),
     })
+
+    config.module.rules.push({
+      test: /\.mdx$/,
+      include: [path.join(__dirname, 'src/pages/showcase/')],
+      use: mainMdxLoader(null),
+    })
+
     return config
   },
 })
@@ -435,7 +412,7 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
     addComponents: () => {},
     corePlugins: () => true,
     prefix: (x) => x,
-    config: (option, defaultValue) => defaultValue,
+    config: (option, defaultValue) => (option ? defaultValue : { future: {} }),
     addUtilities,
     theme: (key, defaultValue) => dlv(defaultConfig.theme, key, defaultValue),
     matchUtilities: (matches, { values, supportsNegativeValues } = {}) => {
