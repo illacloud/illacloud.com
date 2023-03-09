@@ -35,9 +35,8 @@ const blogBaseStructuredData = {
     name: 'Jerry',
     image: {
       '@type': 'ImageObject',
-      url: `https://www.illacloud.com${
-        require('@/img/authors/jerry.jpeg').default
-      }`,
+      url: `https://www.illacloud.com${require('@/img/authors/jerry.jpeg').default
+        }`,
       width: 512,
       height: 512,
     },
@@ -64,7 +63,7 @@ export function BlogPostLayout({
     <div className="overflow-hidden relative">
       <div className="max-w-8xl mx-auto">
         <div className="flex px-4 pt-8 pb-10 lg:px-8">
-          <Link href="/blog">
+          <Link href="/blog" legacyBehavior>
             <a className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
               <svg
                 viewBox="0 -9 3 24"
@@ -272,7 +271,7 @@ export function BlogPostLayout({
                           className="flex flex-col items-start"
                         >
                           <h3 className="order-1 text-lg text-slate-900 font-semibold dark:text-slate-200">
-                            <Link href={`/blog/${post.slug}`}>
+                            <Link href={`/blog/${post.slug}`} legacyBehavior>
                               <a>{post.title}</a>
                             </Link>
                           </h3>
@@ -354,9 +353,8 @@ export function Metadata({ meta }) {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${
-              require('@/img/illa_logo.png').default
-            }`}
+            content={`https://illa.cloud${require('@/img/illa_logo.png').default
+              }`}
           />
         </>
       )}

@@ -7,7 +7,7 @@ export function Footer({ children, previous, next }) {
       {(previous || next) && (
         <div className="mb-10 text-slate-700 font-semibold flex items-center dark:text-slate-200">
           {previous && (
-            <Link href={previous.href}>
+            <Link href={previous.href} legacyBehavior>
               <a className="group flex items-center hover:text-slate-900 dark:hover:text-white">
                 <svg
                   viewBox="0 0 3 6"
@@ -27,7 +27,7 @@ export function Footer({ children, previous, next }) {
             </Link>
           )}
           {next && (
-            <Link href={next.href}>
+            <Link href={next.href} legacyBehavior>
               <a className="group ml-auto flex items-center hover:text-slate-900 dark:hover:text-white">
                 {next.shortTitle || next.title}
                 <svg

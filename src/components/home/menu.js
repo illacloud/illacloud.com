@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { CloseWhiteIcon, SelectIcon } from '@/img/home/svg'
 import { useState } from 'react'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
@@ -46,11 +46,11 @@ export const Menu = ({ menuExpand, closeMenu }) => {
       )}
     >
       <div className="justify-between  w-full h-[64px] flex items-center ">
-        <NextLink href="/">
+        <Link legacyBehavior href="/">
           <a className="flex items-center w-[42.5px] h-[20px]">
             <IllaLogoWhiteIcon />
           </a>
-        </NextLink>
+        </Link>
         <span
           onClick={() => {
             closeMenu && closeMenu()
@@ -77,7 +77,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         style={{ height: productListExpand ? 80 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        <NextLink href="https://github.com/illacloud/illa-builder">
+        <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
           <a
             className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
@@ -90,8 +90,8 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           >
             ILLA Builder
           </a>
-        </NextLink>
-        <NextLink href="https://github.com/illacloud/illa-design">
+        </Link>
+        <Link legacyBehavior href="https://github.com/illacloud/illa-design">
           <a
             className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
@@ -104,9 +104,9 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           >
             ILLA Design
           </a>
-        </NextLink>
+        </Link>
       </div>
-      <NextLink href="/docs/about-illa">
+      <Link legacyBehavior href="/docs/about-illa">
         <a
           className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
@@ -119,8 +119,8 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         >
           {t('nav.doc')}
         </a>
-      </NextLink>
-      <NextLink href="/hire">
+      </Link>
+      <Link legacyBehavior href="/hire">
         <a
           className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
@@ -133,7 +133,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         >
           {t('nav.career')}
         </a>
-      </NextLink>
+      </Link>
       <span
         onClick={() => {
           sendTagEvent({
@@ -176,7 +176,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           )
         })}
       </div>
-      <NextLink href="https://blog.illacloud.com/">
+      <Link legacyBehavior href="https://blog.illacloud.com/">
         <a
           className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
           onClick={() => {
@@ -189,7 +189,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         >
           {t('nav.blog')}
         </a>
-      </NextLink>
+      </Link>
 
       <span
         onClick={() => {
@@ -205,7 +205,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         {router.locale === 'en-US' ? 'English' : '简体中文'} <SelectIcon />
       </span>
       <div>
-        <NextLink
+        <Link legacyBehavior
           href={router.pathname}
           locale={router.locale === 'en-US' ? 'zh-CN' : 'en-US'}
         >
@@ -225,7 +225,7 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           >
             {router.locale === 'en-US' ? '简体中文' : 'English'}
           </a>
-        </NextLink>
+        </Link>
       </div>
     </div>
   )

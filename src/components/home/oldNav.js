@@ -8,7 +8,7 @@ import {
 } from '@/img/home/svg'
 import { LanguageSelect } from '@/components/home/language-select'
 import { ProductSelect } from '@/components/home/product-select'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Menu } from '@/components/home/menu'
@@ -30,11 +30,11 @@ export const Nav = ({
   return (
     <>
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-end lg:hidden">
-        <NextLink href="/">
+        <Link legacyBehavior href="/">
           <a>
             <ILLA_LOGO />
           </a>
-        </NextLink>
+        </Link>
         <span
           onClick={() => {
             setMenuExpand(() => !menuExpand)
@@ -51,18 +51,18 @@ export const Nav = ({
             navColorChange ? 'text-[#ffffff]' : 'text-[#1d2129]',
           )}
         >
-          <NextLink href="/">
+          <Link legacyBehavior href="/">
             <a>
               {navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}
             </a>
-          </NextLink>
-          <NextLink href="https://github.com/illacloud/illa-builder">
+          </Link>
+          <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
             <a>
               <span className="cursor-pointer">
                 {navColorChange ? <GIT_LOGO_WHITE /> : <GIT_LOGO />}
               </span>
             </a>
-          </NextLink>
+          </Link>
           <LanguageSelect buttonColorChange={navColorChange} />
         </div>
         <div className="w-1/3 flex justify-center font-medium text-[#1d2129] text-[16px]">
@@ -75,16 +75,16 @@ export const Nav = ({
             )}
           >
             <ProductSelect buttonColorChange={navColorChange} />
-            <NextLink href="/docs/about-illa">
+            <Link legacyBehavior href="/docs/about-illa">
               <a className="px-[16px] text-center leading-[48px]">
                 {t('nav.doc')}
               </a>
-            </NextLink>
-            <NextLink href="/hire">
+            </Link>
+            <Link legacyBehavior href="/hire">
               <a className="px-[16px] text-center leading-[48px]">
                 {t('nav.career')}
               </a>
-            </NextLink>
+            </Link>
           </div>
         </div>
         <div
@@ -92,7 +92,7 @@ export const Nav = ({
             'w-1/3 text-[16px] font-normal gap-[16px] flex justify-end  pr-[40px]',
           )}
         >
-          <NextLink href="/docs/illa-cli">
+          <Link legacyBehavior href="/docs/illa-cli">
             <a
               className={clsx(
                 'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
@@ -101,8 +101,8 @@ export const Nav = ({
             >
               {t('self-Hosted')}
             </a>
-          </NextLink>
-          <NextLink href="https://cloud.illacloud.com">
+          </Link>
+          <Link legacyBehavior href="https://cloud.illacloud.com">
             <a
               className={clsx(
                 'w-[160px] text-center leading-[48px] box-border rounded-full',
@@ -114,7 +114,7 @@ export const Nav = ({
             >
               {t('illa-Cloud')}
             </a>
-          </NextLink>
+          </Link>
         </div>
       </div>
     </>

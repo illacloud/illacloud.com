@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { DiscordIcon } from '@/img/public/discord'
@@ -145,7 +145,7 @@ export const Title = (props) => {
             {t('description')}
           </span>
           <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
-            <NextLink href="https://cloud.illacloud.com/">
+            <Link legacyBehavior href="https://cloud.illacloud.com/">
               <a
                 className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -155,11 +155,11 @@ export const Title = (props) => {
                     label: t('illa-Cloud'),
                     value: 'https://cloud.illacloud.com/',
                   })
-              }}>
+                }}>
                 {t('illa-Cloud')}
               </a>
-            </NextLink>
-            <NextLink href="/docs/illa-cli">
+            </Link>
+            <Link legacyBehavior href="/docs/illa-cli">
               <a
                 className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] font-normal	 border-white-01 text-center	rounded-[8px] px-[64px] py-[8px] text-white-01"
                 onClick={() => {
@@ -168,13 +168,13 @@ export const Title = (props) => {
                     category: 'homepage_body_self_hosted_click',
                     label: t('self-Hosted'),
                   })
-              }}>
+                }}>
                 {t('self-Hosted')}
               </a>
-            </NextLink>
+            </Link>
           </div>
           <div className="flex mt-[40px] gap-[16px]">
-            <NextLink href="https://github.com/illacloud/illa-builder">
+            <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
               <a
                 target="__blank"
                 className="flex gap-[12px] items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"
@@ -189,24 +189,24 @@ export const Title = (props) => {
               >
                 <GithubIcon />
                 <div className="flex flex-col">
-                <span className="text-white-01 text-[10px] font-medium">
-                  {t('join-github')}
-                </span>
+                  <span className="text-white-01 text-[10px] font-medium">
+                    {t('join-github')}
+                  </span>
                   <span className="text-white-01 text-[16px] font-bold">
-                  {t('github')}
-                </span>
+                    {t('github')}
+                  </span>
                 </div>
                 <div className="flex flex-col">
-                <span className="flex justify-center">
-                  <StarIcon />
-                </span>
+                  <span className="flex justify-center">
+                    <StarIcon />
+                  </span>
                   <span className="text-white-01 text-[14px] font-bold text-center">
-                  {githubStarts}
-                </span>
+                    {githubStarts}
+                  </span>
                 </div>
               </a>
-            </NextLink>
-            <NextLink href="https://discord.com/invite/illacloud">
+            </Link>
+            <Link legacyBehavior href="https://discord.com/invite/illacloud">
               <a
                 target="__blank"
                 className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
@@ -221,23 +221,23 @@ export const Title = (props) => {
               >
                 <DiscordIcon />
                 <div className="flex flex-col">
-                <span className="text-white-01 text-[10px] font-medium">
-                  {t('join-discord')}
-                </span>
+                  <span className="text-white-01 text-[10px] font-medium">
+                    {t('join-discord')}
+                  </span>
                   <span className="text-white-01 text-[16px] font-bold">
-                  {t('discord')}
-                </span>
+                    {t('discord')}
+                  </span>
                 </div>
                 <div className="flex flex-col">
-                <span className="flex justify-center">
-                  <GoIcon />
-                </span>
+                  <span className="flex justify-center">
+                    <GoIcon />
+                  </span>
                   <span className="text-white-01 text-[14px] font-bold text-center">
-                  {t('go')}
-                </span>
+                    {t('go')}
+                  </span>
                 </div>
               </a>
-            </NextLink>
+            </Link>
           </div>
         </div>
       </motion.div>

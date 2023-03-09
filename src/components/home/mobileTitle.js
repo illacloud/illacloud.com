@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
@@ -39,7 +39,7 @@ export const MobileTitle = (props) => {
           {t('description')}
         </div>
         <div className="mt-[32px] w-full flex gap-[16px]">
-          <NextLink href="/docs/illa-cli">
+          <Link legacyBehavior href="/docs/illa-cli">
             <a
               className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -52,8 +52,8 @@ export const MobileTitle = (props) => {
             >
               {t('self-Hosted')}
             </a>
-          </NextLink>
-          <NextLink href="https://cloud.illacloud.com/">
+          </Link>
+          <Link legacyBehavior href="https://cloud.illacloud.com/">
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -67,10 +67,10 @@ export const MobileTitle = (props) => {
             >
               {t('illa-Cloud')}
             </a>
-          </NextLink>
+          </Link>
         </div>
         <div className="flex items-center mt-[32px] gap-[40px]">
-          <NextLink href="https://github.com/illacloud/illa-builder">
+          <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
             <a
               target="__blank"
               className="flex flex-col items-center gap-[8px] inline-block"
@@ -88,12 +88,12 @@ export const MobileTitle = (props) => {
               <div className="text-white-01 text-[13px] flex items-center font-medium">
                 <StarIcon />
                 <span className="ml-[5px]">
-                {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
-              </span>
+                  {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
+                </span>
               </div>
             </a>
-          </NextLink>
-          <NextLink href="https://discord.com/invite/illacloud">
+          </Link>
+          <Link legacyBehavior href="https://discord.com/invite/illacloud">
             <a
               target="__blank"
               className="flex flex-col items-center gap-[8px] inline-block"
@@ -112,7 +112,7 @@ export const MobileTitle = (props) => {
                 <span className="ml-[5px] align-middle">{t('join-community')}</span>
               </div>
             </a>
-          </NextLink>
+          </Link>
         </div>
         <div
           className="mt-[32px] relative"
