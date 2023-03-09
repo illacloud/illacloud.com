@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Nav } from '@/components/home/Nav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Content } from '@/components/home/content'
 import { Footer } from '@/components/home/home-footer'
@@ -10,25 +10,12 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import Script from 'next/script'
 
-const Home = () => {
+const Home = (props) => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
-  const [starCounts, setStarCounts] = useState(0)
-
-  useEffect(() => {
-    fetch('https://api.github.com/repos/illacloud/illa-builder')
-      .then((res) => res.json())
-      .then((data) => {
-        const { stargazers_count = 0 } = data
-        setStarCounts(stargazers_count)
-      })
-      .catch((e) => {
-        console.error(e)
-        setStarCounts('unknown')
-      })
-  }, [])
+  const { starCounts } = props;
   return (
     <>
       <Head>
@@ -113,10 +100,15 @@ const Home = () => {
 }
 
 export const getStaticProps = async ({ locale }) => {
+  const res = await fetch('https://api.github.com/repos/illacloud/illa-builder')
+  const resJSON = await res.json()
+  const starCounts = resJSON?.stargazers_count || 0
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'navs'])),
+      starCounts,
     },
+    revalidate: 10,
   }
 }
 
