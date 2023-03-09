@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useClickAway } from 'react-use'
@@ -69,7 +69,8 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
         }}
       >
         {options.map((option) => (
-          <NextLink
+          <Link
+            legacyBehavior
             key={option.value}
             href={router.pathname}
             locale={option.value}
@@ -92,7 +93,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
             >
               {option.label}
             </div>
-          </NextLink>
+          </Link>
         ))}
       </div>
     </div>

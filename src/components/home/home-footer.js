@@ -1,5 +1,5 @@
 import { ILLA_LOGO } from '@/img/home/svg'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Community } from '@/constants/concat'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
@@ -39,7 +39,7 @@ function renderItem(title, items) {
             )
           }
           return (
-            <NextLink key={item.title} href={item.href ?? '/'}>
+            <Link legacyBehavior key={item.title} href={item.href ?? '/'}>
               <a
                 className="mb-[12px]"
                 onClick={() => {
@@ -53,7 +53,7 @@ function renderItem(title, items) {
               >
                 {item.title}
               </a>
-            </NextLink>
+            </Link>
           )
         })}
       </div>
@@ -135,11 +135,11 @@ export function Footer({ noHome = false }) {
         >
           <div className=" w-full justify-center items-start flex ">
             <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center">
-              <NextLink href={'/'}>
+              <Link legacyBehavior href={'/'}>
                 <a>
                   <ILLA_LOGO />
                 </a>
-              </NextLink>
+              </Link>
               <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
                 Create with ❤️ by ILLA
               </span>
@@ -150,7 +150,7 @@ export function Footer({ noHome = false }) {
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
-                <NextLink key={item.tagCategory} href={item.href}>
+                <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
                     className="xs:mb-[12px] text-[#787E85]"
                     onClick={() => {
@@ -163,7 +163,7 @@ export function Footer({ noHome = false }) {
                   >
                     {item.icon}
                   </a>
-                </NextLink>
+                </Link>
               ))}
             </div>
           </div>
@@ -185,7 +185,7 @@ export function Footer({ noHome = false }) {
         </div>
         <div className="w-full xs:w-1/5 xs:h-[212px] flex flex-row xs:flex-col items-start justify-center rounded-[32px] mt-[32px]">
           {Community?.map((item, index) => (
-            <NextLink key={'icon' + index} href={item.href}>
+            <Link legacyBehavior key={'icon' + index} href={item.href}>
               <a
                 className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]"
                 onClick={() => {
@@ -198,7 +198,7 @@ export function Footer({ noHome = false }) {
               >
                 {item.icon}
               </a>
-            </NextLink>
+            </Link>
           ))}
         </div>
         {/*{router.locale === 'zh-CN' ? (*/}

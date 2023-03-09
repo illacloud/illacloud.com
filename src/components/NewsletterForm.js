@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { Toast } from '@/components/home/Toast'
 import { useRouter } from 'next/router'
-import { LoadingIcon } from '@illa-design/icon'
+import { LoadingIcon } from '@illa-design/react'
 
 export function NewsletterForm({ action }) {
   const router = useRouter()

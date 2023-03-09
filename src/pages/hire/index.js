@@ -5,7 +5,7 @@ import { AddressIcon } from '@/img/hire/svg'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
 import Head from 'next/head'
-import NextLink from 'next/link'
+import Link from 'next/link'
 
 const renderImageItem = (item, index) => {
   return (
@@ -100,13 +100,13 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
         </a>
       </div>
       <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
-        <NextLink href="https://www.linkedin.com/company/illacloud/jobs/">
+        <Link legacyBehavior href="https://www.linkedin.com/company/illacloud/jobs/">
           <a className=" text-[14px] sm:text-[28px] text-white ">
             <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">
               {cv}
             </span>
           </a>
-        </NextLink>
+        </Link>
       </div>
     </div>
   )

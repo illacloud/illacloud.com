@@ -13,7 +13,7 @@ const NavItem = forwardRef(
   ({ href, children, isActive, isPublished, fallbackHref, onClick }, ref) => {
     return (
       <li ref={ref}>
-        <Link href={isPublished ? href : fallbackHref}>
+        <Link href={isPublished ? href : fallbackHref} legacyBehavior>
           <a
             className={clsx('block border-l pl-4 -ml-px', {
               'text-sky-500 border-current font-semibold dark:text-sky-400':
@@ -259,8 +259,8 @@ const TopLevelAnchor = forwardRef(
               isActive
                 ? [activeBackground, 'dark:highlight-white/10']
                 : mobile
-                ? 'dark:bg-slate-700 dark:highlight-white/5'
-                : 'dark:bg-slate-800 dark:highlight-white/5',
+                  ? 'dark:bg-slate-700 dark:highlight-white/5'
+                  : 'dark:bg-slate-800 dark:highlight-white/5',
             )}
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
@@ -280,7 +280,7 @@ function TopLevelLink({ href, as, ...props }) {
   }
 
   return (
-    <Link href={href} as={as} passHref>
+    <Link href={href} as={as} passHref legacyBehavior>
       <TopLevelAnchor {...props} />
     </Link>
   )

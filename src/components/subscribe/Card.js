@@ -5,7 +5,7 @@ import { ReactComponent as SubscribeFailedCover } from '@/img/subscribe/subscrib
 import { Fragment } from 'react'
 import clsx from 'clsx'
 import { Community } from '@/constants/concat'
-import NextLink from 'next/link'
+import Link from 'next/link'
 
 const CommunityLink = () => {
   const { t } = useTranslation('subscribe')
@@ -17,9 +17,9 @@ const CommunityLink = () => {
       </div>
       <div className="flex">
         {Community?.map((item, index) => (
-          <NextLink key={item.href} href={item.href}>
+          <Link legacyBehavior key={item.href} href={item.href}>
             <a className="cursor-pointer mx-[10px] text-[#787E85]">{item.icon}</a>
-          </NextLink>
+          </Link>
         ))}
       </div>
     </Fragment>

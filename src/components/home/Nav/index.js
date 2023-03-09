@@ -2,7 +2,7 @@ import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { GithubIcon } from '@/img/public/github'
 import { LanguageSelect } from '@/components/home/language-select'
 import { ProductSelect } from '@/components/home/product-select'
-import NextLink from 'next/link'
+import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { SocialButton } from '@/components/home/Public/socialButton'
 import clsx from 'clsx'
@@ -37,11 +37,11 @@ export const Nav = (props) => {
         )}
       >
         <div className="flex absolute left-[40px] items-center">
-          <NextLink href="/">
+          <Link legacyBehavior href="/">
             <a className=" w-[51px] h-[24px] flex items-center">
               {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
             </a>
-          </NextLink>
+          </Link>
           <div className="flex items-center gap-[4px] ml-[24px]">
             <LanguageSelect buttonColorChange={!whiteTheme} />
             {hasButton && (
@@ -87,7 +87,7 @@ export const Nav = (props) => {
             )}
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
-            <NextLink href="/docs/about-illa">
+            <Link legacyBehavior href="/docs/about-illa">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {
@@ -100,8 +100,8 @@ export const Nav = (props) => {
               >
                 {t('nav.doc')}
               </a>
-            </NextLink>
-            <NextLink href="/hire">
+            </Link>
+            <Link legacyBehavior href="/hire">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {
@@ -114,9 +114,9 @@ export const Nav = (props) => {
               >
                 {t('nav.career')}
               </a>
-            </NextLink>
+            </Link>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
-            <NextLink href="https://blog.illacloud.com/">
+            <Link legacyBehavior href="https://blog.illacloud.com/">
               <a
                 className="px-[16px] text-center"
                 onClick={() => {
@@ -129,7 +129,7 @@ export const Nav = (props) => {
               >
                 {t('nav.blog')}
               </a>
-            </NextLink>
+            </Link>
           </div>
         </div>
         {hasButton && (
@@ -139,7 +139,7 @@ export const Nav = (props) => {
             )}
             style={{ opacity: opacity }}
           >
-            <NextLink href="/docs/illa-cli">
+            <Link legacyBehavior href="/docs/illa-cli">
               <a
                 className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01"
                 onClick={() => {
@@ -152,8 +152,8 @@ export const Nav = (props) => {
               >
                 {t('self-Hosted')}
               </a>
-            </NextLink>
-            <NextLink href="https://cloud.illacloud.com/">
+            </Link>
+            <Link legacyBehavior href="https://cloud.illacloud.com/">
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
@@ -167,16 +167,16 @@ export const Nav = (props) => {
               >
                 {t('illa-Cloud')}
               </a>
-            </NextLink>
+            </Link>
           </motion.div>
         )}
       </div>
       <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xl:hidden">
-        <NextLink href="/">
+        <Link legacyBehavior href="/">
           <a className="flex items-center w-[42.5px] h-[20px]">
             {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
           </a>
-        </NextLink>
+        </Link>
         <span
           onClick={() => {
             sendTagEvent({
