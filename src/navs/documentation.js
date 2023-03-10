@@ -64,7 +64,11 @@ export const ILLADocumentationNav = (locale) => {
       '👷 Deploy ILLA': [
         pagesUS['illa-cli'],
       ],
-      "🔨 Integrations": [pagesUS['integration-list'],pagesUS['supabase']],
+      "🔨 Integrations": [
+        pagesUS['integration-list'],
+        pagesUS['supabase'],
+        pagesUS['appwrite']
+      ],
       "📲 Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
       '🌀 BUILD YOUR APPS': [
         pagesUS['app-editor'],
