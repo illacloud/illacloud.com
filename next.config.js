@@ -75,15 +75,6 @@ module.exports = withBundleAnalyzer({
       stream: false,
       constants: false,
     }
-    if (!options.dev && options.isServer) {
-      let originalEntry = config.entry
-
-      config.entry = async () => {
-        let entries = { ...(await originalEntry()) }
-        entries['scripts/build-rss'] = './src/scripts/build-rss.js'
-        return entries
-      }
-    }
 
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|webp|avif|mp4|webm|zip)$/i,
