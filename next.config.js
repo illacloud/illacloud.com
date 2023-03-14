@@ -14,6 +14,8 @@ const {
   simplifyToken,
   normalizeTokens,
 } = require('./remark/utils')
+const { withPrevalInstructions } = require('./remark/withPrevalInstructions')
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -35,12 +37,7 @@ const fallbackDefaultExports = {
   'src/pages/{docs,components}/**/*': [
     '@/layouts/ContentsLayout',
     'ContentsLayout',
-  ],
-  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
-}
-
-const fallbackGetStaticProps = {
-  'src/pages/blog/**/*': '@/layouts/BlogPostLayout',
+  ]
 }
 
 module.exports = withBundleAnalyzer({
@@ -226,17 +223,21 @@ module.exports = withBundleAnalyzer({
     let mdx = (plugins = []) => [
       {
         loader: '@mdx-js/loader',
-        options: {
-          remarkPlugins: [
-            withExamples,
-            withTableOfContents,
-            withSyntaxHighlighting,
-            withNextLinks,
-            withSmartQuotes,
-            ...plugins,
-          ],
-          rehypePlugins: [withLinkRoles],
-        },
+        options:
+          plugins === null
+            ? {}
+            : {
+              remarkPlugins: [
+                withPrevalInstructions,
+                withExamples,
+                withTableOfContents,
+                withSyntaxHighlighting,
+                withNextLinks,
+                withSmartQuotes,
+                ...plugins,
+              ],
+              rehypePlugins: [withLinkRoles],
+            },
       },
       createLoader(function (source) {
         let pathSegments = this.resourcePath.split(path.sep)
@@ -279,9 +280,7 @@ module.exports = withBundleAnalyzer({
         }),
         ...mdx([
           () => (tree) => {
-            let firstParagraphIndex = tree.children.findIndex(
-              (child) => child.type === 'paragraph',
-            )
+            let firstParagraphIndex = tree.children.findIndex((child) => child.type === 'paragraph')
             if (firstParagraphIndex > -1) {
               tree.children = tree.children.filter((child, index) => {
                 if (child.type === 'import' || child.type === 'export') {
@@ -295,10 +294,8 @@ module.exports = withBundleAnalyzer({
       ],
     })
 
-    config.module.rules.push({
-      test: { and: [/\.mdx$/], not: [/snippets/] },
-      resourceQuery: { not: [/rss/, /preview/] },
-      use: [
+    function mainMdxLoader(plugins) {
+      return [
         options.defaultLoaders.babel,
         createLoader(function (source) {
           if (source.includes('/*START_META*/')) {
@@ -312,7 +309,7 @@ module.exports = withBundleAnalyzer({
             `\nMDXContent.layoutProps = layoutProps\n`
           )
         }),
-        ...mdx(),
+        ...mdx(plugins),
         createLoader(function (source) {
           let fields =
             new URLSearchParams(this.resourceQuery.substr(1)).get('meta') ??
@@ -357,21 +354,6 @@ module.exports = withBundleAnalyzer({
             }
           }
 
-          if (
-            !/^\s*export\s+(async\s+)?function\s+getStaticProps\s+/m.test(
-              source.replace(/```(.*?)```/gs, ''),
-            )
-          ) {
-            for (let glob in fallbackGetStaticProps) {
-              if (minimatch(resourcePath, glob)) {
-                extra.push(
-                  `export { getStaticProps } from '${fallbackGetStaticProps[glob]}'`,
-                )
-                break
-              }
-            }
-          }
-
           let metaExport
           if (!/export\s+(const|let|var)\s+meta\s*=/.test(source)) {
             metaExport =
@@ -392,8 +374,22 @@ module.exports = withBundleAnalyzer({
             .filter(Boolean)
             .join('\n\n')
         }),
-      ],
+      ]
+    }
+
+    config.module.rules.push({
+      test: { and: [/\.mdx$/], not: [/snippets/] },
+      resourceQuery: { not: [/rss/, /preview/] },
+      exclude: [path.join(__dirname, 'src/pages/showcase/')],
+      use: mainMdxLoader(),
     })
+
+    config.module.rules.push({
+      test: /\.mdx$/,
+      include: [path.join(__dirname, 'src/pages/showcase/')],
+      use: mainMdxLoader(null),
+    })
+
     return config
   },
 })
