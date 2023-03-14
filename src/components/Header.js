@@ -231,7 +231,7 @@ export function Header({
             )}
           >
             <div className="relative flex items-center">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a className="mr-3 flex-none  overflow-hidden md:w-auto">
                   <span className="sr-only">ILLA home page</span>
                   <Logo className="w-auto h-5" />

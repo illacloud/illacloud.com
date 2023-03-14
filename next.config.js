@@ -14,7 +14,6 @@ const {
   simplifyToken,
   normalizeTokens,
 } = require('./remark/utils')
-const { withPrevalInstructions } = require('./remark/withPrevalInstructions')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -33,7 +32,15 @@ const fallbackLayouts = {
 }
 
 const fallbackDefaultExports = {
-  'src/pages/{docs}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
+  'src/pages/{docs,components}/**/*': [
+    '@/layouts/ContentsLayout',
+    'ContentsLayout',
+  ],
+  'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
+}
+
+const fallbackGetStaticProps = {
+  'src/pages/blog/**/*': '@/layouts/BlogPostLayout',
 }
 
 module.exports = withBundleAnalyzer({
@@ -44,7 +51,8 @@ module.exports = withBundleAnalyzer({
     disableStaticImages: true,
   },
   experimental: {
-    esmExternals: false,
+    // Enables the styled-components SWC transform
+    styledComponents: true,
   },
   async redirects() {
     return require('./redirects.json')
@@ -52,18 +60,34 @@ module.exports = withBundleAnalyzer({
   async rewrites() {
     return [
       {
-        source: '/en-US/docs/:slug*',
-        destination: '/en-US/docs/en-US/:slug*',
+        source: '/zh-CN/docs/:slug*',
+        destination: '/zh-CN/docs/zh-CN/:slug*',
         locale: false,
       },
       {
-        source: '/zh-CN/docs/:slug*',
-        destination: '/zh-CN/docs/zh-CN/:slug*',
+        source: '/en-US/docs/:slug*',
+        destination: '/en-US/docs/en-US/:slug*',
         locale: false,
       },
     ]
   },
   webpack(config, options) {
+    config.resolve.fallback = {
+      fs: false,
+      path: false,
+      stream: false,
+      constants: false,
+    }
+    if (!options.dev && options.isServer) {
+      let originalEntry = config.entry
+
+      config.entry = async () => {
+        let entries = { ...(await originalEntry()) }
+        entries['scripts/build-rss'] = './src/scripts/build-rss.js'
+        return entries
+      }
+    }
+
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|webp|avif|mp4|webm|zip)$/i,
       issuer: /\.(jsx?|tsx?|mdx)$/,
@@ -100,7 +124,7 @@ module.exports = withBundleAnalyzer({
         let pluginName = new URLSearchParams(this.resourceQuery).get('plugin')
         let plugin = require('tailwindcss/lib/corePlugins.js').corePlugins[
           pluginName
-        ]
+          ]
         return `export default ${JSON.stringify(getUtilities(plugin))}`
       }),
     })
@@ -117,12 +141,12 @@ module.exports = withBundleAnalyzer({
             example:
               Object.keys(utilities).length > 0
                 ? Object.keys(utilities)
-                    [Math.floor((Object.keys(utilities).length - 1) / 2)].split(
-                      /[>:]/,
-                    )[0]
-                    .trim()
-                    .substr(1)
-                    .replace(/\\/g, '')
+                  [Math.floor((Object.keys(utilities).length - 1) / 2)].split(
+                  /[>:]/,
+                )[0]
+                  .trim()
+                  .substr(1)
+                  .replace(/\\/g, '')
                 : undefined,
           }
         })
@@ -149,7 +173,7 @@ module.exports = withBundleAnalyzer({
 
     // Remove the 3px deadzone for drag gestures in Framer Motion
     config.module.rules.push({
-      test: /node_modules\/framer-motion/,
+      test: /framer-motion/,
       use: createLoader(function (source) {
         return source.replace(
           /var isDistancePastThreshold = .*?$/m,
@@ -192,8 +216,8 @@ module.exports = withBundleAnalyzer({
             export const lines = ${JSON.stringify(normalizeTokens(tokens))}
             export const code = ${JSON.stringify(source)}
             export const highlightedCode = ${JSON.stringify(
-              highlightCode(source, lang),
-            )}
+            highlightCode(source, lang),
+          )}
           `
         }),
       ],
@@ -202,21 +226,17 @@ module.exports = withBundleAnalyzer({
     let mdx = (plugins = []) => [
       {
         loader: '@mdx-js/loader',
-        options:
-          plugins === null
-            ? {}
-            : {
-                remarkPlugins: [
-                  withPrevalInstructions,
-                  withExamples,
-                  withTableOfContents,
-                  withSyntaxHighlighting,
-                  withNextLinks,
-                  withSmartQuotes,
-                  ...plugins,
-                ],
-                rehypePlugins: [withLinkRoles],
-              },
+        options: {
+          remarkPlugins: [
+            withExamples,
+            withTableOfContents,
+            withSyntaxHighlighting,
+            withNextLinks,
+            withSmartQuotes,
+            ...plugins,
+          ],
+          rehypePlugins: [withLinkRoles],
+        },
       },
       createLoader(function (source) {
         let pathSegments = this.resourcePath.split(path.sep)
@@ -275,8 +295,10 @@ module.exports = withBundleAnalyzer({
       ],
     })
 
-    function mainMdxLoader(plugins) {
-      return [
+    config.module.rules.push({
+      test: { and: [/\.mdx$/], not: [/snippets/] },
+      resourceQuery: { not: [/rss/, /preview/] },
+      use: [
         options.defaultLoaders.babel,
         createLoader(function (source) {
           if (source.includes('/*START_META*/')) {
@@ -290,7 +312,7 @@ module.exports = withBundleAnalyzer({
             `\nMDXContent.layoutProps = layoutProps\n`
           )
         }),
-        ...mdx(plugins),
+        ...mdx(),
         createLoader(function (source) {
           let fields =
             new URLSearchParams(this.resourceQuery.substr(1)).get('meta') ??
@@ -335,14 +357,29 @@ module.exports = withBundleAnalyzer({
             }
           }
 
+          if (
+            !/^\s*export\s+(async\s+)?function\s+getStaticProps\s+/m.test(
+              source.replace(/```(.*?)```/gs, ''),
+            )
+          ) {
+            for (let glob in fallbackGetStaticProps) {
+              if (minimatch(resourcePath, glob)) {
+                extra.push(
+                  `export { getStaticProps } from '${fallbackGetStaticProps[glob]}'`,
+                )
+                break
+              }
+            }
+          }
+
           let metaExport
           if (!/export\s+(const|let|var)\s+meta\s*=/.test(source)) {
             metaExport =
               typeof fields === 'undefined'
                 ? `export const meta = ${JSON.stringify(meta)}`
                 : `export const meta = /*START_META*/${JSON.stringify(
-                    meta || {},
-                  )}/*END_META*/`
+                  meta || {},
+                )}/*END_META*/`
           }
 
           return [
@@ -355,22 +392,8 @@ module.exports = withBundleAnalyzer({
             .filter(Boolean)
             .join('\n\n')
         }),
-      ]
-    }
-
-    config.module.rules.push({
-      test: { and: [/\.mdx$/], not: [/snippets/] },
-      resourceQuery: { not: [/rss/, /preview/] },
-      exclude: [path.join(__dirname, 'src/pages/showcase/')],
-      use: mainMdxLoader(),
+      ],
     })
-
-    config.module.rules.push({
-      test: /\.mdx$/,
-      include: [path.join(__dirname, 'src/pages/showcase/')],
-      use: mainMdxLoader(null),
-    })
-
     return config
   },
 })
@@ -383,7 +406,7 @@ function normalizeProperties(input) {
     let newVal = typeof val === 'object' ? normalizeProperties(val) : val
     newObj[
       key.replace(/([a-z])([A-Z])/g, (m, p1, p2) => `${p1}-${p2.toLowerCase()}`)
-    ] = newVal
+      ] = newVal
     return newObj
   }, {})
 }
@@ -412,7 +435,7 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
     addComponents: () => {},
     corePlugins: () => true,
     prefix: (x) => x,
-    config: (option, defaultValue) => (option ? defaultValue : { future: {} }),
+    config: (option, defaultValue) => defaultValue,
     addUtilities,
     theme: (key, defaultValue) => dlv(defaultConfig.theme, key, defaultValue),
     matchUtilities: (matches, { values, supportsNegativeValues } = {}) => {

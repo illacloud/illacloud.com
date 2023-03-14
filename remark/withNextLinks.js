@@ -12,7 +12,7 @@ module.exports.withNextLinks = () => {
         if (node.type === 'link' && node.url.startsWith('/')) {
           root.children = [
             ...root.children.slice(0, i),
-            { type: 'jsx', value: `<${component} href="${node.url}" passHref><a>` },
+            { type: 'jsx', value: `<${component} href="${node.url}" passHref legacyBehavior><a>` },
             ...node.children,
             { type: 'jsx', value: `</a></${component}>` },
             ...root.children.slice(i + 1),
