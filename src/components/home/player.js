@@ -25,21 +25,6 @@ export const Player = forwardRef(({ menuExpand, closeMenu }, ref) => {
           src={require('@/img/home/video.webm').default}
           type="video/webm"
         />
-        <source
-          src={require('@/img/home/video.mp4').default}
-          type="video/mp4"
-        />
-        <object
-          data={require('@/img/home/video.mp4').default}
-          width="320"
-          height="240"
-        >
-          <embed
-            width="320"
-            height="240"
-            src={require('@/img/home/video.mp4').default}
-          />
-        </object>
       </video>
     </div>
   )
