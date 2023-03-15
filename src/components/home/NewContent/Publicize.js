@@ -1,19 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
 
-const Publicize = ({ publicizeList }) => {
-  const [publicizeItem, setPublicize] = useState({})
-  const now = Date.now()
-  for (let item of publicizeList) {
-    const { startTime, endTime } = item
-    const isMoreStarTime = now >= new Date(startTime).getTime()
-    const isLessEndTime = now <= new Date(endTime).getTime()
-    if (isMoreStarTime && isLessEndTime) {
-      setPublicize(item)
-      return
+const Publicize = () => {
+  const [ publicizeList, setPublicizeList ] = useState([])
+  const host = 'https://strapi.illasoft.com'
+
+  const publicizeItem = useMemo(() => {
+    const now = Date.now()
+    if(!publicizeList) return []
+    for(let item of publicizeList) {
+      const { startTime, endTime } = item
+      const isMoreStarTime = now >= new Date(startTime).getTime()
+      const isLessEndTime = now <= new Date(endTime).getTime()
+      if (isMoreStarTime && isLessEndTime) {
+        return item
+      }
     }
-  }
+  }, [publicizeList])
+
+  useEffect(() => {
+    const request = async () => {
+      try {
+        const res = await fetch(
+          'https://strapi.illasoft.com/Official-website-messages',
+        )
+        const data = await res.json()
+        setPublicizeList(data)
+      } catch {
+        setPublicizeList([])
+      }
+    }
+    request()
+  }, [])
   if (!publicizeList || !publicizeItem) return null
   return (
     <a
@@ -28,11 +47,13 @@ const Publicize = ({ publicizeList }) => {
         value: `${publicizeItem.href}`,
       })}
     >
-      <img
-        src={publicizeItem.bgImg}
-        alt="publicize background"
-        className={style.publicizeStyle}
-      />
+      <span className={style.publicizeStyle}>
+        <img
+        className='w-full'
+          src={host + publicizeItem?.bgImg?.url}
+          alt="publicize background"
+        />
+      </span>
       <span className="flex flex-row justify-between items-center absolute z-[1]">
         <span className={style.publicIntru}>
           <img
@@ -42,28 +63,10 @@ const Publicize = ({ publicizeList }) => {
           />
           {publicizeItem.intruduction}
         </span>
-        <span className={style.publicSlogan}>{publicizeItem.slogan}</span>
       </span>
+      <span className={style.publicSlogan}>{publicizeItem.slogan}</span>
     </a>
   )
-}
-
-export const getStaticProps = async () => {
-  let publicizeList
-  try {
-    const res = await fetch(
-      'https://strapi.illasoft.com/Official-website-messages',
-    )
-    const data = await res.json()
-    publicizeList = data
-  } catch {
-    publicizeList = []
-  }
-  return {
-    props: {
-      publicizeList,
-    },
-  }
 }
 
 export default Publicize

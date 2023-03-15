@@ -3,10 +3,35 @@ import Huggingface from '@/img/home/Huggingface.svg'
 import Supabase from '@/img/home/Supabase.svg'
 import Pingcap from '@/img/home/Pingcap.svg'
 import Appwrite from '@/img/home/Appwrite.svg'
+import Lightly from '@/img/home/Lightly.svg'
+import APITable from '@/img/home/APITable.svg'
+import buildDevelopers from '@/img/home/build_developers.svg'
+import collaboration from '@/img/home/collaboration.svg'
+import dataSource from '@/img/home/data_source.png'
+import sqlGenerate from '@/img/home/sql_generate.svg'
+import uiLibrary from '@/img/home/ui_library.svg'
 
 export const contentList = [
   {
-    contentSvg: '@/img/home/test.png',
+    contentSvg: sqlGenerate,
+    tittleList: [
+      'content.sql-generate.title-1',
+      'content.sql-generate.title-2',
+    ],
+    colorationTitle: ['Generate', '智能生成'],
+    color: {
+      colorDeg: '104.61deg',
+      colorStart: '#C120C5',
+      colorEnd: 'rgba(184, 255, 68, 0)',
+    },
+    linkUrl: '',
+    linkContent: 'content.sql-generate.goto',
+    extraLinkContent: '✍️ →',
+    desc: 'content.sql-generate.introduction',
+    imgDesc: 'SQL Generate. More AIGC features are coming soon.'
+  },
+  {
+    contentSvg: buildDevelopers,
     tittleList: [
       'content.for-developer.title-1',
       'content.for-developer.title-2',
@@ -24,7 +49,7 @@ export const contentList = [
     desc: 'content.for-developer.introduction',
   },
   {
-    contentSvg: '@/img/home/test.png',
+    contentSvg: dataSource,
     tittleList: [
       'content.date-integrate.title-1',
       'content.date-integrate.title-2',
@@ -55,9 +80,10 @@ export const contentList = [
         tagBgColor: '#08FEC3',
       },
     ],
+    imgDesc: 'ILLA allows users to integrate with the following data sources via GUI mode: MySQL, Microsoft SQL Server, PostgreSQL, MongoDB, Redis, Elastic Search, Amazon DynamoDB, Snowflake, SMTP, REST API, S3, GraphQL, Clickhouse, MariaDB, Firebase, Appwrite, Supabase, TiDB, Hugging face, Oracle DB, CouchDB.'
   },
   {
-    contentSvg: '@/img/home/test.png',
+    contentSvg: collaboration,
     tittleList: [
       'content.collaborative-develop.title-1',
       'content.collaborative-develop.title-2',
@@ -76,7 +102,7 @@ export const contentList = [
     desc: 'content.collaborative-develop.introduction',
   },
   {
-    contentSvg: '@/img/home/test.png',
+    contentSvg: uiLibrary,
     tittleList: [
       'content.ui-library.title-1',
       'content.ui-library.title-2',
@@ -134,6 +160,7 @@ export const deploymentContent = {
 export const partnerContent = {
   tittleList: ['content.for-developer.title-2'],
   colorationTitle: [' Developers', '开发者'],
+  becomePartner: 'Become a partner',
   color: {
     colorDeg: '1272.97deg',
     colorStart: 'rgba(58, 19, 255, 0)',
@@ -142,7 +169,7 @@ export const partnerContent = {
   },
   partners: [
     {
-      logo: Huggingface, // todo
+      logo: Huggingface,
       name: 'Huggingface',
       desc: 'partnerList.partner-1',
       tag: 'AI',
@@ -150,7 +177,7 @@ export const partnerContent = {
       tagCategory: 'homepage_partner_hf_click',
     },
     {
-      logo: Supabase, // todo
+      logo: Supabase,
       name: 'Supabase',
       desc: 'partnerList.partner-2',
       tag: 'Database',
@@ -158,7 +185,7 @@ export const partnerContent = {
       tagCategory: 'homepage_partner_supabase_click',
     },
     {
-      logo: Pingcap, // todo
+      logo: Pingcap,
       name: 'Pingcap',
       desc: 'partnerList.partner-3',
       tag: 'Database',
@@ -166,12 +193,28 @@ export const partnerContent = {
       tagCategory: 'homepage_partner_pingcap_click',
     },
     {
-      logo: Appwrite, // todo
+      logo: Appwrite,
       name: 'Appwrite',
       desc: 'partnerList.partner-4',
       tag: 'API',
       href: 'https://appwrite.io/',
       tagCategory: 'homepage_partner_appwrite_click',
+    },
+    {
+      logo: Lightly,
+      name: 'Lightly',
+      desc: 'partnerList.partner-5',
+      tag: 'API',
+      href: 'https://www.lightly-dev.com/',
+      tagCategory: 'homepage_partner_lightly_click',
+    },
+    {
+      logo: APITable,
+      name: 'APITable',
+      desc: 'partnerList.partner-6',
+      tag: 'API',
+      href: 'https://apitable.com/',
+      tagCategory: 'homepage_partner_apitable_click',
     },
   ],
 }

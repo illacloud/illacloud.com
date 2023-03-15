@@ -12,7 +12,7 @@ import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import Script from 'next/script'
 
-const Home = ({ publicizeList }) => {
+const Home = () => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
@@ -102,13 +102,11 @@ const Home = ({ publicizeList }) => {
           githubStarts={starCounts}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
-          publicizeList={publicizeList}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
           githubStarts={starCounts}
           onSubscribe={() => setModalVisible(true)}
-          publicizeList={publicizeList}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} />
         <div className="w-20px lg:h-[500px] h-[40px]"></div>
@@ -132,25 +130,9 @@ const Home = ({ publicizeList }) => {
 }
 
 export const getStaticProps = async ({ locale }) => {
-  // const res = await fetch('https://api.github.com/repos/illacloud/illa-builder')
-  // const resJSON = await res.json()
-  // const starCounts = resJSON?.stargazers_count || 0
-  console.log('执行了')
-  let publicizeList
-  try {
-    const res = await fetch(
-      'https://strapi.illasoft.com/Official-website-messages',
-    )
-    const data = await res.json()
-    publicizeList = data
-  } catch {
-    publicizeList = []
-  }
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'navs'])),
-      publicizeList,
-      // starCounts,
     },
     revalidate: 10,
   }

@@ -131,8 +131,30 @@ export const Nav = (props) => {
                 {t('nav.blog')}
               </a>
             </Link>
-            <span
+            {/* <span
               className="px-[16px] text-center cursor-pointer"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_partner_apply_click',
+                  label: t('nav.bookDemo'),
+                })
+                // onChangeShow()
+              }}
+            >
+              {'Pricing'}
+            </span> */}
+          </div>
+        </div>
+        {hasButton && (
+          <motion.div
+            className={clsx(
+              'flex items-center content-between gap-[16px] absolute right-[40px]',
+            )}
+            style={{ opacity: opacity }}
+          >
+            <span
+              className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01 cursor-pointer"
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -144,29 +166,6 @@ export const Nav = (props) => {
             >
               {t('nav.bookDemo')}
             </span>
-          </div>
-        </div>
-        {hasButton && (
-          <motion.div
-            className={clsx(
-              'flex items-center content-between gap-[16px] absolute right-[40px]',
-            )}
-            style={{ opacity: opacity }}
-          >
-            <Link legacyBehavior href="/docs/illa-cli">
-              <a
-                className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_slide_menu_self_hosted_click',
-                    label: t('self-Hosted'),
-                  })
-                }}
-              >
-                {t('self-Hosted')}
-              </a>
-            </Link>
             <Link legacyBehavior href="https://cloud.illacloud.com/">
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"

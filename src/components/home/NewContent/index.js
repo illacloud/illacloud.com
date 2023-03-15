@@ -20,6 +20,7 @@ const ContentWrapper = ({ contentValue }) => {
     linkContent,
     contentSvg,
     extraLinkContent,
+    imgDesc,
   } = contentValue
   return (
     <div className={style.contentWrapper}>
@@ -60,8 +61,8 @@ const ContentWrapper = ({ contentValue }) => {
       </div>
       <div className="flex flex-col justify-center items-center w-[588px]">
         <img
-          src={require('@/img/home/test.png').default}
-          alt={t(linkContent)}
+          src={contentSvg}
+          alt={ imgDesc || t(linkContent)}
         />
       </div>
     </div>

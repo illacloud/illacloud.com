@@ -25,7 +25,7 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand, setMenuExpand] = useState(false)
-  const { setPlayMaskShow, githubStarts, onSubscribe, publicizeList } = props
+  const { setPlayMaskShow, githubStarts, onSubscribe } = props
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
@@ -34,7 +34,7 @@ export const MobileTitle = (props) => {
     <div className="w-full xl:hidden	">
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full gap-[32px]">
         <div className="flex flex-col items-center gap-[12px]">
-          <Publicize publicizeList={publicizeList} />
+          <Publicize />
           <h1 className="text-white-01 text-[40px] text-center font-bold leading-[48px]">
             {t('slogan-1')}
           </h1>

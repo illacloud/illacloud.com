@@ -88,8 +88,8 @@
   @apply xl:w-[1200px] xl:px-0;
 }
 .contentWrapper {
-  @apply flex flex-wrap justify-between items-center gap-[32px];
-  @apply xl:h-[100vh];
+  @apply flex flex-wrap justify-center items-center gap-[32px];
+  @apply xl:h-[100vh] xl:justify-between;
 }
 .contentDesc {
   @apply font-[400] leading-[20px] text-[14px];
@@ -117,6 +117,6 @@
   @apply xl:text-[14px] xl:leading-[17px];
 }
 .publicSlogan {
-  @apply text-[12px] leading-[16px] font-[500] uppercase mx-[16px];
+  @apply text-[12px] leading-[16px] font-[500] uppercase absolute top-[12px] right-[16px] z-[1];
   @apply xl:text-[16px] xl:leading-[21px] xl:mx-0;
 }

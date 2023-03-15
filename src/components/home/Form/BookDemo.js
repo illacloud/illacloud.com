@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { RemoveScroll } from 'react-remove-scroll'
 import { useTranslation } from 'next-i18next'
@@ -10,7 +10,6 @@ import { getBookForm } from '@/constants/larkFormJs2Json'
 
 export const BookDemo = ({ visible, onChangeShow }) => {
   const { t } = useTranslation('home')
-  const formRef = useRef()
   const {
     handleSubmit,
     register,
@@ -91,7 +90,6 @@ export const BookDemo = ({ visible, onChangeShow }) => {
               className="font-[500] text-[17px] leading-[22px] xl:text-[14px]"
               autoComplete="off"
               noValidate
-              ref={formRef}
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className={clsx('w-full', style.colInputItem)}>

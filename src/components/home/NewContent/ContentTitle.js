@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
-import clsx from 'clsx'
 import style from './index.module.css'
 
 export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
@@ -12,8 +11,8 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
       hasFilter ? 'drop-shadow(0px 2px 16px rgba(21, 15, 27, 0.16))' : 'none'
     }`,
   }
-  const firstHalf = useRef(tittleList.slice(0, 2)).current
-  const lastHalf = useRef(tittleList.slice(2)).current
+  const firstHalf = tittleList.slice(0, 2)
+  const lastHalf = tittleList.slice(2)
   return (
     <div className={style.contentTitle}>
       {firstHalf.some((key) => Boolean(t(key))) && (

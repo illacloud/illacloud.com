@@ -13,7 +13,7 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 
 export const Title = (props) => {
-  const { githubStarts, setPlayMaskShow, onSubscribe, publicizeList } = props
+  const { githubStarts, setPlayMaskShow, onSubscribe } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
@@ -140,7 +140,7 @@ export const Title = (props) => {
       >
         <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px]">
           <div className="flex flex-col items-center gap-[24px]">
-            <Publicize publicizeList={publicizeList} />
+            <Publicize />
             <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
               {t('slogan-1')}
             </h1>

@@ -8,7 +8,7 @@ import style from './index.module.css'
 
 export const Partner = ({ onChangeShow }) => {
   const { t } = useTranslation('home')
-  const { partners, tittleList, colorationTitle, color } = partnerContent
+  const { partners, tittleList, colorationTitle, color, becomePartner } = partnerContent
   return (
     <div
       className={clsx(
@@ -84,7 +84,7 @@ export const Partner = ({ onChangeShow }) => {
           </svg>
         </span>
         <span className="lg:leading-[24px] leading-[20px] font-[500px] text-[16px]">
-          Become a partner
+          {t(becomePartner)}
         </span>
       </div>
     </div>

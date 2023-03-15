@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { RemoveScroll } from 'react-remove-scroll'
 import { useTranslation } from 'next-i18next'
@@ -10,7 +10,6 @@ import { getPartnerForm } from '@/constants/larkFormJs2Json'
 
 const BecomePartner = ({ visible, onChangeShow }) => {
   const { t } = useTranslation('home')
-  const formRef = useRef()
   const {
     handleSubmit,
     register,
@@ -27,7 +26,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
     if (!disabled) return
     setDisabled(false)
     await fetch(
-      '/api/open-apis/bot/v2/hook/74a67728-cc16-49f1-879a-fbf4b842b823',
+      'https://open.larksuite.com/open-apis/bot/v2/hook/74a67728-cc16-49f1-879a-fbf4b842b823',
       {
         method: 'POST',
         body: data,
@@ -62,7 +61,13 @@ const BecomePartner = ({ visible, onChangeShow }) => {
     <div className={style.partner}>
       <RemoveScroll>
         <div className={style.partnerContainer}>
-          <div className="w-full">
+          <form
+            autoComplete="off"
+            noValidate
+            onSubmit={handleSubmit(onSubmit)}
+            className="font-[500] text-[17px] leading-[22px] xl:text-[14px]"
+          >
+            <div className="w-full">
             <img
               className="hidden xl:block absolute top-[24px] right-[24px] cursor-pointer"
               src={require('@/img/home/close.png').default}
@@ -80,14 +85,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
               />
             </p>
           </div>
-          <form
-            autoComplete="off"
-            noValidate
-            ref={formRef}
-            onSubmit={handleSubmit(onSubmit)}
-            className="font-[500] text-[17px] leading-[22px] xl:text-[14px]"
-          >
-            <div className={clsx('w-full', style.inputItem)}>
+            <div className={clsx(style.colInputItem, 'w-auto')}>
               <span>{t('partnerFrom.form.name.label')}</span>
               <div className={clsx('flex flex-row justify-end gap-[8px]')}>
                 <input
@@ -103,7 +101,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
               </div>
             </div>
             {partnerFormContent.map(({ label, name, required, pattern }) => (
-              <div key={label} className={clsx('w-full', style.inputItem)}>
+              <div key={label} className={clsx('w-full', style.colInputItem)}>
                 <div className="flex flex-row items-center gap-[4px]">
                   {required && (
                     <svg
@@ -138,7 +136,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
               <button
                 type="submit"
                 disabled={!disabled}
-                className={clsx(style.button, 'xl:w-[552px] w-[343px]')}
+                className={clsx(style.button, 'xl:w-[400px] w-[343px]')}
               >
                 {t('partnerFrom.submit')}
               </button>
