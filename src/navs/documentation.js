@@ -43,29 +43,50 @@ export const documentationNav = {
 export const ILLADocumentationNav = (locale) => {
   if (locale === 'zh-CN') {
     return {
-      '👋 Introduction': [pagesCN['about-illa'], pagesCN['connect-data-sources'], pagesCN['build-your-apps'], pagesCN['deploy-on-premise']],
-      '👷 Deploy ILLA': [
-        pagesCN['illa-cli'],
+      '👋 Introduction': [
+        pagesCN['about-illa'],
+        pagesCN['connect-data-sources'],
+        pagesCN['build-your-apps'],
+        pagesCN['deploy-on-premise'],
       ],
-      "🔨 Integrations": [pagesCN['integration-list'],pagesCN['supabase']],
-      "📲 Connect to Database and API": [pagesCN['connect-to-a-database'], pagesCN['connect-to-an-api'],pagesCN['api-authentication'], pagesCN['custom-api-authentication']],
-      "🌀 构建Apps": [
+      '👷 Deploy ILLA': [pagesCN['illa-cli']],
+      '🔨 Integrations': [pagesCN['integration-list'], pagesCN['supabase']],
+      '📲 Connect to Database and API': [
+        pagesCN['connect-to-a-database'],
+        pagesCN['connect-to-an-api'],
+        pagesCN['api-authentication'],
+        pagesCN['custom-api-authentication'],
+      ],
+      '🌀 构建Apps': [
         pagesCN['app-editor'],
         pagesCN['transformer'],
         pagesCN['event-handler'],
         pagesCN['javascript'],
       ],
-      '🧬 Assemble components': [pagesCN['table'], pagesCN['list'], pagesCN['chart'], pagesCN['container']],
-      '📎 Contributing Guide': [pagesCN['beyond-coding']]
+      '🧬 Assemble components': [
+        pagesCN['table'],
+        pagesCN['list'],
+        pagesCN['chart'],
+        pagesCN['container'],
+      ],
+      '📎 Contributing Guide': [pagesCN['beyond-coding']],
     }
   } else {
     return {
-      '👋 Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
-      '👷 Deploy ILLA': [
-        pagesUS['illa-cli'],
+      '👋 Introduction': [
+        pagesUS['about-illa'],
+        pagesUS['connect-data-sources'],
+        pagesUS['build-your-apps'],
+        pagesUS['deploy-on-premise'],
       ],
-      "🔨 Integrations": [pagesUS['integration-list'],pagesUS['supabase']],
-      "📲 Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
+      '👷 Deploy ILLA': [pagesUS['illa-cli']],
+      '🔨 Integrations': [pagesUS['integration-list'], pagesUS['supabase']],
+      '📲 Connect to Database and API': [
+        pagesUS['connect-to-a-database'],
+        pagesUS['connect-to-an-api'],
+        pagesUS['api-authentication'],
+        pagesUS['custom-api-authentication'],
+      ],
       '🌀 BUILD YOUR APPS': [
         pagesUS['app-editor'],
         pagesUS['transformer'],
@@ -73,16 +94,15 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['javascript'],
       ],
       '🧬 Assemble components': [
-        pagesUS['table'], 
-        pagesUS['list'], 
-        pagesUS['chart'], 
+        pagesUS['table'],
+        pagesUS['list'],
+        pagesUS['chart'],
         pagesUS['container'],
         pagesUS['page'],
         pagesUS['upload'],
-        pagesUS['text']
+        pagesUS['text'],
       ],
-      '📎 Contributing Guide': [pagesUS['beyond-coding']]
+      '📎 Contributing Guide': [pagesUS['beyond-coding']],
     }
-
   }
 }

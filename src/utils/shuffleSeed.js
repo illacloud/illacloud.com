@@ -29,7 +29,11 @@ import seedrandom from 'seedrandom'
 const shuffleSeed = {}
 
 const seedify = function (seed) {
-  if (/(number|string)/i.test(Object.prototype.toString.call(seed).match(/^\[object (.*)\]$/)[1]))
+  if (
+    /(number|string)/i.test(
+      Object.prototype.toString.call(seed).match(/^\[object (.*)\]$/)[1],
+    )
+  )
     return seed
   if (isNaN(seed))
     return Number(
@@ -38,7 +42,7 @@ const seedify = function (seed) {
         .map(function (x) {
           return x.charCodeAt(0)
         })
-        .join('')
+        .join(''),
     )
   return seed
 }

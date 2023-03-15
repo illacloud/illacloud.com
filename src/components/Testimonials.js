@@ -93,7 +93,8 @@ export function Testimonials() {
     function onScroll() {
       let bodyRect = document.body.getBoundingClientRect()
       let rect = ref.current.getBoundingClientRect()
-      let middle = rect.top + rect.height / 4 - bodyRect.top - window.innerHeight / 2
+      let middle =
+        rect.top + rect.height / 4 - bodyRect.top - window.innerHeight / 2
       let isHalfWay = window.scrollY > middle
       if (showCollapseButton && !isHalfWay) {
         setShowCollapseButton(false)
@@ -118,7 +119,7 @@ export function Testimonials() {
         ref={inViewRef}
         className={clsx(
           'grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3',
-          !expanded && 'max-h-[33rem] overflow-hidden'
+          !expanded && 'max-h-[33rem] overflow-hidden',
         )}
       >
         {testimonials.map((column, i) => (
@@ -127,11 +128,15 @@ export function Testimonials() {
             className={clsx(
               'space-y-8',
               i === 1 && 'hidden sm:block',
-              i === 2 && 'hidden lg:block'
+              i === 2 && 'hidden lg:block',
             )}
           >
             {column.map((testimonial) => (
-              <Testimonial key={testimonial.author.name} expanded={expanded} {...testimonial} />
+              <Testimonial
+                key={testimonial.author.name}
+                expanded={expanded}
+                {...testimonial}
+              />
             ))}
           </ul>
         ))}
@@ -143,7 +148,7 @@ export function Testimonials() {
             'relative bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 text-sm text-white font-semibold h-12 px-6 rounded-lg flex items-center dark:bg-slate-700 dark:hover:bg-slate-600',
             transition && 'transition-transform',
             expanded && !showCollapseButton && 'translate-y-4',
-            (!expanded || showCollapseButton) && 'pointer-events-auto'
+            (!expanded || showCollapseButton) && 'pointer-events-auto',
           )}
           onClick={() => setExpanded(!expanded)}
         >

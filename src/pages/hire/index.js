@@ -100,7 +100,10 @@ const renderJobItem = (item, responsibilities, requirements, pluses, cv) => {
         </a>
       </div>
       <div className="h-[48px] bg-[#654aec] flex items-center sm:block rounded-full">
-        <Link legacyBehavior href="https://www.linkedin.com/company/illacloud/jobs/">
+        <Link
+          legacyBehavior
+          href="https://www.linkedin.com/company/illacloud/jobs/"
+        >
           <a className=" text-[14px] sm:text-[28px] text-white ">
             <span className="cursor-pointer text-[16px] sm:text-[16px] px-[40px] ">
               {cv}

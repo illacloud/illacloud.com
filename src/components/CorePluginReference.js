@@ -4,12 +4,18 @@ const descriptions = {
   preflight: "Tailwind's base/reset styles",
   container: 'The `container` component',
   accessibility: 'The `sr-only` and `not-sr-only` utilities',
-  backgroundOpacity: 'The `background-color` opacity utilities like `bg-opacity-25`',
-  borderOpacity: 'The `border-color` opacity utilities like `border-opacity-25`',
-  divideColor: 'The between elements `border-color` utilities like `divide-slate-500`',
-  divideWidth: 'The between elements `border-width` utilities like `divide-x-2`',
-  placeholderColor: 'The placeholder `color` utilities like `placeholder-red-600`',
-  placeholderOpacity: 'The placeholder `color` opacity utilities like `placeholder-opacity-25`',
+  backgroundOpacity:
+    'The `background-color` opacity utilities like `bg-opacity-25`',
+  borderOpacity:
+    'The `border-color` opacity utilities like `border-opacity-25`',
+  divideColor:
+    'The between elements `border-color` utilities like `divide-slate-500`',
+  divideWidth:
+    'The between elements `border-width` utilities like `divide-x-2`',
+  placeholderColor:
+    'The placeholder `color` utilities like `placeholder-red-600`',
+  placeholderOpacity:
+    'The placeholder `color` opacity utilities like `placeholder-opacity-25`',
   space: 'The "space-between" utilities like `space-x-4`',
   transform: 'The `transform` utility (for enabling transform features)',
 }
@@ -38,14 +44,14 @@ export function CorePluginReference() {
                   {descriptions[plugin]
                     ?.split(/`([^`]+)`/)
                     .map((segment, i) =>
-                      i % 2 === 0 ? segment : <code key={i}>{segment}</code>
+                      i % 2 === 0 ? segment : <code key={i}>{segment}</code>,
                     ) || (
                     <>
                       The{' '}
                       <code>
                         {plugin.replace(
                           /([a-z])([A-Z])/g,
-                          (_m, p1, p2) => `${p1}-${p2.toLowerCase()}`
+                          (_m, p1, p2) => `${p1}-${p2.toLowerCase()}`,
                         )}
                       </code>{' '}
                       utilities like <code>{example}</code>

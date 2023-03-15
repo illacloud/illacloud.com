@@ -5,7 +5,9 @@ const fs = require('fs')
 
 const inDir = path.resolve(__dirname, '../src/fonts')
 const outDir = path.resolve(inDir, 'generated')
-const files = glob.sync(path.resolve(__dirname, '../src/fonts/*'), { nodir: true })
+const files = glob.sync(path.resolve(__dirname, '../src/fonts/*'), {
+  nodir: true,
+})
 
 const customizationDemo = [
   'AaBbCc',
@@ -65,13 +67,16 @@ Promise.all(
     exec(
       `${path.resolve(
         __dirname,
-        '../node_modules/.bin/glyphhanger'
+        '../node_modules/.bin/glyphhanger',
       )} --css --family="${font}" --whitelist="${subsets[font]
         .join('')
-        .replace(/(["$\\])/g, '\\$1')}" --formats=woff-zopfli,woff2 --subset=${font}.ttf`,
-      { cwd: inDir }
-    )
-  )
+        .replace(
+          /(["$\\])/g,
+          '\\$1',
+        )}" --formats=woff-zopfli,woff2 --subset=${font}.ttf`,
+      { cwd: inDir },
+    ),
+  ),
 ).then(() => {
   const generatedFiles = glob
     .sync(path.resolve(inDir, '*'), { nodir: true })
@@ -89,9 +94,18 @@ Promise.all(
         `.font {\n  font-family: ${family};\n}\n\n` +
           fs
             .readFileSync(file, 'utf8')
-            .replace(/}\s*$/, (match) => `${additionalSettings[family] ?? ''}${match}`)
+            .replace(
+              /}\s*$/,
+              (match) => `${additionalSettings[family] ?? ''}${match}`,
+            ),
       )
     }
-    fs.renameSync(file, path.resolve(outDir, path.basename(file).replace(/\.css$/, '.module.css')))
+    fs.renameSync(
+      file,
+      path.resolve(
+        outDir,
+        path.basename(file).replace(/\.css$/, '.module.css'),
+      ),
+    )
   })
 })

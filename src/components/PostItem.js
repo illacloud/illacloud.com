@@ -3,7 +3,14 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { formatDate } from '@/utils/formatDate'
 
-export default function PostItem({ title, category, slug, date, children, wide = false }) {
+export default function PostItem({
+  title,
+  category,
+  slug,
+  date,
+  children,
+  wide = false,
+}) {
   return (
     <article
       className={clsx('relative flex flex-col', {
@@ -30,10 +37,13 @@ export default function PostItem({ title, category, slug, date, children, wide =
           <dt className="sr-only">Date</dt>
           <dd
             className={clsx('text-sm leading-6 dark:text-slate-400', {
-              'lg:absolute lg:top-0 lg:right-full lg:mr-8 lg:whitespace-nowrap': wide,
+              'lg:absolute lg:top-0 lg:right-full lg:mr-8 lg:whitespace-nowrap':
+                wide,
             })}
           >
-            <time dateTime={date}>{formatDate(date, '{MMMM} {DD}, {YYYY}')}</time>
+            <time dateTime={date}>
+              {formatDate(date, '{MMMM} {DD}, {YYYY}')}
+            </time>
           </dd>
         </dl>
         <svg

@@ -1,0 +1,59 @@
+.inputItem {
+  @apply flex flex-col items-start justify-center gap-[16px] py-[8px] px-[16px];
+  @apply xl:py-[8px] xl:pl-[16px] xl:pr-[24px] xl:justify-end xl:items-center xl:flex-row xl:p-0;
+}
+.colInputItem {
+  @apply flex flex-col items-start  justify-center gap-[16px] py-[8px] px-[16px] leading-[22px] font-[500];
+  @apply xl:gap-[8px] xl:px-[32px];
+}
+.bookInput div div {
+  box-sizing: border-box !important;
+  height: 32px !important;
+  @apply py-[5px] px-[16px];
+}
+.input {
+  border: 1px solid #e5e6eb;
+  @apply py-[13px] px-[16px] bg-[#1F1F1F] rounded-[4px] h-[48px] box-border outline-none border-0;
+  @apply xl:py-[5px] xl:bg-[#FFFFFF] xl:rounded-[8px] xl:h-[32px] xl:border-[1px];
+}
+.button {
+  @apply box-border flex flex-row items-center  justify-center text-white h-[48px] py-[14px] px-[16px] font-[500] text-[16px] leading-[20px] rounded-[4px];
+  @apply bg-tech-purple-01 rounded-[4px] hover:bg-tech-purple-02 focus:bg-tech-purple-n-01;
+  @apply xl:py-[5px] xl:px-[16px] xl:font-[400] xl:text-[14px] xl:leading-[22px] xl:h-[32px] xl:rounded-[8px];
+}
+.button:disabled {
+  @apply bg-tech-purple-03;
+}
+.partner {
+  @apply fixed top-0 bottom-0 w-full z-50;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+.partnerContainer {
+  @apply flex flex-col justify-center text-white w-full h-screen bg-black z-[51];
+  @apply xl:text-[#1D2129] xl:w-[600px] xl:h-[388px] xl:absolute xl:rounded-[8px] xl:bg-white xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:m-auto;
+}
+.partnerTitle {
+  @apply h-[64px] font-[700] text-[24px] leading-[26px]  flex items-center justify-between py-[17.5px] px-[20px];
+  @apply xl:h-[68px] xl:font-[500] xl:text-[20px] xl:leading-[28px] xl:text-center xl:justify-center xl:py-0 xl:px-0;
+}
+.book {
+  @apply fixed top-0 bottom-0 w-full z-50;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+.bookContainer {
+  @apply flex flex-col justify-center items-start text-white w-full h-screen bg-black z-[51] overflow-y-scroll;
+  @apply xl:text-[#1D2129] flex-row xl:w-[744px] xl:h-[710px] xl:absolute xl:rounded-[16px] xl:overflow-hidden xl:bg-white xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:m-auto;
+  /* @apply flex flex-row items-start text-[#1D2129] w-[744px] overflow-hidden absolute rounded-[16px] bg-white  z-[51] left-[50%] top-[50%]; */
+}
+.bookTitle {
+  @apply h-[64px] font-[700] text-[24px] leading-[26px]  flex items-center justify-between py-[17.5px] px-[20px];
+  @apply xl:h-[68px] xl:font-[500] xl:text-[20px] xl:leading-[28px] xl:text-center xl:justify-center xl:py-0 xl:pl-[32px];
+  /* @apply h-[68px] font-[500] text-[20px] leading-[28px] flex items-center pl-[32px]; */
+  /* @apply xl:h-[68px] xl:font-[500] xl:text-[20px] xl:leading-[28px] xl:text-center xl:py-0 xl:pl-[32px] xl:bg-white; */
+}
+.mdSubmit {
+  @apply w-full flex justify-center items-center py-[36px] px-0 gap-[4px];
+  @apply xl:p-[24px] xl:gap-[8px];
+}

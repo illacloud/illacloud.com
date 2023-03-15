@@ -163,7 +163,11 @@ const themes = {
       originalWidth: 1200,
       originalHeight: 2128,
     },
-    contentContainer: ['p-6 pt-0 -mx-1.5 -mb-1.5', 'p-6 pt-0 -mx-1.5 -mb-1.5', 'p-6 pt-0 -my-1.5'],
+    contentContainer: [
+      'p-6 pt-0 -mx-1.5 -mb-1.5',
+      'p-6 pt-0 -mx-1.5 -mb-1.5',
+      'p-6 pt-0 -my-1.5',
+    ],
     header: 'py-6',
     heading: 'w-full flex-none mb-3',
     stock: 'flex-none ml-auto',
@@ -286,7 +290,9 @@ export function HtmlZenGarden({ theme }) {
   const updateWidth = useCallback(
     debounce(() => {
       if (!containerRef.current) return
-      const newWidth = Math.round(containerRef.current.getBoundingClientRect().width)
+      const newWidth = Math.round(
+        containerRef.current.getBoundingClientRect().width,
+      )
       const newCol =
         window.innerWidth < 640
           ? 'sm'
@@ -297,7 +303,7 @@ export function HtmlZenGarden({ theme }) {
       if (newWidth !== containerWidth || newCol !== col || newAbove !== above) {
         setContainerState({ width: newWidth, col: newCol, above: newAbove })
       }
-    }, 300)
+    }, 300),
   )
 
   useEffect(() => {
@@ -311,7 +317,9 @@ export function HtmlZenGarden({ theme }) {
 
   const getThemeValue = (key, defaultValue) => {
     const value = dlv(themes[theme], key, defaultValue)
-    return Array.isArray(value) ? value[col === 'sm' ? 0 : col === 'lg' ? 1 : 2] : value
+    return Array.isArray(value)
+      ? value[col === 'sm' ? 0 : col === 'lg' ? 1 : 2]
+      : value
   }
 
   const getImageRadius = (key) => {
@@ -357,9 +365,9 @@ export function HtmlZenGarden({ theme }) {
           >
             <motion.div
               layout
-              className={`bg-white flex w-full ${col ? 'flex-col' : ''} ${getThemeValue(
-                'container'
-              )}`}
+              className={`bg-white flex w-full ${
+                col ? 'flex-col' : ''
+              } ${getThemeValue('container')}`}
               initial={false}
               animate={{ borderRadius: getThemeValue('wrapper.borderRadius') }}
             >
@@ -368,10 +376,13 @@ export function HtmlZenGarden({ theme }) {
                   layout
                   className={clsx(
                     'relative z-20 overflow-hidden flex-none',
-                    getThemeValue('image.className')
+                    getThemeValue('image.className'),
                   )}
                   style={{
-                    width: themes[theme].image.width({ containerWidth, col }, true),
+                    width: themes[theme].image.width(
+                      { containerWidth, col },
+                      true,
+                    ),
                     height: themes[theme].image.height({ containerWidth, col }),
                   }}
                   initial={false}
@@ -388,10 +399,16 @@ export function HtmlZenGarden({ theme }) {
                         themes[theme].image.width({ containerWidth, col }),
                         themes[theme].image.height({ containerWidth, col }),
                         themes[name].image.originalWidth,
-                        themes[name].image.originalHeight
+                        themes[name].image.originalHeight,
                       )}
                       initial={i === 0 ? 'visible' : 'hidden'}
-                      animate={theme === name ? 'visible' : prevTheme === name ? 'prev' : 'hidden'}
+                      animate={
+                        theme === name
+                          ? 'visible'
+                          : prevTheme === name
+                          ? 'prev'
+                          : 'hidden'
+                      }
                       variants={imageAnimationVariants}
                     />
                   ))}
@@ -400,7 +417,9 @@ export function HtmlZenGarden({ theme }) {
                   layout
                   className={clsx(
                     'absolute z-10 bg-teal-400',
-                    theme === 'Brutalist' ? 'top-1 left-1 -right-1 -bottom-1' : 'inset-px'
+                    theme === 'Brutalist'
+                      ? 'top-1 left-1 -right-1 -bottom-1'
+                      : 'inset-px',
                   )}
                   initial={false}
                   animate={getImageRadius(theme)}
@@ -408,7 +427,7 @@ export function HtmlZenGarden({ theme }) {
               </div>
               <div
                 className={`self-start flex-auto flex flex-wrap items-baseline ${getThemeValue(
-                  'contentContainer'
+                  'contentContainer',
                 )}`}
               >
                 <div
@@ -427,20 +446,22 @@ export function HtmlZenGarden({ theme }) {
                       layout
                       className={clsx(
                         'inline-flex text-gray-900 text-lg font-semibold',
-                        theme === 'Simple' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Simple' ? '' : 'absolute bottom-0 left-0',
                       )}
                       initial={false}
                       animate={{ opacity: theme === 'Simple' ? 1 : 0 }}
                     >
-                      <span className="hidden sm:inline whitespace-pre">Classic </span>Utility
-                      Jacket
+                      <span className="hidden sm:inline whitespace-pre">
+                        Classic{' '}
+                      </span>
+                      Utility Jacket
                     </motion.h2>
                     <motion.h2
                       layout
                       className={clsx(
                         'inline-flex text-gray-900 text-base font-medium',
                         pallyVariable,
-                        theme === 'Playful' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Playful' ? '' : 'absolute bottom-0 left-0',
                       )}
                       initial={false}
                       animate={{ opacity: theme === 'Playful' ? 1 : 0 }}
@@ -452,7 +473,7 @@ export function HtmlZenGarden({ theme }) {
                       className={clsx(
                         'inline-flex text-gray-900 text-2xl leading-none',
                         sourceSerifProRegular,
-                        theme === 'Elegant' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Elegant' ? '' : 'absolute bottom-0 left-0',
                       )}
                       initial={false}
                       animate={{ opacity: theme === 'Elegant' ? 1 : 0 }}
@@ -464,7 +485,7 @@ export function HtmlZenGarden({ theme }) {
                       className={clsx(
                         'inline-flex text-white text-2xl',
                         ibmPlexMonoSemiBold,
-                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0',
                       )}
                       initial={false}
                       animate={{ opacity: theme === 'Brutalist' ? 1 : 0 }}
@@ -497,7 +518,7 @@ export function HtmlZenGarden({ theme }) {
                       className={clsx(
                         'inline-flex text-lg text-gray-500 font-medium',
                         synonymVariable,
-                        theme === 'Elegant' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Elegant' ? '' : 'absolute bottom-0 left-0',
                       )}
                       layout
                       initial={false}
@@ -509,7 +530,7 @@ export function HtmlZenGarden({ theme }) {
                       className={clsx(
                         'inline-flex text-white text-base',
                         ibmPlexMonoSemiBold,
-                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0',
                       )}
                       layout
                       initial={false}
@@ -518,7 +539,12 @@ export function HtmlZenGarden({ theme }) {
                       $89.00
                     </motion.div>
                   </div>
-                  <div className={clsx('relative whitespace-nowrap', themes[theme].stock)}>
+                  <div
+                    className={clsx(
+                      'relative whitespace-nowrap',
+                      themes[theme].stock,
+                    )}
+                  >
                     <motion.div
                       layout
                       initial={false}
@@ -556,7 +582,7 @@ export function HtmlZenGarden({ theme }) {
                       className={clsx(
                         'inline-flex text-teal-400 text-base uppercase',
                         ibmPlexMonoRegular,
-                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0'
+                        theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0',
                       )}
                     >
                       In stock
@@ -566,10 +592,12 @@ export function HtmlZenGarden({ theme }) {
                 <div
                   className={clsx(
                     'w-full flex-none flex items-center',
-                    getThemeValue('size.container')
+                    getThemeValue('size.container'),
                   )}
                 >
-                  <motion.ul className={clsx('flex text-sm', themes[theme].size.list)}>
+                  <motion.ul
+                    className={clsx('flex text-sm', themes[theme].size.list)}
+                  >
                     {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
                       <motion.li
                         layout
@@ -595,10 +623,11 @@ export function HtmlZenGarden({ theme }) {
                               'absolute bg-teal-400',
                               theme === 'Brutalist'
                                 ? 'top-0.5 left-0.5 -right-0.5 -bottom-0.5'
-                                : 'inset-px'
+                                : 'inset-px',
                             )}
                             animate={{
-                              borderRadius: themes[theme].size.button.borderRadius,
+                              borderRadius:
+                                themes[theme].size.button.borderRadius,
                             }}
                           />
                         )}
@@ -607,17 +636,21 @@ export function HtmlZenGarden({ theme }) {
                           initial={false}
                           className="absolute inset-0 border-2"
                           animate={{
-                            borderRadius: themes[theme].size.button.borderRadius,
+                            borderRadius:
+                              themes[theme].size.button.borderRadius,
                             borderColor:
                               (size === 'XS'
                                 ? themes[theme].size.button.activeBorderColor
                                 : themes[theme].size.button.borderColor) ||
                               (size === 'XS'
-                                ? themes[theme].size.button.activeBackgroundColor
+                                ? themes[theme].size.button
+                                    .activeBackgroundColor
                                 : '#fff'),
                             ...(size === 'XS'
                               ? {
-                                  backgroundColor: themes[theme].size.button.activeBackgroundColor,
+                                  backgroundColor:
+                                    themes[theme].size.button
+                                      .activeBackgroundColor,
                                 }
                               : {}),
                           }}
@@ -653,7 +686,7 @@ export function HtmlZenGarden({ theme }) {
                   layout
                   className={clsx(
                     'w-full h-px bg-gray-200',
-                    theme === 'Brutalist' ? '-mt-px' : 'my-6'
+                    theme === 'Brutalist' ? '-mt-px' : 'my-6',
                   )}
                   initial={false}
                   animate={{ opacity: theme === 'Brutalist' ? 0 : 1 }}
@@ -662,17 +695,23 @@ export function HtmlZenGarden({ theme }) {
                   className="flex-none w-full grid gap-4 text-center"
                   style={{ gridTemplateColumns: getThemeValue('button.grid') }}
                 >
-                  <div className={`relative ${getThemeValue('button.primary.class')}`}>
+                  <div
+                    className={`relative ${getThemeValue(
+                      'button.primary.class',
+                    )}`}
+                  >
                     <motion.div
                       layout
                       className={clsx(
                         'relative text-sm border-2 cursor-pointer flex items-center justify-center whitespace-nowrap',
-                        themes[theme].button.primary.className || themes[theme].button.className
+                        themes[theme].button.primary.className ||
+                          themes[theme].button.className,
                       )}
                       style={{ height: getThemeValue('button.height') }}
                       initial={false}
                       animate={{
-                        backgroundColor: themes[theme].button.primary.backgroundColor,
+                        backgroundColor:
+                          themes[theme].button.primary.backgroundColor,
                         borderColor:
                           themes[theme].button.primary.borderColor ||
                           themes[theme].button.primary.backgroundColor,
@@ -685,7 +724,7 @@ export function HtmlZenGarden({ theme }) {
                           className={clsx(
                             'flex items-center justify-center',
                             themes[name].button.primary.text,
-                            theme === name ? '' : 'absolute'
+                            theme === name ? '' : 'absolute',
                           )}
                           initial={false}
                           animate={{ opacity: theme === name ? 1 : 0 }}
@@ -700,12 +739,14 @@ export function HtmlZenGarden({ theme }) {
                       layout
                       className={clsx(
                         'relative text-sm border cursor-pointer flex items-center justify-center whitespace-nowrap',
-                        themes[theme].button.secondary.className || themes[theme].button.className
+                        themes[theme].button.secondary.className ||
+                          themes[theme].button.className,
                       )}
                       style={{ height: getThemeValue('button.height') }}
                       initial={false}
                       animate={{
-                        backgroundColor: themes[theme].button.secondary.backgroundColor,
+                        backgroundColor:
+                          themes[theme].button.secondary.backgroundColor,
                         borderColor:
                           themes[theme].button.secondary.borderColor ||
                           themes[theme].button.secondary.backgroundColor,
@@ -718,7 +759,7 @@ export function HtmlZenGarden({ theme }) {
                           className={clsx(
                             'w-full flex-none flex items-center justify-center',
                             themes[name].button.secondary.text,
-                            theme === name ? '' : 'absolute'
+                            theme === name ? '' : 'absolute',
                           )}
                           initial={false}
                           animate={{ opacity: theme === name ? 1 : 0 }}
@@ -729,7 +770,10 @@ export function HtmlZenGarden({ theme }) {
                     </motion.div>
                   </div>
                   <div
-                    className={clsx('flex', themes[theme].button.like.container || 'justify-end')}
+                    className={clsx(
+                      'flex',
+                      themes[theme].button.like.container || 'justify-end',
+                    )}
                   >
                     <motion.div
                       layout
@@ -737,7 +781,10 @@ export function HtmlZenGarden({ theme }) {
                         themes[theme].button.like.className || 'justify-center'
                       }`}
                       style={{
-                        width: getThemeValue('button.width', getThemeValue('button.height')),
+                        width: getThemeValue(
+                          'button.width',
+                          getThemeValue('button.height'),
+                        ),
                         height: getThemeValue('button.height'),
                       }}
                       initial={false}
@@ -770,20 +817,28 @@ export function HtmlZenGarden({ theme }) {
                     </motion.div>
                   </div>
                 </div>
-                <div className={`relative w-full ${getThemeValue('smallprint.container') || ''}`}>
+                <div
+                  className={`relative w-full ${
+                    getThemeValue('smallprint.container') || ''
+                  }`}
+                >
                   {Object.keys(themes).map((name) => (
                     <motion.p
                       layout
                       key={name}
-                      className={`inline-flex align-top ${themes[name].smallprint.inner || ''} ${
-                        theme === name ? '' : 'absolute bottom-0 left-0'
-                      }`}
+                      className={`inline-flex align-top ${
+                        themes[name].smallprint.inner || ''
+                      } ${theme === name ? '' : 'absolute bottom-0 left-0'}`}
                       initial={false}
                       animate={{ opacity: theme === name ? 1 : 0 }}
                     >
                       <span>
                         Free shipping on all
-                        <span className="hidden sm:inline"> continental US</span> orders.
+                        <span className="hidden sm:inline">
+                          {' '}
+                          continental US
+                        </span>{' '}
+                        orders.
                       </span>
                     </motion.p>
                   ))}

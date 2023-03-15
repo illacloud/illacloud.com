@@ -152,7 +152,7 @@ export function Footer({ noHome = false }) {
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-[#787E85]"
+                    className="xs:mb-[12px] text-[#787E85] flex flex-row items-center gap-[8px]"
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',
@@ -161,7 +161,8 @@ export function Footer({ noHome = false }) {
                       })
                     }}
                   >
-                    {item.icon}
+                    <span>{item.icon}</span>
+                    <span className="hidden xl:block">{item.label}</span>
                   </a>
                 </Link>
               ))}

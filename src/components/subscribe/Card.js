@@ -12,13 +12,13 @@ const CommunityLink = () => {
 
   return (
     <Fragment>
-      <div className="text-[12px] text-[#a9aeb8] mb-[12px]">
-        {t('contact')}
-      </div>
+      <div className="text-[12px] text-[#a9aeb8] mb-[12px]">{t('contact')}</div>
       <div className="flex">
         {Community?.map((item, index) => (
           <Link legacyBehavior key={item.href} href={item.href}>
-            <a className="cursor-pointer mx-[10px] text-[#787E85]">{item.icon}</a>
+            <a className="cursor-pointer mx-[10px] text-[#787E85]">
+              {item.icon}
+            </a>
           </Link>
         ))}
       </div>
@@ -37,7 +37,9 @@ export const SubscribeCard = ({ failed }) => {
             <SubscribeFailedCover className={styles.pcMode} />
             <img
               className={styles.mobileMode}
-              src={require('@/img/subscribe/subscribe-failed-cover.png').default}
+              src={
+                require('@/img/subscribe/subscribe-failed-cover.png').default
+              }
               alt=""
             />
           </div>
@@ -69,7 +71,9 @@ export const SubscribeCard = ({ failed }) => {
               alt=""
             />
             <div className={styles.title}>{t('subscribed.title')}</div>
-            <div className={styles.description}>{t('subscribed.description')}</div>
+            <div className={styles.description}>
+              {t('subscribed.description')}
+            </div>
             <CommunityLink />
           </div>
         </div>

@@ -52,9 +52,7 @@ export const Nav = ({
           )}
         >
           <Link legacyBehavior href="/">
-            <a>
-              {navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}
-            </a>
+            <a>{navColorChange ? <ILLA_LOGO_WHITE /> : <ILLA_LOGO />}</a>
           </Link>
           <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
             <a>

@@ -11,10 +11,12 @@ export function ColorPaletteReference({ colors }) {
 
         let palette =
           typeof value === 'string'
-            ? [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map((variant) => ({
-                name: variant,
-                value: dlv(colorPalette, [value, variant]),
-              }))
+            ? [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map(
+                (variant) => ({
+                  name: variant,
+                  value: dlv(colorPalette, [value, variant]),
+                }),
+              )
             : Object.keys(value).map((name) => ({ name, value: value[name] }))
 
         return (
@@ -45,7 +47,9 @@ export function ColorPaletteReference({ colors }) {
                           {name}
                         </div>
                         <div className="text-slate-500 font-mono lowercase dark:text-slate-400">
-                          {value.replace(/^#[a-f0-9]+/gi, (m) => m.toUpperCase())}
+                          {value.replace(/^#[a-f0-9]+/gi, (m) =>
+                            m.toUpperCase(),
+                          )}
                         </div>
                       </div>
                     </div>

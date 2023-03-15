@@ -71,12 +71,7 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
         }}
       >
         {options.map((option) => (
-          <a
-            href={option.value}
-
-            className="w-full"
-            key={option.label}
-          >
+          <a href={option.value} className="w-full" key={option.label}>
             <div
               className={clsx(
                 'h-[40px] leading-[40px] text-center w-full hover:bg-white-09',

@@ -30,7 +30,7 @@ const communityOptions = [
   },
 ]
 
-export const Menu = ({ menuExpand, closeMenu }) => {
+export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [productListExpand, setProductListExpand] = useState(false)
   const [languageListExpand, setLanguageListExpand] = useState(false)
   const [communityListExpand, setCommunityListExpand] = useState(false)
@@ -190,6 +190,23 @@ export const Menu = ({ menuExpand, closeMenu }) => {
           {t('nav.blog')}
         </a>
       </Link>
+      {
+        // todo: 补充移动端
+      }
+      <span
+        onClick={() => {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_partner_apply_click',
+            label: t('nav.bookDemo'),
+          })
+          closeMenu && closeMenu()
+          onChangeShow()
+        }}
+        className="w-full cursor-pointer flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
+      >
+        {t('nav.bookDemo')}
+      </span>
 
       <span
         onClick={() => {
@@ -205,7 +222,8 @@ export const Menu = ({ menuExpand, closeMenu }) => {
         {router.locale === 'en-US' ? 'English' : '简体中文'} <SelectIcon />
       </span>
       <div>
-        <Link legacyBehavior
+        <Link
+          legacyBehavior
           href={router.pathname}
           locale={router.locale === 'en-US' ? 'zh-CN' : 'en-US'}
         >

@@ -21,6 +21,7 @@ export const Nav = (props) => {
     onSubscribe,
     whiteTheme = false,
     hasButton = true,
+    onChangeShow,
   } = props
   const { t } = useTranslation('home')
 
@@ -130,6 +131,19 @@ export const Nav = (props) => {
                 {t('nav.blog')}
               </a>
             </Link>
+            <span
+              className="px-[16px] text-center cursor-pointer"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_partner_apply_click',
+                  label: t('nav.bookDemo'),
+                })
+                onChangeShow()
+              }}
+            >
+              {t('nav.bookDemo')}
+            </span>
           </div>
         </div>
         {hasButton && (
@@ -198,11 +212,12 @@ export const Nav = (props) => {
       </div>
       <Menu
         menuExpand={menuExpand}
+        onChangeShow={onChangeShow}
         closeMenu={() => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_fold_mob_click',
-            value: 'fold'
+            value: 'fold',
           })
           setMenuExpand(false)
         }}

@@ -13,7 +13,9 @@ import { useState } from 'react'
  * @param {import('clsx').ClassValue} props.className
  */
 function TabAdornment({ className }) {
-  return <div className={clsx('pointer-events-none absolute inset-0', className)} />
+  return (
+    <div className={clsx('pointer-events-none absolute inset-0', className)} />
+  )
 }
 
 /**
@@ -47,14 +49,22 @@ function TabItem({ children, selectedIndex, myIndex, marker }) {
     <Tab
       className={clsx(
         'flex items-center relative z-10 overflow-hidden px-4 py-1',
-        isSelected ? 'text-sky-300' : 'text-slate-400'
+        isSelected ? 'text-sky-300' : 'text-slate-400',
       )}
     >
       <span className="z-10">{children}</span>
 
       {marker === 'close' && (
-        <svg viewBox="0 0 4 4" className="ml-2.5 flex-none w-1 h-1 text-slate-500 overflow-visible">
-          <path d="M-1 -1L5 5M5 -1L-1 5" fill="none" stroke="currentColor" strokeLinecap="round" />
+        <svg
+          viewBox="0 0 4 4"
+          className="ml-2.5 flex-none w-1 h-1 text-slate-500 overflow-visible"
+        >
+          <path
+            d="M-1 -1L5 5M5 -1L-1 5"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+          />
         </svg>
       )}
 
@@ -68,7 +78,7 @@ function TabItem({ children, selectedIndex, myIndex, marker }) {
           className={clsx(
             'bg-slate-700/50 border-y border-slate-500/30',
             edges.leading === 'capped' && 'border-l rounded-tl',
-            edges.trailing === 'capped' && 'border-r rounded-tr'
+            edges.trailing === 'capped' && 'border-r rounded-tr',
           )}
         />
       )}
@@ -102,7 +112,11 @@ export function SnippetGroup({ children, actions }) {
       <div className="flex">
         <Tab.List className="flex text-slate-400 text-xs leading-6 overflow-hidden rounded-tl-xl pt-2">
           {children.map((child, tabIndex) => (
-            <TabItem key={child.props.filename} myIndex={tabIndex} selectedIndex={selectedIndex}>
+            <TabItem
+              key={child.props.filename}
+              myIndex={tabIndex}
+              selectedIndex={selectedIndex}
+            >
               {child.props.filename}
             </TabItem>
           ))}
@@ -111,12 +125,16 @@ export function SnippetGroup({ children, actions }) {
           <div
             className={clsx(
               'flex-auto flex justify-end bg-slate-700/50 border-y border-slate-500/30 pr-4',
-              selectedIndex === children.length - 1 ? 'rounded-tl border-l' : ''
+              selectedIndex === children.length - 1
+                ? 'rounded-tl border-l'
+                : '',
             )}
           />
         </div>
         {actions ? (
-          <div className="absolute top-2 right-4 h-8 flex">{actions({ selectedIndex })}</div>
+          <div className="absolute top-2 right-4 h-8 flex">
+            {actions({ selectedIndex })}
+          </div>
         ) : null}
       </div>
       <Tab.Panels className="flex overflow-auto">

@@ -25,7 +25,7 @@ export function Steps({ steps, code, level = 2 }) {
             className={clsx(
               'relative pl-10 xl:grid grid-cols-5 gap-16 before:content-[counter(step)] before:absolute before:left-0 before:flex before:items-center before:justify-center before:w-[calc(1.375rem+1px)] before:h-[calc(1.375rem+1px)] before:text-[0.625rem] before:font-bold before:text-slate-700 before:rounded-md before:shadow-sm before:ring-1 before:ring-slate-900/5 dark:before:bg-slate-700 dark:before:text-slate-200 dark:before:ring-0 dark:before:shadow-none dark:before:highlight-white/5',
               index !== steps.length - 1 &&
-                'pb-8 after:absolute after:top-[calc(1.875rem+1px)] after:bottom-0 after:left-[0.6875rem] after:w-px after:bg-slate-200 dark:after:bg-slate-200/5'
+                'pb-8 after:absolute after:top-[calc(1.875rem+1px)] after:bottom-0 after:left-[0.6875rem] after:w-px after:bg-slate-200 dark:after:bg-slate-200/5',
             )}
             style={{ counterIncrement: 'step' }}
           >
@@ -37,7 +37,9 @@ export function Steps({ steps, code, level = 2 }) {
                 <step.body />
               </div>
             </div>
-            {step.code && <Snippet code={step.code} highlightedCode={code[index]} />}
+            {step.code && (
+              <Snippet code={step.code} highlightedCode={code[index]} />
+            )}
           </li>
         ))}
       </ol>
@@ -68,9 +70,11 @@ function CopyButton({ code }) {
           'text-sky-400': state === 'copied',
         })}
         onClick={() => {
-          navigator.clipboard.writeText(redent(code.replace(/^[+>-]/gm, ' '))).then(() => {
-            setState({ state: 'copied', i: i + 1 })
-          })
+          navigator.clipboard
+            .writeText(redent(code.replace(/^[+>-]/gm, ' ')))
+            .then(() => {
+              setState({ state: 'copied', i: i + 1 })
+            })
         }}
       >
         <svg
@@ -123,7 +127,7 @@ function Code({ code, lang, pad }) {
     <pre
       className={clsx(
         'text-sm leading-6 text-slate-50 flex ligatures-none',
-        pad && 'overflow-auto'
+        pad && 'overflow-auto',
       )}
     >
       <code
@@ -149,7 +153,9 @@ function Snippet({ code, highlightedCode }) {
     return (
       <div className="col-span-3">
         <SnippetGroup
-          actions={({ selectedIndex }) => <CopyButton code={code[selectedIndex].code} />}
+          actions={({ selectedIndex }) => (
+            <CopyButton code={code[selectedIndex].code} />
+          )}
         >
           {code.map(({ name, lang }, index) => (
             <Editor key={name} filename={name}>
@@ -183,7 +189,9 @@ function TabBar({ name, children }) {
         <div className="flex-auto -mr-px bg-slate-700/50 border border-slate-500/30 rounded-tl" />
       </div>
       {children && (
-        <div className="absolute top-2 right-0 h-8 flex items-center pr-4">{children}</div>
+        <div className="absolute top-2 right-0 h-8 flex items-center pr-4">
+          {children}
+        </div>
       )}
     </div>
   )

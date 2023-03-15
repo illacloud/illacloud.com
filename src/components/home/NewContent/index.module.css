@@ -1,0 +1,122 @@
+.partner::-webkit-scrollbar {
+  display: none;
+}
+.partner {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  @apply w-full flex flex-row items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
+}
+.rowCenter {
+  @apply flex flex-row items-center  justify-center;
+}
+.colCenter {
+  @apply flex flex-col items-center  justify-center;
+}
+.partnerCard {
+  @apply flex flex-col justify-between items-center flex-shrink-0 gap-[12px] py-[20px] px-[16px] rounded-[8px] w-[144px] h-[204px] relative overflow-hidden z-0;
+  @apply xl:w-[288px] xl:gap-[24px] xl:py-[40px] xl:px-[32px] xl:rounded-[16px] xl:h-[376px];
+  background: linear-gradient(
+    180deg,
+    rgba(108, 56, 255, 0.2) 0%,
+    rgba(0, 56, 255, 0) 100%
+  );
+}
+.partnerCard::before {
+  @apply absolute left-0 top-0 bottom-0 right-0 opacity-0 z-[-1];
+  content: '';
+  background: linear-gradient(180deg, #6c38ff 0%, rgba(0, 56, 255, 0) 100%);
+  transition: opacity 200ms ease-in-out;
+}
+.partnerCard:hover::before {
+  opacity: 1;
+}
+.partnerName {
+  @apply font-[700] text-[14px] leading-[17px];
+  @apply xl:text-[24px] xl:leading-[28px];
+}
+.partnerDesc {
+  @apply font-[400] text-[9px] leading-[15px];
+  @apply xl:text-[16px] xl:leading-[24px];
+}
+.partnerTag {
+  @apply font-[500] text-[9px] leading-[12px] flex flex-row items-center justify-center gap-[4px] font-[500]  text-[9px] leading-[12px] py-[2px] px-[10px] rounded-[4px];
+  @apply xl:rounded-[8px] xl:py-[4px] xl:px-[20px] xl:text-[12px] xl:leading-[20px] xl:gap-[8px];
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.becomePartner {
+  @apply rounded-[22px] gap-[8px] py-[8px] px-[12px] bg-tech-purple-01 cursor-pointer;
+  @apply xl:px-[24] xl:gap-[8px] xl:rounded-[20px];
+}
+.deployment {
+  @apply w-full flex flex-col justify-center items-start xl:h-[100vh] xl:pt-[24px] gap-[32px];
+}
+.deploymentDesc {
+  @apply font-[400] leading-[20px] text-[14px];
+  @apply xl:leading-[19px] xl:text-[16px];
+}
+.deploymentItem {
+  @apply flex flex-row rounded-[8px] justify-between items-center p-[16px] pr-[40px];
+  @apply xl:rounded-[16px] xl:px-[32px] xl:py-[40px];
+  background: linear-gradient(
+    180deg,
+    rgba(108, 56, 255, 0.16) 0%,
+    rgba(0, 56, 255, 0) 100%
+  );
+}
+.deploymentItemTitle {
+  @apply font-[700] text-[16px] leading-[20px];
+  @apply xl:text-[24px] xl:leading-[28px];
+}
+.deploymentItemDesc {
+  @apply font-[400] text-[12px] leading-[32px];
+  @apply xl:text-[16px] xl:leading-[24px];
+}
+.deploymentLink {
+  @apply hidden justify-center items-center w-[40px] h-[40px] border-solid border-white border-[1px] rounded-[20px];
+  @apply xl:flex;
+}
+.contentTitle {
+  @apply flex flex-col items-start  justify-start font-[700] gap-[4px] leading-[29px] text-[24px];
+  @apply xl:gap-[8px] xl:leading-[58px] xl:text-[48px];
+}
+.contentColorTitle {
+  @apply py-[4px] px-[12px] leading-[28px] rounded-[32px];
+  @apply xl:py-[8px] xl:px-[24px] xl:leading-[56px] xl:rounded-[32px];
+}
+.content {
+  @apply w-full mx-auto rounded-b-[40px] text-white bg-black pt-[40px] px-[24px] flex flex-col gap-[60px];
+  @apply xl:w-[1200px] xl:px-0;
+}
+.contentWrapper {
+  @apply flex flex-wrap justify-between items-center gap-[32px];
+  @apply xl:h-[100vh];
+}
+.contentDesc {
+  @apply font-[400] leading-[20px] text-[14px];
+  @apply xl:leading-[19px] xl:text-[16px];
+}
+.contentTagDesc {
+  @apply flex flex-row justify-center items-center py-[4px] px-[20px] gap-[8px] text-black rounded-[8px];
+}
+.contentLink {
+  @apply underline font-[400] text-[12px] leading-[16px];
+  @apply xl:font-[500] xl:text-[16px] xl:leading-[19px];
+}
+.publicize {
+  @apply text-white w-[335px] h-[40px] rounded-[4px] overflow-hidden relative box-border py-[8px] px-[16px];
+  @apply xl:w-[520px];
+}
+.publicizeStyle {
+  @apply object-none object-center w-[402px] h-[124px] absolute top-[50%] left-[50%] z-0;
+  @apply xl:w-[579px] xl:h-[179px] xl:z-[-1];
+  filter: blur(23px);
+  transform: translate(-50%, -50%);
+}
+.publicIntru {
+  @apply flex items-center gap-[8px] text-[11px] leading-[13.5px] font-[500];
+  @apply xl:text-[14px] xl:leading-[17px];
+}
+.publicSlogan {
+  @apply text-[12px] leading-[16px] font-[500] uppercase mx-[16px];
+  @apply xl:text-[16px] xl:leading-[21px] xl:mx-0;
+}

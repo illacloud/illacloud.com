@@ -131,7 +131,9 @@ function hasLineHighlights(code) {
   if (!/^>/m.test(code)) {
     return false
   }
-  return code.split('\n').every((line) => line === '' || line === '>' || /^[> ] /.test(line))
+  return code
+    .split('\n')
+    .every((line) => line === '' || line === '>' || /^[> ] /.test(line))
 }
 
 module.exports.highlightCode = function highlightCode(code, prismLanguage) {
@@ -193,7 +195,9 @@ module.exports.highlightCode = function highlightCode(code, prismLanguage) {
       }
     }
 
-    let lineClassName = ['token', ...commonTypes, className].filter(Boolean).join(' ')
+    let lineClassName = ['token', ...commonTypes, className]
+      .filter(Boolean)
+      .join(' ')
 
     if (empty) {
       return `<span class="${lineClassName}">\n</span>`
@@ -202,14 +206,18 @@ module.exports.highlightCode = function highlightCode(code, prismLanguage) {
     return `<span class="${lineClassName}">${line
       .map((token) =>
         token.types.length
-          ? `<span class="token ${token.types.join(' ')}">${token.content}</span>`
-          : token.content
+          ? `<span class="token ${token.types.join(' ')}">${
+              token.content
+            }</span>`
+          : token.content,
       )
       .join('')}\n</span>`
   }
 
   if (isDiff || highlightedLines.length) {
-    let lines = normalizeTokens(Prism.util.encode(Prism.tokenize(code, grammar)))
+    let lines = normalizeTokens(
+      Prism.util.encode(Prism.tokenize(code, grammar)),
+    )
 
     if (isDiff) {
       code = lines
@@ -222,8 +230,8 @@ module.exports.highlightCode = function highlightCode(code, prismLanguage) {
                 : removedLines.includes(index)
                 ? 'deleted'
                 : 'unchanged'
-            }`
-          )
+            }`,
+          ),
         )
         .join('')
     } else {
@@ -235,8 +243,8 @@ module.exports.highlightCode = function highlightCode(code, prismLanguage) {
               highlightedLines.includes(index)
                 ? ' -mx-5 pl-4 pr-5 border-l-4 border-sky-400 bg-sky-300/[0.15]'
                 : ''
-            }`
-          )
+            }`,
+          ),
         )
         .join('')
     }
@@ -247,7 +255,8 @@ module.exports.highlightCode = function highlightCode(code, prismLanguage) {
   return language === 'html'
     ? code.replace(
         /\*\*(.*?)\*\*/g,
-        (_, text) => `<span class="code-highlight bg-code-highlight">${text}</span>`
+        (_, text) =>
+          `<span class="code-highlight bg-code-highlight">${text}</span>`,
       )
     : code
 }
@@ -297,7 +306,9 @@ function normalizeTokens(tokens) {
   const acc = [currentLine]
 
   while (stackIndex > -1) {
-    while ((i = tokenArrIndexStack[stackIndex]++) < tokenArrSizeStack[stackIndex]) {
+    while (
+      (i = tokenArrIndexStack[stackIndex]++) < tokenArrSizeStack[stackIndex]
+    ) {
       let content
       let types = typeArrStack[stackIndex]
 
@@ -357,7 +368,9 @@ module.exports.simplifyToken = function simplifyToken(token) {
   if (typeof token === 'string') return token
   return [
     token.type,
-    Array.isArray(token.content) ? token.content.map(simplifyToken) : token.content,
+    Array.isArray(token.content)
+      ? token.content.map(simplifyToken)
+      : token.content,
   ]
 }
 

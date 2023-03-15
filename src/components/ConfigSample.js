@@ -21,7 +21,9 @@ function Value({ value }) {
         {value.map((v, i) => (
           <Fragment key={i}>
             <Value value={v} />
-            {i === value.length - 1 ? null : <span className="token punctuation">, </span>}
+            {i === value.length - 1 ? null : (
+              <span className="token punctuation">, </span>
+            )}
           </Fragment>
         ))}
         <span className="token punctuation">]</span>
@@ -101,11 +103,24 @@ export function ConfigSample({ path, add, remove, before, after }) {
                 ))}
             </span>
             {remove && (
-              <Edits edits={remove} type="deleted" indent={'  '.repeat(path.length + 1)} />
+              <Edits
+                edits={remove}
+                type="deleted"
+                indent={'  '.repeat(path.length + 1)}
+              />
             )}
-            {add && <Edits edits={add} type="inserted" indent={'  '.repeat(path.length + 1)} />}
+            {add && (
+              <Edits
+                edits={add}
+                type="inserted"
+                indent={'  '.repeat(path.length + 1)}
+              />
+            )}
             <span className="token unchanged">
-              {after && castArray(after).map((str) => `${'  '.repeat(path.length + 2)}${str}\n`)}
+              {after &&
+                castArray(after).map(
+                  (str) => `${'  '.repeat(path.length + 2)}${str}\n`,
+                )}
               {path.map((key, i) => (
                 <Fragment key={i}>
                   {'  '}

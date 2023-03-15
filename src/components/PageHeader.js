@@ -38,7 +38,9 @@ export function PageHeader({ title, description, repo, badge = {}, section }) {
         )}
       </div>
       {description && (
-        <p className="mt-2 text-lg text-slate-700 dark:text-slate-400">{description}</p>
+        <p className="mt-2 text-lg text-slate-700 dark:text-slate-400">
+          {description}
+        </p>
       )}
     </header>
   )

@@ -6,7 +6,8 @@
     "dev": "PORT=4000 next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "format": "prettier '{src,remark,scripts}/**/*.{css,js,mdx}' --write"
+    "format": "prettier '{src,remark,scripts}/**/*.{css,js,mdx}' --write",
+    "dev:node-middleware": "node server.js"
   },
   "browserslist": [
     "> 1%"
@@ -41,6 +42,7 @@
     "debounce": "^1.2.0",
     "dlv": "^1.1.3",
     "exec-sh": "^0.3.4",
+    "express": "^4.18.2",
     "feed": "^4.2.2",
     "file-loader": "^6.0.0",
     "file-saver": "^2.0.5",
@@ -50,6 +52,7 @@
     "glob": "^7.1.6",
     "gsap": "^3.6.0",
     "gzip-size": "^5.1.1",
+    "http-proxy-middleware": "^2.0.6",
     "intersection-observer": "^0.11.0",
     "just-group-by": "^1.0.0",
     "mini-svg-data-uri": "^1.4.3",

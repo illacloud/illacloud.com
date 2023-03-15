@@ -5,6 +5,7 @@ import Image from 'next/image'
 import playVideoCover from '@/img/home/playVideoCover.png'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
+import Publicize from '@/components/home/NewContent/Publicize'
 import { StarIcon } from '@/img/public/star'
 import { GoIcon } from '@/img/public/go'
 import { LinearGithubIcon } from '@/img/public/linearGithub'
@@ -24,21 +25,24 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand, setMenuExpand] = useState(false)
-  const { setPlayMaskShow, githubStarts, onSubscribe } = props
+  const { setPlayMaskShow, githubStarts, onSubscribe, publicizeList } = props
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
   return (
     <div className="w-full xl:hidden	">
-      <div className="px-[20px] h-full flex flex-col items-center justify-center w-full">
-        <h1 className="text-white-01 text-[40px] text-center font-bold pt-[20px] leading-[48px]">
-          {t('slogan-1')}
-        </h1>
-        <div className="mt-[32px] text-white-01 text-[14px] text-center">
+      <div className="px-[20px] h-full flex flex-col items-center justify-center w-full gap-[32px]">
+        <div className="flex flex-col items-center gap-[12px]">
+          <Publicize publicizeList={publicizeList} />
+          <h1 className="text-white-01 text-[40px] text-center font-bold leading-[48px]">
+            {t('slogan-1')}
+          </h1>
+        </div>
+        <div className="text-white-01 text-[14px] text-center">
           {t('description')}
         </div>
-        <div className="mt-[32px] w-full flex gap-[16px]">
+        <div className="w-full flex gap-[16px]">
           <Link legacyBehavior href="/docs/illa-cli">
             <a
               className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
@@ -69,7 +73,7 @@ export const MobileTitle = (props) => {
             </a>
           </Link>
         </div>
-        <div className="flex items-center mt-[32px] gap-[40px]">
+        <div className="flex items-center gap-[40px]">
           <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
             <a
               target="__blank"
@@ -81,7 +85,6 @@ export const MobileTitle = (props) => {
                   label: `${githubStarts} ${t('stars')}`,
                   value: 'https://github.com/illacloud/illa-builder',
                 })
-
               }}
             >
               <LinearGithubIcon />
@@ -109,7 +112,9 @@ export const MobileTitle = (props) => {
               <LinearDiscordIcon />
               <div className="text-white-01 text-[13px] flex items-center font-medium items-center">
                 <GoIcon />
-                <span className="ml-[5px] align-middle">{t('join-community')}</span>
+                <span className="ml-[5px] align-middle">
+                  {t('join-community')}
+                </span>
               </div>
             </a>
           </Link>

@@ -1,7 +1,11 @@
 import clsx from 'clsx'
 import styles from './GridLockup.module.css'
 
-let overhangs = { sm: 'top-0 xl:top-8', md: 'top-0 xl:top-14', lg: 'top-0 xl:top-18' }
+let overhangs = {
+  sm: 'top-0 xl:top-8',
+  md: 'top-0 xl:top-14',
+  lg: 'top-0 xl:top-18',
+}
 
 export function GridLockup({
   left,
@@ -13,19 +17,33 @@ export function GridLockup({
   beams = 0,
 }) {
   return (
-    <GridLockup.Container className={className} overhang={overhang} beams={beams}>
-      <GridLockup.Grid left={left} right={right} leftProps={leftProps} rightProps={rightProps} />
+    <GridLockup.Container
+      className={className}
+      overhang={overhang}
+      beams={beams}
+    >
+      <GridLockup.Grid
+        left={left}
+        right={right}
+        leftProps={leftProps}
+        rightProps={rightProps}
+      />
     </GridLockup.Container>
   )
 }
 
-GridLockup.Container = function Grid({ beams = 0, className, overhang = 'sm', children }) {
+GridLockup.Container = function Grid({
+  beams = 0,
+  className,
+  overhang = 'sm',
+  children,
+}) {
   return (
     <div className={clsx('relative pt-10 xl:pt-0', className)}>
       <div
         className={clsx(
           'hidden dark:block absolute top-0 inset-x-0 h-[37.5rem] bg-gradient-to-b from-[#0c1120]',
-          overhangs[overhang]
+          overhangs[overhang],
         )}
       />
       {beams !== -1 && (
@@ -33,14 +51,14 @@ GridLockup.Container = function Grid({ beams = 0, className, overhang = 'sm', ch
           className={clsx(
             'absolute top-0 inset-x-0 bg-top bg-no-repeat',
             styles[`beams-${beams}`],
-            overhangs[overhang]
+            overhangs[overhang],
           )}
         />
       )}
       <div
         className={clsx(
           'absolute top-0 inset-x-0 h-[37.5rem] bg-grid-slate-900/[0.04] bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-grid-slate-100/[0.03] dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5',
-          overhangs[overhang]
+          overhangs[overhang],
         )}
       />
       {/* <div
@@ -57,12 +75,20 @@ GridLockup.Container = function Grid({ beams = 0, className, overhang = 'sm', ch
   )
 }
 
-GridLockup.Grid = function Inner({ left, right, leftProps = {}, rightProps = {} }) {
+GridLockup.Grid = function Inner({
+  left,
+  right,
+  leftProps = {},
+  rightProps = {},
+}) {
   return right ? (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
       <div
         {...leftProps}
-        className={clsx('lg:col-span-5 xl:col-span-6 flex flex-col', leftProps.className)}
+        className={clsx(
+          'lg:col-span-5 xl:col-span-6 flex flex-col',
+          leftProps.className,
+        )}
       >
         {left}
       </div>
@@ -70,14 +96,17 @@ GridLockup.Grid = function Inner({ left, right, leftProps = {}, rightProps = {} 
         {...rightProps}
         className={clsx(
           'mt-4 -mx-4 sm:mx-0 lg:mt-0 lg:col-span-7 xl:col-span-6',
-          rightProps.className
+          rightProps.className,
         )}
       >
         {right}
       </div>
     </div>
   ) : (
-    <div {...leftProps} className={clsx('max-w-7xl mx-auto sm:px-6 md:px-8', leftProps.className)}>
+    <div
+      {...leftProps}
+      className={clsx('max-w-7xl mx-auto sm:px-6 md:px-8', leftProps.className)}
+    >
       {left}
     </div>
   )

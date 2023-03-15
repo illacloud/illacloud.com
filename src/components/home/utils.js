@@ -20,7 +20,9 @@ export const scale = 400 / coverBgRadius
 export const getBgSize = (y) => {
   const top = AppState.h - y - (COVER_HEIGHT / 2 - OFFSET)
   return (
-    ((AppState.h - COVER_HEIGHT / 2 + OFFSET - top) / AppState.h) * (AppState.w + 1000) * 2.5 +
+    ((AppState.h - COVER_HEIGHT / 2 + OFFSET - top) / AppState.h) *
+      (AppState.w + 1000) *
+      2.5 +
     COVER_HEIGHT
   )
 }
