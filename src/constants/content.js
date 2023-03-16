@@ -125,16 +125,19 @@ export const deploymentContent = {
       icon: <CLIIcon />,
       title: 'deployment.illa-CLI.title',
       des: 'deployment.illa-CLI.des',
+      linkUrl: 'docs/illa-cli',
     },
     {
       icon: <KubernetesIcon />,
       title: 'deployment.kubernetes.title',
       des: 'deployment.kubernetes.des',
+      linkUrl: 'https://github.com/illacloud/deploy-illa-manually/',
     },
     {
       icon: <WaysIcon />,
       title: 'deployment.docker.title',
       des: 'deployment.docker.des',
+      linkUrl: 'https://github.com/illacloud/deploy-illa-manually/',
     },
   ],
 }
