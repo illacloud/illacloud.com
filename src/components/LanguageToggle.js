@@ -34,7 +34,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
       <Listbox.Options
         className={clsx(
           'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300',
-          panelClassName
+          panelClassName,
         )}
       >
         {languages.map(({ value, label }) => (
@@ -44,7 +44,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
                 className={clsx(
                   'lg:py-1 lg:px-2 py-2 px-3 flex items-center cursor-pointer',
                   selected && 'text-sky-500',
-                  active && 'bg-slate-50 dark:bg-slate-600/30'
+                  active && 'bg-slate-50 dark:bg-slate-600/30',
                 )}
               >
                 {label}

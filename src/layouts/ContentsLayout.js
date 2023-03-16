@@ -1,4 +1,11 @@
-import { useState, useEffect, createContext, Fragment, useCallback, useContext } from 'react'
+import {
+  useState,
+  useEffect,
+  createContext,
+  Fragment,
+  useCallback,
+  useContext,
+} from 'react'
 import { ClassTable } from '@/components/ClassTable'
 import { useRouter } from 'next/router'
 import { usePrevNext } from '@/hooks/usePrevNext'
@@ -31,7 +38,9 @@ function TableOfContents({ tableOfContents, currentSection }) {
     return section.children.findIndex(isActive) > -1
   }
 
-  let pageHasSubsections = tableOfContents.some((section) => section.children.length > 0)
+  let pageHasSubsections = tableOfContents.some(
+    (section) => section.children.length > 0,
+  )
 
   return (
     <>
@@ -50,7 +59,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                   pageHasSubsections ? 'font-medium' : '',
                   isActive(section)
                     ? 'font-medium text-sky-500 dark:text-sky-400'
-                    : 'hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300'
+                    : 'hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300',
                 )}
               >
                 {section.title}
@@ -65,7 +74,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                     'group flex items-start py-1',
                     isActive(subsection)
                       ? 'text-sky-500 dark:text-sky-400'
-                      : 'hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300'
+                      : 'hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300',
                   )}
                 >
                   <svg
@@ -98,7 +107,10 @@ function useTableOfContents(tableOfContents) {
   let [headings, setHeadings] = useState([])
 
   const registerHeading = useCallback((id, top) => {
-    setHeadings((headings) => [...headings.filter((h) => id !== h.id), { id, top }])
+    setHeadings((headings) => [
+      ...headings.filter((h) => id !== h.id),
+      { id, top },
+    ])
   }, [])
 
   const unregisterHeading = useCallback((id) => {
@@ -109,7 +121,9 @@ function useTableOfContents(tableOfContents) {
     if (tableOfContents.length === 0 || headings.length === 0) return
     function onScroll() {
       let style = window.getComputedStyle(document.documentElement)
-      let scrollMt = parseFloat(style.getPropertyValue('--scroll-mt').match(/[\d.]+/)?.[0] ?? 0)
+      let scrollMt = parseFloat(
+        style.getPropertyValue('--scroll-mt').match(/[\d.]+/)?.[0] ?? 0,
+      )
       let fontSize = parseFloat(style.fontSize.match(/[\d.]+/)?.[0] ?? 16)
       scrollMt = scrollMt * fontSize
 
@@ -140,9 +154,8 @@ function useTableOfContents(tableOfContents) {
 }
 
 export function ContentsLayoutOuter({ children, layoutProps, ...props }) {
-  const { currentSection, registerHeading, unregisterHeading } = useTableOfContents(
-    layoutProps.tableOfContents
-  )
+  const { currentSection, registerHeading, unregisterHeading } =
+    useTableOfContents(layoutProps.tableOfContents)
 
   return (
     <SidebarLayout
@@ -163,14 +176,23 @@ export function ContentsLayoutOuter({ children, layoutProps, ...props }) {
   )
 }
 
-export function ContentsLayout({ children, meta, classes, tableOfContents, section }) {
+export function ContentsLayout({
+  children,
+  meta,
+  classes,
+  tableOfContents,
+  section,
+}) {
   const router = useRouter()
   const toc = [
-    ...(classes ? [{ title: 'Quick reference', slug: 'class-reference', children: [] }] : []),
+    ...(classes
+      ? [{ title: 'Quick reference', slug: 'class-reference', children: [] }]
+      : []),
     ...tableOfContents,
   ]
 
-  const { currentSection, registerHeading, unregisterHeading } = useTableOfContents(toc)
+  const { currentSection, registerHeading, unregisterHeading } =
+    useTableOfContents(toc)
   let { prev, next } = usePrevNext()
 
   return (
@@ -207,7 +229,10 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
 
       <div className="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 px-8 overflow-y-auto hidden xl:block">
         {toc.length > 0 && (
-          <TableOfContents tableOfContents={toc} currentSection={currentSection} />
+          <TableOfContents
+            tableOfContents={toc}
+            currentSection={currentSection}
+          />
         )}
       </div>
     </div>

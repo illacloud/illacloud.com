@@ -9,8 +9,8 @@ let steps = [
     title: 'Install ILLA',
     body: () => (
       <p>
-        Install <code>tailwindcss</code> via npm, and create your <code>tailwind.config.js</code>{' '}
-        file.
+        Install <code>tailwindcss</code> via npm, and create your{' '}
+        <code>tailwind.config.js</code> file.
       </p>
     ),
     code: {
@@ -23,7 +23,8 @@ let steps = [
     title: 'Configure your template paths',
     body: () => (
       <p>
-        Add the paths to all of your template files in your <code>tailwind.config.js</code> file.
+        Add the paths to all of your template files in your{' '}
+        <code>tailwind.config.js</code> file.
       </p>
     ),
     code: {
@@ -42,8 +43,8 @@ let steps = [
     title: 'Add the Tailwind directives to your CSS',
     body: () => (
       <p>
-        Add the <code>@tailwind</code> directives for each of Tailwind’s layers to your main CSS
-        file.
+        Add the <code>@tailwind</code> directives for each of Tailwind’s layers
+        to your main CSS file.
       </p>
     ),
     code: {
@@ -54,7 +55,12 @@ let steps = [
   },
   {
     title: 'Start the Tailwind CLI build process',
-    body: () => <p>Run the CLI tool to scan your template files for classes and build your CSS.</p>,
+    body: () => (
+      <p>
+        Run the CLI tool to scan your template files for classes and build your
+        CSS.
+      </p>
+    ),
     code: {
       name: 'Terminal',
       lang: 'terminal',
@@ -65,8 +71,8 @@ let steps = [
     title: 'Start using Tailwind in your HTML',
     body: () => (
       <p>
-        Add your compiled CSS file to the <code>{'<head>'}</code> and start using Tailwind’s utility
-        classes to style your content.
+        Add your compiled CSS file to the <code>{'<head>'}</code> and start
+        using Tailwind’s utility classes to style your content.
       </p>
     ),
     code: {
@@ -98,8 +104,8 @@ export default function TailwindCli({ code }) {
       >
         <h3 className="sr-only">Installing Tailwind CLI</h3>
         <p>
-          The simplest and fastest way to get up and running with ILLA from scratch is with the
-          Tailwind CLI tool.
+          The simplest and fastest way to get up and running with ILLA from
+          scratch is with the Tailwind CLI tool.
         </p>
       </div>
       <Steps level={4} steps={steps} code={code} />
@@ -110,9 +116,11 @@ export default function TailwindCli({ code }) {
         description={
           <>
             <strong className="text-slate-900 font-semibold">
-              This is only the beginning of what’s possible with the Tailwind CLI.
+              This is only the beginning of what’s possible with the Tailwind
+              CLI.
             </strong>{' '}
-            To learn more about everything it can do, check out the Tailwind CLI documentation.
+            To learn more about everything it can do, check out the Tailwind CLI
+            documentation.
           </>
         }
       />

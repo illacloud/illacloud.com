@@ -35,8 +35,9 @@ const blogBaseStructuredData = {
     name: 'Jerry',
     image: {
       '@type': 'ImageObject',
-      url: `https://www.illacloud.com${require('@/img/authors/jerry.jpeg').default
-        }`,
+      url: `https://www.illacloud.com${
+        require('@/img/authors/jerry.jpeg').default
+      }`,
       width: 512,
       height: 512,
     },
@@ -353,8 +354,9 @@ export function Metadata({ meta }) {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${require('@/img/illa_logo.png').default
-              }`}
+            content={`https://illa.cloud${
+              require('@/img/illa_logo.png').default
+            }`}
           />
         </>
       )}

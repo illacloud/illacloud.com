@@ -15,7 +15,8 @@ module.exports.withTableOfContents = () => {
           .filter(
             (n, i, a) =>
               n.type === 'text' &&
-              (a[i - 1]?.type !== 'jsx' || !a[i - 1]?.value.startsWith('<small'))
+              (a[i - 1]?.type !== 'jsx' ||
+                !a[i - 1]?.value.startsWith('<small')),
           )
           .map((n) => n.value)
           .join('')
@@ -39,19 +40,29 @@ module.exports.withTableOfContents = () => {
         }
 
         if (tree.children[nodeIndex + 1]) {
-          let { children, position, value, ...element } = tree.children[nodeIndex + 1]
+          let { children, position, value, ...element } =
+            tree.children[nodeIndex + 1]
           props.nextElement = element
         }
 
-        if (node.children[0].type === 'jsx' && /^\s*<Heading[\s>]/.test(node.children[0].value)) {
-          let value = node.children[0].value.replace(/toc="((?:[^"\\]|\\.)*)"/, (_, toc) => {
-            title = toc
-            slug = slugify(title)
-            props.id = slug
-            return ''
-          })
+        if (
+          node.children[0].type === 'jsx' &&
+          /^\s*<Heading[\s>]/.test(node.children[0].value)
+        ) {
+          let value = node.children[0].value.replace(
+            /toc="((?:[^"\\]|\\.)*)"/,
+            (_, toc) => {
+              title = toc
+              slug = slugify(title)
+              props.id = slug
+              return ''
+            },
+          )
           node.value =
-            value.replace(/^\s*<Heading([\s>])/, `<Heading ${stringifyProps(props)}$1`) +
+            value.replace(
+              /^\s*<Heading([\s>])/,
+              `<Heading ${stringifyProps(props)}$1`,
+            ) +
             node.children
               .slice(1)
               .map((n) => n.value)
@@ -65,7 +76,11 @@ module.exports.withTableOfContents = () => {
         if (level === 2) {
           contents.push({ title, slug, children: [] })
         } else if (level === 3) {
-          contents[contents.length - 1].children.push({ title, slug, children: [] })
+          contents[contents.length - 1].children.push({
+            title,
+            slug,
+            children: [],
+          })
         } else {
           contents[contents.length - 1].children[
             contents[contents.length - 1].children.length - 1
@@ -79,7 +94,10 @@ module.exports.withTableOfContents = () => {
         const title = node.value
           .replace(/<[^>]+>/g, '')
           .replace(/\{(["'])((?:(?=(\\?))\3.)*?)\1\}/g, '$2')
-        node.value = node.value.replace(/^\s*<Heading([\s>])/, `<Heading id="${slugify(title)}"$1`)
+        node.value = node.value.replace(
+          /^\s*<Heading([\s>])/,
+          `<Heading id="${slugify(title)}"$1`,
+        )
       }
     }
 

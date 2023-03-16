@@ -10,7 +10,9 @@ export function addClassTokens(token, tokensArr, index) {
       token[1]
         .map((t) => {
           if (typeof t !== 'string') return [t]
-          return t.split(/(\s+)/).map((c, i) => (i % 2 !== 0 ? c : ['class', c]))
+          return t
+            .split(/(\s+)/)
+            .map((c, i) => (i % 2 !== 0 ? c : ['class', c]))
         })
         .flat(),
     ]
@@ -34,7 +36,7 @@ export function addClassTokens2(lines) {
               return { content: part, types: [...lines[i][j].types, 'class'] }
             }
             return { content: part, types: ['plain'] }
-          })
+          }),
         )
       }
     }

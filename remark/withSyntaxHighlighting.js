@@ -12,10 +12,15 @@ module.exports.withSyntaxHighlighting = () => {
 
       let lightCode = node.value.replace(
         re,
-        (_match, before, _key, _value, after) => `${before}${after}`
+        (_match, before, _key, _value, after) => `${before}${after}`,
       )
-      let darkCode = node.value.replace(re, (_match, before, key, value, after) =>
-        `${before}${after}`.replace(new RegExp(`(\\s${key})="[^"]+"`), `$1="${value}"`)
+      let darkCode = node.value.replace(
+        re,
+        (_match, before, key, value, after) =>
+          `${before}${after}`.replace(
+            new RegExp(`(\\s${key})="[^"]+"`),
+            `$1="${value}"`,
+          ),
       )
 
       node.type = 'html'

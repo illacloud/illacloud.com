@@ -33,19 +33,25 @@ export function TabBar({
         className={clsx(
           'flex-auto flex items-center bg-slate-700/50 border border-slate-500/30',
           side === 'left' ? 'rounded-tl lg:rounded-tr' : 'rounded-tl',
-          translucent && 'dark:bg-slate-800/50'
+          translucent && 'dark:bg-slate-800/50',
         )}
       >
         {secondary.map(({ name, open = true, className }) => (
           <div
             key={name}
-            className={clsx('px-4 py-1 border-r border-slate-200/5', className, { italic: !open })}
+            className={clsx(
+              'px-4 py-1 border-r border-slate-200/5',
+              className,
+              { italic: !open },
+            )}
           >
             {name}
           </div>
         ))}
         {children && (
-          <div className="flex-auto flex items-center justify-end px-4 space-x-4">{children}</div>
+          <div className="flex-auto flex items-center justify-end px-4 space-x-4">
+            {children}
+          </div>
         )}
       </div>
     </div>

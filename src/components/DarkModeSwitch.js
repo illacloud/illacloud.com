@@ -40,7 +40,10 @@ export function DarkModeSwitch() {
         <motion.span
           layout
           className="bg-white rounded-full w-8 h-8"
-          style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.1)' }}
+          style={{
+            boxShadow:
+              '0 2px 5px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.1)',
+          }}
         />
       </Switch>
       <svg width="24" height="24" fill="none">

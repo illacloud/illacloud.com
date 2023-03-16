@@ -50,7 +50,10 @@ const descriptions = {
       'scale',
       'sepia',
       'skew',
-    ].map((pluginName) => [pluginName, `Values for the \`${pluginName}\` plugin`])
+    ].map((pluginName) => [
+      pluginName,
+      `Values for the \`${pluginName}\` plugin`,
+    ]),
   ),
 }
 
@@ -74,12 +77,15 @@ export function ThemeReference() {
                 {descriptions[key]
                   ?.split(/`([^`]+)`/)
                   .map((segment, i) =>
-                    i % 2 === 0 ? segment : <code key={i}>{segment}</code>
+                    i % 2 === 0 ? segment : <code key={i}>{segment}</code>,
                   ) || (
                   <>
                     Values for the{' '}
                     <code>
-                      {key.replace(/([a-z])([A-Z])/g, (_m, p1, p2) => `${p1}-${p2.toLowerCase()}`)}
+                      {key.replace(
+                        /([a-z])([A-Z])/g,
+                        (_m, p1, p2) => `${p1}-${p2.toLowerCase()}`,
+                      )}
                     </code>{' '}
                     property
                   </>

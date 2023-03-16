@@ -45,7 +45,8 @@ export function Button({
   ...props
 }) {
   let colorClasses = typeof color === 'string' ? colors[color] : color
-  let darkColorClasses = typeof darkColor === 'string' ? colorsDark[darkColor] || [] : darkColor
+  let darkColorClasses =
+    typeof darkColor === 'string' ? colorsDark[darkColor] || [] : darkColor
 
   return (
     <Link href={href} legacyBehavior>
@@ -55,7 +56,7 @@ export function Button({
           colorClasses[0],
           darkColorClasses[0],
           className,
-          reverse && 'flex-row-reverse'
+          reverse && 'flex-row-reverse',
         )}
         {...props}
       >
@@ -65,7 +66,7 @@ export function Button({
             'overflow-visible',
             reverse ? 'mr-3' : 'ml-3',
             colorClasses[1],
-            darkColorClasses[1]
+            darkColorClasses[1],
           )}
           width="3"
           height="6"

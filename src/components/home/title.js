@@ -7,6 +7,7 @@ import { DiscordIcon } from '@/img/public/discord'
 import { GithubIcon } from '@/img/public/github'
 import { StarIcon } from '@/img/public/star'
 import { GoIcon } from '@/img/public/go'
+import Publicize from '@/components/home/NewContent/Publicize'
 
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
@@ -133,48 +134,56 @@ export const Title = (props) => {
     >
       <motion.div
         style={{ opacity: opacity, translateY: titlePositionY }}
-        className={clsx('fixed left-0 top-[20vh] w-full flex justify-center', {
+        className={clsx('fixed left-0 top-[10vh] w-full flex justify-center', {
           'pointer-events-none': !canClick,
         })}
       >
-        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px]">
-          <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[78px]">
-            {t('slogan-1')}
-          </h1>
-          <span className="font-normal text-[20px] mt-[24px] px-[20px] sm:px-0 text-center">
-            {t('description')}
-          </span>
-          <div className="flex items-center content-between gap-[16px] text-[20px] mt-[24px]">
-            <Link legacyBehavior href="https://cloud.illacloud.com/">
-              <a
-                className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_live_demo_click',
-                    label: t('illa-Cloud'),
-                    value: 'https://cloud.illacloud.com/',
-                  })
-                }}>
-                {t('illa-Cloud')}
-              </a>
-            </Link>
-            <Link legacyBehavior href="/docs/illa-cli">
-              <a
-                className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] font-normal	 border-white-01 text-center	rounded-[8px] px-[64px] py-[8px] text-white-01"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_self_hosted_click',
-                    label: t('self-Hosted'),
-                  })
-                }}>
-                {t('self-Hosted')}
-              </a>
-            </Link>
+        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px]">
+          <div className="flex flex-col items-center gap-[24px]">
+            <Publicize />
+            <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
+              {t('slogan-1')}
+            </h1>
+            <span className="font-normal text-[20px] px-[20px] sm:px-0 text-center">
+              {t('description')}
+            </span>
+            <div className="flex items-center content-between gap-[16px] text-[20px]">
+              <Link legacyBehavior href="https://cloud.illacloud.com/">
+                <a
+                  className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+                  onClick={() => {
+                    sendTagEvent({
+                      action: 'click',
+                      category: 'homepage_body_live_demo_click',
+                      label: t('illa-Cloud'),
+                      value: 'https://cloud.illacloud.com/',
+                    })
+                  }}
+                >
+                  {t('illa-Cloud')}
+                </a>
+              </Link>
+              <Link legacyBehavior href="/docs/illa-cli">
+                <a
+                  className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] font-normal	 border-white-01 text-center	rounded-[8px] px-[64px] py-[8px] text-white-01"
+                  onClick={() => {
+                    sendTagEvent({
+                      action: 'click',
+                      category: 'homepage_body_self_hosted_click',
+                      label: t('self-Hosted'),
+                    })
+                  }}
+                >
+                  {t('self-Hosted')}
+                </a>
+              </Link>
+            </div>
           </div>
-          <div className="flex mt-[40px] gap-[16px]">
-            <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
+          <div className="flex gap-[16px]">
+            <Link
+              legacyBehavior
+              href="https://github.com/illacloud/illa-builder"
+            >
               <a
                 target="__blank"
                 className="flex gap-[12px] items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"

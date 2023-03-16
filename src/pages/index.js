@@ -1,21 +1,40 @@
 import Head from 'next/head'
 import { Nav } from '@/components/home/Nav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
-import { Content } from '@/components/home/content'
+import { NewContent } from '@/components/home/NewContent'
 import { Footer } from '@/components/home/home-footer'
 import { Title } from '@/components/home/title'
 import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
+import BecomePartner from '@/components/home/Form/BecomePartner'
+import { BookDemo } from '@/components/home/Form/BookDemo'
 import Script from 'next/script'
 
-const Home = (props) => {
+const Home = () => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
-  const { starCounts } = props;
+  const [isPartnerShow, setIsPartnerShow] = useState(false)
+  const [isBookShow, setIsBookShow] = useState(false)
+  const [starCounts, setStarCounts] = useState(0)
+
+  useEffect(() => {
+    const request = async () => {
+      let starCounts = 0
+      try {
+        const res = await fetch(
+          'https://api.github.com/repos/illacloud/illa-builder',
+        )
+        const resJSON = await res.json()
+        starCounts = resJSON?.stargazers_count
+        setStarCounts(starCounts)
+      } catch {}
+    }
+    request()
+  }, [])
   return (
     <>
       <Head>
@@ -46,6 +65,7 @@ const Home = (props) => {
           githubStarts={starCounts}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
+          onChangeShow={() => setIsBookShow(true)}
         />
 
         {/*Global site tag (gtag.js) - Google Analytics */}
@@ -87,11 +107,19 @@ const Home = (props) => {
           githubStarts={starCounts}
           onSubscribe={() => setModalVisible(true)}
         />
-        <Content />
+        <NewContent onChangeShow={() => setIsPartnerShow(true)} />
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
         <SubscribeModal
           visible={modalVisible}
           onClose={() => setModalVisible(false)}
+        />
+        <BecomePartner
+          visible={isPartnerShow}
+          onChangeShow={() => setIsPartnerShow(false)}
+        />
+        <BookDemo
+          visible={isBookShow}
+          onChangeShow={() => setIsBookShow(false)}
         />
       </div>
       <Footer />
@@ -100,13 +128,9 @@ const Home = (props) => {
 }
 
 export const getStaticProps = async ({ locale }) => {
-  const res = await fetch('https://api.github.com/repos/illacloud/illa-builder')
-  const resJSON = await res.json()
-  const starCounts = resJSON?.stargazers_count || 0
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'navs'])),
-      starCounts,
     },
     revalidate: 10,
   }

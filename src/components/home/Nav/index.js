@@ -21,6 +21,7 @@ export const Nav = (props) => {
     onSubscribe,
     whiteTheme = false,
     hasButton = true,
+    onChangeShow,
   } = props
   const { t } = useTranslation('home')
 
@@ -130,6 +131,19 @@ export const Nav = (props) => {
                 {t('nav.blog')}
               </a>
             </Link>
+            {/* <span
+              className="px-[16px] text-center cursor-pointer"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_partner_apply_click',
+                  label: t('nav.bookDemo'),
+                })
+                // onChangeShow()
+              }}
+            >
+              {'Pricing'}
+            </span> */}
           </div>
         </div>
         {hasButton && (
@@ -139,20 +153,19 @@ export const Nav = (props) => {
             )}
             style={{ opacity: opacity }}
           >
-            <Link legacyBehavior href="/docs/illa-cli">
-              <a
-                className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_slide_menu_self_hosted_click',
-                    label: t('self-Hosted'),
-                  })
-                }}
-              >
-                {t('self-Hosted')}
-              </a>
-            </Link>
+            <span
+              className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01 cursor-pointer"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_partner_apply_click',
+                  label: t('nav.bookDemo'),
+                })
+                onChangeShow()
+              }}
+            >
+              {t('nav.bookDemo')}
+            </span>
             <Link legacyBehavior href="https://cloud.illacloud.com/">
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
@@ -198,11 +211,12 @@ export const Nav = (props) => {
       </div>
       <Menu
         menuExpand={menuExpand}
+        onChangeShow={onChangeShow}
         closeMenu={() => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_fold_mob_click',
-            value: 'fold'
+            value: 'fold',
           })
           setMenuExpand(false)
         }}

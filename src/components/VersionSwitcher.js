@@ -5,7 +5,12 @@ export function VersionSwitcher({ className }) {
     <Menu as="div" className="relative">
       <Menu.Button className="text-xs leading-5 font-semibold bg-slate-400/10 rounded-full py-1 px-3 flex items-center space-x-2 hover:bg-slate-400/20 dark:highlight-white/5">
         v0.0.4
-        <svg width="6" height="3" className="ml-2 overflow-visible" aria-hidden="true">
+        <svg
+          width="6"
+          height="3"
+          className="ml-2 overflow-visible"
+          aria-hidden="true"
+        >
           <path
             d="M0 0L3 3L6 0"
             fill="none"

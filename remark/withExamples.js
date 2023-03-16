@@ -38,12 +38,18 @@ module.exports = () => {
 
       if (node.type === 'jsx') {
         let [, props = '', html] =
-          node.value.trim().match(/^<Example(?:>|\s(.*?)>)(.*?)<\/Example>$/is) ?? []
+          node.value
+            .trim()
+            .match(/^<Example(?:>|\s(.*?)>)(.*?)<\/Example>$/is) ?? []
 
         if (html) {
           let next = tree.children[index + 1]
           if (!componentName) {
-            componentName = addImport(preTree, '@/components/Example', 'Example')
+            componentName = addImport(
+              preTree,
+              '@/components/Example',
+              'Example',
+            )
           }
 
           node.value = `<${componentName} ${props} containerClassName="${

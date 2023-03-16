@@ -1,7 +1,13 @@
 import clsx from 'clsx'
 import { Button } from '../Button'
 
-export function IconContainer({ as: Component = 'div', className = '', light, dark, ...props }) {
+export function IconContainer({
+  as: Component = 'div',
+  className = '',
+  light,
+  dark,
+  ...props
+}) {
   return (
     <Component
       className={`w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden ${className}`}
@@ -41,7 +47,9 @@ export function BigText({ className = '', ...props }) {
 }
 
 export function Paragraph({ as: Component = 'p', className = '', ...props }) {
-  return <Component className={`mt-4 max-w-3xl space-y-6 ${className}`} {...props} />
+  return (
+    <Component className={`mt-4 max-w-3xl space-y-6 ${className}`} {...props} />
+  )
 }
 
 export function Link({ className, ...props }) {
@@ -69,12 +77,21 @@ export let themeTabs = {
         stroke="currentColor"
         strokeWidth="2"
       />
-      <path d="M15 7v34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M15 7v34"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </>
   ),
   Playful: (selected) => (
     <>
-      <path d="M5 8h36v32H5V8Z" fill="currentColor" fillOpacity={selected ? '.1' : '0'} />
+      <path
+        d="M5 8h36v32H5V8Z"
+        fill="currentColor"
+        fillOpacity={selected ? '.1' : '0'}
+      />
       <path
         d="M42 29V11a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v26a4 4 0 0 0 4 4h19"
         stroke="currentColor"
@@ -89,7 +106,12 @@ export let themeTabs = {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M14 7v34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M14 7v34"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
       <path
         d="M22.8 19.949a2 2 0 0 1 2.4-1.5l5.851 1.352a2 2 0 0 1 1.5 2.399l-1.352 5.851a2 2 0 0 1-2.399 1.5l-5.851-1.352a2 2 0 0 1-1.5-2.399l1.352-5.851Z"
         fill={selected ? 'currentColor' : 'none'}

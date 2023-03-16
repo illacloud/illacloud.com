@@ -23,7 +23,9 @@ export function numbersFirst(classes) {
 }
 
 export function numbersFirstByPrefix(classes) {
-  return Object.values(groupBy(classes, (c) => c.match(/^(.*?)[^-]+$/)[1])).flatMap(numbersFirst)
+  return Object.values(
+    groupBy(classes, (c) => c.match(/^(.*?)[^-]+$/)[1]),
+  ).flatMap(numbersFirst)
 }
 
 export function numbersLast(classes) {
