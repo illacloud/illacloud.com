@@ -4,6 +4,7 @@ import { ContentTitle } from './ContentTitle'
 import { deploymentContent } from '@/constants/content'
 import clsx from 'clsx'
 import style from './index.module.css'
+import Link from 'next/link'
 
 export const Deployment = () => {
   const { t } = useTranslation('home')
@@ -22,23 +23,25 @@ export const Deployment = () => {
         {items &&
           items.map(
             ({ icon, title, des, linkUrl, extraLinkContent }, index) => (
-              <div
-                key={title}
-                className={clsx(
-                  style.deploymentItem,
-                  !index ? 'w-full' : 'xl:w-[388px] w-full',
-                )}
-              >
-                <div className="flex flex-col">
-                  <span className="xl:w-[40px] w-[28px]">{icon}</span>
-                  <span className={style.deploymentItemTitle}>
-                    {t(title)}
-                    {extraLinkContent}
-                  </span>
-                  <span className={style.deploymentItemDesc}>{t(des)}</span>
+              <Link href={linkUrl ?? ''} key={title} legacyBehavior>
+                <div
+                  key={title}
+                  className={clsx(
+                    style.deploymentItem,
+                    !index ? 'w-full' : 'xl:w-[388px] w-full',
+                  )}
+                >
+                  <div className="flex flex-col">
+                    <span className="xl:w-[40px] w-[28px]">{icon}</span>
+                    <span className={style.deploymentItemTitle}>
+                      {t(title)}
+                      {extraLinkContent}
+                    </span>
+                    <span className={style.deploymentItemDesc}>{t(des)}</span>
+                  </div>
+                  {linkUrl && <div className={style.deploymentLink}>→</div>}
                 </div>
-                {linkUrl && <div className={style.deploymentLink}>→</div>}
-              </div>
+              </Link>
             ),
           )}
       </div>

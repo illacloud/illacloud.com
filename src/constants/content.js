@@ -173,7 +173,7 @@ export const partnerContent = {
       logo: Appwrite,
       name: 'Appwrite',
       desc: 'partnerList.partner-4',
-      tag: 'API',
+      tag: 'Database',
       href: 'https://appwrite.io/',
       tagCategory: 'homepage_partner_appwrite_click',
     },

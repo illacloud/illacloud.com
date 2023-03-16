@@ -30,9 +30,8 @@ const Home = () => {
         )
         const resJSON = await res.json()
         starCounts = resJSON?.stargazers_count
-      } catch {
         setStarCounts(starCounts)
-      }
+      } catch {}
     }
     request()
   }, [])
