@@ -78,9 +78,15 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['connect-data-sources'],
         pagesUS['build-your-apps'],
         pagesUS['deploy-on-premise'],
+        pagesUS['collaboration'],
       ],
       '👷 Deploy ILLA': [pagesUS['illa-cli']],
-      '🔨 Integrations': [pagesUS['integration-list'], pagesUS['supabase']],
+      '🔨 Integrations': [
+        pagesUS['integration-list'],
+        pagesUS['supabase'],
+        pagesUS['sql_generate'],
+        pagesUS['appwrite'],
+      ],
       '📲 Connect to Database and API': [
         pagesUS['connect-to-a-database'],
         pagesUS['connect-to-an-api'],
@@ -94,6 +100,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['javascript'],
       ],
       '🧬 Assemble components': [
+        pagesUS['illa_components'],
         pagesUS['table'],
         pagesUS['list'],
         pagesUS['chart'],
