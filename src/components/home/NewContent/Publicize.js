@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
+import clsx from 'clsx'
 
 const Publicize = () => {
   const [publicizeList, setPublicizeList] = useState([])
@@ -34,19 +35,26 @@ const Publicize = () => {
     }
     request()
   }, [])
-  if (!publicizeItem) return null
   return (
     <a
-      className={style.publicize}
-      href={publicizeItem.href}
+      className={clsx(style.publicize, {
+        "invisible": !publicizeItem,
+        "pointer-events-none": !publicizeItem
+      })}
+      href={publicizeItem?.href ?? ""}
       target="_blank"
       rel="noreferrer"
-      onClick={sendTagEvent({
-        action: 'click',
-        category: 'homepage_body_announcement_click',
-        label: 'announcement',
-        value: `${publicizeItem.href}`,
-      })}
+      onClick={() => {
+        if (publicizeItem) {
+          sendTagEvent({
+            action: 'click',
+            category: 'homepage_body_announcement_click',
+            label: 'announcement',
+            value: `${publicizeItem.href}`,
+          })
+        }
+
+      }}
     >
       <span className={style.publicizeStyle}>
         <img
@@ -59,13 +67,13 @@ const Publicize = () => {
         <span className={style.publicIntru}>
           <img
             className="h-[24px] w-[24px]"
-            src={publicizeItem.logo}
+            src={publicizeItem?.logo ?? ""}
             alt="publicize logo"
           />
-          {publicizeItem.intruduction}
+          {publicizeItem?.intruduction ?? ""}
         </span>
       </span>
-      <span className={style.publicSlogan}>{publicizeItem.slogan}</span>
+      <span className={style.publicSlogan}>{publicizeItem?.slogan ?? ""}</span>
     </a>
   )
 }
