@@ -8,7 +8,7 @@ const Publicize = () => {
 
   const publicizeItem = useMemo(() => {
     const now = Date.now()
-    if(!publicizeList) return []
+    if(!publicizeList.length) return []
     for(let item of publicizeList) {
       const { startTime, endTime } = item
       const isMoreStarTime = now >= new Date(startTime).getTime()

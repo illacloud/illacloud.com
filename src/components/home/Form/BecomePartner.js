@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { RemoveScroll } from 'react-remove-scroll'
 import { useTranslation } from 'next-i18next'
@@ -51,9 +51,6 @@ const BecomePartner = ({ visible, onChangeShow }) => {
       })
   }
 
-  useEffect(() => {
-    setDisabled(isValid)
-  }, [isValid])
 
   if (!visible) return null
 
@@ -135,7 +132,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
             <div className={clsx(style.mdSubmit, 'xl:h-[80px] h-[120px]')}>
               <button
                 type="submit"
-                disabled={!disabled}
+                disabled={!disabled || !isValid}
                 className={clsx(style.button, 'xl:w-[400px] w-[343px]')}
               >
                 {t('partnerFrom.submit')}

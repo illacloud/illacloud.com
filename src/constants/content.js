@@ -7,9 +7,16 @@ import Lightly from '@/img/home/Lightly.svg'
 import APITable from '@/img/home/APITable.svg'
 import buildDevelopers from '@/img/home/build_developers.svg'
 import collaboration from '@/img/home/collaboration.svg'
-import dataSource from '@/img/home/data_source.png'
+import dataSource from '@/img/home/data_source.svg'
 import sqlGenerate from '@/img/home/sql_generate.svg'
 import uiLibrary from '@/img/home/ui_library.svg'
+import bgGenerate from '@/img/home/bg_generate.svg'
+import bgAny from '@/img/home/bg_any.svg'
+import bgCollaboration from '@/img/home/bg_collaboration.svg'
+import bgFlexible from '@/img/home/bg_flexible.svg'
+import bgFully from '@/img/home/bg_fully.svg'
+import bgPartner from '@/img/home/bg_partner.svg'
+import bgDevelopers from '@/img/home/bg_developers.svg'
 
 export const contentList = [
   {
@@ -19,11 +26,7 @@ export const contentList = [
       'content.sql-generate.title-2',
     ],
     colorationTitle: ['Generate', '智能生成'],
-    color: {
-      colorDeg: '104.61deg',
-      colorStart: '#C120C5',
-      colorEnd: 'rgba(184, 255, 68, 0)',
-    },
+    color: bgGenerate,
     linkUrl: '',
     linkContent: 'content.sql-generate.goto',
     extraLinkContent: '✍️ →',
@@ -36,13 +39,8 @@ export const contentList = [
       'content.for-developer.title-1',
       'content.for-developer.title-2',
     ],
-    colorationTitle: [' Developers', '开发者'],
-    color: {
-      colorDeg: '272.97deg',
-      colorStart: 'rgba(85, 39, 130, 0)',
-      colorEnd: '#521CED',
-      hasFilter: true,
-    },
+    colorationTitle: ['Developers', '开发者'],
+    color: bgDevelopers,
     linkUrl: 'https://www.illacloud.com/docs/javascript',
     linkContent: 'content.for-developer.goto',
     extraLinkContent: '😋 →',
@@ -57,11 +55,7 @@ export const contentList = [
       'content.date-integrate.title-4',
     ],
     colorationTitle: ['Any', '整合'],
-    color: {
-      colorDeg: '104.61deg',
-      colorStart: '#20C560',
-      colorEnd: 'rgba(193, 197, 32, 0)',
-    },
+    color: bgAny,
     linkUrl: 'https://www.illacloud.com/docs/integration-list',
     linkContent: 'content.date-integrate.goto',
     extraLinkContent: '😀 →',
@@ -91,11 +85,7 @@ export const contentList = [
       'content.collaborative-develop.title-4',
     ],
     colorationTitle: ['Collaboration', '协同'],
-    color: {
-      colorDeg: '90deg',
-      colorStart: '#FF008A',
-      colorEnd: 'rgba(255, 15, 0, 0)',
-    },
+    color: bgCollaboration,
     linkUrl: '/docs/about-illa',
     linkContent: 'content.collaborative-develop.goto',
     extraLinkContent: '🤠 →',
@@ -110,11 +100,7 @@ export const contentList = [
       'content.ui-library.title-4',
     ],
     colorationTitle: ['fully', '完善'],
-    color: {
-      colorDeg: '104.61deg',
-      colorStart: '#C58320',
-      colorEnd: 'rgba(154, 197, 32, 0)',
-    },
+    color: bgFully,
     linkUrl: '/docs/about-illa',
     linkContent: 'content.ui-library.goto',
     extraLinkContent: '👍 →',
@@ -124,12 +110,7 @@ export const contentList = [
 export const deploymentContent = {
   tittleList: ['deployment.title-1', 'deployment.title-2'],
   colorationTitle: ['Flexible', '灵活'],
-  color: {
-    colorDeg: '272.97deg',
-    colorStart: 'rgba(11, 255, 35, 0)',
-    colorEnd: '#0500FF',
-    hasFilter: true,
-  },
+  color: bgFlexible,
   desc: 'deployment.introduction',
   items: [
     {
@@ -158,15 +139,10 @@ export const deploymentContent = {
 }
 
 export const partnerContent = {
-  tittleList: ['content.for-developer.title-2'],
-  colorationTitle: [' Developers', '开发者'],
+  tittleList: ['partner'],
+  colorationTitle: ['Partner', '合作伙伴'],
   becomePartner: 'Become a partner',
-  color: {
-    colorDeg: '1272.97deg',
-    colorStart: 'rgba(58, 19, 255, 0)',
-    colorEnd: '#8000FF',
-    hasFilter: true,
-  },
+  color: bgPartner,
   partners: [
     {
       logo: Huggingface,
@@ -245,8 +221,8 @@ export const partnerFormContent = [
 export const bookFormContent = [
   ...partnerFormContent,
   {
-    label: 'bookFrom.form.bit.label',
-    name: 'bit',
+    label: 'bookFrom.form.about.label',
+    name: 'about',
     required: true,
   },
   {

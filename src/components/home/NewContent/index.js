@@ -71,7 +71,7 @@ const ContentWrapper = ({ contentValue }) => {
 
 export const NewContent = ({ onChangeShow }) => {
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-black xl:pb-[200px] pb-[40px]">
       <div className={style.content}>
         {contentList.map((contentValue) => (
           <ContentWrapper key={contentValue.desc} contentValue={contentValue} />

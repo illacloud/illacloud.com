@@ -75,7 +75,7 @@ export const getBookForm = ({
   firstName,
   lastName,
   title,
-  bit,
+  about,
   wantTo,
 }) => {
   const bookForm = {
@@ -129,7 +129,7 @@ export const getBookForm = ({
           {
             is_short: true,
             text: {
-              content: `**📈 About his project**\n${bit}`,
+              content: `**📈 About his project**\n${about}`,
               tag: 'lark_md',
             },
           },

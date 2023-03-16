@@ -109,7 +109,6 @@ const Home = () => {
           onSubscribe={() => setModalVisible(true)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} />
-        <div className="w-20px lg:h-[500px] h-[40px]"></div>
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
         <SubscribeModal
           visible={modalVisible}

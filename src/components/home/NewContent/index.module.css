@@ -48,7 +48,7 @@
   @apply xl:px-[24] xl:gap-[8px] xl:rounded-[20px];
 }
 .deployment {
-  @apply w-full flex flex-col justify-center items-start xl:h-[100vh] xl:pt-[24px] gap-[32px];
+  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] xl:pt-[24px] gap-[32px] my-0 mx-auto;
 }
 .deploymentDesc {
   @apply font-[400] leading-[20px] text-[14px];
@@ -84,12 +84,12 @@
   @apply xl:py-[8px] xl:px-[24px] xl:leading-[56px] xl:rounded-[32px];
 }
 .content {
-  @apply w-full mx-auto rounded-b-[40px] text-white bg-black pt-[40px] px-[24px] flex flex-col gap-[60px];
+  @apply w-full mx-auto rounded-b-[40px] text-white bg-black xl:pt-[200px] px-[24px] flex flex-col xl:gap-[320px] gap-[60px];
   @apply xl:w-[1200px] xl:px-0;
 }
 .contentWrapper {
-  @apply flex flex-wrap justify-center items-center gap-[32px];
-  @apply xl:h-[100vh] xl:justify-between;
+  @apply flex flex-wrap justify-center items-center gap-[32px] xl:mt-[200px] mt-[40px];
+  @apply  xl:justify-between;
 }
 .contentDesc {
   @apply font-[400] leading-[20px] text-[14px];
@@ -115,6 +115,12 @@
 .publicIntru {
   @apply flex items-center gap-[8px] text-[11px] leading-[13.5px] font-[500];
   @apply xl:text-[14px] xl:leading-[17px];
+}
+.partnerCard:first-child {
+  @apply ml-[24px] xl:ml-[120px];
+}
+.partnerCard:last-child {
+  @apply mr-[24px] xl:mr-[120px];
 }
 .publicSlogan {
   @apply text-[12px] leading-[16px] font-[500] uppercase absolute top-[12px] right-[16px] z-[1];

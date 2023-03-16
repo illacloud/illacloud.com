@@ -12,7 +12,7 @@ export const Partner = ({ onChangeShow }) => {
   return (
     <div
       className={clsx(
-        'w-full xl:gap-[40px] overflow-hidden gap-[20px] text-white',
+        'w-full xl:gap-[40px] overflow-hidden gap-[20px] text-white pt-[40px] xl:pt-[200px]',
         style.colCenter,
       )}
     >

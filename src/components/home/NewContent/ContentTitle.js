@@ -4,12 +4,9 @@ import style from './index.module.css'
 
 export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
   const { t } = useTranslation('home')
-  const { colorDeg, colorStart, colorEnd, hasFilter } = color
   const colorStyle = {
-    background: `linear-gradient(${colorDeg}, ${colorStart} 0%, ${colorEnd} 100%)`,
-    filter: `${
-      hasFilter ? 'drop-shadow(0px 2px 16px rgba(21, 15, 27, 0.16))' : 'none'
-    }`,
+    background: `url('${color}') no-repeat`,
+    backgroundSize: 'cover'
   }
   const firstHalf = tittleList.slice(0, 2)
   const lastHalf = tittleList.slice(2)
