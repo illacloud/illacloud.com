@@ -3,13 +3,13 @@ import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
 
 const Publicize = () => {
-  const [ publicizeList, setPublicizeList ] = useState([])
+  const [publicizeList, setPublicizeList] = useState([])
   const host = 'https://strapi.illasoft.com'
 
   const publicizeItem = useMemo(() => {
     const now = Date.now()
-    if(!publicizeList.length) return []
-    for(let item of publicizeList) {
+    if (!publicizeList.length) return undefined
+    for (let item of publicizeList) {
       const { startTime, endTime } = item
       const isMoreStarTime = now >= new Date(startTime).getTime()
       const isLessEndTime = now <= new Date(endTime).getTime()
@@ -17,6 +17,7 @@ const Publicize = () => {
         return item
       }
     }
+    return undefined
   }, [publicizeList])
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const Publicize = () => {
     }
     request()
   }, [])
-  if (!publicizeList || !publicizeItem) return null
+  if (!publicizeItem) return null
   return (
     <a
       className={style.publicize}
@@ -49,7 +50,7 @@ const Publicize = () => {
     >
       <span className={style.publicizeStyle}>
         <img
-        className='w-full'
+          className='w-full'
           src={host + publicizeItem?.bgImg?.url}
           alt="publicize background"
         />
