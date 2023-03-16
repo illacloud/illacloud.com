@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 import { mdxComponents } from '@/utils/mdxComponents'
 import clsx from 'clsx'
-import { NewsletterForm } from '@/components/NewsletterForm'
 import { Button } from '@/components/Button'
 import { formatDate } from '@/utils/formatDate'
 import { ReactComponent as LinkedinShare } from '@/img/share/linkedin.svg'
@@ -35,9 +34,8 @@ const blogBaseStructuredData = {
     name: 'Jerry',
     image: {
       '@type': 'ImageObject',
-      url: `https://www.illacloud.com${
-        require('@/img/authors/jerry.jpeg').default
-      }`,
+      url: `https://www.illacloud.com${require('@/img/authors/jerry.jpeg').default
+        }`,
       width: 512,
       height: 512,
     },
@@ -354,9 +352,8 @@ export function Metadata({ meta }) {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${
-              require('@/img/illa_logo.png').default
-            }`}
+            content={`https://illa.cloud${require('@/img/illa_logo.png').default
+              }`}
           />
         </>
       )}

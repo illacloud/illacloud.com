@@ -55,8 +55,8 @@
   @apply xl:leading-[19px] xl:text-[16px];
 }
 .deploymentItem {
-  @apply flex flex-row rounded-[8px] justify-between p-[16px] pr-[40px];
-  @apply xl:rounded-[16px] xl:px-[32px] xl:py-[40px];
+  @apply flex flex-row rounded-[8px] justify-between p-[16px];
+  @apply xl:rounded-[16px] xl:p-[32px];
   background: linear-gradient(
     180deg,
     rgba(108, 56, 255, 0.16) 0%,
@@ -72,8 +72,7 @@
   @apply xl:text-[16px] xl:leading-[24px];
 }
 .deploymentLink {
-  @apply hidden justify-center items-center w-[40px] h-[40px] border-solid border-white border-[1px] rounded-[20px];
-  @apply xl:flex;
+  @apply flex justify-center items-center w-[28px] h-[28px] border-solid border-white border-[1px] rounded-[20px] xl:w-[40px] xl:h-[40px];
 }
 .contentTitle {
   @apply flex flex-col items-start  justify-start font-[700] gap-[4px] leading-[29px] text-[24px];
