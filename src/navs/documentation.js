@@ -84,7 +84,7 @@ export const ILLADocumentationNav = (locale) => {
       '🔨 Integrations': [
         pagesUS['integration-list'],
         pagesUS['supabase'],
-        pagesUS['sql_generate'],
+        pagesUS['sql-generate'],
         pagesUS['appwrite'],
       ],
       '📲 Connect to Database and API': [
@@ -100,7 +100,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['javascript'],
       ],
       '🧬 Assemble components': [
-        pagesUS['illa_components'],
+        pagesUS['illa-components'],
         pagesUS['table'],
         pagesUS['list'],
         pagesUS['chart'],

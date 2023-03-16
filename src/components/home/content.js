@@ -66,20 +66,18 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px] opacity-90 w-full  font-normal pt-[8px] xl:pt-[16px]">
               {t('content.for-developer.introduction')}
             </div>
-            <Link href="/docs/about-illa" legacyBehavior>
-              <div
-                className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90 font-normal cursor-pointer mt-[12px] xl:mt-[16px]"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_write_javascript_click',
-                    label: `${t('content.for-developer.goto')} 😋 →`,
-                  })
-                }}
-              >
-                {t('content.for-developer.goto')} 😋 →
-              </div>
-            </Link>
+            <div
+              className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90 font-normal cursor-pointer mt-[12px] xl:mt-[16px]"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_write_javascript_click',
+                  label: `${t('content.for-developer.goto')} 😋 →`,
+                })
+              }}
+            >
+              {t('content.for-developer.goto')} 😋 →
+            </div>
           </>
         }
       />
@@ -109,7 +107,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  xl:text-[16px] opacity-90 w-full font-normal pt-[16px]">
               {t('content.date-integrate.introduction')}
             </div>
-            <Link href="/docs/about-illa" legacyBehavior>
+            <a>
               <div
                 className="text-[14px] xl:text-[16px] text-[#bca6f7] opacity-90  font-normal cursor-pointer  mt-[12px] xl:mt-[16px]"
                 onClick={() => {
@@ -122,7 +120,7 @@ export function Content() {
               >
                 {t('content.date-integrate.goto')} 😀 →
               </div>
-            </Link>
+            </a>
           </>
         }
       />
@@ -151,20 +149,18 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full font-normal pt-[8px] xl:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <Link href="/docs/collaboration" legacyBehavior>
-              <div
-                className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_learn_how_click',
-                    label: `${t('content.collaborative-develop.goto')} 🤠 →`,
-                  })
-                }}
-              >
-                {t('content.collaborative-develop.goto')} 🤠 →
-              </div>
-            </Link>
+            <div
+              className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_learn_how_click',
+                  label: `${t('content.collaborative-develop.goto')} 🤠 →`,
+                })
+              }}
+            >
+              {t('content.collaborative-develop.goto')} 🤠 →
+            </div>
           </>
         }
       />
@@ -192,20 +188,18 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full mt-[8px] xl:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
-            <Link href="/docs/illa_components" legacyBehavior>
-              <div
-                className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_view_all_click',
-                    label: `${t('content.ui-library.goto')} 👍 →`,
-                  })
-                }}
-              >
-                {t('content.ui-library.goto')} 👍 →
-              </div>
-            </Link>
+            <div
+              className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: 'homepage_body_view_all_click',
+                  label: `${t('content.ui-library.goto')} 👍 →`,
+                })
+              }}
+            >
+              {t('content.ui-library.goto')} 👍 →
+            </div>
           </>
         }
       />
