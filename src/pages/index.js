@@ -29,9 +29,11 @@ const Home = () => {
           'https://api.github.com/repos/illacloud/illa-builder',
         )
         const resJSON = await res.json()
-        starCounts = resJSON?.stargazers_count
+        starCounts = resJSON?.stargazers_count || 0
         setStarCounts(starCounts)
-      } catch {}
+      } catch {
+        setStarCounts(0)
+      }
     }
     request()
   }, [])
