@@ -32,6 +32,7 @@ export const Deployment = () => {
                   className={clsx(
                     style.deploymentItem,
                     !index ? 'w-full' : 'xl:w-[388px] w-full',
+                    showArrow ? "items-center" : "items-start",
                   )}
                 >
                   <div className="flex flex-col">
