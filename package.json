@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js ",
     "export": "next build && next export",
-    "dev": "PORT=4000 next dev",
+    "dev": "node server.js",
     "build": "next build",
     "postbuild": "next-sitemap",
     "format": "prettier '{src,remark,scripts}/**/*.{css,js,mdx}' --write"

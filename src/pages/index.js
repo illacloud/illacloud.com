@@ -94,6 +94,11 @@ const Home = (props) => {
           onClose={() => setModalVisible(false)}
         />
       </div>
+      <div onClick={() => {
+        fetch("/sendMessageToServer")
+      }}>
+        11adsadas
+      </div>
       <Footer />
     </>
   )
