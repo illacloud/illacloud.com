@@ -19,7 +19,7 @@ export const Deployment = () => {
         />
         <div className={style.deploymentDesc}>{t(desc)}</div>
       </div>
-      <div className="flex xl:flex-row flex-wrap justify-between">
+      <div className="flex xl:flex-row flex-wrap justify-between gap-[12px] xl:gap-0 xl:gap-y-[16px] ">
         {items &&
           items.map(
             (
