@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import React from 'react'
 import Link from 'next/link'
-import { sendTagEvent } from '@/utils/gtag'
 import { ContentTitle } from './ContentTitle'
 import { Deployment } from './Deployment'
 import { Partner } from './Partner'
@@ -47,13 +46,6 @@ const ContentWrapper = ({ contentValue }) => {
         <Link href={linkUrl} legacyBehavior>
           <div
             className={style.contentLink}
-            onClick={() => {
-              sendTagEvent({
-                action: '',
-                category: '',
-                label: ``,
-              })
-            }}
           >
             {`${t(linkContent)} ${extraLinkContent}`}
           </div>

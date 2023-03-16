@@ -8,11 +8,11 @@ import style from './index.module.css'
 
 export const Partner = ({ onChangeShow }) => {
   const { t } = useTranslation('home')
-  const { partners, tittleList, colorationTitle, color, becomePartner } = partnerContent
+  const { partners, tittleList, colorationTitle, color } = partnerContent
   return (
     <div
       className={clsx(
-        'w-full xl:gap-[40px] overflow-hidden gap-[20px] text-white pt-[40px] xl:pt-[200px]',
+        'w-full xl:w-[1200px] xl:gap-[40px] overflow-hidden gap-[20px] text-white pt-[40px] xl:pt-[200px] my-0 mx-auto',
         style.colCenter,
       )}
     >
@@ -84,7 +84,7 @@ export const Partner = ({ onChangeShow }) => {
           </svg>
         </span>
         <span className="lg:leading-[24px] leading-[20px] font-[500px] text-[16px]">
-          {t(becomePartner)}
+          {t('becomePartner')}
         </span>
       </div>
     </div>

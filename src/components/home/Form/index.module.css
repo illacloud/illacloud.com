@@ -16,6 +16,9 @@
   @apply py-[13px] px-[16px] bg-[#1F1F1F] rounded-[4px] h-[48px] box-border outline-none border-0;
   @apply xl:py-[5px] xl:bg-[#FFFFFF] xl:rounded-[8px] xl:h-[32px] xl:border-[1px];
 }
+.input::placeholder {
+  @apply font-[400] text-[14px] leading-[22px] text-[#999999]
+}
 .button {
   @apply box-border flex flex-row items-center  justify-center text-white h-[48px] py-[14px] px-[16px] font-[500] text-[16px] leading-[20px] rounded-[4px];
   @apply bg-tech-purple-01 rounded-[4px] hover:bg-tech-purple-02 focus:bg-tech-purple-n-01;
@@ -43,14 +46,14 @@
   backdrop-filter: blur(4px);
 }
 .bookContainer {
-  @apply flex flex-col justify-center items-center text-white w-full h-screen bg-black z-[51] overflow-y-scroll;
-  @apply xl:text-[#1D2129] flex-row xl:w-[744px] xl:h-[710px] xl:absolute xl:rounded-[16px] xl:overflow-hidden xl:bg-white xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:m-auto;
+  @apply flex flex-col justify-center items-start text-white w-full h-screen bg-black z-[51] overflow-y-scroll;
+  @apply xl:text-[#1D2129] flex-row xl:w-[744px] xl:h-[710px] xl:absolute xl:rounded-[16px] xl:overflow-hidden xl:bg-white xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:m-auto lg:items-center;
 }
 .bookTitle {
   @apply h-[64px] font-[700] text-[24px] leading-[26px]  flex items-center justify-between py-[17.5px] px-[20px];
   @apply xl:h-[68px] xl:font-[500] xl:text-[20px] xl:leading-[28px] xl:text-center xl:justify-center xl:py-0 xl:pl-[32px];
 }
 .mdSubmit {
-  @apply w-full flex justify-center items-center py-[36px] px-0 gap-[4px];
-  @apply xl:p-[24px] xl:gap-[8px];
+  @apply w-full flex justify-center items-center py-[36px] px-0 gap-[4px] mb-[150px];
+  @apply xl:p-[24px] xl:gap-[8px] xl:mb-0;
 }

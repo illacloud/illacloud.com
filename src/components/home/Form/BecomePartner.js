@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import style from './index.module.css'
 import { Toast } from '@/components/home/Toast'
 import { partnerFormContent } from '@/constants/content'
-import { getPartnerForm } from '@/constants/larkFormJs2Json'
 
 const BecomePartner = ({ visible, onChangeShow }) => {
   const { t } = useTranslation('home')
@@ -19,17 +18,16 @@ const BecomePartner = ({ visible, onChangeShow }) => {
     mode: 'onSubmit',
   })
 
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(true)
 
   const onSubmit = async (val) => {
-    const data = getPartnerForm(val)
     if (!disabled) return
     setDisabled(false)
     await fetch(
-      'https://open.larksuite.com/open-apis/bot/v2/hook/74a67728-cc16-49f1-879a-fbf4b842b823',
+      'https://lark.illasoft.com/lark/partner',
       {
         method: 'POST',
-        body: data,
+        body: JSON.stringify(val),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -37,7 +35,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
     )
       .then(async (res) => {
         const resJSON = await res.json()
-        if (resJSON.code === 0) {
+        if (resJSON.message) {
           onChangeShow()
           reset()
           Toast.info('😀 success', 2)

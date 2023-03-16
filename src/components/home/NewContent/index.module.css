@@ -4,7 +4,7 @@
 .partner {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  @apply w-full flex flex-row items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
+  @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .rowCenter {
   @apply flex flex-row items-center  justify-center;
@@ -22,7 +22,7 @@
   );
 }
 .partnerCard::before {
-  @apply absolute left-0 top-0 bottom-0 right-0 opacity-0 z-[-1];
+  @apply hidden lg:block absolute left-0 top-0 bottom-0 right-0 opacity-0 z-[-1];
   content: '';
   background: linear-gradient(180deg, #6c38ff 0%, rgba(0, 56, 255, 0) 100%);
   transition: opacity 200ms ease-in-out;
@@ -48,7 +48,7 @@
   @apply xl:px-[24] xl:gap-[8px] xl:rounded-[20px];
 }
 .deployment {
-  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] xl:pt-[24px] gap-[32px] my-0 mx-auto;
+  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] xl:pt-[300px] gap-[32px] my-0 mx-auto;
 }
 .deploymentDesc {
   @apply font-[400] leading-[20px] text-[14px];
@@ -64,11 +64,11 @@
   );
 }
 .deploymentItemTitle {
-  @apply font-[700] text-[16px] leading-[20px];
+  @apply font-[700] text-[16px] leading-[20px] mt-[12px] xl:mt-[24px];
   @apply xl:text-[24px] xl:leading-[28px];
 }
 .deploymentItemDesc {
-  @apply font-[400] text-[12px] leading-[32px];
+  @apply font-[400] text-[12px] leading-[32px] mt-[8px];
   @apply xl:text-[16px] xl:leading-[24px];
 }
 .deploymentLink {
@@ -84,11 +84,11 @@
   @apply xl:py-[8px] xl:px-[24px] xl:leading-[56px] xl:rounded-[32px];
 }
 .content {
-  @apply w-full mx-auto rounded-b-[40px] text-white bg-black xl:pt-[200px] px-[24px] flex flex-col xl:gap-[320px] gap-[60px];
+  @apply w-full mx-auto rounded-b-[40px] text-white bg-black  px-[24px] flex flex-col lg:gap-0 gap-[60px];
   @apply xl:w-[1200px] xl:px-0;
 }
 .contentWrapper {
-  @apply flex flex-wrap justify-center items-center gap-[32px] xl:mt-[200px] mt-[40px];
+  @apply flex flex-wrap justify-center items-center gap-[32px] xl:mt-[300px] mt-[40px];
   @apply  xl:justify-between;
 }
 .contentDesc {
@@ -99,7 +99,7 @@
   @apply flex flex-row justify-center items-center py-[4px] px-[20px] gap-[8px] text-black rounded-[8px];
 }
 .contentLink {
-  @apply underline font-[400] text-[12px] leading-[16px];
+  @apply underline font-[400] text-[12px] leading-[16px] cursor-pointer;
   @apply xl:font-[500] xl:text-[16px] xl:leading-[19px];
 }
 .publicize {
@@ -117,10 +117,10 @@
   @apply xl:text-[14px] xl:leading-[17px];
 }
 .partnerCard:first-child {
-  @apply ml-[24px] xl:ml-[120px];
+  @apply ml-[32px] xl:ml-0;
 }
 .partnerCard:last-child {
-  @apply mr-[24px] xl:mr-[120px];
+  @apply mr-[32px] xl:mr-0;
 }
 .publicSlogan {
   @apply text-[12px] leading-[16px] font-[500] uppercase absolute top-[12px] right-[16px] z-[1];

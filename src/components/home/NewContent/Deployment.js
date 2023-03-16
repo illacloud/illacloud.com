@@ -29,7 +29,7 @@ export const Deployment = () => {
                   !index ? 'w-full' : 'xl:w-[388px] w-full',
                 )}
               >
-                <div className="flex flex-col xl:gap-[24px] gap-[12px]">
+                <div className="flex flex-col">
                   <span className="xl:w-[40px] w-[28px]">{icon}</span>
                   <span className={style.deploymentItemTitle}>
                     {t(title)}

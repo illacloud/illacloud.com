@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import style from './index.module.css'
 import { Toast } from '@/components/home/Toast'
 import { bookFormContent } from '@/constants/content'
-import { getBookForm } from '@/constants/larkFormJs2Json'
 
 export const BookDemo = ({ visible, onChangeShow }) => {
   const { t } = useTranslation('home')
@@ -22,14 +21,13 @@ export const BookDemo = ({ visible, onChangeShow }) => {
   const [disabled, setDisabled] = useState(true)
 
   const onSubmit = async (val) => {
-    const data = getBookForm(val)
     if (!disabled) return
     setDisabled(false)
     await fetch(
-      '/api/open-apis/bot/v2/hook/74a67728-cc16-49f1-879a-fbf4b842b823',
+      'https://lark.illasoft.com/lark/bookForm',
       {
         method: 'POST',
-        body: data,
+        body: JSON.stringify(val),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -37,7 +35,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
     )
       .then(async (res) => {
         const resJSON = await res.json()
-        if (resJSON.code === 0) {
+        if (resJSON.message) {
           onChangeShow()
           reset()
           Toast.info('😀 success', 2)
