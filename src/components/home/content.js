@@ -151,7 +151,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full font-normal pt-[8px] xl:pt-[16px]">
               {t('content.collaborative-develop.introduction')}
             </div>
-            <Link href="/docs/about-illa" legacyBehavior>
+            <Link href="/docs/collaboration" legacyBehavior>
               <div
                 className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
                 onClick={() => {
@@ -192,7 +192,7 @@ export function Content() {
             <div className="text-[14px] xl:text-[16px]  opacity-90 w-full mt-[8px] xl:mt-[16px]  font-normal">
               {t('content.ui-library.introduction')}
             </div>
-            <Link href="/docs/about-illa" legacyBehavior>
+            <Link href="/docs/illa_components" legacyBehavior>
               <div
                 className="text-[16px] text-[#bca6f7] opacity-90 cursor-pointer  font-normal mt-[12px] xl:mt-[16px]"
                 onClick={() => {
