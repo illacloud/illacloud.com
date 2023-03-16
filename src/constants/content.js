@@ -116,6 +116,7 @@ export const deploymentContent = {
   items: [
     {
       icon: <CloudIcon />,
+      showArrow: true,
       title: 'deployment.illa-cloud.title',
       des: 'deployment.illa-cloud.des',
       linkUrl: 'https://cloud.illacloud.com/',

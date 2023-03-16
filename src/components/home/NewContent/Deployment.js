@@ -22,7 +22,10 @@ export const Deployment = () => {
       <div className="flex xl:flex-row flex-wrap justify-between">
         {items &&
           items.map(
-            ({ icon, title, des, linkUrl, extraLinkContent }, index) => (
+            (
+              { icon, title, des, linkUrl, extraLinkContent, showArrow },
+              index,
+            ) => (
               <Link href={linkUrl ?? ''} key={title} legacyBehavior>
                 <div
                   key={title}
@@ -39,7 +42,7 @@ export const Deployment = () => {
                     </span>
                     <span className={style.deploymentItemDesc}>{t(des)}</span>
                   </div>
-                  {linkUrl && <div className={style.deploymentLink}>→</div>}
+                  {showArrow && <div className={style.deploymentLink}>→</div>}
                 </div>
               </Link>
             ),
