@@ -60,19 +60,21 @@ export const ILLADocumentationNav = (locale) => {
     }
   } else {
     return {
-      '👋 Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise']],
+      '👋 Introduction': [pagesUS['about-illa'], pagesUS['connect-data-sources'], pagesUS['build-your-apps'], pagesUS['deploy-on-premise'], pagesUS['collaboration']],
       '👷 Deploy ILLA': [
         pagesUS['illa-cli'],
       ],
-      "🔨 Integrations": [pagesUS['integration-list'],pagesUS['supabase']],
+      "🔨 Integrations": [pagesUS['integration-list'],pagesUS['supabase'],pagesUS['sql_generate']],
       "📲 Connect to Database and API": [pagesUS['connect-to-a-database'], pagesUS['connect-to-an-api'], pagesUS['api-authentication'], pagesUS['custom-api-authentication']],
       '🌀 BUILD YOUR APPS': [
         pagesUS['app-editor'],
         pagesUS['transformer'],
         pagesUS['event-handler'],
         pagesUS['javascript'],
+   
       ],
       '🧬 Assemble components': [
+        pagesUS['illa_components'], 
         pagesUS['table'], 
         pagesUS['list'], 
         pagesUS['chart'], 
