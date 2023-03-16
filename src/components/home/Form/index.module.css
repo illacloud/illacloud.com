@@ -17,7 +17,7 @@
   @apply xl:py-[5px] xl:bg-[#FFFFFF] xl:rounded-[8px] xl:h-[32px] xl:border-[1px];
 }
 .input::placeholder {
-  @apply font-[400] text-[14px] leading-[22px] text-[#999999]
+  @apply font-[400] text-[14px] leading-[22px] text-[#999999];
 }
 .button {
   @apply box-border flex flex-row items-center  justify-center text-white h-[48px] py-[14px] px-[16px] font-[500] text-[16px] leading-[20px] rounded-[4px];
@@ -33,7 +33,7 @@
   backdrop-filter: blur(4px);
 }
 .partnerContainer {
-  @apply flex flex-col justify-center items-center text-white w-full h-screen bg-black z-[51];
+  @apply flex flex-col  items-center text-white w-full h-screen bg-black z-[51] overflow-y-auto;
   @apply xl:text-[#1D2129] xl:w-[464px] xl:h-[538px] xl:absolute xl:rounded-[8px] xl:bg-white xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:m-auto;
 }
 .partnerTitle {

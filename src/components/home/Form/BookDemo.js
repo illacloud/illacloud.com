@@ -1,4 +1,4 @@
-import {useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { RemoveScroll } from 'react-remove-scroll'
 import { useTranslation } from 'next-i18next'
@@ -53,7 +53,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
 
   return (
     <div className={style.book}>
-      <RemoveScroll>
+      <RemoveScroll className='w-full'>
         <div className={style.bookContainer}>
           <div className="hidden xl:block w-[280px]">
             <img
@@ -61,7 +61,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
               alt="book a demo"
             />
           </div>
-          <div>
+          <div className='w-full xl:w-auto'>
             <div className="w-full">
               <img
                 className="hidden xl:block absolute top-[24px] right-[24px] cursor-pointer"
