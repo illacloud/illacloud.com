@@ -215,12 +215,14 @@ export const partnerFormContent = [
     required: true,
     pattern:
       /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+$/,
+      placeholder: 'www.illacloud.com',
   },
   {
     label: 'partnerFrom.form.email.label',
     name: 'email',
     required: true,
     pattern: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+    placeholder: 'business@illasoft.com',
   },
 ]
 export const bookFormContent = [
