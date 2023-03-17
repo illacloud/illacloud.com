@@ -17,7 +17,7 @@ function renderItem(title, items) {
       <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">
         {title}
       </div>
-      <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
+      <div className="flex flex-col text-[14px] text-[#1d2129]  font-normal cursor-pointer ">
         {items?.map((item) => {
           if (item.downloadName) {
             return (
@@ -98,17 +98,16 @@ export function Footer({ noHome = false }) {
           href: 'https://restfulapi.net/',
           tagCategory: 'homepage_footer_restapi_click',
         },
+        {
+          title: 'Status',
+          href: 'https://status.illacloud.com/',
+          tagCategory: 'homepage_footer_status_click',
+        },
       ],
     },
     {
       title: t('footer.company'),
       items: [
-        // { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
-        {
-          title: t('footer.career'),
-          href: '/hire',
-          tagCategory: 'homepage_footer_career_click',
-        },
         {
           title: t('footer.media'),
           href: 'https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip',
@@ -128,7 +127,7 @@ export function Footer({ noHome = false }) {
         )}
       >
         <motion.div
-          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1]"
+          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1] color-[#0B0C0F]"
           style={{
             translateY,
           }}
@@ -152,7 +151,7 @@ export function Footer({ noHome = false }) {
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-[#787E85] flex flex-row items-center gap-[8px]"
+                    className="xs:mb-[12px] text-[#0B0C0F] flex flex-row items-center gap-[8px]" 
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',
@@ -179,7 +178,7 @@ export function Footer({ noHome = false }) {
             Create with ❤️ by ILLA
           </span>
         </div>
-        <div className=" w-full justify-center items-center flex ">
+        <div className=" w-full justify-center items-center flex text-[#0B0C0F]">
           <div className=" w-full flex-wrap justify-start items-start flex ">
             {waysData.map((item) => renderItem(item.title, item.items))}
           </div>

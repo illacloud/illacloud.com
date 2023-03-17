@@ -1,0 +1,114 @@
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+.cardContainer {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
+}
+.pricingContainer {
+  @apply w-full overflow-y-scroll lg:h-[2158px] h-[1900px] absolute z-0;
+  @apply xs:rounded-b-[40px] overflow-hidden bg-black  ;
+}
+.pricingMaskLeft {
+  @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
+  @apply hidden lg:block bg-[#654AEC] absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskRight {
+  @apply w-[824px] h-[453px] left-[1004px] top-[109px] opacity-30;
+  @apply hidden lg:block bg-[#654AEC] absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskPhone {
+  @apply w-[630px] h-[415.69px] left-[-204px] top-[46.5\px] opacity-30 z-[-1];
+  @apply block lg:hidden absolute;
+  filter: blur(50px);
+  transform: rotate(2.6deg);
+  background: radial-gradient(37% 76.28% at 48.58% 50.06%, #654AEC 0%, rgba(101, 74, 236, 0) 100%) ;
+}
+.pricingContent {
+  @apply flex flex-col justify-center items-center gap-[10px] w-full my-0 mx-auto;
+  @apply xl:gap-[24px] lg:w-[1200px];
+}
+.pricingContentTitle {
+  @apply font-[700] text-[40px] leading-[48px] justify-self-center;
+  @apply xl:text-[64px] xl:leading-[72px];
+  position: relative;
+}
+.pricingContentTitleTag {
+  @apply hidden lg:inline-block gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px] ml-[8px] ;
+  background-color: rgba(169, 63, 253, 0.22);
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+}
+.contentContainer {
+  @apply flex flex-row gap-[2px] p-[1px] rounded-[4px];
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.pricingContentBtn {
+  @apply text-[14px] leading-[22px] flex items-center rounded-[3px] justify-center text-center w-[88px] h-[30px] cursor-pointer font-[400];
+  
+}
+.pricingContentBtnActive {
+  background: #654AEC;
+  filter: none;
+  font-weight: 500;
+}
+.cardContainer {
+  @apply flex flex-row gap-[12px] xl:gap-[16px] w-full justify-start items-start mt-[16px] rounded-[16px];
+  @apply lg:justify-center overflow-x-scroll overflow-y-hidden lg:w-[1400px] w-full;
+}
+.card {
+  @apply w-[320px] h-[916px] flex flex-col gap-[24px] items-center rounded-[16px] pt-[32px] relative;
+  @apply flex-shrink-0;
+  background: linear-gradient(180deg, rgba(120, 56, 255, 0.12) 67.93%, rgba(204, 0, 255, 0) 100%);
+}
+.lightCard{
+  @apply w-[320px] h-[916px] flex flex-col gap-[24px] items-center rounded-[16px] pt-[32px] relative cursor-pointer;
+  @apply flex-shrink-0;
+  background: linear-gradient(180deg, rgba(120, 56, 255, 0.4) 67.93%, rgba(204, 0, 255, 0) 100%);
+}
+.cardTitle {
+  @apply flex flex-row items-start py-[7px] px-[16px] gap-[8px] rounded-[20px] font-[500] text-[18px] leading-[26px];
+  background: rgba(169, 63, 253, 0.16);
+}
+.cardBtn {
+  @apply flex flex-row items-center py-[10px] px-[32px] gap-[10px] font-[400] text-[16px] leading-[28px]  h-[48px] rounded-[8px] cursor-pointer;
+}
+.cardListTitle {
+  @apply flex flex-row items-center py-[4px] px-[24px] gap-[8px] font-[600] text-[16px] leading-[24px] mt-[24px];
+}
+.cardListContent {
+  @apply flex flex-row items-center gap-[8px] font-[400] text-[14px] leading-[24px];
+}
+.hiddenListContent {
+  @apply lg:block hidden lg:py-[4px] lg:px-[24px] py-0 px-0 lg:h-[32px]
+}
+.blockListContent {
+ @apply py-[4px] px-[24px]
+}
+.card:first-child {
+  @apply ml-[32px] xl:ml-0;
+}
+.card:last-child {
+  @apply mr-[32px] xl:mr-0;
+}
+.openSource {
+  padding-top: 40px!important;
+  @apply px-[20px] lg:px-0 pb-[100px];
+}
+.doubt:hover .tips{
+  display: block;
+}
+.tips {
+  position: absolute;
+}
+.tips img {
+  @apply w-[4px] h-[32px] relative left-[24px];
+}
+.tips span {
+  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
+}

@@ -241,11 +241,6 @@ export function Header({
               {/*<VersionSwitcher />*/}
               <Featured />
               <div className="relative hidden lg:flex items-center ml-auto">
-                <nav className="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
-                  <ul className="flex space-x-8">
-                    <NavItems />
-                  </ul>
-                </nav>
                 <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
                   <LanguageToggle />
                   <ThemeToggle />
