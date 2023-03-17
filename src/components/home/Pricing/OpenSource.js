@@ -27,6 +27,7 @@ export const OpenSource = () => {
                   key={title}
                   className={clsx(
                     style.deploymentItem,
+                    'cursor-pointer',
                     !index ? 'w-full' : 'xl:w-[388px] w-full',
                     showArrow ? "items-center" : "items-start",
                   )}

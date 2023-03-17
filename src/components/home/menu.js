@@ -122,7 +122,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
       </Link>
       <Link legacyBehavior href="/pricing">
               <a
-                className="px-[16px] text-center"
+                className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',

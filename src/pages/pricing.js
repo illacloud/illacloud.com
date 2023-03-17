@@ -39,7 +39,7 @@ const Pricing = () => {
           visible={isBookShow}
           onChangeShow={() => setIsBookShow(false)}
         />
-      <div className='mt-[2000px] inline-block w-full'>
+      <div className='lg:mt-[2250px] mt-[2150px] inline-block w-full'>
         <Footer />
       </div>
     </div>
