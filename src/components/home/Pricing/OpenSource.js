@@ -11,7 +11,7 @@ export const OpenSource = () => {
   const { items, desc, tittle } = openSourceContent
   return (
     <div className={clsx(style.deployment, styles.openSource)}>
-      <div className="flex flex-col xl:gap-[16px] gap-[12px] my-0 mx-auto pb-[100px]">
+      <div className="flex flex-col xl:gap-[16px] gap-[12px] my-0 mx-auto ">
         <div className='font-[700] text-[24px] leading-[29px] xl:text-[48px] xl:leading-[56px] text-center'>{t(tittle)}</div>
         <div className={clsx(style.deploymentDesc, 'text-center lg:w-[800px] w-[335px]')}>{t(desc)}</div>
       </div>
