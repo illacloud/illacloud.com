@@ -118,20 +118,6 @@ export const Nav = (props) => {
                 {t('nav.doc')}
               </a>
             </Link>
-            <Link legacyBehavior href="/hire">
-              <a
-                className="px-[16px] text-center"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_menu_career_click',
-                    label: t('nav.career'),
-                  })
-                }}
-              >
-                {t('nav.career')}
-              </a>
-            </Link>
             <FlowUsSelect buttonColorChange={!whiteTheme} />
             <Link legacyBehavior href="https://blog.illacloud.com/">
               <a

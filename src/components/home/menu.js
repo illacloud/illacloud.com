@@ -120,20 +120,6 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           {t('nav.doc')}
         </a>
       </Link>
-      <Link legacyBehavior href="/hire">
-        <a
-          className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
-          onClick={() => {
-            sendTagEvent({
-              action: 'click',
-              category: 'homepage_menu_career_mob_click',
-              label: t('nav.career'),
-            })
-          }}
-        >
-          {t('nav.career')}
-        </a>
-      </Link>
       <span
         onClick={() => {
           sendTagEvent({

@@ -517,6 +517,7 @@ export const openSourceContent = {
       title: 'deployment.illa-CLI.title',
       des: 'deployment.illa-CLI.des',
       linkUrl: 'https://www.illacloud.com/docs/illa-cli',
+      showArrow: true,
     },
     {
       icon: <KubernetesIcon />,

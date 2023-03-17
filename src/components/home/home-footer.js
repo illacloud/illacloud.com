@@ -98,17 +98,16 @@ export function Footer({ noHome = false }) {
           href: 'https://restfulapi.net/',
           tagCategory: 'homepage_footer_restapi_click',
         },
+        {
+          title: 'Status',
+          href: 'https://status.illacloud.com/',
+          tagCategory: 'homepage_footer_status_click',
+        },
       ],
     },
     {
       title: t('footer.company'),
       items: [
-        // { title: t('footer.blog'), href: 'https://www.illa.cloud/blog' },
-        {
-          title: t('footer.career'),
-          href: '/hire',
-          tagCategory: 'homepage_footer_career_click',
-        },
         {
           title: t('footer.media'),
           href: 'https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip',

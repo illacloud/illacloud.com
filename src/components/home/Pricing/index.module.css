@@ -89,15 +89,16 @@
 .openSource {
   padding-top: 40px!important;
 }
-.doubt:hover  .tips{
+.doubt:hover .tips{
   display: block;
 }
 .tips {
-  width: 200px
+  width: 200px;
+  position: absolute;
 }
 .tips img {
-  @apply w-[4px] h-[32px] relative left-[-4px] top-[50%];
+  @apply w-[4px] h-[32px] relative left-[24px];
 }
 .tips span {
-  @apply flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1];
+  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] top-[-65%];
 }

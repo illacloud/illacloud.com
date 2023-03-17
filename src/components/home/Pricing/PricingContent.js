@@ -7,7 +7,7 @@ import pricing_ from '@/img/home/pricing_.svg'
 import doubt from '@/img/home/doubt.svg'
 
 
-export const PricingContent = ({onChangeShow}) => {
+export const PricingContent = ({ onChangeShow }) => {
   const { t } = useTranslation('pricing')
   const [activeBtn, setActiveBtn] = useState(0)
   const [currentTip, setCurrentTip] = useState('')
@@ -16,13 +16,9 @@ export const PricingContent = ({onChangeShow}) => {
     return !activeBtn ? monthlyContent : annuallyContent
   }, [activeBtn])
 
-  const closeTip = (e) => {
-    if(!currentTip || e.target?.nodeName === 'IMG') return
-    setCurrentTip('')
-  }
 
   return (
-    <div className={style.pricingContent} onClick={closeTip}>
+    <div className={style.pricingContent} >
       <div className='w-full flex flex-row justify-start items-end'>
         <span className={style.pricingContentTitle}>{t('title')} </span>
         <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
@@ -41,7 +37,7 @@ export const PricingContent = ({onChangeShow}) => {
                 <span className='font-[700] text-[40px] leading-[48px]'>{t(price)}</span>
                 <span className='h-[48px] font-[400] text-[14px] leading-[22px] flex flex-col items-center'>
                   <span>{t(userMonth)}</span>
-                  {startAt && <span>{ t(startAt)}</span>}
+                  {startAt && <span>{t(startAt)}</span>}
                 </span>
               </div>
               {href && (
@@ -70,17 +66,17 @@ export const PricingContent = ({onChangeShow}) => {
                 {
                   apps.map(({ text, tip }) => {
                     return (
-                      <p className={clsx(!text ? 'h-[32px]' : '', style.cardListContent)} key={`app${{text}}`}>
+                      <p className={clsx(!text ? 'h-[32px]' : '', style.cardListContent)} key={`app${{ text }}`}>
                         {text && <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />}
                         <span>{t(text)}</span>
                         {tip && (
-                          <>
-                          <img onClick={() => {setCurrentTip(`${title}${tip}`)}} className={clsx('h-[16px] w-[16px]', style.doubt)} src={doubt} alt='pricing' />
-                          <span className={clsx(style.tips, 'relative flex items-center', (currentTip === `${title}${tip}` ? 'block' : 'hidden'))}>
-                            <img src={require('@/img/home/tip.svg').default} alt='tips'/>
-                            <span>{t(tip)}</span>
+                          <span className={clsx('w-[24px] h-[24px] flex items-center', style.doubt)}>
+                            <img className='h-[16px] w-[16px]' src={doubt} alt='pricing' />
+                            <span className={clsx(style.tips, 'relative flex items-center hidden')}>
+                              <img src={require('@/img/home/tip.svg').default} alt='tips' />
+                              <span>{t(tip)}</span>
+                            </span>
                           </span>
-                          </>
                         )}
                       </p>
                     )
@@ -94,13 +90,13 @@ export const PricingContent = ({onChangeShow}) => {
                         {title && <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />}
                         <span>{t(text)}</span>
                         {tip && (
-                          <>
-                          <img onClick={() => {setCurrentTip(`${title}${tip}`)}} className={clsx('h-[16px] w-[16px]', style.doubt)} src={doubt} alt='pricing' />
-                          <span className={clsx(style.tips, 'relative flex items-center', (currentTip === `${title}${tip}` ? 'block' : 'hidden'))}>
-                            <img  src={require('@/img/home/tip.svg').default} alt='tips'/>
-                            <span >{t(tip)}</span>
+                          <span className={clsx('w-[24px] h-[24px] flex items-center', style.doubt)}>
+                            <img className='h-[16px] w-[16px]' src={doubt} alt='pricing' />
+                            <span className={clsx(style.tips, 'relative flex items-center hidden')}>
+                              <img src={require('@/img/home/tip.svg').default} alt='tips' />
+                              <span>{t(tip)}</span>
+                            </span>
                           </span>
-                          </>
                         )}
                       </p>
                     )
