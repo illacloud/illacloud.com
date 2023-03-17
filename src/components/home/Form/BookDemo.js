@@ -101,7 +101,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
                   />
                 </div>
               </div>
-              {bookFormContent.map(({ label, name, required, pattern }) => (
+              {bookFormContent.map(({ label, name, required, pattern, placeholder }) => (
                 <div key={label} className={clsx('w-full', style.colInputItem)}>
                   <div className="flex flex-row items-center gap-[4px]">
                     {required && (
@@ -129,6 +129,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
                         required,
                         pattern,
                       })}
+                      placeholder={placeholder}
                     />
                   </div>
                 </div>

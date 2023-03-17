@@ -1,0 +1,41 @@
+.pricingContainer {
+  @apply w-full overflow-y-scroll h-[2058px] absolute z-0;
+  @apply xs:rounded-b-[40px] overflow-hidden bg-black xl:h-[2562px] ;
+}
+.pricingMaskLeft {
+  @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
+  @apply hidden lg:block bg-[#654AEC] absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskRight {
+  @apply w-[824px] h-[453px] left-[1004px] top-[109px] opacity-30;
+  @apply hidden lg:block bg-[#654AEC] absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskPhone {
+  @apply w-[630px] h-[415.69px] left-[-204px] top-[46.5\px] opacity-30 z-[-1];
+  @apply block lg:hidden absolute;
+  filter: blur(50px);
+  transform: rotate(2.6deg);
+  background: radial-gradient(37% 76.28% at 48.58% 50.06%, #654AEC 0%, rgba(101, 74, 236, 0) 100%) ;
+}
+.pricingContent {
+  @apply flex flex-col justify-center items-center gap-[10px] w-full my-0 mx-auto;
+  @apply xl:gap-[24px] lg:w-[1040px];
+}
+.pricingContentTitle {
+  @apply font-[700] text-[40px] leading-[48px];
+  @apply xl:text-[64px] xl:leading-[72px]
+}
+.pricingContentTitleTag {
+  @apply hidden lg:block gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px];
+  background-color: rgba(169, 63, 253, 0.22);
+}
+.pricingContentBtn {
+  @apply text-[14px] leading-[22px] flex items-center justify-center text-center rounded-[3px] w-[88px] h-[30px] cursor-pointer;
+  filter: drop-shadow(0px 2px 4px rgba(26, 34, 51, 0.04))
+}
+.pricingContentBtnActive {
+  background: #654AEC;
+  filter: none;
+}

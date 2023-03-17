@@ -95,7 +95,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
                 />
               </div>
             </div>
-            {partnerFormContent.map(({ label, name, required, pattern }) => (
+            {partnerFormContent.map(({ label, name, required, pattern, placeholder }) => (
               <div key={label} className={clsx('w-full', style.colInputItem)}>
                 <div className="flex flex-row items-center gap-[4px]">
                   {required && (
@@ -123,6 +123,7 @@ const BecomePartner = ({ visible, onChangeShow }) => {
                       required,
                       pattern,
                     })}
+                    placeholder={placeholder ? placeholder : ''}
                   />
                 </div>
               </div>
