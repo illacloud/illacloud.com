@@ -39,7 +39,7 @@ export const OpenSource = () => {
                     </span>
                     <span className={style.deploymentItemDesc}>{t(des)}</span>
                   </div>
-                  {showArrow && <div className={style.deploymentLink}>→</div>}
+                  {showArrow && <div className={clsx(style.deploymentLink, 'cursor-pointer')}>→</div>}
                 </div>
               </Link>
             ),

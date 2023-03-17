@@ -178,7 +178,7 @@ export function Footer({ noHome = false }) {
             Create with ❤️ by ILLA
           </span>
         </div>
-        <div className=" w-full justify-center items-center flex ">
+        <div className=" w-full justify-center items-center flex text-[#0B0C0F]">
           <div className=" w-full flex-wrap justify-start items-start flex ">
             {waysData.map((item) => renderItem(item.title, item.items))}
           </div>
