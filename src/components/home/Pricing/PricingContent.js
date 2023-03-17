@@ -10,7 +10,6 @@ import doubt from '@/img/home/doubt.svg'
 export const PricingContent = ({ onChangeShow }) => {
   const { t } = useTranslation('pricing')
   const [activeBtn, setActiveBtn] = useState(0)
-  const [currentTip, setCurrentTip] = useState('')
 
   const activeList = useMemo(() => {
     return !activeBtn ? monthlyContent : annuallyContent
@@ -19,22 +18,31 @@ export const PricingContent = ({ onChangeShow }) => {
 
   return (
     <div className={style.pricingContent} >
-      <div className='w-full flex flex-row justify-start items-end'>
+      <div className='w-full flex flex-row justify-center items-end'>
+        <div className='relative'>
         <span className={style.pricingContentTitle}>{t('title')} </span>
+        <span className='absolute bottom-0'>
         <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
+        </span>
+        </div>
       </div>
-      <div className='font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center'>{t('page-desc')}</div>
+      <div className='font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center lg:w-[1040px] w-full'>{t('page-desc')}</div>
       <div className={style.contentContainer} >
         <span onClick={() => setActiveBtn(0)} className={clsx(style.pricingContentBtn, !activeBtn ? (style.pricingContentBtnActive) : '')}>{t('monthly')}</span>
         <span onClick={() => setActiveBtn(1)} className={clsx(style.pricingContentBtn, activeBtn ? (style.pricingContentBtnActive) : '')}>{t('yearly')}</span>
       </div>
       <div className={style.cardContainer}>
         {
-          activeList.map(({ title, btnColor, titleColor, price, userMonth, startAt, href, btnContent, members, apps, security }, index) => (
+          activeList.map(({ title, btnColor, titleColor, price, userMonth, startAt, href, btnContent, members, apps, security, decimal }, index) => (
             <div className={clsx(style.card, index === 1 ? style.lightCard : '')} key={title}>
-              <span className={style.cardTitle} style={{ color: titleColor }}>{t(title)}</span>
+              <span className={style.cardTitle} style={{ color: titleColor }}>
+              {t(title)}
+              </span>
               <div className='flex flex-col items-center gap-[16px]'>
-                <span className='font-[700] text-[40px] leading-[48px]'>{t(price)}</span>
+                <span className='font-[700] text-[40px] leading-[48px]'>
+                  {t(price)}
+                  <span className='text-[24px] leading-[30px]'>{decimal}</span>
+                  </span>
                 <span className='h-[48px] font-[400] text-[14px] leading-[22px] flex flex-col items-center'>
                   <span>{t(userMonth)}</span>
                   {startAt && <span>{t(startAt)}</span>}
@@ -66,7 +74,7 @@ export const PricingContent = ({ onChangeShow }) => {
                 {
                   apps.map(({ text, tip }) => {
                     return (
-                      <p className={clsx(!text ? 'h-[32px]' : '', style.cardListContent)} key={`app${{ text }}`}>
+                      <p className={clsx(!text ? 'xl:h-[32px] xl:block p-0' : '', style.cardListContent)} key={`app${{ text }}`}>
                         {text && <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />}
                         <span>{t(text)}</span>
                         {tip && (

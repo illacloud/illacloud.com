@@ -408,7 +408,8 @@ export const annuallyContent = [
   },
   {
     title: 'Plus',
-    price: '$8.3',
+    price: '$8.',
+    decimal: '3',
     userMonth: 'user-month',
     btnContent: 'plus-btn',
     btnColor: '#FF0EA1',

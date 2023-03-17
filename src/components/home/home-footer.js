@@ -127,7 +127,7 @@ export function Footer({ noHome = false }) {
         )}
       >
         <motion.div
-          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1]"
+          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1] color-[#0B0C0F]"
           style={{
             translateY,
           }}
@@ -151,7 +151,7 @@ export function Footer({ noHome = false }) {
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-[#787E85] flex flex-row items-center gap-[8px]"
+                    className="xs:mb-[12px] text-[#0B0C0F] flex flex-row items-center gap-[8px]" 
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',

@@ -120,6 +120,20 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           {t('nav.doc')}
         </a>
       </Link>
+      <Link legacyBehavior href="/pricing">
+              <a
+                className="px-[16px] text-center"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_menu_doc_click',
+                    label: t('nav.pricing'),
+                  })
+                }}
+              >
+                {t('nav.pricing')}
+              </a>
+        </Link>
       <span
         onClick={() => {
           sendTagEvent({

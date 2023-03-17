@@ -12,7 +12,7 @@ import style from '@/components/home/Pricing/index.module.css'
 
 
 const Pricing = () => {
-  const { t } = useTranslation('hire')
+  const { t } = useTranslation('pricing')
   const [isBookShow, setIsBookShow] = useState(false)
 
   const customNavStyle = {
@@ -30,7 +30,7 @@ const Pricing = () => {
       <div className={style.pricingContainer}>
       <PricingMask />
         <Nav hasButton={false}  whiteTheme={false} customStyle={customNavStyle} />
-        <div className='w-full text-white xl:pt-[120px] px-[20px] bg-transparent'>
+        <div className='w-full text-white xl:pt-[120px] bg-transparent'>
               <PricingContent onChangeShow={() => setIsBookShow(true)}/>
               <OpenSource/>
         </div>
@@ -39,7 +39,7 @@ const Pricing = () => {
           visible={isBookShow}
           onChangeShow={() => setIsBookShow(false)}
         />
-      <div className='mt-[2100px] inline-block w-full'>
+      <div className='mt-[2000px] inline-block w-full'>
         <Footer />
       </div>
     </div>
