@@ -379,7 +379,7 @@ export const annuallyContent = [
     price: '$0',
     userMonth: 'user-month',
     btnContent: 'free-btn',
-    href: 'cloud.illacloud.com',
+    href: 'https://cloud.illacloud.com/',
     btnColor: 'rgba(255, 255, 255, 0.08)',
     titleColor: '#ffffff',
     members: 'free-members',
@@ -414,7 +414,7 @@ export const annuallyContent = [
     btnContent: 'plus-btn',
     btnColor: '#FF0EA1',
     titleColor: '#FFC122',
-    href: 'cloud.illacloud.com',
+    href: 'https://cloud.illacloud.com/',
     members: 'unlimited-members',
     apps: [
       {

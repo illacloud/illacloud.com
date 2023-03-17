@@ -7,7 +7,7 @@
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  @apply w-full overflow-y-scroll h-[2158px] absolute z-0;
+  @apply w-full overflow-y-scroll;
   @apply xs:rounded-b-[40px] overflow-hidden bg-black  ;
 }
 .pricingMaskLeft {
@@ -83,7 +83,13 @@
   @apply flex flex-row items-center py-[4px] px-[24px] gap-[8px] font-[600] text-[16px] leading-[24px] mt-[24px];
 }
 .cardListContent {
-  @apply flex flex-row items-center py-[4px] px-[24px] gap-[8px] font-[400] text-[14px] leading-[24px];
+  @apply flex flex-row items-center gap-[8px] font-[400] text-[14px] leading-[24px];
+}
+.hiddenListContent {
+  @apply lg:block hidden lg:py-[4px] lg:px-[24px] py-0 px-0 lg:h-[32px]
+}
+.blockListContent {
+ @apply py-[4px] px-[24px]
 }
 .card:first-child {
   @apply ml-[32px] xl:ml-0;
@@ -93,7 +99,7 @@
 }
 .openSource {
   padding-top: 40px!important;
-  @apply px-[20px] lg:px-0;
+  @apply px-[20px] lg:px-0 pb-[80px];
 }
 .doubt:hover .tips{
   display: block;

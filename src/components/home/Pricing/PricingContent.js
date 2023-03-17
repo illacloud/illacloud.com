@@ -21,9 +21,7 @@ export const PricingContent = ({ onChangeShow }) => {
       <div className='w-full flex flex-row justify-center items-end'>
         <div className='relative'>
         <span className={style.pricingContentTitle}>{t('title')} </span>
-        <span className='absolute bottom-0'>
         <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
-        </span>
         </div>
       </div>
       <div className='font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center lg:w-[1040px] w-full'>{t('page-desc')}</div>
@@ -66,7 +64,7 @@ export const PricingContent = ({ onChangeShow }) => {
               )}
               <div className='flex flex-col item-start w-[320px] h-[536px]'>
                 <p className={style.cardListTitle}>{t('members')}</p>
-                <p className={style.cardListContent}>
+                <p  className={clsx(style.blockListContent, style.cardListContent)}>
                   <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />
                   <span>{t(members)}</span>
                 </p>
@@ -74,7 +72,7 @@ export const PricingContent = ({ onChangeShow }) => {
                 {
                   apps.map(({ text, tip }) => {
                     return (
-                      <p className={clsx(!text ? 'xl:h-[32px] xl:block p-0' : '', style.cardListContent)} key={`app${{ text }}`}>
+                      <p className={clsx(!text ? style.hiddenListContent : style.blockListContent, style.cardListContent)} key={`app${{ text }}`}>
                         {text && <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />}
                         <span>{t(text)}</span>
                         {tip && (
@@ -94,7 +92,7 @@ export const PricingContent = ({ onChangeShow }) => {
                 {
                   security.map(({ text, tip }) => {
                     return (
-                      <p className={style.cardListContent} key={`security${text}`}>
+                      <p className={clsx(style.blockListContent, style.cardListContent)} key={`security${text}`}>
                         {title && <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />}
                         <span>{t(text)}</span>
                         {tip && (
