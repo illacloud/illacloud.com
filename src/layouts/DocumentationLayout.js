@@ -1,7 +1,6 @@
 import { SidebarLayout } from '@/layouts/SidebarLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import socialSquare from '@/img/illa_logo.png'
 import { Title } from '@/components/Title'
 // import { documentationNav } from '@/navs/documentation'
 import { ILLADocumentationNav } from '@/navs/documentation'
@@ -41,10 +40,9 @@ export function DocumentationHeader(props) {
         key="og:image"
         name="og:image"
         property="og:image"
-        content={`https://illa.cloud${
-          meta.image ??
+        content={`https://illa.cloud${meta.image ??
           `https://illa.cloud${require('@/img/illa_logo.png').default}`
-        }`}
+          }`}
       />
       <meta
         key="og:description"
@@ -56,10 +54,9 @@ export function DocumentationHeader(props) {
       <meta
         key="image"
         name="image"
-        content={`https://illa.cloud${
-          meta.image ??
+        content={`https://illa.cloud${meta.image ??
           `https://illa.cloud${require('@/img/illa_logo.png').default}`
-        }`}
+          }`}
       />
 
       <meta name="description" content={meta.description ?? meta.desc}></meta>
@@ -90,9 +87,8 @@ export function DocumentationHeader(props) {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${
-              require('@/img/illa_logo.png').default
-            }`}
+            content={`https://illa.cloud${require('@/img/illa_logo.png').default
+              }`}
           />
         </>
       )}
