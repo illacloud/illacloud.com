@@ -17,7 +17,7 @@ function renderItem(title, items) {
       <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">
         {title}
       </div>
-      <div className="flex flex-col text-[14px]  font-normal cursor-pointer ">
+      <div className="flex flex-col text-[14px] text-[#1d2129]  font-normal cursor-pointer ">
         {items?.map((item) => {
           if (item.downloadName) {
             return (
