@@ -7,7 +7,7 @@
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  @apply w-full overflow-y-scroll;
+  @apply w-full overflow-y-scroll lg:h-[2158px] h-[1900px] absolute z-0;
   @apply xs:rounded-b-[40px] overflow-hidden bg-black  ;
 }
 .pricingMaskLeft {
@@ -32,7 +32,6 @@
   @apply xl:gap-[24px] lg:w-[1200px];
 }
 .pricingContentTitle {
-  /* flex flex-row gap-[8px] items-end */
   @apply font-[700] text-[40px] leading-[48px] justify-self-center;
   @apply xl:text-[64px] xl:leading-[72px];
   position: relative;
