@@ -41,8 +41,8 @@
   @apply   gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px] ml-[8px] ;
   background-color: rgba(169, 63, 253, 0.22);
   white-space: nowrap;
-  /* position: absolute;
-  right: -8px; */
+  position: absolute;
+  bottom: 0;
 }
 .contentContainer {
   @apply flex flex-row gap-[2px] p-[1px] rounded-[4px];
@@ -99,7 +99,7 @@
 }
 .openSource {
   padding-top: 40px!important;
-  @apply px-[20px] lg:px-0 pb-[80px];
+  @apply px-[20px] lg:px-0 pb-[100px];
 }
 .doubt:hover .tips{
   display: block;
@@ -111,5 +111,5 @@
   @apply w-[4px] h-[32px] relative left-[24px];
 }
 .tips span {
-  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] top-[-65%];
+  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
 }

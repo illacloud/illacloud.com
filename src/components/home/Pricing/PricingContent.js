@@ -24,7 +24,7 @@ export const PricingContent = ({ onChangeShow }) => {
         <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
         </div>
       </div>
-      <div className='font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center lg:w-[1040px] w-full'>{t('page-desc')}</div>
+      <div className='px-[24px] font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center lg:w-[1040px] w-full'>{t('page-desc')}</div>
       <div className={style.contentContainer} >
         <span onClick={() => setActiveBtn(0)} className={clsx(style.pricingContentBtn, !activeBtn ? (style.pricingContentBtnActive) : '')}>{t('monthly')}</span>
         <span onClick={() => setActiveBtn(1)} className={clsx(style.pricingContentBtn, activeBtn ? (style.pricingContentBtnActive) : '')}>{t('yearly')}</span>
