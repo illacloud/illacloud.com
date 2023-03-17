@@ -238,3 +238,303 @@ export const bookFormContent = [
     required: true,
   },
 ]
+
+export const monthlyContent = [
+  {
+    title: 'Free',
+    price: '$0',
+    userMonth: 'user-month',
+    btnContent: 'free-btn',
+    href: 'https://cloud.illacloud.com/',
+    btnColor: 'rgba(255, 255, 255, 0.08)',
+    titleColor: '#ffffff',
+    members: 'free-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: ''
+      },
+      {
+        text: ''
+      },
+      {
+        text: ''
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-7'
+      }
+    ],
+  },
+  {
+    title: 'Plus',
+    price: '$10',
+    userMonth: 'user-month',
+    href: 'https://cloud.illacloud.com/',
+    btnContent: 'plus-btn',
+    btnColor: '#FF0EA1',
+    titleColor: '#FFC122',
+    members: 'unlimited-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: 'apps.plugins',
+        tip: 'tips.plugins'
+      },
+      {
+        text: 'apps.sql',
+        tip: 'tips.sql'
+      },
+      {
+        text: 'apps.watermark',
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-30'
+      },
+      {
+        text: 'security.develop-environment',
+        tip: 'tips.staging'
+      },
+      {
+        text: 'security.app-public',
+        tip: 'tips.app-public'
+      },
+      {
+        text: 'security.restore-data',
+        tip: 'tips.restore-data'
+      },
+    ],
+  },
+  {
+    title: 'Enterprise',
+    price: '$50',
+    userMonth: 'user-month',
+    startAt: "start-at",
+    btnContent: 'enterprise-btn',
+    btnColor: '#654AEC',
+    titleColor: '#6D6AFF',
+    members: 'unlimited-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: 'apps.plugins',
+        tip: 'tips.plugins'
+      },
+      {
+        text: 'apps.sql',
+        tip: 'tips.sql'
+      },
+      {
+        text: 'apps.watermark',
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-30'
+      },
+      {
+        text: 'security.develop-environment',
+        tip: 'tips.staging'
+      },
+      {
+        text: 'security.app-public',
+        tip: 'tips.app-public'
+      },
+      {
+        text: 'security.restore-data',
+        tip: 'tips.restore-data'
+      },
+      {
+        text: 'security.deployed',
+        tip: 'tips.deployed'
+      },
+      {
+        text: 'security.dedicated',
+        tip: 'tips.dedicated'
+      },
+    ],
+  }
+]
+export const annuallyContent = [
+  {
+    title: 'Free',
+    price: '$0',
+    userMonth: 'user-month',
+    btnContent: 'free-btn',
+    href: 'cloud.illacloud.com',
+    btnColor: 'rgba(255, 255, 255, 0.08)',
+    titleColor: '#ffffff',
+    members: 'free-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: ''
+      },
+      {
+        text: ''
+      },
+      {
+        text: ''
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-7'
+      }
+    ],
+  },
+  {
+    title: 'Plus',
+    price: '$8.3',
+    userMonth: 'user-month',
+    btnContent: 'plus-btn',
+    btnColor: '#FF0EA1',
+    titleColor: '#FFC122',
+    href: 'cloud.illacloud.com',
+    members: 'unlimited-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: 'apps.plugins',
+        tip: 'tips.plugins'
+      },
+      {
+        text: 'apps.sql',
+        tip: 'tips.sql'
+      },
+      {
+        text: 'apps.watermark',
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-30'
+      },
+      {
+        text: 'security.develop-environment',
+        tip: 'tips.staging'
+      },
+      {
+        text: 'security.app-public',
+        tip: 'tips.app-public'
+      },
+      {
+        text: 'security.restore-data',
+        tip: 'tips.restore-data'
+      },
+    ],
+  },
+  {
+    title: 'Enterprise',
+    price: '$50',
+    userMonth: 'user-month',
+    startAt: "start-at",
+    btnContent: 'enterprise-btn',
+    btnColor: '#654AEC',
+    titleColor: '#6D6AFF',
+    members: 'unlimited-members',
+    apps: [
+      {
+        text: 'apps.components'
+      },
+      {
+        text: 'apps.resources'
+      },
+      {
+        text: 'apps.plugins',
+        tip: 'tips.plugins'
+      },
+      {
+        text: 'apps.sql',
+        tip: 'tips.sql'
+      },
+      {
+        text: 'apps.watermark',
+      },
+    ],
+    security: [
+      {
+        text: 'security.historic-30'
+      },
+      {
+        text: 'security.develop-environment',
+        tip: 'tips.staging'
+      },
+      {
+        text: 'security.app-public',
+        tip: 'tips.app-public'
+      },
+      {
+        text: 'security.restore-data',
+        tip: 'tips.restore-data'
+      },
+      {
+        text: 'security.deployed',
+        tip: 'tips.deployed'
+      },
+      {
+        text: 'security.dedicated',
+        tip: 'tips.dedicated'
+      },
+    ],
+  }
+]
+
+export const openSourceContent = {
+  tittle: 'open-source',
+  desc: 'source-desc',
+  items: [
+    {
+      icon: <CLIIcon />,
+      title: 'deployment.illa-CLI.title',
+      des: 'deployment.illa-CLI.des',
+      linkUrl: 'https://www.illacloud.com/docs/illa-cli',
+    },
+    {
+      icon: <KubernetesIcon />,
+      title: 'deployment.kubernetes.title',
+      des: 'deployment.kubernetes.des',
+      linkUrl: 'https://github.com/illacloud/deploy-illa-manually/',
+    },
+    {
+      icon: <WaysIcon />,
+      title: 'deployment.docker.title',
+      des: 'deployment.docker.des',
+      linkUrl: 'https://github.com/illacloud/deploy-illa-manually/',
+    },
+    {
+      icon: <CLIIcon />,
+      title: 'deployment.illa-CLI.title',
+      des: 'deployment.illa-CLI.des',
+      linkUrl: 'docs/illa-cli',
+    },
+  ],
+}

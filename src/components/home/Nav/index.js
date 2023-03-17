@@ -22,6 +22,7 @@ export const Nav = (props) => {
     whiteTheme = false,
     hasButton = true,
     onChangeShow,
+    customStyle
   } = props
   const { t } = useTranslation('home')
 
@@ -36,6 +37,7 @@ export const Nav = (props) => {
           'fixed hidden xl:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center backdrop-blur-[50px]',
           whiteTheme ? 'bg-[rgba(255,255,255,0.75)]' : 'bg-[rgba(0,0,0,0.75)]',
         )}
+        style={customStyle || {}}
       >
         <div className="flex absolute left-[40px] items-center">
           <Link legacyBehavior href="/">
@@ -88,6 +90,20 @@ export const Nav = (props) => {
             )}
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
+            <Link legacyBehavior href="/pricing">
+              <a
+                className="px-[16px] text-center"
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: 'homepage_menu_doc_click',
+                    label: t('nav.pricing'),
+                  })
+                }}
+              >
+                {t('nav.pricing')}
+              </a>
+            </Link>
             <Link legacyBehavior href="/docs/about-illa">
               <a
                 className="px-[16px] text-center"
@@ -131,19 +147,6 @@ export const Nav = (props) => {
                 {t('nav.blog')}
               </a>
             </Link>
-            {/* <span
-              className="px-[16px] text-center cursor-pointer"
-              onClick={() => {
-                sendTagEvent({
-                  action: 'click',
-                  category: 'homepage_partner_apply_click',
-                  label: t('nav.bookDemo'),
-                })
-                // onChangeShow()
-              }}
-            >
-              {'Pricing'}
-            </span> */}
           </div>
         </div>
         {hasButton && (
