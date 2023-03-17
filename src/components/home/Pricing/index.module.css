@@ -32,16 +32,28 @@
   @apply xl:gap-[24px] lg:w-[1040px];
 }
 .pricingContentTitle {
-  @apply font-[700] text-[40px] leading-[48px];
-  @apply xl:text-[64px] xl:leading-[72px]
+  /* flex flex-row gap-[8px] items-end */
+  @apply font-[700] text-[40px] leading-[48px] justify-self-center;
+  @apply xl:text-[64px] xl:leading-[72px];
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .pricingContentTitleTag {
-  @apply hidden lg:block gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px];
+  @apply hidden lg:block gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px] ml-[8px];
   background-color: rgba(169, 63, 253, 0.22);
+  position: relative;
+  left: 45%;
+  transform: translateX(-50%);
+}
+.contentContainer {
+  @apply flex flex-row gap-[2px] p-[1px] rounded-[4px];
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .pricingContentBtn {
-  @apply text-[14px] leading-[22px] flex items-center justify-center text-center rounded-[3px] w-[88px] h-[30px] cursor-pointer;
-  filter: drop-shadow(0px 2px 4px rgba(26, 34, 51, 0.04));
+  @apply text-[14px] leading-[22px] flex items-center rounded-[3px] justify-center text-center w-[88px] h-[30px] cursor-pointer;
+  
 }
 .pricingContentBtnActive {
   background: #654AEC;
@@ -56,14 +68,10 @@
   @apply flex-shrink-0;
   background: linear-gradient(180deg, rgba(120, 56, 255, 0.12) 67.93%, rgba(204, 0, 255, 0) 100%);
 }
-.card::before {
-  @apply hidden lg:block absolute left-0 top-0 bottom-0 right-0 opacity-0 z-[-1] rounded-[16px];
-  content: '';
+.lightCard{
+  @apply w-[320px] h-[916px] flex flex-col gap-[24px] items-center rounded-[16px] pt-[32px] relative cursor-pointer;
+  @apply flex-shrink-0;
   background: linear-gradient(180deg, rgba(120, 56, 255, 0.4) 67.93%, rgba(204, 0, 255, 0) 100%);
-  transition: opacity 200ms ease-in-out;
-}
-.card:hover::before {
-  opacity: 1;
 }
 .cardTitle {
   @apply flex flex-row items-start py-[7px] px-[16px] gap-[8px] rounded-[20px] font-[500] text-[18px] leading-[26px];

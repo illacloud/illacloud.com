@@ -17,7 +17,7 @@ const Pricing = () => {
 
   const customNavStyle = {
     background: 'transparent',
-    zIndex: 0
+    zIndex: 1
   }
 
   return (

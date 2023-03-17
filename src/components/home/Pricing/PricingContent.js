@@ -23,19 +23,19 @@ export const PricingContent = ({onChangeShow}) => {
 
   return (
     <div className={style.pricingContent} onClick={closeTip}>
-      <div className='flex flex-row justify-center items-end'>
-        <span className={style.pricingContentTitle}>{t('title')}</span>
+      <div className='w-full flex flex-row justify-start items-end'>
+        <span className={style.pricingContentTitle}>{t('title')} </span>
         <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
       </div>
       <div className='font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center'>{t('page-desc')}</div>
-      <div className='flex flex-row gap-[2px] p-[1px]'>
+      <div className={style.contentContainer} >
         <span onClick={() => setActiveBtn(0)} className={clsx(style.pricingContentBtn, !activeBtn ? (style.pricingContentBtnActive) : '')}>{t('monthly')}</span>
         <span onClick={() => setActiveBtn(1)} className={clsx(style.pricingContentBtn, activeBtn ? (style.pricingContentBtnActive) : '')}>{t('yearly')}</span>
       </div>
       <div className={style.cardContainer}>
         {
-          activeList.map(({ title, btnColor, titleColor, price, userMonth, startAt, href, btnContent, members, apps, security }) => (
-            <div className={style.card} key={title}>
+          activeList.map(({ title, btnColor, titleColor, price, userMonth, startAt, href, btnContent, members, apps, security }, index) => (
+            <div className={clsx(style.card, index === 1 ? style.lightCard : '')} key={title}>
               <span className={style.cardTitle} style={{ color: titleColor }}>{t(title)}</span>
               <div className='flex flex-col items-center gap-[16px]'>
                 <span className='font-[700] text-[40px] leading-[48px]'>{t(price)}</span>
