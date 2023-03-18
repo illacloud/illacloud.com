@@ -14,10 +14,10 @@ function renderItem(title, items) {
       key={title}
       className="w-1/2   xs:w-1/5  flex flex-col  items-start  justify-center mt-[32px] xs:mt-0 "
     >
-      <div className="text-[16px] text-[#1d2129] font-bold mb-[16px]">
+      <div className="text-[16px] text-garyBlue-02 font-bold mb-[16px]">
         {title}
       </div>
-      <div className="flex flex-col text-[14px] text-[#1d2129]  font-normal cursor-pointer ">
+      <div className="flex flex-col text-[14px] text-garyBlue-02 font-normal cursor-pointer ">
         {items?.map((item) => {
           if (item.downloadName) {
             return (
@@ -127,7 +127,7 @@ export function Footer({ noHome = false }) {
         )}
       >
         <motion.div
-          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1] color-[#0B0C0F]"
+          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1] color-garyBlue-01"
           style={{
             translateY,
           }}
@@ -139,19 +139,19 @@ export function Footer({ noHome = false }) {
                   <ILLA_LOGO />
                 </a>
               </Link>
-              <span className="text-[#1d2129] grow-1 text-[12px] mt-[16px]">
+              <span className="text-garyBlue-02 grow-1 text-[12px] mt-[16px]">
                 Create with ❤️ by ILLA
               </span>
             </div>
             {waysData.map((item) => renderItem(item.title, item.items))}
             <div className="w-full  xs:w-1/5 flex flex-row xs:flex-col items-start justify-center rounded-[32px]">
-              <div className="text-[16px] text-[#1d2129] font-bold mb-[16px] hidden xs:block">
+              <div className="text-[16px] text-garyBlue-02 font-bold mb-[16px] hidden xs:block">
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-[#0B0C0F] flex flex-row items-center gap-[8px]" 
+                    className="xs:mb-[12px] text-garyBlue-01 flex flex-row items-center gap-[8px]" 
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',
@@ -174,11 +174,11 @@ export function Footer({ noHome = false }) {
           <span className="flex  w-[34px] h-[16px] items-center">
             <IllaLogo />
           </span>
-          <span className="text-[#a9aeb8] grow-1 text-[12px]">
+          <span className="text-garyBlue-04 grow-1 text-[12px]">
             Create with ❤️ by ILLA
           </span>
         </div>
-        <div className=" w-full justify-center items-center flex text-[#0B0C0F]">
+        <div className=" w-full justify-center items-center flex text-garyBlue-01">
           <div className=" w-full flex-wrap justify-start items-start flex ">
             {waysData.map((item) => renderItem(item.title, item.items))}
           </div>
@@ -187,7 +187,7 @@ export function Footer({ noHome = false }) {
           {Community?.map((item, index) => (
             <Link legacyBehavior key={'icon' + index} href={item.href}>
               <a
-                className="mx-[10px] mx-[10px] xs:mb-[12px] text-[#787E85]"
+                className="mx-[10px] mx-[10px] xs:mb-[12px] text-garyBlue-03"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',

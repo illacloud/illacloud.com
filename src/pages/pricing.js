@@ -29,7 +29,7 @@ const Pricing = () => {
       <div className='w-full px-0'>
       <div className={style.pricingContainer}>
       <PricingMask />
-        <Nav hasButton={false}  whiteTheme={false} customStyle={customNavStyle} />
+        <Nav hasButton={false}  whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
         <div className='w-full text-white xl:pt-[120px] bg-transparent'>
               <PricingContent onChangeShow={() => setIsBookShow(true)}/>
               <OpenSource/>

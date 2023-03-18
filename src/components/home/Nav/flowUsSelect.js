@@ -77,7 +77,7 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
                 'h-[40px] leading-[40px] text-center w-full hover:bg-white-09',
                 {
                   'hover:bg-white-09': buttonColorChange,
-                  'hover:bg-[#f2f3f5]': !buttonColorChange,
+                  'hover:bg-garyBlue-09': !buttonColorChange,
                 },
               )}
               onClick={() => {

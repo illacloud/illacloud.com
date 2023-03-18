@@ -50,12 +50,9 @@
 }
 .pricingContentBtn {
   @apply text-[14px] leading-[22px] flex items-center rounded-[3px] justify-center text-center w-[88px] h-[30px] cursor-pointer font-[400];
-  
 }
 .pricingContentBtnActive {
-  background: #654AEC;
-  filter: none;
-  font-weight: 500;
+  @apply bg-tech-purple-01 font-[500] filter-none
 }
 .cardContainer {
   @apply flex flex-row gap-[12px] xl:gap-[16px] w-full justify-start items-start mt-[16px] rounded-[16px];
@@ -110,5 +107,5 @@
   @apply w-[4px] h-[32px] relative left-[24px];
 }
 .tips span {
-  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
+  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-tech-purple-01 rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
 }

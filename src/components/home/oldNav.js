@@ -48,7 +48,7 @@ export const Nav = ({
         <div
           className={clsx(
             'w-1/3 h-[48px] items-center flex  h-full items-end flex-row z-50 pl-[40px]',
-            navColorChange ? 'text-[#ffffff]' : 'text-[#1d2129]',
+            navColorChange ? 'text-white' : 'text-garyBlue-02',
           )}
         >
           <Link legacyBehavior href="/">
@@ -63,13 +63,13 @@ export const Nav = ({
           </Link>
           <LanguageSelect buttonColorChange={navColorChange} />
         </div>
-        <div className="w-1/3 flex justify-center font-medium text-[#1d2129] text-[16px]">
+        <div className="w-1/3 flex justify-center font-medium text-garyBlue-02 text-[16px]">
           <div
             className={clsx(
               'flex justify-center rounded-full px-[24px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.02)] transition-background',
               navColorChange
-                ? 'bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur '
-                : 'bg-[#ffffff] text-[#1d2129]',
+                ? 'bg-white[.12] text-white supports-backdrop-blur:bg-white/[.12] backdrop-blur '
+                : 'bg-white text-garyBlue-02',
             )}
           >
             <ProductSelect buttonColorChange={navColorChange} />
@@ -93,7 +93,7 @@ export const Nav = ({
           <Link legacyBehavior href="/docs/illa-cli">
             <a
               className={clsx(
-                'w-[160px] text-center bg-[#ffffff]/[.12] text-[#ffffff] supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
+                'w-[160px] text-center bg-white/[.12] text-white supports-backdrop-blur:bg-white/[.12] backdrop-blur  leading-[48px] box-border rounded-full ',
                 navColorChange ? 'visible' : 'hidden',
               )}
             >
@@ -106,8 +106,8 @@ export const Nav = ({
                 'w-[160px] text-center leading-[48px] box-border rounded-full',
                 navColorChange ? 'visible' : 'hidden',
                 cloudButtonColorChange
-                  ? 'bg-[#654aec] text-[#ffffff]'
-                  : 'bg-[#ffffff] text-[#654aec]',
+                  ? 'bg-tech-purple-01 text-white'
+                  : 'bg-white text-tech-purple-01',
               )}
             >
               {t('illa-Cloud')}

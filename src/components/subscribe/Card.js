@@ -12,11 +12,11 @@ const CommunityLink = () => {
 
   return (
     <Fragment>
-      <div className="text-[12px] text-[#a9aeb8] mb-[12px]">{t('contact')}</div>
+      <div className="text-[12px] text-garyBlue-04 mb-[12px]">{t('contact')}</div>
       <div className="flex">
         {Community?.map((item, index) => (
           <Link legacyBehavior key={item.href} href={item.href}>
-            <a className="cursor-pointer mx-[10px] text-[#787E85]">
+            <a className="cursor-pointer mx-[10px] text-garyBlue-03">
               {item.icon}
             </a>
           </Link>
