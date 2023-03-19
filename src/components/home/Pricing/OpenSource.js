@@ -26,7 +26,6 @@ export const OpenSource = () => {
                 <div
                   className={clsx(
                     style.deploymentItem,
-                    'cursor-pointer',
                     !index ? 'w-full' : 'xl:w-[388px] w-full',
                     showArrow ? "items-center" : "items-start",
                   )}
@@ -39,7 +38,7 @@ export const OpenSource = () => {
                     </span>
                     <span className={style.deploymentItemDesc}>{t(des)}</span>
                   </div>
-                  {showArrow && <div className={clsx(style.deploymentLink, 'cursor-pointer')}>→</div>}
+                  {showArrow && <div className={clsx(style.deploymentLink)}>→</div>}
                 </div>
               </Link>
             ),

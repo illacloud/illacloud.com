@@ -246,8 +246,8 @@ export const monthlyContent = [
     userMonth: 'user-month',
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
-    btnColor: 'rgba(255, 255, 255, 0.08)',
-    titleColor: '#ffffff',
+    btnColor: 'bg-white/[0.08]',
+    titleColor: 'text-white',
     members: 'free-members',
     list: [
       {
@@ -286,8 +286,8 @@ export const monthlyContent = [
     userMonth: 'user-month',
     href: 'https://cloud.illacloud.com/',
     btnContent: 'plus-btn',
-    btnColor: '#FF0EA1',
-    titleColor: '#FFC122',
+    btnColor: 'bg-[#FF0EA1]',
+    titleColor: 'text-[#FFC122]',
     members: 'unlimited-members',
     list: [
       {
@@ -340,8 +340,8 @@ export const monthlyContent = [
     userMonth: 'user-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
-    btnColor: '#654AEC',
-    titleColor: '#6D6AFF',
+    btnColor: 'bg-tech-purple-01',
+    titleColor: 'text-[#6D6AFF]',
     members: 'unlimited-members',
     list: [
       {
@@ -404,8 +404,8 @@ export const annuallyContent = [
     userMonth: 'user-month',
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
-    btnColor: 'rgba(255, 255, 255, 0.08)',
-    titleColor: '#ffffff',
+    btnColor: 'bg-white/[0.08]',
+    titleColor: 'text-white',
     members: 'free-members',
     list: [
       {
@@ -444,8 +444,8 @@ export const annuallyContent = [
     decimal: '3',
     userMonth: 'user-month',
     btnContent: 'plus-btn',
-    btnColor: '#FF0EA1',
-    titleColor: '#FFC122',
+    btnColor: 'bg-[#FF0EA1]',
+    titleColor: 'text-[#FFC122]',
     href: 'https://cloud.illacloud.com/',
     members: 'unlimited-members',
     list: [
@@ -499,8 +499,8 @@ export const annuallyContent = [
     userMonth: 'user-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
-    btnColor: '#654AEC',
-    titleColor: '#6D6AFF',
+    btnColor: 'bg-tech-purple-01',
+    titleColor: 'text-[#6D6AFF]',
     members: 'unlimited-members',
     list: [
       {

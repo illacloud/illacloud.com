@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { monthlyContent, annuallyContent } from '@/constants/content'
 import pricing_ from '@/img/home/pricing_.svg'
 import { CardList } from './CardList'
-
+import Link from 'next/link'
 
 
 const Tooltip = ({ content, styles, isBound }) => {
@@ -52,7 +52,7 @@ export const PricingContent = ({ onChangeShow }) => {
     setIsBound(index === activeList.length - 1)
   }
   const resolveMobile = (e) => {
-    if(!visibility) return
+    if (!visibility) return
     e.target?.nodeName !== 'IMG' && onMouseLeave()
   }
 
@@ -74,7 +74,7 @@ export const PricingContent = ({ onChangeShow }) => {
         {
           activeList.map(({ title, btnColor, titleColor, price, userMonth, startAt, href, btnContent, members, list, decimal }, index) => (
             <div className={clsx(style.card, index === 1 ? style.lightCard : '')} key={`${title}${index}`}>
-              <span className={style.cardTitle} style={{ color: titleColor }}>
+              <span className={clsx(style.cardTitle, titleColor)} >
                 {t(title)}
               </span>
               <div className='flex flex-col items-center gap-[16px]'>
@@ -88,18 +88,15 @@ export const PricingContent = ({ onChangeShow }) => {
                 </span>
               </div>
               {href && (
-                <a
-                  className={style.cardBtn}
-                  style={{ background: btnColor }}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >{t(btnContent)}</a>
+                <Link href={href} key={title} legacyBehavior >
+                  <span
+                    className={clsx(style.cardBtn, btnColor)}
+                  >{t(btnContent)}</span>
+                </Link>
               )}
               {!href && (
                 <span
-                  className={style.cardBtn}
-                  style={{ background: btnColor }}
+                  className={clsx(style.cardBtn, btnColor)}
                   onClick={onChangeShow}
                 >{t(btnContent)}</span>
               )}
