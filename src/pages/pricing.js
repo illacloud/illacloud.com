@@ -17,7 +17,7 @@ const Pricing = () => {
 
   const customNavStyle = {
     background: 'transparent',
-    zIndex: 1
+    // zIndex: 1
   }
 
   return (
@@ -26,9 +26,9 @@ const Pricing = () => {
         <title>{t('title')}</title>
         <meta name="description" content={t('meta-desc')} />
       </Head>
+      <PricingMask />
       <div className='w-full px-0'>
       <div className={style.pricingContainer}>
-      <PricingMask />
         <Nav hasButton={false}  whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
         <div className='w-full text-white xl:pt-[120px] bg-transparent'>
               <PricingContent onChangeShow={() => setIsBookShow(true)}/>
@@ -39,16 +39,17 @@ const Pricing = () => {
           visible={isBookShow}
           onChangeShow={() => setIsBookShow(false)}
         />
-      <div className='inline-block w-full lg:mt-[2250px] mt-[1900px]'>
-        <Footer />
-      </div>
     </div>
+    {/* <div className='inline-block w-full lg:mt-[2250px] mt-[1900px]'> */}
+        <Footer />
+      {/* </div> */}
     </>
   )
 }
 export const getStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['pricing', 'home'])),
+    revalidate: 10,
   },
 })
 

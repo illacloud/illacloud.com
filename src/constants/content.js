@@ -249,26 +249,34 @@ export const monthlyContent = [
     btnColor: 'rgba(255, 255, 255, 0.08)',
     titleColor: '#ffffff',
     members: 'free-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-7'
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-7'
+          }
+        ]
       }
     ],
   },
@@ -281,41 +289,49 @@ export const monthlyContent = [
     btnColor: '#FF0EA1',
     titleColor: '#FFC122',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+        ]
+      }
     ],
   },
   {
@@ -327,49 +343,57 @@ export const monthlyContent = [
     btnColor: '#654AEC',
     titleColor: '#6D6AFF',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
-      {
-        text: 'security.deployed',
-        tip: 'tips.deployed'
-      },
-      {
-        text: 'security.dedicated',
-        tip: 'tips.dedicated'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+          {
+            text: 'security.deployed',
+            tip: 'tips.deployed'
+          },
+          {
+            text: 'security.dedicated',
+            tip: 'tips.dedicated'
+          },
+        ]
+      }
     ],
   }
 ]
@@ -383,26 +407,34 @@ export const annuallyContent = [
     btnColor: 'rgba(255, 255, 255, 0.08)',
     titleColor: '#ffffff',
     members: 'free-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-7'
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-7'
+          }
+        ]
       }
     ],
   },
@@ -416,41 +448,49 @@ export const annuallyContent = [
     titleColor: '#FFC122',
     href: 'https://cloud.illacloud.com/',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+        ]
+      }
     ],
   },
   {
@@ -462,49 +502,54 @@ export const annuallyContent = [
     btnColor: '#654AEC',
     titleColor: '#6D6AFF',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
-      {
-        text: 'security.deployed',
-        tip: 'tips.deployed'
-      },
-      {
-        text: 'security.dedicated',
-        tip: 'tips.dedicated'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+          {
+            text: 'security.deployed',
+            tip: 'tips.deployed'
+          },
+          {
+            text: 'security.dedicated',
+            tip: 'tips.dedicated'
+          },
+        ]
+      }
     ],
   }
 ]

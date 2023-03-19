@@ -22,9 +22,8 @@ export const OpenSource = () => {
               { icon, title, des, linkUrl, extraLinkContent, showArrow },
               index,
             ) => (
-              <Link href={linkUrl ?? ''} key={title} legacyBehavior>
+              <Link href={linkUrl ?? ''} key={`${title}${index}`}legacyBehavior>
                 <div
-                  key={title}
                   className={clsx(
                     style.deploymentItem,
                     'cursor-pointer',
