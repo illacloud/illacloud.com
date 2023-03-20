@@ -32,7 +32,12 @@ export const FAQ = ({ }) => {
                 <span className='font-[500] text-[14px] leading-[22px] text-center lg:text-[16px]'>{t(question)}</span>
                 <img src={arrow} alt='arrow' className={clsx(showIndex === index ? `${listStyle['end']}` : `${listStyle['start']}`, style.direction)} />
               </div>
-              {showIndex === index && <span className={style.faqListAnswer}>{t(answer)}</span>}
+              {showIndex === index && (
+                <div className={style.faqListAnswer}>
+                  <span dangerouslySetInnerHTML={{ __html: t(answer) }}></span>
+                </div>
+
+              )}
             </Fragment>
           ))
         }

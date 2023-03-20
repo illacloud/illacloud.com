@@ -41,7 +41,7 @@ const Pricing = () => {
           onChangeShow={() => setIsBookShow(false)}
         />
     </div>
-    <div className='lg:pt-[50px] bg-[#fafafa] xl:bg-white'>
+    <div className={style.pricingFooter}>
         <Footer/>
       </div>
     </>

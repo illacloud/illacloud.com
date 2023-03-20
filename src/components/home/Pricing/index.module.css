@@ -2,7 +2,7 @@
   display: none;
 }
 .pricingMask {
-  @apply w-full overflow-hidden absolute z-[-1] h-[2440px] bg-black xs:rounded-b-[40px]
+  @apply w-full overflow-hidden absolute z-[-1] h-[2434px] bg-black xs:rounded-b-[40px]
 }
 .cardContainer {
   scrollbar-width: none;
@@ -140,8 +140,21 @@
   @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer
 }
 .faqListAnswer {
-  @apply w-full font-[400] text-[12px] leading-[16px] xl:leading-[20px] flex items-center gap-[16px] rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line
+  @apply w-full font-[400] text-[12px] leading-[16px] xl:leading-[20px] flex items-center rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line
+}
+.faqListAnswer a{
+ @apply underline
 }
 .direction {
   @apply w-[12px] h-[12px];
+}
+/* lg:pt-[50px] bg-[#fafafa] xl:bg-white */
+.pricingFooter {
+  @apply lg:pt-[50px] bg-[#fafafa] xl:bg-white
+}
+
+@media only screen and (max-width: 1440px) {
+  .pricingFooter {
+    background-color: #fafafa;
+  }
 }
