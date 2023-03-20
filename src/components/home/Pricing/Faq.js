@@ -30,7 +30,7 @@ export const FAQ = ({ }) => {
             <Fragment key={question}>
               <div onClick={() => { showDesc(index) }} className={clsx(style.faqListQuestion, showIndex === index ? `${listStyle['activeBg']}` : ``)}>
                 <span className='font-[500] text-[14px] leading-[22px] text-center lg:text-[16px]'>{t(question)}</span>
-                <img src={arrow} alt='arrow' className={clsx(showIndex === index ? `${listStyle['end']}` : `${listStyle['start']}`, style.direction,)} />
+                <img src={arrow} alt='arrow' className={clsx(showIndex === index ? `${listStyle['end']}` : `${listStyle['start']}`, style.direction)} />
               </div>
               {showIndex === index && <span className={style.faqListAnswer}>{t(answer)}</span>}
             </Fragment>

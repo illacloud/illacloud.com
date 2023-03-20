@@ -40,10 +40,10 @@ const Publicize = () => {
       className={clsx(style.publicize, {
         "invisible": !publicizeItem,
         "pointer-events-none": !publicizeItem
-      })}
+      },
+      `${publicizeItem?.borderColor}`
+      )}
       href={publicizeItem?.href ?? ""}
-      target="_blank"
-      rel="noreferrer"
       onClick={() => {
         if (publicizeItem) {
           sendTagEvent({
