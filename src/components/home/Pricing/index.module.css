@@ -2,7 +2,7 @@
   display: none;
 }
 .pricingMask {
-  @apply w-full overflow-hidden absolute z-[-1] h-[2145px] bg-black xs:rounded-b-[40px]
+  @apply w-full overflow-hidden absolute z-[-1] h-[2440px] bg-black xs:rounded-b-[40px]
 }
 .cardContainer {
   scrollbar-width: none;
@@ -10,9 +10,7 @@
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  /* lg:h-[2158px] h-[1900px] absolute z-0  bg-black*/
-  /* xs:rounded-b-[40px]  */
-  @apply w-full overflow-y-scroll lg:pb-[200px];
+  @apply w-full overflow-y-scroll;
   @apply overflow-hidden  ;
 }
 .pricingMaskLeft {
@@ -108,47 +106,42 @@
 .doubt:hover .tips{
   display: block;
 }
-.tips {
-  position: absolute;
-}
-.tips img {
-  @apply w-[4px] h-[32px] relative left-[24px];
-}
-.tips span {
-  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-tech-purple-01 rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
-}
 .tooltip{
-  @apply bg-tech-purple-01 hidden;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  z-index: 100;
-  border-radius: 6px;
-  font-size: 12px;
+  @apply w-[200px] bg-tech-purple-01 flex fixed items-center text-white z-[20] text-[14px] leading-[22px];
+  @apply flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] rounded-[2px]
 }
 .tooltip::after {
+  @apply absolute border-[5px] border-solid;
   content: " ";
-  position: absolute;
-  border-width: 5px;
-  border-style: solid;
   border-color:  transparent transparent #654AEC transparent;
 }
 .rightTip::after  {
+  @apply left-[-5px];
   transform-origin: 0;
   transform: rotate(-90deg);
-  left: -5px;
 }
-
 .bottomTip::after {
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
+  @apply bottom-[100%] left-[67%] ml-[-5px]
 }
 .tipContent{
-  @apply flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px];
-  width: 200px;
   word-break: break-all;
   white-space: normal
+}
+.faqContainer {
+  @apply flex flex-col items-center gap-[24px] xl:gap-[48px] pb-[60px] lg:pb-[200px]
+}
+.faqTitle {
+  @apply font-[700] text-[24px] leading-[28px] text-center xl:text-[48px] xl:leading-[56px]
+}
+.faqListContainer {
+  @apply w-full flex flex-col items-start lg:w-[800px]
+}
+.faqListQuestion {
+  @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer
+}
+.faqListAnswer {
+  @apply w-full font-[400] text-[12px] leading-[16px] xl:leading-[20px] flex items-center gap-[16px] rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line
+}
+.direction {
+  transition: transform 200ms ease-in-out;
 }

@@ -5,7 +5,7 @@ import style from './index.module.css'
 import pricing_ from '@/img/home/pricing_.svg'
 import doubt from '@/img/home/doubt.svg'
 
-export const CardList = ({ name, values, mouseLeave, mouseOver, index, touchMove }) => {
+export const CardList = ({ name, values, mouseLeave, mouseOver, index }) => {
   const { t } = useTranslation('pricing')
   return (
     <>

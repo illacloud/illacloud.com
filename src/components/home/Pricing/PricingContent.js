@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import clsx from 'clsx'
@@ -11,14 +11,18 @@ import Link from 'next/link'
 const Tooltip = ({ content, styles, isBound }) => {
 
   const ref = useRef()
+  const [currentVisibility, setCurrentVisibility] = useState('hidden')
   const iconWidth = 8, gap = 5, width = 200
   const { top, left, visibility } = styles
   const offsetHeight = ref.current?.offsetHeight
-  const currentVisibility = visibility ? 'visible' : 'hidden'
   const currentStyle = {
-    top: isBound ? `${top + 24 + gap}px` : `${top - offsetHeight / 2 + iconWidth * 2}px`,
-    left: isBound ? `${left - width / 2 + iconWidth}px` : `${left + iconWidth * 2 + gap * 2}px`,
+    top: isBound ? `${top + 24 + gap}px` : `${top - offsetHeight / 2 + iconWidth * 2 - gap}px`,
+    left: isBound ? `${left - width / 1.5 + iconWidth}px` : `${left + iconWidth * 2 + gap * 2}px`,
   }
+  // Get the size of the element for the first time but not display it, then update the position of the element and display it
+  useEffect(() => {
+    setCurrentVisibility(visibility ? 'visible' : 'hidden')
+  }, [visibility])
   return (
     <div className={clsx(isBound ? style.bottomTip : style.rightTip, style.tooltip)} ref={ref} style={{ visibility: currentVisibility, ...currentStyle }}>
       <p className={style.tipContent}>{content}</p>

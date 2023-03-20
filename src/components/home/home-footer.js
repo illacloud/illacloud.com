@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
 
-function renderItem(title, items) {
+function renderItem (title, items) {
   return (
     <div
       key={title}
@@ -61,7 +61,7 @@ function renderItem(title, items) {
   )
 }
 
-export function Footer({ noHome = false }) {
+export function Footer ({ noHome = false }) {
   const { t } = useTranslation('home')
   const { scrollYProgress } = useViewportScroll()
   const translateY = useTransform(scrollYProgress, [0.91, 1], [-140, 0])
@@ -98,11 +98,6 @@ export function Footer({ noHome = false }) {
           href: 'https://restfulapi.net/',
           tagCategory: 'homepage_footer_restapi_click',
         },
-        {
-          title: 'Status',
-          href: 'https://status.illacloud.com/',
-          tagCategory: 'homepage_footer_status_click',
-        },
       ],
     },
     {
@@ -113,6 +108,11 @@ export function Footer({ noHome = false }) {
           href: 'https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip',
           downloadName: 'ILLA Media Kit.zip',
           tagCategory: 'homepage_footer_mediakit_click',
+        },
+        {
+          title: 'Status',
+          href: 'https://status.illacloud.com/',
+          tagCategory: 'homepage_footer_status_click',
         },
       ],
     },
@@ -151,7 +151,7 @@ export function Footer({ noHome = false }) {
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-garyBlue-01 flex flex-row items-center gap-[8px]" 
+                    className="xs:mb-[12px] text-garyBlue-01 flex flex-row items-center gap-[8px]"
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',

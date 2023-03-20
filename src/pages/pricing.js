@@ -8,6 +8,7 @@ import {PricingContent} from '@/components/home/Pricing/PricingContent'
 import {PricingMask} from '@/components/home/Pricing/PricingMask'
 import {OpenSource} from '@/components/home/Pricing/OpenSource'
 import { BookDemo } from '@/components/home/Form/BookDemo'
+import {FAQ} from '@/components/home/Pricing/Faq'
 import style from '@/components/home/Pricing/index.module.css'
 
 
@@ -17,7 +18,6 @@ const Pricing = () => {
 
   const customNavStyle = {
     background: 'transparent',
-    // zIndex: 1
   }
 
   return (
@@ -33,6 +33,7 @@ const Pricing = () => {
         <div className='w-full text-white xl:pt-[120px] bg-transparent'>
               <PricingContent onChangeShow={() => setIsBookShow(true)}/>
               <OpenSource/>
+              <FAQ/>
         </div>
       </div>
       <BookDemo
@@ -40,16 +41,15 @@ const Pricing = () => {
           onChangeShow={() => setIsBookShow(false)}
         />
     </div>
-    {/* <div className='inline-block w-full lg:mt-[2250px] mt-[1900px]'> */}
-        <Footer />
-      {/* </div> */}
+    <div className='lg:pt-[50px] bg-[#fafafa] xl:bg-white'>
+        <Footer/>
+      </div>
     </>
   )
 }
 export const getStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['pricing', 'home'])),
-    revalidate: 10,
   },
 })
 

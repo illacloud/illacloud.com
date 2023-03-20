@@ -585,3 +585,22 @@ export const openSourceContent = {
     },
   ],
 }
+
+export const faqList = [
+  {
+    question: 'FAQ.faq-1.k',
+    answer: 'FAQ.faq-1.v'
+  },
+  {
+    question: 'FAQ.faq-2.k',
+    answer: 'FAQ.faq-2.v'
+  },
+  {
+    question: 'FAQ.faq-3.k',
+    answer: 'FAQ.faq-3.v'
+  },
+  {
+    question: 'FAQ.faq-4.k',
+    answer: 'FAQ.faq-4.v'
+  },
+]
