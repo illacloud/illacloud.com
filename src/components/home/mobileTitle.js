@@ -32,10 +32,10 @@ export const MobileTitle = (props) => {
   }, [menuExpand])
   return (
     <div className="w-full xl:hidden	">
+      <Publicize />
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full gap-[32px]">
         <div className="flex flex-col items-center gap-[12px]">
-          <Publicize />
-          <h1 className="text-white-01 text-[40px] text-center font-bold leading-[48px]">
+          <h1 className="text-white-01 text-[40px] text-center font-bold leading-[48px] mt-[60px]">
             {t('slogan-1')}
           </h1>
         </div>
