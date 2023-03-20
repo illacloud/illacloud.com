@@ -41,8 +41,8 @@ const Publicize = () => {
         "invisible": !publicizeItem,
         "pointer-events-none": !publicizeItem
       },
-      `${publicizeItem?.borderColor}`
       )}
+      style={{borderColor: publicizeItem?.borderColor}}
       href={publicizeItem?.href ?? ""}
       onClick={() => {
         if (publicizeItem) {
