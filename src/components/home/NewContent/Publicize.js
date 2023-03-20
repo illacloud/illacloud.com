@@ -42,7 +42,7 @@ const Publicize = () => {
         "pointer-events-none": !publicizeItem
       },
       )}
-      style={{borderColor: publicizeItem?.borderColor}}
+      style={{ borderColor: publicizeItem?.borderColor }}
       href={publicizeItem?.href ?? ""}
       onClick={() => {
         if (publicizeItem) {
@@ -63,17 +63,19 @@ const Publicize = () => {
           alt="publicize background"
         />
       </span>
-      <span className="flex flex-row justify-between items-center absolute z-[1]">
-        <span className={style.publicIntru}>
-          <img
-            className="h-[24px] w-[24px]"
-            src={publicizeItem?.logo ?? ""}
-            alt="publicize logo"
-          />
-          {publicizeItem?.intruduction ?? ""}
+      <span className='flex flex-row justify-between items-center'>
+        <span className="flex flex-row justify-between">
+          <span className={style.publicIntru}>
+            <img
+              className="h-[24px] w-[24px]"
+              src={publicizeItem?.logo ?? ""}
+              alt="publicize logo"
+            />
+            {publicizeItem?.intruduction ?? ""}
+          </span>
         </span>
+        <span className={style.publicSlogan}>{publicizeItem?.slogan ?? ""}</span>
       </span>
-      <span className={style.publicSlogan}>{publicizeItem?.slogan ?? ""}</span>
     </a>
   )
 }

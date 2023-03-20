@@ -103,12 +103,14 @@
   @apply xl:font-[500] xl:text-[16px] xl:leading-[19px];
 }
 .publicize {
-  @apply text-white w-[335px] h-[40px] rounded-[4px] overflow-hidden relative box-border py-[8px] px-[16px] border-[1px] border-solid;
+  @apply text-white w-[335px] h-[40px] rounded-[4px] overflow-hidden box-border  border-[1px] border-solid py-[8px] px-[16px];
   @apply xl:w-[520px];
+  @apply absolute top-[70px] lg:top-[45px] left-[50%];
+  transform: translateX(-50%)
 }
 .publicizeStyle {
-  @apply object-none object-center w-[402px] h-[124px] absolute top-[50%] left-[50%] z-0;
-  @apply xl:w-[579px] xl:h-[179px] xl:z-[-1];
+  @apply object-none object-center w-[402px] h-[124px] absolute top-[50%] left-[50%] z-[-1];
+  @apply xl:w-[579px] xl:h-[179px] xl:z-[-1] flex flex-row items-center justify-between;
   filter: blur(23px);
   transform: translate(-50%, -50%);
 }
@@ -123,6 +125,6 @@
   @apply mr-[32px] xl:mr-0;
 }
 .publicSlogan {
-  @apply text-[12px] leading-[16px] font-[500] uppercase absolute top-[12px] right-[16px] z-[1];
+  @apply text-[12px] leading-[16px] font-[500] uppercase ;
   @apply xl:text-[16px] xl:leading-[21px] xl:mx-0;
 }

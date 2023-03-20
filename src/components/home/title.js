@@ -138,10 +138,10 @@ export const Title = (props) => {
           'pointer-events-none': !canClick,
         })}
       >
+          <Publicize />
         <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px]">
           <div className="flex flex-col items-center gap-[24px]">
-            <Publicize />
-            <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
+            <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px] mt-[60px]">
               {t('slogan-1')}
             </h1>
             <span className="font-normal text-[20px] px-[20px] sm:px-0 text-center">
