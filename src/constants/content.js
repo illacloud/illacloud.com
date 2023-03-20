@@ -246,29 +246,37 @@ export const monthlyContent = [
     userMonth: 'user-month',
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
-    btnColor: 'rgba(255, 255, 255, 0.08)',
-    titleColor: '#ffffff',
+    btnColor: 'bg-white/[0.08]',
+    titleColor: 'text-white',
     members: 'free-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-7'
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-7'
+          }
+        ]
       }
     ],
   },
@@ -278,44 +286,52 @@ export const monthlyContent = [
     userMonth: 'user-month',
     href: 'https://cloud.illacloud.com/',
     btnContent: 'plus-btn',
-    btnColor: '#FF0EA1',
-    titleColor: '#FFC122',
+    btnColor: 'bg-[#FF0EA1]',
+    titleColor: 'text-[#FFC122]',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+        ]
+      }
     ],
   },
   {
@@ -324,52 +340,60 @@ export const monthlyContent = [
     userMonth: 'user-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
-    btnColor: '#654AEC',
-    titleColor: '#6D6AFF',
+    btnColor: 'bg-tech-purple-01',
+    titleColor: 'text-[#6D6AFF]',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
-      {
-        text: 'security.deployed',
-        tip: 'tips.deployed'
-      },
-      {
-        text: 'security.dedicated',
-        tip: 'tips.dedicated'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+          {
+            text: 'security.deployed',
+            tip: 'tips.deployed'
+          },
+          {
+            text: 'security.dedicated',
+            tip: 'tips.dedicated'
+          },
+        ]
+      }
     ],
   }
 ]
@@ -380,29 +404,37 @@ export const annuallyContent = [
     userMonth: 'user-month',
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
-    btnColor: 'rgba(255, 255, 255, 0.08)',
-    titleColor: '#ffffff',
+    btnColor: 'bg-white/[0.08]',
+    titleColor: 'text-white',
     members: 'free-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+          {
+            text: ''
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-      {
-        text: ''
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-7'
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-7'
+          }
+        ]
       }
     ],
   },
@@ -412,45 +444,53 @@ export const annuallyContent = [
     decimal: '3',
     userMonth: 'user-month',
     btnContent: 'plus-btn',
-    btnColor: '#FF0EA1',
-    titleColor: '#FFC122',
+    btnColor: 'bg-[#FF0EA1]',
+    titleColor: 'text-[#FFC122]',
     href: 'https://cloud.illacloud.com/',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+        ]
+      }
     ],
   },
   {
@@ -459,52 +499,57 @@ export const annuallyContent = [
     userMonth: 'user-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
-    btnColor: '#654AEC',
-    titleColor: '#6D6AFF',
+    btnColor: 'bg-tech-purple-01',
+    titleColor: 'text-[#6D6AFF]',
     members: 'unlimited-members',
-    apps: [
+    list: [
       {
-        text: 'apps.components'
+        name: 'app',
+        values: [
+          {
+            text: 'apps.components'
+          },
+          {
+            text: 'apps.resources'
+          },
+          {
+            text: 'apps.plugins',
+            tip: 'tips.plugins'
+          },
+          {
+            text: 'apps.sql',
+            tip: 'tips.sql'
+          },
+        ]
       },
       {
-        text: 'apps.resources'
-      },
-      {
-        text: 'apps.plugins',
-        tip: 'tips.plugins'
-      },
-      {
-        text: 'apps.sql',
-        tip: 'tips.sql'
-      },
-      {
-        text: 'apps.watermark',
-      },
-    ],
-    security: [
-      {
-        text: 'security.historic-30'
-      },
-      {
-        text: 'security.develop-environment',
-        tip: 'tips.staging'
-      },
-      {
-        text: 'security.app-public',
-        tip: 'tips.app-public'
-      },
-      {
-        text: 'security.restore-data',
-        tip: 'tips.restore-data'
-      },
-      {
-        text: 'security.deployed',
-        tip: 'tips.deployed'
-      },
-      {
-        text: 'security.dedicated',
-        tip: 'tips.dedicated'
-      },
+        name: 'security-support',
+        values: [
+          {
+            text: 'security.historic-30'
+          },
+          {
+            text: 'security.develop-environment',
+            tip: 'tips.staging'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
+            text: 'security.restore-data',
+            tip: 'tips.restore-data'
+          },
+          {
+            text: 'security.deployed',
+            tip: 'tips.deployed'
+          },
+          {
+            text: 'security.dedicated',
+            tip: 'tips.dedicated'
+          },
+        ]
+      }
     ],
   }
 ]
@@ -540,3 +585,22 @@ export const openSourceContent = {
     },
   ],
 }
+
+export const faqList = [
+  {
+    question: 'FAQ.faq-1.k',
+    answer: 'FAQ.faq-1.v'
+  },
+  {
+    question: 'FAQ.faq-2.k',
+    answer: 'FAQ.faq-2.v'
+  },
+  {
+    question: 'FAQ.faq-3.k',
+    answer: 'FAQ.faq-3.v'
+  },
+  {
+    question: 'FAQ.faq-4.k',
+    answer: 'FAQ.faq-4.v'
+  },
+]

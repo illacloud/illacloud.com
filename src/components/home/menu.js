@@ -190,9 +190,6 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           {t('nav.blog')}
         </a>
       </Link>
-      {
-        // todo: 补充移动端
-      }
       <span
         onClick={() => {
           sendTagEvent({

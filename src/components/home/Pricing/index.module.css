@@ -1,23 +1,26 @@
 .cardContainer::-webkit-scrollbar {
   display: none;
 }
+.pricingMask {
+  @apply w-full overflow-hidden absolute z-[-1] h-[2434px] bg-black xs:rounded-b-[40px]
+}
 .cardContainer {
   scrollbar-width: none;
   -ms-overflow-style: none;
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  @apply w-full overflow-y-scroll lg:h-[2158px] h-[1900px] absolute z-0;
-  @apply xs:rounded-b-[40px] overflow-hidden bg-black  ;
+  @apply w-full overflow-y-scroll;
+  @apply overflow-hidden  ;
 }
 .pricingMaskLeft {
   @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
-  @apply hidden lg:block bg-[#654AEC] absolute;
+  @apply hidden lg:block bg-tech-purple-01 absolute;
   filter: blur(238.125px);
 }
 .pricingMaskRight {
   @apply w-[824px] h-[453px] left-[1004px] top-[109px] opacity-30;
-  @apply hidden lg:block bg-[#654AEC] absolute;
+  @apply hidden lg:block bg-tech-purple-01 absolute;
   filter: blur(238.125px);
 }
 .pricingMaskPhone {
@@ -50,12 +53,9 @@
 }
 .pricingContentBtn {
   @apply text-[14px] leading-[22px] flex items-center rounded-[3px] justify-center text-center w-[88px] h-[30px] cursor-pointer font-[400];
-  
 }
 .pricingContentBtnActive {
-  background: #654AEC;
-  filter: none;
-  font-weight: 500;
+  @apply bg-tech-purple-01 font-[500] filter-none
 }
 .cardContainer {
   @apply flex flex-row gap-[12px] xl:gap-[16px] w-full justify-start items-start mt-[16px] rounded-[16px];
@@ -100,15 +100,61 @@
   padding-top: 40px!important;
   @apply px-[20px] lg:px-0 pb-[100px];
 }
+.doubt {
+  @apply cursor-pointer
+}
 .doubt:hover .tips{
   display: block;
 }
-.tips {
-  position: absolute;
+.tooltip{
+  @apply w-[200px] bg-tech-purple-01 flex fixed items-center text-white z-[20] text-[14px] leading-[22px];
+  @apply flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] rounded-[2px]
 }
-.tips img {
-  @apply w-[4px] h-[32px] relative left-[24px];
+.tooltip::after {
+  @apply absolute border-[5px] border-solid;
+  content: " ";
+  border-color:  transparent transparent #654AEC transparent;
 }
-.tips span {
-  @apply w-[200px] flex flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] bg-[#654AEC] rounded-[2px] absolute z-[1] left-[28px] bottom-[-30%];
+.rightTip::after  {
+  @apply left-[-5px];
+  transform-origin: 0;
+  transform: rotate(-90deg);
+}
+.bottomTip::after {
+  @apply bottom-[100%] left-[67%] ml-[-5px]
+}
+.tipContent{
+  word-break: break-all;
+  white-space: normal
+}
+.faqContainer {
+  @apply flex flex-col items-center gap-[24px] xl:gap-[48px] pb-[60px] lg:pb-[200px]
+}
+.faqTitle {
+  @apply font-[700] text-[24px] leading-[28px] text-center xl:text-[48px] xl:leading-[56px]
+}
+.faqListContainer {
+  @apply w-full flex flex-col items-start lg:w-[800px]
+}
+.faqListQuestion {
+  @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer
+}
+.faqListAnswer {
+  @apply w-full font-[400] text-[12px] leading-[16px] xl:leading-[20px] flex items-center rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line
+}
+.faqListAnswer a{
+ @apply underline
+}
+.direction {
+  @apply w-[12px] h-[12px];
+}
+/* lg:pt-[50px] bg-[#fafafa] xl:bg-white */
+.pricingFooter {
+  @apply lg:pt-[50px] bg-[#fafafa] xl:bg-white
+}
+
+@media only screen and (max-width: 1440px) {
+  .pricingFooter {
+    background-color: #fafafa;
+  }
 }
