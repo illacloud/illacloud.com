@@ -20,19 +20,20 @@ const Home = () => {
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const [starCounts, setStarCounts] = useState(0)
+  const defaultStar = 6000
 
   useEffect(() => {
     const request = async () => {
-      let starCounts = 0
+      let starCounts = defaultStar
       try {
         const res = await fetch(
           'https://api.github.com/repos/illacloud/illa-builder',
         )
         const resJSON = await res.json()
-        starCounts = resJSON?.stargazers_count || 0
+        starCounts = resJSON?.stargazers_count || defaultStar
         setStarCounts(starCounts)
       } catch {
-        setStarCounts(0)
+        setStarCounts(defaultStar)
       }
     }
     request()
