@@ -25,7 +25,7 @@ export const contentList = [
       'content.sql-generate.title-1',
       'content.sql-generate.title-2',
     ],
-    colorationTitle: ['Generate', '智能生成'],
+    colorationTitle: ['Generate', '智能生成', '생성하다', '生成'],
     color: bgGenerate,
     linkUrl: '/docs/sql-generate',
     linkContent: 'content.sql-generate.goto',
@@ -39,7 +39,7 @@ export const contentList = [
       'content.for-developer.title-1',
       'content.for-developer.title-2',
     ],
-    colorationTitle: ['Developers', '开发者'],
+    colorationTitle: ['Developers', '开发者', '개발자', '開発者'],
     color: bgDevelopers,
     linkUrl: '/docs/javascript',
     linkContent: 'content.for-developer.goto',
@@ -54,7 +54,7 @@ export const contentList = [
       'content.date-integrate.title-3',
       'content.date-integrate.title-4',
     ],
-    colorationTitle: ['Any', '整合'],
+    colorationTitle: ['Any', '整合', 'どれでも', '어느'],
     color: bgAny,
     linkUrl: '/docs/integration-list',
     linkContent: 'content.date-integrate.goto',
@@ -85,7 +85,7 @@ export const contentList = [
       'content.collaborative-develop.title-3',
       'content.collaborative-develop.title-4',
     ],
-    colorationTitle: ['Collaboration', '协同'],
+    colorationTitle: ['Collaboration', '协同', 'コラボレーション', '협동'],
     color: bgCollaboration,
     linkUrl: '/docs/collaboration',
     linkContent: 'content.collaborative-develop.goto',
@@ -100,7 +100,7 @@ export const contentList = [
       'content.ui-library.title-3',
       'content.ui-library.title-4',
     ],
-    colorationTitle: ['fully', '完善'],
+    colorationTitle: ['fully', '完善', '完全に', '충분히'],
     color: bgFully,
     linkUrl: '/docs/illa-components',
     linkContent: 'content.ui-library.goto',
@@ -110,7 +110,7 @@ export const contentList = [
 ]
 export const deploymentContent = {
   tittleList: ['deployment.title-1', 'deployment.title-2'],
-  colorationTitle: ['Flexible', '灵活'],
+  colorationTitle: ['Flexible', '灵活', '유연한', 'フレキシブル'],
   color: bgFlexible,
   desc: 'deployment.introduction',
   items: [
@@ -248,8 +248,15 @@ export const monthlyContent = [
     href: 'https://cloud.illacloud.com/',
     btnColor: 'bg-white/[0.08]',
     titleColor: 'text-white',
-    members: 'free-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'free-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -283,13 +290,23 @@ export const monthlyContent = [
   {
     title: 'Plus',
     price: '$10',
-    userMonth: 'user-month',
+    userMonth: 'editor-month',
     href: 'https://cloud.illacloud.com/',
     btnContent: 'plus-btn',
     btnColor: 'bg-[#FF0EA1]',
     titleColor: 'text-[#FFC122]',
-    members: 'unlimited-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'unlimited-viewer'
+          },
+          {
+            text: 'unlimited-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -298,6 +315,10 @@ export const monthlyContent = [
           },
           {
             text: 'apps.resources'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
           },
           {
             text: 'apps.plugins',
@@ -321,10 +342,6 @@ export const monthlyContent = [
           {
             text: 'security.develop-environment',
             tip: 'tips.staging'
-          },
-          {
-            text: 'security.app-public',
-            tip: 'tips.app-public'
           },
           {
             text: 'security.restore-data',
@@ -337,13 +354,23 @@ export const monthlyContent = [
   {
     title: 'Enterprise',
     price: '$50',
-    userMonth: 'user-month',
+    userMonth: 'editor-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
     btnColor: 'bg-tech-purple-01',
     titleColor: 'text-[#6D6AFF]',
-    members: 'unlimited-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'unlimited-viewer'
+          },
+          {
+            text: 'unlimited-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -352,6 +379,10 @@ export const monthlyContent = [
           },
           {
             text: 'apps.resources'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
           },
           {
             text: 'apps.plugins',
@@ -375,10 +406,6 @@ export const monthlyContent = [
           {
             text: 'security.develop-environment',
             tip: 'tips.staging'
-          },
-          {
-            text: 'security.app-public',
-            tip: 'tips.app-public'
           },
           {
             text: 'security.restore-data',
@@ -408,6 +435,14 @@ export const annuallyContent = [
     titleColor: 'text-white',
     members: 'free-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'free-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -442,13 +477,23 @@ export const annuallyContent = [
     title: 'Plus',
     price: '$8.',
     decimal: '3',
-    userMonth: 'user-month',
+    userMonth: 'editor-month',
     btnContent: 'plus-btn',
     btnColor: 'bg-[#FF0EA1]',
     titleColor: 'text-[#FFC122]',
     href: 'https://cloud.illacloud.com/',
-    members: 'unlimited-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'unlimited-viewer'
+          },
+          {
+            text: 'unlimited-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -457,6 +502,10 @@ export const annuallyContent = [
           },
           {
             text: 'apps.resources'
+          },
+          {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
           },
           {
             text: 'apps.plugins',
@@ -482,10 +531,6 @@ export const annuallyContent = [
             tip: 'tips.staging'
           },
           {
-            text: 'security.app-public',
-            tip: 'tips.app-public'
-          },
-          {
             text: 'security.restore-data',
             tip: 'tips.restore-data'
           },
@@ -496,13 +541,23 @@ export const annuallyContent = [
   {
     title: 'Enterprise',
     price: '$50',
-    userMonth: 'user-month',
+    userMonth: 'editor-month',
     startAt: "start-at",
     btnContent: 'enterprise-btn',
     btnColor: 'bg-tech-purple-01',
     titleColor: 'text-[#6D6AFF]',
-    members: 'unlimited-members',
     list: [
+      {
+        name: 'members',
+        values: [
+          {
+            text: 'unlimited-viewer'
+          },
+          {
+            text: 'unlimited-members'
+          }
+        ]
+      },
       {
         name: 'app',
         values: [
@@ -513,12 +568,19 @@ export const annuallyContent = [
             text: 'apps.resources'
           },
           {
+            text: 'security.app-public',
+            tip: 'tips.app-public'
+          },
+          {
             text: 'apps.plugins',
             tip: 'tips.plugins'
           },
           {
             text: 'apps.sql',
             tip: 'tips.sql'
+          },
+          {
+            text: 'apps.watermark',
           },
         ]
       },
@@ -531,10 +593,6 @@ export const annuallyContent = [
           {
             text: 'security.develop-environment',
             tip: 'tips.staging'
-          },
-          {
-            text: 'security.app-public',
-            tip: 'tips.app-public'
           },
           {
             text: 'security.restore-data',

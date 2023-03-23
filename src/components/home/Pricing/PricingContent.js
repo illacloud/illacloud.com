@@ -105,11 +105,6 @@ export const PricingContent = ({ onChangeShow }) => {
                 >{t(btnContent)}</span>
               )}
               <div className='flex flex-col item-start w-[320px] h-[536px]'>
-                <p className={style.cardListTitle}>{t('members')}</p>
-                <p className={clsx(style.blockListContent, style.cardListContent)}>
-                  <img className='h-[16px] w-[16px]' src={pricing_} alt='pricing' />
-                  <span>{t(members)}</span>
-                </p>
                 {
                   list.map(({ name, values }) => {
                     return (

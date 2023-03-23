@@ -7,6 +7,8 @@ import { IllaLogo } from '@/img/public/illa-logo'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
+import { LanguageSelect } from '@/components/home/language-select'
+import Language from '@/img/home/language.svg'
 
 function renderItem (title, items) {
   return (
@@ -133,15 +135,21 @@ export function Footer ({ noHome = false }) {
           }}
         >
           <div className=" w-full justify-center items-start flex ">
-            <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center">
-              <Link legacyBehavior href={'/'}>
-                <a>
-                  <ILLA_LOGO />
-                </a>
-              </Link>
-              <span className="text-garyBlue-02 grow-1 text-[12px] mt-[16px]">
-                Create with ❤️ by ILLA
-              </span>
+            <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center lg:gap-[16px]">
+              <div>
+                <Link legacyBehavior href={'/'}>
+                  <a>
+                    <ILLA_LOGO />
+                  </a>
+                </Link>
+                <span className="text-garyBlue-02 grow-1 text-[12px] mt-[16px]">
+                  Create with ❤️ by ILLA
+                </span>
+              </div>
+              <div className='hidden lg:flex w-[200px] flex flex-row gap-[8px]'>
+                <img src={Language} alt='language'/>
+                <LanguageSelect buttonColorChange={false} />
+              </div>
             </div>
             {waysData.map((item) => renderItem(item.title, item.items))}
             <div className="w-full  xs:w-1/5 flex flex-row xs:flex-col items-start justify-center rounded-[32px]">

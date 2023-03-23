@@ -20,6 +20,7 @@ const Home = () => {
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const [starCounts, setStarCounts] = useState(0)
+  const [currentStarCounts, setCurrentStarCounts] = useState(0)
   const defaultStar = 6000
 
   useEffect(() => {
@@ -38,6 +39,16 @@ const Home = () => {
     }
     request()
   }, [])
+
+  useEffect(() => {
+    if(!starCounts) return
+    if(currentStarCounts > starCounts) {
+      setCurrentStarCounts(starCounts)
+    }
+    if(currentStarCounts < starCounts) {
+      setCurrentStarCounts(currentStarCounts + 1000)
+    }
+  }, [starCounts, currentStarCounts])
   return (
     <>
       <Head>
@@ -65,7 +76,7 @@ const Home = () => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={starCounts}
+          githubStarts={currentStarCounts}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -101,13 +112,13 @@ const Home = () => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={starCounts}
+          githubStarts={currentStarCounts}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={starCounts}
+          githubStarts={currentStarCounts}
           onSubscribe={() => setModalVisible(true)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} />
@@ -124,6 +135,7 @@ const Home = () => {
           visible={isBookShow}
           onChangeShow={() => setIsBookShow(false)}
         />
+        
       </div>
       <Footer />
     </>

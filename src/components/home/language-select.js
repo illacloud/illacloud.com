@@ -5,6 +5,7 @@ import { useClickAway } from 'react-use'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
+import {getLanString} from '@/utils/languageMap'
 
 const options = [
   {
@@ -17,6 +18,16 @@ const options = [
     value: 'zh-CN',
     tagCategory: 'homepage_menu_language_zh_click',
   },
+  {
+    label: '日本語',
+    value: 'ja-JP',
+    agCategory: 'homepage_menu_language_ja_click',
+  },
+  {
+    label: '한국인',
+    value: 'ko-KR',
+    agCategory: 'homepage_menu_language_ko_click',
+  }
 ]
 
 export const LanguageSelect = ({ buttonColorChange = true }) => {
@@ -36,7 +47,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
     >
       <div
         className={clsx(
-          'text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]',
+          'text-[16px] h-full w-full flex flex-row items-center gap-[8px]',
           {
             'text-white-01': buttonColorChange,
             'text-gray-01': !buttonColorChange,
@@ -51,8 +62,8 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           setExpandPanel(() => !expandPanel)
         }}
       >
-        <span className="mr-[10px]">
-          {router.locale === 'en-US' ? 'English' : '简体中文'}
+        <span>
+          {getLanString(router.locale)}
         </span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
@@ -65,7 +76,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           },
         )}
         style={{
-          height: `${expandPanel ? 96 : 0}px `,
+          height: expandPanel ? 'auto' : 0,
         }}
       >
         {options.map((option) => (

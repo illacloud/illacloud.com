@@ -46,7 +46,7 @@ export const Nav = (props) => {
             </a>
           </Link>
           <div className="flex items-center gap-[4px] ml-[24px]">
-            <LanguageSelect buttonColorChange={!whiteTheme} />
+            {/* <LanguageSelect buttonColorChange={!whiteTheme} /> */}
             {hasButton && (
               <motion.div
                 className="flex items-center gap-[4px] ml-[24px]"
