@@ -1,6 +1,6 @@
 # ILLA Documentation
 
-Thanks for [tailwindcss.com](https://github.com/tailwindcss.com).
+Thanks for [tailwindcss.com](https://github.com/tailwindlabs/tailwindcss.com).
 
 ILLA uses [Next.js](https://nextjs.org/) for its documentation. Here is how you can run the project locally:
 
