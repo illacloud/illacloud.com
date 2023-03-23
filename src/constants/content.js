@@ -85,7 +85,7 @@ export const contentList = [
       'content.collaborative-develop.title-3',
       'content.collaborative-develop.title-4',
     ],
-    colorationTitle: ['Collaboration', '协同', 'コラボレーション', '협동'],
+    colorationTitle: ['Collaboration', '协同', '共同開発', '협동'],
     color: bgCollaboration,
     linkUrl: '/docs/collaboration',
     linkContent: 'content.collaborative-develop.goto',
