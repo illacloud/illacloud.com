@@ -1,5 +1,11 @@
 /** @type {import("next-sitemap").IConfig} */
 const site = process.env.SITE_URL || 'https://www.illacloud.com'
+const getHrefLan = (href) => {
+  if(href.includes('zh-CN')) return 'zh'
+  else if(href.includes('ko-KR')) return 'ko'
+  else if(href.includes('ja-JP')) return 'ja'
+  else return 'en'
+}
 module.exports = {
   siteUrl: site,
   generateRobotsTxt: true,
@@ -12,7 +18,7 @@ module.exports = {
       alternateRefs: [
         {
           href: site + path,
-          hreflang: path.includes('zh-CN') ? 'zh' : 'en',
+          hreflang: getHrefLan(path),
           hrefIsAbsolute: true,
         },
       ],

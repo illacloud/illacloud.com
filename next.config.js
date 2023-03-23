@@ -54,6 +54,7 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return require('./redirects.json')
   },
+  // todo: 待补充文档
   async rewrites() {
     return [
       {
@@ -63,6 +64,16 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/en-US/docs/:slug*',
+        destination: '/en-US/docs/en-US/:slug*',
+        locale: false,
+      },
+      {
+        source: '/ja-JP/docs/:slug*',
+        destination: '/en-US/docs/en-US/:slug*',
+        locale: false,
+      },
+      {
+        source: '/ko-KR/docs/:slug*',
         destination: '/en-US/docs/en-US/:slug*',
         locale: false,
       },

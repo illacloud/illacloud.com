@@ -31,11 +31,13 @@ export const Partner = ({ onChangeShow }) => {
             className={clsx(style.partnerCard)}
             rel="noreferrer"
             target="_blank"
-            onClick={sendTagEvent({
-              action: 'click',
-              category: tagCategory,
-              value: href,
-            })}
+            onClick={() => {
+              sendTagEvent({
+                action: 'click',
+                category: tagCategory,
+                value: href,
+              })
+            }}
           >
             <span
               className={clsx(

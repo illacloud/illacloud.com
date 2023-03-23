@@ -119,7 +119,6 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
             </svg>
           </button>
           <ul className="space-y-6">
-            <NavItems />
             <li>
               <a
                 href="/github"
@@ -138,27 +137,6 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
   )
 }
 
-export function NavItems() {
-  return (
-    <>
-      {/* <li>
-        <Link href="/docs/about-illa">
-          <a className="hover:text-sky-500 dark:hover:text-sky-400">Docs</a>
-        </Link>
-      </li> */}
-      {/* <li>
-        <Link href="/blog">
-          <a className="hover:text-sky-500 dark:hover:text-sky-400">Blog</a>
-        </Link>
-      </li> */}
-      <li>
-        <Link href="/hire" legacyBehavior>
-          <a className="hover:text-sky-500 dark:hover:text-sky-400">Career</a>
-        </Link>
-      </li>
-    </>
-  )
-}
 
 export function Header({
   hasNav = false,

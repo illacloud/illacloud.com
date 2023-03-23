@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { sendTagEvent } from '@/utils/gtag'
+import { getLanString } from '@/utils/languageMap'
 
 const communityOptions = [
   {
@@ -30,12 +31,36 @@ const communityOptions = [
   },
 ]
 
+const options = [
+  {
+    label: 'English',
+    value: 'en-US',
+    tagCategory: 'homepage_menu_language_en_mob_click',
+  },
+  {
+    label: '简体中文',
+    value: 'zh-CN',
+    tagCategory: 'homepage_menu_language_zh_mob_click',
+  },
+  {
+    label: '日本語',
+    value: 'ja-JP',
+    agCategory: 'homepage_menu_language_ja_mob_click',
+  },
+  {
+    label: '한국인',
+    value: 'ko-KR',
+    agCategory: 'homepage_menu_language_ko_mob_click',
+  }
+]
+
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [productListExpand, setProductListExpand] = useState(false)
   const [languageListExpand, setLanguageListExpand] = useState(false)
   const [communityListExpand, setCommunityListExpand] = useState(false)
   const { t } = useTranslation('home')
   const router = useRouter()
+
 
   return (
     <div
@@ -121,19 +146,19 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         </a>
       </Link>
       <Link legacyBehavior href="/pricing">
-              <a
-                className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_menu_doc_click',
-                    label: t('nav.pricing'),
-                  })
-                }}
-              >
-                {t('nav.pricing')}
-              </a>
-        </Link>
+        <a
+          className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
+          onClick={() => {
+            sendTagEvent({
+              action: 'click',
+              category: 'homepage_menu_doc_click',
+              label: t('nav.pricing'),
+            })
+          }}
+        >
+          {t('nav.pricing')}
+        </a>
+      </Link>
       <span
         onClick={() => {
           sendTagEvent({
@@ -210,16 +235,38 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_language_mob_click',
-            label: router.locale === 'en-US' ? 'English' : '简体中文',
+            label: getLanString(router.locale),
           })
           setLanguageListExpand(() => !languageListExpand)
         }}
         className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px]  "
       >
-        {router.locale === 'en-US' ? 'English' : '简体中文'} <SelectIcon />
+        {getLanString(router.locale)} <SelectIcon />
       </span>
       <div>
-        <Link
+        {options.map(({ value, label, tagCategory }) => (
+          <Link
+            legacyBehavior
+            href={router.pathname}
+            locale={value}
+            key={value}
+          >
+            <a
+              style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
+              className={clsx('transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]', {'hidden': router.locale === value})}
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: tagCategory,
+                  label,
+                })
+              }}
+            >
+              {getLanString(value)}
+            </a>
+          </Link>
+        ))}
+        {/* <Link
           legacyBehavior
           href={router.pathname}
           locale={router.locale === 'en-US' ? 'zh-CN' : 'en-US'}
@@ -240,7 +287,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           >
             {router.locale === 'en-US' ? '简体中文' : 'English'}
           </a>
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

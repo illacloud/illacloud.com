@@ -186,7 +186,7 @@ export const Title = (props) => {
             >
               <a
                 target="__blank"
-                className="flex gap-[12px] items-center rounded-[8px] py-[9px] px-[16px] justify-center  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] inline-block"
+                className="flex gap-[12px] items-center rounded-[8px] px-[27px] justify-start  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] relative"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -205,7 +205,7 @@ export const Title = (props) => {
                     {t('github')}
                   </span>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col absolute right-[27px]">
                   <span className="flex justify-center">
                     <StarIcon />
                   </span>

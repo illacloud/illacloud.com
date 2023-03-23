@@ -10,6 +10,7 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
+import {useRaf} from 'react-use'
 import Script from 'next/script'
 
 const Home = () => {
@@ -38,6 +39,8 @@ const Home = () => {
     }
     request()
   }, [])
+  const step = useRaf(1000, 0)
+
   return (
     <>
       <Head>
@@ -65,7 +68,7 @@ const Home = () => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={starCounts}
+          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -101,13 +104,13 @@ const Home = () => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={starCounts}
+          githubStarts={Math.floor(starCounts * step)}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={starCounts}
+          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} />
@@ -133,7 +136,7 @@ const Home = () => {
 export const getStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home', 'navs'])),
+      ...(await serverSideTranslations(locale, ['home'])),
     },
     revalidate: 10,
   }

@@ -4,16 +4,12 @@ import style from './index.module.css'
 
 export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
   const { t } = useTranslation('home')
-  const colorStyle = {
-    background: `url('${color}') no-repeat`,
-    backgroundSize: 'cover'
-  }
   const firstHalf = tittleList.slice(0, 2)
   const lastHalf = tittleList.slice(2)
   return (
     <div className={style.contentTitle}>
       {firstHalf.some((key) => Boolean(t(key))) && (
-        <div className="flex items-center flex-row xl:gap-[16px] gap-[8px]">
+        <div className={style.titleText}>
           {firstHalf.map(
             (key) =>
               t(key) && (
@@ -24,16 +20,16 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
                       : ''
                   }
                   key={key}
-                  style={colorationTitle.includes(t(key)) ? colorStyle : {}}
                 >
-                  {t(key)}
+                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  <span>{t(key)}</span>
                 </span>
               ),
           )}
         </div>
       )}
       {lastHalf.some((key) => Boolean(t(key))) && (
-        <div className="flex items-center flex-row xl:gap-[16px] gap-[8px]">
+        <div className={style.titleText}>
           {lastHalf.map(
             (key) =>
               t(key) && (
@@ -44,9 +40,9 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
                       : ''
                   }
                   key={key}
-                  style={colorationTitle.includes(t(key)) ? colorStyle : {}}
                 >
-                  {t(key)}
+                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  <span>{t(key)}</span>
                 </span>
               ),
           )}

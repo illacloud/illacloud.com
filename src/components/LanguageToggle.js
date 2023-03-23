@@ -2,6 +2,7 @@ import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
+import {tempGetLanString} from '@/utils/languageMap'
 
 const languages = [
   {
@@ -12,6 +13,15 @@ const languages = [
     value: 'zh-CN',
     label: '简体中文',
   },
+  // todo 文档待补充翻译, 先不显示label
+  // {
+  //   value: 'ja-JP',
+  //   label: '日本語',
+  // },
+  // {
+  //   value: 'ko-KR',
+  //   label: '한국인'
+  // }
 ]
 
 export function LanguageToggle({ panelClassName = 'mt-4' }) {
@@ -28,7 +38,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
         <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
-          {router.locale === 'en-US' ? 'English' : '简体中文'}
+          {tempGetLanString(router.locale)}
         </span>
       </Listbox.Button>
       <Listbox.Options

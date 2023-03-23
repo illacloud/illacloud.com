@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 const Publicize = () => {
   const [publicizeList, setPublicizeList] = useState([])
+  const [showOpacity, setShowOpacity] = useState(0)
   const host = 'https://strapi.illasoft.com'
 
   const publicizeItem = useMemo(() => {
@@ -38,11 +39,10 @@ const Publicize = () => {
   return (
     <a
       className={clsx(style.publicize, {
-        "invisible": !publicizeItem,
         "pointer-events-none": !publicizeItem
       },
       )}
-      style={{ borderColor: publicizeItem?.borderColor }}
+      style={{ borderColor: publicizeItem?.borderColor, opacity: showOpacity}}
       href={publicizeItem?.href ?? ""}
       onClick={() => {
         if (publicizeItem) {
@@ -61,6 +61,7 @@ const Publicize = () => {
           className='w-full'
           src={host + publicizeItem?.bgImg?.url}
           alt="publicize background"
+          onLoad={() => setShowOpacity(1)}
         />
       </span>
       <span className='flex flex-row justify-between items-center'>
