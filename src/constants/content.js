@@ -10,13 +10,13 @@ import collaboration from '@/img/home/collaboration.webp'
 import dataSource from '@/img/home/data_source.webp'
 import sqlGenerate from '@/img/home/sql_generate.webp'
 import uiLibrary from '@/img/home/ui_library.webp'
-import bgGenerate from '@/img/home/bg_generate.svg'
-import bgAny from '@/img/home/bg_any.svg'
-import bgCollaboration from '@/img/home/bg_collaboration.svg'
-import bgFlexible from '@/img/home/bg_flexible.svg'
-import bgFully from '@/img/home/bg_fully.svg'
-import bgPartner from '@/img/home/bg_partner.svg'
-import bgDevelopers from '@/img/home/bg_developers.svg'
+import bgGenerate from '@/img/home/bg_generate.png'
+import bgAny from '@/img/home/bg_any.png'
+import bgCollaboration from '@/img/home/bg_collaboration.png'
+import bgFlexible from '@/img/home/bg_flexible.png'
+import bgFully from '@/img/home/bg_fully.png'
+import bgPartner from '@/img/home/bg_partner.png'
+import bgDevelopers from '@/img/home/bg_developers.png'
 
 export const contentList = [
   {
@@ -145,7 +145,7 @@ export const deploymentContent = {
 
 export const partnerContent = {
   tittleList: ['partner'],
-  colorationTitle: ['Partner', '合作伙伴'],
+  colorationTitle: ['Partner', '合作伙伴', '相棒', '파트너'],
   becomePartner: 'Become a partner',
   color: bgPartner,
   partners: [

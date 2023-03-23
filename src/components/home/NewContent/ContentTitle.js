@@ -4,10 +4,6 @@ import style from './index.module.css'
 
 export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
   const { t } = useTranslation('home')
-  const colorStyle = {
-    background: `url('${color}') no-repeat`,
-    backgroundSize: '100% 100%',
-  }
   const firstHalf = tittleList.slice(0, 2)
   const lastHalf = tittleList.slice(2)
   return (
@@ -24,9 +20,9 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
                       : ''
                   }
                   key={key}
-                  style={colorationTitle.includes(t(key)) ? colorStyle : {}}
                 >
-                  {t(key)}
+                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  <span>{t(key)}</span>
                 </span>
               ),
           )}
@@ -44,9 +40,9 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
                       : ''
                   }
                   key={key}
-                  style={colorationTitle.includes(t(key)) ? colorStyle : {}}
                 >
-                  {t(key)}
+                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  <span>{t(key)}</span>
                 </span>
               ),
           )}
