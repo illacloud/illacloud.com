@@ -10,6 +10,7 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
+import { useAnimationFrame } from "framer-motion"
 import Script from 'next/script'
 
 const Home = () => {
@@ -21,7 +22,20 @@ const Home = () => {
   const [isBookShow, setIsBookShow] = useState(false)
   const [starCounts, setStarCounts] = useState(0)
   const [currentStarCounts, setCurrentStarCounts] = useState(0)
+
   const defaultStar = 6000
+
+  const addCount = () => {
+    if(!starCounts) return
+    if(currentStarCounts >= starCounts) {
+      setCurrentStarCounts(starCounts)
+      cancelAnimationFrame(animationId)
+      return
+    }
+    setCurrentStarCounts(currentStarCounts + 300)
+  }
+
+  const animationId = useAnimationFrame(addCount)
 
   useEffect(() => {
     const request = async () => {
@@ -39,16 +53,6 @@ const Home = () => {
     }
     request()
   }, [])
-
-  useEffect(() => {
-    if(!starCounts) return
-    if(currentStarCounts > starCounts) {
-      setCurrentStarCounts(starCounts)
-    }
-    if(currentStarCounts < starCounts) {
-      setCurrentStarCounts(currentStarCounts + 1000)
-    }
-  }, [starCounts, currentStarCounts])
   return (
     <>
       <Head>
