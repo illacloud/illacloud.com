@@ -10,6 +10,7 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
+import {useRaf} from 'react-use'
 import Script from 'next/script'
 
 const Home = () => {
@@ -20,8 +21,6 @@ const Home = () => {
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const [starCounts, setStarCounts] = useState(0)
-  const [currentStarCounts, setCurrentStarCounts] = useState(0)
-
   const defaultStar = 6000
 
   useEffect(() => {
@@ -40,16 +39,8 @@ const Home = () => {
     }
     request()
   }, [])
+  const step = useRaf(1000, 0)
 
-  useEffect(() => {
-    if(!starCounts) return
-    if(currentStarCounts >= starCounts) {
-      setCurrentStarCounts(starCounts)
-      return
-    }
-    setCurrentStarCounts(currentStarCounts + 300)
-
-  }, [starCounts, currentStarCounts])
   return (
     <>
       <Head>
@@ -77,7 +68,7 @@ const Home = () => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={currentStarCounts}
+          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -113,13 +104,13 @@ const Home = () => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={currentStarCounts}
+          githubStarts={Math.floor(starCounts * step)}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={currentStarCounts}
+          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} />
@@ -136,7 +127,6 @@ const Home = () => {
           visible={isBookShow}
           onChangeShow={() => setIsBookShow(false)}
         />
-        
       </div>
       <Footer />
     </>
