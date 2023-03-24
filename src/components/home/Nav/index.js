@@ -34,7 +34,7 @@ export const Nav = (props) => {
     <>
       <div
         className={clsx(
-          'fixed hidden xs:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center backdrop-blur-[50px]',
+          'fixed hidden xl:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center backdrop-blur-[50px]',
           whiteTheme ? 'bg-[rgba(255,255,255,0.75)]' : 'bg-[rgba(0,0,0,0.75)]',
         )}
         style={customStyle || {}}
@@ -173,7 +173,7 @@ export const Nav = (props) => {
           </motion.div>
         )}
       </div>
-      <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xs:hidden">
+      <div className="justify-between  px-[20px] w-full h-[64px] flex items-center xl:hidden">
         <Link legacyBehavior href="/">
           <a className="flex items-center w-[42.5px] h-[20px]">
             {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
