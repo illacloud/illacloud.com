@@ -1,9 +1,27 @@
 [
-  { "source": "/discord", "destination": "https://discord.com/invite/illacloud", "permanent": false },
-  { "source": "/github", "destination": "https://github.com/illacloud/illa-builder", "permanent": false },
+  {
+    "source": "/discord",
+    "destination": "https://discord.com/invite/illacloud",
+    "permanent": false
+  },
+  {
+    "source": "/github",
+    "destination": "https://github.com/illacloud/illa-builder",
+    "permanent": false
+  },
   {
     "source": "/community",
     "destination": "https://github.com/illacloud/illa-builder",
     "permanent": false
+  },
+  {
+    "source": "/blog",
+    "destination": "https://blog.illacloud.com/",
+    "permanent": true
+  },
+  {
+    "source": "/blog/:path*",
+    "destination": "https://blog.illacloud.com/:path*",
+    "permanent": true
   }
 ]
