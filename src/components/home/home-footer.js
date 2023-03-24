@@ -14,7 +14,7 @@ function renderItem (title, items) {
   return (
     <div
       key={title}
-      className="w-1/2   xs:w-1/5  flex flex-col  items-start  justify-center mt-[32px] xs:mt-0 "
+      className="w-1/2   xl:w-1/5  flex flex-col  items-start  justify-center mt-[32px] xl:mt-0 "
     >
       <div className="text-[16px] text-garyBlue-02 font-bold mb-[16px]">
         {title}
@@ -124,7 +124,7 @@ export function Footer ({ noHome = false }) {
     <>
       <div
         className={clsx(
-          'w-full flex-col items-center  h-[440px] px-[120px] hidden xs:flex',
+          'w-full flex-col items-center  h-[440px] px-[120px] hidden xl:flex',
           noHome ? 'bg-[#fafafa]' : 'bg-white-01',
         )}
       >
@@ -135,7 +135,7 @@ export function Footer ({ noHome = false }) {
           }}
         >
           <div className=" w-full justify-center items-start flex ">
-            <div className="mr-[20px]  w-full xs:w-1/5 flex xs:flex-col  justify-center lg:gap-[16px]">
+            <div className="mr-[20px]  w-full xl:w-1/5 flex xl:flex-col  justify-center lg:gap-[16px]">
               <div>
                 <Link legacyBehavior href={'/'}>
                   <a>
@@ -152,14 +152,14 @@ export function Footer ({ noHome = false }) {
               </div>
             </div>
             {waysData.map((item) => renderItem(item.title, item.items))}
-            <div className="w-full  xs:w-1/5 flex flex-row xs:flex-col items-start justify-center rounded-[32px]">
-              <div className="text-[16px] text-garyBlue-02 font-bold mb-[16px] hidden xs:block">
+            <div className="w-full  xl:w-1/5 flex flex-row xl:flex-col items-start justify-center rounded-[32px]">
+              <div className="text-[16px] text-garyBlue-02 font-bold mb-[16px] hidden xl:block">
                 {t('footer.community')}
               </div>
               {Community?.map((item, index) => (
                 <Link legacyBehavior key={item.tagCategory} href={item.href}>
                   <a
-                    className="xs:mb-[12px] text-garyBlue-01 flex flex-row items-center gap-[8px]"
+                    className="xl:mb-[12px] text-garyBlue-01 flex flex-row items-center gap-[8px]"
                     onClick={() => {
                       sendTagEvent({
                         action: 'click',
@@ -177,7 +177,7 @@ export function Footer ({ noHome = false }) {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xs:hidden bg-[#fafafa]">
+      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xl:hidden bg-[#fafafa]">
         <div className="w-full xs:w-1/6 flex xs:flex-col items-center justify-between">
           <span className="flex  w-[34px] h-[16px] items-center">
             <IllaLogo />
