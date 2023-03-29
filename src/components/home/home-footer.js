@@ -169,7 +169,7 @@ export function Footer ({ noHome = false }) {
                     }}
                   >
                     <span>{item.icon}</span>
-                    <span className="hidden xl:block">{item.label}</span>
+                    <span className="hidden xl:block text-[14px]">{item.label}</span>
                   </a>
                 </Link>
               ))}
