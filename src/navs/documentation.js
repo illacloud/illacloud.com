@@ -88,6 +88,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['integration-list'],
         pagesUS['supabase'],
         pagesUS['appwrite'],
+        pagesUS['hugging-face-endpoint'],
         pagesUS['sql-generate'],
       ],
       '📲 Connect to Database and API': [
