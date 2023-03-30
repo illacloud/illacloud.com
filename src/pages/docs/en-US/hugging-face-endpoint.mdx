@@ -1,0 +1,47 @@
+
+---
+
+title: Hugging Face endpoint
+metaTitle: Connect to Hugging Face endpoint
+description: Learn how to use hugging face endpoint in ILLA
+tagCategory: doc_menu_hugging_face_endpoint_click
+
+---
+
+## <Heading hidden>Hugging Face endpoint</Heading>
+
+With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+
+We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  And we will introduce how to use this model to build an application in ILLA Cloud in this article.
+
+### Step 1: Build the front-end interface with components
+
+We have built an interface using the components such as file upload and button, as follows.
+
+<img src={require('@/img/docs/connect/hf1.png').default} alt="" />
+
+### Step 2: Add a Hugging Face resource
+
+Fill in the fields shown below to finish the resource configuration. [Create an endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+
+<img src={require('@/img/docs/connect/hf2.png').default} alt="" />
+
+### Step 3: Configure an Action
+
+Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+
+<img src={require('@/img/docs/connect/hf3.png').default} alt="" />
+
+Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+
+<img src={require('@/img/docs/connect/hf4.png').default} alt="" />
+
+### Step 4: Connect the components and actions
+
+Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+
+<img src={require('@/img/docs/connect/hf5.gif').default} alt="" />
+
+After the above steps are configured, the application is created and the running results are as follows.
+
+![Powered by Whisper on Hugging Face.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e081c8df-308f-4938-9519-3d8844c101bc/Powered_by_Whisper_on_Hugging_Face.gif)
