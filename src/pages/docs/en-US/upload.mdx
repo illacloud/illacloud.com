@@ -10,7 +10,7 @@ tagCategory: doc_menu_upload_click
 
 The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
 
-<img src={require('@/img/docs/upload1.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
 ### Properties
 
@@ -59,7 +59,7 @@ The upload component has some commonly used data, which can be called in the app
 
 ### Upload files to a cloud storage service
 
-<img src={require('@/img/docs/upload2.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
 #### Upload a single file through an S3 resource
 
@@ -77,7 +77,7 @@ Upload data
 {{upload1.value[0]}}
 ```
 
-<img src={require('@/img/docs/upload3.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
 #### Upload multiple files through an S3 resource
 
@@ -93,7 +93,7 @@ Upload data list
 {{upload1.value}}
 ```
 
-<img src={require('@/img/docs/upload4.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
 Upload an image and display it on the image component
 Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
@@ -102,4 +102,4 @@ Change the image source to the file base64 data of upload component. The base64 
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
 ```
 
-<img src={require('@/img/docs/upload5.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

@@ -44,30 +44,30 @@ tagCategory: doc_menu_hugging_face_endpoint_click
 
 我们使用文件上传和按钮等组件构建了如下界面。
 
-<img src={require('@/img/docs/connect/hf1.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
 #### 步骤2：添加Hugging Face资源
 
 填写下面显示的字段以完成资源配置。[创建端点](https://ui.endpoints.huggingface.co/new)并获取端点URL。在[个人资料设置](https://huggingface.co/settings/tokens)中获取组织API令牌。
 
-<img src={require('@/img/docs/connect/hf2.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
 #### 步骤3：配置操作
 
 首先选择参数类型。以 `openai/whisper-base` 为例，该模型需要二进制文件输入，因此我们将参数更改为 `Binary`。
 
-<img src={require('@/img/docs/connect/hf3.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
 将从文件上传组件上传的文件数据设置为要传递给模型的二进制文件。例如，`{{upload1.value[0]}}`
 
-<img src={require('@/img/docs/connect/hf4.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
 #### 步骤4：连接组件和操作
 
 为按钮添加事件处理程序，以在单击按钮时触发操作运行。并将文本组件的值设置为{{whisper.data[0].text}}，以在文本组件上显示转换结果。
 
-<img src={require('@/img/docs/connect/hf5.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
 完成上述步骤后，应用程序已创建，运行结果如下。
 
-<img src={require('@/img/docs/connect/hf6.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />

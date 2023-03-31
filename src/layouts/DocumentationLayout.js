@@ -41,7 +41,7 @@ export function DocumentationHeader(props) {
         name="og:image"
         property="og:image"
         content={`https://illa.cloud${meta.image ??
-          `https://illa.cloud${require('@/img/illa_logo.png').default}`
+          `https://cdn.illacloud.com/official-website/img/illa_logo.png`
           }`}
       />
       <meta
@@ -55,7 +55,7 @@ export function DocumentationHeader(props) {
         key="image"
         name="image"
         content={`https://illa.cloud${meta.image ??
-          `https://illa.cloud${require('@/img/illa_logo.png').default}`
+          `https://cdn.illacloud.com/official-website/img/illa_logo.png`
           }`}
       />
 
@@ -87,8 +87,7 @@ export function DocumentationHeader(props) {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${require('@/img/illa_logo.png').default
-              }`}
+            content={`https://cdn.illacloud.com/official-website/img/illa_logo.png`}
           />
         </>
       )}

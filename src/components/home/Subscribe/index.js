@@ -73,7 +73,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
           <div className={styles.container}>
             <img
               className={styles.closeIcon}
-              src={require('@/img/home/close.png').default}
+              src='https://cdn.illacloud.com/official-website/img/home/close.png'
               alt="closeIcon"
               onClick={onClose}
             />
@@ -81,7 +81,7 @@ export const SubscribeModal = ({ visible, onClose }) => {
               <SubscribeCover className={'hidden sm:block'} />
               <img
                 className={'block sm:hidden'}
-                src={require('@/img/home/m-subscribe-cover.png').default}
+                src='https://cdn.illacloud.com/official-website/img/home/m-subscribe-cover.png'
                 alt=""
               />
             </div>

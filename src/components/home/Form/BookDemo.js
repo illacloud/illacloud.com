@@ -57,7 +57,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
         <div className={style.bookContainer}>
           <div className="hidden xl:block w-[280px]">
             <img
-              src={require('@/img/home/book_image.png').default}
+              src='https://cdn.illacloud.com/official-website/img/home/book_image.png'
               alt="book a demo"
             />
           </div>
@@ -65,7 +65,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
             <div className="w-full">
               <img
                 className="hidden xl:block absolute top-[24px] right-[24px] cursor-pointer"
-                src={require('@/img/home/close.png').default}
+                src='https://cdn.illacloud.com/official-website/img/home/close.png'
                 alt="closeIcon"
                 onClick={onChangeShow}
               />

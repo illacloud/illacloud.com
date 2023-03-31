@@ -47,13 +47,13 @@ Based on the expected usage scenario you described, build a front-end interface.
 
 The following image is an example of a front-end page for a product that answer questions based on context.
 
-<img src={require('@/img/docs/connect/hfapi1.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
 
 ### Step 2: Create a Hugging Face Resource and config the Actions
 
 Click + New in the action list and select Hugging Face Inference API.
 
-<img src={require('@/img/docs/connect/hfapi2.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
 
 Fill in the form to connect to your Hugging Face:
 
@@ -61,7 +61,7 @@ Name: The name that will be displayed in ILLA
 
 Token: Get in your Hugging Face [profile settings]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
 
-<img src={require('@/img/docs/connect/hfapi3.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
 Confirm the model information in Hugging Face before configuring the actions:
 
@@ -69,17 +69,17 @@ Select a model in [Hugging Face Model Page]([https://huggingface.co/models](http
 
 Let’s use [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) as an example. Enter the detail page > click Deploy > Click Inference API
 
-<img src={require('@/img/docs/connect/hfapi4.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
 The parameters after `“inputs”` is what you should fill in ILLA. 
 
-<img src={require('@/img/docs/connect/hfapi5.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
 
 In ILLA Builder, we should fill in the Model ID and Parameter. Taking the above model as an example, the `“inputs”` is a key-value pair, so we can fill in it with key-value or JSON. 
 
-<img src={require('@/img/docs/connect/hfapi6.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
 
-<img src={require('@/img/docs/connect/hfapi7.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
 
 And we also support the text input and binary input which can meet all Hugging Face Inference API connections.
 
@@ -96,14 +96,14 @@ To pass the user's front-end input to the API, you can use {{ to retrieve data i
 
 Before displaying the output data of the Action in the front-end component, we should confirm which field the output of different models is placed in. Still taking `deepset/roberta-base-squad2` as an example, the results are as follows:
 
-<img src={require('@/img/docs/connect/hfapi8.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
 
 So we can get the answer with `{{ textQuestion.data[0].answer }}`(the `textQuestion` is the name of the action). 
 
-<img src={require('@/img/docs/connect/hfapi9.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
 
 ### Demo
 
-<img src={require('@/img/docs/connect/hfapi10.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
 
-<img src={require('@/img/docs/connect/hfapi11.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />

@@ -46,14 +46,14 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 以下图像是基于上下文回答问题的产品的前端页面示例。
 
-<img src={require('@/img/docs/connect/hfapi1.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
 
 
 ### 步骤2：创建Hugging Face资源并配置操作
 
 单击操作列表中的+ New，然后选择Hugging Face Inference API。
 
-<img src={require('@/img/docs/connect/hfapi2.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
 
 填写表格以连接到您的Hugging Face：
 
@@ -61,7 +61,7 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 令牌：在您的Hugging Face [个人资料设置](https://huggingface.co/settings/tokens)中获取
 
-<img src={require('@/img/docs/connect/hfapi3.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
 在配置操作之前，请确认Hugging Face中的模型信息：
 
@@ -69,17 +69,17 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 我们以[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 为例。进入详细页面>单击“部署”>单击“推理API”
 
-<img src={require('@/img/docs/connect/hfapi4.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
 “输入”后的参数是您应该在ILLA中填写的内容。
 
-<img src={require('@/img/docs/connect/hfapi5.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
 
 在ILLA Builder中，我们应该填写模型ID和参数。以上面的模型为例，“输入”是一个键值对，因此我们可以使用键值或JSON填充它。
 
-<img src={require('@/img/docs/connect/hfapi6.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
 
-<img src={require('@/img/docs/connect/hfapi7.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
 
 我们还支持满足所有Hugging Face Inference API连接的文本输入和二进制输入。
 
@@ -97,14 +97,14 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 在将操作的输出数据显示在前端组件中之前，我们应该确认不同模型的输出放置在哪个字段。仍以“deepset/roberta-base-squad2”为例，结果如下：
 
-<img src={require('@/img/docs/connect/hfapi8.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
 
 因此，我们可以使用“{{textQuestion.data [0] .answer}}”（“textQuestion”是操作的名称）获得答案。
 
-<img src={require('@/img/docs/connect/hfapi9.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
 
 ### 演示
 
-<img src={require('@/img/docs/connect/hfapi10.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
 
-<img src={require('@/img/docs/connect/hfapi11.gif').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />

@@ -37,9 +37,7 @@ export const SubscribeCard = ({ failed }) => {
             <SubscribeFailedCover className={styles.pcMode} />
             <img
               className={styles.mobileMode}
-              src={
-                require('@/img/subscribe/subscribe-failed-cover.png').default
-              }
+              src='https://cdn.illacloud.com/official-website/img/subscribe/subscribe-failed-cover.png'
               alt=""
             />
           </div>
@@ -60,7 +58,7 @@ export const SubscribeCard = ({ failed }) => {
             <SubscribedCover className={styles.pcMode} />
             <img
               className={'block sm:hidden'}
-              src={require('@/img/subscribe/subscribe-cover.png').default}
+              src='https://cdn.illacloud.com/official-website/img/subscribe/subscribe-cover.png'
               alt=""
             />
           </div>

@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import playVideoCover from '@/img/home/playVideoCover.png'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { DiscordIcon } from '@/img/public/discord'
 import { GithubIcon } from '@/img/public/github'
@@ -138,7 +137,7 @@ export const Title = (props) => {
           'pointer-events-none': !canClick,
         })}
       >
-          <Publicize />
+        <Publicize />
         <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px]">
           <div className="flex flex-col items-center gap-[24px]">
             <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px] mt-[60px]">
@@ -257,7 +256,7 @@ export const Title = (props) => {
         }}
       >
         <motion.img
-          src={playVideoCover}
+          src="https://cdn.illacloud.com/official-website/img/home/playVideoCover.png"
           className="animate-coverage-visible  flex items-center justify-center "
           alt="Screenshot of ILLA Cloud app editor"
           style={{

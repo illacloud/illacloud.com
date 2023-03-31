@@ -5,28 +5,16 @@ import Pingcap from '@/img/home/Pingcap.svg'
 import Appwrite from '@/img/home/Appwrite.svg'
 import Lightly from '@/img/home/Lightly.svg'
 import APITable from '@/img/home/APITable.svg'
-import buildDevelopers from '@/img/home/build_developers.webp'
-import collaboration from '@/img/home/collaboration.webp'
-import dataSource from '@/img/home/data_source.webp'
-import sqlGenerate from '@/img/home/sql_generate.webp'
-import uiLibrary from '@/img/home/ui_library.webp'
-import bgGenerate from '@/img/home/bg_generate.png'
-import bgAny from '@/img/home/bg_any.png'
-import bgCollaboration from '@/img/home/bg_collaboration.png'
-import bgFlexible from '@/img/home/bg_flexible.png'
-import bgFully from '@/img/home/bg_fully.png'
-import bgPartner from '@/img/home/bg_partner.png'
-import bgDevelopers from '@/img/home/bg_developers.png'
 
 export const contentList = [
   {
-    contentSvg: sqlGenerate,
+    contentSvg: 'https://cdn.illacloud.com/official-website/img/home/sql_generate.webp',
     tittleList: [
       'content.sql-generate.title-1',
       'content.sql-generate.title-2',
     ],
     colorationTitle: ['Generate', '智能生成', '생성하다', '生成'],
-    color: bgGenerate,
+    color: 'https://cdn.illacloud.com/official-website/img/home/bg_generate.png',
     linkUrl: '/docs/sql-generate',
     linkContent: 'content.sql-generate.goto',
     extraLinkContent: '✍️ →',
@@ -34,20 +22,20 @@ export const contentList = [
     imgDesc: 'SQL Generate. More AIGC features are coming soon.',
   },
   {
-    contentSvg: buildDevelopers,
+    contentSvg: 'https://cdn.illacloud.com/official-website/img/home/build_developers.webp',
     tittleList: [
       'content.for-developer.title-1',
       'content.for-developer.title-2',
     ],
     colorationTitle: ['Developers', '开发者', '개발자', '開発者'],
-    color: bgDevelopers,
+    color: 'https://cdn.illacloud.com/official-website/img/home/bg_developers.png',
     linkUrl: '/docs/javascript',
     linkContent: 'content.for-developer.goto',
     extraLinkContent: '😋 →',
     desc: 'content.for-developer.introduction',
   },
   {
-    contentSvg: dataSource,
+    contentSvg: 'https://cdn.illacloud.com/official-website/img/home/data_source.webp',
     tittleList: [
       'content.date-integrate.title-1',
       'content.date-integrate.title-2',
@@ -55,7 +43,7 @@ export const contentList = [
       'content.date-integrate.title-4',
     ],
     colorationTitle: ['Any', '整合', 'データベース', '어느'],
-    color: bgAny,
+    color: 'https://cdn.illacloud.com/official-website/img/home/bg_any.png',
     linkUrl: '/docs/integration-list',
     linkContent: 'content.date-integrate.goto',
     extraLinkContent: '😀 →',
@@ -78,7 +66,7 @@ export const contentList = [
       'ILLA allows users to integrate with the following data sources via GUI mode: MySQL, Microsoft SQL Server, PostgreSQL, MongoDB, Redis, Elastic Search, Amazon DynamoDB, Snowflake, SMTP, REST API, S3, GraphQL, Clickhouse, MariaDB, Firebase, Appwrite, Supabase, TiDB, Hugging face, Oracle DB, CouchDB.',
   },
   {
-    contentSvg: collaboration,
+    contentSvg: 'https://cdn.illacloud.com/official-website/img/home/collaboration.webp',
     tittleList: [
       'content.collaborative-develop.title-1',
       'content.collaborative-develop.title-2',
@@ -86,14 +74,14 @@ export const contentList = [
       'content.collaborative-develop.title-4',
     ],
     colorationTitle: ['Collaboration', '协同', '共同開発', '협동'],
-    color: bgCollaboration,
+    color: 'https://cdn.illacloud.com/official-website/img/home/bg_collaboration.png',
     linkUrl: '/docs/collaboration',
     linkContent: 'content.collaborative-develop.goto',
     extraLinkContent: '🤠 →',
     desc: 'content.collaborative-develop.introduction',
   },
   {
-    contentSvg: uiLibrary,
+    contentSvg: 'https://cdn.illacloud.com/official-website/img/home/ui_library.webp',
     tittleList: [
       'content.ui-library.title-1',
       'content.ui-library.title-2',
@@ -101,7 +89,7 @@ export const contentList = [
       'content.ui-library.title-4',
     ],
     colorationTitle: ['fully', '完善', '完全な', '충분히'],
-    color: bgFully,
+    color: 'https://cdn.illacloud.com/official-website/img/home/bg_fully.png',
     linkUrl: '/docs/illa-components',
     linkContent: 'content.ui-library.goto',
     extraLinkContent: '👍 →',
@@ -111,7 +99,7 @@ export const contentList = [
 export const deploymentContent = {
   tittleList: ['deployment.title-1', 'deployment.title-2'],
   colorationTitle: ['Flexible', '灵活', '유연한', 'フレキシブル'],
-  color: bgFlexible,
+  color: 'https://cdn.illacloud.com/official-website/img/home/bg_flexible.png',
   desc: 'deployment.introduction',
   items: [
     {
@@ -147,7 +135,7 @@ export const partnerContent = {
   tittleList: ['partner'],
   colorationTitle: ['Partner', '合作伙伴', '相棒', '파트너'],
   becomePartner: 'Become a partner',
-  color: bgPartner,
+  color: 'https://cdn.illacloud.com/official-website/img/home/bg_partner.png',
   partners: [
     {
       logo: Huggingface,
@@ -215,7 +203,7 @@ export const partnerFormContent = [
     required: true,
     pattern:
       /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+$/,
-      placeholder: 'www.illacloud.com',
+    placeholder: 'www.illacloud.com',
   },
   {
     label: 'partnerFrom.form.email.label',

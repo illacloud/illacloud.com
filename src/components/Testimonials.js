@@ -12,7 +12,7 @@ let testimonials = [
       author: {
         name: 'Test',
         role: 'Test',
-        avatar: require('@/img/avatars/owen_chen.png').default,
+        avatar: 'https://cdn.illacloud.com/official-website/img/avatars/owen_chen.png',
       },
     },
   ],

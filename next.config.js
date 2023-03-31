@@ -46,6 +46,7 @@ module.exports = withBundleAnalyzer({
   pageExtensions: ['js', 'jsx', 'mdx'],
   images: {
     disableStaticImages: true,
+    domains: ["cdn.illacloud.com"]
   },
   experimental: {
     // Enables the styled-components SWC transform
@@ -123,7 +124,7 @@ module.exports = withBundleAnalyzer({
         let pluginName = new URLSearchParams(this.resourceQuery).get('plugin')
         let plugin = require('tailwindcss/lib/corePlugins.js').corePlugins[
           pluginName
-          ]
+        ]
         return `export default ${JSON.stringify(getUtilities(plugin))}`
       }),
     })
@@ -140,7 +141,7 @@ module.exports = withBundleAnalyzer({
             example:
               Object.keys(utilities).length > 0
                 ? Object.keys(utilities)
-                  [Math.floor((Object.keys(utilities).length - 1) / 2)].split(
+                [Math.floor((Object.keys(utilities).length - 1) / 2)].split(
                   /[>:]/,
                 )[0]
                   .trim()
@@ -404,7 +405,7 @@ function normalizeProperties(input) {
     let newVal = typeof val === 'object' ? normalizeProperties(val) : val
     newObj[
       key.replace(/([a-z])([A-Z])/g, (m, p1, p2) => `${p1}-${p2.toLowerCase()}`)
-      ] = newVal
+    ] = newVal
     return newObj
   }, {})
 }
@@ -428,9 +429,9 @@ function getUtilities(plugin, { includeNegativeValues = false } = {}) {
   }
 
   plugin({
-    addBase: () => {},
-    addDefaults: () => {},
-    addComponents: () => {},
+    addBase: () => { },
+    addDefaults: () => { },
+    addComponents: () => { },
     corePlugins: () => true,
     prefix: (x) => x,
     config: (option, defaultValue) => defaultValue,

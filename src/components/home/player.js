@@ -22,9 +22,24 @@ export const Player = forwardRef(({ menuExpand, closeMenu }, ref) => {
       </span>
       <video className="w-full bg-blue-100" controls autoPlay>
         <source
-          src={require('@/img/home/video.webm').default}
+          src="https://cdn.illacloud.com/official-website/img/home/video.webm"
           type="video/webm"
         />
+        <source
+          src="https://cdn.illacloud.com/official-website/img/home/video.mp4"
+          type="video/mp4"
+        />
+        <object
+          data="https://cdn.illacloud.com/official-website/img/home/video.mp4"
+          width="320"
+          height="240"
+        >
+          <embed
+            width="320"
+            height="240"
+            src="https://cdn.illacloud.com/official-website/img/home/video.mp4"
+          />
+        </object>
       </video>
     </div>
   )
