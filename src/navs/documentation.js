@@ -52,7 +52,8 @@ export const ILLADocumentationNav = (locale) => {
       ],
       '👷 Deploy ILLA': [pagesCN['illa-cli']],
       '🔨 Integrations': [pagesCN['integration-list'], pagesCN['supabase'],
-      pagesCN['appwrite'], pagesCN['sql-generate'],],
+      pagesCN['appwrite'], 
+        pagesCN['hugging-face-endpoint'],pagesCN['sql-generate'],],
       '📲 Connect to Database and API': [
         pagesCN['connect-to-a-database'],
         pagesCN['connect-to-an-api'],
