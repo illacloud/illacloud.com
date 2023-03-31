@@ -53,7 +53,9 @@ export const ILLADocumentationNav = (locale) => {
       '👷 Deploy ILLA': [pagesCN['illa-cli']],
       '🔨 Integrations': [pagesCN['integration-list'], pagesCN['supabase'],
       pagesCN['appwrite'], 
-        pagesCN['hugging-face-endpoint'],pagesCN['sql-generate'],],
+        pagesCN['hugging-face-endpoint'],
+                          pagesCN['hugging-face-api'],
+                          pagesCN['sql-generate'],],
       '📲 Connect to Database and API': [
         pagesCN['connect-to-a-database'],
         pagesCN['connect-to-an-api'],
@@ -90,6 +92,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['supabase'],
         pagesUS['appwrite'],
         pagesUS['hugging-face-endpoint'],
+        pagesUS['hugging-face-api'],
         pagesUS['sql-generate'],
       ],
       '📲 Connect to Database and API': [
