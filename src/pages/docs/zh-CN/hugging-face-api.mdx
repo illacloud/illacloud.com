@@ -19,7 +19,7 @@ Hugging Face库中可用的一些模型示例包括：
 
 ### 在ILLA Builder中使用Hugging Face的方法
 
-在Hugging Face中，通过公共API可以访问超过130,000个机器学习模型，您可以在[**[https://huggingface.co/models](https://huggingface.co/models)**]免费使用和测试。此外，如果您需要生产场景的解决方案，您可以使用Hugging Face的推理终端点，这些终端点可以部署和访问[**[https://huggingface.co/docs/inference-endpoints/index](https://huggingface.co/docs/inference-endpoints/index)**]。
+在Hugging Face中，通过公共API可以访问超过130,000个机器学习模型，您可以在https://huggingface.co/models中免费使用和测试。此外，如果您需要生产场景的解决方案，可以使用Hugging Face的推理终端点，了解更多关于推理终端点的信息：https://huggingface.co/docs/inference-endpoints/index。
 
 ILLA Builder提供了数十个常用的前端组件，允许您根据特定的需求快速构建不同的前端界面。同时，ILLA提供了与Hugging Face的连接，使您能够快速连接到API，发送请求并接收返回的数据。通过连接API和前端组件，您可以实现用户可以通过前端输入内容并将其提交到API的要求。API返回生成的内容以在前端显示。
 
@@ -28,7 +28,7 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 | 属性 | 必需 | 描述 |
 | --- | --- | --- |
 | 名称 | 必需 | 定义用于在ILLA中显示的资源名称 |
-| Token | 必需 | 用户访问或API令牌。您可以在https://huggingface.co/settings/tokens中获取。 |
+| Token | 必需 | 用户访问或API令牌。您可以在https://huggingface.co/settings/tokens 中获取。 |
 
 ### 配置操作
 
@@ -59,15 +59,15 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 名称：在ILLA中显示的名称
 
-令牌：在您的Hugging Face [个人资料设置]（[[https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)]（[https://huggingface.co/settings/tokens））中获取](https://huggingface.co/settings/tokens%EF%BC%89%EF%BC%89%E4%B8%AD%E8%8E%B7%E5%8F%96)
+令牌：在您的Hugging Face [个人资料设置](https://huggingface.co/settings/tokens)中获取
 
 <img src={require('@/img/docs/connect/hfapi3.png').default} alt="" />
 
 在配置操作之前，请确认Hugging Face中的模型信息：
 
-在[Hugging Face Model Page]（[[https://huggingface.co/models](https://huggingface.co/models)]（[https://huggingface.co/models））中选择一个模型](https://huggingface.co/models%EF%BC%89%EF%BC%89%E4%B8%AD%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B)
+在[Hugging Face Model Page]（https://huggingface.co/models](https://huggingface.co/models)中选择一个模型
 
-我们以[deepset/roberta-base-squad2]（[[https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)]）为例。进入详细页面>单击“部署”>单击“推理API”
+我们以[deepset/roberta-base-squad2]（https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2）为例。进入详细页面>单击“部署”>单击“推理API”
 
 <img src={require('@/img/docs/connect/hfapi4.png').default} alt="" />
 
