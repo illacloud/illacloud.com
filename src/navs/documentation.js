@@ -70,10 +70,11 @@ export const ILLADocumentationNav = (locale) => {
       ],
       '🧬 Assemble components': [
         pagesCN['illa-components'],
-        pagesCN['table'],
-        pagesCN['list'],
         pagesCN['chart'],
         pagesCN['container'],
+        pagesCN['list'],
+        pagesCN['table'],
+        pagesCN['radio-button'],
       ],
       '📎 Contributing Guide': [pagesCN['beyond-coding']],
     }
@@ -108,12 +109,13 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['javascript'],
       ],
       '🧬 Assemble components': [
+        pagesUS['illa-components'],
         pagesUS['chart'],
         pagesUS['container'],
-        pagesUS['illa-components'],
         pagesUS['list'],
         pagesUS['multi-select'],
         pagesUS['page'],
+        pagesUS['radio-button'],
         pagesUS['table'],
         pagesUS['text'],
         pagesUS['upload'],
