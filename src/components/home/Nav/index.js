@@ -1,6 +1,5 @@
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { GithubIcon } from '@/img/public/github'
-import { LanguageSelect } from '@/components/home/language-select'
 import { ProductSelect } from '@/components/home/product-select'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'

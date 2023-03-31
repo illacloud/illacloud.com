@@ -63,23 +63,23 @@ const BecomePartner = ({ visible, onChangeShow }) => {
             className="font-[500] text-[17px] leading-[22px] xl:text-[14px]"
           >
             <div className="w-full">
-            <img
-              className="hidden xl:block absolute top-[24px] right-[24px] cursor-pointer"
-              src={require('@/img/home/close.png').default}
-              alt="closeIcon"
-              onClick={onChangeShow}
-            />
-            <p className={style.partnerTitle}>
-              <span>{t('partnerFrom.title')}</span>
               <img
-                className="block xl:hidden cursor-pointer"
-                src={require('@/img/home/close_white.svg').default}
-                width="20"
+                className="hidden xl:block absolute top-[24px] right-[24px] cursor-pointer"
+                src='https://cdn.illacloud.com/official-website/img/home/close.png'
                 alt="closeIcon"
                 onClick={onChangeShow}
               />
-            </p>
-          </div>
+              <p className={style.partnerTitle}>
+                <span>{t('partnerFrom.title')}</span>
+                <img
+                  className="block xl:hidden cursor-pointer"
+                  src={require('@/img/home/close_white.svg').default}
+                  width="20"
+                  alt="closeIcon"
+                  onClick={onChangeShow}
+                />
+              </p>
+            </div>
             <div className={clsx(style.colInputItem, 'w-auto')}>
               <span>{t('partnerFrom.form.name.label')}</span>
               <div className={clsx('flex flex-row justify-end gap-[8px]')}>

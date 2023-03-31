@@ -3,7 +3,6 @@ import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import clsx from 'clsx'
 import { monthlyContent, annuallyContent } from '@/constants/content'
-import pricing_ from '@/img/home/pricing_.svg'
 import { CardList } from './CardList'
 import Link from 'next/link'
 

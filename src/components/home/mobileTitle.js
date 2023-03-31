@@ -2,7 +2,6 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import playVideoCover from '@/img/home/playVideoCover.png'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
 import Publicize from '@/components/home/NewContent/Publicize'
@@ -130,7 +129,7 @@ export const MobileTitle = (props) => {
           }}
         >
           <Image
-            src={playVideoCover}
+            src="https://cdn.illacloud.com/official-website/img/home/playVideoCover.png"
             width="2080"
             height="1294"
             alt="Screenshot of ILLA Cloud app editor"
