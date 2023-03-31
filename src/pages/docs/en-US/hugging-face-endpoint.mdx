@@ -10,21 +10,50 @@ tagCategory: doc_menu_hugging_face_endpoint_click
 
 With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  And we will introduce how to use this model to build an application in ILLA Cloud in this article.
+### Create Hugging Face endpoint resource
 
-### Step 1: Build the front-end interface with components
+There are two ways to add a Hugging Face endpoint resource. 
+
+1. Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face endpoint` >> Configure the connection information and click `Save Resource`
+2. Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+
+### Configure connection information
+
+| Properties | Required | Description |
+| --- | --- | --- |
+| Name | required | Define a resource name that will be used for display in ILLA |
+| Endpoint URL | required |  https://ui.endpoints.huggingface.co/new and get the URL.  |
+| Token | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+
+### Create Actions
+
+Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face endpoint` >> Choose an existing resource or add a new resource
+
+### Configure actions
+
+| Properties | Required | Description |
+| --- | --- | --- |
+| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
+| Parameter | required | Enter your parameter. Use {{ componentName.value }} to use data of components.  |
+
+
+### Use case
+
+We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+
+#### Step 1: Build the front-end interface with components
 
 We have built an interface using the components such as file upload and button, as follows.
 
 <img src={require('@/img/docs/connect/hf1.png').default} alt="" />
 
-### Step 2: Add a Hugging Face resource
+#### Step 2: Add a Hugging Face resource
 
 Fill in the fields shown below to finish the resource configuration. [Create an endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
 
 <img src={require('@/img/docs/connect/hf2.png').default} alt="" />
 
-### Step 3: Configure an Action
+#### Step 3: Configure an Action
 
 Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
 
@@ -34,7 +63,7 @@ Set the binary to be passed to the model as the file data uploaded from the file
 
 <img src={require('@/img/docs/connect/hf4.png').default} alt="" />
 
-### Step 4: Connect the components and actions
+#### Step 4: Connect the components and actions
 
 Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
 
