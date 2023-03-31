@@ -75,6 +75,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesCN['list'],
         pagesCN['table'],
         pagesCN['radio-button'],
+        pagesCN['radio-group'],
       ],
       '📎 Contributing Guide': [pagesCN['beyond-coding']],
     }
@@ -116,6 +117,7 @@ export const ILLADocumentationNav = (locale) => {
         pagesUS['multi-select'],
         pagesUS['page'],
         pagesUS['radio-button'],
+        pagesUS['radio-group'],
         pagesUS['table'],
         pagesUS['text'],
         pagesUS['upload'],
