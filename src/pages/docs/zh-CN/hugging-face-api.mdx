@@ -46,13 +46,14 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 以下图像是基于上下文回答问题的产品的前端页面示例。
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64bcb326-02ea-4ce5-a7d5-c3dd22c0ea4d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64bcb326-02ea-4ce5-a7d5-c3dd22c0ea4d/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi1.png').default} alt="" />
+
 
 ### 步骤2：创建Hugging Face资源并配置操作
 
 单击操作列表中的+ New，然后选择Hugging Face Inference API。
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b4535d4-8863-4156-9ef4-e5c92853e12d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b4535d4-8863-4156-9ef4-e5c92853e12d/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi2.png').default} alt="" />
 
 填写表格以连接到您的Hugging Face：
 
@@ -60,7 +61,7 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 令牌：在您的Hugging Face [个人资料设置]（[[https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)]（[https://huggingface.co/settings/tokens））中获取](https://huggingface.co/settings/tokens%EF%BC%89%EF%BC%89%E4%B8%AD%E8%8E%B7%E5%8F%96)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/31faedfa-1094-4b4f-8587-a6a8d76ba9d2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/31faedfa-1094-4b4f-8587-a6a8d76ba9d2/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi3.png').default} alt="" />
 
 在配置操作之前，请确认Hugging Face中的模型信息：
 
@@ -68,17 +69,17 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 我们以[deepset/roberta-base-squad2]（[[https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)]）为例。进入详细页面>单击“部署”>单击“推理API”
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0353023c-5f14-4596-a808-5c11d136b98d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0353023c-5f14-4596-a808-5c11d136b98d/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi4.png').default} alt="" />
 
 “输入”后的参数是您应该在ILLA中填写的内容。
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58f5d709-7607-47fd-b9c0-480a9699d9af/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58f5d709-7607-47fd-b9c0-480a9699d9af/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi5.png').default} alt="" />
 
 在ILLA Builder中，我们应该填写模型ID和参数。以上面的模型为例，“输入”是一个键值对，因此我们可以使用键值或JSON填充它。
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3aa6b854-b14b-441f-a728-4108cd19fefc/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3aa6b854-b14b-441f-a728-4108cd19fefc/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi6.png').default} alt="" />
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a667f4c6-eabb-43f0-8dde-09ac0f462e53/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a667f4c6-eabb-43f0-8dde-09ac0f462e53/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi7.png').default} alt="" />
 
 我们还支持满足所有Hugging Face Inference API连接的文本输入和二进制输入。
 
@@ -96,14 +97,14 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 在将操作的输出数据显示在前端组件中之前，我们应该确认不同模型的输出放置在哪个字段。仍以“deepset/roberta-base-squad2”为例，结果如下：
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37ec48f9-e80e-46d4-970d-8a3da9ed6586/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37ec48f9-e80e-46d4-970d-8a3da9ed6586/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi8.png').default} alt="" />
 
 因此，我们可以使用“{{textQuestion.data [0] .answer}}”（“textQuestion”是操作的名称）获得答案。
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cac9a536-2fa8-48bd-a8cc-97a037271ce8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cac9a536-2fa8-48bd-a8cc-97a037271ce8/Untitled.png)
+<img src={require('@/img/docs/connect/hfapi9.png').default} alt="" />
 
 ### 演示
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c7cb756a-fca8-4bd0-99fa-756d42ba08a3/en1.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c7cb756a-fca8-4bd0-99fa-756d42ba08a3/en1.gif)
+<img src={require('@/img/docs/connect/hfapi10.gif').default} alt="" />
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f40492d-bc3d-4664-97c9-17ef53791194/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f40492d-bc3d-4664-97c9-17ef53791194/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D.gif)
+<img src={require('@/img/docs/connect/hfapi11.png').default} alt="" />
