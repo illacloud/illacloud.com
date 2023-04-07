@@ -242,7 +242,10 @@ export const monthlyContent = [
         values: [
           {
             text: 'free-members'
-          }
+          },
+          {
+            text: ''
+          },
         ]
       },
       {
@@ -253,6 +256,9 @@ export const monthlyContent = [
           },
           {
             text: 'apps.resources'
+          },
+          {
+            text: ''
           },
           {
             text: ''
@@ -428,7 +434,10 @@ export const annuallyContent = [
         values: [
           {
             text: 'free-members'
-          }
+          },
+          {
+            text: ''
+          },
         ]
       },
       {
@@ -439,6 +448,9 @@ export const annuallyContent = [
           },
           {
             text: 'apps.resources'
+          },
+          {
+            text: ''
           },
           {
             text: ''
