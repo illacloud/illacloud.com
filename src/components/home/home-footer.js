@@ -9,6 +9,7 @@ import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
 import { LanguageSelect } from '@/components/home/language-select'
 import Language from '@/img/home/language.svg'
+import { useRouter } from 'next/router'
 
 function renderItem (title, items) {
   return (
@@ -67,6 +68,8 @@ export function Footer ({ noHome = false }) {
   const { t } = useTranslation('home')
   const { scrollYProgress } = useViewportScroll()
   const translateY = useTransform(scrollYProgress, [0.91, 1], [-140, 0])
+  const router = useRouter()
+  const curLanguage = router.locale
 
   const waysData = [
     {
@@ -116,6 +119,16 @@ export function Footer ({ noHome = false }) {
           href: 'https://status.illacloud.com/',
           tagCategory: 'homepage_footer_status_click',
         },
+        {
+          title: t('footer.privacy-policy'),
+          href: `https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`,
+          tagCategory: 'homepage_footer_privacy_policy_click',
+        },
+        {
+          title: t('footer.terms-of-service'),
+          href: `https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`,
+          tagCategory: 'homepage_footer_terms_of_service_click',
+        }
       ],
     },
   ]

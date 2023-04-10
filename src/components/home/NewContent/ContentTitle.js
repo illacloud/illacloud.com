@@ -21,7 +21,7 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
                   }
                   key={key}
                 >
-                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] xl:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] xl:h-[72px] rounded-[32px] z-[-1]'/>}
                   <span>{t(key)}</span>
                 </span>
               ),
