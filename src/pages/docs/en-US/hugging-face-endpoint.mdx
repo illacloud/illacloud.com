@@ -1,39 +1,39 @@
 ---
-title: Hugging Face endpoint
-metaTitle: Connect to Hugging Face endpoint
-description: Learn how to use Hugging Face endpoint in ILLA
+title: Hugging Face Endpoint
+metaTitle: Connect to Hugging Face Endpoint
+description: Learn how to use Hugging Face Endpoint in ILLA
 tagCategory: doc_menu_hugging_face_endpoint_click
 ---
 ---
 
-## <Heading hidden>Hugging Face endpoint</Heading>
+## <Heading hidden>Hugging Face Endpoint</Heading>
 
 With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
 
 ### Create Hugging Face endpoint resource
 
-There are two ways to add a Hugging Face endpoint resource. 
+There are two ways to add a Hugging Face Endpoint resource. 
 
-1. Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face endpoint` >> Configure the connection information and click `Save Resource`
-2. Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1. Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
+2. Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
 
 ### Configure connection information
 
 | Properties | Required | Description |
 | --- | --- | --- |
 | Name | required | Define a resource name that will be used for display in ILLA |
-| Endpoint URL | required |  create endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.  |
+| Endpoint URL | required |  create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.  |
 | Token | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
 
 ### Create Actions
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face endpoint` >> Choose an existing resource or add a new resource
+Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
 
 ### Configure actions
 
 | Properties | Required | Description |
 | --- | --- | --- |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
+| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
 | Parameter | required | Enter your parameter. Use {{ componentName.value }} to use data of components.  |
 
 
@@ -49,7 +49,7 @@ We have built an interface using the components such as file upload and button, 
 
 #### Step 2: Add a Hugging Face resource
 
-Fill in the fields shown below to finish the resource configuration. [Create an endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
