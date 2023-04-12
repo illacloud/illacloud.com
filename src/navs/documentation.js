@@ -92,8 +92,8 @@ export const ILLADocumentationNav = (locale) => {
       '👷 Deploy ILLA': [
         pagesUS['quickly-deploy'],
         pagesUS['illa-cli'],
-        pagesUS['kubernetes'],
         pagesUS['docker-all-in-one-image'],
+        pagesUS['kubernetes'],
         pagesUS['known-issues'],
       ],
       '🔨 Integrations': [
