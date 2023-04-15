@@ -45,6 +45,7 @@ function renderItem (title, items) {
             <Link legacyBehavior key={item.title} href={item.href ?? '/'}>
               <a
                 className="mb-[12px]"
+                target={item.isBlank ? '_blank' : '_self'}
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
@@ -123,11 +124,13 @@ export function Footer ({ noHome = false }) {
           title: t('footer.privacy-policy'),
           href: `https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`,
           tagCategory: 'homepage_footer_privacy_policy_click',
+          isBlank: true
         },
         {
           title: t('footer.terms-of-service'),
           href: `https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`,
           tagCategory: 'homepage_footer_terms_of_service_click',
+          isBlank: true
         }
       ],
     },
