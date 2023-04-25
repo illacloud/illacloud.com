@@ -1,5 +1,6 @@
 import { DiscordIcon, GitHubIconGray, TwitterIcon } from '@/img/home/svg'
 import { ProductHuntIcon } from '@/img/public/productHunt'
+import { LinkInIcon } from '@/img/public/linkedin';
 
 export const Community = [
   {
@@ -25,5 +26,11 @@ export const Community = [
     href: 'https://www.producthunt.com/posts/illa',
     tagCategory: 'homepage_footer_producthunt_click',
     label: 'ProductHunt',
+  },
+  {
+    icon: <LinkInIcon />,
+    href: 'https://www.linkedin.com/company/illacloud/',
+    tagCategory: 'homepage_footer_linkedin_click',
+    label: 'LinkedIn',
   },
 ]

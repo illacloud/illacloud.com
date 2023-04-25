@@ -10,35 +10,17 @@ import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import { SubscribeModal } from '@/components/home/Subscribe'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
-import {useRaf} from 'react-use'
+import { useRaf } from 'react-use'
 import Script from 'next/script'
+import {DefaultStart} from '@/constants/defaultVal';
 
-const Home = () => {
+const Home = ({starCounts}) => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [modalVisible, setModalVisible] = useState()
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
-  const [starCounts, setStarCounts] = useState(0)
-  const defaultStar = 6000
-
-  useEffect(() => {
-    const request = async () => {
-      let starCounts = defaultStar
-      try {
-        const res = await fetch(
-          'https://api.github.com/repos/illacloud/illa-builder',
-        )
-        const resJSON = await res.json()
-        starCounts = resJSON?.stargazers_count || defaultStar
-        setStarCounts(starCounts)
-      } catch {
-        setStarCounts(defaultStar)
-      }
-    }
-    request()
-  }, [])
   const step = useRaf(1000, 0)
 
   return (
@@ -68,7 +50,7 @@ const Home = () => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={Math.floor(starCounts * step)}
+          githubStarts={Math.floor( starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -133,12 +115,24 @@ const Home = () => {
   )
 }
 
-export const getStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
+  const request = async () => {
+    try {
+      const res = await fetch(
+        'https://api.github.com/repos/illacloud/illa-builder',
+      )
+      const resJSON = await res.json()
+      return resJSON?.stargazers_count || DefaultStart
+    } catch {
+      return DefaultStart
+    }
+  }
+  const starCounts = await request()
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home'])),
+      starCounts,
     },
-    revalidate: 10,
   }
 }
 

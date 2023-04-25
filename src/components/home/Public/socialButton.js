@@ -1,5 +1,5 @@
 export const SocialButton = (props) => {
-  const { icon, text, href, onClick } = props
+  const { icon, text, href, onClick, whiteTheme } = props
   return (
     <a
       className="flex px-[8px] py-[5px] gap-[8px]"
@@ -10,7 +10,7 @@ export const SocialButton = (props) => {
       }}
     >
       {icon}
-      <span className="text-white-01 hidden xs:inline-block">{text}</span>
+      <span className={`${whiteTheme ? 'text-garyBlue-02' : 'text-white-01'} hidden xs:inline-block`}>{text}</span>
     </a>
   )
 }

@@ -1,0 +1,1 @@
+export const DefaultStart = 6000

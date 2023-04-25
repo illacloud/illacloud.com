@@ -29,6 +29,11 @@ const communityOptions = [
     value: 'https://www.producthunt.com/posts/illa',
     tagCategory: 'homepage_menu_community_producthunt_mob_click',
   },
+  {
+    label: 'LinkedIn',
+    value: 'https://www.linkedin.com/company/illacloud/',
+    tagCategory: 'homepage_menu_community_linkedIn_mob_click',
+  },
 ]
 
 const options = [
@@ -54,12 +59,38 @@ const options = [
   }
 ]
 
+
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [productListExpand, setProductListExpand] = useState(false)
   const [languageListExpand, setLanguageListExpand] = useState(false)
   const [communityListExpand, setCommunityListExpand] = useState(false)
   const { t } = useTranslation('home')
   const router = useRouter()
+
+  const productOptions = [
+    {
+      label: 'ILLA Builder',
+      value: 'https://github.com/illacloud/illa-builder',
+      tagCategory: 'homepage_menu_product_builder_mob_click',
+    },
+    {
+      label: 'ILLA Design',
+      value: 'https://github.com/illacloud/illa-design',
+      tagCategory: 'homepage_menu_product_design_mob_click',
+    },
+    {
+      label: t('nav.integrations'),
+      value: '/landingPage/integrations',
+      tagCategory: 'homepage_menu_product_integration_click',
+      target: 'Integrations'
+    },
+    {
+      label: t('nav.components'),
+      value: '/landingPage/components',
+      tagCategory: 'homepage_menu_product_component_click',
+      target: 'Components'
+    },
+  ]
 
 
   return (
@@ -99,37 +130,25 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         {t('nav.product')} <SelectIcon />
       </span>
       <div
-        style={{ height: productListExpand ? 80 : 0, overflowY: 'hidden' }}
+        style={{ height: productListExpand ? 160 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        <Link legacyBehavior href="https://github.com/illacloud/illa-builder">
+        {productOptions.map(({label, value, tagCategory, target}) => (
+          <Link legacyBehavior href={value} key={label}>
           <a
             className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
             onClick={() => {
               sendTagEvent({
                 action: 'click',
-                category: 'homepage_menu_product_builder_mob_click',
-                label: 'ILLA Builder',
+                category: tagCategory,
+                label: target || label,
               })
             }}
           >
-            ILLA Builder
+            {label}
           </a>
         </Link>
-        <Link legacyBehavior href="https://github.com/illacloud/illa-design">
-          <a
-            className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
-            onClick={() => {
-              sendTagEvent({
-                action: 'click',
-                category: 'homepage_menu_product_design_mob_click',
-                label: 'ILLA Design',
-              })
-            }}
-          >
-            ILLA Design
-          </a>
-        </Link>
+        ))}
       </div>
       <Link legacyBehavior href="/docs/about-illa">
         <a
@@ -266,28 +285,6 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
             </a>
           </Link>
         ))}
-        {/* <Link
-          legacyBehavior
-          href={router.pathname}
-          locale={router.locale === 'en-US' ? 'zh-CN' : 'en-US'}
-        >
-          <a
-            style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
-            className="transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
-            onClick={() => {
-              sendTagEvent({
-                action: 'click',
-                category:
-                  router.locale === 'en-US'
-                    ? 'homepage_menu_language_zh_mob_click'
-                    : 'homepage_menu_language_en_mob_click',
-                label: router.locale === 'en-US' ? '简体中文' : 'English',
-              })
-            }}
-          >
-            {router.locale === 'en-US' ? '简体中文' : 'English'}
-          </a>
-        </Link> */}
       </div>
     </div>
   )

@@ -12,11 +12,25 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
       label: 'ILLA Builder',
       value: 'https://github.com/illacloud/illa-builder',
       tagCategory: 'homepage_menu_product_builder_click',
+      openNewPage: true
     },
     {
       label: 'ILLA Design',
       value: 'https://github.com/illacloud/illa-design',
       tagCategory: 'homepage_menu_product_design_click',
+      openNewPage: true
+    },
+    {
+      label: t('nav.integrations'),
+      value: '/landingPage/integrations',
+      tagCategory: 'homepage_menu_product_integration_click',
+      target: 'Integrations'
+    },
+    {
+      label: t('nav.components'),
+      value: '/landingPage/components',
+      tagCategory: 'homepage_menu_product_component_click',
+      target: 'Components'
     },
   ]
   const [expandPanel, setExpandPanel] = useState(false)
@@ -55,13 +69,13 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
           },
         )}
         style={{
-          height: `${expandPanel ? 96 : 0}px `,
+          height: `${expandPanel ? 192 : 0}px `,
         }}
       >
         {options.map((option) => (
           <a
             href={option.value}
-            target="_blank"
+            target={option.openNewPage ? '_blank' : '_self'}
             className="w-full"
             key={option.label}
           >
@@ -77,7 +91,7 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
                 sendTagEvent({
                   action: 'click',
                   category: option.tagCategory,
-                  label: option.label,
+                  label: option.target || option.label,
                   value: option.value,
                 })
                 setExpandPanel(() => !expandPanel)
