@@ -83,7 +83,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           <Link
             legacyBehavior
             key={option.value}
-            href={router.pathname}
+            href={router.asPath}
             locale={option.value}
           >
             <div

@@ -13,6 +13,8 @@ import { CloseIcon, MenuIcon, MenuWhiteIcon } from '@/img/home/svg'
 import { useState } from 'react'
 import { Menu } from '@/components/home/menu'
 import { sendTagEvent } from '@/utils/gtag'
+import { BlackDisCordIcon } from '@/img/public/blackDisCord'
+import { BlackGithubIcon } from '@/img/public/blackGitHub'
 
 export const Nav = (props) => {
   const {
@@ -52,7 +54,8 @@ export const Nav = (props) => {
                 style={{ opacity: opacity }}
               >
                 <SocialButton
-                  icon={<GithubIcon />}
+                  icon={whiteTheme ? <BlackGithubIcon /> : <GithubIcon />}
+                  whiteTheme={whiteTheme}
                   text={`${githubStarts} ${t('stars')}`}
                   href="https://github.com/illacloud/illa-builder"
                   onClick={() => {
@@ -65,7 +68,8 @@ export const Nav = (props) => {
                   }}
                 />
                 <SocialButton
-                  icon={<DiscordIcon />}
+                  icon={whiteTheme ?<BlackDisCordIcon /> :<DiscordIcon />}
+                  whiteTheme={whiteTheme}
                   text="Discord"
                   href="https://discord.com/invite/illacloud"
                   onClick={() => {
@@ -85,7 +89,7 @@ export const Nav = (props) => {
           <div
             className={clsx(
               'flex items-center',
-              whiteTheme ? 'text-gray-01' : 'text-white-01',
+              whiteTheme ? 'text-garyBlue-02' : 'text-white-01',
             )}
           >
             <ProductSelect buttonColorChange={!whiteTheme} />
@@ -142,7 +146,10 @@ export const Nav = (props) => {
             style={{ opacity: opacity }}
           >
             <span
-              className="h-[40px]  bg-blackAlpha-05 border-[1px] border-white-01 rounded-[8px] px-[24px] py-[8px] text-white-01 cursor-pointer"
+              className={clsx(
+                'h-[40px] border-[1px] rounded-[8px] px-[24px] py-[8px] cursor-pointer',
+                whiteTheme ? 'bg-garyBlue-09 border-garyBlue-09  text-garyBlue-02' : 'bg-blackAlpha-05 border-white-01 text-white-01',
+              )}
               onClick={() => {
                 sendTagEvent({
                   action: 'click',

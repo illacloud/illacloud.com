@@ -50,7 +50,7 @@ function renderItem (title, items) {
                   sendTagEvent({
                     action: 'click',
                     category: item.tagCategory,
-                    label: item.title,
+                    label: item.target || item.title,
                     value: item.href,
                   })
                 }}
@@ -77,15 +77,38 @@ export function Footer ({ noHome = false }) {
       title: t('footer.product'),
       items: [
         {
+          title: t('footer.integrations'),
+          href: '/landingPage/integrations',
+          tagCategory: 'homepage_footer_integration_click',
+          target: 'Integrations'
+        },
+        {
+          title: t('footer.components'),
+          href: '/landingPage/components',
+          tagCategory: 'homepage_footer_component_click',
+          target: 'Components'
+        },
+        {
           title: 'ILLA Builder',
           href: 'https://github.com/illacloud/illa-builder',
           tagCategory: 'homepage_footer_builder_click',
         },
-        // { title: 'ILLA Cloud', href: 'https://github.com/illacloud/illa' },
         {
           title: 'ILLA Design',
           href: 'https://github.com/illacloud/illa-design',
           tagCategory: 'homepage_footer_design_click',
+        },
+        {
+          title: t('footer.changelog'),
+          href: 'https://github.com/illacloud/illa-builder/releases',
+          tagCategory: 'homepage_footer_changelog_click',
+          target: 'Changelog'
+        },
+        {
+          title: t('footer.roadmap'),
+          href: 'https://github.com/orgs/illacloud/projects/4',
+          tagCategory: 'homepage_footer_roadmap_click',
+          target: 'Roadmap'
         },
       ],
     },
@@ -93,16 +116,16 @@ export function Footer ({ noHome = false }) {
       title: t('footer.resources'),
       items: [
         {
-          title: 'MySQL',
-          href: 'https://www.mysql.com/',
-          tagCategory: 'homepage_footer_mysql_click',
+          title: t('footer.blog'),
+          href: 'https://blog.illacloud.com/',
+          tagCategory: 'homepage_footer_blog_click',
+          target: 'Blog'
         },
-        // { title: 'Postgres', href: 'https://www.postgresql.org/' },
-        // { title: 'Redis', href: 'https://redis.io/' },
         {
-          title: 'Rest API',
-          href: 'https://restfulapi.net/',
-          tagCategory: 'homepage_footer_restapi_click',
+          title: t('footer.documentation'),
+          href: 'https://www.illacloud.com/docs/about-illa',
+          tagCategory: 'homepage_footer_documentation_click',
+          target: 'Documentation'
         },
       ],
     },
@@ -110,15 +133,16 @@ export function Footer ({ noHome = false }) {
       title: t('footer.company'),
       items: [
         {
+          title: t('footer.about-us'),
+          href: 'https://www.illacloud.com/docs/about-illa',
+          tagCategory: 'homepage_footer_about us_click',
+          target: 'About us'
+        },
+        {
           title: t('footer.media'),
           href: 'https://illa-cloud-storage.illacloud.com/system-assets/media-kit/illa_media_kit.20230228.zip',
           downloadName: 'ILLA Media Kit.zip',
           tagCategory: 'homepage_footer_mediakit_click',
-        },
-        {
-          title: 'Status',
-          href: 'https://status.illacloud.com/',
-          tagCategory: 'homepage_footer_status_click',
         },
         {
           title: t('footer.privacy-policy'),
@@ -131,7 +155,13 @@ export function Footer ({ noHome = false }) {
           href: `https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`,
           tagCategory: 'homepage_footer_terms_of_service_click',
           isBlank: true
-        }
+        },
+        {
+          title: t('footer.status'),
+          href: 'https://status.illacloud.com/',
+          tagCategory: 'homepage_footer_status_click',
+          target: 'Status'
+        },
       ],
     },
   ]
@@ -140,8 +170,7 @@ export function Footer ({ noHome = false }) {
     <>
       <div
         className={clsx(
-          'w-full flex-col items-center  h-[440px] px-[120px] hidden xl:flex',
-          noHome ? 'bg-[#fafafa]' : 'bg-white-01',
+          'w-full flex-col items-center  h-[440px] px-[120px] hidden xl:flex bg-white-01',
         )}
       >
         <motion.div
@@ -180,6 +209,7 @@ export function Footer ({ noHome = false }) {
                       sendTagEvent({
                         action: 'click',
                         category: item.tagCategory,
+                        label: item.label,
                         value: item.href,
                       })
                     }}
@@ -193,7 +223,7 @@ export function Footer ({ noHome = false }) {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xl:hidden bg-[#fafafa]">
+      <div className="flex flex-wrap items-center px-[20px] py-[40px] w-full xl:hidden bg-white-01">
         <div className="w-full xs:w-1/6 flex xs:flex-col items-center justify-between">
           <span className="flex  w-[34px] h-[16px] items-center">
             <IllaLogo />
@@ -216,6 +246,7 @@ export function Footer ({ noHome = false }) {
                   sendTagEvent({
                     action: 'click',
                     category: item.tagCategory,
+                    label: item.label,
                     value: item.href,
                   })
                 }}

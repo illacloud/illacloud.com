@@ -47,7 +47,7 @@ const Pricing = () => {
     </>
   )
 }
-export const getStaticProps = async ({ locale }) => ({
+export const getServerSideProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['pricing', 'home'])),
   },

@@ -26,6 +26,11 @@ const options = [
     value: 'https://www.producthunt.com/posts/illa',
     tagCategory: 'homepage_menu_community_producthunt_click',
   },
+  {
+    label: 'LinkedIn',
+    value: 'https://www.linkedin.com/company/illacloud/',
+    tagCategory: 'homepage_menu_community_linkedIn_click',
+  },
 ]
 
 export const FlowUsSelect = ({ buttonColorChange = true }) => {
@@ -67,7 +72,7 @@ export const FlowUsSelect = ({ buttonColorChange = true }) => {
           },
         )}
         style={{
-          height: `${expandPanel ? 176 : 0}px `,
+          height: `${expandPanel ? 220 : 0}px `,
         }}
       >
         {options.map((option) => (
