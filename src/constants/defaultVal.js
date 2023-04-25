@@ -1,0 +1,1 @@
+export const DefaultStars = 6000
