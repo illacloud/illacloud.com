@@ -267,7 +267,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         {options.map(({ value, label, tagCategory }) => (
           <Link
             legacyBehavior
-            href={router.pathname}
+            href={router.asPath}
             locale={value}
             key={value}
           >

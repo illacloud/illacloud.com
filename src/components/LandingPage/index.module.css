@@ -1,6 +1,6 @@
 .lpContainer {
   @apply w-full mx-auto px-[20px] text-[#1d2129];
-  @apply xl:pt-[120px] xl:w-[1200px];
+  @apply xl:pt-[120px] xl:w-[1200px] xl:px-0;
 }
 .lpHeader {
   @apply flex flex-col flex-wrap justify-between items-start gap-[40px] pt-[30px];
@@ -41,7 +41,7 @@
   );
 }
 .itemName {
-  @apply capitalize font-[600] text-[16px] leading-[20px];
+  @apply capitalize font-[600] text-[16px] leading-[20px] overflow-ellipsis line-clamp-1;
   @apply xl:text-[18px] xl:leading-[26px];
 }
 .itemDescription {
@@ -62,7 +62,7 @@
   @apply xl:gap-[24px] xl:mt-[60px]
 }
 .templateItemContainer {
-  @apply grid grid-cols-2 lg:grid-cols-4 gap-[12px] lg:gap-[32px];
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-[16px] lg:gap-[40px];
 }
 .templateItem {
   @apply flex flex-col justify-center items-start gap-[12px] xl:gap-[24px] rounded-[16px]

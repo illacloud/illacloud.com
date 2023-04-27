@@ -20,7 +20,7 @@ const renderItems = (contentList, pageName) => {
       <div className={style.item} key={name}>
         <img src={logo} alt={name} className='h-[24px] xl:h-[40px]' />
         <div className='flex flex-col items-start gap-[4px] xl:gap-[8px]'>
-          <span className={style.itemName}>{name}</span>
+          <div className='xl:h-[26px] h-[20px] overflow-hidden'><span className={style.itemName}>{name}</span></div>
           <div className='h-[72px] overflow-hidden'><span className={style.itemDescription}>{description}</span></div>
           <LearnMore href={`/landingPage/detail/${name}?pageName=${pageName}`} onClick={() => onClick(name)} />
         </div>
