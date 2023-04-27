@@ -64,7 +64,7 @@ function App({ Component, pageProps, router }) {
     router.pathname !== '/subscribed' &&
     router.pathname !== '/subscribe-failed' &&
     router.pathname !== '/pricing' &&
-    !/\/landingPage/.test(router.pathname )
+    !/\/(components|integrations)/.test(router.asPath)
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || t('meta.description')
