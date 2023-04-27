@@ -78,13 +78,13 @@ export function Footer ({ noHome = false }) {
       items: [
         {
           title: t('footer.integrations'),
-          href: '/landingPage/integrations',
+          href: '/integrations',
           tagCategory: 'homepage_footer_integration_click',
           target: 'Integrations'
         },
         {
           title: t('footer.components'),
-          href: '/landingPage/components',
+          href: '/components',
           tagCategory: 'homepage_footer_component_click',
           target: 'Components'
         },

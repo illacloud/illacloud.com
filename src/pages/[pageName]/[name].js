@@ -11,6 +11,7 @@ import { LpHeader } from '@/components/LandingPage/LpHeader';
 import { LpTemplate } from '@/components/LandingPage/LpTemplate';
 import { formatLpSecondContent } from '@/utils/formatLpList'
 import { getStars } from '@/utils/getStars';
+import { pageMap } from '@/constants/landingPage';
 
 
 const LandingPageSecond = ({ content, pageName, starCounts }) => {
@@ -38,7 +39,7 @@ const LandingPageSecond = ({ content, pageName, starCounts }) => {
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
       </Head>
-      <div className='w-full px-0 bg-white overflow-y-auto xs:rounded-b-[40px]'>
+      <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
         <div className={style.lpContainer}>
           <LpHeader content={headerContent} />
@@ -56,8 +57,15 @@ const LandingPageSecond = ({ content, pageName, starCounts }) => {
   )
 }
 export const getServerSideProps = async ({ locale, params, query }) => {
-  const { name } = params
-  const { pageName } = query
+  const { pageName, name } = params
+  if (!pageMap[pageName]) {
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    };
+  }
   const starCounts = await getStars()
   const content = await formatLpSecondContent(name, locale)
   return {

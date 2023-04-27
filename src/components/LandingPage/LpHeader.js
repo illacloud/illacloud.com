@@ -12,7 +12,7 @@ export const LpHeader = ({ content }) => {
     <div className={style.lpHeader}>
       <div className={clsx(style.lpHeaderLeft, isShowBack ? 'w-full ' : 'xl:pt-[48px] xl:w-[570px] w-full ')}>
         {isShowBack && (
-          <Link href={`/landingPage/${isIntegration ? 'integrations' : 'components'}`} legacyBehavior>
+          <Link href={`/${isIntegration ? 'integrations' : 'components'}`} legacyBehavior>
             <span className={style.back} onClick={() => {
               sendTagEvent({
                 action: 'click',

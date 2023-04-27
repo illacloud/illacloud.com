@@ -80,13 +80,13 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
     },
     {
       label: t('nav.integrations'),
-      value: `/${router.locale}/landingPage/integrations`,
+      value: `/${router.locale}/integrations`,
       tagCategory: 'homepage_menu_product_integration_click',
       target: 'Integrations'
     },
     {
       label: t('nav.components'),
-      value: `/${router.locale}/landingPage/components`,
+      value: `/${router.locale}/components`,
       tagCategory: 'homepage_menu_product_component_click',
       target: 'Components'
     },
