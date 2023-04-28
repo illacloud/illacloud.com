@@ -15,7 +15,7 @@ const renderItems = (contentList, pageName) => {
     })
   }
   if (!contentList) return null
-  return contentList.map(({ logo, name, description }) => {
+  return contentList.sort((a, b) => a.sort - b.sort).map(({ logo, name, description }) => {
     return (
       <div className={style.item} key={name}>
         <img src={logo} alt={name} className='h-[24px] xl:h-[40px]' />
@@ -32,10 +32,10 @@ const renderItems = (contentList, pageName) => {
 
 export const AsyncIndexContent = ({ content, pageName }) => {
   const { t } = useTranslation('landingPage')
-  if (!content.length) return null
+  if (Object.keys(content).length <= 0) return null
   return (
     <div className='flex flex-col gap-[24px] pb-[60px] xl:pb-[100px]'>
-      {content.map(({ title, contentList }) => {
+      {Object.values(content).map(({ title, contentList }) => {
         return (
           <Fragment key={title}>
             <p className={style.contentTitle}>{t(title)}</p>

@@ -9,35 +9,35 @@ import { BookDemo } from '@/components/home/Form/BookDemo'
 import style from '@/components/LandingPage/index.module.css'
 import { useRaf } from 'react-use'
 import { LpHeader } from '@/components/LandingPage/LpHeader';
-import { contentMap } from '@/constants/landingPage';
 import { AsyncIndexContent } from '@/components/LandingPage/AsyncIndexContent';
 import { pageMap } from '@/constants/landingPage';
-import { formatLpContentList } from '@/utils/formatLpList';
 import { getStars } from '@/utils/getStars';
 
 
-const LandingPageIndex = ({ content, pageName, starCounts }) => {
+const LandingPageIndex = ({ pageName, starCounts }) => {
   const router = useRouter()
-  if(!pageMap[pageName]) {
+  if (!pageMap[pageName]) {
     router.replace('/404')
   }
-  const { t } = useTranslation('landingPage')
   const [isBookShow, setIsBookShow] = useState(false)
-  const contentMapFinal = contentMap[pageName]
   const step = useRaf(1000, 0)
 
-  if (!content || !content.length) return null
+  const { t } = useTranslation("landingPageIndex")
+  const content = t(`${pageName}.classify`, {
+    returnObjects: true
+  })
 
+  if (!content || Object.keys(content).length <= 0) return null
   return (
     <>
       <Head>
-        <title>{t(contentMapFinal.meta.title)}</title>
-        <meta name="description" content={t(contentMapFinal.meta.description)} />
+        <title>{t(`${pageName}.meta.title`)}</title>
+        <meta name="description" content={t(`${pageName}.meta.description`)} />
       </Head>
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
         <div className={style.lpContainer}>
-          <LpHeader content={contentMapFinal.headerContent} />
+          <LpHeader title={t(`${pageName}.headerContent.title`)} description={t(`${pageName}.headerContent.description`)} btnText={t(`${pageName}.headerContent.btn-text`)} name={pageName} leftImage={t(`${pageName}.headerContent.left-image`)} />
           <AsyncIndexContent content={content} pageName={pageName} />
         </div>
       </div>
@@ -59,13 +59,11 @@ export const getServerSideProps = async ({ locale, params }) => {
       },
     };
   }
-  const id = pageMap[pageName]
   const starCounts = await getStars()
-  const list = await formatLpContentList(id, locale, pageName)
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['landingPage', 'home'])),
-      content: list || [],
+      ...(await serverSideTranslations(locale, ['home', 'landingPageIndex'])),
       pageName,
       starCounts
     },
