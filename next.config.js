@@ -59,11 +59,23 @@ module.exports = withBundleAnalyzer({
   // todo: 待补充文档
   async rewrites() {
     return locales.map((locale) => {
-      return {
-        source: `/${locale}/docs/:slug*`,
-        destination: '/en-US/docs/en-US/:slug*',
-        locale: false,
+      switch (locale) {
+        case "zh-CN": {
+          return {
+            source: `/${locale}/docs/:slug*`,
+            destination: '/zh-CN/docs/zh-CN/:slug*',
+            locale: false,
+          }
+        }
+        default: {
+          return {
+            source: `/${locale}/docs/:slug*`,
+            destination: '/en-US/docs/en-US/:slug*',
+            locale: false,
+          }
+        }
       }
+
     })
   },
   webpack(config, options) {
