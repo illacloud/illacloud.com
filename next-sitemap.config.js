@@ -1,9 +1,10 @@
 /** @type {import("next-sitemap").IConfig} */
 const site = process.env.SITE_URL || 'https://www.illacloud.com'
 const getHrefLan = (href) => {
-  if(href.includes('zh-CN')) return 'zh'
-  else if(href.includes('ko-KR')) return 'ko'
-  else if(href.includes('ja-JP')) return 'ja'
+  console.log("href", href)
+  if (href.includes('zh-CN')) return 'zh'
+  else if (href.includes('ko-KR')) return 'ko'
+  else if (href.includes('ja-JP')) return 'ja'
   else return 'en'
 }
 module.exports = {

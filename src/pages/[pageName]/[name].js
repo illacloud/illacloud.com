@@ -61,7 +61,7 @@ export const getServerSideProps = async ({ locale, params, query }) => {
   const starCounts = await getStars()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['landingPageDetails', 'home'])),
+      ...(await serverSideTranslations(locale, ['landingPageDetails', 'home', "common"])),
       starCounts,
       pageName,
       name,

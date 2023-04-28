@@ -63,7 +63,7 @@ export const getServerSideProps = async ({ locale, params }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home', 'landingPageIndex'])),
+      ...(await serverSideTranslations(locale, ['home', 'landingPageIndex', "common"])),
       pageName,
       starCounts
     },

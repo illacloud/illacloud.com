@@ -15,6 +15,7 @@ const {
   normalizeTokens,
 } = require('./remark/utils')
 const { withPrevalInstructions } = require('./remark/withPrevalInstructions')
+const { locales } = require('./src/constants/language')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -57,28 +58,13 @@ module.exports = withBundleAnalyzer({
   },
   // todo: 待补充文档
   async rewrites() {
-    return [
-      {
-        source: '/zh-CN/docs/:slug*',
-        destination: '/zh-CN/docs/zh-CN/:slug*',
-        locale: false,
-      },
-      {
-        source: '/en-US/docs/:slug*',
+    return locales.map((locale) => {
+      return {
+        source: `/${locale}/docs/:slug*`,
         destination: '/en-US/docs/en-US/:slug*',
         locale: false,
-      },
-      {
-        source: '/ja-JP/docs/:slug*',
-        destination: '/en-US/docs/en-US/:slug*',
-        locale: false,
-      },
-      {
-        source: '/ko-KR/docs/:slug*',
-        destination: '/en-US/docs/en-US/:slug*',
-        locale: false,
-      },
-    ]
+      }
+    })
   },
   webpack(config, options) {
     config.resolve.fallback = {
