@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
+title: Hugging Gesichtspunkt Endpunkt
+metaTitle: Mit Hugging Face Endpunkt verbinden
+description: Lernen Sie, wie Sie Hugging Face Endpoint in ILLA verwenden
 tagCategory: doc_menu_hugging_face_endpoint_click
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>Umhüllender Gesichtspunkt Endpunkt</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+Mit Hugging Face Inference Endpoints können Sie einfach Transformer, Diffuser oder jedes Modell einer engagierten, vollständig verwalteten Infrastruktur einsetzen. [Klicke hier](https://ui.endpoints.huggingface.co/new) um einen Endpunkt zu erstellen. 
 
-### Create Hugging Face endpoint resource
+### Erstelle Hugging Face Endpunkt Ressource
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Es gibt zwei Möglichkeiten, eine Hugging Face Endpoint Ressource hinzuzufügen. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Gib den `ILLA Builder` ein >> Klicke `Resources` Tab >> Klicke `Create New` >> Wähle `Hugging Face Endpoint` >> Konfiguriere die Verbindungsinformationen und klicke `Resource`
+2.  Gib die Bearbeitungsseite ein >> klicke `+ New` in der Aktionsliste >> Wähle `Hugging Face Endpoint` >> Konfiguriere die Verbindungsinformationen oder klicke `+ Neue Ressource` um neue Verbindungsinformationen hinzuzufügen
 
-### Configure connection information
+### Verbindungsdaten konfigurieren
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Eigenschaften | Benötigt | Beschreibung                                                                                     |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------ |
+| Name          | benötigt | Legen Sie einen Ressourcennamen fest, der für die Anzeige in der ILLA verwendet wird             |
+| Endpoint URL  | benötigt | erstelle Endpoint hier: https://ui.endpoints.huggingface.co/new und erhalte die URL.             |
+| Token         | benötigt | Der Organisations-Token. Du kannst es unter https://huggingingface.co/settings/tokens bekommen.  |
 
-### Create Actions
+### Aktionen erstellen
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Gib die Bearbeitungsseite ein >> klicke `+ New` in der Aktionsliste >> Wähle `Hugging Face Endpunkt` >> Wähle ein vorhandenes Werk oder füge ein neues Werk hinzu
 
-### Configure actions
+### Aktionen konfigurieren
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Eigenschaften | Benötigt | Beschreibung                                                                                                                                                                                                                                                      |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parametertyp  | benötigt | Der Parametertyp Ihres Endpunkts. Wenn zum Beispiel Ihr Endpunkt eine Texteingabe benötigt, geben Sie den Parameter „Eingabe“ mit Text ein. Wenn Ihr Endpunkt eine JSON-Eingabe benötigt, geben Sie den Parameter „Eingabetaste“ mit JSON oder Schlüsselwert ein. |
+| Parameter     | benötigt | Geben Sie Ihren Parameter ein. Verwenden Sie {{ componentName.value }} , um Daten von Komponenten zu verwenden.                                                                                                                                                   |
 
-### Use case
+### Gehäuse verwenden
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+Wir haben `openai/Whisper-base` implementiert, die eine Audiodatei eingibt und in Text konvertiert. Es eignet sich für Sitzungsprotokolle, Podcasts zu Text, etc. Als nächstes stellen wir Ihnen vor, wie Sie mit diesem Modell eine Anwendung in ILLA Cloud erstellen können.
 
-#### Step 1: Build the front-end interface with components
+#### Schritt 1: Bauen Sie die Front-End Schnittstelle mit Komponenten
 
-We have built an interface using the components such as file upload and button, as follows.
+Wir haben eine Schnittstelle mit den Komponenten wie Datei-Upload und Taste, wie folgt:
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Schritt 2: Füge eine Hugging Gesichts-Ressource hinzu
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Füllen Sie die unten angezeigten Felder aus, um die Ressourcenkonfiguration abzuschließen. [Erstelle einen Endpunkt](https://ui.endpoints.huggingface.co/new) und erhalte die Endpunkt-URL. Und erhalte den API Token der Organisation in [Profileinstellungen](https://huggingingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Schritt 3: Eine Aktion konfigurieren
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Wählen Sie zuerst einen Parametertyp. Nehmen Sie `openai/whisper-base` als Beispiel, dieses Modell benötigt binäre Datei-Eingabe, so dass wir den Parameter auf `Binary` ändern.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Legen Sie die Binärdatei fest, die dem Modell als Datei-Upload-Komponente übergeben werden soll. Zum Beispiel `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Schritt 4: Die Komponenten und Aktionen verbinden
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Fügen Sie einen Ereignis-Handler zu der Schaltfläche hinzu, um die Aktion auszuführen, wenn der Button geklickt wird. Und setze den Wert der Textkomponente auf {{whisper.data[0].text}} , um das Konvertierungsergebnis auf der Textkomponente anzuzeigen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+Nachdem die oben genannten Schritte konfiguriert sind, wird die Anwendung erstellt und die Ergebnisse werden wie folgt ausgeführt.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
