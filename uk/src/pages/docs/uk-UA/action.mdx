@@ -1,47 +1,47 @@
 ---
-title: Action
-metaTitle: ILLA Cloud Action doc
+title: Дія
+metaTitle: Операція ILLA Cloud doc
 tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+desc: Дії - це міст між даними та компонентами і є важливою частиною створення програми.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Запит</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Після створення ресурсу, вам потрібно витягти дані з ресурсу, вибирати, вибрати, фільтр, об’єднайте дані та помістіть їх в Маніпулятори за логічними вимогами. Ми називаємо це процесом обробки даних. Дії - це міст між даними та компонентами і є важливою частиною створення програми. Ми поділили дії на два категорії: дії та трансформери.
 
-### SQL Action
+### SQL дія
 
-#### Create action
+#### Створити дію
 
-The process of using SQL actions is divided into the following steps:
+Процес використання SQL дій розділений на наступні кроки:
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Спочатку потрібно знайти список дій в редакторі програми та натиснути кнопку "Додати".
+2.  Потім виберіть тип джерела даних в полі вибору ресурсів. Ви можете знайти створені ресурси у відповідному списку ресурсів, ви також можете створити тут нові ресурси. Виберіть створений ресурс і натисніть кнопку "Підтвердити". SQL дія буде успішно створена.
+3.  Створена дія буде відображатися в списку дій. Після стискання на дії буде показано нижче редактор дії. Ви можете змінити ресурс дій, писати звіт про дії, вміст відповіді, додати перетворювачі, обробники подій.
+4.  Після заповнення списку дій, ви можете натиснути кнопку "Попередній перегляд", щоб перевірити, чи виконала дію яку ви написали. Конфігурація панелі відображення результату дії. Після редагування дії ви можете натиснути кнопку "Зберегти", щоб завершити процес. Якщо ви перейдете на іншу дію, не зберігаючи інформацію, система запропонує вам зберегти зміни.
 
-#### Action Breakdown
+#### Експлікація
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Дія: Ви можете ввести свої дії оператори в модулі дій, де ми додали редактор віддзеркалювання коду, щоб дозволити підсвітку дій та завершення коду. У наступних оновленнях, ми будемо надавати режим вводу графічного інтерфейсу для запису операторів дій, щоб користувачі не знайомі з операторами дії також могли завершити дії даних.
+2.  Трансформер: Ви можете звучати логіку дій за допомогою команд JavaScript у перетворенні, наприклад, використовуючи функцію фільтра в JS замість функції в операторі дій.
+3.  обробник подій: обробники подій дозволяють вам викликати дії, керувати вставками та іншими діями у відповідь на взаємодію користувача. Ви можете додати кілька обробників подій для відповіді на подію без додавання користувацьких команд JavaScript команд. Наприклад, коли користувач натискає кнопку, ви можете (1) викликати дію для запуску, під час (2) скидає стан кількох випадаючих списків і введених текстів.
+4.  Відповідь: у модулі Відповіді ви можете налаштувати умови, за яких дія повертає неправильні результати, таким чином щоб забезпечити точність дій.
+5.  Розширений переклад: Уточнені налаштування для таких дій, як очікування очікування бази даних, час обробки подій, затримки затримки тощо в розширених налаштуваннях.
 
-### API Actions
+### Дії API
 
-#### Create action
+#### Створити дію
 
-The process for actioning data using the API is similar to that for SQL.
+Процес дії даних з використанням API подібний до нього для SQL.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  З самого початку, у користувача повинен знайти список дій унизу зліва від сторінки редагування додатку і натисніть на знак плюс в верхній правій частині списку дій.
+2.  Далі виберіть відповідний список даних у полі вибору ресурсів, який спливає. Ви можете знайти створений ресурс у відповідному списку даних, або ви можете створити тут новий ресурс. Виберіть створений ресурс, натисніть "Створити" і дію API буде створено успішно.
+3.  При натисканні на кнопку у списку дійових дій, що відображаються в нижній панелі та в загальній вкладці (Загально), з'являтимуться під кадром під вказівником. Ви можете зробити запит на будь-який HTTP API в ILLA. Будь ласка, перегляньте документацію API-інтерфейс для методів запиту даних.
+4.  Як тільки ви заповнили свою дію, ви можете натиснути на кнопку "Попередній перегляд", щоб перевірити чи дія, яку ви написали, дійсна і панель конфігурації дасть вам результати. Після завершення редагування процесу натисніть кнопку Зберегти і вийдіть щоб завершити процес. Якщо ви перейдете на іншу операцію без збереження - спливаюче вікно запропонує вам завершити операцію збереження.
 
-#### Action Breakdown
+#### Експлікація
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Трансформер: Ви можете звучати логіку дій за допомогою JavaScript в перетворенні, наприклад, використовуючи функцію фільтру в JS замість функції в операторі.
+2.  Обробники дій: обробники подій дозволяють вам викликати дії, керувати вставками та іншими діями у відповідь на взаємодію користувача. Ви можете додати кілька обробників подій для відповіді на подію без додавання користувацьких команд JavaScript команд. Наприклад, коли користувач натискає кнопку, ви можете (1) викликати дію для запуску, під час (2) скидає стан кількох випадаючих списків і введених текстів.
