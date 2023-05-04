@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
-tagCategory: doc_menu_quick_start_click
+title: Snel starten
+metaTitle: ILLA Cloud snelle startgids
+description: Versnel je interne tools ontwikkeling
+tagCategory: doc_menu_quick_start_klik
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Overzicht</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  ILLA bouwer implementeren
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Voordat je ILLA Builder gaat gebruiken, moet je ervoor kiezen om ILLA Cloud of Self-host ILLA te gebruiken om je apps te plaatsen. We bieden je ILLA CLI, Docker Compose, en K8s aan om ILLA in minder dan 5 minuten zelf te organiseren. We zullen je later voorzien van ILLA Cloud om je te helpen eenvoudig aan de slag te gaan met ILLA Builder.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Gebruikersgegevens ophalen
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Registreer en log in bij ILLA Builder, voer dan het resourcetabel in. Klik op de knop "Nieuwe maken" en dan kan je hier het type document selecteren. Wij voorzien u van REST API en MySQL om uw gegevens te koppelen. Postgres, Redis en MongoDB zullen deze maand beschikbaar zijn.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Slepen en neerzetten robotarmen
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+Als uw gegevens zijn voorbereid, kunt u teruggaan naar het tabblad Apps om een app te maken. De invoeglijst staat aan de rechterkant van de pagina. U kunt er één kiezen en het in het kader slepen. Klik vervolgens op de parameters invoegen en aanpassen in het Inspect paneel. We voorzien je van de markdown modus om het label van elke insertie te bewerken. Als u bekend bent met Markdown syntaxis, kunt u snel tekst grootte en dikte aanpassen. In de tussentijd kun je {{double brackets}} gebruiken om actie gegevens in het tekstinvoerveld aan te roepen om meer resultaten te bereiken in ILLA Builder.
 
-### 4.  Add action in Apps
+### 4.  Actie toevoegen in Apps
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+Er is een actie nodig om de gegevens te transformeren van bronnen naar invoegen. Wij noemen het actie. Je kunt een query schrijven in actie om gegevens van je bron op te halen. Op deze basis kunt u JavaScript schrijven in acties om gegevensverwerkingsinstructies uit te voeren, zoals filter en samenvoegen. Een MySQL voorbeeld wordt hieronder gegeven:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Maak een MySQL actie in de App editor. Benoem het actie1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Voer de querycode in het paneel in, bijv. SELECT \* FROM gebruikers.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Voer deze actie uit, het resultaat zal worden weergegeven op het onderste paneel.
 
-### 5.  Show your data
+### 5.  Uw gegevens weergeven
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+Wanneer de actie succesvol is aangemaakt, moet je het resultaat van de actie koppelen aan het component. U moet de waarde variabele in het inspectiescherm vervangen door het resultaat van de acties {{action1.data}}. Dan zijn de componentgegevens verbonden met het resultaat van de actie. 
