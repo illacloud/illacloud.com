@@ -1,92 +1,92 @@
 ---
-title: Hugging Face API
-metaTitle: Connect to Hugging Face API
-description: Learn how to use Hugging Face API in ILLA
-tagCategory: doc_menu_hugging_face_api_click
+title: Heijastava Face API
+metaTitle: Yhdistä halaukun Face APIin
+description: Opi käyttämään hugging Face APIa ILLA:ssa
+tagCategory: doc_menu_hugging_face_api_klikkaa
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face API</Heading>
+## <Heading hidden>Hyljellä Face API</Heading>
 
-Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
+Hugging Face on koneenoppimisyhteisön Github, jossa on tällä hetkellä satoja tuhansia esikoulutettuja malleja ja 10.000 datakokonaisuutta. Voit käyttää vapaasti muiden alan asiantuntijoiden jakamia malleja ja tietokokonaisuuksia tai isännöidä ja ottaa mallejasi käyttöön hugging Facessa.
 
-Some examples of models available in the Hugging Face library include:
+Esimerkkejä malleista, jotka ovat saatavilla hugging Face -kirjastossa, ovat seuraavat:
 
-1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
-2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
-3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
-4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
-5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
+1.  BERT (Bidirectional Encoder Representations from Transformers): BERT on Googlen kehittämä muuntajapohjainen malli eri NLP-tehtäviin. Se on saavuttanut huipputason tuloksia kielen ymmärtämisen ja konekääntämisen tehtäviä.
+2.  GPT (Generative Pre-training Transformer): GPT on toinen OpenAI:n kehittämä muuntajapohjainen malli. Sitä käytetään pääasiassa kielten sukupolvien tehtäviin, kuten käännöksiin ja tekstien tiivistämiseen.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa on BERT-mallin laajennus, joka kehitettiin parantamaan BERTin suorituskykyä erilaisissa NLP-tehtävissä.
+4.  XLNet (eXtraordinary LanguageNet): XLNet on Googlen kehittämä muuntajapohjainen malli, jonka tarkoituksena on parantaa muuntajamallien suorituskykyä kielen ymmärtämisessä.
+5.  ALBERT (A Lite BERT): ALBERT on versio BERT-mallista, joka on kehitetty tehostamaan ja nopeuttamaan junatoimintaa ja säilyttämään hyvän suorituskyvyn NLP-tehtävissä.
 
-### What you can do with Hugging Face in ILLA Builder
+### Mitä voit tehdä hugging Face in ILLA Builder
 
-In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at [\*\*\[https://huggingface.co/models\](https://huggingface.co/models)]([https://huggingface.co/models](https://huggingface.co/models))**. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>)\*\*.
+Hugging Facessa yli 130 000 koneoppimisen mallia on saatavilla julkisen APIn kautta, jota voit käyttää ja testata ilmaiseksi \[**<https://huggingface.co/models>]([https://huggingface.co/models]([https://huggingface.co/models)**. Lisäksi, jos tarvitset ratkaisun tuotantoskenaarioihin, voit käyttää huggingFace's Inference Endpoints, jota voidaan käyttää ja käyttää osoitteessa \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>**.
 
-ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
+ILLA Builder tarjoaa kymmeniä yleisesti käytettyjä etupäähän komponentteja, joiden avulla voit rakentaa erilaisia etupäähän rajapintoja perustuu sinun erityistarpeisiin nopeasti. Samaan aikaan ILLA tarjoaa yhteyden hugging Faceen, jonka avulla voit nopeasti yhdistää APIin, lähettää pyyntöjä ja vastaanottaa palautettuja tietoja. Yhdistämällä API- ja etupääkomponentit, voit toteuttaa vaatimuksen siitä, että käyttäjät voivat syöttää sisältöä etupään kautta ja lähettää sen APIin. API palauttaa luodun sisällön näytettäväksi edessä olevassa päässä.
 
-### Configure Hugging Face API resource
+### Määritä hugging Face API -resurssi
 
-| Properties | Required | Description                                                                              |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Name       | required | Define a resource name that will be used for display in ILLA                             |
-| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
+| Ominaisuudet | Pakollinen | Kuvaus                                                                                    |
+| ------------ | ---------- | ----------------------------------------------------------------------------------------- |
+| Nimi         | vaadittu   | Määritä resurssin nimi, jota käytetään näytettäväksi ILLA:ssa                             |
+| Pääsymerkki  | vaadittu   | Käyttäjän pääsy tai API merkitty. Voit saada sen https://huggingface.co/settings/tokens.  |
 
-### Configure Action
+### Määritä Toiminto
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Ominaisuudet      | Pakollinen | Kuvaus                                                                                                                                                                                                                                                      |
+| ----------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Malli ID          | vaadittu   | Etsi malleja: https://huggingface.co/models                                                                                                                                                                                                                 |
+| Parametrin tyyppi | vaadittu   | The parameter type of your endpoint. (Automatic Copy) Esimerkiksi, jos päätepisteesi tarvitsee tekstin syötteen, valitse ”syötteet” -parametri tekstillä. Jos päätepiste tarvitsee JSON syötteen, valitse täytä parametri “syötteet” JSON tai avaimen arvo. |
+| Parametri         | vaadittu   | Syötä parametri. Käytä {{ componentName.value }} komponenttien tietojen käyttämiseen.                                                                                                                                                                       |
 
-# How to use Hugging Face in ILLA Builder
+# Miten hugging Face in ILLA Builder -sovellusta käytetään
 
-### Step 1: Build UI with components on ILLA Builder
+### Vaihe 1: Rakenna käyttöliittymä ILLA Builderiin
 
-Based on the expected usage scenario you described, build a front-end interface. For example, you could use input and image components if your product takes in text and outputs an image. If your product takes in text and outputs generated text, you could use input and text components.
+Perustuen kuvaamaasi odotettavissa olevaan käyttöskenaarioon, rakenna etupään käyttöliittymä. Voit esimerkiksi käyttää syöttö- ja kuvakomponentteja, jos tuote ottaa tekstiä ja tulostaa kuvan. Jos tuotteesi ottaa tekstiä ja tuotoksia luotua tekstiä, voit käyttää syöttö- ja tekstikomponentteja.
 
-The following image is an example of a front-end page for a product that answer questions based on context.
+Seuraava kuva on esimerkki tuotteen etupään sivusta, joka vastaa asiayhteyteen perustuviin kysymyksiin.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
 
-### Step 2: Create a Hugging Face Resource and config the Actions
+### Vaihe 2: Luo hugging Face Resource ja määritä toiminnot
 
-Click + New in the action list and select Hugging Face Inference API.
+Napsauta + Uutta toimintoluettelossa ja valitse Hugging Face Inference API.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
 
-Fill in the form to connect to your Hugging Face:
+Täytä lomake yhdistääksesi hugging Faceesi:
 
-Name: The name that will be displayed in ILLA
+Nimi: Nimi joka näytetään ILLA:ssa
 
 Token: Get in your Hugging Face [profile settings]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
-Confirm the model information in Hugging Face before configuring the actions:
+Vahvista mallitiedot hugging Facessa ennen toimintojen määrittämistä:
 
-Select a model in [Hugging Face Model Page]([https://huggingface.co/models](https://huggingface.co/models))
+Valitse malli [Hugging Face Model Page]([https://huggingface.co/models](https://huggingface.co/models))
 
-Let’s use [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) as an example. Enter the detail page > click Deploy > Click Inference API
+Käytetään esimerkkinä [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)). Anna yksityiskohta sivu > napsauta Deploy > Klikkaa Inference API
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
-The parameters after `“inputs”` is what you should fill in ILLA. 
+Parametrit “”syötteet”” jälkeen on mitä sinun pitäisi täyttää ILLA. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
 
-In ILLA Builder, we should fill in the Model ID and Parameter. Taking the above model as an example, the `“inputs”` is a key-value pair, so we can fill in it with key-value or JSON. 
+ILLA Builderissa meidän pitäisi täyttää Model ID ja parametri. Edellä mainitun mallin esimerkkinä voidaan mainita `“syötteet”` on avainarvopari, joten voimme täyttää sen avausarvolla tai JSONilla. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
 
-And we also support the text input and binary input which can meet all Hugging Face Inference API connections.
+Ja tuemme myös tekstin syöte ja binary syöttö, joka voi täyttää kaikki hugging Face Inference API yhteyksiä.
 
-### Step 3: Connect actions to components
+### Vaihe 3: Yhdistä toiminnot komponentteihin
 
-To pass the user's front-end input to the API, you can use {{ to retrieve data inputted in the component. For example, input2 is the component to input the question and input1 is the component to input context, we can fill `question` and `context` in key, and fill `{{ input.value }}` in value:
+Jos haluat siirtää käyttäjän etupään syötteen APIlle, voit käyttää {{ noutaaksesi syötettyä tietoa komponentista. Esimerkiksi, input2 on komponentti syöttää kysymyksen ja syötteen1 on komponentti syötettäväksi yhteydessä, voimme täyttää `question` ja `context` avaimessa ja täyttää `{{ input.value }}` arvolla:
 
 ```jsx
 {
@@ -95,11 +95,11 @@ To pass the user's front-end input to the API, you can use {{ to retrieve data i
 }
 ```
 
-Before displaying the output data of the Action in the front-end component, we should confirm which field the output of different models is placed in. Still taking `deepset/roberta-base-squad2` as an example, the results are as follows:
+Ennen kuin näytetään Toiminnan tulostiedot etupäässä, meidän on vahvistettava, mihin kenttään eri mallien tuotos sijoitetaan. Kun esimerkkinä otetaan vielä `deepset/roberta-base-squad2`, tulokset ovat seuraavat:
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
 
-So we can get the answer with `{{ textQuestion.data[0].answer }}`(the `textQuestion` is the name of the action). 
+Joten voimme saada vastauksen komennolla `{{ textQuestion.data[0].answer }}`(`textQuestion` on toimen nimi). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
 
