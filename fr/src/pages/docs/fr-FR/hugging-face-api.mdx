@@ -1,92 +1,92 @@
 ---
-title: Hugging Face API
-metaTitle: Connect to Hugging Face API
-description: Learn how to use Hugging Face API in ILLA
-tagCategory: doc_menu_hugging_face_api_click
+title: Accrochage de l'API Face
+metaTitle: Se connecter à l'API Face
+description: Apprenez à utiliser l'API Face d'Hugging dans ILLA
+tagCategory: Doc_menu_hugging_face_api_click
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face API</Heading>
+## <Heading hidden>API Face câlinage</Heading>
 
-Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
+Hugging Face est le Github de la communauté d'apprentissage automatique, avec des centaines de milliers de modèles pré-formés et 10 000 jeux de données actuellement disponibles. Vous pouvez accéder librement à des modèles et des jeux de données partagés par d'autres experts de l'industrie ou héberger et déployer vos modèles sur Hugging Face.
 
-Some examples of models available in the Hugging Face library include:
+Quelques exemples de modèles disponibles dans la bibliothèque de Hugging Face incluent :
 
-1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
-2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
-3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
-4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
-5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
+1.  BERT (Bidirectional Encoder Representations from Transformers): BERT est un modèle basé sur le transformateur développé par Google pour diverses tâches NLP. Il a obtenu des résultats à la pointe de la technologie dans la compréhension des langues et des tâches de traduction automatique.
+2.  GPT (Generative Pre-training Transformer): GPT est un autre modèle basé sur les transformateurs développé par OpenAI. Il est principalement utilisé pour les tâches de génération de langues, telles que la traduction et la récapitulation du texte.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa est une extension du modèle BERT qui a été développée pour améliorer les performances de BERT sur diverses tâches NLP.
+4.  XLNet (eXtraordinary LanguageNet) : XLNet est un modèle basé sur les transformateurs développé par Google et conçu pour améliorer les performances des modèles de transformateurs sur les tâches de compréhension du langage.
+5.  ALBERT (A Lite BERT): ALBERT est une version du modèle BERT qui a été développée pour être plus efficace et plus rapide à former tout en maintenant de bonnes performances sur les tâches NLP.
 
-### What you can do with Hugging Face in ILLA Builder
+### Ce que vous pouvez faire avec Hugging Face dans ILLA Builder
 
-In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at [\*\*\[https://huggingface.co/models\](https://huggingface.co/models)]([https://huggingface.co/models](https://huggingface.co/models))**. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>)\*\*.
+En Hugging Face, plus de 130 000 modèles d'apprentissage automatique sont disponibles via l'API publique, que vous pouvez utiliser et tester gratuitement sur \[**<https://huggingface.co/models>](<https://huggingface.co/models>**. En outre, si vous avez besoin d'une solution pour les scénarios de production, vous pouvez utiliser les points de terminaison d'inférence de Facebook, qui peuvent être déployés et accédés à \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>**.
 
-ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
+ILLA Builder fournit des douzaines de composants front-end couramment utilisés, vous permettant de construire rapidement différentes interfaces front-end en fonction de vos besoins spécifiques. En même temps, ILLA offre une connexion à Face, vous permettant de vous connecter rapidement à l'API, d'envoyer des demandes et de recevoir des données retournées. En connectant l'API et les composants front-end, vous pouvez implémenter l'exigence que les utilisateurs puissent entrer du contenu via le front-end et le soumettre à l'API. L'API retourne le contenu généré à afficher sur le front-end.
 
-### Configure Hugging Face API resource
+### Configurer les ressources de l'API Face
 
-| Properties | Required | Description                                                                              |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Name       | required | Define a resource name that will be used for display in ILLA                             |
-| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
+| Propriétés | Requis      | Libellé                                                                                               |
+| ---------- | ----------- | ----------------------------------------------------------------------------------------------------- |
+| Nom        | Obligatoire | Définir un nom de ressource qui sera utilisé pour l'affichage dans ILLA                               |
+| Jeton      | Obligatoire | Accès utilisateur ou jeton d'API. Vous pouvez l'obtenir dans https://huggingface.co/settings/tokens.  |
 
-### Configure Action
+### Configurer l'action
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Propriétés        | Requis      | Libellé                                                                                                                                                                                                                                                                                   |
+| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID du modèle      | Obligatoire | Rechercher des modèles : https://huggingface.co/models                                                                                                                                                                                                                                    |
+| Type de paramètre | Obligatoire | Le type de paramètre de votre terminal. Par exemple, si votre point de terminaison a besoin d'une entrée de texte, choisissez le paramètre "entrées" avec le texte. Si votre point de terminaison a besoin d'une entrée JSON, choisissez le paramètre « Entrée » avec JSON ou clé-valeur. |
+| Paramètre         | Obligatoire | Entrez votre paramètre. Utilisez {{ componentName.value }} pour utiliser les données des composants.                                                                                                                                                                                      |
 
-# How to use Hugging Face in ILLA Builder
+# Comment utiliser la face d'embrochage dans le constructeur ILLA
 
-### Step 1: Build UI with components on ILLA Builder
+### Étape 1 : Construire l'interface utilisateur avec des composants sur le constructeur ILLA
 
-Based on the expected usage scenario you described, build a front-end interface. For example, you could use input and image components if your product takes in text and outputs an image. If your product takes in text and outputs generated text, you could use input and text components.
+Basé sur le scénario d'utilisation que vous avez décrit, construisez une interface frontale. Par exemple, vous pouvez utiliser des éléments d'entrée et d'image si votre produit prend du texte et envoie une image. Si votre produit prend du texte et des résultats générés, vous pouvez utiliser des composants de texte et de texte.
 
-The following image is an example of a front-end page for a product that answer questions based on context.
+L'image suivante est un exemple de page d'accueil pour un produit qui répond à des questions basées sur le contexte.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
 
-### Step 2: Create a Hugging Face Resource and config the Actions
+### Étape 2 : Créer une ressource de face d'embrochage et configurer les actions
 
-Click + New in the action list and select Hugging Face Inference API.
+Cliquez sur + Nouveau dans la liste d’actions et sélectionnez l’API d’Inférence de Visage.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
 
-Fill in the form to connect to your Hugging Face:
+Remplissez le formulaire pour vous connecter à votre Face:
 
-Name: The name that will be displayed in ILLA
+Nom : Le nom qui sera affiché dans ILLA
 
-Token: Get in your Hugging Face [profile settings]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
+Jeton : Accédez à votre face d'Hugging [paramètres de profil]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
-Confirm the model information in Hugging Face before configuring the actions:
+Confirmez les informations du modèle dans la face d'accrochage avant de configurer les actions :
 
-Select a model in [Hugging Face Model Page]([https://huggingface.co/models](https://huggingface.co/models))
+Sélectionnez un modèle dans [Page de Modèle de Visage Hugging]([https://huggingface.co/models](https://huggingface.co/models))
 
-Let’s use [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) as an example. Enter the detail page > click Deploy > Click Inference API
+Utilisons [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) comme exemple. Entrez la page de détail > cliquez sur Déployer > Cliquez sur Inférence API
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
-The parameters after `“inputs”` is what you should fill in ILLA. 
+Les paramètres après `“entrées”` sont ce que vous devez remplir en ILLA. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
 
-In ILLA Builder, we should fill in the Model ID and Parameter. Taking the above model as an example, the `“inputs”` is a key-value pair, so we can fill in it with key-value or JSON. 
+Dans ILLA Builder, nous devons remplir l'ID du modèle et le paramètre. En prenant le modèle ci-dessus comme exemple, le `“inputs”` est une paire clé-valeur, donc nous pouvons le remplir avec clé-valeur ou JSON. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
 
-And we also support the text input and binary input which can meet all Hugging Face Inference API connections.
+Et nous prenons également en charge l'entrée de texte et l'entrée binaire qui peut répondre à toutes les connexions de l'API d'Inférence de Face Hugging.
 
-### Step 3: Connect actions to components
+### Étape 3 : Connecter les actions aux composants
 
-To pass the user's front-end input to the API, you can use {{ to retrieve data inputted in the component. For example, input2 is the component to input the question and input1 is the component to input context, we can fill `question` and `context` in key, and fill `{{ input.value }}` in value:
+Pour passer l'entrée front-end de l'utilisateur à l'API, vous pouvez utiliser {{ pour récupérer les données entrées dans le composant. Par exemple, input2 est le composant de saisie de la question et input1 est le composant de contexte d'entrée, nous pouvons remplir `question` et `context` dans la clé, et remplir `{{ input.value }}` dans la valeur:
 
 ```jsx
 {
@@ -95,15 +95,15 @@ To pass the user's front-end input to the API, you can use {{ to retrieve data i
 }
 ```
 
-Before displaying the output data of the Action in the front-end component, we should confirm which field the output of different models is placed in. Still taking `deepset/roberta-base-squad2` as an example, the results are as follows:
+Avant d'afficher les données de sortie de l'Action dans le composant frontal, nous devons confirmer dans quel champ la sortie des différents modèles est placée. Toujours en prenant comme exemple `deepset/roberta-base-squad2`, les résultats sont les suivants:
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
 
-So we can get the answer with `{{ textQuestion.data[0].answer }}`(the `textQuestion` is the name of the action). 
+Donc nous pouvons obtenir la réponse avec `{{ textQuestion.data[0].answer }}`(la `textQuestion` est le nom de l'action). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
 
-### Demo
+### Démo
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
 
