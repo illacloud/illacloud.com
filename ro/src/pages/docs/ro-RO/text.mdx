@@ -1,8 +1,8 @@
 ---
 title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
-tagCategory: doc_menu_text_click
+metaTitle: Componenta text ILLA Cloud doc
+description: Afișare date cu componenta text
+tagCategory: click doc_meniu_text_
 ---
 
 * * *
@@ -11,28 +11,28 @@ tagCategory: doc_menu_text_click
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### Proprietăți
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| Proprietate         | Descriere                                                                                                                                                                                                                           |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Conținut            | Setați textul afișat pe componenta de text. Markdown și text simplu sunt acceptate.                                                                                                                                                 |
+| Tooltip             | Un tip de instrument afișat pe componentă atunci când utilizatorii planează deasupra componentei.                                                                                                                                   |
+| Aliniere orizontală | Pentru a seta poziția orizontală a conținutului textului în componentă                                                                                                                                                              |
+| Aliniere verticală  | Pentru a seta poziția verțială a conținutului textului în componentă                                                                                                                                                                |
+| Hidden              | Pentru a seta dacă se afișează această componentă și în ce condiții se afișează. De exemplu, dacă utilizatorul curent nu este utilizator A, această componentă ar trebui să fie ascunsă: {{ currentUserInfo.nickname != 'User A' }} |
+| Culoare             | Pentru a seta culoarea textului în formatul de pictură                                                                                                                                                                              |
+| Dimensiune text     | Pentru a seta dimensiunea textului în formatul de vopsea text                                                                                                                                                                       |
 
-### Use Markdown
+### Folosește Markdown
 
-#### Headline
+#### Titlu
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# Rubrica 1
+## Rubrica 2
+### Rubrica 3
 ```
 
 #### Bold & Italics
@@ -44,48 +44,48 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### Listă de sarcini
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### Lista To-do
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] 🚀 Construiți o nouă aplicație pe ILLA Cloud
+2. [ ] ☎️ Sunați împreună cu Monica
+3. [x] 🍷 Luați cina cu **Elsa**
+4. [x] 💃 Jucați `Just dance` timp de o jumătate de oră
 ```
 
-#### Bulleted list
+#### Listă cu gloanțe
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
-### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+### Listă cu gloanțe
+- Colaborare în timp real: Putem crea totul în timp real împreună.
+- 🛠️ Plugin-ul personalizat: Construiește orice plugin personalizat pentru a face ceea ce doriți.
+- 🤖 Automate Support: Conectează totul și automatizează-l în 5 secunde.
+- 🖥️ Autogazdă: suportă Docker & k8s
 ```
 
-#### Table
+#### Tabel
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
 ```jsx
-### Table
-| Name        | Link   |  Description  |
-| :--------  | :-------  | :----  |
-| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
-| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
-| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+### Tabelul
+ΕName <unk> Link <unk> Descriere
+<unk> :-------- <unk> :------- <unk> :------<unk>
+<unk> ILLA Cloud <unk> [https://cloud. llacloud.com/](https://cloud.illacloud.com/) <unk> Build apps pe ILLA Cloud<unk>
+<unk> ILLA GitHub <unk> [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) <unk> Star us pe GitHub<unk>
+<unk> ILLA homepage <unk> [https://www.illacloud.com/](https://www.illacloud.com/) <unk> ILLA Cloud Offical website
 ```
 
-### Display dynamic data
+### Afișare date dinamice
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+Folosiți `{{` pentru a obține date de la alte componente sau acțiuni sau de la variabile globale. De exemplu, pentru a afișa porecla utilizatorului curent:
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Salut! '+ currentUserInfo.nickname }}
 ```
