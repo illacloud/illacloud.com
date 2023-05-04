@@ -1,48 +1,48 @@
 ---
 title: Kubernetes
-tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+tagCategory: doc_menú_kubernetes_clic
+desc: Construye la imagen todo en uno y la ejecuta k8s en tu máquina.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Descripción
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Construye la imagen todo en uno y la ejecuta k8s en tu máquina. Puede revisar el archivo de scripts en la carpeta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) para más detalles.
 
-Note:
+Nota:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Recomendamos altamente desplegar con nuestras herramientas de despliegue automático[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+Y por el momento no soportamos Apple Silicon M1 (arco darwin-arm64).
 
-### Run with an official slim image
+### Ejecutar con una imagen delgada oficial
 
-Install GNU make and type:
+Instalar GNU make y tipo:
 
 ```jsx
-make deploy
+desplegar
 ```
 
-or just execute:
+o simplemente ejecutar:
 
 ```jsx
 /bin/bash scripts/deploy.sh
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+este comando extraerá la imagen oficial todo en uno y la desplegará en su clúster de Kubernetes.
 
-### For Database Persistent Storage
+### Para almacenamiento persistente de base de datos
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+Edita[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), y añade tu configuración de almacenamiento persistente de IAAS en él.
 
-### For HTTPS Config
+### Para configuración HTTPS
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Puede enrutar el NodePort a su pasarela de progreso del clúster de Kubernetes y reescribir en el puerto 443, y añadir certificado https en su pasarela de progreso.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+O, puede desplegar una pasarela de progreso manualmente en su servidor de Kubernetes, configuración así:
 
 ```jsx
 static_resources:
