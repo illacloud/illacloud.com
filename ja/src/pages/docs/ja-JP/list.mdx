@@ -1,51 +1,51 @@
 ---
-title: List
-metaTitle: ILLA Cloud List Component doc
-description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+title: リスト
+metaTitle: ILLA クラウドリストコンポーネントドキュメント
+description: Listコンポーネントを使用すると、ルックアンドフィールが定義されたデータの繰り返し行を作成できます。
 tagCategory: doc_menu_list_click
 ---
 
 * * *
 
-## <Heading hidden>List</Heading>
+## <Heading hidden>リスト</Heading>
 
-The List component is similar to a Container in that you can nest other components inside of it.
+Listコンポーネントはコンテナに似ており、他のコンポーネントを入れ子にすることができます。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
   alt=""
 />
 
-### Drag components to list
+### コンポーネントをドラッグして一覧にする
 
-When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+List コンポーネントをフレームにドラッグすると、コンポーネントが自動的に含まれます。 削除または変更し、新しいコンポーネントをリストにドラッグできます。 
 
-Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+最初の項目だけを編集でき、最初の項目に基づいて他の項目が自動的に変更されます。 最初の項目にフォーカスして、バーをドラッグして高さの項目を変更することもできます。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
   alt=""
 />
 
-### Display query results in a list
+### クエリ結果をリストに表示する
 
-When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+List コンポーネントをフレームにドラッグすると、自動的に JSON 形式でテストデータが表示されます。 データソースをアクションに変更するには、`{{ mysql_list_query.data }}`を使用します。 
 
-After setting the data source, you can change the data of components:
+データ ソースを設定した後、コンポーネントのデータを変更できます。
 
-1.  Select the component in the first item. 
-2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+1.  最初の項目でコンポーネントを選択します。 
+2.  コンポーネントデータがリストからの場合は、`{{ currentItem.columnName }}` を使用してデータを設定できます。 たとえば、`{{ currentItem.Avater }}`でイメージソースを設定できます。 `Avater` はリストのデータソースからの列です。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+コンポーネントがリストに含まれている場合にのみ、`{{ currentItem.columnName }}`を使用できます。 
 
-### Use the data of list
+### リストのデータを使用
 
-You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+`{{ list1.selectedItem.columnName }}`で選択したアイテムのデータを使用できます。 または、`{{ list1.dataSource[n].columnName }}`を使用してリストの任意のデータを使用してください
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
