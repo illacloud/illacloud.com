@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
-tagCategory: doc_menu_database_click
+title: Połącz z bazą danych
+metaTitle: Połączenie ILLA Cloud z bazą danych
+desc: ILLA łączy się z większością baz danych, w tym z PostgreSQL, MySQL, TiDB i MongoDB
+tagCategory: kliknij przycisk bazy danych dok_menu_
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Połącz z bazą danych</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA łączy się z większością baz danych, w tym z PostgreSQL, MySQL, TiDB i MongoDB. Sprawdź tę listę tutaj, aby uzyskać informacje o źródłach danych ILLA. Na liście znajdują się nadchodzące źródła danych, które planujemy wspierać. Jeśli ILLA brakuje pewnych zasobów danych, których używasz, proszę wypełnić formularz tutaj.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+Szczegóły połączenia wymagane przez ILLA zależą od rodzaju bazy danych, którą chcesz połączyć. Informacje te obejmują zazwyczaj host, port, dane użytkownika i ciąg połączeń. Aby to osiągnąć, zapoznaj się z konfiguracją lub dokumentacją bazy danych.
 
-### 1.  Create a database resource
+### 1.  Utwórz zasób bazy danych
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Zasoby reprezentują połączenia z źródłami danych i są tym, co zapytujesz w swoich aplikacjach ILLA.Zaloguj się do ILLA i przejdź do zakładki **Zasoby** > kliknij **Utwórz nową** i wybierz bazę danych, z którą chcesz się połączyć. Otwiera to **Konfiguruj modal** w którym dodasz informacje o połączeniu.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+Po wprowadzeniu szczegółów połączenia, kliknij **Test Connection**, aby sprawdzić czy ILLA może się połączyć. Po zakończeniu kliknij **Zapisz zasób** aby zapisać zasób.
 
-In addition, you can create resources in the action list under the **App editor**.
+Ponadto możesz tworzyć zasoby na liście akcji w **Edytorze aplikacji**.
 
-### 2.  Query your database
+### 2.  Zapytaj bazę danych
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+W edytorze aplikacji, kliknij **+ Nowy** na **Lista działań** > wybierz typ zasobów i wybierz istniejący zasób lub utwórz nowy zasób > kliknij **utwórz akcję** i zaktualizuj działania, aby pobrać pewne informacje z tabeli w bazie danych.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Kliknij **Zapisz**, a następnie kliknij **Uruchom**. Wyniki zapytania są automatycznie wyświetlane po zakończeniu zapytania.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+Istnieją pewne zaawansowane ustawienia, w tym zmiana nazwy, ustawienia uruchamiania, przekształcanie danych i ustawianie obsługi sukcesu lub awarii, jak pokazano poniżej.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
