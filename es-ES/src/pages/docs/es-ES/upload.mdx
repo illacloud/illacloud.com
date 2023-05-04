@@ -1,78 +1,78 @@
 ---
-title: Upload
-metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
-tagCategory: doc_menu_upload_click
+title: Subir
+metaTitle: Documento del componente Subida en la nube de ILLA
+description: Utilice el componente subir archivos desde las máquinas locales a cualquier almacenamiento en la nube
+tagCategory: doc_menú_subir_hacer clic
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>Subir</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+El componente de subida se utiliza para permitir a los usuarios subir archivos de sus máquinas locales a cualquier almacenamiento en la nube mediante API. A continuación, introduciremos cómo configurar un componente de carga, cómo asociar el componente de carga con un servicio de almacenamiento en la nube, cómo utilizar el componente de carga para seleccionar una imagen, y mostrarla con una imagen, etc.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### Propiedades
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| Propiedad                            | Descripción                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tipo                                 | Establece el tipo de componente de subida, incluyendo Botón y Dropzone.                                                                                                                                                                                                                                                                                                                   |
+| Texto                                | El texto mostrado en el componente de subida.                                                                                                                                                                                                                                                                                                                                             |
+| Tipos de selección                   | Establezca el tipo de selección a varios archivos, un solo archivo o directorio.                                                                                                                                                                                                                                                                                                          |
+| Tipos de archivo                     | Una lista de extensiones de archivo permitidas para subir. Ningún valor permitirá todos los tipos de archivo.                                                                                                                                                                                                                                                                             |
+| Añadir nuevos archivos seleccionados | Para establecer el nuevo archivo seleccionado a añadir al archivo seleccionado o reemplazar el archivo seleccionado en el tipo de selección de varios archivos o directorio.                                                                                                                                                                                                              |
+| Lista de archivos                    | Para establecer si mostrar una lista de los archivos seleccionados debajo del componente de subida. La altura del cargador cambiará dinámicamente en función de la longitud de la lista de archivos.                                                                                                                                                                                      |
+| Analizar valor                       | Intento de analizar los archivos seleccionados, con soporte para archivos JSON, CSV, TSV, Excel, y TXT. Se puede acceder a los datos analizados a través de {{upload1.parsedValue}}. Los archivos que no se pueden analizar serán nulos en la matriz. Todos los archivos están disponibles como cadenas codificadas en base64 en la matriz de valores, independientemente de esta opción. |
+| Cargando                             | Si el componente debe mostrar un indicador de carga.                                                                                                                                                                                                                                                                                                                                      |
+| Deshabilitado                        | Establecer si desactivar este componente y bajo qué condiciones desactivarlo. Por ejemplo, si el componente input1 es nulo, este componente debe ser desactivado: {{ input1.value == ‘ ’}}                                                                                                                                                                                                |
+| Sugerencia                           | Una descripción mostrada en el componente cuando los usuarios pasan el cursor sobre el componente.                                                                                                                                                                                                                                                                                        |
+| Campo requerido                      | Para establecer si es necesario.                                                                                                                                                                                                                                                                                                                                                          |
+| Min size                             | Para establecer el tamaño mínimo permitido para ser añadido.                                                                                                                                                                                                                                                                                                                              |
+| Max size                             | Para establecer el tamaño máximo de archivo permitido para ser añadido.                                                                                                                                                                                                                                                                                                                   |
+| Regla personalizada                  | Para configurar el texto mostrado cuando la verificación falla.                                                                                                                                                                                                                                                                                                                           |
+| Ocultar mensaje de validación        | Para establecer si mostrar o no el mensaje de validación cuando la verificación falla.                                                                                                                                                                                                                                                                                                    |
+| Clave de Formulario                  | Para establecer una clave para el componente. Después de añadir este componente a un formulario, esta clave se utilizará para identificar los datos de este componente al enviar el formulario.                                                                                                                                                                                           |
+| Hidden                               | Para establecer si mostrar este componente y bajo qué condiciones mostrarlo. Por ejemplo, si el usuario actual no es el usuario A, este componente debe estar oculto: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                                                          |
+| Variante                             | Para establecer el componente Cargar Botón a Outline o Rellenado.                                                                                                                                                                                                                                                                                                                         |
+| Color del tema                       | Para establecer el color del componente Cargar botón.                                                                                                                                                                                                                                                                                                                                     |
 
-### Method
+### Método
 
-You can use other components to control the Upload component. We support the following three methods:
+Puede utilizar otros componentes para controlar el componente Subir. Apoyamos los tres métodos siguientes:
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| clearValidation  | Utilizado para borrar el mensaje de validación                               |
+| ---------------- | ---------------------------------------------------------------------------- |
+| limpiarValor     | Utilizado para limpiar los seleccionados                                     |
+| setDeshabilitado | Utilizado para establecer el componente de subida a desactivado o habilitado |
 
-### Event handler
+### Controlador de eventos
 
-To trigger actions when the selected files change
+Para desencadenar acciones cuando los archivos seleccionados cambian
 
-### Data of Uploader
+### Datos del cargador
 
-The upload component has some commonly used data, which can be called in the app.
+El componente de subida tiene algunos datos comúnmente utilizados, que se pueden llamar en la aplicación.
 
-`value` an array consisting of the base64 data of files. 
+`value` una matriz que consiste en los datos base64 de archivos. 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+`files` una matriz de objetos. Las claves de los objetos incluyen `lastModified`, `name`, `size`, `type`. Puede utilizar `{{upload1.files.map(file =>file. ame)}}` para obtener una matriz de nombres de archivo y también puede obtener la última matriz modificada, matriz de tamaño, matriz de tipo de la misma manera. 
 
-### Upload files to a cloud storage service
+### Subir archivos a un servicio de almacenamiento en la nube
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### Subir un solo archivo a través de un recurso S3
 
-The configuration of action is as follows. 
+La configuración de la acción es la siguiente. 
 
-Upload object name
+Subir nombre del objeto
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+Subir datos
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### Subir varios archivos a través de un recurso S3
 
-Upload object name list
+Subir lista de nombres de objeto
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+Subir lista de datos
 
 ```jsx
 {{upload1.value}}
@@ -96,8 +96,8 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+Subir una imagen y mostrarla en el componente de imagen
+Cambiar la fuente de la imagen al archivo base64 datos del componente de carga. Los datos base64 se almacenan en el atributo de valor en array. Y debemos dividir el prefijo del archivo con los datos del archivo. El código es el siguiente. 
 
 ```jsx
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
