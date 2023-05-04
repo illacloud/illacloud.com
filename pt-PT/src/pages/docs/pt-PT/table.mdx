@@ -1,93 +1,93 @@
 ---
-title: Table
-metaTitle: ILLA Cloud table component doc
-description: Display and interact with data using the Table component.
-tagCategory: doc_menu_table_click
+title: Classificações
+metaTitle: Componente para tabelas ILLA Cloud
+description: Exibir e interagir com os dados usando o componente Table
+tagCategory: link_do_menu_tabela_clique
 ---
 
 * * *
 
-## <Heading hidden>Table</Heading>
+## <Heading hidden>Tabela</Heading>
 
-Tables are a common way to view and interact with your data. You can sort, filter, paginate, and download rows of information. Tables also support row selection and custom columns.
+As tabelas são uma maneira comum de visualizar e interagir com os seus dados. Você pode ordenar, filtrar, página e baixar linhas de informação. Tabelas também suportam seleção de linhas e colunas personalizadas.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
   alt=""
 />
 
-### Load data in a table
+### Carregar dados em uma tabela
 
-When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
+Quando você arrastar um componente Table para o Frame, ele mostra automaticamente os dados de teste no formato JSON. Você pode alterar os dados exibidos em uma tabela, editando a propriedade de origem de dados. Use o formato `{{ actionName.data }}` para escolher a ação.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
   alt=""
 />
 
-You can also set the data source by inputing an array.
+Você também pode definir a fonte de dados inserindo um array.
 
-### Column settings
+### Configurações da coluna
 
-**Set aliases for data columns**
+**Define apelidos para colunas de dados**
 
-When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+Ao definir a fonte de dados das tabelas, o nome da coluna será definido automaticamente com base na fonte de dados. Você pode renomear todas as colunas clicando na coluna na aba **Inspecionar** e define o **título da coluna**.
 
-**Change column types**
+**Alterar tipos de colunas**
 
-When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
+Quando você define a fonte de dados das tabelas, as colunas são definidas para **Texto**. Você pode definir os tipos de coluna manualmente clicando na coluna na aba **Inspecionar** e selecionando o tipo no menu suspenso **Coluna**.
 
-The column types include:
+Os tipos de coluna incluem:
 
-1.  Text
-2.  Date, you can set the display format of the date in the date type.
-3.  Number, you can set the decimal places in the number type.
-4.  Percent, you can set the decimal places in the percent type.
-5.  Link
-6.  Button, you can add event handlers in the button type.
+1.  texto
+2.  Data, você pode definir o formato de exibição da data no tipo de data.
+3.  Número, você pode definir as casas decimais no tipo de número.
+4.  Por cento, você pode definir as casas decimais no tipo de porcentagem.
+5.  Vincular
+6.  Botão, você pode adicionar manipuladores de eventos no tipo de botão.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
   alt=""
 />
 
-**Mapped value of custom columns**
+**Valor mapeado de colunas personalizadas**
 
-You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+Você pode adicionar colunas personalizadas às tabelas usando o botão **+ Adicionar** na aba **Inspecionar**. As colunas personalizadas são frequentemente usadas para calcular os dados com base em outros valores no seu aplicativo. Por exemplo, se você tem colunas `revenue` e `user_num` e você quer calcular uma coluna `ARPU`, você pode usar `{{ currentRow.receita/currentRow.user_num }}`
 
-In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
+Além disso, depois de calcular, você pode definir o tipo de coluna como número ou porcentagem e definir as casas decimais para melhorar a legibilidade.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
   alt=""
 />
 
-### Access data of table
+### Acessar dados da tabela
 
-Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0.
+Use `{{ table1.selectedRow[i].columnName }}` para acessar os dados das linhas selecionadas em outros componentes. Se você não ativou a seleção **Multi-Row **, `i` será sempre 0.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
   alt=""
 />
 
-**Update the table data**
+**Atualizar os dados da tabela**
 
-1.  Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`.
-2.  Use `{{ input1.value }}` in Update actions to get selected values and updated values.
-3.  Add an event handler to Update Button to run the Update Action when clicked.
-4.  Update the data of selected row by changing the input value and clicking the Update Button.
+1.  Use o componente de entrada ou outros dados de entrada cpmponents para mostrar `{{ table1.selectedRow[i].columnName }}`.
+2.  Use `{{ input1.value }}` em Atualizar ações para obter valores selecionados e valores atualizados.
+3.  Adicione um manipulador de eventos para o botão Atualizar para executar a Ação de Atualização quando clicado.
+4.  Atualize os dados da linha selecionada, alterando o valor de entrada e clicando no botão atualizar.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
   alt=""
 />
 
-**Insert a new row into table**
+**Insira uma nova linha na tabela**
 
-1.  Use `{{ input1.value }}` in insert actions get values.
-2.  Add an event handler to Insert Button to run the Insert Action when clicked.
-3.  Insert new data by inputing values in input components and clicking the Insert Button.
+1.  Use `{{ input1.value }}` na inserção de ações obtêm valores.
+2.  Adicione um manipulador de eventos para inserir o botão para executar a ação de inserir quando clicado.
+3.  Insira novos dados inserindo valores nos componentes de entrada e clicando em inserir botão.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
