@@ -1,48 +1,48 @@
 ---
 title: Kubernetes
 tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+desc: illaのオールインワンイメージを構築し、あなたのマシン上でk8sでそれを実行します。
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### 説明
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+illaのオールインワンイメージを構築し、あなたのマシン上でk8sでそれを実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts)フォルダにあるスクリプトファイルをご覧ください。
 
-Note:
+メモ:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+auto-deploy tools[illa-cli](https://github.com/illacloud/illa) を使ってデプロイすることを強くお勧めします。
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+そして、現時点では、Apple Silicon M1(darwin-arm64アーチ)はサポートしていません。
 
-### Run with an official slim image
+### 公式のスリムな画像で実行
 
-Install GNU make and type:
+GNU make をインストールし、次のように入力します:
 
 ```jsx
-make deploy
+デプロイする
 ```
 
-or just execute:
+実行してみてください
 
 ```jsx
 /bin/bash scripts/deploy.sh
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+このコマンドはillasoftの公式オールインワンイメージを引き出し、Kubernetesクラスタにデプロイします。
 
-### For Database Persistent Storage
+### データベースの永続的なストレージ
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) を編集し、IAAS の永続的なストレージ設定を追加します。
 
-### For HTTPS Config
+### HTTPS 設定
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+NodePortをKubernetesクラスタイングレスゲートウェイにルーティングし、443ポートに書き換え、イングレスゲートウェイにhttps証明書を追加することができます。
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+または、イングレスゲートウェイをKubernetesサーバーに手動でデプロイすることもできます。
 
 ```jsx
 static_resources:
