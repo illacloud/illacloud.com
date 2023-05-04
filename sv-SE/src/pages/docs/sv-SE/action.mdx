@@ -1,47 +1,47 @@
 ---
-title: Action
+title: Åtgärd
 metaTitle: ILLA Cloud Action doc
-tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+tagCategory: Klicka
+desc: Åtgärder är en bro mellan data och komponenter och är en viktig del i att bygga en applikation.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Fråga</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Efter att du skapat resursen, måste du extrahera data i resursen, välja, filtrera, sammanfoga data och sedan lägga den i infästningarna enligt de logiska kraven. Vi kallar den här processen för databehandling en åtgärd. Åtgärder är en bro mellan data och komponenter och är en viktig del i att bygga en applikation. Vi har delat in åtgärder i två kategorier: åtgärder och Transformers.
 
-### SQL Action
+### SQL åtgärd
 
-#### Create action
+#### Skapa åtgärd
 
-The process of using SQL actions is divided into the following steps:
+Processen att använda SQL-åtgärder är uppdelad i följande steg:
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Först måste du hitta åtgärdslistan i appredigeraren och klicka på knappen "Lägg till".
+2.  Välj sedan en datakälla typ i resursen välj rutan. Du hittar de skapade resurserna i motsvarande resurslista, du kan också skapa nya resurser här. Välj den skapade resursen och klicka på knappen "Bekräfta". En SQL-åtgärd kommer att skapas.
+3.  Den skapade åtgärden kommer att visas på åtgärdslistan. En åtgärdsredigerare kommer att visas under ramen efter att du sparkat åtgärden. Du kan ändra resursen för åtgärder, skriva uttalanden, svarsinnehåll, lägga till transformatorer, händelsehanterare.
+4.  Efter att du fyllt i åtgärdslistan kan du klicka på "Förhandsgranska" knappen för att kontrollera om åtgärden du skrev är giltig. Konfigurationspanelen visar åtgärdsresultatet. Efter att åtgärden har redigerats kan du klicka på knappen "Spara" för att avsluta processen. Om du byter till en annan åtgärd utan att spara informationen kommer systemet att uppmana dig att spara ändringen.
 
-#### Action Breakdown
+#### Åtgärd fördelning
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Åtgärd: Du kan ange dina åtgärdsuttalanden i åtgärdsmodulen där vi har lagt till redigeraren för Code Mirror för att aktivera åtgärdsuttryck markering och fullbordan av koden. I efterföljande uppdateringar, vi kommer att ge ett GUI-inmatningsläge för att skriva åtgärdsuttalanden så att användare som inte känner till åtgärdsuttalanden också kan slutföra dataåtgärder.
+2.  Transformator: Du kan förfina åtgärdslogiken med JavaScript-satser i transformatorn, till exempel genom att använda filterfunktionen i JS istället för den där funktionen i åtgärdssatsen.
+3.  Händelsehanterare: Händelsehanterare låter dig utlösa åtgärder, styra insatser och andra åtgärder som svar på användarens interaktion. Du kan lägga till flera händelsehanterare för att svara på en händelse utan att lägga till anpassade JavaScript-uttalanden. Till exempel, när en användare klickar på en knapp, kan du (1) utlösa en åtgärd att köra, medan (2) återställa tillståndet för flera rullgardinslistor och textinmatningar.
+4.  Svar: I Svarsmodulen kan du anpassa de villkor under vilka åtgärden returnerar felaktiga resultat, på ett sådant sätt att man ser till att åtgärden är korrekt.
+5.  Avancerat: Förfina detaljerade inställningar för åtgärder som databastimeout svarstider, fördröjningar händelseprocessorn etc. inom de avancerade alternativen.
 
-### API Actions
+### API åtgärder
 
-#### Create action
+#### Skapa åtgärd
 
-The process for actioning data using the API is similar to that for SQL.
+Processen för att åtgärda data med hjälp av API:et liknar den för SQL.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  För det första, användaren måste hitta åtgärdslistan längst ner till vänster på programredigeringssidan och klicka på plustecknet längst upp till höger i åtgärdslistan.
+2.  Välj sedan motsvarande datakälllista i rutan för resursval som dyker upp. Du kan hitta den skapade resursen i motsvarande datakälllista, eller så kan du skapa en ny resurs här. Välj den skapade resursen, klicka på "Create" och en API-åtgärd kommer att skapas.
+3.  Den framgångsrikt skapade åtgärden kommer att visas i åtgärdslistan i den nedre panelen och fliken Allmänt för åtgärden kommer att dyka upp under ramen när du klickar. Du kan göra en förfrågan till alla HTTP API i ILLA . Se API:ets dokumentation för metoder för att begära data.
+4.  När du har fyllt i din åtgärd, du kan klicka på "Förhandsgranska" knappen för att se om åtgärden du har skrivit är giltig och konfigurationspanelen kommer att ge dig resultat. När du har redigerat din åtgärd, kan du klicka på Spara och avsluta processen. Om du byter till en annan operation utan att spara, kommer en popup att uppmana dig att slutföra sparoperationen.
 
-#### Action Breakdown
+#### Åtgärd fördelning
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Transformator: Du kan förfina åtgärdslogiken med JavaScript-satser i en transformator, t.ex. genom att använda filterfunktionen i JS istället för den där funktionen i ett åtgärdsuttryck.
+2.  Händelsehanterare: Händelsehanterare låter dig utlösa åtgärder, styra insatser och andra åtgärder som svar på användarens interaktion. Du kan lägga till flera händelsehanterare för att svara på en händelse utan att lägga till anpassade JavaScript-uttalanden. Till exempel, när en användare klickar på en knapp, kan du (1) utlösa en åtgärd att köra, medan (2) återställa tillståndet för flera rullgardinslistor och textinmatningar.
