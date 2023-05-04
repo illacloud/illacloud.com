@@ -1,132 +1,132 @@
 ---
-title: Radio button
-metaTitle: Radio button component
-description: Display all options on radio buttons and support to select 1 option.
-tagCategory: doc_menu_radio_button_click
+title: Botón de radio
+metaTitle: Componente del botón de radio
+description: Mostrar todas las opciones en los botones de radio y soporte para seleccionar una opción.
+tagCategory: doc_menú_botón_radio_clic
 ---
 
 * * *
 
-## <Heading hidden>Radio button</Heading>
+## <Heading hidden>Botón de radio</Heading>
 
-A radio button is select input component that allows users to select one option from a group of pre-defined options. It appears as a rounded square button, which can be selected or deselected by users. When a radio button is selected, all other radio buttons in the same group are automatically deselected, ensuring that only one option can be selected at a time. Radio buttons are commonly used in forms, questionnaires, and surveys to help users make a single choice from a list of options.
+Un botón de radio es seleccionar el componente de entrada que permite a los usuarios seleccionar una opción de un grupo de opciones predefinidas. Aparece como un botón cuadrado redondeado, que puede ser seleccionado o deseleccionado por los usuarios. Cuando se selecciona un botón de radio, todos los demás botones de radio del mismo grupo son automáticamente deseleccionados, asegurando que sólo una opción puede ser seleccionada a la vez. Los botones de radio se utilizan comúnmente en formularios, cuestionarios y encuestas para ayudar a los usuarios a elegir entre una lista de opciones.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
 
-### Properties
+### Propiedades
 
-#### Manual options
+#### Opciones manuales
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Añadir nuevas opciones o eliminar opciones manualmente y configurar las opciones una por una. Las propiedades de las opciones son las siguientes: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Propiedades   | Descripción                                     |
+| ------------- | ----------------------------------------------- |
+| Etiqueta      | El texto mostrado para la opción                |
+| Valor         | El valor asociado con la opción                 |
+| Deshabilitado | Si la opción está desactivada para la selección |
 
-#### Mapped options
+#### Opciones mapeadas
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+También puede añadir opciones desde una fuente de datos asignando la etiqueta y las propiedades de valor a los campos de datos correspondientes. Puede obtener opciones dinámicamente de la base de datos de esta manera. Al final de este artículo demostraremos cómo utilizarlo a través de un ejemplo.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Propiedades     | Descripción                                                                        |
+| --------------- | ---------------------------------------------------------------------------------- |
+| Fuente de datos | Establecer la fuente de datos de opciones                                          |
+| Etiqueta        | Utilice {{item}} para establecer la etiqueta de opciones                           |
+| Valor           | Utilice {{item}} para establecer el valor de las opciones                          |
+| Deshabilitado   | Utilice {{item}} para establecer si la opción está deshabilitada para la selección |
 
-#### Other properties
+#### Otras propiedades
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Propiedades                   | Descripción                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valor por defecto             | El valor inicial del componente. Puede cambiar dinámicamente el valor inicial escribiendo JavaScript en {{}}.                                                        |
+| Marcador de posición          | El valor se mostrará cuando el campo de entrada esté vacío.                                                                                                          |
+| Etiqueta                      | El nombre del campo mostrado al usuario                                                                                                                              |
+| Leyenda                       | Un título usado para describir el campo en detalle                                                                                                                   |
+| Etiqueta oculta               | Establecer si mostrar o no la etiqueta                                                                                                                               |
+| Posición                      | Define la posición de la etiqueta relativa al componente                                                                                                             |
+| Alineación                    | Establecer la alineación de la etiqueta                                                                                                                              |
+| Width                         | Cuando la etiqueta está en el lado izquierdo del componente, establezca la proporción de ancho de la etiqueta                                                        |
+| Manejador del Evento          | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                                               |
+| Deshabilitado                 | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.                                   |
+| Sólo lectura                  | Controlar el estado de si el componente es de sólo lectura. Un componente de sólo lectura puede ser seleccionado y enfocado, pero no puede ser modificado.           |
+| Mostrar botón de borrar       | Establecer si mostrar o no el botón de borrar                                                                                                                        |
+| Sugerencia                    | Los usuarios pueden ingresar la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado.                        |
+| Campo requerido               | Válido sólo cuando el interruptor está encendido.                                                                                                                    |
+| Regla personalizada           | Editor.inspect.setter_tooltip.regla personalizada                                                                                                                    |
+| Ocultar mensaje de validación | Puede ocultar el mensaje de error cambiando el estado oculto cuando el valor de entrada es incorrecto. Puedes cambiar dinámicamente el estado oculto por JavaScript. |
+| Clave de Formulario           | Especifique una clave de un componente de formulario de envoltura al construir el atributo de datos.                                                                 |
+| Hidden                        | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                                         |
+| Color del tema                | Para seleccionar el color del tema del componente                                                                                                                    |
 
-### Method
+### Método
 
-You can use other components to control the component. We support the following three methods:
+Puede usar otros componentes para controlar el componente. Apoyamos los tres métodos siguientes:
 
 #### setValue
 
-To set the selected option, for example, {{”value1”}}
+Para establecer la opción seleccionada, por ejemplo, {{”value1”}}
 
-| Properties | Description                         |
-| ---------- | ----------------------------------- |
-| Value      | A string of selected option value.  |
+| Propiedades | Descripción                                  |
+| ----------- | -------------------------------------------- |
+| Valor       | Una cadena de valor de opción seleccionada.  |
 
-#### clearValue
+#### limpiarValor
 
-To clear the selected options
+Borrar las opciones seleccionadas
 
 #### validate
 
-To verify that the input information is legal
+Para verificar que la información de entrada es legal
 
 #### clearValidate
 
-To clear the validation message
+Para borrar el mensaje de validación
 
-### Event handler
+### Controlador de eventos
 
-We support listening to the `onChange` event of the radio button component. 
+Apoyamos escuchar el evento `onChange` del componente del botón de radio. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a group of radio buttons, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Cuando la opción seleccionada cambia, puede desencadenar una acción especificada. Esto significa que cuando un usuario selecciona una opción diferente de un grupo de botones de radio, se puede realizar una acción particular basada en la opción seleccionada. Por ejemplo, en un formulario web, seleccionar una opción diferente puede activar la visualización de diferentes campos de formulario o la presentación del formulario a un destino diferente. De esta forma, la opción seleccionada por el usuario puede afectar el comportamiento del software o aplicación web que está utilizando. La capacidad de desencadenar acciones específicas basadas en la entrada del usuario es un aspecto importante del diseño interactivo de software y puede mejorar la usabilidad y funcionalidad del software.
 
-### Data
+### Datos
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+El componente tiene algunos datos comúnmente utilizados, que se pueden llamar a través de {{componentName.propertyName}} en la aplicación.
 
-| Property name | Description                               |
-| ------------- | ----------------------------------------- |
-| value         | a string of value of the selected option  |
+| Nombre de la propiedad | Descripción                                    |
+| ---------------------- | ---------------------------------------------- |
+| valor                  | una cadena de valor de la opción seleccionada  |
 
-### Use case
+### Caso de uso
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+A continuación, demostraremos cómo usar el modo mapeado para obtener opciones dinámicamente. 
 
-#### Step 1 Add an action
+#### Paso 1 Añadir una acción
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Hemos creado una tabla llamada `selection`, incluyendo 5 columnas: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Almacenamos los valores de opciones en `value` y almacenamos la etiqueta de opciones en diferentes idiomas en otras columnas. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Crea una acción para listar todos los datos en `selección` llamada `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+seleccionar * de la selección
 ```
 
-#### Step 2 Configure the component
+#### Paso 2 Configurar el componente
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Establecer las fuentes de datos a `{{postgresql1.data}}` 
+2.  Configurar la etiqueta para cambiar la etiqueta basada en el idioma. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Utilice {{ item.columnName }} para establecer la columna. 
+    2.  Utilice {{ currentUserInfo.language }} para establecer el idioma que utilizan los usuarios en ILLA.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
     : currentUserInfo.language == 'ko-KR' ? item.options_kr 
     : currentUserInfo.language == 'zh-CN' ? item.options_zh 
-    : item.options_en }}
+    : item.options_es }}
     ```
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio2.png' alt="" />
