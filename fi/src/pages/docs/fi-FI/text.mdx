@@ -1,38 +1,38 @@
 ---
-title: Text
+title: Teksti
 metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
+description: Näytä tekstikomponentin tiedot
 tagCategory: doc_menu_text_click
 ---
 
 * * *
 
-## <Heading hidden>Text</Heading>
+## <Heading hidden>Teksti</Heading>
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### Ominaisuudet
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| Ominaisuus               | Kuvaus                                                                                                                                                                                                          |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sisältö                  | Aseta teksti, joka näytetään tekstin osassa. Markdown ja pelkkää tekstiä tuetaan.                                                                                                                               |
+| Työkaluvihje             | Komponentin kohdalla näkyvä työkaluvihje kun käyttäjät leijuvat komponentin päällä.                                                                                                                             |
+| Vaakasuora suuntaus      | Jotta voidaan määrittää tekstin sisällön horisontaalinen sijainti osassa                                                                                                                                        |
+| Pystysuuntainen suuntaus | Jos haluat asettaa tekstin sisällön vertikaalisen sijainnin komponentissa                                                                                                                                       |
+| Hidden                   | Määrittää, näyttääkö tämä komponentti ja millä ehdoilla se näyttää. Esimerkiksi, jos nykyinen käyttäjä ei ole käyttäjä A, tämän komponentin pitäisi olla piilotettu: {{ currentUserInfo.nickname != 'User A' }} |
+| Väri                     | Valitaksesi tekstin värin maalin tekstimuodossa                                                                                                                                                                 |
+| Tekstin koko             | Valitaksesi tekstin koon maalin tekstimuodossa                                                                                                                                                                  |
 
-### Use Markdown
+### Käytä Markdownia
 
-#### Headline
+#### Otsikko
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# Otsake 1
+## Otsake 2
+### Otsake 3
 ```
 
 #### Bold & Italics
@@ -44,48 +44,48 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### Tehtäväluettelo
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### Tehtäväluettelo
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] 🚀 Rakenna uusi sovellus ILLA Cloudiin
+2. [ ] :puhelin: Soita Monica
+3. [x] 🍷 päivällinen **Elsa**
+4. [x] 💃 Pelaa `Just dance` puolen tunnin ajan
 ```
 
-#### Bulleted list
+#### Bulletoitu luettelo
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
-### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+### Tiedotuslista
+– Reaaliaikainen yhteistyö: Voimme luoda kaiken reaaliaikaisesti yhdessä.
+- 🛠️ Mukautettu lisäosa: Rakenna mukautettu liitännäinen tehdäksesi mitä haluat.
+- 🤖 Automatisoi tuki: Yhdistä kaikki ja automatisoi ne 5 sekunnissa.
+- 🖥️ Itse hosted: tukee Docker & k8s
 ```
 
-#### Table
+#### Taulukko
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
 ```jsx
-### Table
-| Name        | Link   |  Description  |
-| :--------  | :-------  | :----  |
-| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
-| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
-| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+### Taulukko
+- Nimi: Linkki ¼ Kuvaus ¶
+¶ :-------- ☐ :------- ☐ :---- ¼
+¶ ILLA Cloud ¶ [https://cloud. llacloud.com/](https://cloud.illacloud.com/) ¶ Build apps on ILLA Cloud¶
+¶ ILLA GitHub ¶ [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) ¶ Star us GitHub¶
+¶ ILLA homepage pt [https://www.illacloud.com/](https://www.illacloud.com/) ¶ ILLA Cloud Offical -sivusto
 ```
 
-### Display dynamic data
+### Näytä dynaaminen data
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+Käytä `{{` saadaksesi tietoja muista komponenteista tai toiminnoista tai yleisistä muuttujista. Voit esimerkiksi näyttää nykyisen käyttäjän lempinimen:
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Hei! '+ nykyinenKäyttäjäInfo.nickname }}
 ```
