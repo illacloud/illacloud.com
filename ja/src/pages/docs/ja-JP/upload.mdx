@@ -1,78 +1,78 @@
 ---
-title: Upload
-metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
+title: アップロード
+metaTitle: ILLA クラウドアップロードコンポーネントドキュメント
+description: ローカルマシンから任意のクラウドストレージにファイルをアップロードするには、アップロードコンポーネントを使用します
 tagCategory: doc_menu_upload_click
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>アップロード</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+アップロードコンポーネントは、ユーザーがローカルマシンから任意のクラウドストレージにAPIを介してファイルをアップロードできるようにするために使用されます。 次に、アップロードコンポーネントをクラウドストレージサービスに関連付ける方法を紹介します。 アップロードコンポーネントを使用して画像を選択し、画像などで表示する方法。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### プロパティー
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| 属性             | 説明                                                                                                                                                                                    |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| タイプ            | ボタンとDropzoneを含むアップロードコンポーネントの種類を設定します。                                                                                                                                                |
+| テキスト           | アップロードコンポーネントに表示されるテキスト。                                                                                                                                                              |
+| 選択タイプ          | 選択タイプを複数のファイル、単一のファイル、またはディレクトリに設定します。                                                                                                                                                |
+| ファイルの種類        | アップロード可能なファイル拡張子のリスト。 値はすべてのファイルタイプを許可しません。                                                                                                                                           |
+| 新規に選択したファイルを追加 | 選択した新しいファイルを選択したファイルに追加するか、複数のファイルまたはディレクトリの選択タイプで選択したファイルを置き換えます。                                                                                                                    |
+| ファイルリスト        | アップロードコンポーネントの下に選択したファイルのリストを表示するかどうかを設定します。 アップロード者の高さは、ファイルリストの長さに基づいて動的に変更されます。                                                                                                    |
+| 解析値            | JSON、CSV、TSV、Excel、およびTXTファイルをサポートして、選択したファイルを解析しようとします。 パースされたデータは {{upload1.parsedValue}} 経由でアクセスできます。 解析できないファイルは null になります。 このオプションに関係なく、すべてのファイルは value64 エンコードされた文字列として使用できます。 |
+| 読み込み中          | コンポーネントがロードインジケータを表示するかどうか。                                                                                                                                                           |
+| 無効             | このコンポーネントを無効にするか、無効にするかどうかを設定します。 例えば、input1 コンポーネントが null の場合、このコンポーネントは無効にする必要があります: {{ input1.value == <unk> ’}}                                                                   |
+| ツールチップ         | ユーザーがコンポーネントにカーソルを合わせたときにコンポーネントにツールチップが表示されます。                                                                                                                                       |
+| 必須項目           | 必須かどうかを設定します。                                                                                                                                                                         |
+| Min size       | 追加可能な最小ファイルサイズを設定します。                                                                                                                                                                 |
+| Max size       | 追加可能な最大ファイルサイズを設定します。                                                                                                                                                                 |
+| カスタムルール        | 検証に失敗したときに表示されるテキストを設定する。                                                                                                                                                             |
+| 検証メッセージを隠す     | 検証に失敗したときに検証メッセージを表示するかどうかを設定する。                                                                                                                                                      |
+| フォームデータキー      | コンポーネントのキーを設定する。 フォームにこのコンポーネントを追加した後、フォームを送信する際にこのコンポーネントのデータを識別するためにこのキーが使用されます。                                                                                                    |
+| Hidden         | このコンポーネントを表示するかどうかを設定し、どのような条件で表示するかを設定します。 たとえば、現在のユーザが User A でない場合、このコンポーネントは非表示にする必要があります: {{ currentUserInfo.nickname != 'User A' }}                                             |
+| バリアント型         | ボタンアップロードコンポーネントをアウトラインまたは塗りつぶしに設定します。                                                                                                                                                |
+| テーマの色          | format@@0コンポーネントの色を設定します。                                                                                                                                                             |
 
-### Method
+### 方法
 
-You can use other components to control the Upload component. We support the following three methods:
+アップロードコンポーネントを制御するために他のコンポーネントを使用することができます。 以下の3つの方法をサポートします。
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| clearValidation | 検証メッセージをクリアするために使用されます            |
+| --------------- | --------------------------------- |
+| clearValue      | 選択したものを消去するために使用                  |
+| setDisabled     | アップロードコンポーネントを無効または有効にするために使用します。 |
 
-### Event handler
+### イベントハンドラ：
 
-To trigger actions when the selected files change
+選択したファイルが変更されたときにアクションをトリガーする
 
-### Data of Uploader
+### アップローダーのデータ
 
-The upload component has some commonly used data, which can be called in the app.
+アップロードコンポーネントには、アプリケーションで呼び出すことができるいくつかの一般的に使用されるデータがあります。
 
-`value` an array consisting of the base64 data of files. 
+`value` ファイルの base64 データからなる配列。 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+`files` オブジェクトの配列。 オブジェクトのキーには `lastModified` 、 `name` 、 `size` 、 `type` が含まれます。 `{{upload1.files.map(file =>file) を使用できます。 ame)}}`でファイル名の配列を取得し、lastModified array、size array、type array も同じ方法で取得できます。 
 
-### Upload files to a cloud storage service
+### クラウドストレージサービスにファイルをアップロード
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### S3リソースを介して単一のファイルをアップロード
 
-The configuration of action is as follows. 
+アクションの構成は以下のとおりです。 
 
-Upload object name
+オブジェクト名をアップロード
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+データをアップロード
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### S3リソースを介して複数のファイルをアップロード
 
-Upload object name list
+オブジェクト名リストをアップロード
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+データリストをアップロード
 
 ```jsx
 {{upload1.value}}
@@ -96,8 +96,8 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+画像をアップロードし、画像コンポーネントに表示します。
+画像ソースを、アップロードコンポーネントの base64 データに変更します。 base64 データは配列内の value 属性に格納されます。 そして、ファイルのプレフィックスをファイルデータで分割する必要があります。 コードは以下の通りです。 
 
 ```jsx
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
