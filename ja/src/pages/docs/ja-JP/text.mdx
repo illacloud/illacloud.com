@@ -1,31 +1,31 @@
 ---
-title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
+title: テキスト
+metaTitle: ILLA クラウドテキストコンポーネントドキュメント
+description: テキストコンポーネントでデータを表示
 tagCategory: doc_menu_text_click
 ---
 
 * * *
 
-## <Heading hidden>Text</Heading>
+## <Heading hidden>テキスト</Heading>
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### プロパティー
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| 属性      | 説明                                                                                                                                        |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| コンテンツ   | テキストコンポーネントに表示されるテキストを設定します。 マークダウンとプレーンテキストがサポートされています。                                                                                  |
+| ツールチップ  | ユーザーがコンポーネントにカーソルを合わせたときにコンポーネントにツールチップが表示されます。                                                                                           |
+| 水平方向の配置 | コンポーネント内のテキストコンテンツの水平方向の位置を設定する                                                                                                           |
+| 縦方向の配置  | コンポーネント内のテキストコンテンツの位置を設定する                                                                                                                |
+| Hidden  | このコンポーネントを表示するかどうかを設定し、どのような条件で表示するかを設定します。 たとえば、現在のユーザが User A でない場合、このコンポーネントは非表示にする必要があります: {{ currentUserInfo.nickname != 'User A' }} |
+| 色       | テキスト形式でテキストの色を設定する                                                                                                                        |
+| 文字サイズ   | テキスト形式でテキストサイズを設定する                                                                                                                       |
 
-### Use Markdown
+### マークダウンを使用
 
-#### Headline
+#### 見出し
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
@@ -44,7 +44,7 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### To-do リスト
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
@@ -57,7 +57,7 @@ tagCategory: doc_menu_text_click
 4. [x] 💃 Play `Just dance` for half an hour
 ```
 
-#### Bulleted list
+#### 箇条書きリスト
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
@@ -69,7 +69,7 @@ tagCategory: doc_menu_text_click
 - 🖥 Self-hosted: supports Docker & k8s
 ```
 
-#### Table
+#### 表
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
@@ -82,9 +82,9 @@ tagCategory: doc_menu_text_click
 | ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
 ```
 
-### Display dynamic data
+### 動的データを表示
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+他のコンポーネントやアクションやグローバル変数からデータを取得するには {{\` を使用してください。 たとえば、現在のユーザーのニックネームを表示するには、次のようにします。
 
 ```jsx
 ## {{ '👋 Hello! '+ currentUserInfo.nickname }}
