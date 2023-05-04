@@ -1,5 +1,5 @@
 ---
-title: JavaScript Guider
+title: JavaScript 指南
 metaTitle: ILLA Cloud JavaScript Guider doc
 desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
 tagCategory: doc_menu_js_guider_click
@@ -7,53 +7,53 @@ tagCategory: doc_menu_js_guider_click
 
 * * *
 
-## <Heading hidden>JavaScript Guider</Heading>
+## <Heading hidden>JavaScript 指南</Heading>
 
-JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP. Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说，掌握JavaScript的调用方式，您就已经掌握了ILLA Builder的使用方法。 Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
 
-When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+当您在ILLA Builder中搭建项目时，可以使用{{模版语法}}书写自定义的JavaScript语句，用于调用、操作数据，或是在Transformer中直接书写JS代码
 
-### Operation data
+### 操作数据
 
-#### Accessing data on objects
+#### 访问对象中的数据
 
 In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
 
 We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
 
-#### Accessing numbers in arrays
+#### 访问数组中的数据
 
-When you need to access a value in a specific array, you can get the value by the position or subscription of the data you need to access.
+当您需要访问具体数组中的值时，您可以通过需要访问的数据位置或下标获取数值。例如：
 
 ```javascript
 const list = ['a', 'b', 'c']
-return list[0] // Return the first value in list 'a'
+return list[0] // Return the first value in alist 'a'
 ```
 
-### View  data
+### 查看数据
 
-There are four locations to view data in ILLA Builder: the data workspace in the left-hand panel, the data prompt below the text box after entering a JavaScript expression, and the data display through the data insert to display the data.
+在ILLA Builder中，一共有四处位置可以查看数据，分别是：左侧面板的数据工作区，文本框中输入JavaScript表达式后下方数据提示，通过数据展示组件显示数据。
 
-#### Data workspace presentation
+#### 数据工作区展示
 
-You can find the data workspace by opening the left-hand panel in the App editor, so the data is presented as structured JSON in which every property and list can be expanded and all data is visually displayed in the workspace.
-
-[//]: # "[图片]"
-
-#### Live preview of data input
-
-When you call an action or transformer operation in the input box, the data for that operation will automatically pop up below the input box, and you can confirm that the data called is correct based on the information here.
+您可以在编辑器中打开左侧面板找到数据工作区，所以数据在其中以结构化JSON的形式展示，每一个属性与列表都可以展开，所有数据都在工作区中直观展示。
 
 [//]: # "[图片]"
 
-#### Data presentation
+#### 数据输入实时预览
 
-The data display insert gives you the most intuitive view of the data. Simply drag and drop the component into the frame, enter the name of the corresponding data source in the data field, filter and arrange it, and you will have access to the data display information.
+当您在输入框中调用了一个查询或Transformer时，输入框下方会自动弹出该Action的数据展示，您可以根据此处的信息确认调用的数据是否正确。
+
+[//]: # "[图片]"
+
+#### 数据展示组件
+
+The data display insert gives you the most intuitive view of the data. 数据展示组件可以让您最直观的查看数据，您只需要将相应的组件拖拽至画布中，在其数据栏中输入对应的数据源名称，加以筛选和排列，就可以获得数据展示的信息了
 
 [//]: # "[图片]"
 
 ### Transformer
 
-You can write multiple lines of JS code in the transformer, and we recommend that you choose to write in the transformer rather than in double curly brackets. You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法 You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
 
 Click here for detailed usage of the transformer.
