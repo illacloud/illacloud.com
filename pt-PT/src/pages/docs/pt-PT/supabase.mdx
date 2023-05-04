@@ -1,30 +1,30 @@
 ---
 title: Supabase DB
 metaTitle: ILLA Cloud Supabase DB Integration doc
-description: Connect to Supabase instance and show Supabase DB data on components
-tagCategory: doc_menu_supabase_click
+description: Conectar a instância do Supabase e mostrar dados do DB do Supabase em componentes
+tagCategory: doc_menu_suabase_clique
 ---
 
 * * *
 
 ## <Heading hidden>Supabase DB</Heading>
 
-Supabase is an open-source Firebase alternative that allows developers to build real-time web and mobile applications. It provides many of the same features as Firebase, such as real-time databases, user authentication, and hosting, but with the added benefits of being open-source and providing a SQL API. This allows developers to use their existing SQL knowledge and tools, making it easy to integrate with other systems. Additionally, Supabase provides a more flexible and customizable platform than Firebase, which can be more restrictive regarding data modeling and usage.
+Supabase é uma alternativa open-source para Firebase que permite aos desenvolvedores construir aplicativos web e móveis em tempo real. Ele fornece muitos dos mesmos recursos que o Firebase, como banco de dados em tempo real, autenticação do usuário, e hospedagem, mas com os benefícios adicionais de ser de código aberto e fornecer uma API SQL. Isso permite que os desenvolvedores usem suas ferramentas e conhecimentos SQL existentes, facilitando a integração com outros sistemas. Além disso, o suprimento fornece uma plataforma mais flexível e personalizável do que o Firebase, que pode ser mais restritivo em relação ao modelagem e uso de dados.
 
-This tutorial outlines the process of creating an Admin Panel using ILLA Builder and Supabase in a few simple steps. ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Supabase, visit their website at <https://supabase.com/>. Let's begin!
+Este tutorial descreve o processo de criação de um Painel de Administração usando o Construtor ILLA e Suprimir em alguns passos simples. ILLA é uma plataforma de código baixo para desenvolvedores que permite o desenvolvimento rápido e a implantação de ferramentas internas. Isto permite criar páginas arrastando e soltando componentes UI (interface do usuário, em inglês) conectando-se a qualquer banco de dados ou API, e escrevendo JavaScript. Para saber mais sobre subutilização, visite seu site em <https://supabase.com/>. Vamos começar!
 
-### Step 1: Set up your Back end on Supabase
+### Etapa 1: configure sua parte de trás em Suprimento
 
-On the [Supabase dashboard](https://app.supabase.com/projects), click `New project` and set the name to adminPanel.
+No [Painel de Controles de Suporte](https://app.supabase.com/projects), clique em `Novo projeto` e defina o nome como Painel de Administração.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
   alt=""
 />
 
-Create a new table by clicking on the `Create a new table` .
+Crie uma nova tabela clicando em 'Criar uma nova tabela'.
 
-Supabase offers a variety of options for populating tables with data, including writing queries, creating schemas through a user interface, and uploading CSV files.
+O suporte oferece uma variedade de opções para preencher tabelas com dados, incluindo escrever consultas, criar esquemas através de um interface de usuário e fazer upload de arquivos CSV.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
@@ -36,102 +36,102 @@ Supabase offers a variety of options for populating tables with data, including 
   alt=""
 />
 
-Fill out the info in the table. The database is now set up.
+Preencha as informações da tabela. O banco de dados está agora criado.
 
-### Step 2: Build UI on ILLA Cloud
+### Passo 2: Construir interface de usuário na nuvem ILLA
 
-On [ILLA Cloud](https://cloud.illacloud.com), click Create New to create a new application.
+Em [ILLA Cloud](https://cloud.illacloud.com), clique em Criar Novo para criar uma nova aplicação.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
   alt=""
 />
 
-Drag components from the `Insert` panel to the canvas.
+Arraste componentes do painel `Insert` para a tela.
 
-Select the components on the canvas and configure the property on the `Inspect` panel.
+Selecione os componentes na tela e configure a propriedade no painel `Inspect`.
 
-As seen in the below screenshot, we have built a simple admin panel.
+Como visto na captura de tela abaixo, construímos um painel de administração simples.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
   alt=""
 />
 
-### Step 3: Connect to Supabase and config CRUD
+### Passo 3: Conectar a suplemento e configuração do CRUD
 
-Note down the database connection information under [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) in Supabase.
+Anote as informações de conexão do banco de dados em [Configurações do Projeto](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) no suporte.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
   alt=""
 />
 
-In the Action List, click `+ New` and select Supabase DB.
+Na lista de ações, clique em `+ Novo` e selecione suplicar DB.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
   alt=""
 />
 
-Fill out the form to connect to your Supabase instance. Test connection and save resource.
+Preencha o formulário para conectar à sua instância de suporte. Testar conexão e salvar recurso.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
   alt=""
 />
 
-Click `Create Action` to create an action with the Supabase resource and config your CRUD.
+Clique em `Criar Ação` para criar uma ação com o recurso de Suprimento e configurar sua CRUD.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
   alt=""
 />
 
-Use {{ to get the front-end input data. The following is an example of the User Management page in the Admin Panel.
+Use {{ para obter os dados de entrada de front-end. O seguinte é um exemplo da página de gerenciamento de usuário no painel de administração.
 
-Search for a user by the name inputted in input1
+Procurar um usuário pelo nome inserido no input1
 
 ```
-SELECT *
-FROM user
-WHERE name = "{{input1.value}}"
+SELECIONE *
+DE usuário
+NOTA nome = "{{input1.value}}"
 ;
 ```
 
-Update user data. Update user information when id matches
+Atualizar dados do usuário. Atualizar informação do usuário quando id corresponder
 
 ```
-UPDATE user
-SET name = "{{input3.value}}"
-, email = "{{input4.value}}"
-WHERE id="{{input2.value}}"
+ATUALIZAR usuário
+DET nome = "{{input3.value}}"
+, e-mail = "{{input4.value}}"
+SER id="{{input2.value}}"
 ;
 ```
 
-Insert user data
+Inserir dados do usuário
 
 ```
-INSERT INTO user VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+INSERIR VALOR DO usuário({{input5.value}}","{{input6.value}}","{{input7.value}}");
 ```
 
-Delete a user by id
+Excluir um usuário por identificação
 
 ```
-DELETE FROM user WHERE id = "{{input2.value}}";
+EXCLUIR DO usuário SEM ID = "{{input2.value}}";
 ```
 
-### Step 4: Show data on components
+### Passo 4: Exibir dados em componentes
 
-Configure the properties of components with {{ . For example:
+Configure as propriedades dos componentes com {{ . Por exemplo:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
   alt=""
 />
 
-## Resources
+## Recursos
 
--   [Supabase official website](https://supabase.com/)
+-   [Suprimir site oficial](https://supabase.com/)
 -   [Supabase GitHub](https://github.com/supabase/supabase)
--   [Supabase documentation](https://supabase.com/docs)
+-   [Documentação de suporte](https://supabase.com/docs)
