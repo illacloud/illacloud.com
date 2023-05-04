@@ -1,0 +1,89 @@
+---
+title: Docker オールインワン イメージ
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。
+---
+
+* * *
+
+## <Heading hidden>オールインワンイメージ</Heading>
+
+### 説明
+
+illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts)フォルダにあるスクリプトファイルをご覧ください。
+
+メモ:
+
+auto-deploy tools[illa-cli](https://github.com/illacloud/illa) を使ってデプロイすることを強くお勧めします。
+
+そして、現時点では、Apple Silicon M1(darwin-arm64アーチ)はサポートしていません。
+
+### 公式画像を実行
+
+GNU make をインストールし、次のように入力します:
+
+```jsx
+make run-official-image
+```
+
+実行してみてください
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+この命令は、あなたのドッカー環境でそれを実行するillasoftの公式画像を引き出します。
+
+デフォルトのユーザー名**`root`**とパスワード**`password`**でログインします。
+
+### 画像を手動でビルドして実行
+
+GNU make をインストールする(または scripts フォルダにシェルスクリプトを手動で実行する)。
+
+illaのオールインワンイメージを構築して実行するには、次のように入力します。
+
+```jsx
+すべて作る
+```
+
+ポッドマンの場合は
+
+```jsx
+ポッドマンを作る
+```
+
+またはスクリプトフォルダに `run-by-podman.sh` シェルスクリプトを実行します。
+
+### コンテナを停止して削除
+
+```jsx
+stop-and-remove-container にする
+```
+
+### Postgres データベースファイルを消去
+
+** このコマンドはあなたのディスク上のデータベースファイルを削除します!!! \*\*\*** バックアップ、慎重に行ってください \*\*\*
+
+デフォルトでは、Postgres データベースは `/var/lib/illa/database/postgresql/` フォルダに保存されます。
+
+次のコマンドを実行して削除します。
+
+```jsx
+clean-postgres-database-file を作成
+```
+
+### Configランタイム環境変数
+
+必要に応じて `scripts/run.sh` を編集します。
+
+```jsx
+# postgres データベースパスワード
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres データベースファイルストレージフォルダ
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```
