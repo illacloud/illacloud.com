@@ -1,86 +1,86 @@
 ---
 title: ILLA CLI
 metaTitle: ILLA Cloud CLI doc
-description: The ILLA CLI enables you to deploy ILLA Builder faster than your imagination.
+description: CLI ILLA дозволяє вам розгортати конструктор ILLA швидше за вашу уяву.
 tagCategory: doc_menu_illa_cli_click
 ---
 
-**You must have Docker before using the ILLA CLI to deploy a self-hosted installation. When you use ILLA CLI, you should add current user to docker group or use in root.**
+**У вас має бути Docker перед використанням ILLA CLI для розгортання налаштованого на свій хостинг. При використанні ILLA CLI, ви повинні додати поточного користувача в групу docker або використовувати в root.**
 
-## Downloading ILLA CLI
+## Завантаження ILLA CLI
 
-If you have Rust installed, you can easily build+install the latest ILLA CLI release with **cargo**:
+Якщо у вас встановлена Rust, ви можете легко побудувати + встановити останній випуск ILLA CLI з **cargo**:
 
 ```
 > cargo install illa
 ```
 
-The **cargo** tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it.
-Once installed, you can run the ILLA CLI with the **illa** command.
+Інструмент **авто** буде завершити завантаження ILLA CLI його вихідними залежностями, побудувати і встановити його в шлях вантажівки, щоб ми могли його запустити.
+Після установки ви можете запустити ILLA CLI за допомогою **illa** команди.
 
-Alternatively, you can just download the ILLA CLI for your operating system here:
+Крім того, ви можете просто завантажити ILLA CLI для вашої операційної системи тут:
 
 -   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
 -   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
 -   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
 
-If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from **cargo**. After downloading the CLI, you will have to make it executable. Let's take the illa-linux for example:
+Якщо ви завантажуєте з вищевказаних посилань, кроки трошки відрізняються в порівнянні з завантаженням ILLA CLI з **cargo**. Після завантаження інтерфейсу користувача, вам потрібно буде його виконувати. Давайте візьмемо ілюструкс, наприклад:
 
 ```
-## download illa cli binary file
-> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz
+## завантаження двійкового файлу cli
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
 
-## unpack the file
-> tar -zxvf illa-x86_64-linux.tar.gz
+## розпакувати файл
+> tar -zxvf illa-x86_64-linux.tar. z
 
 > cd illa-x86_64-linux
 
 > chmod +x illa
 
-## run the illa cli
+## запустити illa cli
 > ./illa
 
 ```
 
-### Checking the prerequisites of self-hosted installation
+### Перевірка передумов встановлення власного хостингу
 
-**These ports 5432, 9999 and 8000 should remain for the ILLA Builder**
+**Ці порти 5432, 9999 та 8000 повинні залишатися в конструкторі ILLA**
 
-The following command will check the prerequisites of self-hosted installation on your operating system:
+Наступна команда перевіряє передумови встановлення на вашій операційній системі:
 
 ```
 > illa doctor
 ```
 
-### Deploying ILLA Builder
+### Розгортання ILLA Builder
 
-Once the ILLA CLI has been installed, you can run a self-hosted or [cloud installation](https://cloud.illacloud.com/).
+Після встановлення ILLA CLI, ви можете запустити самохостинг або [налаштування хмари](https://cloud.illacloud.com/).
 
-Quickstart
-
-```
-> illa deploy --self --port=10000
-```
-
-You can simply deploy a self-hosted ILA Builder by running the following command:
+Швидкий старт
 
 ```
-# the port which ILLA Builder can be accessed on can be changed
-# the <MOUNT_PATH> is the custom mount path of ILLA Builder, the default value is a path under the user home directory if not filled
+> Розгортання illa --self --port=10000
+```
+
+Ви можете просто розгорнути ILA Builder для самостійного хостингу, запустивши наступну команду:
+
+```
+# порт, до якого можна отримати доступ набір ILLA Builder можна змінити
+# the <MOUNT_PATH> -- це налаштований шлях збірника ILLA Builder, значення за замовчуванням є шляхом під домашнім каталогом, якщо не заповнено
 > illa deploy --self --port=10000 --mount=<MOUNT_PATH>
 ```
 
-Now, you can access the ILLA Builder: http://localhost:10000
+Тепер ви можете отримати доступ до ILLA Builder: http://localhost:10000
 
-## Updating ILLA Builder
+## Оновлення ILLA Builder
 
-To update the ILLA Builder with the latest docker images, use the following command:
+Щоб оновити Конструктор ILLA з останніми зображеннями докерів, використовуйте наступну команду:
 
 ```
-> illa update --self
+> лла оновлення --self
 ```
 
-## Other operations
+## Інші операції
 
 ```
 # list the ILLA Builder
