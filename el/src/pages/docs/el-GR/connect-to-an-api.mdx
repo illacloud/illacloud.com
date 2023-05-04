@@ -1,32 +1,32 @@
 ---
-title: Connect to an API
-metaTitle: ILLA Cloud Connect to an API
-desc: You can connect ILLA to most APIs using our native integrations. ILLA can connect to any REST, GraphQL API
+title: Σύνδεση σε ένα API
+metaTitle: Σύνδεση ILLA Cloud σε ένα API
+desc: Μπορείτε να συνδέσετε το ILLA με τα περισσότερα APIs χρησιμοποιώντας τις εγγενείς ενοποιήσεις μας. Η ILLA μπορεί να συνδεθεί σε οποιοδήποτε REST, GraphQL API
 tagCategory: doc_menu_api_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to an API</Heading>
+## <Heading hidden>Συνδεθείτε σε ένα API</Heading>
 
-Connect to any REST, GraphQL API.
+Συνδεθείτε σε οποιοδήποτε REST, GraphQL API.
 
-You can connect ILLA to most APIs using our native integrations. If you need to connect to an internal API, or if there isn't a supported integration, you can connect using our REST API integration or GraphQL Integration.
+Μπορείτε να συνδέσετε το ILLA με τα περισσότερα APIs χρησιμοποιώντας τις εγγενείς ενοποιήσεις μας. Αν χρειαστεί να συνδεθείτε με ένα εσωτερικό API, ή αν δεν υπάρχει υποστηριζόμενη ενσωμάτωση, μπορείτε να συνδεθείτε χρησιμοποιώντας την ολοκλήρωση REST API ή την ολοκλήρωση GraphQL.
 
-### 1.  Create an API resource
+### 1.  Δημιουργία ενός πόρου API
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the API you want to connect to, such as **REST API**. This opens the **Configure a resource** modal where you add your connection information.
+Οι πόροι αντιπροσωπεύουν συνδέσεις με πηγές δεδομένων και είναι αυτό που ρωτάτε στις εφαρμογές ILLA.Συνδεθείτε στο ILLA και μεταβείτε στην καρτέλα **Resources** > κάντε κλικ στο **Δημιουργία νέου** και επιλέξτε το API στο οποίο θέλετε να συνδεθείτε, όπως **REST API**. Ανοίγει τη λειτουργία **Ρυθμίστε μια λειτουργία πόρου** όπου προσθέτετε τις πληροφορίες σύνδεσης.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
   alt=""
 />
 
-At a minimum, you need the base URL of the API you want to connect to. You can also pass URL parameters, headers, etc. If your API requires authentication, you can configure that on this page as well. For example, OAuth2.0 requires an Authorization URL, Access Token URL, etc. After you enter your connection details, click **Save resource.**
+Στο ελάχιστο, χρειάζεστε τη βασική διεύθυνση URL του API που θέλετε να συνδεθείτε. Μπορείτε επίσης να περάσετε παραμέτρους URL, κεφαλίδες, κλπ. Αν το API σας απαιτεί έλεγχο ταυτότητας, μπορείτε να το ρυθμίσετε και σε αυτή τη σελίδα. Για παράδειγμα, το OAuth2.0 απαιτεί URL εξουσιοδότησης, URL διακριτικού πρόσβασης, κλπ. Αφού εισάγετε τα στοιχεία σύνδεσής σας, κάντε κλικ στο κουμπί **Αποθήκευση πόρου.**
 
-### 2.  Query your API
+### 2.  Ερώτημα API
 
-In the App editor, click **+ New** in **Action List** > select **REST API** and choose an existed REST API or create a new one > click **create action** and update the actions with additional URL parameters, headers, etc.
+Στον επεξεργαστή εφαρμογών, κάντε κλικ στο **+ Νέο** στη **Λίστα ενεργειών** > επιλέξτε **REST API** και επιλέξτε ένα υπάρχον API REST ή δημιουργήστε ένα νέο> κάντε κλικ στο **Δημιουργία ενέργειας** και ενημερώστε τις ενέργειες με πρόσθετες παραμέτρους URL, κεφαλίδες κ.λπ.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
