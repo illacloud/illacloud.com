@@ -1,132 +1,132 @@
 ---
-title: Select
-metaTitle: ILLA Cloud Select component
-description: Displays all options in dropdown box and supports to select 1 option.
-tagCategory: doc_menu_select_click
+title: Sélectionner
+metaTitle: Composant de sélection du nuage ILLA
+description: Affiche toutes les options dans la liste déroulante et supporte de sélectionner 1 option.
+tagCategory: Clique sur le menu doc_select.
 ---
 
 * * *
 
-## <Heading hidden>Select</Heading>
+## <Heading hidden>Sélectionnez</Heading>
 
-A select component is commonly used to present users with a list of options in a dropdown menu format. The user can select only one option from the dropdown list at a time.
+Un composant sélectionné est couramment utilisé pour présenter aux utilisateurs une liste d'options dans un format de menu déroulant. L'utilisateur ne peut sélectionner qu'une seule option de la liste déroulante à la fois.
 
-The dropdown single-select component typically consists of a text label and a dropdown arrow icon, which when clicked or tapped, opens a list of options for the user to choose from. Once the user selects an option, the dropdown menu closes, and the selected option is displayed in the component.
+Le composant déroulant à sélection unique se compose généralement d'un libellé de texte et d'une icône de flèche vers le bas, qui, lorsqu'elle est cliquée ou cliquée, ouvre une liste d'options parmi lesquelles l'utilisateur peut choisir. Une fois que l'utilisateur a sélectionné une option, le menu déroulant se ferme, et l'option sélectionnée est affichée dans le composant.
 
-This component is often used in forms, surveys, and other data entry scenarios where a user needs to select one option from a predefined set of choices. It offers a compact and intuitive way to present a list of options without taking up too much screen real estate or overwhelming the user with too many options at once.
+Ce composant est souvent utilisé dans les formulaires, les sondages, et d'autres scénarios de saisie de données où un utilisateur doit sélectionner une option à partir d'un ensemble prédéfini de choix. Il offre un moyen compact et intuitif de présenter une liste d'options sans prendre trop d'écran immobilier ou submerger l'utilisateur avec trop d'options à la fois.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select1.png' alt="" />
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select2.png' alt="" />
 
-### Properties
+### Propriétés
 
-#### Manual options
+#### Options manuelles
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Ajoutez de nouvelles options ou supprimez manuellement les options et configurez les options une par une. Les propriétés des options sont les suivantes : 
 
-| Properties | Description                                  |
+| Propriétés | Libellé                                      |
 | ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Étiquette  | Le texte affiché pour l'option               |
+| Valeur     | La valeur associée à l'option                |
+| Désactivé  | Si l'option est désactivée pour la sélection |
 
-#### Mapped options
+#### Options de mappage
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Vous pouvez également ajouter des options à partir d'une source de données en associant les propriétés d'étiquette et de valeur aux champs de données correspondants. Vous pouvez ainsi obtenir des options dynamiquement à partir de la base de données. À la fin de cet article, nous montrerons comment l'utiliser par le biais d'un exemple.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Propriétés        | Libellé                                                                     |
+| ----------------- | --------------------------------------------------------------------------- |
+| Source de données | Définir la source de données des options                                    |
+| Étiquette         | Utilisez {{item}} pour définir l'étiquette des options                      |
+| Valeur            | Utilisez {{item}} pour définir la valeur des options                        |
+| Désactivé         | Utilisez {{item}} pour définir si l'option est désactivée pour la sélection |
 
-#### Other properties
+#### Autres propriétés
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valeur par défaut                | La valeur initiale du composant. Vous pouvez modifier dynamiquement la valeur initiale en tapant JavaScript dans {{}}.                                                          |
+| Placeholder                      | La valeur sera affichée lorsque le champ de saisie est vide.                                                                                                                    |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Définir l'alignement du libellé                                                                                                                                                 |
+| Width                            | Lorsque l'étiquette est sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette                                                                        |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Lecture seule                    | Contrôle l'état du composant en lecture seule. Un composant en lecture seule peut être sélectionné et concentré mais ne peut pas être modifié.                                  |
+| Afficher le bouton de nettoyage  | Définir si le bouton d'effacement doit être affiché                                                                                                                             |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Règle personnalisée              | Inspecter la règle personnalisée                                                                                                                                                |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Pour sélectionner la couleur du thème du composant                                                                                                                              |
 
-### Method
+### Méthode
 
-You can use other components to control the component. We support the following three methods:
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les trois méthodes suivantes:
 
-#### setValue
+#### définirValeur
 
-To set the selected option, for example, {{”value1”}}
+Pour définir l'option sélectionnée, par exemple, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Propriétés | Libellé             |
+| ---------- | ------------------- |
+| Valeur     | Valeur sélectionnée |
 
-#### clearValue
+#### effacer la valeur
 
-To clear the selected options
+Effacer les options sélectionnées
 
 #### validate
 
-To verify that the input information is legal
+Vérifier que les informations saisies sont légales
 
-#### clearValidate
+#### clearValider
 
-To clear the validation message
+Effacer le message de validation
 
-### Event handler
+### Gestionnaire d'événements
 
-We support listening to the `onChange` event of the radio group. 
+Nous supportons l'écoute de l'événement `onChange` du groupe radio. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Lorsque l'option sélectionnée change, elle peut déclencher une action spécifiée. Cela signifie que lorsqu'un utilisateur sélectionne une option différente d'un groupe radio, une action particulière peut être effectuée en fonction de l'option sélectionnée. Par exemple, dans un formulaire web, sélectionner une option différente peut déclencher l'affichage de différents champs de formulaire ou la soumission du formulaire à une destination différente. De cette façon, l'option choisie par l'utilisateur peut affecter le comportement du logiciel ou de l'application Web qu'il utilise. La capacité de déclencher des actions spécifiques basées sur la saisie de l'utilisateur est un aspect important de la conception interactive de logiciels et peut améliorer la facilité d'utilisation et la fonctionnalité du logiciel.
 
-### Data
+### Donnée
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Le composant a des données couramment utilisées, qui peuvent être appelées via {{componentName.propertyName}} dans l'application.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Nom de la propriété | Libellé             |
+| ------------------- | ------------------- |
+| valeur              | Valeur sélectionnée |
 
-### Use case
+### Cas d'utilisation
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Ensuite, nous montrerons comment utiliser le mode mappé pour obtenir dynamiquement des options. 
 
-#### Step 1 Add an action
+#### Étape 1 Ajouter une action
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Nous avons créé une table nommée `selection`, incluant 5 colonnes: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Nous avons stocké les valeurs d'options dans `value` et stocké l'étiquette d'options dans différentes langues dans d'autres colonnes. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Créez une action pour lister toutes les données dans `selection` nommé `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+sélectionner * dans la sélection
 ```
 
-#### Step 2 Configure the component
+#### Étape 2 Configurer le composant
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Définissez les sources de données à `{{postgresql1.data}}` 
+2.  Configurez l'étiquette pour changer l'étiquette en fonction de la langue. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Utilisez {{ item.columnName }} pour définir la colonne. 
+    2.  Utilisez {{ currentUserInfo.language }} pour définir la langue utilisée par les utilisateurs en ILLA.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
