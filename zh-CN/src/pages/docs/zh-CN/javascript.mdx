@@ -1,7 +1,7 @@
 ---
 title: JavaScript 指南
 metaTitle: ILLA Cloud JavaScript Guider doc
-desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
+desc: JavaScript 是ILLA 生成器中最重要的组件。 这是您用来构建您的 APP 数据访问和逻辑构造的工具
 tagCategory: doc_menu_js_guider_click
 ---
 
@@ -9,7 +9,7 @@ tagCategory: doc_menu_js_guider_click
 
 ## <Heading hidden>JavaScript 指南</Heading>
 
-JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说，掌握JavaScript的调用方式，您就已经掌握了ILLA Builder的使用方法。 Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说，掌握JavaScript的调用方式，您就已经掌握了ILLA Builder的使用方法。 掌握如何调用 JavaScript 的方法，你已经掌握了ILLA Builder的使用。
 
 当您在ILLA Builder中搭建项目时，可以使用{{模版语法}}书写自定义的JavaScript语句，用于调用、操作数据，或是在Transformer中直接书写JS代码
 
@@ -17,9 +17,9 @@ JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中�
 
 #### 访问对象中的数据
 
-In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
+在 ILLA 构建器中，您可以使用模板语法在任何文本输入框中输入 JavaScript 表达式。 数据对象是可引用的，你可以通过 JavaScript 操纵所有插入、动作和变压器的数据。 例如，您可以使用 `{{textInput.data}}` 来访问文本输入插入的内容，{{action.data}}`从一个动作数据库访问数据，以及`{{transformer.value}}\`从变压器访问数据。
 
-We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
+我们已经添加和修改了插入到产品的代码镜像。 调整它以适应ILLA Builder 编程环境，支持语法高亮和自动缩进， 并添加详细说明编程期间出现的变量和函数，以便您可以学习如何低成本使用ILLA Builder。 在您输入对象名称后，请输入一个点。 提示将包含对象的所有属性、数据类型和部分文字描述， 这样您可以随时识别要访问的属性。
 
 #### 访问数组中的数据
 
@@ -48,12 +48,12 @@ return list[0] // Return the first value in alist 'a'
 
 #### 数据展示组件
 
-The data display insert gives you the most intuitive view of the data. 数据展示组件可以让您最直观的查看数据，您只需要将相应的组件拖拽至画布中，在其数据栏中输入对应的数据源名称，加以筛选和排列，就可以获得数据展示的信息了
+数据显示插入使您能够最直观地查看数据。 数据展示组件可以让您最直观的查看数据，您只需要将相应的组件拖拽至画布中，在其数据栏中输入对应的数据源名称，加以筛选和排列，就可以获得数据展示的信息了
 
 [//]: # "[图片]"
 
-### Transformer
+### 变压器
 
-您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法 You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法 您可以直接在变压器中编程JavaScript，并在操作中调用 "{{}}" 的帮助。
 
-Click here for detailed usage of the transformer.
+点击此处查看变压器的详细使用情况。
