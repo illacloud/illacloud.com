@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
-tagCategory: doc_menu_database_click
+title: Conectează-te la o Bază de date
+metaTitle: ILLA Cloud Conectare la o bază de date
+desc: ILLA se conectează la majoritatea bazelor de date, inclusiv PostgreSQL, MySQL, TiDB și MongoDB
+tagCategory: doc_menu_bază_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Conectare la o bază de date</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA se conectează la majoritatea bazelor de date, inclusiv PostgreSQL, MySQL, TiDB și MongoDB. Vă rugăm să verificați această listă aici pentru sursele de date pe care ILLA le suportă în prezent. Viitoarele surse de date pe care intenţionăm să le susţinem sunt enumerate aici. Dacă ILLA nu are anumite resurse de date pe care le utilizați, vă rugăm să completați formularul aici.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+Detaliile conexiunii necesare ILLA depind de tipul bazei de date pe care doriți să o conectați. Aceste informații includ în general o gazdă, un port, o acreditare de utilizator și un șir de conexiune. Vă rugăm să consultaţi configuraţia sau documentaţia bazei de date pentru a obţine acest lucru.
 
-### 1.  Create a database resource
+### 1.  Creează o resursă pentru baza de date
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Resursele reprezintă conexiuni la surse de date și sunt ceea ce interogați în cadrul aplicațiilor ILLA.Loghează-te la ILLA și navighează la fila **Resurse** > apasă **Creează nou** și selectează baza de date la care vrei să te conectezi. Aceasta deschide modul **Configurați o resursă** unde adăugați informațiile dvs. de conexiune.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+După ce introduceți detaliile conexiunii, faceți clic pe **Test Connection** pentru a verifica dacă ILLA se poate conecta cu succes. După completare, faceți clic pe **Salvați resursa** pentru a salva resursa.
 
-In addition, you can create resources in the action list under the **App editor**.
+În plus, poți crea resurse în lista de acțiuni sub **editorul de aplicații**.
 
-### 2.  Query your database
+### 2.  Interogați baza dvs. de date
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+În editorul de aplicații, faceți clic pe **+ Nou** în **Lista de acțiuni** > selectați tipul de resurse și alegeți o resursă existentă sau creați o resursă nouă > faceți clic pe **creare acțiune** și actualizați acțiunile pentru a prelua unele informații dintr-un tabel din baza dvs. de date.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Apasă pe **Salvează** și apoi apasă **Rulează**. Rezultatele interogării sunt afişate automat după finalizarea interogării.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+Există unele setări avansate, inclusiv redenumirea, rularea setărilor, transformarea datelor și configurarea gestionării succesului sau eșecului, după cum se arată mai jos.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
