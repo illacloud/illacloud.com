@@ -1,126 +1,126 @@
 ---
-title: Radio button
-metaTitle: Radio button component
-description: Display all options on radio buttons and support to select 1 option.
-tagCategory: doc_menu_radio_button_click
+title: Radion painike
+metaTitle: Radio-painikkeen komponentti
+description: Näytä kaikki asetukset radio-painikkeissa ja tuki valitaksesi 1 vaihtoehto.
+tagCategory: doc_menu_radio_nappi_klikkaa
 ---
 
 * * *
 
-## <Heading hidden>Radio button</Heading>
+## <Heading hidden>Radio-painike</Heading>
 
-A radio button is select input component that allows users to select one option from a group of pre-defined options. It appears as a rounded square button, which can be selected or deselected by users. When a radio button is selected, all other radio buttons in the same group are automatically deselected, ensuring that only one option can be selected at a time. Radio buttons are commonly used in forms, questionnaires, and surveys to help users make a single choice from a list of options.
+Radio-painike on valitse syöttökomponentti, jonka avulla käyttäjät voivat valita yhden vaihtoehdon ennalta määriteltyjen vaihtoehtojen ryhmästä. Se näkyy pyöristettynä neliön painikkeena, joka voidaan valita tai poistaa käyttäjien toimesta. Kun radio-painike on valittuna, kaikki muut samaan ryhmään kuuluvat radio-painikkeet poistetaan automaattisesti valinnasta, varmistetaan, että kerralla voidaan valita vain yksi vaihtoehto. Radio-painikkeita käytetään yleisesti lomakkeissa, kyselylomakkeissa ja kyselyissä, joiden avulla käyttäjät voivat tehdä yhden valinnan vaihtoehtojen luettelosta.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
 
-### Properties
+### Ominaisuudet
 
-#### Manual options
+#### Manuaaliset asetukset
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Lisää uusia vaihtoehtoja tai poista asetukset manuaalisesti ja määritä asetukset yksitellen. Vaihtoehtojen ominaisuudet ovat seuraavat: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Ominaisuudet  | Kuvaus                                           |
+| ------------- | ------------------------------------------------ |
+| Tunniste      | The text displayed for the option                |
+| Arvo          | Vaihtoehtoon liittyvä arvo                       |
+| Pois Käytöstä | Onko valinta poistettu käytöstä valinnan varalta |
 
-#### Mapped options
+#### Kartoitetut asetukset
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Voit myös lisätä vaihtoehtoja tietolähteestä liittämällä tunnisteen ja arvon ominaisuudet vastaaviin tietokenttiin. Voit saada vaihtoehtoja dynaamisesti tietokannasta tällä tavalla. Tämän artiklan lopussa osoitamme, miten sitä voidaan käyttää esimerkin avulla.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Ominaisuudet  | Kuvaus                                                                     |
+| ------------- | -------------------------------------------------------------------------- |
+| Tietolähde    | Aseta valintojen tietolähde                                                |
+| Tunniste      | Käytä {{item}} asettaaksesi valintojen otsikon                             |
+| Arvo          | Käytä {{item}} valintojen arvon määrittämiseen                             |
+| Pois Käytöstä | Käytä {{item}} määrittääksesi, onko valinta poistettu käytöstä valitaksesi |
 
-#### Other properties
+#### Muut ominaisuudet
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Oletus arvo             | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.                                 |
+| Paikkamerkki            | Arvo näytetään, kun syöttökenttä on tyhjä.                                                                                                          |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus                                                                                                                              |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Vain Luettu             | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                    |
+| Näytä tyhjennyspainike  | Aseta näytetäänkö tyhjä painike                                                                                                                     |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Mukautettu sääntö       | editor.inspect.setter_tooltip.custom_rule                                                                                                           |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman väri             | Voit valita komponentin teeman värin                                                                                                                |
 
-### Method
+### Menetelmä
 
-You can use other components to control the component. We support the following three methods:
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kolmea menetelmää:
 
 #### setValue
 
-To set the selected option, for example, {{”value1”}}
+Valitun vaihtoehdon asettamiseksi esimerkiksi {{”arvo1”}}
 
-| Properties | Description                         |
-| ---------- | ----------------------------------- |
-| Value      | A string of selected option value.  |
+| Ominaisuudet | Kuvaus                                 |
+| ------------ | -------------------------------------- |
+| Arvo         | Valitun vaihtoehdon arvon merkkijono.  |
 
 #### clearValue
 
-To clear the selected options
+Poista valitut vaihtoehdot
 
 #### validate
 
-To verify that the input information is legal
+Varmistetaan, että syöttötiedot ovat laillisia
 
-#### clearValidate
+#### kirjoita
 
-To clear the validation message
+Vahvistusviestin tyhjentämiseksi
 
-### Event handler
+### Tapahtuman käsittelijä
 
-We support listening to the `onChange` event of the radio button component. 
+Me tuemme radio-painikkeen komponentin `onChange`-tapahtuman kuuntelemista. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a group of radio buttons, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Kun valittu vaihtoehto muuttuu, se voi käynnistää määritellyn toiminnon. Tämä tarkoittaa, että kun käyttäjä valitsee eri vaihtoehdon kuin ryhmä radio-painikkeita, valitun vaihtoehdon perusteella voidaan toteuttaa erityinen toimenpide. Esimerkiksi Internetissä olevassa muodossa, eri vaihtoehdon valitseminen voi laukaista lomakkeen eri kenttien näytön tai lomakkeen toimittamisen eri määränpäähän. Tällä tavoin käyttäjän valitsema vaihtoehto voi vaikuttaa käyttämänsä ohjelmiston tai verkkosovelluksen käyttäytymiseen. Kyky käynnistää käyttäjän syötteeseen perustuvia määriteltyjä toimia on tärkeä osa interaktiivista ohjelmistosuunnittelua ja voi parantaa ohjelmiston käytettävyyttä ja toimivuutta.
 
-### Data
+### Tiedot
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta {{componentName.propertyName}}.
 
-| Property name | Description                               |
-| ------------- | ----------------------------------------- |
-| value         | a string of value of the selected option  |
+| Ominaisuuden nimi | Kuvaus                                  |
+| ----------------- | --------------------------------------- |
+| arvo              | merkkijono valitun vaihtoehdon arvosta  |
 
-### Use case
+### Käytä laatikkoa
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Seuraavaksi osoitamme, miten kartoitettua tilaa voidaan käyttää saadaksesi dynaamisesti vaihtoehtoja. 
 
-#### Step 1 Add an action
+#### Vaihe 1 Lisää toiminto
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Olemme luoneet taulun nimeltä `selection`, mukaan lukien 5 saraketta: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Tallensimme valitsimen arvot `value`-muotoon ja tallennamme asetusmerkin eri kielillä muihin sarakkeisiin. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Luo toiminnot luetteloidaksesi kaikki tiedot `selection`-nimestä `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+valitse * valinnasta
 ```
 
-#### Step 2 Configure the component
+#### Vaihe 2 Määritä komponentti
 
 1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+2.  Määritä otsikko muuttaaksesi otsikkoa kielen perusteella. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Aseta sarake käyttämällä {{ item.columnName }}. 
+    2.  Käytä {{ currentUserInfo.language }} asettaaksesi kielen käyttäjät käytettäväksi ILLA:ssa.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
