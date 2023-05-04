@@ -1,51 +1,51 @@
 ---
-title: List
-metaTitle: ILLA Cloud List Component doc
-description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+title: Список
+metaTitle: Доктор списку Cloud
+description: Список компонентів дозволяє створювати рядки повторюваних даних, зовнішній вигляд і відчуття визначені вами.
 tagCategory: doc_menu_list_click
 ---
 
 * * *
 
-## <Heading hidden>List</Heading>
+## <Heading hidden>Список</Heading>
 
-The List component is similar to a Container in that you can nest other components inside of it.
+Список компонентів схожий на контейнер, в якому можна вмістити інші компоненти.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
   alt=""
 />
 
-### Drag components to list
+### Перетягніть компоненти до списку
 
-When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+Коли ви перетягнете список компонентів до кадру, він автоматично включає деякі компоненти. Ви можете видалити або змінити їх та перетягувати нові компоненти в список. 
 
-Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+Можна редагувати тільки перший елемент, а інші автоматично зміняться на основі першого елемента. Ви також можете сфокусуватися на першому елементі і перетягнути панель для зміни елементів висоти.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
   alt=""
 />
 
-### Display query results in a list
+### Показати результати запиту у списку
 
-When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+Коли ви перетягнете список компонентів у кадр, він автоматично відображає тестові дані у форматі JSON. Ви можете змінити джерело даних на дію, використовуючи `{{ mysql_list_query.data }}`. 
 
-After setting the data source, you can change the data of components:
+Після налаштування джерела даних, ви можете змінити дані компонентів:
 
-1.  Select the component in the first item. 
-2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+1.  Виберіть компонент у першому списку. 
+2.  Якщо дані компонента знаходяться зі списку, ви можете встановити дані, використовуючи `{{ currentItem.columnName }}. Наприклад, ви можете встановити джерело зображення за допомогою `{{ currentItem.Avater }}`. `Avater\` - це стовпець з джерела даних списку.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+Ви можете використовувати `{{ currentItem.columnName }}` лише тоді, коли компоненти знаходяться в списку. 
 
-### Use the data of list
+### Використовувати дані зі списком
 
-You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+Ви можете використовувати дані вибраних елементів, використовуючи `{{ list1.selectedItem.columnName }}`. Або використайте будь-які дані зі списку, використовуючи `{{ list1.dataSource[n].columnName }}`
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
