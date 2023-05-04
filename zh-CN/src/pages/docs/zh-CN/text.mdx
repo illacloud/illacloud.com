@@ -1,38 +1,38 @@
 ---
-title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
-tagCategory: doc_menu_text_click
+title: 文本
+metaTitle: ILLA 云文本组件doc
+description: 显示包含文本组件的数据
+tagCategory: doc_menu_text_点击
 ---
 
 * * *
 
-## <Heading hidden>Text</Heading>
+## <Heading hidden>文本</Heading>
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### 属性
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| 财产     | 描述                                                                                       |
+| ------ | ---------------------------------------------------------------------------------------- |
+| 内容     | 设置文本组件中显示的文本。 支持Markdown和纯文本。                                                            |
+| 工具提示   | 当用户悬停在组件上时在组件上显示工具提示。                                                                    |
+| 水平对齐   | 设置组件中文本内容的水平位置                                                                           |
+| 垂直对齐   | 在组件中设置文本内容的顶点位置                                                                          |
+| Hidden | 设置是否显示此组件以及在什么条件下显示它。 例如，如果当前用户不是用户A，这个组件应该隐藏：{□ currentUserInfo.nickname != 'User A' }} |
+| 颜色     | 以油漆文本格式设置文本颜色                                                                            |
+| 文本大小   | 以油漆文本格式设置文本大小                                                                            |
 
-### Use Markdown
+### 使用Markdown
 
-#### Headline
+#### 标题
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# 标题1
+## 标题2
+### 标题3
 ```
 
 #### Bold & Italics
@@ -44,32 +44,32 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### 待办事项列表
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### 待办事项列表
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] :routh: 在 ILLA Cloud 上构建一个新的应用程序
+2. [ ] :phone: 呼叫Monica
+3。 [x] 🍷 与**Elsa** 举行晚餐
+4。 [x] 💃 玩`Just dance` 半小时
 ```
 
-#### Bulleted list
+#### 公告列表
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
-### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+### 公告列表
+- 实时协作：我们可以一起实时创建一切。
+- 🛠️ 自定义插件：建立任何自定义插件来做你想做的事情。
+- 🤖 自动支持: 连接一切并在5秒内实现自动化。
+- :desktop_compute: 自主机: 支持 Docker 和 k8
 ```
 
-#### Table
+#### 表
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
@@ -82,10 +82,10 @@ tagCategory: doc_menu_text_click
 | ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
 ```
 
-### Display dynamic data
+### 显示动态数据
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+使用 "{{" 从其他组件或动作或全局变量中获取数据。 例如，要显示当前用户的昵称：
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {● '👋 Hello! '+ currentUserInfo.nickname }}
 ```
