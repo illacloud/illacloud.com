@@ -1,7 +1,7 @@
 ---
 title: Supabase DB
 metaTitle: ILLA Cloud Supabase DB Integration doc
-description: Connect to Supabase instance and show Supabase DB data on components
+description: Supabase インスタンスに接続し、Supabase DB データをコンポーネントに表示する
 tagCategory: doc_menu_supabase_click
 ---
 
@@ -9,22 +9,22 @@ tagCategory: doc_menu_supabase_click
 
 ## <Heading hidden>Supabase DB</Heading>
 
-Supabase is an open-source Firebase alternative that allows developers to build real-time web and mobile applications. It provides many of the same features as Firebase, such as real-time databases, user authentication, and hosting, but with the added benefits of being open-source and providing a SQL API. This allows developers to use their existing SQL knowledge and tools, making it easy to integrate with other systems. Additionally, Supabase provides a more flexible and customizable platform than Firebase, which can be more restrictive regarding data modeling and usage.
+Supabaseは、開発者がリアルタイムでWebやモバイルアプリケーションを構築できるオープンソースのFirebaseの代替手段です。 リアルタイムデータベースやユーザー認証など、Firebaseと同じ多くの機能を提供します。 しかし、オープンソースであり、SQL APIを提供するという利点があります。 これにより、開発者は既存のSQL知識とツールを使用できるため、他のシステムと簡単に統合できます。 さらに、SupabaseはFirebaseよりも柔軟でカスタマイズ可能なプラットフォームを提供します。このプラットフォームは、データモデリングや使用についてより制限をかけることができます。
 
-This tutorial outlines the process of creating an Admin Panel using ILLA Builder and Supabase in a few simple steps. ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Supabase, visit their website at <https://supabase.com/>. Let's begin!
+このチュートリアルでは、ILLA BuilderとSupabaseを使用したAdmin Panelを簡単な手順で作成する方法について説明します。 ILLAは、社内ツールの迅速な開発と展開を可能にする開発者向けの低コードプラットフォームです。 UI コンポーネントをドラッグ&ドロップしたり、データベースや API に接続したり、JavaScript を書いたりすることで、ページを作成することができます。 Supabaseの詳細については、ウェブサイト<https://supabase.com/>をご覧ください。 始めましょう！
 
-### Step 1: Set up your Back end on Supabase
+### ステップ 1: Supabaseでバックエンドを設定する
 
-On the [Supabase dashboard](https://app.supabase.com/projects), click `New project` and set the name to adminPanel.
+format@@0(https://app.supabase.com/projects)で、`New project`をクリックし、adminPanelに名前を設定します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
   alt=""
 />
 
-Create a new table by clicking on the `Create a new table` .
+`新しいテーブルを作成` をクリックして新しいテーブルを作成します。
 
-Supabase offers a variety of options for populating tables with data, including writing queries, creating schemas through a user interface, and uploading CSV files.
+Supabaseは、クエリの書き込み、ユーザーインターフェイスによるスキーマの作成、CSVファイルのアップロードなど、テーブルにデータを入力するためのさまざまなオプションを提供します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
@@ -36,70 +36,70 @@ Supabase offers a variety of options for populating tables with data, including 
   alt=""
 />
 
-Fill out the info in the table. The database is now set up.
+表の情報を入力します。 データベースがセットアップされました。
 
-### Step 2: Build UI on ILLA Cloud
+### ステップ2：ILLAクラウド上でUIを構築する
 
-On [ILLA Cloud](https://cloud.illacloud.com), click Create New to create a new application.
+format@@0(https://cloud.illacloud.com)で、Create New をクリックして新しいアプリケーションを作成します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
   alt=""
 />
 
-Drag components from the `Insert` panel to the canvas.
+「挿入」パネルからコンポーネントをキャンバスにドラッグします。
 
-Select the components on the canvas and configure the property on the `Inspect` panel.
+キャンバス上のコンポーネントを選択し、`Inspect` パネルでプロパティを構成します。
 
-As seen in the below screenshot, we have built a simple admin panel.
+以下のスクリーンショットで見られるように、簡単な管理パネルを構築しました。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
   alt=""
 />
 
-### Step 3: Connect to Supabase and config CRUD
+### ステップ3：Supabaseに接続してコンフィグCRUD
 
-Note down the database connection information under [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) in Supabase.
+Supabase の [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) のデータベース接続情報に注意してください。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
   alt=""
 />
 
-In the Action List, click `+ New` and select Supabase DB.
+アクションリストで`+ New`をクリックし、Supabase DBを選択します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
   alt=""
 />
 
-Fill out the form to connect to your Supabase instance. Test connection and save resource.
+フォームに記入して、Supabaseインスタンスに接続します。 接続をテストしてリソースを保存します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
   alt=""
 />
 
-Click `Create Action` to create an action with the Supabase resource and config your CRUD.
+`Create Action`をクリックして、Supabaseリソースでアクションを作成し、CRUDを設定します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
   alt=""
 />
 
-Use {{ to get the front-end input data. The following is an example of the User Management page in the Admin Panel.
+フロントエンドの入力データを取得するには {{ を使用します。 以下は、format@@0パネルのformat@@1ページの例です。
 
-Search for a user by the name inputted in input1
+input1 に入力された名前でユーザーを検索
 
 ```
 SELECT *
 FROM user
-WHERE name = "{{input1.value}}"
+WHERE名 = "{{input1.value}}"
 ;
 ```
 
-Update user data. Update user information when id matches
+ユーザーデータを更新 IDが一致したときにユーザー情報を更新する
 
 ```
 UPDATE user
@@ -109,29 +109,29 @@ WHERE id="{{input2.value}}"
 ;
 ```
 
-Insert user data
+ユーザーデータを挿入
 
 ```
-INSERT INTO user VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+INSERT INTO user VALUES("{{input5.value}}",",{{input6.value}}",",{{input7.value}}');
 ```
 
-Delete a user by id
+IDでユーザーを削除する
 
 ```
-DELETE FROM user WHERE id = "{{input2.value}}";
+ユーザーWHEREから削除 ID = "{{input2.value}}";
 ```
 
-### Step 4: Show data on components
+### ステップ 4: コンポーネントにデータを表示
 
-Configure the properties of components with {{ . For example:
+{{ でコンポーネントのプロパティを設定します。 例:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
   alt=""
 />
 
-## Resources
+## リソース
 
--   [Supabase official website](https://supabase.com/)
+-   format@@0(https://supabase.com/)
 -   [Supabase GitHub](https://github.com/supabase/supabase)
--   [Supabase documentation](https://supabase.com/docs)
+-   format@@0(https://supabase.com/docs)
