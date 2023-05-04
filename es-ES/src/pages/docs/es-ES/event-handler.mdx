@@ -1,36 +1,36 @@
 ---
-title: Event handler
-metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
-tagCategory: doc_menu_evnet_handler_click
+title: Controlador de eventos
+metaTitle: Documento de manejador de eventos ILLA Cloud
+desc: Los manejadores de eventos son una parte integral de refinar la lógica de uso de la herramienta interna
+tagCategory: doc_menú_evnet_handler_clic
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Controlador de eventos</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Los gestores de eventos son una parte integral de la mejora de la lógica de uso de la herramienta interna. Cualquier inserción o acción que responda a una acción de usuario tiene sus propios eventos que pueden ser activados, como un botón insertar con un evento 'click', una casilla de texto con un evento 'enviado', el éxito de una acción, etc. Los gestores de eventos ayudan a los usuarios a activar instrucciones predefinidas cuando ocurren eventos: puede reaccionar a una única ocurrencia de eventos, o puede configurar múltiples gestores de eventos y configurarlos como flujos de trabajo para hacer un trabajo más complejo.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Después de que el evento que ha establecido haya ocurrido, el controlador de eventos puede ayudarle a realizar una variedad de acciones: controlar las sentencias de acción, controlar insertos, ejecutar scripts y más. También puede añadir condiciones más detalladas de activación de JavaScript en la parte superior de las condiciones de activación.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Controladores de eventos
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+En los controladores de eventos, puede establecer el resultado del evento basándose en si los resultados de la consulta fallan o no. Puede completar la lógica del disparador estableciendo la condición de fallo de consulta en la pestaña Response.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Editar manejador de envío
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Establecemos una condición de disparador para cada inserción interactiva, y puede seleccionar un evento en la lista de acciones del manejador como la condición de disparador. Por ejemplo, podría establecer 'Enviar' como la condición de disparador en el controlador de eventos para el cuadro de entrada de datos, que automáticamente inserta la entrada en la base de datos cuando el usuario 'envió' la entrada, implementando así una simple función de inserción de datos.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Estados temporales
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Al procesar datos, puede encontrarse con situaciones en las que los datos procesados no se llaman inmediatamente. Por esta razón, hemos creado estados temporales para almacenar estados intermedios para el procesamiento de datos. Puede elegir establecer un estado temporal en las opciones del evento de respuesta de los controladores de eventos y hacer clic en Crear nuevo estado para almacenar los datos actuales en el estado temporal, que puede ser colocado para cualquier propiedad.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Fuera del editor del proyecto, también puede almacenar datos mediante {{tempState1.setValue(data)}} o llamar a datos por {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Los valores en el estado temporal se borrarán cuando se reinicie el proyecto, y necesitará almacenar los valores localmente o en la nube para asegurar la integridad de los datos.
