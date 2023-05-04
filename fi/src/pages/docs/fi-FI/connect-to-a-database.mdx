@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
+title: Yhdistä tietokantaan
 metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
+desc: ILLA yhdistää useimpiin tietokantoihin, kuten PostgreSQL, MySQL, TiDB ja MongoDB
 tagCategory: doc_menu_database_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Yhdistä tietokantaan</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA yhdistää useimpiin tietokantoihin, kuten PostgreSQL, MySQL, TiDB ja MongoDB. Ole hyvä ja tarkista tämä luettelo tietolähteistä ILLA tällä hetkellä tuetaan. Tässä on lueteltu tulevat tietolähteet, joita aiomme tukea. Jos ILLA puuttuu tiettyjä käyttämiäsi tietoresursseja, täytä lomake tähän.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+ILLAn tarvitsemat yhteystiedot riippuvat siitä, minkä tyyppinen tietokanta haluat yhdistää. Näihin tietoihin kuuluvat yleensä isäntä, portti, käyttäjätunnukset ja yhteysmerkki. Ole hyvä ja tutustu tietokannan konfiguraatioon tai dokumentaatioon saadaksesi tämän.
 
-### 1.  Create a database resource
+### 1.  Luo tietokannan resurssi
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Resurssit edustavat yhteyksiä tietolähteisiin ja mitä kysyt ILLA-sovelluksistasi.Kirjaudu ILLA:han ja siirry **Resurssit** -välilehteen > klikkaa **Luo uusi** ja valitse tietokanta, johon haluat yhdistää. Tämä avaa modaalin **Määritä resurssi** johon lisäät yhteystietosi.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+Kun olet syöttänyt yhteystietosi, napsauta **Testaa yhteyttä** tarkistaaksesi ILLA:n yhteyden onnistuneesti. Kun resurssi on valmis, napsauta **Tallenna resurssi** tallentaaksesi resurssin.
 
-In addition, you can create resources in the action list under the **App editor**.
+Lisäksi voit luoda resursseja toiminnon listalle **Sovelluseditorin** alla.
 
-### 2.  Query your database
+### 2.  Kysy tietokantaasi
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+Sovelluksen editorissa klikkaa **+ Uusi** **Toimintoluettelossa** > valitse resurssityyppi ja valitse olemassa oleva resurssi tai luo uusi resurssi > klikkaa **Luo toiminto** ja päivitä toiminnot noutaaksesi joitakin tietoja tietokannassasi olevasta taulusta.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Klikkaa **Tallenna** ja sitten **Suorita**. Kyselyn tulokset näytetään automaattisesti kyselyn valmistuttua.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+On olemassa joitakin edistyneitä asetuksia, kuten uudelleennimeäminen, ajon asetukset, muuntaminen tietoja ja määrittämällä ajon onnistumisen tai epäonnistumisen käsittely, kuten alla esitetään.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
