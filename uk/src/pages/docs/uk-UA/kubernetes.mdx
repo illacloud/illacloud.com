@@ -1,48 +1,48 @@
 ---
 title: Kubernetes
 tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+desc: Сконструюйте усі зображення в одному і виконайте його на вашому комп’ютері.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Опис
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Сконструюйте усі зображення в одному і виконайте його на вашому комп’ютері. Ви можете перевірити файл скриптів у теці [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) для деталей.
 
-Note:
+Нотатка:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Наполегливо рекомендуємо розгорнути наші інструменти авторозгортання[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+І на даний момент ми не підтримуємо арх Apple Silicon M1 (darwin-6).
 
-### Run with an official slim image
+### Запустити з офіційним зображенням Slim
 
-Install GNU make and type:
-
-```jsx
-make deploy
-```
-
-or just execute:
+Встановити GNU значення і тип:
 
 ```jsx
-/bin/bash scripts/deploy.sh
+зробити розгортання
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+або просто виконати:
 
-### For Database Persistent Storage
+```jsx
+/bin/bash скрипти/розгортання
+```
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+ця команда буде витягувати illasoft офіційний весь в-одному зображенні і розгорнути його на вашому кластері Kubernetes.
 
-### For HTTPS Config
+### Для постійного сховища бази даних
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Редагувати[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), і додати вашу IAAS стійку конфігурацію зберігання на ньому.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+### Для конфігурації HTTPS
+
+Ви можете маршрутизувати вузловий порт вашого Kubernetes-кластера і переписати до 443 порту, а також додати https cert в шлюзі ingress
+
+Або ви можете розмістити термостат ingress вручну до вашого сервера Kubernetes, конфігурація як тут:
 
 ```jsx
 static_resources:
