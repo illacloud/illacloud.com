@@ -1,114 +1,114 @@
 ---
-title: Radio group
-metaTitle: ILLA Cloud Radio group component
-description: Displays all options on radio group and supports to select 1 option.
+title: 無線グループ
+metaTitle: ILLA クラウド無線グループの構成
+description: ラジオグループのすべてのオプションを表示し、1つのオプションを選択するためにサポートします。
 tagCategory: doc_menu_radio_group_click
 ---
 
 * * *
 
-## <Heading hidden>Radio group</Heading>
+## <Heading hidden>無線グループ</Heading>
 
-A radio group, also known as a single-choice group or simply a radio group, is a component that allows users to select only one option from a list of predefined options. Each option in the group is represented by a circular button that can be selected or deselected by users. When one option is selected, any previously selected option in the group is automatically deselected.
+単一選択グループまたは単にラジオグループとして知られているラジオグループ。 は、あらかじめ定義されたオプションのリストから 1 つのオプションのみを選択できるコンポーネントです。 グループ内の各オプションは、ユーザーによって選択または選択解除される円形ボタンによって表されます。 いずれかのオプションが選択されている場合、グループ内で選択済みのオプションは自動的に選択解除されます。
 
-Radio groups are commonly used in web forms, dialog boxes, and other interactive applications where users need to make a single choice from a set of options. They are useful for preventing errors that can occur when users select multiple options by mistake or confusion. Additionally, radio button groups are easy to use and visually intuitive, making them a popular choice for designers and developers alike.
+無線グループは、Webフォーム、ダイアログボックスで一般的に使用されます。 他のインタラクティブなアプリケーションでは、ユーザーは一連のオプションから選択する必要があります。 ユーザーが間違って複数のオプションを選択した場合に発生する可能性のあるエラーを防ぐのに便利です。 さらに、ラジオボタングループは使いやすく、視覚的に直感的であり、デザイナーや開発者にとっても人気の高い選択肢です。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### プロパティー
 
-#### Manual options
+#### 手動オプション
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+新しいオプションを追加するか、手動でオプションを削除し、オプションを1つずつ設定します。 オプションのプロパティは以下のとおりです。 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| プロパティー | 説明                   |
+| ------ | -------------------- |
+| ラベル    | オプションに表示されるテキスト      |
+| 値      | オプションに関連付けられている値     |
+| 無効     | 選択オプションが無効になっているかどうか |
 
-#### Mapped options
+#### マップされたオプション
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+label と value プロパティを対応するデータフィールドにマッピングすることで、データソースからオプションを追加することもできます。 このようにして、データベースから動的にオプションを取得できます。 この記事の最後に、例を通してそれを使用する方法を紹介します。
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| プロパティー | 説明                                          |
+| ------ | ------------------------------------------- |
+| データソース | オプションのデータソースを設定                             |
+| ラベル    | {{item}} を使用してオプションのラベルを設定                  |
+| 値      | {{item}} を使用してオプションの値を設定します                 |
+| 無効     | 選択オプションが無効になっているかどうかを設定するには {{item}} を使用します |
 
-#### Other properties
+#### その他のプロパティ
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| プロパティー     | 説明                                                                            |
+| ---------- | ----------------------------------------------------------------------------- |
+| 既定値        | コンポーネントの初期値。 {{}}}にJavaScriptを入力すると、初期値を動的に変更することができます。                       |
+| プレースホルダー   | 値は入力フィールドが空の場合に表示されます。                                                        |
+| ラベル        | ユーザーに表示されるフィールドの名前                                                            |
+| 図表番号       | フィールドを詳細に説明するために使用されるキャプションです。                                                |
+| 非表示ラベル     | ラベルを表示するかどうかを設定します                                                            |
+| 位置         | コンポーネントに対する相対的なラベルの位置を設定します                                                   |
+| 配置         | ラベルの配置を設定                                                                     |
+| Width      | ラベルがコンポーネントの左側にある場合、ラベルの幅比率を設定します                                             |
+| イベントハンドラー  | トリガクエリ、コンポーネントのイベントに応じてコンポーネントを制御したり、他のAPIを呼び出したりします。                         |
+| 無効         | コンポーネントが無効化されているかどうかのステータスを制御します。 無効になっている場合、コンポーネントを変更したりフォーカスしたりすることはできません。 |
+| 読み取り専用     | コンポーネントが読み取り専用かどうかのステータスを制御します。 読み取り専用コンポーネントを選択してフォーカスできますが、変更することはできません。    |
+| クリアボタンを表示  | クリアボタンを表示するかどうかを設定します                                                         |
+| ツールチップ     | ユーザはコンポーネントツールチップを入力できます。 ツールチップがフォーカスされると表示されます。 Markdown 形式がサポートされています。     |
+| 必須項目       | スイッチがオンの場合のみ有効です。                                                             |
+| カスタムルール    | editor.inspect.setter_tooltip.custom_rule                                     |
+| 検証メッセージを隠す | 入力値が正しくない場合は非表示の状態を切り替えることでエラーメッセージを非表示にできます。 非表示状態はJavaScriptで動的に変更できます。     |
+| フォームデータキー  | data 属性を構築する際に、ラッピングフォームコンポーネントのキーを指定します。                                     |
+| Hidden     | コンポーネントが非表示になるかどうかを動的に制御します。 動的ブール値を使用して非表示状態を変更できます。                         |
+| テーマの色      | コンポーネントのテーマカラーを選択する                                                           |
 
-### Method
+### 方法
 
-You can use other components to control the component. We support the following three methods:
+他のコンポーネントを使用してコンポーネントを制御できます。 以下の3つの方法をサポートします。
 
 #### setValue
 
-To set the selected option, for example, {{”value1”}}
+選択したオプションを設定するには、例えば{{"value1"}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| プロパティー | 説明    |
+| ------ | ----- |
+| 値      | 選択した値 |
 
 #### clearValue
 
-To clear the selected options
+選択したオプションをクリアするには
 
 #### validate
 
-To verify that the input information is legal
+入力情報が合法であることを確認するには
 
 #### clearValidate
 
-To clear the validation message
+検証メッセージを消去するには
 
-### Event handler
+### イベントハンドラ：
 
-We support listening to the `onChange` event of the radio group. 
+ラジオグループの `onChange` イベントのリスニングをサポートします。 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+選択したオプションが変更されると、指定したアクションをトリガーできます。 これは、ユーザーが無線グループから別のオプションを選択した場合、選択したオプションに基づいて特定のアクションを実行することができることを意味します。 例えば、ウェブ形式では 別のオプションを選択すると、異なるフォームフィールドの表示や、別の宛先へのフォームの送信がトリガーされます。 このようにして、ユーザーが選択したオプションは、使用しているソフトウェアまたはWebアプリケーションの動作に影響を与える可能性があります。 ユーザーの入力に基づいて指定されたアクションをトリガーする能力は、インタラクティブなソフトウェア設計の重要な側面であり、ソフトウェアの使いやすさと機能を向上させることができます.
 
-### Data
+### データ
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+このコンポーネントには、一般的に使用されるデータがいくつか含まれており、アプリで {{componentName.propertyName}} を介して呼び出すことができます。
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| プロパティ名 | 説明    |
+| ------ | ----- |
+| 値      | 選択した値 |
 
-### Use case
+### 大文字小文字を区別する
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+次に、マップされたモードを使用してオプションを動的に取得する方法を示します。 
 
-#### Step 1 Add an action
+#### ステップ 1 アクションを追加
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+`options_en`、`options.jp`、`options_zh`、`options_kr`、`value`の5つの列を含む`selection`という名前のテーブルを作成しました。 オプションの値は `value` に保存され、他の列の異なる言語のオプションラベルに保存されました。 
 
-Create an actions to list all data in `selection` named `postgresql1`
+`postgresql1`という名前の`selection`内のすべてのデータを一覧表示するアクションを作成します
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
@@ -116,13 +116,13 @@ Create an actions to list all data in `selection` named `postgresql1`
 select * from selection
 ```
 
-#### Step 2 Configure the component
+#### ステップ 2 コンポーネントの設定
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  データソースを`{{postgresql1.data}}`に設定する 
+2.  言語に基づいてラベルを変更するようにラベルを設定します。 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  {{ item.columnName }} を使用して列を設定します。 
+    2.  ILLAで使用する言語を設定するには、 {{ currentUserInfo.language }} を使用します。
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
