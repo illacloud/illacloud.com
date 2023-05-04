@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
-tagCategory: doc_menu_hugging_face_endpoint_click
+title: Sfârșit de față
+metaTitle: Conectare la Hugging Face Endpoint
+description: Învățați cum să utilizați criteriul final al feței Hugging în ILLA
+tagCategory: click_menu_hugging_face_endpoint_endpoint_
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>Punct de sfârșit față față</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+Cu criteriile de evaluare a toleranței față față, poți implementa cu ușurință transformații, agenți diferiți sau orice model pe o infrastructură dedicată, complet gestionată. [Faceți clic aici](https://ui.endpoints.huggingface.co/new) pentru a crea un punct final. 
 
-### Create Hugging Face endpoint resource
+### Creare resursă Face Face
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Există două modalități de a adăuga o resursă de la punctul final al faței. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Introduceți `ILLA Builder` >> Faceți clic pe `Resources` tab >> faceți clic pe `Create New` >> alegeți `Hugging Face Endpoint` >> Configurați informațiile de conectare și faceți clic pe `Save Resource`
+2.  Introduceți pagina de editare >> faceți clic pe `+ Nou` din lista de acțiuni >> alegeți `Hugging Face Endpoint` >> Configurați informațiile despre conexiune sau faceți clic pe `+ Resurse noi` pentru a adăuga noi informații despre conexiune
 
-### Configure connection information
+### Configurați informațiile de conectare
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Proprietăți  | Necesar | Descriere                                                                           |
+| ------------ | ------- | ----------------------------------------------------------------------------------- |
+| Nume         | necesar | Definiți un nume de resursă care va fi utilizat pentru afișare în ILLA              |
+| Endpoint URL | necesar | creează punctul final aici: https://ui.endpoints.huggingface.co/new și obține URL.  |
+| Token        | necesar | Token organizatie. Îl poți obține în https://huggingface.co/settings/tokens.        |
 
-### Create Actions
+### Creați Acțiuni
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Introduceți pagina de editare >> apăsați `+ Nou` în lista de acțiuni >> Alegeți `Hugging Face Endpoint` >> Alegeți o resursă existentă sau adăugați o resursă nouă
 
-### Configure actions
+### Configurare acțiuni
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Proprietăți      | Necesar | Descriere                                                                                                                                                                                                                                                                                          |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tip de parametru | necesar | Tipul parametrului de la punctul final. De exemplu, în cazul în care punctul final are nevoie de un text introdus, alegeți să completați parametrul "intrări" cu text. Dacă punctul dvs. final are nevoie de o intrare JSON, alegeți completarea parametrului "intrări" cu JSON sau valoare cheie. |
+| Parametru        | necesar | Introduceți parametrul dvs. Folosește {{ componentName.value }} pentru a utiliza datele componentelor.                                                                                                                                                                                             |
 
-### Use case
+### Utilizare majusculă
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+Am trimis cu ajutorul lui `openai/whisper-base` care primește un fișier audio și se transformă în text. Este potrivit pentru întâlniri, podcast-uri pentru text, etc. Apoi vom introduce cum să folosim acest model pentru a construi o aplicație în ILLA Cloud.
 
-#### Step 1: Build the front-end interface with components
+#### Pasul 1: Construiți interfața front-end cu componentele
 
-We have built an interface using the components such as file upload and button, as follows.
+Am construit o interfață folosind componente precum încărcare fișier și buton, după cum urmează.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Pasul 2: Adaugă o resursă a feței
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Completează câmpurile afișate mai jos pentru a finaliza configurarea resurselor. [Creați un punct final](https://ui.endpoints.huggingface.co/new) și obțineți URL-ul de sfârșit. Și obțineți token-ul API al organizației în [setările profilului](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Pasul 3: Configurați o acțiune
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Selectaţi mai întâi un parametru. Luaţi `openai/whisper-base` ca exemplu, acest model necesită introducerea fişierului binar astfel încât să schimbăm parametrul în `Binary`.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Setaţi binarul să fie trecut la model ca datele fişierului încărcat din componenta de încărcare a fişierului. (Automatic Translation) De exemplu, `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Pasul 4: Conectaţi componentele şi acţiunile
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Adăugați un handler de evenimente la buton pentru a declanșa acțiunea când butonul este apăsat. Și setează valoarea componentei text la {{whisper.data[0].text}} pentru a afișa rezultatul conversiei în componenta text. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+După pașii de mai sus sunt configurați, aplicația este creată și rezultatele de execuție sunt după cum urmează.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
