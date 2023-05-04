@@ -1,38 +1,38 @@
 ---
-title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
+title: Tekstveld
+metaTitle: ILLA Cloud tekstcomponent doc
+description: Toon gegevens met tekstcomponent
 tagCategory: doc_menu_text_click
 ---
 
 * * *
 
-## <Heading hidden>Text</Heading>
+## <Heading hidden>Tekst</Heading>
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### Eigenschappen
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| Eigenschap             | Beschrijving                                                                                                                                                                                                                                         |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Inhoud                 | Stel de tekst in die getoond wordt op het tekstcomponent. Markdown en platte tekst worden ondersteund.                                                                                                                                               |
+| Knopinfo               | Een tooltip weergegeven op het onderdeel wanneer gebruikers over het onderdeel bewegen.                                                                                                                                                              |
+| Horizontale uitlijning | Om de horizontale positie van de tekstinhoud in de component in te stellen                                                                                                                                                                           |
+| Verticale uitlijning   | Om de verticale positie van de tekstinhoud in het component in te stellen                                                                                                                                                                            |
+| Hidden                 | Om in te stellen of deze component weer te geven onder welke voorwaarden het moet worden weergegeven. Bijvoorbeeld, als de huidige gebruiker geen Gebruiker A is, moet dit component verborgen zijn: {{ currentUserInfo.nickname != 'Gebruiker A' }} |
+| Kleur                  | Om de tekstkleur in tekentekstformaat in te stellen                                                                                                                                                                                                  |
+| Tekst grootte          | Om de tekstgrootte in tekentekst in te stellen                                                                                                                                                                                                       |
 
-### Use Markdown
+### Gebruik Markdown
 
-#### Headline
+#### Kop
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# Rubriek 1
+## Titel 2
+### titel 3
 ```
 
 #### Bold & Italics
@@ -44,48 +44,48 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### To-do lijst
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### To-do lijst
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] 🚀 Bouw een nieuwe app in ILLA Cloud
+2. [ ] :phone : Bel met Monica
+3. [x] 🍷 Heb een diner met **Elsa**
+4. [x] :woman_dans: Speel `Just dans` gedurende een half uur
 ```
 
-#### Bulleted list
+#### Lijst met opsommingstekens
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
 ### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+- Real-time Collaboration: We kunnen alles in real-time samen maken.
+- 🛠️ Aangepaste Plugin: Bouw elke aangepaste plugin om te doen wat u wilt.
+- 🤖 Automate ondersteuning: verbind alles en automatiseer ze in 5 seconden.
+- 🖥️ Zelf-hosted: ondersteunt Docker & k8s
 ```
 
-#### Table
+#### Tabel
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
 ```jsx
-### Table
-| Name        | Link   |  Description  |
-| :--------  | :-------  | :----  |
-| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
-| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
-| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+### Tafel
+± Link Link COM(
+-0:--------------------------- ------- ------------
+・ILLA Cloud help. [https://cloud. llacloud.com/](https://cloud.illacloud.com/) · Build apps op ILLA Cloud×
+quad ILLA GitHub.v. [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) $\\qStar ons op GitHubleast
+★ILLA homepage (IN[https://www.illacloud.com/) https://www.illacloud.com/) EnvironLA Cloud Offical website
 ```
 
-### Display dynamic data
+### Laat dynamische gegevens zien
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+Gebruik `{{` om gegevens van andere componenten of acties of globale variabelen te krijgen. Bijvoorbeeld, om de bijnaam van de huidige gebruiker weer te geven:
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Hallo! '+ currentUserInfo.nickname }}
 ```
