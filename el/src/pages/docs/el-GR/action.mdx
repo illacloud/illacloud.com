@@ -1,47 +1,47 @@
 ---
-title: Action
+title: Ενέργεια
 metaTitle: ILLA Cloud Action doc
 tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+desc: Οι ενέργειες είναι η γέφυρα μεταξύ των δεδομένων και των στοιχείων και αποτελούν ουσιαστικό μέρος της κατασκευής μιας εφαρμογής.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Ερώτημα</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Μετά τη δημιουργία του πόρου, θα πρέπει να εξαγάγετε τα δεδομένα στον πόρο, να επιλέξετε, να φιλτράρετε, συγχωνεύστε τα δεδομένα και στη συνέχεια να τα βάλετε στα Ένθετα σύμφωνα με τις λογικές απαιτήσεις. Αποκαλούμε αυτή τη διαδικασία επεξεργασίας δεδομένων μια Δράση. Οι ενέργειες είναι η γέφυρα μεταξύ των δεδομένων και των στοιχείων και αποτελούν ουσιαστικό μέρος της κατασκευής μιας εφαρμογής. Έχουμε διαιρέσει τις δράσεις σε δύο κατηγορίες: δράσεις και Transformers.
 
-### SQL Action
+### Ενέργεια SQL
 
-#### Create action
+#### Δημιουργία ενέργειας
 
-The process of using SQL actions is divided into the following steps:
+Η διαδικασία χρήσης SQL ενεργειών χωρίζεται στα ακόλουθα βήματα:
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Πρώτα, πρέπει να βρείτε τη λίστα ενεργειών στον επεξεργαστή εφαρμογών και να κάνετε κλικ στο κουμπί "Προσθήκη".
+2.  Στη συνέχεια, επιλέξτε έναν τύπο πηγής δεδομένων στο πλαίσιο επιλογής πόρου. Μπορείτε να βρείτε τους πόρους που δημιουργήθηκαν στην αντίστοιχη λίστα πόρων, μπορείτε επίσης να δημιουργήσετε νέους πόρους εδώ. Επιλέξτε τον δημιουργημένο πόρο και κάντε κλικ στο κουμπί "Επιβεβαίωση". Μια ενέργεια SQL θα δημιουργηθεί με επιτυχία.
+3.  Η ενέργεια που δημιουργείται θα εμφανιστεί στη λίστα ενεργειών. Ένας επεξεργαστής ενεργειών θα εμφανιστεί κάτω από το πλαίσιο αφού κλωτσήσει την ενέργεια. Μπορείτε να αλλάξετε τον πόρο των ενεργειών, να γράψετε δηλώσεις ενέργειας, περιεχόμενο απάντησης, να προσθέσετε μετασχηματιστές, χειριστές γεγονότων.
+4.  Αφού συμπληρώσετε τη λίστα ενεργειών, μπορείτε να κάνετε κλικ στο κουμπί "Προεπισκόπηση" για να ελέγξετε αν η ενέργεια που γράψατε είναι έγκυρη. Ο πίνακας ρυθμίσεων θα εμφανίζει το αποτέλεσμα της ενέργειας. Μετά την επεξεργασία της ενέργειας, μπορείτε να κάνετε κλικ στο κουμπί "Αποθήκευση" για να τερματίσετε τη διαδικασία. Αν κάνετε εναλλαγή σε άλλη ενέργεια χωρίς αποθήκευση των πληροφοριών, το σύστημα θα σας ζητήσει να αποθηκεύσετε την τροποποίηση.
 
-#### Action Breakdown
+#### Κατανομή Ενεργειών
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Ενέργεια: Μπορείτε να εισάγετε τις δηλώσεις ενεργειών σας στο πρόσθετο Ενέργειας, όπου έχουμε προσθέσει τον επεξεργαστή Κώδικα Mirror για να ενεργοποιήσετε την επισήμανση ενέργειας και την ολοκλήρωση κώδικα. Σε επόμενες ενημερώσεις, θα παράσχουμε έναν τρόπο εισαγωγής GUI για τη σύνταξη δηλώσεων δράσης, έτσι ώστε οι χρήστες που δεν είναι εξοικειωμένοι με τις δηλώσεις δράσης να μπορούν επίσης να ολοκληρώσουν τις ενέργειες δεδομένων.
+2.  Μετασχηματιστής: Μπορείτε να βελτιώσετε τη λογική δράσης με δηλώσεις JavaScript στον μετασχηματιστή, για παράδειγμα, χρησιμοποιώντας τη λειτουργία φίλτρου στο JS αντί της λειτουργίας όπου βρίσκεται η εντολή δράσης.
+3.  Χειριστής συμβάντων: Οι χειριστές συμβάντων σας επιτρέπουν να ενεργοποιείτε ενέργειες, να ελέγχετε ένθετα και άλλες ενέργειες ως απάντηση στην αλληλεπίδραση του χρήστη. Μπορείτε να προσθέσετε πολλαπλούς χειριστές συμβάντων για να απαντήσετε σε ένα συμβάν χωρίς να προσθέσετε προσαρμοσμένες εντολές JavaScript. Για παράδειγμα, όταν ένας χρήστης κάνει κλικ σε ένα κουμπί, μπορείτε (1) να ενεργοποιήσετε μια ενέργεια για εκτέλεση, ενώ (2) επαναφορά της κατάστασης των πολλαπλών αναπτυσσόμενων λιστών και των εισροών κειμένου.
+4.  Απάντηση: Στη μονάδα απόκρισης, μπορείτε να προσαρμόσετε τις συνθήκες υπό τις οποίες η ενέργεια επιστρέφει εσφαλμένα αποτελέσματα, με τέτοιο τρόπο ώστε να εξασφαλίζεται η ακρίβεια της δράσης.
+5.  Για προχωρημένους: Εκλεπτυσμένες λεπτομερείς ρυθμίσεις για ενέργειες όπως χρόνος απόκρισης της βάσης δεδομένων, καθυστερήσεις επεξεργαστή συμβάντων κλπ. εντός των προηγμένων επιλογών.
 
-### API Actions
+### Ενέργειες API
 
-#### Create action
+#### Δημιουργία ενέργειας
 
-The process for actioning data using the API is similar to that for SQL.
+Η διαδικασία για την ενεργοποίηση δεδομένων χρησιμοποιώντας το API είναι παρόμοια με αυτή για SQL.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  Πρώτον, ο χρήστης πρέπει να βρει τη λίστα ενεργειών στο κάτω αριστερά μέρος της σελίδας επεξεργασίας της εφαρμογής και κάντε κλικ στο σύμβολο συν στο πάνω δεξιά μέρος της λίστας ενεργειών.
+2.  Στη συνέχεια, επιλέξτε την αντίστοιχη λίστα προέλευσης δεδομένων στο πλαίσιο επιλογής πόρων που εμφανίζεται επάνω. Μπορείτε να βρείτε τον δημιουργημένο πόρο στην αντίστοιχη λίστα πηγής δεδομένων, ή μπορείτε να δημιουργήσετε έναν νέο πόρο εδώ. Επιλέξτε τον δημιουργημένο πόρο, κάντε κλικ στο "Δημιουργία" και μια ενέργεια API θα δημιουργηθεί με επιτυχία.
+3.  Η ενέργεια που δημιουργήθηκε με επιτυχία θα εμφανιστεί στη λίστα ενεργειών στο κάτω μέρος του πίνακα και η καρτέλα Γενικά για την ενέργεια θα εμφανιστεί κάτω από το πλαίσιο όταν πατηθεί. Μπορείτε να υποβάλετε αίτημα σε οποιοδήποτε HTTP API στο ILLA . Παρακαλούμε δείτε την τεκμηρίωση APIs για τις μεθόδους αίτησης δεδομένων.
+4.  Μόλις συμπληρώσετε τη δράση σας, μπορείτε να κάνετε κλικ στο κουμπί "Προεπισκόπηση" για να δείτε αν η ενέργεια που έχετε γράψει είναι έγκυρη και ο πίνακας ρυθμίσεων θα σας δώσει τα αποτελέσματα. Μόλις ολοκληρώσετε την επεξεργασία της ενέργειας σας, μπορείτε να κάνετε κλικ στο κουμπί Αποθήκευση και έξοδο για να τερματίσετε τη διαδικασία. Αν κάνετε εναλλαγή σε άλλη λειτουργία χωρίς αποθήκευση, ένα αναδυόμενο παράθυρο θα σας ζητήσει να ολοκληρώσετε τη λειτουργία αποθήκευσης.
 
-#### Action Breakdown
+#### Κατανομή Ενεργειών
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Μετασχηματιστής: Μπορείτε να βελτιώσετε τη λογική δράσης με δηλώσεις JavaScript σε έναν μετασχηματιστή, για παράδειγμα, χρησιμοποιώντας τη λειτουργία φίλτρου στο JS αντί για τη λειτουργία όπου βρίσκεται μια εντολή δράσης.
+2.  Χειριστές συμβάντων: Οι χειριστές συμβάντων σας επιτρέπουν να ενεργοποιείτε ενέργειες, να ελέγχετε ένθετα και άλλες ενέργειες ως απάντηση στην αλληλεπίδραση του χρήστη. Μπορείτε να προσθέσετε πολλαπλούς χειριστές συμβάντων για να απαντήσετε σε ένα συμβάν χωρίς να προσθέσετε προσαρμοσμένες εντολές JavaScript. Για παράδειγμα, όταν ένας χρήστης κάνει κλικ σε ένα κουμπί, μπορείτε (1) να ενεργοποιήσετε μια ενέργεια για εκτέλεση, ενώ (2) επαναφορά της κατάστασης των πολλαπλών αναπτυσσόμενων λιστών και των εισροών κειμένου.
