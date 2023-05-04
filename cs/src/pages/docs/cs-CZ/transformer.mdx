@@ -1,29 +1,29 @@
 ---
-title: Transformer
-metaTitle: ILLA Cloud transformer doc
-desc: Transformer in ILLA allows user to write JavaScript to refine the application logic
-tagCategory: doc_menu_transformer_click
+title: Transformátor
+metaTitle: Transformátor z ILLA Cloudu
+desc: Transformer v ILLA umožňuje uživateli psát JavaScript pro upřesnění aplikační logiky
+tagCategory: doc_menu_transformer_klikněte
 ---
 
 * * *
 
-## <Heading hidden>Transformer</Heading>
+## <Heading hidden>transformátor</Heading>
 
-We have put a Transformer in ILLA to meet your requirements for writing JavaScript to refine your application logic. In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
+Vložili jsme transformátor v ILLA, aby splnil vaše požadavky na psaní JavaScriptu pro upřesnění logiky aplikace. V transformátoru nemusíte programovat v JavaScriptu pomocí {{template syntax}} , jak to děláte ve vstupním poli postavy, aby bylo možné psát dlouhé a komplexní bloky JS kódu plynuleji. Kromě toho Transformer pomáhá vývojářům odpovědným za tvorbu stránek a logické budování k dokončení jejich vývojové práce efektivněji, aniž by se navzájem omezoval pokrok.
 
-You can use the Transformer not only for established data operations but also for creating transformer operations when transforming data. It would be better to choose an independent transformer when you have multiple operations involved in transforming data, or need to use complex JavaScript logic to transform data.
+Transformátor můžete použít nejen pro zavedené operace s daty, ale také pro vytváření operací transformátorů při transformaci dat. Bylo by lepší zvolit nezávislý transformátor, když máte více operací spojených s transformací dat, nebo je třeba použít komplexní logiku JavaScriptu pro transformaci dat.
 
-### Creative Transformers
+### Kreativní transformátory
 
-Click on the Transformers tab in the Action list, and click on "+ New" to create a transformer. It will be displayed in the action list after creation. You can change the name, write JS code, save and run it in the configuration panel after selection.
+Klikněte na kartu Transformers v seznamu akcí a klikněte na "+ Nové" pro vytvoření transformátoru. Po vytvoření se zobrazí v seznamu akcí. Po výběru můžete změnit název, zapsat JS kód, uložit a spustit jej v konfiguračním panelu.
 
-> You can use the 'preview' button to see the results of a transformer. Note that you have to save the transformer for the rest of the app to get the new value.
+> Můžete použít tlačítko 'náhled' pro zobrazení výsledků transformátoru. Pro získání nové hodnoty musíte transformátor pro zbytek aplikace uložit.
 
-The insert calls the transformer with a value equal to the data returned within the transformer, this data will change as the data entered into the transformer changes with the code of the transformer. As with the character input box, you can still use the template syntax to call the global variable No. When you are writing JS code to call data, you can find the specific data variable name in the data workspace in the left hand panel to help you write code faster.
+Vlož volá transformátor o hodnotě rovnající se datům předaným v rámci transformátoru, tyto údaje se změní, jakmile se data vložená do transformátoru změní pomocí kódu transformátoru. Stejně jako u vstupního pole postavy můžete stále použít syntaxi šablony k volání globální proměnné č. Když píšete JS kód pro volání, konkrétní název datové proměnné naleznete v pracovním prostoru v levém panelu, který vám pomůže psát kód rychleji.
 [//]\: # ([Image])
 
-You can call the transformer variable in the data entry box by using `{{transformer name. tag name}}` to call the transformer variable in the data entry box.
+Proměnnou transformátor můžete zavolat v datovém poli pomocí `{{transformer name. název tagu}}` pro zavolání transformátorové proměnné v poli zadávání dat.
 
-### Query Transformer
+### Transformátor dotazu
 
-We have put a Transformer in the query operation to allow you to transform the fetched data into the desired format directly after completing the action You can then simply pass {{actionName.data}} to retrieve the data once you have completed the conversion in the transformer within the action.
+Do operace dotazu jsme vložili transformátor, který vám umožní transformovat načtená data do požadovaného formátu přímo po dokončení akce. Poté můžete jednoduše předat {{actionName.data}} pro načtení dat po dokončení konverze v transformátoru v rámci akce.
