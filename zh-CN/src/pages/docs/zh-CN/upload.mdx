@@ -1,78 +1,78 @@
 ---
-title: Upload
-metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
+title: 上传
+metaTitle: ILLA 云上传组件doc
+description: 使用上传组件从本地机器上传文件到任何云存储
 tagCategory: doc_menu_upload_click
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>上传</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+上传组件用于允许用户通过API从本地机器上传文件到任何云存储。 接下来，我们将介绍如何配置上传组件，如何将上传组件与云存储服务联系起来。 如何使用上传组件来选择一个图像，并用图像等显示它。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### 属性
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| 财产       | 描述                                                                                                                                     |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 类型       | 设置上传组件的类型，包括按钮和 Drop区。                                                                                                                 |
+| 文本       | 上传组件上显示的文本。                                                                                                                            |
+| 选择类型     | 将选择类型设置为多个文件、单个文件或目录。                                                                                                                  |
+| 文件类型     | 允许上传的文件扩展名列表。 没有值允许所有文件类型。                                                                                                             |
+| 追加新选定的文件 | 将选中的新文件附加到选定的文件或替换多个文件或目录的选定类型中的文件。                                                                                                    |
+| 文件列表     | 设置是否在上传组件下方显示选中的文件列表。 上传器的高度将根据文件列表的长度动态变化。                                                                                            |
+| 解析值      | 尝试解析选中的文件，并支持 JSON、CSV、TSV、Excel和 TXT 文件。 解析后的数据可以通过 {{upload1.parsedValue}} 访问。 无法解析的文件将在数组中为空 所有文件都可以在数组中以 Base64 编码的字符串使用，无论此选项是什么。 |
+| 正在加载     | 组件是否应显示加载指示器。                                                                                                                          |
+| 已禁用      | 设置是否禁用此组件以及在什么条件下禁用它。 例如，如果输入1组件为空，则该组件应禁用：{请注意，输入值== altil }}                                                                         |
+| 工具提示     | 当用户悬停在组件上时在组件上显示工具提示。                                                                                                                  |
+| 必填字段     | 确定是否需要。                                                                                                                                |
+| Min size | 要设置允许添加的最小文件大小。                                                                                                                        |
+| Max size | 要设置允许添加的最大文件大小。                                                                                                                        |
+| 自定义规则    | 设置验证失败时显示的文本。                                                                                                                          |
+| 隐藏验证消息   | 设置验证失败时是否显示验证消息。                                                                                                                       |
+| 表单数据键    | 为组件设置一个密钥。 在将此组件添加到表单后，此密钥将用于在提交表单时识别此组件的数据。                                                                                           |
+| Hidden   | 设置是否显示此组件以及在什么条件下显示它。 例如，如果当前用户不是用户A，这个组件应该隐藏：{□ currentUserInfo.nickname != 'User A' }}                                               |
+| 变体       | 设置按钮上传组件到大纲或填充。                                                                                                                        |
+| 主题颜色     | 设置按钮上传组件的颜色。                                                                                                                           |
 
-### Method
+### 方法
 
-You can use other components to control the Upload component. We support the following three methods:
+您可以使用其他组件来控制上传组件。 我们支持以下三种方法：
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| 清除验证  | 用于清除验证消息        |
+| ----- | --------------- |
+| 清除值   | 用于清除选中的         |
+| 设置已禁用 | 用于将上传组件设置为禁用或启用 |
 
-### Event handler
+### 事件处理程序
 
-To trigger actions when the selected files change
+当所选文件改变时触发操作
 
-### Data of Uploader
+### 上传器数据
 
-The upload component has some commonly used data, which can be called in the app.
+上传组件有一些常用的数据，可以在应用程序中调用。
 
-`value` an array consisting of the base64 data of files. 
+`value`，一个由数据库64数据组成的数组。 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+`files` 对象数组。 对象的键值包括“lastModified”、“name`、`size`、`type\`”。 您可以使用 "{{upload1.files.map(ile =>文件"。 你可以获得一个文件名数组并且你也可以获得最后修改数组、大小数组、类型数组。 
 
-### Upload files to a cloud storage service
+### 上传文件到云存储服务
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### 通过S3资源上传单个文件
 
-The configuration of action is as follows. 
+行动配置如下。 
 
-Upload object name
+上传对象名称
 
 ```jsx
-{{upload1.files.map(file =>file.name)[0]}}
+{{upload1.files.map(ile =>file.name)[0]}}
 ```
 
-Upload data
+上传数据
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### 通过S3资源上传多个文件
 
-Upload object name list
+上传对象名称列表
 
 ```jsx
-{{upload1.files.map(file =>file.name)}}
+{{upload1.files.map(ile =>file.name)}}
 ```
 
-Upload data list
+上传数据列表
 
 ```jsx
 {{upload1.value}}
@@ -96,11 +96,11 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+上传图像并在图像组件上显示
+将图像源更改为文件基准64 上传组件数据。 Base64 数据存储在数组中的值属性中。 我们应该将文件前缀与文件数据分割开来。 该守则如下。 
 
 ```jsx
-{{'data:image/jpeg;base64,'+upload1.value[0]}}
+{{'data:image/jpeg;base64'+upload1.value[0]}}
 ```
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
