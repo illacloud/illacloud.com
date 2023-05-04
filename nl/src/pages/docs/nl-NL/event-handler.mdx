@@ -1,36 +1,36 @@
 ---
 title: Event handler
 metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
-tagCategory: doc_menu_evnet_handler_click
+desc: Event handlers zijn een integraal onderdeel van het verfijnen van uw interne tool gebruik logica
+tagCategory: doc_menu_evnet_handler_klik
 ---
 
 * * *
 
 ## <Heading hidden>Event handler</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Event handlers zijn een integraal onderdeel van het verfijnen van uw interne tool gebruik logisch. Elke invoegen of actie die reageert op een gebruikersactie heeft zijn eigen gebeurtenissen die kunnen worden geactiveerd, zoals een knop invoegen met een 'klik'-evenement, een tekstinvoerveld met een 'indienen' evenement, het succes van een actie, enzovoort. Event handlers helpen gebruikers vooraf gedefinieerde instructies te activeren bij gebeurtenissen: je kunt reageren op één gebeurtenis, of je kunt meerdere event handlers instellen en instellen als workflows om complexer werk te doen.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Nadat de gebeurtenis is ingesteld kan de event-handler u helpen om een aantal acties uit te voeren: controle van de actiestaden, beheer robots, voer scripts uit en meer. Je kunt ook meer gedetailleerde JavaScript-trigger-voorwaarden toevoegen bovenop de triggervoorwaarden.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Afspraken afhandelaars
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+In geval van afhandelaars kunt u de uitkomst van het evenement bepalen op basis van of de zoekresultaten mislukken of niet. U kunt de trigger-logica voltooien door de query foutvoorwaarde in te stellen in het response tabblad.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Handler indienen bewerken
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+We stellen een trigger-voorwaarde in voor elke interactieve insert, en je kunt een gebeurtenis in de actielijst van de handler selecteren als de trigger-voorwaarde. U kunt bijvoorbeeld 'Verzenden' instellen als de triggervoorwaarde in de event-handler voor het gegevensinvoerveld, welke het invoerbestand automatisch in de database invoegd wanneer de gebruiker de invoer 'verzenden', waardoor een simpele data-invoegfunctie wordt geïmplementeerd.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Tijdelijke staten
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Bij het verwerken van gegevens kan je situaties tegenkomen waarbij de verwerkte gegevens niet onmiddellijk worden opgeroepen. Daarom hebben we tijdelijke staten opgericht om tussenlanden op te slaan voor gegevensverwerking. U kunt kiezen om een tijdelijke status in te stellen in de respons-event-opties van event-handlers en klik op Aanmaken nieuwe status om de huidige gegevens in de tijdelijke staat op te slaan welke geplaatst kunnen worden voor elk eigendom.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Buiten de project editor, kan je ook gegevens opslaan via {{tempState1.setValue(data)}} of oproepgegevens door {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> De waarden in de tijdelijke staat zullen worden gewist wanneer het project opnieuw wordt opgestart, en je moet de waarden lokaal of in de cloud opslaan om de integriteit van de gegevens te waarborgen.
