@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
+title: 顔の端点を<unk>
+metaTitle: Hugging Face Endpoint に接続
+description: ILLAでのHugging Face Endpointの使い方を学ぶ
 tagCategory: doc_menu_hugging_face_endpoint_click
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>顔の端点を抱きしめる</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+Hugging Face Inferation Endpointを使用すると、トランスフォーマー、ディフューザー、または任意のモデルを専用の完全管理インフラストラクチャに簡単に展開できます。 format@@0(https://ui.endpoints.huggingface.co/new) をクリックしてエンドポイントを作成します。 
 
-### Create Hugging Face endpoint resource
+### Hugging Faceエンドポイント リソースを作成
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Hugging Face Endpoint リソースを追加するには 2 つの方法があります。 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  `ILLA Builder`を入力します>>「リソース」タブをクリックします>>「新規作成」をクリックします>>「面の端点を抱きしめる」を選択します>>接続情報を設定し、「リソースを保存」をクリックします。
+2.  編集ページを入力してください>> アクションリストで「+ 新規」をクリックします >> `顔の端点を接続する` を選択します >> 接続情報を設定するか、新しい接続情報を追加するには「+ 新しいリソース」をクリックします
 
-### Configure connection information
+### 接続情報を設定
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| プロパティー       | 必須 | 説明                                                                    |
+| ------------ | -- | --------------------------------------------------------------------- |
+| 名前           | 必須 | ILLA で表示するリソース名を定義します。                                                |
+| Endpoint URL | 必須 | Endpoint を作成します: https://ui.endpoints.huggingface.co/new URL を取得します。  |
+| トークン         | 必須 | 組織のトークン https://huggingface.co/settings/tokensで入手できます。                |
 
-### Create Actions
+### アクションを作成
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+編集ページを入力してください>> アクションリストで「+ 新規」をクリックします >> 「顔の端点を抱きしめる」を選択します >> 既存のリソースを選択するか、新しいリソースを追加します
 
-### Configure actions
+### アクションの設定
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| プロパティー   | 必須 | 説明                                                                                                                               |
+| -------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
+| パラメータの種類 | 必須 | エンドポイントのパラメータタイプ。 たとえば、エンドポイントにテキスト入力が必要な場合は、「inputs」パラメータにテキストを入力します。 エンドポイントに JSON 入力が必要な場合は、「inputs」パラメータを JSON またはキー値で入力します。 |
+| パラメータ    | 必須 | パラメータを入力します。 コンポーネントのデータを使用するには {{ componentName.value }} を使用します。                                                                |
 
-### Use case
+### 大文字小文字を区別する
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+オーディオファイルの入力とテキストへの変換を行う「openai/whisper-base」を導入しました。 会議分、テキストへのポッドキャストなどに適しています。 次に、このモデルを使ってILLA Cloudでアプリケーションを構築する方法を紹介します。
 
-#### Step 1: Build the front-end interface with components
+#### ステップ 1: コンポーネントを使用してフロントエンドインターフェイスを構築する
 
-We have built an interface using the components such as file upload and button, as follows.
+以下のように、ファイルアップロードやボタンなどのコンポーネントを使用してインターフェースを構築しています。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### ステップ 2: Hugging Face リソースを追加
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+リソースの設定を完了するには、以下のフィールドを入力します。 format@@0(https://ui.endpoints.huggingface.co/new) とエンドポイントURLを取得します。 format@@0(https://huggingface.co/settings/tokens)で組織 API トークンを入手してください。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### ステップ 3: アクションの設定
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+最初にパラメータタイプを選択します。 例として、`openai/whisper-base`を取ります。このモデルではバイナリファイル入力が必要なので、パラメータを`Binary`に変更します。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+ファイルアップロードコンポーネントからアップロードされたファイルデータとしてモデルに渡すバイナリを設定します。 例えば、 `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### ステップ 4: コンポーネントとアクションを接続する
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+ボタンがクリックされたときに実行されるアクションをトリガーするイベントハンドラをボタンに追加します。 テキストコンポーネントの値を {{whisper.data[0].text}} に設定して、テキストコンポーネントに変換結果を表示します。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+上記のステップが設定されると、アプリケーションが作成され、実行結果は次のとおりです。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
