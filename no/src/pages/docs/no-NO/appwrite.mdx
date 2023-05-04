@@ -1,151 +1,151 @@
 ---
 title: Appwrite
 metaTitle: ILLA Cloud Appwrite Integration Document
-description: The guide to setup and integrate with Appwrite on ILLA Cloud
-tagCategory: doc_menu_appwrite_click
+description: Guiden å sette opp og integrere med Appwrite på ILLA Cloud
+tagCategory: doc_menu_appwrite_klikk
 ---
 
 * * *
 
 ## <Heading hidden>Appwrite Database</Heading>
 
-Within Appwrite's different services, you can find user authentication and account management, user preferences, database and storage persistence, cloud functions, localization, image manipulation, and more. 
+I Appwrites ulike tjenester kan du finne brukerautentisering og kontostyring, brukerpreferanser, database og varighet av lagring, skyfunksjoner, lokalisering, bildemanipulering og mer. 
 
-The combination of ILLA Cloud and Appwrite, that is, the combination of server-side low-code and front-end low-code, will truly realize low-code full-stack development.
+Kombinasjonen ILLA Cloud og Appwrite, det vil bety en kombinasjon av server-side lavkode og front-end lav-kode, virkelig realisere lav-kode full stabelutvikling.
 
-[Click here](https://appwrite.io/) to learn more about Appwrite.
+[Klikk her](https://appwrite.io/) for å lære mer om Appwrite.
 
-### Setup Appwrite resource on ILLA Cloud
+### Oppsett av Appwrite ressurs på ILLA Cloud
 
-#### Two ways to create resources
+#### To måter å lage ressurser på
 
-The first way is to enter the `Resources` tab > click `Create New` to select Appwrite. 
+Den første måten er å skrive inn `Resources` fanen > klikk `Create New` for å velge Appwrite. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
 
-The another way is to enter the `app editor` page > click `+ New` to select Appwrite > click `+ New Resources` to add the new configuration. 
+Den en annen måte er å skrive inn `app editor` siden > klikk `+ New` for å velge Appwrite > klikk `+ Nye Ressurser` for å legge til den nye konfigurasjonen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
 
-#### Setup Appwrite by filling in the following fields
+#### Installasjonsprograminnstillinger ved å fylle ut følgende felt
 
-Before you connect an Appwrite resource, make sure you have deployed Appwrite on your local machine or a cloud provider. [Click here](https://appwrite.io/docs/installation) to learn more about the installation of Appwrite. 
+Før du kobler til en Appwrite resource, sørg for at du har distribuert Appwrite på din lokale maskin eller en skylagel. [Klikk her](https://appwrite.io/docs/installation) for å lære mer om installasjon av Appwrite. 
 
-| Property    | is_required | Description                                                                                                 |
-| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
-| Name        | required    | The name for resource when creating actions in the ILLA. You can customize a name for easy identification.  |
-| Host        | required    | HOSTNAME OR IP.                                                                                             |
-| Database ID | required    | Database ID                                                                                                 |
-| Project ID  | required    | Project ID                                                                                                  |
-| Api key     | required    | TOKEN                                                                                                       |
+| Egenskap    | is_nødvendig | Beskrivelse                                                                                              |
+| ----------- | ------------ | -------------------------------------------------------------------------------------------------------- |
+| Navn        | obligatorisk | Navnet på ressursen når det skapes handlinger i ILLA. Du kan tilpasse et navn for enkel identifikasjon.  |
+| Vert        | obligatorisk | VELKOMMEN ELLER IP.                                                                                      |
+| Database ID | obligatorisk | Database ID                                                                                              |
+| Prosjekt ID | obligatorisk | Prosjekt ID                                                                                              |
+| Api nøkkel  | obligatorisk | TOKEN                                                                                                    |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
 
-### Create actions in the app editor
+### Opprett handlinger i appeditor
 
-#### Create actions in the following way
+#### Opprett handlinger på følgende måte
 
-Click `+ New` in the app editor page > to select Appwrite > select an existing Appwrite resource or create a new resource > click `Create Action` to create a new action. 
+Klikk `+ New` i app-editor siden > å velge Appwrite > velge en eksisterende Appwrite resource eller skape en ny ressurs > klikk `Create Action` for å opprette en ny handling. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
 
-After creating an action, please select a method. We provide the following methods: List documents, Create a document, Update a document, Get a document, and Delete a document. The configuration of each method is as follows. 
+Velg en metode etter at du har opprettet en handling. Vi angir følgende metoder: Liste-dokument, Opprett et dokument, oppdater et dokument, Få et dokument, og slett et dokument. Konfigurasjonen av hver metode er som følger: 
 
-#### List documents
+#### Liste opp dokumenter
 
-The following is a simple configuration example: List the document with $id 5. 
+Følgende er et enkelt konfigurasjons eksempel: List dokumentet med $id 5. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
 
-| Property      | is_required | Description                                                                                                                                                                                                                                 |
-| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Collection ID | Required    | Input or select a collection id from the database                                                                                                                                                                                           |
-| Filter        | Optional    | Support multiple filters. A filter consists of a key, a value and a condition. 1. key: input an attribute 2. condition: select a condition, including equal, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. value: input the value |
-| Order by      | Optional    | Support for ordering by multiple attributes. 1. input an attribute to order by 2. Select asc( by default ) or desc                                                                                                                          |
-| Limit         | Optional    | number of records                                                                                                                                                                                                                           |
+| Egenskap     | is_nødvendig | Beskrivelse                                                                                                                                                                                                                                     |
+| ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Samling ID   | Påkrevd      | Angi eller velg en samlings-ID fra databasen                                                                                                                                                                                                    |
+| Filtrer      | Valgfritt    | Støtt flere filtre. Et filter består av en nøkkel, verdi og en betingelse. 1. Nøkkel: legg inn et attributt 2. betingelse: Velg en betingelse, inkludert likeverdig, noEqual, lessThan, lessThanEqual, greaterThan, etc. 3. verdi: angi verdien |
+| Sorter etter | Valgfritt    | Støtte for sortering etter flere attributter. 1. angi en attributt til sortering av 2. Velg asc( som standard) eller desc                                                                                                                       |
+| Grense       | Valgfritt    | antall poster                                                                                                                                                                                                                                   |
 
-The following is an example of how to use the data entered in the component in the action:
+Følgende er et eksempel på hvordan du bruker dataene som er angitt i komponenten i handlingen:
 
-1.  Add an input component to the frame so that users can enter the document id they want to find.  
-2.  Add a filter: set the attribute field to $id and enter {{ input1.value }} in the value field. 
+1.  Legg til en inngangskomponent på rammen, slik at brukere kan skrive inn dokument-ID de ønsker å finne.  
+2.  Legg til et filter: sett attributtfeltet til $id og skriv inn {{ input1.value }} i verdifeltet. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
 
-Output
+Utgang
 
-Check the data structure on the left panel. For example, use `{{list.data[0].documents[0].id}}`(`list` is the name of the action) to get the id of the first document. 
+Sjekk datastrukturen på venstre panel. For eksempel, bruk `{{list.data[0].documents[0].id}}`(list\` er handlingens navn) for å få ID-en til det første dokumentet. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
 
-You can also use `{{list.data[0].documents.map(documents => documents)}}` to display all data on `table` component. 
+Du kan også bruke `{{list.data[0].documents.map(documents => documents)}}` for å vise alle data på `table` komponenten. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
 
-#### Create a document
+#### Opprett et dokument
 
-| Collection ID | Required | Input or select a collection id from the database                  |
-| ------------- | -------- | ------------------------------------------------------------------ |
-| Document ID   | Required | input an ID. the document will be created with this ID             |
-| Data          | Required | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| Samling ID  | Påkrevd | Angi eller velg en samlings-ID fra databasen                        |
+| ----------- | ------- | ------------------------------------------------------------------- |
+| Dokument ID | Påkrevd | skrive inn en ID. Dokumentet vil bli opprettet med denne IDen       |
+| Data        | Påkrevd | An object enclosed in {{ }}. For eksempel, {{ { "key": "value" } }} |
 
-The following is an example of how to use the data entered in the component in an object. 
+I det følgende er et eksempel på hvordan du bruker dataene som angis i komponenten i et objekt. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
 
-#### Update a document
+#### Oppdater et dokument
 
-| Property      | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| Collection ID | Input or select a collection id from the database                  |
-| Document ID   | input an existing document ID to be updated                        |
-| Data          | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| Egenskap    | Beskrivelse                                                         |
+| ----------- | ------------------------------------------------------------------- |
+| Samling ID  | Angi eller velg en samlings-ID fra databasen                        |
+| Dokument ID | skriv inn en eksisterende dokument-ID som skal oppdateres           |
+| Data        | An object enclosed in {{ }}. For eksempel, {{ { "key": "value" } }} |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
 
-#### Get a document
+#### Få et dokument
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Egenskap    | Beskrivelse                                  |
+| ----------- | -------------------------------------------- |
+| Samling ID  | Angi eller velg en samlings-ID fra databasen |
+| Dokument ID | skriv inn en eksisterende dokument-ID        |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
 
-The output data is as follows. Use {{get.data[0]}} to get the document object.
+Utdata er som følger. Bruk {{get.data[0]}} for å få dokumentobjektet.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
 
-#### Delete a document
+#### Slett et dokument
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Egenskap    | Beskrivelse                                  |
+| ----------- | -------------------------------------------- |
+| Samling ID  | Angi eller velg en samlings-ID fra databasen |
+| Dokument ID | skriv inn en eksisterende dokument-ID        |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
 
-### Connect the data from Appwrite with front-end components
+### Koble dataene fra Appwrite med front-end komponenter
 
-#### Configure the actions
+#### Konfigurer handlingene
 
-Create a delete_document action > fill the Document ID field with {{ input1.value }}. 
+Opprett en slette_document handling > fyll feltet Dokument ID med {{ input1.value }}. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
 
-Add an event handler to the action to set a response when run successfully. 
+Legg til en hendelsesbehandler til handlingen for å sette et svar under kjøring vellykket. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
 
-#### Configure components
+#### Konfigurer komponenter
 
-Add a event handler to button to trigger the delete_document action. 
+Legg til en hendelsesbehandler for å utløse en slette_document handling. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
 
-Set the data source of the table to display data. 
+Angi datakilden til tabellen for å vise data. (Automatic Translation) 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
 
-#### View running results
+#### Vis kjørende resultater
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
