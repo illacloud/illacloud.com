@@ -1,78 +1,78 @@
 ---
-title: Upload
+title: Lähetä
 metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
+description: Käytä latauskomponenttia ladataksesi tiedostoja paikallisista koneista mihin tahansa pilvitallennustilaan
 tagCategory: doc_menu_upload_click
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>Lataa</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+Lähetyskomponenttia käytetään siihen, että käyttäjät voivat ladata tiedostoja paikallisista koneistaan mihin tahansa pilvitallennustilaan API:n kautta. Seuraavaksi esittelemme kuinka konfiguroida latauskomponentin, kuinka liittää latauskomponentti yhteen pilvipalvelun, jonka avulla voit tallentaa palvelun. miten voit käyttää latauskomponenttia valitaksesi kuvan, ja näyttää sen kuvan avulla jne.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### Ominaisuudet
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| Ominaisuus                    | Kuvaus                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tyyppi                        | Aseta latauskomponentin tyyppi, mukaan lukien painike ja Dropzone.                                                                                                                                                                                                                                                                                     |
+| Teksti                        | Teksti näytetään ladattavan komponentin kohdalla.                                                                                                                                                                                                                                                                                                      |
+| Valinnan tyypit               | Set the selection type to multiple files, single file or directory. (Automatic Copy)                                                                                                                                                                                                                                                                   |
+| Tiedostotyypit                | Luettelo tiedostopäätteistä, jotka on sallittu ladata. Mikään arvo ei salli kaikkia tiedostotyyppejä.                                                                                                                                                                                                                                                  |
+| Lisää uudet valitut tiedostot | Voit asettaa valitun uuden tiedoston liittämään valitun tiedoston tai korvata valitun tiedoston valintatyyppiin useita tiedostoja tai hakemistoa.                                                                                                                                                                                                      |
+| Tiedoston luettelo            | Määrittää, näytetäänkö lista valituista tiedostoista ladattavan komponentin alapuolella. @ info: whatsthis Lähettimen korkeus muuttuu dynaamisesti sen mukaan, mikä on tiedostonlistan pituus.                                                                                                                                                         |
+| Jäsennuksen Arvo              | Yritetään jäsentää valitut tiedostot, jotka tukevat JSON-, CSV-, TSV-, Excel- ja TXT-tiedostoja. Jäsennettyjä tietoja voi käyttää sivuston {{upload1.parsedValue}} kautta. Tiedostot, joita ei voi jäsentää, ovat tyhjiä taulukossa. Kaikki tiedostot ovat saatavilla base64-koodatuina merkkijonoina arvotaulukossa, tästä vaihtoehdosta riippumatta. |
+| Ladataan                      | Onko komponentissa käytettävä kuormitusindikaattoria.                                                                                                                                                                                                                                                                                                  |
+| Pois Käytöstä                 | Määrittää, poistaako tämä komponentti käytöstä ja millä ehdoilla se käytöstä. Esimerkiksi, jos input1 komponentti on null, tämä komponentti pitäisi poistaa käytöstä: {{ input1.value == ‘ '}}                                                                                                                                                         |
+| Työkaluvihje                  | Komponentin kohdalla näkyvä työkaluvihje kun käyttäjät leijuvat komponentin päällä.                                                                                                                                                                                                                                                                    |
+| Vaadittu kenttä               | Määrittääkseen, onko se pakollinen.                                                                                                                                                                                                                                                                                                                    |
+| Min size                      | Jos haluat asettaa pienimmän tiedostokoon, joka voidaan lisätä.                                                                                                                                                                                                                                                                                        |
+| Max size                      | Jos haluat asettaa tiedoston enimmäiskoon, se voidaan lisätä.                                                                                                                                                                                                                                                                                          |
+| Mukautettu sääntö             | Näytettävän tekstin asettaminen kun vahvistus epäonnistuu.                                                                                                                                                                                                                                                                                             |
+| Piilota vahvistusviesti       | Määrittää, näytetäänkö validointiviesti kun vahvistus epäonnistuu.                                                                                                                                                                                                                                                                                     |
+| Lomakkeen Dataavain           | Jos haluat asettaa komponentin avaimen. Kun tämä komponentti on lisätty lomakkeeseen, tätä avainta käytetään tunnistamaan tämän komponentin tiedot kun lomake lähetetään.                                                                                                                                                                              |
+| Hidden                        | Määrittää, näyttääkö tämä komponentti ja millä ehdoilla se näyttää. Esimerkiksi, jos nykyinen käyttäjä ei ole käyttäjä A, tämän komponentin pitäisi olla piilotettu: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                        |
+| Variantti                     | Aseta painikkeen latauskomponentti ääriviivaan tai täytettäväksi.                                                                                                                                                                                                                                                                                      |
+| Teeman väri                   | Jos haluat asettaa painikkeen latauskomponentin värin.                                                                                                                                                                                                                                                                                                 |
 
-### Method
+### Menetelmä
 
-You can use other components to control the Upload component. We support the following three methods:
+Voit käyttää muita komponentteja Upload komponentin ohjaamiseen. Kannatamme seuraavia kolmea menetelmää:
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| tyhjennys   | Käytetään validointiviestin tyhjentämiseen                              |
+| ----------- | ----------------------------------------------------------------------- |
+| clearValue  | Käytetään tyhjentämään valitut                                          |
+| setDisabled | Käytetään latauksen komponentin asettamiseen pois käytöstä tai käytössä |
 
-### Event handler
+### Tapahtuman käsittelijä
 
-To trigger actions when the selected files change
+Käynnistä toimintoja, kun valitut tiedostot muuttuvat
 
-### Data of Uploader
+### Lähettäjän tiedot
 
-The upload component has some commonly used data, which can be called in the app.
+Lataa komponentti on joitakin yleisesti käytettyjä tietoja, joita voidaan kutsua sovelluksessa.
 
-`value` an array consisting of the base64 data of files. 
+`value` taulukko, joka sisältää tiedostojen kanta64 tiedot. 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+`files` joukko esineitä. Objektien avaimiin kuuluvat `lastModified`, `name`, `size`, `type`. Voit käyttää `{{upload1.files.map(file =>tiedosto. nimi)}` saadaksesi joukon tiedostojen nimiä ja voit myös saada lastModified taulukon, kokotaulukon, kirjoittaa taulukkoa samalla tavalla. 
 
-### Upload files to a cloud storage service
+### Lataa tiedostoja pilven tallennuspalveluun
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### Lataa yksi tiedosto S3-resurssin kautta
 
-The configuration of action is as follows. 
+Toiminnan määrittely on seuraavanlainen: 
 
-Upload object name
+Lataa objektin nimi
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+Lataa tiedot
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### Lataa useita tiedostoja S3-resurssin kautta
 
-Upload object name list
+Lataa objektin nimiluettelo
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+Lataa tietoluettelo
 
 ```jsx
 {{upload1.value}}
@@ -96,8 +96,8 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+Lataa kuva ja näytä se kuvan komponentin
+Muuta kuvan lähde tiedostoon base64 datan latauskomponentti. The base64 data is stored in the value attribute in array. Ja meidän pitäisi splice tiedoston etuliite tiedoston tiedot. Koodi on seuraava: 
 
 ```jsx
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
