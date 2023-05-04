@@ -1,131 +1,131 @@
 ---
-title: Radio group
-metaTitle: ILLA Cloud Radio group component
-description: Displays all options on radio group and supports to select 1 option.
+title: Ομάδα ραδιοφώνου
+metaTitle: ILLA συνιστώσα ομάδας ραδιοφώνου Cloud
+description: Εμφανίζει όλες τις επιλογές στην ομάδα ραδιοφώνου και υποστηρίζει την επιλογή 1.
 tagCategory: doc_menu_radio_group_click
 ---
 
 * * *
 
-## <Heading hidden>Radio group</Heading>
+## <Heading hidden>Ομάδα ραδιοφώνου</Heading>
 
-A radio group, also known as a single-choice group or simply a radio group, is a component that allows users to select only one option from a list of predefined options. Each option in the group is represented by a circular button that can be selected or deselected by users. When one option is selected, any previously selected option in the group is automatically deselected.
+Μια ραδιοφωνική ομάδα, επίσης γνωστή ως ομάδα μιας επιλογής ή απλά μια ραδιοφωνική ομάδα, είναι ένα στοιχείο που επιτρέπει στους χρήστες να επιλέξουν μόνο μία επιλογή από μια λίστα προκαθορισμένων επιλογών. Κάθε επιλογή στην ομάδα αντιπροσωπεύεται από ένα κυκλικό κουμπί που μπορεί να επιλεγεί ή να αποεκλεγεί από τους χρήστες. Όταν μια επιλογή είναι ενεργοποιημένη, οποιαδήποτε προηγούμενη επιλογή στην ομάδα αποεπιλέγεται αυτόματα.
 
-Radio groups are commonly used in web forms, dialog boxes, and other interactive applications where users need to make a single choice from a set of options. They are useful for preventing errors that can occur when users select multiple options by mistake or confusion. Additionally, radio button groups are easy to use and visually intuitive, making them a popular choice for designers and developers alike.
+Οι ομάδες ραδιοφώνου χρησιμοποιούνται συνήθως σε φόρμες ιστού, πλαίσια διαλόγου, και άλλες διαδραστικές εφαρμογές όπου οι χρήστες πρέπει να κάνουν μια ενιαία επιλογή από ένα σύνολο επιλογών. Είναι χρήσιμα για την πρόληψη σφαλμάτων που μπορεί να προκύψουν όταν οι χρήστες επιλέγουν πολλαπλές επιλογές κατά λάθος ή σύγχυση. Επιπλέον, οι ομάδες κουμπιών ραδιοφώνου είναι εύκολο στη χρήση και οπτικά διαισθητικές, καθιστώντας τους μια δημοφιλής επιλογή για τους σχεδιαστές και τους προγραμματιστές.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### Ιδιότητες
 
-#### Manual options
+#### Χειροκίνητες επιλογές
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Προσθέστε νέες επιλογές ή διαγράψτε χειροκίνητα και ρυθμίστε τις επιλογές μία προς μία. Οι ιδιότητες των επιλογών είναι οι εξής: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Ιδιότητες        | Περιγραφή                                           |
+| ---------------- | --------------------------------------------------- |
+| Ετικέτα          | Το κείμενο που εμφανίζεται για την επιλογή          |
+| Τιμή             | Η τιμή που σχετίζεται με την επιλογή                |
+| Απενεργοποιημένο | Αν η επιλογή είναι απενεργοποιημένη για την επιλογή |
 
-#### Mapped options
+#### Αντιστοιχισμένες επιλογές
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Μπορείτε επίσης να προσθέσετε επιλογές από μια πηγή δεδομένων με τη χαρτογράφηση των ιδιοτήτων της ετικέτας και της τιμής στα αντίστοιχα πεδία δεδομένων. Μπορείτε να πάρετε επιλογές δυναμικά από τη βάση δεδομένων με αυτόν τον τρόπο. Στο τέλος αυτού του άρθρου, θα δείξουμε πώς να το χρησιμοποιήσουμε μέσω ενός παραδείγματος.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Ιδιότητες        | Περιγραφή                                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------ |
+| Πηγή δεδομένων   | Ορίστε την πηγή δεδομένων των επιλογών                                                     |
+| Ετικέτα          | Χρησιμοποιήστε {{item}} για να ορίσετε την ετικέτα των επιλογών                            |
+| Τιμή             | Χρησιμοποιήστε {{item}} για να ορίσετε την τιμή των επιλογών                               |
+| Απενεργοποιημένο | Χρησιμοποιήστε {{item}} για να ορίσετε αν η επιλογή είναι απενεργοποιημένη για την επιλογή |
 
-#### Other properties
+#### Άλλες ιδιότητες
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Ιδιότητες                     | Περιγραφή                                                                                                                                                                        |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Προεπιλεγμένη τιμή            | Η αρχική τιμή του εξαρτήματος. Μπορείτε να αλλάξετε δυναμικά την αρχική τιμή πληκτρολογώντας JavaScript στην {{}}.                                                               |
+| Υποκατάστατο                  | Η τιμή θα εμφανίζεται όταν το πεδίο εισαγωγής είναι κενό.                                                                                                                        |
+| Ετικέτα                       | Το όνομα του πεδίου που εμφανίζεται στο χρήστη                                                                                                                                   |
+| Λεζάντα                       | Μια λεζάντα που χρησιμοποιείται για να περιγράψει λεπτομερώς το πεδίο                                                                                                            |
+| Κρυφή ετικέτα                 | Ορίστε αν θα εμφανίζεται η ετικέτα                                                                                                                                               |
+| Θέση                          | Ορίστε τη θέση της ετικέτας σε σχέση με το στοιχείο                                                                                                                              |
+| Ευθυγράμμιση                  | Ορίστε την ευθυγράμμιση της ετικέτας                                                                                                                                             |
+| Width                         | Όταν η ετικέτα βρίσκεται στην αριστερή πλευρά του εξαρτήματος, ορίστε τον λόγο πλάτους της ετικέτας                                                                              |
+| Χειριστής Συμβάντων           | Ερωτήματα ενεργοποίησης, έλεγχος εφαρμογών, ή κλήση άλλων API σε απόκριση σε συμβάντα εφαρμογής.                                                                                 |
+| Απενεργοποιημένο              | Ελέγξτε την κατάσταση του αν το στοιχείο είναι απενεργοποιημένο. Το στοιχείο δεν μπορεί να τροποποιηθεί ή να εστιαστεί όταν είναι απενεργοποιημένο.                              |
+| Μόνο Για Ανάγνωση             | Ελέγξτε την κατάσταση του αν το στοιχείο είναι μόνο για ανάγνωση. Ένα στοιχείο μόνο για ανάγνωση μπορεί να επιλεγεί και να εστιασθεί, αλλά δεν μπορεί να τροποποιηθεί.           |
+| Εμφάνιση κουμπιού καθαρισμού  | Ορίστε αν θα εμφανίζεται το κουμπί εκκαθάρισης                                                                                                                                   |
+| Υπόδειξη                      | Οι χρήστες μπορούν να εισάγουν εδώ την υπόδειξη συστατικού. Η υπόδειξη θα εμφανίζεται όταν εστιάζεται. Υποστηρίζεται μορφή Markdown                                              |
+| Απαιτούμενο πεδίο             | Ισχύει μόνο όταν ο διακόπτης είναι ενεργοποιημένος.                                                                                                                              |
+| Προσαρμοσμένοι κανόνες        | editor.inspect.setter_tooltip.custom_rule                                                                                                                                        |
+| Απόκρυψη μηνύματος επικύρωσης | Μπορείτε να αποκρύψετε το μήνυμα σφάλματος αλλάζοντας την κρυφή κατάσταση όταν η τιμή εισόδου είναι εσφαλμένη. Μπορείτε να αλλάξετε δυναμικά την κρυφή κατάσταση από JavaScript. |
+| Πλήκτρο Δεδομένων Φόρμας      | Καθορίστε ένα κλειδί ενός στοιχείου φόρμας περιτυλίγματος κατά την κατασκευή του χαρακτηριστικού δεδομένων.                                                                      |
+| Hidden                        | Δυναμική ρύθμιση της απόκρυψης του συστατικού. Μπορείτε να αλλάξετε την κρυφή κατάσταση μέσω της δυναμικής δυαδικής τιμής.                                                       |
+| Χρώμα θέματος                 | Για να επιλέξετε το χρώμα του θέματος του στοιχείου                                                                                                                              |
 
-### Method
+### Μέθοδος
 
-You can use other components to control the component. We support the following three methods:
+Μπορείτε να χρησιμοποιήσετε άλλα στοιχεία για τον έλεγχο της εφαρμογής. Υποστηρίζουμε τις ακόλουθες τρεις μεθόδους:
 
-#### setValue
+#### ορισμόςΤιμή
 
-To set the selected option, for example, {{”value1”}}
+Για να ορίσετε την επιλεγμένη επιλογή, για παράδειγμα, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Ιδιότητες | Περιγραφή       |
+| --------- | --------------- |
+| Τιμή      | Επιλεγμένη τιμή |
 
-#### clearValue
+#### εκκαθάρισηΤιμή
 
-To clear the selected options
+Για να καθαρίσετε τις επιλεγμένες επιλογές
 
 #### validate
 
-To verify that the input information is legal
+Για να επιβεβαιωθεί ότι οι πληροφορίες εισόδου είναι νόμιμες
 
 #### clearValidate
 
-To clear the validation message
+Για να καθαρίσετε το μήνυμα επικύρωσης
 
-### Event handler
+### Χειριστής συμβάντων
 
-We support listening to the `onChange` event of the radio group. 
+Υποστηρίζουμε την ακρόαση της εκδήλωσης `onChange` της ομάδας ραδιοφώνου. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Όταν αλλάζει η επιλεγμένη επιλογή, μπορεί να ενεργοποιήσει μια καθορισμένη ενέργεια. Αυτό σημαίνει ότι όταν ένας χρήστης επιλέγει μια διαφορετική επιλογή από μια ομάδα ραδιοφώνου, μια συγκεκριμένη ενέργεια μπορεί να αναληφθεί με βάση την επιλεγμένη επιλογή. Για παράδειγμα, σε μορφή ιστού, επιλέγοντας μια διαφορετική επιλογή μπορεί να ενεργοποιήσει την εμφάνιση διαφορετικών πεδίων φόρμας ή την υποβολή του εντύπου σε διαφορετικό προορισμό. Με αυτόν τον τρόπο, η επιλογή που επιλέγεται από τον χρήστη μπορεί να επηρεάσει τη συμπεριφορά του λογισμικού ή της διαδικτυακής εφαρμογής που χρησιμοποιούν. Η δυνατότητα ενεργοποίησης καθορισμένων ενεργειών που βασίζονται στην είσοδο του χρήστη είναι μια σημαντική πτυχή του διαδραστικού σχεδιασμού λογισμικού και μπορεί να βελτιώσει τη χρηστικότητα και τη λειτουργικότητα του λογισμικού.
 
-### Data
+### Δεδομένα
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Το στοιχείο έχει κάποια κοινώς χρησιμοποιούμενα δεδομένα, τα οποία μπορούν να κληθούν μέσω {{componentName.propertyName}} στην εφαρμογή.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Όνομα ιδιότητας | Περιγραφή       |
+| --------------- | --------------- |
+| τιμή            | Επιλεγμένη τιμή |
 
-### Use case
+### Περίπτωση χρήσης
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Στη συνέχεια, θα δείξουμε πώς να χρησιμοποιήσετε το χαρτογραφημένο τρόπο για να αποκτήσετε δυναμικά επιλογές. 
 
-#### Step 1 Add an action
+#### Βήμα 1 Προσθέστε μια ενέργεια
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Έχουμε δημιουργήσει έναν πίνακα με το όνομα `selection`, που περιλαμβάνει 5 στήλες: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Αποθηκεύσαμε τις τιμές επιλογών σε `value` και τις αποθηκευμένες ετικέτες επιλογών σε διαφορετικές γλώσσες σε άλλες στήλες. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Δημιουργήστε μια ενέργεια για να εμφανίσετε όλα τα δεδομένα στο `selection` με όνομα `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+επιλέξτε * από την επιλογή
 ```
 
-#### Step 2 Configure the component
+#### Βήμα 2 Διαμόρφωση του εξαρτήματος
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Ορίστε τις πηγές δεδομένων σε `{{postgresql1.data}}` 
+2.  Ρυθμίστε την ετικέτα για να αλλάξετε την ετικέτα με βάση τη γλώσσα. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Χρησιμοποιήστε {{ item.columnName }} για να ορίσετε τη στήλη. 
+    2.  Χρησιμοποιήστε {{ currentUserInfo.language }} για να ορίσετε τη χρήση της γλώσσας από το ILLA.
 
     ```jsx
-    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    {currentUserInfo.language=='ja-JP' ? item.options_jp 
     : currentUserInfo.language == 'ko-KR' ? item.options_kr 
     : currentUserInfo.language == 'zh-CN' ? item.options_zh 
     : item.options_en }}
