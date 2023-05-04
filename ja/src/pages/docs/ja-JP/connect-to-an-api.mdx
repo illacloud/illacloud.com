@@ -1,32 +1,32 @@
 ---
-title: Connect to an API
+title: APIに接続
 metaTitle: ILLA Cloud Connect to an API
-desc: You can connect ILLA to most APIs using our native integrations. ILLA can connect to any REST, GraphQL API
+desc: ILLAをほとんどのAPIに接続するには、ネイティブインテグレーションを使用します。 ILLA は任意の REST、GraphQL API に接続できます
 tagCategory: doc_menu_api_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to an API</Heading>
+## <Heading hidden>API に接続</Heading>
 
-Connect to any REST, GraphQL API.
+任意のREST、GraphQL APIに接続します。
 
-You can connect ILLA to most APIs using our native integrations. If you need to connect to an internal API, or if there isn't a supported integration, you can connect using our REST API integration or GraphQL Integration.
+ILLAをほとんどのAPIに接続するには、ネイティブインテグレーションを使用します。 内部 API に接続する必要がある場合、またはサポートされていない場合。 REST API インテグレーションまたは GraphQL インテグレーションを使用して接続できます。
 
-### 1.  Create an API resource
+### 1.  API リソースを作成
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the API you want to connect to, such as **REST API**. This opens the **Configure a resource** modal where you add your connection information.
+リソースはデータソースへの接続を表し、ILLAアプリケーション内で問い合わせるものです。ILLAにログインし、**リソース**タブ>**新規作成**をクリックし、接続したいAPIを選択してください。 例えば**REST API** **Configure a modal to add your connection information**.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
   alt=""
 />
 
-At a minimum, you need the base URL of the API you want to connect to. You can also pass URL parameters, headers, etc. If your API requires authentication, you can configure that on this page as well. For example, OAuth2.0 requires an Authorization URL, Access Token URL, etc. After you enter your connection details, click **Save resource.**
+最低でも接続したいAPIのベースURLが必要です。 URLパラメータ、ヘッダなどを渡すこともできます。 API が認証を必要とする場合は、このページでも設定できます。 例えば、OAuth2.0では認証URL、アクセストークンURLなどが必要です。 接続の詳細を入力したら、**保存**をクリックしてください。
 
-### 2.  Query your API
+### 2.  API のクエリ
 
-In the App editor, click **+ New** in **Action List** > select **REST API** and choose an existed REST API or create a new one > click **create action** and update the actions with additional URL parameters, headers, etc.
+アプリエディタで **Action List** > select **REST API** and choose an existing REST API or create a new one > click **create action** and update the actions with additional URL parameters. ヘッダなどです
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
