@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
+title: Γρήγορη εκκίνηση
+metaTitle: ILLA Cloud οδηγός γρήγορης εκκίνησης
+description: Επιταχύνετε την ανάπτυξη εσωτερικών εργαλείων
 tagCategory: doc_menu_quick_start_click
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Επισκόπηση</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  Ανάπτυξη Κατασκευαστή ILLA
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Πριν αρχίσετε να χρησιμοποιείτε το ILLA Builder, θα πρέπει να επιλέξετε να χρησιμοποιήσετε ILLA Cloud ή Self-host ILLA για να φιλοξενήσετε τις εφαρμογές σας. Σας παρέχουμε ILLA CLI, Docker Compose, και K8s για την αυτο-φιλοξενία ILLA σε λιγότερο από 5 λεπτά. Θα σας παρέχουμε το ILLA Cloud αργότερα, για να σας βοηθήσουμε απλά να ξεκινήσετε με τον ILLA Builder.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Λήψη δεδομένων χρηστών
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Εγγραφείτε και συνδεθείτε στο ILLA Builder, στη συνέχεια, εισάγετε την καρτέλα των πόρων. Κάντε κλικ στο κουμπί "Δημιουργία νέου" και στη συνέχεια μπορείτε να επιλέξετε τον τύπο πόρων εδώ. Σας παρέχουμε API REST και MySQL για να συνδέσετε τα δεδομένα σας. Οι Postgres, Redis και MongoDB θα είναι διαθέσιμες αυτό το μήνα.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Σύρετε και αποθέστε ένθετα
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+Όταν τα δεδομένα σας είναι έτοιμα, μπορείτε να επιστρέψετε στην καρτέλα Εφαρμογές και να δημιουργήσετε μια εφαρμογή. Η λίστα εισαγωγής βρίσκεται στη δεξιά πλευρά της σελίδας. Μπορείτε να επιλέξετε ένα από αυτά και να το σύρετε στο πλαίσιο. Στη συνέχεια, κάντε κλικ στο ένθετο και να τροποποιήσει τις παραμέτρους του πίνακα Επιθεώρηση. Σας παρέχουμε τη λειτουργία σήμανσης για να επεξεργαστείτε την ετικέτα κάθε ένθετου. Αν είστε εξοικειωμένοι με τη σύνταξη Markdown, μπορείτε να προσαρμόσετε γρήγορα το μέγεθος του κειμένου και το πάχος. Εν τω μεταξύ, μπορείτε να χρησιμοποιήσετε το {{double brackets}} για να επικαλεστείτε δεδομένα ενέργειας στο πλαίσιο εισαγωγής κειμένου για να επιτύχετε περισσότερα αποτελέσματα στο ILLA Builder.
 
-### 4.  Add action in Apps
+### 4.  Προσθήκη ενέργειας στις εφαρμογές
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+Μια ενέργεια απαιτείται για να μετατρέψει τα δεδομένα από τους πόρους να εισαχθούν. Το αποκαλούμε πράξη. Μπορείτε να γράψετε ένα ερώτημα σε δράση για να πάρετε τα δεδομένα από τον πόρο σας. Σε αυτή τη βάση, μπορείτε να γράψετε JavaScript σε ενέργειες για να εκτελέσετε τις οδηγίες επεξεργασίας δεδομένων, όπως φίλτρο και συγχώνευση. Ένα παράδειγμα MySQL δίνεται παρακάτω:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Δημιουργήστε μια ενέργεια MySQL στον επεξεργαστή εφαρμογών. Ονομάστηκε ενέργεια1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Εισάγετε τον κωδικό του ερωτήματος στον πίνακα, π.χ. ΕΠΙΛΟΓΗ \* ΑΠΟ τους χρήστες.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Εκτέλεση αυτής της ενέργειας, το αποτέλεσμα ερωτήματος θα εμφανιστεί στον κάτω πίνακα.
 
-### 5.  Show your data
+### 5.  Εμφάνιση των δεδομένων σας
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+Όταν η ενέργεια δημιουργηθεί με επιτυχία, πρέπει να δεσμεύσετε το αποτέλεσμα της ενέργειας στο στοιχείο. Θα πρέπει να αντικαταστήσετε τη μεταβλητή τιμής στον πίνακα επιθεώρησης με το αποτέλεσμα των ενεργειών {{action1.data}}. Στη συνέχεια, τα δεδομένα στοιχείων θα δεσμεύονται με το αποτέλεσμα ενέργειας. 
