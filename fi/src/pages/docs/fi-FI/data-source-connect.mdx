@@ -1,40 +1,40 @@
 ---
-title: Connect to your data sources
-metaTitle: ILLA Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder.
+title: Yhdistä tietolähteisiisi
+metaTitle: ILLA Cloud Liitä tietolähteisiisi
+desc: Opi yhteyden muodostamisesta tietolähteeseesi ja soita sitä ILLA Builderiin.
 tagCategory: doc_menu_data_source_connect_click
 ---
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Opi yhteyden muodostamisesta tietolähteeseesi ja soita sitä ILLA Builderiin.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+ILLAn avulla voit yhdistää ja integroida laajan valikoiman tietolähteitä, kuten tietokantoja ja sovellusliittymiä, organisaatiosi käytettäväksi resursseina.
 
-## Data sources
+## Tietolähteet
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Tietolähteet ovat paikkoja, joissa tietoja säilytetään ja käsitellään. Esimerkkejä tietolähteistä ovat PostgreSQL-tietokannat, Twilio REST API:t ja Amazon S3 -kauhat. ILLA:ssa voit lisätä useita tietolähteitä ja asettaa ne käyttäjien saataville kyselyä varten.
 
-### **Integrations**
+### **Integraatiot**
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using Retool. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA tarjoaa sisäänrakennettuja integrointeja monia suosittuja tietolähteitä, jotka vaativat minimaalinen kokoonpano, kuten SQL tietokannat, ja Stripe. Nämä integraatiot, jotka tunnetaan myös resursseina, mahdollistavat yhteyden ja kyselyn tietolähteisiin käyttäen Retool. Jos tietyn tyyppistä tietolähdettä ei tueta sisäänrakennetulla integroinnilla, voit käyttää REST, GraphQL tai SOAP-integraatioita yhteyden lähes mihin tahansa API. Tämän avulla voit käyttää monenlaisia tietolähteitä ILLA-rakentajan sisäpuolelta.
 
-### Connect to databases
+### Yhdistä tietokantoihin
 
-Connect to most databases and data stores
+Yhdistä useimpiin tietokantoihin ja tietokauppoihin
 
-### Connect to APIs
+### Yhdistä APIin
 
-Connect to REST and GraphQL.
+Yhdistä REST ja GraphQL.
 
-## Resources
+## Resurssit
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+ILLAn resurssi on tallennettu konfiguraatio, joka määrittelee, miten ILLA muodostaa yhteyden tietolähteeseen. Käyttääksesi tietolähdettä ILLA, sinun täytyy luoda resurssi sitä varten. Voit valita sopivan resurssin päästäksesi tietoihin kun kirjoitat kyselyn.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Kullakin ILLAn resurssilla on omat konfigurointimahdollisuutensa, jotka määrittävät, miten ILLA muodostaa yhteyden vastaavaan tietolähteeseen. Näihin valintoihin voivat kuulua tunnistautumistiedot ja virtaus, tietokantayhteyden asetukset ja API-asetukset, kuten perusosoite ja oletusotsikot.
 
-### **How resources work**
+### **Kuinka resurssit toimiva**
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, Retool uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only Retool has direct access to the data source.
+ILLA resurssit tallentaa tarvittavat asetukset yhteyden tietolähteeseesi turvallisesti. Tämän avulla voit hakea tietoja helposti paljastamatta tietolähdettäsi suoraan käyttäjillesi. Kun kysely on suoritettu resurssin varalle, Uudelleentyökalu käyttää resurssin konfiguraation asetuksia välittää pyynnön tietolähteeseen palvelimen puolella. Näin varmistetaan, että vain uudelleentyökalulla on suora pääsy tietolähteeseen.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA yksinkertaistaa prosessia, jossa käyttäjä on yhteydessä tietolähteeseen. Niiden tarvitsee vain valita asiaankuuluva resurssi kirjoittaessaan kyselyn murehtimatta tietolähteen yksityiskohtia. Voit myös lisätä useita resursseja samantyyppisiä, kuten useita Amazon S3 kauhat, erottaa ne.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Tämä lähestymistapa pitää tietolähteet piilossa käyttäjiltä ja varmistaa, että kaikki vuorovaikutus tietolähteen kanssa hoidetaan turvallisesti. ILLAlla vältetään asiakaspuolen yhteyksiä tietolähteeseen, joka voisi paljastaa arkaluonteisia tietoja ja käyttää samoja ehtoja kaikissa vuorovaikutussuhteissa. Lisäksi resurssit mahdollistavat kyselyn välimuistin, joka voi vähentää tietolähteeseen tehtyjen pyyntöjen määrää ja mahdollisesti alentaa kustannuksia.
