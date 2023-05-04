@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
-tagCategory: doc_menu_hugging_face_endpoint_click
+title: Hugend Gezicht Eindpunt
+metaTitle: Verbind met Hugging Face Eindpunt
+description: Leer hoe Hugging Face Eindpunt in ILLA te gebruiken
+tagCategory: doc_menu_hugging_face_endpoint_klik
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>Huggen Face Eindpunt</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+Met Hugging Face Inference Endpoints kunt u eenvoudig Transformers, Diffusers of elk model op toegewijde, volledig beheerde infrastructuur deployen. [Klik hier](https://ui.endpoints.huggingface.co/new) om een eindpunt te maken. 
 
-### Create Hugging Face endpoint resource
+### Creëer Hugging Face eindpunt bron
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Er zijn twee manieren om een Huging-eindpunt hulpbron toe te voegen. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Voer de `ILLA Builder` in >> Klik `Resources` tab >> Klik `Create New` >> Kies `Hugging Face Endpoint` >> Configureer de verbindingsinformatie en klik op `Save Resource`
+2.  Voer de pagina bewerken >> klik `+ Nieuw` in de actielijst >> Kies `Hugging Face Endpoint` >> Configureer de verbindingsinformatie of klik `+ nieuwe Resource` om nieuwe verbindingsinformatie toe te voegen
 
-### Configure connection information
+### Verbindingsinformatie configureren
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Eigenschappen | vereist   | Beschrijving                                                                            |
+| ------------- | --------- | --------------------------------------------------------------------------------------- |
+| naam          | verplicht | Definieer een bronnaam die zal worden gebruikt voor weergave in ILLA                    |
+| Endpoint URL  | verplicht | maak hier een eindpunt aan: https://ui.endpoints.huggingface.co/new en ontvang de URL.  |
+| Token         | verplicht | De organisatiesleutel. U kunt het vinden in https://huggingface.co/settings/tokens.     |
 
-### Create Actions
+### Acties aanmaken
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Voer de pagina bewerken >> klik `+ Nieuw` in de actielijst >> Kies `Hugging Face Eindpoint` >> Kies een bestaande bron of voeg een nieuwe bron toe
 
-### Configure actions
+### Acties configureren
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Eigenschappen  | vereist   | Beschrijving                                                                                                                                                                                                                                          |
+| -------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter type | verplicht | Het parametertype van uw eindpunt. Bijvoorbeeld, als je eindpunt een tekstinvoer nodig heeft, kies dan voor de "invoer" parameter met tekst. Als je eindpunt een JSON-ingang nodig heeft, kies dan voor "inputs" parameter met JSON of sleutelwaarde. |
+| Parameter      | verplicht | Voer uw parameter in. Gebruik {{ componentName.value }} om gegevens van componenten te gebruiken.                                                                                                                                                     |
 
-### Use case
+### Gebruik geval
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+We hebben `openai/whisper-base` deployd, die een audio bestand ontvangt en in tekst converteert. Het is geschikt voor vergaderminuten, podcasts om tekst te maken, enzovoort. Vervolgens introduceren we hoe we dit model kunnen gebruiken om een applicatie in ILLA Cloud te bouwen.
 
-#### Step 1: Build the front-end interface with components
+#### Stap 1: Bouw de front-end interface met componenten
 
-We have built an interface using the components such as file upload and button, as follows.
+We hebben een interface gemaakt met behulp van de componenten zoals het uploaden en knopen van bestanden.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Stap 2: Voeg een Huging-gezichtsbron toe
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Vul de velden in die hieronder getoond worden om de resource configuratie te voltooien. [Maak een eindpunt aan](https://ui.endpoints.huggingface.co/new) en krijg de eindpunt URL. En de organisatie-API-token ophalen in [profielinstellingen](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Stap 3: Configureer een actie
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Selecteer eerst een parametertype. Neem `openai/whisper-base` als voorbeeld, dit model vereist binaire bestandsinvoer zodat we de parameter veranderen naar `Binary`.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Stel de binary in die aan het model moet worden doorgegeven als de bestandsgegevens geüpload van het bestandsupload component. Bijvoorbeeld '{{upload1.value[0]}}'
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Stap 4: Verbind de componenten en acties
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Voeg een event handler toe aan de knop om de actie uit te voeren wanneer op de knop wordt geklikt. En stel de waarde van het tekstcomponent in op {{whisper.data[0].text}} om het resultaat van de conversie op de tekstcomponent weer te geven. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+Nadat de bovenstaande stappen zijn geconfigureerd, wordt de applicatie aangemaakt en de lopende resultaten zijn als volgt.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
