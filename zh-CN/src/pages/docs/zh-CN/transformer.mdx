@@ -9,21 +9,22 @@ tagCategory: doc_menu_transformer_click
 
 ## <Heading hidden>Transformer</Heading>
 
-We have put a Transformer in ILLA to meet your requirements for writing JavaScript to refine your application logic. In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
+我们在ILLA中内置了Transformer以满足您编写JavaScript完善应用逻辑的需求。在Transformer中，您不需要像在字符输入框中一样使用{{模版语法}}进行JavaScript编程，让您能更流畅的书写长且复杂的JS代码块。Transformer的存在还能帮助负责页面设计与逻辑搭建的开发者不受限于对方的进度，更高效的完成开发工作。
+您在转换数据时不仅可以在已建立好的数据操作中使用Transformer，也可以选择创建Transformer操作。当您的转换工作涉及到多个操作，或是需要使用复杂的JavaScript逻辑进行转换时，选择独立的Transformer将是更好的选择。 In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
 
 You can use the Transformer not only for established data operations but also for creating transformer operations when transforming data. It would be better to choose an independent transformer when you have multiple operations involved in transforming data, or need to use complex JavaScript logic to transform data.
 
-### Creative Transformers
+### 创建Transformer
 
 Click on the Transformers tab in the Action list, and click on "+ New" to create a transformer. It will be displayed in the action list after creation. You can change the name, write JS code, save and run it in the configuration panel after selection.
 
-> You can use the 'preview' button to see the results of a transformer. Note that you have to save the transformer for the rest of the app to get the new value.
+> 您可以使用预览按钮查看Transformer的结果。请注意，您项目中的数值只会在点击Transformer保存按钮后更新。 Note that you have to save the transformer for the rest of the app to get the new value.
 
 The insert calls the transformer with a value equal to the data returned within the transformer, this data will change as the data entered into the transformer changes with the code of the transformer. As with the character input box, you can still use the template syntax to call the global variable No. When you are writing JS code to call data, you can find the specific data variable name in the data workspace in the left hand panel to help you write code faster.
 [//]\: # ([Image])
 
-You can call the transformer variable in the data entry box by using `{{transformer name. tag name}}` to call the transformer variable in the data entry box.
+您可以通过{{Transformer名字.标签名}}的方式在数据输入框中调用Transformer变量 tag name}}\` to call the transformer variable in the data entry box.
 
-### Query Transformer
+### 查询Transformer
 
-We have put a Transformer in the query operation to allow you to transform the fetched data into the desired format directly after completing the action You can then simply pass {{actionName.data}} to retrieve the data once you have completed the conversion in the transformer within the action.
+我们在查询操作中内置了一个转化器，方便您在完成查询后直接将获取的数据转换成需要的格式。当您在查询内的Transformer中完成了转换后，您只需要通过`{{queryName.data}}`即可获取数据。
