@@ -1,44 +1,44 @@
 ---
-title: Connect to your data sources
-metaTitle: Illa Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder
-tagCategory: doc_menu_data_source_connect_click
+title: Conectar a tus fuentes de datos
+metaTitle: Conectar a la nube de Illa a tus fuentes de datos
+desc: Aprende sobre cómo conectarte a tu fuente de datos y llámalo en tu Constructor de ILLA
+tagCategory: doc_menú_datos_fuentes_conectar_clic
 ---
 
 * * *
 
-## <Heading hidden>Connect to your data sources （Action)</Heading>
+## <Heading hidden>Conéctate a tus fuentes de datos (Acción)</Heading>
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Aprende sobre cómo conectarte a tu fuente de datos y llámalo en tu Constructor de ILLA.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+ILLA le permite conectar e integrar una amplia gama de fuentes de datos, incluyendo bases de datos y APIs, en su organización para su uso como recursos.
 
-### Data sources
+### Fuentes de datos
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Las fuentes de datos son lugares donde se almacenan y procesan los datos. Ejemplos de fuentes de datos incluyen bases de datos PostgreSQL, API Twilio REST y cubos Amazon S3. En ILLA puede agregar múltiples fuentes de datos y hacerlas accesibles a los usuarios para consultar.
 
-#### Integrations
+#### Integraciones
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using ILLA. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA proporciona integraciones integradas para muchas fuentes de datos populares que requieren una mínima configuración, como bases de datos SQL y Stripe. Estas integraciones, también conocidas como recursos, le permiten conectarse y consultar sus fuentes de datos usando ILLA. Si un tipo particular de fuente de datos no es soportado por una integración integrada, puede usar las integraciones REST, GraphQL o SOAP para conectarse a casi cualquier API. Esto le permite acceder a una amplia gama de fuentes de datos desde dentro del constructor ILLA.
 
-#### Connect to databases
+#### Conectar a bases de datos
 
-Connect to most databases and data stores
+Conectar a la mayoría de bases de datos y tiendas de datos
 
-#### Connect to APIs
+#### Conectar a APIs
 
-Connect to REST and GraphQL.
+Conéctate a REST y GraphQL.
 
-### Resources
+### Recursos
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+Un recurso en ILLA es una configuración guardada que especifica cómo se conecta ILLA a una fuente de datos. Para utilizar una fuente de datos en ILA, debe crear un recurso para ella. Puede seleccionar el recurso apropiado para acceder a los datos al escribir una consulta.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Cada recurso de ILLA tiene sus propias opciones de configuración que determinan cómo se conecta ILLA a la fuente de datos correspondiente. Estas opciones pueden incluir credenciales y flujos de autenticación, configuración de conexión de base de datos y configuración de API, como URL base y cabeceras predeterminadas.
 
-#### How resources work
+#### Cómo funcionan los recursos
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, ILLA uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only ILLA has direct access to the data source.
+Los recursos de ILLA almacenan los ajustes necesarios para conectarse a su fuente de datos de forma segura. Esto le permite consultar datos fácilmente sin exponer su fuente de datos directamente a sus usuarios. Cuando se ejecuta una consulta para un recurso, ILLA utiliza los ajustes de configuración del recurso para proxy de la petición a la fuente de datos del lado del servidor. Esto asegura que sólo la ILLA tenga acceso directo a la fuente de datos.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA simplifica el proceso de conexión a una fuente de datos para sus usuarios. Sólo necesitan seleccionar el recurso relevante al escribir una consulta sin preocuparse por los detalles de la fuente de datos. También puede agregar múltiples recursos del mismo tipo, como múltiples cubos de Amazon S3, para distinguir entre ellos.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Este enfoque mantiene sus fuentes de datos ocultos a sus usuarios y asegura que todas las interacciones con la fuente de datos sean manejadas de forma segura. ILLA evita hacer conexiones del lado del cliente a la fuente de datos que puedan exponer información sensible y utilizar las mismas condiciones para todas las interacciones. Adicionalmente, los recursos permiten la caché de consultas, lo que puede reducir el número de peticiones realizadas a una fuente de datos y potencialmente reducir los costos.
