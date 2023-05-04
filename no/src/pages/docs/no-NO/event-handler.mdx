@@ -1,36 +1,36 @@
 ---
-title: Event handler
-metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
-tagCategory: doc_menu_evnet_handler_click
+title: Arrangement behandler
+metaTitle: ILLA Sky-hendelsesdoktor
+desc: Hendelsesbehandlere er en integrert del av raffinering av dine interne verktøys brukerlogikk
+tagCategory: doc_menu_evnet_handler_klikk
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Arrangementbehandler</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Hendelse-håndteringsbrukere er en integrert del av å raffinere ditt interne verktøy brukslogikk. Alle innsatser eller tiltak som svarer på en brukerhandling har sine egne hendelser som kan aktiveres, for eksempel en knapp med et "klikk"-arrangement, en tekstinngang med en "sende" hendelse, suksessen av en handling og så videre. Hendelsesbehandlere hjelper brukere med å utløse forhåndsdefinerte instruksjoner når hendelser oppstår: Du kan reagere på en enkelt hendelseshendelse, eller du kan sette opp flere hendelsesbehandlere og sette dem opp som arbeidsflyter for å gjøre mer komplekse oppgaver.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Etter at hendelsen du har angitt, kan hendelsesbehandleren hjelpe deg med å utføre en rekke handlinger: kontrollhandlinger, innsatser for styring, kjøre skript og mer. Du kan også legge til mer detaljerte JavaScript-utløserbetingelser øverst i utløserbetingelsene.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Hendelsesbehandling
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+I håndteringsprosessen for arrangementet kan du angi resultatet av hendelsen basert på om spørringen mislyktes eller ikke. Du kan fullføre utløsningslogikken ved å sette spørringsfeilbetingelsen i Respons-fanen.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Rediger sendingsbehandler
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Vi setter en utløserbetingelse for hvert interaktivt innlegg. Du kan velge en hendelse i handlerlisten som utløsertilstand. Du kan for eksempel angi 'Send' som utløsningsbetingelse i hendelsesbehandlingen for data-inntastingsboksen. som automatisk setter inn inndata i databasen når brukeren "sender" innspillet, og dermed bruker en enkel innsetting av data.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Midlertidige tilstander
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Når du behandles data kan det oppstå situasjoner der du ikke får noen behandling med behandlede data umiddelbart Derfor har vi opprettet midlertidige stater for å lagre mellomliggende stater for databehandling. Du kan velge å angi en midlertidig stat i responsalternativene for håndtering av arrangementer, og klikk på Opprett ny tilstand for å lagre gjeldende data i midlertidig tilstand, som kan plasseres for en hvilken som helst eiendom.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Utenfor prosjekteditoren kan du også lagre data fra {{tempState1.setValue(data)}} eller ringe data fra {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Verdiene i den midlertidige staten blir klarert når prosjektet er startet på nytt, og du må lagre verdiene lokalt eller i skyen for å sikre integriteten til dataene.
