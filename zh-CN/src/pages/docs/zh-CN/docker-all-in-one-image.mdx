@@ -1,0 +1,89 @@
+---
+title: 停靠全部内置图像
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: 构建程序使用一张全套的图像，并在您的机器上运行它。
+---
+
+* * *
+
+## <Heading hidden>停靠所有内置图像</Heading>
+
+### 描述
+
+构建程序使用一张全套的图像，并在您的机器上运行它。 您可以在 [scripts](https://github.com/illacloud/deply-illa-manually/blob/main/docker/scripts)文件夹中查看脚本文件以了解更多详情。
+
+注：
+
+我们强烈建议使用我们的自动部署工具[illa-cli](https://github.com/illacloud/illa)。
+
+目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
+
+### 运行官方图像
+
+安装 GNU 制造商和类型：
+
+```jsx
+制作运行官方图像
+```
+
+或仅执行：
+
+```jsx
+/bin/bash 脚本/run-official-image.sh
+```
+
+这个命令将拉illasoft 官方图像并在你的停泊环境中运行它。
+
+并使用默认用户名**`root`** 和密码**`password`** 登录。
+
+### 手动构建图像并运行
+
+安装 GNU making (或手动执行脚本文件夹中的 shell 脚本)。
+
+为构建所有内置图像并运行，请输入：
+
+```jsx
+做所有
+```
+
+对于土豆，类型：
+
+```jsx
+每个波德曼运行
+```
+
+或在脚本文件夹中执行 shell 脚本 `runpodman.sh` 。
+
+### 停止并删除容器
+
+```jsx
+制作停止和移除容器
+```
+
+### 清除 Postgres 数据库文件
+
+** 此商品将会删除您的数据库文件！！！ \*\*\*** BACKUP, 并使信息技术变得更加困难\*\*\*
+
+在默认情况下，Postgres数据库将存储在 `/var/lib/illa/database/postgresql/` 文件夹中。
+
+运行以下命令来删除它。
+
+```jsx
+创建清除后的数据库文件
+```
+
+### 配置运行时环境变量
+
+必要时编辑 "scripts/run.sh"
+
+```jsx
+# postgres 数据库密码
+PG_PASS=mysecret密码
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres 数据库文件存储文件夹
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/driver
+```
