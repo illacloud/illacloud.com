@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
+title: クイックスタート
+metaTitle: ILLA Cloud クイックスタートガイド
+description: 内部ツールの開発を加速
 tagCategory: doc_menu_quick_start_click
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>概要</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  ILLA ビルダーをデプロイ
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+ILLA Builderを使用する前に、アプリケーションをホストするために、ILLA Cloudまたはセルフホスト ILLAを使用することを選択してください。 ILLA CLI、Docker Compose、K8を5分以内にセルフホストのILLAを提供します。 ILLA Cloud を後で提供し、ILLA Builderを使い始めるだけのお手伝いをします。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  ユーザーデータを取得する
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+ILLA Builderに登録してログインし、リソースタブを入力します。 「新規作成」ボタンをクリックすると、ここでリソースタイプを選択できます。 データを接続するための REST API と MySQL を提供します。 Postgres、Redis、MongoDBは今月リリース予定です。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  ドラッグ＆ドロップの挿入
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+データが準備されたら、format@@0 タブに戻ってアプリを作成できます。 挿入リストはページの右側にあります。 それらのいずれかを選択し、フレームにドラッグできます。 次に、インサートをクリックし、「検査」パネルのパラメーターを変更します。 各インサートのラベルを編集するためのマークダウンモードを提供します。 Markdown構文に慣れていれば、テキストのサイズと太さをすばやく調整できます。 その間、ILLA Builder でより多くの結果を得るために、テキスト入力ボックス内のアクションデータを呼び出すために {{double brackets}} を使用できます。
 
-### 4.  Add action in Apps
+### 4.  アプリにアクションを追加
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+データをリソースから挿入するには、アクションが必要です。 私たちはそれを行動と呼んでいます リソースからデータを取得するためのアクションでクエリを書くことができます。 これに基づいて、フィルタやマージなどのデータ処理命令を実行するアクションに JavaScript を記述できます。 MySQLの例を以下に示します。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  アプリエディタでMySQLアクションを作成します。 action1と命名しました。
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  パネルにクエリコードを入力します。例えばSELECT \* FROM Usersです。
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  このアクションを実行すると、クエリの結果が下のパネルに表示されます。
 
-### 5.  Show your data
+### 5.  データを表示
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+アクションが正常に作成された場合、アクションの結果をコンポーネントにバインドする必要があります。 検査パネルの値変数をアクション {{action1.data}}の結果に置き換える必要があります。 その後、コンポーネントデータはアクション結果にバインドされます。 
