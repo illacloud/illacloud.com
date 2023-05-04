@@ -1,0 +1,53 @@
+---
+title: List
+metaTitle: ILLA Cloud List Component doc
+description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+tagCategory: doc_menu_list_click
+---
+
+* * *
+
+## <Heading hidden>List</Heading>
+
+The List component is similar to a Container in that you can nest other components inside of it.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Drag components to list
+
+When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+
+Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Display query results in a list
+
+When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+
+After setting the data source, you can change the data of components:
+
+1.  Select the component in the first item. 
+2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+
+### Use the data of list
+
+You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
