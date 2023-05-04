@@ -1,44 +1,44 @@
 ---
-title: Connect to your data sources
-metaTitle: Illa Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder
-tagCategory: doc_menu_data_source_connect_click
+title: Anslut till dina datakällor
+metaTitle: Illa Cloud Anslut till dina datakällor
+desc: Läs mer om att ansluta till din datakälla och anropa den i din ILLA Builder
+tagCategory: Koppla
 ---
 
 * * *
 
-## <Heading hidden>Connect to your data sources （Action)</Heading>
+## <Heading hidden>Anslut till dina datakällor (Åtgärd)</Heading>
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Läs mer om att ansluta till din datakälla och anropa den i din ILLA Builder.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+Med ILLA kan du ansluta och integrera ett brett spektrum av datakällor, inklusive databaser och API:er, till din organisation för användning som resurser.
 
-### Data sources
+### Datakällor
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Datakällor är platser där data lagras och behandlas. Exempel på datakällor är PostgreSQL-databaser, Twilio REST API:er och Amazon S3 hinkar. I ILLA kan du lägga till flera datakällor och göra dem tillgängliga för användare för frågor.
 
-#### Integrations
+#### Integrationer
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using ILLA. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA tillhandahåller inbyggda integrationer för många populära datakällor som kräver minimal konfiguration, såsom SQL-databaser och Stripe. Dessa integreringar, även kända som resurser, låter dig ansluta till och fråga dina datakällor med ILLA. Om en viss typ av datakälla inte stöds av en inbyggd integration, Du kan använda REST, GraphQL eller SOAP integrationer för att ansluta till nästan alla API. Detta ger dig tillgång till en mängd olika datakällor inifrån ILLA-byggaren.
 
-#### Connect to databases
+#### Anslut till databaser
 
-Connect to most databases and data stores
+Anslut till de flesta databaser och datalager
 
-#### Connect to APIs
+#### Anslut till API:er
 
-Connect to REST and GraphQL.
+Anslut till REST och GraphQL.
 
-### Resources
+### Resurser
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+En resurs i ILLA är en sparad konfiguration som anger hur ILLA ansluter till en datakälla. För att använda en datakälla i ILLA måste du skapa en resurs för den. Du kan välja lämplig resurs för att komma åt data när du skriver en fråga.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Varje resurs i ILLA har sina egna konfigurationsalternativ som avgör hur ILLA ansluter till motsvarande datakälla. Dessa alternativ kan innehålla autentiseringsuppgifter och flöde, databasanslutningsinställningar och API-inställningar, såsom bas-URL och standardrubriker.
 
-#### How resources work
+#### Hur resurser fungerar
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, ILLA uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only ILLA has direct access to the data source.
+ILLA resurser lagra nödvändiga inställningar för att ansluta till din datakälla på ett säkert sätt. Detta gör att du enkelt kan fråga data utan att exponera din datakälla direkt för dina användare. När en fråga körs för en resurs, ILLA använder resursens konfigurationsinställningar för att proxy begäran till datakällan på serversidan. Detta säkerställer att endast ILLA har direkt tillgång till datakällan.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA förenklar processen att ansluta till en datakälla för dina användare. De behöver bara välja relevant resurs när de skriver en fråga utan att behöva oroa sig över datakällans detaljer. Du kan också lägga till flera resurser av samma typ, såsom flera Amazon S3 hinkar, för att skilja mellan dem.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Denna metod håller dina datakällor dolda för dina användare och ser till att alla interaktioner med datakällan hanteras säkert. ILLA undviker att göra klient-side anslutningar till datakällan som kan exponera känslig information och använder samma villkor för alla interaktioner. Dessutom aktiverar resurser sökcachelagring, vilket kan minska antalet förfrågningar som görs till en datakälla och potentiellt lägre kostnader.
