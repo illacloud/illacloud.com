@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
+title: Точка конечного лица
+metaTitle: Подключение к конечной точке лица
+description: Узнайте, как использовать точку конечного лица в ILLA
 tagCategory: doc_menu_hugging_face_endpoint_click
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>конечная точка лица</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+С помощью точек Endpoint Face Inference вы можете легко развернуть преобразователи, диффузоры или любую модель на выделенной, полностью управляемой инфраструктуре. [Нажмите здесь](https://ui.endpoints.huggingface.co/new), чтобы создать конечную точку. 
 
-### Create Hugging Face endpoint resource
+### Создать ресурс конечной точки лица
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Есть два способа добавить ресурс конечной точки огранки. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Введите `ILLA Builder` >> Щелкните `Ресурсы` >> Щелкните `Create New` >> Выберите `Hugging Face Endpoint` >> Настройте информацию о соединении и нажмите `Save Resource`
+2.  Введите страницу редактирования >> нажмите `+ New` в списке действий >> Выберите `Hugging Face Endpoint` >> Настройте информацию о подключении или нажмите `+ New Resource`, чтобы добавить новую информацию о подключении
 
-### Configure connection information
+### Настройка информации о подключении
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Свойства     | Требуется    | Описание                                                                               |
+| ------------ | ------------ | -------------------------------------------------------------------------------------- |
+| Наименование | обязательный | Укажите имя ресурса, которое будет использоваться для отображения в ILLA               |
+| Endpoint URL | обязательный | создать конечную точку здесь: https://ui.endpoints.huggingface.co/new и получить URL.  |
+| Токен        | обязательный | Маркер организации. Вы можете получить его в https://huggingface.co/settings/tokens.   |
 
-### Create Actions
+### Создать действия
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Введите страницу редактирования >> нажмите `+ New` в списке действий >> Выберите `Hugging Face Endpoint` >> Выберите существующий ресурс или добавьте новый ресурс
 
-### Configure actions
+### Настройка действий
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Свойства      | Требуется    | Описание                                                                                                                                                                                                                                                          |
+| ------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Тип параметра | обязательный | Тип параметра конечной точки. Например, если ваша конечная точка нуждается в вводе текста, выберите заполните параметр «inputs» с текстом. Если ваша конечная точка нуждается в JSON, выберите заполните параметр «inputs» с помощью JSON или ключевого значения. |
+| Параметр      | обязательный | Введите ваш параметр. Используйте {{ componentName.value }} , чтобы использовать данные компонентов.                                                                                                                                                              |
 
-### Use case
+### Вариант использования
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+Мы развернули `openai/whisper-base`, который получает ввод аудио файла и конвертирует в текст. Он подходит для встреч минут, подкастов к тексту и т.д. Далее мы покажем, как использовать эту модель для построения приложения в облаке ILLA.
 
-#### Step 1: Build the front-end interface with components
+#### Шаг 1: Постройте внешний интерфейс с компонентами
 
-We have built an interface using the components such as file upload and button, as follows.
+Мы создали интерфейс, используя компоненты, такие как загрузка файлов и кнопка, следующим образом:
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Шаг 2: Добавьте ресурс Hugging Face
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Заполните поля ниже для завершения настройки ресурса. [Создайте конечную точку](https://ui.endpoints.huggingface.co/new) и получите URL Endpoint URL. И получите API токен организации в [настройках профиля](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Шаг 3: Настройка действия
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Сначала выберите тип параметра. Возьмите в качестве примера `openai/whisper-base` эту модель требует ввода бинарного файла, поэтому мы изменим параметр на `Binary`.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Установить бинарный файл, который будет передан модели в качестве файловых данных, загруженных из компонента загрузки файла. Например, `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Шаг 4: Соедините компоненты и действия
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Добавьте обработчик событий к кнопке, чтобы запустить действие, когда кнопка нажата. И установите значение текстового компонента в {{whisper.data[0].text}} , чтобы отобразить результат преобразования текстового компонента. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+После того, как перечисленные выше шаги настроены, приложение создается и выполняются следующие результаты.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
