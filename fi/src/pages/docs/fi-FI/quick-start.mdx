@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
+title: Nopea käynnistys
+metaTitle: ILLA Cloud pikakäynnistyksen opas
+description: Kiihdytä sisäisten työkalujen kehittämistä
 tagCategory: doc_menu_quick_start_click
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Yleiskatsaus</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  Julkaise ILLA Builder
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Ennen kuin aloitat ILLA Builderin käytön, sinun tulee käyttää ILLA Cloudia tai Itsesatamaa ILLAa sovelluksien ylläpitämiseen. Tarjoamme sinulle ILLA CLI, Docker Compose, ja K8s itse isäntä ILLA alle 5 minuutissa. Tarjoamme sinulle ILLA Cloud myöhemmin, jotta voit yksinkertaisesti aloittaa ILLA Builder.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Hanki käyttäjien tiedot
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Rekisteröidy ja kirjaudu ILLA Builderiin ja kirjoita sitten resurssivälilehti. Klikkaa "Luo uusi" painiketta ja voit valita resurssityypin täällä. Tarjoamme sinulle REST API ja MySQL yhdistää tiedot. Postgres, Redis, ja MongoDB ovat saatavilla tässä kuussa.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Vedä ja pudota lisäosia
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+Kun tietosi on valmis, voit palata sovellusten välilehteen ja luoda sovelluksen. The insert list is on the right side of the page. Voit valita yhden niistä ja vetää sen kehykseen. Napsauta sitten lisäosaa ja muokkaa sen parametreja Inspect-paneelissa. Tarjoamme sinulle markdown -tilan muokataksesi jokaisen lisäyksen etikettiä. Jos tunnet Markdown-syntaksin, voit säätää tekstin kokoa ja paksuutta nopeasti. Sillä välin voit käyttää {{double brackets}} käyttääksesi toiminnon tietoja tekstinsyöttöruudussa saadaksesi lisää tuloksia ILLA Builderissa.
 
-### 4.  Add action in Apps
+### 4.  Lisää toiminto sovelluksissa
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+Toimi on tarpeen, jotta tiedot voidaan muuntaa resursseista lisättäviksi. Me kutsumme sitä toiminnaksi. Voit kirjoittaa kyselyn toiminnassa, jotta voit saalis tietoja resursseistasi. Tällä perusteella voit kirjoittaa JavaScriptin toimintoihin, joilla voit suorittaa tietojenkäsittelyohjeita, kuten suodattimen ja yhdistämisen. MySQL esimerkki on alla:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Luo MySQL toiminto App editorissa. Nimetty se toiminta1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Syötä kyselyn koodi paneelissa, esim. SELECT \* FROM Käyttäjät.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Suorita tämä toiminto, kyselyn tulos näytetään alhaalla olevassa paneelissa.
 
-### 5.  Show your data
+### 5.  Näytä tietosi
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+Kun toiminto on onnistuneesti luotu, sinun täytyy sitoa toiminnon tulos komponenttiin. Sinun pitäisi korvata tarkastuspaneelissa oleva arvomuuttuja toimintojen {{action1.data}} tuloksena. Sitten komponentin tiedot sitoutuvat toiminnon tulokseen. 
