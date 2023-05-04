@@ -1,0 +1,91 @@
+---
+title: Text
+metaTitle: ILLA Cloud Text component doc
+description: Display data with text component
+tagCategory: doc_menu_text_click
+---
+
+* * *
+
+## <Heading hidden>Text</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Properties
+
+| Property             | Description                                                                                                                                                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
+| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
+| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
+| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
+| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
+| Color                | To set the text color in paint text format                                                                                                                                                                    |
+| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+
+### Use Markdown
+
+#### Headline
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### To-do list
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### To-do list
+
+1. [ ] 🚀 Build a new app on ILLA Cloud
+2. [ ] ☎️ Call with Monica
+3. [x] 🍷 Have dinner with **Elsa**
+4. [x] 💃 Play `Just dance` for half an hour
+```
+
+#### Bulleted list
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Bulleted list
+- Real-time Collaboration: We can create everything in real-time together.
+- 🛠 Custom Plugin: Build any custom plugin to do what you want.
+- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
+- 🖥 Self-hosted: supports Docker & k8s
+```
+
+#### Table
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Table
+| Name        | Link   |  Description  |
+| :--------  | :-------  | :----  |
+| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
+| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
+| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+```
+
+### Display dynamic data
+
+Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+
+```jsx
+## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+```
