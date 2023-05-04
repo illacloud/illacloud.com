@@ -1,5 +1,5 @@
 ---
-title: List
+title: 列表（List）
 metaTitle: ILLA Cloud List Component doc
 description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
 tagCategory: doc_menu_list_click
@@ -7,45 +7,45 @@ tagCategory: doc_menu_list_click
 
 * * *
 
-## <Heading hidden>List</Heading>
+## <Heading hidden>列表（List）</Heading>
 
-The List component is similar to a Container in that you can nest other components inside of it.
+列表组件类似于容器，你可以在里面嵌套其他组件。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
   alt=""
 />
 
-### Drag components to list
+### 拖动组件到列表
 
-When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+When you drag a List component to the Frame, it automatically includes some components. 拖动一个列表组件到画布中时，它会自动包含一些组件。您可以删除或修改它们，并将新的组件拖入列表。 
 
-Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+Only the first item can be edited, and others will automatically change based on the first item. 只有列表中的第一项可以被编辑，其他项会根据第一项的配置自动改变。你也可以选中第一项，通过拖动bar来改变每一项的高度。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
   alt=""
 />
 
-### Display query results in a list
+### 在列表组件中显示数据查询结果
 
-When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+When you drag a List component to the Frame, it automatically displays the test data in JSON format. 拖动一个列表组件到画布中时，它会自动显示JSON格式的测试数据。您可以通过使用**{{mysql_list_query.data }}**将数据源改成一个来源于数据查询Action的数据。 
 
-After setting the data source, you can change the data of components:
+设置完数据源后，您可以进一步改变列表中其他组件的数据。
 
-1.  Select the component in the first item. 
-2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+1.  选择第一项中的组件。 
+2.  如果您期望该组件的数据来源于列表的某一列，可以通过**{{ currentItem.columnName }}**来设置数据。例如，您可以用**{{ currentItem.Avater }}**来设置图片来源。其中，**Avater**是来自列表的数据源的一个列。. For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+只有当组件在列表中时，才能使用**{{ currentItem.columnName }}**。 
 
-### Use the data of list
+### 使用列表的数据
 
-You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+可以通过使用**{{ list1.selectedItem.columnName }}**来使用所选项的数据。或者通过使用 **{{ list1.dataSource[n].columnName }}**来使用列表中的任何数据。 Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
