@@ -1,29 +1,29 @@
 ---
-title: Transformer
+title: トランス
 metaTitle: ILLA Cloud transformer doc
-desc: Transformer in ILLA allows user to write JavaScript to refine the application logic
+desc: ILLAの変換器では、JavaScriptを書いてアプリケーションロジックを改良することができます。
 tagCategory: doc_menu_transformer_click
 ---
 
 * * *
 
-## <Heading hidden>Transformer</Heading>
+## <Heading hidden>トランス</Heading>
 
-We have put a Transformer in ILLA to meet your requirements for writing JavaScript to refine your application logic. In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
+私たちは、アプリケーションロジックを改善するためにJavaScriptを書くための要件を満たすために、ILLAにトランスフォーマーを置いています。 トランスフォーマーでは、キャラクター入力ボックスのように {{template syntax}} を使用してJavaScriptでコーディングする必要はありません。 長く複雑なJSコードをより流暢に書けるようにします。 加えて、 Transformerは、ページ設計やロジック構築を担当する開発者が、お互いの進歩に制約を受けることなく、開発作業をより効率的に完了するのに役立ちます。
 
-You can use the Transformer not only for established data operations but also for creating transformer operations when transforming data. It would be better to choose an independent transformer when you have multiple operations involved in transforming data, or need to use complex JavaScript logic to transform data.
+Transformer は、既存のデータ操作だけでなく、データ変換時にトランス操作を作成するためにも使用できます。 データ変換に関わる複数の操作がある場合は、独立したトランスを選択することをお勧めします。 データを変換するのに複雑な JavaScript ロジックを使用する必要があります。
 
-### Creative Transformers
+### クリエイティブな変換
 
-Click on the Transformers tab in the Action list, and click on "+ New" to create a transformer. It will be displayed in the action list after creation. You can change the name, write JS code, save and run it in the configuration panel after selection.
+アクションリストの「変圧器」タブをクリックし、「+ 新規」をクリックして変圧器を作成します。 作成後、アクションリストに表示されます。 名前を変更したり、JS コードを記述したり、選択後に設定パネルで保存したり、実行したりできます。
 
-> You can use the 'preview' button to see the results of a transformer. Note that you have to save the transformer for the rest of the app to get the new value.
+> 「プレビュー」ボタンを使用して、トランスの結果を確認できます。 新しい値を取得するには、アプリの残りの部分でトランスを保存する必要があります。
 
-The insert calls the transformer with a value equal to the data returned within the transformer, this data will change as the data entered into the transformer changes with the code of the transformer. As with the character input box, you can still use the template syntax to call the global variable No. When you are writing JS code to call data, you can find the specific data variable name in the data workspace in the left hand panel to help you write code faster.
+insertはトランス内で返されるデータと同じ値でトランスを呼び出します。 このデータは変圧器のコードで変換器に入力されるデータと共に変化します 文字入力ボックスと同様に、テンプレート構文を使用してグローバル変数 No. を呼び出すことができます。 データを呼び出すためにJavaScriptコードを書いているとき 特定のデータ変数名は、左側のパネルにあるデータ ワークスペースで見つけることができます。コードの書き込みが速くなります。
 [//]\: # ([Image])
 
-You can call the transformer variable in the data entry box by using `{{transformer name. tag name}}` to call the transformer variable in the data entry box.
+データ入力ボックス内のtransformer変数を呼び出すには、 `{{transformer name. データ入力ボックス内のトランス変数を呼び出すタグ名}}`。
 
-### Query Transformer
+### クエリトランス
 
-We have put a Transformer in the query operation to allow you to transform the fetched data into the desired format directly after completing the action You can then simply pass {{actionName.data}} to retrieve the data once you have completed the conversion in the transformer within the action.
+アクションの完了後に、取得したデータを任意の形式に変換できるようにクエリ操作にTransformerを追加しました。アクション内のトランスで変換が完了したら、 {{actionName.data}} を渡すだけでデータを取得できます。
