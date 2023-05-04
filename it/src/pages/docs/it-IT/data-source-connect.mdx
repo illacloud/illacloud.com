@@ -1,40 +1,40 @@
 ---
-title: Connect to your data sources
-metaTitle: ILLA Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder.
+title: Connettiti alle tue fonti di dati
+metaTitle: ILLA Cloud Connetti alle tue fonti di dati
+desc: Impara a connetterti alla tua sorgente dati e chiamala nel tuo ILLA Builder.
 tagCategory: doc_menu_data_source_connect_click
 ---
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Impara a connetterti alla tua sorgente dati e chiamala nel tuo ILLA Builder.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+ILLA ti permette di connetterti e integrare una vasta gamma di fonti di dati, tra cui database e API, nella tua organizzazione per l'utilizzo come risorse.
 
-## Data sources
+## Fonti di dati
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Le fonti di dati sono luoghi in cui i dati vengono memorizzati ed elaborati. Esempi di fonti di dati includono database PostgreSQL, API REST di Twilio e secchi di Amazon S3. In ILLA, è possibile aggiungere più fonti di dati e renderli accessibili agli utenti per la interrogazione.
 
-### **Integrations**
+### **Integrazioni**
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using Retool. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA fornisce integrazioni integrate per molte fonti di dati popolari che richiedono una configurazione minima, come database SQL e Stripe. Queste integrazioni, note anche come risorse, consentono di connettersi e interrogare le fonti di dati utilizzando Retool. Se un particolare tipo di sorgente di dati non è supportato da un'integrazione integrata, è possibile utilizzare le integrazioni REST, GraphQL o SOAP per connettersi a quasi tutte le API. Questo consente di accedere a una vasta gamma di fonti di dati dall'interno del costruttore ILLA.
 
-### Connect to databases
+### Connettiti ai database
 
-Connect to most databases and data stores
+Connettiti alla maggior parte dei database e degli archivi dati
 
-### Connect to APIs
+### Connettiti alle API
 
-Connect to REST and GraphQL.
+Connettiti a REST e GraphQL.
 
-## Resources
+## Risorse
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+Una risorsa in ILLA è una configurazione salvata che specifica come ILLA si connette a una sorgente dati. Per utilizzare una sorgente dati in ILLA, è necessario creare una risorsa per esso. È possibile selezionare la risorsa appropriata per accedere ai dati durante la scrittura di una interrogazione.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Ogni risorsa in ILLA ha le proprie opzioni di configurazione che determinano come ILLA si connette alla sorgente dati corrispondente. Queste opzioni possono includere credenziali di autenticazione e flusso, impostazioni di connessione al database e impostazioni API, come URL di base e intestazioni predefinite.
 
-### **How resources work**
+### **Come funzionano le risorse**
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, Retool uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only Retool has direct access to the data source.
+Le risorse ILLA memorizzano le impostazioni necessarie per connettersi alla sorgente dati in modo sicuro. Questo ti permette di interrogare facilmente i dati senza esporre la tua fonte di dati direttamente agli utenti. Quando una query è eseguita per una risorsa, Retool utilizza le impostazioni di configurazione della risorsa per proxy la richiesta alla sorgente dati sul lato server. Questo garantisce che solo Retool abbia accesso diretto alla sorgente dati.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA semplifica il processo di connessione a una sorgente dati per i tuoi utenti. Hanno solo bisogno di selezionare la risorsa pertinente quando si scrive una query senza preoccuparsi dei dettagli della sorgente dati. Puoi anche aggiungere più risorse dello stesso tipo, come più secchi Amazon S3, per distinguerli tra loro.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Questo approccio mantiene le fonti di dati nascoste agli utenti e garantisce che tutte le interazioni con la fonte di dati siano gestite in modo sicuro. ILLA evita di creare connessioni lato client alla fonte di dati che potrebbero esporre informazioni sensibili e utilizza le stesse condizioni per tutte le interazioni. Inoltre, le risorse consentono la cache delle interrogazioni, che può ridurre il numero di richieste fatte a una fonte di dati e i costi potenzialmente inferiori.
