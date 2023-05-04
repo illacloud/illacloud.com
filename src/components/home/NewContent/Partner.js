@@ -51,7 +51,7 @@ export const Partner = ({ onChangeShow }) => {
               />
               <span className="flex flex-col item-center xl:gap-[16px] gap-[8px]">
                 <span className={clsx(style.partnerName)}>{name}</span>
-                <span className={clsx(style.partnerDesc)}>{t(desc)}</span>
+                <div className='h-[75px] xl:h-[100px] overflow-hidden'><span className={clsx(style.partnerDesc)}>{t(desc)}</span></div>
               </span>
             </span>
             <span className={clsx(style.partnerTag, style.rowCenter)}>
