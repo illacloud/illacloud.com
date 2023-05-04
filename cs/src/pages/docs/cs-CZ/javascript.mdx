@@ -1,7 +1,7 @@
 ---
-title: JavaScript Guider
+title: Guider JavaScriptu
 metaTitle: ILLA Cloud JavaScript Guider doc
-desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
+desc: JavaScript je nejdůležitější součástí Editoru ILLA což je nástroj, který používáte pro vytvoření přístupu k datům a logické konstrukce vašeho APP
 tagCategory: doc_menu_js_guider_click
 ---
 
@@ -9,51 +9,51 @@ tagCategory: doc_menu_js_guider_click
 
 ## <Heading hidden>JavaScript Guider</Heading>
 
-JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP. Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+JavaScript je nejdůležitější součástí Editoru ILLA což je nástroj, který používáte pro vytvoření přístupu k datům a logické konstrukce vašeho APP. Mistrovství, jak volat JavaScript, jste zvládli používání ILLA Builderu.
 
-When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+Při vytváření svého APP v Editoru ILLA můžete použít `{{template syntax}}` k psaní vlastních JavaScriptových prohlášení pro volání a manipulaci s daty, nebo napište JS kód přímo na transformátor.
 
-### Operation data
+### Provozní údaje
 
-#### Accessing data on objects
+#### Přístup k datům o objektech
 
-In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
+V Editoru ILLA můžete vložit JavaScript výrazy do libovolného textového pole pomocí syntaxe šablony. Datové objekty jsou dostupné a můžete manipulovat s údaji ze všech vložek, akcí a transformátorů přes JavaScript. Například můžete použít `{{textInput.data}}` pro přístup k obsahu vloženého textu, `{{action.data}}` pro přístup k datům z databáze akcí a `{{transformer.value}}` pro přístup k datům z transformátoru.
 
-We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
+Do produktu jsme přidali a upravili kódové zrcátko, přizpůsobil jej programovacímu prostředí editoru ILLA podporovanému zvýrazňování syntaxí a automatické odsazování, a přidal podrobné vysvětlení proměnných a funkcí, které se vyskytují během programování, takže se můžete naučit používat ILLA Builder za nízké náklady. Poté, co zadáte název objektu, zadejte tečku. výzva bude obsahovat všechny vlastnosti objektu, datový typ a částečný textový popis, aby bylo možné určit vlastnost, která má být přístupná za čas.
 
-#### Accessing numbers in arrays
+#### Přístup k číslům v polích
 
-When you need to access a value in a specific array, you can get the value by the position or subscription of the data you need to access.
+Pokud potřebujete přístup k hodnotě v určitém poli, hodnotu můžete získat podle pozice nebo předplatného dat, ke kterým potřebujete přístup.
 
 ```javascript
 const list = ['a', 'b', 'c']
-return list[0] // Return the first value in list 'a'
+vratný seznam[0] // Vrací první hodnotu v seznamu 'a'
 ```
 
-### View  data
+### Zobrazit data
 
-There are four locations to view data in ILLA Builder: the data workspace in the left-hand panel, the data prompt below the text box after entering a JavaScript expression, and the data display through the data insert to display the data.
+V editoru ILLA jsou čtyři umístění: prostor pro data v levém panelu, datová výzva pod textovým polem po zadání výrazu JavaScript a zobrazení dat prostřednictvím datového vložení k zobrazení dat.
 
-#### Data workspace presentation
+#### Prezentace pracovního prostoru dat
 
-You can find the data workspace by opening the left-hand panel in the App editor, so the data is presented as structured JSON in which every property and list can be expanded and all data is visually displayed in the workspace.
-
-[//]: # "[图片]"
-
-#### Live preview of data input
-
-When you call an action or transformer operation in the input box, the data for that operation will automatically pop up below the input box, and you can confirm that the data called is correct based on the information here.
+Datový pracovní prostor najdete otevřením levého panelu v editoru aplikací, V případě, že je k dispozici více informací o datech, musí být všechny údaje o datech prezentovány jako strukturovaný JSON a všechny údaje jsou zobrazeny v pracovním prostoru.
 
 [//]: # "[图片]"
 
-#### Data presentation
+#### Živý náhled vstupu dat
 
-The data display insert gives you the most intuitive view of the data. Simply drag and drop the component into the frame, enter the name of the corresponding data source in the data field, filter and arrange it, and you will have access to the data display information.
+Když zavoláte akci nebo transformátor ve vstupním poli, data pro tuto operaci se automaticky zobrazí pod vstupním polem, a můžete potvrdit, že volané údaje jsou správné na základě informací zde.
 
 [//]: # "[图片]"
 
-### Transformer
+#### Předkládání údajů
 
-You can write multiple lines of JS code in the transformer, and we recommend that you choose to write in the transformer rather than in double curly brackets. You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+Vložený datový displej vám poskytne nejintuitivnější zobrazení dat. Jednoduše přetáhněte komponentu do rámečku, zadejte název příslušného zdroje dat do pole dat. filtrovat a uspořádat jej a budete mít přístup k informacím o zobrazení dat.
 
-Click here for detailed usage of the transformer.
+[//]: # "[图片]"
+
+### Transformátor
+
+V transformátoru můžete napsat více řádků JS kódu, a doporučujeme, abyste se rozhodli psát v transformátorech, a ne ve dvojitých zuřivých závorkách. S pomocí `{{}}` můžete programovat JavaScript přímo v transformátorech a také volat data v operaci.
+
+Klikněte zde pro detailní využití transformátoru.
