@@ -1,23 +1,23 @@
 ---
-title: Known Issues
-tagCategory: doc_menu_known_issues_click
-desc: Known issues and solutions of ILLA Builder deployment.
+title: Kända problem
+tagCategory: Ärenden
+desc: Kända problem och lösningar för installation av ILLA Builder.
 ---
 
 * * *
 
-## <Heading hidden>Known Issues</Heading>
+## <Heading hidden>Kända ärenden</Heading>
 
-### Mount Type Issue
+### Problem med monteringstyp
 
-Run `illa deploy --self -port=1000 -s={your-ip-address}` or `run-official-image.sh`, return following error:
+Kör `illa distribuera --self -port=1000 -s={your-ip-address}` eller `run-official-image.sh`, returnera följande fel:
 
-`Docker responded with status code 400: invalid mount config for type "bind": bind source path does not exist: /tmp/illa-data`
+`Docker svarade med statuskod 400: ogiltig mount config for type "bind": bind källkod finns inte: /tmp/illa-data`
 
-For now, the mount type only supports `mount`, please config `docker -v` as `mount` mode. Or reinstall the docker by following scripts.
+För tillfället stöder monteringstypen endast `mount`, vänligen config `docker -v` som `mount`-läge. Eller installera om dockaren genom att följa skript.
 
-[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manuelly/blob/main/utils/reinstall-docker-with-ubuntu.sh)
 
-And run the deploy command again.
+Och kör distributionskommandot igen.
 
-For more issues: https://github.com/illacloud/illa-builder/issues
+För fler problem: https://github.com/illacloud/illa-builder/issues
