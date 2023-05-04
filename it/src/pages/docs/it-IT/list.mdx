@@ -1,51 +1,51 @@
 ---
-title: List
-metaTitle: ILLA Cloud List Component doc
-description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+title: Elenco
+metaTitle: Componente ILLA Cloud List doc
+description: Il componente Lista consente di creare righe ripetibili di dati il cui aspetto e la cui sensazione sono definiti da te.
 tagCategory: doc_menu_list_click
 ---
 
 * * *
 
-## <Heading hidden>List</Heading>
+## <Heading hidden>Elenco</Heading>
 
-The List component is similar to a Container in that you can nest other components inside of it.
+Il componente Lista è simile a un contenitore in quanto è possibile nidificare altri componenti al suo interno.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
   alt=""
 />
 
-### Drag components to list
+### Trascina i componenti per elencare
 
-When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+Quando si trascina un componente Lista sul Frame, esso include automaticamente alcuni componenti. È possibile eliminarli o modificarli e trascinare i nuovi componenti nella lista. 
 
-Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+Solo il primo elemento può essere modificato e altri cambieranno automaticamente in base al primo elemento. È inoltre possibile concentrarsi sul primo elemento e trascinare la barra per modificare gli elementi di altezza.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
   alt=""
 />
 
-### Display query results in a list
+### Visualizza i risultati della query in un elenco
 
-When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+Quando si trascina un componente Lista sul Frame, viene visualizzato automaticamente i dati di prova in formato JSON. Puoi cambiare la sorgente dei dati in un'azione usando `{{ mysql_list_query.data }}`. 
 
-After setting the data source, you can change the data of components:
+Dopo aver impostato la sorgente dati, è possibile modificare i dati dei componenti:
 
-1.  Select the component in the first item. 
-2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+1.  Selezionare il componente nel primo elemento. 
+2.  Se i dati del componente sono dall'elenco, puoi impostare i dati usando `{{ currentItem.columnName }}` . Ad esempio, puoi impostare la sorgente dell'immagine con il `{{ currentItem.Avater }}`. `Avater` è una colonna dalla sorgente dei dati dell'elenco.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+Puoi usare `{{ currentItem.columnName }}` solo quando i componenti sono nella lista. 
 
-### Use the data of list
+### Usa i dati della lista
 
-You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+Puoi usare i dati degli elementi selezionati usando `{{ list1.selectedItem.columnName }}`. Oppure usa qualsiasi dato della lista usando `{{ list1.dataSource[n].columnName }}`
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
