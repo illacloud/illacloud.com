@@ -1,151 +1,151 @@
 ---
-title: Appwrite
-metaTitle: ILLA Cloud Appwrite Integration Document
-description: The guide to setup and integrate with Appwrite on ILLA Cloud
+title: Аплікація
+metaTitle: Документ інтеграції ILLA Cloud Appwrite
+description: Керівництво по налаштуванню та інтеграції з Appwrite з ILLA Cloud
 tagCategory: doc_menu_appwrite_click
 ---
 
 * * *
 
-## <Heading hidden>Appwrite Database</Heading>
+## <Heading hidden>База даних Appwrite</Heading>
 
-Within Appwrite's different services, you can find user authentication and account management, user preferences, database and storage persistence, cloud functions, localization, image manipulation, and more. 
+У різних сервісах Appwrite, можна знайти автентифікацію користувача і керування обліковим записами, уподобання користувачів, збереження бази даних і зберігання даних, хмарні функції, локалізація, маніпулювання зображеннями та інше. 
 
-The combination of ILLA Cloud and Appwrite, that is, the combination of server-side low-code and front-end low-code, will truly realize low-code full-stack development.
+Комбінація ILLA Cloud та Appwrite, тобто поєднання низького коду на сервері та нижнього індексу справді усвідомить низького рівня розвитку низького кодексу.
 
-[Click here](https://appwrite.io/) to learn more about Appwrite.
+[Натисніть тут](https://appwrite.io/), щоб дізнатися більше про Appwrite.
 
-### Setup Appwrite resource on ILLA Cloud
+### Налаштувати ресурс Appwrite на ILLA Cloud
 
-#### Two ways to create resources
+#### Два способи для створення ресурсів
 
-The first way is to enter the `Resources` tab > click `Create New` to select Appwrite. 
+Перший спосіб - ввести вкладку "Ресурси" > натисніть "Створити новий", щоб обрати Appwrite. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
 
-The another way is to enter the `app editor` page > click `+ New` to select Appwrite > click `+ New Resources` to add the new configuration. 
+Інший спосіб - ввести сторінку `Редактора додатків` > натисніть `+ Новий` щоб обрати Appwrite > натисніть \`+ Нові ресурси", щоб додати нову конфігурацію. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
 
-#### Setup Appwrite by filling in the following fields
+#### Налаштування Appwrite заповнивши наступні поля
 
-Before you connect an Appwrite resource, make sure you have deployed Appwrite on your local machine or a cloud provider. [Click here](https://appwrite.io/docs/installation) to learn more about the installation of Appwrite. 
+Перед підключенням Appwrite resource, переконайтеся, що ви маєте розгортання Appwrite на локальній машині або хмарний провайдер. [Натисніть тут](https://appwrite.io/docs/installation), щоб дізнатися більше про встановлення Appwrite. 
 
-| Property    | is_required | Description                                                                                                 |
-| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
-| Name        | required    | The name for resource when creating actions in the ILLA. You can customize a name for easy identification.  |
-| Host        | required    | HOSTNAME OR IP.                                                                                             |
-| Database ID | required    | Database ID                                                                                                 |
-| Project ID  | required    | Project ID                                                                                                  |
-| Api key     | required    | TOKEN                                                                                                       |
+| Властивість           | необхідно \_ISO | Опис                                                                                          |
+| --------------------- | --------------- | --------------------------------------------------------------------------------------------- |
+| Ім'я                  | обов’язково     | Назва ресурсу при створенні дій в ILLA. Ви можете налаштувати ім'я для легкої ідентифікації.  |
+| Хост                  | обов’язково     | HOSTNAME АБО IP.                                                                              |
+| ID бази даних         | обов’язково     | ID бази даних                                                                                 |
+| Ідентифікатор проекту | обов’язково     | Ідентифікатор проекту                                                                         |
+| Ключ API              | обов’язково     | ТОКІН                                                                                         |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
 
-### Create actions in the app editor
+### Створення дій у редакторі програм
 
-#### Create actions in the following way
+#### Створення дій таким чином
 
-Click `+ New` in the app editor page > to select Appwrite > select an existing Appwrite resource or create a new resource > click `Create Action` to create a new action. 
+Натисніть `+ New` у редакторі додатків > щоб вибрати додаток > вибрати наявний ресурс Appwrite або створити новий ресурс > натисніть `Створити дію` щоб створити нову дію. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
 
-After creating an action, please select a method. We provide the following methods: List documents, Create a document, Update a document, Get a document, and Delete a document. The configuration of each method is as follows. 
+Після створення дії, будь ласка, виберіть метод. Ми надаємо наступні методи: Список документів, створити документ, оновити документ, отримати документ та видалити документ. Конфігурація кожного методу виглядає наступним чином. 
 
-#### List documents
+#### Список документів
 
-The following is a simple configuration example: List the document with $id 5. 
+Нижче наведено простий приклад: Список документів з $id 5. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
 
-| Property      | is_required | Description                                                                                                                                                                                                                                 |
-| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Collection ID | Required    | Input or select a collection id from the database                                                                                                                                                                                           |
-| Filter        | Optional    | Support multiple filters. A filter consists of a key, a value and a condition. 1. key: input an attribute 2. condition: select a condition, including equal, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. value: input the value |
-| Order by      | Optional    | Support for ordering by multiple attributes. 1. input an attribute to order by 2. Select asc( by default ) or desc                                                                                                                          |
-| Limit         | Optional    | number of records                                                                                                                                                                                                                           |
+| Властивість   | необхідно \_ISO | Опис                                                                                                                                                                                                                                  |
+| ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID колекції   | Обов'язково     | Введи або виберіть ідентифікатор колекції з бази даних                                                                                                                                                                                |
+| Фільтр        | За бажанням     | Підтримка кількох фільтрів. Фільтр складається з значення, значення та умови. 1. ключ: введіть атрибут 2. умова: вибрати умову, включаючи формулу, неоднакову, менш рівну, менш низьку, більше ніж 3 тощо. значення: введіть значення |
+| Сортування за | За бажанням     | Підтримка замовлення за кількома атрибутами. 1. введіть атрибут для замовлення на 2. Позначити за замовчуванням( або за спаданням                                                                                                     |
+| Ліміт         | За бажанням     | кількість записів                                                                                                                                                                                                                     |
 
-The following is an example of how to use the data entered in the component in the action:
+Наступні приклад як використовувати дані, введені в компоненті в дії:
 
-1.  Add an input component to the frame so that users can enter the document id they want to find.  
-2.  Add a filter: set the attribute field to $id and enter {{ input1.value }} in the value field. 
+1.  Додайте вхідний компонент у кадр, щоб користувачі могли ввести ідентифікатор документа, який вони хочуть знайти.  
+2.  Додайте фільтр: встановити поле атрибуту на $id і введіть {{ input1.value }} у полі значення. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
 
-Output
+Вихід
 
-Check the data structure on the left panel. For example, use `{{list.data[0].documents[0].id}}`(`list` is the name of the action) to get the id of the first document. 
+Перевірте структуру даних на лівій панелі. Наприклад, використовуйте `{{list.data[0].documents[0].id}}`(`list` - це назва дії), щоб отримати ідентифікатор першого документу. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
 
-You can also use `{{list.data[0].documents.map(documents => documents)}}` to display all data on `table` component. 
+Ви також можете використовувати `{{list.data[0].documents.map(documents => documents)}}`, щоб відобразити всі дані про компонент `table`. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
 
-#### Create a document
+#### Створити документ
 
-| Collection ID | Required | Input or select a collection id from the database                  |
-| ------------- | -------- | ------------------------------------------------------------------ |
-| Document ID   | Required | input an ID. the document will be created with this ID             |
-| Data          | Required | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| ID колекції  | Обов'язково | Введи або виберіть ідентифікатор колекції з бази даних      |
+| ------------ | ----------- | ----------------------------------------------------------- |
+| ID документа | Обов'язково | введіть ID. Вузол буде створений з цим ID                   |
+| Дані         | Обов'язково | Об'єкт включений в {{ }}. Наприклад, {{ "key": "value" } }} |
 
-The following is an example of how to use the data entered in the component in an object. 
+Наступні приклади як використовувати дані, введені в компоненті в об'єкті. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
 
-#### Update a document
+#### Оновити документ
 
-| Property      | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| Collection ID | Input or select a collection id from the database                  |
-| Document ID   | input an existing document ID to be updated                        |
-| Data          | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| Властивість  | Опис                                                        |
+| ------------ | ----------------------------------------------------------- |
+| ID колекції  | Введи або виберіть ідентифікатор колекції з бази даних      |
+| ID документа | введіть існуючий документ для оновлення                     |
+| Дані         | Об'єкт включений в {{ }}. Наприклад, {{ "key": "value" } }} |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
 
-#### Get a document
+#### Отримати документ
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Властивість  | Опис                                                   |
+| ------------ | ------------------------------------------------------ |
+| ID колекції  | Введи або виберіть ідентифікатор колекції з бази даних |
+| ID документа | введіть ID існуючого документа                         |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
 
-The output data is as follows. Use {{get.data[0]}} to get the document object.
+Вихідні дані такі. Використовуйте {{get.data[0]}} , щоб отримати об'єкт документа.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
 
-#### Delete a document
+#### Видалити документ
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Властивість  | Опис                                                   |
+| ------------ | ------------------------------------------------------ |
+| ID колекції  | Введи або виберіть ідентифікатор колекції з бази даних |
+| ID документа | введіть ID існуючого документа                         |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
 
-### Connect the data from Appwrite with front-end components
+### Підключити дані з Appwrite за допомогою передніх компонентів
 
-#### Configure the actions
+#### Налаштування дій
 
-Create a delete_document action > fill the Document ID field with {{ input1.value }}. 
+Створити дію delete_document > заповніть поле ID документа {{ input1.value }}. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
 
-Add an event handler to the action to set a response when run successfully. 
+Додайте обробник подій до дії, щоб встановити відповідь після успішного запуску. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
 
-#### Configure components
+#### Налаштування компонентів
 
-Add a event handler to button to trigger the delete_document action. 
+Додайте обробник подій до кнопки, щоб запустити дію delete_document. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
 
-Set the data source of the table to display data. 
+Встановити джерело даних таблиці для відображення даних. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
 
-#### View running results
+#### Переглянути запущені результати
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
