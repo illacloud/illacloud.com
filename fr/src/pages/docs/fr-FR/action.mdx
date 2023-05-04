@@ -1,47 +1,47 @@
 ---
 title: Action
-metaTitle: ILLA Cloud Action doc
-tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+metaTitle: Manuel d'action du Cloud ILLA
+tagCategory: Cliquez sur le lien de menu du doc_menu_action
+desc: Les actions sont le pont entre les données et les composants et constituent un élément essentiel de la construction d'une application.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Requête</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Après avoir créé la ressource, vous devez extraire les données dans la ressource, sélectionner, filtrer, fusionner les données et ensuite les mettre dans les Hors-textes selon les exigences logiques. Nous appelons ce processus de traitement des données une Action. Les actions sont le pont entre les données et les composants et constituent un élément essentiel de la construction d'une application. Nous avons divisé les actions en deux catégories : les actions et les transformateurs.
 
-### SQL Action
+### Action SQL
 
-#### Create action
+#### Créer une action
 
-The process of using SQL actions is divided into the following steps:
+Le processus d'utilisation des actions SQL est divisé en les étapes suivantes :
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Tout d'abord, vous devez trouver la liste d'actions dans l'éditeur d'application et cliquez sur le bouton "Ajouter".
+2.  Sélectionnez ensuite un type de source de données dans la zone de sélection de la ressource. Vous pouvez trouver les ressources créées dans la liste des ressources correspondantes, vous pouvez également créer de nouvelles ressources ici. Sélectionnez la ressource créée et cliquez sur le bouton "Confirmer". Une action SQL sera créée avec succès.
+3.  L'action créée sera affichée dans la liste des actions. Un éditeur d'action s'affichera sous le cadre après avoir démarré l'action. Vous pouvez modifier la ressource des actions, écrire des instructions d'action, du contenu de réponse, ajouter des transformateurs, des gestionnaires d'événements.
+4.  Après avoir rempli la liste d'actions, vous pouvez cliquer sur le bouton "Aperçu" pour vérifier si l'action que vous avez écrite est valide. Le panneau de configuration affichera le résultat de l'action. Une fois l'action modifiée, vous pouvez cliquer sur le bouton "Enregistrer" pour terminer le processus. Si vous passez à une autre action sans enregistrer les informations, le système vous demandera d'enregistrer la modification.
 
-#### Action Breakdown
+#### Répartition de l'action
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Action : Vous pouvez entrer vos instructions d'action dans le module Action où nous avons ajouté l'éditeur Code Mirror pour activer la mise en évidence de l'instruction action et la complétion du code. Dans les mises à jour suivantes, nous fournirons un mode de saisie de l'interface graphique pour écrire des instructions d'action, de sorte que les utilisateurs qui ne sont pas familiers avec les instructions d'action puissent également effectuer des actions de données.
+2.  Transformateur : Vous pouvez affiner la logique d'action avec des instructions JavaScript dans le transformateur, par exemple en utilisant la fonction filter en JS au lieu de la fonction where dans la requête d'action.
+3.  Gestionnaire d'événements : Les gestionnaires d'événements vous permettent de déclencher des actions, d'insertions de contrôle et d'autres actions en réponse à l'interaction de l'utilisateur. Vous pouvez ajouter plusieurs gestionnaires d'événements pour répondre à un événement sans ajouter des instructions JavaScript personnalisées. Par exemple, lorsqu'un utilisateur clique sur un bouton, vous pouvez (1) déclencher une action à exécuter, tandis que (2) réinitialisation de l'état des listes déroulantes multiples et des entrées de texte.
+4.  Réponse : Dans le module de réponse, vous pouvez personnaliser les conditions dans lesquelles l'action retourne des résultats incorrects, de manière à assurer l'exactitude de l'action.
+5.  Avancé : Affiner les paramètres détaillés pour les actions telles que les temps de réponse de la base de données, les délais de traitement des événements, etc. dans les options avancées.
 
-### API Actions
+### Actions API
 
-#### Create action
+#### Créer une action
 
-The process for actioning data using the API is similar to that for SQL.
+Le processus d'actionnement des données utilisant l'API est similaire à celui de SQL.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  Tout d'abord, l'utilisateur doit trouver la liste d'actions en bas à gauche de la page d'édition de l'application et cliquer sur le signe plus en haut à droite de la liste d'actions.
+2.  Ensuite, sélectionnez la liste des sources de données correspondantes dans la zone de sélection des ressources qui apparaît. Vous pouvez trouver la ressource créée dans la liste des sources de données correspondantes, ou vous pouvez créer une nouvelle ressource ici. Sélectionnez la ressource créée, cliquez sur "Créer" et une action API sera créée avec succès.
+3.  L'action créée avec succès sera affichée dans la liste Actions dans le panneau du bas et l'onglet Général de l'action s'affichera sous le cadre lorsque vous cliquez dessus. Vous pouvez faire une requête à n'importe quelle API HTTP dans ILLA . Veuillez consulter la documentation des API pour les méthodes de requête de données.
+4.  Une fois que vous avez rempli votre action, vous pouvez cliquer sur le bouton "Aperçu" pour voir si l'action que vous avez écrite est valide et le panneau de configuration vous donnera les résultats. Une fois que vous avez terminé de modifier votre action, vous pouvez cliquer sur Enregistrer et quitter pour terminer le processus. Si vous passez à une autre opération sans enregistrer, une popup vous demandera de terminer l'opération d'enregistrement.
 
-#### Action Breakdown
+#### Répartition de l'action
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Transformateur : Vous pouvez affiner la logique d'action avec des instructions JavaScript dans un transformateur, par exemple en utilisant la fonction filtre en JS au lieu de la fonction où dans une requête d'action.
+2.  Gestionnaires d'événements: Les gestionnaires d'événements vous permettent de déclencher des actions, d'insertions de contrôle et d'autres actions en réponse à l'interaction de l'utilisateur. Vous pouvez ajouter plusieurs gestionnaires d'événements pour répondre à un événement sans ajouter des instructions JavaScript personnalisées. Par exemple, lorsqu'un utilisateur clique sur un bouton, vous pouvez (1) déclencher une action à exécuter, tandis que (2) réinitialisation de l'état des listes déroulantes multiples et des entrées de texte.
