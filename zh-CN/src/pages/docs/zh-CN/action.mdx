@@ -1,47 +1,47 @@
 ---
-title: Action
-metaTitle: ILLA Cloud Action doc
+title: 行 动
+metaTitle: ILLA 云行动 doc
 tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+desc: 行动是数据和组件之间的桥梁，是构建应用程序的一个基本部分。
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>查询</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+在创建资源后，您需要提取资源中的数据，选择、过滤。 合并数据，然后按照逻辑要求将其放入插入插件。 我们将这一数据处理过程称为行动。 行动是数据和组件之间的桥梁，是构建应用程序的一个基本部分。 我们将行动分为两类：行动和改革。
 
-### SQL Action
+### SQL查询
 
-#### Create action
+#### 创建动作
 
-The process of using SQL actions is divided into the following steps:
+使用SQL查询的过程主要分为以下几步：
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  首先，用户需要在应用编辑页面的左下方找到Action列表，在Action列表的右上方点击加号。
+2.  然后在资源选择框中选择一个数据源类型。 您可以在相应的资源列表中找到创建的资源，您也可以在这里创建新的资源。 选择创建的资源，然后点击“确认”按钮。 SQL 操作将成功创建。
+3.  创建的操作将显示在操作列表中。 踢出动作后，动作编辑器将显示在框架下。 您可以更改动作、写动作语句、响应内容、添加变压器、事件处理器。
+4.  填写操作列表后，您可以点击“预览”按钮来检查您写的操作是否有效。 配置面板将显示动作结果。 编辑操作后，您可以点击“保存”按钮结束操作。 如果您切换到另一个动作而不保存信息，系统会提示您保存修改。
 
-#### Action Breakdown
+#### 动作分解
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  动作：您可以在我们添加代码镜像编辑器的行动模块中输入您的动作语句以启用高亮和代码补全。 在随后的更新中， 我们将提供写动作语句的GUI输入模式，以便不熟悉动作语句的用户也可以完成数据操作。
+2.  转换器（Transformer）：您可以在转换器中用JavaScript语句完善查询逻辑，例如在JS中使用filter函数代替查询语句中的where函数。
+3.  事件处理程序：事件处理程序允许您触发动作，控制插入和其他动作响应用户交互。 事件处理器（event handler）：事件处理器允许您触发查询、控制组件等行为以响应用户交互。您可以在不添加自定义JavaScript语句的前提下添加多个事件处理程序以响应一个事件。例如，当用户单击一个按钮时，您可以(1)触发一个查询来运行，同时(2)重置多个下拉列表和文本输入的状态。 例如，当用户点击按钮时，您可以(1) 触发一个动作来运行。 当(2) 重置多个下拉列表和文本输入的状态。
+4.  响应（Response）：在响应模块中，您可以自定义查询返回结果错误的条件，通过这样的方式保证查询的准确性。
+5.  高级（Advanced）：在高级选项内完善查询的详细设置，例如数据库的超时响应时间、事件处理器延迟等。
 
-### API Actions
+### API查询
 
-#### Create action
+#### 创建动作
 
-The process for actioning data using the API is similar to that for SQL.
+使用API数据查询的过程与SQL大致相同：
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  首先，用户需要在应用编辑页面的左下方找到Action列表，在Action列表的右上方点击加号。
+2.  接下来，在资源选择框中选择相应的数据源列表。 您可以在相应的数据源列表中找到创建的资源，或者您可以在这里创建一个新的资源。 选择创建的资源，点击“创建”并成功创建 API 动作。
+3.  成功创建的动作将会显示在底部面板中的动作列表中，当点击时，动作会在框架下拉亮。 您可以在 ILLA 中向任何 HTTP API发出请求。 请查看 API 文档以获取数据请求方法。
+4.  一旦您填写了您的动作， 您可以点击“预览”按钮来查看您所写的动作是否有效，配置面板将给您提供结果。 一旦完成编辑您的操作，您可以单击保存并退出以结束进程。 如果您切换到另一个操作而不保存，弹出窗口会促使您完成保存操作。
 
-#### Action Breakdown
+#### 动作分解
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  转换器（Transformer）：您可以在转换器中用JavaScript语句完善查询逻辑，例如在JS中使用filter函数代替查询语句中的where函数。
+2.  事件处理器：事件处理器允许您触发动作，控制插入和其他动作响应用户交互。 事件处理器（event handler）：事件处理器允许您触发查询、控制组件等行为以响应用户交互。您可以在不添加自定义JavaScript语句的前提下添加多个事件处理程序以响应一个事件。例如，当用户单击一个按钮时，您可以(1)触发一个查询来运行，同时(2)重置多个下拉列表和文本输入的状态。 例如，当用户点击按钮时，您可以(1) 触发一个动作来运行。 当(2) 重置多个下拉列表和文本输入的状态。
