@@ -1,44 +1,44 @@
 ---
-title: Connect to your data sources
-metaTitle: Illa Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder
+title: Συνδεθείτε στις πηγές δεδομένων σας
+metaTitle: Illa Cloud Σύνδεση με τις πηγές δεδομένων σας
+desc: Μάθετε για τη σύνδεση με την πηγή δεδομένων σας και καλέστε την στο ILLA Builder σας
 tagCategory: doc_menu_data_source_connect_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to your data sources （Action)</Heading>
+## <Heading hidden>Συνδεθείτε με τις πηγές δεδομένων σας (Δράση)</Heading>
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Μάθετε για τη σύνδεση με την πηγή των δεδομένων σας και καλέστε την στον Δημιουργό ILLA.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+Το ILLA σας επιτρέπει να συνδέσετε και να ενσωματώσετε ένα ευρύ φάσμα πηγών δεδομένων, συμπεριλαμβανομένων βάσεων δεδομένων και API, στον οργανισμό σας για χρήση ως πόρους.
 
-### Data sources
+### Πηγές δεδομένων
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Οι πηγές δεδομένων είναι τοποθεσίες όπου αποθηκεύονται και υφίστανται επεξεργασία τα δεδομένα. Παραδείγματα πηγών δεδομένων περιλαμβάνουν βάσεις δεδομένων PostgreSQL, Twilio REST API, και κάδους Amazon S3. Στο ILLA, μπορείτε να προσθέσετε πολλαπλές πηγές δεδομένων και να τις καταστήσετε προσβάσιμες στους χρήστες για ερωτήματα.
 
-#### Integrations
+#### Ενσωματώσεις
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using ILLA. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA παρέχει ενσωματωμένες ενσωματώσεις για πολλές δημοφιλείς πηγές δεδομένων που απαιτούν ελάχιστη ρύθμιση, όπως βάσεις δεδομένων SQL και Stripe. Αυτές οι ενσωματώσεις, γνωστές και ως πόροι, σας επιτρέπουν να συνδεθείτε και να ρωτήσετε τις πηγές δεδομένων σας χρησιμοποιώντας ILLA. Εάν ένας συγκεκριμένος τύπος πηγής δεδομένων δεν υποστηρίζεται από ενσωματωμένη ενσωμάτωση, μπορείτε να χρησιμοποιήσετε τις ενσωματώσεις REST, GraphQL, ή SOAP για να συνδεθείτε σχεδόν σε οποιοδήποτε API. Αυτό σας επιτρέπει να αποκτήσετε πρόσβαση σε ένα ευρύ φάσμα πηγών δεδομένων από μέσα ILLA-builder.
 
-#### Connect to databases
+#### Σύνδεση σε βάσεις δεδομένων
 
-Connect to most databases and data stores
+Σύνδεση στις περισσότερες βάσεις δεδομένων και στα καταστήματα δεδομένων
 
-#### Connect to APIs
+#### Σύνδεση σε APIs
 
-Connect to REST and GraphQL.
+Συνδεθείτε στο REST και GraphQL.
 
-### Resources
+### Πόροι
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+Ένας πόρος στο ILLA είναι μια αποθηκευμένη διαμόρφωση που καθορίζει τον τρόπο σύνδεσης της ILLA σε μια πηγή δεδομένων. Για να χρησιμοποιήσετε μια πηγή δεδομένων στο ILLA, πρέπει να δημιουργήσετε έναν πόρο για αυτό. Μπορείτε να επιλέξετε τον κατάλληλο πόρο για να αποκτήσετε πρόσβαση στα δεδομένα κατά την εγγραφή ενός ερωτήματος.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Κάθε πόρος στο ILLA έχει τις δικές του επιλογές ρύθμισης παραμέτρων που καθορίζουν πώς η ILLA συνδέεται με την αντίστοιχη πηγή δεδομένων. Αυτές οι επιλογές μπορούν να περιλαμβάνουν διαπιστευτήρια ελέγχου ταυτότητας και ροή, ρυθμίσεις σύνδεσης βάσης δεδομένων και ρυθμίσεις API, όπως βασική διεύθυνση URL και προεπιλεγμένες κεφαλίδες.
 
-#### How resources work
+#### Πώς λειτουργούν οι πόροι
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, ILLA uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only ILLA has direct access to the data source.
+Οι πόροι ILLA αποθηκεύουν τις απαραίτητες ρυθμίσεις για την ασφαλή σύνδεση με την πηγή δεδομένων σας. Αυτό σας επιτρέπει να αναζητάτε δεδομένα εύκολα χωρίς να εκθέτετε την πηγή δεδομένων απευθείας στους χρήστες σας. Όταν εκτελείται ένα ερώτημα για έναν πόρο, Το ILLA χρησιμοποιεί τις ρυθμίσεις διαμόρφωσης του πόρου για να διαμεσολαβήσει το αίτημα στην πηγή δεδομένων στην πλευρά του διακομιστή. Αυτό διασφαλίζει ότι μόνο η ILLA έχει άμεση πρόσβαση στην πηγή δεδομένων.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+Το ILLA απλοποιεί τη διαδικασία σύνδεσης με μια πηγή δεδομένων για τους χρήστες σας. Πρέπει μόνο να επιλέξετε τον σχετικό πόρο όταν γράφετε ένα ερώτημα χωρίς να ανησυχείτε για τις λεπτομέρειες της πηγής δεδομένων. Μπορείτε επίσης να προσθέσετε πολλαπλούς πόρους του ίδιου τύπου, όπως πολλαπλούς κάδους του Amazon S3, για να διακρίνετε μεταξύ τους.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Αυτή η προσέγγιση κρατά τις πηγές δεδομένων σας κρυμμένες από τους χρήστες σας και εξασφαλίζει ότι όλες οι αλληλεπιδράσεις με την πηγή δεδομένων αντιμετωπίζονται με ασφάλεια. Η ILLA αποφεύγει να κάνει συνδέσεις από την πλευρά του πελάτη στην πηγή δεδομένων που θα μπορούσαν να εκθέσουν ευαίσθητες πληροφορίες και να χρησιμοποιούν τις ίδιες συνθήκες για όλες τις αλληλεπιδράσεις. Επιπλέον, οι πόροι επιτρέπουν την προσωρινή αποθήκευση ερωτημάτων, η οποία μπορεί να μειώσει τον αριθμό των αιτήσεων που υποβάλλονται σε μια πηγή δεδομένων και δυνητικά χαμηλότερο κόστος.
