@@ -8,7 +8,7 @@ import style from './index.module.css'
 
 export const Partner = ({ onChangeShow }) => {
   const { t } = useTranslation('home')
-  const { partners, tittleList, colorationTitle, color } = partnerContent
+  const { partners, tittleList, color } = partnerContent
   return (
     <div
       className={clsx(
@@ -19,7 +19,6 @@ export const Partner = ({ onChangeShow }) => {
       <div>
         <ContentTitle
           tittleList={tittleList}
-          colorationTitle={colorationTitle}
           color={color}
         />
       </div>
