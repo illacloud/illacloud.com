@@ -1,23 +1,23 @@
 ---
-title: Known Issues
+title: Známé problémy
 tagCategory: doc_menu_known_issues_click
-desc: Known issues and solutions of ILLA Builder deployment.
+desc: Známé problémy a řešení nasazení společnosti ILLA Builder.
 ---
 
 * * *
 
-## <Heading hidden>Known Issues</Heading>
+## <Heading hidden>Známé problémy</Heading>
 
-### Mount Type Issue
+### Problém s připojením
 
-Run `illa deploy --self -port=1000 -s={your-ip-address}` or `run-official-image.sh`, return following error:
+Spustit `illa deploy --self -port=1000 -s={your-ip-address}` nebo `run-official-image.sh`, vraťte následující chybu:
 
-`Docker responded with status code 400: invalid mount config for type "bind": bind source path does not exist: /tmp/illa-data`
+`Docker odpověděl se stavovým kódem 400: neplatný konfigurační soubor pro typ "bind": svázat zdrojovou cestu neexistuje: /tmp/illa-data`
 
-For now, the mount type only supports `mount`, please config `docker -v` as `mount` mode. Or reinstall the docker by following scripts.
+Pro tuto chvíli typ připojení podporuje pouze `mount`, prosím konfiguraci `docker -v` jako `mount` režim. Nebo znovu nainstalujte dokovací zařízení následujícími skripty.
 
 [reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
 
-And run the deploy command again.
+A znovu spustit příkaz pro nasazení.
 
-For more issues: https://github.com/illacloud/illa-builder/issues
+Pro více problémů: https://github.com/illacloud/illa-builder/issues
