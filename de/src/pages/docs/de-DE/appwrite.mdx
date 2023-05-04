@@ -1,151 +1,151 @@
 ---
 title: Appwrite
-metaTitle: ILLA Cloud Appwrite Integration Document
-description: The guide to setup and integrate with Appwrite on ILLA Cloud
-tagCategory: doc_menu_appwrite_click
+metaTitle: ILLA Cloud Appwrite Integrationsdokument
+description: Die Anleitung zum Einrichten und Integrieren von Appwrite in ILLA Cloud
+tagCategory: doc_menü_appwrite_click
 ---
 
 * * *
 
-## <Heading hidden>Appwrite Database</Heading>
+## <Heading hidden>Appwrite Datenbank</Heading>
 
-Within Appwrite's different services, you can find user authentication and account management, user preferences, database and storage persistence, cloud functions, localization, image manipulation, and more. 
+In den verschiedenen Diensten von Appwrite finden Sie Benutzerauthentifizierung und Kontenverwaltung, Benutzereinstellungen, Datenbank- und Speicherpersistenz, Cloud-Funktionen, Lokalisierung, Bildbearbeitung und vieles mehr. 
 
-The combination of ILLA Cloud and Appwrite, that is, the combination of server-side low-code and front-end low-code, will truly realize low-code full-stack development.
+Die Kombination von ILLA Cloud und Appwrite, das heißt die Kombination aus serverseitigem Low-Code und Frontend-Low-Code-Code, wird wirklich eine Low-Code-Komplett-Entwicklung realisieren.
 
-[Click here](https://appwrite.io/) to learn more about Appwrite.
+[Klicke hier](https://appwrite.io/) um mehr über Appwrite zu erfahren.
 
-### Setup Appwrite resource on ILLA Cloud
+### Appwrite Ressource in der ILLA Cloud einrichten
 
-#### Two ways to create resources
+#### Zwei Wege, Ressourcen zu erstellen
 
-The first way is to enter the `Resources` tab > click `Create New` to select Appwrite. 
+Der erste Weg ist, die `Resources` Registerkarte > klicken Sie auf `Create New` um Appwrite auszuwählen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
 
-The another way is to enter the `app editor` page > click `+ New` to select Appwrite > click `+ New Resources` to add the new configuration. 
+Die andere Möglichkeit ist, den `app editor` Seite > klicken Sie `+ New` um Appwrite auszuwählen > klicken Sie `+ New Resources`, um die neue Konfiguration hinzuzufügen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
 
-#### Setup Appwrite by filling in the following fields
+#### Appwrite einrichten, indem Sie die folgenden Felder ausfüllen
 
-Before you connect an Appwrite resource, make sure you have deployed Appwrite on your local machine or a cloud provider. [Click here](https://appwrite.io/docs/installation) to learn more about the installation of Appwrite. 
+Bevor Sie eine Appwrite-Ressource verbinden, stellen Sie sicher, dass Sie Appwrite auf Ihrem lokalen Rechner oder einem Cloud-Anbieter eingesetzt haben. [Klicke hier](https://appwrite.io/docs/installation) um mehr über die Installation von Appwrite zu erfahren. 
 
-| Property    | is_required | Description                                                                                                 |
-| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
-| Name        | required    | The name for resource when creating actions in the ILLA. You can customize a name for easy identification.  |
-| Host        | required    | HOSTNAME OR IP.                                                                                             |
-| Database ID | required    | Database ID                                                                                                 |
-| Project ID  | required    | Project ID                                                                                                  |
-| Api key     | required    | TOKEN                                                                                                       |
+| Objekt       | ist_erforderlich | Beschreibung                                                                                                                            |
+| ------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Name         | benötigt         | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA. Sie können einen Namen für eine einfache Identifizierung anpassen.  |
+| Host         | benötigt         | HOSTNAME ODER IP.                                                                                                                       |
+| Datenbank-ID | benötigt         | Datenbank-ID                                                                                                                            |
+| Projekt-ID   | benötigt         | Projekt-ID                                                                                                                              |
+| Api Taste    | benötigt         | TOKEN                                                                                                                                   |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
 
-### Create actions in the app editor
+### Aktionen im App-Editor erstellen
 
-#### Create actions in the following way
+#### Erstelle Aktionen auf folgende Weise
 
-Click `+ New` in the app editor page > to select Appwrite > select an existing Appwrite resource or create a new resource > click `Create Action` to create a new action. 
+Klicken Sie auf `+ Neu` in der App-Editor-Seite > um Appwrite > wählen Sie eine vorhandene Appwrite-Ressource aus oder erstellen Sie eine neue Ressource > klicken Sie auf `Create Action`, um eine neue Aktion zu erstellen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
 
-After creating an action, please select a method. We provide the following methods: List documents, Create a document, Update a document, Get a document, and Delete a document. The configuration of each method is as follows. 
+Nach dem Erstellen einer Aktion, wählen Sie bitte eine Methode. Wir bieten folgende Methoden: Dokumente auflisten, Dokument erstellen, Dokument aktualisieren, Dokument holen und Dokument löschen. Die Konfiguration der einzelnen Methoden erfolgt wie folgt. 
 
-#### List documents
+#### Dokumente auflisten
 
-The following is a simple configuration example: List the document with $id 5. 
+Das folgende Beispiel ist ein einfaches Konfigurationsbeispiel: Das Dokument mit $id 5 auflisten. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
 
-| Property      | is_required | Description                                                                                                                                                                                                                                 |
-| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Collection ID | Required    | Input or select a collection id from the database                                                                                                                                                                                           |
-| Filter        | Optional    | Support multiple filters. A filter consists of a key, a value and a condition. 1. key: input an attribute 2. condition: select a condition, including equal, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. value: input the value |
-| Order by      | Optional    | Support for ordering by multiple attributes. 1. input an attribute to order by 2. Select asc( by default ) or desc                                                                                                                          |
-| Limit         | Optional    | number of records                                                                                                                                                                                                                           |
+| Objekt         | ist_erforderlich | Beschreibung                                                                                                                                                                                                                                                                             |
+| -------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sammlungs-ID   | Benötigt         | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                                                                                                                                                                                                                             |
+| Filtern        | Optional         | Unterstütze mehrere Filter. Ein Filter besteht aus einem Schlüssel, einem Wert und einer Bedingung. 1. key: Geben Sie ein Attribut 2 ein. Bedingung: Wählen Sie eine Bedingung aus, einschließlich gleicher, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. wert: Wert eingeben |
+| Sortieren nach | Optional         | Unterstützung für die Bestellung nach mehreren Attributen. 1. geben Sie ein Attribut ein, um nach 2 zu sortieren. Wählen Sie asc(standardmäßig ) oder desc                                                                                                                               |
+| Limit          | Optional         | Anzahl der Datensätze                                                                                                                                                                                                                                                                    |
 
-The following is an example of how to use the data entered in the component in the action:
+Das folgende Beispiel zeigt, wie die in der Komponente eingegebenen Daten verwendet werden sollen:
 
-1.  Add an input component to the frame so that users can enter the document id they want to find.  
-2.  Add a filter: set the attribute field to $id and enter {{ input1.value }} in the value field. 
+1.  Fügen Sie dem Frame eine Eingabekomponente hinzu, damit Benutzer die Dokumentennummer eingeben können, die sie finden möchten.  
+2.  Fügen Sie einen Filter hinzu: setzen Sie das Attributfeld auf $id und geben Sie {{ input1.value }} in das Wertefeld ein. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
 
-Output
+Ausgang
 
-Check the data structure on the left panel. For example, use `{{list.data[0].documents[0].id}}`(`list` is the name of the action) to get the id of the first document. 
+Prüfen Sie die Datenstruktur im linken Fenster. Verwende zum Beispiel `{{list.data[0].documents[0].id}}`(`list` ist der Name der Aktion) um die ID des ersten Dokuments zu erhalten. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
 
-You can also use `{{list.data[0].documents.map(documents => documents)}}` to display all data on `table` component. 
+Du kannst auch `{{list.data[0].documents.map(documents => documents)}}` verwenden, um alle Daten auf der `table` Komponente anzuzeigen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
 
-#### Create a document
+#### Dokument erstellen
 
-| Collection ID | Required | Input or select a collection id from the database                  |
-| ------------- | -------- | ------------------------------------------------------------------ |
-| Document ID   | Required | input an ID. the document will be created with this ID             |
-| Data          | Required | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| Sammlungs-ID | Benötigt | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                |
+| ------------ | -------- | --------------------------------------------------------------------------- |
+| Dokument-ID  | Benötigt | eine ID eingeben. Das Dokument wird mit dieser ID erstellt                  |
+| Daten        | Benötigt | Ein in {{ }} eingeschlossenes Objekt. Zum Beispiel {{ { "key": "value" } }} |
 
-The following is an example of how to use the data entered in the component in an object. 
+Das Folgende ist ein Beispiel dafür, wie man die in der Komponente eingegebenen Daten in einem Objekt verwendet. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
 
-#### Update a document
+#### Dokument aktualisieren
 
-| Property      | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| Collection ID | Input or select a collection id from the database                  |
-| Document ID   | input an existing document ID to be updated                        |
-| Data          | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+| Objekt       | Beschreibung                                                                |
+| ------------ | --------------------------------------------------------------------------- |
+| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                |
+| Dokument-ID  | eine existierende Dokument-ID eingeben                                      |
+| Daten        | Ein in {{ }} eingeschlossenes Objekt. Zum Beispiel {{ { "key": "value" } }} |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
 
-#### Get a document
+#### Dokument erhalten
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Objekt       | Beschreibung                                                 |
+| ------------ | ------------------------------------------------------------ |
+| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank |
+| Dokument-ID  | eine existierende Dokument-ID eingeben                       |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
 
-The output data is as follows. Use {{get.data[0]}} to get the document object.
+Die Ausgabedaten sind wie folgt. Verwenden Sie {{get.data[0]}} , um das Dokumentenobjekt zu erhalten.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
 
-#### Delete a document
+#### Dokument löschen
 
-| Property      | Description                                       |
-| ------------- | ------------------------------------------------- |
-| Collection ID | Input or select a collection id from the database |
-| Document ID   | input an existing document ID                     |
+| Objekt       | Beschreibung                                                 |
+| ------------ | ------------------------------------------------------------ |
+| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank |
+| Dokument-ID  | eine existierende Dokument-ID eingeben                       |
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
 
-### Connect the data from Appwrite with front-end components
+### Daten von Appwrite mit Frontend-Komponenten verbinden
 
-#### Configure the actions
+#### Aktionen konfigurieren
 
-Create a delete_document action > fill the Document ID field with {{ input1.value }}. 
+Erstellen Sie eine delete_document Aktion > füllen Sie das Dokument ID Feld mit {{ input1.value }} aus. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
 
-Add an event handler to the action to set a response when run successfully. 
+Fügen Sie einen Ereignis-Handler der Aktion hinzu, um eine Antwort zu setzen, wenn sie erfolgreich ausgeführt wird. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
 
-#### Configure components
+#### Komponenten konfigurieren
 
-Add a event handler to button to trigger the delete_document action. 
+Fügen Sie einen Ereignis-Handler hinzu, um die Aktion delete_document auszulösen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
 
-Set the data source of the table to display data. 
+Legen Sie die Datenquelle der Tabelle fest, um Daten anzuzeigen. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
 
-#### View running results
+#### Laufende Ergebnisse anzeigen
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
