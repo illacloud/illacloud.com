@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
+title: Підключення до бази даних
+metaTitle: ВСТАНОВИТИ Хмару підключення до бази паролів
+desc: ILLA підключення до більшості баз даних, включаючи PostgreSQL, MySQL, TiDB і MongoDB
 tagCategory: doc_menu_database_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Підключення до бази даних</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA підключення до більшості баз даних, включаючи PostgreSQL, MySQL, TiDB і MongoDB. Будь ласка, перевірте цей список тут для підтримки підтримки зазначених джерел ILLA. Майбутні джерела даних, які ми плануємо підтримати будуть перераховані тут. Якщо ILLA не вистачає певних ресурсів даних, будь ласка, заповніть форму тут.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+Деталі підключення, необхідні для ILLA залежать від типу бази даних, яку ви хочете підключитися. Ця інформація, як правило, містить порт, облікові дані користувача і рядок підключення. Будь ласка, зверніться до конфігурації вашої бази даних або документації, щоб отримати це.
 
-### 1.  Create a database resource
+### 1.  Створити ресурс бази даних
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Ресурси представляють з'єднання з джерелами даних і є тим, що ви запитуєте в ваших ILLA додатках.Ввійдіть в систему ILLA і перейдіть в вкладку **Ресурси** > натисніть **Створити новий** та виберіть базу даних, до якої ви хочете підключитися. Це відкриває **Налаштувати ресурс** модаль, де ви додаєте інформацію про з'єднання.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+Після того, як ви введете дані про підключення, натисніть **Тестове підключення**, щоб перевірити ILLA може успішно підключитися. Після завершення натисніть **Зберегти ресурс**, щоб зберегти ресурс.
 
-In addition, you can create resources in the action list under the **App editor**.
+Крім того, ви можете створювати ресурси зі списку дій під **редактором додатків**.
 
-### 2.  Query your database
+### 2.  Запит бази даних
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+У редакторі програм, натисніть **+ Створити** в **Списку дій** > оберіть тип ресурсу або створіть новий ресурс > натисніть **Створити дію** та поновіть дії з таблиці, щоб отримати інформацію з Вашої бази даних.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Клацніть **Зберегти**, а потім натисніть **Запустити**. Результати запиту відображаються автоматично після закінчення запиту.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+Є деякі додаткові налаштування, включаючи перейменування, налаштування запуску, перетворення даних та створення процесу успішності чи невдачі, як показано нижче.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
