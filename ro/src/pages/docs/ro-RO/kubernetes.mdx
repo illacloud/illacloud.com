@@ -1,101 +1,101 @@
 ---
 title: Kubernetes
-tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+tagCategory: click doc_menu_kubernetes_click
+desc: Construiți o imagine illa all-in-one și rulați-o cu k8 pe mașina dvs.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Descriere
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Construiți o imagine illa all-in-one și rulați-o cu k8 pe mașina dvs. Puteți vizualiza fișierul scripts în folderul [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) pentru mai multe detalii.
 
-Note:
+Notă:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Am recomandat implementarea cu instrumentele noastre de auto-implementare[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+Și deocamdată nu sprijinim Apple Silicon M1 (darwin-arm64 arch).
 
-### Run with an official slim image
+### Rulează cu o imagine subţire oficială
 
-Install GNU make and type:
+Instalează GNU marca și tip:
 
 ```jsx
-make deploy
+fă implementare
 ```
 
-or just execute:
+sau doar executa:
 
 ```jsx
 /bin/bash scripts/deploy.sh
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+această comandă va trage imaginea oficială all-in-one și o va implementa în clusterul dvs Kubernetes.
 
-### For Database Persistent Storage
+### Pentru baza de date Stocare Persistentă
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+Editează[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), și adaugă configurația persistentă a IAAS pe ea.
 
-### For HTTPS Config
+### Pentru configurarea HTTPS
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Puteți direcționa NodePort către gateway-ul de cluster Kubernetes și puteți rescrie în portul 443 și adăuga https cert în gateway-ul de ingress.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+Sau, poți implementa manual un gateway de intrare în serverul dvs Kubernetes, configurare ca aceasta:
 
 ```jsx
 static_resources:
-  listeners:
-  - name: https_listener
-    address:
+  ascultători:
+  - nume: http_listener
+    adresa:
       socket_address:
-        address: 0.0.0.0
+        adresa: 0. .0.0
         port_value: 443
-    filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
+    filtre_chains:
+    - filtre:
+      - nume: trimis. ilters.network.http_connection_manager
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
-          stat_prefix: https_listener
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. trolConnectionManager
+          stat_prefix: http_listener
           route_config:
-            name: local_route
+            nume: local_route
             virtual_hosts:
-            - name: illa_builder
-              domains:
-              - "illa.yourdomian.com" # replace with your domain
-              routes:
-              - match:
+            - nume: illa_builder
+              domenii:
+              - "illa. ordomian. om" # înlocuieşte cu rutele dvs
+              :
+              - potrivire:
                   prefix: "/"route:
                   cluster: illa_builder
           http_filters:
-          - name: envoy.filters.http.router
-            typed_config:
-              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+          - nume: trimis. ilters.http. afara
+            tip_config:
+              "@type": tip. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
       transport_socket:
-        name: envoy.transport_sockets.tls
+        nume: envoy.transport_sockets. ls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
           common_tls_context:
             tls_certificates:
-            # replace this with your cert file
+            # înlocuiește acest lucru cu fișierul certului
             - certificate_chain:
-                filename: /your-cert-folder/fullchain.pem
+                nume de fișier: /your-cert-folder/fullchain. em
               private_key:
-                filename: /your-cert-folder/privkey.pem
+                nume fișier: /cert-folder/privkey. em
 
-  clusters:
-  - name: illa_builder
-    type: STRICT_DNS
+  cluster:
+  - nume: illa_builder
+    tip: STRICT_DNS
     lb_policy: ROUND_ROBIN
     connect_timeout: 10s
     load_assignment:
       cluster_name: illa_builder
       endpoints:
       - lb_endpoints:
-        - endpoint:
-            address:
+        - punct final:
+            adresă:
               socket_address:
-                address: illa-builder
+                adresă: illa-builder
                 port_value: 80
 ```
