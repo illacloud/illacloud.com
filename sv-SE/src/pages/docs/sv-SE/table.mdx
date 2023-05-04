@@ -1,93 +1,93 @@
 ---
-title: Table
+title: Tabell
 metaTitle: ILLA Cloud table component doc
-description: Display and interact with data using the Table component.
-tagCategory: doc_menu_table_click
+description: Visa och interagera med data med tabellkomponenten.
+tagCategory: Klicka
 ---
 
 * * *
 
-## <Heading hidden>Table</Heading>
+## <Heading hidden>Tabell</Heading>
 
-Tables are a common way to view and interact with your data. You can sort, filter, paginate, and download rows of information. Tables also support row selection and custom columns.
+Tabeller är ett vanligt sätt att visa och interagera med dina data. Du kan sortera, filtrera, paginera och ladda ner rader av information. Tabeller stöder även val av rader och anpassade kolumner.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
   alt=""
 />
 
-### Load data in a table
+### Ladda data i en tabell
 
-When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
+När du drar en tabellkomponent till bildrutan, visas testdata automatiskt i JSON-format. Du kan ändra data som visas i en tabell genom att redigera datakällans egenskap. Använd formatet \`{{ actionName.data }}för att välja åtgärden.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
   alt=""
 />
 
-You can also set the data source by inputing an array.
+Du kan också ställa in datakällan genom att mata in en array.
 
-### Column settings
+### Inställningar för kolumn
 
-**Set aliases for data columns**
+**Ställ in alias för datakolumner**
 
-When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+När du anger datakällan för tabeller, kommer kolumnnamnet automatiskt att ställas in baserat på datakällan. Du kan byta namn på alla kolumner genom att klicka på kolumnen i fliken **Inspektera** och ange **Kolumntitel**.
 
-**Change column types**
+**Ändra kolumntyper**
 
-When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
+När du ställer in datakällan för tabeller, är kolumnerna inställda till **Text**. Du kan ställa in kolumntyper manuellt genom att klicka på kolumnen i fliken **Inspektera** och välja typen från rullgardinsmenyn **Kolumntyp**
 
-The column types include:
+Kolumntyperna inkluderar:
 
 1.  Text
-2.  Date, you can set the display format of the date in the date type.
-3.  Number, you can set the decimal places in the number type.
-4.  Percent, you can set the decimal places in the percent type.
-5.  Link
-6.  Button, you can add event handlers in the button type.
+2.  Datum kan du ställa in datumets visningsformat i datumtyp.
+3.  Nummer, du kan ställa in decimaler i taltypen.
+4.  Procent, kan du ställa in decimaltal platser i procent typ.
+5.  Länk
+6.  Knappen, du kan lägga till händelsehanterare i knapptypen.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
   alt=""
 />
 
-**Mapped value of custom columns**
+**Kartlagt värde för anpassade kolumner**
 
-You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+Du kan lägga till anpassade kolumner till tabeller med hjälp av **+ Lägg till**-knappen i fliken **Inspektera**. Anpassade kolumner används ofta för att beräkna data baserat på andra värden i din app. Till exempel, om du har kolumner `revenue` och `user_num` och du vill beräkna en `ARPU`-kolumn, kan du använda `{{currentRow.revenue/currentRow.user_num }}`
 
-In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
+Dessutom, efter beräkning, kan du ställa in kolumntypen till antal eller procent och ställa in decimaltecken för att förbättra läsbarheten.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
   alt=""
 />
 
-### Access data of table
+### Få tillgång till data i tabellen
 
-Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0.
+Använd `{{ table1.selectedRow[i].columnName }}` för att komma åt data från markerade rader i andra komponenter. Om du inte har aktiverat **Multi-Row Selection**, kommer `i` alltid att vara 0.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
   alt=""
 />
 
-**Update the table data**
+**Uppdatera tabelldata**
 
-1.  Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`.
-2.  Use `{{ input1.value }}` in Update actions to get selected values and updated values.
-3.  Add an event handler to Update Button to run the Update Action when clicked.
-4.  Update the data of selected row by changing the input value and clicking the Update Button.
+1.  Använd inmatningskomponent eller andra datainmatningsmponenter för att visa `{{ table1.selectedRow[i].columnName }}`.
+2.  Använd `{{ input1.value }}` i Uppdatera åtgärder för att få valda värden och uppdaterade värden.
+3.  Lägg till en händelsehanterare till uppdateringsknappen för att köra uppdateringsåtgärden när du klickar.
+4.  Uppdatera data för den markerade raden genom att ändra indatavärdet och klicka på knappen Uppdatera.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
   alt=""
 />
 
-**Insert a new row into table**
+**Sätt in en ny rad i tabell**
 
-1.  Use `{{ input1.value }}` in insert actions get values.
-2.  Add an event handler to Insert Button to run the Insert Action when clicked.
-3.  Insert new data by inputing values in input components and clicking the Insert Button.
+1.  Använd `{{ input1.value }}` i infoga åtgärder få värden.
+2.  Lägg till en händelsehanterare för att infoga knappen för att köra Infoga åtgärden när du klickar.
+3.  Infoga nya data genom att mata in värden i inmatningskomponenter och klicka på Infoga knappen.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
