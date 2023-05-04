@@ -1,36 +1,36 @@
 ---
-title: Event handler
-metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
+title: Gestore eventi
+metaTitle: Gestione eventi ILLA Cloud doc
+desc: I gestori degli eventi sono parte integrante della logica interna di utilizzo degli strumenti
 tagCategory: doc_menu_evnet_handler_click
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Gestore eventi</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+I gestori degli eventi sono parte integrante della logica di utilizzo interno degli strumenti. Qualsiasi inserimento o azione che risponde a un'azione utente ha i propri eventi che possono essere attivati, come un inserto di pulsante con un evento 'clic', una casella di testo con un evento 'invia' ', il successo di un'azione, e così via. I gestori di eventi aiutano gli utenti a attivare istruzioni predefinite quando si verificano eventi: è possibile reagire a un singolo evento, o è possibile impostare più gestori di eventi e configurarli come flussi di lavoro per fare un lavoro più complesso.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Dopo che l'evento impostato si è verificato, il gestore dell'evento può aiutarti a eseguire una serie di azioni: controllare le dichiarazioni d'azione, controllare gli inserti, eseguire script e altro ancora. È inoltre possibile aggiungere condizioni di attivazione JavaScript più dettagliate in aggiunta alle condizioni di attivazione.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Gestori eventi
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+In caso di gestori, è possibile impostare il risultato dell'evento in base al fatto che i risultati della query falliscono o meno. È possibile completare la logica di attivazione impostando la condizione di errore della query nella scheda Risposta.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Modifica gestore invio
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Impostiamo una condizione di attivazione per ogni inserto interattivo e puoi selezionare un evento nell'elenco delle azioni del gestore come condizione di attivazione. Ad esempio, è possibile impostare 'Invia' come condizione di attivazione nel gestore di eventi per la casella di immissione dati, che inserisce automaticamente l'input nel database quando l'utente 'invia' l'input, implementando così una semplice funzione di inserimento dati.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Stati temporanei
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Quando si elaborano i dati, si possono incontrare situazioni in cui i dati trattati non vengono richiamati immediatamente. Per questo motivo, abbiamo istituito Stati temporanei per memorizzare gli stati intermedi per l'elaborazione dei dati. Puoi scegliere di impostare uno stato temporaneo nelle opzioni degli eventi di risposta dei gestori degli eventi e fare clic su Crea nuovo stato per memorizzare i dati attuali nello stato temporaneo, che può essere collocato per qualsiasi proprietà.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Al di fuori dell'editor del progetto, puoi anche memorizzare i dati da {{tempState1.setValue(data)}} o chiamare i dati da {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> I valori nello stato temporaneo verranno cancellati al riavvio del progetto, e sarà necessario memorizzare i valori localmente o nel cloud per garantire l'integrità dei dati.
