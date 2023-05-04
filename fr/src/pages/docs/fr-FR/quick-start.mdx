@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
-tagCategory: doc_menu_quick_start_click
+title: Démarrage rapide
+metaTitle: Guide de démarrage rapide de ILLA Cloud
+description: Accélérez le développement de vos outils internes
+tagCategory: Clic rapide
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Aperçu</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  Déployer le constructeur ILLA
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Avant de commencer à utiliser le constructeur ILLA, vous devriez choisir d'utiliser ILLA Cloud ou l'hébergement ILLA pour héberger vos applications. Nous vous fournissons ILLA CLI, Docker Compose, et K8s pour l'auto-hôte ILLA en moins de 5 minutes. Nous vous fournirons ILLA Cloud plus tard, pour vous aider simplement à commencer avec ILLA Builder.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Obtenir les données des utilisateurs
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Enregistrez-vous et connectez-vous à ILLA Builder, puis entrez l'onglet Ressources. Cliquez sur le bouton "Créer un nouveau" puis vous pouvez sélectionner le type de ressource ici. Nous vous fournissons l'API REST et MySQL pour connecter vos données. Postgres, Redis et MongoDB seront disponibles ce mois-ci.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Glisser-déposer des inserts
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+Lorsque vos données sont préparées, vous pouvez retourner à l'onglet Applications et créer une application. La liste d'insertion se trouve sur le côté droit de la page. Vous pouvez choisir l'un d'eux et le faire glisser dans le cadre. Cliquez ensuite sur l'insertion et modifiez ses paramètres dans le panneau d'inspection. Nous vous fournissons le mode markdown pour éditer le libellé de chaque insert. Si vous êtes familier avec la syntaxe Markdown, vous pouvez rapidement ajuster la taille et l'épaisseur du texte. En attendant, vous pouvez utiliser {{double brackets}} pour invoquer des données d'action dans la zone de saisie de texte pour obtenir plus de résultats dans ILLA Builder.
 
-### 4.  Add action in Apps
+### 4.  Ajouter une action dans les applications
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+Une action est nécessaire pour transformer les données des ressources en insertion. Nous l'appelons action. Vous pouvez écrire une requête en action pour capturer des données de votre ressource. Sur cette base, vous pouvez écrire JavaScript dans des actions pour exécuter des instructions de traitement de données, telles que le filtre et la fusion. Un exemple MySQL est donné ci-dessous:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Créez une action MySQL dans l'éditeur d'applications. Nommé action1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Entrez le code de la requête dans le panneau, par exemple SELECT \* FROM Users.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Exécuter cette action, le résultat de la requête sera affiché sur le panneau inférieur.
 
-### 5.  Show your data
+### 5.  Afficher vos données
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+Lorsque l'action est créée avec succès, vous devez lier le résultat de l'action au composant. Vous devriez remplacer la variable de valeur sur le panneau d'inspection par le résultat des actions {{action1.data}}. Ensuite, les données du composant se lieront avec le résultat de l'action. 
