@@ -1,51 +1,51 @@
 ---
-title: List
-metaTitle: ILLA Cloud List Component doc
-description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+title: Lista
+metaTitle: ILLA Cloud List -komponentin doc
+description: Luettelo komponentin avulla voit luoda toistuvia rivejä tietoja, joiden ulkoasu ja tunnelma on määritelty sinulle.
 tagCategory: doc_menu_list_click
 ---
 
 * * *
 
-## <Heading hidden>List</Heading>
+## <Heading hidden>Luettelo</Heading>
 
-The List component is similar to a Container in that you can nest other components inside of it.
+Luettelo komponentti on samanlainen kuin säiliö että voit pistä muita komponentteja sen sisällä.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
   alt=""
 />
 
-### Drag components to list
+### Vedä komponentit listalle
 
-When you drag a List component to the Frame, it automatically includes some components. You can deleted or modify them and drag new components into list. 
+Kun vedät Luettelon osan kehykseen, se sisältää automaattisesti joitakin komponentteja. Voit poistaa tai muokata niitä ja vetää uusia komponentteja luetteloon. 
 
-Only the first item can be edited, and others will automatically change based on the first item. You can also focus on the first item and drag the bar to change the height items.
+Vain ensimmäinen kohde voidaan muokata, ja muut muuttuvat automaattisesti ensimmäisen kohteen perusteella. Voit myös keskittyä ensimmäiseen kohteeseen ja vetää palkin muuttaa korkeus kohteita.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
   alt=""
 />
 
-### Display query results in a list
+### Näytä kyselyn tulokset luettelossa
 
-When you drag a List component to the Frame, it automatically displays the test data in JSON format. You can change the data source to an action by using `{{ mysql_list_query.data }}`. 
+Kun vedät Luettelon osan kehykseen, se näyttää automaattisesti testitiedot JSON-muodossa. Voit muuttaa tietolähteen toimintoon käyttämällä `{{ mysql_list_query.data }}`. 
 
-After setting the data source, you can change the data of components:
+Kun olet asettanut tietolähteen, voit muuttaa tietojen komponenttia:
 
-1.  Select the component in the first item. 
-2.  If the component data is from the list, you can set the data by using `{{ currentItem.columnName }}` . For example, you can set the image source with the `{{ currentItem.Avater }}`. `Avater` is a column from the data source of the list.
+1.  Valitse komponentti ensimmäisessä kohteessa. 
+2.  Jos komponentin tiedot ovat luettelosta, voit asettaa tiedot käyttämällä `{{ currentItem.columnName }}` . Voit esimerkiksi asettaa kuvan lähteen `{{ currentItem.Avater }}`. `Avater` on sarake luettelon tietolähteestä.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-You can use  `{{ currentItem.columnName }}` only when the components are in the list. 
+Voit käyttää `{{ currentItem.columnName }}` vain kun komponentit ovat luettelossa. 
 
-### Use the data of list
+### Käytä listan tietoja
 
-You can use the data of selected items by using `{{ list1.selectedItem.columnName }}`. Or use any data of list by using `{{ list1.dataSource[n].columnName }}`
+Voit käyttää valittujen kohteiden tietoja käyttämällä `{{ list1.selectedItem.columnName }}`. Tai käytä mitä tahansa listaa käyttämällä `{{ list1.dataSource[n].columnName }}`
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
