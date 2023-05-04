@@ -1,128 +1,128 @@
 ---
-title: Radio group
-metaTitle: ILLA Cloud Radio group component
-description: Displays all options on radio group and supports to select 1 option.
+title: Радіогрупа
+metaTitle: Компонент групи ILLA Cloud Radio
+description: Відображає всі параметри в радіо та піддається вибору 1 опції.
 tagCategory: doc_menu_radio_group_click
 ---
 
 * * *
 
-## <Heading hidden>Radio group</Heading>
+## <Heading hidden>Радіогрупа</Heading>
 
-A radio group, also known as a single-choice group or simply a radio group, is a component that allows users to select only one option from a list of predefined options. Each option in the group is represented by a circular button that can be selected or deselected by users. When one option is selected, any previously selected option in the group is automatically deselected.
+Раціональна група, також відома як одновибірна група або просто радіогрупа, це компонент, який дозволяє користувачам вибирати лише один варіант зі списку попередньо визначених варіантів. Кожен параметр у групі представлений круговою кнопкою, яку можуть бути обрані або знехтувані користувачами. При виборі однієї з опцій, будь який раніше обраний у групі буде автоматично знято.
 
-Radio groups are commonly used in web forms, dialog boxes, and other interactive applications where users need to make a single choice from a set of options. They are useful for preventing errors that can occur when users select multiple options by mistake or confusion. Additionally, radio button groups are easy to use and visually intuitive, making them a popular choice for designers and developers alike.
+Радіогрупи зазвичай використовуються у веб-формах, діалогових вікон, та інші інтерактивні програми, в яких потрібно зробити лише вибір із набору опцій. Вони корисні для запобігання помилкам, які можуть статися, коли користувачі обирають декілька варіантів помилково або плутанині. Крім того, групи кнопок радіо-легко використовувати та візуально інтуїтивно, роблячи їх популярним вибором для дизайнерів і розробників.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### Властивості
 
-#### Manual options
+#### Ручні налаштування
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Додайте нові опції або видаліть параметри вручну і налаштуйте параметри один за одним. Властивості варіантів наступним чином: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Властивості | Опис                           |
+| ----------- | ------------------------------ |
+| Мітка       | Текст, відображений для опції  |
+| Цінність    | Значення, пов'язане з опцією   |
+| Вимкнено    | Чи відключена опція для вибору |
 
-#### Mapped options
+#### Налаштування зіставлених
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Ви також можете додати опції з джерела даних, натиснувши на мітки та значення у відповідних полях даних. Ви можете отримати параметри динамічно з бази даних. В кінці цієї статті ми продемонструємо, як використовувати її в прикладі.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Властивості   | Опис                                                                   |
+| ------------- | ---------------------------------------------------------------------- |
+| Джерело даних | Встановити джерело даних опцій                                         |
+| Мітка         | Використовуйте {{item}} , щоб встановити мітку опцій                   |
+| Цінність      | Використовуйте {{item}} , щоб встановити значення опцій                |
+| Вимкнено      | Використовуйте {{item}} , щоб встановити, чи вимкнена опція для вибору |
 
-#### Other properties
+#### Інші властивості
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Властивості                      | Опис                                                                                                                                                                       |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Значення за замовчуванням        | Початкове значення компонента. Ви можете динамічно змінити початкове значення, набравши JavaScript у {{}}.                                                                 |
+| Мітка-заповнювач                 | Значення буде показано, коли поле вводу порожнє.                                                                                                                           |
+| Мітка                            | Ім'я поля, яке відображається користувачеві                                                                                                                                |
+| Підпис                           | Заголовок використовується для опису поля докладно                                                                                                                         |
+| Прихована мітка                  | Вкажіть, чи показувати мітки                                                                                                                                               |
+| Позиція                          | Встановіть позицію мітки щодо компонента                                                                                                                                   |
+| Вирівнювання                     | Встановити вирівнювання мітки                                                                                                                                              |
+| Width                            | Коли етикетка розташована в лівій частині компонента, встановіть співвідношення ширини мітки                                                                               |
+| Обробник подій                   | Тригер запит, компоненти керування, тобто виклик інших API-файлів у відповідь на події компонента.                                                                         |
+| Вимкнено                         | Керування статусом того, що компонент відключений. Компонент не може бути змінений або змінений, якщо він вимкнений.                                                       |
+| Лише для читання                 | Керування статусом того, чи є компонент лише для читання. Компонент, який доступний лише для читання, може бути вибраний і сфокусований, але не може бути змінений.        |
+| Показувати кнопку очищення       | Вкажіть, чи показувати кнопку Очистити                                                                                                                                     |
+| Підказка                         | Тут можна ввести підказку для компонентів. Підказка буде відображатись при зосередженні. Формат Markdown підтримується.                                                    |
+| Обов'язкове поле                 | Дійсний лише при увімкненому перемикачі.                                                                                                                                   |
+| Користувацьке правило            | призначені для користувача інспекції setter_tooltip.custom_rule                                                                                                            |
+| Приховати повідомлення перевірки | Ви можете приховати повідомлення про помилку, перемикнувши прихований статус, коли вхідне значення неправильне. Ви можете динамічно змінити прихований стан на JavaScript. |
+| Ключ даних форми                 | Вкажіть ключ форми обгортання компонентів при конструюванні атрибуту даних.                                                                                                |
+| Hidden                           | Динамічне керування, чи прихований компонент в мережі. Ви можете змінити прихований статус за допомогою динамічного логічного значення.                                    |
+| Колір теми                       | Щоб вибрати колір теми компонента                                                                                                                                          |
 
-### Method
+### Метод
 
-You can use other components to control the component. We support the following three methods:
+Ви можете використовувати інші компоненти для керування компонентами. Ми підтримуємо наступні три методи:
 
-#### setValue
+#### значення набору
 
-To set the selected option, for example, {{”value1”}}
+Наприклад, щоб встановити вибраний параметр, наприклад, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Властивості | Опис            |
+| ----------- | --------------- |
+| Цінність    | Обране значення |
 
-#### clearValue
+#### чисте значення
 
-To clear the selected options
+Очистити вибрані параметри
 
 #### validate
 
-To verify that the input information is legal
+Щоб переконатися, що вхідна інформація є правовою
 
-#### clearValidate
+#### очистити усі
 
-To clear the validation message
+Щоб очистити повідомлення підтвердження
 
-### Event handler
+### Обробник подій
 
-We support listening to the `onChange` event of the radio group. 
+Ми підтримуємо прослуховування події `onChange` радіогрупи. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Якщо вибраний параметр зміниться, він може викликати певну дію. Це означає, що коли користувач вибирає іншу опцію від групи радіо - можна здійснити конкретну дію, засновану на обраній опції. Наприклад, у веб-формі, обирається інша опція, може викликати відображення різних полів форми або подання форми до іншого призначення. Таким чином, вибір користувача може впливати на поведінку програмного забезпечення чи веб-додатку, яку він використовує. Можливість викликати вказані дії на основі вводу користувача є важливим аспектом інтерактивної розробки програмного забезпечення і може покращити зручність і функціональність програмного забезпечення.
 
-### Data
+### Дані
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Компонент має найбільш часто використовувані дані, які можна викликати через {{componentName.propertyName}} у додатку.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Ім'я властивості | Опис            |
+| ---------------- | --------------- |
+| значення         | Обране значення |
 
-### Use case
+### Використати регістр
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Далі, ми продемонструємо, як використовувати відображений режим для динамічного отримання варіантів. 
 
-#### Step 1 Add an action
+#### Крок 1 Додати дію
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Ми створили таблицю з назвою 'selection`, включаючи 5 стовпців: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value\`. Ми зберегли значення параметрів у значенні "значення" та збережену позначку параметрів на різних мовах в інших стовпцях. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Створіть дії для списку всіх даних в `selection` з ім'ям `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+вибрати * з вибору
 ```
 
-#### Step 2 Configure the component
+#### Крок 2 налаштування компонента
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Встановити джерела даних на `{{postgresql1.data}}` 
+2.  Налаштуйте етикетку, щоб змінити мітку на основі мови. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Використовувати {{ item.columnName }} , щоб встановити цей стовпець. 
+    2.  Використовуйте {{ currentUserInfo.language }} , щоб встановити використання мови в ILLA.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
