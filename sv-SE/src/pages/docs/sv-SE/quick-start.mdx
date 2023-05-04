@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
-tagCategory: doc_menu_quick_start_click
+title: Snabb start
+metaTitle: ILLA Cloud snabbstartsguide
+description: Accelerera din interna verktygsutveckling
+tagCategory: Starta
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Översikt</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  Distribuera ILLA Builder
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Innan du börjar använda ILLA Builder bör du välja att använda ILLA Cloud eller Self-host ILLA för att vara värd för dina appar. Vi förser dig med ILLA CLI, Docker Compose, och K8s för att själv värd ILLA på under 5 minuter. Vi kommer att förse dig med ILLA Cloud senare för att hjälpa dig att komma igång med ILLA Builder.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Hämta användardata
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Registrera dig och logga in på ILLA Builder, ange sedan resursfliken. Klicka på knappen "Skapa nytt" så kan du välja resurstypen här. Vi förser dig med REST API och MySQL för att ansluta dina data. Postgres, Redis och MongoDB kommer att finnas tillgängliga denna månad.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Dra och släpp inlägg
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+När dina data är förberedda kan du gå tillbaka till fliken Appar och skapa en app. Inläggslistan finns på höger sida av sidan. Du kan välja en av dem och dra in den i ramen. Klicka sedan på infoga och modifiera dess parametrar i kontrollpanelen. Vi ger dig markdown-läge för att redigera etiketten för varje insats. Om du är bekant med Markdown syntax, kan du snabbt justera textstorlek och tjocklek. Under tiden kan du använda {{double brackets}} för att åberopa åtgärdsdata i textrutan för att uppnå fler resultat i ILLA Builder.
 
-### 4.  Add action in Apps
+### 4.  Lägg till åtgärd i appar
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+En åtgärd krävs för att omvandla data från resurser att infoga. Vi kallar det handling. Du kan skriva en fråga i handling för att fånga data från din resurs. På denna grund kan du skriva JavaScript i åtgärder för att utföra instruktioner för databehandling, såsom filter och sammanfogning. Ett MySQL-exempel ges nedan:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Skapa en MySQL-åtgärd i appredigeraren. Namngav det åtgärd1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Ange frågekoden i panelen, t.ex. SELECT \* FRÅN användare.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Kör den här åtgärden, frågeresultatet kommer att visas på den nedre panelen.
 
-### 5.  Show your data
+### 5.  Visa dina data
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+När åtgärden har skapats måste du binda resultatet av åtgärden till komponenten. Du bör ersätta värdevariabeln på kontrollpanelen med resultatet av åtgärder {{action1.data}}. Därefter kommer komponentdatan att binda med åtgärdsresultatet. 
