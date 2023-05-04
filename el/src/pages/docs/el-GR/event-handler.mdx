@@ -1,36 +1,36 @@
 ---
-title: Event handler
+title: Χειριστής συμβάντων
 metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
+desc: Οι χειριστές συμβάντων αποτελούν αναπόσπαστο μέρος της εξευγενισμού της εσωτερικής λογικής χρήσης εργαλείων σας
 tagCategory: doc_menu_evnet_handler_click
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Χειριστής συμβάντων</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Οι χειριστές συμβάντων αποτελούν αναπόσπαστο μέρος της εξευγενισμού της εσωτερικής λογικής χρήσης εργαλείων σας. Κάθε εισαγωγή ή ενέργεια που ανταποκρίνεται σε μια ενέργεια χρήστη έχει τα δικά της συμβάντα που μπορούν να ενεργοποιηθούν, όπως ένα ένθετο κουμπί με ένα συμβάν 'κλικ', ένα πλαίσιο εισαγωγής κειμένου με ένα συμβάν 'υποβολής', την επιτυχία μιας ενέργειας και ούτω καθεξής. Οι χειριστές συμβάντων βοηθούν τους χρήστες να ενεργοποιήσουν προκαθορισμένες οδηγίες όταν συμβαίνουν συμβάντα: μπορείτε να αντιδράσετε σε ένα μόνο συμβάν, ή μπορείτε να ρυθμίσετε πολλαπλούς χειριστές γεγονότων και να τους ρυθμίσετε ως ροές εργασίας για να κάνετε πιο σύνθετες εργασίες.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Μετά το συμβάν που ορίσατε, ο χειριστής συμβάντων μπορεί να σας βοηθήσει να εκτελέσετε διάφορες ενέργειες: ελέγχετε τις εντολές δράσης, έλεγχος εισαγωγικά, εκτέλεση σεναρίων και πολλά άλλα. Μπορείτε επίσης να προσθέσετε πιο λεπτομερείς συνθήκες ενεργοποίησης JavaScript πάνω από τις συνθήκες ενεργοποίησης.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Χειριστές συμβάντων
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+Σε χειριστές γεγονότων, μπορείτε να ορίσετε την έκβαση του γεγονότος με βάση το αν τα αποτελέσματα του ερωτήματος αποτυγχάνουν ή όχι. Μπορείτε να ολοκληρώσετε τη λογική ενεργοποίησης ρυθμίζοντας την κατάσταση αποτυχίας του ερωτήματος στην καρτέλα Απάντηση.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Επεξεργασία χειριστή υποβολής
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Ορίζουμε μια συνθήκη ενεργοποίησης για κάθε διαδραστικό ένθετο και μπορείτε να επιλέξετε ένα συμβάν στη λίστα ενεργειών του χειριστή ως συνθήκη ενεργοποίησης. Για παράδειγμα, θα μπορούσατε να ορίσετε την 'Υποβολή' ως την κατάσταση ενεργοποίησης στο χειριστή συμβάντος για το πλαίσιο εισαγωγής δεδομένων, το οποίο εισάγει αυτόματα την εισαγωγή στη βάση δεδομένων όταν ο χρήστης «υποβάλλει» την είσοδο, εφαρμόζοντας έτσι μια απλή λειτουργία εισαγωγής δεδομένων.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Προσωρινές πολιτείες
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Όταν επεξεργάζεστε δεδομένα, ενδέχεται να αντιμετωπίσετε καταστάσεις στις οποίες τα επεξεργασμένα δεδομένα δεν καλούνται αμέσως. Για τον λόγο αυτόν, δημιουργήσαμε προσωρινά κράτη που θα αποθηκεύουν ενδιάμεσα κράτη για την επεξεργασία των δεδομένων. Μπορείτε να επιλέξετε να ορίσετε μια προσωρινή κατάσταση στις επιλογές συμβάντων απόκρισης των χειριστών συμβάντων και κάντε κλικ στο Δημιουργία νέας κατάστασης για να αποθηκεύσετε τα τρέχοντα δεδομένα στην προσωρινή κατάσταση, το οποίο μπορεί να τοποθετηθεί για οποιαδήποτε ιδιοκτησία.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Έξω από τον επεξεργαστή έργου, μπορείτε επίσης να αποθηκεύσετε δεδομένα από το {{tempState1.setValue(data)}} ή δεδομένα κλήσεων από το {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Οι τιμές στην προσωρινή κατάσταση θα εκκαθαριστούν κατά την επανεκκίνηση του έργου, και θα χρειαστεί να αποθηκεύσετε τις τιμές τοπικά ή στο cloud για να διασφαλίσετε την ακεραιότητα των δεδομένων.
