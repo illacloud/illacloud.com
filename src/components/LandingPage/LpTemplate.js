@@ -15,6 +15,7 @@ export const LpTemplate = () => {
       value: target,
     })
   }
+
   return (
     <div className={style.templateContainer}>
       {templateContent && templateContent.map(({ label, title, description, link, itemList, btnText, target }) => (

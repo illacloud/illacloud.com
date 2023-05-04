@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import { Nav } from '@/components/home/Nav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -15,6 +15,8 @@ import { pageMap } from '@/constants/landingPage';
 
 const LandingPageSecond = ({ pageName, name, starCounts }) => {
   const { t } = useTranslation('landingPageDetails')
+  const a = useTranslation('landingPageDetails')
+  console.log("a", a)
   const [isBookShow, setIsBookShow] = useState(false)
   const content = t(name, {
     returnObjects: true
@@ -24,7 +26,7 @@ const LandingPageSecond = ({ pageName, name, starCounts }) => {
   const step = useRaf(1000, 0)
 
   if (!content.metaTitle) return null
-
+  console.log("build_with", t("build_with", { name }))
   return (
     <>
       <Head>

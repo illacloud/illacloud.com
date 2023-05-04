@@ -28,6 +28,7 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
   })
 
   if (!content || Object.keys(content).length <= 0) return null
+
   return (
     <>
       <Head>
@@ -37,7 +38,7 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
         <div className={style.lpContainer}>
-          <LpHeader title={t(`${pageName}.headerContent.title`)} description={t(`${pageName}.headerContent.description`)} btnText={t(`${pageName}.headerContent.btn-text`)} name={pageName} leftImage={t(`${pageName}.headerContent.left-image`)} />
+          <LpHeader title={t(`${pageName}.headerContent.title`)} description={t(`${pageName}.headerContent.description`)} btnText={t(`${pageName}.headerContent.btn_text`)} name={pageName} leftImage={t(`${pageName}.headerContent.left_image`)} />
           <AsyncIndexContent content={content} pageName={pageName} />
         </div>
       </div>
