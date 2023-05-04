@@ -1,101 +1,101 @@
 ---
 title: Kubernetes
-tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+tagCategory: Klicka
+desc: Bygg illa allt-i-ett-bild och kör den av k8s på din maskin.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Beskrivning
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Bygg illa allt-i-ett-bild och kör den av k8s på din maskin. Du kan kolla in skriptfilen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) för mer information.
 
-Note:
+Notera:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Vi rekommenderar starkt att distribuera med våra auto-distribuera verktyg[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
 
-### Run with an official slim image
+### Kör med en officiell smal bild
 
-Install GNU make and type:
-
-```jsx
-make deploy
-```
-
-or just execute:
+Installera GNU make och typ:
 
 ```jsx
-/bin/bash scripts/deploy.sh
+gör driftsättning
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+eller bara exekvera:
 
-### For Database Persistent Storage
+```jsx
+/bin/bash skript/deploy.sh
+```
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+detta kommando kommer att dra illasoft officiella allt-i-ett image och distribuera den på din Kubernetes kluster.
 
-### For HTTPS Config
+### För databas ihållande lagring
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Redigera[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), och lägg till din IAAS beständiga lagringskonfiguration på den.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+### För HTTPS-konfiguration
+
+Du kan dirigera NodePort till din Kubernetes kluster intress gateway och skriva om till 443 port, och lägga till https cert i din intress gateway.
+
+Eller så kan du distribuera en inress-gateway manuellt till din Kubernetes server, konfiguration så här:
 
 ```jsx
 static_resources:
   listeners:
   - name: https_listener
-    address:
-      socket_address:
-        address: 0.0.0.0
+    adress:
+      socket_adress:
+        adress: 0. .0.0
         port_value: 443
-    filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
+    filter_kedjor:
+    - filter:
+      - namn: envoy. ilters.network.http_connection_manager
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
           stat_prefix: https_listener
           route_config:
-            name: local_route
+            namn: local_route
             virtual_hosts:
-            - name: illa_builder
-              domains:
-              - "illa.yourdomian.com" # replace with your domain
-              routes:
-              - match:
-                  prefix: "/"route:
-                  cluster: illa_builder
+            - namn: illa_builder
+              domäner:
+              - "illa. vår domian. om" # ersätt med din domän
+              rutter:
+              - matcha:
+                  prefix: "/"rutt:
+                  kluster: illa_builder
           http_filters:
-          - name: envoy.filters.http.router
+          - namn: envoy. ilters.http. yttre
             typed_config:
-              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
       transport_socket:
-        name: envoy.transport_sockets.tls
+        namn: envoy.transport_sockets. ls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
           common_tls_context:
             tls_certificates:
-            # replace this with your cert file
+            # ersätt detta med din cert-fil
             - certificate_chain:
-                filename: /your-cert-folder/fullchain.pem
+                filnamn: /your-cert-folder/fullchain. em
               private_key:
-                filename: /your-cert-folder/privkey.pem
+                filnamn: /your-cert-folder/privkey. em
 
-  clusters:
-  - name: illa_builder
-    type: STRICT_DNS
+  kluster:
+  - namn: illa_builder
+    -typ: STRICT_DNS
     lb_policy: ROUND_ROBIN
     connect_timeout: 10s
     load_assignment:
       cluster_name: illa_builder
-      endpoints:
+      slutpunkter:
       - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: illa-builder
+        - slutpunkt:
+            adress:
+              socket_adress:
+                adress: illa-builder
                 port_value: 80
 ```
