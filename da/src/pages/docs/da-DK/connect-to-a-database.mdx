@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
+title: Opret forbindelse til en database
+metaTitle: ILLA Cloud Forbind til en database
+desc: ILLA forbinder til de fleste databaser, herunder PostgreSQL, MySQL, TiDB og MongoDB
 tagCategory: doc_menu_database_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Forbind til en database</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA forbinder til de fleste databaser, herunder PostgreSQL, MySQL, TiDB og MongoDB. Tjek venligst denne liste her for datakilderne ILLA understøtter. De kommende datakilder, vi planlægger at støtte, er opført her. Hvis ILLA mangler visse datakurser, du bruger, så udfyld venligst formularen her.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+De forbindelsesoplysninger, som ILLA kræver, afhænger af, hvilken type database du ønsker at forbinde. Disse oplysninger omfatter generelt en vært, port, brugeroplysninger og forbindelsesstreng. Se venligst din databases konfiguration eller dokumentation for at få dette.
 
-### 1.  Create a database resource
+### 1.  Opret en database ressource
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Ressourcer repræsenterer forbindelser til datakilder og er, hvad du forespørger i dine ILLA-apps.Log ind på ILLA og gå til fanen **Ressourcer** > klik **Opret ny** og vælg den database, du vil forbinde til. Dette åbner **Konfigurer en ressource**-modalen, hvor du tilføjer dine forbindelsesoplysninger.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+Når du har indtastet dine forbindelsesoplysninger, skal du klikke på **Test Connection** for at tjekke ILLA kan oprette forbindelse. Når du er færdig, skal du klikke på **Gem ressource** for at gemme ressourcen.
 
-In addition, you can create resources in the action list under the **App editor**.
+Derudover kan du oprette ressourcer i handlingslisten under **App editor**.
 
-### 2.  Query your database
+### 2.  Forestil din database
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+I App editor, klik **+ Ny** i **Handlingsliste** > vælg ressourcetype og vælg en eksisterende ressource, eller opret en ny ressource > klik **Opret handling** og opdatér handlingerne for at hente oplysninger fra en tabel i din database.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Klik på **Gem** og klik derefter på **Kør**. Forespørgselsresultater vises automatisk, når forespørgslen er afsluttet.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+Der er nogle avancerede indstillinger, herunder omdøbning, kør indstillinger, transformere data, og opsætning af håndtering af køre succes eller fiasko, som vist nedenfor.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
