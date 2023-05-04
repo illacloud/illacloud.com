@@ -1,59 +1,59 @@
 ---
-title: JavaScript Guider
+title: Οδηγός JavaScript
 metaTitle: ILLA Cloud JavaScript Guider doc
-desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
+desc: Η JavaScript είναι το πιο σημαντικό συστατικό της ILLA Builder, το οποίο είναι το εργαλείο που χρησιμοποιείτε για να οικοδομήσουμε την πρόσβαση στα δεδομένα και την κατασκευή λογική της APP σας
 tagCategory: doc_menu_js_guider_click
 ---
 
 * * *
 
-## <Heading hidden>JavaScript Guider</Heading>
+## <Heading hidden>Οδηγός JavaScript</Heading>
 
-JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP. Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+Η JavaScript είναι το πιο σημαντικό συστατικό της ILLA Builder, το οποίο είναι το εργαλείο που χρησιμοποιείτε για να δημιουργήσετε την πρόσβαση στα δεδομένα και την κατασκευή λογική του APP σας. Mastering πώς να καλέσετε JavaScript, έχετε κατακτήσει τη χρήση του ILLA Builder.
 
-When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+Όταν χτίζεις το APP σου στο ILLA Builder, μπορείς να χρησιμοποιήσεις το `{{template syntax}}` για να γράψεις προσαρμοσμένες δηλώσεις JavaScript για κλήσεις και χειρισμό δεδομένων, ή γράψτε κώδικα JS απευθείας στο μετασχηματιστή.
 
-### Operation data
+### Δεδομένα λειτουργίας
 
-#### Accessing data on objects
+#### Πρόσβαση στα δεδομένα σε αντικείμενα
 
-In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
+Στο ILLA Builder μπορείτε να εισάγετε εκφράσεις JavaScript σε οποιοδήποτε πλαίσιο εισαγωγής κειμένου χρησιμοποιώντας τη σύνταξη προτύπων. Αντικείμενα δεδομένων είναι δυνατότητα παραπομπής και μπορείτε να χειριστείτε τα δεδομένα όλων των παρεμβάσεων, ενεργειών και μετασχηματιστών μέσω JavaScript. Για παράδειγμα, μπορείτε να χρησιμοποιήσετε το `{{textInput.data}}` για να αποκτήσετε πρόσβαση στο περιεχόμενο ενός ένθετου εισαγωγής κειμένου, `{{action.data}}` για πρόσβαση στα δεδομένα από μια βάση δεδομένων ενεργειών και `{{transformer.value}}` για πρόσβαση στα δεδομένα από έναν μετασχηματιστή.
 
-We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
+Έχουμε προσθέσει και τροποποιήσει το ένθετο καθρέφτη κώδικα στο προϊόν, το προσάρμοσε στο περιβάλλον προγραμματισμού κατασκευαστών ILLA, υποστηριζόμενο τονισμό σύνταξης και αυτόματη εσοχή, και πρόσθεσε λεπτομερείς εξηγήσεις μεταβλητών και λειτουργιών που συμβαίνουν κατά τη διάρκεια του προγραμματισμού, έτσι ώστε να μπορείτε να μάθετε πώς να χρησιμοποιήσετε ILLA Builder σε χαμηλό κόστος. Αφού εισαγάγετε το όνομα του αντικειμένου, πληκτρολογήστε μια τελεία. Η προτροπή θα περιέχει όλες τις ιδιότητες του αντικειμένου, τον τύπο δεδομένων και μια μερική περιγραφή κειμένου, ώστε να μπορείτε να αναγνωρίσετε την ιδιότητα που θα έχει πρόσβαση σε χρόνο μηδέν.
 
-#### Accessing numbers in arrays
+#### Πρόσβαση σε αριθμούς σε πίνακες
 
-When you need to access a value in a specific array, you can get the value by the position or subscription of the data you need to access.
+Όταν πρέπει να έχετε πρόσβαση σε μια τιμή σε ένα συγκεκριμένο πίνακα, μπορείτε να πάρετε την τιμή από τη θέση ή τη συνδρομή των δεδομένων που χρειάζεστε για την πρόσβαση.
 
 ```javascript
 const list = ['a', 'b', 'c']
 return list[0] // Return the first value in list 'a'
 ```
 
-### View  data
+### Προβολή δεδομένων
 
-There are four locations to view data in ILLA Builder: the data workspace in the left-hand panel, the data prompt below the text box after entering a JavaScript expression, and the data display through the data insert to display the data.
+Υπάρχουν τέσσερις τοποθεσίες για να δείτε τα δεδομένα στο ILLA Builder: ο χώρος εργασίας δεδομένων στο αριστερό πάνελ, η προτροπή δεδομένων κάτω από το πλαίσιο κειμένου μετά την εισαγωγή μιας έκφρασης JavaScript και την εμφάνιση δεδομένων μέσω του ένθετου δεδομένων για την εμφάνιση των δεδομένων.
 
-#### Data workspace presentation
+#### Παρουσίαση χώρου εργασίας δεδομένων
 
-You can find the data workspace by opening the left-hand panel in the App editor, so the data is presented as structured JSON in which every property and list can be expanded and all data is visually displayed in the workspace.
-
-[//]: # "[图片]"
-
-#### Live preview of data input
-
-When you call an action or transformer operation in the input box, the data for that operation will automatically pop up below the input box, and you can confirm that the data called is correct based on the information here.
+Μπορείτε να βρείτε το χώρο εργασίας δεδομένων ανοίγοντας τον αριστερό πίνακα στον επεξεργαστή εφαρμογών, έτσι τα δεδομένα παρουσιάζονται ως δομημένη JSON στην οποία κάθε ιδιότητα και λίστα μπορεί να επεκταθεί και όλα τα δεδομένα εμφανίζονται οπτικά στο χώρο εργασίας.
 
 [//]: # "[图片]"
 
-#### Data presentation
+#### Ζωντανή προεπισκόπηση της εισαγωγής δεδομένων
 
-The data display insert gives you the most intuitive view of the data. Simply drag and drop the component into the frame, enter the name of the corresponding data source in the data field, filter and arrange it, and you will have access to the data display information.
+Όταν καλείτε μια ενέργεια ή μια λειτουργία μετασχηματιστή στο πλαίσιο εισαγωγής, τα δεδομένα για αυτή τη λειτουργία θα εμφανιστούν αυτόματα κάτω από το πλαίσιο εισαγωγής, και μπορείτε να επιβεβαιώσετε ότι τα δεδομένα που ονομάζονται είναι σωστά με βάση τις πληροφορίες εδώ.
 
 [//]: # "[图片]"
 
-### Transformer
+#### Παρουσίαση των δεδομένων
 
-You can write multiple lines of JS code in the transformer, and we recommend that you choose to write in the transformer rather than in double curly brackets. You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+Το ένθετο δεδομένων σας δίνει την πιο διαισθητική προβολή των δεδομένων. Απλά σύρετε και αφήστε το στοιχείο στο πλαίσιο, εισάγετε το όνομα της αντίστοιχης πηγής δεδομένων στο πεδίο δεδομένων, φίλτρο και να κανονίσετε αυτό, και θα έχετε πρόσβαση στις πληροφορίες εμφάνισης δεδομένων.
 
-Click here for detailed usage of the transformer.
+[//]: # "[图片]"
+
+### Μετασχηματιστής
+
+Μπορείτε να γράψετε πολλαπλές γραμμές κώδικα JS στον μετασχηματιστή, και σας συνιστούμε να επιλέξετε να γράψετε στο μετασχηματιστή και όχι σε διπλά σγουρά στηρίγματα. Μπορείτε να προγραμματίσετε JavaScript απευθείας στον μετασχηματιστή καθώς και να καλέσετε τα δεδομένα στη λειτουργία με τη βοήθεια του `{}}`.
+
+Κάντε κλικ εδώ για λεπτομερή χρήση του μετασχηματιστή.
