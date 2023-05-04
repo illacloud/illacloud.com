@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
+title: データベースに接続
+metaTitle: ILLA Cloud データベースに接続
+desc: ILLAはPostgreSQL、MySQL、TiDB、MongoDBを含むほとんどのデータベースに接続します
 tagCategory: doc_menu_database_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>データベースに接続する</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLAは、PostgreSQL、MySQL、TiDB、MongoDBを含むほとんどのデータベースに接続します。 現在サポートされているデータソースについては、こちらのリストをご確認ください。 サポートする予定の今後のデータソースはこちらです。 使用している特定のデータリソースが不足している場合は、こちらのフォームに記入してください。
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+ILLAで必要とされる接続の詳細は、接続するデータベースの種類によって異なります。 この情報は通常、ホスト、ポート、ユーザー資格情報、および接続文字列を含みます。 これを取得するには、データベースの設定またはドキュメントを参照してください。
 
-### 1.  Create a database resource
+### 1.  データベース リソースを作成
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+リソースはデータソースへの接続を表し、ILLAアプリケーション内で問い合わせるものです。ILLAにログインし、**リソース**タブ>**新規作成**をクリックし、接続したいデータベースを選択してください。 **Configure a modal to add your connection information**.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+接続の詳細を入力したら、**接続テスト**をクリックしてILLAが正常に接続できるかどうかを確認します。 完了したら、**Save resource**をクリックしてリソースを保存します。
 
-In addition, you can create resources in the action list under the **App editor**.
+さらに、**アプリエディタ**の下にアクションリストにリソースを作成できます。
 
-### 2.  Query your database
+### 2.  データベースに問い合わせ
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+アプリエディタで **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+**保存**をクリックし、**実行**をクリックします。 クエリの結果は、クエリの完了後に自動的に表示されます。
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+以下に示すように、名前の変更、実行設定、データの変換、および実行の成功または失敗の処理の設定を含むいくつかの高度な設定があります。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
