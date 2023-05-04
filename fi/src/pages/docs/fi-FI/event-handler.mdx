@@ -1,36 +1,36 @@
 ---
-title: Event handler
+title: Tapahtuman käsittelijä
 metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
+desc: Tapahtuman käsittelijät ovat olennainen osa sisäisen työkalun käyttölogiikan jalostamista
 tagCategory: doc_menu_evnet_handler_click
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Tapahtuman käsittelijä</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Tapahtuma käsittelijät ovat olennainen osa sisäisen työkalun käytön logiikan jalostamista. Mikä tahansa lisäke tai toiminto, joka vastaa käyttäjän toiminta on omia tapahtumia, jotka voivat käynnistyä, kuten painikkeen lisäys, jossa on 'klikkaa' tapahtuma, tekstin syöttöruutu, jossa on 'lähettää' tapahtuma, toiminnan onnistuminen ja niin edelleen. Tapahtuman käsittelijät auttavat käyttäjiä laukaisemaan ennalta määritellyt ohjeet tapahtumien tapahtuessa: voit reagoida yhteen tapahtumaan, tai voit perustaa useita tapahtumakäsittelijöitä ja asettaa ne ylös työnkulku tehdä monimutkaisempaa työtä.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Kun olet asettanut tapahtuman, tapahtumakäsittelijä voi auttaa sinua suorittamaan erilaisia toimintoja: ohjausta koskevat toimintalausekkeet, hallitse lisäosia, aja skriptejä ja paljon muuta. Voit myös lisätä yksityiskohtaisempia JavaScript trigger ehdot päälle laukaisuehtoja.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Tapahtuman käsittelijät
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+Mikäli käsittelijät eivät onnistu, voit määrittää tapahtuman lopputuloksen sen perusteella, epäonnistuvatko kyselyn tulokset vai eivät. Voit täydentää laukaisevan logiikan asettamalla kyselyn epäonnistumisen ehto vastausvälilehdessä.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Muokkaa lähetyksen käsittelijää
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Asetamme laukaisevan ehdon jokaiselle interaktiiviselle lisäykselle, ja voit valita tapahtuman käsittelijän toimintaluettelosta laukaisevana edellytyksenä. Voit esimerkiksi asettaa tapahtuman käsittelijän käynnistäjän tilaksi 'Lähettä' datan syöttämisruutuun, jossa se on mukana. joka automaattisesti lisää syötteen tietokantaan, kun käyttäjä ”toimittaa syötteen” ja ottaa käyttöön yksinkertaisen tietojen syöttämistoiminnon.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Väliaikaiset valtiot
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Kun käsittelet tietoja, saatat kohdata tilanteita, joissa käsiteltyjä tietoja ei heti soiteta. Tästä syystä olemme perustaneet väliaikaisia valtioita, jotka säilyttävät välivaiheen valtiot tietojen käsittelyä varten. Voit valita väliaikaiseksi tilaksi tapahtuman käsittelijöiden vastausvalinnoissa ja klikkaa Luo uusi tila, jotta voit tallentaa nykyiset tiedot väliaikaiseen tilaan, jotka voidaan sijoittaa mihin tahansa omaisuuteen.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Projektin editorin ulkopuolella voit tallentaa tietoja myös {{tempState1.setValue(data)}} toimesta tai soittaa dataa {{tempState1.value}} toimesta.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Arvot väliaikaisessa tilassa tyhjennetään kun projekti käynnistetään uudelleen, ja sinun täytyy tallentaa arvot paikallisesti tai pilveen varmistaaksesi tietojen eheyden.
