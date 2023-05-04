@@ -1,83 +1,83 @@
 ---
-title: App editor
+title: Sovellusten muokkain
 metaTitle: ILLA Cloud App editor doc
-desc: The APP editor is the interface to develop the application
-tagCategory: doc_menu_app_editor_click
+desc: APP editor on käyttöliittymä kehittää sovellus
+tagCategory: doc_valikko_app_editor_click
 ---
 
 * * *
 
-## <Heading hidden>App editor</Heading>
+## <Heading hidden>Sovellusmuokkain</Heading>
 
-The APP editor is the interface to develop the application and consists of the following main parts:
+APP-editori on käyttöliittymä sovelluksen kehittämiseen ja koostuu seuraavista keskeisistä osista:
 
--   Toolbar
+-   Työkalupalkki
 -   Frame
--   Action editor
--   Data workspace
+-   Toiminnon muokkain
+-   Datan työtila
 -   Insert
--   Inspect
+-   Tutki
 
 <img alt="editor" src={'https://cdn.illacloud.com/official-website/img/official-site/content.png'} />
 
-### Toolbar
+### Työkalupalkki
 
-The Toolbar is located at the top of the APP Editor which is used mainly to configure the APP and can be used for the following tasks：
+Työkalupalkki sijaitsee APP-editorin yläosassa, jota käytetään pääasiassa APP:n määrittämiseen ja jota voidaan käyttää seuraavissa tehtävissä：
 
--   Click on the ILLA icon on the left to return to the home page.
--   View APP information and save status.
--   Show/hide items left, right, lower panel.
--   Adjusting the scaling of items.
--   Show all current developers of the APP.
--   Alerting the APP to current bug status.
--   Share the APP with other developers.
--   Running the APP.
+-   Klikkaa vasemmalla olevaa ILLA-kuvaketta ja palaa sitten kotisivulle.
+-   Näytä APP tiedot ja tallenna tila.
+-   Näytä/piilota kohteet vasemmalle, oikealle, alempi paneeli.
+-   Kohtien skaalautumisen säätäminen.
+-   Näytä kaikki nykyiset APP:n kehittäjät.
+-   Kuulutetaan APP nykyiseen vikatilaan.
+-   Jaa APP muiden kehittäjien kanssa.
+-   Ohjelman toteutus.
 
-#### More features are coming soom
+#### Lisää ominaisuuksia tulossa soom
 
--   Import APPs from json.
--   Reproduction APPs.
--   Export APPs in json format.
--   Select the desired APP version.
--   View the edited history.
--   Reload all actions.
+-   Tuo APP:t jsonista.
+-   Lisäämisen APP
+-   Vie APP:t json muodossa.
+-   Valitse haluamasi APP-versio.
+-   Näytä muokattu historia.
+-   Lataa kaikki toiminnot uudelleen.
 
 [//]: # "[Image]"
 
 ### Frame
 
-Frame is the area of the APP where you can edit the graphical interface of the APP. You can drag and drop inserts into the frame from the inserts panel on the right hand; you can also select inserts that have been placed into the frame and use the mouse to drag and drop to modify the position and size of the inserts.
+Kehys on APP alue, jossa voit muokata graafista käyttöliittymää APP. Voit vetää ja pudottaa insertit kehykseen asettelijoiden paneelista oikeaan käteen. voit myös valita lisäosia, jotka on sijoitettu kehykseen ja käyttää hiirtä raahata ja pudota muuttaaksesi lisäosien sijaintia ja kokoa.
 
-When you are dragging and dropping inserts or modifying their size, a dashed square will appear in the background of the frame to help you to arrange the inserts neatly in the frame. When you encounter overlapping inserts while dragging and dropping, ILLA Builder will give priority to the insert you are moving and automatically move the blocking insert out of the way for you.
+Kun vedät ja pudotat lisäosia tai muokkaat niiden kokoa, rungon taustalla näkyy katkottu neliö, jonka avulla voit järjestää lisäosat siististi kehykseen. Kun kohtaat päällekkäisiä insertit vetämällä ja pudottamalla ILLA Builder antaa etusijan asemaan, jota liikutat ja siirrä automaattisesti esto insert pois tieltä sinulle.
 
-#### Preview
+#### Esikatselu
 
-The preview toggle button is located in the top right corner of the frame . When clicked, the editor will enter preview mode, the lower left and right panels will be hidden and the inserts in the frame will not be modified, all inserts will be presented in front of you in 1:1 size.
+Esikatselu vaihtaa painiketta sijaitsee yläkulmassa oikeassa yläkulmassa kehyksen . Kun napsautetaan, editori syötetään esikatselutila, vasemman ja oikean alaosan paneelit piilotetaan ja kehykseen olevia lisäosia ei muuteta, kaikki insertit esitetään edessä teidän 1:1 koko.
 
-> ### Browsers supported
+> ### Selaimet tuettu
 >
-> We recommend that you open ILLA Builder in Google Chrome.
+> Suosittelemme, että avaat ILLA Builderin Google Chromessa.
 
-### Action Editor
+### Toimintojen Muokkain
 
-The Action Editor is located below the frame and is the area where you write code to interact with data from resources. In this area you can find created operations, select the current operational resource, write query statements and set up transformers.You can edit the query statement in the action editor and when you update the query statement, the APP editor will automatically update your action results.
+Toimintoeditori sijaitsee kehyksen alapuolella ja se on alue, johon kirjoitat koodia vuorovaikutuksessa resurssien kanssa. Tällä alueella voit löytää luotuja toimintoja, valita nykyisen operatiivisen resurssin, kirjoittaa kyselyn tiliotteita ja perustaa muuntajia. ou voi muokata kyselyn lausetta muokkaimessa ja kun päivität kyselyn lauseen, APP-editori päivittää automaattisesti toiminnon tulokset.
 
-When entering SQL action statements, you can choose to use SQL mode to edit them via plain code, or you can choose GUI mode to modify them under the action framework we give you to quickly complete the action editing.For detailed tutorials, please see the operating documentation.
+Kun syötät SQL-toimintolausekkeita, voit käyttää SQL-tilaa muokataksesi niitä pelkän koodin kautta, tai voit valita graafisen käyttöliittymätilan muokataksesi niitä toimintakehyksessä, jonka annamme sinulle toiminnon muokkaamisen loppuun saattamiseksi. tai yksityiskohtaiset oppaat, katso toimintaasiakirjat.
 
-### Action List
+### Toimintojen Luettelo
 
-The Action list is located on the left hand side of the configuration panel, where you can find the action you need to use and modify it in the edition editor.You can also add a new action here, see details of the creation process.
+Toimintoluettelo sijaitsee asetuspaneelin vasemmalla puolella, ja se on saatavilla mistä voit löytää toiminnon, jota tarvitset ja muokata sitä painos editorissa. ou voi myös lisätä uuden toiminnan, katso yksityiskohdat luomisprosessin.
 
-### Data Workspace
+### Datan Työtila
 
-The Data Workspace is located in the panel to the left of the frame, where you can view the inserts, actions and global status of the editor, all displayed in Json format. You can also edit the data by selecting it in the workspace or delete it by clicking on the More settings button.
+Data Workspace sijaitsee paneelissa vasemmalla puolella ruutua, jossa voit tarkastella lisäosia, toiminnot ja editorin globaali tila, kaikki näytetään Jsonin muodossa. Voit myös muokata dataa valitsemalla sen työtilassa tai poistamalla sen napsauttamalla Lisää asetuksia -painiketta.
 
 ### Insert
 
-The Insert is located in the panel to the right of the frame, and you can move the insert to the frame by dragging and dropping it with the mouse. You can find the insert you need by insert type, or you can search for it and find it quickly.
+Laite on sijoitettu paneeliin sen oikealla puolella olevaan ruutuun. ja voit siirtää lisäosan kehykseen vetämällä ja pudottamalla sen hiirellä. Voit löytää tarvitsemasi lisäyksen lisäämällä tyypin tai voit etsiä sen ja löytää sen nopeasti.
 
 [//]: # "[Image]"
 
-### Inspect
+### Tutki
 
-Inspect is located in the panel to the right of the frame. When you select an insert in the frame or data workspace, the panel to the right will automatically switch to the insert page. From this page you can set variables, update the insert name, create event handlers or perform an insert delete operation. The toolbar of the insert will also be set differently for different inserts, so that you can change the content of the different inserts.
+Tarkastus on sijoitettu paneeliin sen oikealla puolella. Kun valitset ruutuun tai datatilaan lisätyn kohdan, oikealla oleva paneeli vaihtaa automaattisesti lisäyksen sivulle. Tältä sivulta voit asettaa muuttujia, päivittää lisäyksen nimen, luoda tapahtuman käsittelijöitä tai suorittaa lisäosan poisto. Laitteen työkalurivi asetetaan myös eri tavoin eri lisäysten kohdalle, jotta voit muuttaa eri lisäysten sisältöä.
