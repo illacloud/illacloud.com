@@ -1,0 +1,89 @@
+---
+title: Docker alles-in-één afbeelding
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: Bouw illa gebruikt een alles-in-één afbeelding en voer het uit op je machine.
+---
+
+* * *
+
+## <Heading hidden>Docker alles-in-één afbeelding</Heading>
+
+### Beschrijving
+
+Bouw illa gebruikt een alles-in-één afbeelding en voer het uit op je machine. U kunt het scripts bestand bekijken in de map [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) voor meer details.
+
+Opmerking:
+
+We raden het gebruik aan met onze auto-deploy tools[illa-cli](https://github.com/illacloud/illa).
+
+Op dit moment steunen we Apple Silicon M1 (donker-arm64 boog) niet.
+
+### Voer een officiële afbeelding uit
+
+Installeer GNU maken en type:
+
+```jsx
+maak run-officiële-afbeelding
+```
+
+of gewoon uitvoeren:
+
+```jsx
+/bin/bash scripts/run-officiële-image.sh
+```
+
+deze opdracht trekt een illasoft officiële afbeelding op en voert deze uit op uw docker omgeving.
+
+En log in met de standaard gebruikersnaam **`root`** en wachtwoord **`password`**.
+
+### Bouw afbeelding handmatig en voer uit
+
+Installeer GNU maken (of shell scripts handmatig uit te voeren in de scripts map).
+
+Voor de build illa alle-in-1 afbeelding en uitvoer, typ:
+
+```jsx
+alles maken
+```
+
+voor podman, type:
+
+```jsx
+maak run-by-podman
+```
+
+of voer shell scripts `run-by-podman.sh` uit in scripts map.
+
+### Stop en Verwijder Container
+
+```jsx
+stop en verwijder-container maken
+```
+
+### Clean Postgres Databasebestand
+
+** DEZE COMMAND WILT VERWIJDEREN DE DATABASE BESTAND OP UW KORTING!!! \*** BACKUP, EN DOOR HET CAREFULLY \*\*\*
+
+In de standaard standaard zal de Postgres database opgeslagen worden in de `/var/lib/illa/database/postgresql/` map.
+
+Voer het volgende commando uit om het te verwijderen.
+
+```jsx
+maak clean-postgres-database-bestand
+```
+
+### Runtime Environment variabelen configureren
+
+Bewerk `scripts/run.sh` wanneer nodig:
+
+```jsx
+# postgres database wachtwoord
+PG_PASS=mijnsecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres database opslagmap
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```
