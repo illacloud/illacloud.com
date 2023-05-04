@@ -1,68 +1,68 @@
 ---
 title: ILLA CLI
 metaTitle: ILLA Cloud CLI doc
-description: The ILLA CLI enables you to deploy ILLA Builder faster than your imagination.
+description: CLI ILLA umožňuje nasazení ILLA Builder rychleji než vaše představivost.
 tagCategory: doc_menu_illa_cli_click
 ---
 
-**You must have Docker before using the ILLA CLI to deploy a self-hosted installation. When you use ILLA CLI, you should add current user to docker group or use in root.**
+**Musíš mít Docker před použitím CLI ILLA pro nasazení vlastní instalace. Používáte-li ILLA CLI, měli byste přidat aktuálního uživatele do docker skupiny nebo použít v root.**
 
-## Downloading ILLA CLI
+## Stahování ILLA CLI
 
-If you have Rust installed, you can easily build+install the latest ILLA CLI release with **cargo**:
+Pokud máte Rust nainstalován, můžete snadno sestavit + nainstalovat nejnovější verzi ILLA CLI s **cargo**:
 
 ```
 > cargo install illa
 ```
 
-The **cargo** tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it.
-Once installed, you can run the ILLA CLI with the **illa** command.
+Nástroj **náklad** dokončí stahování ILLA CLI se zdrojovými závislostmi, postavit a nainstalovat ji do cesty nákladního koše, abychom ji mohli spustit.
+Po instalaci můžete spustit ILLA CLI příkazem **illa**.
 
-Alternatively, you can just download the ILLA CLI for your operating system here:
+Alternativně si můžete stáhnout ILLA CLI pro váš operační systém zde:
 
 -   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
 -   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
 -   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
 
-If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from **cargo**. After downloading the CLI, you will have to make it executable. Let's take the illa-linux for example:
+Pokud stahujete z výše uvedených odkazů, kroky se mírně liší oproti stažení ILLA CLI z **cargo**. Po stažení CLI budete muset udělat spustitelný soubor. Vezměme si například illa-linux:
 
 ```
-## download illa cli binary file
-> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz
+## stáhnout binární soubor illa cli
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
 
-## unpack the file
-> tar -zxvf illa-x86_64-linux.tar.gz
+## rozbalí soubor
+> tar -zxvf illa-x86_64-linux.tar. z
 
 > cd illa-x86_64-linux
 
 > chmod +x illa
 
-## run the illa cli
+## spustí illa cli
 > ./illa
 
 ```
 
-### Checking the prerequisites of self-hosted installation
+### Kontrola předpokladů vlastní instalace
 
-**These ports 5432, 9999 and 8000 should remain for the ILLA Builder**
+**Tyto přístavy 5432, 9999 a 8000 by měly zůstat pro Tvůrce ILLA **
 
-The following command will check the prerequisites of self-hosted installation on your operating system:
+Následující příkaz zkontroluje předpoklady vlastní instalace na vašem operačním systému:
 
 ```
 > illa doctor
 ```
 
-### Deploying ILLA Builder
+### Nasazování Editoru ILLA
 
-Once the ILLA CLI has been installed, you can run a self-hosted or [cloud installation](https://cloud.illacloud.com/).
+Jakmile je ILLA CLI nainstalována, můžete spustit vlastní instalaci nebo [cloudovou instalaci](https://cloud.illacloud.com/).
 
-Quickstart
+Rychlý start
 
 ```
 > illa deploy --self --port=10000
 ```
 
-You can simply deploy a self-hosted ILA Builder by running the following command:
+Můžete jednoduše nasadit vlastní editor ILA spuštěním následujícího příkazu:
 
 ```
 # the port which ILLA Builder can be accessed on can be changed
@@ -70,17 +70,17 @@ You can simply deploy a self-hosted ILA Builder by running the following command
 > illa deploy --self --port=10000 --mount=<MOUNT_PATH>
 ```
 
-Now, you can access the ILLA Builder: http://localhost:10000
+Nyní můžete přistupovat k Editoru ILL: http://localhost:10000
 
-## Updating ILLA Builder
+## Aktualizace Editoru ILLA
 
-To update the ILLA Builder with the latest docker images, use the following command:
+Pro aktualizaci ILLA Builder s nejnovějšími obrázky v doku, použijte následující příkaz:
 
 ```
-> illa update --self
+> illa update --sama
 ```
 
-## Other operations
+## Ostatní operace
 
 ```
 # list the ILLA Builder
@@ -95,7 +95,7 @@ To update the ILLA Builder with the latest docker images, use the following comm
 # forced removal of the running ILLA Builder and persistent data
 > sudo illa remove --force --self --data
 
-# restart the ILLA Builder
+# restart ILLA Builder
 > illa restart --self
 
 # help information
