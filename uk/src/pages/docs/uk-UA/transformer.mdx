@@ -1,29 +1,29 @@
 ---
-title: Transformer
-metaTitle: ILLA Cloud transformer doc
-desc: Transformer in ILLA allows user to write JavaScript to refine the application logic
+title: Трансформатор
+metaTitle: Документація передач ILLA Cloud
+desc: Трансформатор ILLA дозволяє користувачеві писати JavaScript для вдосконалення логіки програми
 tagCategory: doc_menu_transformer_click
 ---
 
 * * *
 
-## <Heading hidden>Transformer</Heading>
+## <Heading hidden>Трансформатор</Heading>
 
-We have put a Transformer in ILLA to meet your requirements for writing JavaScript to refine your application logic. In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
+Ми встановили ILLA Transformer в ILLA для задоволення ваших вимог щодо написання JavaScript для того щоб уточнити логіку ваших програм. У Transformer вам не потрібно кодувати в JavaScript, використовуючи {{template syntax}} , як це робиться у введенні символа щоб можна було написати довгі і складні блоки коду JS більш чітко. Крім того, Transformer допомагає розробникам відповідати за дизайн сторінки та логічну будівлю, щоб завершити свою роботу з розвитком ефективніше, не обмежуючись прогресом один одного.
 
-You can use the Transformer not only for established data operations but also for creating transformer operations when transforming data. It would be better to choose an independent transformer when you have multiple operations involved in transforming data, or need to use complex JavaScript logic to transform data.
+Ви можете використовувати Transformer не тільки для встановлених операцій з передачею даних, але і для створення операцій з транзитом під час перетворення даних. Було б краще обрати незалежну трансформерацію, коли ви маєте кілька операцій, пов'язаних з трансформацією даних, або потрібно використовувати складну логіку JavaScript для перетворення даних.
 
-### Creative Transformers
+### Творчі Трансформери
 
-Click on the Transformers tab in the Action list, and click on "+ New" to create a transformer. It will be displayed in the action list after creation. You can change the name, write JS code, save and run it in the configuration panel after selection.
+Натисніть на вкладку "Трансформери" у списку діях та натисніть "+ Нове", щоб створити перетворювача. Він буде відображатися в списку дій після створення. Ви можете змінити ім'я, написати код JS, зберегти і запустити його в панелі конфігурації після вибору.
 
-> You can use the 'preview' button to see the results of a transformer. Note that you have to save the transformer for the rest of the app to get the new value.
+> Ви можете використовувати кнопку "попередній перегляд", щоб переглянути результати перетворення. Зверніть увагу, що вам потрібно зберегти трансформатор для решти додатку, щоб отримати нові значення.
 
-The insert calls the transformer with a value equal to the data returned within the transformer, this data will change as the data entered into the transformer changes with the code of the transformer. As with the character input box, you can still use the template syntax to call the global variable No. When you are writing JS code to call data, you can find the specific data variable name in the data workspace in the left hand panel to help you write code faster.
+Вставка викликає перетворювач зі значенням, що повертає в межах перетворювача, ці дані зміняться, коли введені дані будуть змінюватися з кодом перетворювача. Як і у вхідній скриньці символів, ви все ще можете використовувати синтаксис шаблону для виклику глобальної змінної №. Під час написання JS коду для виклику, ви можете знайти конкретне ім'я змінної даних в робочому просторі даних на лівій панелі щоб допомогти вам писати код швидше.
 [//]\: # ([Image])
 
-You can call the transformer variable in the data entry box by using `{{transformer name. tag name}}` to call the transformer variable in the data entry box.
+Ви можете викликати трансформаторну змінну в записі даних, використовуючи `{{transformer name. ім'я тега}}` для виклику змінної трансформатора в полі введення даних.
 
-### Query Transformer
+### Трансформатор запитів
 
-We have put a Transformer in the query operation to allow you to transform the fetched data into the desired format directly after completing the action You can then simply pass {{actionName.data}} to retrieve the data once you have completed the conversion in the transformer within the action.
+Ми вставили Transformer в операцію запиту, щоб дозволити вам перетворити отримані дані в потрібний формат безпосередньо після виконання дії. Потім Ви можете просто передати {{actionName.data}} для отримання даних, як тільки ви завершите перетворення в процесі транзакції.
