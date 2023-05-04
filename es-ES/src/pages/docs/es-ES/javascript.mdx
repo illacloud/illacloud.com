@@ -1,59 +1,59 @@
 ---
-title: JavaScript Guider
-metaTitle: ILLA Cloud JavaScript Guider doc
-desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
-tagCategory: doc_menu_js_guider_click
+title: Guiante de JavaScript
+metaTitle: Documento JavaScript Guider de ILLA Cloud
+desc: JavaScript es el componente más importante del ILLA Builder, que es la herramienta que utilizas para construir el acceso a los datos y la construcción lógica de tu APP
+tagCategory: doc_menú_js_guía_clic
 ---
 
 * * *
 
-## <Heading hidden>JavaScript Guider</Heading>
+## <Heading hidden>Guiante JavaScript</Heading>
 
-JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP. Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+JavaScript es el componente más importante del ILLA Builder, que es la herramienta que utilizas para construir el acceso a los datos y la construcción lógica de tu APP. Dominando cómo llamar a JavaScript, has dominado el uso de ILLA Builder.
 
-When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+Al construir tu APP en el Constructor de ILLA, puedes usar `{{template syntax}}` para escribir declaraciones JavaScript personalizadas para llamar y manipular datos, o escribir código JS directamente en el transformer.
 
-### Operation data
+### Datos de la operación
 
-#### Accessing data on objects
+#### Accediendo a datos sobre objetos
 
-In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
+En ILLA Builder puede introducir expresiones JavaScript en cualquier cuadro de entrada de texto usando la sintaxis de plantilla. Los objetos de datos son referibles, y usted puede manipular los datos de todas las inserciones, acciones y transformadores a través de JavaScript. Por ejemplo, puedes usar `{{textInput.data}}` para acceder al contenido de una inserción de entrada de texto, `{{action.data}}` para acceder a los datos de una base de datos de acción y `{{transformer.value}}` para acceder a los datos de un transformador.
 
-We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
+Hemos añadido y modificado el código de inserción de espejo al producto, lo adaptó al entorno de programación de ILLA Builder, resaltado de sintaxis soportado y sangría automática, y explicaciones detalladas de las variables y funciones que se producen durante la programación, para que pueda aprender cómo utilizar ILLA Builder a bajo costo. Después de haber introducido el nombre del objeto, ingrese un punto. El prompt contendrá todas las propiedades del objeto, el tipo de datos y una descripción parcial del texto, para que pueda identificar la propiedad a tener acceso en un momento.
 
-#### Accessing numbers in arrays
+#### Acceder a números en matrices
 
-When you need to access a value in a specific array, you can get the value by the position or subscription of the data you need to access.
+Cuando necesita acceder a un valor en una matriz específica, puede obtener el valor por la posición o suscripción de los datos que necesita para acceder.
 
 ```javascript
 const list = ['a', 'b', 'c']
-return list[0] // Return the first value in list 'a'
+return list[0] // Devuelve el primer valor en la lista 'a'
 ```
 
-### View  data
+### Ver datos
 
-There are four locations to view data in ILLA Builder: the data workspace in the left-hand panel, the data prompt below the text box after entering a JavaScript expression, and the data display through the data insert to display the data.
+Hay cuatro ubicaciones para ver los datos en ILLA Builder: el espacio de trabajo de datos en el panel de la izquierda, el indicador de datos debajo del cuadro de texto después de introducir una expresión JavaScript, y la visualización de datos a través de la inserción de datos para mostrar los datos.
 
-#### Data workspace presentation
+#### Presentación del área de trabajo de datos
 
-You can find the data workspace by opening the left-hand panel in the App editor, so the data is presented as structured JSON in which every property and list can be expanded and all data is visually displayed in the workspace.
-
-[//]: # "[图片]"
-
-#### Live preview of data input
-
-When you call an action or transformer operation in the input box, the data for that operation will automatically pop up below the input box, and you can confirm that the data called is correct based on the information here.
+Puede encontrar el espacio de trabajo abriendo el panel de la izquierda en el editor de aplicaciones, para que los datos se presenten como JSON estructurado en el que cada propiedad y lista pueden ser expandidos y todos los datos se visualizan visualmente en el área de trabajo.
 
 [//]: # "[图片]"
 
-#### Data presentation
+#### Vista previa en vivo de la entrada de datos
 
-The data display insert gives you the most intuitive view of the data. Simply drag and drop the component into the frame, enter the name of the corresponding data source in the data field, filter and arrange it, and you will have access to the data display information.
+Cuando llama a una operación de acción o transformador en la caja de entrada, los datos de esa operación aparecerán automáticamente debajo de la caja de entrada, y puede confirmar que los datos mencionados son correctos en base a la información aquí.
 
 [//]: # "[图片]"
 
-### Transformer
+#### Presentación de datos
 
-You can write multiple lines of JS code in the transformer, and we recommend that you choose to write in the transformer rather than in double curly brackets. You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+El inserto de visualización de datos le da la visión más intuitiva de los datos. Simplemente arrastre y suelte el componente en el marco, introduzca el nombre de la fuente de datos correspondiente en el campo de datos, , y tendrá acceso a la información de la pantalla de datos.
 
-Click here for detailed usage of the transformer.
+[//]: # "[图片]"
+
+### Transformador
+
+Puedes escribir múltiples líneas del código JS en el transformador, y le recomendamos que elija escribir en el transformador en lugar de en llaves dobles. Puede programar JavaScript directamente en el transformador así como llamar a los datos en la operación con la ayuda de `{{}}`.
+
+Haga clic aquí para un uso detallado del transformer.
