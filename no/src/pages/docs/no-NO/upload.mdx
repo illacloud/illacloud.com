@@ -1,78 +1,78 @@
 ---
-title: Upload
-metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
-tagCategory: doc_menu_upload_click
+title: Last opp
+metaTitle: ILLA Cloud Opplasting komponent doc
+description: Bruk opplastet komponent for å laste opp filer fra lokale maskiner til hvilken som helst sky-lagring
+tagCategory: doc_menu_upload_Klikk
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>Last opp</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+Last opp komponenten brukes til å tillate brukere å laste opp filer fra deres lokale maskiner til en hvilken som helst sky-lagring via API. Neste, vi vil introdusere hvordan vi konfigurerer en laste opp komponent, hvordan å knytte opplastingskomponenten til en skylagringstjeneste. hvordan bruke opplastingskomponenten for å velge et bilde og vise det med et bilde osv.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### Egenskaper
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| Egenskap                    | Beskrivelse                                                                                                                                                                                                                                                                                   |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type:                       | Angi typen opplastingskomponent, inkludert knapp og Dropzone. (Automatic Translation)                                                                                                                                                                                                         |
+| Tekst                       | Teksten som vises på opplastings-komponenten.                                                                                                                                                                                                                                                 |
+| Utvalg typer                | Angi valgtypen til flere filer, én fil eller katalog. (Automatic Translation)                                                                                                                                                                                                                 |
+| Fil typer                   | En liste over filendelser har lov til å laste opp. Ingen verdi vil tillate alle filtyper.                                                                                                                                                                                                     |
+| Legg til nylig valgte filer | Hvis du vil angi valgt ny fil til å legge til den valgte filen, eller erstatte den valgte filen i valgt type filer eller mappe.                                                                                                                                                               |
+| Liste over filer            | Hvis du vil vise en liste over valgte filer under opplastingskomponenten. (Automatic Translation) Høyden på opplastingen vil endres dynamisk basert på lengden av fillisten.                                                                                                                  |
+| Analysere verdi             | Forsøk på å analysere valgte filer, med støtte for JSON, CSV, TSV, Excel, og TXT filer. Analyserte data kan nås via {{upload1.parsedValue}}. Filer som ikke kan analyseres er null i listen. Alle filer er tilgjengelige som base64 kodet strenger av verdi, uavhengig av dette alternativet. |
+| Laster                      | Om komponenten skal vise en belastningsindikator.                                                                                                                                                                                                                                             |
+| Deaktivert                  | For å angi om denne komponenten skal deaktivere og under hvilke betingelser den skal deaktiveres. For eksempel bør denne komponenten hvis inngangs-1 komponenten er null, deaktiveres: {{ input1.value =‘ ’}}                                                                                 |
+| Verktøytips                 | Et verktøytips vises på komponenten når brukerne holder over komponenten.                                                                                                                                                                                                                     |
+| Obligatorisk felt           | For å angi om det er påkrevd.                                                                                                                                                                                                                                                                 |
+| Min size                    | For å angi minimum filstørrelse som skal legges til.                                                                                                                                                                                                                                          |
+| Max size                    | For å angi maksimal filstørrelse som skal legges til.                                                                                                                                                                                                                                         |
+| Egendefinert regel          | For å angi teksten som vises når verifiseringen feiler.                                                                                                                                                                                                                                       |
+| Skjul valideringsmelding    | For å angi om valideringsmeldingen skal vises når verifiseringen mislykkes                                                                                                                                                                                                                    |
+| Skjema Datastøkkel          | Hvis du vil sette en nøkkel for komponenten. Etter å ha lagt denne komponenten til et skjema vil denne nøkkelen bli brukt til å identifisere dataene til denne komponenten når du sender skjemaet.                                                                                            |
+| Hidden                      | Angir om denne komponenten skal vises og under hvilke betingelser den skal vises. Hvis gjeldende bruker ikke er bruker A, bør denne komponenten skjules: {{ currentUserInfo.nickname != 'User A' }}                                                                                           |
+| Variant                     | Hvis du vil sette en knapp, last opp en komponent til Outline eller Filled.                                                                                                                                                                                                                   |
+| Tema farge                  | Hvis du vil angi fargen på knappen Last opp komponenten.                                                                                                                                                                                                                                      |
 
-### Method
+### Metode
 
-You can use other components to control the Upload component. We support the following three methods:
+Du kan bruke andre komponenter til å kontrollere opplastings-komponenten. Følgende tre metoder støtter vi:
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| klarering  | Brukes til å fjerne valideringsmeldingen                               |
+| ---------- | ---------------------------------------------------------------------- |
+| klar verdi | Brukes til å tømme valgte                                              |
+| Deaktivert | Brukes til å angi opplastingskomponenten til deaktivert eller aktivert |
 
-### Event handler
+### Arrangement behandler
 
-To trigger actions when the selected files change
+Hvis du vil utløse handlinger når valgte filer endres
 
-### Data of Uploader
+### Data av opplaster
 
-The upload component has some commonly used data, which can be called in the app.
+Opplastingskomponenten har noen vanlig brukte data, som kan kalles i appen.
 
-`value` an array consisting of the base64 data of files. 
+«verdi» en liste som består av filenes base64-data. 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+'filer' en liste med objekter. Nøklene til objektene inneholder `lastModifisert`, `navn`, `størrelse`, `type`. Du kan bruke `{{upload1.files.map(fil =>file. ame)}}` for å få en liste med filnavn og du kan også bli sist modifisert matrise, størrelse matrise, type matrise på samme måte. 
 
-### Upload files to a cloud storage service
+### Last opp filer til en sky-lagringstjeneste
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### Last opp en enkelt fil gjennom en S3-ressurs
 
-The configuration of action is as follows. 
+Konfigurasjonen til handlingen er som følger: 
 
-Upload object name
+Last opp objektnavn
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+Laste opp data
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### Laste opp flere filer gjennom en S3-ressurs
 
-Upload object name list
+Laste opp navn på objekter
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+Laste opp dataliste
 
 ```jsx
 {{upload1.value}}
@@ -96,8 +96,8 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+Last opp et bilde og vis det på bilde-komponenten
+Endre bildekilden til filens base64 data for opplastede komponenter. Base64 data er lagret i verdiattributtet i listen. Og vi skal sette filprefikset ut med fildataene. Koden er som følger. 
 
 ```jsx
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
