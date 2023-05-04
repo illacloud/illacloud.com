@@ -1,47 +1,47 @@
 ---
-title: Action
+title: Toiminto
 metaTitle: ILLA Cloud Action doc
 tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+desc: Toimet ovat silta datan ja komponenttien välillä ja ovat olennainen osa sovelluksen rakentamista.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Kysely</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Kun olet luonut resurssin, sinun täytyy poimia tiedot resurssi, valitse suodatin, Yhdistä tiedot ja laita ne sitten Lisää, loogisten vaatimusten mukaisesti. Me kutsumme tätä tietojenkäsittelyprosessia toimeksi. Toimet ovat silta datan ja komponenttien välillä ja ovat olennainen osa sovelluksen rakentamista. Olemme jakaneet toimet kahteen ryhmään: toimet ja muuntajat.
 
-### SQL Action
+### SQL Toiminto
 
-#### Create action
+#### Luo toiminto
 
-The process of using SQL actions is divided into the following steps:
+Prosessi käyttää SQL toimia on jaettu seuraaviin vaiheisiin:
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Ensin sinun täytyy löytää toimintaluettelo sovelluseditorista ja klikkaa "Lisää" -painiketta.
+2.  Valitse sitten tietolähteen tyyppi resurssista valitse ruutu. Voit löytää luotu resurssit vastaavan resurssiluettelon, voit myös luoda uusia resursseja täältä. Valitse luotu resurssi ja napsauta "Vahvista "-painiketta. SQL toiminto luodaan onnistuneesti.
+3.  Luotu toiminto näytetään toimintoluettelossa. @ info: whatsthis Toimintoeditori näkyy kehyksen alapuolella sen jälkeen, kun toiminto on potkittu. Voit muuttaa toimintojen resurssia, kirjoittaa toimintalausekkeita, vastata sisältöön, lisätä muuntajia, tapahtumankäsittelijöitä.
+4.  Kun olet täyttänyt toimintoluettelon, voit klikata "Esikatselu" -painiketta tarkistaaksesi, onko kirjoittamasi toiminto kelvollinen. Konfiguraatiopaneeli näyttää toiminnon tuloksen. Kun toiminto on muokattu, voit klikata "Tallenna" painiketta lopettaaksesi prosessin. Jos vaihdat toiseen toimintoon tallentamatta tietoja, järjestelmä kehottaa sinua tallentamaan muutokset.
 
-#### Action Breakdown
+#### Toimintojen Jaottelu
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Toiminto: Voit syöttää toimintalausekkeesi toimintomoduuliin, johon olemme lisänneet Code Mirror -editorin, jotta toiminto korostuu ja koodin täydennys voidaan aloittaa. Myöhemmissä päivityksissä Tarjoamme graafisen käyttöliittymän syöttötavan toimintakertomusten kirjoittamiseen, jotta käyttäjät eivät tunne toimintakertomuksia ja voivat suorittaa myös datan toimet.
+2.  Transformer: Voit tarkentaa toimintalogiikkaa Javascript-lausekkeiden kanssa muuntaja, Esimerkiksi käyttämällä suodatinfunktiota JS:ssä sen sijaan, missä toiminto on toimintolausekkeessa.
+3.  Tapahtuman käsittelijä: Tapahtumien käsittelijät antavat sinun käynnistää toimintoja, ohjata lisäyksiä ja muita toimia vastauksena käyttäjän vuorovaikutukseen. Voit lisätä useita tapahtumakäsittelijöitä vastaamaan tapahtumaan lisäämättä mukautettuja JavaScript-lausekkeita. Esimerkiksi, kun käyttäjä klikkaa painiketta, voit (1) käynnistää toiminnon, joka suoritetaan, kun taas (2) palautetaan useiden avattavien listojen ja tekstien tila.
+4.  Vastaus: Vastausmoduulissa voit muokata ehtoja, joilla toiminto palauttaa virheellisiä tuloksia, siten, että varmistetaan toimenpiteen oikeellisuus ja että se voidaan toteuttaa.
+5.  Edistetty: Tarkenna yksityiskohtaiset asetukset toimintoihin, kuten tietokannan aikakatkaisun vasteaikoihin, tapahtumaprosessorin viivästyksiin jne. edistyneissä vaihtoehdoissa.
 
-### API Actions
+### Api Toiminnot
 
-#### Create action
+#### Luo toiminto
 
-The process for actioning data using the API is similar to that for SQL.
+Prosessi datan käyttämiseksi APIlla on samankaltainen kuin SQL:llä.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  Ensimmäinen käyttäjän on löydettävä toimintaluettelo sovelluksen muokkaussivun vasemmasta alareunasta ja klikattava lisämerkintää toimintoluettelon oikeassa yläkulmassa olevan sivun kohdalla.
+2.  Seuraavaksi valitse vastaava tietolähteen luettelo resurssivalikosta joka ponnahtaa ylös. Voit löytää luotu resurssi vastaavasta tietolähdeluettelosta, tai voit luoda uuden resurssin täältä. Valitse luotu resurssi, klikkaa "Luo" ja API-toiminto luodaan onnistuneesti.
+3.  Onnistuneesti luotu toiminto näytetään alapaneelin Toiminnot -listassa, ja toiminnon yleinen välilehti ponnahtaa ylöspäin kehyksen alapuolelle, kun sitä napsautetaan. Voit tehdä pyynnön mille tahansa HTTP API ILLA . Katso API-dokumentaatio datan pyytämistä koskevia menetelmiä varten.
+4.  Kun olet täyttänyt oman toiminnan, voit klikata "Esikatselu" painiketta nähdä, onko toiminto olet kirjoittanut on voimassa ja asetuspaneeli antaa sinulle tuloksia. Kun olet suorittanut toiminnon muokkauksen, voit klikata Tallenna ja poistua lopettaaksesi prosessin. Jos vaihdat toiseen toimintoon tallentamatta, ponnahdusikkuna kehottaa sinua suorittamaan tallennuksen valmiiksi.
 
-#### Action Breakdown
+#### Toimintojen Jaottelu
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Transformer: Voit tarkentaa toimintalogiikkaa Javascript-lausekkeiden kanssa muuntaja, Esimerkiksi käyttämällä suodatinfunktiota JS:ssä sen sijaan, että funktio olisi toimintalausekkeessa.
+2.  Tapahtuman käsittelijät: Tapahtuman käsittelijöiden avulla voit laukaista toimintoja, hallita lisäyksiä ja muita toimia käyttäjän vuorovaikutuksessa. Voit lisätä useita tapahtumakäsittelijöitä vastaamaan tapahtumaan lisäämättä mukautettuja JavaScript-lausekkeita. Esimerkiksi, kun käyttäjä klikkaa painiketta, voit (1) käynnistää toiminnon, joka suoritetaan, kun taas (2) palautetaan useiden avattavien listojen ja tekstien tila.
