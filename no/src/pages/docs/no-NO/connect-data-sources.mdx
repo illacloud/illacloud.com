@@ -1,44 +1,44 @@
 ---
-title: Connect to your data sources
-metaTitle: Illa Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder
-tagCategory: doc_menu_data_source_connect_click
+title: Koble til dine datakilder
+metaTitle: Illa Cloud Koble til dine datakilder
+desc: Lær om tilkobling til din datakilde og ring den i ILLA-byggeren din
+tagCategory: doc_menu_data_source_connect_Klikk
 ---
 
 * * *
 
-## <Heading hidden>Connect to your data sources （Action)</Heading>
+## <Heading hidden>Koble til datakildene dine (Oppgjør)</Heading>
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Lær om tilkobling til din datakilde og ring den i ILLA byggeren.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+ILLA lar deg koble til og integrere en rekke datakilder, inkludert databaser og APIer, i organisasjonen din for å bruke som ressurser.
 
-### Data sources
+### Datakilder
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Kilder er plasseringer der data lagres og behandles. Eksempler på datakilder omfatter PostgreSQL databaser, Twilio REST APIer og Amazon S3 bøtter. I ILLA kan du legge til flere datakilder og gjøre dem tilgjengelige for brukerne.
 
-#### Integrations
+#### Integrasjoner
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using ILLA. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA gir innebygde integrasjoner for mange populære datakilder som krever minimal konfigurasjon, slik som SQL databaser og Stripe. Disse integrasjonene, også kjent som ressurser, gjør det mulig for deg å søke om datakildene dine ved hjelp av ILLA. Hvis en bestemt type datakilde ikke støttes av en innebygd integrering, du kan bruke REST, GraphQL, eller SOAP-integrasjoner for å koble til nesten et hvilket som helst API. Dette gir deg tilgang til et bredt spekter av datakilder fra ILLA-builder.
 
-#### Connect to databases
+#### Koble til databaser
 
-Connect to most databases and data stores
+Koble til de fleste databaser og datalagre
 
-#### Connect to APIs
+#### Koble til APIer
 
-Connect to REST and GraphQL.
+Koble til REST og GraphQL.
 
-### Resources
+### Ressurser
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+En ressurs i ILLA er en lagret konfigurasjon som spesifiserer hvordan ILLA kobles til en datakilde. For å bruke en datakilde i ILLA, må du lage en ressurs for den. Du kan velge riktig ressurs for å få tilgang til dataene når du skriver en spørring.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Hver ressurs i ILLA har sine egne konfigurasjonsalternativer som bestemmer hvordan ILLA kobles til den aktuelle datakilden. Disse innstillingene kan inkludere innloggingsinformasjon og flyt, innstillinger for databasetilkobling og API innstillinger, som base-URL og standardoverskrifter.
 
-#### How resources work
+#### Hvordan ressurser fungerer
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, ILLA uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only ILLA has direct access to the data source.
+ILLA ressurser lagrer de nødvendige innstillingene for å koble til datakilden din. Dette lar deg spørre om data uten å vise din datakilde direkte for dine brukere. Når en spørring kjøres for en ressurs, ILLA bruker ressursens konfigurasjonsinnstillinger for å proxy forespørselen til datakilden på serversiden. Dette sikrer at bare ILLA har direkte tilgang til datakilden.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA forenkler prosessen med å koble til en datakilde for dine brukere. De trenger bare å velge ut relevant ressurs ved skriving av en spørring uten å bekymre seg for datakildens opplysninger. Du kan også legge til flere ressurser av samme type, som flere Amazon S3 bøtter, for å skille mellom dem.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Denne tilnærmingen holder datakildene dine skjult for brukerne og sikrer at alle samhandlinger med datakilden håndteres på en sikker måte. ILLA unngår å knytte klientsiden til datakilden som kan utsette sensitiv informasjon, og bruke samme betingelser for all interaksjon. I tillegg tillater ressurser lagring av spørringer som kan redusere antall forespørsler til en datakilde og potensielt lavere kostnader.
