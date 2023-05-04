@@ -1,99 +1,99 @@
 ---
 title: Kubernetes
-tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+tagCategory: link_menu_kubernetes_clique
+desc: Construa uma imagem completa e a rode por k8s em sua máquina.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Descrição:
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Construa uma imagem completa e a rode por k8s em sua máquina. Você pode conferir os arquivos de scripts na pasta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) para mais detalhes.
 
-Note:
+Nota:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Nós recomendamos fortemente implantar com nossas ferramentas de auto-deploy[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+E, por enquanto, não suportamos o Apple Silicon M1 (arca-darwin-arm6).
 
-### Run with an official slim image
+### Executar com uma imagem com um slim oficial
 
-Install GNU make and type:
+Instalar GNU fazer e tipo:
 
 ```jsx
-make deploy
+fazer deploy
 ```
 
-or just execute:
+ou apenas execute:
 
 ```jsx
 /bin/bash scripts/deploy.sh
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+este comando irá puxar o illasoft oficial tudo em um e publicá-lo em seu cluster do Kubernetes.
 
-### For Database Persistent Storage
+### Para armazenamento persistente do banco de dados
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+Edite[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) e adicione sua configuração de armazenamento persistente IAAS nele.
 
-### For HTTPS Config
+### Configuração HTTPS para
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Você pode encaminhar o NodePort para o seu gateway de agrupamento de cluster Kubernetes e reescrever para 443 porta e adicionar cert https em seu gateway de locância.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+Ou, você pode implantar um gateway de vela manualmente no servidor Kubernetes, configuração assim:
 
 ```jsx
 static_resources:
-  listeners:
-  - name: https_listener
-    address:
+  ouvintes:
+  - Nome: https_listener
+    endereço:
       socket_address:
-        address: 0.0.0.0
+        endereço: 0. .0.0
         port_value: 443
     filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
-        typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+    - filtros:
+      - nome: emissário. ilters.network.http_connection_manager
+        tipado_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
           stat_prefix: https_listener
           route_config:
-            name: local_route
+            nome: local_route
             virtual_hosts:
             - name: illa_builder
-              domains:
-              - "illa.yourdomian.com" # replace with your domain
-              routes:
+              domínios:
+              - "illa. ourdomian. om" # substitui pelo seu domínio
+              rotas:
               - match:
-                  prefix: "/"route:
+                  prefixo: "/"route:
                   cluster: illa_builder
           http_filters:
-          - name: envoy.filters.http.router
+          - nome: envoy. ilters.http. outer
             typed_config:
-              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              "@type": tipo. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
       transport_socket:
-        name: envoy.transport_sockets.tls
+        nome: envoy.transport_sockets. ls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
           common_tls_context:
             tls_certificates:
-            # replace this with your cert file
+            # substitui isso pelo seu arquivo do certificado
             - certificate_chain:
-                filename: /your-cert-folder/fullchain.pem
+                nome: /your-cert-folder/fullchain. em
               private_key:
-                filename: /your-cert-folder/privkey.pem
+                nome: /your-cert-folder/privkey. em
 
   clusters:
-  - name: illa_builder
-    type: STRICT_DNS
+  - nome: illa_builder
+    tipo: STRICT_DNS
     lb_policy: ROUND_ROBIN
     connect_timeout: 10s
     load_assignment:
       cluster_name: illa_builder
       endpoints:
       - lb_endpoints:
-        - endpoint:
+        - endpoints:
             address:
               socket_address:
                 address: illa-builder
