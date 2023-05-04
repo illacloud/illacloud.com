@@ -1,36 +1,36 @@
 ---
-title: Event handler
+title: イベントハンドラ：
 metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
+desc: イベントハンドラーは、内部ツールの使用ロジックを改良するための不可欠な部分です
 tagCategory: doc_menu_evnet_handler_click
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>イベントハンドラ</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+イベントハンドラは、内部ツール使用ロジックを改良する上で不可欠な部分です。 ユーザーアクションに応答する Insert またはアクションには、トリガーされる可能性のある独自のイベントがあります。 例えば、'click' イベントを持つボタン挿入、'submit' イベントを持つテキスト入力ボックス、アクションの成功など。 イベントハンドラは、ユーザーがイベントが発生したときに事前に定義された命令をトリガーするのに役立ちます。単一のイベント発生に反応することができます。 または、複数のイベントハンドラを設定して、より複雑な作業を行うためのワークフローとして設定できます。
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+設定したイベントが発生した後、イベントハンドラはさまざまなアクションを実行するのに役立ちます: アクション文の制御 挿入の制御スクリプトの実行など。 トリガー条件の上に、より詳細な JavaScript トリガー条件を追加することもできます。
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### イベントハンドラ:
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+イベントハンドラでは、クエリの結果が失敗するかどうかに基づいてイベントの結果を設定できます。 format@@0タブでクエリの失敗条件を設定することで、トリガロジックを完了できます。
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### 送信ハンドラの編集
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+インタラクティブなインサートごとにトリガー条件を設定し、ハンドラーのアクションリストからトリガー条件としてイベントを選択できます。 たとえば、データエントリボックスのイベントハンドラで「Submit」をトリガー条件として設定できます。 これは、ユーザーが入力を「送信」するときに自動的に入力をデータベースに挿入するため、単純なデータ挿入機能を実装します。
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### 一時状態
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+データを処理すると、処理されたデータがすぐに呼び出されない状況が発生することがあります。 このため、データ処理のために中間状態を保存する一時状態を設定しています。 イベントハンドラーのレスポンスイベントオプションで一時状態を設定し、format@@0をクリックして、現在のデータを一時状態に保存します。 どのプロパティにも配置できます
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+プロジェクトエディタの外では、 {{tempState1.setValue(data)}} でデータを保存したり、 {{tempState1.value}} でデータを呼び出したりすることもできます。
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> プロジェクトの再起動時に一時状態の値がクリアされます。 データの整合性を確保するためには、ローカルまたはクラウドに値を保存する必要があります。
