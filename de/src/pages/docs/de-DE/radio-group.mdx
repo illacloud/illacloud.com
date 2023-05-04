@@ -1,134 +1,134 @@
 ---
-title: Radio group
-metaTitle: ILLA Cloud Radio group component
-description: Displays all options on radio group and supports to select 1 option.
+title: Funkgruppe
+metaTitle: ILLA Cloud Radio Gruppenkomponente
+description: Zeigt alle Optionen in der Funkgruppe an und unterstützt die Auswahl einer Option.
 tagCategory: doc_menu_radio_group_click
 ---
 
 * * *
 
-## <Heading hidden>Radio group</Heading>
+## <Heading hidden>Funkgruppe</Heading>
 
-A radio group, also known as a single-choice group or simply a radio group, is a component that allows users to select only one option from a list of predefined options. Each option in the group is represented by a circular button that can be selected or deselected by users. When one option is selected, any previously selected option in the group is automatically deselected.
+Eine Funkgruppe, auch bekannt als Single-Choice-Gruppe oder einfach nur als Funkgruppe ist eine Komponente, die es Benutzern erlaubt, nur eine Option aus einer Liste vordefinierter Optionen auszuwählen. Jede Option in der Gruppe wird durch eine kreisförmige Schaltfläche repräsentiert, die von Benutzern ausgewählt oder desgewählt werden kann. Wenn eine Option ausgewählt ist, wird jede zuvor ausgewählte Option in der Gruppe automatisch deaktiviert.
 
-Radio groups are commonly used in web forms, dialog boxes, and other interactive applications where users need to make a single choice from a set of options. They are useful for preventing errors that can occur when users select multiple options by mistake or confusion. Additionally, radio button groups are easy to use and visually intuitive, making them a popular choice for designers and developers alike.
+Funkgruppen werden häufig in Webformularen und Dialogfeldern verwendet und anderen interaktiven Anwendungen, bei denen Benutzer eine Auswahl aus einer Reihe von Optionen treffen müssen. Sie sind nützlich, um Fehler zu vermeiden, die auftreten können, wenn Benutzer mehrere Optionen irrtümlich oder verwirrend auswählen. Darüber hinaus sind Funk-Button-Gruppen einfach zu bedienen und visuell intuitiv zu bedienen. Dies macht sie zu einer beliebten Wahl für Designer und Entwickler gleichermaßen.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### Eigenschaften
 
-#### Manual options
+#### Manuelle Optionen
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Fügen Sie neue Optionen hinzu oder löschen Sie die Optionen manuell und konfigurieren Sie sie einzeln. Die Eigenschaften der Optionen sind: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Eigenschaften | Beschreibung                                  |
+| ------------- | --------------------------------------------- |
+| Label         | Der angezeigte Text für die Option            |
+| Wert          | Der der Option zugeordnete Wert               |
+| Deaktiviert   | Ob die Option für die Auswahl deaktiviert ist |
 
-#### Mapped options
+#### Zugeordnete Optionen
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Sie können auch Optionen aus einer Datenquelle hinzufügen, indem Sie die Label- und Werteeigenschaften den entsprechenden Datenfeldern zuordnen. Auf diese Weise können Sie Optionen dynamisch aus der Datenbank beziehen. Am Ende dieses Artikels, werden wir zeigen, wie man es verwenden durch ein Beispiel.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Eigenschaften | Beschreibung                                                                           |
+| ------------- | -------------------------------------------------------------------------------------- |
+| Datenquelle   | Datenquelle für Optionen festlegen                                                     |
+| Label         | Verwenden Sie {{item}} , um die Bezeichnung der Optionen zu setzen                     |
+| Wert          | Verwenden Sie {{item}} , um den Wert der Optionen zu setzen                            |
+| Deaktiviert   | Verwenden Sie {{item}} , um festzulegen, ob die Option für die Auswahl deaktiviert ist |
 
-#### Other properties
+#### Andere Objekte
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert                     | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                       |
+| Platzhalter                      | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                   |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Ausrichtung des Labels festlegen                                                                                                                                                          |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest                                                                         |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Löschtaste anzeigen              | Legen Sie fest, ob die Schaltfläche "Löschen" angezeigt werden soll                                                                                                                       |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | editor.inspect.setter_tooltip.custom_rule                                                                                                                                                 |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Um die Farbe der Komponente auszuwählen                                                                                                                                                   |
 
-### Method
+### Methode
 
-You can use other components to control the component. We support the following three methods:
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden drei Methoden:
 
-#### setValue
+#### setWert
 
-To set the selected option, for example, {{”value1”}}
+Um die ausgewählte Option zu setzen, zum Beispiel {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Eigenschaften | Beschreibung      |
+| ------------- | ----------------- |
+| Wert          | Ausgewählter Wert |
 
-#### clearValue
+#### clearWert
 
-To clear the selected options
+Ausgewählte Optionen löschen
 
 #### validate
 
-To verify that the input information is legal
+Um zu überprüfen, ob die Eingabe zulässig ist
 
-#### clearValidate
+#### löschen
 
-To clear the validation message
+Um die Validierungsmeldung zu löschen
 
-### Event handler
+### Event-Handler
 
-We support listening to the `onChange` event of the radio group. 
+Wir unterstützen das Hören der "onChange" Veranstaltung der Funkgruppe. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Wenn sich die ausgewählte Option ändert, kann sie eine bestimmte Aktion auslösen. Das heißt, wenn ein Benutzer eine andere Option als eine Funkgruppe wählt, kann auf der Basis der gewählten Option eine bestimmte Aktion durchgeführt werden. Zum Beispiel in einem Webformular die Auswahl einer anderen Option kann die Anzeige von verschiedenen Formularfeldern oder die Übermittlung des Formulars an einen anderen Bestimmungsort auslösen. Auf diese Weise kann sich die vom Benutzer gewählte Option auf das Verhalten der von ihm verwendeten Software oder Web-Anwendung auswirken. Die Möglichkeit, spezielle Aktionen auf Basis von Benutzereingaben auszulösen, ist ein wichtiger Aspekt des interaktiven Software-Designs und kann die Benutzerfreundlichkeit und Funktionalität der Software verbessern.
 
-### Data
+### Daten
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Die Komponente hat einige häufig verwendete Daten, die über {{componentName.propertyName}} in der App aufgerufen werden können.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Eigenschaftsname | Beschreibung      |
+| ---------------- | ----------------- |
+| wert             | Ausgewählter Wert |
 
-### Use case
+### Gehäuse verwenden
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Als nächstes zeigen wir, wie man den zugeordneten Modus verwendet, um dynamisch Optionen zu erhalten. 
 
-#### Step 1 Add an action
+#### Schritt 1 Eine Aktion hinzufügen
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Wir haben eine Tabelle namens `selection` mit 5 Spalten erstellt: `options_de`, `options_jp`, `options_zh`, `options_kr`, `value`. Wir haben die Optionswerte in `value` gespeichert und in verschiedenen Sprachen in anderen Spalten gespeichert. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Erstelle eine Aktion um alle Daten in `selection` mit dem Namen `postgresql1` aufzulisten
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+* aus der Auswahl auswählen
 ```
 
-#### Step 2 Configure the component
+#### Schritt 2 die Komponente konfigurieren
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Datenquellen auf `{{postgresql1.data}} ` gesetzt 
+2.  Konfigurieren Sie das Label, um das Label basierend auf der Sprache zu ändern. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Verwenden Sie {{ item.columnName }} , um die Spalte festzulegen. 
+    2.  Verwenden Sie {{ currentUserInfo.language }} , um die Sprache der Benutzer in der ILLA festzulegen.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
     : currentUserInfo.language == 'ko-KR' ? item.options_kr 
     : currentUserInfo.language == 'zh-CN' ? item.options_zh 
-    : item.options_en }}
+    : item.options_de }}
     ```
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />
