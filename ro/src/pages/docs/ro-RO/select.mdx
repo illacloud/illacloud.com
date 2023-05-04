@@ -1,135 +1,135 @@
 ---
-title: Select
-metaTitle: ILLA Cloud Select component
-description: Displays all options in dropdown box and supports to select 1 option.
-tagCategory: doc_menu_select_click
+title: Selectare
+metaTitle: ILLA Cloud Selectare componentă
+description: Afișează toate opțiunile în caseta dropdown și acceptă alegerea unei opțiuni.
+tagCategory: doc_meniu_select_click
 ---
 
 * * *
 
-## <Heading hidden>Select</Heading>
+## <Heading hidden>Selectați</Heading>
 
-A select component is commonly used to present users with a list of options in a dropdown menu format. The user can select only one option from the dropdown list at a time.
+O componentă selectată este utilizată în mod obișnuit pentru a prezenta utilizatorilor o listă de opțiuni într-un format de meniu derulant. Utilizatorul poate selecta o singură opțiune din lista derulantă la un moment dat.
 
-The dropdown single-select component typically consists of a text label and a dropdown arrow icon, which when clicked or tapped, opens a list of options for the user to choose from. Once the user selects an option, the dropdown menu closes, and the selected option is displayed in the component.
+Componenta dropdown cu o singură selecție constă de obicei dintr-o etichetă text și o pictogramă cu săgeată verticală, care, atunci când este apăsat sau aplicat, deschide o listă de opţiuni din care utilizatorul să poată alege. Odată ce utilizatorul selectează o opțiune, meniul vertical se închide, iar opțiunea selectată este afișată în componentă.
 
-This component is often used in forms, surveys, and other data entry scenarios where a user needs to select one option from a predefined set of choices. It offers a compact and intuitive way to present a list of options without taking up too much screen real estate or overwhelming the user with too many options at once.
+Această componentă este utilizată adesea sub formă de anchete, precum și alte scenarii de intrare de date în care un utilizator trebuie să selecteze o opțiune dintr-un set predefinit de opțiuni. Acesta oferă o modalitate compactă și intuitivă de a prezenta o listă de opțiuni fără a analiza prea mult proprietățile imobiliare sau a copleși utilizatorul în același timp cu prea multe opțiuni.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select1.png' alt="" />
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select2.png' alt="" />
 
-### Properties
+### Proprietăți
 
-#### Manual options
+#### Opțiuni manuale
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Adăugați opțiuni noi sau ștergeți manual opțiunile și configurați una câte una. Proprietățile opțiunilor sunt următoarele: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Proprietăți | Descriere                                      |
+| ----------- | ---------------------------------------------- |
+| Etichetă    | Textul afişat pentru opţiune                   |
+| Valoare     | Valoarea asociată cu opțiunea                  |
+| Dezactivat  | Dacă opțiunea este dezactivată pentru selecție |
 
-#### Mapped options
+#### Optiuni afisate
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+De asemenea, puteți adăuga opțiuni dintr-o sursă de date prin maparea etichetei și a proprietăților valorii în câmpurile de date corespunzătoare. Poți obține opțiuni dinamice din baza de date în acest mod. La finalul acestui articol, vom demonstra cum să îl folosim printr-un exemplu.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Proprietăți   | Descriere                                                                       |
+| ------------- | ------------------------------------------------------------------------------- |
+| Sursă de date | Setați sursa de date pentru opțiuni                                             |
+| Etichetă      | Utilizați {{item}} pentru a seta eticheta opțiunilor                            |
+| Valoare       | Folosește {{item}} pentru a seta valoarea opțiunilor                            |
+| Dezactivat    | Folosește {{item}} pentru a seta dacă opțiunea este dezactivată pentru selecție |
 
-#### Other properties
+#### Alte proprietăți
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Proprietăți                 | Descriere                                                                                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valoare implicită           | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                   |
+| Substituent                 | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                 |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                   |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                   |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                       |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                        |
+| Aliniere                    | Setați alinierea etichetei                                                                                                                              |
+| Width                       | Când eticheta este pe partea stângă a componentei, setați raportul lățimii etichetei                                                                    |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                        |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                         |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.       |
+| Afişare buton ştergere      | Setează dacă se afișează butonul de ștergere                                                                                                            |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.           |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                               |
+| Regulă personalizată        | editor.inspect.setter_tooltip.custom_rule                                                                                                               |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript. |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                       |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                        |
+| Culoarea temei              | Pentru a selecta culoarea temei componentei                                                                                                             |
 
-### Method
+### Metodă
 
-You can use other components to control the component. We support the following three methods:
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele trei metode:
 
-#### setValue
+#### valoare setată
 
-To set the selected option, for example, {{”value1”}}
+Pentru a seta opțiunea selectată, de exemplu, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Proprietăți | Descriere         |
+| ----------- | ----------------- |
+| Valoare     | Valoare selectată |
 
-#### clearValue
+#### curățare
 
-To clear the selected options
+Pentru a șterge opțiunile selectate
 
 #### validate
 
-To verify that the input information is legal
+Pentru a verifica dacă informațiile de intrare sunt legale
 
-#### clearValidate
+#### clearValidare
 
-To clear the validation message
+Pentru a șterge mesajul de validare
 
-### Event handler
+### Gestionar de evenimente
 
-We support listening to the `onChange` event of the radio group. 
+Sprijinim ascultarea evenimentului `onChange` al grupului radio. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Când opțiunea selectată se schimbă, poate declanșa o acțiune specificată. Aceasta înseamnă că atunci când un utilizator alege o opțiune diferită de un grup radio, o anumită acțiune poate fi întreprinsă pe baza opțiunii selectate. De exemplu, într-un formular web, selectarea unei opțiuni diferite poate declanșa afișarea unor câmpuri diferite ale formularului sau transmiterea formularului la o destinație diferită. În acest fel, opțiunea selectată de utilizator poate afecta comportamentul software-ului sau al aplicației web pe care o utilizează. Capacitatea de a declanșa acțiunile specificate bazate pe datele introduse de utilizator este un aspect important al design-ului de software interactiv și poate îmbunătăți utilitatea și funcționalitatea software-ului.
 
-### Data
+### Date
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin intermediul {{componentName.propertyName}} în aplicație.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Nume proprietate | Descriere         |
+| ---------------- | ----------------- |
+| valoare          | Valoare selectată |
 
-### Use case
+### Utilizare majusculă
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Apoi, vom demonstra cum să folosim modul mapat pentru a obține în mod dinamic opțiuni. 
 
-#### Step 1 Add an action
+#### Pasul 1 Adăugare acţiune
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Am creat un tabel numit `selection`, inclusiv 5 coloane: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Am stocat valorile opțiunii în `value` și în eticheta de opțiuni stocate în diferite limbi în alte coloane. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Creaţi o acţiune pentru a lista toate datele din `selecţie` numit `postgresql1`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+selectează * din selecție
 ```
 
-#### Step 2 Configure the component
+#### Pasul 2 Configurați componenta
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Setaţi sursele de date la `{{postgresql1.data}}` 
+2.  Configurați eticheta pentru a schimba eticheta în funcție de limbă. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Folosește {{ item.columnName }} pentru a seta coloana. 
+    2.  Folosește {{ currentUserInfo.language }} pentru a seta limba pe care utilizatorii o folosesc în ILLA.
 
     ```jsx
-    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    {{currentUserInfo.language==='ja-JP' ? item.options_jp 
     : currentUserInfo.language == 'ko-KR' ? item.options_kr 
     : currentUserInfo.language == 'zh-CN' ? item.options_zh 
     : item.options_en }}
