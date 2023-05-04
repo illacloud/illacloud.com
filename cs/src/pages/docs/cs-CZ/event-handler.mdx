@@ -1,36 +1,36 @@
 ---
-title: Event handler
-metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
-tagCategory: doc_menu_evnet_handler_click
+title: Manažer událostí
+metaTitle: ILLA Cloud Event doc
+desc: Manažeři událostí jsou nedílnou součástí rafinace vnitřní logiky využití nástroje
+tagCategory: doc_menu_evnet_handler_kliknutí
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Pracovník události</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Pracovníci události jsou nedílnou součástí rafinace interní logiky využití nástroje. Vlož nebo činnost reagující na uživatelskou akci má své vlastní události, které mohou být spuštěny, jako je tlačítko vložit událost "kliknutí", textové pole s událostí "submit", úspěch akce a tak dále. Zpracovatelé událostí pomáhají uživatelům spustit předem definované instrukce při událostech: můžete reagovat na jednu událost, nebo můžete nastavit více obsluhovatelů událostí a nastavit je jako pracovní postupy, abyste mohli pracovat komplexněji.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Po události, kterou jste nastavili, vám může obsluha události pomoci provést řadu akcí: kontrolní příkazy akcí, ovládat vložky, spouštět skripty a další. Můžete také přidat podrobnější podmínky aktivace JavaScriptu navíc k podmínkám spouštění.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Zpracovatelé událostí
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+V případě manipulátorů, můžete nastavit výsledek události na základě toho, zda výsledky dotazu selžou, nebo ne. Můžete dokončit spouštěcí logiku nastavením stavu selhání dotazu v záložce Odpovědi.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Upravit obsluhu submitu
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Nastavili jsme spouštěcí podmínku pro každý interaktivní vložení a jako podmínku pro spuštění můžete vybrat událost v seznamu akcí obsluhovatele. Například můžete nastavit 'Odeslat' jako spouštěcí podmínku v případě manipulace s daty, který automaticky vloží vstup do databáze při 'odesílání' vstup, čímž se provádí jednoduchá funkce vkládání dat.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Dočasné státy
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+Při zpracovávání údajů se můžete setkat se situacemi, kdy zpracované údaje nejsou okamžitě povolány. Z tohoto důvodu jsme vytvořili dočasné státy, které budou ukládat prozatímní státy pro zpracování údajů. Můžete zvolit nastavení dočasného stavu v možnostech odezvy obsluhy událostí a klepněte na tlačítko Vytvořit nový stav pro uložení aktuálních dat v dočasném stavu, které lze umístit pro jakýkoli majetek.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+Mimo editor projektu můžete také ukládat data pomocí {{tempState1.setValue(data)}} nebo volat uživatelem {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Hodnoty v dočasném stavu budou vymazány po restartu projektu, a budete muset ukládat hodnoty lokálně nebo v cloudu, abyste zajistili integritu dat.
