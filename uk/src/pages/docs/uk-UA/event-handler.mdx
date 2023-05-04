@@ -1,36 +1,36 @@
 ---
-title: Event handler
-metaTitle: ILLA Cloud Event handler doc
-desc: Event handlers are an integral part of refining your internal tool usage logic
+title: Обробник подій
+metaTitle: Оброблювач подій ILLA Cloud
+desc: Обробники подій є невід'ємною частиною уточнення логіки використання внутрішнього інструменту
 tagCategory: doc_menu_evnet_handler_click
 ---
 
 * * *
 
-## <Heading hidden>Event handler</Heading>
+## <Heading hidden>Обробник подій</Heading>
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Обробники подій є невід'ємною частиною уточнення логіки використання внутрішнього інструменту. Будь-яка вставка або дія, що відповідає дії користувача, має свої власні події, які можуть бути запущені, така, як кнопка, вставляє її з подією "клік", текстовим полем в поле із подією "submit", успіхом дії тощо. Обробники подій допомагають користувачам проводити попередньо визначені інструкції під час події. Ви можете відреагувати на одну подію входу, або ви можете встановити декілька обробників подій і встановити їх як робочі процеси, щоб виконати складніші роботи.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+Після того, як ви встановили, обробник подій може допомогти вам виконати різноманітні дії: команду керування діями, керування вставленнями, скриптами запуску та багато іншого. Ви також можете додати більш детальні умови запуску JavaScript у верхній частині умов тригера.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
 
-### Event handlers
+### Обробники подій
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+В обробників подій ви можете встановити результат події на основі того, чи результатів запиту не виконано чи ні. Ви можете завершити логіку тригера, встановивши умови відмови запитів на вкладці Відповідність.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
 
-### Edit submit handler
+### Редагувати обробник сабмітів
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+Ми встановлюємо умову тригера для кожного інтерактивного вставки, і ви можете вибрати подію в списку дій обробника як умову тригера. Наприклад, ви можете встановити «Submit» як умову тригеру в обробнику подій для запису даних який автоматично вставляє вхідні дані в базу даних при вході користувача 'сабміти', тим самим реалізуючи простий метод вставки.
 
 <img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
 
-### Temporary states
+### Тимчасові дані
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+При обробці даних ви можете зіткнутися з ситуаціями, коли оброблені дані не викликають негайно. З цієї причини ми створили тимчасові штати для зберігання проміжних держав для обробки даних. Ви можете встановити тимчасовий стан у налаштуваннях події події обробників подій і натисніть на Створити новий стан для зберігання поточних даних у тимчасовому стані, яке може бути розміщене на будь-яку власність.
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+За межами редактора проекту, ви також можете зберігати дані від {{tempState1.setValue(data)}} або дані про виклики {{tempState1.value}}.
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+> Значення в тимчасовому стані будуть видалені при перезапуску проекту, і вам необхідно буде зберігати значення локально або у хмарі, щоб забезпечити цілісність даних.
