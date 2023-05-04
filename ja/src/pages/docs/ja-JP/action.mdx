@@ -1,47 +1,47 @@
 ---
-title: Action
-metaTitle: ILLA Cloud Action doc
+title: アクション
+metaTitle: ILLA クラウドアクションドキュメント
 tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+desc: アクションは、データとコンポーネントの間の架け橋であり、アプリケーションを構築する上で不可欠な要素です。
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>クエリ</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+リソースを作成したら、リソース内のデータを抽出する必要があります。 データをマージし、論理要件に従ってInsertsに入れます。 私たちは、このデータ処理プロセスをアクションと呼んでいます。 アクションは、データとコンポーネントの間の架け橋であり、アプリケーションを構築する上で不可欠な要素です。 行動とトランスフォーマーの二つのカテゴリーに分かれています。
 
-### SQL Action
+### SQL アクション
 
-#### Create action
+#### アクションを作成
 
-The process of using SQL actions is divided into the following steps:
+SQLアクションを使用するプロセスは、次のステップに分かれています。
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  まず、アプリエディタでアクションリストを見つけて「追加」ボタンをクリックする必要があります。
+2.  次に、リソース選択ボックスでデータ ソースの種類を選択します。 作成されたリソースは、対応するリソースリストで見つけることができます。ここで新しいリソースを作成することもできます。 作成したリソースを選択し、「確認」ボタンをクリックします。 SQL アクションは正常に作成されます。
+3.  作成されたアクションがアクションリストに表示されます。 アクションエディタは、アクションをキックした後、フレームの下に表示されます。 アクションのリソースを変更したり、アクションステートメントを書いたり、レスポンスコンテンツを追加したり、変換したり、イベントハンドラを追加したりすることができます。
+4.  アクションリストを入力した後、"Preview" ボタンをクリックして、作成したアクションが有効かどうかを確認できます。 設定パネルにアクションの結果が表示されます。 アクションが編集されたら、「保存」ボタンをクリックして処理を終了します。 情報を保存せずに別のアクションに切り替えると、システムは変更を保存するように求められます。
 
-#### Action Breakdown
+#### アクションの破壊
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Action: Action モジュールに Code Mirror エディタを追加し、アクション文のハイライトとコード補完を有効にしたアクション文を入力できます。 その後のアップデートで アクションステートメントに慣れていないユーザーがデータアクションを完了できるよう、アクションステートメントを記述するためのGUI入力モードを提供します。
+2.  Transformer: 変換器内の JavaScript 文でアクションロジックを絞り込むことができます。 例えば、action文のwhere関数の代わりにJSでフィルタ関数を使用するなどです。
+3.  イベントハンドラ: イベントハンドラを使用すると、ユーザーの操作に応じてアクションのトリガー、挿入制御、およびその他のアクションを実行できます。 カスタム JavaScript ステートメントを追加することなく、イベントに応答するために複数のイベントハンドラを追加できます。 例えば、ユーザーがボタンをクリックすると、(1) 実行するアクションをトリガーできます。 (2) 複数のドロップダウン リストとテキスト入力の状態をリセットします。
+4.  Response: Response モジュールでは、アクションが不正な結果を返す条件をカスタマイズできます。 行動の正確性を確保するための方法です
+5.  Advanced:高度なオプションで、データベースのタイムアウト応答時間、イベントプロセッサの遅延などのアクションの詳細設定を調整します。
 
-### API Actions
+### APIアクション
 
-#### Create action
+#### アクションを作成
 
-The process for actioning data using the API is similar to that for SQL.
+API を使用してデータを操作するプロセスは、SQL に似ています。
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  まず、 ユーザーは、アプリケーションの編集ページの左下にあるアクションリストを見つけて、アクションリストの右上にあるプラス記号をクリックする必要があります。
+2.  次に、表示されるリソース選択ボックスで対応するデータソースリストを選択します。 作成されたリソースは、対応するデータソースリストで見つけることができます。また、ここで新しいリソースを作成することもできます。 作成したリソースを選択し、「作成」をクリックすると、APIアクションが正常に作成されます。
+3.  正常に作成されたアクションは、下部パネルのformat@@0リストに表示され、クリックすると、アクションのformat@@1タブがフレームの下に表示されます。 ILLA 内の任意の HTTP API にリクエストを行うことができます。 データリクエストメソッドについては API ドキュメントを参照してください。
+4.  あなたの行動に記入したら、 「プレビュー」ボタンをクリックすると、記述したアクションが有効であるかどうかを確認でき、設定パネルに結果が表示されます。 アクションの編集が完了したら、format@@0をクリックして終了し、処理を終了します。 保存せずに別の操作に切り替えると、保存操作を完了するようポップアップが表示されます。
 
-#### Action Breakdown
+#### アクションの破壊
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Transformer: 変換器内の JavaScript 文でアクションロジックを絞り込むことができます。 例えば、action文のwhere関数の代わりにJSでフィルタ関数を使用するなどします。
+2.  イベントハンドラ: イベントハンドラを使用すると、ユーザーの操作に応じてアクションのトリガー、挿入制御、およびその他のアクションを実行できます。 カスタム JavaScript ステートメントを追加することなく、イベントに応答するために複数のイベントハンドラを追加できます。 例えば、ユーザーがボタンをクリックすると、(1) 実行するアクションをトリガーできます。 (2) 複数のドロップダウン リストとテキスト入力の状態をリセットします。
