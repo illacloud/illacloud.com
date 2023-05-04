@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
-tagCategory: doc_menu_hugging_face_endpoint_click
+title: Koncový bod obličeje
+metaTitle: Připojit ke konečnému bodu obličeje
+description: Naučte se používat Hugging Face Endpoint v ILLA
+tagCategory: doc_menu_hugging_face_endpoint_kliknutí
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>Koncový bod obličeje</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+S koncovými body rušení tváří v tvář můžete snadno nasadit transformátory, difuzory nebo libovolný model na vyhrazenou, plně spravovanou infrastrukturu. [Klikněte zde](https://ui.endpoints.huggingface.co/new) pro vytvoření koncového bodu. 
 
-### Create Hugging Face endpoint resource
+### Vytvořit zdroj koncového bodu obličeje
 
-There are two ways to add a Hugging Face Endpoint resource. 
+Existují dva způsoby, jak přidat zdroj z hugující koncovky tváře. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Zadejte `ILLA Builder` >> Klepněte na záložku `Zdroje` >> Klikněte na `Vytvořit nové` >> Zvolte `Hugging Face Endpoint` >> Nastavte informace o připojení a klikněte na tlačítko `Uložit zdroje`
+2.  Zadejte editační stránku >> klikněte na `+ Nové` v seznamu akcí >> Vyberte `Hugging Face Endpoint` >> Nastavte informace o připojení nebo klikněte na `+ Nový dokument` pro přidání nových informací o připojení
 
-### Configure connection information
+### Nastavit informace o připojení
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                                 |
+| ------------ | ---------- | ----------------------------------------------------------------------------------------- |
+| Název        | vyžadováno | Definujte název zdroje, který bude použit pro zobrazení v ILLA                            |
+| Endpoint URL | vyžadováno | vytvořte koncový bod zde: https://ui.endpoints.huggingface.co/new a získejte URL adresu.  |
+| Token        | vyžadováno | Token organizace. Můžete to získat v https://huggingface.co/settings/tokens.              |
 
-### Create Actions
+### Vytvořit akce
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Zadejte editační stránku >> klikněte na `+ Nové` v seznamu akcí >> Zvolte `Hugging Face Endpoint` >> Vyberte existující zdroj nebo přidejte nový zdroj
 
-### Configure actions
+### Konfigurace akcí
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Vlastnosti    | Požadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                                                               |
+| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ parametru | vyžadováno | Typ parametru vašeho koncového bodu. Například, pokud váš koncový bod vyžaduje textový vstup, zvolte možnost vyplnit parametr „inputs“ textem. Pokud váš koncový bod potřebuje JSON vstup, zvolte možnost vyplnit parametr "vstupy" pomocí JSON nebo klávesové hodnoty. |
+| Parametr      | vyžadováno | Zadejte svůj parametr. Pomocí {{ componentName.value }} můžete použít data komponentů.                                                                                                                                                                                  |
 
-### Use case
+### Případ použití
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+Nainstalovali jsme `openai/whisper-base`, který získá vstup do audio souboru a převede na text. Je vhodný pro zápisy z jednání, podcasty do textu atd. Dále představíme jak použít tento model pro vytvoření aplikace v ILLA Cloud.
 
-#### Step 1: Build the front-end interface with components
+#### Krok 1: Postav přední rozhraní s komponenty
 
-We have built an interface using the components such as file upload and button, as follows.
+Vytvořili jsme rozhraní pomocí komponent, jako je nahrávání souborů a tlačítko následující.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Krok 2: Přidej zdroj obličeje
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Vyplňte pole níže pro dokončení konfigurace dokumentu. [Vytvořit koncový bod](https://ui.endpoints.huggingface.co/new) a získat Endpoint URL. A získejte API token organizace v [nastavení profilu](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Krok 3: Konfigurace akce
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Nejprve vyberte typ parametru. Vezměte si příklad `openai/whisper-base`, tento model vyžaduje vstup binárního souboru, abychom změnili parametr na `Binary`.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Nastavte binární soubor, který má být předán modelu, jako data nahraná ze souborové komponenty. Například, `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Krok 4: Připojte komponenty a akce
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Přidat ovladač události k tlačítku pro spuštění akce po kliknutí na tlačítko. A nastavte hodnotu textové komponenty na {{whisper.data[0].text}} pro zobrazení výsledku konverze na textové komponenty. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+Po nastavení výše uvedených kroků je aplikace vytvořena a výsledky jsou následující.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
