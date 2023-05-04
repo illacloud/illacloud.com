@@ -1,32 +1,32 @@
 ---
-title: Connect to an API
+title: Yhdistä APIin
 metaTitle: ILLA Cloud Connect to an API
-desc: You can connect ILLA to most APIs using our native integrations. ILLA can connect to any REST, GraphQL API
-tagCategory: doc_menu_api_click
+desc: "Voit yhdistää ILLA: n useimpiin sovellusrajapintoihin käyttämällä kotoperäisiä integroituja. ILLA voi muodostaa yhteyden mihin tahansa REST, GraphQL API"
+tagCategory: doc_menu_api_klikkaa
 ---
 
 * * *
 
-## <Heading hidden>Connect to an API</Heading>
+## <Heading hidden>Yhdistä sovellusrajapintaan</Heading>
 
-Connect to any REST, GraphQL API.
+Yhdistä mihin tahansa REST-sovellukseen, GraphQL APIin.
 
-You can connect ILLA to most APIs using our native integrations. If you need to connect to an internal API, or if there isn't a supported integration, you can connect using our REST API integration or GraphQL Integration.
+Voit yhdistää ILLA: n useimpiin sovellusrajapintoihin käyttämällä kotoperäisiä integroituja. Jos sinun täytyy muodostaa yhteys sisäiseen rajapintaan, tai jos integraatiota ei tueta, voit muodostaa yhteyden käyttäen REST API integraatio tai GraphQL Integration.
 
-### 1.  Create an API resource
+### 1.  Luo API-resurssi
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the API you want to connect to, such as **REST API**. This opens the **Configure a resource** modal where you add your connection information.
+Resurssit edustavat yhteyksiä tietolähteisiin ja mitä kysyt ILLA-sovelluksistasi.Kirjaudu ILLA:han ja siirry **Resurssit** -välilehteen > klikkaa **Luo uusi** ja valitse sovellusliittymä, johon haluat yhteyden, kuten **REST API**. Tämä avaa modaalin **Määritä resurssi** johon lisäät yhteystietosi.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
   alt=""
 />
 
-At a minimum, you need the base URL of the API you want to connect to. You can also pass URL parameters, headers, etc. If your API requires authentication, you can configure that on this page as well. For example, OAuth2.0 requires an Authorization URL, Access Token URL, etc. After you enter your connection details, click **Save resource.**
+Vähintään sinä tarvitset sellaisen API:n perusosoitteen, jonka haluat muodostaa. Voit myös siirtää URL-parametrit, otsikot jne. Jos API vaatii todennusta, voit määrittää että tällä sivulla samoin. Esimerkiksi OAuth2.0 vaatii valtuutuksen URL-osoitteen, käyttöoikeuksien URL-osoitteen jne. Kun olet syöttänyt yhteystietosi, napsauta **Tallenna resurssi.**
 
-### 2.  Query your API
+### 2.  Kysy API
 
-In the App editor, click **+ New** in **Action List** > select **REST API** and choose an existed REST API or create a new one > click **create action** and update the actions with additional URL parameters, headers, etc.
+Sovelluksen editorissa klikkaa **+ Uusi** **Toimintoluettelosta** > valitse **REST API** ja valitse olemassa oleva REST API tai luo uusi > klikkaa **luo toiminto** ja päivitä toiminnot URL-parametreilla, otsikot jne.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
