@@ -1,78 +1,78 @@
 ---
-title: Upload
+title: Ανέβασμα
 metaTitle: ILLA Cloud Upload component doc
-description: Use the upload component to upload files from the local machines to any cloud storage
+description: Χρησιμοποιήστε το στοιχείο μεταφόρτωσης για να ανεβάσετε αρχεία από τις τοπικές μηχανές σε οποιοδήποτε χώρο αποθήκευσης σύννεφων
 tagCategory: doc_menu_upload_click
 ---
 
 * * *
 
-## <Heading hidden>Upload</Heading>
+## <Heading hidden>Μεταφόρτωση</Heading>
 
-The upload component is used to allow users to upload files from their local machines to any cloud storage via API. Next, we will introduce how to configure an upload component, how to associate the upload component with a cloud storage service, how to use the upload component to select an image, and display it with an image, etc.
+Το στοιχείο μεταφόρτωσης χρησιμοποιείται για να επιτρέπει στους χρήστες να ανεβάζουν αρχεία από τις τοπικές μηχανές τους σε οποιοδήποτε χώρο αποθήκευσης cloud μέσω API. Στη συνέχεια, θα παρουσιάσουμε πώς να ρυθμίσετε ένα στοιχείο μεταφόρτωσης, πώς να συσχετίσετε το στοιχείο μεταφόρτωσης με μια υπηρεσία αποθήκευσης στο cloud, πώς να χρησιμοποιήσετε το στοιχείο μεταφόρτωσης για να επιλέξετε μια εικόνα και να το εμφανίσετε με μια εικόνα, κλπ.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### Ιδιότητες
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| Ιδιότητα                            | Περιγραφή                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Τύπος                               | Ορίστε τον τύπο του στοιχείου μεταφόρτωσης, συμπεριλαμβανομένων των κουμπιών και Dropzone.                                                                                                                                                                                                                                                                                         |
+| Κείμενο                             | Το κείμενο που εμφανίζεται στην εφαρμογή μεταφόρτωσης.                                                                                                                                                                                                                                                                                                                             |
+| Τύποι επιλογής                      | Ορίστε τον τύπο επιλογής σε πολλαπλά αρχεία, ένα αρχείο ή κατάλογο.                                                                                                                                                                                                                                                                                                                |
+| Τύποι αρχείων                       | Μια λίστα με επεκτάσεις αρχείων επιτρέπεται να μεταφορτώσουν. Καμία τιμή δεν θα επιτρέπει όλους τους τύπους αρχείων.                                                                                                                                                                                                                                                               |
+| Προσάρτηση νέων επιλεγμένων αρχείων | Για να ορίσετε το επιλεγμένο νέο αρχείο που θα προσαρτηθεί στο επιλεγμένο αρχείο ή να αντικαταστήσετε το επιλεγμένο αρχείο στον τύπο επιλογής πολλαπλών αρχείων ή καταλόγου.                                                                                                                                                                                                       |
+| Λίστα αρχείων                       | Για να ορίσετε αν θα εμφανίζεται μια λίστα με τα επιλεγμένα αρχεία κάτω από την εφαρμογή μεταφόρτωσης. Το ύψος του uploader θα αλλάξει δυναμικά με βάση το μήκος της λίστας αρχείων.                                                                                                                                                                                               |
+| Τιμή Ανάλυσης                       | Προσπάθεια ανάλυσης των επιλεγμένων αρχείων, με υποστήριξη για αρχεία JSON, CSV, TSV, Excel, και TXT. Μπορούν να προσπελαστούν τα αναλυμένα δεδομένα μέσω του {{upload1.parsedValue}}. Τα αρχεία που δεν μπορούν να αναλυθούν θα είναι κενά στον πίνακα. Όλα τα αρχεία είναι διαθέσιμα ως base64 κωδικοποιημένες συμβολοσειρές στον πίνακα τιμών, ανεξάρτητα από αυτή την επιλογή. |
+| Φόρτωση                             | Αν το στοιχείο θα εμφανίζει μια ένδειξη φόρτωσης.                                                                                                                                                                                                                                                                                                                                  |
+| Απενεργοποιημένο                    | Για να ορίσετε αν θα απενεργοποιήσετε αυτό το στοιχείο και κάτω από ποιες συνθήκες θα το απενεργοποιήσετε. Για παράδειγμα, αν το συστατικό εισόδου1 είναι κενό, αυτό το στοιχείο θα πρέπει να απενεργοποιηθεί: {◆ input1.value == ‘ '}}                                                                                                                                            |
+| Υπόδειξη                            | Μια υπόδειξη που εμφανίζεται στο στοιχείο όταν οι χρήστες αιωρούνται πάνω από το στοιχείο.                                                                                                                                                                                                                                                                                         |
+| Απαιτούμενο πεδίο                   | Για να ορίσετε αν αυτό απαιτείται.                                                                                                                                                                                                                                                                                                                                                 |
+| Min size                            | Για να ορίσετε το ελάχιστο μέγεθος αρχείου που επιτρέπεται να προστεθεί.                                                                                                                                                                                                                                                                                                           |
+| Max size                            | Για να ορίσετε το μέγιστο μέγεθος αρχείου που επιτρέπεται να προστεθεί.                                                                                                                                                                                                                                                                                                            |
+| Προσαρμοσμένοι κανόνες              | Για να ορίσετε το κείμενο που θα εμφανίζεται όταν αποτύχει η επαλήθευση.                                                                                                                                                                                                                                                                                                           |
+| Απόκρυψη μηνύματος επικύρωσης       | Για να ορίσετε αν θα εμφανίζεται το μήνυμα επικύρωσης όταν αποτύχει η επαλήθευση.                                                                                                                                                                                                                                                                                                  |
+| Πλήκτρο Δεδομένων Φόρμας            | Για να ορίσετε ένα κλειδί για την εφαρμογή. Μετά την προσθήκη αυτού του στοιχείου σε μια φόρμα, αυτό το κλειδί θα χρησιμοποιηθεί για τον προσδιορισμό των δεδομένων αυτού του στοιχείου κατά την υποβολή της φόρμας.                                                                                                                                                               |
+| Hidden                              | Για να ορίσετε αν θα εμφανίζεται αυτό το εξάρτημα και υπό ποιες συνθήκες θα εμφανίζεται. Για παράδειγμα, εάν ο τρέχων χρήστης δεν είναι χρήστης Α, αυτό το στοιχείο θα πρέπει να είναι κρυμμένο: {//currentUserInfo.nickname != 'User A' }}                                                                                                                                        |
+| Παραλλαγή                           | Για να ορίσετε το στοιχείο Μεταφόρτωση κουμπιού στο Περίγραμμα ή γεμίστηκε.                                                                                                                                                                                                                                                                                                        |
+| Χρώμα θέματος                       | Για να ορίσετε το χρώμα του στοιχείου Μεταφόρτωση κουμπιού.                                                                                                                                                                                                                                                                                                                        |
 
-### Method
+### Μέθοδος
 
-You can use other components to control the Upload component. We support the following three methods:
+Μπορείτε να χρησιμοποιήσετε άλλα στοιχεία για να ελέγξετε την εφαρμογή Μεταφόρτωση. Υποστηρίζουμε τις ακόλουθες τρεις μεθόδους:
 
-| clearValidation | Used to clear the validation message                    |
-| --------------- | ------------------------------------------------------- |
-| clearValue      | Used to clear the selected                              |
-| setDisabled     | Used to set the upload component to disabled or enabled |
+| καθαρισμόςΕπικύρωση | Χρησιμοποιείται για την εκκαθάριση του μηνύματος επικύρωσης                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------ |
+| εκκαθάρισηΤιμή      | Χρησιμοποιείται για τον καθαρισμό του επιλεγμένου                                                |
+| setΑπενεργοποιημένο | Χρησιμοποιείται για να ορίσετε τη μεταφόρτωση της εφαρμογής σε απενεργοποιημένη ή ενεργοποιημένη |
 
-### Event handler
+### Χειριστής συμβάντων
 
-To trigger actions when the selected files change
+Για την ενεργοποίηση ενεργειών όταν αλλάζουν τα επιλεγμένα αρχεία
 
-### Data of Uploader
+### Δεδομένα του Uploader
 
-The upload component has some commonly used data, which can be called in the app.
+Το στοιχείο μεταφόρτωσης έχει κάποια ευρέως χρησιμοποιούμενα δεδομένα, τα οποία μπορούν να κληθούν στην εφαρμογή.
 
-`value` an array consisting of the base64 data of files. 
+`value` ένας πίνακας που αποτελείται από τα δεδομένα base64 των αρχείων. 
 
-`files` an array of objects. The keys of the objects include `lastModified`, `name`, `size`, `type`. You can use  `{{upload1.files.map(file =>file.name)}}` to get an array of file names and you can also get lastModified array, size array, type array in the same way. 
+`files` μια σειρά αντικειμένων. Τα πλήκτρα των αντικειμένων περιλαμβάνουν `lastModified`, `name`, `size`, `type`. Μπορείτε να χρησιμοποιήσετε το `{{upload1.files.map(αρχείο =>αρχείο. ame)}}` για να πάρετε μια σειρά από ονόματα αρχείων και μπορείτε επίσης να πάρετε τον τελευταίοτροποποιημένο πίνακα, τον πίνακα μεγέθους, τον πίνακα τύπου με τον ίδιο τρόπο. 
 
-### Upload files to a cloud storage service
+### Ανεβάστε αρχεία σε μια υπηρεσία αποθήκευσης cloud
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
 
-#### Upload a single file through an S3 resource
+#### Ανεβάστε ένα μόνο αρχείο μέσω ενός πόρου S3
 
-The configuration of action is as follows. 
+Η διαμόρφωση της δράσης είναι η ακόλουθη. 
 
-Upload object name
+Ανεβάστε όνομα αντικειμένου
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+Μεταφόρτωση δεδομένων
 
 ```jsx
 {{upload1.value[0]}}
@@ -80,15 +80,15 @@ Upload data
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
 
-#### Upload multiple files through an S3 resource
+#### Μεταφόρτωση πολλαπλών αρχείων μέσω ενός πόρου S3
 
-Upload object name list
+Μεταφόρτωση λίστας ονόματος αντικειμένου
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+Μεταφόρτωση λίστας δεδομένων
 
 ```jsx
 {{upload1.value}}
@@ -96,8 +96,8 @@ Upload data list
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
 
-Upload an image and display it on the image component
-Change the image source to the file base64 data of upload component. The base64 data is stored in the value attribute in array. And we should splice the file prefix with the file data. The code is as follows. 
+Ανεβάστε μια εικόνα και να την εμφανίσετε στο στοιχείο της εικόνας
+Αλλάξτε την πηγή της εικόνας στο αρχείο base64 δεδομένα της εφαρμογής μεταφόρτωση. Τα base64 δεδομένα αποθηκεύονται στο χαρακτηριστικό τιμής στον πίνακα. Και θα πρέπει να συνδέσουμε το πρόθεμα αρχείου με τα δεδομένα αρχείου. Ο κώδικας είναι ο ακόλουθος. 
 
 ```jsx
 {{'data:image/jpeg;base64,'+upload1.value[0]}}
