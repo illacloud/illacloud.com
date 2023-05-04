@@ -1,74 +1,74 @@
 ---
-title: Hugging Face Endpoint
-metaTitle: Connect to Hugging Face Endpoint
-description: Learn how to use Hugging Face Endpoint in ILLA
+title: Hyljetään Face Päätepistettä
+metaTitle: Yhdistä halauksen kasvojen päätepisteeseen
+description: Opi käyttämään hugging Face Endpoint -sovellusta ILLA:ssa
 tagCategory: doc_menu_hugging_face_endpoint_click
 ---
 
 * * *
 
-## <Heading hidden>Hugging Face Endpoint</Heading>
+## <Heading hidden>Hyljellä kasvojen päätepistettä</Heading>
 
-With Hugging Face Inference Endpoints, you can easily deploy Transformers, Diffusers or any model on dedicated, fully managed infrastructure. [Click here](https://ui.endpoints.huggingface.co/new) to create an endpoint. 
+Huijaus Face Inference Endpoints, voit helposti ottaa käyttöön Transformers, Diffusers tai mikä tahansa malli omistautunut, täysin hallinnoitu infrastruktuuri. [Klikkaa tästä](https://ui.endpoints.huggingface.co/new) luodaksesi päätepisteen. 
 
-### Create Hugging Face endpoint resource
+### Luo hugging Face endpoint -resurssi
 
-There are two ways to add a Hugging Face Endpoint resource. 
+On olemassa kaksi tapaa lisätä halauksen Face Endpoint -resurssi. 
 
-1.  Enter the `ILLA Builder` >> Click `Resources` tab >> Click `Create New` >> Choose `Hugging Face Endpoint` >> Configure the connection information and click `Save Resource`
-2.  Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Configure the connection information or click `+ New Resource` to add new connection information
+1.  Syötä `ILLA Builder` >> Klikkaa `Resources` -välilehti >> Klikkaa `Create New` >> Valitse `Hugging Face Endpoint` >> Määritä yhteystiedot ja napsauta `Save Resource`
+2.  Syötä muokkaussivu >> klikkaa `+ Uutta` toiminta-luettelossa >> Valitse `Hylkivä Face Endpoint` >> Määritä yhteystiedot tai napsauta `+ Uusi resurssi` lisätäksesi uusia yhteystietoja
 
-### Configure connection information
+### Määritä yhteystiedot
 
-| Properties   | Required | Description                                                                        |
-| ------------ | -------- | ---------------------------------------------------------------------------------- |
-| Name         | required | Define a resource name that will be used for display in ILLA                       |
-| Endpoint URL | required | create Endpoint here: https://ui.endpoints.huggingface.co/new and get the URL.     |
-| Token        | required | The organization token. You can get it in https://huggingface.co/settings/tokens.  |
+| Ominaisuudet | Pakollinen | Kuvaus                                                                         |
+| ------------ | ---------- | ------------------------------------------------------------------------------ |
+| Nimi         | vaadittu   | Määritä resurssin nimi, jota käytetään näytettäväksi ILLA:ssa                  |
+| Endpoint URL | vaadittu   | luo Endpoint täältä: https://ui.endpoints.huggingface.co/new ja hanki URL.     |
+| Pääsymerkki  | vaadittu   | Organisaatio merkitty. Voit saada sen https://huggingface.co/settings/tokens.  |
 
-### Create Actions
+### Luo Toiminnot
 
-Enter the edit page >> click `+ New` in the action list >> Choose `Hugging Face Endpoint` >> Choose an existing resource or add a new resource
+Syötä muokkaussivu >> klikkaa `+ Uutta` toiminta-luettelossa >> Valitse `Hugging Face Endpoint` >> Valitse olemassa oleva resurssi tai lisää uusi resurssi
 
-### Configure actions
+### Määritä toiminnot
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parameter type | required | The parameter type of your Endpoint. For example, if your Endpoint needs an text input, choose fill in “inputs” parameter with text. If your Endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Ominaisuudet      | Pakollinen | Kuvaus                                                                                                                                                                                                                            |
+| ----------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parametrin tyyppi | vaadittu   | Päätepisteen parametrin tyyppi. Esimerkiksi, jos Endpoint tarvitsee tekstin syötteen, valitse täytä “syötteet” parametri tekstillä. Jos Endpoint tarvitsee JSON syötteen, valitse täytä “syötteet” parametri JSON tai avain-arvo. |
+| Parametri         | vaadittu   | Syötä parametri. Käytä {{ componentName.value }} komponenttien tietojen käyttämiseen.                                                                                                                                             |
 
-### Use case
+### Käytä laatikkoa
 
-We have deployed `openai/whisper-base` which gets an audio file input and converts into text. It is suitable for meeting minutes, podcasts to text, etc.  Next we will introduce how to use this model to build an application in ILLA Cloud.
+Olemme ottaneet käyttöön `openai/whisper-base`, joka saa äänitiedoston syötteen ja muuntaa tekstiksi. Se sopii kokousminuutteja, podcasteja tekstiin, jne. Seuraavaksi esittelemme miten käyttää tätä mallia rakentaaksemme sovelluksen ILLA Cloudiin.
 
-#### Step 1: Build the front-end interface with components
+#### Vaihe 1: Rakenna etupään käyttöliittymä komponentteihin
 
-We have built an interface using the components such as file upload and button, as follows.
+Olemme rakentaneet käyttöliittymän käyttäen komponentteja, kuten tiedoston lataus ja painike, seuraavasti.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
 
-#### Step 2: Add a Hugging Face resource
+#### Vaihe 2: Lisää hugging Face -resurssi
 
-Fill in the fields shown below to finish the resource configuration. [Create an Endpoint](https://ui.endpoints.huggingface.co/new) and get the Endpoint URL. And get the organization API token in [profile settings](https://huggingface.co/settings/tokens). 
+Täytä alla näkyvät kentät viimeistelläksesi resurssiasetukset. [Luo Endpoint](https://ui.endpoints.huggingface.co/new) ja hanki Endpoint URL. Ja hanki organisaation API-tunniste [profiilin asetukset](https://huggingface.co/settings/tokens). 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### Step 3: Configure an Action
+#### Vaihe 3: Toiminnon määrittäminen
 
-Select a parameter type first. Take `openai/whisper-base` as an example, this model requires binary file input so we change the parameter to `Binary`.
+Valitse parametrin tyyppi ensin. Ota `openai/whisper-base` esimerkkinä, tämä malli vaatii binääritiedoston syötteen, jotta muutamme parametrin `Binary`.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-Set the binary to be passed to the model as the file data uploaded from the file upload component. For example, `{{upload1.value[0]}}`
+Asettaa binäärin, joka voidaan siirtää malliin tiedostoon ladatun tiedoston komponentin avulla. Esimerkiksi `{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### Step 4: Connect the components and actions
+#### Vaihe 4: Yhdistä komponentit ja toiminnot
 
-Add an event handler to the button to trigger the action run when the button is clicked. And set the value of text component to {{whisper.data[0].text}} to display the convert result on text component. 
+Lisää tapahtuman käsittelijä nappiin käynnistääksesi sen toiminnon, kun painiketta napsautetaan. Ja aseta tekstin komponentin arvo arvoksi {{whisper.data[0].text}} näyttääksesi muunnostuloksen tekstinkomponentilla. 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-After the above steps are configured, the application is created and the running results are as follows.
+Kun edellä mainitut vaiheet on määritetty, sovellus luodaan ja käynnissä olevat tulokset ovat seuraavat.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
