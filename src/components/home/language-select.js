@@ -5,33 +5,13 @@ import { useClickAway } from 'react-use'
 import { SelectIcon, SelectIconBlack } from '@/img/home/svg'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
-import {getLanString} from '@/utils/languageMap'
+import { generateLanguageOptions } from '@/constants/language'
+import { useTranslation } from 'next-i18next'
 
-const options = [
-  {
-    label: 'English',
-    value: 'en-US',
-    tagCategory: 'homepage_menu_language_en_click',
-  },
-  {
-    label: '简体中文',
-    value: 'zh-CN',
-    tagCategory: 'homepage_menu_language_zh_click',
-  },
-  {
-    label: '日本語',
-    value: 'ja-JP',
-    agCategory: 'homepage_menu_language_ja_click',
-  },
-  {
-    label: '한국인',
-    value: 'ko-KR',
-    agCategory: 'homepage_menu_language_ko_click',
-  }
-]
 
 export const LanguageSelect = ({ buttonColorChange = true }) => {
   const [expandPanel, setExpandPanel] = useState(false)
+  const { t } = useTranslation("common")
 
   const ref = useRef(null)
 
@@ -63,13 +43,13 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
         }}
       >
         <span>
-          {getLanString(router.locale)}
+          {t(`language.${router.locale || "en-US"}`)}
         </span>
         {buttonColorChange ? <SelectIcon /> : <SelectIconBlack />}
       </div>
       <div
         className={clsx(
-          'text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center justify-center w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)] overflow-y-hidden',
+          'max-h-[180px] overflow-y-auto text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center  w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]',
           {
             'bg-gray-02 text-white-01': buttonColorChange,
             'bg-white text-gray-01': !buttonColorChange,
@@ -79,7 +59,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           height: expandPanel ? 'auto' : 0,
         }}
       >
-        {options.map((option) => (
+        {generateLanguageOptions(t).map((option) => (
           <Link
             legacyBehavior
             key={option.value}

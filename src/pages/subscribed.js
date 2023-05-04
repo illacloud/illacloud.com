@@ -23,7 +23,7 @@ const Subscribed = () => {
 }
 export const getServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['subscribe', 'home'])),
+    ...(await serverSideTranslations(locale, ['subscribe', 'home', "common"])),
   },
 })
 

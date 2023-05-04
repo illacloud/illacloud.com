@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import { Nav } from '@/components/home/Nav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -9,30 +9,21 @@ import style from '@/components/LandingPage/index.module.css'
 import { useRaf } from 'react-use'
 import { LpHeader } from '@/components/LandingPage/LpHeader';
 import { LpTemplate } from '@/components/LandingPage/LpTemplate';
-import { formatLpSecondContent } from '@/utils/formatLpList'
 import { getStars } from '@/utils/getStars';
 import { pageMap } from '@/constants/landingPage';
 
 
-const LandingPageSecond = ({ content, pageName, starCounts }) => {
-  const { t } = useTranslation('landingPage')
+const LandingPageSecond = ({ pageName, name, starCounts }) => {
+  const { t } = useTranslation('landingPageDetails')
   const [isBookShow, setIsBookShow] = useState(false)
+  const content = t(name, {
+    returnObjects: true
+  })
+
   const { metaTitle, metaDescription } = content
-  const headerContent = useMemo(() => {
-    const { name, title, description } = content
-    return {
-      title,
-      description,
-      btnText: `${t('build-with', { name })}`,
-      isShowBack: true,
-      isIntegration: pageName === 'integrations',
-      name,
-    }
-  }, [content, pageName, t])
   const step = useRaf(1000, 0)
 
   if (!content.metaTitle) return null
-
   return (
     <>
       <Head>
@@ -42,7 +33,7 @@ const LandingPageSecond = ({ content, pageName, starCounts }) => {
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
         <div className={style.lpContainer}>
-          <LpHeader content={headerContent} />
+          <LpHeader title={t(`${name}.title`)} description={t(`${name}.description`)} btnText={t("build_with", { name })} name={name} isShowBack backText={t(`back_to_${pageName}`)} pageName={pageName} />
           <LpTemplate />
         </div>
       </div>
@@ -67,13 +58,12 @@ export const getServerSideProps = async ({ locale, params, query }) => {
     };
   }
   const starCounts = await getStars()
-  const content = await formatLpSecondContent(name, locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['landingPage', 'home'])),
-      content: content,
+      ...(await serverSideTranslations(locale, ['landingPageDetails', 'home', "common"])),
       starCounts,
       pageName,
+      name,
     },
   }
 }

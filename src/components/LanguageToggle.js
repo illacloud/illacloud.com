@@ -2,7 +2,7 @@ import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
-import {tempGetLanString} from '@/utils/languageMap'
+import { useTranslation } from 'next-i18next'
 
 const languages = [
   {
@@ -28,6 +28,11 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
   const router = useRouter()
   const curLanguage = router.locale
 
+  const findLanguage = languages.find(value => {
+    return router.locale === value.value
+  })?.label
+
+
   return (
     <Listbox
       value={curLanguage}
@@ -38,7 +43,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
         <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
-          {tempGetLanString(router.locale)}
+          {findLanguage ?? "English"}
         </span>
       </Listbox.Button>
       <Listbox.Options

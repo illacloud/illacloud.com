@@ -12,9 +12,9 @@ import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
-import {getStars} from '@/utils/getStars';
+import { getStars } from '@/utils/getStars';
 
-const Home = ({starCounts}) => {
+const Home = ({ starCounts }) => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
@@ -50,7 +50,7 @@ const Home = ({starCounts}) => {
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={Math.floor( starCounts * step)}
+          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -119,7 +119,7 @@ export const getServerSideProps = async ({ locale }) => {
   const starCounts = await getStars()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home'])),
+      ...(await serverSideTranslations(locale, ['home', "common"])),
       starCounts,
     },
   }

@@ -2,11 +2,11 @@ import { Fragment } from 'react';
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
-import { templateContent } from '@/constants/landingPage';
 import { LearnMore } from '@/components/LandingPage/LearnMore';
 
 export const LpTemplate = () => {
-  const { t } = useTranslation('landingPage')
+  const { t } = useTranslation('landingPageDetails')
+  const templateContent = t("second-page.classify", { returnObjects: true })
   const onClick = (target) => {
     sendTagEvent({
       action: 'click',
@@ -15,6 +15,7 @@ export const LpTemplate = () => {
       value: target,
     })
   }
+
   return (
     <div className={style.templateContainer}>
       {templateContent && templateContent.map(({ label, title, description, link, itemList, btnText, target }) => (

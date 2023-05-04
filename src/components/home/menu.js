@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { sendTagEvent } from '@/utils/gtag'
-import { getLanString } from '@/utils/languageMap'
+import { generateLanguageOptions } from '@/constants/language'
 
 const communityOptions = [
   {
@@ -36,28 +36,6 @@ const communityOptions = [
   },
 ]
 
-const options = [
-  {
-    label: 'English',
-    value: 'en-US',
-    tagCategory: 'homepage_menu_language_en_mob_click',
-  },
-  {
-    label: '简体中文',
-    value: 'zh-CN',
-    tagCategory: 'homepage_menu_language_zh_mob_click',
-  },
-  {
-    label: '日本語',
-    value: 'ja-JP',
-    agCategory: 'homepage_menu_language_ja_mob_click',
-  },
-  {
-    label: '한국인',
-    value: 'ko-KR',
-    agCategory: 'homepage_menu_language_ko_mob_click',
-  }
-]
 
 
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
@@ -65,6 +43,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [languageListExpand, setLanguageListExpand] = useState(false)
   const [communityListExpand, setCommunityListExpand] = useState(false)
   const { t } = useTranslation('home')
+  const { t: publicT } = useTranslation("common")
   const router = useRouter()
 
   const productOptions = [
@@ -133,22 +112,22 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         style={{ height: productListExpand ? 160 : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
-        {productOptions.map(({label, value, tagCategory, target}) => (
+        {productOptions.map(({ label, value, tagCategory, target }) => (
           <Link legacyBehavior href={value} key={label}>
-          <a
-            className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
-            onClick={() => {
-              closeMenu && closeMenu()
-              sendTagEvent({
-                action: 'click',
-                category: tagCategory,
-                label: target || label,
-              })
-            }}
-          >
-            {label}
-          </a>
-        </Link>
+            <a
+              className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
+              onClick={() => {
+                closeMenu && closeMenu()
+                sendTagEvent({
+                  action: 'click',
+                  category: tagCategory,
+                  label: target || label,
+                })
+              }}
+            >
+              {label}
+            </a>
+          </Link>
         ))}
       </div>
       <Link legacyBehavior href="/docs/about-illa">
@@ -255,16 +234,16 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_language_mob_click',
-            label: getLanString(router.locale),
+            label: publicT(`language.${router.locale || "en-US"}`),
           })
           setLanguageListExpand(() => !languageListExpand)
         }}
         className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px]  "
       >
-        {getLanString(router.locale)} <SelectIcon />
+        {publicT(`language.${router.locale || "en-US"}`)} <SelectIcon />
       </span>
-      <div>
-        {options.map(({ value, label, tagCategory }) => (
+      <div className='max-h-[180px] overflow-y-auto'>
+        {generateLanguageOptions(publicT).map(({ value, label, tagCategory }) => (
           <Link
             legacyBehavior
             href={router.asPath}
@@ -273,7 +252,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           >
             <a
               style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
-              className={clsx('transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]', {'hidden': router.locale === value})}
+              className={clsx('transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px] ', { 'hidden': router.locale === value })}
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
@@ -282,7 +261,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
                 })
               }}
             >
-              {getLanString(value)}
+              {publicT(`language.${value}`)}
             </a>
           </Link>
         ))}
