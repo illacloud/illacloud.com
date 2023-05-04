@@ -186,7 +186,6 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                         let isActive = item.match
                           ? item.match.test(router.asPath)
                           : item.href === router.pathname
-                        // console.log(item, 'item')
                         return (
                           <NavItem
                             key={i}
@@ -196,7 +195,6 @@ function Nav({ nav, children, fallbackHref, mobile = false }) {
                             isPublished={item.published !== false}
                             fallbackHref={fallbackHref}
                             onClick={() => {
-                              console.log(item.tagCategory, window.gtag, 'item')
                               item.tagCategory &&
                                 sendTagEvent({
                                   action: 'click',
@@ -259,8 +257,8 @@ const TopLevelAnchor = forwardRef(
               isActive
                 ? [activeBackground, 'dark:highlight-white/10']
                 : mobile
-                ? 'dark:bg-slate-700 dark:highlight-white/5'
-                : 'dark:bg-slate-800 dark:highlight-white/5',
+                  ? 'dark:bg-slate-700 dark:highlight-white/5'
+                  : 'dark:bg-slate-800 dark:highlight-white/5',
             )}
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
