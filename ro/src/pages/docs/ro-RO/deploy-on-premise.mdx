@@ -1,0 +1,30 @@
+---
+title: Lansare la premise
+metaTitle: Lansarea ILLA Cloud la premise
+desc: ILLA poate fi auto-hostec pe server sau mașină în loc să utilizeze un furnizor terț de servicii
+tagCategory: doc_meniu_deploy_premise_click
+---
+
+* * *
+
+# <Heading hidden>Lansare la premise</Heading>
+
+Autogăzduire ILLA înseamnă găzduirea și gestionarea platformei ILLA pe propriul server sau mașină în loc să utilizați un furnizor terț de servicii. Această abordare este adesea considerată mai sigură și privată, deoarece aveți un control complet asupra datelor și utilizării acestora.
+
+ILLA va oferi o versiune „cloud-host” și opțiunea de a vă configura instanța pe diferite platforme în curând.
+
+## Autogăzduit
+
+Autogazduirea ILLA pe propria infrastructură vă permite să o integrați perfect cu configurația existentă fără a fi nevoie să păstrați o configurație separată. Acest lucru vă permite să utilizați funcțiile și capacitățile infrastructurii existente și să le extindeți la ILLA. Printre avantajele implementării ILLA pe infrastructura dvs. se numără:
+
+### Securitate
+
+Gazduind ILLA pe propria ta infrastructură, îți poți păstra datele la fața locului și să te asiguri că cheile API sau datele de securitate nu părăsesc niciodată serverul. Acest lucru îți permite să aplici aceleași reguli de securitate la ILLA pe care le aplici oricărei alte aplicații de pe server. Aplicațiile pe care le construiești folosind ILLA vor fi găzduite pe infrastructura ta și în interiorul rețelelor tale corporative. De asemenea, poți alege să găzduiești ILLA pe rețelele interne din spatele unui firewall și să o configurezi pentru a lucra cu domeniul personal și cu politicile de securitate.
+
+### Baza de date internă
+
+Prin auto-găzduire ILLA, vă puteți conecta la o bază de date care rulează pe aceeași mașină sau intranet și îl puteți folosi pentru a construi aplicații. ILLA folosește MongoDB pentru a stoca datele aplicațiilor și Redis pentru a stoca informațiile sesiunii și geocutiile non-critice. Dacă vrei să integrezi ILLA cu servere MongoDB personalizate sau Redis găzduite pe infrastructura ta, va trebui să modificați configurația variabilelor de mediu și să le orientați către instanțele dumneavoastră personalizate MongoDB/Redis.
+
+### Actualizări
+
+Prin auto-găzduire ILLA, puteți configura programe de actualizare mai flexibile și alte activități de întreținere. Puteți urma pașii furnizați pentru a configura o fereastră de mentenanță și programa actualizări automate. Acest lucru vă permite să mențineți și să actualizați instanța ILLA într-un mod convenabil pentru dvs. și pentru organizația dvs.
