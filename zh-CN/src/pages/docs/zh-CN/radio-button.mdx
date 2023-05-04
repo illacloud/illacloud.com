@@ -2,14 +2,14 @@
 title: 单选按钮（Radio button）
 metaTitle: 单选按钮组件
 description: 通过单选按钮，展示所有选项，并允许选择其中一项
-tagCategory: doc_menu_radio_button_click
+tagCategory: doc_menu_radio_buton_click
 ---
 
 * * *
 
 ## <Heading hidden>单选按钮</Heading>
 
-单选按钮是一种选择输入组件，允许用户从预定义选项组中选择一个选项。它显示为一个圆角正方形按钮，用户可以选择或取消选择。当选择了单选按钮时，同一组中的所有其他单选按钮都会自动取消选择，确保只能选择一个选项。单选按钮通常用于表单、问卷和调查中，帮助用户从一系列选项中作出单一选择。 It appears as a rounded square button, which can be selected or deselected by users. When a radio button is selected, all other radio buttons in the same group are automatically deselected, ensuring that only one option can be selected at a time. Radio buttons are commonly used in forms, questionnaires, and surveys to help users make a single choice from a list of options.
+单选按钮是一种选择输入组件，允许用户从预定义选项组中选择一个选项。它显示为一个圆角正方形按钮，用户可以选择或取消选择。当选择了单选按钮时，同一组中的所有其他单选按钮都会自动取消选择，确保只能选择一个选项。单选按钮通常用于表单、问卷和调查中，帮助用户从一系列选项中作出单一选择。 它是一个四舍五入的方形按钮，可以由用户选择或去除选择。 当选择一个无线电按钮时，同一组中的所有其他无线电按钮都会自动取消选定。 确保一次只能选择一个选项。 无线电按钮通常用于表格、问卷和调查，以帮助用户从选项列表中作出单一选择。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
 
@@ -17,7 +17,7 @@ tagCategory: doc_menu_radio_button_click
 
 #### 手动选项
 
-手动添加新选项或删除选项，并逐个配置选项。选项的属性如下： The properties of options are as follows: 
+手动添加新选项或删除选项，并逐个配置选项。选项的属性如下： 备选办法的特性如下： 
 
 | 属性 | 描述       |
 | -- | -------- |
@@ -27,7 +27,7 @@ tagCategory: doc_menu_radio_button_click
 
 #### 映射选项
 
-您还可以通过将标签和值属性映射到相应的数据字段来添加来自数据源的选项。您可以通过这种方式从数据库动态获取选项。在本文末尾，我们将通过一个示例演示如何使用它。 You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+您还可以通过将标签和值属性映射到相应的数据字段来添加来自数据源的选项。您可以通过这种方式从数据库动态获取选项。在本文末尾，我们将通过一个示例演示如何使用它。 您可以通过这种方式动态地从数据库中获取选项。 在本条末尾，我们将展示如何通过一个例子来使用它。
 
 | 属性  | 描述                   |
 | --- | -------------------- |
@@ -38,33 +38,33 @@ tagCategory: doc_menu_radio_button_click
 
 #### 其他属性
 
-| 属性          | 描述                                                                                                                      |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 默认值         | The initial value of the component. 组件的初始值。您可以通过在{{}}中键入JavaScript动态更改初始值。                                              |
-| Placeholder | 当输入字段为空时，将显示该值。                                                                                                         |
-| 标签          | 用户显示的字段名称                                                                                                               |
-| Caption     | 用于详细描述字段的标题                                                                                                             |
-| 隐藏标签        | 设置是否显示标签                                                                                                                |
-| 位置          | 设置标签相对于组件的位置                                                                                                            |
-| 对齐方式        | 设置标签的对齐方式                                                                                                               |
-| 宽度          | 当标签在组件的左侧时，设置标签的宽度比                                                                                                     |
-| 事件处理程序      | 在响应组件事件时触发查询、控制组件或调用其他API。                                                                                              |
-| 禁用          | Control the status of whether the component is disabled. 控制组件是否禁用的状态。当禁用时，无法修改或聚焦组件。                                    |
-| 只读          | 控制组件是否为只读状态。只读的组件可以被选择和聚焦，但不能被修改。 A read-only component can be selected and focused but cannot be modified.             |
-| 显示清除按钮      | 设置是否显示清除按钮                                                                                                              |
-| 工具提示        | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
-| 必填字段        | 仅在开关打开时有效。                                                                                                              |
-| 自定义规则       | editor.inspect.setter_tooltip.custom_rule                                                                               |
-| 隐藏验证消息      | 您可以通过切换隐藏状态来隐藏错误消息，当输入值不正确时。您可以通过JavaScript动态更改隐藏状态。 You can dynamically change the hidden status by JavaScript.        |
-| 表单数据键       | 构造数据属性时指定包装表单组件的键。                                                                                                      |
-| 隐藏          | 动态控制组件是否隐藏。您可以通过动态布尔值更改隐藏状态。 You can change the hidden status through dynamical boolean value.                          |
-| 主题颜色        | 选择组件的主题颜色                                                                                                               |
+| 属性     | 描述                                                                            |
+| ------ | ----------------------------------------------------------------------------- |
+| 默认值    | 组件的初始值。 组件的初始值。您可以通过在{{}}中键入JavaScript动态更改初始值。                                |
+| 占位符    | 当输入字段为空时，将显示该值。                                                               |
+| 标签     | 用户显示的字段名称                                                                     |
+| 标题     | 用于详细描述字段的标题                                                                   |
+| 隐藏标签   | 设置是否显示标签                                                                      |
+| 位置     | 设置标签相对于组件的位置                                                                  |
+| 对齐方式   | 设置标签的对齐方式                                                                     |
+| 宽度     | 当标签在组件的左侧时，设置标签的宽度比                                                           |
+| 事件处理程序 | 在响应组件事件时触发查询、控制组件或调用其他API。                                                    |
+| 禁用     | 控制组件是否被禁用的状态。 控制组件是否禁用的状态。当禁用时，无法修改或聚焦组件。                                     |
+| 只读     | 控制组件是否为只读状态。只读的组件可以被选择和聚焦，但不能被修改。 一个只读组件可以被选择和集中，但不能被修改。                      |
+| 显示清除按钮 | 设置是否显示清除按钮                                                                    |
+| 工具提示   | 用户可以在此输入组件工具提示。 工具提示将在其焦点时显示。 支持Markdown 格式。                                  |
+| 必填字段   | 仅在开关打开时有效。                                                                    |
+| 自定义规则  | 编辑器.setter_tooltip.custom_rule                                                |
+| 隐藏验证消息 | 您可以通过切换隐藏状态来隐藏错误消息，当输入值不正确时。您可以通过JavaScript动态更改隐藏状态。 您可以用JavaScript动态地更改隐藏状态。 |
+| 表单数据键  | 构造数据属性时指定包装表单组件的键。                                                            |
+| 隐藏     | 动态控制组件是否隐藏。您可以通过动态布尔值更改隐藏状态。 您可以通过动态布尔值更改隐藏状态。                                |
+| 主题颜色   | 选择组件的主题颜色                                                                     |
 
 ### 方法
 
-您可以使用其他组件来控制组件。我们支持以下三种方法： We support the following three methods:
+您可以使用其他组件来控制组件。我们支持以下三种方法： 我们支持以下三种方法：
 
-#### setValue
+#### 设置值
 
 设置所选选项，例如{{”value1”}}
 
@@ -72,7 +72,7 @@ tagCategory: doc_menu_radio_button_click
 | -- | -------- |
 | 值  | 所选选项的值。  |
 
-#### clearValue
+#### 清除值
 
 清除所选选项
 
@@ -80,7 +80,7 @@ tagCategory: doc_menu_radio_button_click
 
 验证输入信息是否合法
 
-#### clearValidate
+#### 清除验证
 
 清除验证消息
 
@@ -88,15 +88,15 @@ tagCategory: doc_menu_radio_button_click
 
 我们支持监听单选按钮组件的`onChange`事件。 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a group of radio buttons, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+当所选选项更改时，它可以触发指定的动作。 这意味着当用户从一组无线电按钮中选择不同的选项。 可根据选定的备选办法采取特定行动。 例如，以一种网页形式出现。 选择一个不同的选项可以触发不同表单字段的显示或提交表单到另一个目的地。 这样，用户选择的选项可以影响他们正在使用的软件或网络应用程序的行为。 根据用户输入触发特定行动的能力是交互式软件设计的一个重要方面，可以提高软件的可用性和功能。
 
 ### 数据
 
 组件具有一些常用数据，可以通过{{componentName.propertyName}}在应用程序中调用。
 
-| 属性名称  | 描述          |
-| ----- | ----------- |
-| value | 所选选项的值的字符串  |
+| 属性名称 | 描述          |
+| ---- | ----------- |
+| 值    | 所选选项的值的字符串  |
 
 ### 使用案例
 
@@ -104,7 +104,7 @@ When the selected option changes, it can trigger a specified action. This means 
 
 #### 第1步添加操作
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. 我们创建了一个名为`selection`的表，包括5个列：`options_en`、`options_jp`、`options_zh`、`options_kr`、`value`。我们将选项值存储在`value`中，并将不同语言的选项标签存储在其他列中。 
+我们创建了一个叫做`selection`的表格，包括5列：`options_en`、`options_jp`、`options_zh`、`options_kr`、`value`。 我们创建了一个名为`selection`的表，包括5个列：`options_en`、`options_jp`、`options_zh`、`options_kr`、`value`。我们将选项值存储在`value`中，并将不同语言的选项标签存储在其他列中。 
 
 创建一个名为`postgresql1`的操作以列出`selection`中的所有数据
 
