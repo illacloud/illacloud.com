@@ -1,8 +1,8 @@
 ---
 title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
-tagCategory: doc_menu_text_click
+metaTitle: ILLA Text komponentního doku
+description: Zobrazit data s textovou komponentou
+tagCategory: doc_menu_text_klikněte
 ---
 
 * * *
@@ -11,28 +11,28 @@ tagCategory: doc_menu_text_click
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### Vlastnosti
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| Majetek             | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                    |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Obsah               | Nastavte text zobrazený na Textové komponentě. Markdown a prostý text jsou podporovány.                                                                                                                                      |
+| Šipka nástroje      | Nápověda zobrazená na komponentě při přejetí komponenty.                                                                                                                                                                     |
+| Vodorovné zarovnání | Chcete-li nastavit vodorovnou pozici textového obsahu v komponentě                                                                                                                                                           |
+| Svislé zarovnání    | Možnost nastavit vertikální umístění textu v komponentě                                                                                                                                                                      |
+| Hidden              | Chcete-li nastavit, zda má být tato komponenta zobrazena a za jakých podmínek ji zobrazí. Například, pokud aktuální uživatel není Uživatel A, tato komponenta by měla být skryta: {{ currentUserInfo.nickname != 'User A' }} |
+| Barva               | Chcete-li nastavit barvu textu ve formátu malby                                                                                                                                                                              |
+| Velikost textu      | Možnost nastavit velikost textu ve formátu malby                                                                                                                                                                             |
 
-### Use Markdown
+### Použít Markdown
 
-#### Headline
+#### Nadpis
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# Nadpis 1
+## Nadpis 2
+### Nadpis 3
 ```
 
 #### Bold & Italics
@@ -44,48 +44,48 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### Seznam úkolů
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### Seznam úkolů
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] 🚀 Vytvořte novou aplikaci na ILLA Cloud
+2. [ ] :telefon: Hovor s Monikou
+3. [x] 🍷 Nechte večeři s **Elsa**
+4. [x] 💃 Hrajte `Jen tanec` půl hodiny
 ```
 
-#### Bulleted list
+#### Bizovaný seznam
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
-### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+### Zakázaný seznam
+- Spolupráce v reálném čase: Můžeme vše vytvořit společně v reálném čase.
+- 🛠️ Vlastní Plugin: Vytvořte jakýkoliv vlastní plugin pro to, co chcete.
+- 🤖 Automatická podpora: Připojte vše a automatizujte je za 5 sekund.
+- 🖥️ Samohostitel: podporuje Docker a k8s
 ```
 
-#### Table
+#### Stupeň úvěrové kvality 1
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
 ```jsx
-### Table
-| Name        | Link   |  Description  |
-| :--------  | :-------  | :----  |
-| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
-| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
-| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+### Tabulka
+| Jméno | Popis |
+| :-------- | :------- | :---- |
+| ILLA Cloud | [https://cloud. llacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
+| ILLA GitHub | [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
+| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Offical web
 ```
 
-### Display dynamic data
+### Zobrazit dynamická data
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+Použijte `{{` pro získání dat z jiných komponentů, akcí nebo globálních proměnných. Například zobrazit přezdívku aktuálního uživatele:
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Dobrý den! '+ currentUserInfo.nickname }}
 ```
