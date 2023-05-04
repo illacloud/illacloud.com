@@ -1,8 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
+import { isColorKey } from '@/utils/getColorKey';
 
-export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
+export const ContentTitle = ({ tittleList, color }) => {
   const { t } = useTranslation('home')
   const firstHalf = tittleList.slice(0, 2)
   const lastHalf = tittleList.slice(2)
@@ -15,16 +16,16 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
               t(key) && (
                 <span
                   className={
-                    colorationTitle.includes(t(key))
+                    isColorKey(key)
                       ? style.contentColorTitle
                       : ''
                   }
                   key={key}
                 >
-                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] xl:h-[72px] rounded-[32px] z-[-1]'/>}
+                  {isColorKey(key) && <img src={color} className='w-full absolute h-[36px] xl:h-[72px] rounded-[32px] z-[-1]' alt=''/>}
                   <span>{t(key)}</span>
                 </span>
-              ),
+              )
           )}
         </div>
       )}
@@ -35,13 +36,13 @@ export const ContentTitle = ({ tittleList, colorationTitle, color }) => {
               t(key) && (
                 <span
                   className={
-                    colorationTitle.includes(t(key))
-                      ? style.contentColorTitle
-                      : ''
+                    isColorKey(key)
+                    ? style.contentColorTitle
+                    : ''
                   }
                   key={key}
                 >
-                  {colorationTitle.includes(t(key)) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt={t(key)}/>}
+                  {isColorKey(key) && <img src={color} className='w-full absolute h-[36px] lg:h-[72px] rounded-[32px] z-[-1]' alt='' />}
                   <span>{t(key)}</span>
                 </span>
               ),

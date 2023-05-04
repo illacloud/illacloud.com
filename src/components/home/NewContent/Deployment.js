@@ -8,13 +8,12 @@ import Link from 'next/link'
 
 export const Deployment = () => {
   const { t } = useTranslation('home')
-  const { items, desc, tittleList, colorationTitle, color } = deploymentContent
+  const { items, desc, tittleList,color } = deploymentContent
   return (
     <div className={style.deployment}>
       <div className="flex flex-col xl:gap-[16px] gap-[12px]">
         <ContentTitle
           tittleList={tittleList}
-          colorationTitle={colorationTitle}
           color={color}
         />
         <div className={style.deploymentDesc}>{t(desc)}</div>

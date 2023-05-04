@@ -13,7 +13,6 @@ export const contentList = [
       'content.sql-generate.title-1',
       'content.sql-generate.title-2',
     ],
-    colorationTitle: ['Generate', '智能生成', '생성하다', '生成'],
     color: 'https://cdn.illacloud.com/official-website/img/home/bg_generate.png',
     linkUrl: '/docs/sql-generate',
     linkContent: 'content.sql-generate.goto',
@@ -27,7 +26,6 @@ export const contentList = [
       'content.for-developer.title-1',
       'content.for-developer.title-2',
     ],
-    colorationTitle: ['Developers', '开发者', '개발자', '開発者'],
     color: 'https://cdn.illacloud.com/official-website/img/home/bg_developers.png',
     linkUrl: '/docs/javascript',
     linkContent: 'content.for-developer.goto',
@@ -42,7 +40,6 @@ export const contentList = [
       'content.date-integrate.title-3',
       'content.date-integrate.title-4',
     ],
-    colorationTitle: ['Any', '整合', 'データベース', '어느'],
     color: 'https://cdn.illacloud.com/official-website/img/home/bg_any.png',
     linkUrl: '/docs/integration-list',
     linkContent: 'content.date-integrate.goto',
@@ -73,7 +70,6 @@ export const contentList = [
       'content.collaborative-develop.title-3',
       'content.collaborative-develop.title-4',
     ],
-    colorationTitle: ['Collaboration', '协同', '共同開発', '협동'],
     color: 'https://cdn.illacloud.com/official-website/img/home/bg_collaboration.png',
     linkUrl: '/docs/collaboration',
     linkContent: 'content.collaborative-develop.goto',
@@ -88,7 +84,6 @@ export const contentList = [
       'content.ui-library.title-3',
       'content.ui-library.title-4',
     ],
-    colorationTitle: ['fully', '完善', '完全な', '충분히'],
     color: 'https://cdn.illacloud.com/official-website/img/home/bg_fully.png',
     linkUrl: '/docs/illa-components',
     linkContent: 'content.ui-library.goto',
@@ -98,7 +93,6 @@ export const contentList = [
 ]
 export const deploymentContent = {
   tittleList: ['deployment.title-1', 'deployment.title-2'],
-  colorationTitle: ['Flexible', '灵活', '유연한', 'フレキシブル'],
   color: 'https://cdn.illacloud.com/official-website/img/home/bg_flexible.png',
   desc: 'deployment.introduction',
   items: [
@@ -133,7 +127,6 @@ export const deploymentContent = {
 
 export const partnerContent = {
   tittleList: ['partner'],
-  colorationTitle: ['Partner', '合作伙伴', '相棒', '파트너'],
   becomePartner: 'Become a partner',
   color: 'https://cdn.illacloud.com/official-website/img/home/bg_partner.png',
   partners: [

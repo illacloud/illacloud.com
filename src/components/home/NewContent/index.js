@@ -13,7 +13,6 @@ const ContentWrapper = ({ contentValue }) => {
     tags,
     desc,
     tittleList,
-    colorationTitle,
     color,
     linkUrl,
     linkContent,
@@ -26,7 +25,6 @@ const ContentWrapper = ({ contentValue }) => {
       <div className="flex flex-col items-start w-[520px] gap-[12px] lg:gap-[24px]">
         <ContentTitle
           tittleList={tittleList}
-          colorationTitle={colorationTitle}
           color={color}
         />
         <p className={style.contentDesc}>{t(desc)}</p>
