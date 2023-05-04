@@ -1,132 +1,134 @@
 ---
-title: Radio button
-metaTitle: Radio button component
-description: Display all options on radio buttons and support to select 1 option.
+title: 单选按钮（Radio button）
+metaTitle: 单选按钮组件
+description: 通过单选按钮，展示所有选项，并允许选择其中一项
 tagCategory: doc_menu_radio_button_click
 ---
 
 * * *
 
-## <Heading hidden>Radio button</Heading>
+## <Heading hidden>单选按钮</Heading>
 
-A radio button is select input component that allows users to select one option from a group of pre-defined options. It appears as a rounded square button, which can be selected or deselected by users. When a radio button is selected, all other radio buttons in the same group are automatically deselected, ensuring that only one option can be selected at a time. Radio buttons are commonly used in forms, questionnaires, and surveys to help users make a single choice from a list of options.
+单选按钮是一种选择输入组件，允许用户从预定义选项组中选择一个选项。它显示为一个圆角正方形按钮，用户可以选择或取消选择。当选择了单选按钮时，同一组中的所有其他单选按钮都会自动取消选择，确保只能选择一个选项。单选按钮通常用于表单、问卷和调查中，帮助用户从一系列选项中作出单一选择。 It appears as a rounded square button, which can be selected or deselected by users. When a radio button is selected, all other radio buttons in the same group are automatically deselected, ensuring that only one option can be selected at a time. Radio buttons are commonly used in forms, questionnaires, and surveys to help users make a single choice from a list of options.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
 
-### Properties
+### 属性
 
-#### Manual options
+#### 手动选项
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+手动添加新选项或删除选项，并逐个配置选项。选项的属性如下： The properties of options are as follows: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| 属性 | 描述       |
+| -- | -------- |
+| 标签 | 显示为选项的文本 |
+| 值  | 与选项相关联的值 |
+| 禁用 | 选项是否禁用选择 |
 
-#### Mapped options
+#### 映射选项
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+您还可以通过将标签和值属性映射到相应的数据字段来添加来自数据源的选项。您可以通过这种方式从数据库动态获取选项。在本文末尾，我们将通过一个示例演示如何使用它。 You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| 属性  | 描述                   |
+| --- | -------------------- |
+| 数据源 | 设置选项的数据源             |
+| 标签  | 使用{{item}}设置选项的标签    |
+| 值   | 使用{{item}}设置选项的值     |
+| 禁用  | 使用{{item}}设置选项是否禁用选择 |
 
-#### Other properties
+#### 其他属性
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| 属性          | 描述                                                                                                                      |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 默认值         | The initial value of the component. 组件的初始值。您可以通过在{{}}中键入JavaScript动态更改初始值。                                              |
+| Placeholder | 当输入字段为空时，将显示该值。                                                                                                         |
+| 标签          | 用户显示的字段名称                                                                                                               |
+| Caption     | 用于详细描述字段的标题                                                                                                             |
+| 隐藏标签        | 设置是否显示标签                                                                                                                |
+| 位置          | 设置标签相对于组件的位置                                                                                                            |
+| 对齐方式        | 设置标签的对齐方式                                                                                                               |
+| 宽度          | 当标签在组件的左侧时，设置标签的宽度比                                                                                                     |
+| 事件处理程序      | 在响应组件事件时触发查询、控制组件或调用其他API。                                                                                              |
+| 禁用          | Control the status of whether the component is disabled. 控制组件是否禁用的状态。当禁用时，无法修改或聚焦组件。                                    |
+| 只读          | 控制组件是否为只读状态。只读的组件可以被选择和聚焦，但不能被修改。 A read-only component can be selected and focused but cannot be modified.             |
+| 显示清除按钮      | 设置是否显示清除按钮                                                                                                              |
+| 工具提示        | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
+| 必填字段        | 仅在开关打开时有效。                                                                                                              |
+| 自定义规则       | editor.inspect.setter_tooltip.custom_rule                                                                               |
+| 隐藏验证消息      | 您可以通过切换隐藏状态来隐藏错误消息，当输入值不正确时。您可以通过JavaScript动态更改隐藏状态。 You can dynamically change the hidden status by JavaScript.        |
+| 表单数据键       | 构造数据属性时指定包装表单组件的键。                                                                                                      |
+| 隐藏          | 动态控制组件是否隐藏。您可以通过动态布尔值更改隐藏状态。 You can change the hidden status through dynamical boolean value.                          |
+| 主题颜色        | 选择组件的主题颜色                                                                                                               |
 
-### Method
+### 方法
 
-You can use other components to control the component. We support the following three methods:
+您可以使用其他组件来控制组件。我们支持以下三种方法： We support the following three methods:
 
 #### setValue
 
-To set the selected option, for example, {{”value1”}}
+设置所选选项，例如{{”value1”}}
 
-| Properties | Description                         |
-| ---------- | ----------------------------------- |
-| Value      | A string of selected option value.  |
+| 属性 | 描述       |
+| -- | -------- |
+| 值  | 所选选项的值。  |
 
 #### clearValue
 
-To clear the selected options
+清除所选选项
 
 #### validate
 
-To verify that the input information is legal
+验证输入信息是否合法
 
 #### clearValidate
 
-To clear the validation message
+清除验证消息
 
-### Event handler
+### 事件处理程序
 
-We support listening to the `onChange` event of the radio button component. 
+我们支持监听单选按钮组件的`onChange`事件。 
 
 When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a group of radio buttons, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
 
-### Data
+### 数据
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+组件具有一些常用数据，可以通过{{componentName.propertyName}}在应用程序中调用。
 
-| Property name | Description                               |
-| ------------- | ----------------------------------------- |
-| value         | a string of value of the selected option  |
+| 属性名称  | 描述          |
+| ----- | ----------- |
+| value | 所选选项的值的字符串  |
 
-### Use case
+### 使用案例
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+接下来，我们将演示如何使用映射模式动态获取选项。 
 
-#### Step 1 Add an action
+#### 第1步添加操作
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. 我们创建了一个名为`selection`的表，包括5个列：`options_en`、`options_jp`、`options_zh`、`options_kr`、`value`。我们将选项值存储在`value`中，并将不同语言的选项标签存储在其他列中。 
 
-Create an actions to list all data in `selection` named `postgresql1`
+创建一个名为`postgresql1`的操作以列出`selection`中的所有数据
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
 select * from selection
+
 ```
 
-#### Step 2 Configure the component
+#### 第2步配置组件
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  将数据源设置为`{{postgresql1.data}}` 
+2.  配置标签以根据语言更改标签。 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  使用{{ item.columnName }}设置列。 
+    2.  使用{{ currentUserInfo.language }}设置用户在ILLA中使用的语言。
 
     ```jsx
-    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
-    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
-    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh
     : item.options_en }}
+
     ```
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio2.png' alt="" />
