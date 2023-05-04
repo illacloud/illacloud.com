@@ -1,7 +1,7 @@
 ---
-title: JavaScript Guider
+title: JavaScript- Guider
 metaTitle: ILLA Cloud JavaScript Guider doc
-desc: JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP
+desc: JavaScript on ILLA Builderin tärkein osa, joka on työkalu, jota käytät rakentaa datan käyttöoikeus ja logiikan rakentaminen oman APP
 tagCategory: doc_menu_js_guider_click
 ---
 
@@ -9,51 +9,51 @@ tagCategory: doc_menu_js_guider_click
 
 ## <Heading hidden>JavaScript Guider</Heading>
 
-JavaScript is the most important component of the ILLA Builder, which is the tool you use to build the data access and logic construction of your APP. Mastering how to call JavaScript, you have mastered the use of ILLA Builder.
+JavaScript on ILLA Builderin tärkein osa, joka on työkalu, jota käytät rakentaa datan käyttöoikeus ja logiikan rakentaminen oman APP. Määrittelemällä, miten soittaa JavaScriptille, olet oppinut ILLA Builderin käytön.
 
-When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+Kun rakennat APP ILLA Builderiin, voit käyttää `{{template syntax}}` kirjoittaaksesi mukautettuja JavaScript-lausekkeita tietojen soittamiseen ja manipulointiin. tai kirjoita JS-koodi suoraan muuntajaan.
 
-### Operation data
+### Toiminnan tiedot
 
-#### Accessing data on objects
+#### Käytetään objekteja koskevia tietoja
 
-In ILLA Builder you can enter JavaScript expressions in any text input box using the template syntax. Data objects are referable, and you can manipulate the data of all inserts, actions and transformers via JavaScript. For example, you can use `{{textInput.data}}` to access the content of a text input insert, `{{action.data}}` to access the data from an action database and `{{transformer.value}}` to access the data from a transformer.
+ILLA Builderissa voit syöttää JavaScript-lausekkeet mihin tahansa tekstikenttään käyttäen mallin syntaksia. Dataobjektit ovat viittaavia ja voit manipuloida kaikkien lisäysten, toimintojen ja muuntajien tietoja JavaScriptin kautta. Voit esimerkiksi käyttää `{{textInput.data}}` päästäksesi käsiksi syötteen sisältöön, `{{action.data}}` päästäksesi toimintatietokannan tietoihin ja `{{transformer.value}}` päästäksesi tietoihin muuntajan kautta.
 
-We have added and modified the code mirror insert to the product, adapted it to the ILLA Builder programming environment, supported syntax highlighting and automatic indentation, and added detailed explanations of variables and functions that occur during programming, so that you can learn how to use ILLA Builder at low cost. After you have entered the object name, enter a dot. The prompt will contain all the properties of the object, the data type and a partial text description, so that you can identify the property to be accessed in no time.
+Olemme lisänneet ja muuttaneet koodin peili lisätään tuotteeseen, mukautettu ILLA Builder ohjelmointiympäristöön, tuettu syntaksin korostaminen ja automaattinen sisennys, ja lisäsi yksityiskohtaisia selityksiä muuttujien ja toimintojen ohjelmoinnin aikana, jotta voit oppia käyttämään ILLA Builderia alhaisin kustannuksin. Kun olet syöttänyt objektin nimen, kirjoita piste. Kehys sisältää kaikki objektin ominaisuudet, tietotyypin ja osittaisen tekstinkuvauksen, joka sisältää jotta voit tunnistaa ominaisuuden, joka on käytettävissä ei ole aikaa.
 
-#### Accessing numbers in arrays
+#### Numeroiden käyttö taulukoissa
 
-When you need to access a value in a specific array, you can get the value by the position or subscription of the data you need to access.
+Kun sinun täytyy käyttää arvoa tietyssä taulukossa, voit saada arvon sen sijainnin tai tilauksen perusteella, joka sinun täytyy käyttää.
 
 ```javascript
 const list = ['a', 'b', 'c']
-return list[0] // Return the first value in list 'a'
+palautuslista[0] // Palauta ensimmäinen arvo luettelossa 'a'
 ```
 
-### View  data
+### Näytä tiedot
 
-There are four locations to view data in ILLA Builder: the data workspace in the left-hand panel, the data prompt below the text box after entering a JavaScript expression, and the data display through the data insert to display the data.
+ILLA Builderissa on neljä paikkaa, joissa dataa voi tarkastella vasemmanpuoleisessa paneelissa, tekstilaatikon alapuolella oleva tietokehys, kun JavaScript-lauseke on syötetty, ja tiedot näytetään datanäytön kautta datan näyttämiseksi.
 
-#### Data workspace presentation
+#### Datatyötilan esitystapa
 
-You can find the data workspace by opening the left-hand panel in the App editor, so the data is presented as structured JSON in which every property and list can be expanded and all data is visually displayed in the workspace.
-
-[//]: # "[图片]"
-
-#### Live preview of data input
-
-When you call an action or transformer operation in the input box, the data for that operation will automatically pop up below the input box, and you can confirm that the data called is correct based on the information here.
+Voit löytää datan työtilan avaamalla vasemmanpuoleisen paneelin App editorissa, jotta tiedot esitetään strukturoituna JSONina, jossa jokaista ominaisuutta ja listaa voidaan laajentaa ja kaikki tiedot näkyvät työtilassa.
 
 [//]: # "[图片]"
 
-#### Data presentation
+#### Tietojen reaaliaikainen esikatselu
 
-The data display insert gives you the most intuitive view of the data. Simply drag and drop the component into the frame, enter the name of the corresponding data source in the data field, filter and arrange it, and you will have access to the data display information.
+Kun soitat toiminnon tai muuntimen toimintaa syöttöruudussa, kyseisen toiminnon tiedot pop ylös automaattisesti alle syöttöruudun, ja voit vahvistaa, että kutsutut tiedot ovat oikeita tässä esitettyjen tietojen perusteella.
 
 [//]: # "[图片]"
 
-### Transformer
+#### Tietojen esitystapa
 
-You can write multiple lines of JS code in the transformer, and we recommend that you choose to write in the transformer rather than in double curly brackets. You can program JavaScript directly in the transformer as well as calling the data in the operation with the help of `{{}}`.
+Tietojen näyttämisen lisäosa antaa sinulle kaikkein intuitiivisimman kuvan tiedoista. Vedä ja pudota komponentti vain kehykseen, syötä vastaavan tietolähteen nimi tietokenttään ja vedä se. suodattaa ja järjestää se, ja sinulla on pääsy tietojen näyttö.
 
-Click here for detailed usage of the transformer.
+[//]: # "[图片]"
+
+### Muuntaja
+
+Voit kirjoittaa useita rivejä JS koodi muuntaja, ja suosittelemme, että päätät kirjoittaa muuntaja pikemminkin kuin kaksinkertainen kihara sulut. Voit ohjelmoida JavaScriptin suoraan muuntajassa sekä soittaa toimessa oleviin tietoihin komennolla `{{}}`.
+
+Klikkaa tästä saadaksesi muuntajan yksityiskohtaisen käytön.
