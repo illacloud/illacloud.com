@@ -1,93 +1,93 @@
 ---
-title: Table
-metaTitle: ILLA Cloud table component doc
-description: Display and interact with data using the Table component.
-tagCategory: doc_menu_table_click
+title: Taulukko
+metaTitle: ILLA Cloud table komponentti
+description: Näytä ja vuorovaikutuksessa datan kanssa taulukon komponentin avulla.
+tagCategory: doc_valikko_table_klikkaa
 ---
 
 * * *
 
-## <Heading hidden>Table</Heading>
+## <Heading hidden>Taulukko</Heading>
 
-Tables are a common way to view and interact with your data. You can sort, filter, paginate, and download rows of information. Tables also support row selection and custom columns.
+Taulukot ovat yhteinen tapa tarkastella ja olla vuorovaikutuksessa tietojesi kanssa. Voit lajitella, suodattaa, lievittää ja ladata rivejä tietoja. Taulut tukevat myös rivin valintaa ja mukautettuja sarakkeita.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
   alt=""
 />
 
-### Load data in a table
+### Lataa tiedot tauluun
 
-When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
+Kun vedät kehykseen taulukon komponentin, se näyttää automaattisesti testitulokset JSON-muodossa. Voit muuttaa taulukossa näytettäviä tietoja muokkaamalla Data source -ominaisuutta. Käytä \`{{ actionName.data }}-muotoa valitaksesi toiminnon.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
   alt=""
 />
 
-You can also set the data source by inputing an array.
+Voit myös asettaa tietolähteen syöttämällä taulukkoon.
 
-### Column settings
+### Sarakkeen asetukset
 
-**Set aliases for data columns**
+**Aseta tietosarakkeiden peitenimet**
 
-When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+Kun olet valinnut taulukoiden tietolähteen, sarakkeen nimi asetetaan automaattisesti tietolähteen perusteella. Voit nimetä kaikki sarakkeet uudelleen klikkaamalla **Tarkasta** -välilehden saraketta ja aseta **Sarakkeen otsikko**.
 
-**Change column types**
+\*\*Muuta saraketyyppejä
 
-When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
+Kun asetat taulukoiden tietolähteen, sarakkeet on asetettu **Teksti**. Voit asettaa sarakkeiden tyypit manuaalisesti klikkaamalla **Tarkasta** -välilehden saraketta ja valitsemalla tyypin **Sarakkeen tyypistä** pudotusvalikosta.
 
-The column types include:
+Sarakkeiden tyyppejä ovat:
 
-1.  Text
-2.  Date, you can set the display format of the date in the date type.
-3.  Number, you can set the decimal places in the number type.
-4.  Percent, you can set the decimal places in the percent type.
-5.  Link
-6.  Button, you can add event handlers in the button type.
+1.  Teksti
+2.  Päivämäärä, voit asettaa päivämäärän esitysmuodon päiväyksen ja päivämäärän tyypin.
+3.  Numero, voit asettaa desimaaliluvun numeron tyypissä.
+4.  Prosentti, voit asettaa desimaalipisteitä prosentteina tyypistä.
+5.  Linkki
+6.  Painikkeella voit lisätä tapahtumankäsittelijöitä painikkeen tyypissä.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
   alt=""
 />
 
-**Mapped value of custom columns**
+**Mukautettujen sarakkeiden yhdistetty arvo**
 
-You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+Voit lisätä mukautettuja sarakkeita taulukoihin käyttämällä **+ Lisää** painiketta **Tutka** välilehti. Mukautettuja sarakkeita käytetään usein laskettaessa tietoja, jotka perustuvat sovelluksen muihin arvoihin. Jos sinulla on esimerkiksi `revenue`- ja `user_num`-sarakkeita ja haluat laskea `ARPU`-sarakkeen, voit käyttää `{{ currentRow.revenue/currentRow.user_num }}`
 
-In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
+Laskennan jälkeen voit lisäksi asettaa sarakkeen tyypin numeroon tai prosenttiosuuteen ja asettaa desimaalipaikat luettavuuden parantamiseksi.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
   alt=""
 />
 
-### Access data of table
+### Pääsy taulukkoon
 
-Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0.
+Käytä `{{ table1.selectedRow[i].columnName }}` päästäksesi muiden komponenttien valittujen rivien tietoihin. Jos et ole ottanut käyttöön **Multi-Row Valinta**, `i` on aina 0.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
   alt=""
 />
 
-**Update the table data**
+**Päivitä taulukon tiedot**
 
-1.  Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`.
-2.  Use `{{ input1.value }}` in Update actions to get selected values and updated values.
-3.  Add an event handler to Update Button to run the Update Action when clicked.
-4.  Update the data of selected row by changing the input value and clicking the Update Button.
+1.  Käytä syötekomponenttia tai muita syötecpmponentteja näytettäväksi `{{ table1.selectedRow[i].columnName }}`.
+2.  Käytä `{{ input1.value }}` päivitystoiminnoissa saadaksesi valitut arvot ja päivitetyt arvot.
+3.  Lisää tapahtuman käsittelijä päivityspainikkeeseen suorittaaksesi päivitystoiminnon, kun sitä napsautetaan.
+4.  Päivitä valitun rivin tiedot muuttamalla syötteen arvoa ja klikkaamalla päivityspainiketta.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
   alt=""
 />
 
-**Insert a new row into table**
+**Lisää uusi rivi taulukkoon**
 
-1.  Use `{{ input1.value }}` in insert actions get values.
-2.  Add an event handler to Insert Button to run the Insert Action when clicked.
-3.  Insert new data by inputing values in input components and clicking the Insert Button.
+1.  Käytä `{{ input1.value }}` lisättäessä toimintoa saavat arvot.
+2.  Lisää tapahtuman käsittelijä Lisää painikkeeseen asettaaksesi Lisää toiminto -toiminnon kun napsautetaan.
+3.  Lisää uusia tietoja syöttämällä arvot syöttökomponentteihin ja napsauttamalla Lisää painike.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
