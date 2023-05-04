@@ -9,22 +9,22 @@ tagCategory: doc_menu_supabase_click
 
 ## <Heading hidden>Supabase DB</Heading>
 
-Supabase is an open-source Firebase alternative that allows developers to build real-time web and mobile applications. It provides many of the same features as Firebase, such as real-time databases, user authentication, and hosting, but with the added benefits of being open-source and providing a SQL API. This allows developers to use their existing SQL knowledge and tools, making it easy to integrate with other systems. Additionally, Supabase provides a more flexible and customizable platform than Firebase, which can be more restrictive regarding data modeling and usage.
+Supabase 是一种开源的 Firebase 替代品，允许开发人员构建实时 Web 和移动应用程序。 它提供许多与 Firebase 相同的功能，例如实时数据库、用户身份验证和托管，但具有开源和提供 SQL API 的额外优势。 这允许开发人员使用他们现有的 SQL 知识和工具，从而很容易与其他系统集成。 此外，Supabase 提供了一个比 Firebase 更灵活和可定制的平台，后者在数据建模和使用方面可能更具限制性。 It provides many of the same features as Firebase, such as real-time databases, user authentication, and hosting, but with the added benefits of being open-source and providing a SQL API. This allows developers to use their existing SQL knowledge and tools, making it easy to integrate with other systems. Additionally, Supabase provides a more flexible and customizable platform than Firebase, which can be more restrictive regarding data modeling and usage.
 
-This tutorial outlines the process of creating an Admin Panel using ILLA Builder and Supabase in a few simple steps. ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Supabase, visit their website at <https://supabase.com/>. Let's begin!
+本教程概述了通过几个简单的步骤使用 ILLA Builder 和 Supabase 创建管理面板的过程。 ILLA 是面向开发人员的低代码平台，可实现内部工具的快速开发和部署。 它允许通过拖放 UI 组件、连接到任何数据库或 API 以及编写 JavaScript 来创建页面。 要了解有关Supabase的更多信息，请访问<https://supabase.com/>。 ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Supabase, visit their website at <https://supabase.com/>. Let's begin!
 
-### Step 1: Set up your Back end on Supabase
+### 步骤1: 在Supabase上配置您的后端
 
-On the [Supabase dashboard](https://app.supabase.com/projects), click `New project` and set the name to adminPanel.
+在[Supabase dashboard](https://app.supabase.com/projects), 点击 `New project` 并且设置名称为adminPanel。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
   alt=""
 />
 
-Create a new table by clicking on the `Create a new table` .
+点击 `Create a new table` 创建新表。
 
-Supabase offers a variety of options for populating tables with data, including writing queries, creating schemas through a user interface, and uploading CSV files.
+Supabase 提供了多种选项来将数据填充到表里，包括编写查询、通过用户界面创建以及上传CSV文件等。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
@@ -38,50 +38,50 @@ Supabase offers a variety of options for populating tables with data, including 
 
 Fill out the info in the table. The database is now set up.
 
-### Step 2: Build UI on ILLA Cloud
+### 步骤2: 在ILLA Cloud上构建UI
 
-On [ILLA Cloud](https://cloud.illacloud.com), click Create New to create a new application.
+在[ILLA Cloud](https://cloud.illacloud.com)里, 点击 `Create New` 创建新应用.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
   alt=""
 />
 
-Drag components from the `Insert` panel to the canvas.
+从`Insert`面板拖拽组件到画布上；
 
-Select the components on the canvas and configure the property on the `Inspect` panel.
+选中画布中的组件，并在`Inspect`面板上配置属性；
 
-As seen in the below screenshot, we have built a simple admin panel.
+正如下方截图所见，按照上述步骤，我们搭建了一个简单的管理面板。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
   alt=""
 />
 
-### Step 3: Connect to Supabase and config CRUD
+### 步骤3: 连接到Supabase DB，并配置CRUD
 
-Note down the database connection information under [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) in Supabase.
+通过Supabase的[Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database)获取配置信息。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
   alt=""
 />
 
-In the Action List, click `+ New` and select Supabase DB.
+在Action列表，点击 `+ New` 并选择Supabase DB。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
   alt=""
 />
 
-Fill out the form to connect to your Supabase instance. Test connection and save resource.
+填充表单信息，以连接到Supabase实例。测试连接并保存资源。 Test connection and save resource.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
   alt=""
 />
 
-Click `Create Action` to create an action with the Supabase resource and config your CRUD.
+点击 `Create Action` 来使用刚保存的Supabase实例创建一个Action，在Action中配置CRUD
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
@@ -90,7 +90,7 @@ Click `Create Action` to create an action with the Supabase resource and config 
 
 Use {{ to get the front-end input data. The following is an example of the User Management page in the Admin Panel.
 
-Search for a user by the name inputted in input1
+根据input1中输入的用户名称，查询表格：
 
 ```
 SELECT *
@@ -99,7 +99,7 @@ WHERE name = "{{input1.value}}"
 ;
 ```
 
-Update user data. Update user information when id matches
+Update user data. 更新用户数据，在id匹配时更新用户信息：
 
 ```
 UPDATE user
@@ -109,19 +109,19 @@ WHERE id="{{input2.value}}"
 ;
 ```
 
-Insert user data
+插入数据：
 
 ```
 INSERT INTO user VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
 ```
 
-Delete a user by id
+在id匹配时删除用户：
 
 ```
 DELETE FROM user WHERE id = "{{input2.value}}";
 ```
 
-### Step 4: Show data on components
+### 第四步: 在组件上展示数据
 
 Configure the properties of components with {{ . For example:
 
@@ -132,6 +132,6 @@ Configure the properties of components with {{ . For example:
 
 ## Resources
 
--   [Supabase official website](https://supabase.com/)
+-   [Supabase官方网站](https://supabase.com/)
 -   [Supabase GitHub](https://github.com/supabase/supabase)
--   [Supabase documentation](https://supabase.com/docs)
+-   [Supabase文档](https://supabase.com/docs)
