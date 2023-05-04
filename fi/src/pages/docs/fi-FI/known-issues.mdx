@@ -1,23 +1,23 @@
 ---
-title: Known Issues
+title: Tunnetut Ongelmat
 tagCategory: doc_menu_known_issues_click
-desc: Known issues and solutions of ILLA Builder deployment.
+desc: ILLA Builder -hankkeen tunnetut ongelmat ja ratkaisut.
 ---
 
 * * *
 
-## <Heading hidden>Known Issues</Heading>
+## <Heading hidden>Tunnetut kysymykset</Heading>
 
-### Mount Type Issue
+### Liitännäistyypin Ongelma
 
-Run `illa deploy --self -port=1000 -s={your-ip-address}` or `run-official-image.sh`, return following error:
+Suorita `illa deploy --self -port=1000 -s={your-ip-address}` tai `run-official-image.sh`, seuraava virhe:
 
-`Docker responded with status code 400: invalid mount config for type "bind": bind source path does not exist: /tmp/illa-data`
+`Docker vastasi tilakoodilla 400: virheellinen mount config tyypille "bind": bind source path does not exist: /tmp/illa-data`
 
-For now, the mount type only supports `mount`, please config `docker -v` as `mount` mode. Or reinstall the docker by following scripts.
+Tällä hetkellä mount-tyyppi tukee vain `mount`, config `docker -v` -tilaa `mount`-tilassa. Tai asentaa telakan uudelleen seuraamalla komentosarjoja.
 
 [reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
 
-And run the deploy command again.
+Ja suorita deploy-komento uudelleen.
 
-For more issues: https://github.com/illacloud/illa-builder/issues
+Lisää asioita: https://github.com/illacloud/illa-builder/issues
