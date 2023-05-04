@@ -1,29 +1,29 @@
 ---
-title: Transformer
-metaTitle: ILLA Cloud transformer doc
-desc: Transformer in ILLA allows user to write JavaScript to refine the application logic
+title: Trasformatore
+metaTitle: Trasformatore ILLA Cloud doc
+desc: Trasformatore in ILLA consente all'utente di scrivere JavaScript per affinare la logica dell'applicazione
 tagCategory: doc_menu_transformer_click
 ---
 
 * * *
 
-## <Heading hidden>Transformer</Heading>
+## <Heading hidden>Trasformatore</Heading>
 
-We have put a Transformer in ILLA to meet your requirements for writing JavaScript to refine your application logic. In the Transformer, you don't need to code in JavaScript using {{template syntax}} as you do in the character input box, so that you can write long and complex blocks of JS code more fluently. In addition, the Transformer helps developers responsible for page design and logic building to complete their development work more efficiently without being constrained by each other's progress.
+Abbiamo messo un trasformatore in ILLA per soddisfare le vostre esigenze per scrivere JavaScript per affinare la vostra logica di applicazione. Nel Transformer, non è necessario codificare in JavaScript utilizzando {{template syntax}} come si fa nella casella di immissione dei caratteri, in modo da poter scrivere blocchi lunghi e complessi di codice JS più fluentemente. Inoltre, il trasformatore aiuta gli sviluppatori responsabili della progettazione delle pagine e della costruzione logica a completare il loro lavoro di sviluppo in modo più efficiente senza essere vincolati dai progressi reciproci.
 
-You can use the Transformer not only for established data operations but also for creating transformer operations when transforming data. It would be better to choose an independent transformer when you have multiple operations involved in transforming data, or need to use complex JavaScript logic to transform data.
+È possibile utilizzare il trasformatore non solo per le operazioni di dati stabiliti, ma anche per la creazione di operazioni di trasformatore durante la trasformazione dei dati. Sarebbe meglio scegliere un trasformatore indipendente quando si hanno più operazioni coinvolte nella trasformazione dei dati, o la necessità di utilizzare una logica JavaScript complessa per trasformare i dati.
 
-### Creative Transformers
+### Trasformatori Creativi
 
-Click on the Transformers tab in the Action list, and click on "+ New" to create a transformer. It will be displayed in the action list after creation. You can change the name, write JS code, save and run it in the configuration panel after selection.
+Fare clic sulla scheda Trasformatori nell'elenco Azioni e fare clic su "+ Nuovo" per creare un trasformatore. Verrà visualizzato nell'elenco delle azioni dopo la creazione. È possibile modificare il nome, scrivere il codice JS, salvarlo ed eseguirlo nel pannello di configurazione dopo la selezione.
 
-> You can use the 'preview' button to see the results of a transformer. Note that you have to save the transformer for the rest of the app to get the new value.
+> È possibile utilizzare il pulsante 'anteprima' per vedere i risultati di un trasformatore. Nota che devi salvare il trasformatore per il resto dell'app per ottenere il nuovo valore.
 
-The insert calls the transformer with a value equal to the data returned within the transformer, this data will change as the data entered into the transformer changes with the code of the transformer. As with the character input box, you can still use the template syntax to call the global variable No. When you are writing JS code to call data, you can find the specific data variable name in the data workspace in the left hand panel to help you write code faster.
+L'inserimento chiama il trasformatore con un valore pari ai dati restituiti all'interno del trasformatore, questi dati cambiano come i dati inseriti nel trasformatore cambiano con il codice del trasformatore. Come con la casella di immissione dei caratteri, è ancora possibile utilizzare la sintassi del modello per chiamare la variabile globale No. Quando si sta scrivendo codice JS per chiamare i dati, è possibile trovare il nome specifico della variabile dati nello spazio di lavoro dati nel pannello a sinistra per aiutarti a scrivere il codice più velocemente.
 [//]\: # ([Image])
 
-You can call the transformer variable in the data entry box by using `{{transformer name. tag name}}` to call the transformer variable in the data entry box.
+È possibile chiamare la variabile del trasformatore nella casella di inserimento dati utilizzando `{{nome del trasformatore. tag name}}` per chiamare la variabile del trasformatore nella casella di immissione dati.
 
-### Query Transformer
+### Trasformatore Query
 
-We have put a Transformer in the query operation to allow you to transform the fetched data into the desired format directly after completing the action You can then simply pass {{actionName.data}} to retrieve the data once you have completed the conversion in the transformer within the action.
+Abbiamo messo un trasformatore nell'operazione di interrogazione per permetterti di trasformare i dati recuperati nel formato desiderato direttamente dopo aver completato l'azione Puoi semplicemente passare {{actionName.data}} per recuperare i dati dopo aver completato la conversione nel trasformatore all'interno dell'azione.
