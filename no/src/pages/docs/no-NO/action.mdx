@@ -1,47 +1,47 @@
 ---
-title: Action
-metaTitle: ILLA Cloud Action doc
-tagCategory: doc_menu_action_click
-desc: Actions are the bridge between data and components and are an essential part of building an application.
+title: Handling
+metaTitle: ILLA Sky-handlingsdoc
+tagCategory: doc_menu_action_klikk
+desc: Påvirkninger er brua mellom data og komponenter og er en viktig del av en bygning.
 ---
 
 * * *
 
-## <Heading hidden>Query</Heading>
+## <Heading hidden>Spørring</Heading>
 
-After creating the resource, you need to extract the data in the resource, select, filter, merge the data and then put it into the Inserts according to the logical requirements. We call this process of data processing an Action. Actions are the bridge between data and components and are an essential part of building an application. We have divided actions into two categories: actions and Transformers.
+Etter å ha laget ressursen, må du trekke ut data i ressursen, velge, filter, slå sammen dataene og deretter sette dem i innboksene i samsvar med de logiske kravene. Vi kaller denne prosessen for databehandling en handling. Påvirkninger er brua mellom data og komponenter og er en viktig del av en bygning. Vi har inndelt handlinger i to kategorier: aksjoner og transaksjoner.
 
-### SQL Action
+### SQL handling
 
-#### Create action
+#### Opprett handling
 
-The process of using SQL actions is divided into the following steps:
+Prosessen med å bruke SQL-handlinger er delt inn i følgende trinn:
 
-1.  First, you need to find the action list in the app editor and click the "Add" button.
-2.  Then, select a data source type in the resource select box. You can find the created resources in the corresponding resource list, you can also create new resources here. Select the created resource and click the "Confirm" button. An SQL action will be successfully created.
-3.  The created action will be displayed on the action list. An action editor will be shown below the frame after kicking the action. You can change the resource of actions, write action statements, response content, add transformers, event handlers.
-4.  After filling in the action list, you can click the "Preview" button to check whether the action you wrote is valid. The configuration panel will display the action result. After the action is edited, you can click "Save" button to end the process. If you switch to another action without saving the information, the system will prompt you to save the modification.
+1.  Først må du finne handlingslisten i appeditoren og klikk "Legg til" knappen.
+2.  Velg så en datakilde type i ressursen i valgboksen. Du kan finne de opprettede ressursene i den aktuelle ressurslisten, du kan også opprette nye ressurser her. Velg den opprettede ressursen, og klikk "Bekreft"-knappen. En SQL handling vil bli vellykket opprettet.
+3.  Den opprettede handlingen vil bli vist i handlingslisten. Et redigeringsprogram for handlinger vises under bildet etter at du har kastet bort handlingen. Du kan endre ressursen av handlinger, skrive til handlinger, responsinnhold, legge til transformatorer, hendelsesbehandlere.
+4.  Etter utfylling av handlingslisten, kan du klikke på "Forhåndsvisning"-knappen for å sjekke om handlingen du skrev er gyldig. Konfigurasjonspanelet vil vise handlingens resultat. Når handlingen er redigert, kan du klikke "Lagre"-knappen for å avslutte prosessen. Hvis du bytter til en annen handling uten å lagre informasjonen, vil systemet be deg om å lagre endringen.
 
-#### Action Breakdown
+#### Handlingsbrudd
 
-1.  Action: You can enter your action statements in the Action module where we have added the Code Mirror editor to enable action statement highlighting and code completion. In subsequent updates, we will provide a GUI input mode for writing action statements so that users unfamiliar with action statements can also complete data actions.
-2.  Transformer: You can refine the action logic with JavaScript statements in the transformer, for example by using the filter function in JS instead of the where function in the action statement.
-3.  Event handler: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
-4.  Response: In the Response module, you can customise the conditions under which the action returns incorrect results, in such a way as to ensure the accuracy of the action.
-5.  Advanced: Refine detailed settings for actions such as database timeout response times, event processor delays, etc. within the advanced options.
+1.  Handling: Du kan skrive inn handlingene dine i handlingsmodulen der vi har lagt til editor med Code Mirror for å aktivere handlingserklæring som utheving og kodefullføring. I påfølgende oppdateringer, vi vil angi en GUI-inngang for å skrive handlingsangivelser slik at brukere ikke kjent med handlings-instruksjoner også kan fullføre datahandlinger.
+2.  Transformer: Du kan begrense handlingslogikken med JavaScript-kommandoer i transformatoren, for eksempel ved å bruke filterfunksjonen i JS i stedet for der funksjonen i handlingsangivelsen.
+3.  Hendelsesbehandler: Hendelsesbehandlere lar deg utløse handlinger, kontrollere innsatser og andre handlinger som svar på brukersamhandlinger. Du kan legge til flere hendelsesbehandlere for å svare på en hendelse uten å legge til egendefinerte JavaScript-setninger. Når en bruker for eksempel klikker en knapp, kan du (1) utløse en handling for å kjøre, mens (2) nullstiller tilstanden på flere rullegardinlister og tekstinnganger.
+4.  Svar: I respons modulen kan du tilpasse forholdene som handlingen returnerer feilaktige resultater, tiltak er utformet slik at det sikrer at påvirkningene er nøyaktige.
+5.  Avansert: Begrens detaljerte innstillinger for handlinger som databasetidsavbrudd responstid, hendelsesprosessor forsinkelse etc. innenfor de avanserte alternativene.
 
-### API Actions
+### API handlinger
 
-#### Create action
+#### Opprett handling
 
-The process for actioning data using the API is similar to that for SQL.
+Prosessen for å benytte dataene ved hjelp av API-et ligner den for SQL.
 
-1.  Firstly, the user needs to find the action list at the bottom left of the application editing page and click on the plus sign at the top right of the action list.
-2.  Next, select the corresponding data source list in the resource selection box that pops up. You can find the created resource in the corresponding data source list, or you can create a new resource here. Select the created resource, click on "Create" and an API action will be created successfully.
-3.  The successfully created action will be displayed in the Actions list in the bottom panel and the General tab for the action will pop up below the frame when clicked. You can make a request to any HTTP API in ILLA . Please see the APIs documentation for data request methods.
-4.  Once you have filled in your action, you can click on the "Preview" button to see if the action you have written is valid and the configuration panel will give you the results. Once you have finished editing your action, you can click Save and exit to end the process. If you switch to another operation without saving, a popup will prompt you to complete the save operation.
+1.  For det første Brukeren må finne handlingslisten nederst til venstre for applikasjonredigeringssiden og klikke på plusstegnet øverst til høyre i handlingslisten.
+2.  Velg så den tilsvarende datakildelisten i ressursvalg-boksen som spretter opp. Du kan finne den opprettede ressursen i listen over datakilder, eller du kan opprette en ny ressurs her. Velg den opprettede ressursen, klikk på "Opprett" og en API-handling vil bli opprettet.
+3.  Den opprettede handlingen vil bli vist i Handlingslisten i det nederste panelet og den generelle fanen for handlingen sprette opp under rammen når du klikker. Du kan be om en forespørsel til hvilken som helst HTTP API i ILLA. Se APIets dokumentasjon for metoder for dataforespørsel.
+4.  Når du har fylt ut handlingen, du kan klikke på "Forhåndsvisning"-knappen for å se om handlingen du har skrevet er gyldig og konfigurasjonspanelet vil gi deg resultatene. Når du er ferdig med å redigere handlingen, kan du klikke Lagre og avslutte for å avslutte prosessen. Hvis du bytter til en annen operasjon uten å lagre, vil en popup be deg om å fullføre lagringsoperasjonen.
 
-#### Action Breakdown
+#### Handlingsbrudd
 
-1.  Transformer: You can refine the action logic with JavaScript statements in a transformer, for example by using the filter function in JS instead of the where function in an action statement.
-2.  Event handlers: Event handlers allow you to trigger actions, control inserts and other actions in response to user interaction. You can add multiple event handlers to respond to an event without adding custom JavaScript statements. For example, when a user clicks a button, you can (1) trigger an action to run, while (2) resetting the state of multiple drop-down lists and text inputs.
+1.  Transformer: Du kan begrense handlingslogikken med JavaScript-kommandoer i en transformator, for eksempel ved å bruke filterfunksjonen i JS i stedet for hvor funksjonen i en handlingsangivelse.
+2.  Hendelseshåndterere: Hendelsesbehandlere lar deg utløse handlinger, kontrollere innsatser og andre handlinger som svar på brukersamhandlinger. Du kan legge til flere hendelsesbehandlere for å svare på en hendelse uten å legge til egendefinerte JavaScript-setninger. Når en bruker for eksempel klikker en knapp, kan du (1) utløse en handling for å kjøre, mens (2) nullstiller tilstanden på flere rullegardinlister og tekstinnganger.
