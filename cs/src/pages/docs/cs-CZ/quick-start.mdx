@@ -1,51 +1,51 @@
 ---
-title: Quick start
-metaTitle: ILLA Cloud quick start guide
-description: Accelerate your internal tools development
+title: Rychlý start
+metaTitle: Průvodce rychlým startem ILLA
+description: Zrychlete vývoj interních nástrojů
 tagCategory: doc_menu_quick_start_click
 ---
 
 * * *
 
-## <Heading hidden>Overview</Heading>
+## <Heading hidden>Přehled</Heading>
 
-### 1.  Deploy ILLA Builder
+### 1.  Nasadit ILLA Tvůrce
 
-Before starting to use ILLA Builder, you should choose to use ILLA Cloud or Self-host ILLA to host your apps. We provide you with ILLA CLI, Docker Compose, and K8s to self-host ILLA in under 5 minutes. We will provide you with ILLA Cloud later, to help you simply get started with ILLA Builder.
+Než začnete používat ILLA Builder, měli byste pro hostování aplikací použít ILLA Cloud nebo Self-host ILLA. Poskytujeme vám ILLA CLI, Docker Compose a K8 pro vlastní hostování ILLA v méně než 5 minut. Poskytneme vám ILLA Cloud později, abychom vám jednoduše pomohli začít s ILLA Builderem.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
   alt=""
 />
 
-### 2.  Get users data
+### 2.  Získat uživatelská data
 
-Register and log in to ILLA Builder, then enter the resource tab. Click the "Create new" button then you can select the resource type here. We provide you with REST API and MySQL to connect your data. Postgres, Redis, and MongoDB will be available this month.
+Zaregistrujte se a přihlaste se do Editoru ILLA a pak zadejte záložku zdrojů. Klikněte na tlačítko "Vytvořit nové" a můžete zde vybrat typ dokumentu. Poskytujeme vám REST API a MySQL pro připojení vašich dat. Postgres, Redis a MongoDB budou k dispozici tento měsíc.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3.  Drag and drop inserts
+### 3.  Přetáhněte vložky
 
-When your data is prepared, you can go back to the Apps tab and create an app. The insert list is on the right side of the page. You can choose one of them and drag it into the frame. Then click the insert and modified its parameters in the Inspect panel. We provide you with markdown mode to edit the label of each insert. If you are familiar with Markdown syntax, you can quickly adjust text size and thickness. In the meantime, you can use {{double brackets}} to invoke action data in the text input box to achieve more results in ILLA Builder.
+Až budou vaše data připravena, můžete se vrátit na záložku Aplikace a vytvořit aplikaci. Vložte seznam je na pravé straně stránky. Můžete si vybrat jednu z nich a přetáhnout ji do rámečku. Poté klepněte na tlačítko Vložit a upravte jeho parametry v průzkumném panelu. Poskytujeme Vám režim markdown pro úpravu popisku každého vloženého záznamu. Pokud znáte Markdown syntaxi, můžete rychle upravit velikost a tloušťku textu. Mezitím můžete použít {{double brackets}} k vyvolání akčních dat v textovém poli pro dosažení dalších výsledků v Editoru ILLA .
 
-### 4.  Add action in Apps
+### 4.  Přidat akci v aplikacích
 
-An action is required to transform the data from resources to insert. We call it action. You can write a query in action to catch data from your resource. On this basis, you can write JavaScript in actions to execute data processing instructions, such as filter and merge. A MySQL example is given below:
+K přeměně dat ze zdrojů na vložení je třeba provést akci. Nazýváme to činy. Můžete napsat dotaz v akci pro získání dat z vašeho zdroje. Na tomto základě můžete psát JavaScript do akcí k provedení instrukcí pro zpracování dat, jako je filtr a sloučení. Příklad MySQL je uveden níže:
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-1.  Create a MySQL action in the App editor. Named it action1.
+1.  Vytvořte MySQL akci v editoru aplikací. Pojmenováno akce1.
 
-2.  Enter the query code in the panel, e.g. SELECT \* FROM Users.
+2.  Zadejte kód dotazu v panelu, např. SELECT \* OD uživatelů.
 
-3.  Run this action, the query result will be displayed on the bottom panel.
+3.  Spustit tuto akci, výsledek dotazu se zobrazí na spodním panelu.
 
-### 5.  Show your data
+### 5.  Ukázat svá data
 
-When the action is successfully created, you need to bind the result of the action to the component. You should replace the value variable on the inspection panel with the result of actions {{action1.data}}. Then the component data will bind with the action result. 
+Když je akce úspěšně vytvořena, musíte spojit výsledek akce s komponentou. Proměnná hodnoty v inspekčním panelu by měla být nahrazena výsledkem akcí {{action1.data}}. Pak budou data komponenty svázána s akčním výsledkem. 
