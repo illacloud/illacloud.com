@@ -1,92 +1,92 @@
 ---
 title: Kubernetes
-tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+tagCategory: doc_μενού_kubernetes_click
+desc: Φτιάξτε illa all-in-one εικόνα και εκτελέστε την από k8s στο μηχάνημά σας.
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### Περιγραφή
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+Φτιάξτε illa all-in-one εικόνα και εκτελέστε την από k8s στο μηχάνημά σας. Μπορείτε να δείτε το αρχείο σεναρίων στο φάκελο [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) για περισσότερες λεπτομέρειες.
 
-Note:
+Σημείωση:
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+Προτείνουμε την ανάπτυξη με τα εργαλεία αυτόματης ανάπτυξης[illa-cli](https://github.com/illacloud/illa).
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+Και προς το παρόν δεν υποστηρίζουμε το Apple Silicon M1 (darwin-arm64 arch).
 
-### Run with an official slim image
+### Εκτέλεση με μια επίσημη εικόνα slim
 
-Install GNU make and type:
+Εγκατάσταση του GNU make και Τύπος:
 
 ```jsx
-make deploy
+κάνε ανάπτυξη
 ```
 
-or just execute:
+ή απλά εκτελέστε:
 
 ```jsx
 /bin/bash scripts/deploy.sh
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+αυτή η εντολή θα τραβήξει illasoft επίσημη εικόνα all-in-one και να το αναπτύξει στο σύμπλεγμα Kubernetes σας.
 
-### For Database Persistent Storage
+### Για Μόνιμη Αποθήκευση Βάσης Δεδομένων
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+Επεξεργαστείτε το[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), και προσθέστε την επίμονη ρύθμιση αποθήκευσης του IAAS σε αυτό.
 
-### For HTTPS Config
+### Για Ρυθμίσεις HTTPS
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+Μπορείτε να δρομολογήσετε το NodePort στην πύλη εισόδου σύμπλεγμα Kubernetes σας και να ξαναγράψετε σε 443 θύρα, και να προσθέσετε https cert στην πύλη εισόδου σας.
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+Ή, μπορείτε να αναπτύξετε μια πύλη εισόδου χειροκίνητα στο διακομιστή Kubernetes, όπως αυτό:
 
 ```jsx
 static_resources:
   listeners:
-  - name: https_listener
-    address:
+  - name: Ř_listener
+    διεύθυνση:
       socket_address:
-        address: 0.0.0.0
+        διεύθυνση: 0. .0.0
         port_value: 443
     filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
+    - φίλτρα:
+      - όνομα: απεσταλμένος. ilters.network.http_connection_manager
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
-          stat_prefix: https_listener
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: ġ_listener
           route_config:
-            name: local_route
+            όνομα: local_route
             virtual_hosts:
-            - name: illa_builder
+            - όνομα: illa_builder
               domains:
-              - "illa.yourdomian.com" # replace with your domain
-              routes:
-              - match:
-                  prefix: "/"route:
+              - "illa. ουδομιδική. om" # αντικαταστήστε με τον τομέα σας
+              διαδρομές:
+              - ταιριάζει:
+                  πρόθεμα: "/"διαδρομή:
                   cluster: illa_builder
           http_filters:
-          - name: envoy.filters.http.router
+          - όνομα: απεσταλμένος. ilters.http. outer
             typed_config:
-              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              "@type": type. ογλεάπης. om/envoy.extensions.filters.http.router.v3.Router
       transport_socket:
-        name: envoy.transport_sockets.tls
+        όνομα: envoy.transport_sockets. ls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
           common_tls_context:
             tls_certificates:
-            # replace this with your cert file
+            # αντικαταστήστε το με το αρχείο cert
             - certificate_chain:
-                filename: /your-cert-folder/fullchain.pem
+                filename: /your-cert-folder/fullchain. em
               private_key:
-                filename: /your-cert-folder/privkey.pem
+                όνομα: /your-cert-folder/privkey. em
 
   clusters:
-  - name: illa_builder
-    type: STRICT_DNS
+  - όνομα: illa_builder
+    τύπος: STRICT_DNS
     lb_policy: ROUND_ROBIN
     connect_timeout: 10s
     load_assignment:
@@ -94,8 +94,8 @@ static_resources:
       endpoints:
       - lb_endpoints:
         - endpoint:
-            address:
+            διεύθυνση:
               socket_address:
-                address: illa-builder
+                διεύθυνση: illa-builder
                 port_value: 80
 ```
