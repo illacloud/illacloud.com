@@ -1,48 +1,48 @@
 ---
 title: Kubernetes
 tagCategory: doc_menu_kubernetes_click
-desc: Build illa all-in-one image and run it by k8s on your machine.
+desc: 构建全部内置图像并在您的机器上用 k8 运行它。
 ---
 
 * * *
 
 ## <Heading hidden>Kubernetes</Heading>
 
-### Description
+### 描述
 
-Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+构建全部内置图像并在您的机器上用 k8 运行它。 您可以在 [scripts]中查看脚本文件(https://github.com/illacloud/damy-illa-manualy/blob/main/kubernetes/scripts) 以了解更多详情。
 
-Note:
+注：
 
-We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+我们强烈建议使用我们的自动部署工具[illa-cli](https://github.com/illacloud/illa)。
 
-And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
 
-### Run with an official slim image
+### 使用官方的 slim 图像运行
 
-Install GNU make and type:
-
-```jsx
-make deploy
-```
-
-or just execute:
+安装 GNU 制造商和类型：
 
 ```jsx
-/bin/bash scripts/deploy.sh
+进行部署
 ```
 
-this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+或仅执行：
 
-### For Database Persistent Storage
+```jsx
+/bin/bash 脚本/部署.sh
+```
 
-Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+这个命令将把illasoft 官方的全部图像拉入您的Kubernetes集群。
 
-### For HTTPS Config
+### 数据库永久存储
 
-You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+编辑[illa-builder.yaml](https://github.com/illacloud/deply-illa-manualy/blob/main/kubernetes/illa-builder.yaml)，并在其中添加您IAAS的持续存储配置。
 
-Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+### HTTPS 配置
+
+您可以将NodePort 导入到您的Kubernetes集群网关并重写到443个端口，并在您的导入网关中添加 https 证书。
+
+或者，您可以手动将一个接口部署到您的 Kubernetes 服务器上，配置类似于：
 
 ```jsx
 static_resources:
