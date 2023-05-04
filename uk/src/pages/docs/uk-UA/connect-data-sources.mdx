@@ -1,44 +1,44 @@
 ---
-title: Connect to your data sources
-metaTitle: Illa Cloud Connect to your data sources
-desc: Learn about connecting to your data source and call it in your ILLA Builder
+title: Підключення до джерела даних
+metaTitle: Illa Cloud Connect до ваших джерел даних
+desc: Дізнайтеся про підключення до ваших даних і назвіть його у вашому ILLA Builder
 tagCategory: doc_menu_data_source_connect_click
 ---
 
 * * *
 
-## <Heading hidden>Connect to your data sources （Action)</Heading>
+## <Heading hidden>Підключитися до ваших джерел даних (дія)</Heading>
 
-Learn about connecting to your data source and call it in your ILLA Builder.
+Дізнайтеся про підключення до ваших даних і назвіть їх у вашому ILLA Builder.
 
-ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+ILLA дозволяє вам підключатися та інтегрувати широкий спектр джерел даних, включаючи бази даних і API, в вашу організацію для використання в якості ресурсів.
 
-### Data sources
+### Джерела даних
 
-Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+Джерела даних це місця, де зберігаються та обробляються дані. Приклади джерел даних включають в себе бази даних PostgreSQL, Twilio REST API та Amazon S3 buckets. В ILLA, ви можете додати кілька джерел даних і зробити їх доступними для запиту.
 
-#### Integrations
+#### Ентеграції
 
-ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using ILLA. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+ILLA забезпечує вбудовані інтеграції для багатьох популярних джерел даних, які потребують мінімальної конфігурації, таких як SQL бази даних і Stripe. Ці інтеграції також відомі як ресурси, дозволяють з'єднатися і запитувати джерела даних за допомогою ILLA. Якщо конкретний тип джерела даних не підтримується вбудованою інтеграцією, ви можете використовувати REST, GraphQL або SOAP-інтеграції, щоб підключитися майже до будь-якого API. Це дає змогу отримати доступ до широкого спектру джерел даних з діапазону будівельника ILLA.
 
-#### Connect to databases
+#### Підключення до баз даних
 
-Connect to most databases and data stores
+Підключення до більшості баз даних і магазинів даних
 
-#### Connect to APIs
+#### Підключитися до API
 
-Connect to REST and GraphQL.
+Підключення до REST і GraphQL.
 
-### Resources
+### Ресурси
 
-A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+Ресурс в ILLA є збереженою конфігурацією, яка визначає як ILLA підключена до джерела даних. Щоб використовувати джерело даних в ILLA, ви повинні створити для нього ресурс. Ви можете вибрати відповідний ресурс для доступу до даних під час запису запиту.
 
-Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+Кожен ресурс в ILLA має власні параметри конфігурації, які визначають, як ILLA з'єднаний з відповідним джерелом даних. Ці параметри можуть включати облікові дані для автентифікації та потік налаштувань підключення до бази даних, а також налаштування API, такі як базовий URL і заголовки за замовчуванням.
 
-#### How resources work
+#### Як працюють ресурси
 
-ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, ILLA uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only ILLA has direct access to the data source.
+ILLA ресурси зберігають необхідні налаштування для безпечного підключення до ваших даних. Це дозволяє легко запитувати дані, без стороннього розкриття джерела даних вашим користувачам. Коли запит виконується за ресурс, ILLA використовує налаштування ресурсу для проксі-запиту до джерела даних на стороні сервера. Це гарантує, що тільки ILLA має прямий доступ до джерела даних.
 
-ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+ILLA спрощує процес підключення до джерела даних для ваших користувачів. Їм потрібно лише вибрати відповідний ресурс під час запису запиту, не турбуючись про дані джерела. Ви також можете додати декілька ресурсів такого ж типу, наприклад, велика кількість роздільників Amazon S3, щоб розрізнити їх.
 
-This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.
+Цей підхід дозволяє стороннім джерелам ваших даних сховати від ваших користувачів і гарантує безпечну взаємодію з джерелом даних. ILLA уникає з'єднань клієнтів з джерелом даних, які можуть розкрити чутливу інформацію і використовувати ті ж умови для всіх взаємодій. Крім того, ресурси дозволяють кешувати запитів, які можуть зменшити кількість запитів, зроблених з джерела даних і потенційно менші витрати.
