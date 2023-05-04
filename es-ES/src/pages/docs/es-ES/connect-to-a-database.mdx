@@ -1,21 +1,21 @@
 ---
-title: Connect to a Database
-metaTitle: ILLA Cloud Connect to a Database
-desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
-tagCategory: doc_menu_database_click
+title: Conectar a una base de datos
+metaTitle: Conectarse a una base de datos ILLA Cloud
+desc: ILLA se conecta a la mayoría de bases de datos, incluyendo PostgreSQL, MySQL, TiDB y MongoDB
+tagCategory: doc_menú_base de datos_clic
 ---
 
 * * *
 
-## <Heading hidden>Connect to a database</Heading>
+## <Heading hidden>Conectar a una base de datos</Heading>
 
-ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+ILLA se conecta a la mayoría de bases de datos, incluyendo PostgreSQL, MySQL, TiDB y MongoDB. Por favor revise esta lista aquí para ver las fuentes de datos que actualmente soporta ILLA. Las próximas fuentes de datos que estamos planeando apoyar están listadas aquí. Si la ILLA carece de ciertos recursos de datos que está usando, por favor rellene el formulario aquí.
 
-The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+Los detalles de conexión requeridos por ILLA dependen del tipo de base de datos que desee conectar. Esta información generalmente incluye un host, puerto, credenciales de usuario y cadena de conexión. Consulte la configuración o documentación de su base de datos para obtener esto.
 
-### 1.  Create a database resource
+### 1.  Crear un recurso de base de datos
 
-Resources represent connections to data sources and are what you query within your ILLA apps.Log in to ILLA and navigate to the **Resources** tab > click **Create new** and select the database you want to connect to. This opens the **Configure a resource** modal where you add your connection information.
+Los recursos representan conexiones a fuentes de datos y son lo que consulta dentro de sus aplicaciones ILLA.Inicie sesión en ILLA y vaya a la pestaña **Recursos** > haga clic en **Crear nuevo** y seleccione la base de datos a la que desea conectarse. Esto abre la modal **Configurar un recurso** donde se añade la información de la conexión.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
@@ -26,22 +26,22 @@ Resources represent connections to data sources and are what you query within yo
   alt=""
 />
 
-After you enter your connection details, click **Test Connection** to check ILLA can successfully connect. Once complete, click **Save resource** to save the resource.
+Después de introducir los detalles de su conexión, haga clic en **Probar conexión** para comprobar que ILLA puede conectarse correctamente. Una vez completado, haga clic en **Guardar recurso** para guardar el recurso.
 
-In addition, you can create resources in the action list under the **App editor**.
+Además, puedes crear recursos en la lista de acciones bajo el **editor de aplicaciones**.
 
-### 2.  Query your database
+### 2.  Consulta tu base de datos
 
-In the App editor, click **+ New** in **Action List** > select resource type and choose an existing resource or create a new resource > click **create action** and update the actions to retrieve some information from a table in your database.
+En el editor de aplicaciones, haga clic en **+ Nuevo** en la **Lista de Acciones** > seleccione el tipo de recurso y elija un recurso existente o cree un nuevo recurso > haga clic en **crear acción** y actualice las acciones para obtener información de una tabla en su base de datos.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
   alt=""
 />
 
-Click **Save** and then click **Run**. Query results are automatically displayed after the query completes.
+Haga clic en **Guardar** y luego haga clic en **Ejecutar**. Los resultados de la consulta se muestran automáticamente después de completar la consulta.
 
-There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.
+Hay algunos ajustes avanzados, incluyendo renombrar, ejecutar ajustes, transformar datos, y configurar el manejo de éxito o fallo, como se muestra a continuación.
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
