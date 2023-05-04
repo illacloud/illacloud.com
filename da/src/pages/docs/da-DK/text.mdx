@@ -1,38 +1,38 @@
 ---
-title: Text
-metaTitle: ILLA Cloud Text component doc
-description: Display data with text component
+title: Tekst
+metaTitle: ILLA Cloud Tekst komponent doc
+description: Vis data med tekstkomponent
 tagCategory: doc_menu_text_click
 ---
 
 * * *
 
-## <Heading hidden>Text</Heading>
+## <Heading hidden>Tekst</Heading>
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
 
-### Properties
+### Egenskaber
 
-| Property             | Description                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Content              | Set the text displayed on Text component. Markdown and plain text are supported.                                                                                                                              |
-| Tooltip              | A tooltip displayed on the component when users hover over the component.                                                                                                                                     |
-| Horizontal alignment | To set the horizontal position of the text content in the component                                                                                                                                           |
-| Vertical alignment   | To set the vertial position of the text content in the component                                                                                                                                              |
-| Hidden               | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }} |
-| Color                | To set the text color in paint text format                                                                                                                                                                    |
-| Text size            | To set the text size in paint text format                                                                                                                                                                     |
+| Egenskab             | Varebeskrivelse                                                                                                                                                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Indhold              | Sæt teksten der vises på Tekst komponent. Markdown og almindelig tekst understøttes.                                                                                                                                             |
+| Værktøjstip          | Et værktøjstip, der vises på komponenten, når brugerne svæver over komponenten.                                                                                                                                                  |
+| Horisontal justering | For at indstille den horisontale position af tekstindholdet i komponenten                                                                                                                                                        |
+| Lodret justering     | For at indstille den vertikale position af tekstindholdet i komponenten                                                                                                                                                          |
+| Hidden               | For at indstille om denne komponent skal vises og under hvilke betingelser den skal vises. For eksempel, hvis den aktuelle bruger ikke er bruger A, denne komponent skal være skjult: {{ currentUserInfo.nickname != 'User A' }} |
+| Farve                | For at sætte tekstfarven i tekstformat                                                                                                                                                                                           |
+| Tekst størrelse      | For at indstille tekststørrelsen i maling tekstformat                                                                                                                                                                            |
 
-### Use Markdown
+### Brug Markdown
 
-#### Headline
+#### Overskrift
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
 
 ```jsx
-# Heading 1
-## Heading 2
-### Heading 3
+# Overskrift 1
+## Overskrift 2
+### Overskrift 3
 ```
 
 #### Bold & Italics
@@ -44,32 +44,32 @@ tagCategory: doc_menu_text_click
 *Italics*
 ```
 
-#### To-do list
+#### Gøremålsliste
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
 
 ```jsx
-### To-do list
+### Gøremålsliste
 
-1. [ ] 🚀 Build a new app on ILLA Cloud
-2. [ ] ☎️ Call with Monica
-3. [x] 🍷 Have dinner with **Elsa**
-4. [x] 💃 Play `Just dance` for half an hour
+1. [ ] :raket: Byg en ny app på ILLA Cloud
+2. [ ] :telefon: Ring med Monica
+3. [x] 🍷 Hold middag med **Elsa**
+4. [x] 💃 Spil `Just dance` i en halv time
 ```
 
-#### Bulleted list
+#### Bullet liste
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
 
 ```jsx
 ### Bulleted list
-- Real-time Collaboration: We can create everything in real-time together.
-- 🛠 Custom Plugin: Build any custom plugin to do what you want.
-- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
-- 🖥 Self-hosted: supports Docker & k8s
+- Real-time Collaboration: Vi kan skabe alt i realtid sammen.
+- 🛠️ Brugerdefineret Plugin: Byg enhver brugerdefineret plugin til at gøre, hvad du ønsker.
+- 🤖 Automatiser Support: Forbind alt og automatisér dem på 5 sekunder.
+- 🖥️ Selvhosted: understøtter Docker & k8s
 ```
 
-#### Table
+#### Tabel
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
 
@@ -82,10 +82,10 @@ tagCategory: doc_menu_text_click
 | ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
 ```
 
-### Display dynamic data
+### Vis dynamiske data
 
-Use `{{` to get data from other components or actions or global variables. For example, to display the nickname of current user:
+Brug `{{` for at hente data fra andre komponenter eller handlinger eller globale variabler. For eksempel, at vise kaldenavnet af nuværende bruger:
 
 ```jsx
-## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Hej! '+ currentUserInfo.nickname }}
 ```
