@@ -1,128 +1,128 @@
 ---
-title: Radio group
-metaTitle: ILLA Cloud Radio group component
-description: Displays all options on radio group and supports to select 1 option.
+title: Radio gruppe
+metaTitle: ILLA Cloud Radio gruppe komponent
+description: Viser alle indstillinger i radiogruppen og understøtter at vælge 1 mulighed.
 tagCategory: doc_menu_radio_group_click
 ---
 
 * * *
 
-## <Heading hidden>Radio group</Heading>
+## <Heading hidden>Radiogruppe</Heading>
 
-A radio group, also known as a single-choice group or simply a radio group, is a component that allows users to select only one option from a list of predefined options. Each option in the group is represented by a circular button that can be selected or deselected by users. When one option is selected, any previously selected option in the group is automatically deselected.
+En radiogruppe, også kendt som en enkeltvalgsgruppe eller blot en radiogruppe er en komponent, der giver brugerne mulighed for kun at vælge én mulighed fra en liste af foruddefinerede indstillinger. Hver indstilling i gruppen er repræsenteret ved en cirkulær knap, der kan vælges eller fravælges af brugere. Når en indstilling er valgt, fravælges enhver tidligere valgt indstilling i gruppen automatisk.
 
-Radio groups are commonly used in web forms, dialog boxes, and other interactive applications where users need to make a single choice from a set of options. They are useful for preventing errors that can occur when users select multiple options by mistake or confusion. Additionally, radio button groups are easy to use and visually intuitive, making them a popular choice for designers and developers alike.
+Radiogrupperne er almindeligt anvendte i netformularer, dialogbokse, og andre interaktive applikationer, hvor brugerne har brug for at foretage et enkelt valg fra et sæt af muligheder. De er nyttige for at forhindre fejl, der kan opstå, når brugere vælger flere muligheder ved en fejl eller forvirring. Derudover er radioknapgrupper nemme at bruge og visuelt intuitive, hvilket gør dem til et populært valg for designere og udviklere.
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### Egenskaber
 
-#### Manual options
+#### Manuelle indstillinger
 
-Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
+Tilføj nye muligheder eller slet indstillinger manuelt og konfigurere mulighederne én efter én. Egenskaberne for muligheder er som følger: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| Egenskaber  | Varebeskrivelse                          |
+| ----------- | ---------------------------------------- |
+| Etiket      | Teksten som vises for indstillingen      |
+| Værdi       | Værdien associeret med indstillingen     |
+| Deaktiveret | Om indstillingen er deaktiveret for valg |
 
-#### Mapped options
+#### Tilknyttede indstillinger
 
-You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+Du kan også tilføje indstillinger fra en datakilde ved at kortlægge etiket og værdi egenskaber til de tilsvarende datafelter. Du kan få indstillinger dynamisk fra databasen på denne måde. I slutningen af denne artikel vil vi vise, hvordan vi kan bruge den gennem et eksempel.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| Egenskaber  | Varebeskrivelse                                                       |
+| ----------- | --------------------------------------------------------------------- |
+| Datakilde   | Angiv datakilden for indstillinger                                    |
+| Etiket      | Brug {{item}} til at angive etiketten på indstillinger                |
+| Værdi       | Brug {{item}} til at indstille værdien af indstillinger               |
+| Deaktiveret | Brug {{item}} til at angive, om indstillingen er deaktiveret for valg |
 
-#### Other properties
+#### Andre egenskaber
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi          | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                            |
+| Pladsholder             | Værdien vil blive vist når inputfeltet er tomt.                                                                                                      |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justering af etiketten                                                                                                                       |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet på etiketten                                                             |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Vis ryd-knap            | Angiv, om ryd-knappen skal vises                                                                                                                     |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Brugerdefineret regel   | editor.inspect.setter_tooltip.custom_rule                                                                                                            |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema farve              | For at vælge temafarven på komponenten                                                                                                               |
 
-### Method
+### Metode
 
-You can use other components to control the component. We support the following three methods:
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende tre metoder:
 
 #### setValue
 
-To set the selected option, for example, {{”value1”}}
+For at angive den valgte indstilling, for eksempel, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Valgt værdi     |
 
 #### clearValue
 
-To clear the selected options
+For at rydde de valgte indstillinger
 
 #### validate
 
-To verify that the input information is legal
+At kontrollere, at inputoplysningerne er lovlige
 
-#### clearValidate
+#### clearValidér
 
-To clear the validation message
+For at rydde valideringsmeddelelsen
 
-### Event handler
+### Hændelse handler
 
-We support listening to the `onChange` event of the radio group. 
+Vi støtter at lytte til den 'onChange' begivenhed i radiogruppen. 
 
-When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
+Når den valgte indstilling ændres, kan den udløse en specificeret handling. Det betyder, at når en bruger vælger en anden mulighed end en radiogruppe, kan der træffes en særlig foranstaltning baseret på den valgte mulighed. For eksempel i en webformular at vælge en anden mulighed kan udløse visningen af forskellige formularfelter eller indgivelsen af formularen til en anden destination. På denne måde kan den indstilling, der er valgt af brugeren påvirke adfærden af den software eller web-applikation, de bruger. Evnen til at udløse specificerede handlinger baseret på brugerinput er et vigtigt aspekt af interaktivt software design og kan forbedre anvendeligheden og funktionaliteten af softwaren.
 
 ### Data
 
-The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via {{componentName.propertyName}} i appen.
 
-| Property name | Description    |
-| ------------- | -------------- |
-| value         | Selected value |
+| Egenskabens navn | Varebeskrivelse |
+| ---------------- | --------------- |
+| værdi            | Valgt værdi     |
 
-### Use case
+### Brug case
 
-Next, we will demonstrate how to use the mapped mode to dynamically obtain options. 
+Dernæst vil vi demonstrere, hvordan man bruger den kortlagte tilstand til dynamisk at opnå muligheder. 
 
-#### Step 1 Add an action
+#### Trin 1 Tilføj en handling
 
-We have created a table named `selection`, including 5 columns: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We stored the option values in `value` and stored options label in different languages in other columns. 
+Vi har oprettet en tabel med navnet `selection`, herunder 5 kolonner: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Vi lagrede indstillingsværdierne i 'værdi' og gemte valgmuligheder etiket på forskellige sprog i andre kolonner. 
 
-Create an actions to list all data in `selection` named `postgresql1`
+Opret en handling for at liste alle data i 'selection' ved navn 'postgresql1'
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
 
 ```jsx
-select * from selection
+vælg * fra valg
 ```
 
-#### Step 2 Configure the component
+#### Trin 2 Konfigurér komponenten
 
-1.  Set the Data sources to `{{postgresql1.data}}` 
-2.  Configure the label to change the label based on the language. 
+1.  Sæt datakilderne til `{{postgresql1.data}}` 
+2.  Indstil etiketten til at ændre etiketten baseret på sproget. 
 
-    1.  Use {{ item.columnName }} to set the column. 
-    2.  Use {{ currentUserInfo.language }} to set the language users use in ILLA.
+    1.  Brug {{ item.columnName }} til at angive kolonnen. 
+    2.  Benyt {{ currentUserInfo.language }} til at indstille sprogbrugernes brug i ILLA.
 
     ```jsx
     {{currentUserInfo.language=='ja-JP' ? item.options_jp 
