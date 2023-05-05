@@ -1,7 +1,7 @@
 ---
-title: 变压器
-metaTitle: ILLA 云变压器doc
-desc: ILLA 中的变压器允许用户写入 JavaScript 以改进应用逻辑。
+title: Transformer
+metaTitle: ILLA Cloud Transformer doc
+desc: ILLA Cloud 中的 Transformer 允许用户写入 JavaScript 以改进应用逻辑。
 tagCategory: doc_menu_transformer_click
 ---
 
@@ -9,22 +9,21 @@ tagCategory: doc_menu_transformer_click
 
 ## <Heading hidden>变压器</Heading>
 
-我们在ILLA中内置了Transformer以满足您编写JavaScript完善应用逻辑的需求。在Transformer中，您不需要像在字符输入框中一样使用{{模版语法}}进行JavaScript编程，让您能更流畅的书写长且复杂的JS代码块。Transformer的存在还能帮助负责页面设计与逻辑搭建的开发者不受限于对方的进度，更高效的完成开发工作。
-您在转换数据时不仅可以在已建立好的数据操作中使用Transformer，也可以选择创建Transformer操作。当您的转换工作涉及到多个操作，或是需要使用复杂的JavaScript逻辑进行转换时，选择独立的Transformer将是更好的选择。 在转换器中，你不需要像在字符输入框中那样使用 {{template syntax}} 在 JavaScript 代码。 这样你可以更流畅地写入长而复杂的JS代码块。 此外， 变压器帮助负责页面设计和逻辑构建的开发者更有效地完成其开发工作，而不受彼此进步的限制。
+我们在ILLA中内置了Transformer以满足您编写JavaScript完善应用逻辑的需求。 在 Transformer 中，你不需要像在字符输入框中那样使用 {{template syntax}} 来用 JavaScript 编写代码，这样你就可以更流畅地编写长而复杂的 JS 代码块。 此外，Transformer 还可以帮助负责页面设计和逻辑构建的开发者，在不受彼此进度限制的情况下，更高效地完成开发工作。
 
-您可以使用变压器，不仅用于已经建立的数据操作，而且用于在转换数据时创建变压器操作。 当您有多个操作涉及转换数据时，最好选择一个独立的变压器。 或需要使用复杂的 JavaScript 逻辑来转换数据。
+你可以使用 Transformer 不仅用于已有的数据操作，还可以在转换数据时创建 transformer 操作。 当你在转换数据时涉及多个操作，或者需要使用复杂的 JavaScript 逻辑来转换数据时，最好选择一个独立的 transformer。
 
 ### 创建Transformer
 
-点击动作列表中的变换器标签，然后点击“+新”创建变换器。 它将在创建后显示在动作列表中。 您可以更改名称，写JS代码，在选择后在配置面板中保存并运行它。
+在动作列表中点击 Transformers 标签，然后点击 “+ 新建” 来创建一个 transformer。 它将在创建后显示在动作列表中。 您可以更改名称，写JS代码，在选择后在配置面板中保存并运行它。
 
-> 您可以使用预览按钮查看Transformer的结果。请注意，您项目中的数值只会在点击Transformer保存按钮后更新。 请注意，您必须为应用程序其余部分保存变压器才能获得新值。
+> 你可以使用 ‘预览’ 按钮来查看 transformer 的结果。 注意，你必须保存 transformer，才能让应用的其他部分获取新的值。
 
-插入调用变压器的值等于在变压器中返回的数据的变压器。 此数据将随着输入变压器的数据与变压器代码的改变而改变。 和字符输入框一样，您仍然可以使用模板语法来调用全局变量编号： 当您写入JS代码来调用数据时 您可以在左手面板的数据工作区中找到特定的数据变量名，以帮助您更快地编写代码。
+插入操作会用等于 transformer 中返回的数据的值来调用 transformer，这个数据会随着输入到 transformer 中的数据和 transformer 的代码的变化而变化。 和字符输入框一样，您仍然可以使用模板语法来调用全局变量编号： 当您编写 JS 代码来调用数据时，可以在左侧面板的数据工作区中找到具体的数据变量名，以帮助您更快地编写代码。
 [//]\: # ([Image])
 
-您可以通过{{Transformer名字.标签名}}的方式在数据输入框中调用Transformer变量 标签名称}}\` 以调用数据输入框中的变量。
+您可以通过{{Transformer名字.标签名}}的方式在数据输入框中调用Transformer变量  
 
 ### 查询Transformer
 
-我们在查询操作中内置了一个转化器，方便您在完成查询后直接将获取的数据转换成需要的格式。当您在查询内的Transformer中完成了转换后，您只需要通过`{{queryName.data}}`即可获取数据。
+我们在查询操作中放置了一个 Transformer，让您在完成操作后可以直接将获取的数据转换为所需的格式。然后，您只需传递 {{actionName.data}} 来检索数据，一旦您在操作中的转换器中完成了转换。
