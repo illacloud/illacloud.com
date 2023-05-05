@@ -1,0 +1,23 @@
+---
+title: Znane problemy
+tagCategory: "[PLACEHOLDER] doc_menu_known issues_click"
+desc: Znane kwestie i rozwiązania dotyczące rozmieszczenia konstruktora ILLA.
+---
+
+* * *
+
+## <Heading hidden>Znane problemy</Heading>
+
+### Problem z typem montowania
+
+Uruchom `illa deploy --self -port=1000 -s={your-ip-address}` lub `run-official-image.sh`, wróć następujący błąd:
+
+`Docker odpowiedziało kodem statusu 400: nieprawidłowa konfiguracja montowania dla typu "bind": powiązanie ścieżki źródłowej nie istnieje: /tmp/illa-data`
+
+Na razie typ montowania obsługuje tylko `montowanie`, proszę skonfigurować `docker -v` jako tryb 'montowanie'. Lub ponownie zainstaluj docker przez następujące skrypty.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+I ponownie uruchom polecenie wdrożenia.
+
+Więcej problemów: https://github.com/illacloud/illa-builder/issues
