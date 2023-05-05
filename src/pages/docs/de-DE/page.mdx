@@ -1,0 +1,52 @@
+---
+title: Seite
+metaTitle: ILLA Cloud Page doc
+description: Erstelle einseitige Apps und mehrseitige App auf ILLA
+tagCategory: doc-Menü_klicken_Seite
+---
+
+* * *
+
+## <Heading hidden>Seite</Heading>
+
+Eine mehrseitige Demo basierend auf ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Eine Einzelseitenanwendung ist eine App, die Seiten ändern kann, ohne alle Komponenten auf der Seite neu zu laden. Die meisten Ressourcen (einschließlich HTML, CSS und Skript) werden nur einmal während des gesamten Lebenszyklus der Anwendung geladen, was eine Anwendung mit einer einzigen Seite schnell macht.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+In einer mehrseitigen Anwendung jede Änderung zum Beispiel die Anzeige der Daten oder das Zurücksenden von Daten an die Serveranfragen, die eine neue Seite vom Server wiedergeben. Die mehrseitige Anwendung verfügt über ein paar Ebenen, was die Anwendungsstruktur für die Anwender einfach und einfach macht.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+Im ILLA Builder kann eine Einzelseiten-Anwendung erstellt werden, indem der Rahmen der Seite gesetzt wird und Sektionen Views hinzugefügt werden, und eine mehrseitige Anwendung kann durch das Hinzufügen mehrerer Seiten erstellt werden, und Entwickler können beide diese beiden Designmuster in einer Anwendung verwenden.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Layout der Seiten festlegen
+
+Gehen Sie zur Seitenkonfiguration als folgende Schritte：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Sie können die Preset-Layouts verwenden oder das Layout manuell hinzufügen und löschen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Ansichten zu einer Seite hinzufügen
+
+`Pfad anzeigen`: ein String nach der URL der Seite, um auf die angegebene Ansicht zuzugreifen. Nachdem die App freigegeben wurde, lautet die vollständige Zugangsadresse wie folgt: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Sie können auch die Homepage- und Standardansicht über den folgenden Pfad eingeben:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Menü und Seiten verbinden
+
+Füge Ereignis-Handler zu Menüeinträgen → Setze die `Action` auf `Setze Router` → wähle die Seite und zeige sie an
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
