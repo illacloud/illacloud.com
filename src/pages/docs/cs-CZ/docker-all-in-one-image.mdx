@@ -1,0 +1,89 @@
+---
+title: Obrázek vně jednoho Dockeru
+tagCategory: doc_menu_docker-all-in-one image_click
+desc: Postav ilustruje všechen obrázek a spusť ho na tvém počítači.
+---
+
+* * *
+
+## <Heading hidden>Docker vně jednoho obrázku</Heading>
+
+### L 343, 22.12.2009, s. 1).
+
+Postav ilustruje všechen obrázek a spusť ho na tvém počítači. Můžete se podívat na soubor skriptů ve složce [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) pro více informací.
+
+Pozn.:
+
+Důrazně jsme doporučili nasazení našich nástrojů pro automatické nasazení[illa-cli](https://github.com/illacloud/illa).
+
+A pro tuto chvíli nepodporujeme Apple Silicon M1 (archu Darwin-arm64).
+
+### Spustit oficiální obrázek
+
+Nainstalujte GNU značku a typ:
+
+```jsx
+vytvořit run-Oficiální obrázek
+```
+
+nebo jen provést:
+
+```jsx
+/bin/bash skripts/run-official-image.sh
+```
+
+tento příkaz natáhne illasoft oficiální obrázek a spustí ho na svém dokovacím prostředí.
+
+A přihlaste se pomocí výchozího uživatelského jména **`root`** a hesla **`password`**.
+
+### Vytvořit obrázek ručně a spustit
+
+Nainstalujte GNU make (nebo proveďte skripty ve složce skripty ručně).
+
+Pro sestavení illa all-in-one obrázku a běh typ:
+
+```jsx
+udělá vše
+```
+
+u podkožního tuku:
+
+```jsx
+udělá run-by-podmana
+```
+
+nebo spustit skripty `run-by-podman.sh` ve složce skriptů.
+
+### Zastavit a odebrat kontejner
+
+```jsx
+vytvořit zastávku a odebrat kontejner
+```
+
+### Vyčistit soubor databáze Postgres
+
+** Tentokrát OBCHODUJTE DATABÁZE NA VAŠI DISKU!!! \*\*\*** BAKTUALIZOVÁNÍ, A ZOBRAZIT NÁHRADU \*\*\*
+
+Ve výchozím nastavení bude databáze Postgres uložena do složky `/var/lib/illa/database/postgresql/`.
+
+Spusťte následující příkaz pro jeho odstranění.
+
+```jsx
+vytvořit čistý soubor postgres-databáze
+```
+
+### Konfigurační proměnné prostředí běžného času
+
+Upravte `scripts/run.sh` v případě potřeby:
+
+```jsx
+# postgres database password
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres úložiště databázového souboru
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```
