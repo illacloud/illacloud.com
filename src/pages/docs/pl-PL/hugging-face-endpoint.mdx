@@ -1,0 +1,74 @@
+---
+title: Punkt końcowy wyciszenia twarzy
+metaTitle: Połącz z Punktem Końcowym Ostrza
+description: Dowiedz się, jak używać punktu końcowego Ostrza w ILLA
+tagCategory: "[PLACEHOLDER] doc_menu_hugging_face_endpoint_click"
+---
+
+* * *
+
+## <Heading hidden>Ogniskowy punkt końcowy twarzy</Heading>
+
+Dzięki punktom końcowym opalania twarzy, możesz łatwo wdrożyć transformatory, dyfuzory lub dowolny model na zdedykowanej, w pełni zarządzanej infrastrukturze. [Kliknij tutaj](https://ui.endpoints.huggingface.co/new), aby utworzyć punkt końcowy. 
+
+### Utwórz zasób punktu końcowego Ostrza
+
+Istnieją dwa sposoby na dodanie zasobu punktu końcowego odłamka twarzy. 
+
+1.  Wprowadź `ILLA Builder` >> Kliknij zakładkę `Resources` >> Kliknij `Create New` >> Wybierz `Ostre Face Endpoint` >> Skonfiguruj informacje o połączeniu i kliknij `Save Resource`
+2.  Wprowadź stronę edycji >> kliknij `+ New` na liście akcji >> Wybierz `Ostre Face Endpoint` >> Skonfiguruj informacje o połączeniu lub kliknij `+ New Resource` aby dodać nowe informacje o połączeniu
+
+### Skonfiguruj informacje o połączeniu
+
+| Właściwości  | Wymagane | Opis                                                                                      |
+| ------------ | -------- | ----------------------------------------------------------------------------------------- |
+| Nazwisko     | wymagane | Zdefiniuj nazwę zasobu, która będzie używana do wyświetlania w ILLA                       |
+| Endpoint URL | wymagane | utwórz punkt końcowy tutaj: https://ui.endpoints.huggingface.co/new i uzyskaj adres URL.  |
+| Token        | wymagane | Token organizacji. Możesz to uzyskać w https://huggingface.co/settings/tokens.            |
+
+### Utwórz akcje
+
+Wprowadź stronę edycji >> kliknij `+ New` na liście akcji >> Wybierz `Ostre Face Endpoint` >> Wybierz istniejący zasób lub dodaj nowy zasób
+
+### Skonfiguruj akcje
+
+| Właściwości   | Wymagane | Opis                                                                                                                                                                                                                                                             |
+| ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ parametru | wymagane | Typ parametru punktu końcowego. Na przykład, jeśli Twój punkt końcowy potrzebuje wprowadzenia tekstu, wybierz parametr "wejście" z tekstem. Jeśli twój punkt końcowy potrzebuje danych wejściowych JSON, wybierz parametr "wejść" z JSON lub wartością kluczową. |
+| Parametr      | wymagane | Wprowadź swój parametr. Użyj {{ componentName.value }} aby użyć danych komponentów.                                                                                                                                                                              |
+
+### Przypadek użycia
+
+Wprowadziliśmy plik `openai/whisper-base`, który otrzymuje plik audio wprowadzany i konwertuje się na tekst. Jest on odpowiedni dla protokołów posiedzeń, podcastów do tekstu itp. Następnie wprowadzimy sposób wykorzystania tego modelu do tworzenia aplikacji w chmurze ILLA.
+
+#### Krok 1: Zbuduj interfejs front-end z komponentami
+
+Stworzyliśmy interfejs za pomocą komponentów, takich jak przesyłanie plików i przycisk, w następujący sposób.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Krok 2: Dodaj zasób ściany
+
+Wypełnij pola pokazane poniżej, aby zakończyć konfigurację zasobów. [Utwórz punkt końcowy](https://ui.endpoints.huggingface.co/new) i uzyskaj adres URL punktu końcowego. I uzyskaj token API organizacji w [ustawieniach profilu](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Krok 3: Skonfiguruj działanie
+
+Najpierw wybierz typ parametru. Weź jako przykład `openai/whisper-base` ten model wymaga wprowadzenia pliku binarnego, więc zmieniamy parametr na `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Ustaw binarny jako plik przesłany z komponentu do wgrywania pliku. Na przykład, `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Krok 4: Podłącz komponenty i akcje
+
+Dodaj program obsługi zdarzeń do przycisku, aby uruchomić akcję po kliknięciu przycisku. I ustaw wartość komponentu tekstowego na {{whisper.data[0].text}} , aby wyświetlić wynik konwersji w komponencie tekstowym. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Po skonfigurowaniu powyższych kroków aplikacja zostanie utworzona, a bieżące wyniki są następujące:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
