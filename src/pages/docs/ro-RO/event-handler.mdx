@@ -1,0 +1,36 @@
+---
+title: Gestionar de evenimente
+metaTitle: Gestionar de evenimente ILLA Cloud
+desc: Gestionarii de evenimente sunt parte integrantă a rafinării logicii utilizării uneltelor interne
+tagCategory: clic doc_meniu_evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Gestionar de evenimente</Heading>
+
+Managerii de evenimente sunt parte integrantă a rafinării logicii de utilizare a instrumentelor interne. Orice inserare sau acțiune care răspunde unei acțiuni a utilizatorului are propriile evenimente care pot fi declanșate, cum ar fi un buton inserat cu un eveniment "clic", o cutie de intrare text cu un eveniment "trimite", succesul unei acţiuni şi aşa mai departe. Gestionarii de evenimente ajută utilizatorii să declanșeze instrucțiuni predefinite atunci când au loc evenimentele: puteți reacționa la o singură apariție a evenimentului, sau puteți configura manipulatoare de evenimente multiple și să le setați ca fluxuri de lucru pentru a face o muncă mai complexă.
+
+După ce evenimentul pe care l-ați setat a avut loc, gestionarul de evenimente vă poate ajuta să efectuați o varietate de acțiuni: declarații de acțiune de control, controlează inserările, execută scripturi și multe altele. De asemenea, puteți adăuga condiții mai detaliate de declanșare JavaScript deasupra condițiilor de declanșare.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Gestionari de evenimente
+
+În gestionarii de evenimente, puteţi seta rezultatul evenimentului bazat pe dacă rezultatele interogării nu reuşesc sau nu. Puteți completa logica de declanșare prin setarea condiției de eșec a interogării în fila de răspuns.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Editați gestionarul de depunere
+
+Am stabilit o condiție de declanșare pentru fiecare inserare interactivă, și puteți selecta un eveniment în lista de acțiune a manipulatorului ca condiție de declanșare. De exemplu, ați putea seta „Trimite” ca condiție de declanșare în gestionarul de evenimente pentru caseta de intrări de date, care introduce automat în baza de date atunci când utilizatorul "trimite" intrarea, implementând astfel o funcţie simplă de inserare a datelor.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Stări temporare
+
+Atunci când prelucraţi date, puteţi întâlni situaţii în care datele prelucrate nu sunt solicitate imediat. Din acest motiv, am înfiinţat state temporare care să stocheze state intermediare pentru procesarea datelor. Puteți alege să setați o stare temporară în opțiunile evenimentului de răspuns ale gestionarilor de evenimente și faceți clic pe Creare stare nouă pentru a stoca datele curente în stare temporară, care pot fi plasate pentru orice proprietate.
+
+În afara editorului de proiect, puteți stoca date de la {{tempState1.setValue(data)}} sau date de apel de către {{tempState1.value}}.
+
+> Valorile din starea temporară vor fi șterse atunci când proiectul este repornit și va trebui să stocați valorile la nivel local sau în nor pentru a asigura integritatea datelor.
