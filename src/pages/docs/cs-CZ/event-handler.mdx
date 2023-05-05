@@ -1,0 +1,36 @@
+---
+title: Manažer událostí
+metaTitle: ILLA Cloud Event doc
+desc: Manažeři událostí jsou nedílnou součástí rafinace vnitřní logiky využití nástroje
+tagCategory: doc_menu_evnet_handler_kliknutí
+---
+
+* * *
+
+## <Heading hidden>Pracovník události</Heading>
+
+Pracovníci události jsou nedílnou součástí rafinace interní logiky využití nástroje. Vlož nebo činnost reagující na uživatelskou akci má své vlastní události, které mohou být spuštěny, jako je tlačítko vložit událost "kliknutí", textové pole s událostí "submit", úspěch akce a tak dále. Zpracovatelé událostí pomáhají uživatelům spustit předem definované instrukce při událostech: můžete reagovat na jednu událost, nebo můžete nastavit více obsluhovatelů událostí a nastavit je jako pracovní postupy, abyste mohli pracovat komplexněji.
+
+Po události, kterou jste nastavili, vám může obsluha události pomoci provést řadu akcí: kontrolní příkazy akcí, ovládat vložky, spouštět skripty a další. Můžete také přidat podrobnější podmínky aktivace JavaScriptu navíc k podmínkám spouštění.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Zpracovatelé událostí
+
+V případě manipulátorů, můžete nastavit výsledek události na základě toho, zda výsledky dotazu selžou, nebo ne. Můžete dokončit spouštěcí logiku nastavením stavu selhání dotazu v záložce Odpovědi.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Upravit obsluhu submitu
+
+Nastavili jsme spouštěcí podmínku pro každý interaktivní vložení a jako podmínku pro spuštění můžete vybrat událost v seznamu akcí obsluhovatele. Například můžete nastavit 'Odeslat' jako spouštěcí podmínku v případě manipulace s daty, který automaticky vloží vstup do databáze při 'odesílání' vstup, čímž se provádí jednoduchá funkce vkládání dat.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Dočasné státy
+
+Při zpracovávání údajů se můžete setkat se situacemi, kdy zpracované údaje nejsou okamžitě povolány. Z tohoto důvodu jsme vytvořili dočasné státy, které budou ukládat prozatímní státy pro zpracování údajů. Můžete zvolit nastavení dočasného stavu v možnostech odezvy obsluhy událostí a klepněte na tlačítko Vytvořit nový stav pro uložení aktuálních dat v dočasném stavu, které lze umístit pro jakýkoli majetek.
+
+Mimo editor projektu můžete také ukládat data pomocí {{tempState1.setValue(data)}} nebo volat uživatelem {{tempState1.value}}.
+
+> Hodnoty v dočasném stavu budou vymazány po restartu projektu, a budete muset ukládat hodnoty lokálně nebo v cloudu, abyste zajistili integritu dat.
