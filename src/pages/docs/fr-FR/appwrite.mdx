@@ -1,0 +1,151 @@
+---
+title: Écriture de l'application
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: Le guide à installer et à intégrer avec Appwrite sur ILLA Cloud
+tagCategory: Clique sur le menu doc_appwrite_fr
+---
+
+* * *
+
+## <Heading hidden>Base de données d'écriture d'application</Heading>
+
+Dans les différents services d'Appwrite, vous pouvez trouver la gestion des comptes et de l'authentification des utilisateurs, la persistance de la base de données et du stockage, les fonctions cloud, la localisation, la manipulation des images, et plus encore. 
+
+La combinaison d'ILLA Cloud et d'Appwrite, c'est-à-dire la combinaison de code bas du serveur côté serveur et du code bas du front-end, réalisera vraiment le développement de la pleine pile de code bas.
+
+[Cliquez ici](https://appwrite.io/) pour en savoir plus sur l'écriture d'Apps.
+
+### Configurer la ressource Appwrite sur ILLA Cloud
+
+#### Deux façons de créer des ressources
+
+La première façon est d'entrer dans l'onglet `Ressources` > cliquez sur `Créer un nouveau` pour sélectionner l'écriture de l'application. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+L'autre façon est d'entrer dans la page `éditeur d'application` > cliquez sur `+ Nouveau` pour sélectionner Appwrite > cliquez sur `+ Nouvelles ressources` pour ajouter la nouvelle configuration. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Configurer l'Appwrite en remplissant les champs suivants
+
+Avant de connecter une ressource Appwrit, assurez-vous que vous avez déployé Appwrite sur votre machine locale ou un fournisseur de cloud. [Cliquez ici](https://appwrite.io/docs/installation) pour en savoir plus sur l'installation d'Appwrite. 
+
+| Propriété                | est obligatoire | Libellé                                                                                                                              |
+| ------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Nom                      | Obligatoire     | Le nom de la ressource lors de la création d'actions dans l'ILLA. Vous pouvez personnaliser un nom pour faciliter l'identification.  |
+| Hôte                     | Obligatoire     | NOM D'HÔTEL OU IP.                                                                                                                   |
+| ID de la base de données | Obligatoire     | ID de la base de données                                                                                                             |
+| ID du projet             | Obligatoire     | ID du projet                                                                                                                         |
+| Clé Api                  | Obligatoire     | JETON                                                                                                                                |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Créer des actions dans l'éditeur d'application
+
+#### Créer des actions de la manière suivante
+
+Cliquez sur `+ New` dans la page de l'éditeur d'application> pour sélectionner Appwrite > sélectionnez une ressource existante ou créez une nouvelle ressource > cliquez sur `Create Action` pour créer une nouvelle action. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+Après avoir créé une action, veuillez sélectionner une méthode. Nous fournissons les méthodes suivantes : Lister les documents, créer un document, mettre à jour un document, Obtenir un document et supprimer un document. La configuration de chaque méthode est la suivante. 
+
+#### Liste des documents
+
+Voici un exemple de configuration simple : Listez le document avec $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Propriété           | est obligatoire | Libellé                                                                                                                                                                                                                                                               |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID de la collection | Requis          | Entrer ou sélectionner un id de collection dans la base de données                                                                                                                                                                                                    |
+| Filtre              | Optionnel       | Prise en charge de plusieurs filtres. Un filtre consiste en une clé, une valeur et une condition. 1. clé : entrez un attribut 2. condition: sélectionnez une condition, y compris égal, notEqual, lessThan, lessThanEqual, greaterThan, etc. valeur: entrez la valeur |
+| Trier par           | Optionnel       | Prise en charge de la commande par plusieurs attributs. 1. saisissez un attribut à ordonner par 2. Sélectionnez asc( par défaut ) ou desc                                                                                                                             |
+| Limite              | Optionnel       | nombre d'enregistrements                                                                                                                                                                                                                                              |
+
+Voici un exemple d'utilisation des données saisies dans le composant dans l'action :
+
+1.  Ajouter un composant d'entrée au cadre afin que les utilisateurs puissent saisir l'identifiant du document qu'ils veulent trouver.  
+2.  Ajouter un filtre: définir le champ d'attribut à $id et entrer {{ input1.value }} dans le champ de valeur. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Sortie
+
+Vérifiez la structure des données sur le panneau de gauche. Par exemple, utilisez `{{list.data[0].documents[0].id}}`(`list` est le nom de l'action) pour obtenir l'id du premier document. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+Vous pouvez également utiliser `{{list.data[0].documents.map(documents => documents)}}` pour afficher toutes les données sur le composant `table`. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Créer un document
+
+| ID de la collection | Requis | Entrer ou sélectionner un id de collection dans la base de données |
+| ------------------- | ------ | ------------------------------------------------------------------ |
+| ID du document      | Requis | saisissez un ID. Le document sera créé avec cet ID                 |
+| Donnée              | Requis | Un objet clos dans {{ }}. Par exemple, {{ "key": "value" } }}      |
+
+Ce qui suit est un exemple d'utilisation des données saisies dans le composant d'un objet. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Mettre à jour un document
+
+| Propriété           | Libellé                                                            |
+| ------------------- | ------------------------------------------------------------------ |
+| ID de la collection | Entrer ou sélectionner un id de collection dans la base de données |
+| ID du document      | saisir un ID de document existant à mettre à jour                  |
+| Donnée              | Un objet clos dans {{ }}. Par exemple, {{ "key": "value" } }}      |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Obtenir un document
+
+| Propriété           | Libellé                                                            |
+| ------------------- | ------------------------------------------------------------------ |
+| ID de la collection | Entrer ou sélectionner un id de collection dans la base de données |
+| ID du document      | entrer un ID de document existant                                  |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+Les données de sortie sont les suivantes. Utilisez {{get.data[0]}} pour récupérer l'objet du document.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Supprimer un document
+
+| Propriété           | Libellé                                                            |
+| ------------------- | ------------------------------------------------------------------ |
+| ID de la collection | Entrer ou sélectionner un id de collection dans la base de données |
+| ID du document      | entrer un ID de document existant                                  |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Connecter les données de l'Appwrite avec les composants frontaux
+
+#### Configurer les actions
+
+Créez une action delete_document > remplissez le champ ID du document avec {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Ajouter un gestionnaire d'événements à l'action pour définir une réponse lors de l'exécution réussie. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Configurer les composants
+
+Ajouter un gestionnaire d'événements au bouton pour déclencher l'action delete_document. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Définit la source de données de la table pour afficher les données. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Voir les résultats en cours d'exécution
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
