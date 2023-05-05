@@ -1,0 +1,151 @@
+---
+title: Appwrite
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: Opas Appwriten käyttöön ja integrointiin ILLA Cloudissa
+tagCategory: doc_menu_appwrite_click
+---
+
+* * *
+
+## <Heading hidden>Appwrite tietokanta</Heading>
+
+Appwriten eri palveluissa voit löytää käyttäjän todennuksen ja tilinhallinnan, käyttäjäasetukset, tietokannan ja tallennustilan pysyvyys, pilvitoiminnot, lokalisointi, kuvien manipulointi ja enemmän. 
+
+Yhdistelmä ILLA Cloud ja Appwrite, eli yhdistelmä palvelimen puolella matala koodi ja etu-end matala koodi, todella toteuttaa matala koodi koko pino kehitystä.
+
+[Klikkaa tästä](https://appwrite.io/) saadaksesi lisätietoja Appwritesta.
+
+### Aseta Appwrite resurssi ILLA Cloudiin
+
+#### Kaksi tapaa luoda resursseja
+
+Ensimmäinen tapa on syöttää `Resources`-välilehti > klikkaa `Create New` valitaksesi Appwrite. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+Toinen tapa on syöttää `app editor`-sivu > klikkaa `+ New` valitaksesi Appwrite > klikkaa `+ New Resources` lisätäksesi uuden konfiguraation. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Määritä Appwrite täyttämällä seuraavat kentät
+
+Ennen kuin yhdistät Appwrite resurssin, varmista, että olet ottanut Appwrite käyttöön paikalliseen koneeseesi tai pilvipalveluun. [Klikkaa tästä](https://appwrite.io/docs/installation) saadaksesi lisätietoja Appwriten asennuksesta. 
+
+| Ominaisuus         | on_pakollinen | Kuvaus                                                                                     |
+| ------------------ | ------------- | ------------------------------------------------------------------------------------------ |
+| Nimi               | vaadittu      | Resurssin nimi kun luodaan toimia ILLA:ssa. Voit muokata nimeä helposti tunnistettavaksi.  |
+| Isäntä             | vaadittu      | HOSTNAAMI TAI IP-osoite.                                                                   |
+| Tietokannan Tunnus | vaadittu      | Tietokannan Tunnus                                                                         |
+| Projektin Tunnus   | vaadittu      | Projektin Tunnus                                                                           |
+| API-avain          | vaadittu      | TOKEN                                                                                      |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Luo toiminnot sovellusmuokkaimessa
+
+#### Luo toiminnot seuraavalla tavalla
+
+Napsauta `+ New` sovelluseditorin sivulla > valitaksesi Appwrite > valitse olemassa oleva Appwrite resurssi tai luo uusi resurssi > klikkaa `Create Action` luodaksesi uuden toiminnon. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+Kun olet luonut toiminnon, valitse menetelmä. We provide the following methods: List documents , Create a document, Update a document, Get a document, and Delete a document. Kunkin menetelmän kokoonpano on seuraava: 
+
+#### Listaa asiakirjat
+
+Seuraava on yksinkertainen konfiguraatioesimerkki: Listaa dokumentti $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Ominaisuus       | on_pakollinen | Kuvaus                                                                                                                                                                                                                            |
+| ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kokoelman Tunnus | Pakollinen    | Syötä tai valitse kokoelman tunnus tietokannasta                                                                                                                                                                                  |
+| Suodatin         | Valinnainen   | Tue useita suodattimia. Suodatin koostuu avaimesta, arvosta ja tilasta. 1. avain: syötä attribuutti 2. ehto: valitse ehto, mukaan lukien tasa-arvoinen, notEqual, oppitunti, lessThanEqual, greaterThan, etc. 3. arvo: syötä arvo |
+| Järjestä mukaan  | Valinnainen   | Tuki tilaamiseen useiden attribuuttien avulla. 1. syötä attribuutti tilaukseen 2. mennessä. Valitse asc( oletusarvoisesti ) tai desc                                                                                              |
+| Raja             | Valinnainen   | tietueiden lukumäärä                                                                                                                                                                                                              |
+
+Seuraavassa on esimerkki siitä, miten toimintoon merkittyjä tietoja voidaan käyttää:
+
+1.  Lisää ruutuun syötteen komponentti, jotta käyttäjät voivat syöttää asiakirjan tunnuksen, jonka he haluavat löytää.  
+2.  Lisää suodatin: aseta attribuuttikenttä $id ja syötä arvo kenttään {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Ulostulo
+
+Tarkista vasemman paneelin tietojen rakenne. Esimerkiksi käytä `{{list.data[0].documents[0].id}}`(`list` on toimenpiteen nimi) saadaksesi ensimmäisen asiakirjan tunnuksen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+Voit myös käyttää `{{list.data[0].documents.map(documents => documents)}}` näyttääksesi kaikki tiedot `table`-komponentissa. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Luo asiakirja
+
+| Kokoelman Tunnus  | Pakollinen | Syötä tai valitse kokoelman tunnus tietokannasta                    |
+| ----------------- | ---------- | ------------------------------------------------------------------- |
+| Asiakirjan Tunnus | Pakollinen | syötä ID. asiakirja luodaan tällä ID:llä                            |
+| Tiedot            | Pakollinen | Kohde, joka on liitetty {{ }}. Esimerkiksi {{ { "key": "value" } }} |
+
+Seuraavassa on esimerkki siitä, miten voidaan käyttää tietoja, jotka on syötetty objektin osaan. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Päivitä asiakirja
+
+| Ominaisuus        | Kuvaus                                                              |
+| ----------------- | ------------------------------------------------------------------- |
+| Kokoelman Tunnus  | Syötä tai valitse kokoelman tunnus tietokannasta                    |
+| Asiakirjan Tunnus | syötä olemassa oleva asiakirjan ID päivitettäväksi                  |
+| Tiedot            | Kohde, joka on liitetty {{ }}. Esimerkiksi {{ { "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Hanki asiakirja
+
+| Ominaisuus        | Kuvaus                                           |
+| ----------------- | ------------------------------------------------ |
+| Kokoelman Tunnus  | Syötä tai valitse kokoelman tunnus tietokannasta |
+| Asiakirjan Tunnus | syötä olemassa oleva asiakirjatunnus             |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+Tulostustiedot ovat seuraavanlaisia. Käytä {{get.data[0]}} saadaksesi asiakirjan objektin.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Poista asiakirja
+
+| Ominaisuus        | Kuvaus                                           |
+| ----------------- | ------------------------------------------------ |
+| Kokoelman Tunnus  | Syötä tai valitse kokoelman tunnus tietokannasta |
+| Asiakirjan Tunnus | syötä olemassa oleva asiakirjatunnus             |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Yhdistä tiedot Appwrite etupäähän komponentteihin
+
+#### Määritä toiminnot
+
+Luo delete_document toiminto > Täytä Document ID -kenttä {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Lisää tapahtumankäsittelijä toimintoon, jolla vastaus asetetaan, kun se suoritetaan onnistuneesti. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Määritä komponentit
+
+Lisää tapahtuman käsittelijä nappiin käynnistääksesi delete_document toiminnon. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Set the data source of the table to display data. (Automatic Copy) 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Näytä käynnissä olevat tulokset
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
