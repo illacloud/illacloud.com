@@ -1,0 +1,91 @@
+---
+title: Text
+metaTitle: ILLA Cloud Text component doc
+description: Visa data med textkomponent
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Text</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Egenskaper
+
+| Egenskap              | Beskrivning                                                                                                                                                                                                                |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Innehåll              | Ställ in texten som visas på textkomponent. Markdown och klartext stöds.                                                                                                                                                   |
+| Verktygstips          | Ett verktygstips som visas på komponenten när användare svävar över komponenten.                                                                                                                                           |
+| Horisontell justering | För att ställa in den horisontella positionen för textinnehållet i komponenten                                                                                                                                             |
+| Vertikal justering    | För att ställa in den vertikala positionen för textinnehållet i komponenten                                                                                                                                                |
+| Hidden                | Ställ in om denna komponent ska visas och under vilka förutsättningar den ska visas. Till exempel, om den nuvarande användaren inte är Användare A, bör denna komponent döljas: {{ currentUserInfo.nickname != 'User A' }} |
+| Färg                  | För att ställa in textfärgen i färgat textformat                                                                                                                                                                           |
+| Textens storlek       | För att ställa in textstorleken i färgtextformat                                                                                                                                                                           |
+
+### Använd markdown
+
+#### Rubrik
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Rubrik 1
+## Rubrik 2
+### Rubrik 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### göra-lista
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Att göra-lista
+
+1. [ ] 🚀 Bygg en ny app på ILLA Cloud
+2. [ ] :telefon: Ring med Monica
+3. [x] 🍷 Ät middag med **Elsa**
+4. [x] 💃 Spela `Just dance` i en halvtimme
+```
+
+#### Punktad lista
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Bulleted list
+- Realtidssamarbete: Vi kan skapa allt i realtid tillsammans.
+- 🛠️ Anpassad plugin: Bygg en anpassad plugin för att göra vad du vill.
+- 🤖 Automate Support: Anslut allt och automatisera dem på 5 sekunder.
+- 🖥️ Självvärd: stöder Docker & k8s
+```
+
+#### Tabell
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Table
+| Namn        | Länk   |  Beskrivning  |
+| :--------  | :-------  | :----  |
+| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Bygga appar på ILLA Cloud|
+| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
+| ILLA hemsida | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+```
+
+### Visa dynamiska data
+
+Använd `{{` för att hämta data från andra komponenter eller handlingar eller globala variabler. Till exempel för att visa smeknamnet för den aktuella användaren:
+
+```jsx
+## {{ '👋 Hej! '+ currentUserInfo.nickname }}
+```
