@@ -1,0 +1,29 @@
+---
+title: Transformator
+metaTitle: ILLA Cloud transformator doc
+desc: Transformator i ILLA tillater bruker å skrive JavaScript å raffinere programlogikken
+tagCategory: doc_menu_transformer_klikk
+---
+
+* * *
+
+## <Heading hidden>Transformator</Heading>
+
+Vi har satt en Transformator i ILLA for å oppfylle kravene dine for å skrive JavaScript for å raffinere logikken i søknaden din. I Transformatoren, trenger du ikke kode i JavaScript med {{template syntax}} som du gjør i inntastingsboksen for tegn, slik at du kan skrive lange og komplekse blokker av JS-kode samtidig. I tillegg, Transformatoren hjelper utviklere ansvarlig for sidedesign og logisk bygging for å fullføre utviklingsarbeidet sitt mer effektivt uten å bli begrenset av hverandres fremgang.
+
+Du kan benytte Transformator ikke bare for etablerte dataoperasjoner, men også for å opprette transformatoroperasjoner når data transformeres. Det vil være bedre å velge en uavhengig transformator når du har flere operasjoner involvert i transformering av data, eller må bruke kompleks JavaScript logikk for å forvandle data.
+
+### Kreative Transformatorer
+
+Klikk på Transformator-fanen i handling-listen, og klikk på "+ Ny" for å opprette en transformator. Det vil bli vist i handlingslisten etter opprettelse. Du kan endre navn, skrive JS-kode, lagre og kjøre den i konfigurasjonspanelet etter utvalg.
+
+> Du kan bruke 'forhåndsvisning'-knappen for å se resultatene av en transformator. Merk at du må lagre transformatoren for resten av appen for å få den nye verdien.
+
+Innlegget kaller transformatoren med en verdi lik dataene som er returnert i transformatoren, disse dataene vil endres etter hvert som dataene som er ført inn i transformatorens endringer, med transformatorens kode. Som med faktaboksen, kan du fortsatt bruke malens syntaks til å ringe det globale variabelnummeret. Når du skriver JS-kode for å ringe data, du finner det spesifikke navnet på datamodellen i arbeidsområdet til venstre for å hjelpe deg med å skrive kode raskere.
+[//]\: # ([Image])
+
+Du kan kalle transformatorvariabelen i data-oppføringsboksen ved å bruke `{{transformer navn. tag navn}` å ringe transformatorvariabelen i datavareboksen.
+
+### Spørreforvandler
+
+Vi har satt en Transformator i operasjonen for å tillate deg å omdanne de hentede dataene til ønsket format direkte etter at handlingen Du kan da rett og slett passere {{actionName.data}} for å hente dataene når du har fullført konverteringen i transformatoren i handlingen.
