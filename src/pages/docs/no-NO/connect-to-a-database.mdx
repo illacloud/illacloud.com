@@ -1,0 +1,49 @@
+---
+title: Koble til en Database
+metaTitle: ILLA Sky Koble til en database
+desc: ILLA kobles til de fleste databaser, inkludert PostgreSQL, MySQL, TiDB og MongoDB
+tagCategory: doc_menu_database_klikk
+---
+
+* * *
+
+## <Heading hidden>Koble til en database</Heading>
+
+ILLA kobles til de fleste databaser, inkludert PostgreSQL, MySQL, TiDB og MongoDB. Vennligst sjekk denne listen her for datakildene ILLA som støttes for øyeblikket. Her presenteres de kommende datakildene vi planlegger å støtte til. Hvis ILLA mangler visse data du bruker, vennligst fyll ut skjemaet her.
+
+Tilkoblingsdetaljene som kreves av ILLA, avhenger av hvilken type database du ønsker å koble til. Denne informasjonen inkluderer vanligvis en vert, port, brukerlegitimasjon og en tilkoblingsstreng. Referer til din databases konfigurasjon eller dokumentasjon for å skaffe dette.
+
+### 1.  Opprett en databaseressurs
+
+Ressurser representerer forbindelser til datakilder, og er hva du spør i ILLA-appene.Logg inn for ILLA og naviger til **Ressurser** fanen > klikk **Opprett ny** og velg databasen du vil koble til. Dette åpner **Konfigurer en ressursen** modal hvor du legger til din tilkoblingsinformasjon.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Etter du har skrevet inn tilkoblingsdetaljene dine, klikk **Test Connection** for å sjekke ILLA om du har koblet til. Når fullført, klikk på **Lagre ressursen** for å spare ressursen.
+
+I tillegg kan du opprette ressurser i handlingslisten under **App-editoren**.
+
+### 2.  Spørre databasen
+
+I app-editoren klikk **+ Ny** i **Handlingsliste** > velg ressurstype og velg en eksisterende ressurs eller opprett en ny ressurs > klikk **opprett handling** og oppdatere handlingene for å hente informasjon fra en tabell i databasen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Klikk **Lagre** og klikk **Kjør**. Spørrings-resultatene vises automatisk etter at spørringen er fullført.
+
+Det finnes enkelte avanserte innstillinger, blant annet innstillinger for navneendring av kjøring, transformering av data og innføring av håndteringen av kjøringssuksess eller -feil, som vist nedenfor.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>
