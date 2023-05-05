@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: Klicka
+desc: Bygg illa allt-i-ett-bild och kör den av k8s på din maskin.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Beskrivning
+
+Bygg illa allt-i-ett-bild och kör den av k8s på din maskin. Du kan kolla in skriptfilen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) för mer information.
+
+Notera:
+
+Vi rekommenderar starkt att distribuera med våra auto-distribuera verktyg[illa-cli](https://github.com/illacloud/illa).
+
+Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
+
+### Kör med en officiell smal bild
+
+Installera GNU make och typ:
+
+```jsx
+gör driftsättning
+```
+
+eller bara exekvera:
+
+```jsx
+/bin/bash skript/deploy.sh
+```
+
+detta kommando kommer att dra illasoft officiella allt-i-ett image och distribuera den på din Kubernetes kluster.
+
+### För databas ihållande lagring
+
+Redigera[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), och lägg till din IAAS beständiga lagringskonfiguration på den.
+
+### För HTTPS-konfiguration
+
+Du kan dirigera NodePort till din Kubernetes kluster intress gateway och skriva om till 443 port, och lägga till https cert i din intress gateway.
+
+Eller så kan du distribuera en inress-gateway manuellt till din Kubernetes server, konfiguration så här:
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    adress:
+      socket_adress:
+        adress: 0. .0.0
+        port_value: 443
+    filter_kedjor:
+    - filter:
+      - namn: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            namn: local_route
+            virtual_hosts:
+            - namn: illa_builder
+              domäner:
+              - "illa. vår domian. om" # ersätt med din domän
+              rutter:
+              - matcha:
+                  prefix: "/"rutt:
+                  kluster: illa_builder
+          http_filters:
+          - namn: envoy. ilters.http. yttre
+            typed_config:
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        namn: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # ersätt detta med din cert-fil
+            - certificate_chain:
+                filnamn: /your-cert-folder/fullchain. em
+              private_key:
+                filnamn: /your-cert-folder/privkey. em
+
+  kluster:
+  - namn: illa_builder
+    -typ: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      slutpunkter:
+      - lb_endpoints:
+        - slutpunkt:
+            adress:
+              socket_adress:
+                adress: illa-builder
+                port_value: 80
+```
