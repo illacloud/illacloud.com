@@ -1,0 +1,53 @@
+---
+title: Liste
+metaTitle: ILLA Cloud Liste komponent doc
+description: Listekomponenten lar deg opprette repeterbare rader med data hvis utseende er definert av deg.
+tagCategory: doc_menu_list_klikk
+---
+
+* * *
+
+## <Heading hidden>Liste</Heading>
+
+Listekomponenten ligner på en container der du kan hekte inn andre komponenter inne i den.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Dra komponenter for å liste
+
+Når du drar en listekomponent for rammen, inneholder den automatisk noen komponenter. Du kan slette eller endre dem og dra nye komponenter i listen. 
+
+Bare det første elementet kan redigeres, og andre vil automatisk endres basert på det første elementet. Du kan også fokusere på det første elementet og dra på linjen for å endre høydeelementene.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Vis søkeresultater i en liste
+
+Når du drar en listekomponent til rammen, viser den automatisk testdata i JSON-format. Du kan endre datakilden til en handling ved å bruke `{{ mysql_list_query.data }}`. 
+
+Etter at du har satt datakilden, kan du endre data for komponentene:
+
+1.  Velg komponenten i det første elementet. 
+2.  Hvis komponentdataene er fra listen, kan du angi dataene ved å bruke `{{ currentItem.columnName }}. For eksempel kan du angi bildekilden med `{{ currentItem.Avater }}`. `Avater\` er en kolonne fra datakilden i listen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Du kan bare bruke `{{ currentItem.columnName }}` når komponentene er i listen. 
+
+### Bruk dataene i listen
+
+Du kan bruke data fra valgte elementer ved å bruke `{{ list1.selectedItem.columnName }}`. Eller bruk data fra listen ved hjelp av `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
