@@ -1,0 +1,106 @@
+---
+title: Incarca
+metaTitle: ILLA Cloud Upload component doc
+description: Folosiți componenta de încărcare pentru a încărca fișiere de pe aparatele locale în orice spațiu de stocare în cloud
+tagCategory: click_doc_meniu_upload_
+---
+
+* * *
+
+## <Heading hidden>Încărcați</Heading>
+
+Componenta de încărcare este utilizată pentru a permite utilizatorilor să încarce fișiere de pe aparatele lor locale în orice spațiu de stocare din cloud prin API. Apoi, vom introduce cum să configurăm o componentă de încărcare, cum să asociem componenta de încărcare cu un serviciu de stocare cloud, cum să utilizaţi componenta de încărcare pentru a selecta o imagine, şi să o afişaţi cu o imagine, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Proprietăți
+
+| Proprietate                      | Descriere                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tip                              | Setaţi tipul de componentă de încărcare, inclusiv Butonul şi Dropzone. (Automatic Translation)                                                                                                                                                                                                                                                         |
+| Text                             | Textul afișat pe componenta de încărcare.                                                                                                                                                                                                                                                                                                              |
+| Tipuri de selecţie               | Setaţi tipul de selecţie la fişiere multiple, un singur fişier sau director. (Automatic Translation)                                                                                                                                                                                                                                                   |
+| Tipuri de fișiere                | O listă de extensii de fișiere care pot fi încărcate. Nicio valoare nu va permite toate tipurile de fișiere.                                                                                                                                                                                                                                           |
+| Adăugaţi fişierele noi selectate | Pentru a seta fişierul nou selectat să ataşeze la fişierul selectat sau să înlocuiască fişierul selectat în tipul de selecţie a fişierelor multiple sau a directorului.                                                                                                                                                                                |
+| Listă de fișiere                 | Pentru a seta dacă se afișează o listă de fișiere selectate sub componenta de încărcare. Înălțimea încărcătorului se va schimba dinamic în funcție de lungimea listei de fișiere.                                                                                                                                                                      |
+| Valoare de analiză               | Încercați să analizați fișierele selectate, cu suport pentru fișierele JSON, CSV, TSV, Excel și TXT. Datele analizate pot fi accesate prin intermediul {{upload1.parsedValue}}. Fișierele care nu pot fi analizate vor fi nule în matrice. Toate fișierele sunt disponibile ca șiruri codate base64 pe tabloul valoric, indiferent de această opțiune. |
+| Încărcare                        | Dacă componenta ar trebui să afișeze un indicator de încărcare.                                                                                                                                                                                                                                                                                        |
+| Dezactivat                       | Pentru a seta dacă să dezactivați această componentă și în ce condiții să dezactivați. De exemplu, dacă componenta input1 este null, această componentă trebuie să fie dezactivată: {{ input1.value == “’}}                                                                                                                                            |
+| Tooltip                          | Un tip de instrument afișat pe componentă atunci când utilizatorii planează deasupra componentei.                                                                                                                                                                                                                                                      |
+| Câmp obligatoriu                 | Pentru a stabili dacă este necesar.                                                                                                                                                                                                                                                                                                                    |
+| Min size                         | Pentru a seta dimensiunea minimă a fişierului care poate fi adăugată.                                                                                                                                                                                                                                                                                  |
+| Max size                         | Pentru a seta dimensiunea maximă a fişierului permisă a fi adăugată.                                                                                                                                                                                                                                                                                   |
+| Regulă personalizată             | Pentru a seta textul afișat atunci când verificarea eșuează.                                                                                                                                                                                                                                                                                           |
+| Ascunde mesajul de validare      | Pentru a seta dacă se afișează mesajul de validare atunci când verificarea eșuează.                                                                                                                                                                                                                                                                    |
+| Formular cheie date              | Stabilirea unei chei pentru componentă. După adăugarea acestei componente la un formular, această cheie va fi folosită pentru a identifica datele acestei componente la trimiterea formularului.                                                                                                                                                       |
+| Hidden                           | Pentru a seta dacă se afișează această componentă și în ce condiții se afișează. De exemplu, dacă utilizatorul curent nu este utilizator A, această componentă ar trebui să fie ascunsă: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                    |
+| Variantă                         | Pentru a seta componenta de încărcare buton în contur sau umplut.                                                                                                                                                                                                                                                                                      |
+| Culoarea temei                   | Pentru a seta culoarea componentei de încărcare buton.                                                                                                                                                                                                                                                                                                 |
+
+### Metodă
+
+Puteți folosi alte componente pentru a controla componenta Încărcare. Sprijinim următoarele trei metode:
+
+| clearValidare | Folosit pentru a șterge mesajul de validare                             |
+| ------------- | ----------------------------------------------------------------------- |
+| curățare      | Folosit pentru a şterge selecţia                                        |
+| Dezactivat    | Folosit pentru a seta componenta de încărcare la dezactivat sau activat |
+
+### Gestionar de evenimente
+
+Pentru a declanșa acțiuni atunci când se schimbă fișierele selectate
+
+### Datele încărcătorului
+
+Componenta de încărcare are niște date utilizate în mod obișnuit, care pot fi apelate în aplicație.
+
+`value` un array format din datele base64 ale fișierelor. 
+
+`files` o serie de obiecte. Cheile obiectelor includ `lastModified`, `name`, `size`, `type`. Puteți utiliza `{{upload1.files.map(fișier =>fișier). ame)}` pentru a obţine o serie de nume de fişiere şi puteţi obţine de asemenea matrice de ultimă oră, matrice de mărime, matrice în acelaşi mod. 
+
+### Încărcați fișiere într-un serviciu de stocare în cloud
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Încărcați un singur fișier printr-o resursă S3
+
+Configurația acțiunii este următoarea. 
+
+Încărcați numele obiectului
+
+```jsx
+{{upload1.files.map(fișier =>fișier.name)[0]}}
+```
+
+Încarcă date
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Încarcă mai multe fișiere printr-o resursă S3
+
+Încărcați lista de nume de obiecte
+
+```jsx
+{{upload1.files.map(fișier =>file.name)}}
+```
+
+Încarcă lista de date
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Încărcaţi o imagine şi afişaţi-o în componenta de imagine
+Modificaţi sursa imaginii în baza de fişier64 a componentei de încărcare. Datele base64 sunt stocate în atributul valoric din array. Și ar trebui să împărțim prefixul fișierului cu datele fișierului. Codul este după cum urmează. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
