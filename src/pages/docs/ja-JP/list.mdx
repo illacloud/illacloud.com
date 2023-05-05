@@ -1,0 +1,53 @@
+---
+title: リスト
+metaTitle: ILLA クラウドリストコンポーネントドキュメント
+description: Listコンポーネントを使用すると、ルックアンドフィールが定義されたデータの繰り返し行を作成できます。
+tagCategory: doc_menu_list_click
+---
+
+* * *
+
+## <Heading hidden>リスト</Heading>
+
+Listコンポーネントはコンテナに似ており、他のコンポーネントを入れ子にすることができます。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### コンポーネントをドラッグして一覧にする
+
+List コンポーネントをフレームにドラッグすると、コンポーネントが自動的に含まれます。 削除または変更し、新しいコンポーネントをリストにドラッグできます。 
+
+最初の項目だけを編集でき、最初の項目に基づいて他の項目が自動的に変更されます。 最初の項目にフォーカスして、バーをドラッグして高さの項目を変更することもできます。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### クエリ結果をリストに表示する
+
+List コンポーネントをフレームにドラッグすると、自動的に JSON 形式でテストデータが表示されます。 データソースをアクションに変更するには、`{{ mysql_list_query.data }}`を使用します。 
+
+データ ソースを設定した後、コンポーネントのデータを変更できます。
+
+1.  最初の項目でコンポーネントを選択します。 
+2.  コンポーネントデータがリストからの場合は、`{{ currentItem.columnName }}` を使用してデータを設定できます。 たとえば、`{{ currentItem.Avater }}`でイメージソースを設定できます。 `Avater` はリストのデータソースからの列です。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+コンポーネントがリストに含まれている場合にのみ、`{{ currentItem.columnName }}`を使用できます。 
+
+### リストのデータを使用
+
+`{{ list1.selectedItem.columnName }}`で選択したアイテムのデータを使用できます。 または、`{{ list1.dataSource[n].columnName }}`を使用してリストの任意のデータを使用してください
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
