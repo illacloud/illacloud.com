@@ -1,0 +1,132 @@
+---
+title: Przycisk Radio
+metaTitle: Komponent przycisku radiowego
+description: Wyświetl wszystkie opcje na przyciskach radiowych i wsparcie aby wybrać 1 opcję.
+tagCategory: kliknij przycisk_doc_menu_radio_przycisk_kliknięcia
+---
+
+* * *
+
+## <Heading hidden>Przycisk radia</Heading>
+
+Przycisk radia wybiera komponent wejściowy, który pozwala użytkownikom wybrać jedną opcję z grupy wstępnie zdefiniowanych opcji. Wyświetla się jako zaokrąglony kwadrat, który może być wybrany lub odznaczony przez użytkowników. Gdy przycisk radiowy jest zaznaczony, wszystkie inne przyciski radiowe w tej samej grupie są automatycznie odznaczane, zapewnienie możliwości wyboru tylko jednej opcji w danym momencie. Przyciski radiowe są powszechnie używane w formach, kwestionariuszach i ankietach, aby pomóc użytkownikom w dokonaniu jednego wyboru z listy opcji.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
+
+### Właściwości
+
+#### Opcje ręczne
+
+Dodaj nowe opcje lub usuń opcje ręcznie i skonfiguruj opcje po nim. Właściwości opcji są następujące: 
+
+| Właściwości | Opis                                     |
+| ----------- | ---------------------------------------- |
+| Etykieta    | Tekst wyświetlany dla opcji              |
+| Wartość     | Wartość powiązana z opcją                |
+| Wyłączone   | Czy opcja jest wyłączona dla zaznaczenia |
+
+#### Opcje mapowane
+
+Możesz również dodać opcje ze źródła danych poprzez mapowanie etykiety i właściwości wartości do odpowiednich pól danych. Możesz uzyskać opcje dynamicznie z bazy danych w ten sposób. Na końcu tego artykułu zademonstrowaliśmy, jak wykorzystać go przykładowo.
+
+| Właściwości   | Opis                                                                   |
+| ------------- | ---------------------------------------------------------------------- |
+| Źródło danych | Ustaw źródło danych opcji                                              |
+| Etykieta      | Użyj {{item}} aby ustawić etykietę opcji                               |
+| Wartość       | Użyj {{item}} aby ustawić wartość opcji                                |
+| Wyłączone     | Użyj {{item}} , aby określić, czy opcja jest wyłączona dla zaznaczenia |
+
+#### Inne właściwości
+
+| Właściwości                    | Opis                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Wartość domyślna               | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                                           |
+| Zastępca                       | Wartość będzie wyświetlana, gdy pole wejściowe jest puste.                                                                                                         |
+| Etykieta                       | Nazwa pola wyświetlanego użytkownikowi                                                                                                                             |
+| Podpis                         | Podpis używany do szczegółowego opisu pola                                                                                                                         |
+| Ukryta etykieta                | Ustaw czy wyświetlić etykietę                                                                                                                                      |
+| Położenie                      | Ustaw położenie etykiety względem komponentu                                                                                                                       |
+| Wyrównanie                     | Ustaw wyrównanie etykiety                                                                                                                                          |
+| Width                          | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety                                                                         |
+| Obsługa zdarzeń                | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                           |
+| Wyłączone                      | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                            |
+| Tylko do odczytu               | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                            |
+| Pokaż przycisk wyczyść         | Ustaw czy pokazać przycisk wyczyść                                                                                                                                 |
+| Wskazówka                      | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                      |
+| Pole wymagane                  | Ważne tylko wtedy, gdy przełącznik jest włączony.                                                                                                                  |
+| Własna reguła                  | Edytor.inspect.setter_tooltip.custom_reguła                                                                                                                        |
+| Ukryj komunikat potwierdzający | Możesz ukryć komunikat o błędzie przełączając status ukrycia, gdy wartość wejściowa jest nieprawidłowa. Możesz dynamicznie zmienić status ukryty przez JavaScript. |
+| Klucz danych formularza        | Określ klucz komponentu opakowania formularza podczas konstruowania atrybutu danych.                                                                               |
+| Hidden                         | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                 |
+| Kolor motywu                   | Aby wybrać kolor motywu komponentu                                                                                                                                 |
+
+### Metoda
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące trzy metody:
+
+#### Wartość zadana
+
+Aby ustawić wybraną opcję, na przykład {{”value1”}}
+
+| Właściwości | Opis                           |
+| ----------- | ------------------------------ |
+| Wartość     | Ciąg wartości wybranej opcji.  |
+
+#### wyczyść wartość
+
+Aby wyczyścić wybrane opcje
+
+#### validate
+
+Sprawdzenie, czy informacje wejściowe są zgodne z prawem
+
+#### wyczyść walidator
+
+Aby wyczyścić komunikat potwierdzający
+
+### Obsługa zdarzeń
+
+Wspieramy słuchanie zdarzenia `onChange` komponentu przycisku radiowego. 
+
+Po zmianie wybranej opcji, może ona wyzwalać określoną akcję. Oznacza to, że gdy użytkownik wybiera inną opcję z grupy przycisków radiowych, konkretne działanie może zostać podjęte w oparciu o wybraną opcję. Na przykład w formie internetowej, wybranie innej opcji może spowodować wyświetlanie różnych pól formularza lub przesłanie formularza do innego miejsca przeznaczenia. W ten sposób opcja wybrana przez użytkownika może mieć wpływ na zachowanie używanego oprogramowania lub aplikacji internetowej. Możliwość uruchomienia określonych działań w oparciu o dane wejściowe użytkownika jest ważnym aspektem interaktywnego projektowania oprogramowania i może poprawić użyteczność i funkcjonalność oprogramowania.
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywołane przez {{componentName.propertyName}} w aplikacji.
+
+| Nazwa własności | Opis                          |
+| --------------- | ----------------------------- |
+| wartość         | ciąg wartości wybranej opcji  |
+
+### Przypadek użycia
+
+Następnie pokażemy jak korzystać z odwzorowanego trybu do dynamicznego uzyskiwania opcji. 
+
+#### Krok 1 Dodaj akcję
+
+Stworzyliśmy tabelę o nazwie `selection`, w tym 5 kolumn: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Zapisaliśmy wartości opcji w `value` i zapisaliśmy etykietę opcji w różnych językach w innych kolumnach. 
+
+Utwórz akcje, aby wyświetlić listę wszystkich danych w `selection` o nazwie `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+wybierz * z zaznaczenia
+```
+
+#### Krok 2 Konfiguruj komponent
+
+1.  Ustawiono źródła danych na `{{postgresql1.data}}` 
+2.  Skonfiguruj etykietę, aby zmienić etykietę na podstawie języka. 
+
+    1.  Użyj {{ item.columnName }} , aby ustawić kolumnę. 
+    2.  Użyj {{ currentUserInfo.language }} , aby ustawić język używany przez użytkowników w ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio2.png' alt="" />
