@@ -68,7 +68,7 @@ function renderItem (title, items) {
 export function Footer ({ noHome = false }) {
   const { t } = useTranslation('home')
   const { scrollYProgress } = useViewportScroll()
-  const translateY = useTransform(scrollYProgress, [0.91, 1], [-140, 0])
+  const translateY = useTransform(scrollYProgress, [0.91, 1], [-120, 0])
   const router = useRouter()
   const curLanguage = router.locale
 
@@ -174,7 +174,7 @@ export function Footer ({ noHome = false }) {
         )}
       >
         <motion.div
-          className="flex w-full grow justify-center items-center flex translate-y-[-140px] z-[1] color-garyBlue-01"
+          className="flex w-full grow justify-center items-center flex translate-y-[-120px] z-[1] color-garyBlue-01"
           style={{
             translateY,
           }}

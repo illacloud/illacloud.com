@@ -34,6 +34,7 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
       <Head>
         <title>{t(`${pageName}.meta.title`)}</title>
         <meta name="description" content={t(`${pageName}.meta.description`)} />
+        <link rel="canonical" href={`https://www.illacloud.com/${pageName}`} />
       </Head>
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />

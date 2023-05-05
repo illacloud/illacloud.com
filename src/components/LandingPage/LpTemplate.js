@@ -21,8 +21,8 @@ export const LpTemplate = () => {
       {templateContent && templateContent.map(({ label, title, description, link, itemList, btnText, target }) => (
         <Fragment key={label}>
           <div className={style.templateHeader}>
-            <span className={style.templateHeaderLabel}>{t(label)}</span>
-            <span className={style.templateHeaderTitle}>{t(title)}</span>
+            <h2 className={style.templateHeaderLabel}>{t(label)}</h2>
+            <h3 className={style.templateHeaderTitle}>{t(title)}</h3>
             <span className={style.templateHeaderDesc}>{t(description)}</span>
             <LearnMore href={link} btnText={btnText} onClick={() => onClick(target)} />
           </div>
@@ -31,7 +31,7 @@ export const LpTemplate = () => {
               itemList && itemList.map(({ itemImage, itemDesc, itemLink, itemName, btnText, target }) => (
                 <div className={style.templateItem} key={itemName}>
                   <img src={itemImage} alt={itemName} className='w-full' />
-                  <span className={style.templateItemName}>{t(itemName)}</span>
+                  <h3 className={style.templateItemName}>{t(itemName)}</h3>
                   <div className='h-[64px] overflow-hidden'><span className={style.templateItemDesc}>{t(itemDesc)}</span></div>
                   <LearnMore href={itemLink} btnText={btnText} onClick={() => onClick(target)} />
                 </div>

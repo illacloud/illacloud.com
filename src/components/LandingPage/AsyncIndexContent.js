@@ -22,7 +22,7 @@ const ContentItems = ({ contentList, pageName }) => {
       <div className={style.item} key={name}>
         <img src={logo} alt={name} className='h-[24px] xl:h-[40px]' />
         <div className='flex flex-col items-start gap-[4px] xl:gap-[8px]'>
-          <div className='xl:h-[26px] h-[20px] overflow-hidden'><span className={style.itemName}>{name}</span></div>
+          <h3 className='xl:h-[26px] h-[20px] overflow-hidden'><span className={style.itemName}>{name}</span></h3>
           <div className='h-[72px] overflow-hidden'><span className={style.itemDescription}>{description}</span></div>
           <LearnMore href={`/${pageName}/${name}`} onClick={() => onClick(name)} btnText={t("learn_more")} />
         </div>
@@ -39,7 +39,7 @@ export const AsyncIndexContent = ({ content, pageName }) => {
       {Object.values(content).map(({ title, contentList }) => {
         return (
           <Fragment key={title}>
-            <p className={style.contentTitle}>{title}</p>
+            <h2 className={style.contentTitle}>{title}</h2>
             <div className={style.itemsContainer}>
               <ContentItems contentList={contentList} pageName={pageName} />
             </div>
