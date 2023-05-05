@@ -1,0 +1,49 @@
+---
+title: Connettiti a un database
+metaTitle: ILLA Cloud Connetti a un database
+desc: ILLA si connette alla maggior parte dei database, inclusi PostgreSQL, MySQL, TiDB e MongoDB
+tagCategory: doc_menu_database_click
+---
+
+* * *
+
+## <Heading hidden>Connetti a un database</Heading>
+
+ILLA si connette alla maggior parte dei database, inclusi PostgreSQL, MySQL, TiDB e MongoDB. Si prega di controllare questa lista qui per le fonti di dati ILLA attualmente supportati. Le prossime fonti di dati che stiamo progettando di supportare sono elencate qui. Se ILLA manca alcune risorse di dati che stai utilizzando, compila il modulo qui.
+
+I dettagli di connessione richiesti dall'ILLA dipendono dal tipo di database che si desidera connettere. Queste informazioni includono generalmente un host, porta, credenziali utente e stringa di connessione. Fare riferimento alla configurazione o alla documentazione del database per ottenere questo.
+
+### 1.  Crea una risorsa database
+
+Le risorse rappresentano connessioni alle fonti di dati e sono ciò che chiedi all'interno delle tue app ILLA.Accedi all'ILLA e vai alla scheda **Risorse** > fai clic su **Crea nuovo** e seleziona il database a cui vuoi connetterti. Questo apre il modal **Configura una risorsa** dove aggiungi le informazioni di connessione.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Dopo aver inserito i dati di connessione, clicca su **Test Connection** per controllare che ILLA possa connettersi correttamente. Una volta completato, fare clic su **Salva risorsa** per salvare la risorsa.
+
+Inoltre, è possibile creare risorse nella lista delle azioni sotto **App editor**.
+
+### 2.  Interroga il tuo database
+
+Nell'editor di app, fare clic su **+ Nuovo** in **Elenco Azioni** > selezionare il tipo di risorsa e scegliere una risorsa esistente o creare una nuova risorsa > fare clic su **creare azione** e aggiornare le azioni per recuperare alcune informazioni da una tabella nel database.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Fare clic su **Salva** e quindi su **Esegui**. I risultati delle interrogazioni vengono visualizzati automaticamente dopo il completamento dell'interrogazione.
+
+Ci sono alcune impostazioni avanzate, tra cui il rinominamento, le impostazioni di esecuzione, la trasformazione dei dati e la configurazione della gestione del successo di esecuzione o di fallimento, come mostrato di seguito.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>
