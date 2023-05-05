@@ -1,0 +1,151 @@
+---
+title: Aplică
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: Ghidul de configurare și integrare cu Appwrite pe ILLA Cloud
+tagCategory: doc_meniu_appwrite_click
+---
+
+* * *
+
+## <Heading hidden>Baza de date Appwrite</Heading>
+
+În cadrul diferitelor servicii Appwrite, puteți găsi autentificarea și gestionarea contului, preferințele utilizatorilor, persistența bazei de date și a stocării, funcțiile cloud, localizarea, manipularea imaginii și multe altele. 
+
+Combinația dintre ILLA Cloud și Appwrite, și anume combinația dintre codul jos din partea serverului și codul minuțios din față, va realiza cu adevărat dezvoltarea de cod complet jos.
+
+[Faceți clic aici](https://appwrite.io/) pentru a afla mai multe despre Appwrite.
+
+### Configurare resursă Appwrite pe ILLA Cloud
+
+#### Două moduri de a crea resurse
+
+Prima cale este de a introduce fila `Resources` > apasă `Create New` pentru a selecta Appwrite. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+O altă cale este să introduceţi pagina `app editor` > faceţi clic pe `+ New` pentru a selecta Appwrite > faceţi clic pe `+ Resurse noi` pentru a adăuga o nouă configuraţie. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Configurare Appwrite completând următoarele câmpuri
+
+Înainte de a conecta o resursă Appwrite asigură-te că ai instalat Appwrite pe calculatorul local sau un furnizor de cloud. [Faceți clic aici](https://appwrite.io/docs/installation) pentru a afla mai multe despre instalarea Appwrite. 
+
+| Proprietate         | necesar_este | Descriere                                                                                                      |
+| ------------------- | ------------ | -------------------------------------------------------------------------------------------------------------- |
+| Nume                | necesar      | Numele pentru resurse la crearea de acțiuni în ILLA. Puteţi personaliza un nume pentru o identificare uşoară.  |
+| Gazdă               | necesar      | CUM SAU IP.                                                                                                    |
+| ID-ul bazei de date | necesar      | ID-ul bazei de date                                                                                            |
+| ID Proiect          | necesar      | ID Proiect                                                                                                     |
+| Cheia Api           | necesar      | TOKEN                                                                                                          |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Crează acțiuni în editorul aplicației
+
+#### Crează acțiuni în următorul mod
+
+Faceți clic pe `+ Nou` din pagina editorului de aplicații > pentru a selecta Appwrite > selectați o resursă Appwrite existentă sau creați o resursă nouă > faceți clic pe `Creare Acțiune` pentru a crea o acțiune nouă. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+După crearea unei acțiuni, te rugăm să selectezi o metodă. Oferim următoarele metode: Listați documente, Creați un document, actualizați un document, obțineți un document și ștergeți un document. Configurația fiecărei metode este după cum urmează. 
+
+#### Listare documente
+
+Următorul exemplu este o configurare simplă: Listați documentul cu $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Proprietate   | necesar_este | Descriere                                                                                                                                                                                                                                              |
+| ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ID colecție   | Necesar      | Introduceți sau selectați un id de colectare din baza de date                                                                                                                                                                                          |
+| Filtrare      | Opţional     | Suportă filtre multiple. Un filtru constă dintr-o cheie, o valoare și o condiție. 1. cheie: introduceți un atribut 2. conditie: selectati o conditie, inclusiv egala, notEqual, lessThan, lessThanEqual, mai mare etc. 3. valoare: introducere valoare |
+| Ordonare după | Opţional     | Suport pentru comenzi prin atribute multiple. 1. introdu un atribut pentru a comanda cu 2. Selectați asc( implicit ) sau descrescător                                                                                                                  |
+| Limită        | Opţional     | numărul de înregistrări                                                                                                                                                                                                                                |
+
+Următorul exemplu este modul de utilizare a datelor introduse în componentă în acțiune:
+
+1.  Adăugați o componentă de intrare la cadru astfel încât utilizatorii să poată introduce ID-ul documentului pe care doresc să-l găsească.  
+2.  Adăugați un filtru: setați câmpul atributului la $id și introduceți {{ input1.value }} în câmpul valoric. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Ieșire
+
+Verificați structura de date în panoul din stânga. De exemplu, folosiți `{{list.data[0].documents[0].id}}(`list\` este numele acțiunii) pentru a obține ID-ul primului document. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+De asemenea, puteți utiliza `{{list.data[0].documents.map(documente => documents)}}` pentru a afișa toate datele de pe componenta `table`. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Creează un document
+
+| ID colecție | Necesar | Introduceți sau selectați un id de colectare din baza de date |
+| ----------- | ------- | ------------------------------------------------------------- |
+| ID document | Necesar | introduceți un ID. documentul va fi creat cu acest ID         |
+| Date        | Necesar | Un obiect inchis in {{ }}. De exemplu, {{ "key": "value" } }  |
+
+Urmează un exemplu de utilizare a datelor introduse în componentă într-un obiect. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Actualizează un document
+
+| Proprietate | Descriere                                                     |
+| ----------- | ------------------------------------------------------------- |
+| ID colecție | Introduceți sau selectați un id de colectare din baza de date |
+| ID document | introduceți un ID de document existent pentru a fi actualizat |
+| Date        | Un obiect inchis in {{ }}. De exemplu, {{ "key": "value" } }  |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Obțineți un document
+
+| Proprietate | Descriere                                                     |
+| ----------- | ------------------------------------------------------------- |
+| ID colecție | Introduceți sau selectați un id de colectare din baza de date |
+| ID document | introduceți un ID document existent                           |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+Datele de ieșire sunt următoarele. Folosește {{get.data[0]}} pentru a obține obiectul document.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Șterge un document
+
+| Proprietate | Descriere                                                     |
+| ----------- | ------------------------------------------------------------- |
+| ID colecție | Introduceți sau selectați un id de colectare din baza de date |
+| ID document | introduceți un ID document existent                           |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Conectați datele de la Appwrite cu componentele front-end
+
+#### Configurați acțiunile
+
+Creați o acțiune de ștergere_document > completați câmpul ID document cu {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Adăugați un gestionar de evenimente la acțiune pentru a seta un răspuns atunci când rulați cu succes. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Configurați componentele
+
+Adaugă un handler de evenimente la buton pentru a declanșa acțiunea ștergere_document. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Setați sursa de date din tabel pentru a afișa date. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Vezi rezultatele în derulare
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
