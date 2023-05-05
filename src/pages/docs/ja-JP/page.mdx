@@ -1,0 +1,52 @@
+---
+title: ページ
+metaTitle: ILLA Cloud Page doc
+description: ILLAでシングルページアプリとマルチページアプリをビルドする
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>ページ</Heading>
+
+ILLAにビルドされた複数ページのデモ: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+単一ページアプリケーションは、ページ上のすべてのコンポーネントを再読み込みせずにページを変更できるアプリケーションです。 ほとんどのリソース(HTML、CSS、スクリプトを含む)は、アプリケーションのライフサイクル全体で一度だけ読み込まれるため、単一ページのアプリケーションが高速になります。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+複数ページのアプリケーションでは、すべての変更があります。 例えば、データを表示したり、サーバー要求にデータを送信したりすると、サーバーから新しいページをレンダリングしたりするなどです。 複数ページのアプリケーションにはいくつかのレベルがあり、アプリケーションの構造はユーザーにとってシンプルで簡単です。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+ILLA Builderでは、ページのフレームを設定し、セクションにビューを追加することで、シングルページアプリケーションを構築できます。 複数のページを追加することで複数ページのアプリケーションを構築できます 開発者はこの2つのデザインパターンを 1つのアプリケーションで両方使用できます
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### ページのレイアウトを設定する
+
+次の手順としてページ設定に移動：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+プリセットレイアウトを使用するか、セクションを手動で追加および削除してレイアウトを設定できます。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### ビューをページに追加
+
+`View path`: 指定したビューにアクセスするためにページURLの後にスプライズされた文字列。 アプリがデプロイされると、次のようになります。https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+以下のパスでホームページとデフォルト表示を入力することもできます。
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### メニューとページを接続
+
+メニューアイテムにイベントハンドラを追加する → `Action` を `Set router` に設定する → ページを選択して表示する
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
