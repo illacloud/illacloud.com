@@ -1,0 +1,52 @@
+---
+title: 页
+metaTitle: ILLA Cloud Page doc
+description: 在 ILLA 上构建单页应用和多页应用
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>页面</Heading>
+
+在ILLA上构建一个多页面演示： 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+单页应用程序是一个可以更改页面而不重新加载页面上所有组件的应用程序。 大多数资源 (包括HTML、CSS 和 Script) 仅在应用程序整个生命周期中加载一次，使单页应用程序变得更快。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+在一个多页应用程序中，每次更改， 例如显示数据或提交数据回到服务器请求从服务器上渲染一个新页面。 多页应用程序有几个级别，这使得应用程序结构对用户简单明了。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+在ILLA Builder中，可以通过设置页面框架和添加视图到部分来构建单页应用程序。 和多页应用程序可以通过添加多页来构建，开发者可以在一个应用程序中使用这两种设计模式。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### 设置页面布局
+
+转到页面配置作为以下步骤：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+您可以使用预设布局，或者手动添加和删除版块来设置布局。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### 添加视图到页面
+
+`查看路径`: 在页面URL后面的字符串分割以访问指定视图。 应用部署后，完整的访问地址如下：https://builder.illacloud.com/{{team_identifier}}/dep/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+您也可以通过以下路径输入主页和默认视图：
+
+https://builder.illacloud.com/{{team_identifier}}/dep/app/{{app_id}}。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### 连接菜单和页面
+
+将事件处理程序添加到菜单项 → 设置动作为 "设置路由" -> 选择页面和视图
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
