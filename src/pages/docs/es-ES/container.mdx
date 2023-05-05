@@ -1,0 +1,38 @@
+---
+title: Contenedor
+metaTitle: Doc contenedor de nube ILLA
+desc: El Contenedor de ILLA permite agrupar componentes reltados juntos en una tarjeta
+tagCategory: doc_menú_contenedor_clic
+---
+
+* * *
+
+## <Heading hidden>Contenedor</Heading>
+
+Puede agrupar componentes relacionados en una tarjeta usando el componente Container. Los contenedores también soportan múltiples vistas que le permiten separar el contenido en distintas vistas entre las que los usuarios pueden cambiar.
+
+Los contenedores funcionan como cualquier otro componente. Una vez añadido, puedes agrupar componentes dentro de él pulsando D o K y arrastrándolos al Contenedor.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/container.png'
+  alt=""
+/>
+
+### Múltiples vistas
+
+Los contenedores admiten múltiples vistas para agrupar contenido. Puedes establecer vistas en la sección **Vistas** de la pestaña **Inspect**. Sólo una vista es visible a la vez y los usuarios cambian entre ellos cambiando la vista actual del componente Contenedor.
+
+### Usar otros componentes para cambiar las vistas
+
+Puede utilizar otros componentes para controlar contenedores añadiendo controladores de eventos a otros componentes. Los siguientes métodos son compatibles:
+
+1.  Establecer la vista actual por clave
+2.  Establecer vista actual por índice
+3.  Mostrar la siguiente vista (visible)
+4.  Mostrar la vista anterior (visible)
+
+### Conectar una pestaña a un contenedor
+
+Puedes usar un componente de pestaña para controlar un contenedor cambiando el **Enlace a un contenedor** de la pestaña **Inspect**.
+
+Después de enlazar a un contenedor, las etiquetas de las pestañas cambiarán a las etiquetas de las vistas. Puede cambiar las vistas haciendo clic en pestañas sin gestores de eventos. 
