@@ -1,0 +1,51 @@
+---
+title: Rask start
+metaTitle: ILLA Sky hurtigstartguide
+description: Utvikle dine interne verktøy
+tagCategory: doc_menu_quick_start_klikk
+---
+
+* * *
+
+## <Heading hidden>Oversikt</Heading>
+
+### 1.  Benytt ILLA-bygger
+
+Før du begynner å bruke ILLA-bygger, bør du velge å bruke ILLA Cloud eller Self-host ILLA til å være vert for appene dine. Vi tilbyr deg ILLA CLI, Docker Compose, og K8s til selv-vert ILLA om under 5 minutter. Vi vil gi deg ILLA Cloud senere, noe som hjelper deg å rett og slett komme i gang med ILLA-byggeren.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Hent brukerdata
+
+Registrer deg og logg inn i ILLA-byggeren, og skriv deretter inn ressurstabelen. Klikk på knappen "Lag ny" og så kan du velge ressurstype her. Vi tilbyr deg med REST API og MySQL for å koble sammen dataene dine. Postgres, Redis og MongoDB vil være tilgjengelig denne måneden.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Dra og slipp innsetter
+
+Når dataene dine er klargjort, kan du gå tilbake til app-fanen og opprette en app. Søkelisten er på høyre side av siden. Du kan velge en av dem og dra den inn i rammen. Deretter klikker du på innsettet og endrer parametrene i Kontrollpanelet. Vi gir deg markdown modus for å redigere etiketten for hvert innlegg. Dersom du er kjent med Markdown-syntaks, kan du raskt justere tekststørrelse og tykkelse. I mellomtiden kan du bruke {{double brackets}} til å påberope deg handlingsdata i inntastingsboksen for å oppnå flere resultater i ILLA-byggeren.
+
+### 4.  Legg til handling i apper
+
+En handling kreves for å omforme data fra ressurser til innsetting av data. Vi kaller det handel. Du kan skrive en spørring i handlingen for å fange data fra ressursen din. På bakgrunn av dette kan du skrive JavaScript i handlinger for å utføre databehandlingsinstrukser, som for eksempel filter og fletting. Et MySQL eksempel er gitt nedenfor:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Lag en MySQL handling i App-editoren. Navngitt den action1.
+
+2.  Angi spørringskoden i panelet, f.eks SELECT \* FRA brukere.
+
+3.  Kjør denne handlingen, spørringen vil bli vist på bunn-panelet.
+
+### 5.  Vis dine data
+
+Når handlingen er opprettet, må du binde resultatet av handlingen til komponenten. Du må erstatte verdivariabelen på inspeksjonspanelet med resultatet av handlinger {{action1.data}}. Deretter vil komponentdataene binde med handlingsresultatet. 
