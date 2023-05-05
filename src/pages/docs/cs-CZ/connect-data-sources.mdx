@@ -1,0 +1,44 @@
+---
+title: Připojte se ke zdrojům dat
+metaTitle: Illa Cloud připojení ke zdrojům dat
+desc: Naučte se připojit ke zdroji dat a zavolat jej v Editoru ILLA
+tagCategory: doc_menu_data_source_connect_click
+---
+
+* * *
+
+## <Heading hidden>Připojte se ke zdrojům dat (akce)</Heading>
+
+Naučte se připojit ke zdroji dat a zavolejte jej v Editoru ILLA .
+
+ILLA umožňuje připojit a integrovat širokou škálu datových zdrojů, včetně databází a API, do vaší organizace pro použití jako suroviny.
+
+### Zdroje údajů
+
+Zdroje údajů jsou místa, kde se údaje ukládají a zpracovávají. Příklady zdrojů dat zahrnují PostgreSQL databáze, Twilio REST API a Amazon S3 buckets. V ILLA můžete přidat více zdrojů dat a zpřístupnit je uživatelům pro dotaz.
+
+#### Integrace
+
+ILLA poskytuje vestavěné integrace pro mnoho populárních zdrojů dat, které vyžadují minimální konfiguraci, jako jsou SQL databáze nebo Stripe. Tyto integrace, známé také jako zdroje, vám umožní připojit se k vašim zdrojům dat a dotazovat se na ně pomocí ILLA. Pokud určitý typ zdroje dat není podporován integrovanou integrací, můžete použít REST, GraphQL nebo SOAP integrace, abyste se připojili k téměř jakémukoli API. To vám umožní přístup k široké škále zdrojů dat v rámci ILLA-builderu.
+
+#### Připojit k databázím
+
+Připojit k většině databází a datových úložišť
+
+#### Připojit k API
+
+Připojte se k REST a GraphQL.
+
+### Zdroje
+
+Zdroj v ILLA je uložená konfigurace, která specifikuje, jak se ILLA připojuje ke zdroji dat. Chcete-li použít zdroj dat v ILLA, musíte pro něj vytvořit zdroj. Můžete vybrat vhodný zdroj pro přístup k datům při psaní dotazu.
+
+Každý zdroj v ILLA má své vlastní konfigurační možnosti, které určují, jak se ILLA připojuje k odpovídajícímu zdroji dat. Tyto možnosti mohou zahrnovat ověřovací údaje a tok dat, nastavení připojení k databázi a nastavení API, jako je základní URL a výchozí hlavičky.
+
+#### Jak fungují zdroje
+
+ILLA zdroje ukládají potřebná nastavení pro bezpečné připojení k vašemu zdroji dat. To vám umožní snadno dohlížet na data, aniž byste byl zdroj dat vystaven přímo vašim uživatelům. Když je dotaz spuštěn pro zdroj, ILLA používá nastavení zdroje pro proxy požadavku na zdroj dat na straně serveru. Tím je zajištěno, že pouze ILLA má přímý přístup ke zdroji údajů.
+
+ILLA zjednodušuje proces připojování k datovému zdroji pro vaše uživatele. Musí vybrat příslušný zdroj pouze při psaní dotazu bez obav z detailů zdroje údajů. Můžete také přidat více zdrojů stejného typu, jako je více kbelíků na Amazon S3, aby je bylo možné rozlišovat.
+
+Tento přístup udržuje vaše zdroje dat skryté před vašimi uživateli a zajišťuje, že všechny interakce se zdrojem dat budou zpracovávány bezpečně. ILLA se vyhýbá navázání spojení na stranu klienta se zdrojem údajů, který by mohl odhalit citlivé informace a používat stejné podmínky pro všechny interakce. Zdroje navíc umožňují mezipaměť dotazů, která může snížit počet žádostí podaných na zdroj údajů a potenciálně snížit náklady.
