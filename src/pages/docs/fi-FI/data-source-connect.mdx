@@ -1,0 +1,40 @@
+---
+title: Yhdistä tietolähteisiisi
+metaTitle: ILLA Cloud Liitä tietolähteisiisi
+desc: Opi yhteyden muodostamisesta tietolähteeseesi ja soita sitä ILLA Builderiin.
+tagCategory: doc_menu_data_source_connect_click
+---
+
+Opi yhteyden muodostamisesta tietolähteeseesi ja soita sitä ILLA Builderiin.
+
+ILLAn avulla voit yhdistää ja integroida laajan valikoiman tietolähteitä, kuten tietokantoja ja sovellusliittymiä, organisaatiosi käytettäväksi resursseina.
+
+## Tietolähteet
+
+Tietolähteet ovat paikkoja, joissa tietoja säilytetään ja käsitellään. Esimerkkejä tietolähteistä ovat PostgreSQL-tietokannat, Twilio REST API:t ja Amazon S3 -kauhat. ILLA:ssa voit lisätä useita tietolähteitä ja asettaa ne käyttäjien saataville kyselyä varten.
+
+### **Integraatiot**
+
+ILLA tarjoaa sisäänrakennettuja integrointeja monia suosittuja tietolähteitä, jotka vaativat minimaalinen kokoonpano, kuten SQL tietokannat, ja Stripe. Nämä integraatiot, jotka tunnetaan myös resursseina, mahdollistavat yhteyden ja kyselyn tietolähteisiin käyttäen Retool. Jos tietyn tyyppistä tietolähdettä ei tueta sisäänrakennetulla integroinnilla, voit käyttää REST, GraphQL tai SOAP-integraatioita yhteyden lähes mihin tahansa API. Tämän avulla voit käyttää monenlaisia tietolähteitä ILLA-rakentajan sisäpuolelta.
+
+### Yhdistä tietokantoihin
+
+Yhdistä useimpiin tietokantoihin ja tietokauppoihin
+
+### Yhdistä APIin
+
+Yhdistä REST ja GraphQL.
+
+## Resurssit
+
+ILLAn resurssi on tallennettu konfiguraatio, joka määrittelee, miten ILLA muodostaa yhteyden tietolähteeseen. Käyttääksesi tietolähdettä ILLA, sinun täytyy luoda resurssi sitä varten. Voit valita sopivan resurssin päästäksesi tietoihin kun kirjoitat kyselyn.
+
+Kullakin ILLAn resurssilla on omat konfigurointimahdollisuutensa, jotka määrittävät, miten ILLA muodostaa yhteyden vastaavaan tietolähteeseen. Näihin valintoihin voivat kuulua tunnistautumistiedot ja virtaus, tietokantayhteyden asetukset ja API-asetukset, kuten perusosoite ja oletusotsikot.
+
+### **Kuinka resurssit toimiva**
+
+ILLA resurssit tallentaa tarvittavat asetukset yhteyden tietolähteeseesi turvallisesti. Tämän avulla voit hakea tietoja helposti paljastamatta tietolähdettäsi suoraan käyttäjillesi. Kun kysely on suoritettu resurssin varalle, Uudelleentyökalu käyttää resurssin konfiguraation asetuksia välittää pyynnön tietolähteeseen palvelimen puolella. Näin varmistetaan, että vain uudelleentyökalulla on suora pääsy tietolähteeseen.
+
+ILLA yksinkertaistaa prosessia, jossa käyttäjä on yhteydessä tietolähteeseen. Niiden tarvitsee vain valita asiaankuuluva resurssi kirjoittaessaan kyselyn murehtimatta tietolähteen yksityiskohtia. Voit myös lisätä useita resursseja samantyyppisiä, kuten useita Amazon S3 kauhat, erottaa ne.
+
+Tämä lähestymistapa pitää tietolähteet piilossa käyttäjiltä ja varmistaa, että kaikki vuorovaikutus tietolähteen kanssa hoidetaan turvallisesti. ILLAlla vältetään asiakaspuolen yhteyksiä tietolähteeseen, joka voisi paljastaa arkaluonteisia tietoja ja käyttää samoja ehtoja kaikissa vuorovaikutussuhteissa. Lisäksi resurssit mahdollistavat kyselyn välimuistin, joka voi vähentää tietolähteeseen tehtyjen pyyntöjen määrää ja mahdollisesti alentaa kustannuksia.
