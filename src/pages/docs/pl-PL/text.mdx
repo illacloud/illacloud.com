@@ -1,0 +1,91 @@
+---
+title: Tekst
+metaTitle: Komponent tekstowy ILLA
+description: Wyświetl dane z komponentem tekstowym
+tagCategory: kliknięcie_tekstu_dokumentu
+---
+
+* * *
+
+## <Heading hidden>Tekst</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Właściwości
+
+| Własność           | Opis                                                                                                                                                                                                                          |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zawartość          | Ustaw tekst wyświetlany w komponencie tekstu. Tekst Markdown i zwykły tekst są obsługiwane.                                                                                                                                   |
+| Wskazówka          | Podpowiedź wyświetlana na komponencie, gdy użytkownicy najechają kursorem nad komponentem.                                                                                                                                    |
+| Wyrównanie poziome | Aby ustawić poziomą pozycję zawartości tekstu w komponencie                                                                                                                                                                   |
+| Wyrównanie pionowe | Aby ustawić pionową pozycję zawartości tekstu w komponencie                                                                                                                                                                   |
+| Hidden             | Aby określić, czy wyświetlać ten komponent i na jakich warunkach go wyświetlać. Na przykład, jeśli bieżący użytkownik nie jest Użytkownikiem A, ten komponent powinien być ukryty: {{ currentUserInfo.nickname != 'User A' }} |
+| Kolor              | Aby ustawić kolor tekstu w formacie tekstowym                                                                                                                                                                                 |
+| Rozmiar tekstu     | Aby ustawić rozmiar tekstu w formacie malowania                                                                                                                                                                               |
+
+### Użyj Markdown
+
+#### Nagłówek
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Dział 1
+## Nagłówek 2
+### Nagłówek 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Lista zadań
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Lista To-do
+
+1. [ ] 🚀 Zbuduj nową aplikację na Chmurze ILLA
+2. [ ] ☎️ Zadzwoń z Monica
+3. [x] 🍷 Zobiad z **Elsa**
+4. [x] 💃 Graj na "Just dance" przez pół godziny
+```
+
+#### Lista wypunktowana
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Pojedyncza lista
+- Współpraca w czasie rzeczywistym: razem możemy stworzyć wszystko w czasie rzeczywistym.
+- 🛠️ Własna wtyczka: Zbuduj dowolną niestandardową wtyczkę, aby zrobić to, co chcesz.
+- 🤖 Automatyczne wsparcie: Podłącz wszystko i zautomatyzuj je w 5 sekund.
+- 🖥️ samodzielny hosted: obsługuje Docker & k8s
+```
+
+#### Tabela
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tabela
+| Nazwa | Link | Opis |
+| :-------- | :------- | :---- |
+| Chmura ILLA | [https://cloud. llacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
+| ILLA GitHub | [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Gwiazdka na GitHub|
+| Strona główna ILLA | [https://www.illacloud.com/](https://www.illacloud.com/) |Strona oficera ILLA
+```
+
+### Wyświetl dane dynamiczne
+
+Użyj `{{` aby uzyskać dane z innych komponentów lub akcji lub zmiennych globalnych. Na przykład, aby wyświetlić pseudonim bieżącego użytkownika:
+
+```jsx
+## {{ '👋 Witaj! '+ currentUserInfo.nickname }}
+```
