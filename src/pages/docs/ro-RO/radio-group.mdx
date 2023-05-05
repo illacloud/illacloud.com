@@ -1,0 +1,134 @@
+---
+title: Grup radio
+metaTitle: Componenta grup Radio ILLA Cloud
+description: Afișează toate opțiunile din grupul radio și acceptă alegerea unei opțiuni.
+tagCategory: click_doc_meniu_radio_group_
+---
+
+* * *
+
+## <Heading hidden>Grupul Radio</Heading>
+
+un grup radio, cunoscut și ca un grup cu o singură opțiune sau pur și simplu ca un grup radio, este o componentă care permite utilizatorilor să selecteze o singură opțiune dintr-o listă de opțiuni predefinite. Fiecare opţiune din grup este reprezentată de un buton circular care poate fi selectat sau deselectat de utilizatori. Când este selectată o opţiune, orice opţiune selectată anterior în grup este deselectată automat.
+
+Grupurile de radio sunt utilizate frecvent în formulare web, casete de dialog, și alte aplicații interactive în care utilizatorii trebuie să facă o singură alegere dintr-un set de opțiuni. Acestea sunt utile pentru prevenirea erorilor care pot apărea atunci când utilizatorii selectează mai multe opţiuni din greşeală sau confuzie. În plus, grupurile de butoane radio sunt ușor de utilizat și intuitive vizual, făcându-le o alegere populară atât pentru designeri, cât și pentru dezvoltatori.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Proprietăți
+
+#### Opțiuni manuale
+
+Adăugați opțiuni noi sau ștergeți manual opțiunile și configurați una câte una. Proprietățile opțiunilor sunt următoarele: 
+
+| Proprietăți | Descriere                                      |
+| ----------- | ---------------------------------------------- |
+| Etichetă    | Textul afişat pentru opţiune                   |
+| Valoare     | Valoarea asociată cu opțiunea                  |
+| Dezactivat  | Dacă opțiunea este dezactivată pentru selecție |
+
+#### Optiuni afisate
+
+De asemenea, puteți adăuga opțiuni dintr-o sursă de date prin maparea etichetei și a proprietăților valorii în câmpurile de date corespunzătoare. Poți obține opțiuni dinamice din baza de date în acest mod. La finalul acestui articol, vom demonstra cum să îl folosim printr-un exemplu.
+
+| Proprietăți   | Descriere                                                                       |
+| ------------- | ------------------------------------------------------------------------------- |
+| Sursă de date | Setați sursa de date pentru opțiuni                                             |
+| Etichetă      | Utilizați {{item}} pentru a seta eticheta opțiunilor                            |
+| Valoare       | Folosește {{item}} pentru a seta valoarea opțiunilor                            |
+| Dezactivat    | Folosește {{item}} pentru a seta dacă opțiunea este dezactivată pentru selecție |
+
+#### Alte proprietăți
+
+| Proprietăți                 | Descriere                                                                                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valoare implicită           | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                   |
+| Substituent                 | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                 |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                   |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                   |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                       |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                        |
+| Aliniere                    | Setați alinierea etichetei                                                                                                                              |
+| Width                       | Când eticheta este pe partea stângă a componentei, setați raportul lățimii etichetei                                                                    |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                        |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                         |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.       |
+| Afişare buton ştergere      | Setează dacă se afișează butonul de ștergere                                                                                                            |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.           |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                               |
+| Regulă personalizată        | editor.inspect.setter_tooltip.custom_rule                                                                                                               |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript. |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                       |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                        |
+| Culoarea temei              | Pentru a selecta culoarea temei componentei                                                                                                             |
+
+### Metodă
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele trei metode:
+
+#### valoare setată
+
+Pentru a seta opțiunea selectată, de exemplu, {{”value1”}}
+
+| Proprietăți | Descriere         |
+| ----------- | ----------------- |
+| Valoare     | Valoare selectată |
+
+#### curățare
+
+Pentru a șterge opțiunile selectate
+
+#### validate
+
+Pentru a verifica dacă informațiile de intrare sunt legale
+
+#### clearValidare
+
+Pentru a șterge mesajul de validare
+
+### Gestionar de evenimente
+
+Sprijinim ascultarea evenimentului `onChange` al grupului radio. 
+
+Când opțiunea selectată se schimbă, poate declanșa o acțiune specificată. Aceasta înseamnă că atunci când un utilizator alege o opțiune diferită de un grup radio, o anumită acțiune poate fi întreprinsă pe baza opțiunii selectate. De exemplu, într-un formular web, selectarea unei opțiuni diferite poate declanșa afișarea unor câmpuri diferite ale formularului sau transmiterea formularului la o destinație diferită. În acest fel, opțiunea selectată de utilizator poate afecta comportamentul software-ului sau al aplicației web pe care o utilizează. Capacitatea de a declanșa acțiunile specificate bazate pe datele introduse de utilizator este un aspect important al design-ului de software interactiv și poate îmbunătăți utilitatea și funcționalitatea software-ului.
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin intermediul {{componentName.propertyName}} în aplicație.
+
+| Nume proprietate | Descriere         |
+| ---------------- | ----------------- |
+| valoare          | Valoare selectată |
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să folosim modul mapat pentru a obține în mod dinamic opțiuni. 
+
+#### Pasul 1 Adăugare acţiune
+
+Am creat un tabel numit `selection`, inclusiv 5 coloane: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Am stocat valorile opțiunii în `value` și în eticheta de opțiuni stocate în diferite limbi în alte coloane. 
+
+Creaţi o acţiune pentru a lista toate datele din `selecţie` numit `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+selectează * din selecție
+```
+
+#### Pasul 2 Configurați componenta
+
+1.  Setaţi sursele de date la `{{postgresql1.data}}` 
+2.  Configurați eticheta pentru a schimba eticheta în funcție de limbă. 
+
+    1.  Folosește {{ item.columnName }} pentru a seta coloana. 
+    2.  Folosește {{ currentUserInfo.language }} pentru a seta limba pe care utilizatorii o folosesc în ILLA.
+
+    ```jsx
+    {{currentUserInfo.language==='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />
