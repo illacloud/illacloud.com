@@ -1,0 +1,74 @@
+---
+title: Extremo rostro abrazo
+metaTitle: Conectar al punto final del rostro abrazo
+description: Aprende a utilizar el punto final del rostro abrazo en ILLA
+tagCategory: doc_menú_abugando_face_endpoint_clic
+---
+
+* * *
+
+## <Heading hidden>Fin del rostro abrazado</Heading>
+
+Con Hugging Face Inference Endpoints, usted puede implementar fácilmente Transformers, Diferentes o cualquier modelo en una infraestructura dedicada y completamente administrada. [Haz clic aquí](https://ui.endpoints.huggingface.co/new) para crear un punto final. 
+
+### Crear recurso de punto final de cara abrazada
+
+Hay dos maneras de agregar un recurso Endpoint para rostros abrazados. 
+
+1.  Introduzca el `Constructor de ILLA` >> Haga clic en la pestaña `Recursos` >> Haga clic en `Crear nuevo` >> Elija `Endpoint de Cara` >> Configurar la información de conexión y haga clic en `Guardar recurso`
+2.  Introduzca la página de edición >> haga clic en `+ Nuevo` en la lista de acciones >> Seleccione `Endpoint de Cara` >> Configurar la información de conexión o haga clic en `+ Nuevo recurso` para agregar nueva información de conexión
+
+### Configurar información de conexión
+
+| Propiedades  | Requerido | Descripción                                                                               |
+| ------------ | --------- | ----------------------------------------------------------------------------------------- |
+| Nombre       | requerido | Definir un nombre de recurso que se utilizará para mostrar en ILLA                        |
+| Endpoint URL | requerido | crear Endpoint aquí: https://ui.endpoints.huggingface.co/new y obtener la URL.            |
+| Token        | requerido | El token de la organización. Puedes obtenerlo en https://huggingface.co/settings/tokens.  |
+
+### Crear acciones
+
+Introduzca la página de edición >> haga clic en `+ Nuevo` en la lista de acciones >> Elija `Endpoint de Cara de Abuso` >> Elija un recurso existente o añada un nuevo recurso
+
+### Configurar acciones
+
+| Propiedades       | Requerido | Descripción                                                                                                                                                                                                                                                   |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tipo de parámetro | requerido | El tipo de parámetro de su Endpoint. Por ejemplo, si su Endpoint necesita una entrada de texto, elija rellenar el parámetro “entradas” con texto. Si su Endpoint necesita una entrada JSON, elija rellenar el parámetro “entradas” con JSON o valor de clave. |
+| Parámetro         | requerido | Introduzca su parámetro. Usa {{ componentName.value }} para usar datos de componentes.                                                                                                                                                                        |
+
+### Caso de uso
+
+Hemos desplegado `openai/whisper-base` que obtiene una entrada de archivos de audio y se convierte en texto. Es apto para actas de reunión, podcasts a texto, etc. A continuación presentaremos cómo utilizar este modelo para construir una aplicación en ILLA Cloud.
+
+#### Paso 1: Construye la interfaz front-end con componentes
+
+Hemos construido una interfaz usando los componentes como la carga de archivos y el botón, de la siguiente manera.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Paso 2: Añadir un recurso de Cara abrazada
+
+Rellena los campos mostrados a continuación para finalizar la configuración del recurso. [Crear un Endpoint](https://ui.endpoints.huggingface.co/new) y obtener la URL de Endpoint. Y obtén el token de la API de la organización en [configuración de perfil](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Paso 3: Configurar una acción
+
+Seleccione primero un tipo de parámetro. Tome `openai/whisper-base` como ejemplo, este modelo requiere entrada de archivo binario así que cambiamos el parámetro a `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Establece el binario a ser pasado al modelo como los datos de archivo subidos desde el componente de subida de archivos. Por ejemplo, `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Paso 4: Conectar los componentes y acciones
+
+Añadir un controlador de evento al botón para activar la acción ejecutada cuando se hace clic en el botón. Y establezca el valor del componente de texto a {{whisper.data[0].text}} para mostrar el resultado de conversión en el componente de texto. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Después de configurar los pasos anteriores, la aplicación se crea y los resultados son los siguientes.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
