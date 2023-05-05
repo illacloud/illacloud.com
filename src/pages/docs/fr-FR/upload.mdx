@@ -1,0 +1,106 @@
+---
+title: Charger
+metaTitle: Téléchargement de la documentation du composant ILLA Cloud
+description: Utilisez le composant de téléchargement pour télécharger des fichiers depuis les machines locales vers n'importe quel stockage cloud
+tagCategory: Clique sur le fichier doc_upload_doc_upload_click
+---
+
+* * *
+
+## <Heading hidden>Télécharger</Heading>
+
+Le composant de téléchargement est utilisé pour permettre aux utilisateurs de télécharger des fichiers depuis leurs machines locales vers n'importe quel stockage cloud via API. Ensuite, nous allons introduire comment configurer un composant de téléchargement, comment associer le composant de téléchargement à un service de stockage cloud, comment utiliser le composant de téléchargement pour sélectionner une image et l'afficher avec une image, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Propriétés
+
+| Propriété                                      | Libellé                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type de texte                                  | Définissez le type de composant de téléchargement, y compris Bouton et Dropzone.                                                                                                                                                                                                                                                                                                               |
+| Texte du texte                                 | Le texte affiché sur le composant de téléchargement.                                                                                                                                                                                                                                                                                                                                           |
+| Types de sélection                             | Définissez le type de sélection à plusieurs fichiers, un fichier ou un répertoire.                                                                                                                                                                                                                                                                                                             |
+| Types de fichiers                              | Une liste des extensions de fichier autorisées à télécharger. Aucune valeur n'autorisera tous les types de fichiers.                                                                                                                                                                                                                                                                           |
+| Ajouter les fichiers nouvellement sélectionnés | Pour définir le nouveau fichier sélectionné à ajouter au fichier sélectionné ou remplacer le fichier sélectionné dans le type de sélection de plusieurs fichiers ou répertoires.                                                                                                                                                                                                               |
+| Liste des fichiers                             | Pour définir s'il faut afficher une liste de fichiers sélectionnés en dessous du composant de téléchargement. La hauteur de l'uploader changera dynamiquement en fonction de la longueur de la liste de fichiers.                                                                                                                                                                              |
+| Analyser la valeur                             | Tentative d'analyser les fichiers sélectionnés, avec le support des fichiers JSON, CSV, TSV, Excel et TXT. Les données analysées sont accessibles via {{upload1.parsedValue}}. Les fichiers qui ne peuvent pas être analysés seront nuls dans le tableau. Tous les fichiers sont disponibles sous forme de chaînes encodées en base64 sur le tableau de valeurs, quelle que soit cette option. |
+| En cours de chargement                         | Si le composant doit afficher un indicateur de chargement.                                                                                                                                                                                                                                                                                                                                     |
+| Désactivé                                      | Pour définir s'il faut désactiver ce composant et dans quelles conditions le désactiver. Par exemple, si le composant input1 est null, ce composant devrait être désactivé: {{ input1.value == ‘ ’}}                                                                                                                                                                                           |
+| Info-bulle                                     | Une infobulle affichée sur le composant lorsque les utilisateurs survolent le composant.                                                                                                                                                                                                                                                                                                       |
+| Champ obligatoire                              | Pour définir si c'est nécessaire.                                                                                                                                                                                                                                                                                                                                                              |
+| Min size                                       | Pour définir la taille minimale du fichier autorisé à être ajouté.                                                                                                                                                                                                                                                                                                                             |
+| Max size                                       | Pour définir la taille maximale du fichier autorisé à être ajouté.                                                                                                                                                                                                                                                                                                                             |
+| Règle personnalisée                            | Pour définir le texte affiché lorsque la vérification échoue.                                                                                                                                                                                                                                                                                                                                  |
+| Masquer le message de validation               | Pour définir s'il faut afficher le message de validation lorsque la vérification échoue.                                                                                                                                                                                                                                                                                                       |
+| Clé de données du formulaire                   | Définir une clé pour le composant. Après avoir ajouté ce composant à un formulaire, cette clé sera utilisée pour identifier les données de ce composant lors de l'envoi du formulaire.                                                                                                                                                                                                         |
+| Hidden                                         | Pour définir s'il faut afficher ce composant et dans quelles conditions l'afficher. Par exemple, si l'utilisateur courant n'est pas utilisateur A, ce composant doit être masqué: {{ currentUserInfo.nickname != 'Utilisateur A' }}                                                                                                                                                            |
+| Variante                                       | Pour définir le bouton Téléverser le composant vers Contour ou Rempli.                                                                                                                                                                                                                                                                                                                         |
+| Couleur du thème                               | Pour définir la couleur du bouton de téléchargement.                                                                                                                                                                                                                                                                                                                                           |
+
+### Méthode
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant de téléchargement. Nous soutenons les trois méthodes suivantes:
+
+| clearValidation   | Utilisé pour effacer le message de validation                             |
+| ----------------- | ------------------------------------------------------------------------- |
+| effacer la valeur | Utilisé pour effacer la sélection                                         |
+| setDésactivé      | Utilisé pour définir le composant de téléchargement à désactivé ou activé |
+
+### Gestionnaire d'événements
+
+Pour déclencher des actions lorsque les fichiers sélectionnés changent
+
+### Données de l'uploader
+
+Le composant de téléchargement contient des données couramment utilisées, qui peuvent être appelées dans l'application.
+
+`value` un tableau composé des données de fichiers en base64. 
+
+`files` un tableau d'objets. Les clés des objets incluent `lastModified`, `name`, `size`, `type`. Vous pouvez utiliser `{{upload1.files.map(file =>fichier. ame)}}` pour obtenir un tableau de noms de fichiers et vous pouvez également obtenir le tableau lastModifié, le tableau de tailles, le tableau de type de la même manière. 
+
+### Télécharger des fichiers vers un service de stockage cloud
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Télécharger un seul fichier via une ressource S3
+
+La configuration de l'action est la suivante. 
+
+Télécharger le nom de l'objet
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Charger des données
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Télécharger plusieurs fichiers via une ressource S3
+
+Télécharger la liste des noms d'objet
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Charger une liste de données
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Téléchargez une image et affichez-la sur le composant image
+Changez la source de l'image pour le fichier de données base64 du composant de téléchargement. Les données base64 sont stockées dans l'attribut valeur du tableau. Et nous devrions couper le préfixe de fichier avec les données du fichier. Le code est le suivant. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
