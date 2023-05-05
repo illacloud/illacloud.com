@@ -1,0 +1,137 @@
+---
+title: Selectare multiplă
+metaTitle: Componenta ILLA Cloud Multi-select
+description: O componentă tip drop-down care afișează toate opțiunile, acceptă mai multe selecții
+tagCategory: doc_meniu_multi_select_click
+---
+
+## <Heading hidden>Multi-selectare</Heading>
+
+Componenta multi-selectare poate fi utilă în situațiile în care trebuie selectate mai multe opțiuni dintr-o listă. Acest lucru poate permite o intrare și o filtrare mai eficiente a datelor. Componenta poate fi configurată cu diverse proprietăți pentru a obține efecte diferite și, de asemenea, suportă metode și manipulatoare de evenimente pentru mai multe personalizări.
+
+Puteți adăuga opțiuni manual sau în bloc de la sursa de date. În acest articol, vom introduce în detaliu modul de utilizare a componentei multi-selectare. 
+
+### Proprietăți
+
+#### Opțiuni manuale
+
+Adăugați opțiuni noi sau ștergeți manual opțiunile și configurați una câte una. Proprietățile opțiunilor sunt următoarele: 
+
+| Proprietăți | Descriere                                      |
+| ----------- | ---------------------------------------------- |
+| Etichetă    | Textul afişat pentru opţiune                   |
+| Valoare     | Valoarea asociată cu opțiunea                  |
+| Dezactivat  | Dacă opțiunea este dezactivată pentru selecție |
+
+#### Optiuni afisate
+
+De asemenea, puteți adăuga opțiuni dintr-o sursă de date prin maparea etichetei și a proprietăților valorii în câmpurile de date corespunzătoare. Poți obține opțiuni dinamice din baza de date în acest mod. La finalul acestui articol, vom demonstra cum să îl folosim printr-un exemplu.
+
+| Proprietăți   | Descriere                                                                       |
+| ------------- | ------------------------------------------------------------------------------- |
+| Sursă de date | Setați sursa de date pentru opțiuni                                             |
+| Etichetă      | Utilizați {{item}} pentru a seta eticheta opțiunilor                            |
+| Valoare       | Folosește {{item}} pentru a seta valoarea opțiunilor                            |
+| Dezactivat    | Folosește {{item}} pentru a seta dacă opțiunea este dezactivată pentru selecție |
+
+#### Alte proprietăți
+
+| Proprietăți                 | Descriere                                                                                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valoare implicită           | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                   |
+| Substituent                 | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                 |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                   |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                   |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                       |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                        |
+| Aliniere                    | Setați alinierea etichetei                                                                                                                              |
+| Width                       | Când eticheta este pe partea stângă a componentei, setați raportul lățimii etichetei                                                                    |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                        |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                         |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.       |
+| Afişare buton ştergere      | Setează dacă se afișează butonul de ștergere                                                                                                            |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.           |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                               |
+| Alegeți cel puțin           | Setaţi numărul minim de opţiuni pentru a alege                                                                                                          |
+| Alege până la               | Setaţi numărul maxim de opţiuni pentru a alege                                                                                                          |
+| Regulă personalizată        | editor.inspect.setter_tooltip.custom_rule                                                                                                               |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript. |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                       |
+| Înălțime                    | Cum să setezi înălțimea pentru a se potrivi                                                                                                             |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                        |
+| Culoarea temei              | Pentru a selecta culoarea temei componentei                                                                                                             |
+
+### Metodă
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele trei metode:
+
+#### valoare setată
+
+Pentru a seta opțiunea selectată, de exemplu, {{[”value1”,”value3”…]}}
+
+| Proprietăți | Descriere                                    |
+| ----------- | -------------------------------------------- |
+| Valoare     | O serie de valori ale opțiunilor selectate.  |
+
+#### curățare
+
+Pentru a șterge opțiunile selectate
+
+#### validate
+
+Pentru a verifica dacă informațiile de intrare sunt legale
+
+#### clearValidare
+
+Pentru a șterge mesajul de validare
+
+### Gestionar de evenimente
+
+Sprijinim ascultarea evenimentului onChange al componentei multi-selectare.
+
+### Date
+
+Componenta multi-selectare are unele date utilizate în mod obișnuit, care pot fi apelate prin intermediul {{componentName.propertyName}} în aplicație.
+
+| Nume proprietate | Descriere                                |
+| ---------------- | ---------------------------------------- |
+| valoare          | o serie de valori ale opțiunii selectate |
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să folosim modul mapat pentru a obține în mod dinamic opțiuni. 
+
+#### Pasul 1 Adăugare acţiune
+
+Am creat un tabel numit `selection`, inclusiv 5 coloane: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Am stocat valorile opțiunii în `value` și în eticheta de opțiuni stocate în diferite limbi în alte coloane. 
+
+Creaţi o acţiune pentru a lista toate datele din `selecţie` numit `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect1.png' alt="" />
+
+```jsx
+selectează * din selecție
+```
+
+#### Pasul 2 Configurarea componentei multi-selectare
+
+1.  Setaţi sursele de date la `{{postgresql1.data}}` 
+2.  Configurați eticheta pentru a schimba eticheta în funcție de limbă. 
+
+    1.  Folosește {{ item.columnName }} pentru a seta coloana. 
+    2.  Folosește {{ currentUserInfo.language }} pentru a seta limba pe care utilizatorii o folosesc în ILLA.
+
+    ```jsx
+    {{currentUserInfo.language==='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect2.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect3.png' alt="" />
+
+#### Ce este mai mult
+
+Puteți adăuga sau șterge opțiuni prin adăugarea sau ștergerea de rânduri în tabelul de selecție.
