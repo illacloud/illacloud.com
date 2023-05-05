@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integration doc
+description: Připojte se k instanci Supabase a zobrazte DB data o komponentách
+tagCategory: doc_menu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Supabase je open-source Firebase alternativa, která umožňuje vývojářům vytvářet webové a mobilní aplikace v reálném čase. Poskytuje mnoho stejných funkcí jako Firebase, jako jsou databáze v reálném čase, ověření uživatele. a hostingu, ale s přidanými výhodami být open-source a poskytovat SQL API. To umožňuje vývojářům používat jejich stávající znalosti a nástroje SQL a usnadňuje tak integraci s jinými systémy. Kromě toho Supabase poskytuje flexibilnější a přizpůsobivější platformu než Firebase, která může být více omezující, pokud jde o modelování a používání dat.
+
+Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Supabase v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Další informace o Supabase naleznete na jejich webu <https://supabase.com/>. Začněme!
+
+### Krok 1: Nastavte svůj konec zpět na Supabase
+
+Na [Nástěnce Supabas](https://app.supabase.com/projects), klikněte na `Nový projekt` a nastavte jméno na adminPanel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+Vytvořte novou tabulku kliknutím na tlačítko "Vytvořit novou tabulku" .
+
+Supabase nabízí řadu možností pro vyplnění tabulek daty, včetně psaní dotazů, vytváření schémat prostřednictvím uživatelského rozhraní a nahrávání CSV souborů.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+Vyplňte informace v tabulce. Databáze je nyní vytvořena.
+
+### Krok 2: Sestavit UI na ILLA Cloud
+
+Na [ILLA Cloud](https://cloud.illacloud.com) klepněte na tlačítko Vytvořit Nový pro vytvoření nové aplikace.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+Přetáhněte komponenty z panelu "Vložit" do plátna.
+
+Vyberte komponenty na plátně a nakonfigurujte vlastnost na panelu `Inspect`.
+
+Jak jsme viděli v níže uvedeném snímku obrazovky, vytvořili jsme jednoduchý admin panel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### Krok 3: Připojte se k Supabase a nastavení CRUD
+
+Zapište si informace o připojení k databázi podle [Nastavení projektu](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) v Supabase.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+V seznamu akcí klikněte na "+ Nové" a vyberte Supabase DB.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+Vyplňte formulář pro připojení k instanci Supabase. Otestovat spojení a uložit zdroj.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+Klepněte na tlačítko `Vytvořit akci` a vytvořte akci pomocí zdroje Supabase a nastavte si CRUD.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+Pomocí {{ získáte vstupní data z front-endu. Následující je příklad stránky Správa uživatelů v panelu Admin
+
+Hledat uživatele podle jména vloženého do vstupního 1
+
+```
+VYBERTE *
+OD uživatele
+WHERE name = "{{input1.value}}"
+;
+```
+
+Aktualizovat uživatelská data. Aktualizovat informace o uživateli, když id odpovídá
+
+```
+AKTUALIZOVAT uživatele
+SET jméno = "{{input3.value}}"
+, e-mail = "{{input4.value}}"
+WHERE id="{{input2.value}}"
+;
+```
+
+Vložit uživatelská data
+
+```
+VLOŽTE VE VŮČI uživatelským VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+```
+
+Odstranit uživatele podle ID
+
+```
+ODSTRANIT OD uživatele, WHERE id = "{{input2.value}}";
+```
+
+### Krok 4: Zobrazit údaje o komponentech
+
+Nastavte vlastnosti komponent pomocí {{ . Například:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## Zdroje
+
+-   [Supabase oficiální webové stránky](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Supabase dokumentace](https://supabase.com/docs)
