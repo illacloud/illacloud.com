@@ -1,0 +1,134 @@
+---
+title: Radion ryhmä
+metaTitle: ILLA Cloud Radio -ryhmän komponentti
+description: Näyttää kaikki vaihtoehdot radioryhmässä ja tukee valita 1 vaihtoehto.
+tagCategory: doc_menu_radio_group_klikkaa
+---
+
+* * *
+
+## <Heading hidden>Radioryhmä</Heading>
+
+Radioryhmä, joka tunnetaan myös yhden vaihtoehdon ryhmänä tai yksinkertaisesti radioryhmänä, on komponentti, jonka avulla käyttäjät voivat valita vain yhden vaihtoehdon ennalta määriteltyjen vaihtoehtojen luettelosta. Jokainen vaihtoehto ryhmässä on edustettuna pyöreällä painikkeella, jonka käyttäjät voivat valita tai jota ei voi valita. Kun yksi vaihtoehto on valittuna, mikä tahansa aiemmin valittu vaihtoehto ryhmässä on automaattisesti pois valittuna.
+
+Radioryhmiä käytetään yleisesti www-lomakkeissa, dialogi laatikoissa, ja muita interaktiivisia sovelluksia, joissa käyttäjien on tehtävä yksi valinta useista vaihtoehdoista. Ne ovat hyödyllisiä estämään virheitä, joita voi esiintyä, kun käyttäjät valitsevat virheitä virheellisesti tai sekaannuksella. Lisäksi radio-painikkeiden ryhmät ovat helppokäyttöisiä ja visuaalisesti intuitiivisia, joten ne ovat suosittuja sekä suunnittelijoille että kehittäjille.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Ominaisuudet
+
+#### Manuaaliset asetukset
+
+Lisää uusia vaihtoehtoja tai poista asetukset manuaalisesti ja määritä asetukset yksitellen. Vaihtoehtojen ominaisuudet ovat seuraavat: 
+
+| Ominaisuudet  | Kuvaus                                           |
+| ------------- | ------------------------------------------------ |
+| Tunniste      | The text displayed for the option                |
+| Arvo          | Vaihtoehtoon liittyvä arvo                       |
+| Pois Käytöstä | Onko valinta poistettu käytöstä valinnan varalta |
+
+#### Kartoitetut asetukset
+
+Voit myös lisätä vaihtoehtoja tietolähteestä liittämällä tunnisteen ja arvon ominaisuudet vastaaviin tietokenttiin. Voit saada vaihtoehtoja dynaamisesti tietokannasta tällä tavalla. Tämän artiklan lopussa osoitamme, miten sitä voidaan käyttää esimerkin avulla.
+
+| Ominaisuudet  | Kuvaus                                                                     |
+| ------------- | -------------------------------------------------------------------------- |
+| Tietolähde    | Aseta valintojen tietolähde                                                |
+| Tunniste      | Käytä {{item}} asettaaksesi valintojen otsikon                             |
+| Arvo          | Käytä {{item}} valintojen arvon määrittämiseen                             |
+| Pois Käytöstä | Käytä {{item}} määrittääksesi, onko valinta poistettu käytöstä valitaksesi |
+
+#### Muut ominaisuudet
+
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Oletus arvo             | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.                                 |
+| Paikkamerkki            | Arvo näytetään, kun syöttökenttä on tyhjä.                                                                                                          |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus                                                                                                                              |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Vain Luettu             | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                    |
+| Näytä tyhjennyspainike  | Aseta näytetäänkö tyhjä painike                                                                                                                     |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Mukautettu sääntö       | editor.inspect.setter_tooltip.custom_rule                                                                                                           |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman väri             | Voit valita komponentin teeman värin                                                                                                                |
+
+### Menetelmä
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kolmea menetelmää:
+
+#### setValue
+
+Valitun vaihtoehdon asettamiseksi esimerkiksi {{”arvo1”}}
+
+| Ominaisuudet | Kuvaus       |
+| ------------ | ------------ |
+| Arvo         | Valittu arvo |
+
+#### clearValue
+
+Poista valitut vaihtoehdot
+
+#### validate
+
+Varmistetaan, että syöttötiedot ovat laillisia
+
+#### kirjoita
+
+Vahvistusviestin tyhjentämiseksi
+
+### Tapahtuman käsittelijä
+
+Me tuemme radioryhmän `onChange`-tapahtuman kuuntelemista. 
+
+Kun valittu vaihtoehto muuttuu, se voi käynnistää määritellyn toiminnon. Tämä tarkoittaa sitä, että kun käyttäjä valitsee eri vaihtoehdon kuin radioryhmä, voidaan toteuttaa tietty toimenpide valitun vaihtoehdon perusteella. Esimerkiksi Internetissä olevassa muodossa, eri vaihtoehdon valitseminen voi laukaista lomakkeen eri kenttien näytön tai lomakkeen toimittamisen eri määränpäähän. Tällä tavoin käyttäjän valitsema vaihtoehto voi vaikuttaa käyttämänsä ohjelmiston tai verkkosovelluksen käyttäytymiseen. Kyky käynnistää käyttäjän syötteeseen perustuvia määriteltyjä toimia on tärkeä osa interaktiivista ohjelmistosuunnittelua ja voi parantaa ohjelmiston käytettävyyttä ja toimivuutta.
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta {{componentName.propertyName}}.
+
+| Ominaisuuden nimi | Kuvaus       |
+| ----------------- | ------------ |
+| arvo              | Valittu arvo |
+
+### Käytä laatikkoa
+
+Seuraavaksi osoitamme, miten kartoitettua tilaa voidaan käyttää saadaksesi dynaamisesti vaihtoehtoja. 
+
+#### Vaihe 1 Lisää toiminto
+
+Olemme luoneet taulun nimeltä `selection`, mukaan lukien 5 saraketta: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Tallensimme valitsimen arvot `value`-muotoon ja tallennamme asetusmerkin eri kielillä muihin sarakkeisiin. 
+
+Luo toiminnot luetteloidaksesi kaikki tiedot `selection`-nimestä `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+valitse * valinnasta
+```
+
+#### Vaihe 2 Määritä komponentti
+
+1.  Set the Data sources to `{{postgresql1.data}}` 
+2.  Määritä otsikko muuttaaksesi otsikkoa kielen perusteella. 
+
+    1.  Aseta sarake käyttämällä {{ item.columnName }}. 
+    2.  Käytä {{ currentUserInfo.language }} asettaaksesi kielen käyttäjät käytettäväksi ILLA:ssa.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />
