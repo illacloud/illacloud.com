@@ -1,0 +1,29 @@
+---
+title: Transformator
+metaTitle: Doc transformatora ILLA
+desc: Transformator w ILLA pozwala użytkownikowi zapisywać JavaScript w celu udoskonalenia logiki aplikacji
+tagCategory: kliknięcie_transformatora_dok_menu_
+---
+
+* * *
+
+## <Heading hidden>Transformator</Heading>
+
+Wprowadziliśmy Transformatora do ILLA, aby spełnić Twoje wymagania do pisania JavaScript w celu udoskonalenia logiki aplikacji. W Transformatorze nie musisz kodować w JavaScript używając {{template syntax}} tak jak w polu wprowadzania znaków, aby móc pisać długie i złożone bloki kodu JS bardziej płynnie. Dodatkowo, Transformator pomaga programistom odpowiedzialnym za projektowanie stron i budowanie logiki w bardziej efektywny sposób dokończyć prace rozwojowe, nie ograniczając ich wzajemnych postępów.
+
+Transformator można używać nie tylko do ustalonych operacji danych, ale także do tworzenia operacji transformatorskich podczas przetwarzania danych. Lepiej byłoby wybrać niezależnego transformatora, gdy masz wiele operacji związanych z przetwarzaniem danych, lub musi użyć złożonej logiki JavaScript do przekształcania danych.
+
+### Transformatory kreatywne
+
+Kliknij na zakładkę Transformatory na liście akcji i kliknij na "+ Nowy", aby utworzyć transformator. Zostanie wyświetlone na liście akcji po utworzeniu. Możesz zmienić nazwę, zapisać kod JS, zapisać i uruchomić go w panelu konfiguracji po wybraniu.
+
+> Możesz użyć przycisku 'podgląd', aby zobaczyć wyniki transformatora. Zauważ, że musisz zapisać transformator dla reszty aplikacji, aby uzyskać nową wartość.
+
+Wstaw wywołuje transformator o wartości równej wartości zwróconej w transformatorze, dane te ulegną zmianie, gdy dane wprowadzone do transformatora ulegną zmianie wraz z kodem transformatora. Podobnie jak w przypadku pola wprowadzania znaków, nadal możesz użyć składni szablonu, aby wywołać globalną zmienną nr Podczas pisania kodu JS do połączenia danych, znajdziesz konkretną nazwę zmiennej danych w obszarze roboczym danych w lewym panelu, aby pomóc w szybszym zapisywaniu kodu.
+[//]\: # ([Image])
+
+Możesz wywołać zmienną transformatora w polu wprowadzania danych używając `{{transformer name. tag name}}` do wywołania zmiennej transformatora w polu wprowadzania danych.
+
+### Transformator zapytania
+
+Wprowadziliśmy Transformator do operacji zapytania, aby umożliwić przekształcenie pobranych danych w żądany format bezpośrednio po zakończeniu akcji, a następnie po prostu przekazać {{actionName.data}} aby odzyskać dane po zakończeniu konwersji w transformatorze w ramach akcji.
