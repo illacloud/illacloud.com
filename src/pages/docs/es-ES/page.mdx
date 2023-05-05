@@ -1,0 +1,52 @@
+---
+title: Pgina
+metaTitle: ILLA Cloud Page doc
+description: Construir aplicaciones de una sola página y de varias páginas en ILLA
+tagCategory: doc_menú_haga clic
+---
+
+* * *
+
+## <Heading hidden>Página</Heading>
+
+Una demostración de varias páginas construida en ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Una aplicación de una sola página es una aplicación que puede cambiar páginas sin recargar todos los componentes de la página. La mayoría de los recursos (incluyendo HTML, CSS y Script) sólo se cargan una vez a lo largo del ciclo de vida de la aplicación, haciendo que una aplicación de una sola página sea rápida.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+En una aplicación de varias páginas, cada cambio, tales como mostrar los datos o enviar datos de vuelta al servidor peticiones de representación de una nueva página del servidor. La aplicación de varias páginas tiene unos pocos niveles, lo que hace que la estructura de la aplicación sea sencilla y sencilla para los usuarios.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+En ILLA Builder, se puede construir una aplicación de una sola página configurando el marco de la página y añadiendo vistas a las secciones, y una aplicación de varias páginas se puede construir añadiendo varias páginas, y los desarrolladores pueden utilizar ambos patrones de diseño en una sola aplicación.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Establecer el diseño de las páginas
+
+Ir a la configuración de la página como los siguientes pasos：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Puede utilizar los diseños predefinidos, o agregar y eliminar manualmente secciones para establecer el diseño. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Añadir vistas a una página
+
+`Ver ruta`: una cadena empalmada después de la URL de la página para acceder a la vista especificada. Después de desplegar la aplicación, la dirección de acceso completa es la siguiente: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+También puede introducir la página de inicio y la vista por defecto a través de la siguiente ruta:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Conectar menú y páginas
+
+Añadir controladores de eventos a elementos de menú → establecer la `Acción` a `Establecer enrutador` → seleccionar la página y ver
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
