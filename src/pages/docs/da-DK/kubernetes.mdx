@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: Byg illa alt-i-ét billede og køre det af k8s på din maskine.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Varebeskrivelse
+
+Byg illa alt-i-ét billede og køre det af k8s på din maskine. Du kan tjekke scripts filen i [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) mappen for flere detaljer.
+
+Bemærk:
+
+Vi anbefaler stærkt at implementere vores auto-implementeringsværktøjer[illa-cli](https://github.com/illacloud/illa).
+
+Og for øjeblikket understøtter vi ikke Apple Silicon M1 (darwin-arm64 bue).
+
+### Kør med et officielt slankt billede
+
+Installer GNU fabrikat og skriv:
+
+```jsx
+lav implementering
+```
+
+eller blot udføre:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+denne kommando vil trække illasoft officielt alt-i-ét billede og implementere det på din Kubernetes-klynge.
+
+### For Database Vedvarende Lagerplads
+
+Rediger[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), og tilføj din IAAS vedvarende lagerkonfiguration.
+
+### Til HTTPS-konfiguration
+
+Du kan rute NodePort til din Kubernetes klynge indtrængen gateway og omskrive til 443 port, og tilføje https cert i din indtrængen gateway.
+
+Eller du kan implementere en indtrængningsgateway manuelt i din Kubernetes-server, config sådan her:
+
+```jsx
+static_resources:
+  lyttere:
+  - navn: https_listener
+    adresse:
+      socket_address:
+        adresse: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtre:
+      - navn: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            navn: local_route
+            virtual_hosts:
+            - navn: illa_builder
+              domæner:
+              - "illa. ourdomian. om" # erstat med dit domæne
+              ruter:
+              - match:
+                  præfiks: "/"route:
+                  klynge: illa_builder
+          http_filters:
+          - navn: envoy. ilters.http. ydre
+            typed_config:
+              "@type": type. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        navn: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # udskift dette med din cert fil
+            - certificate_chain:
+                filnavn: /your-cert-folder/fullchain. em
+              private_key:
+                filnavn: /your-cert-folder/privkey. em
+
+  clusters:
+  - navn: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            adresse:
+              socket_address:
+                adresse: illa-builder
+                port_value: 80
+```
