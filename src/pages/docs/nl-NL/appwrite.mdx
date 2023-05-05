@@ -1,0 +1,151 @@
+---
+title: Appwrite
+metaTitle: ILLA Cloud Appwrite integratiedocument
+description: De handleiding om in te stellen en te integreren met Appwrite on ILLA Cloud
+tagCategory: doc_menu_appwrite_klik
+---
+
+* * *
+
+## <Heading hidden>Appwrite Database</Heading>
+
+Binnen de verschillende diensten van Appwrite's kunt u gebruikersauthenticatie en accountbeheer vinden, gebruikersvoorkeuren, database en opslag volharding, cloudfuncties, localisatie, afbeeldingsmanipulatie en meer. 
+
+De combinatie van ILLA Cloud en Appwrite, dat wil zeggen de combinatie van server-side low-code en frontend low-code zullen echt de ontwikkeling van low-code full-stack realiseren.
+
+[Klik hier](https://appwrite.io/) om meer te leren over Appwrite.
+
+### Stel Appwrite resource in op ILLA Cloud
+
+#### Twee manieren om bronnen aan te maken
+
+De eerste manier is om het tabblad `Resources` in te voeren > klik op `Create New` om Appwrite te selecteren. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+Een andere manier is om de `app editor` pagina in te voeren > klik op `+ Nieuw` om Appwrite te selecteren > klik op `+ Nieuwe Bronnen` om de nieuwe configuratie toe te voegen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Appwrite instellen door de volgende velden in te vullen
+
+Voordat je een Appwrite bron verbindt, zorg ervoor dat je ingezette Appwrite op je lokale machine of een cloud provider hebt gebruikt. [Klik hier](https://appwrite.io/docs/installation) voor meer informatie over de installatie van Appwrite. 
+
+| Eigenschap  | is_verplicht | Beschrijving                                                                                                              |
+| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| naam        | verplicht    | De naam voor resource bij het maken van acties in de ILLA. Je kunt een naam aanpassen voor een eenvoudige identificatie.  |
+| Hostnaam    | verplicht    | HOSTNAAM OF IP.                                                                                                           |
+| Database ID | verplicht    | Database ID                                                                                                               |
+| Project ID  | verplicht    | Project ID                                                                                                                |
+| API sleutel | verplicht    | TOKEN                                                                                                                     |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Maak acties in de app-editor
+
+#### Acties maken op de volgende manier
+
+Klik op `+ Nieuw` in de app editor pagina > selecteer Appwrite > selecteer een bestaand Appwrite document of maak een nieuw document aan > klik op `Create Action` om een nieuwe actie aan te maken. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+Na het aanmaken van een actie, selecteer een methode. Wij bieden de volgende methoden aan: Lijstdocumenten, een document aanmaken, een document bijwerken, een document opvragen en een document verwijderen. De configuratie van elke methode is als volgt. 
+
+#### Documenten weergeven
+
+Het volgende is een eenvoudig configuratievoorbeeld: Laat het document met $id 5 zien. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Eigenschap     | is_verplicht | Beschrijving                                                                                                                                                                                                                                                                    |
+| -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Verzameling ID | vereist      | Voer in of selecteer een collectie-id uit de database                                                                                                                                                                                                                           |
+| Filteren       | Optioneel    | Ondersteun meerdere filters. Een filter bestaat uit een sleutel, een waarde en een voorwaarde. 1. sleutel: voer een attribuut 2 in. Selecteer een voorwaarde: selecteer een voorwaarde, met inbegrip van gelijke, notal, lesThanEqual, hoger, enz. 3. waarde: voer de waarde in |
+| Sorteer op     | Optioneel    | Ondersteuning voor het bestellen op meerdere attributen. 1. voer een attribuut in om te bestellen bij 2. Selecteer asc(standaard ) of desc                                                                                                                                      |
+| Limiet         | Optioneel    | aantal records                                                                                                                                                                                                                                                                  |
+
+Het volgende is een voorbeeld van hoe de gegevens die in de component zijn ingevoerd in de actie moeten worden gebruikt:
+
+1.  Voeg een invoercomponent toe aan het frame zodat gebruikers het document-id kunnen invoeren dat ze willen vinden.  
+2.  Voeg een filter toe: stel het attribuutveld in op $id en vul {{ input1.value }} in het waardeveld. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Uitvoer
+
+Controleer de datastructuur op het linkerpaneel. Gebruik bijvoorbeeld `{{list.data[0].documents[0].id}}`(`list` is de naam van de actie) om het id van het eerste document te krijgen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+U kunt ook `{{list.data[0].documents.map(document => documents)}}` gebruiken om alle gegevens op `table` component weer te geven. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Een document aanmaken
+
+| Verzameling ID | vereist | Voer in of selecteer een collectie-id uit de database              |
+| -------------- | ------- | ------------------------------------------------------------------ |
+| Document ID    | vereist | voer een ID in. het document zal worden aangemaakt met dit ID      |
+| Gegevens       | vereist | Een object omhelsde in {{ }}. Bijvoorbeeld, {{ "key": "value" } }} |
+
+Het volgende is een voorbeeld van hoe de gegevens in de component in een object moeten worden gebruikt. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Een document bijwerken
+
+| Eigenschap     | Beschrijving                                                       |
+| -------------- | ------------------------------------------------------------------ |
+| Verzameling ID | Voer in of selecteer een collectie-id uit de database              |
+| Document ID    | voer een bestaand document-ID in om te worden bijgewerkt           |
+| Gegevens       | Een object omhelsde in {{ }}. Bijvoorbeeld, {{ "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Document ophalen
+
+| Eigenschap     | Beschrijving                                          |
+| -------------- | ----------------------------------------------------- |
+| Verzameling ID | Voer in of selecteer een collectie-id uit de database |
+| Document ID    | voer een bestaand document-ID in                      |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+De output data is als volgt. Gebruik {{get.data[0]}} om het documentobject te krijgen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Verwijder een document
+
+| Eigenschap     | Beschrijving                                          |
+| -------------- | ----------------------------------------------------- |
+| Verzameling ID | Voer in of selecteer een collectie-id uit de database |
+| Document ID    | voer een bestaand document-ID in                      |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Verbind de gegevens van Appwrite met front-end componenten
+
+#### Configureer de acties
+
+Maak een delete_document actie > vul het Document ID veld met {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Voeg een event handler toe aan de actie om een reactie in te stellen als deze met succes wordt uitgevoerd. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Onderdelen configureren
+
+Voeg een event handler toe aan de knop om de delete_document actie te activeren. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+De gegevensbron van de tabel instellen om gegevens weer te geven. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Actieve resultaten weergeven
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
