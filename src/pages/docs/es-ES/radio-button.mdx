@@ -1,0 +1,132 @@
+---
+title: Botón de radio
+metaTitle: Componente del botón de radio
+description: Mostrar todas las opciones en los botones de radio y soporte para seleccionar una opción.
+tagCategory: doc_menú_botón_radio_clic
+---
+
+* * *
+
+## <Heading hidden>Botón de radio</Heading>
+
+Un botón de radio es seleccionar el componente de entrada que permite a los usuarios seleccionar una opción de un grupo de opciones predefinidas. Aparece como un botón cuadrado redondeado, que puede ser seleccionado o deseleccionado por los usuarios. Cuando se selecciona un botón de radio, todos los demás botones de radio del mismo grupo son automáticamente deseleccionados, asegurando que sólo una opción puede ser seleccionada a la vez. Los botones de radio se utilizan comúnmente en formularios, cuestionarios y encuestas para ayudar a los usuarios a elegir entre una lista de opciones.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
+
+### Propiedades
+
+#### Opciones manuales
+
+Añadir nuevas opciones o eliminar opciones manualmente y configurar las opciones una por una. Las propiedades de las opciones son las siguientes: 
+
+| Propiedades   | Descripción                                     |
+| ------------- | ----------------------------------------------- |
+| Etiqueta      | El texto mostrado para la opción                |
+| Valor         | El valor asociado con la opción                 |
+| Deshabilitado | Si la opción está desactivada para la selección |
+
+#### Opciones mapeadas
+
+También puede añadir opciones desde una fuente de datos asignando la etiqueta y las propiedades de valor a los campos de datos correspondientes. Puede obtener opciones dinámicamente de la base de datos de esta manera. Al final de este artículo demostraremos cómo utilizarlo a través de un ejemplo.
+
+| Propiedades     | Descripción                                                                        |
+| --------------- | ---------------------------------------------------------------------------------- |
+| Fuente de datos | Establecer la fuente de datos de opciones                                          |
+| Etiqueta        | Utilice {{item}} para establecer la etiqueta de opciones                           |
+| Valor           | Utilice {{item}} para establecer el valor de las opciones                          |
+| Deshabilitado   | Utilice {{item}} para establecer si la opción está deshabilitada para la selección |
+
+#### Otras propiedades
+
+| Propiedades                   | Descripción                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valor por defecto             | El valor inicial del componente. Puede cambiar dinámicamente el valor inicial escribiendo JavaScript en {{}}.                                                        |
+| Marcador de posición          | El valor se mostrará cuando el campo de entrada esté vacío.                                                                                                          |
+| Etiqueta                      | El nombre del campo mostrado al usuario                                                                                                                              |
+| Leyenda                       | Un título usado para describir el campo en detalle                                                                                                                   |
+| Etiqueta oculta               | Establecer si mostrar o no la etiqueta                                                                                                                               |
+| Posición                      | Define la posición de la etiqueta relativa al componente                                                                                                             |
+| Alineación                    | Establecer la alineación de la etiqueta                                                                                                                              |
+| Width                         | Cuando la etiqueta está en el lado izquierdo del componente, establezca la proporción de ancho de la etiqueta                                                        |
+| Manejador del Evento          | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                                               |
+| Deshabilitado                 | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.                                   |
+| Sólo lectura                  | Controlar el estado de si el componente es de sólo lectura. Un componente de sólo lectura puede ser seleccionado y enfocado, pero no puede ser modificado.           |
+| Mostrar botón de borrar       | Establecer si mostrar o no el botón de borrar                                                                                                                        |
+| Sugerencia                    | Los usuarios pueden ingresar la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado.                        |
+| Campo requerido               | Válido sólo cuando el interruptor está encendido.                                                                                                                    |
+| Regla personalizada           | Editor.inspect.setter_tooltip.regla personalizada                                                                                                                    |
+| Ocultar mensaje de validación | Puede ocultar el mensaje de error cambiando el estado oculto cuando el valor de entrada es incorrecto. Puedes cambiar dinámicamente el estado oculto por JavaScript. |
+| Clave de Formulario           | Especifique una clave de un componente de formulario de envoltura al construir el atributo de datos.                                                                 |
+| Hidden                        | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                                         |
+| Color del tema                | Para seleccionar el color del tema del componente                                                                                                                    |
+
+### Método
+
+Puede usar otros componentes para controlar el componente. Apoyamos los tres métodos siguientes:
+
+#### setValue
+
+Para establecer la opción seleccionada, por ejemplo, {{”value1”}}
+
+| Propiedades | Descripción                                  |
+| ----------- | -------------------------------------------- |
+| Valor       | Una cadena de valor de opción seleccionada.  |
+
+#### limpiarValor
+
+Borrar las opciones seleccionadas
+
+#### validate
+
+Para verificar que la información de entrada es legal
+
+#### clearValidate
+
+Para borrar el mensaje de validación
+
+### Controlador de eventos
+
+Apoyamos escuchar el evento `onChange` del componente del botón de radio. 
+
+Cuando la opción seleccionada cambia, puede desencadenar una acción especificada. Esto significa que cuando un usuario selecciona una opción diferente de un grupo de botones de radio, se puede realizar una acción particular basada en la opción seleccionada. Por ejemplo, en un formulario web, seleccionar una opción diferente puede activar la visualización de diferentes campos de formulario o la presentación del formulario a un destino diferente. De esta forma, la opción seleccionada por el usuario puede afectar el comportamiento del software o aplicación web que está utilizando. La capacidad de desencadenar acciones específicas basadas en la entrada del usuario es un aspecto importante del diseño interactivo de software y puede mejorar la usabilidad y funcionalidad del software.
+
+### Datos
+
+El componente tiene algunos datos comúnmente utilizados, que se pueden llamar a través de {{componentName.propertyName}} en la aplicación.
+
+| Nombre de la propiedad | Descripción                                    |
+| ---------------------- | ---------------------------------------------- |
+| valor                  | una cadena de valor de la opción seleccionada  |
+
+### Caso de uso
+
+A continuación, demostraremos cómo usar el modo mapeado para obtener opciones dinámicamente. 
+
+#### Paso 1 Añadir una acción
+
+Hemos creado una tabla llamada `selection`, incluyendo 5 columnas: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Almacenamos los valores de opciones en `value` y almacenamos la etiqueta de opciones en diferentes idiomas en otras columnas. 
+
+Crea una acción para listar todos los datos en `selección` llamada `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+seleccionar * de la selección
+```
+
+#### Paso 2 Configurar el componente
+
+1.  Establecer las fuentes de datos a `{{postgresql1.data}}` 
+2.  Configurar la etiqueta para cambiar la etiqueta basada en el idioma. 
+
+    1.  Utilice {{ item.columnName }} para establecer la columna. 
+    2.  Utilice {{ currentUserInfo.language }} para establecer el idioma que utilizan los usuarios en ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_es }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio2.png' alt="" />
