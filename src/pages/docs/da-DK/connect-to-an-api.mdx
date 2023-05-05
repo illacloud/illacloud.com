@@ -1,0 +1,34 @@
+---
+title: Opret forbindelse til en API
+metaTitle: ILLA Cloud Forbind til en API
+desc: Du kan forbinde ILLA til de fleste API'er ved hjælp af vores indfødte integrationer. ILLA kan oprette forbindelse til enhver REST, GraphQL API
+tagCategory: doc_menu_api_click
+---
+
+* * *
+
+## <Heading hidden>Opret forbindelse til et API</Heading>
+
+Opret forbindelse til enhver REST, GraphQL API.
+
+Du kan forbinde ILLA til de fleste API'er ved hjælp af vores indfødte integrationer. Hvis du har brug for at oprette forbindelse til en intern API, eller hvis der ikke er en understøttet integration, du kan oprette forbindelse ved hjælp af vores REST API integration eller GraphQL Integration.
+
+### 1.  Opret en API-ressource
+
+Ressourcer repræsenterer forbindelser til datakilder og er, hvad du forespørger i dine ILLA-apps.Log ind på ILLA og gå til fanen **Ressourcer** > klik **Opret ny** og vælg den API, du vil oprette forbindelse til, såsom **REST API**. Dette åbner **Konfigurer en ressource**-modalen, hvor du tilføjer dine forbindelsesoplysninger.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Du skal som minimum bruge basis-URL'en på den API, du vil oprette forbindelse til. Du kan også passere URL-parametre, overskrifter osv. Hvis din API kræver godkendelse, kan du også konfigurere det på denne side. For eksempel kræver OAuth2.0 en autorisation URL, Access Token URL, osv. Når du har indtastet dine forbindelsesoplysninger, skal du klikke på **Gem ressource.**
+
+### 2.  Forespørger på din API
+
+I App editor, klik **+ Ny** i **Handlingsliste** > vælg **REST API** og vælg en eksisterende REST API eller opret en ny > klik **Opret handling** og opdatér handlingerne med yderligere URL-parametre, overskrifter, osv.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>
