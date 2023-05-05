@@ -1,0 +1,95 @@
+---
+title: Tableau
+metaTitle: Tableau ILLA Cloud doc de composants
+description: Afficher et interagir avec les données en utilisant le composant Tableau.
+tagCategory: Doc_menu_table_click
+---
+
+* * *
+
+## <Heading hidden>Table</Heading>
+
+Les tables sont un moyen courant de visualiser et d'interagir avec vos données. Vous pouvez trier, filtrer, paginer, et télécharger des lignes d'informations. Les tables prennent également en charge la sélection de lignes et les colonnes personnalisées.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Charger les données dans un tableau
+
+Lorsque vous faites glisser un composant de Table vers le Frame, il affiche automatiquement les données de test au format JSON. Vous pouvez modifier les données affichées dans un tableau en modifiant la propriété source de données. Utilisez le format `{{ actionName.data }}` pour choisir l'action.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Vous pouvez également définir la source de données en entrant un tableau.
+
+### Paramètres des colonnes
+
+**Définir les alias pour les colonnes de données**
+
+Lorsque vous définissez la source de données des tables, le nom de la colonne sera automatiquement défini en fonction de la source de données. Vous pouvez renommer toutes les colonnes en cliquant sur la colonne dans l'onglet **Inspecter** et définir le **titre de la colonne**.
+
+**Changer les types de colonnes**
+
+Lorsque vous définissez la source de données des tables, les colonnes sont définies à **Text**. Vous pouvez définir les types de colonne manuellement en cliquant sur la colonne dans l'onglet **Inspecter** et en sélectionnant le type dans le menu déroulant **Type de colonne** .
+
+Les types de colonne incluent :
+
+1.  Texte du texte
+2.  Date, vous pouvez définir le format d'affichage de la date dans le type de date.
+3.  Numéro, vous pouvez définir les décimales dans le type de nombre.
+4.  Pour cent, vous pouvez définir les décimales dans le type de pourcentage.
+5.  Lier
+6.  Bouton, vous pouvez ajouter des gestionnaires d'événements dans le type de bouton.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Valeur mappée des colonnes personnalisées**
+
+Vous pouvez ajouter des colonnes personnalisées aux tables en utilisant le bouton **+ Ajouter** dans l'onglet **Inspect**. Les colonnes personnalisées sont souvent utilisées pour calculer des données basées sur d'autres valeurs dans votre application. Par exemple, si vous avez des colonnes `revenue` et `user_num` et que vous voulez calculer une colonne `ARPU`, vous pouvez utiliser `{{ currentRow.revenue/currentRow.user_num }}`
+
+De plus, après avoir calculé, vous pouvez définir le type de colonne sur le nombre ou le pourcentage et définir les décimales pour améliorer la lisibilité.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Accès aux données de la table
+
+Utilisez `{{ table1.selectedRow[i].columnName }}` pour accéder aux données des lignes sélectionnées dans d'autres composants. Si vous n'avez pas activé la **sélection multi-ligne**, `i` sera toujours 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Mettre à jour les données du tableau**
+
+1.  Utilisez le composant d'entrée ou d'autres cpmponents d'entrée de données pour afficher `{{ table1.selectedRow[i].columnName }}`.
+2.  Utilisez `{{ input1.value }}` dans les actions de mise à jour pour obtenir les valeurs sélectionnées et les valeurs mises à jour.
+3.  Ajouter un gestionnaire d'événements au bouton de mise à jour pour exécuter l'action de mise à jour lorsque vous cliquez dessus.
+4.  Mettre à jour les données de la ligne sélectionnée en modifiant la valeur d'entrée et en cliquant sur le bouton Mettre à jour.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Insérer une nouvelle ligne dans la table**
+
+1.  Utilisez `{{ input1.value }}` dans les actions d'insertion récupère les valeurs.
+2.  Ajouter un gestionnaire d'événements à Insertion Bouton pour exécuter l'action d'insertion lorsque vous cliquez dessus.
+3.  Insérez de nouvelles données en saisissant des valeurs dans les composants d'entrée et en cliquant sur le bouton Insertion.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
