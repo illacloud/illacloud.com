@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integration doc
+description: Supabase インスタンスに接続し、Supabase DB データをコンポーネントに表示する
+tagCategory: doc_menu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Supabaseは、開発者がリアルタイムでWebやモバイルアプリケーションを構築できるオープンソースのFirebaseの代替手段です。 リアルタイムデータベースやユーザー認証など、Firebaseと同じ多くの機能を提供します。 しかし、オープンソースであり、SQL APIを提供するという利点があります。 これにより、開発者は既存のSQL知識とツールを使用できるため、他のシステムと簡単に統合できます。 さらに、SupabaseはFirebaseよりも柔軟でカスタマイズ可能なプラットフォームを提供します。このプラットフォームは、データモデリングや使用についてより制限をかけることができます。
+
+このチュートリアルでは、ILLA BuilderとSupabaseを使用したAdmin Panelを簡単な手順で作成する方法について説明します。 ILLAは、社内ツールの迅速な開発と展開を可能にする開発者向けの低コードプラットフォームです。 UI コンポーネントをドラッグ&ドロップしたり、データベースや API に接続したり、JavaScript を書いたりすることで、ページを作成することができます。 Supabaseの詳細については、ウェブサイト<https://supabase.com/>をご覧ください。 始めましょう！
+
+### ステップ 1: Supabaseでバックエンドを設定する
+
+format@@0(https://app.supabase.com/projects)で、`New project`をクリックし、adminPanelに名前を設定します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+`新しいテーブルを作成` をクリックして新しいテーブルを作成します。
+
+Supabaseは、クエリの書き込み、ユーザーインターフェイスによるスキーマの作成、CSVファイルのアップロードなど、テーブルにデータを入力するためのさまざまなオプションを提供します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+表の情報を入力します。 データベースがセットアップされました。
+
+### ステップ2：ILLAクラウド上でUIを構築する
+
+format@@0(https://cloud.illacloud.com)で、Create New をクリックして新しいアプリケーションを作成します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+「挿入」パネルからコンポーネントをキャンバスにドラッグします。
+
+キャンバス上のコンポーネントを選択し、`Inspect` パネルでプロパティを構成します。
+
+以下のスクリーンショットで見られるように、簡単な管理パネルを構築しました。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### ステップ3：Supabaseに接続してコンフィグCRUD
+
+Supabase の [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) のデータベース接続情報に注意してください。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+アクションリストで`+ New`をクリックし、Supabase DBを選択します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+フォームに記入して、Supabaseインスタンスに接続します。 接続をテストしてリソースを保存します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+`Create Action`をクリックして、Supabaseリソースでアクションを作成し、CRUDを設定します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+フロントエンドの入力データを取得するには {{ を使用します。 以下は、format@@0パネルのformat@@1ページの例です。
+
+input1 に入力された名前でユーザーを検索
+
+```
+SELECT *
+FROM user
+WHERE名 = "{{input1.value}}"
+;
+```
+
+ユーザーデータを更新 IDが一致したときにユーザー情報を更新する
+
+```
+UPDATE user
+SET name = "{{input3.value}}"
+, email = "{{input4.value}}"
+WHERE id="{{input2.value}}"
+;
+```
+
+ユーザーデータを挿入
+
+```
+INSERT INTO user VALUES("{{input5.value}}",",{{input6.value}}",",{{input7.value}}');
+```
+
+IDでユーザーを削除する
+
+```
+ユーザーWHEREから削除 ID = "{{input2.value}}";
+```
+
+### ステップ 4: コンポーネントにデータを表示
+
+{{ でコンポーネントのプロパティを設定します。 例:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## リソース
+
+-   format@@0(https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   format@@0(https://supabase.com/docs)
