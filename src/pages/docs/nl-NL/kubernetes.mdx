@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: menu_kubernetes_klik
+desc: Bouw illa alles-in-één afbeelding en voer het door 8s op je machine.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Beschrijving
+
+Bouw illa alles-in-één afbeelding en voer het door 8s op je machine. U kunt het scripts bestand bekijken in de [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) map voor meer details.
+
+Opmerking:
+
+We raden het gebruik aan met onze auto-deploy tools[illa-cli](https://github.com/illacloud/illa).
+
+Op dit moment steunen we Apple Silicon M1 (donker-arm64 boog) niet.
+
+### Uitvoeren met een officiële slim afbeelding
+
+Installeer GNU maken en type:
+
+```jsx
+maak implementatie
+```
+
+of gewoon uitvoeren:
+
+```jsx
+/verbind/bash scripts/deploy.sh
+```
+
+deze opdracht zal de illasoft officiër in één afbeelding plaatsen en deze in je Kubernetes-cluster deployen.
+
+### Voor permanente database opslag
+
+Bewerk[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/kubernetes/illa-builder.yaml) en voeg je blijvende opslagconfiguratie toe aan je IAAS.
+
+### Voor HTTPS Configuratie
+
+U kunt de NodePort doorsturen naar uw Kubernetes-clusteringress gateway en herschrijven naar 443 poort, en https cert toevoegen aan uw ingress gateway.
+
+Of, u kunt een ingress gateway handmatig implementeren in uw Kubernetes server, configuratie zoals deze:
+
+```jsx
+static_resources:
+  luisteraars:
+  - naam: https_listener
+    adres:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - naam: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            naam: local_route
+            virtual_hosts:
+            - naam: illa_builder
+              domeinen:
+              - "illa. onze domica. " # vervang met uw domein
+              routes:
+              - match:
+                  voorvoegsel: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - naam: envoy. ilters.http. Buiten
+            typed_config:
+              "@type": type. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        naam: envoy.transport_sockets. l
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificaten:
+            # vervang dit door uw cert bestand
+            - certificate_chain:
+                bestandsnaam: /your-cert-folder/fullchain. em
+              private_key:
+                bestandsnaam: /your-cert-folder/privkey. em
+
+  clusters:
+  - naam: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      eindpunten:
+      - lb_endpoints:
+        - end:
+            adres:
+              socket_address:
+                adres: illa-builder
+                port_value: 80
+```
