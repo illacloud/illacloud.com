@@ -8,19 +8,21 @@ tagCategory: doc_menu_illa_cli_click
 **在使用 ILLA CLI 进行本地化部署前，需先安装 docker. 在使用 ILLA CLI 时请将用户加入docker用户组或以root权限运行 ILLA CLI**
 
 ## 下载ILLA CLI
-如果已经安装了Rust，你可以轻松通过**cargo**下载并安装ILLA CLI: 
-``` 
+
+如果已经安装了Rust，你可以轻松通过**cargo**下载并安装ILLA CLI:
+
+```
 > cargo install illa
 ```
-**cargo**将会下载ILLA CLI及其依赖，并将ILLA CLI编译安装到cargo执行文件目录下，以便我们使用它.
 
+**cargo**将会下载ILLA CLI及其依赖，并将ILLA CLI编译安装到cargo执行文件目录下，以便我们使用它.
 安装完成后，我们可以通过**illa**命令使用ILLA CLI.
 
 当然，你也可以通过以下链接下载对应操作系统的ILLA CLI可执行文件:
 
-* [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
-* [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
-* [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-Linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
 
 通过上述链接下载的ILLA CLI不同于通过**cargo**安装的ILLA CLI. 安装CLI后，你需要让它可执行. 以illa-linux为例:
 
@@ -40,40 +42,46 @@ tagCategory: doc_menu_illa_cli_click
 
 ```
 
-## 检查本地化部署的前置依赖
+### 检查自托管安装的前提条件
 
 **端口5432, 9999和8000需要为ILLA Builder保留，以免出现安装错误**
 
-此命令将检查不同操作系统下ILLA Builder的前置依赖是否符合要求:
+以下命令将在您的操作系统中检查自托管安装的前提条件：
+
 ```
 > illa doctor
 ```
 
-## 部署ILLA Builder
+### 部署ILLA Builder
+
 ILLA CLI安装完成后，你可以通过其进行本地化部署和[ILLA云服务部署](https://cloud.illacloud.com/).
 
 快速部署
 
 ```
-> illa deploy --self --port=10000
+> illa 部署 --self --port=10000
 ```
 
-只需要运行此命令即可在本地部署ILLA Builder: 
+只需要运行此命令即可在本地部署ILLA Builder:
 
 ```
 ## ILLA Builder的访问端口可以更改
 ## 可将MOUNT_PATH设置为自定义的ILLA Builder mount路径, 如若不填其值为系统用户目录下的.illa-builder文件夹路径
 > illa deploy --self --port=10000 --mount=<MOUNT_PATH>
 ```
+
 现在你可以通过 http://localhost:10000 访问ILLA Builder.
 
 ## 更新 ILLA Builder
+
 使用此命令可将ILLA Builder更新至最新发布版本:
+
 ```
-> illa update --self
+> illa 更新 --self
 ```
 
 ## 其他操作
+
 ```
 ## 列出ILLA Builder相关信息
 > illa list --self
