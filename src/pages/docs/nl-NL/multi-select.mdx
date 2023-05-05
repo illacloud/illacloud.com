@@ -1,0 +1,137 @@
+---
+title: Multiselect
+metaTitle: ILLA Cloud Multi-select onderdeel
+description: Een drop-down component die alle opties weergeeft, ondersteunt meerdere selecties
+tagCategory: menu_multi_select_klik
+---
+
+## <Heading hidden>Multi-select</Heading>
+
+De multi-select component kan handig zijn in situaties waarin meerdere opties moeten worden geselecteerd uit een lijst. Dit kan zorgen voor efficiëntere data invoer en filteren. Het component kan worden geconfigureerd met verschillende eigenschappen om verschillende effecten te bereiken en ondersteunt ook methoden en gebeurtenisafhandelaars voor meer aanpassingen.
+
+U kunt opties handmatig of in bulk toevoegen vanuit uw gegevensbron. In dit artikel zullen we in detail introduceren hoe we de multi-select component moeten gebruiken. 
+
+### Eigenschappen
+
+#### Handmatige opties
+
+Voeg nieuwe opties toe of verwijder opties handmatig en configureer de opties één voor één. De eigenschappen van opties zijn als volgt: 
+
+| Eigenschappen | Beschrijving                                 |
+| ------------- | -------------------------------------------- |
+| Omschrijving  | De tekst die wordt weergegeven voor de optie |
+| Waarde        | De waarde geassocieerd met de optie          |
+| Uitgeschakeld | Of de optie is uitgeschakeld voor selectie   |
+
+#### Toegewezen opties
+
+Je kunt ook opties uit een gegevensbron toevoegen door de eigenschappen van het label en de waarde te koppelen aan de overeenkomstige gegevensvelden. Op deze manier kun je opties dynamisch uit de database halen. Aan het eind van dit artikel zullen we laten zien hoe we het kunnen gebruiken door middel van een voorbeeld.
+
+| Eigenschappen | Beschrijving                                                                 |
+| ------------- | ---------------------------------------------------------------------------- |
+| Data bron     | Gegevensbron van opties instellen                                            |
+| Omschrijving  | Gebruik {{item}} om het label van opties in te stellen                       |
+| Waarde        | Gebruik {{item}} om de waarde van opties in te stellen                       |
+| Uitgeschakeld | Gebruik {{item}} om in te stellen of de optie is uitgeschakeld voor selectie |
+
+#### Andere eigenschappen
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standaard waarde           | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                                                     |
+| Plaatsaanduiding           | De waarde wordt getoond wanneer het invoerveld leeg is.                                                                                                                         |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning van het label in                                                                                                                                             |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in                                                                         |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Alleen lezen               | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                |
+| Toon wissen knop           | Stel in of de wissen knop moet worden weergegeven                                                                                                                               |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Kies ten minste            | Stel het minimum aantal te kiezen opties in                                                                                                                                     |
+| Kies tot                   | Stel het maximum aantal te kiezen opties in                                                                                                                                     |
+| Aangepaste regel           | editor.inspect.setter_tooltip.custom_rule                                                                                                                                       |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Højde                      | Hoe de hoogte in te stellen                                                                                                                                                     |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Om de themakleur van het component te selecteren                                                                                                                                |
+
+### Methode
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende drie methoden:
+
+#### stelwaarde
+
+Om de geselecteerde optie in te stellen, bijvoorbeeld {{[”value1”,”value3”…]}}
+
+| Eigenschappen | Beschrijving                               |
+| ------------- | ------------------------------------------ |
+| Waarde        | Een array van geselecteerde optiewaarden.  |
+
+#### leeswaarde
+
+Om de geselecteerde opties te wissen
+
+#### validate
+
+Om te controleren of de invoerinformatie legaal is
+
+#### wissen
+
+Om het validatiebericht te wissen
+
+### Event handler
+
+We ondersteunen het luisteren naar de onChange gebeurtenis van het multi-select component.
+
+### Gegevens
+
+Het multi-select component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via {{componentName.propertyName}} in de app.
+
+| Naam van eigenschap | Beschrijving                             |
+| ------------------- | ---------------------------------------- |
+| waarde              | een reeks van geselecteerde optiewaarden |
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de mapped modus kunnen gebruiken om op dynamische wijze opties te verkrijgen. 
+
+#### Stap 1 Voeg een actie toe
+
+We hebben een tabel genaamd `selection`, inclusief 5 kolommen: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. We hebben de optiewaarden opgeslagen in `value` en opgeslagen optielabel in verschillende talen in andere kolommen. 
+
+Maak een actie aan om alle gegevens in `selection` genaamd `postgresql1` te tonen
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect1.png' alt="" />
+
+```jsx
+selecteer * uit selectie
+```
+
+#### Stap 2 Het multi-select component configureren
+
+1.  Zet de gegevensbronnen op `{{postgresql1.data}}` 
+2.  Configureer het label om het label te wijzigen op basis van de taal. 
+
+    1.  Gebruik {{ item.columnName }} om de kolom in te stellen. 
+    2.  Gebruik {{ currentUserInfo.language }} om in te stellen welke taalgebruikers gebruiken in ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_n_n}}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect2.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect3.png' alt="" />
+
+#### Wat is meer
+
+Je kunt opties toevoegen of verwijderen door rijen toe te voegen of te verwijderen aan de selectietabel.
