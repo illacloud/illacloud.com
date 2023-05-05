@@ -1,0 +1,51 @@
+---
+title: クイックスタート
+metaTitle: ILLA Cloud クイックスタートガイド
+description: 内部ツールの開発を加速
+tagCategory: doc_menu_quick_start_click
+---
+
+* * *
+
+## <Heading hidden>概要</Heading>
+
+### 1.  ILLA ビルダーをデプロイ
+
+ILLA Builderを使用する前に、アプリケーションをホストするために、ILLA Cloudまたはセルフホスト ILLAを使用することを選択してください。 ILLA CLI、Docker Compose、K8を5分以内にセルフホストのILLAを提供します。 ILLA Cloud を後で提供し、ILLA Builderを使い始めるだけのお手伝いをします。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  ユーザーデータを取得する
+
+ILLA Builderに登録してログインし、リソースタブを入力します。 「新規作成」ボタンをクリックすると、ここでリソースタイプを選択できます。 データを接続するための REST API と MySQL を提供します。 Postgres、Redis、MongoDBは今月リリース予定です。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  ドラッグ＆ドロップの挿入
+
+データが準備されたら、format@@0 タブに戻ってアプリを作成できます。 挿入リストはページの右側にあります。 それらのいずれかを選択し、フレームにドラッグできます。 次に、インサートをクリックし、「検査」パネルのパラメーターを変更します。 各インサートのラベルを編集するためのマークダウンモードを提供します。 Markdown構文に慣れていれば、テキストのサイズと太さをすばやく調整できます。 その間、ILLA Builder でより多くの結果を得るために、テキスト入力ボックス内のアクションデータを呼び出すために {{double brackets}} を使用できます。
+
+### 4.  アプリにアクションを追加
+
+データをリソースから挿入するには、アクションが必要です。 私たちはそれを行動と呼んでいます リソースからデータを取得するためのアクションでクエリを書くことができます。 これに基づいて、フィルタやマージなどのデータ処理命令を実行するアクションに JavaScript を記述できます。 MySQLの例を以下に示します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  アプリエディタでMySQLアクションを作成します。 action1と命名しました。
+
+2.  パネルにクエリコードを入力します。例えばSELECT \* FROM Usersです。
+
+3.  このアクションを実行すると、クエリの結果が下のパネルに表示されます。
+
+### 5.  データを表示
+
+アクションが正常に作成された場合、アクションの結果をコンポーネントにバインドする必要があります。 検査パネルの値変数をアクション {{action1.data}}の結果に置き換える必要があります。 その後、コンポーネントデータはアクション結果にバインドされます。 
