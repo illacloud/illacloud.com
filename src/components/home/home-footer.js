@@ -11,7 +11,7 @@ import { LanguageSelect } from '@/components/home/language-select'
 import Language from '@/img/home/language.svg'
 import { useRouter } from 'next/router'
 
-function renderItem (title, items) {
+function renderItem(title, items) {
   return (
     <div
       key={title}
@@ -65,7 +65,7 @@ function renderItem (title, items) {
   )
 }
 
-export function Footer ({ noHome = false }) {
+export function Footer({ noHome = false }) {
   const { t } = useTranslation('home')
   const { scrollYProgress } = useViewportScroll()
   const translateY = useTransform(scrollYProgress, [0.91, 1], [-120, 0])
@@ -192,7 +192,7 @@ export function Footer ({ noHome = false }) {
                 </span>
               </div>
               <div className='hidden lg:flex w-[200px] flex flex-row gap-[8px]'>
-                <img src={Language} alt='language'/>
+                <img src={Language} alt='language' className='text-[#0B0C0F]' />
                 <LanguageSelect buttonColorChange={false} />
               </div>
             </div>
