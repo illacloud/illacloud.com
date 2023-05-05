@@ -1,0 +1,95 @@
+---
+title: 表
+metaTitle: ILLA クラウドテーブルコンポーネントドキュメント
+description: テーブルコンポーネントを使用してデータを表示および操作します。
+tagCategory: doc_menu_table_click
+---
+
+* * *
+
+## <Heading hidden>テーブル</Heading>
+
+テーブルは、データを表示して操作する一般的な方法です。 情報の行を並べ替え、フィルタリング、ページネート、およびダウンロードできます。 テーブルは行の選択とカスタム列もサポートしています。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### テーブルにデータを読み込む
+
+テーブルコンポーネントをフレームにドラッグすると、テストデータが JSON 形式で自動的に表示されます。 [データ ソース] プロパティを編集することで、表に表示されるデータを変更できます。 `{{ actionName.data }}`形式でアクションを選択します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+配列を入力してデータソースを設定することもできます。
+
+### 列の設定
+
+**データ列のエイリアスを設定**
+
+テーブルのデータソースを設定すると、列名はデータソースに基づいて自動的に設定されます。 **検査**タブ内のカラムをクリックし、**列名**を設定することで、すべてのカラムの名前を変更できます。
+
+**列の種類を変更**
+
+テーブルのデータソースを設定すると、列は **Text** に設定されます。 **インスペクション**タブのカラムをクリックし、**コラムタイプ**ドロップダウンからカラムタイプを選択することで、カラムタイプを手動で設定できます。
+
+列の種類は次のとおりです。
+
+1.  テキスト
+2.  format@@0では、日付タイプの日付の表示形式を設定できます。
+3.  数値は、数値の種類で小数点以下の桁数を設定できます。
+4.  パーセント、パーセントの種類で小数点を設定できます。
+5.  リンク
+6.  ボタンタイプにイベントハンドラを追加できます。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**カスタムカラムのマッピングされた値**
+
+**検査** タブの **+ 追加** ボタンを使用して、テーブルにカスタムカラムを追加できます。 カスタム 列は、アプリケーションの他の値に基づいてデータを計算するためによく使用されます。 例えば、 `revenue` と `user_num` カラムがあり、 `ARPU` カラムを計算したい場合、 `{{ currentRow.revenue/currentRow.user_num }}` を使用できます。
+
+さらに、計算後、列の種類を数値またはパーセントに設定し、小数点以下の桁数を設定して読みやすくすることもできます。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### テーブルのデータへのアクセス
+
+他のコンポーネントで選択した行のデータにアクセスするには、`{{ table1.selectedRow[i].columnName }}`を使用します。 **複数行選択**を有効にしていない場合、`i`は常に0になります。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**テーブルデータを更新**
+
+1.  `{{ table1.selectedRow[i].columnName }}`を表示するには、入力コンポーネントまたは他のデータ入力cpmponentsを使用してください。
+2.  選択した値と更新された値を取得するには、更新アクションで `{{ input1.value }}` を使用します。
+3.  [Update Action] ボタンにイベント ハンドラを追加して、クリックされたときに [Update Action] を実行します。
+4.  入力値を変更し、format@@0ボタンをクリックして、選択した行のデータを更新します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**新しい行をテーブルに挿入**
+
+1.  挿入アクションに`{{ input1.value }}`を使用すると、値を取得します。
+2.  挿入ボタンをクリックしたときに挿入アクションを実行するイベントハンドラを追加します。
+3.  入力コンポーネントに値を入力し、format@@0 ボタンをクリックして新しいデータを挿入します。
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
