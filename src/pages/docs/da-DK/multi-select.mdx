@@ -1,0 +1,137 @@
+---
+title: Multi-valg
+metaTitle: ILLA Cloud Multivælger komponent
+description: En drop-down komponent, der viser alle indstillinger, understøtter flere valg
+tagCategory: doc_menu_multi_select_click
+---
+
+## <Heading hidden>Multivalg</Heading>
+
+Komponenten med flere valg kan være nyttig i situationer, hvor flere muligheder skal vælges fra en liste. Dette kan give mulighed for mere effektiv dataindtastning og filtrering. Komponenten kan konfigureres med forskellige egenskaber for at opnå forskellige effekter og understøtter også metoder og event handlers for mere tilpasning.
+
+Du kan tilføje indstillinger manuelt eller i løs vægt fra din datakilde. I denne artikel vil vi introducere i detaljer, hvordan man bruger multi-select komponent. 
+
+### Egenskaber
+
+#### Manuelle indstillinger
+
+Tilføj nye muligheder eller slet indstillinger manuelt og konfigurere mulighederne én efter én. Egenskaberne for muligheder er som følger: 
+
+| Egenskaber  | Varebeskrivelse                          |
+| ----------- | ---------------------------------------- |
+| Etiket      | Teksten som vises for indstillingen      |
+| Værdi       | Værdien associeret med indstillingen     |
+| Deaktiveret | Om indstillingen er deaktiveret for valg |
+
+#### Tilknyttede indstillinger
+
+Du kan også tilføje indstillinger fra en datakilde ved at kortlægge etiket og værdi egenskaber til de tilsvarende datafelter. Du kan få indstillinger dynamisk fra databasen på denne måde. I slutningen af denne artikel vil vi vise, hvordan vi kan bruge den gennem et eksempel.
+
+| Egenskaber  | Varebeskrivelse                                                       |
+| ----------- | --------------------------------------------------------------------- |
+| Datakilde   | Angiv datakilden for indstillinger                                    |
+| Etiket      | Brug {{item}} til at angive etiketten på indstillinger                |
+| Værdi       | Brug {{item}} til at indstille værdien af indstillinger               |
+| Deaktiveret | Brug {{item}} til at angive, om indstillingen er deaktiveret for valg |
+
+#### Andre egenskaber
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi          | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                            |
+| Pladsholder             | Værdien vil blive vist når inputfeltet er tomt.                                                                                                      |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justering af etiketten                                                                                                                       |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet på etiketten                                                             |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Vis ryd-knap            | Angiv, om ryd-knappen skal vises                                                                                                                     |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Vælg mindst             | Indstil det mindste antal muligheder at vælge                                                                                                        |
+| Vælg op til             | Angiv det maksimale antal indstillinger at vælge                                                                                                     |
+| Brugerdefineret regel   | editor.inspect.setter_tooltip.custom_rule                                                                                                            |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Højde                   | Sådan indstilles højden til at passe                                                                                                                 |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema farve              | For at vælge temafarven på komponenten                                                                                                               |
+
+### Metode
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende tre metoder:
+
+#### setValue
+
+For at angive den valgte mulighed, for eksempel, {{[”value1”,”value3”…]}}
+
+| Egenskaber | Varebeskrivelse                          |
+| ---------- | ---------------------------------------- |
+| Værdi      | Et array af valgte indstillingsværdier.  |
+
+#### clearValue
+
+For at rydde de valgte indstillinger
+
+#### validate
+
+At kontrollere, at inputoplysningerne er lovlige
+
+#### clearValidér
+
+For at rydde valideringsmeddelelsen
+
+### Hændelse handler
+
+Vi støtter at lytte til onChange begivenhed af multi-select komponent.
+
+### Data
+
+Komponenten med flere valg har nogle almindeligt anvendte data, som kan kaldes via {{componentName.propertyName}} i appen.
+
+| Egenskabens navn | Varebeskrivelse                        |
+| ---------------- | -------------------------------------- |
+| værdi            | et array af valgte indstillingsværdier |
+
+### Brug case
+
+Dernæst vil vi demonstrere, hvordan man bruger den kortlagte tilstand til dynamisk at opnå muligheder. 
+
+#### Trin 1 Tilføj en handling
+
+Vi har oprettet en tabel med navnet `selection`, herunder 5 kolonner: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Vi lagrede indstillingsværdierne i 'værdi' og gemte valgmuligheder etiket på forskellige sprog i andre kolonner. 
+
+Opret en handling for at liste alle data i 'selection' ved navn 'postgresql1'
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect1.png' alt="" />
+
+```jsx
+vælg * fra valg
+```
+
+#### Trin 2 Konfigurere multi-select komponent
+
+1.  Sæt datakilderne til `{{postgresql1.data}}` 
+2.  Indstil etiketten til at ændre etiketten baseret på sproget. 
+
+    1.  Brug {{ item.columnName }} til at angive kolonnen. 
+    2.  Benyt {{ currentUserInfo.language }} til at indstille sprogbrugernes brug i ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect2.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect3.png' alt="" />
+
+#### Hvad er mere
+
+Du kan tilføje eller slette indstillinger ved at tilføje eller slette rækker til markeringstabellen.
