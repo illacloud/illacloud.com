@@ -1,0 +1,95 @@
+---
+title: Table
+metaTitle: ILLA Cloud table component doc
+description: Display and interact with data using the Table component.
+tagCategory: doc_menu_table_click
+---
+
+* * *
+
+## <Heading hidden>Table</Heading>
+
+Tables are a common way to view and interact with your data. You can sort, filter, paginate, and download rows of information. Tables also support row selection and custom columns.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Load data in a table
+
+When you drag a Table component to the Frame, it automatically displays the test data in JSON format. You can change the data displayed in a table by editing the Data source property. Use the `{{ actionName.data }}` format to choose the action.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+You can also set the data source by inputing an array.
+
+### Column settings
+
+**Set aliases for data columns**
+
+When you set the data source of tables, the column name will be automatically set based on the data source. You can rename all columns by clicking on the column in the **Inspect** tab and set the **Column title**.
+
+**Change column types**
+
+When you set the data source of tables, the columns are set to **Text**. You can set column types manually by clicking on the column in the **Inspect** tab and selecting the type from the **Column type** dropdown.
+
+The column types include:
+
+1.  Text
+2.  Date, you can set the display format of the date in the date type.
+3.  Number, you can set the decimal places in the number type.
+4.  Percent, you can set the decimal places in the percent type.
+5.  Link
+6.  Button, you can add event handlers in the button type.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Mapped value of custom columns**
+
+You can add custom columns to tables using the **+ Add** button in the **Inspect** tab. Custom columns are often used to calculate data based on other values in your app. For example, if you have `revenue` and `user_num` columns and you want to calculate an `ARPU` column, you could use `{{ currentRow.revenue/currentRow.user_num }}`
+
+In addition, after calculating, you can set the column type to number or percent and set the decimal places to improve readability.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Access data of table
+
+Use `{{ table1.selectedRow[i].columnName }}` to access the data of selected rows in other components. If you haven’t enabled the **Multi-Row Selection**, `i` will always be 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Update the table data**
+
+1.  Use input component or other data input cpmponents to show `{{ table1.selectedRow[i].columnName }}`.
+2.  Use `{{ input1.value }}` in Update actions to get selected values and updated values.
+3.  Add an event handler to Update Button to run the Update Action when clicked.
+4.  Update the data of selected row by changing the input value and clicking the Update Button.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Insert a new row into table**
+
+1.  Use `{{ input1.value }}` in insert actions get values.
+2.  Add an event handler to Insert Button to run the Insert Action when clicked.
+3.  Insert new data by inputing values in input components and clicking the Insert Button.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
