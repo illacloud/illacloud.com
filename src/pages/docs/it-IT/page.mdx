@@ -1,0 +1,52 @@
+---
+title: Pagina
+metaTitle: ILLA Cloud Page doc
+description: Costruisci app a singola pagina e app multi-pagina su ILLA
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>Pagina</Heading>
+
+Una demo multi-pagina costruita su ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Un'applicazione a singola pagina è un'app che può cambiare le pagine senza ricaricare tutti i componenti della pagina. La maggior parte delle risorse (tra cui HTML, CSS e Script) sono caricate solo una volta per tutto il ciclo di vita dell'applicazione, rendendo veloce un'applicazione a singola pagina.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+In un'applicazione multi-pagina, ogni cambiamento, ad esempio la visualizzazione dei dati o l'invio di dati alle richieste del server che rendono una nuova pagina dal server. L'applicazione multi-pagina ha alcuni livelli, il che rende la struttura dell'applicazione semplice e semplice per gli utenti.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+In ILLA Builder, è possibile costruire un'applicazione a singola pagina impostando la cornice della pagina e aggiungendo viste alle sezioni, e un'applicazione multi-pagina può essere costruita aggiungendo più pagine, e gli sviluppatori possono utilizzare entrambi questi due modelli di progettazione in una sola applicazione.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Imposta il layout delle pagine
+
+Vai alla configurazione della pagina come i seguenti passaggi：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+È possibile utilizzare i layout preimpostati, o aggiungere ed eliminare manualmente sezioni per impostare il layout. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Aggiungi viste a una pagina
+
+`Visualizza percorso`: una stringa splicata dopo l'URL della pagina per accedere alla vista specificata. Dopo la distribuzione dell'app, l'indirizzo di accesso completo è il seguente: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+È inoltre possibile inserire la pagina iniziale e la visualizzazione predefinita tramite il seguente percorso:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Collega menu e pagine
+
+Aggiungi i gestori degli eventi agli elementi di menu → imposta il file `Azione` a `Imposta router` → seleziona la pagina e visualizza
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
