@@ -54,19 +54,19 @@ tagCategory: doc_menu_illa_cli_click
 
 ### 部署ILLA Builder
 
-ILLA CLI安装完成后，你可以通过其进行本地化部署和[ILLA云服务部署](https://cloud.illacloud.com/).
+ILLA CLI安装完成后，你可以通过其进行本地化部署或直接使用[ILLA Cloud](https://cloud.illacloud.com/).
 
 快速部署
 
 ```
-> illa 部署 --self --port=10000
+> illa deploy --self --port=10000
 ```
 
 只需要运行此命令即可在本地部署ILLA Builder:
 
 ```
 ## ILLA Builder的访问端口可以更改
-## 可将MOUNT_PATH设置为自定义的ILLA Builder mount路径, 如若不填其值为系统用户目录下的.illa-builder文件夹路径
+## 可将 <MOUNT_PATH>设置为自定义的ILLA Builder mount路径, 如若不填其值为系统用户目录下的.illa-builder文件夹路径
 > illa deploy --self --port=10000 --mount=<MOUNT_PATH>
 ```
 
@@ -77,27 +77,27 @@ ILLA CLI安装完成后，你可以通过其进行本地化部署和[ILLA云服�
 使用此命令可将ILLA Builder更新至最新发布版本:
 
 ```
-> illa 更新 --self
+> illa update --self
 ```
 
 ## 其他操作
 
 ```
-## 列出ILLA Builder相关信息
+# list the ILLA Builder
 > illa list --self
 
-# 停止ILLA Builder
+# stop the ILLA Builder
 > illa stop --self
 
-# 移除ILLA Builder
+# remove the ILLA Builder
 > illa remove --self
 
-# 强制删除运行中的ILLA Builder和持久化数据
+# forced removal of the running ILLA Builder and persistent data
 > sudo illa remove --force --self --data
 
-# 重启ILLA Builder
+# restart the ILLA Builder
 > illa restart --self
 
-# 帮助信息
+# help information
 > illa help
 ```
