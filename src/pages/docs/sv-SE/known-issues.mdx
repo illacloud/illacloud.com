@@ -1,0 +1,23 @@
+---
+title: Kända problem
+tagCategory: Ärenden
+desc: Kända problem och lösningar för installation av ILLA Builder.
+---
+
+* * *
+
+## <Heading hidden>Kända ärenden</Heading>
+
+### Problem med monteringstyp
+
+Kör `illa distribuera --self -port=1000 -s={your-ip-address}` eller `run-official-image.sh`, returnera följande fel:
+
+`Docker svarade med statuskod 400: ogiltig mount config for type "bind": bind källkod finns inte: /tmp/illa-data`
+
+För tillfället stöder monteringstypen endast `mount`, vänligen config `docker -v` som `mount`-läge. Eller installera om dockaren genom att följa skript.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manuelly/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Och kör distributionskommandot igen.
+
+För fler problem: https://github.com/illacloud/illa-builder/issues
