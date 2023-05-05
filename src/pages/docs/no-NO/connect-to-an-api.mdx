@@ -1,0 +1,34 @@
+---
+title: Koble til en API
+metaTitle: ILLA Sky Koble til et API
+desc: Du kan koble ILLA til de fleste APIer som bruker våre innebygde integrasjoner. ILLA kan koble til hvilken som helst REST, GraphQL API
+tagCategory: doc_meny_api_klikk
+---
+
+* * *
+
+## <Heading hidden>Koble til API</Heading>
+
+Koble til REST, GraphQL API.
+
+Du kan koble ILLA til de fleste APIer som bruker våre innebygde integrasjoner. Dersom du trenger å koble til en intern API, eller hvis det ikke er støttet integrasjon, du kan koble til ved hjelp av REST-API-integrasjon eller GraphQL Integrasjon.
+
+### 1.  Opprett en API-ressurs
+
+Ressurser representerer forbindelser til datakilder, og er hva du spør i ILLA-appene.Logg inn for ILLA og naviger til **Ressurser** fanen > Klikk **Opprett ny** og velg API-et du vil koble til, slike som **REST API**. Dette åpner **Konfigurer en ressursen** modal hvor du legger til din tilkoblingsinformasjon.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Som et minimum trenger du grunn-nettadressen til API-et du vil koble til. Du kan også sende URL parametere, overskrifter osv. Dersom ditt API krever autentisering, kan du konfigurere dette også på denne siden. For eksempel OAuth2.0 krever en autorisasjons URL, Access Token URL, osv. Etter du har skrevet inn tilkoblingsdetaljene dine, klikk **Lagre ressurs.**
+
+### 2.  Spør API
+
+I app-editoren klikk **+ Ny** på **Handlingslisten** > velg **REST API** og velg en eksisterende REST API eller opprett en ny > klikk **lag handlingen** og oppdatere handlingene med flere URL-parametere, overskrifter, osv.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>
