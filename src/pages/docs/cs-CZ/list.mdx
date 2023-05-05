@@ -1,0 +1,53 @@
+---
+title: Seznam
+metaTitle: Složka seznamu Cloud List ILLA
+description: Komponenta seznamu umožňuje vytvářet opakovatelné řádky dat, jejichž vzhled a pocit jsou definovány vámi.
+tagCategory: doc_menu_seznam_kliknutí
+---
+
+* * *
+
+## <Heading hidden>Seznam</Heading>
+
+Komponenta seznamu je podobná kontejneru, ve kterém můžete hnízdit další komponenty.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Přetáhněte komponenty do seznamu
+
+Při přetáhnutí komponenty seznamu do rámečku, automaticky obsahuje některé komponenty. Můžete je odstranit nebo upravit a přetáhnout nové komponenty do seznamu. 
+
+Pouze první položka může být upravena a ostatní se budou automaticky měnit na základě první položky. Můžete se také zaměřit na první položku a přetažením lišty změníte výšku.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Zobrazit výsledky dotazu v seznamu
+
+Při přetažení komponenty seznamu na snímek, automaticky zobrazuje testovací data ve formátu JSON. Zdroj dat můžete změnit na akci pomocí `{{ mysql_list_query.data }}`. 
+
+Po nastavení zdroje dat můžete změnit data komponentů:
+
+1.  Vyberte komponentu v první položce. 
+2.  Pokud jsou data komponent ze seznamu, můžete nastavit data pomocí `{{ currentItem.columnName }}` . Například můžete nastavit zdroj obrázku pomocí `{{ currentItem.Avater }}`. `Avater` je sloupec ze zdroje dat v seznamu.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Můžete použít `{{ currentItem.columnName }}` pouze v případě, že jsou komponenty v seznamu. 
+
+### Použít údaje ze seznamu
+
+Data vybraných položek můžete použít pomocí `{{ list1.selectedItem.columnName }}`. Nebo použijte libovolná data seznamu pomocí `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
