@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integration doc
+description: Подключиться к экземпляру Supabase и показать данные базы данных Supabase на компонентах
+tagCategory: doc_menu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Supabase - это альтернатива Firebase с открытым исходным кодом, которая позволяет разработчикам создавать веб и мобильные приложения в реальном времени. Он предоставляет многие из тех же возможностей, что и Firebase, таких как базы данных реального времени, аутентификация пользователей, и хостинг, но с дополнительными преимуществами быть open-source и предоставлять SQL API. Это позволяет разработчикам использовать свои существующие знания и инструменты SQL, что облегчает интеграцию с другими системами. Кроме того, Supabase предоставляет более гибкую и настраиваемую платформу, чем Firebase, которая может быть более ограничительной в отношении моделирования и использования данных.
+
+В этом уроке описывается процесс создания панели администратора с помощью ILLA Builder и Supabase за несколько простых шагов. ILLA – это низкокодовая платформа для разработчиков, позволяющая быстро разрабатывать и устанавливать внутренние инструменты. Он позволяет создавать страницы, перетаскивая пользовательские компоненты, подключаясь к любой базе данных или API, а также писать JavaScript. Чтобы узнать больше о Supabase, посетите их сайт <https://supabase.com/>. Давайте начнём!
+
+### Шаг 1: Настройте свой Backend на Supabase
+
+На [панели управления Supabasa](https://app.supabase.com/projects) нажмите на `New project` и установите имя в adminPanel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+Создайте новую таблицу, нажав на кнопку «Создать новую таблицу» .
+
+Supabase предлагает множество опций для заполнения таблиц с данными, в том числе для написания запросов, создания схем через пользовательский интерфейс и загрузки файлов CSV.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+Заполните информацию в таблице. База данных теперь настроена.
+
+### Шаг 2: Создание интерфейса в ILLA Cloud
+
+В [ILLA Cloud](https://cloud.illacloud.com) нажмите кнопку Создать новый, чтобы создать новое приложение.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+Перетащите компоненты из панели `Insert` в холст.
+
+Выберите компоненты на холсте и настройте свойство на панели `Inspect`.
+
+Как видно на скриншоте ниже, мы создали простую панель администратора.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### Шаг 3: Подключиться к соглашению и CRUD конфигурации
+
+Обратите внимание на информацию о подключении к базе данных в разделе [Настройки проекта](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) в Supabase.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+В списке действий нажмите `+ New` и выберите пункт Supabase DB.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+Заполните форму для подключения к сервису Supabase. Проверить соединение и сохранить ресурс.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+Нажмите «Создать действие», чтобы создать действие с ресурсом поддержки и настроить CRUD.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+Используйте {{ для получения внешних входных данных. Ниже приведен пример страницы управления пользователями в панели администратора.
+
+Поиск пользователя по имени, указанному в input1
+
+```
+ВЫБЕРИТЕ *
+от пользователя
+WHERE name = "{{input1.value}}"
+;
+```
+
+Обновить данные пользователя. Обновление информации о пользователе при совпадении идентификатора
+
+```
+UPDATE пользователь
+SET имя = "{{input3.value}}"
+, email = "{{input4.value}}"
+Где id="{{input2.value}}"
+;
+```
+
+Вставить данные пользователя
+
+```
+INSERT INTO пользователя VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+```
+
+Удалить пользователя по id
+
+```
+УДАЛИТЬ ИЗ пользователя WHERE id = "{{input2.value}}";
+```
+
+### Шаг 4: Показать данные по компонентам
+
+Настройте свойства компонентов с помощью {{ . Например:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## Ресурсы
+
+-   [Подключить официальный сайт](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Поддерживать документацию](https://supabase.com/docs)
