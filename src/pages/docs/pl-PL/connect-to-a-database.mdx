@@ -1,0 +1,49 @@
+---
+title: Połącz z bazą danych
+metaTitle: Połączenie ILLA Cloud z bazą danych
+desc: ILLA łączy się z większością baz danych, w tym z PostgreSQL, MySQL, TiDB i MongoDB
+tagCategory: kliknij przycisk bazy danych dok_menu_
+---
+
+* * *
+
+## <Heading hidden>Połącz z bazą danych</Heading>
+
+ILLA łączy się z większością baz danych, w tym z PostgreSQL, MySQL, TiDB i MongoDB. Sprawdź tę listę tutaj, aby uzyskać informacje o źródłach danych ILLA. Na liście znajdują się nadchodzące źródła danych, które planujemy wspierać. Jeśli ILLA brakuje pewnych zasobów danych, których używasz, proszę wypełnić formularz tutaj.
+
+Szczegóły połączenia wymagane przez ILLA zależą od rodzaju bazy danych, którą chcesz połączyć. Informacje te obejmują zazwyczaj host, port, dane użytkownika i ciąg połączeń. Aby to osiągnąć, zapoznaj się z konfiguracją lub dokumentacją bazy danych.
+
+### 1.  Utwórz zasób bazy danych
+
+Zasoby reprezentują połączenia z źródłami danych i są tym, co zapytujesz w swoich aplikacjach ILLA.Zaloguj się do ILLA i przejdź do zakładki **Zasoby** > kliknij **Utwórz nową** i wybierz bazę danych, z którą chcesz się połączyć. Otwiera to **Konfiguruj modal** w którym dodasz informacje o połączeniu.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Po wprowadzeniu szczegółów połączenia, kliknij **Test Connection**, aby sprawdzić czy ILLA może się połączyć. Po zakończeniu kliknij **Zapisz zasób** aby zapisać zasób.
+
+Ponadto możesz tworzyć zasoby na liście akcji w **Edytorze aplikacji**.
+
+### 2.  Zapytaj bazę danych
+
+W edytorze aplikacji, kliknij **+ Nowy** na **Lista działań** > wybierz typ zasobów i wybierz istniejący zasób lub utwórz nowy zasób > kliknij **utwórz akcję** i zaktualizuj działania, aby pobrać pewne informacje z tabeli w bazie danych.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Kliknij **Zapisz**, a następnie kliknij **Uruchom**. Wyniki zapytania są automatycznie wyświetlane po zakończeniu zapytania.
+
+Istnieją pewne zaawansowane ustawienia, w tym zmiana nazwy, ustawienia uruchamiania, przekształcanie danych i ustawianie obsługi sukcesu lub awarii, jak pokazano poniżej.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>
