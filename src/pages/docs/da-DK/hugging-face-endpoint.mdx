@@ -1,0 +1,74 @@
+---
+title: Hugging Ansigt Endepunkt
+metaTitle: Opret forbindelse til Hugging Ansigt Endpoint
+description: Lær at bruge Hugging Face Endpoint i ILLA
+tagCategory: doc_menu_hugging_face_endpoint_click
+---
+
+* * *
+
+## <Heading hidden>Hugging Face Endpoint</Heading>
+
+Med Hugging Face Inference Endpoints, kan du nemt implementere Transformers, diffusorer eller enhver model på dedikeret, fuldt administreret infrastruktur. [Klik her](https://ui.endpoints.huggingface.co/new) for at oprette et slutpunkt. 
+
+### Opret Hugging Face endpoint ressource
+
+Der er to måder at tilføje en Hugging Face Endpoint ressource. 
+
+1.  Indtast fanen `ILLA Builder` >> Klik på `Ressourcer` >> Klik på `Opret ny` >> Vælg `Hugging Face Endpoint` >> Indstil forbindelsesinformationen og klik på `Gem Resource`
+2.  Indtast redigeringssiden >> klik på `+ Ny` i handlingslisten >> Vælg `Hugging Face Endpoint` >> Konfigurer forbindelsesinformationen eller klik på `+ Ny ressource` for at tilføje ny forbindelsesinformation
+
+### Konfigurér forbindelsesoplysninger
+
+| Egenskaber   | Påkrævet | Varebeskrivelse                                                                  |
+| ------------ | -------- | -------------------------------------------------------------------------------- |
+| Navn         | påkrævet | Definér et ressourcenavn, der vil blive brugt til visning i ILLA                 |
+| Endpoint URL | påkrævet | opret Endpoint her: https://ui.endpoints.huggingface.co/new og få URL'en.        |
+| Token        | påkrævet | Organisationens token. Du kan få det på https://huggingface.co/settings/tokens.  |
+
+### Opret Handlinger
+
+Indtast redigeringssiden >> klik på `+ Ny` i handlingslisten >> Vælg `Hugging Face Endpoint` >> Vælg en eksisterende ressource eller tilføj en ny ressource
+
+### Konfigurér handlinger
+
+| Egenskaber     | Påkrævet | Varebeskrivelse                                                                                                                                                                                                                                                         |
+| -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter type | påkrævet | Parameteren type af dit Endpoint. For eksempel, hvis din Endpoint har brug for en tekst input, skal du vælge udfylde “inputs” parameter med tekst. Hvis din Endpoint har brug for en JSON-input, skal du vælge at udfylde “inputs” parameter med JSON eller nøgleværdi. |
+| Parameter      | påkrævet | Indtast din parameter. Brug {{ componentName.value }} til at bruge data fra komponenter.                                                                                                                                                                                |
+
+### Brug case
+
+Vi har indsat 'openai/whisper-base', som får en lydfil input og konverterer til tekst. Det er velegnet til mødeprotokoller, podcasts til tekst, osv. Derefter vil vi introducere, hvordan du bruger denne model til at opbygge en ansøgning i ILLA Cloud.
+
+#### Trin 1: Byg front-end interface med komponenter
+
+Vi har bygget en grænseflade ved hjælp af komponenter såsom fil upload og knap, som følger.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Trin 2: Tilføj en Hugging Ansigtsressource
+
+Udfyld felterne vist nedenfor for at afslutte ressourcekonfigurationen. [Opret et endepunkt](https://ui.endpoints.huggingface.co/new) og få endepunkts URL. Og få organisationen API token i [profilindstillinger](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Trin 3: Konfigurer en handling
+
+Vælg først en parametertype. Tag `openai/whisper-base` som et eksempel, denne model kræver binær fil input, så vi ændrer parameteren til `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Set the binary to be passed to the model as the file data uploaded from the file upload component. (Automatic Copy) For eksempel `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Trin 4: Tilslut komponenter og handlinger
+
+Tilføj en hændelseshandler til knappen for at udløse handlingen, når der klikkes på knappen. Og sæt værdien af tekstkomponenten til {{whisper.data[0].text}} for at vise konverteringsresultatet på tekstkomponenten. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Efter ovenstående trin er konfigureret, programmet er oprettet, og de løbende resultater er som følger.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
