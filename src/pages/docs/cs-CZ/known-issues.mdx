@@ -1,0 +1,23 @@
+---
+title: Známé problémy
+tagCategory: doc_menu_known_issues_click
+desc: Známé problémy a řešení nasazení společnosti ILLA Builder.
+---
+
+* * *
+
+## <Heading hidden>Známé problémy</Heading>
+
+### Problém s připojením
+
+Spustit `illa deploy --self -port=1000 -s={your-ip-address}` nebo `run-official-image.sh`, vraťte následující chybu:
+
+`Docker odpověděl se stavovým kódem 400: neplatný konfigurační soubor pro typ "bind": svázat zdrojovou cestu neexistuje: /tmp/illa-data`
+
+Pro tuto chvíli typ připojení podporuje pouze `mount`, prosím konfiguraci `docker -v` jako `mount` režim. Nebo znovu nainstalujte dokovací zařízení následujícími skripty.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+A znovu spustit příkaz pro nasazení.
+
+Pro více problémů: https://github.com/illacloud/illa-builder/issues
