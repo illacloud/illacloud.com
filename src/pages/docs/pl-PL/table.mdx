@@ -1,0 +1,95 @@
+---
+title: Tabela
+metaTitle: Doc tabeli ILLA
+description: Wyświetlanie i interakcja z danymi za pomocą komponentu tabeli.
+tagCategory: kliknij tabelę_dok_menu_
+---
+
+* * *
+
+## <Heading hidden>Tabela</Heading>
+
+Tabele są powszechnym sposobem na oglądanie i interakcję z danymi. Możesz sortować, filtrować, stronicować i pobierać wiersze informacji. Tabele obsługują również wybór wierszy i niestandardowe kolumny.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Załaduj dane w tabeli
+
+Gdy przeciągniesz komponent tabeli do ramki, automatycznie wyświetla dane testowe w formacie JSON. Możesz zmienić dane wyświetlane w tabeli poprzez edycję właściwości źródła danych. Użyj formatu `{{ actionName.data }}`, aby wybrać akcję.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Możesz również ustawić źródło danych, wprowadzając tablicę.
+
+### Ustawienia kolumny
+
+**Ustaw aliasy dla kolumn danych**
+
+Po ustawieniu źródła danych tabel nazwa kolumny zostanie automatycznie ustawiona w oparciu o źródło danych. Możesz zmienić nazwę wszystkich kolumn klikając na kolumnę w zakładce **Sprawdź** i ustaw **Tytuł kolumny**.
+
+**Zmień typy kolumn **
+
+Po ustawieniu źródła danych tabel kolumny są ustawione na **Tekst**. Możesz ustawić typy kolumn ręcznie, klikając na kolumnę w zakładce **Sprawdź** i wybierając typ z rozwijanej listy **Kolumny**.
+
+Rodzaje kolumn obejmują:
+
+1.  Tekst
+2.  Data, możesz ustawić format wyświetlania daty w typie daty.
+3.  Liczba, można ustawić miejsca dziesiętne w danym typie liczby.
+4.  Procent, możesz ustawić miejsca dziesiętne w typie procentowym.
+5.  Link
+6.  Przycisk, możesz dodać obsługę zdarzeń w typie przycisku.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Odwzorowana wartość niestandardowych kolumn **
+
+Możesz dodać własne kolumny do tabel za pomocą przycisku **+ Dodaj** w zakładce **Sprawdź**. Niestandardowe kolumny są często używane do obliczania danych na podstawie innych wartości w aplikacji. Na przykład, jeśli masz kolumny `revenue` i `user_num` i chcesz obliczyć kolumnę `ARPU`, możesz użyć `{{ currentRow.revenue/currentRow.user_num }}`
+
+Ponadto po obliczeniu można ustawić typ kolumny na liczbę lub procent i ustawić miejsca dziesiętne, aby poprawić czytelność.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Dostęp do danych w tabeli
+
+Użyj `{{ table1.selectedRow[i].columnName }}` aby uzyskać dostęp do danych wybranych wierszy w innych komponentach. Jeśli nie włączyłeś **Wybór wielu wierszów**, `i` zawsze będzie równy 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Aktualizuj dane tabeli**
+
+1.  Użyj komponentu wejściowego lub innych danych wejściowych cpmponents do pokazania `{{ table1.selectedRow[i].columnName }}`.
+2.  Użyj `{{ input1.value }}` w akcjach aktualizacji, aby uzyskać wybrane wartości i zaktualizowane wartości.
+3.  Dodaj program obsługi zdarzeń do przycisku Aktualizacji, aby uruchomić akcję Aktualizacji po kliknięciu.
+4.  Zaktualizuj dane wybranego wiersza poprzez zmianę wartości wejściowej i kliknięcie przycisku Aktualizacja.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Wstaw nowy wiersz do tabeli**
+
+1.  Użyj `{{ input1.value }}` we wstawionych wartościach.
+2.  Dodaj program obsługi zdarzeń, aby wstawić przycisk, aby uruchomić akcję po kliknięciu.
+3.  Wstaw nowe dane poprzez wprowadzanie wartości w komponentach wejściowych i kliknięcie przycisku Wstaw
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
