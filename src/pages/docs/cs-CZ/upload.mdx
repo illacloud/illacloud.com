@@ -1,0 +1,106 @@
+---
+title: Nahrát
+metaTitle: ILLA Cloud Upload komponenta doc
+description: Nahrát komponentu pro nahrání souborů z lokálních počítačů do libovolného cloudového úložiště
+tagCategory: doc_menu_upload_click
+---
+
+* * *
+
+## <Heading hidden>Nahrát</Heading>
+
+Nahrávání komponenty se používá k umožnění uživatelům nahrávat soubory ze svých lokálních počítačů do libovolného cloudového úložiště přes API. Dále představíme jak nakonfigurovat komponentu pro nahrávání, jak propojit komponentu s cloudovým úložištěm, jak použít nahrát komponentu pro výběr obrázku a zobrazit ji s obrázkem atd.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Vlastnosti
+
+| Majetek                       | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                                                                                                                    |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ                           | Nastavte typ nahrávání komponenty, včetně tlačítka a Dropzone.                                                                                                                                                                                                                                                               |
+| Text                          | Text zobrazený na komponentě.                                                                                                                                                                                                                                                                                                |
+| Typy výběru                   | Nastavte typ výběru na více souborů, jeden soubor nebo složku.                                                                                                                                                                                                                                                               |
+| Typy souborů                  | Seznam přípon souborů, které mohou být nahrávány. Žádná hodnota neumožní všechny typy souborů.                                                                                                                                                                                                                               |
+| Připojit nově vybrané soubory | Chcete-li nastavit vybraný nový soubor pro připojení k vybranému souboru nebo nahradit vybraný soubor ve výběru více souborů nebo složky.                                                                                                                                                                                    |
+| Seznam souborů                | Nastavení, zda zobrazit seznam vybraných souborů pod komponentou. Výška nahrávače se dynamicky změní v závislosti na délce seznamu souborů.                                                                                                                                                                                  |
+| Parsovat hodnotu              | Pokusit se analyzovat vybrané soubory s podporou pro JSON, CSV, TSV, Excel a TXT soubory. Parsovaná data mohou být přístupná přes {{upload1.parsedValue}}. Soubory, které nelze analyzovat, budou v poli neplatné. Všechny soubory jsou k dispozici jako base64 kódované řetězce na poli hodnot, bez ohledu na tuto možnost. |
+| Načítání                      | Zda má komponenta zobrazit indikátor načítání.                                                                                                                                                                                                                                                                               |
+| Zakázáno                      | Nastavení, zda chcete zakázat tuto komponentu a za jakých podmínek ji zakázat. Například, pokud je input1 komponenta null, měla by být tato komponenta vypnuta: {{ input1.value == ‘ ’}}                                                                                                                                     |
+| Šipka nástroje                | Nápověda zobrazená na komponentě při přejetí komponenty.                                                                                                                                                                                                                                                                     |
+| Povinné pole                  | Chcete-li nastavit, zda je to vyžadováno.                                                                                                                                                                                                                                                                                    |
+| Min size                      | Možnost nastavit minimální velikost souboru, která může být přidána.                                                                                                                                                                                                                                                         |
+| Max size                      | Možnost nastavit maximální povolenou velikost souboru.                                                                                                                                                                                                                                                                       |
+| Vlastní pravidlo              | Možnost nastavit text, který se zobrazí při selhání ověření.                                                                                                                                                                                                                                                                 |
+| Skrýt ověřovací zprávu        | Chcete-li nastavit, zda má být zobrazena ověřovací zpráva, když ověření selže.                                                                                                                                                                                                                                               |
+| Datový klíč formuláře         | Možnost nastavit klíč pro komponentu. Po přidání této komponenty do formuláře bude tento klíč použit k identifikaci dat této komponenty při odeslání formuláře.                                                                                                                                                              |
+| Hidden                        | Chcete-li nastavit, zda má být tato komponenta zobrazena a za jakých podmínek ji zobrazí. Například, pokud aktuální uživatel není Uživatel A, tato komponenta by měla být skryta: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
+| Varianta                      | Možnost nastavit tlačítko Nahrát komponentu pro načtení nebo vyplnění.                                                                                                                                                                                                                                                       |
+| Barva motivu                  | Pro nastavení barvy tlačítka Nahrát komponentu.                                                                                                                                                                                                                                                                              |
+
+### Metoda
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto tři metody:
+
+| clearValidace | Používá se k vymazání ověřovací zprávy                            |
+| ------------- | ----------------------------------------------------------------- |
+| clearValue    | Používá se k vymazání vybraného                                   |
+| nastaveno     | Slouží k nastavení nahrávání komponenty na zakázané nebo povolené |
+
+### Manažer událostí
+
+Pro spuštění akcí, když se změní vybrané soubory
+
+### Data pro nahrávání
+
+Nahraná komponenta obsahuje některá běžně používaná data, která lze volat v aplikaci.
+
+`hodnota` pole sestávající z dat base64 souborů. 
+
+`files` pole objektů. Mezi klíče objektů patří `lastModified`, `name`, `size`, `type`. Můžete použít `{{upload1.files.map(soubor => soubor). ame)}}` pro získání pole názvů souborů a můžete také získat naposledy upravené pole, pole velikosti, zadejte pole stejným způsobem. 
+
+### Nahrát soubory do cloudového úložiště
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Nahrát jeden soubor prostřednictvím zdroje S3
+
+Konfigurace akce je následující: 
+
+Nahrát název objektu
+
+```jsx
+{{upload1.files.map(soubor => file.name)[0]}}
+```
+
+Nahrát data
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Nahrát více souborů prostřednictvím S3 zdroje
+
+Nahrát seznam názvů objektů
+
+```jsx
+{{upload1.files.map(soubor => file.name)}}
+```
+
+Nahrát datový seznam
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Nahrajte obrázek a zobrazte ho na komponentě obrázku
+Změňte zdroj obrázku na základní data souboru ze komponenty. Data base64 jsou uložena v atributu hodnoty v poli. A měli bychom rozdělit prefix souboru s daty souboru. Kód je následující. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
