@@ -1,0 +1,95 @@
+---
+title: Tabell
+metaTitle: ILLA Cloud table component doc
+description: Visa och interagera med data med tabellkomponenten.
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Tabell</Heading>
+
+Tabeller är ett vanligt sätt att visa och interagera med dina data. Du kan sortera, filtrera, paginera och ladda ner rader av information. Tabeller stöder även val av rader och anpassade kolumner.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Ladda data i en tabell
+
+När du drar en tabellkomponent till bildrutan, visas testdata automatiskt i JSON-format. Du kan ändra data som visas i en tabell genom att redigera datakällans egenskap. Använd formatet \`{{ actionName.data }}för att välja åtgärden.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Du kan också ställa in datakällan genom att mata in en array.
+
+### Inställningar för kolumn
+
+**Ställ in alias för datakolumner**
+
+När du anger datakällan för tabeller, kommer kolumnnamnet automatiskt att ställas in baserat på datakällan. Du kan byta namn på alla kolumner genom att klicka på kolumnen i fliken **Inspektera** och ange **Kolumntitel**.
+
+**Ändra kolumntyper**
+
+När du ställer in datakällan för tabeller, är kolumnerna inställda till **Text**. Du kan ställa in kolumntyper manuellt genom att klicka på kolumnen i fliken **Inspektera** och välja typen från rullgardinsmenyn **Kolumntyp**
+
+Kolumntyperna inkluderar:
+
+1.  Text
+2.  Datum kan du ställa in datumets visningsformat i datumtyp.
+3.  Nummer, du kan ställa in decimaler i taltypen.
+4.  Procent, kan du ställa in decimaltal platser i procent typ.
+5.  Länk
+6.  Knappen, du kan lägga till händelsehanterare i knapptypen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Kartlagt värde för anpassade kolumner**
+
+Du kan lägga till anpassade kolumner till tabeller med hjälp av **+ Lägg till**-knappen i fliken **Inspektera**. Anpassade kolumner används ofta för att beräkna data baserat på andra värden i din app. Till exempel, om du har kolumner `revenue` och `user_num` och du vill beräkna en `ARPU`-kolumn, kan du använda `{{currentRow.revenue/currentRow.user_num }}`
+
+Dessutom, efter beräkning, kan du ställa in kolumntypen till antal eller procent och ställa in decimaltecken för att förbättra läsbarheten.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Få tillgång till data i tabellen
+
+Använd `{{ table1.selectedRow[i].columnName }}` för att komma åt data från markerade rader i andra komponenter. Om du inte har aktiverat **Multi-Row Selection**, kommer `i` alltid att vara 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Uppdatera tabelldata**
+
+1.  Använd inmatningskomponent eller andra datainmatningsmponenter för att visa `{{ table1.selectedRow[i].columnName }}`.
+2.  Använd `{{ input1.value }}` i Uppdatera åtgärder för att få valda värden och uppdaterade värden.
+3.  Lägg till en händelsehanterare till uppdateringsknappen för att köra uppdateringsåtgärden när du klickar.
+4.  Uppdatera data för den markerade raden genom att ändra indatavärdet och klicka på knappen Uppdatera.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Sätt in en ny rad i tabell**
+
+1.  Använd `{{ input1.value }}` i infoga åtgärder få värden.
+2.  Lägg till en händelsehanterare för att infoga knappen för att köra Infoga åtgärden när du klickar.
+3.  Infoga nya data genom att mata in värden i inmatningskomponenter och klicka på Infoga knappen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
