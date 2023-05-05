@@ -1,0 +1,36 @@
+---
+title: Event-Handler
+metaTitle: ILLA Cloud Event-Handler Doc
+desc: Event-Handler sind ein integraler Bestandteil der Verfeinerung Ihrer internen Tool-Nutzungslogik
+tagCategory: doc-Menü evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Event-Handler</Heading>
+
+Eventhandler sind integraler Bestandteil der Verfeinerung Ihrer internen Tool-Nutzungslogik. Jede Einfüge- oder Aktion, die auf eine Benutzeraktion reagiert, hat eigene Ereignisse, die ausgelöst werden können, B. eine Schaltfläche einfügen mit einem 'click'-Ereignis, eine Texteingabebox mit einem 'absenden' Ereignis, der Erfolg einer Aktion usw. Ereignishandler helfen Benutzern, vordefinierte Anweisungen beim Auftreten von Ereignissen auszulösen: Sie können auf ein einzelnes Ereignis-Ereignis reagieren, oder Sie können mehrere Eventhandler einrichten und sie als Workflows einrichten, um komplexere Aufgaben zu erledigen.
+
+Nach dem eingestellten Ereignis kann der Ereignis-Handler Ihnen dabei helfen, eine Vielzahl von Aktionen auszuführen: Kontrollaktions-Anweisungen, Einfügeoperationen steuern, Skripte und vieles mehr ausführen. Zusätzlich zu den Triggerbedingungen können Sie auch detailliertere JavaScript-Auslösebedingungen hinzufügen.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Event-Handler
+
+Falls Handler das Ergebnis des Ereignisses einstellen können, hängt davon ab, ob die Abfrageergebnisse fehlschlagen oder nicht. Sie können die Triggerlogik durch Setzen der Abfragefehlerbedingung im Reiter Response beenden.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Absender-Handler bearbeiten
+
+Wir stellen eine Trigger-Bedingung für jede interaktive Einfügung fest und Sie können ein Ereignis in der Aktionsliste des Handlers als Trigger-Bedingung auswählen. Zum Beispiel können Sie 'Absenden' als Triggerbedingung im Ereignishandler für das Dateneingabefeld festlegen , die die Eingaben automatisch in die Datenbank einfügt, wenn der Benutzer die Eingaben "überträgt" und damit eine einfache Dateneinfügefunktion implementiert.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Temporäre Zustände
+
+Bei der Verarbeitung von Daten kann es zu Situationen kommen, in denen die verarbeiteten Daten nicht sofort aufgerufen werden. Aus diesem Grund haben wir temporäre Staaten eingerichtet, um Zwischenstaaten für die Datenverarbeitung zu speichern. Sie können einen temporären Status in den Antwort-Eventoptionen von Ereignis-Handler festlegen und auf Neuen Status erstellen klicken, um die aktuellen Daten im temporären Zustand zu speichern , die für jede Immobilie platziert werden kann.
+
+Außerhalb des Projekt-Editors können Sie auch Daten von {{tempState1.setValue(data)}} speichern oder Daten von {{tempState1.value}} aufrufen.
+
+> Die Werte im temporären Zustand werden beim Neustart des Projekts gelöscht und Sie müssen die Werte lokal oder in der Cloud speichern, um die Integrität der Daten zu gewährleisten.
