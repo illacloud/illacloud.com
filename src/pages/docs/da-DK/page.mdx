@@ -1,0 +1,52 @@
+---
+title: Side
+metaTitle: ILLA Cloud Page doc
+description: Byg enkelt-sidet apps og flersidet app på ILLA
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>Side</Heading>
+
+En demo med flere sider bygget på ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+En single-page applikation er en app, der kan ændre sider uden at genindlæse alle komponenter på siden. De fleste ressourcer (herunder HTML, CSS og Script) er kun indlæst én gang i hele programmets livscyklus, hvilket gør en enkelt side ansøgning hurtigt.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+I et flersidet program, hver ændring, såsom visning af data eller indsendelse af data tilbage til serveren anmodninger om gengivelse af en ny side fra serveren. Den multi-side ansøgning har et par niveauer, hvilket gør ansøgningen struktur enkel og ligetil for brugerne.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+I ILLA Builder, kan der bygges et enkeltsidet program ved at indstille rammen af siden og tilføje visninger til sektioner, og en flersidet applikation kan bygges ved at tilføje flere sider, og udviklere kan bruge begge disse to design mønstre i én applikation.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Indstil layout for siderne
+
+Gå til siden konfiguration som følgende trin：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Du kan bruge de forudindstillede layouts, eller manuelt tilføje og slette sektioner for at indstille layout. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Tilføj visninger til en side
+
+`Vis sti`: en streng splejset efter siden URL for at få adgang til den angivne visning. Efter app'en er installeret, er den komplette adgangsadresse som følger: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Du kan også indtaste hjemmesiden og standardvisningen via følgende sti:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Forbind menu og sider
+
+Tilføj hændelseshandlere til menupunkter → sæt `Handling` til `Indstil router` → Vælg siden og se
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
