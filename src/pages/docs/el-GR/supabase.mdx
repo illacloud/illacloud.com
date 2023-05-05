@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integration doc
+description: Σύνδεση στην παρουσία Supabase και εμφάνιση δεδομένων Supabase DB στα συστατικά
+tagCategory: doc_menu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Το Supabase είναι μια εναλλακτική λύση Firebase ανοιχτού κώδικα που επιτρέπει στους προγραμματιστές να κατασκευάζουν σε πραγματικό χρόνο web και mobile εφαρμογές. Παρέχει πολλά από τα ίδια χαρακτηριστικά με το Firebase, όπως βάσεις δεδομένων σε πραγματικό χρόνο, έλεγχο ταυτότητας χρήστη, και φιλοξενία, αλλά με τα πρόσθετα οφέλη του να είναι ανοιχτού κώδικα και την παροχή ενός SQL API. Αυτό επιτρέπει στους προγραμματιστές να χρησιμοποιούν τις υπάρχουσες γνώσεις και τα εργαλεία SQL τους, καθιστώντας εύκολη την ενσωμάτωση με άλλα συστήματα. Επιπλέον, Supabase παρέχει μια πιο ευέλικτη και προσαρμόσιμη πλατφόρμα από Firebase, η οποία μπορεί να είναι πιο περιοριστική όσον αφορά τη μοντελοποίηση και τη χρήση δεδομένων.
+
+Αυτό το σεμινάριο περιγράφει τη διαδικασία της δημιουργίας ενός Πίνακα Διαχειριστή χρησιμοποιώντας ILLA Builder και Supabase σε μερικά απλά βήματα. Το ILLA είναι μια πλατφόρμα χαμηλού κώδικα για προγραμματιστές που επιτρέπει την ταχεία ανάπτυξη και ανάπτυξη εσωτερικών εργαλείων. Επιτρέπει τη δημιουργία σελίδων σύροντας και απορρίπτοντας στοιχεία UI, που συνδέονται με οποιαδήποτε βάση δεδομένων ή API, και γράφοντας JavaScript. Για να μάθετε περισσότερα σχετικά με το Supabase, επισκεφθείτε την ιστοσελίδα τους στο <https://supabase.com/>. Ας ξεκινήσουμε!
+
+### Βήμα 1: Ρυθμίστε το Πίσω σας στο Supabase
+
+Στον πίνακα [Supabase dashboard](https://app.supabase.com/projects), κάντε κλικ στο κουμπί `New project` και ορίστε το όνομα σε adminPanel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+Δημιουργήστε ένα νέο πίνακα κάνοντας κλικ στο `Δημιουργία ενός νέου πίνακα` .
+
+Το Supabase προσφέρει μια ποικιλία επιλογών για τη συμπλήρωση πινάκων με δεδομένα, συμπεριλαμβανομένων ερωτημάτων γραφής, δημιουργώντας σχήματα μέσω διεπαφής χρήστη, και ανεβάζοντας αρχεία CSV.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+Συμπληρώστε τις πληροφορίες στον πίνακα. Η βάση δεδομένων είναι τώρα ρυθμισμένη.
+
+### Βήμα 2: Κατασκευή UI στο σύννεφο ILLA
+
+Στο [ILLA Cloud](https://cloud.illacloud.com), κάντε κλικ στο κουμπί Δημιουργία Νέου για να δημιουργήσετε μια νέα εφαρμογή.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+Σύρετε στοιχεία από τον πίνακα `Insert` στον καμβά.
+
+Επιλέξτε τα στοιχεία στον καμβά και ρυθμίστε την ιδιότητα στον πίνακα `Inspect`.
+
+Όπως φαίνεται στο παρακάτω στιγμιότυπο οθόνης, έχουμε δημιουργήσει ένα απλό πίνακα διαχείρισης.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### Βήμα 3: Συνδεθείτε με Supabase και config CRUD
+
+Σημειώστε τις πληροφορίες σύνδεσης της βάσης δεδομένων στο [Ρυθμίσεις Έργου](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) στο Supabase.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+Στη λίστα ενεργειών, κάντε κλικ στο `+ New` και επιλέξτε Supabase DB.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+Συμπληρώστε τη φόρμα για να συνδεθείτε στην παρουσία Supabase. Δοκιμή σύνδεσης και αποθήκευση πόρου.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+Κάντε κλικ στο κουμπί `Create Action` για να δημιουργήσετε μια ενέργεια με τον πόρο Supabase και να ρυθμίσετε το CRUD σας.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+Χρησιμοποίησε {Şos. Για να πάρεις τα δεδομένα εισόδου στο μπροστινό μέρος. Το παρακάτω είναι ένα παράδειγμα της σελίδας Διαχείρισης Χρηστών στο Admin Panel.
+
+Αναζήτηση για ένα χρήστη με το όνομα που εισάγεται στο input1
+
+```
+SELECT *
+FROM user
+WHERE name = "{{input1.value}}"
+;
+```
+
+Ενημέρωση δεδομένων χρήστη. Ενημέρωση πληροφοριών χρήστη όταν το id ταιριάζει
+
+```
+UPDATE user
+SET name = "{{input3.value}}"
+, email = "{{input4.value}}"
+WHERE id="{{input2.value}}"
+;
+```
+
+Εισαγωγή δεδομένων χρήστη
+
+```
+ΕΙΣΑΓΩΓΗ ΣΤΙΣ ΤΙΜΕΣ Χρηστών ("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+```
+
+Διαγραφή ενός χρήστη με id
+
+```
+ΔΙΑΓΡΑΦΗ ΑΠΟ το χρήστη WHERE id = "{{input2.value}}";
+```
+
+### Βήμα 4: Δείτε τα δεδομένα στα εξαρτήματα
+
+Ρυθμίστε τις ιδιότητες των συστατικών με {{{. Για παράδειγμα:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## Πόροι
+
+-   [Supabase official website](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Τεκμηρίωση Supabase](https://supabase.com/docs)
