@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: illaのオールインワンイメージを構築し、あなたのマシン上でk8sでそれを実行します。
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### 説明
+
+illaのオールインワンイメージを構築し、あなたのマシン上でk8sでそれを実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts)フォルダにあるスクリプトファイルをご覧ください。
+
+メモ:
+
+auto-deploy tools[illa-cli](https://github.com/illacloud/illa) を使ってデプロイすることを強くお勧めします。
+
+そして、現時点では、Apple Silicon M1(darwin-arm64アーチ)はサポートしていません。
+
+### 公式のスリムな画像で実行
+
+GNU make をインストールし、次のように入力します:
+
+```jsx
+デプロイする
+```
+
+実行してみてください
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+このコマンドはillasoftの公式オールインワンイメージを引き出し、Kubernetesクラスタにデプロイします。
+
+### データベースの永続的なストレージ
+
+[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) を編集し、IAAS の永続的なストレージ設定を追加します。
+
+### HTTPS 設定
+
+NodePortをKubernetesクラスタイングレスゲートウェイにルーティングし、443ポートに書き換え、イングレスゲートウェイにhttps証明書を追加することができます。
+
+または、イングレスゲートウェイをKubernetesサーバーに手動でデプロイすることもできます。
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
