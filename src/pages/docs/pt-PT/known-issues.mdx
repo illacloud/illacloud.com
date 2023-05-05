@@ -1,0 +1,23 @@
+---
+title: Problemas conhecidos
+tagCategory: link_menu_conhecido_problemas_clique
+desc: Problemas conhecidos e soluções da implantação do Construtor da ILLA.
+---
+
+* * *
+
+## <Heading hidden>Problemas conhecidos</Heading>
+
+### Problema Tipo de Montagem
+
+Execute `illa deploy --self -port=1000 -s={your-ip-address}` ou `run-official-image.sh`, retorne o seguinte erro:
+
+`Docker respondeu com código de status 400: configuração de montagem inválida para o tipo "bind": vincular caminho de origem não existe: /tmp/illa-data`
+
+Por enquanto, o tipo de montagem suporta apenas `mount`, por favor, configure `docker -v` como modo `mount`. Ou reinstale o docker seguindo os scripts.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+E execute o comando de deploy novamente.
+
+Para mais problemas: https://github.com/illacloud/illa-builder/issues
