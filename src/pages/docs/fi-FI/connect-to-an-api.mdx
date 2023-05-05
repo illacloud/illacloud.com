@@ -1,0 +1,34 @@
+---
+title: Yhdistä APIin
+metaTitle: ILLA Cloud Connect to an API
+desc: "Voit yhdistää ILLA: n useimpiin sovellusrajapintoihin käyttämällä kotoperäisiä integroituja. ILLA voi muodostaa yhteyden mihin tahansa REST, GraphQL API"
+tagCategory: doc_menu_api_klikkaa
+---
+
+* * *
+
+## <Heading hidden>Yhdistä sovellusrajapintaan</Heading>
+
+Yhdistä mihin tahansa REST-sovellukseen, GraphQL APIin.
+
+Voit yhdistää ILLA: n useimpiin sovellusrajapintoihin käyttämällä kotoperäisiä integroituja. Jos sinun täytyy muodostaa yhteys sisäiseen rajapintaan, tai jos integraatiota ei tueta, voit muodostaa yhteyden käyttäen REST API integraatio tai GraphQL Integration.
+
+### 1.  Luo API-resurssi
+
+Resurssit edustavat yhteyksiä tietolähteisiin ja mitä kysyt ILLA-sovelluksistasi.Kirjaudu ILLA:han ja siirry **Resurssit** -välilehteen > klikkaa **Luo uusi** ja valitse sovellusliittymä, johon haluat yhteyden, kuten **REST API**. Tämä avaa modaalin **Määritä resurssi** johon lisäät yhteystietosi.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Vähintään sinä tarvitset sellaisen API:n perusosoitteen, jonka haluat muodostaa. Voit myös siirtää URL-parametrit, otsikot jne. Jos API vaatii todennusta, voit määrittää että tällä sivulla samoin. Esimerkiksi OAuth2.0 vaatii valtuutuksen URL-osoitteen, käyttöoikeuksien URL-osoitteen jne. Kun olet syöttänyt yhteystietosi, napsauta **Tallenna resurssi.**
+
+### 2.  Kysy API
+
+Sovelluksen editorissa klikkaa **+ Uusi** **Toimintoluettelosta** > valitse **REST API** ja valitse olemassa oleva REST API tai luo uusi > klikkaa **luo toiminto** ja päivitä toiminnot URL-parametreilla, otsikot jne.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>
