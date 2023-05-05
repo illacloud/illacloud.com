@@ -1,0 +1,52 @@
+---
+title: Pagină
+metaTitle: ILLA Cloud Page doc
+description: Construiește aplicații cu o singură pagină și aplicații multipagină pe ILLA
+tagCategory: doc_meniu_pagină_click
+---
+
+* * *
+
+## <Heading hidden>Pagina</Heading>
+
+Un demo multi-pagină construit pe ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+O aplicație cu o singură pagină este o aplicație care poate schimba paginile fără a reîncărca toate componentele de pe pagină. Majoritatea resurselor (inclusiv HTML, CSS și Script) sunt încărcate o singură dată pe tot parcursul ciclului de viață al aplicației, făcând o aplicație cu o singură pagină rapidă.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+Într-o aplicație multi-pagină, fiecare schimbare, cum ar fi afişarea datelor sau trimiterea datelor înapoi la serverul cereri de redare a unei pagini noi de pe server. Aplicația multi-pagină are câteva niveluri, ceea ce face structura aplicației simplă și simplă pentru utilizatori.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+În ILLA Builder, o aplicație cu o singură pagină poate fi construită prin setarea cadrului paginii și adăugarea de vizualizări la secțiuni, și o aplicație multi-pagină poate fi construită prin adăugarea mai multor pagini, iar dezvoltatorii pot utiliza ambele modele de design într-o singură aplicație.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Setaţi aspectul paginilor
+
+Mergeți la configurația paginii ca pași：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Puteți utiliza layout-urile de presetare, sau puteți adăuga și șterge secțiuni pentru a seta layout-ul. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Adăugați vizualizări la o pagină
+
+`View path`: a string spliced după URL-ul paginii pentru a accesa vizualizarea specificată. După implementarea aplicației, adresa completă de acces este următoarea: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+De asemenea, puteţi introduce prima pagină şi vizualizarea implicită prin următoarea cale:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Conectează meniul și paginile
+
+Adaugă manipulatoare de evenimente în Meniu → setează `Action` la `Setează router` → selectează pagina şi vezi
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
