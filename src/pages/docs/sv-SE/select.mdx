@@ -1,0 +1,138 @@
+---
+title: Välj
+metaTitle: ILLA Cloud Select komponent
+description: Visar alla alternativ i rullgardinsmenyn och stöder för att välja 1 alternativ.
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Välj</Heading>
+
+En vald komponent används ofta för att presentera användare med en lista över alternativ i en rullgardinsmeny format. Användaren kan endast välja ett alternativ från rullgardinsmenyn åt gången.
+
+Den rullgardinsmenyn med ett val består vanligtvis av en textetikett och en rullgardinsmeny med pil, som när du klickat eller knackat, öppnar en lista med alternativ för användaren att välja mellan. När användaren väljer ett alternativ, stängs rullgardinsmenyn och det valda alternativet visas i komponenten.
+
+Denna komponent används ofta i former, undersökningar, och andra datainmatningsscenarier där en användare måste välja ett alternativ från en fördefinierad uppsättning val. Det erbjuder ett kompakt och intuitivt sätt att presentera en lista över alternativ utan att ta upp för mycket skärm fastigheter eller överväldigande användaren med för många alternativ på en gång.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select1.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select2.png' alt="" />
+
+### Egenskaper
+
+#### Manuella alternativ
+
+Lägg till nya alternativ eller ta bort alternativ manuellt och konfigurera alternativen en efter en. Alternativens egenskaper är följande: 
+
+| Egenskaper  | Beskrivning                               |
+| ----------- | ----------------------------------------- |
+| Etikett     | Texten som visas för alternativet         |
+| Värde       | Värdet som är associerat med alternativet |
+| Inaktiverad | Om alternativet är inaktiverat för val    |
+
+#### Mappade alternativ
+
+Du kan också lägga till alternativ från en datakälla genom att mappa etikett- och värdeegenskaper till motsvarande datafält. Du kan få alternativ dynamiskt från databasen på detta sätt. I slutet av denna artikel kommer vi att visa hur vi kan använda den genom ett exempel.
+
+| Egenskaper  | Beskrivning                                                         |
+| ----------- | ------------------------------------------------------------------- |
+| Datakälla   | Ange datakällan för alternativ                                      |
+| Etikett     | Använd {{item}} för att ställa in etikett på alternativ             |
+| Värde       | Använd {{item}} för att ställa in värdet på alternativ              |
+| Inaktiverad | Använd {{item}} för att ange om alternativet är inaktiverat för val |
+
+#### Andra egenskaper
+
+| Egenskaper                 | Beskrivning                                                                                                                                         |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Förvalt värde              | Det initiala värdet av komponenten. Du kan dynamiskt ändra initialvärdet genom att skriva JavaScript i {{}}.                                        |
+| Platshållare               | Värdet kommer att visas när inmatningsfältet är tomt.                                                                                               |
+| Etikett                    | Namnet på fältet som visas för användaren                                                                                                           |
+| Bildtext                   | En text som används för att beskriva fältet i detalj                                                                                                |
+| Dold etikett               | Ange om etiketten ska visas                                                                                                                         |
+| Befattning                 | Ställ in positionen för etiketten i förhållande till komponenten                                                                                    |
+| Justering                  | Ställ in riktningen på etiketten                                                                                                                    |
+| Width                      | När etiketten är på vänster sida av komponenten, ange breddförhållandet för etiketten                                                               |
+| Händelsehanterare          | Utlösa frågor, styra komponenter, eller ringa andra API:er som svar på komponenthändelser.                                                          |
+| Inaktiverad                | Kontrollera status för om komponenten är inaktiverad. Komponenten kan inte ändras eller fokuseras när den är inaktiverad.                           |
+| Läs endast                 | Kontrollera status på om komponenten är skrivskyddad. En skrivskyddad komponent kan väljas och fokuseras men kan inte ändras.                       |
+| Visa tydlig knapp          | Ange om du vill visa rensningsknappen                                                                                                               |
+| Verktygstips               | Användare kan ange komponenten verktygstips här. Verktygstipen kommer att visas när den är fokuserad. Markdown format stöds.                        |
+| Obligatoriskt fält         | Gäller endast när strömbrytaren är aktiverad.                                                                                                       |
+| Anpassad regel             | editor.inspect.setter_tooltip.custom_rule                                                                                                           |
+| Dölj valideringsmeddelande | Du kan dölja felmeddelandet genom att byta dold status när inmatningsvärdet är felaktigt. Du kan dynamiskt ändra den dolda statusen med JavaScript. |
+| Formulär dataknapp         | Ange en nyckel till en omslagningsformulärkomponent när du konstruerar data-attributet.                                                             |
+| Hidden                     | Styr dynamiskt om komponenten är dold. Du kan ändra den dolda statusen genom dynamiskt booleskt värde.                                              |
+| Tema färg                  | För att välja temafärgen på komponenten                                                                                                             |
+
+### Metod
+
+Du kan använda andra komponenter för att styra komponenten. Vi stöder följande tre metoder:
+
+#### mängdvärde
+
+För att ställa in det valda alternativet, till exempel, {{”value1”}}
+
+| Egenskaper | Beskrivning |
+| ---------- | ----------- |
+| Värde      | Valt värde  |
+
+#### rensa
+
+Rensa de valda alternativen
+
+#### validate
+
+För att verifiera att indata informationen är laglig
+
+#### rensa
+
+Rensa valideringsmeddelandet
+
+### Händelsehanterare
+
+Vi stöder att lyssna på "onChange" händelsen i radiogruppen. 
+
+När det valda alternativet ändras, kan det utlösa en viss åtgärd. Detta innebär att när en användare väljer ett annat alternativ än en radiogrupp, kan en viss åtgärd vidtas baserat på det valda alternativet. Till exempel i ett webbformulär, välja ett annat alternativ kan utlösa visning av olika formulärfält eller inlämning av formuläret till en annan destination. På detta sätt kan det alternativ som valts av användaren påverka beteendet hos programvaran eller webbapplikationen som de använder. Möjligheten att utlösa specificerade åtgärder baserade på användarindata är en viktig aspekt av interaktiv programvarudesign och kan förbättra användbarheten och funktionaliteten hos programvaran.
+
+### Data
+
+Komponenten har några vanliga data, som kan anropas via {{componentName.propertyName}} i appen.
+
+| Egenskapens namn | Beskrivning |
+| ---------------- | ----------- |
+| värde            | Valt värde  |
+
+### Använd ärende
+
+Därefter kommer vi att visa hur man använder det mappade läget för att dynamiskt få alternativ. 
+
+#### Steg 1 Lägg till en åtgärd
+
+Vi har skapat en tabell som heter `selection`, inklusive 5 kolumner: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Vi lagrade optionsvärdena i `value` och lagrade optionsbeteckningen på olika språk i andra kolumner. 
+
+Skapa en åtgärd för att lista alla data i `selection` som heter `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+välj * från markering
+```
+
+#### Steg 2 Konfigurera komponenten
+
+1.  Ställ in källorna till `{{postgresql1.data}}` 
+2.  Konfigurera etiketten för att ändra etiketten baserat på språket. 
+
+    1.  Använd {{ item.columnName }} för att ställa in kolumnen. 
+    2.  Använd {{ currentUserInfo.language }} för att ställa in de språkanvändare som används i ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select3.png' alt="" />
