@@ -13,8 +13,8 @@ const allFiles = newCreatePageList(
 
 const sortCategory = (allFiles) => {
   return Object.values(allFiles).sort((a, b) => {
-    const aCategoryPriority = a.categoryPriority ?? 0
-    const bCategoryPriority = b.categoryPriority ?? 0
+    const aCategoryPriority = a.categoryPriority ?? +Infinity
+    const bCategoryPriority = b.categoryPriority ?? +Infinity
     if (aCategoryPriority === bCategoryPriority) {
       return 0
     }
@@ -26,8 +26,8 @@ const sortCategory = (allFiles) => {
 
 const sortPosts = (allFiles) => {
   return Object.values(allFiles).sort((a, b) => {
-    const aPostPriority = a.postPriority ?? 0
-    const bPostPriority = b.postPriority ?? 0
+    const aPostPriority = a.postPriority ?? +Infinity
+    const bPostPriority = b.postPriority ?? +Infinity
     if (aPostPriority === bPostPriority) {
       return 0
     }
