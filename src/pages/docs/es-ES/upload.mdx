@@ -1,0 +1,106 @@
+---
+title: Subir
+metaTitle: Documento del componente Subida en la nube de ILLA
+description: Utilice el componente subir archivos desde las máquinas locales a cualquier almacenamiento en la nube
+tagCategory: doc_menú_subir_hacer clic
+---
+
+* * *
+
+## <Heading hidden>Subir</Heading>
+
+El componente de subida se utiliza para permitir a los usuarios subir archivos de sus máquinas locales a cualquier almacenamiento en la nube mediante API. A continuación, introduciremos cómo configurar un componente de carga, cómo asociar el componente de carga con un servicio de almacenamiento en la nube, cómo utilizar el componente de carga para seleccionar una imagen, y mostrarla con una imagen, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Propiedades
+
+| Propiedad                            | Descripción                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tipo                                 | Establece el tipo de componente de subida, incluyendo Botón y Dropzone.                                                                                                                                                                                                                                                                                                                   |
+| Texto                                | El texto mostrado en el componente de subida.                                                                                                                                                                                                                                                                                                                                             |
+| Tipos de selección                   | Establezca el tipo de selección a varios archivos, un solo archivo o directorio.                                                                                                                                                                                                                                                                                                          |
+| Tipos de archivo                     | Una lista de extensiones de archivo permitidas para subir. Ningún valor permitirá todos los tipos de archivo.                                                                                                                                                                                                                                                                             |
+| Añadir nuevos archivos seleccionados | Para establecer el nuevo archivo seleccionado a añadir al archivo seleccionado o reemplazar el archivo seleccionado en el tipo de selección de varios archivos o directorio.                                                                                                                                                                                                              |
+| Lista de archivos                    | Para establecer si mostrar una lista de los archivos seleccionados debajo del componente de subida. La altura del cargador cambiará dinámicamente en función de la longitud de la lista de archivos.                                                                                                                                                                                      |
+| Analizar valor                       | Intento de analizar los archivos seleccionados, con soporte para archivos JSON, CSV, TSV, Excel, y TXT. Se puede acceder a los datos analizados a través de {{upload1.parsedValue}}. Los archivos que no se pueden analizar serán nulos en la matriz. Todos los archivos están disponibles como cadenas codificadas en base64 en la matriz de valores, independientemente de esta opción. |
+| Cargando                             | Si el componente debe mostrar un indicador de carga.                                                                                                                                                                                                                                                                                                                                      |
+| Deshabilitado                        | Establecer si desactivar este componente y bajo qué condiciones desactivarlo. Por ejemplo, si el componente input1 es nulo, este componente debe ser desactivado: {{ input1.value == ‘ ’}}                                                                                                                                                                                                |
+| Sugerencia                           | Una descripción mostrada en el componente cuando los usuarios pasan el cursor sobre el componente.                                                                                                                                                                                                                                                                                        |
+| Campo requerido                      | Para establecer si es necesario.                                                                                                                                                                                                                                                                                                                                                          |
+| Min size                             | Para establecer el tamaño mínimo permitido para ser añadido.                                                                                                                                                                                                                                                                                                                              |
+| Max size                             | Para establecer el tamaño máximo de archivo permitido para ser añadido.                                                                                                                                                                                                                                                                                                                   |
+| Regla personalizada                  | Para configurar el texto mostrado cuando la verificación falla.                                                                                                                                                                                                                                                                                                                           |
+| Ocultar mensaje de validación        | Para establecer si mostrar o no el mensaje de validación cuando la verificación falla.                                                                                                                                                                                                                                                                                                    |
+| Clave de Formulario                  | Para establecer una clave para el componente. Después de añadir este componente a un formulario, esta clave se utilizará para identificar los datos de este componente al enviar el formulario.                                                                                                                                                                                           |
+| Hidden                               | Para establecer si mostrar este componente y bajo qué condiciones mostrarlo. Por ejemplo, si el usuario actual no es el usuario A, este componente debe estar oculto: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                                                          |
+| Variante                             | Para establecer el componente Cargar Botón a Outline o Rellenado.                                                                                                                                                                                                                                                                                                                         |
+| Color del tema                       | Para establecer el color del componente Cargar botón.                                                                                                                                                                                                                                                                                                                                     |
+
+### Método
+
+Puede utilizar otros componentes para controlar el componente Subir. Apoyamos los tres métodos siguientes:
+
+| clearValidation  | Utilizado para borrar el mensaje de validación                               |
+| ---------------- | ---------------------------------------------------------------------------- |
+| limpiarValor     | Utilizado para limpiar los seleccionados                                     |
+| setDeshabilitado | Utilizado para establecer el componente de subida a desactivado o habilitado |
+
+### Controlador de eventos
+
+Para desencadenar acciones cuando los archivos seleccionados cambian
+
+### Datos del cargador
+
+El componente de subida tiene algunos datos comúnmente utilizados, que se pueden llamar en la aplicación.
+
+`value` una matriz que consiste en los datos base64 de archivos. 
+
+`files` una matriz de objetos. Las claves de los objetos incluyen `lastModified`, `name`, `size`, `type`. Puede utilizar `{{upload1.files.map(file =>file. ame)}}` para obtener una matriz de nombres de archivo y también puede obtener la última matriz modificada, matriz de tamaño, matriz de tipo de la misma manera. 
+
+### Subir archivos a un servicio de almacenamiento en la nube
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Subir un solo archivo a través de un recurso S3
+
+La configuración de la acción es la siguiente. 
+
+Subir nombre del objeto
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Subir datos
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Subir varios archivos a través de un recurso S3
+
+Subir lista de nombres de objeto
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Subir lista de datos
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Subir una imagen y mostrarla en el componente de imagen
+Cambiar la fuente de la imagen al archivo base64 datos del componente de carga. Los datos base64 se almacenan en el atributo de valor en array. Y debemos dividir el prefijo del archivo con los datos del archivo. El código es el siguiente. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

@@ -1,0 +1,36 @@
+---
+title: Gestionnaire d'événements
+metaTitle: Documentation du gestionnaire d'événements du Cloud ILLA
+desc: Les gestionnaires d'événements font partie intégrante du raffinement de la logique d'utilisation de vos outils internes
+tagCategory: Doc_menu_evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Gestionnaire d'événements</Heading>
+
+Les gestionnaires d'événements font partie intégrante du raffinement de votre logique d'utilisation interne des outils. Toute insertion ou action qui répond à une action utilisateur a ses propres événements qui peuvent être déclenchés, comme un insertion de bouton avec un événement "clic", une zone de saisie de texte avec un événement "soumettre", le succès d'une action, et ainsi de suite. Les gestionnaires d'événements aident les utilisateurs à déclencher des instructions prédéfinies lorsque des événements se produisent : vous pouvez réagir à une seule occurrence d'événement, ou vous pouvez configurer plusieurs gestionnaires d'événements et les configurer en tant que workflows pour faire un travail plus complexe.
+
+Après l'événement que vous avez défini, le gestionnaire d'événements peut vous aider à effectuer diverses actions : contrôler les instructions d'action, contrôlez les inserts, exécutez des scripts et plus encore. Vous pouvez également ajouter des conditions de déclenchement JavaScript plus détaillées en plus des conditions de déclenchement.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Gestionnaires d'événements
+
+Dans les gestionnaires d'événements, vous pouvez définir le résultat de l'événement en fonction de l'échec ou non des résultats de la requête. Vous pouvez terminer la logique de déclenchement en définissant la condition d'échec de la requête dans l'onglet Réponse.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Modifier le gestionnaire d'envoi
+
+Nous définissons une condition de déclenchement pour chaque insertion interactive et vous pouvez sélectionner un événement dans la liste des actions du gestionnaire comme condition de déclenchement. Par exemple, vous pouvez définir 'Submit' comme condition de déclenchement dans le gestionnaire d'événements pour la zone de saisie de données, qui insère automatiquement l'entrée dans la base de données lorsque l'utilisateur soumet l'entrée, implémentant ainsi une fonction d'insertion de données simple.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### États temporaires
+
+Lors du traitement des données, vous pouvez rencontrer des situations où les données traitées ne sont pas appelées immédiatement. C'est pourquoi nous avons mis en place des États temporaires pour stocker des États intermédiaires pour le traitement des données. Vous pouvez choisir de définir un état temporaire dans les options d'événement de réponse des gestionnaires d'événements et cliquer sur Créer un nouvel état pour stocker les données actuelles dans l'état temporaire. qui peut être placé pour n'importe quelle propriété.
+
+En dehors de l'éditeur de projet, vous pouvez également stocker des données par {{tempState1.setValue(data)}} ou appeler des données par {{tempState1.value}}.
+
+> Les valeurs dans l'état temporaire seront effacées lorsque le projet sera redémarré, et vous devrez stocker les valeurs localement ou dans le cloud pour assurer l'intégrité des données.

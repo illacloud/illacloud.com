@@ -1,0 +1,23 @@
+---
+title: Відомі проблеми
+tagCategory: doc_menu_known_issues_click
+desc: Відомі проблеми та рішення розгортання ILLA конструктора.
+---
+
+* * *
+
+## <Heading hidden>Відомі проблеми</Heading>
+
+### Записати проблему монтування
+
+Запустіть `illa розгортання --self -port=1000 -s={your-ip-address}` або `run-official-image.sh`, повертайте наступну помилку:
+
+`Docker відповів на код статусу 400: неприпустима конфігурація mount для типу "bind": шляху джерела зв'язку не існує: /tmp/illa-data`
+
+Поки тип монтування підтримує лише `mount`, будь ласка, конфігурації `docker -v` як `mount` режим. Або перевстановіть докер за наступними сценаріями.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Запустіть команду розгортання знову.
+
+Для детальних питань: https://github.com/illacloud/illa-builder/issues

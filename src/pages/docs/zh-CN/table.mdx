@@ -1,14 +1,16 @@
 ---
 title: 表格（Table）
-metaTitle: ILLA Cloud table component doc
-description: Display and interact with data using the Table component.
+metaTitle: ILLA Cloud 表格组件doc
+description: 使用表格组件显示数据并进行交互。
 tagCategory: doc_menu_table_click
 ---
----
+
+* * *
 
 ## <Heading hidden>表格（Table）</Heading>
 
-表格是查看数据及数据交互的常见方式。您可以对数据进行排序、筛选、分页和下载等。表格还支持行选择和自定义列。
+表格是查看和操作数据的常用方式。 您可以排序、过滤、分页和下载行信息。 表格还支持行选择和自定义列。
+
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
   alt=""
@@ -16,39 +18,42 @@ tagCategory: doc_menu_table_click
 
 ### 在表格中加载数据
 
-当你拖动一个Table组件到画布时，它会自动显示JSON格式的测试数据。你可以通过编辑**数据源**属性来改变表格中显示的数据，使用** {{actionName.data }} **来选择Action的数据。
+当你拖动一个 Table 组件到画布时，它会自动显示JSO N格式的测试数据。 您可以通过编辑数据源属性来更改表中显示的数据。 使用 "{{ actionName.data }}" 格式来选择操作。
+
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
   alt=""
 />
 
-### 列的设置
+您也可以通过输入数组来设置数据源。
 
-#### 为数据列设置别名
+### 数据列设置
 
-当你设置表格的数据源时，列名将根据数据源自动设置。你可以通过点击**INSPECT**中的列，并设置**列标题**来重命名所有的列。
+**设置数据列别名**
 
-#### 改变列数据类型
+当你设置表格的数据源时，列名将根据数据源自动设置。 您可以通过单击**检查**选项卡中的列来重命名所有列，并设置**列标题**。
 
-当你设置表格的数据源时，列数据被设置为**文本**类型。你可以通过点击**INSPECT**中的列，在**列类型**的下拉菜单中选择数据类型来手动设置列类型。
+改变列数据类型
+
+当你设置表格的数据源时，列数据被设置为 **文本** 类型。 您可以通过在 **Inspect** 标签页中点击列，并从 **Column type** 下拉菜单中选择类型，来手动设置列类型。
 
 列的类型包括：
 
-1. 文本
-2. 日期，你可以在日期类型中设置日期的显示格式。
-3. 数字，你可以在数字类型中设置小数点的位置。
-4. 4.百分比，你可以在百分比类型中设置小数点后的位置。
-5. 链接
-6. 按钮，你可以在按钮类型中添加事件处理程序。
+1.  文本
+2.  日期，你可以在日期类型中设置日期的显示格式。
+3.  数字，你可以在数字类型中设置小数点后的数位。
+4.  百分比，你可以在百分比类型中设置小数点后的位置。
+5.  链接
+6.  按钮，你可以在按钮类型中添加事件处理程序。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
   alt=""
 />
 
-#### 自定义列的映射值
+**自定义列的映射值**
 
-你可以使用**INSPECT**中的**+ New** 按钮添加自定义列。自定义列经常用于显示根据表格中的其他值计算出来的数据。例如，有**revenue**和**user_num**列，想计算得出**ARPU**列，可以使用**{{ currentRow.revenue/currentRow.user_num }}**。
+您可以在 **检查** 选项卡中使用 **+ 添加** 按钮添加自定义的列表。 自定义列常用来根据您的应用程序中的其他值计算数据。 你可以使用**INSPECT**中的**+ New** 按钮添加自定义列。自定义列经常用于显示根据表格中的其他值计算出来的数据。例如，有**revenue**和**user_num**列，想计算得出**ARPU**列，可以使用**{{ currentRow.revenue/currentRow.user_num }}**。
 
 此外，在计算之后，你可以将列的类型设置为数字或百分比，并设置小数点后的位置以提高可读性。
 
@@ -57,32 +62,32 @@ tagCategory: doc_menu_table_click
   alt=""
 />
 
-### 访问表的数据
+### 访问表格的数据
 
-使用**{ table1.selectedRow[i].columnName }}**来访问其他组件中选定行的数据。如果你没有启用**多行选择**，**i**将永远是0。
+使用`{{ table1.selectedRow[i].columnName }}`访问其他组件中选定行的数据。 如果你没有启用**多行选择**，**i**将永远是0。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
   alt=""
 />
 
-#### 更新表的数据
+更新表格的数据
 
-1. 使用**输入**组件或其他**数据输入**组件来显示**{{ table1.selectedRow[i].columnName }}**数据。
-2. 在更新数据的Action中使用**{{ input1.value }}**，以获取表格中选定行的值和更新后的值。
-3. 给**更新按钮**添加一个**事件处理器**，从而在点击按钮时运行更新数据的Action。
-4. 通过改变**输入**组件中的输入值和点击**更新按钮**来更新所选行的数据。
+1.  使用**输入**组件或其他**数据输入**组件来显示**{{ table1.selectedRow[i].columnName }}**数据。
+2.  在更新数据的Action中使用**{{ input1.value }}**，以获取表格中选定行的值和更新后的值。
+3.  给**更新按钮**添加一个**事件处理器**，从而在点击按钮时运行更新数据的Action。
+4.  通过改变**输入**组件中的输入值和点击**更新按钮**来更新所选行的数据。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
   alt=""
 />
 
-#### 在表中插入新的一行
+在表中插入新的一行
 
-1. 在插入数据的Action中使用**{{ input1.value }}**来获取待插入的数据。
-2. 给**插入按钮**添加一个**事件处理器**，从而在点击时运行插入数据的Action。
-3. 通过在**输入**组件中输入数据并点击**插入按钮**来插入新数据。
+1.  在插入数据的Action中使用**{{ input1.value }}**来获取待插入的数据。
+2.  给**插入按钮**添加一个**事件处理器**，从而在点击时运行插入数据的Action。
+3.  通过在**输入**组件中输入数据并点击**插入按钮**来插入新数据。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'

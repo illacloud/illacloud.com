@@ -1,0 +1,89 @@
+---
+title: Image tout-en-un Docker
+tagCategory: docker-all-in-one-image_clic_docker
+desc: illa utilise une image tout-en-un et l'exécute sur votre machine.
+---
+
+* * *
+
+## <Heading hidden>Image tout-en-un Docker</Heading>
+
+### Libellé
+
+illa utilise une image tout-en-un et l'exécute sur votre machine. Vous pouvez consulter le fichier des scripts dans le dossier [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) pour plus de détails.
+
+Note :
+
+Nous vous recommandons fortement de déployer avec nos outils de déploiement automatique[illa-cli](https://github.com/illacloud/illa).
+
+Et pour le moment nous ne supportons pas Apple Silicon M1 (arc darwin-arm64).
+
+### Exécuter une image officielle
+
+Installez la marque GNU et tapez :
+
+```jsx
+faire de run-official-image
+```
+
+ou exécutez simplement :
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+cette commande va récupérer illasoft image officielle et l'exécuter sur votre environnement docker.
+
+Et connectez-vous avec le nom d'utilisateur par défaut **`root`** et le mot de passe **`password`**.
+
+### Construire une image manuellement et exécuter
+
+Installez GNU make (ou exécutez des scripts shell dans le dossier des scripts).
+
+Pour construire une image tout-en-un et exécuter, tapez :
+
+```jsx
+tout faire
+```
+
+pour le podman, type:
+
+```jsx
+faire run-by-podman
+```
+
+ou exécutez des scripts shell `run-by-podman.sh` dans le dossier des scripts.
+
+### Arrêter et supprimer le conteneur
+
+```jsx
+créer un conteneur-stop-and-remove
+```
+
+### Nettoyer le fichier de base de données Postgres
+
+** CETTE COMMANDE SUPPRIMER LE FICHIER DE LA DONNÉE SUR VOTRE DISK!!! \*\*\*** BACKUP, ET FAITES ATTENTIVEMENT \*\*\*
+
+Par défaut, la base de données Postgres stockera dans le dossier `/var/lib/illa/database/postgresql/`.
+
+Exécutez la commande suivante pour la supprimer.
+
+```jsx
+créer un fichier de base de données de postgres-clean
+```
+
+### Variables d'environnement d'exécution de la configuration
+
+Éditez `scripts/run.sh` lorsque nécessaire:
+
+```jsx
+# postgres database password
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres database file storage folder
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

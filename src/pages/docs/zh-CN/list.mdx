@@ -1,10 +1,11 @@
 ---
 title: 列表（List）
-metaTitle: ILLA Cloud List Component doc
-description: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+metaTitle: ILLA Cloud 列表组件
+description: 列表组件允许您创建重复的数据行，这些数据的外观由您自由定义。
 tagCategory: doc_menu_list_click
 ---
----
+
+* * *
 
 ## <Heading hidden>列表（List）</Heading>
 
@@ -17,9 +18,9 @@ tagCategory: doc_menu_list_click
 
 ### 拖动组件到列表
 
-拖动一个列表组件到画布中时，它会自动包含一些组件。您可以删除或修改它们，并将新的组件拖入列表。
+当你拖动列表组件到框架时，它会自动包含一些组件。 您可以删除或修改它们，并将新的组件拖入列表。 
 
-只有列表中的第一项可以被编辑，其他项会根据第一项的配置自动改变。你也可以选中第一项，通过拖动bar来改变每一项的高度。
+只有第一个项目可以被编辑，其他项目将根据第一个项目自动更改。 你也可以选中第一项，通过拖动bar来改变每一项的高度。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
@@ -28,23 +29,23 @@ tagCategory: doc_menu_list_click
 
 ### 在列表组件中显示数据查询结果
 
-拖动一个列表组件到画布中时，它会自动显示JSON格式的测试数据。您可以通过使用**{{mysql_list_query.data }}**将数据源改成一个来源于数据查询Action的数据。
+当你拖动列表组件到画布时，它会自动以JSON格式显示测试数据。 拖动一个列表组件到画布中时，它会自动显示JSON格式的测试数据。您可以通过使用**{{mysql_list_query.data }}**将数据源改成一个来源于数据查询Action的数据。 
 
 设置完数据源后，您可以进一步改变列表中其他组件的数据。
 
-1. 选择第一项中的组件。
-2. 如果您期望该组件的数据来源于列表的某一列，可以通过**{{ currentItem.columnName }}**来设置数据。例如，您可以用**{{ currentItem.Avater }}**来设置图片来源。其中，**Avater**是来自列表的数据源的一个列。.
+1.  选择第一项中的组件。 
+2.  如果您期望该组件的数据来源于列表的某一列，可以通过**{{ currentItem.columnName }}**来设置数据。 例如，您可以使用`{{ currentItem.Avater }} `设置图像源。 `Avater` 是列表数据源的一列。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
   alt=""
 />
 
-只有当组件在列表中时，才能使用**{{ currentItem.columnName }}**。
+只有当组件在列表中时，才能使用**{{ currentItem.columnName }}**。 
 
 ### 使用列表的数据
 
-可以通过使用**{{ list1.selectedItem.columnName }}**来使用所选项的数据。或者通过使用 **{{ list1.dataSource[n].columnName }}**来使用列表中的任何数据。
+可以通过使用**{{ list1.selectedItem.columnName }}**来使用所选项的数据。或者通过使用 **{{ list1.dataSource[n].columnName }}**来使用列表中的任何数据。 或者使用 `{{ list1.dataSource[n].columnName }} ` 方法使用列表的任何数据
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'

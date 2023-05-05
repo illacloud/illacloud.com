@@ -1,0 +1,29 @@
+---
+title: Muuntaja
+metaTitle: ILLA Cloud muuntaja
+desc: Muuntaja ILLA:ssa sallii käyttäjän kirjoittaa JavaScriptin tarkentamaan sovelluksen logiikkaa
+tagCategory: doc_menu_transformer_click
+---
+
+* * *
+
+## <Heading hidden>Muuntaja</Heading>
+
+Olemme laittaneet muuntaja ILLA, joka täyttää kirjoittamista koskevat vaatimukset JavaScript tarkentaaksesi sovelluksen logiikkaa. Transformerissa sinun ei tarvitse koodata JavaScriptiä käyttäen {{template syntax}} niin kuin teet hahmon syöttöruudussa, jotta voit kirjoittaa pitkiä ja monimutkaisia lohkoja JS koodi sujuvammin. Lisäksi Transformer auttaa sivujen suunnittelusta ja logiikan rakentamisesta vastaavia kehittäjiä tehostamaan kehitystyötään ilman, että toistensa edistyminen rajoittaa.
+
+Muunninta voi käyttää paitsi vakiintuneisiin datatoimintoihin myös muuntajan toimintojen luomiseen dataa muuntaessaan. Olisi parempi valita itsenäinen muuntaja, kun sinulla on useita operaatioita mukana muuntamaan tietoja, tai täytyy käyttää monimutkaista JavaScript-logiikkaa tietojen muuttamiseksi.
+
+### Luovat Muuntajat
+
+Klikkaa Transformers-välilehteä Toiminta -luettelossa, ja napsauta "+ Uusi" luodaksesi muuntajan. Se näytetään toimintoluettelossa luomisen jälkeen. Voit muuttaa nimeä, kirjoittaa JS-koodia, tallentaa ja suorittaa sen valinnan jälkeen asetuspaneelissa.
+
+> Voit käyttää 'esikatselu' -painiketta nähdäksesi muuntimen tulokset. Huomaa, että sinun täytyy tallentaa muunnin muulle sovellukselle, jotta saat uuden arvon.
+
+Laite kutsuu muuntajaa, jonka arvo on yhtä suuri kuin muuntajan sisällä palautetut tiedot, nämä tiedot muuttuvat, kun muuntajan koodia käyttäen syötetyt tiedot muuttujan muutoksiin. Kuten merkin syöttöruutuun, voit silti käyttää mallin syntaksia soittaaksesi globaaliin muuttujaan nro Kun kirjoitat JS-koodia soittaaksesi tietoja, voit löytää tietyn tietomuuttujan nimen data-työtilasta vasemman käden paneelista, jotta voit kirjoittaa koodia nopeammin.
+[//]\: # ([Image])
+
+Voit soittaa muuntimen muuttujaan datan syöttöruudussa käyttämällä `{{muuntajan nimeä. tagin nimi}` soittaaksesi muuntimen muuttujaan datan syöttöruutuun.
+
+### Kyselyn Muuntaja
+
+Olemme tehneet muuntimen kyselyn operaatioon, jotta voit muuntaa haetut tiedot haluttuun muotoon suoraan toiminnon suorittamisen jälkeen Voit sitten yksinkertaisesti siirtää {{actionName.data}} noutamaan tiedot kun olet suorittanut muuntimen muuntamisen toimintoon.

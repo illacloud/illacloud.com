@@ -1,0 +1,30 @@
+---
+title: Distribuera på plats
+metaTitle: ILLA Cloud Distribuera på plats
+desc: ILLA kan vara självhostec på din server eller maskin istället för att använda en tredje parts tjänsteleverantör
+tagCategory: Installera
+---
+
+* * *
+
+# <Heading hidden>Distribuera on-premise</Heading>
+
+Själv-hosting ILLA innebär hosting och hantering av ILLA-plattformen på din egen server eller maskin istället för att använda en tredje parts tjänsteleverantör. Detta tillvägagångssätt anses ofta vara säkrare och privat, eftersom du har fullständig kontroll över dina data och dess användning.
+
+ILLA kommer att erbjuda en molnbaserad version och möjlighet att ställa in din instans på olika plattformar snart.
+
+## Egen värd
+
+Med ILLA på egen hand kan du integrera det sömlöst med din befintliga installation utan att behöva behålla en separat konfiguration. Detta gör att du kan använda funktioner och funktioner i din befintliga infrastruktur och utöka dem till ILLA. Några fördelar med att distribuera ILLA på din infrastruktur är:
+
+### Säkerhet
+
+Genom att vara värd för ILLA på egen infrastruktur, du kan behålla dina data i lokaler och se till att dina API-nycklar eller säkerhetsuppgifter aldrig lämnar din server. Detta gör att du kan tillämpa samma säkerhetsregler för ILLA som du tillämpar på någon annan app på din server. Applikationerna du bygger med ILLA kommer att lagras på din infrastruktur och i dina företagsnätverk. Du kan också välja att vara värd för ILLA på interna nätverk bakom en brandvägg och konfigurera det så att det fungerar med dina egna domän- och säkerhetspolicyer.
+
+### Intern databas
+
+Genom egen hosting ILLA kan du ansluta till en databas som körs på samma maskin eller intranät och använda den för att bygga appar. ILLA använder MongoDB för att lagra appdata och Redis för att lagra sessionsinformation och icke-kritiska cacher. Om du vill integrera ILLA med anpassade MongoDB eller Redis servrar som finns på din infrastruktur, du kommer att behöva ändra konfigurationen av miljövariabler och peka dem till din anpassade MongoDB/Redis instanser.
+
+### Uppdateringar
+
+Genom egen hosting ILLA kan du konfigurera mer flexibla uppdateringsscheman och andra underhållsaktiviteter. Du kan följa stegen för att ställa in ett underhållsfönster och schemalägga automatiska uppdateringar. Detta gör att du kan underhålla och uppdatera din ILLA instans på ett sätt som är praktiskt för dig och din organisation.

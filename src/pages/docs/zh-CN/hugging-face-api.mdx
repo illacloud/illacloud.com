@@ -1,93 +1,94 @@
 ---
 title: Hugging Face API
 metaTitle: 连接到Hugging Face API
-description: 本文将介绍如何连接到Hugging Face API，并使用Hugging Face平台提供的免费模型搭建应用
-tagCategory: doc_menu_hugging_face_api_click
----
+description: 学习如何在 ILLA 中使用 Hugging Face API
+tagCategory: doc_menu_hugging_fac_api_click
 ---
 
+* * *
+
 ## <Heading hidden>Hugging Face API</Heading>
-Hugging Face是机器学习领域的Github，目前提供数十万个预训练模型和1万个数据集。您可以自由地访问由其他行业专家共享的模型和数据集，或在Hugging Face上托管和部署自己的模型。
+
+Hugging Face是机器学习领域的Github，目前提供数十万个预训练模型和1万多个数据集。您可以自由地访问由其他的行业专家共享的模型和数据集，或在Hugging Face上托管和部署自己的模型。 您可以免费使用由其他行业专家共享的模型和数据集，或者在Hugging Face上部署您的模型。
 
 Hugging Face库中可用的一些模型示例包括：
 
-1. BERT（双向编码器来自变形金刚）：BERT是由Google开发的基于变形金刚的模型，用于各种NLP任务。它在语言理解和机器翻译任务中取得了最先进的结果。
-2. GPT（生成式预训练变换器）：GPT是另一个基于变换器的模型，由OpenAI开发。它主要用于语言生成任务，例如翻译和文本摘要。
-3. RoBERTa（强化优化BERT）：RoBERTa是BERT模型的扩展，旨在改善BERT在各种NLP任务上的性能。
-4. XLNet（超级语言网络）：XLNet是由Google开发的基于变换器的模型，旨在改善变换器模型在语言理解任务上的性能。
-5. ALBERT（轻量级BERT）：ALBERT是BERT模型的一种版本，旨在在保持良好的NLP任务性能的同时更加高效和快速地训练。
+1.  BERT（Bidirectional Encoder Representations from Transformers）：BERT是由Google开发的transformer-based模型，用于各种NLP任务。 它在语言理解和机器翻译任务方面取得了先进的成果。
+2.  GPT（Generative Pre-training Transformer)）：GPT是另一个transformer-based 模型，由OpenAI开发。 它主要用于语言生成任务，例如翻译和文本摘要。
+3.  RoBERTa（Robustly Optimized BERT）：RoBERTa是BERT模型的扩展，旨在改善BERT在各种NLP任务上的性能。
+4.  XLNet（eXtraordinary LanguageNet）：XLNet是由Google开发的transformer-based模型，旨在改善transformer模型在语言理解任务上的性能。
+5.  ALBERT（A Lite BERT）： ALBERT是BERT模型的一种版本，旨在在保持良好的NLP任务性能的同时更加高效和快速地训练。
 
 ### 在ILLA Builder中使用Hugging Face的方法
 
-在Hugging Face中，通过公共API可以访问超过130,000个机器学习模型，您可以在https://huggingface.co/models 中免费使用和测试。此外，如果您需要生产场景的解决方案，可以使用Hugging Face的推理终端点，了解更多关于推理终端点的信息：https://huggingface.co/docs/inference-endpoints/index。
+在Hugging Face中，通过公共API可以访问超过130,000个机器学习模型，您可以在https://huggingface.co/models 中免费使用和测试。 此外，如果你需要生产场景的解决办法，你可以使用Hugging Face's Inference Endpoints，Endpoint可以在[\*\*https://huggingface.co/docs/inference-endpoints/index](https://huggingface.co/docs/inference-endpoints/index)上部署和访问<https://huggingface.co/docs/inference-endpoints/index>\*\*。
 
-ILLA Builder提供了数十个常用的前端组件，允许您根据特定的需求快速构建不同的前端界面。同时，ILLA提供了与Hugging Face的连接，使您能够快速连接到API，发送请求并接收返回的数据。通过连接API和前端组件，您可以实现用户可以通过前端输入内容并将其提交到API的要求。API返回生成的内容以在前端显示。
+ILLA Builder提供了数十个常用的前端组件，允许您根据特定的需求快速构建不同的前端界面。 同时，ILLA 提供与 Hugging Face 的连接，允许您快速连接到 API，发送请求并接收返回的数据。 通过连接API和前端组件，您可以实现通过前端输入内容并将其提交到API的需求。 API返回生成的内容也可以在前端显示。
 
 ### 配置Hugging Face API资源
 
-| 属性 | 必需 | 描述 |
-| --- | --- | --- |
-| 名称 | 必需 | 定义用于在ILLA中显示的资源名称 |
-| Token | 必需 | 用户访问或API令牌。您可以在https://huggingface.co/settings/tokens 中获取。 |
+| 属性    | 必需 | 描述                                                          |
+| ----- | -- | ----------------------------------------------------------- |
+| 名称    | 必需 | 定义用于在ILLA中显示的资源名称                                           |
+| Token | 必需 | API Token。 您可以在https://huggingface.co/settings/tokens 中获取。  |
 
-### 配置操作
+### 配置Action
 
-| 属性 | 必需 | 描述 |
-| --- | --- | --- |
-| 模型ID | 必需 | 从这里获取您需要的模型：https://huggingface.co/models |
-| 参数类型 | 必需 | 您的端点的参数类型。例如，如果您的端点需要文本输入，请选择“输入”参数中的“填充”文本。如果您的端点需要JSON输入，请选择用JSON或键值填充“输入”参数。 |
-| 参数 | 必需 | 输入参数。使用{{componentName.value}}使用组件的数据。 |
+| 属性   | 必需 | 描述                                                                                                                                                |
+| ---- | -- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 模型ID | 必需 | 从这里获取您需要的模型：https://huggingface.co/models                                                                                                         |
+| 参数类型 | 必需 | 您的Endpoint的参数类型。 例如，如果您的Endpoint需要输入文本，请fill in “inputs” parameter with text. 如果您的端点需要JSON输入，请选择fill in “inputs” parameter with JSON or key-value |
+| 参数   | 必需 | 输入您的参数。 输入参数。通过{{componentName.value}}使用组件的数据。                                                                                                    |
 
 # 在ILLA Builder中使用Hugging Face的方法
 
 ### 步骤1：使用ILLA Builder上的组件构建UI
 
-根据您所描述的预期使用情况，构建前端界面。例如，如果您的产品需要输入文本并输出图像，则可以使用输入和图像组件。如果您的产品需要输入文本并输出生成的文本，则可以使用输入和文本组件。
+基于您描述的预期使用情景，构建一个前端页面。 例如，如果您的产品在文本中采集并输出图像，您可以使用输入组件和图像组件。 如果您的产品需要输入文本并获取生成文本，您可以使用输入组件和文本组件。
 
 以下图像是基于上下文回答问题的产品的前端页面示例。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
 
+### 步骤2：创建Hugging Face资源并配置Action
 
-### 步骤2：创建Hugging Face资源并配置操作
-
-单击操作列表中的+ New，然后选择Hugging Face Inference API。
+点击Action列表中的+New，然后选择Hugging Face Inference API。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
 
-填写表格以连接到您的Hugging Face：
+填写表单以连接到您的Hugging Face：
 
 名称：在ILLA中显示的名称
 
-令牌：在您的Hugging Face [个人资料设置](https://huggingface.co/settings/tokens)中获取
+Token：在您的Hugging Face [个人资料设置](https://huggingface.co/settings/tokens)中获取
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
-在配置操作之前，请确认Hugging Face中的模型信息：
+在配置Action之前，请确认Hugging Face中的模型信息：
 
-在[Hugging Face Model Page](https://huggingface.co/models](https://huggingface.co/models) 中选择一个模型
+在[Hugging Face Model Page]\(https://huggingface.co/models](https://huggingface.co/models) 中选择一个模型
 
-我们以[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 为例。进入详细页面>单击“部署”>单击“推理API”
+我们以[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 为例。进入详细页面>单击“部署”>单击“Inference API” 进入详情页面 > 点击Deploy按钮 > 点击Inference API
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
-“输入”后的参数是您应该在ILLA中填写的内容。
+“inputs”后的参数是您应该在ILLA中填写的内容。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
 
-在ILLA Builder中，我们应该填写模型ID和参数。以上面的模型为例，“输入”是一个键值对，因此我们可以使用键值或JSON填充它。
+在ILLA Builder中，我们应该填写模型ID和参数。 以上面的模型为例，“inputs”是一个键值对，因此我们可以使用key-value或JSON填充它。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
 
-我们还支持满足所有Hugging Face Inference API连接的文本输入和二进制输入。
+我们还支持文本输入和二进制输入，满足所有Hugging Face Inference API连接需求
 
-### 步骤3：将操作连接到组件
+### 步骤3：将Action连接到组件
 
-为将用户的前端输入传递给API，您可以使用{{检索组件中输入的数据。例如，input2是输入问题的组件，input1是输入上下文的组件，我们可以在键中填写“问题”和“上下文”，在值中填写“{{input.value}}”：
+为将用户的输入内容传递给API，您可以使用{{检索组件中输入的数据。 例如，输入2是输入问题的组件，输入1是输入上下文的组件。 我们可以用密钥填写`question`和`context`，然后填写`{{ input.value }}`值：
 
-```
+```jsx
 {
 "question": {{input2.value}},
 "context": {{input1.value}}
@@ -95,11 +96,11 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 ```
 
-在将操作的输出数据显示在前端组件中之前，我们应该确认不同模型的输出放置在哪个字段。仍以“deepset/roberta-base-squad2”为例，结果如下：
+在将Action的输出数据显示在前端组件中之前，我们应该确认不同模型的输出放置在哪个字段。仍以“deepset/roberta-base-squad2”为例，结果如下： 仍然以`deepset/roberta-base-squad2`为例，结果如下：
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
 
-因此，我们可以使用“{{textQuestion.data [0] .answer}}”（“textQuestion”是操作的名称）获得答案。
+因此，我们可以使用“{{textQuestion.data [0] .answer}}”（“textQuestion”是操作的名称）获取API返回的答案。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
 

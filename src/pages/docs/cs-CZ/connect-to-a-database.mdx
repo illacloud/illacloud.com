@@ -1,0 +1,49 @@
+---
+title: Připojit k databázi
+metaTitle: ILLA Cloud připojení k databázi
+desc: ILLA se připojuje k většině databází, včetně PostgreSQL, MySQL, TiDB a MongoDB
+tagCategory: doc_menu_databáze_kliknutí
+---
+
+* * *
+
+## <Heading hidden>Připojit k databázi</Heading>
+
+ILLA se připojuje k většině databází, včetně PostgreSQL, MySQL, TiDB a MongoDB. Zkontrolujte prosím tento seznam pro zdroje dat ILLA, které jsou aktuálně podporovány. Zde jsou uvedeny nadcházející zdroje údajů, které plánujeme podpořit. Pokud ILLA chybí některé datové zdroje, vyplňte prosím tento formulář zde.
+
+Podrobnosti o připojení požadované ILLA závisí na typu databáze, kterou chcete připojit. Tyto informace obvykle zahrnují hostitele, port, přihlašovací údaje uživatele a řetězec připojení. Chcete-li to získat, podívejte se na konfiguraci nebo dokumentaci databáze.
+
+### 1.  Vytvořit databázový zdroj
+
+Zdroje představují připojení ke zdrojům dat a jsou tím, co dotazujete ve vašich aplikacích ILLA.Přihlaste se do ILLA a přejděte na záložku **zdroje** > klikněte **Vytvořit nové** a vyberte databázi, ke které se chcete připojit. Tímto se otevře **Konfigurovat zdrojový** modál, kde přidáte informace o připojení.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Poté, co zadáte údaje o připojení, klikněte na **Testovat připojení** a zkontrolujte, zda se ILLA může úspěšně připojit. Po dokončení klikněte na **Uložit zdroje** pro uložení zdroje.
+
+Kromě toho můžete vytvářet zdroje v seznamu akcí v **editoru aplikací**.
+
+### 2.  Dotaz na vaši databázi
+
+V editoru aplikací, klikněte na **+ Nový** v **seznamu akcí** > vyberte typ zdroje a vyberte existující zdroj nebo vytvořte nový zdroj > klikněte **vytvořit akci** a aktualizujte akce pro načtení některých informací z tabulky v databázi.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Klikněte na **Uložit** a poté klikněte na **Spustit**. Výsledky dotazu se automaticky zobrazí po dokončení dotazu.
+
+Existují některá pokročilá nastavení, včetně přejmenování, nastavení, transformace dat a nastavení úspěšného spouštění nebo selhání, jak je znázorněno níže.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

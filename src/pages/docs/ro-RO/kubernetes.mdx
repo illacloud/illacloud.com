@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: click doc_menu_kubernetes_click
+desc: Construiți o imagine illa all-in-one și rulați-o cu k8 pe mașina dvs.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Descriere
+
+Construiți o imagine illa all-in-one și rulați-o cu k8 pe mașina dvs. Puteți vizualiza fișierul scripts în folderul [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) pentru mai multe detalii.
+
+Notă:
+
+Am recomandat implementarea cu instrumentele noastre de auto-implementare[illa-cli](https://github.com/illacloud/illa).
+
+Și deocamdată nu sprijinim Apple Silicon M1 (darwin-arm64 arch).
+
+### Rulează cu o imagine subţire oficială
+
+Instalează GNU marca și tip:
+
+```jsx
+fă implementare
+```
+
+sau doar executa:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+această comandă va trage imaginea oficială all-in-one și o va implementa în clusterul dvs Kubernetes.
+
+### Pentru baza de date Stocare Persistentă
+
+Editează[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), și adaugă configurația persistentă a IAAS pe ea.
+
+### Pentru configurarea HTTPS
+
+Puteți direcționa NodePort către gateway-ul de cluster Kubernetes și puteți rescrie în portul 443 și adăuga https cert în gateway-ul de ingress.
+
+Sau, poți implementa manual un gateway de intrare în serverul dvs Kubernetes, configurare ca aceasta:
+
+```jsx
+static_resources:
+  ascultători:
+  - nume: http_listener
+    adresa:
+      socket_address:
+        adresa: 0. .0.0
+        port_value: 443
+    filtre_chains:
+    - filtre:
+      - nume: trimis. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. trolConnectionManager
+          stat_prefix: http_listener
+          route_config:
+            nume: local_route
+            virtual_hosts:
+            - nume: illa_builder
+              domenii:
+              - "illa. ordomian. om" # înlocuieşte cu rutele dvs
+              :
+              - potrivire:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - nume: trimis. ilters.http. afara
+            tip_config:
+              "@type": tip. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        nume: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # înlocuiește acest lucru cu fișierul certului
+            - certificate_chain:
+                nume de fișier: /your-cert-folder/fullchain. em
+              private_key:
+                nume fișier: /cert-folder/privkey. em
+
+  cluster:
+  - nume: illa_builder
+    tip: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - punct final:
+            adresă:
+              socket_address:
+                adresă: illa-builder
+                port_value: 80
+```

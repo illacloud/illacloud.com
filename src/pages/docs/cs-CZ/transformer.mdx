@@ -1,0 +1,29 @@
+---
+title: Transformátor
+metaTitle: Transformátor z ILLA Cloudu
+desc: Transformer v ILLA umožňuje uživateli psát JavaScript pro upřesnění aplikační logiky
+tagCategory: doc_menu_transformer_klikněte
+---
+
+* * *
+
+## <Heading hidden>transformátor</Heading>
+
+Vložili jsme transformátor v ILLA, aby splnil vaše požadavky na psaní JavaScriptu pro upřesnění logiky aplikace. V transformátoru nemusíte programovat v JavaScriptu pomocí {{template syntax}} , jak to děláte ve vstupním poli postavy, aby bylo možné psát dlouhé a komplexní bloky JS kódu plynuleji. Kromě toho Transformer pomáhá vývojářům odpovědným za tvorbu stránek a logické budování k dokončení jejich vývojové práce efektivněji, aniž by se navzájem omezoval pokrok.
+
+Transformátor můžete použít nejen pro zavedené operace s daty, ale také pro vytváření operací transformátorů při transformaci dat. Bylo by lepší zvolit nezávislý transformátor, když máte více operací spojených s transformací dat, nebo je třeba použít komplexní logiku JavaScriptu pro transformaci dat.
+
+### Kreativní transformátory
+
+Klikněte na kartu Transformers v seznamu akcí a klikněte na "+ Nové" pro vytvoření transformátoru. Po vytvoření se zobrazí v seznamu akcí. Po výběru můžete změnit název, zapsat JS kód, uložit a spustit jej v konfiguračním panelu.
+
+> Můžete použít tlačítko 'náhled' pro zobrazení výsledků transformátoru. Pro získání nové hodnoty musíte transformátor pro zbytek aplikace uložit.
+
+Vlož volá transformátor o hodnotě rovnající se datům předaným v rámci transformátoru, tyto údaje se změní, jakmile se data vložená do transformátoru změní pomocí kódu transformátoru. Stejně jako u vstupního pole postavy můžete stále použít syntaxi šablony k volání globální proměnné č. Když píšete JS kód pro volání, konkrétní název datové proměnné naleznete v pracovním prostoru v levém panelu, který vám pomůže psát kód rychleji.
+[//]\: # ([Image])
+
+Proměnnou transformátor můžete zavolat v datovém poli pomocí `{{transformer name. název tagu}}` pro zavolání transformátorové proměnné v poli zadávání dat.
+
+### Transformátor dotazu
+
+Do operace dotazu jsme vložili transformátor, který vám umožní transformovat načtená data do požadovaného formátu přímo po dokončení akce. Poté můžete jednoduše předat {{actionName.data}} pro načtení dat po dokončení konverze v transformátoru v rámci akce.

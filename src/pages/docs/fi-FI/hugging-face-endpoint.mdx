@@ -1,0 +1,74 @@
+---
+title: Hyljetään Face Päätepistettä
+metaTitle: Yhdistä halauksen kasvojen päätepisteeseen
+description: Opi käyttämään hugging Face Endpoint -sovellusta ILLA:ssa
+tagCategory: doc_menu_hugging_face_endpoint_click
+---
+
+* * *
+
+## <Heading hidden>Hyljellä kasvojen päätepistettä</Heading>
+
+Huijaus Face Inference Endpoints, voit helposti ottaa käyttöön Transformers, Diffusers tai mikä tahansa malli omistautunut, täysin hallinnoitu infrastruktuuri. [Klikkaa tästä](https://ui.endpoints.huggingface.co/new) luodaksesi päätepisteen. 
+
+### Luo hugging Face endpoint -resurssi
+
+On olemassa kaksi tapaa lisätä halauksen Face Endpoint -resurssi. 
+
+1.  Syötä `ILLA Builder` >> Klikkaa `Resources` -välilehti >> Klikkaa `Create New` >> Valitse `Hugging Face Endpoint` >> Määritä yhteystiedot ja napsauta `Save Resource`
+2.  Syötä muokkaussivu >> klikkaa `+ Uutta` toiminta-luettelossa >> Valitse `Hylkivä Face Endpoint` >> Määritä yhteystiedot tai napsauta `+ Uusi resurssi` lisätäksesi uusia yhteystietoja
+
+### Määritä yhteystiedot
+
+| Ominaisuudet | Pakollinen | Kuvaus                                                                         |
+| ------------ | ---------- | ------------------------------------------------------------------------------ |
+| Nimi         | vaadittu   | Määritä resurssin nimi, jota käytetään näytettäväksi ILLA:ssa                  |
+| Endpoint URL | vaadittu   | luo Endpoint täältä: https://ui.endpoints.huggingface.co/new ja hanki URL.     |
+| Pääsymerkki  | vaadittu   | Organisaatio merkitty. Voit saada sen https://huggingface.co/settings/tokens.  |
+
+### Luo Toiminnot
+
+Syötä muokkaussivu >> klikkaa `+ Uutta` toiminta-luettelossa >> Valitse `Hugging Face Endpoint` >> Valitse olemassa oleva resurssi tai lisää uusi resurssi
+
+### Määritä toiminnot
+
+| Ominaisuudet      | Pakollinen | Kuvaus                                                                                                                                                                                                                            |
+| ----------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parametrin tyyppi | vaadittu   | Päätepisteen parametrin tyyppi. Esimerkiksi, jos Endpoint tarvitsee tekstin syötteen, valitse täytä “syötteet” parametri tekstillä. Jos Endpoint tarvitsee JSON syötteen, valitse täytä “syötteet” parametri JSON tai avain-arvo. |
+| Parametri         | vaadittu   | Syötä parametri. Käytä {{ componentName.value }} komponenttien tietojen käyttämiseen.                                                                                                                                             |
+
+### Käytä laatikkoa
+
+Olemme ottaneet käyttöön `openai/whisper-base`, joka saa äänitiedoston syötteen ja muuntaa tekstiksi. Se sopii kokousminuutteja, podcasteja tekstiin, jne. Seuraavaksi esittelemme miten käyttää tätä mallia rakentaaksemme sovelluksen ILLA Cloudiin.
+
+#### Vaihe 1: Rakenna etupään käyttöliittymä komponentteihin
+
+Olemme rakentaneet käyttöliittymän käyttäen komponentteja, kuten tiedoston lataus ja painike, seuraavasti.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Vaihe 2: Lisää hugging Face -resurssi
+
+Täytä alla näkyvät kentät viimeistelläksesi resurssiasetukset. [Luo Endpoint](https://ui.endpoints.huggingface.co/new) ja hanki Endpoint URL. Ja hanki organisaation API-tunniste [profiilin asetukset](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Vaihe 3: Toiminnon määrittäminen
+
+Valitse parametrin tyyppi ensin. Ota `openai/whisper-base` esimerkkinä, tämä malli vaatii binääritiedoston syötteen, jotta muutamme parametrin `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Asettaa binäärin, joka voidaan siirtää malliin tiedostoon ladatun tiedoston komponentin avulla. Esimerkiksi `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Vaihe 4: Yhdistä komponentit ja toiminnot
+
+Lisää tapahtuman käsittelijä nappiin käynnistääksesi sen toiminnon, kun painiketta napsautetaan. Ja aseta tekstin komponentin arvo arvoksi {{whisper.data[0].text}} näyttääksesi muunnostuloksen tekstinkomponentilla. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Kun edellä mainitut vaiheet on määritetty, sovellus luodaan ja käynnissä olevat tulokset ovat seuraavat.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />

@@ -1,0 +1,138 @@
+---
+title: Vybrat
+metaTitle: ILLA Cloud Výběr komponenty
+description: Zobrazí všechny možnosti v rozbalovacím okně a podporuje výběr 1 možnosti.
+tagCategory: doc_menu_select_click
+---
+
+* * *
+
+## <Heading hidden>Vyberte</Heading>
+
+Výběrová komponenta se běžně používá pro prezentaci uživatelů se seznamem možností ve formátu rozbalovacího menu. Uživatel může vybrat pouze jednu možnost z rozbalovacího seznamu najednou.
+
+Jednotlivá komponenta rozbalovacího menu se obvykle skládá z textového štítku a ikony rozbalovací šipky, které po kliknutí nebo kliknutí otevře seznam možností, ze kterých si uživatel může vybrat. Jakmile uživatel zvolí možnost, rozbalovací menu se zavře a vybraná možnost se zobrazí v komponentě.
+
+Tato složka se často používá ve formulářích, průzkumech, a další scénáře vkládání údajů, pokud si uživatel musí vybrat jednu možnost z předem definované sady možností. Nabízí kompaktní a intuitivní způsob, jak představit seznam možností, aniž by se zabíral příliš mnoho nemovitosti na obrazovku nebo aby uživatel přehnal příliš mnoho možností najednou.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select1.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select2.png' alt="" />
+
+### Vlastnosti
+
+#### Ruční možnosti
+
+Přidat nové možnosti nebo ručně odstranit možnosti a nakonfigurovat možnosti jeden po druhém. Vlastnosti opcí jsou následující: 
+
+| Vlastnosti | L 343, 22.12.2009, s. 1).               |
+| ---------- | --------------------------------------- |
+| Popisek    | Text zobrazený pro možnost              |
+| Hodnota    | Hodnota spojená s možností              |
+| Zakázáno   | Určuje, zda je volba pro výběr zakázána |
+
+#### Mapované možnosti
+
+Můžete také přidat možnosti ze zdroje dat mapováním popisku a vlastností hodnoty do odpovídajících datových polí. Tímto způsobem můžete získat možnosti dynamicky z databáze. Na konci tohoto článku ukážeme, jak jej využít prostřednictvím příkladu.
+
+| Vlastnosti  | L 343, 22.12.2009, s. 1).                                  |
+| ----------- | ---------------------------------------------------------- |
+| Zdroj údajů | Nastavte zdroj dat možností                                |
+| Popisek     | Pomocí {{item}} nastavíte popisek možností                 |
+| Hodnota     | Pomocí {{item}} nastavíte hodnotu možností                 |
+| Zakázáno    | Pomocí {{item}} nastavíte, zda je volba zakázána pro výběr |
+
+#### Jiné vlastnosti
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Výchozí hodnota              | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.                                               |
+| Zástupný symbol              | Hodnota bude zobrazena, když je vstupní pole prázdné.                                                                                             |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                  |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                          |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                              |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                     |
+| Zarovnání                    | Nastavit zarovnání štítku                                                                                                                         |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku                                                                            |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                          |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                              |
+| Pouze pro čtení              | Určuje, zda je komponenta určena pouze pro čtení. Komponentu, která je určena pouze pro čtení, může být vybrána a zaměřena, ale nelze ji upravit. |
+| Zobrazit tlačítko "Vyčistit" | Nastavte, zda zobrazit tlačítko "Vyčistit"                                                                                                        |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                  |
+| Povinné pole                 | Platné pouze při zapnutí přepínače                                                                                                                |
+| Vlastní pravidlo             | Vlastní pravidlo                                                                                                                                  |
+| Skrýt ověřovací zprávu       | Chybová zpráva můžete skrýt přepnutím skrytého stavu, pokud je zadaná hodnota nesprávná. Skrytý stav můžete dynamicky změnit pomocí JavaScript.   |
+| Datový klíč formuláře        | Zadejte klíč pro balicí komponentu při vytváření atributu dat.                                                                                    |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                        |
+| Barva motivu                 | Vyberte barvu motivu komponenty                                                                                                                   |
+
+### Metoda
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto tři metody:
+
+#### nastavená hodnota
+
+Pro nastavení vybrané volby například {{”value1”}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Vybraná hodnota           |
+
+#### clearValue
+
+Vymazat vybrané možnosti
+
+#### validate
+
+Ověření, zda jsou vstupní informace legální
+
+#### clearValidate
+
+Pro vymazání zprávy o ověření
+
+### Manažer událostí
+
+Podporujeme poslechnutí události `onChange` rádiové skupiny. 
+
+Když se změní vybraná možnost, může spustit zadanou akci. To znamená, že pokud uživatel zvolí jinou možnost než rádiovou skupinu, může být konkrétní akce provedena na základě zvolené možnosti. Například ve webové podobě, výběr jiné možnosti může spustit zobrazení různých polí formuláře nebo odeslání formuláře do jiného místa určení. Tímto způsobem může volba vybraná uživatelem ovlivnit chování softwaru nebo webové aplikace, kterou používá. Schopnost spustit konkrétní akce založené na vstupu uživatele je důležitým aspektem interaktivního návrhu softwaru a může zlepšit použitelnost a funkčnost softwaru.
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze volat přes {{componentName.propertyName}} v aplikaci.
+
+| Název vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------------- | ------------------------- |
+| hodnota          | Vybraná hodnota           |
+
+### Případ použití
+
+Dále ukážeme, jak používat mapovaný režim k dynamickému získání možností. 
+
+#### Krok 1 Přidat akci
+
+Vytvořili jsme tabulku `selection`, včetně 5 sloupců: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Hodnoty možností jsme uložili v `hodnotě` a uložili popisky možností v různých jazycích v jiných sloupcích. 
+
+Vytvořte akce pro zobrazení všech dat v `selection` s názvem `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+vybrat * z výběru
+```
+
+#### Krok 2 Konfigurace komponenty
+
+1.  Nastavte zdroje dat na `{{postgresql1.data}}` 
+2.  Nakonfigurujte štítek pro změnu štítku na základě jazyka. 
+
+    1.  Pro nastavení sloupce použijte {{ item.columnName }}. 
+    2.  Pomocí {{ currentUserInfo.language }} nastavíte jazyk uživatelů v ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select3.png' alt="" />

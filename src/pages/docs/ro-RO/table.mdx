@@ -1,0 +1,95 @@
+---
+title: Tabel
+metaTitle: Componenta de tabel ILLA Cloud doc
+description: Afișează și interacționează cu datele folosind componenta Tabel.
+tagCategory: doc_meniu_table_click
+---
+
+* * *
+
+## <Heading hidden>Tabelul</Heading>
+
+Tabelele sunt un mod comun de a vizualiza și de a interacționa cu datele dvs. Puteți sorta, filtra, paginat și descărca rânduri de informații. Tabelele suportă, de asemenea, selecția rândurilor și coloane personalizate.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Încarcă datele într-un tabel
+
+Când glisați o componentă de tabel la cadru, aceasta afișează automat datele testului în format JSON. Puteți modifica datele afișate într-un tabel prin editarea proprietății sursă a datelor. Folosiți formatul \`{{ actionName.data }}pentru a alege acțiunea.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+De asemenea, puteți seta sursa de date introducând o matrice.
+
+### Setări coloană
+
+**Setează aliasuri pentru coloanele de date**
+
+Când setați sursa de date a tabelelor, numele coloanei va fi setat automat pe baza sursei de date. Puteți redenumi toate coloanele făcând clic pe coloană în fila **Inspector** și setați titlul **Coloanei**.
+
+**Schimbă tipul coloanei**
+
+Când setați sursa de date a tabelelor, coloanele sunt setate în **Text**. Puteți seta manual tipurile de coloane făcând clic pe coloană în fila **Inspectare** și selectând tipul din meniul derulant **Tipul de coloană**.
+
+Tipurile de coloane includ:
+
+1.  Text
+2.  Data, puteți seta formatul de afișare al datei în tipul de dată.
+3.  Număr, puteţi seta zecimalele în tipul de număr.
+4.  Procent poți seta zecimalele în tipul de procent.
+5.  Link-ul
+6.  Buton, poți adăuga manipulatoare de evenimente în tipul de buton.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Valoare atinsă a coloanelor personalizate**
+
+Puteți adăuga coloane personalizate la tabele folosind butonul **+ adăugați** în fila **Inspectare**. Coloanele personalizate sunt adesea folosite pentru a calcula datele pe baza altor valori din aplicația dvs. De exemplu, dacă aveţi coloane `venite` şi `user_num` şi doriţi să calculaţi o coloană `ARPU`, aţi putea folosi `{{ currentRow.revenue/currentRow.user_num }`
+
+În plus, după calcul, puteţi seta tipul de coloană la număr sau procent şi setaţi zecimalele pentru a îmbunătăţi lizibilitatea.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Date privind accesul în tabel
+
+Utilizaţi `{{ table1.selectedRow[i].columnName }}pentru a accesa datele rândurilor selectate în alte componente. Dacă nu ați activat **Selecția cu mai multe rânduri**, `i\` va fi întotdeauna 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Actualizează datele tabelului**
+
+1.  Folosiți componenta de intrare sau alte cpmponenți de date pentru a afișa `{{ table1.selectedRow[i].columnName }}`.
+2.  Utilizaţi \`{{ input1.value }}în acţiunile de actualizare pentru a obţine valorile selectate şi valorile actualizate.
+3.  Adăugați un gestionar de evenimente pentru a actualiza Butonul pentru a rula Acţiunea de actualizare atunci când faceți clic pe ea.
+4.  Actualizează datele rândului selectat schimbând valoarea de intrare şi făcând clic pe butonul de actualizare.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Introduceți un nou rând în tabel**
+
+1.  Utilizaţi `{{ input1.value }}` în inserarea acţiunilor obţine valori.
+2.  Adaugă un handler de evenimente pentru a introduce butonul pentru a rula serva Acțiune atunci când se dă click.
+3.  Introduceți date noi introducând valori în componentele de intrare și apăsând butonul de Inserare.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

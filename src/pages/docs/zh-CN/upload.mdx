@@ -1,0 +1,106 @@
+---
+title: 上传（Upload）
+metaTitle: ILLA Cloud上传组件doc
+description: 使用上传组件从本地机器上传文件到任何云存储
+tagCategory: doc_menu_upload_click
+---
+
+* * *
+
+## <Heading hidden>上传（Upload）</Heading>
+
+上传组件用于允许用户通过API从本地机器上传文件到任何云存储。 接下来，我们将介绍如何配置上传组件，如何将上传组件与云存储服务联系起来。 如何使用上传组件来选择一个图像，并用图像等显示它。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### 属性
+
+| 属性                          | 描述                                                                                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Type                        | 设置上传组件的类型，包括按钮和 Drop区。                                                                                                                     |
+| Text                        | 上传组件上显示的文本。                                                                                                                                |
+| Selection types             | 将选择类型设置为多个文件、单个文件或目录。                                                                                                                      |
+| File types                  | 允许上传的文件扩展名列表。 没有值允许所有文件类型。                                                                                                                 |
+| Append newly selected files | 设置选中的新文件追加到选中的文件或替换选中的文件，在多个文件或目录的选择类型中。                                                                                                   |
+| File list                   | 设置是否在上传组件下方显示选中的文件列表。 上传器的高度将根据文件列表的长度动态变化。                                                                                                |
+| Parse Value                 | 尝试解析选中的文件，支持 JSON、CSV、TSV、Excel和 TXT 文件。 解析后的数据可以通过 {{upload1.parsedValue}} 访问。 无法解析的文件在数组中将为 null。 所有文件都可以在数组中以 Base64 编码的字符串使用，无论此选项是什么。 |
+| Loading                     | 组件是否应显示加载指示器。                                                                                                                              |
+| Disabled                    | 设置是否禁用此组件以及在什么条件下禁用它。 例如，如果 input1 组件为空，则该组件应禁用：{{ input1.value== ' ' }}                                                                   |
+| Tooltip                     | 当用户悬停在组件上时在组件上显示工具提示。                                                                                                                      |
+| Required field              | 确定是否需要。                                                                                                                                    |
+| Min size                    | 设置允许添加的最小文件大小。                                                                                                                             |
+| Max size                    | 设置允许添加的最大文件大小。                                                                                                                             |
+| Custom rule                 | 设置验证失败时显示的文本。                                                                                                                              |
+| Hide validation message     | 设置验证失败时是否显示验证消息。                                                                                                                           |
+| Form Data Key               | 为组件设置一个密钥。 在将此组件添加到表单后，此密钥将用于在提交表单时识别此组件的数据。                                                                                               |
+| Hidden                      | 设置是否显示此组件以及在什么条件下显示它。 例如，如果当前用户不是用户A，这个组件应该隐藏：{{ currentUserInfo.nickname != 'User A' }}                                                   |
+| Variant                     | 设置按钮上传组件为轮廓或填充。                                                                                                                            |
+| Theme color                 | 设置按钮上传组件的颜色。                                                                                                                               |
+
+### 方法
+
+您可以使用其他组件来控制上传组件。 我们支持以下三种方法：
+
+| 清除验证        | 用于清除验证消息        |
+| ----------- | --------------- |
+| clearValue  | 用于清除选中的文件       |
+| setDisabled | 用于将上传组件设置为禁用或启用 |
+
+### 事件处理程序
+
+当所选文件改变时触发操作
+
+### 数据上传器
+
+上传组件有一些常用的数据，可以在应用程序中调用。
+
+`value`，一个由数据库64数据组成的数组。 
+
+`files` 对象数组。 对象的键值包括“lastModified”、“name`、`size`、`type`”。 你可以使用  `{{upload1.files.map(file =>file.name)}}\` 来获取一个文件名的数组，你也可以用同样的方式获取最后修改数组，大小数组，类型数组。 
+
+### 上传文件到云存储服务
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### 通过S3资源上传单个文件
+
+配置如下。 
+
+上传对象名称
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+上传数据
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### 通过S3资源上传多个文件
+
+上传对象名称列表
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+上传数据列表
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+上传一张图片并在图片组件上显示它 
+将图片的源改为上传组件的文件 base64 数据。 Base64 数据存储在数组中的值属性中。 我们应该将文件前缀与文件数据分割开来。 该守则如下。 
+
+```jsx
+{{'data:image/jpeg;base64'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

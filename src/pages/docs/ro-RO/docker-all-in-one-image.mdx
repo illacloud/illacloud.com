@@ -1,0 +1,89 @@
+---
+title: Imagine docker all-in-one
+tagCategory: click pe doc_meniu_docker-all-in-one-image_click
+desc: Construiește illa folosește o imagine all-in-one și rulează pe mașina ta.
+---
+
+* * *
+
+## <Heading hidden>Imagine Docker all-in-one</Heading>
+
+### Descriere
+
+Construiește illa folosește o imagine all-in-one și rulează pe mașina ta. Puteți vizualiza fișierul scripts în folderul [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) pentru mai multe detalii.
+
+Notă:
+
+Am recomandat implementarea cu instrumentele noastre de auto-implementare[illa-cli](https://github.com/illacloud/illa).
+
+Și deocamdată nu sprijinim Apple Silicon M1 (darwin-arm64 arch).
+
+### Rulează o imagine oficială
+
+Instalează GNU marca și tip:
+
+```jsx
+fă o imagine funcțională
+```
+
+sau doar executa:
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+această comandă va trage o imagine oficială illasoft şi o va rula pe mediul de andocare.
+
+Și autentificați-vă cu numele de utilizator implicit **`root`** și parola **`parolă`**.
+
+### Construiește manual imaginea și rulează
+
+Instalați GNU creați (sau executați scripturi shell în directorul script-uri).
+
+Pentru a construi imaginea all-in-one illa și a rula, scrie:
+
+```jsx
+fă totul
+```
+
+pentru podman, tipul:
+
+```jsx
+fă alergător cu podman
+```
+
+sau să execute script-uri `run-by-podman.sh` în folderul de script-uri.
+
+### Opriți și eliminați containerul
+
+```jsx
+fa containere stop-and-remove-container
+```
+
+### Curăță fișierul bazei de date Postgres
+
+** ACEASTĂ COMANDĂ ȘTERGE DATELE ÎN DISCURSUL DUMNEAVOASTRĂ!!! \*\*\*** BACKUP ȘI ADUNĂ CUMPĂRĂ \*\*\*
+
+În Implicit, baza de date Postgres va fi stocată în folderul `/var/lib/illa/bază de date/postgresql/`.
+
+Rulează următoarea comandă pentru a o șterge.
+
+```jsx
+fa fisierul-postgres-baza de date
+```
+
+### Configurare Variabile Mediu Runtime
+
+Editați `scripts/run.sh` atunci când este necesar:
+
+```jsx
+# parola pentru baza de date
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# director pentru stocarea fişierului postgres
+PG_VOLUMN=${ILLA_HOME_DIR}/bază de date/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

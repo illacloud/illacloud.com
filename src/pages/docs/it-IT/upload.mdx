@@ -1,0 +1,106 @@
+---
+title: Carica
+metaTitle: ILLA Cloud Upload componente doc
+description: Usa il componente di caricamento per caricare i file dalle macchine locali su qualsiasi storage cloud
+tagCategory: doc_menu_upload_click
+---
+
+* * *
+
+## <Heading hidden>Carica</Heading>
+
+Il componente di upload viene utilizzato per consentire agli utenti di caricare file dalle loro macchine locali su qualsiasi cloud storage tramite API. Successivamente, introdurremo come configurare un componente di caricamento, come associare il componente di caricamento a un servizio di archiviazione cloud, come utilizzare il componente di caricamento per selezionare un'immagine, e visualizzarla con un'immagine, ecc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Proprietà
+
+| Proprietà                       | Descrizione                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tipo                            | Imposta il tipo di componente di upload, inclusi Pulsante e Dropzone.                                                                                                                                                                                                                                                                                                     |
+| Testo                           | Il testo mostrato sul componente di caricamento.                                                                                                                                                                                                                                                                                                                          |
+| Tipi di selezione               | Imposta il tipo di selezione su più file, singolo file o directory.                                                                                                                                                                                                                                                                                                       |
+| Tipi di file                    | Un elenco di estensioni di file consentite da caricare. Nessun valore consente tutti i tipi di file.                                                                                                                                                                                                                                                                      |
+| Aggiungi nuovi file selezionati | Per impostare il nuovo file selezionato da aggiungere al file selezionato o sostituire il file selezionato nel tipo di selezione di più file o directory.                                                                                                                                                                                                                 |
+| Elenco file                     | Per impostare se mostrare un elenco di file selezionati sotto il componente di caricamento. L'altezza del caricatore cambierà dinamicamente in base alla lunghezza dell'elenco dei file.                                                                                                                                                                                  |
+| Analizza Valore                 | Tentativo di analizzare i file selezionati, con il supporto per i file JSON, CSV, TSV, Excel e TXT. È possibile accedere ai dati analizzati tramite {{upload1.parsedValue}}. I file che non possono essere analizzati saranno nulli nell'array. Tutti i file sono disponibili come stringhe codificate base64 sull'array del valore, indipendentemente da questa opzione. |
+| Caricamento                     | Indica se il componente deve mostrare un indicatore di caricamento.                                                                                                                                                                                                                                                                                                       |
+| Disabilitato                    | Per impostare se disabilitare questo componente e a quali condizioni disabilitarlo. Ad esempio, se il componente input1 è nullo, questo componente dovrebbe essere disabilitato: {{ input1.value == ‘ ’}}                                                                                                                                                                 |
+| Suggerimento                    | Un suggerimento visualizzato sul componente quando gli utenti passano sopra il componente.                                                                                                                                                                                                                                                                                |
+| Campo obbligatorio              | Per impostare se è necessario.                                                                                                                                                                                                                                                                                                                                            |
+| Min size                        | Per impostare la dimensione minima del file è consentito aggiungere.                                                                                                                                                                                                                                                                                                      |
+| Max size                        | Per impostare la dimensione massima del file è consentito aggiungere.                                                                                                                                                                                                                                                                                                     |
+| Regola personalizzata           | Per impostare il testo visualizzato quando la verifica fallisce.                                                                                                                                                                                                                                                                                                          |
+| Nascondi messaggio di convalida | Per impostare se visualizzare il messaggio di convalida quando la verifica non è riuscita.                                                                                                                                                                                                                                                                                |
+| Modulo Dati Chiave              | Per impostare una chiave per il componente. Dopo aver aggiunto questo componente a un modulo, questa chiave verrà utilizzata per identificare i dati di questo componente quando si invia il modulo.                                                                                                                                                                      |
+| Hidden                          | Per impostare se visualizzare questo componente e in quali condizioni visualizzarlo. Ad esempio, se l'utente corrente non è Utente A, questo componente deve essere nascosto: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                                  |
+| Variante                        | Per impostare il pulsante Carica componente su contorno o riempito.                                                                                                                                                                                                                                                                                                       |
+| Colore tema                     | Per impostare il colore del componente Carica pulsante.                                                                                                                                                                                                                                                                                                                   |
+
+### Metodo
+
+È possibile utilizzare altri componenti per controllare il componente Upload. Sosteniamo i seguenti tre metodi:
+
+| clearValidation | Usato per cancellare il messaggio di convalida                               |
+| --------------- | ---------------------------------------------------------------------------- |
+| clearValue      | Usato per cancellare la selezione                                            |
+| setDisabilitato | Usato per impostare il componente di caricamento su disabilitato o abilitato |
+
+### Gestore eventi
+
+Per attivare azioni quando i file selezionati cambiano
+
+### Dati del caricatore
+
+Il componente di upload ha alcuni dati comunemente usati, che possono essere chiamati nell'app.
+
+`value` un array costituito dai dati base64 dei file. 
+
+`files` un array di oggetti. Le chiavi degli oggetti includono `lastModified`, `name`, `size`, `type`. Puoi usare `{{upload1.files.map(file =>file. ame)}}` per ottenere una serie di nomi di file e puoi anche ottenere l'array di ultima modifica, formato array, tipo array nello stesso modo. 
+
+### Carica file su un servizio di archiviazione cloud
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Carica un singolo file attraverso una risorsa S3
+
+La configurazione dell'azione è la seguente. 
+
+Carica nome oggetto
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Carica dati
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Carica più file attraverso una risorsa S3
+
+Carica elenco nomi oggetti
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Carica elenco dati
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Carica un'immagine e visualizzala sul componente immagine
+Cambia la sorgente dell'immagine con i dati di caricamento del componente base64. I dati base64 sono memorizzati nell'attributo valore nell'array. E dovremmo spezzare il prefisso del file con i dati del file. Il codice è il seguente. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

@@ -1,0 +1,59 @@
+---
+title: Guider JavaScriptu
+metaTitle: ILLA Cloud JavaScript Guider doc
+desc: JavaScript je nejdůležitější součástí Editoru ILLA což je nástroj, který používáte pro vytvoření přístupu k datům a logické konstrukce vašeho APP
+tagCategory: doc_menu_js_guider_click
+---
+
+* * *
+
+## <Heading hidden>JavaScript Guider</Heading>
+
+JavaScript je nejdůležitější součástí Editoru ILLA což je nástroj, který používáte pro vytvoření přístupu k datům a logické konstrukce vašeho APP. Mistrovství, jak volat JavaScript, jste zvládli používání ILLA Builderu.
+
+Při vytváření svého APP v Editoru ILLA můžete použít `{{template syntax}}` k psaní vlastních JavaScriptových prohlášení pro volání a manipulaci s daty, nebo napište JS kód přímo na transformátor.
+
+### Provozní údaje
+
+#### Přístup k datům o objektech
+
+V Editoru ILLA můžete vložit JavaScript výrazy do libovolného textového pole pomocí syntaxe šablony. Datové objekty jsou dostupné a můžete manipulovat s údaji ze všech vložek, akcí a transformátorů přes JavaScript. Například můžete použít `{{textInput.data}}` pro přístup k obsahu vloženého textu, `{{action.data}}` pro přístup k datům z databáze akcí a `{{transformer.value}}` pro přístup k datům z transformátoru.
+
+Do produktu jsme přidali a upravili kódové zrcátko, přizpůsobil jej programovacímu prostředí editoru ILLA podporovanému zvýrazňování syntaxí a automatické odsazování, a přidal podrobné vysvětlení proměnných a funkcí, které se vyskytují během programování, takže se můžete naučit používat ILLA Builder za nízké náklady. Poté, co zadáte název objektu, zadejte tečku. výzva bude obsahovat všechny vlastnosti objektu, datový typ a částečný textový popis, aby bylo možné určit vlastnost, která má být přístupná za čas.
+
+#### Přístup k číslům v polích
+
+Pokud potřebujete přístup k hodnotě v určitém poli, hodnotu můžete získat podle pozice nebo předplatného dat, ke kterým potřebujete přístup.
+
+```javascript
+const list = ['a', 'b', 'c']
+vratný seznam[0] // Vrací první hodnotu v seznamu 'a'
+```
+
+### Zobrazit data
+
+V editoru ILLA jsou čtyři umístění: prostor pro data v levém panelu, datová výzva pod textovým polem po zadání výrazu JavaScript a zobrazení dat prostřednictvím datového vložení k zobrazení dat.
+
+#### Prezentace pracovního prostoru dat
+
+Datový pracovní prostor najdete otevřením levého panelu v editoru aplikací, V případě, že je k dispozici více informací o datech, musí být všechny údaje o datech prezentovány jako strukturovaný JSON a všechny údaje jsou zobrazeny v pracovním prostoru.
+
+[//]: # "[图片]"
+
+#### Živý náhled vstupu dat
+
+Když zavoláte akci nebo transformátor ve vstupním poli, data pro tuto operaci se automaticky zobrazí pod vstupním polem, a můžete potvrdit, že volané údaje jsou správné na základě informací zde.
+
+[//]: # "[图片]"
+
+#### Předkládání údajů
+
+Vložený datový displej vám poskytne nejintuitivnější zobrazení dat. Jednoduše přetáhněte komponentu do rámečku, zadejte název příslušného zdroje dat do pole dat. filtrovat a uspořádat jej a budete mít přístup k informacím o zobrazení dat.
+
+[//]: # "[图片]"
+
+### Transformátor
+
+V transformátoru můžete napsat více řádků JS kódu, a doporučujeme, abyste se rozhodli psát v transformátorech, a ne ve dvojitých zuřivých závorkách. S pomocí `{{}}` můžete programovat JavaScript přímo v transformátorech a také volat data v operaci.
+
+Klikněte zde pro detailní využití transformátoru.

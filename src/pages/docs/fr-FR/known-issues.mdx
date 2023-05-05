@@ -1,0 +1,23 @@
+---
+title: Problèmes connus
+tagCategory: Cliquez sur le lien doc_menu_known_issues.
+desc: Problèmes connus et solutions de déploiement d'ILLA Builder.
+---
+
+* * *
+
+## <Heading hidden>Problèmes connus</Heading>
+
+### Problème de type de montage
+
+Exécutez `illa deploy --self -port=1000 -s={your-ip-address}` ou `run-official-image.sh`, retournez l'erreur suivante :
+
+`Docker a répondu avec le code de statut 400: configuration de montage invalide pour le type "bind": le chemin de la source de liaison n'existe pas : /tmp/illa-data`
+
+Pour l'instant, le type de montage ne supporte que `mount`, s'il vous plaît config `docker -v` en mode `mount`. Ou réinstallez le docker en suivant des scripts.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Et lancez à nouveau la commande de déploiement.
+
+Pour plus de problèmes : https://github.com/illacloud/illa-builder/issues

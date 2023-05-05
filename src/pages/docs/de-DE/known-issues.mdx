@@ -1,0 +1,23 @@
+---
+title: Bekannte Probleme
+tagCategory: doc_menu_bekannt_Probleme_klicken
+desc: Bekannte Probleme und Lösungen des ILLA Builder Einsatzes.
+---
+
+* * *
+
+## <Heading hidden>Bekannte Probleme</Heading>
+
+### Mount-Typ Problem
+
+Führe `illa Deploy --self -port=1000 -s={your-ip-address}` oder `run-official-image.sh` aus, gib folgenden Fehler zurück:
+
+`Docker antwortete mit Statuscode 400: Ungültige Mount-Konfiguration für den Typ "bind": Bind-Quellpfad existiert nicht: /tmp/illa-data`
+
+Im Moment unterstützt der Mount-Typ nur `mount`, bitte konfiguriere `docker -v` als `mount`-Modus. Oder installieren Sie den Docker neu, indem Sie den Skripten folgen.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/Deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Und führen Sie den Deploy-Befehl erneut aus.
+
+Für weitere Probleme: https://github.com/illacloud/illa-builder/issues

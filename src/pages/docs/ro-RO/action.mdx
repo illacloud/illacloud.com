@@ -1,0 +1,47 @@
+---
+title: Acțiune
+metaTitle: ILLA Cloud Action document
+tagCategory: click_doc_meniu_action_click
+desc: Acțiunile reprezintă puntea dintre date și componente și reprezintă o parte esențială a construirii unei aplicații.
+---
+
+* * *
+
+## <Heading hidden>Interogare</Heading>
+
+După crearea resursei, trebuie să extrageți datele din resursă, să selectați, să filtrați, fuzionează datele şi apoi le introduce în Inserts conform cerinţelor logice. Numim acest proces de procesare a datelor o acţiune. Acțiunile reprezintă puntea dintre date și componente și reprezintă o parte esențială a construirii unei aplicații. Am împărțit acțiunile în două categorii: acțiuni și Transformatori.
+
+### Acțiune SQL
+
+#### Crează acțiune
+
+Procesul de utilizare a acțiunilor SQL este împărțit în următorii pași:
+
+1.  În primul rând, trebuie să găsiți lista de acțiuni în editorul de aplicații și să faceți clic pe butonul "Adăugați".
+2.  Apoi, selectaţi un tip de sursă de date în caseta de selectare a resurselor. Poți găsi resursele create în lista de resurse corespunzătoare, poți crea, de asemenea, noi resurse aici. Selectați resursa creată și faceți clic pe butonul "Confirmă". O acțiune SQL va fi creată cu succes.
+3.  Acțiunea creată va fi afișată în lista de acțiuni. Un editor de acțiune va fi afișat sub cadru după ce lovește acțiunea. Puteți schimba resursa acțiunilor, scrie acțiuni de acțiune, conținut de răspuns, adăuga transformatoare, gestionari de evenimente.
+4.  După completarea listei de acțiuni, poți da click pe butonul "Previzualizare" pentru a verifica dacă acțiunea pe care ai scris-o este validă. Panoul de configurare va afișa rezultatul acțiunii. După ce acțiunea este editată, puteți apăsa butonul "Salvează" pentru a încheia procesul. Dacă treceți la o altă acțiune fără a salva informațiile, sistemul vă va solicita să salvați modificarea.
+
+#### Defalcare acțiune
+
+1.  Acțiune: Puteți introduce declarațiile de acțiune în modulul Acțiune în care am adăugat editorul Code Mirror pentru a activa evidențierea declarației de acțiune și finalizarea codului. În actualizări ulterioare, vom furniza un mod de intrare GUI pentru scrierea declarațiilor de acțiune, astfel încât utilizatorii care nu sunt familiarizați cu declarațiile de acțiune să poată completa și acțiunile de date.
+2.  Transformator: Poți perfecționa logica de acțiune cu declarații JavaScript în transformator, de exemplu, utilizând funcția de filtrare în JS în loc de locul în care funcționează în declarația de acțiune.
+3.  Gestionar de evenimente: Gestionarii de evenimente vă permit să declanșați acțiuni, control inserturi și alte acțiuni ca răspuns la interacțiunea utilizatorului. Puteți adăuga mai mulți gestionari de evenimente pentru a răspunde la un eveniment fără a adăuga instrucțiuni JavaScript personalizate. De exemplu, atunci când un utilizator apasă un buton, poți (1) declanșa o acțiune pentru a rula, în timp ce (2) resetarea mai multor liste derulante și intrări de text.
+4.  Răspuns: În modulul de răspuns, puteți personaliza condițiile în care acțiunea returnează rezultate incorecte, astfel încât să se asigure acuratețea acțiunii.
+5.  Avansat: Rafinează setările detaliate pentru acțiuni precum timpul de răspuns în baza de date, întârzierile procesorului de evenimente etc. în cadrul opțiunilor avansate.
+
+### Acțiuni API
+
+#### Crează acțiune
+
+Procesul de acreditare a datelor folosind API-ul este similar cu cel pentru SQL.
+
+1.  Primul: utilizatorul trebuie să găsească lista de acțiuni în partea din stânga jos a paginii de editare a aplicației și să facă clic pe semnul plus din dreapta sus a listei de acțiuni.
+2.  Apoi, selectaţi lista corespunzătoare de date sursă în caseta de selecţie a resurselor care apare. Poți găsi resursa creată în lista de surse de date corespunzătoare sau poți crea o resursă nouă aici. Selectați resursa creată, faceți clic pe "Create" și o acțiune API va fi creată cu succes.
+3.  Acțiunea creată cu succes va fi afișată în lista de acțiuni din panoul de jos și fila General pentru acțiune va apărea sub cadru atunci când se dă click pe ea. Puteți face o cerere către orice HTTP API din ILLA. Vă rugăm să consultaţi documentaţia API pentru metodele de solicitare a datelor.
+4.  Odată ce ați completat acțiunea, poți da click pe butonul "Previzualizare" pentru a vedea dacă acțiunea pe care ai scris-o este validă și panoul de configurare îți va da rezultatele. După ce ați terminat de editat acțiunea dvs., puteți apăsa pe Salvare și ieșire pentru a termina procesul. Dacă treceți la o altă operație fără a salva, o fereastră pop-up vă va solicita să finalizați operațiunea de salvare.
+
+#### Defalcare acțiune
+
+1.  Transformator: Poți perfecționa logica de acțiune cu declarații JavaScript într-un transformator, de exemplu, utilizând funcția de filtrare în JS în loc de locul unde funcționează într-o declarație de acțiune.
+2.  Gestionari de evenimente: Gestionarii de evenimente vă permit să declanșați acțiuni, control inserturi și alte acțiuni ca răspuns la interacțiunea utilizatorului. Puteți adăuga mai mulți gestionari de evenimente pentru a răspunde la un eveniment fără a adăuga instrucțiuni JavaScript personalizate. De exemplu, atunci când un utilizator apasă un buton, poți (1) declanșa o acțiune pentru a rula, în timp ce (2) resetarea mai multor liste derulante și intrări de text.

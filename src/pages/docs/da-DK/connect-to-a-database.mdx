@@ -1,0 +1,49 @@
+---
+title: Opret forbindelse til en database
+metaTitle: ILLA Cloud Forbind til en database
+desc: ILLA forbinder til de fleste databaser, herunder PostgreSQL, MySQL, TiDB og MongoDB
+tagCategory: doc_menu_database_click
+---
+
+* * *
+
+## <Heading hidden>Forbind til en database</Heading>
+
+ILLA forbinder til de fleste databaser, herunder PostgreSQL, MySQL, TiDB og MongoDB. Tjek venligst denne liste her for datakilderne ILLA understøtter. De kommende datakilder, vi planlægger at støtte, er opført her. Hvis ILLA mangler visse datakurser, du bruger, så udfyld venligst formularen her.
+
+De forbindelsesoplysninger, som ILLA kræver, afhænger af, hvilken type database du ønsker at forbinde. Disse oplysninger omfatter generelt en vært, port, brugeroplysninger og forbindelsesstreng. Se venligst din databases konfiguration eller dokumentation for at få dette.
+
+### 1.  Opret en database ressource
+
+Ressourcer repræsenterer forbindelser til datakilder og er, hvad du forespørger i dine ILLA-apps.Log ind på ILLA og gå til fanen **Ressourcer** > klik **Opret ny** og vælg den database, du vil forbinde til. Dette åbner **Konfigurer en ressource**-modalen, hvor du tilføjer dine forbindelsesoplysninger.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Når du har indtastet dine forbindelsesoplysninger, skal du klikke på **Test Connection** for at tjekke ILLA kan oprette forbindelse. Når du er færdig, skal du klikke på **Gem ressource** for at gemme ressourcen.
+
+Derudover kan du oprette ressourcer i handlingslisten under **App editor**.
+
+### 2.  Forestil din database
+
+I App editor, klik **+ Ny** i **Handlingsliste** > vælg ressourcetype og vælg en eksisterende ressource, eller opret en ny ressource > klik **Opret handling** og opdatér handlingerne for at hente oplysninger fra en tabel i din database.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Klik på **Gem** og klik derefter på **Kør**. Forespørgselsresultater vises automatisk, når forespørgslen er afsluttet.
+
+Der er nogle avancerede indstillinger, herunder omdøbning, kør indstillinger, transformere data, og opsætning af håndtering af køre succes eller fiasko, som vist nedenfor.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

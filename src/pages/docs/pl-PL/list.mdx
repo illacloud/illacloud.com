@@ -1,0 +1,53 @@
+---
+title: Lista
+metaTitle: Dokumentacja dla komponentu listy chmury ILLA
+description: Komponent Listy pozwala na tworzenie powtarzalnych wierszy danych, których wygląd i poczucie są przez Ciebie zdefiniowane.
+tagCategory: kliknij na listę_doc_menu_
+---
+
+* * *
+
+## <Heading hidden>Lista</Heading>
+
+Komponent listy jest podobny do kontenera, ponieważ możesz zagnieżdżać inne elementy wewnątrz niego.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Przeciągnij elementy do listy
+
+Gdy przeciągniesz komponent listy do ramki, automatycznie zawiera kilka komponentów. Możesz je usunąć lub zmodyfikować i przeciągnąć nowe komponenty do listy. 
+
+Tylko pierwszy element może być edytowany, a inni automatycznie zmienią się w oparciu o pierwszy element. Możesz również skupić się na pierwszym elemencie i przeciągnąć pasek, aby zmienić wysokość.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Wyświetl wyniki zapytania na liście
+
+Po przeciągnięciu komponentu Lista do Ramki automatycznie wyświetla dane testowe w formacie JSON. Możesz zmienić źródło danych na akcję używając `{{ mysql_list_query.data }}`. 
+
+Po ustawieniu źródła danych można zmienić dane komponentów:
+
+1.  Wybierz komponent w pierwszej pozycji. 
+2.  Jeśli dane komponentu znajdują się z listy, możesz ustawić dane używając `{{ currentItem.columnName }}`. Na przykład, możesz ustawić źródło obrazu z `{{ currentItem.Avater }}`. `Avater` jest kolumną ze źródła danych z listy.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Możesz użyć `{{ currentItem.columnName }}` tylko wtedy, gdy komponenty znajdują się na liście. 
+
+### Użyj danych z listy
+
+Możesz użyć danych wybranych elementów używając `{{ list1.selectedItem.columnName }}`. Lub użyj dowolnych danych listy używając `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

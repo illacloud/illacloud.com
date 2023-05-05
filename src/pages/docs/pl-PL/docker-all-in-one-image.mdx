@@ -1,0 +1,89 @@
+---
+title: Zdjęcie Docker wszystkiego w jednym
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: Zbuduj illa utylizuje obraz wszystkiego w jednym i uruchom go na Twoim komputerze.
+---
+
+* * *
+
+## <Heading hidden>Docker all-in-one Image</Heading>
+
+### Opis
+
+Zbuduj illa utylizuje obraz wszystkiego w jednym i uruchom go na Twoim komputerze. Możesz sprawdzić plik skryptów w folderze [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts), aby uzyskać więcej informacji.
+
+Uwaga:
+
+Zalecamy wdrożenie naszych narzędzi do automatycznego wdrażania[illa-cli](https://github.com/illacloud/illa).
+
+A na razie nie wspieramy Apple Silicon M1 (darwin-arm64 arch).
+
+### Uruchom Oficjalny Obraz
+
+Zainstaluj markę i typ GNU:
+
+```jsx
+utwórz run-oficjalny obraz
+```
+
+lub po prostu wykonaj:
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+ta komenda pociągnie za obrazy oficjalne i uruchomi je w środowisku dockera.
+
+I zaloguj się za pomocą domyślnej nazwy użytkownika **`root`** i hasła **`hasło`**.
+
+### Zbuduj obraz ręcznie i uruchom
+
+Zainstaluj GNU (albo ręcznie wykonaj skrypty powłoki w folderze skryptów).
+
+Dla zbudowania illa all-in-one obraz i uruchomienia, wpisz:
+
+```jsx
+utwórz wszystko
+```
+
+w przypadku podmana, typ:
+
+```jsx
+utwórz biegu po podmanewrze
+```
+
+lub wykonaj skrypty powłoki `run-by-podman.sh` w folderze skryptów.
+
+### Zatrzymaj i usuń pojemnik
+
+```jsx
+utwórz zamknięte i zdejmowane pojemniki
+```
+
+### Wyczyść plik bazy danych postgres
+
+** TEN KOMUNIKUJ PLIK BAZY DANYCH NA TWOJEJ DISK!!! \*\*\*** AKTUALIZUJ I KAREFULUJ \*\*\*
+
+Domyślnie baza danych Postgres będzie przechowywana w folderze `/var/lib/illa/database/postgresql/`.
+
+Uruchom następującą komendę, aby ją usunąć.
+
+```jsx
+utwórz plik Clean-postgres-database-file
+```
+
+### Zmienne środowiskowe konfiguracji Runtime
+
+Edytuj `scripts/run.sh` w razie potrzeby:
+
+```jsx
+# hasło bazy danych postgres
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# folder przechowywania plików bazy danych postgres
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

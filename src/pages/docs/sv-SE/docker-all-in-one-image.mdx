@@ -1,0 +1,89 @@
+---
+title: Docker allt-i-ett bild
+tagCategory: docker-allt-i-ett bild-klicka
+desc: Bygg illa utils en allt-i-ett-bild och kör den på din maskin.
+---
+
+* * *
+
+## <Heading hidden>Docker allt-i-ett-bild</Heading>
+
+### Beskrivning
+
+Bygg illa utils en allt-i-ett-bild och kör den på din maskin. Du kan kolla in skriptfilen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) för mer information.
+
+Notera:
+
+Vi rekommenderar starkt att distribuera med våra auto-distribuera verktyg[illa-cli](https://github.com/illacloud/illa).
+
+Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
+
+### Kör en officiell bild
+
+Installera GNU make och typ:
+
+```jsx
+gör run-officiell-bild
+```
+
+eller bara exekvera:
+
+```jsx
+/bin/bash skript/run-official-image.sh
+```
+
+detta kommando kommer att dra illasoft officiella bild och köra det på din docker miljö.
+
+Och logga in med standardnamnet **`root`** och lösenordet **`password`**.
+
+### Bygg bild manuellt och kör
+
+Installera GNU göra (eller kör skalskript i skriptmappen manuellt).
+
+För att bygga illa allt-i-ett-bild och köra, skriv:
+
+```jsx
+gör alla
+```
+
+för podman, skriv:
+
+```jsx
+gör run--by-podman
+```
+
+eller kör skalskript `run-by-podman.sh` i skriptmappen.
+
+### Stoppa och ta bort behållare
+
+```jsx
+gör stopp-och-ta bort behållare
+```
+
+### Rensa Postgres databasfil
+
+** DETTA KOMMAND DELET DATABASE FILE PÅ DINA RABATT!!! \*\*\*** BACKUP, OCH GÖRA DET KRÄFTILLT \*\*\*
+
+I standard kommer Postgres-databasen att lagras i mappen `/var/lib/illa/database/postgresql/`.
+
+Kör följande kommando för att ta bort det.
+
+```jsx
+gör clean-postgres-database-fil
+```
+
+### Variabler för Konfig Runtime Environment
+
+Redigera `scripts/run.sh` vid behov:
+
+```jsx
+# postgres databaslösenord
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres databas fillagringsmapp
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

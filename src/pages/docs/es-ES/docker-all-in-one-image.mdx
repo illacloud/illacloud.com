@@ -1,0 +1,89 @@
+---
+title: Imagen todo en uno de Docker
+tagCategory: doc_menú_docker-all-in-one image_click
+desc: Construye illa utils una imagen todo en uno y la ejecuta en tu máquina.
+---
+
+* * *
+
+## <Heading hidden>Imagen todo en uno de Docker</Heading>
+
+### Descripción
+
+Construye illa utils una imagen todo en uno y la ejecuta en tu máquina. Puedes revisar el archivo de scripts en la carpeta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) para más detalles.
+
+Nota:
+
+Recomendamos altamente desplegar con nuestras herramientas de despliegue automático[illa-cli](https://github.com/illacloud/illa).
+
+Y por el momento no soportamos Apple Silicon M1 (arco darwin-arm64).
+
+### Ejecutar una imagen oficial
+
+Instalar GNU make y tipo:
+
+```jsx
+hacer run-official-image
+```
+
+o simplemente ejecutar:
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+este comando extraerá la imagen oficial de illasoft y la ejecutará en el entorno docker.
+
+Y inicie sesión con el nombre de usuario predeterminado **`root`** y la contraseña **`password`**.
+
+### Crear imagen manualmente y ejecutar
+
+Instale GNU make (o ejecute scripts de shell en la carpeta de scripts manualmente).
+
+Para construir una imagen todo en uno y ejecutar, tipo:
+
+```jsx
+hacer todo
+```
+
+para podman, tipo:
+
+```jsx
+hacer ejecutar por-podman
+```
+
+o ejecute scripts de shell `run-by-podman.sh` en la carpeta de scripts.
+
+### Detener y Eliminar Contenedor
+
+```jsx
+hacer stop-y-remove-container
+```
+
+### Limpiar archivo de base de datos de Postgres
+
+** ESTA COMAND DELLETE EL ARCHIVO DE DATOS EN SU RIESGO !!! \*\*\*** BACKUP, Y HACE CARELAMENTE \*\*\*
+
+Por defecto, la base de datos Postgres almacenará en la carpeta `/var/lib/illa/database/postgresql/`.
+
+Ejecuta el siguiente comando para eliminarlo.
+
+```jsx
+hacer limpiar-postgres-base de datos-archivo
+```
+
+### Configurar variables de entorno de ejecución
+
+Edita `scripts/run.sh` cuando sea necesario:
+
+```jsx
+# postgres database password
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres database file storage folder
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

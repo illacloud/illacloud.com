@@ -1,0 +1,20 @@
+---
+title: Connect to Database
+metaTitle: ILLA Cloud Connect to database
+desc: ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB
+tagCategory: doc_menu_database_click
+---
+
+ILLA connects to most databases, including PostgreSQL, MySQL, TiDB, and MongoDB. Please check this list here for the data sources ILLA currently supports. The upcoming data sources we are planning to support are listed here. If ILLA is missing certain data resources you are using, please fill out the form here.
+The connection details required by ILLA depend on the type of database you want to connect. This information generally includes a host, port, user credentials, and connection string. Please refer to your database's configuration or documentation to get this.
+
+1.  Create a database resource
+    Resources represent connections to data sources and are what you query within your ILLA apps. Log in to ILLA and navigate to the Resources tab > click Create new and select the database you want to connect to. This opens the Configure a resource modal where you add your connection information.
+
+After you enter your connection details, click Test Connection to check ILLA can successfully connect. Once complete, click Save resource to save the resource. 
+In addition, you can create resources in the action list under the App editor. 
+2\. Query your database
+In the App editor, click + New in Action List > select resource type and choose an existing resource or create a new resource > click create action and update the actions to retrieve some information from a table in your database.
+
+Click Save and then click Run. Query results are automatically displayed after the query completes. 
+There are some advanced settings, including renaming, run settings, transforming data, and setting up the handling of run success or failure, as shown below.

@@ -1,0 +1,91 @@
+---
+title: Tekst
+metaTitle: ILLA Sky-tekst-komponent doc
+description: Vis data med tekstkomponent
+tagCategory: doc_menu_text_klikk
+---
+
+* * *
+
+## <Heading hidden>Tekst</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Egenskaper
+
+| Egenskap             | Beskrivelse                                                                                                                                                                                         |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Innhold              | Angi teksten som vises i tekst-komponenten. Markdown og ren tekst støttes.                                                                                                                          |
+| Verktøytips          | Et verktøytips vises på komponenten når brukerne holder over komponenten.                                                                                                                           |
+| Horisontal justering | For å sette horisontal posisjon for tekstinnhold i komponenten                                                                                                                                      |
+| Vertikal justering   | For å sette vertikalposisjonen til tekstinnholdet i komponenten                                                                                                                                     |
+| Hidden               | Angir om denne komponenten skal vises og under hvilke betingelser den skal vises. Hvis gjeldende bruker ikke er bruker A, bør denne komponenten skjules: {{ currentUserInfo.nickname != 'User A' }} |
+| Farge                | Hvis du vil sette tekstfargen i maling tekstformat                                                                                                                                                  |
+| Størrelse på tekst   | Hvis du vil sette tekststørrelsen i maling tekstformat                                                                                                                                              |
+
+### Bruk Markdown
+
+#### Overskrift
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Overskrift 1
+## Overskrift 2
+### Overskrift 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Liste over gjøremål
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### To-do-liste
+
+1. [ ] 🚀 Bygg en ny app på ILLA Cloud
+2. [ ] ☎️ Ring med Monica
+3. [x] 🍷 Har middag med **Elsa**
+4. [x] 💃 Spill `Just dance` i en halv time
+```
+
+#### Punktliste
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Bulleted list
+- Real-time Collaboration: Vi kan lage alt i sanntid sammen.
+- 🛠️ Egendefinert programtillegg: Bygg hvilket som helst tillegg for å gjøre det du vil.
+- 🤖 Koble til alt og automatisér dem etter 5 sekunder.
+- 🖥️ Selvheist : støtter Docker & k8s
+```
+
+#### Tabell
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tabell
+FaceName θName Lenkeskrivelse ########
+########:-------- ------- Atri:---- ε
+εILLA Cloud [https://cloud. llacloud.com/](https://cloud.illacloud.com/) ∙Build apps på ILLA Cloudephal
+4format@@5 ILLA GitHub github[https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) githubStar oss på GitHubΔ
+λ ILLA homepage buildings. [https://www.illacloud.com/](https://www.illacloud.com/) githubILLA Cloud Offical webside
+```
+
+### Vis dynamiske data
+
+Bruk `{{` for å hente data fra andre komponenter eller handlinger eller globale variabler. For eksempel, for å vise gjeldende brukers kallenavn:
+
+```jsx
+## {{'👋 Hei! '+ currentUserInfo.nickname }}
+```

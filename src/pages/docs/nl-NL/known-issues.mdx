@@ -1,0 +1,23 @@
+---
+title: Bekende problemen
+tagCategory: doc_menu_known_issues_klik
+desc: Bekende problemen en oplossingen van ILLA Builder deploying.
+---
+
+* * *
+
+## <Heading hidden>Bekende problemen</Heading>
+
+### Koppel type probleem
+
+Voer `illa deployy --self port=1000 -s={your-ip-address}` of `run-official-image.sh` uit, geef de volgende fout:
+
+`Docker reageerde met status code 400: ongeldige mount config voor type "bind": bind source pad bestaat niet: /tmp/illa-data`
+
+Op dit moment ondersteunt het mount type alleen `mount`, config `docker -v` als `mount` modus. Of herinstalleer de docker door het volgen van scripts.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+En voer de implementatieopdracht opnieuw uit.
+
+Voor meer problemen: https://github.com/illacloud/illa-builder/issues

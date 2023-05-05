@@ -1,0 +1,106 @@
+---
+title: Prześlij
+metaTitle: Dokumentacja ILLA Cloud Upload component
+description: Użyj komponentu do przesyłania plików z lokalnych komputerów do dowolnej pamięci w chmurze
+tagCategory: kliknij_do_menu_upload_click
+---
+
+* * *
+
+## <Heading hidden>Prześlij</Heading>
+
+Komponent przesyłania służy do umożliwienia użytkownikom przesyłania plików z ich lokalnych maszyn do przechowywania w chmurze za pośrednictwem API. Następnie wprowadzimy jak skonfigurować komponent przesyłania, jak powiązać komponent wysyłania z usługą przechowywania w chmurze, jak użyć komponentu wgrywania, aby wybrać obraz i wyświetlić go z obrazem itp.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Właściwości
+
+| Własność                       | Opis                                                                                                                                                                                                                                                                                                                          |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ                            | Ustaw typ komponentu wgrywania, łącznie z przyciskiem i Dropzonem.                                                                                                                                                                                                                                                            |
+| Tekst                          | Tekst wyświetlany w komponencie wgrywania.                                                                                                                                                                                                                                                                                    |
+| Typy zaznaczenia               | Ustaw typ zaznaczenia na wiele plików, pojedynczy plik lub katalog.                                                                                                                                                                                                                                                           |
+| Typy plików                    | Lista rozszerzeń plików, które mogą być przesyłane. Żadna wartość nie pozwoli na wszystkie typy plików.                                                                                                                                                                                                                       |
+| Dołącz nowo wybrane pliki      | Aby ustawić wybrany nowy plik do dodania do wybranego pliku lub zastąpić wybrany plik w wybranym typie wielu plików lub katalogu.                                                                                                                                                                                             |
+| Lista plików                   | Aby ustawić czy wyświetlić listę wybranych plików poniżej komponentu wgrywania. Wysokość uploadera zmieni się dynamicznie w zależności od długości listy plików.                                                                                                                                                              |
+| 530\*\*\*Parse value           | Próba przeanalizowania wybranych plików, z obsługą plików JSON, CSV, TSV, Excel i TXT. Przeanalizowane dane mogą być dostępne przez {{upload1.parsedValue}}. Pliki, które nie mogą być analizowane, będą puste. Wszystkie pliki są dostępne w formie kodowanych tekstów base64 na tablicy wartości, niezależnie od tej opcji. |
+| Ładowanie                      | Czy komponent powinien pokazywać wskaźnik obciążenia.                                                                                                                                                                                                                                                                         |
+| Wyłączone                      | Aby ustawić czy wyłączyć ten komponent i w jakich warunkach go wyłączyć. Na przykład, jeśli komponent input1 jest null, ten komponent powinien być wyłączony: {{ input1.value == ‘ ’}}                                                                                                                                        |
+| Wskazówka                      | Podpowiedź wyświetlana na komponencie, gdy użytkownicy najechają kursorem nad komponentem.                                                                                                                                                                                                                                    |
+| Pole wymagane                  | Aby określić, czy jest to wymagane.                                                                                                                                                                                                                                                                                           |
+| Min size                       | Aby ustawić minimalny rozmiar pliku dozwolony do dodania.                                                                                                                                                                                                                                                                     |
+| Max size                       | Aby ustawić maksymalny rozmiar pliku dozwolony do dodania.                                                                                                                                                                                                                                                                    |
+| Własna reguła                  | Aby ustawić tekst wyświetlany, gdy weryfikacja nie powiedzie się.                                                                                                                                                                                                                                                             |
+| Ukryj komunikat potwierdzający | Aby określić, czy wyświetlić komunikat potwierdzający, gdy weryfikacja nie powiedzie się.                                                                                                                                                                                                                                     |
+| Klucz danych formularza        | Aby ustawić klucz dla komponentu. Po dodaniu tego komponentu do formularza, ten klucz będzie używany do identyfikacji danych tego komponentu podczas wysyłania formularza.                                                                                                                                                    |
+| Hidden                         | Aby określić, czy wyświetlać ten komponent i na jakich warunkach go wyświetlać. Na przykład, jeśli bieżący użytkownik nie jest Użytkownikiem A, ten komponent powinien być ukryty: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
+| Wariant                        | Aby ustawić komponent Prześlij przycisk do zarysu lub wypełniony.                                                                                                                                                                                                                                                             |
+| Kolor motywu                   | Aby ustawić kolor komponentu Prześlij przycisk.                                                                                                                                                                                                                                                                               |
+
+### Metoda
+
+Możesz użyć innych komponentów, aby kontrolować komponent wysyłania. Popieramy następujące trzy metody:
+
+| wyczyść walidację    | Używane do wyczyszczenia komunikatu potwierdzającego                   |
+| -------------------- | ---------------------------------------------------------------------- |
+| wyczyść wartość      | Używane do wyczyszczenia zaznaczonych                                  |
+| ustawienie wyłączone | Używane do ustawiania komponentu przesyłania na wyłączone lub włączone |
+
+### Obsługa zdarzeń
+
+Aby uruchomić akcje po zmianie zaznaczonych plików
+
+### Dane uploadera
+
+Komponent przesyłania zawiera powszechnie używane dane, które można wywołać w aplikacji.
+
+`value` tablica składająca się z danych base64 plików. 
+
+`files` tablica obiektów. Klucze obiektów to `lastModified`, `name`, `size`, `type`. Możesz użyć `{{upload1.files.map(plik =>plik. ame)}}` aby uzyskać tablicę nazw plików, a także możesz uzyskać ostatnią tablicę rozmiarów, tablicę typu w ten sam sposób. 
+
+### Prześlij pliki do usługi przechowywania w chmurze
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Prześlij pojedynczy plik za pomocą zasobu S3
+
+Konfiguracja działania jest następująca. 
+
+Załaduj nazwę obiektu
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Prześlij dane
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Prześlij wiele plików za pomocą zasobu S3
+
+Prześlij listę nazw obiektów
+
+```jsx
+{{upload1.files.map(file =>plik.name)}}
+```
+
+Prześlij listę danych
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Prześlij obraz i wyświetl go na komponencie obrazu
+Zmień źródło obrazu na bazę64 pliku danych składnika. Dane base64 są przechowywane w atrybucie wartości w tablicy. I powinniśmy rozdzielić prefiks pliku z danymi pliku. Kod jest następujący. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

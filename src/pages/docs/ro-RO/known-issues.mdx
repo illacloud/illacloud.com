@@ -1,0 +1,23 @@
+---
+title: Probleme cunoscute
+tagCategory: click_doc_meniu_cunoscut_issues_click
+desc: Probleme cunoscute și soluții pentru implementarea ILLA a constructorului.
+---
+
+* * *
+
+## <Heading hidden>Probleme cunoscute</Heading>
+
+### Montați tipul de problemă
+
+Executați `illa deploy --self-port=1000 -s={your-ip-address}` sau `run-official-image.sh`, reveniți la următoarea eroare:
+
+`Docker a răspuns cu codul de stare 400: configurare nevalidă a montării pentru tipul "bind": nu există calea sursă: /tmp/illa-data`
+
+Pentru moment, tipul de montare suportă doar `mount`, vă rugăm să configurați `docker -v` ca mod `mount`. Sau reinstalați docker-ul prin următoarele scripturi.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Și rulează comanda de implementare din nou.
+
+Pentru mai multe probleme: https://github.com/illacloud/illa-builder/issues

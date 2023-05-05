@@ -1,0 +1,59 @@
+---
+title: JavaScript- Guider
+metaTitle: ILLA Cloud JavaScript Guider doc
+desc: JavaScript on ILLA Builderin tärkein osa, joka on työkalu, jota käytät rakentaa datan käyttöoikeus ja logiikan rakentaminen oman APP
+tagCategory: doc_menu_js_guider_click
+---
+
+* * *
+
+## <Heading hidden>JavaScript Guider</Heading>
+
+JavaScript on ILLA Builderin tärkein osa, joka on työkalu, jota käytät rakentaa datan käyttöoikeus ja logiikan rakentaminen oman APP. Määrittelemällä, miten soittaa JavaScriptille, olet oppinut ILLA Builderin käytön.
+
+Kun rakennat APP ILLA Builderiin, voit käyttää `{{template syntax}}` kirjoittaaksesi mukautettuja JavaScript-lausekkeita tietojen soittamiseen ja manipulointiin. tai kirjoita JS-koodi suoraan muuntajaan.
+
+### Toiminnan tiedot
+
+#### Käytetään objekteja koskevia tietoja
+
+ILLA Builderissa voit syöttää JavaScript-lausekkeet mihin tahansa tekstikenttään käyttäen mallin syntaksia. Dataobjektit ovat viittaavia ja voit manipuloida kaikkien lisäysten, toimintojen ja muuntajien tietoja JavaScriptin kautta. Voit esimerkiksi käyttää `{{textInput.data}}` päästäksesi käsiksi syötteen sisältöön, `{{action.data}}` päästäksesi toimintatietokannan tietoihin ja `{{transformer.value}}` päästäksesi tietoihin muuntajan kautta.
+
+Olemme lisänneet ja muuttaneet koodin peili lisätään tuotteeseen, mukautettu ILLA Builder ohjelmointiympäristöön, tuettu syntaksin korostaminen ja automaattinen sisennys, ja lisäsi yksityiskohtaisia selityksiä muuttujien ja toimintojen ohjelmoinnin aikana, jotta voit oppia käyttämään ILLA Builderia alhaisin kustannuksin. Kun olet syöttänyt objektin nimen, kirjoita piste. Kehys sisältää kaikki objektin ominaisuudet, tietotyypin ja osittaisen tekstinkuvauksen, joka sisältää jotta voit tunnistaa ominaisuuden, joka on käytettävissä ei ole aikaa.
+
+#### Numeroiden käyttö taulukoissa
+
+Kun sinun täytyy käyttää arvoa tietyssä taulukossa, voit saada arvon sen sijainnin tai tilauksen perusteella, joka sinun täytyy käyttää.
+
+```javascript
+const list = ['a', 'b', 'c']
+palautuslista[0] // Palauta ensimmäinen arvo luettelossa 'a'
+```
+
+### Näytä tiedot
+
+ILLA Builderissa on neljä paikkaa, joissa dataa voi tarkastella vasemmanpuoleisessa paneelissa, tekstilaatikon alapuolella oleva tietokehys, kun JavaScript-lauseke on syötetty, ja tiedot näytetään datanäytön kautta datan näyttämiseksi.
+
+#### Datatyötilan esitystapa
+
+Voit löytää datan työtilan avaamalla vasemmanpuoleisen paneelin App editorissa, jotta tiedot esitetään strukturoituna JSONina, jossa jokaista ominaisuutta ja listaa voidaan laajentaa ja kaikki tiedot näkyvät työtilassa.
+
+[//]: # "[图片]"
+
+#### Tietojen reaaliaikainen esikatselu
+
+Kun soitat toiminnon tai muuntimen toimintaa syöttöruudussa, kyseisen toiminnon tiedot pop ylös automaattisesti alle syöttöruudun, ja voit vahvistaa, että kutsutut tiedot ovat oikeita tässä esitettyjen tietojen perusteella.
+
+[//]: # "[图片]"
+
+#### Tietojen esitystapa
+
+Tietojen näyttämisen lisäosa antaa sinulle kaikkein intuitiivisimman kuvan tiedoista. Vedä ja pudota komponentti vain kehykseen, syötä vastaavan tietolähteen nimi tietokenttään ja vedä se. suodattaa ja järjestää se, ja sinulla on pääsy tietojen näyttö.
+
+[//]: # "[图片]"
+
+### Muuntaja
+
+Voit kirjoittaa useita rivejä JS koodi muuntaja, ja suosittelemme, että päätät kirjoittaa muuntaja pikemminkin kuin kaksinkertainen kihara sulut. Voit ohjelmoida JavaScriptin suoraan muuntajassa sekä soittaa toimessa oleviin tietoihin komennolla `{{}}`.
+
+Klikkaa tästä saadaksesi muuntajan yksityiskohtaisen käytön.

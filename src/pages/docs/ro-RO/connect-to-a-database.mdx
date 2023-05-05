@@ -1,0 +1,49 @@
+---
+title: Conectează-te la o Bază de date
+metaTitle: ILLA Cloud Conectare la o bază de date
+desc: ILLA se conectează la majoritatea bazelor de date, inclusiv PostgreSQL, MySQL, TiDB și MongoDB
+tagCategory: doc_menu_bază_click
+---
+
+* * *
+
+## <Heading hidden>Conectare la o bază de date</Heading>
+
+ILLA se conectează la majoritatea bazelor de date, inclusiv PostgreSQL, MySQL, TiDB și MongoDB. Vă rugăm să verificați această listă aici pentru sursele de date pe care ILLA le suportă în prezent. Viitoarele surse de date pe care intenţionăm să le susţinem sunt enumerate aici. Dacă ILLA nu are anumite resurse de date pe care le utilizați, vă rugăm să completați formularul aici.
+
+Detaliile conexiunii necesare ILLA depind de tipul bazei de date pe care doriți să o conectați. Aceste informații includ în general o gazdă, un port, o acreditare de utilizator și un șir de conexiune. Vă rugăm să consultaţi configuraţia sau documentaţia bazei de date pentru a obţine acest lucru.
+
+### 1.  Creează o resursă pentru baza de date
+
+Resursele reprezintă conexiuni la surse de date și sunt ceea ce interogați în cadrul aplicațiilor ILLA.Loghează-te la ILLA și navighează la fila **Resurse** > apasă **Creează nou** și selectează baza de date la care vrei să te conectezi. Aceasta deschide modul **Configurați o resursă** unde adăugați informațiile dvs. de conexiune.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+După ce introduceți detaliile conexiunii, faceți clic pe **Test Connection** pentru a verifica dacă ILLA se poate conecta cu succes. După completare, faceți clic pe **Salvați resursa** pentru a salva resursa.
+
+În plus, poți crea resurse în lista de acțiuni sub **editorul de aplicații**.
+
+### 2.  Interogați baza dvs. de date
+
+În editorul de aplicații, faceți clic pe **+ Nou** în **Lista de acțiuni** > selectați tipul de resurse și alegeți o resursă existentă sau creați o resursă nouă > faceți clic pe **creare acțiune** și actualizați acțiunile pentru a prelua unele informații dintr-un tabel din baza dvs. de date.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Apasă pe **Salvează** și apoi apasă **Rulează**. Rezultatele interogării sunt afişate automat după finalizarea interogării.
+
+Există unele setări avansate, inclusiv redenumirea, rularea setărilor, transformarea datelor și configurarea gestionării succesului sau eșecului, după cum se arată mai jos.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

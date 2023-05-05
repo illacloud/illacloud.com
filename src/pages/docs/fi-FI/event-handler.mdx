@@ -1,0 +1,36 @@
+---
+title: Tapahtuman käsittelijä
+metaTitle: ILLA Cloud Event handler doc
+desc: Tapahtuman käsittelijät ovat olennainen osa sisäisen työkalun käyttölogiikan jalostamista
+tagCategory: doc_menu_evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Tapahtuman käsittelijä</Heading>
+
+Tapahtuma käsittelijät ovat olennainen osa sisäisen työkalun käytön logiikan jalostamista. Mikä tahansa lisäke tai toiminto, joka vastaa käyttäjän toiminta on omia tapahtumia, jotka voivat käynnistyä, kuten painikkeen lisäys, jossa on 'klikkaa' tapahtuma, tekstin syöttöruutu, jossa on 'lähettää' tapahtuma, toiminnan onnistuminen ja niin edelleen. Tapahtuman käsittelijät auttavat käyttäjiä laukaisemaan ennalta määritellyt ohjeet tapahtumien tapahtuessa: voit reagoida yhteen tapahtumaan, tai voit perustaa useita tapahtumakäsittelijöitä ja asettaa ne ylös työnkulku tehdä monimutkaisempaa työtä.
+
+Kun olet asettanut tapahtuman, tapahtumakäsittelijä voi auttaa sinua suorittamaan erilaisia toimintoja: ohjausta koskevat toimintalausekkeet, hallitse lisäosia, aja skriptejä ja paljon muuta. Voit myös lisätä yksityiskohtaisempia JavaScript trigger ehdot päälle laukaisuehtoja.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Tapahtuman käsittelijät
+
+Mikäli käsittelijät eivät onnistu, voit määrittää tapahtuman lopputuloksen sen perusteella, epäonnistuvatko kyselyn tulokset vai eivät. Voit täydentää laukaisevan logiikan asettamalla kyselyn epäonnistumisen ehto vastausvälilehdessä.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Muokkaa lähetyksen käsittelijää
+
+Asetamme laukaisevan ehdon jokaiselle interaktiiviselle lisäykselle, ja voit valita tapahtuman käsittelijän toimintaluettelosta laukaisevana edellytyksenä. Voit esimerkiksi asettaa tapahtuman käsittelijän käynnistäjän tilaksi 'Lähettä' datan syöttämisruutuun, jossa se on mukana. joka automaattisesti lisää syötteen tietokantaan, kun käyttäjä ”toimittaa syötteen” ja ottaa käyttöön yksinkertaisen tietojen syöttämistoiminnon.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Väliaikaiset valtiot
+
+Kun käsittelet tietoja, saatat kohdata tilanteita, joissa käsiteltyjä tietoja ei heti soiteta. Tästä syystä olemme perustaneet väliaikaisia valtioita, jotka säilyttävät välivaiheen valtiot tietojen käsittelyä varten. Voit valita väliaikaiseksi tilaksi tapahtuman käsittelijöiden vastausvalinnoissa ja klikkaa Luo uusi tila, jotta voit tallentaa nykyiset tiedot väliaikaiseen tilaan, jotka voidaan sijoittaa mihin tahansa omaisuuteen.
+
+Projektin editorin ulkopuolella voit tallentaa tietoja myös {{tempState1.setValue(data)}} toimesta tai soittaa dataa {{tempState1.value}} toimesta.
+
+> Arvot väliaikaisessa tilassa tyhjennetään kun projekti käynnistetään uudelleen, ja sinun täytyy tallentaa arvot paikallisesti tai pilveen varmistaaksesi tietojen eheyden.

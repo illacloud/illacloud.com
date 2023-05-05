@@ -1,0 +1,23 @@
+---
+title: Tunnetut Ongelmat
+tagCategory: doc_menu_known_issues_click
+desc: ILLA Builder -hankkeen tunnetut ongelmat ja ratkaisut.
+---
+
+* * *
+
+## <Heading hidden>Tunnetut kysymykset</Heading>
+
+### Liitännäistyypin Ongelma
+
+Suorita `illa deploy --self -port=1000 -s={your-ip-address}` tai `run-official-image.sh`, seuraava virhe:
+
+`Docker vastasi tilakoodilla 400: virheellinen mount config tyypille "bind": bind source path does not exist: /tmp/illa-data`
+
+Tällä hetkellä mount-tyyppi tukee vain `mount`, config `docker -v` -tilaa `mount`-tilassa. Tai asentaa telakan uudelleen seuraamalla komentosarjoja.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Ja suorita deploy-komento uudelleen.
+
+Lisää asioita: https://github.com/illacloud/illa-builder/issues

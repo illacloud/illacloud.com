@@ -1,0 +1,49 @@
+---
+title: Anslut till en databas
+metaTitle: ILLA Cloud Anslut till en databas
+desc: ILLA ansluter till de flesta databaser, inklusive PostgreSQL, MySQL, TiDB och MongoDB
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Anslut till en databas</Heading>
+
+ILLA ansluter till de flesta databaser, inklusive PostgreSQL, MySQL, TiDB och MongoDB. Kontrollera denna lista här för de datakällor ILLA stöder för närvarande. De kommande datakällor som vi planerar att stödja listas här. Om ILLA saknar vissa dataresurser som du använder, fyll i formuläret här.
+
+Anslutningsuppgifter som krävs av ILLA beror på vilken typ av databas du vill ansluta. Denna information innehåller i allmänhet en värd, port, användaruppgifter och anslutningssträng. Se din databas konfiguration eller dokumentation för att få detta.
+
+### 1.  Skapa en databasresurs
+
+Resurser representerar anslutningar till datakällor och är vad du frågar i dina ILLA appar.Logga in på ILLA och navigera till fliken **Resurser** > klicka **Skapa ny** och välj den databas du vill ansluta till. Detta öppnar **Konfigurera en resurs** modal där du lägger till din anslutningsinformation.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+När du har angett dina anslutningsdetaljer klickar du på **Testanslutning** för att kontrollera att ILLA kan anslutas. När du är klar klickar du på **Spara resurs** för att spara resursen.
+
+Dessutom kan du skapa resurser i åtgärdslistan under **App editor**.
+
+### 2.  Fråga din databas
+
+I appredigeraren, klicka på **+ Ny** i **Åtgärdslista** > välj resurstyp och välj en befintlig resurs eller skapa en ny resurs > klicka **skapa åtgärd** och uppdatera åtgärderna för att hämta information från en tabell i din databas.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Klicka på **Spara** och klicka sedan på **Kör**. Frågeresultaten visas automatiskt när frågan är klar.
+
+Det finns några avancerade inställningar, inklusive byta namn, köra inställningar, omvandla data, och ställa in hanteringen av körframgång eller misslyckande, som visas nedan.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

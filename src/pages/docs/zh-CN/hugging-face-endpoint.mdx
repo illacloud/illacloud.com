@@ -2,28 +2,29 @@
 title: Hugging Face Endpoint
 metaTitle: 连接到 Hugging Face Endpoint
 description: 本文将介绍如何使用ILLA和Hugging Face Endpoint构建应用
-tagCategory: doc_menu_hugging_face_endpoint_click
+tagCategory: doc_menu_hugging_fac_endpoint_click
 ---
----
+
+* * *
 
 ## <Heading hidden>Hugging Face Endpoint</Heading>
 
-使用Hugging Face Inference Endpoint，您可以轻松地在专用的、完全托管的基础架构上部署Transformers、Diffusers或任何模型。[单击此处](https://ui.endpoints.huggingface.co/new)创建一个Endpoint。
+使用Hugging Face Inference Endpoint，您可以轻松地在专用的、完全托管的基础架构上部署Transformers、Diffusers或任何模型。[单击此处](https://ui.endpoints.huggingface.co/new)创建一个Endpoint。 [点击这里](https://ui.endpoints.huggingface.co/new)创建端点。 
 
 ### 创建Hugging Face Endpoint资源
 
-有两种方法可以添加Hugging Face Endpoint资源。
+有两种方法可以添加Hugging Face Endpoint资源。 
 
-1. 进入 `ILLA Builder` >> 点击 `资源`选项卡 >> 点击 `创建新的` >> 选择 `Hugging Face Endpoint` >> 配置连接信息并点击 `保存资源`
-2. 进入编辑页面 >> 点击操作列表中的 `+ 新建` >> 选择 `Hugging Face Endpoint` >> 配置连接信息，或点击 `+ 新的资源` 添加新的连接信息
+1.  进入 `ILLA Builder` >> 点击 `资源`选项卡 >> 点击 `创建新的` >> 选择 `Hugging Face Endpoint` >> 配置连接信息并点击 `保存资源`
+2.  进入编辑页面 >> 点击操作列表中的 `+ 新建` >> 选择 `Hugging Face Endpoint` >> 配置连接信息，或点击 `+ 新的资源` 添加新的连接信息
 
 ### 配置连接信息
 
-| 属性 | 必填 | 描述 |
-| --- | --- | --- |
-| 名称 | 必填 | 定义用于在ILLA中显示的资源名称 |
-| Endpoint URL | 必填 | https://ui.endpoints.huggingface.co/new 并获取URL。 |
-| Token | 必填 | 组织令牌。您可以在https://huggingface.co/settings/tokens中获取。 |
+| 属性           | 必填 | 描述                                                        |
+| ------------ | -- | --------------------------------------------------------- |
+| 名称           | 必填 | 定义用于在ILLA中显示的资源名称                                         |
+| Endpoint URL | 必填 | https://ui.endpoints.huggingface.co/new 并获取URL。           |
+| Token        | 必填 | 组织的Token。 您可以在https://huggingface.co/settings/tokens中获取。  |
 
 ### 创建Action
 
@@ -31,14 +32,14 @@ tagCategory: doc_menu_hugging_face_endpoint_click
 
 ### 配置操作
 
-| 属性 | 必填 | 描述 |
-| --- | --- | --- |
-| 参数类型 | 必填 | 您的Endpoint的参数类型。例如，如果您创建的Endpoint需要一个文本输入，选择 "填充 "输入" 参数为文本。如果您的Endpoint需要JSON输入，请选择使用JSON或键值 "填充 "输入 "参数。 |
-| 参数 | 必填 | 输入您的参数。使用{{componentName.value}}使用组件数据。|
+| 属性   | 必填 | 描述                                                                                                                                                         |
+| ---- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 参数类型 | 必填 | 您的Endpoint的参数类型。 例如，如果您的Endpoint需要输入文本，请选择fill in “inputs” parameter with text。 如果您的Endpoint需要JSON输入，请选择fill in “inputs” parameter with JSON or key-value。 |
+| 参数   | 必填 | 输入您的参数。 输入您的参数。使用{{componentName.value}}使用组件数据。                                                                                                            |
 
 ### 使用案例
 
-我们已经部署了 `openai/whisper-base`，它可以得到音频文件输入并将其转换为文本。它适用于会议记录、将播客转换为文本等。接下来我们将介绍如何使用该模型在ILLA Cloud中构建应用程序。
+我们部署了 `openai/whisper-base` ， 它可以得到音频文件输入并将其转换为文本，适用于会议记录、将播客转换为文本等。接下来我们将介绍如何使用该模型在ILLA Cloud中构建应用程序。
 
 #### 步骤1：使用组件构建前端界面
 
@@ -48,26 +49,26 @@ tagCategory: doc_menu_hugging_face_endpoint_click
 
 #### 步骤2：添加Hugging Face资源
 
-填写下面显示的字段以完成资源配置。[创建Endpoint](https://ui.endpoints.huggingface.co/new)并获取Endpoint URL。在[个人资料设置](https://huggingface.co/settings/tokens)中获取组织API令牌。
+填写下面显示的字段以完成资源配置。 填写下面显示的字段以完成资源配置。[创建Endpoint](https://ui.endpoints.huggingface.co/new)并获取Endpoint URL。在[个人资料设置](https://huggingface.co/settings/tokens)中获取组织的API Token。 然后在 [profile settings](https://huggingface.co/settings/tokens) 中获取组织 API 令牌。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
 
-#### 步骤3：配置操作
+#### 步骤3：配置Action
 
-首先选择参数类型。以 `openai/whisper-base` 为例，该模型需要二进制文件输入，因此我们将参数更改为 `Binary`。
+请先选择参数类型。 首先选择参数类型。以 `openai/whisper-base` 为例，该模型需要二进制文件输入，因此我们将参数更改为 `Binary`。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
 
-将从文件上传组件上传的文件数据设置为要传递给模型的二进制文件。例如，`{{upload1.value[0]}}`
+将从文件上传组件上传的文件数据设置为要传递给模型的二进制文件。例如，`{{upload1.value[0]}}` 例如，`{{upload1.value[0]}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
 
-#### 步骤4：连接组件和操作
+#### 步骤4：连接组件和Action
 
-为按钮添加事件处理程序，以在单击按钮时触发操作运行。并将文本组件的值设置为{{whisper.data[0].text}}，以在文本组件上显示转换结果。
+在按钮中添加一个事件处理器来触发点击按钮后的动作。 并将文本组件的值设置为{{whisper.data[0].text}}，以在文本组件上显示转换结果。 
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
 
-完成上述步骤后，应用程序已创建，运行结果如下。
+完成上述步骤后，应用程序已创建完成，运行结果如下。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />

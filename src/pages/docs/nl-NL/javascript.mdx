@@ -1,0 +1,59 @@
+---
+title: JavaScript richtsnoer
+metaTitle: ILLA Cloud JavaScript richtlijnen doc
+desc: JavaScript is de belangrijkste component van de ILLA Bouwer, welke het hulpmiddel is dat u gebruikt om de toegang tot gegevens en logica-constructie van uw APP te bouwen
+tagCategory: menu_js_guider_klik
+---
+
+* * *
+
+## <Heading hidden>JavaScript Guider</Heading>
+
+JavaScript is de belangrijkste component van de ILLA Bouwer, Dit is het hulpmiddel dat u gebruikt om de toegang tot gegevens en logica-constructie van uw API op te bouwen. Masteren hoe JavaScript op te roepen, je hebt het gebruik beheerst van ILLA Builder.
+
+When building your APP in ILLA Builder, you can use `{{template syntax}}` to write custom JavaScript statements for calling and manipulating data, or write JS code directly in the transformer.
+
+### Operatie gegevens
+
+#### Toegang tot gegevens op objecten
+
+In ILLA Builder kunt u JavaScript-expressies in elk tekstinvoervak invoeren met behulp van de sjabloonsyntaxis. Data-objecten zijn refereerbaar, en je kunt de gegevens van alle invoegingen, acties en transformers bewerken via JavaScript. U kunt bijvoorbeeld `{{textInput.data}}` gebruiken voor toegang tot de inhoud van een tekstinvoer ingevoegd, `{{action.data}}` om toegang te krijgen tot de gegevens uit een actie-database en `{{transformer.value}}` om toegang te krijgen tot de gegevens van een transformator.
+
+We hebben de invoeging van de code mirror in het product toegevoegd en gewijzigd. aangepast aan de ILLA Builder programmeeromgeving, ondersteund syntax markering en automatische inspraaking, en voegde gedetailleerde uitleg toe van variabelen en functies die tijdens het programmeren optreden, zodat je kunt leren hoe je ILLA Builder kunt gebruiken tegen lage kosten. Nadat u de objectnaam hebt ingevoerd, voer een punt in. De prompt zal alle eigenschappen van het object, het gegevenstype en een partiële tekstbeschrijving bevatten, zodat u de eigenschap kunt identificeren die binnen een tijdsbestek wordt benaderd.
+
+#### Toegang tot nummers in arrays
+
+Wanneer je toegang nodig hebt tot een waarde in een specifieke array, u kunt de waarde krijgen door de positie of het abonnement van de gegevens die u nodig heeft te gebruiken.
+
+```javascript
+const list = ['a', 'b', 'c']
+return list[0] // Retourneer de eerste waarde in lijst 'a'
+```
+
+### Gegevens weergeven
+
+Er zijn vier locaties om gegevens in ILLA Builder te bekijken: de dataseruimte in het linkerpaneel, de data prompt onder het tekstvak na het invoeren van een JavaScript expressie, en de data display via de data invoegen om de gegevens weer te geven.
+
+#### Data werkruimte presentatie
+
+Je vindt de gegevenswerkruimte door het linkerpaneel in de app-editor te openen, dus de gegevens worden gepresenteerd als gestructureerde JSON waarin elke eigenschap en lijst kan worden uitgebreid en alle gegevens visueel worden weergegeven in de werkruimte.
+
+[//]: # "[图片]"
+
+#### Live voorbeeld van gegevensinvoer
+
+Wanneer u een handeling of transformatoratie in het invoervak aanroept, zullen de gegevens voor deze bewerking automatisch onder het invoervak verschijnen, en u kunt bevestigen dat de gebelde gegevens correct zijn gebaseerd op de informatie hier.
+
+[//]: # "[图片]"
+
+#### Data presentatie
+
+Het invoegen van de gegevens geeft u de meest intuïtieve weergave van de gegevens. Sleep de component simpelweg naar het frame, voer de naam van de bijbehorende gegevensbron in het gegevensveld in. filter en sorteer het en je hebt toegang tot de gegevens weergave.
+
+[//]: # "[图片]"
+
+### Transformator
+
+Je kunt meerdere regels JS code schrijven in de transformer, en we raden u aan om te schrijven in de transformator in plaats van in dubbele accolades. U kunt JavaScript rechtstreeks in de transformator programmeren en de gegevens in de bewerking aanroepen met behulp van `{{}}`.
+
+Klik hier voor een gedetailleerd gebruik van de transformator.

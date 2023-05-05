@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: Build illa all-in-one image and run it by k8s on your machine.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Description
+
+Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+
+Note:
+
+We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+
+And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+
+### Run with an official slim image
+
+Install GNU make and type:
+
+```jsx
+make deploy
+```
+
+or just execute:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+
+### For Database Persistent Storage
+
+Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+
+### For HTTPS Config
+
+You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+
+Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```

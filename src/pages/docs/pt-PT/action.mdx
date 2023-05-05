@@ -1,0 +1,47 @@
+---
+title: Acão
+metaTitle: Documento de ação ILLA Cloud
+tagCategory: link_do_menu_clique_doc_
+desc: Ações são a ponte entre dados e componentes e são uma parte essencial da construção de uma aplicação.
+---
+
+* * *
+
+## <Heading hidden>Consulta</Heading>
+
+Depois de criar o recurso, você precisa extrair os dados no recurso, selecionar, filtrar, mescle os dados e então coloque-os nos Inserts de acordo com os requisitos lógicos. Chamamos este processo de processamento de dados de uma Ação. Ações são a ponte entre dados e componentes e são uma parte essencial da construção de uma aplicação. Nós dividimos as ações em duas categorias: ações e Transformadores.
+
+### Ação SQL
+
+#### Criar ação
+
+O processo de usar ações SQL é dividido nas seguintes etapas:
+
+1.  Primeiro, você precisa encontrar a lista de ações no editor de aplicativos e clicar no botão "Adicionar".
+2.  Em seguida, selecione um tipo de fonte de dados na caixa de seleção de recursos. Você pode encontrar os recursos criados na lista de recursos correspondente, você também pode criar novos recursos aqui. Selecione o recurso criado e clique no botão "Confirmar". Uma ação SQL será criada com sucesso.
+3.  A ação criada será exibida na lista de ações. Um editor de ação será mostrado abaixo do quadro após a expulsão da ação. Você pode alterar o recurso de ações, escrever declarações de ação, conteúdo de resposta, adicionar transformadores, manipuladores de eventos.
+4.  Depois de preencher a lista de ações, você pode clicar no botão "Pré-visualizar" para verificar se a ação que você escreveu é válida. O painel de configuração irá exibir o resultado da ação. Depois que a ação for editada, você pode clicar no botão "Salvar" para finalizar o processo. Se você alternar para outra ação sem salvar as informações, o sistema solicitará você salvar a modificação.
+
+#### Detalhamento da ação
+
+1.  Ação: Você pode inserir suas instruções de ação no módulo de ação, onde adicionamos o editor Code Mirror para permitir o destaque e a conclusão da instrução de código. Nas atualizações subsequentes, forneceremos um modo de entrada da interface gráfica para escrever extratos de ação para que os usuários que não estão familiarizados com os extratos de ação também possam concluir ações de dados.
+2.  Transformador: Você pode refinar a lógica de ação com instruções JavaScript no transformador, por exemplo, usando a função de filtro em JS em vez da função onde está na instrução da ação.
+3.  Manipulador de eventos: Os manipuladores de eventos permitem que você acione ações, inserções de controle e outras ações em resposta à interação do usuário. Você pode adicionar vários manipuladores de eventos para responder a um evento sem adicionar instruções JavaScript personalizadas. Por exemplo, quando o usuário clica em um botão, você pode (1) acionar uma ação para executar, enquanto (2) redefinindo o estado de múltiplas listas suspensas e entradas de texto.
+4.  Resposta: No módulo Resposta você pode personalizar as condições nas quais a ação retorna resultados incorretos. de modo a garantir a exactidão da acção.
+5.  Avançado: Refine as configurações detalhadas para ações como tempo de resposta do banco de dados, atrasos do processador de eventos, etc. dentro das opções avançadas.
+
+### Ações de API
+
+#### Criar ação
+
+O processo de ação de dados usando a API é semelhante ao de SQL.
+
+1.  Primeiro, o usuário precisa encontrar a lista de ações no canto inferior esquerdo da página de edição da aplicação e clicar no sinal de mais no canto superior direito da lista de ações.
+2.  Em seguida, selecione a lista de fonte de dados correspondente na caixa de seleção de recursos que aparece. Você pode encontrar o recurso criado na lista de origem de dados correspondente, ou você pode criar um novo recurso aqui. Selecione o recurso criado, clique em "Criar" e uma ação de API será criada com sucesso.
+3.  A ação criada com sucesso será exibida na lista de ações no painel inferior e a guia geral para a ação aparecerá abaixo do frame quando clicada. Você pode fazer uma solicitação para qualquer API HTTP em ILLA. Por favor, consulte a documentação das APIs para métodos de requisição de dados.
+4.  Uma vez que você tenha preenchido sua ação, você pode clicar no botão "Pré-visualizar" para ver se a ação que você escreveu é válida e o painel de configuração lhe dará os resultados. Depois de terminar de editar sua ação, você pode clicar em Salvar e sair para finalizar o processo. Se você alternar para outra operação sem salvar, um pop-up solicitará que você conclua a operação de salvamento.
+
+#### Detalhamento da ação
+
+1.  Transformador: Você pode refinar a lógica de ação com instruções JavaScript em um transformador, por exemplo, usando a função de filtro em JS em vez da função "como" em uma instrução de ação.
+2.  Manipuladores de eventos: Manipuladores de eventos permitem que você acione ações, inserções de controle e outras ações em resposta à interação do usuário. Você pode adicionar vários manipuladores de eventos para responder a um evento sem adicionar instruções JavaScript personalizadas. Por exemplo, quando o usuário clica em um botão, você pode (1) acionar uma ação para executar, enquanto (2) redefinindo o estado de múltiplas listas suspensas e entradas de texto.

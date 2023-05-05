@@ -1,0 +1,47 @@
+---
+title: Handling
+metaTitle: ILLA Sky-handlingsdoc
+tagCategory: doc_menu_action_klikk
+desc: Påvirkninger er brua mellom data og komponenter og er en viktig del av en bygning.
+---
+
+* * *
+
+## <Heading hidden>Spørring</Heading>
+
+Etter å ha laget ressursen, må du trekke ut data i ressursen, velge, filter, slå sammen dataene og deretter sette dem i innboksene i samsvar med de logiske kravene. Vi kaller denne prosessen for databehandling en handling. Påvirkninger er brua mellom data og komponenter og er en viktig del av en bygning. Vi har inndelt handlinger i to kategorier: aksjoner og transaksjoner.
+
+### SQL handling
+
+#### Opprett handling
+
+Prosessen med å bruke SQL-handlinger er delt inn i følgende trinn:
+
+1.  Først må du finne handlingslisten i appeditoren og klikk "Legg til" knappen.
+2.  Velg så en datakilde type i ressursen i valgboksen. Du kan finne de opprettede ressursene i den aktuelle ressurslisten, du kan også opprette nye ressurser her. Velg den opprettede ressursen, og klikk "Bekreft"-knappen. En SQL handling vil bli vellykket opprettet.
+3.  Den opprettede handlingen vil bli vist i handlingslisten. Et redigeringsprogram for handlinger vises under bildet etter at du har kastet bort handlingen. Du kan endre ressursen av handlinger, skrive til handlinger, responsinnhold, legge til transformatorer, hendelsesbehandlere.
+4.  Etter utfylling av handlingslisten, kan du klikke på "Forhåndsvisning"-knappen for å sjekke om handlingen du skrev er gyldig. Konfigurasjonspanelet vil vise handlingens resultat. Når handlingen er redigert, kan du klikke "Lagre"-knappen for å avslutte prosessen. Hvis du bytter til en annen handling uten å lagre informasjonen, vil systemet be deg om å lagre endringen.
+
+#### Handlingsbrudd
+
+1.  Handling: Du kan skrive inn handlingene dine i handlingsmodulen der vi har lagt til editor med Code Mirror for å aktivere handlingserklæring som utheving og kodefullføring. I påfølgende oppdateringer, vi vil angi en GUI-inngang for å skrive handlingsangivelser slik at brukere ikke kjent med handlings-instruksjoner også kan fullføre datahandlinger.
+2.  Transformer: Du kan begrense handlingslogikken med JavaScript-kommandoer i transformatoren, for eksempel ved å bruke filterfunksjonen i JS i stedet for der funksjonen i handlingsangivelsen.
+3.  Hendelsesbehandler: Hendelsesbehandlere lar deg utløse handlinger, kontrollere innsatser og andre handlinger som svar på brukersamhandlinger. Du kan legge til flere hendelsesbehandlere for å svare på en hendelse uten å legge til egendefinerte JavaScript-setninger. Når en bruker for eksempel klikker en knapp, kan du (1) utløse en handling for å kjøre, mens (2) nullstiller tilstanden på flere rullegardinlister og tekstinnganger.
+4.  Svar: I respons modulen kan du tilpasse forholdene som handlingen returnerer feilaktige resultater, tiltak er utformet slik at det sikrer at påvirkningene er nøyaktige.
+5.  Avansert: Begrens detaljerte innstillinger for handlinger som databasetidsavbrudd responstid, hendelsesprosessor forsinkelse etc. innenfor de avanserte alternativene.
+
+### API handlinger
+
+#### Opprett handling
+
+Prosessen for å benytte dataene ved hjelp av API-et ligner den for SQL.
+
+1.  For det første Brukeren må finne handlingslisten nederst til venstre for applikasjonredigeringssiden og klikke på plusstegnet øverst til høyre i handlingslisten.
+2.  Velg så den tilsvarende datakildelisten i ressursvalg-boksen som spretter opp. Du kan finne den opprettede ressursen i listen over datakilder, eller du kan opprette en ny ressurs her. Velg den opprettede ressursen, klikk på "Opprett" og en API-handling vil bli opprettet.
+3.  Den opprettede handlingen vil bli vist i Handlingslisten i det nederste panelet og den generelle fanen for handlingen sprette opp under rammen når du klikker. Du kan be om en forespørsel til hvilken som helst HTTP API i ILLA. Se APIets dokumentasjon for metoder for dataforespørsel.
+4.  Når du har fylt ut handlingen, du kan klikke på "Forhåndsvisning"-knappen for å se om handlingen du har skrevet er gyldig og konfigurasjonspanelet vil gi deg resultatene. Når du er ferdig med å redigere handlingen, kan du klikke Lagre og avslutte for å avslutte prosessen. Hvis du bytter til en annen operasjon uten å lagre, vil en popup be deg om å fullføre lagringsoperasjonen.
+
+#### Handlingsbrudd
+
+1.  Transformer: Du kan begrense handlingslogikken med JavaScript-kommandoer i en transformator, for eksempel ved å bruke filterfunksjonen i JS i stedet for hvor funksjonen i en handlingsangivelse.
+2.  Hendelseshåndterere: Hendelsesbehandlere lar deg utløse handlinger, kontrollere innsatser og andre handlinger som svar på brukersamhandlinger. Du kan legge til flere hendelsesbehandlere for å svare på en hendelse uten å legge til egendefinerte JavaScript-setninger. Når en bruker for eksempel klikker en knapp, kan du (1) utløse en handling for å kjøre, mens (2) nullstiller tilstanden på flere rullegardinlister og tekstinnganger.

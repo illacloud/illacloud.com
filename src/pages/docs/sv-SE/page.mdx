@@ -1,0 +1,52 @@
+---
+title: Sida
+metaTitle: ILLA Cloud Page doc
+description: Bygg ensidiga appar och flersidiga appar på ILLA
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Sida</Heading>
+
+En flersidig demo byggd på ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+En ensidig applikation är en app som kan ändra sidor utan att ladda om alla komponenter på sidan. De flesta resurser (inklusive HTML, CSS och Script) laddas bara en gång under programmets livscykel, vilket gör ett ensidigt program snabbt.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+I en flersidig applikation, varje ändring, t.ex. att visa data eller skicka tillbaka data till serverförfrågningar som renderar en ny sida från servern. Multisideapplikationen har några få nivåer, vilket gör applikationsstrukturen enkel och enkel för användarna.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+I ILLA Builder kan en ensidig applikation byggas genom att ställa in sidans ram och lägga till vyer i sektionerna, och en flersidig applikation kan byggas genom att lägga till flera sidor, och utvecklare kan använda båda dessa två designmönster i ett program.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Ställ in sidornas layout
+
+Gå till sidkonfigurationen som följande steg：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Du kan använda förinställda layouter eller manuellt lägga till och ta bort sektioner för att ställa in layouten. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Lägg till visningar på en sida
+
+`Visa sökväg`: en sträng skarvad efter sidans URL för att komma åt den angivna vyn. Efter att appen har installerats är den fullständiga åtkomstadressen följande: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Du kan också ange hemsidan och standardvyn via följande sökväg:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Anslut meny och sidor
+
+Lägg till händelsehanterare till menyobjekt → sätt `Action` till `Set router` → välj sidan och visa
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />

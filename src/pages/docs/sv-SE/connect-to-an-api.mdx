@@ -1,0 +1,34 @@
+---
+title: Anslut till ett API
+metaTitle: ILLA Cloud Anslut till ett API
+desc: Du kan ansluta ILLA till de flesta API:er med hjälp av våra inbyggda integrationer. ILLA kan ansluta till alla REST, GraphQL API
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Anslut till ett API</Heading>
+
+Anslut till alla REST, GraphQL API.
+
+Du kan ansluta ILLA till de flesta API:er med hjälp av våra inbyggda integrationer. Om du behöver ansluta till ett internt API, eller om det inte finns en integration som stöds Du kan ansluta med vår REST API-integration eller GraphQL Integration.
+
+### 1.  Skapa en API resurs
+
+Resurser representerar anslutningar till datakällor och är vad du frågar i dina ILLA appar.Logga in för att ILLA och navigera till fliken **Resurser** > klicka **Skapa ny** och välj det API du vill ansluta till, såsom **REST API**. Detta öppnar **Konfigurera en resurs** modal där du lägger till din anslutningsinformation.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Åtminstone behöver du bas-URL:en för det API du vill ansluta till. Du kan också skicka URL-parametrar, rubriker etc. Om ditt API kräver autentisering kan du även konfigurera det på den här sidan. Till exempel, OAuth2.0 kräver en autentiseringskURL, åtkomsttoken URL, etc. När du har angett dina anslutningsdetaljer, klicka på **Spara resurs.**
+
+### 2.  Fråga ditt API
+
+I appredigeraren, klicka på **+ Ny** i **Åtgärdslista** > välj **REST API** och välj ett befintligt REST API eller skapa ett nytt > klicka **skapa åtgärd** och uppdatera åtgärderna med ytterligare URL-parametrar, rubriker, etc.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>

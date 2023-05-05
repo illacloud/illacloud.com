@@ -1,0 +1,38 @@
+---
+title: Container
+metaTitle: ILLA Cloud container doc
+desc: ILLA Container allows you to group reltated components together in a card
+tagCategory: doc_menu_container_click
+---
+
+* * *
+
+## <Heading hidden>Container</Heading>
+
+You can group related components together in a card using the Container component. Containers also support multiple views that allow you to separate content into distinct views that users can switch between.
+
+Containers function like any other component. Once added, you can group components within it by pressing D or K and dragging them onto the Container.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/container.png'
+  alt=""
+/>
+
+### Multiple views
+
+Containers support multiple views for grouping content. You can set views in **Views** section of the **Inspect** tab. Only one view is visible at a time and users switch between them by changing the current view of the Container component.
+
+### Use other components to change views
+
+You can use other components to control containers by add an event handlers to other components. The following methods are supported:
+
+1.  Set current view by key
+2.  Set current view by index
+3.  Show the next  (visible)  view
+4.  Show the previous (visible) view
+
+### Connect a tab to a container
+
+You can use a tab component to control a container by switching on **Link to a container** of the **Inspect** tab.
+
+After linking to a container, labels of tabs will change to the labels of views. You can change views by clicking tabs without event handlers. 

@@ -1,0 +1,40 @@
+---
+title: Connect to your data sources
+metaTitle: ILLA Cloud Connect to your data sources
+desc: Learn about connecting to your data source and call it in your ILLA Builder.
+tagCategory: doc_menu_data_source_connect_click
+---
+
+Learn about connecting to your data source and call it in your ILLA Builder.
+
+ILLA allows you to connect and integrate a wide range of data sources, including databases and APIs, into your organization for use as resources.
+
+## Data sources
+
+Data sources are locations where data is stored and processed. Examples of data sources include PostgreSQL databases, Twilio REST APIs, and Amazon S3 buckets. In ILLA, you can add multiple data sources and make them accessible to users for querying.
+
+### **Integrations**
+
+ILLA provides built-in integrations for many popular data sources that require minimal configuration, such as SQL databases, and Stripe. These integrations, also known as resources, allow you to connect to and query your data sources using Retool. If a particular type of data source is not supported by a built-in integration, you can use the REST, GraphQL, or SOAP integrations to connect to almost any API. This allows you to access a wide range of data sources from within ILLA-builder.
+
+### Connect to databases
+
+Connect to most databases and data stores
+
+### Connect to APIs
+
+Connect to REST and GraphQL.
+
+## Resources
+
+A resource in ILLA is a saved configuration that specifies how ILLA connects to a data source. To use a data source in ILLA, you must create a resource for it. You can select the appropriate resource to access the data when writing a query.
+
+Each resource in ILLA has its own configuration options that determine how ILLA connects to the corresponding data source. These options can include authentication credentials and flow, database connection settings, and API settings, such as base URL and default headers.
+
+### **How resources work**
+
+ILLA resources store the necessary settings to connect to your data source securely. This allows you to query data easily without exposing your data source directly to your users. When a query is run for a resource, Retool uses the resource's configuration settings to proxy the request to the data source on the server side. This ensures that only Retool has direct access to the data source.
+
+ILLA simplifies the process of connecting to a data source for your users. They only need to select the relevant resource when writing a query without worrying about the data source's details. You can also add multiple resources of the same type, such as multiple Amazon S3 buckets, to distinguish between them.
+
+This approach keeps your data sources hidden from your users and ensures that all interactions with the data source are handled securely. ILLA avoids making client-side connections to the data source that could expose sensitive information and uses the same conditions for all interactions. Additionally, resources enable query caching, which can reduce the number of requests made to a data source and potentially lower costs.

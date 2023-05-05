@@ -1,0 +1,51 @@
+---
+title: Pornire rapidă
+metaTitle: Ghid de pornire rapidă ILLA Cloud
+description: Accelerează dezvoltarea instrumentelor interne
+tagCategory: click_doc_meniu_rapid
+---
+
+* * *
+
+## <Heading hidden>Prezentare generală</Heading>
+
+### 1.  Lansează Constructor ILLA
+
+Înainte de a începe să utilizați ILLA Builder, ar trebui să alegeți să utilizați ILLA Cloud sau Self-host ILLA pentru a găzdui aplicațiile dvs. Vă oferim cu ILLA CLI, Docker Compose, și K8 pentru a auto-găzdui ILLA în mai puțin de 5 minute. Îți vom pune la dispoziție ILLA Cloud mai târziu, pentru a te ajuta să începi cu ILLA Builder.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Obțineți datele utilizatorilor
+
+Înregistrează-te și autentifică-te în ILLA Builder, apoi introdu fila de resurse. Dă click pe butonul "Creează nou" atunci poți selecta tipul de resurse aici. Vă oferim REST API și MySQL pentru a vă conecta datele. Postgres, Redis şi MongoDB vor fi disponibile în această lună.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Trage și aruncă inserții
+
+Când datele tale sunt pregătite, poți să te întorci în fila Aplicații și să creezi o aplicație. Lista de inserare este în partea dreaptă a paginii. Poți alege una dintre ele și să o tragi în cadru. Apoi faceţi clic pe inserare şi modificaţi parametrii acesteia în panoul de inspectare. Vă oferim un mod de marcare pentru a edita eticheta fiecărei introduceri. Dacă sunteți familiarizat cu sintaxa Markdown, puteți ajusta rapid dimensiunea și grosimea textului. Între timp, poți folosi {{double brackets}} pentru a invoca date de acțiune în caseta de intrare a textului pentru a obține mai multe rezultate în Constructorul ILLA.
+
+### 4.  Adaugă acțiune în aplicații
+
+Este necesară o acțiune pentru a transforma datele din resurse în inserare. O numim acţiune. Poți scrie o interogare în acțiune pentru a prinde date din resursa ta. Pe această bază, poți scrie JavaScript în acțiuni pentru a executa instrucțiunile de procesare a datelor, cum ar fi filtrul și îmbinarea. Un exemplu MySQL este prezentat mai jos:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Creați o acțiune MySQL în editorul de aplicații. Numit-o acţiune1.
+
+2.  Introduceți codul de interogare în panou, de ex. SELECT\* DE LA Utilizatori.
+
+3.  Rulează această acțiune, rezultatul interogării va fi afișat pe panoul de jos.
+
+### 5.  Arată datele tale
+
+Când acțiunea este creată cu succes, trebuie să asociați rezultatul acțiunii cu componenta. Ar trebui să înlocuiți variabila de valoare din panoul de inspecție cu rezultatul acțiunilor {{action1.data}}. Apoi datele componentei se vor lega cu rezultatul acțiunii. 

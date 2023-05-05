@@ -1,0 +1,23 @@
+---
+title: 既知の問題
+tagCategory: doc_menu_known_issues_click
+desc: ILLA Builder展開の既知の問題と解決策。
+---
+
+* * *
+
+## <Heading hidden>既知の問題</Heading>
+
+### マウントタイプの問題
+
+`illa deploy --self -port=1000 -s={your-ip-address}` または `run-official-image.sh` を実行し、以下のエラーを返します。
+
+`Docker responded with status code 400: invalid mount config for type "bind": bind source path does not exist: /tmp/illa-data`
+
+今のところ、マウント型は `mount` のみをサポートしています。`docker -v` を `mount` モードとして設定してください。 または、以下のスクリプトを使用してdockerを再インストールします。
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+デプロイコマンドをもう一度実行します。
+
+詳細な問題については: https://github.com/illacloud/illa-builder/issues

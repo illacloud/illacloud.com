@@ -1,0 +1,36 @@
+---
+title: Event handler
+metaTitle: ILLA Cloud Event handler doc
+desc: Event handlers zijn een integraal onderdeel van het verfijnen van uw interne tool gebruik logica
+tagCategory: doc_menu_evnet_handler_klik
+---
+
+* * *
+
+## <Heading hidden>Event handler</Heading>
+
+Event handlers zijn een integraal onderdeel van het verfijnen van uw interne tool gebruik logisch. Elke invoegen of actie die reageert op een gebruikersactie heeft zijn eigen gebeurtenissen die kunnen worden geactiveerd, zoals een knop invoegen met een 'klik'-evenement, een tekstinvoerveld met een 'indienen' evenement, het succes van een actie, enzovoort. Event handlers helpen gebruikers vooraf gedefinieerde instructies te activeren bij gebeurtenissen: je kunt reageren op één gebeurtenis, of je kunt meerdere event handlers instellen en instellen als workflows om complexer werk te doen.
+
+Nadat de gebeurtenis is ingesteld kan de event-handler u helpen om een aantal acties uit te voeren: controle van de actiestaden, beheer robots, voer scripts uit en meer. Je kunt ook meer gedetailleerde JavaScript-trigger-voorwaarden toevoegen bovenop de triggervoorwaarden.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Afspraken afhandelaars
+
+In geval van afhandelaars kunt u de uitkomst van het evenement bepalen op basis van of de zoekresultaten mislukken of niet. U kunt de trigger-logica voltooien door de query foutvoorwaarde in te stellen in het response tabblad.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Handler indienen bewerken
+
+We stellen een trigger-voorwaarde in voor elke interactieve insert, en je kunt een gebeurtenis in de actielijst van de handler selecteren als de trigger-voorwaarde. U kunt bijvoorbeeld 'Verzenden' instellen als de triggervoorwaarde in de event-handler voor het gegevensinvoerveld, welke het invoerbestand automatisch in de database invoegd wanneer de gebruiker de invoer 'verzenden', waardoor een simpele data-invoegfunctie wordt geïmplementeerd.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Tijdelijke staten
+
+Bij het verwerken van gegevens kan je situaties tegenkomen waarbij de verwerkte gegevens niet onmiddellijk worden opgeroepen. Daarom hebben we tijdelijke staten opgericht om tussenlanden op te slaan voor gegevensverwerking. U kunt kiezen om een tijdelijke status in te stellen in de respons-event-opties van event-handlers en klik op Aanmaken nieuwe status om de huidige gegevens in de tijdelijke staat op te slaan welke geplaatst kunnen worden voor elk eigendom.
+
+Buiten de project editor, kan je ook gegevens opslaan via {{tempState1.setValue(data)}} of oproepgegevens door {{tempState1.value}}.
+
+> De waarden in de tijdelijke staat zullen worden gewist wanneer het project opnieuw wordt opgestart, en je moet de waarden lokaal of in de cloud opslaan om de integriteit van de gegevens te waarborgen.

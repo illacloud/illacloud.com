@@ -1,0 +1,89 @@
+---
+title: Telakoitsija kaikki yhdessä kuvassa
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: Build illa utils all-in-one image ja suorita se koneellasi.
+---
+
+* * *
+
+## <Heading hidden>Telakoitsija kaikki yhdessä kuvassa</Heading>
+
+### Kuvaus
+
+Build illa utils all-in-one image ja suorita se koneellasi. Voit tarkistaa skriptit tiedostosta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) saadaksesi lisätietoja.
+
+Huomautus:
+
+Suosittelemme, että otamme käyttöön automaattisesti käyttöön työkalujamme[illa-cli](https://github.com/illacloud/illa).
+
+Ja tällä hetkellä emme tue Apple Silicon M1 (darwin-arm64 arch).
+
+### Suorita virallinen kuva
+
+Asenna GNU-merkki ja tyyppi:
+
+```jsx
+tee run-official-image
+```
+
+tai vain suorittaa:
+
+```jsx
+/bin/bash skriptit/run-official-image.sh
+```
+
+tämä komento vetää illasoft virallisen kuvan ja suorittaa sen telakkasi ympäristössä.
+
+Ja kirjaudu sisään oletuskäyttäjätunnuksella **`root`** ja salasanalla **`password`**.
+
+### Rakenna kuva käsin ja suorita
+
+Asenna GNU make (tai suorita komentosarjojen komentosarjat manuaalisesti).
+
+Rakenna kaikki yhdessä kuva ja juoksu tyyppi:
+
+```jsx
+tee kaikki
+```
+
+podman, tyyppi:
+
+```jsx
+tee run-by-podman
+```
+
+tai suorita komentosarjat `run-by-podman.sh` skriptikansiossa.
+
+### Pysäytä ja poista säiliö
+
+```jsx
+tee pysäytys- ja irrotussäiliö
+```
+
+### Puhdista Postgres Tietokantatiedosto
+
+** TÄMÄ YHTEISÖN LÄHETTÄÄ TIETOA TIETOA DISKSI!!! \*\*\*** VARMUUS, JA ANNA SITÄ \*\*\*
+
+Oletusarvoisesti Postgresin tietokanta tallennetaan `/var/lib/illa/tietokannassa/postgresql/`-kansioon.
+
+Suorita seuraava komento poistaaksesi sen.
+
+```jsx
+tee puhdas tietokantatiedosto
+```
+
+### Config Runtime Environment Muuttujat
+
+Muokkaa tarvittaessa `scripts/run.sh`:
+
+```jsx
+# postgres tietokannan salasana
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres tietokannan tallennuskansio
+PG_VOLUMN =${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN =${ILLA_HOME_DIR}/drive
+```

@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: A CLI ILLA permite que você use o Construtor ILLA mais rápido que sua imaginação.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**Você deve ter o Docker antes de usar o CLI ILLA para implantar uma instalação auto-hospedada. Quando você usa CLI ILLA, você deve adicionar o usuário atual ao grupo docker ou usar na raiz.**
+
+## Baixando CLI ILLA
+
+Se você tiver o Rust instalado, você pode facilmente construir+instalar a versão mais recente da ILLA CLI com **cargo**:
+
+```
+> cargo install illa
+```
+
+A ferramenta **cargo** concluirá o download da CLI ILLA com suas dependências de origem, construa e instale-o no caminho do compartimento de carga para que possamos executá-lo.
+Uma vez instalado, você pode executar o CLI ILLA com o comando **illa**.
+
+Como alternativa, você pode apenas baixar o CLI ILLA para seu sistema operacional aqui:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Se você baixar dos links acima, as etapas são um pouco diferentes em comparação com o download da CLI ILLA do **cargo**. Depois de baixar o CLI, você precisará torná-lo executável. Vamos tomar o illa-linux como exemplo:
+
+```
+## baixe o arquivo cli binário
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## descompacte o arquivo
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## Execute a illa cli
+> ./illa
+
+```
+
+### Verificando os pré-requisitos da instalação auto-hospedada
+
+**Esses portos 5432, 9999 e 8000 devem permanecer para o Construtor da ILL**
+
+O seguinte comando verificará os pré-requisitos da instalação auto-hospedada no seu sistema operacional:
+
+```
+> illa doctor
+```
+
+### Implantando Construtor ILLA
+
+Uma vez que a CLI ILLA tenha sido instalada, você pode executar um auto-hospedado ou [instalação em nuvem](https://cloud.illacloud.com/).
+
+Acesso Rápido
+
+```
+> illa deploy --self --port=10000
+```
+
+Você pode simplesmente implantar um Construtor da ILA auto-hospedado executando o seguinte comando:
+
+```
+# a porta na qual o Construtor ILLA pode ser acessado pode ser alterado
+# o <MOUNT_PATH> é o caminho de montagem personalizado do Construtor ILLA, o valor padrão é um caminho sob o diretório do usuário se não for preenchido
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
+```
+
+Agora, você pode acessar o Construtor ILLA: http://localhost:10000
+
+## Atualizando ILLA Builder
+
+Para atualizar o Construtor de ILLA com as mais recentes imagens docker, use o seguinte comando:
+
+```
+> Atualização illa --self
+```
+
+## Outras operações
+
+```
+# lista o Construtor de ILLA
+> lista illa --self
+
+# impede o Construtor de ILLA
+> illa parar --self
+
+# remove o Construtor de ILLA
+> illa remove --self
+
+# remoção forçada do Construtor de ILLA rodando e dados persistentes
+> sudo illa remove --force --self --data
+
+# reiniciar o Construtor de ILLA
+> illa reiniciar --self
+
+# ajuda informações
+> illa ajudar
+```

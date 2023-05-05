@@ -1,0 +1,36 @@
+---
+title: Hændelse handler
+metaTitle: ILLA Cloud Event handler doc
+desc: Event handlers er en integreret del af raffinering din interne værktøj forbrug logik
+tagCategory: doc_menu_evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Event handler</Heading>
+
+Event handlere er en integreret del af at raffinere din interne værktøj forbrug logik. Enhver indsættelse eller handling, der reagerer på en brugerhandling, har sine egne begivenheder, der kan udløses såsom en knap indsætte med en 'klik' begivenhed, en tekst input boks med en 'indsende' begivenhed, succes med en handling, og så videre. Hændelsesbehandlere hjælper brugerne med at udløse foruddefinerede instruktioner, når der opstår hændelser: Du kan reagere på en enkelt hændelse eller du kan oprette flere event handlere og oprette dem som workflows til at gøre mere komplekst arbejde.
+
+Efter den indstillede begivenhed er sket, kan hændelseshandleren hjælpe dig med at udføre en række handlinger: control handling udsagn, kontrol indsatser, køre scripts og meget mere. Du kan også tilføje mere detaljerede JavaScript trigger betingelser på toppen af trigger betingelser.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Handlere af begivenheder
+
+I tilfælde af handlere, kan du indstille resultatet af begivenheden baseret på, om forespørgslen resultater mislykkes eller ej. Du kan fuldføre den trigger logik ved at indstille forespørgslen fejl tilstand i Svar-fanen.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Rediger send handler
+
+Vi sætter en udløsningsbetingelse for hver interaktiv indsats, og du kan vælge en begivenhed i handlerens handlingsliste som udløsningsbetingelse. For eksempel kan du indstille 'Indsende' som udløsningsbetingelse i hændelseshandleren for datapostboksen, som automatisk indsætter input i databasen, når brugeren 'indsender' input, og dermed implementere en simpel dataindsættelsesfunktion.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Midlertidige stater
+
+Når du behandler data, kan du støde på situationer, hvor de behandlede data ikke indkaldes med det samme. Derfor har vi oprettet midlertidige stater til at lagre mellemlande til databehandling. Du kan vælge at indstille en midlertidig tilstand i svarmulighederne for hændelseshandlere og klikke på Opret ny tilstand for at gemme de aktuelle data i den midlertidige tilstand, som kan placeres for enhver ejendom.
+
+Uden for projekteditoren kan du også gemme data fra {{tempState1.setValue(data)}} eller kalde data fra {{tempState1.value}}.
+
+> Værdierne i den midlertidige tilstand vil blive ryddet, når projektet genstartes og du bliver nødt til at gemme værdierne lokalt eller i skyen for at sikre integriteten af data.

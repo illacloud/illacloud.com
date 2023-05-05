@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: CLI ILLA îți permite să implementezi Constructorul ILLA mai rapid decât imaginația ta.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**Trebuie să aveți Docker înainte de a utiliza ILLA CLI pentru a implementa o instalație auto-găzduită. Când utilizați ILLA CLI, trebuie să adăugați utilizatorul curent la grupul de andocare sau să utilizați în root.**
+
+## Descărcare ILLA CLI
+
+Dacă ai Rust instalat, poți construi cu ușurință+instala cea mai recentă versiune de ILLA CLI cu **încărcătură**:
+
+```
+> cargo install illa
+```
+
+Unealta **încărcătură** va finaliza descărcarea CLI ILLA cu dependențele sale sursă, construiește și instalează-l pe traseul binului de încărcare, astfel încât să-l putem rula.
+Odată instalat, puteți rula CLI ILLA cu comanda **illa**.
+
+Alternativ, poți descărca CLI pentru sistemul tău de operare aici:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Dacă descărcați din link-urile de mai sus, pașii sunt puțin diferiți față de descărcarea ILLA CLI din **încărcătură**. După descărcarea liniei de comandă va trebui să o faci executabilă. Să luăm illa-linux de exemplu:
+
+```
+## descarcă illa cli fișier binar
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## dezpachetează fișierul
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## rulează illa cli
+> ./illa
+
+```
+
+### Verificarea cerințelor preliminare ale instalării auto-găzduite
+
+\*\*Aceste porturi 5432, 9999 și 8000 ar trebui să rămână pentru constructorul ILLA
+
+Următoarea comandă va verifica cerințele pentru instalarea auto-găzduită pe sistemul dvs. de operare:
+
+```
+> illa doctor
+```
+
+### Desfășurarea constructorului ILLA
+
+Odată ce ILLA CLI a fost instalată, puteți rula o instalație auto-găzduită sau [cloud](https://cloud.illacloud.com/).
+
+Quickstart
+
+```
+> illa deploy --self --port=10000
+```
+
+Poți implementa pur și simplu un constructor ILA găzduit prin rularea următoarei comenzi:
+
+```
+# portul pe care Constructorul ILLA poate fi accesat poate fi schimbat
+# <MOUNT_PATH> este calea de montare personalizată a ILLA Builder, valoarea implicită este o cale în directorul utilizator acasă dacă nu este completat
+> illa deploy --self--port=10000 --mount=<MOUNT_PATH>
+```
+
+Acum, puteți accesa Constructorul ILLA: http://localhost:10000
+
+## Actualizarea Constructorului ILLA
+
+Pentru a actualiza Constructorul ILLA cu cele mai recente imagini docker, utilizați următoarea comandă:
+
+```
+> actualizare illa --self
+```
+
+## Alte operațiuni
+
+```
+# listează Constructorul ILLA
+> lista cu illa --self
+
+# opresc Constructorul ILLA
+> illa stop --self
+
+# elimină Constructorul ILLA
+> illa remove --self
+
+# eliminare forțată a rulatorului ILLA și date persistente
+> sudo illa remove --force --self--data
+
+# repornirea Constructorului ILLA
+> illa repornire --self
+
+# informații de ajutor
+> ajutor
+```

@@ -1,146 +1,151 @@
 ---
 title: Appwrite 数据库
-metaTitle: Appwrite
+metaTitle: 在连接Appwrite资源之前，请确保您已在本地计算机或云提供商上部署了Appwrite。[点击这里](https://appwrite.io/docs/installation)了解有关Appwrite安装的更多信息。
 description: 在ILLA Cloud中连接Appwrite
 tagCategory: doc_menu_appwrite_click
 ---
----
+
+* * *
+
 ## <Heading hidden>Appwrite 数据库</Heading>
-Appwrite提供了用户身份验证和帐户管理、用户偏好、数据库和存储持久性、云功能、本地化、图像处理等多种服务。
+
+Appwrite提供了用户身份验证和帐户管理、用户偏好、数据库和存储持久性、云功能、本地化、图像处理等多种服务。 
+
 ILLA Cloud与Appwrite的结合，即服务端低代码与前端低代码的结合，将真正实现低代码全栈开发。
 
 [点此](https://appwrite.io/)了解更多关于Appwrite的信息。
+
 ### 在ILLA Cloud中配置Appwrite资源
 
 #### 两种方式来创建资源
 
-第一种方式时进入“资源”标签页 > 点击“新建”并选择Appwrite
+第一种方式时进入“资源”标签页 > 点击“新建”并选择Appwrite 
 
-<img src={require('@/img/docs/assemble/appwrite1.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
 
-另一种方式是进入应用编辑页面 > 点击“+新建” 并选择Appwrite > 点击“新建资源”来添加新配置。
+另一种方式是进入应用编辑页面 > 点击“+新建” 并选择Appwrite > 点击“新建资源”来添加新配置。 
 
-<img src={require('@/img/docs/assemble/appwrite2.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
 
 #### 通过输入下述字段来配置Appwrite
 
-在连接Appwrite资源之前，请确保您已在本地计算机或云提供商上部署了Appwrite。[点击这里](https://appwrite.io/docs/installation)了解有关Appwrite安装的更多信息。
+在连接一个Appwrite 资源之前，请确保您已经在本地机器或云服务提供商上部署了Appwrite。 [点击这里](https://appwrite.io/docs/installation) 了解更多关于安装 Appwrite的信息。 
 
-| 属性 | 是否必填 | 描述 |
-| --- | --- | --- |
-| Name | required | 在ILLA中创建Action时可以看到的资源名称。 您可以自定义名称以便于识别。  |
-| Host | required | 主机名或IP  |
-| Database ID | required | 数据库ID |
-| Project ID | required | 项目ID |
-| Api key | required | TOKEN |
+| 属性          | 是否必填     | 描述                                                         |
+| ----------- | -------- | ---------------------------------------------------------- |
+| Name        | required | 在ILLA中创建Action时可以看到的资源名称。 您可以自定义名称以便于识别。 您可以自定义一个名称以便于识别。  |
+| Host        | required | 主机名或IP                                                     |
+| Database ID | required | 数据库 ID                                                     |
+| Project ID  | required | Project ID                                                 |
+| Api key     | required | 令牌                                                         |
 
-<img src={require('@/img/docs/assemble/appwrite3.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
 
 ### 在应用程序编辑器中创建Action
 
 #### 通过以下方式创建Action
 
-在应用的编辑页中点击 “+ 新建“ > 选择Appwrite > 选择已有的Appwrite资源或创建新资源 > 点击“创建Action”以创建新Action。
+在应用的编辑页中点击 “+ 新建“ > 选择Appwrite > 选择已有的Appwrite资源或创建新资源 > 点击“创建Action”以创建新Action。 
 
-<img src={require('@/img/docs/assemble/appwrite4.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
 
-创建Action后，从下述方法中选择一个您预期执行的方法：列出文档、创建文档、更新文档、获取文档和删除文档。每个方法的配置方式如下。
+创建Action后，从下述方法中选择一个您预期执行的方法： 列出文档、创建文档、更新文档、获取文档和删除文档。 每种方法的配置如下。 
 
 #### 列出文档
 
-下面是一个简单的配置示例：列出$id为5的文档。
+下面是一个简单的配置示例：列出$id为5的文档。 
 
-<img src={require('@/img/docs/assemble/appwrite5.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
 
-| 属性 | 是否必填 | 描述 |
-| --- | --- | --- |
-| Collection ID | Required | 输入一个集合id |
-| Filter | Optional | 支持多个过滤器。过滤器由Key、Value和Condition组成。1. key：输入一个属性2. condition：选择一个条件，包括equal, notEqual, lessThan, lessThanEqual, greaterThan等。3.value：输入值 |
-| Order by | Optional | 支持按多个属性排序。1.输入一个属性来排序 2.选择asc（默认）或desc |
-| Limit | Optional | 返回的记录数量 |
+| 属性            | 必填项 | 描述                                                                                                                                               |
+| ------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Collection ID | 必填  | 输入一个集合id                                                                                                                                         |
+| Filter        | 可选的 | 支持多个过滤器。 过滤器由Key、Value和Condition组成。 1. key：输入一个属性 2. condition：选择一个条件，包括equal, notEqual, lessThan, lessThanEqual, greaterThan等。3.value：输入值 值：输入值 |
+| Order by      | 可选的 | 支持按多个属性排序。 1. 输入一个属性到排序方式 2。 选择asc(默认) 或desc                                                                                                     |
+| Limit         | 可选的 | 返回的记录数量                                                                                                                                          |
 
 下面举例说明了如何在Action中使用组件中输入的数据：
 
-1.在画布中添加一个input组件，让用户可以输入自己想要查找的文档id。
-2.设置filter属性：将Key字段设置为$id，并在Value字段中输入{{ input1.value }}。
+1.  在画布中添加一个input组件，让用户可以输入自己想要查找的文档id。  
+2.  设置filter属性：将Key字段设置为$id，并在Value字段中输入{{ input1.value }}。 
 
-<img src={require('@/img/docs/assemble/appwrite6.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
 
 输出
 
-检查左侧面板上的数据结构。例如，使用 `{{list.data[0].documents[0].id}}`（`list` 是Action的名称）来获取第一个文档的id。
+检查左侧面板上的数据结构。 例如，使用 `{{list.data[0].documents[0].id}}`（`list` 是Action的名称）来获取第一个文档的id。 
 
-<img src={require('@/img/docs/assemble/appwrite7.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
 
-您还可以使用 `{{list.data[0].documents.map(documents => documents)}}` 在 `table` 组件上显示所有数据。
+您还可以使用 `{{list.data[0].documents.map(documents => documents)}}` 在 `table` 组件上显示所有数据。 
 
-<img src={require('@/img/docs/assemble/appwrite8.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
 
 #### 创建文档
 
-| 属性 | 是否必填 | 描述 |
-| Collection ID | Required | 输入集合ID |
-| --- | --- | --- |
-| Document ID | Required | 输入文档ID，用于标识创建的文档 |
-| Data | Required | 包含在 {{ }} 中的对象。 例如，{{ {“Key”：“Value”}}} |
+| Collection ID | 必填 | 输入一个集合id                              |
+| ------------- | -- | ------------------------------------- |
+| Document ID   | 必填 | 输入文档ID，用于标识创建的文档                      |
+| Data          | 必填 | 包含 {{ }} 的对象。 例如，{{ {“Key”：“Value”}}} |
 
-以下是如何在对象中使用输入到组件中的数据的示例。
+以下是如何在对象中使用输入到组件中的数据的示例。 
 
-<img src={require('@/img/docs/assemble/appwrite9.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
 
-#### 更新文档 
+#### 更新文档
 
-| 属性 | 描述 |
-| --- | --- |
-| Collection ID | 输入集合id |
-| Document ID | 输入要更新的文档ID |
-| Data | 包含在 {{ }} 中的对象。 例如，{{ {“Key”：“Value”}}} |
+| 属性            | 描述                                                    |
+| ------------- | ----------------------------------------------------- |
+| Collection ID | 输入一个集合id                                              |
+| Document ID   | 输入要更新的文档ID                                            |
+| Data          | 包含 {{ }} 的对象。 包含在 {{ }} 中的对象。 例如，{{ {“Key”：“Value”}}} |
 
-<img src={require('@/img/docs/assemble/appwrite10.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
 
 #### 获取文档
 
-| 属性 | 描述 |
-| --- | --- |
-| Collection ID | 输入集合id |
-| Document ID | 输入要获取的文档ID |
+| 属性            | 描述         |
+| ------------- | ---------- |
+| Collection ID | 输入一个集合id   |
+| Document ID   | 输入要获取的文档ID |
 
-<img src={require('@/img/docs/assemble/appwrite11.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
 
 输出数据如下。 使用 {{get.data[0]}}（get是Action的名称） 获取文档对象。
 
-<img src={require('@/img/docs/assemble/appwrite12.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
 
 #### 删除文档
 
-| 属性 | 描述 |
-| --- | --- |
-| Collection ID | 输入集合id |
-| Document ID | 输入要删除的文档ID |
+| 属性            | 描述         |
+| ------------- | ---------- |
+| Collection ID | 输入一个集合id   |
+| Document ID   | 输入要删除的文档ID |
 
-<img src={require('@/img/docs/assemble/appwrite13.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
 
 ### 连接组件和Appwrite的数据
 
 #### 配置Action
 
-创建一个Action名为delete_document > 使用 {{ input1.value }} 填充文档ID字段
+创建一个Action名为delete_document > 使用 {{ input1.value }} 填充文档ID字段 
 
-<img src={require('@/img/docs/assemble/appwrite14.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
 
-将事件处理程序添加到Action里，设置成功运行时的响应，如展示通知
+将事件处理程序添加到Action里，设置成功运行时的响应，如展示通知 
 
-<img src={require('@/img/docs/assemble/appwrite15.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
 
 #### 配置组件
 
-给Button组件添加一个事件处理程序以触发delete_document操作
+给Button组件添加一个事件处理程序以触发delete_document操作 
 
-<img src={require('@/img/docs/assemble/appwrite16.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
 
-设置Table组件的Data source，用来展示数据
+设置Table组件的Data source，用来展示数据 
 
-<img src={require('@/img/docs/assemble/appwrite17.png').default} alt="" />
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
 
 #### 查看运行结果
-<img src={require('@/img/docs/assemble/appwrite18.gif').default} alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />

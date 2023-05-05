@@ -1,0 +1,47 @@
+---
+title: Akce
+metaTitle: ILLA Cloud Action doc
+tagCategory: doc_menu_action_click
+desc: Akce jsou mostem mezi údaji a součástmi a jsou nezbytnou součástí budování aplikace.
+---
+
+* * *
+
+## <Heading hidden>Dotaz</Heading>
+
+Po vytvoření zdroje je třeba extrahovat data z dokumentu, vybrat, filtrovat, sloučit údaje a poté je vložit do vložených údajů podle logických požadavků. Tento proces zpracování dat nazýváme akcí. Akce jsou mostem mezi údaji a součástmi a jsou nezbytnou součástí budování aplikace. Akce jsme rozdělili do dvou kategorií: akce a transformátory.
+
+### Akce SQL
+
+#### Vytvořit akci
+
+Proces používání SQL akcí je rozdělen do následujících kroků:
+
+1.  Nejprve je třeba najít seznam akcí v editoru aplikací a klikněte na tlačítko "Přidat".
+2.  Poté vyberte typ zdroje dat v poli výběru dokumentu. Vytvořené zdroje najdete v příslušném seznamu zdrojů, můžete také vytvořit nové zdroje. Vyberte vytvořený dokument a klikněte na tlačítko "Potvrdit". Akce SQL bude úspěšně vytvořena.
+3.  Vytvořená akce se zobrazí v seznamu akcí. Po ukončení akce bude pod rámečkem zobrazen editor. Můžete změnit zdroj akcí, psát příkazy k akci, obsah odpovědí, přidat transformátory, manipulátory událostí.
+4.  Po vyplnění seznamu akcí můžete kliknout na tlačítko "Náhled a zkontrolovat, zda akce, kterou jste napsali, je platná. Konfigurační panel zobrazí výsledek akce. Po úpravě akce můžete kliknout na tlačítko "Uložit" pro ukončení procesu. Pokud přepnete na jinou akci bez uložení informací, systém vás vyzve k uložení úpravy.
+
+#### Rozdělení akcí
+
+1.  Akce: Můžete zadat vaše akční příkazy do modulu Akce, kde jsme přidali editor kódu Mirror pro povolení zvýraznění a dokončení kódu. V následných aktualizacích, poskytneme režim zadávání GUI pro psaní akčních příkazů, aby uživatelé, kteří nejsou obeznámeni s akčními příkazy, mohli také dokončit akce týkající se dat.
+2.  Transformátor: Logiku akce můžete vylepšit pomocí příkazů JavaScriptu v transformátoru, např. použitím filtrační funkce v JS místo toho, kde funkce ve příkazu k akci funguje.
+3.  Zpracovatel událostí: Zpracovatelé událostí umožňují aktivovat akce, ovládat vložky a další akce v reakci na interakci uživatele. Můžete přidat více obsluhovatelů událostí, aby mohli reagovat na událost bez přidání vlastních příkazů JavaScriptu. Například když uživatel klikne na tlačítko, můžete (1) spustit akci k spuštění, zatímco (2) resetování stavu více rozbalovacích seznamů a textových vstupů.
+4.  Odpověď: V modulu Reakce můžete upravit podmínky, za kterých akce vrací nesprávné výsledky, takovým způsobem, aby byla zajištěna přesnost opatření.
+5.  Pokročilé: Upřesnit detailní nastavení pro akce, jako je doba odezvy databáze, zpoždění procesoru událostí atd. v rámci pokročilých možností.
+
+### Akce API
+
+#### Vytvořit akci
+
+Postup pro činnost dat pomocí API je podobný jako u SQL.
+
+1.  Zaprvé uživatel potřebuje najít seznam akcí v levé dolní části stránky úpravy aplikace a klikněte na znaménko plus v pravém horním rohu seznamu akcí.
+2.  Dále vyberte odpovídající seznam zdrojů dat v poli pro výběr zdroje, který se vyskakuje. Vytvořený dokument naleznete v odpovídajícím seznamu zdrojů dat, nebo zde můžete vytvořit nový dokument. Vyberte vytvořený zdroj, klikněte na "Vytvořit" a bude úspěšně vytvořena akce API.
+3.  Úspěšně vytvořená akce bude zobrazena v seznamu akcí v dolní liště a panel Obecné akce bude zobrazen pod rámečkem po kliknutí. Můžete si vyžádat HTTP API v ILLA . Pro metody požadavku na údaje viz dokumentaci API.
+4.  Jakmile jste vyplnili svou akci, klikněte na tlačítko "Náhled", abyste zjistili, zda akce, kterou jste napsali, je platná a konfigurační panel vám poskytne výsledky. Jakmile dokončíte editaci své akce, můžete kliknout na tlačítko Uložit a ukončit proces. Pokud přepnete na jinou operaci bez uložení, vyskakovací okno vás vyzve k dokončení uložené operace.
+
+#### Rozdělení akcí
+
+1.  Transformátor: Logiku akce můžete vylepšit pomocí příkazů JavaScriptu v transformátoru, například použitím filtrační funkce v JS místo toho, kde funkce ve příkazu k akci funguje.
+2.  Manažeery událostí: Manažeery událostí umožňují aktivovat akce, ovládat vložky a další akce v reakci na interakci uživatele. Můžete přidat více obsluhovatelů událostí, aby mohli reagovat na událost bez přidání vlastních příkazů JavaScriptu. Například když uživatel klikne na tlačítko, můžete (1) spustit akci k spuštění, zatímco (2) resetování stavu více rozbalovacích seznamů a textových vstupů.

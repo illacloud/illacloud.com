@@ -1,0 +1,137 @@
+---
+title: Vícenásobný výběr
+metaTitle: ILLA Cloud Multi-select komponenta
+description: Rozbalovací komponenta, která zobrazuje všechny možnosti, podporuje více výběrů
+tagCategory: doc_menu_multi_select_click
+---
+
+## <Heading hidden>Vícenásobný výběr</Heading>
+
+Vícenásobný výběr komponenty může být užitečný v situacích, kdy je třeba vybrat více možností ze seznamu. To může umožnit účinnější vkládání a filtrování údajů. Komponenta může být nakonfigurována s různými vlastnostmi pro dosažení různých efektů a také podporuje metody a manipulátory událostí pro další přizpůsobení.
+
+Můžete přidat možnosti ručně nebo hromadně z vašeho zdroje dat. V tomto článku představíme podrobně, jak používat vícenásobný komponent. 
+
+### Vlastnosti
+
+#### Ruční možnosti
+
+Přidat nové možnosti nebo ručně odstranit možnosti a nakonfigurovat možnosti jeden po druhém. Vlastnosti opcí jsou následující: 
+
+| Vlastnosti | L 343, 22.12.2009, s. 1).               |
+| ---------- | --------------------------------------- |
+| Popisek    | Text zobrazený pro možnost              |
+| Hodnota    | Hodnota spojená s možností              |
+| Zakázáno   | Určuje, zda je volba pro výběr zakázána |
+
+#### Mapované možnosti
+
+Můžete také přidat možnosti ze zdroje dat mapováním popisku a vlastností hodnoty do odpovídajících datových polí. Tímto způsobem můžete získat možnosti dynamicky z databáze. Na konci tohoto článku ukážeme, jak jej využít prostřednictvím příkladu.
+
+| Vlastnosti  | L 343, 22.12.2009, s. 1).                                  |
+| ----------- | ---------------------------------------------------------- |
+| Zdroj údajů | Nastavte zdroj dat možností                                |
+| Popisek     | Pomocí {{item}} nastavíte popisek možností                 |
+| Hodnota     | Pomocí {{item}} nastavíte hodnotu možností                 |
+| Zakázáno    | Pomocí {{item}} nastavíte, zda je volba zakázána pro výběr |
+
+#### Jiné vlastnosti
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Výchozí hodnota              | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.                                               |
+| Zástupný symbol              | Hodnota bude zobrazena, když je vstupní pole prázdné.                                                                                             |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                  |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                          |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                              |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                     |
+| Zarovnání                    | Nastavit zarovnání štítku                                                                                                                         |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku                                                                            |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                          |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                              |
+| Pouze pro čtení              | Určuje, zda je komponenta určena pouze pro čtení. Komponentu, která je určena pouze pro čtení, může být vybrána a zaměřena, ale nelze ji upravit. |
+| Zobrazit tlačítko "Vyčistit" | Nastavte, zda zobrazit tlačítko "Vyčistit"                                                                                                        |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                  |
+| Povinné pole                 | Platné pouze při zapnutí přepínače                                                                                                                |
+| Vyberte alespoň              | Nastavte minimální počet možností, které chcete vybrat                                                                                            |
+| Vyberte si až                | Nastavte maximální počet možností, které chcete vybrat                                                                                            |
+| Vlastní pravidlo             | Vlastní pravidlo                                                                                                                                  |
+| Skrýt ověřovací zprávu       | Chybová zpráva můžete skrýt přepnutím skrytého stavu, pokud je zadaná hodnota nesprávná. Skrytý stav můžete dynamicky změnit pomocí JavaScript.   |
+| Datový klíč formuláře        | Zadejte klíč pro balicí komponentu při vytváření atributu dat.                                                                                    |
+| Výška                        | Jak nastavit výšku tak, aby odpovídala                                                                                                            |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                        |
+| Barva motivu                 | Vyberte barvu motivu komponenty                                                                                                                   |
+
+### Metoda
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto tři metody:
+
+#### nastavená hodnota
+
+Pro nastavení vybrané možnosti například {{[”value1”,”value3”…]}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1).        |
+| ---------- | -------------------------------- |
+| Hodnota    | Pole vybraných hodnot možností.  |
+
+#### clearValue
+
+Vymazat vybrané možnosti
+
+#### validate
+
+Ověření, zda jsou vstupní informace legální
+
+#### clearValidate
+
+Pro vymazání zprávy o ověření
+
+### Manažer událostí
+
+Podporujeme poslechnutí události onChange komponenty.
+
+### Údaje
+
+Vícenásobná komponenta obsahuje některá běžně používaná data, která lze volat přes {{componentName.propertyName}} v aplikaci.
+
+| Název vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------------- | ------------------------- |
+| hodnota          | pole zvolených hodnot     |
+
+### Případ použití
+
+Dále ukážeme, jak používat mapovaný režim k dynamickému získání možností. 
+
+#### Krok 1 Přidat akci
+
+Vytvořili jsme tabulku `selection`, včetně 5 sloupců: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Hodnoty možností jsme uložili v `hodnotě` a uložili popisky možností v různých jazycích v jiných sloupcích. 
+
+Vytvořte akce pro zobrazení všech dat v `selection` s názvem `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect1.png' alt="" />
+
+```jsx
+vybrat * z výběru
+```
+
+#### Krok 2 Konfigurace vícenásobné komponenty
+
+1.  Nastavte zdroje dat na `{{postgresql1.data}}` 
+2.  Nakonfigurujte štítek pro změnu štítku na základě jazyka. 
+
+    1.  Pro nastavení sloupce použijte {{ item.columnName }}. 
+    2.  Pomocí {{ currentUserInfo.language }} nastavíte jazyk uživatelů v ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect2.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/multiselect3.png' alt="" />
+
+#### Co je víc
+
+Možnosti můžete přidat nebo odstranit přidáním nebo odstraněním řádků do tabulky výběru.

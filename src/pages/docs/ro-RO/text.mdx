@@ -1,0 +1,91 @@
+---
+title: Text
+metaTitle: Componenta text ILLA Cloud doc
+description: Afișare date cu componenta text
+tagCategory: click doc_meniu_text_
+---
+
+* * *
+
+## <Heading hidden>Text</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Proprietăți
+
+| Proprietate         | Descriere                                                                                                                                                                                                                           |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Conținut            | Setați textul afișat pe componenta de text. Markdown și text simplu sunt acceptate.                                                                                                                                                 |
+| Tooltip             | Un tip de instrument afișat pe componentă atunci când utilizatorii planează deasupra componentei.                                                                                                                                   |
+| Aliniere orizontală | Pentru a seta poziția orizontală a conținutului textului în componentă                                                                                                                                                              |
+| Aliniere verticală  | Pentru a seta poziția verțială a conținutului textului în componentă                                                                                                                                                                |
+| Hidden              | Pentru a seta dacă se afișează această componentă și în ce condiții se afișează. De exemplu, dacă utilizatorul curent nu este utilizator A, această componentă ar trebui să fie ascunsă: {{ currentUserInfo.nickname != 'User A' }} |
+| Culoare             | Pentru a seta culoarea textului în formatul de pictură                                                                                                                                                                              |
+| Dimensiune text     | Pentru a seta dimensiunea textului în formatul de vopsea text                                                                                                                                                                       |
+
+### Folosește Markdown
+
+#### Titlu
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Rubrica 1
+## Rubrica 2
+### Rubrica 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Listă de sarcini
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Lista To-do
+
+1. [ ] 🚀 Construiți o nouă aplicație pe ILLA Cloud
+2. [ ] ☎️ Sunați împreună cu Monica
+3. [x] 🍷 Luați cina cu **Elsa**
+4. [x] 💃 Jucați `Just dance` timp de o jumătate de oră
+```
+
+#### Listă cu gloanțe
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Listă cu gloanțe
+- Colaborare în timp real: Putem crea totul în timp real împreună.
+- 🛠️ Plugin-ul personalizat: Construiește orice plugin personalizat pentru a face ceea ce doriți.
+- 🤖 Automate Support: Conectează totul și automatizează-l în 5 secunde.
+- 🖥️ Autogazdă: suportă Docker & k8s
+```
+
+#### Tabel
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tabelul
+| ΕName        | Link   |  Descriere  |
+| :--------  | :-------  | :----  |
+| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps pe ILLA Cloud|
+| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) | Star us pe GitHub|
+| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+```
+
+### Afișare date dinamice
+
+Folosiți `{{` pentru a obține date de la alte componente sau acțiuni sau de la variabile globale. De exemplu, pentru a afișa porecla utilizatorului curent:
+
+```jsx
+## {{ '👋 Salut! '+ currentUserInfo.nickname }}
+```

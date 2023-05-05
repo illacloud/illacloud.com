@@ -1,0 +1,95 @@
+---
+title: Tabla
+metaTitle: Doc del componente de tabla de la nube ILLA
+description: Mostrar e interactuar con datos usando el componente de tabla.
+tagCategory: doc_menú_tabla_clic
+---
+
+* * *
+
+## <Heading hidden>Tabla</Heading>
+
+Las tablas son una forma común de ver e interactuar con tus datos. Puede ordenar, filtrar, paginar y descargar filas de información. Las tablas también soportan la selección de filas y columnas personalizadas.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Cargar datos en una tabla
+
+Cuando arrastra un componente de tabla al fotograma, automáticamente muestra los datos de prueba en formato JSON. Puede cambiar los datos mostrados en una tabla editando la propiedad de la fuente de datos. Utiliza el formato `{{ actionName.data }}` para elegir la acción.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+También puede configurar la fuente de datos introduciendo una matriz.
+
+### Ajustes de columna
+
+**Establecer alias para columnas de datos**
+
+Cuando establece la fuente de datos de las tablas, el nombre de la columna se establecerá automáticamente basándose en la fuente de datos. Puedes renombrar todas las columnas haciendo clic en la columna de la pestaña **Inspect** y establecer el **título de Column**.
+
+**Cambiar tipos de columna**
+
+Cuando estableces la fuente de datos de las tablas, las columnas se establecen en **Texto**. Puede establecer manualmente tipos de columna haciendo clic en la columna de la pestaña **Inspect** y seleccionando el tipo del menú desplegable **Tipo de Column**.
+
+Los tipos de columna incluyen:
+
+1.  Texto
+2.  Fecha, puede establecer el formato de visualización de la fecha en el tipo de fecha.
+3.  Número, puede establecer los decimales en el tipo de número.
+4.  Porcentaje, puede establecer los decimales en el tipo de porcentaje.
+5.  Enlace
+6.  Botón, puede añadir controladores de eventos en el tipo de botón.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Valor asignado de columnas personalizadas**
+
+Puedes añadir columnas personalizadas a las tablas usando el botón **+ Añadir** en la pestaña **Inspect**. Las columnas personalizadas se utilizan a menudo para calcular datos basados en otros valores de su aplicación. Por ejemplo, si tienes columnas `revenue` y `user_num` y quieres calcular una columna `ARPU`, puedes usar `{{ currentRow.revenue/currentRow.user_num }}`
+
+Además, después de calcular, puede establecer el tipo de columna a número o porcentaje y establecer los decimales para mejorar la legibilidad.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Acceso a datos de la tabla
+
+Use `{{ table1.selectedRow[i].columnName }}` para acceder a los datos de las filas seleccionadas en otros componentes. Si no has habilitado la **Selección Multifila**, `i` siempre será 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Actualizar los datos de la tabla**
+
+1.  Utilice el componente de entrada u otros cpmponents de entrada de datos para mostrar `{{ table1.selectedRow[i].columnName }}`.
+2.  Utilice `{{ input1.value }}` en acciones de actualización para obtener los valores seleccionados y los valores actualizados.
+3.  Añadir un controlador de evento a Update Button para ejecutar la Update Action cuando se haga clic.
+4.  Actualizar los datos de la fila seleccionada cambiando el valor de entrada y haciendo clic en el botón Actualizar.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Inserta una nueva fila en la tabla**
+
+1.  Usar `{{ input1.value }}` en insertar acciones obtener valores.
+2.  Añadir un controlador de evento al botón Insertar para ejecutar la acción al hacer clic.
+3.  Insertar nuevos datos introduciendo valores en los componentes de entrada y haciendo clic en el botón Insertar.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

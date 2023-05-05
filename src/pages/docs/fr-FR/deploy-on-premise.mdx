@@ -1,0 +1,30 @@
+---
+title: Déployer sur site
+metaTitle: Déploiement du nuage ILLA sur site
+desc: ILLA peut être auto-hébergé sur votre serveur ou votre machine au lieu d'utiliser un fournisseur de services tiers
+tagCategory: format@@0 doc_menu_deploy_premise_click
+---
+
+* * *
+
+# <Heading hidden>Déployer sur site</Heading>
+
+L'ILLA d'hébergement indépendant signifie l'hébergement et la gestion de la plate-forme ILLA sur votre propre serveur ou votre propre machine au lieu d'utiliser un fournisseur de services tiers. Cette approche est souvent considérée comme plus sécurisée et plus privée, car vous avez un contrôle total sur vos données et leur utilisation.
+
+ILLA proposera une version hébergée sur le cloud et la possibilité de configurer votre instance sur différentes plates-formes bientôt.
+
+## Auto-hébergé
+
+L'auto-hébergement ILLA sur votre propre infrastructure vous permet de l'intégrer de manière transparente à votre installation existante sans avoir besoin de maintenir une configuration séparée. Cela vous permet d’utiliser les fonctionnalités et les capacités de votre infrastructure existante et de les étendre à ILLA. Parmi les avantages du déploiement d'ILLA sur votre infrastructure, citons :
+
+### Sécurité
+
+En hébergeant ILLA sur votre propre infrastructure, vous pouvez conserver vos données sur place et vous assurer que vos clés API ou vos identifiants de sécurité ne quittent jamais votre serveur. Cela vous permet d'appliquer les mêmes règles de sécurité à ILLA que celles que vous appliquez à toute autre application sur votre serveur. Les applications que vous construisez en utilisant ILLA seront hébergées sur votre infrastructure et à l'intérieur de vos réseaux d'entreprise. Vous pouvez également choisir d'héberger ILLA sur des réseaux internes derrière un pare-feu, et le configurer pour qu'il fonctionne avec vos politiques de domaine et de sécurité personnalisées.
+
+### Base de données interne
+
+En auto-hébergeant ILLA, vous pouvez vous connecter à une base de données fonctionnant sur la même machine ou intranet et l'utiliser pour construire des applications. ILLA utilise MongoDB pour stocker les données des applications et Redis pour stocker les informations de session et les caches non critiques. Si vous voulez intégrer ILLA avec des serveurs personnalisés MongoDB ou Redis hébergés sur votre infrastructure, vous devrez modifier la configuration des variables d'environnement et les diriger vers vos instances MongoDB/Redis personnalisées.
+
+### Mises à jour
+
+En auto-hébergeant ILLA, vous pouvez configurer des horaires de mise à jour plus souples et d'autres activités de maintenance. Vous pouvez suivre les étapes fournies pour configurer une fenêtre de maintenance et planifier les mises à jour automatiques. Cela vous permet de maintenir et de mettre à jour votre instance ILLA d'une manière qui vous convient ainsi qu'à votre organisation.

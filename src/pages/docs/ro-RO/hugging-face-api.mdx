@@ -1,0 +1,110 @@
+---
+title: Cheie pentru captur API
+metaTitle: Conectează-te la Hugging Face API
+description: Învață cum să folosești Face API în ILLA
+tagCategory: click_doc_meniu_face_api_click
+---
+
+* * *
+
+## <Heading hidden>Hugging Face API</Heading>
+
+Fața căpătată este Githubul comunității de învățare a mașinilor, cu sute de mii de modele prepregătite și 10 000 de seturi de date disponibile în prezent. Puteți accesa în mod liber modele și seturi de date partajate de alți experți din industrie sau puteți găzdui și puteți implementa modelele dvs. în măcelărie.
+
+Printre exemplele de modele disponibile în biblioteca Fugging Face se numără:
+
+1.  OARET (Reprezentații bidirecționale de codificare din partea transformatorilor): OARET este un model bazat pe transformator elaborat de Google pentru diferite sarcini ale PNL. Aceasta a obţinut rezultate de ultimă oră în ceea ce priveşte înţelegerea limbilor şi sarcinile de traducere automată.
+2.  GPT (Transformatorul de pre-pregătire generativă): GPT este un alt model bazat pe transformator dezvoltat de OpenAI. Acesta este utilizat în principal pentru sarcini legate de generarea de limbi, cum ar fi traducerea și rezumarea textului.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa este o extindere a modelului OARET care a fost elaborat pentru a îmbunătăți performanța OARET cu privire la diferite sarcini ale NPL.
+4.  XLNet (eXtraordinary LanguageNet): XLNet este un model bazat pe transformator dezvoltat de Google care este conceput pentru a îmbunătăți performanța modelelor de transformator în ceea ce privește sarcinile de înțelegere a limbii.
+5.  ALBERT (Un Lite BERT): ALBERT este o versiune a modelului OARET care a fost dezvoltat pentru a fi mai eficient și mai rapid pentru a se forma, menținând în același timp o performanță bună în ceea ce privește sarcinile NPL.
+
+### Ce poți face cu Fața Hugging în Constructorul ILLA
+
+În Hugging Face, peste 130.000 de modele de învățare mașină sunt disponibile prin API public, pe care le puteți folosi și testa gratuit la \[**<https://huggingface.co/models>](<https://huggingface.co/models>**. În plus, dacă ai nevoie de o soluție pentru scenarii de producție, poți folosi punctele de referință ale Hugging Face, care pot fi instalate și accesate la \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>**.
+
+Constructorul ILLA furnizează zeci de componente front-end utilizate în mod obișnuit, permițându-vă să construiți interfețe front-end în funcție de nevoile dumneavoastră specifice. În același timp, ILLA oferă o conexiune la Hugging Face, permițându-vă să vă conectați rapid la API, să trimiteți cereri și să primiți date returnate. Prin conectarea API și a componentelor front-end, puteți implementa cerința ca utilizatorii să poată introduce conținut prin fronend și să îl trimiteți la API. API returnează conținutul generat pentru a fi afișat pe front.
+
+### Configurați îmbogățirea resursei API față
+
+| Proprietăți | Necesar | Descriere                                                                                  |
+| ----------- | ------- | ------------------------------------------------------------------------------------------ |
+| Nume        | necesar | Definiți un nume de resursă care va fi utilizat pentru afișare în ILLA                     |
+| Token       | necesar | Acces utilizator sau token API. Îl poți obține în https://huggingface.co/settings/tokens.  |
+
+### Configurați acțiunea
+
+| Proprietăți      | Necesar | Descriere                                                                                                                                                                                                                                                                           |
+| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID model         | necesar | Caută modele: https://huggingface.co/models                                                                                                                                                                                                                                         |
+| Tip de parametru | necesar | Tipul parametrului final al dumneavoastră. De exemplu, în cazul în care punctul final necesită un text introdus, alegeți să completați parametrul "intrări" cu text. Dacă parametrul necesită o intrare JSON, alegeți completarea parametrului "intrări" cu JSON sau valoare cheie. |
+| Parametru        | necesar | Introduceți parametrul dvs. Folosește {{ componentName.value }} pentru a utiliza datele componentelor.                                                                                                                                                                              |
+
+# Cum să folosești Fața Hugging în Constructorul ILLA
+
+### Pasul 1: Construiește UI cu componente pe Constructorul ILLA
+
+Bazat pe scenariul de utilizare preconizat pe care l-ați descris, construiți o interfață front-end. De exemplu, poți folosi componente de intrare și imagine dacă produsul tău ia text și realizează o imagine. În cazul în care produsul dvs. primește text și ieșiri din textul generat, puteți utiliza componente de intrare și de text.
+
+Următoarea imagine este un exemplu de pagină front-end pentru un produs care răspunde la întrebări bazate pe context.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+
+### Pasul 2: Creează un Face Resurse și configurează Acțiunile
+
+Faceți clic pe + Nou în lista de acțiuni și selectați API-ul pentru Face Față.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+
+Completează formularul pentru a te conecta la fața târgului:
+
+Nume: Numele care va fi afișat în ILLA
+
+Token: Intră în fațeta ta Hugging [setările de profil]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+
+Confirmați informațiile modelului în Face de Hugging înainte de configurarea acțiunilor:
+
+Selectați un model în [Hugging Face Model Page]([https://huggingface.co/models](https://huggingface.co/models))
+
+Hai să folosim [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) ca exemplu. Introduceți pagina de detalii > apăsați pe Deploy > Click Inferență API
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+
+Parametrii după \`"intrări"' este ceea ce ar trebui să completați ILLA. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+
+În Constructorul ILLA, ar trebui să completăm modelul de ID și parametru. Luând modelul de mai sus ca un exemplu, `"intrări"` este o pereche cheie-valoare, astfel încât să o putem completa cu valoare cheie-cheie sau JSON. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+
+Și susținem, de asemenea, introducerea textului și introducerea binară care pot satisface toate conexiunile API pentru Înfățișarea feței Hugging Face Inference.
+
+### Pasul 3: Conectează acţiunile la componente
+
+Pentru a trece intrarea de pe front-end a utilizatorului la API, puteţi utiliza {{ pentru a prelua datele introduse în component. De exemplu, intrarea2 este componenta care introduce întrebarea și intrarea1 este componenta care introduce contextul, putem completa `question` și `context` în cheie, și să completăm `{{ input.value }}` în valoarea:
+
+```jsx
+{
+"întrebare": {{input2.value}},
+"context": {{input1.value}}
+}
+```
+
+Înainte de a afișa datele de ieșire ale acțiunii în componenta front-end, ar trebui să confirmăm în ce câmp sunt plasate rezultatele diferitelor modele. Cu toate acestea, luând ca exemplu `deepset/roberta-base-squad2`, rezultatele sunt următoarele:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+
+Așa că putem obține răspunsul cu ````{{ textQuestion.data[0].answer }}```(````textQuestion\` este numele acțiunii). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+
+### Demo
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />

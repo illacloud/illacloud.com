@@ -1,0 +1,151 @@
+---
+title: Zápis aplikací
+metaTitle: Integrační dokument ILLA Cloud Appwrite
+description: Průvodce pro nastavení a integraci do Appwrite na ILLA Cloud
+tagCategory: doc_menu_appwrite_click
+---
+
+* * *
+
+## <Heading hidden>Databáze zápisů aplikací</Heading>
+
+V rámci různých služeb Appwriteru můžete najít uživatelskou autentizaci a správu účtu, uživatelské předvolby, databázi a vytrvalost úložiště, funkce cloudu, lokalizaci, manipulaci s obrázkem a další. 
+
+Kombinace ILLA Cloud a Appwrite, to je, kombinace serverních nízkých kódů a front-end nízkonákladového kódu, bude skutečně realizovat nízkonákladový kompletní vývoj.
+
+[Klikněte zde](https://appwrite.io/) pro více informací o Appwrite.
+
+### Nastavit zdroj zápisu aplikací na ILLA Cloud
+
+#### Dva způsoby vytváření zdrojů
+
+Prvním způsobem je zadat záložku `Zdroje` > klikněte na `Vytvořit nové` pro výběr zápisu aplikací. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+Jiným způsobem je zadat stránku `editoru aplikací` > klikněte na `+ Nové` pro výběr appwrite > klikněte na `+ Nové zdroje` pro přidání nové konfigurace. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Nastavte Appwrite vyplněním následujících polí
+
+Než připojíte zdroj pro zápis aplikací, ujistěte se, že jste vložili zápis aplikací do svého lokálního počítače nebo do cloudu. [Klikněte zde](https://appwrite.io/docs/installation) pro více informací o instalaci Appwrite. 
+
+| Majetek     | je vyžadováno | L 343, 22.12.2009, s. 1).                                                                      |
+| ----------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| Název       | vyžadováno    | Název zdroje při vytváření akcí v ILLA. Můžete si přizpůsobit název pro snadnou identifikaci.  |
+| Hostitel    | vyžadováno    | HOSTNAME NEBO IP.                                                                              |
+| ID databáze | vyžadováno    | ID databáze                                                                                    |
+| ID projektu | vyžadováno    | ID projektu                                                                                    |
+| Api klíč    | vyžadováno    | MAĎARSKO                                                                                       |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Vytvořit akce v editoru aplikací
+
+#### Vytvořit akce následujícím způsobem
+
+Klepnutím na tlačítko `+ Nový` v editoru aplikace > vyberte zápis aplikací> vyberte existující dokument pro zápis do aplikace, nebo vytvořte nový dokument > klikněte na `Vytvořit akci` pro vytvoření nové akce. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+Po vytvoření akce vyberte metodu. Poskytujeme následující metody: Dokumenty seznamu, Vytvořte dokument, aktualizujte dokument, Získejte dokument a odstraňte dokument. Konfigurace každé metody je následující: 
+
+#### Seznam dokumentů
+
+Následující je jednoduchý konfigurační příklad: Seznam dokumentu s $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Majetek     | je vyžadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                         |
+| ----------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID kolekce  | Požadováno    | Vložte nebo vyberte ID kolekce z databáze                                                                                                                                                                                         |
+| Filtr       | Nepovinné     | Podpořte více filtrů. Filtr se skládá z klíče, hodnoty a stavu. 1. klíč: zadejte atribut 2. podmínka: zvolte podmínku, včetně rovného, ne rovného, méněrového, Than, lessThanRoval, greaterThan, atd. 3. hodnota: zadejte hodnotu |
+| Řadit podle | Nepovinné     | Podpora pro řazení podle více atributů. 1. vložte atribut k řazení podle 2. Vyberte vzestupnou ( ve výchozím nastavení ) nebo sestupnou                                                                                           |
+| Limit       | Nepovinné     | počet záznamů                                                                                                                                                                                                                     |
+
+Příkladem použití údajů vložených do složky opatření:
+
+1.  Přidejte do rámečku vstupní komponentu, aby uživatelé mohli zadat ID dokumentu, který chtějí najít.  
+2.  Přidat filtr: nastavte pole atributu na $id a zadejte {{ input1.value }} do pole hodnoty. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Výstup
+
+Zkontrolujte datovou strukturu v levém panelu. Například použijte `{{list.data[0].documents[0].id}}`(`list` je název akce), abyste získali ID prvního dokumentu. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+Můžete také použít `{{list.data[0].documents.map(documents => documents)}}` k zobrazení všech dat na `table` komponentě. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Vytvořit dokument
+
+| ID kolekce   | Požadováno | Vložte nebo vyberte ID kolekce z databáze                        |
+| ------------ | ---------- | ---------------------------------------------------------------- |
+| ID dokumentu | Požadováno | zadejte ID. Dokument bude vytvořen s tímto ID                    |
+| Údaje        | Požadováno | Objekt je přiložen v {{ }}. Například {{ { { "key": "value" } }} |
+
+Níže je uveden příklad, jak použít údaje zadané do komponenty v objektu. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Aktualizovat dokument
+
+| Majetek      | L 343, 22.12.2009, s. 1).                                        |
+| ------------ | ---------------------------------------------------------------- |
+| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze                        |
+| ID dokumentu | vložte existující ID dokumentu, které má být aktualizováno       |
+| Údaje        | Objekt je přiložen v {{ }}. Například {{ { { "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Získat dokument
+
+| Majetek      | L 343, 22.12.2009, s. 1).                 |
+| ------------ | ----------------------------------------- |
+| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze |
+| ID dokumentu | vložte existující ID dokumentu            |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+Výstupní data jsou následující. Pomocí {{get.data[0]}} získáte objekt dokumentu.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Odstranit dokument
+
+| Majetek      | L 343, 22.12.2009, s. 1).                 |
+| ------------ | ----------------------------------------- |
+| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze |
+| ID dokumentu | vložte existující ID dokumentu            |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Připojit data z Appwrite s komponenty na front-end
+
+#### Konfigurace akcí
+
+Vytvořte akci delete_document > vyplňte pole ID dokumentu {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Přidat ovladač události k akci, aby se nastavila odezva při úspěšném spuštění. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Konfigurace komponent
+
+Přidejte tlačítko pro ovládání události pro akci delete_dokument. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Nastavte zdroj dat v tabulce pro zobrazení dat. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Zobrazit výsledky běhu
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />

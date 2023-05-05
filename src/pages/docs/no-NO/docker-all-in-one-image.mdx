@@ -1,0 +1,89 @@
+---
+title: Docker alt-i-ett bilde
+tagCategory: doc_menu_docker-all-in-one-bilde_klikk
+desc: Bygg illa utnytter et alt-i-ett bilde og kjør det på maskinen din.
+---
+
+* * *
+
+## <Heading hidden>Docker alt-i-ett bilde</Heading>
+
+### Beskrivelse
+
+Bygg illa utnytter et alt-i-ett bilde og kjør det på maskinen din. Du kan sjekke ut skriptfilen i [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) mappen for flere detaljer.
+
+Merk:
+
+Vi anbefalte sterkt å distribuere med våre verktøy for automatisk distribusjon[illa-cli](https://github.com/illacloud/illa).
+
+Og for øyeblikket støtter vi ikke Apple Silicon M1 (darwin-arm64 bue).
+
+### Kjør et offisielt bilde
+
+Innstallering GNU Lag og type:
+
+```jsx
+gjøre run-offisielt bilde
+```
+
+eller bare kjører:
+
+```jsx
+/bin/bash skripter/run-offisiell bilde...
+```
+
+denne kommandoen vil dra illasoft offisielt bilde og kjøre den på landskapsmiljøet ditt.
+
+Og logg inn med standardbrukernavnet **`root`** og passord **`password`**.
+
+### Bygg bilde manuelt og kjør
+
+Installer GNU gjøre (eller utføre skallskript i skriptmappen manuelt).
+
+For å bygge illa alt-i-ett bilde og kjøre, type:
+
+```jsx
+lag alle
+```
+
+For podesanne, type:
+
+```jsx
+lag run-for-podman
+```
+
+eller utføre skallskript `run-by-podman.sh` i skriptmappen.
+
+### Stopp og fjern container
+
+```jsx
+lag en stopp-og-fjerningsbeholder
+```
+
+### Slett fil for 'Postgres Database Fil'
+
+** DETTE KOMMANDO VIL SLETT DEG FULLSTASJONEN OM DINE DISK!!! \*\*\*** SIKKERHETSKOPIERING OG GJENNOMKREFULLAG \*\*\*
+
+I standardhvelvet skal databasen Postgres lagres i mappen `/var/lib/illa/database/postgresql/`
+
+Kjør følgende kommando for å slette den.
+
+```jsx
+gjøre clean-postgres-database-fil
+```
+
+### Miljøvariabler for Konfig Runtime
+
+Rediger `skript/run.sh` når nødvendig:
+
+```jsx
+# postgres databasepassord
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres databasefillagring
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

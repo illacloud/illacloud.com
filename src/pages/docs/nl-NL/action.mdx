@@ -1,0 +1,47 @@
+---
+title: actie
+metaTitle: ILLA Cloud actie doc
+tagCategory: doc_menu_action_klik
+desc: Acties zijn de brug tussen data en onderdelen en vormen een essentieel onderdeel van het bouwen van een applicatie.
+---
+
+* * *
+
+## <Heading hidden>Query</Heading>
+
+Na het aanmaken van de bron, moet u de gegevens uitpakken in de bron, selecteren, filter, voeg de gegevens samen en stop ze vervolgens in de robots volgens de logische vereisten. Wij noemen dit proces van gegevensverwerking een actie. Acties zijn de brug tussen data en onderdelen en vormen een essentieel onderdeel van het bouwen van een applicatie. We hebben acties verdeeld in twee categorieën: acties en Transformers.
+
+### SQL actie
+
+#### Actie aanmaken
+
+Het proces van het gebruik van SQL-acties is verdeeld in de volgende stappen:
+
+1.  Eerst moet je de lijst met acties vinden in de app editor en klik op de knop "Toevoegen".
+2.  Selecteer vervolgens een gegevenstype in het brontype selectievak. Je kunt de aangemaakte bronnen vinden in de corresponderende bronlijst, je kunt hier ook nieuwe bronnen maken. Selecteer de aangemaakte resource en klik op de knop "Bevestigen". Een SQL actie zal met succes worden aangemaakt.
+3.  De aangemaakte actie wordt weergegeven in de lijst met acties. Er wordt onder het frame een actie-editor getoond na het verwijderen van de actie. U kunt de acties wijzigen, schrijf-actie verklaringen, reactie inhoud, voeg transformers, event handlers toe.
+4.  Nadat u de actielijst hebt ingevuld, kunt u op de knop "Voorbeeld" klikken om te controleren of de actie die u hebt geschreven geldig is. Het configuratiepaneel toont het resultaat van de actie. Nadat de actie is bewerkt, kunt u op de knop "Opslaan" klikken om het proces te beëindigen. Als u overschakelt naar een andere actie zonder de informatie op te slaan, zal het systeem vragen om de wijziging op te slaan.
+
+#### Uitsplitsing actie
+
+1.  Actie: U kunt uw actie-instructies invoeren in de Actiemodule waar we de editor voor Code Mirror hebben toegevoegd om het actierecht markeren en code voltooien mogelijk te maken. In volgende updates, we zullen een GUI-invoermodus voor het schrijven van actie-instructies aanbieden, zodat gebruikers die onbekend zijn met actie-instructies ook gegevensacties kunnen voltooien.
+2.  Transformer: Je kunt de actielogica verfijnen met JavaScript-instructies in de transformer, bijvoorbeeld door de filterfunctie in JS te gebruiken in plaats van de waar de functie in de actielijst.
+3.  Event handler: Event handlers staan toe om acties, inserts en andere acties te beheren als reactie op de interactie van de gebruiker. Je kunt meerdere event-afhandelaars toevoegen om te reageren op een gebeurtenis zonder aangepaste JavaScript-opdrachten toe te voegen. Als een gebruiker bijvoorbeeld op een knop klikt, kan je (1) een handeling activeren terwijl (2) de status van meerdere drop-down lijsten en tekstinvoeren opnieuw moet worden ingesteld.
+4.  Reactie: In de Response module kunt u de voorwaarden waaronder de actie onjuiste resultaten oplevert. zodanig dat de juistheid van de actie wordt gewaarborgd.
+5.  Geavanceerd: Verfijn gedetailleerde instellingen voor acties zoals database-timeout reactieduren, vertragingen, gebeurtenisprocessor etc. binnen de geavanceerde opties.
+
+### API acties
+
+#### Actie aanmaken
+
+Het proces voor het uitvoeren van gegevens met behulp van de API is vergelijkbaar met die voor SQL.
+
+1.  Ten eerste de gebruiker moet de lijst met acties links onderaan op de bewerkingspagina van de toepassing en klik op het plusteken rechtsboven in de actielijst.
+2.  Vervolgens selecteer je de corresponderende bronlijst in het selectievakje van bronnen die poppen. Je kunt de gemaakte bron vinden in de corresponderende gegevensbronlijst, of je kunt hier een nieuwe bron maken. Selecteer de aangemaakte bron, klik op "Aanmaken" en een API-actie zal met succes worden aangemaakt.
+3.  De succesvol gemaakte actie wordt weergegeven in de lijst met acties in het onderste paneel en het tabblad Algemene instellingen voor de actie verschijnt onder het frame wanneer wordt geklikt. U kunt een aanvraag indienen bij elke HTTP-API in ILLA. Raadpleeg de API's documentatie voor data aanvraagmethoden.
+4.  Zodra je de actie hebt ingevuld Klik op de "Voorbeeld" knop om te zien of de actie die je hebt geschreven geldig is en het configuratiescherm geeft je de resultaten. Zodra u klaar bent met het bewerken van uw actie, kunt u klikken op Opslaan en afsluiten om het proces te beëindigen. Als u overschakelt naar een andere bewerking zonder op te slaan, zal een pop-up u vragen om de save bewerking te voltooien.
+
+#### Uitsplitsing actie
+
+1.  Transformer: Je kunt de actielogica verfijnen met JavaScript instructies in een transformer, bijvoorbeeld door de filterfunctie in JS te gebruiken in plaats van de waar de functie in een actielijst.
+2.  Event verwerkers: Event handlers laten toe om acties, inserts en andere acties te beheren als reactie op de interactie van de gebruiker. Je kunt meerdere event-afhandelaars toevoegen om te reageren op een gebeurtenis zonder aangepaste JavaScript-opdrachten toe te voegen. Als een gebruiker bijvoorbeeld op een knop klikt, kan je (1) een handeling activeren terwijl (2) de status van meerdere drop-down lijsten en tekstinvoeren opnieuw moet worden ingesteld.

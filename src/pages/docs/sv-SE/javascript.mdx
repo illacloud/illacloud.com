@@ -1,0 +1,59 @@
+---
+title: JavaScript Guider
+metaTitle: ILLA Cloud JavaScript Guider doc
+desc: JavaScript är den viktigaste komponenten i ILLA Builder, vilket är det verktyg du använder för att bygga dataåtkomst och logik konstruktion av din APP
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>JavaScript Guider</Heading>
+
+JavaScript är den viktigaste komponenten i ILLA Builder, vilket är det verktyg du använder för att bygga dataåtkomst och logik konstruktion av din APP. Bemästra hur man kallar JavaScript, har du bemästrat användningen av ILLA Builder.
+
+När du bygger din APP i ILLA Builder kan du använda `{{template syntax}}` för att skriva anpassade JavaScript-satser för att ringa och manipulera data, eller skriv JS-kod direkt i transformatorn.
+
+### Åtgärd data
+
+#### Åtkomst till data på objekt
+
+I ILLA Builder kan du ange JavaScript-uttryck i valfri textruta med mallsyntax. Dataregister är referensbara, och du kan manipulera data från alla insatser, åtgärder och transformatorer via JavaScript. Till exempel kan du använda `{{textInput.data}}` för att komma åt innehållet i en textinmatning, `{{action.data}}` för att komma åt data från en åtgärdsdatabas och `{{transformer.value}}` för att komma åt data från en transformator.
+
+Vi har lagt till och ändrat kodspegeln infoga till produkten, anpassade den till ILLA Builder programmeringsmiljö, stödd syntaxmarkering och automatisk indragning, och lagt till detaljerade förklaringar av variabler och funktioner som uppstår under programmering, så att du kan lära dig att använda ILLA Builder till låg kostnad. När du har angett objektnamnet, ange en punkt. Området kommer att innehålla alla egenskaper hos objektet, datatypen och en deltextbeskrivning, så att du kan identifiera den egendom som ska nås på nolltid.
+
+#### Få tillgång till nummer i matriser
+
+När du behöver komma åt ett värde i en specifik matris, du kan få värdet genom positionen eller prenumerationen av de data du behöver för att komma åt.
+
+```javascript
+const list = ['a', 'b', 'c']
+returneringslista[0] // Returnera det första värdet i listan 'a'
+```
+
+### Visa data
+
+Det finns fyra platser att visa data i ILLA Builder: datans arbetsyta i vänsterpanelen, dataprompten under textrutan efter att ha angett ett JavaScript-uttryck, och data visas genom datainsatsen för att visa data.
+
+#### Data arbetsyta presentation
+
+Du hittar arbetsytan för data genom att öppna vänsterpanelen i appredigeraren, så presenteras data som strukturerad JSON där varje fastighet och lista kan utökas och all data visas visuellt i arbetsytan.
+
+[//]: # "[图片]"
+
+#### Live förhandsgranskning av datainmatning
+
+När du ringer en åtgärd eller transformatordrift i inmatningsrutan, kommer data för den operationen automatiskt att dyka upp under inmatningsrutan, och du kan bekräfta att de uppgifter som anropas är korrekta baserat på informationen här.
+
+[//]: # "[图片]"
+
+#### Data presentation
+
+Insatsen för datavisning ger dig den mest intuitiva vyn av data. Dra och släpp komponenten i ramen, ange namnet på motsvarande datakälla i datafältet. filtrera och ordna det, och du kommer att ha tillgång till data visa information.
+
+[//]: # "[图片]"
+
+### Transformator
+
+Du kan skriva flera rader JS-kod i transformatorn, och vi rekommenderar att du väljer att skriva i transformatorn snarare än i dubbla lockiga parenteser. Du kan programmera JavaScript direkt i transformatorn samt anropa data i operationen med hjälp av `{{}}`.
+
+Klicka här för detaljerad användning av transformatorn.

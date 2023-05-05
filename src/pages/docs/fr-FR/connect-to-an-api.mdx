@@ -1,0 +1,34 @@
+---
+title: Se connecter à une API
+metaTitle: Connexion au Cloud ILLA à une API
+desc: Vous pouvez connecter ILLA à la plupart des APIs en utilisant nos intégrations natives. ILLA peut se connecter à n'importe quelle API REST, GraphQL
+tagCategory: Clique sur le menu Doc_api_Clique
+---
+
+* * *
+
+## <Heading hidden>Se connecter à une API</Heading>
+
+Se connecter à n'importe quelle API REST, GraphQL.
+
+Vous pouvez connecter ILLA à la plupart des APIs en utilisant nos intégrations natives. Si vous avez besoin de vous connecter à une API interne, ou s'il n'y a pas d'intégration supportée, vous pouvez vous connecter en utilisant notre intégration REST API ou l'intégration GraphQL.
+
+### 1.  Créer une ressource API
+
+Les ressources représentent les connexions aux sources de données et sont ce que vous demandez dans vos applications ILLA.Connectez-vous à ILLA et accédez à l'onglet **Ressources** > cliquez sur **Créer une nouvelle** et sélectionnez l'API à laquelle vous souhaitez vous connecter. comme **REST API**. Cela ouvre la modale **Configurer une ressource** où vous ajoutez vos informations de connexion.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Au minimum, vous avez besoin de l'URL de base de l'API à laquelle vous voulez vous connecter. Vous pouvez également passer des paramètres d'URL, des en-têtes, etc. Si votre API nécessite une authentification, vous pouvez également le configurer sur cette page. Par exemple, OAuth2.0 requiert une URL d'autorisation, une URL de jeton d'accès, etc. Après avoir entré vos informations de connexion, cliquez sur **Enregistrer la ressource.**
+
+### 2.  Interroger votre API
+
+Dans l'éditeur d'application, cliquez sur **+ Nouveau** dans **Liste d'actions** > sélectionnez **REST API** et choisissez une API REST existante ou créez une nouvelle API > cliquez sur **create action** et mettez à jour les actions avec des paramètres d'URL supplémentaires, en-têtes, etc.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>

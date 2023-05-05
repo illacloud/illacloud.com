@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: клик по документу
+desc: Создайте образ all-in-one и запустите его с помощью k8 на вашей машине.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Описание
+
+Создайте образ all-in-one и запустите его с помощью k8 на вашей машине. Вы можете просмотреть файл скриптов в папке [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) для получения более подробной информации.
+
+Примечание:
+
+Мы настоятельно рекомендуем установить с помощью наших утилит авторазвертывания[illa-cli](https://github.com/illacloud/illa).
+
+А пока мы не поддерживаем Apple Silicon M1 (арка darwin-arm64).
+
+### Запуск с официальным Slim изображением
+
+Установите GNU make и тип:
+
+```jsx
+делать развёрнутый
+```
+
+или просто выполните:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+эта команда выберет официальный образ all-in-one и установит его на ваш кластер Kubernetes.
+
+### Для постоянного хранения базы данных
+
+Редактируйте[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), и добавьте на него конфигурацию хранилища IAAS.
+
+### Для конфигурации HTTPS
+
+Вы можете маршрутизировать NodePort до шлюза кластера ingress и переписать в порт 443, а также добавить сертификат https в шлюз ingress шлюза.
+
+Или вы можете вручную развернуть шлюз ingress на ваш сервер Kubernetes, например:
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            имя: local_route
+            virtual_hosts:
+            - имя: illa_builder
+              доменов:
+              - "illa. ourdomian. om" # заменить домен
+              маршрутов:
+              - совпадать:
+                  префикс: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy. ilters.http. outer
+            typed_config:
+              "@type": тип. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        имя: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # замените это файлом сертификата
+            - certificate_chain:
+                файла: /your-cert-folder/fullchain. em
+              private_key:
+                имя: /your-cert-folder/privkey. em
+
+  кластеров:
+  - имя: illa_builder
+    тип: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```

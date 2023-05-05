@@ -1,0 +1,95 @@
+---
+title: Tisch
+metaTitle: ILLA Cloud-Tabellen-Komponente doc
+description: Anzeige und Interaktion mit Daten mit der Tabellenkomponente.
+tagCategory: doc-Menü klicken
+---
+
+* * *
+
+## <Heading hidden>Tabelle</Heading>
+
+Tabellen sind eine übliche Art, Ihre Daten anzusehen und mit ihnen zu interagieren. Sie können Informationszeilen sortieren, filtern, paginieren und herunterladen. Tabellen unterstützen auch die Zeilenauswahl und benutzerdefinierte Spalten.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Daten in einer Tabelle laden
+
+Wenn Sie eine Tabellenkomponente in den Rahmen ziehen, werden die Testdaten automatisch im JSON-Format angezeigt. Sie können die in einer Tabelle angezeigten Daten ändern, indem Sie die Datenquellen-Eigenschaft bearbeiten. Benutze das `{{ actionName.data }}` Format, um die Aktion auszuwählen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Sie können auch die Datenquelle einstellen, indem Sie ein Array eingeben.
+
+### Spalteneinstellungen
+
+**Lege Aliase für Datenspalten fest **
+
+Wenn Sie die Datenquelle von Tabellen festlegen, wird der Spaltenname automatisch basierend auf der Datenquelle gesetzt. Sie können alle Spalten umbenennen, indem Sie auf die Spalte im Reiter **Inspec** klicken und den **Spalten-Titel** setzen.
+
+**Spaltentypen ändern**
+
+Wenn Sie die Datenquelle von Tabellen festlegen, werden die Spalten auf **Text** gesetzt. Sie können Spaltentypen manuell einstellen, indem Sie auf die Spalte im Reiter **Inspec** klicken und den Typ aus dem Dropdown-Feld **Spaltentyp** auswählen.
+
+Die Spaltentypen beinhalten:
+
+1.  Text
+2.  Datum, Sie können das Anzeigeformat des Datums im Datumstyp festlegen.
+3.  Nummer, Sie können die Dezimalstellen im Zahlentyp festlegen.
+4.  Prozentual können Sie die Dezimalstellen im Prozenttyp festlegen.
+5.  Link
+6.  Schaltfläche, Sie können Event-Handler im Schaltflächentyp hinzufügen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Zugeordneter Wert benutzerdefinierter Spalten**
+
+Du kannst benutzerdefinierte Spalten zu Tabellen hinzufügen indem du den **+ Hinzufügen** Button im Reiter **Inspec** benutzt. Benutzerdefinierte Spalten werden häufig verwendet, um Daten basierend auf anderen Werten in Ihrer App zu berechnen. Wenn du z. B. `revenue` und `user_num` Spalten hast und eine `ARPU` Spalte berechnen möchtest, kannst du `{{ currentRow.revenue/currentRow.user_num }}` verwenden
+
+Zusätzlich können Sie nach der Berechnung den Spaltentyp auf Anzahl oder Prozentsatz einstellen und die Dezimalstellen festlegen, um die Lesbarkeit zu verbessern.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Zugriffsdaten der Tabelle
+
+Verwende `{{ table1.selectedRow[i].columnName }}` um auf die Daten der ausgewählten Zeilen in anderen Komponenten zuzugreifen. Wenn du die **Multi-Row Selection** nicht aktiviert hast, wird `i` immer 0 sein.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Die Tabellendaten aktualisieren**
+
+1.  Verwende Eingabekomponente oder andere Dateneingabe-cpmponents um `{{ table1.selectedRow[i].columnName }} ` anzuzeigen.
+2.  Verwende `{{ input1.value }}` in Update-Aktionen, um ausgewählte Werte und aktualisierte Werte zu erhalten.
+3.  Fügen Sie einen Ereignis-Handler zum Update-Button hinzu, um die Update-Aktion beim Klicken auszuführen.
+4.  Aktualisieren Sie die Daten der ausgewählten Zeile, indem Sie den Eingabewert ändern und auf die Schaltfläche Update klicken.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Füge eine neue Zeile in die Tabelle ein**
+
+1.  Benutze `{{ input1.value }}` in Einfügeaktionen um Werte zu erhalten.
+2.  Fügen Sie einen Ereignis-Handler zum Einfügen-Button hinzu, um die Einfügen-Aktion beim Klicken auszuführen.
+3.  Fügen Sie neue Daten ein, indem Sie Werte in Eingabekomponenten eingeben und auf die Schaltfläche Einfügen klicken.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

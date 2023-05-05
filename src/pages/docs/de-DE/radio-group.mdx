@@ -1,0 +1,134 @@
+---
+title: Funkgruppe
+metaTitle: ILLA Cloud Radio Gruppenkomponente
+description: Zeigt alle Optionen in der Funkgruppe an und unterstützt die Auswahl einer Option.
+tagCategory: doc_menu_radio_group_click
+---
+
+* * *
+
+## <Heading hidden>Funkgruppe</Heading>
+
+Eine Funkgruppe, auch bekannt als Single-Choice-Gruppe oder einfach nur als Funkgruppe ist eine Komponente, die es Benutzern erlaubt, nur eine Option aus einer Liste vordefinierter Optionen auszuwählen. Jede Option in der Gruppe wird durch eine kreisförmige Schaltfläche repräsentiert, die von Benutzern ausgewählt oder desgewählt werden kann. Wenn eine Option ausgewählt ist, wird jede zuvor ausgewählte Option in der Gruppe automatisch deaktiviert.
+
+Funkgruppen werden häufig in Webformularen und Dialogfeldern verwendet und anderen interaktiven Anwendungen, bei denen Benutzer eine Auswahl aus einer Reihe von Optionen treffen müssen. Sie sind nützlich, um Fehler zu vermeiden, die auftreten können, wenn Benutzer mehrere Optionen irrtümlich oder verwirrend auswählen. Darüber hinaus sind Funk-Button-Gruppen einfach zu bedienen und visuell intuitiv zu bedienen. Dies macht sie zu einer beliebten Wahl für Designer und Entwickler gleichermaßen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Eigenschaften
+
+#### Manuelle Optionen
+
+Fügen Sie neue Optionen hinzu oder löschen Sie die Optionen manuell und konfigurieren Sie sie einzeln. Die Eigenschaften der Optionen sind: 
+
+| Eigenschaften | Beschreibung                                  |
+| ------------- | --------------------------------------------- |
+| Label         | Der angezeigte Text für die Option            |
+| Wert          | Der der Option zugeordnete Wert               |
+| Deaktiviert   | Ob die Option für die Auswahl deaktiviert ist |
+
+#### Zugeordnete Optionen
+
+Sie können auch Optionen aus einer Datenquelle hinzufügen, indem Sie die Label- und Werteeigenschaften den entsprechenden Datenfeldern zuordnen. Auf diese Weise können Sie Optionen dynamisch aus der Datenbank beziehen. Am Ende dieses Artikels, werden wir zeigen, wie man es verwenden durch ein Beispiel.
+
+| Eigenschaften | Beschreibung                                                                           |
+| ------------- | -------------------------------------------------------------------------------------- |
+| Datenquelle   | Datenquelle für Optionen festlegen                                                     |
+| Label         | Verwenden Sie {{item}} , um die Bezeichnung der Optionen zu setzen                     |
+| Wert          | Verwenden Sie {{item}} , um den Wert der Optionen zu setzen                            |
+| Deaktiviert   | Verwenden Sie {{item}} , um festzulegen, ob die Option für die Auswahl deaktiviert ist |
+
+#### Andere Objekte
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert                     | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                       |
+| Platzhalter                      | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                   |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Ausrichtung des Labels festlegen                                                                                                                                                          |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest                                                                         |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Löschtaste anzeigen              | Legen Sie fest, ob die Schaltfläche "Löschen" angezeigt werden soll                                                                                                                       |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | editor.inspect.setter_tooltip.custom_rule                                                                                                                                                 |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Um die Farbe der Komponente auszuwählen                                                                                                                                                   |
+
+### Methode
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden drei Methoden:
+
+#### setWert
+
+Um die ausgewählte Option zu setzen, zum Beispiel {{”value1”}}
+
+| Eigenschaften | Beschreibung      |
+| ------------- | ----------------- |
+| Wert          | Ausgewählter Wert |
+
+#### clearWert
+
+Ausgewählte Optionen löschen
+
+#### validate
+
+Um zu überprüfen, ob die Eingabe zulässig ist
+
+#### löschen
+
+Um die Validierungsmeldung zu löschen
+
+### Event-Handler
+
+Wir unterstützen das Hören der "onChange" Veranstaltung der Funkgruppe. 
+
+Wenn sich die ausgewählte Option ändert, kann sie eine bestimmte Aktion auslösen. Das heißt, wenn ein Benutzer eine andere Option als eine Funkgruppe wählt, kann auf der Basis der gewählten Option eine bestimmte Aktion durchgeführt werden. Zum Beispiel in einem Webformular die Auswahl einer anderen Option kann die Anzeige von verschiedenen Formularfeldern oder die Übermittlung des Formulars an einen anderen Bestimmungsort auslösen. Auf diese Weise kann sich die vom Benutzer gewählte Option auf das Verhalten der von ihm verwendeten Software oder Web-Anwendung auswirken. Die Möglichkeit, spezielle Aktionen auf Basis von Benutzereingaben auszulösen, ist ein wichtiger Aspekt des interaktiven Software-Designs und kann die Benutzerfreundlichkeit und Funktionalität der Software verbessern.
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über {{componentName.propertyName}} in der App aufgerufen werden können.
+
+| Eigenschaftsname | Beschreibung      |
+| ---------------- | ----------------- |
+| wert             | Ausgewählter Wert |
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie man den zugeordneten Modus verwendet, um dynamisch Optionen zu erhalten. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Wir haben eine Tabelle namens `selection` mit 5 Spalten erstellt: `options_de`, `options_jp`, `options_zh`, `options_kr`, `value`. Wir haben die Optionswerte in `value` gespeichert und in verschiedenen Sprachen in anderen Spalten gespeichert. 
+
+Erstelle eine Aktion um alle Daten in `selection` mit dem Namen `postgresql1` aufzulisten
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+* aus der Auswahl auswählen
+```
+
+#### Schritt 2 die Komponente konfigurieren
+
+1.  Datenquellen auf `{{postgresql1.data}} ` gesetzt 
+2.  Konfigurieren Sie das Label, um das Label basierend auf der Sprache zu ändern. 
+
+    1.  Verwenden Sie {{ item.columnName }} , um die Spalte festzulegen. 
+    2.  Verwenden Sie {{ currentUserInfo.language }} , um die Sprache der Benutzer in der ILLA festzulegen.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_de }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />

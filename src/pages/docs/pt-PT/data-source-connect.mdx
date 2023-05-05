@@ -1,0 +1,40 @@
+---
+title: Conecte-se às suas fontes de dados
+metaTitle: ILLA Cloud conectar à sua fonte de dados
+desc: Saiba mais sobre a conexão com sua fonte de dados e ligue-a no Construtor de ILLA.
+tagCategory: doc_menu_data_origem_de_conexão_clique
+---
+
+Saiba mais sobre a conexão com sua fonte de dados e ligue-a no Construtor de ILLA.
+
+ILLA permite que você se conecte e integre uma ampla gama de fontes de dados, incluindo bancos de dados e APIs, na sua organização para uso como recursos.
+
+## Fontes de dados
+
+Fontes de dados são locais onde os dados são armazenados e processados. Exemplos de fontes de dados incluem bancos de dados do PostgreSQL, APIs REST do Twilio e buckets Amazon S3. No ILLA, você pode adicionar várias fontes de dados e torná-las acessíveis aos usuários por consulta.
+
+### **Integrações**
+
+ILLA fornece integrações integradas para muitas fontes de dados populares que requerem uma configuração mínima, como bancos de dados SQL e Stripe. Essas integrações, também conhecidas como recursos, permitem que você se conecte e consulte suas fontes de dados utilizando o Retool. Se um determinado tipo de fonte de dados não é suportado por uma integração incorporada. você pode usar as integrações REST, GraphQL ou SOAP para conectar a quase qualquer API. Isso permite que você acesse uma ampla variedade de fontes de dados de dentro do construtor da ILLA.
+
+### Conectar a bancos de dados
+
+Conectar à maioria dos bancos de dados e armazenamentos de dados
+
+### Conectar a APIs
+
+Conectar ao REST e GraphQL.
+
+## Recursos
+
+Um recurso na ILLA é uma configuração salva que especifica como a ILLA se conecta a uma fonte de dados. Para usar uma fonte de dados no ILLA, você deve criar um recurso para isso. Você pode selecionar o recurso apropriado para acessar os dados ao escrever uma consulta.
+
+Cada recurso no ILLA tem suas próprias opções de configuração que determinam como a ILLA se conecta à fonte de dados correspondente. Estas opções podem incluir credenciais e fluxo de autenticação, configurações de conexão de banco de dados, configurações de API, como URL base e cabeçalhos padrão.
+
+### **Como os recursos funcionam**
+
+Os recursos ILLA armazenam as configurações necessárias para se conectar à fonte de dados de forma segura. Isso permite que você consulte dados facilmente sem expor sua fonte de dados diretamente aos seus usuários. Quando uma consulta é executada para um recurso, Retool usa as configurações de configuração do recurso para o proxy da requisição para a fonte de dados no lado do servidor. Isso garante que apenas Retool tenha acesso direto à fonte de dados.
+
+ILLA simplifica o processo de conexão com uma fonte de dados para seus usuários. Eles só precisam selecionar o recurso relevante ao escrever uma consulta sem se preocuparem com os detalhes da fonte de dados. Você também pode adicionar vários recursos do mesmo tipo, como vários bucket Amazon S3, para distinguir entre eles.
+
+Essa abordagem mantém suas fontes de dados ocultas dos usuários e garante que todas as interações com a fonte de dados sejam tratadas com segurança. ILLA evita fazer conexões do lado do cliente com a fonte de dados que podem expor informações confidenciais e usar as mesmas condições para todas as interações. Além disso, os recursos permitem um cache de pesquisas, o que pode reduzir o número de solicitações feitas para uma fonte de dados e custos potencialmente mais baixos.

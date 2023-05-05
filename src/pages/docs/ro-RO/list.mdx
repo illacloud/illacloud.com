@@ -1,0 +1,53 @@
+---
+title: Listă
+metaTitle: Componenta listă ILLA Cloud
+description: Componenta Lista vă permite să creați rânduri repetate de date al căror aspect și simț sunt definite de dvs.
+tagCategory: click_doc_meniu_listă
+---
+
+* * *
+
+## <Heading hidden>Lista</Heading>
+
+Componenta Lista este similară cu un Container în care puteţi muşca alte componente din ea.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Trage componentele de listat
+
+Când trageți o componentă din listă în cadru, aceasta include automat unele componente. Puteți să le ștergeți sau să le modificați și să glisați noile componente în listă. 
+
+Doar primul element poate fi editat, iar alții se vor schimba automat în funcție de primul element. De asemenea, puteți să vă concentrați pe primul element și să glisați bara pentru a schimba elementele de înălțime.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Afișează rezultatele interogării într-o listă
+
+Când glisați o componentă din listă în cadru, aceasta afișează automat datele testului în format JSON. Puteţi schimba sursa de date într-o acţiune folosind `{{ mysql_list_query.data }}`. 
+
+După setarea sursei de date, puteți schimba datele componentelor:
+
+1.  Selectați componenta în primul element. 
+2.  Dacă datele componentei sunt din listă, puteţi seta datele folosind `{{ currentItem.columnName }}. De exemplu, puteţi seta sursa imaginii cu `{{ currentItem.Avater }}`. `Avater\` este o coloană din sursa de date a listei.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Puteţi folosi `{{ currentItem.columnName }}` numai când componentele se află în listă. 
+
+### Utilizați datele din listă
+
+Puteţi utiliza datele articolelor selectate folosind `{{ list1.selectedItem.columnName }}`. Sau folosiți orice date din listă folosind `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

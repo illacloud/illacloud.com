@@ -1,0 +1,89 @@
+---
+title: Docker immagine all-in-one
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: Costruisci illa utilizza un'immagine all-in-one ed eseguila sulla tua macchina.
+---
+
+* * *
+
+## <Heading hidden>Docker all -in-one Image</Heading>
+
+### Descrizione
+
+Costruisci illa utilizza un'immagine all-in-one ed eseguila sulla tua macchina. Puoi controllare il file script nella cartella [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) per maggiori dettagli.
+
+Nota:
+
+Consigliamo vivamente di implementare i nostri strumenti di auto-deploy[illa-cli](https://github.com/illacloud/illa).
+
+E per il momento non supportiamo Apple Silicon M1 (arco darwin-arm64).
+
+### Esegui un'immagine ufficiale
+
+Installare GNU make e digitare:
+
+```jsx
+crea immagine run-official-
+```
+
+o semplicemente eseguire:
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+questo comando tira immagine illasoft ufficiale ed eseguirla sul tuo ambiente docker.
+
+E accedi con il nome utente predefinito **`root`** e la password **`password`**.
+
+### Genera immagine manualmente ed esegui
+
+Installa GNU make (o esegui gli script di shell nella cartella degli script manualmente).
+
+Per costruire illa-all-in-one immagine ed eseguire, digitare:
+
+```jsx
+make all
+```
+
+per podman, tipo:
+
+```jsx
+fare run-by-podman
+```
+
+o esegui script di shell `run-by-podman.sh` nella cartella degli script.
+
+### Ferma e rimuovi Contenitore
+
+```jsx
+crea stop-and-remove-container
+```
+
+### Pulisci File Del Database Postgres
+
+** QUESTO COMANDO DELEVA IL FILE DI DATABASE SUL TUO DISK!!! \*\*\*** BACKUP, E FARE CARATTERISTICHE \*\*\*
+
+In Default, il database Postgres memorizzerà nella cartella `/var/lib/illa/database/postgresql/`.
+
+Eseguire il seguente comando per eliminarlo.
+
+```jsx
+make clean-postgres-database-file
+```
+
+### Variabili Di Ambiente Runtime Di Configurazione
+
+Modifica `scripts/run.sh` quando necessario:
+
+```jsx
+# postgres database password
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres database file storage folder
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

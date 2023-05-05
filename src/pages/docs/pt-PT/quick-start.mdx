@@ -1,0 +1,51 @@
+---
+title: Início rápido
+metaTitle: Guia de início rápido para nuvem ILLA
+description: Acelere o desenvolvimento de suas ferramentas internas
+tagCategory: link_menu_a_iniciar_rápido
+---
+
+* * *
+
+## <Heading hidden>Visão geral</Heading>
+
+### 1.  Implantar Construtor ILLA
+
+Antes de começar a usar o Construtor da ILLA, você deve optar por usar a ILLA Cloud ou auto-hospedar ILLA para hospedar seus aplicativos. Nós lhe fornecemos CLI ILLA, Docker Compose e K8s para auto-hospedar ILLA em menos de 5 minutos. Nós forneceremos a você com ILLA Cloud mais tarde, para ajudar você simplesmente a começar com ILLA Builder.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Obter dados de usuários
+
+Registre-se e faça login no ILLA Builder, em seguida, insira a aba de recursos. Clique no botão "Criar novo" então você pode selecionar o tipo de recurso aqui. Nós lhe fornecemos a API REST e o MySQL para conectar seus dados. Postgres, Redis e MongoDB estarão disponíveis este mês.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Inserções de arrastar e soltar
+
+Quando seus dados estiverem preparados, você pode voltar para a aba Apps e criar um aplicativo. A lista de inserção está no lado direito da página. Você pode escolher um deles e arrastá-lo para o quadro. Em seguida, clique em inserir e modificar seus parâmetros no painel de inspeção. Nós fornecemos a você o modo markdown para editar o rótulo de cada inserção. Se você estiver familiarizado com a sintaxe Markdown, você pode ajustar rapidamente o tamanho e a espessura do texto. Enquanto isso, você pode usar {{double brackets}} para invocar dados de ação na caixa de entrada de texto para obter mais resultados no Construtor de ILLA.
+
+### 4.  Adicionar ação em apps
+
+Uma ação é necessária para transformar os dados de recursos para inserir. Chamamos-lhe acção. Você pode escrever uma consulta em ação para capturar dados de seu recurso. Nesta base, você pode escrever JavaScript em ações para executar instruções de processamento de dados, como filtro e merge. Um exemplo do MySQL é dado abaixo:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Criar uma ação MySQL no editor de aplicativos. Nomeado ação1.
+
+2.  Digite o código de consulta no painel, por exemplo, SELECT \* DE usuários.
+
+3.  Execute esta ação, o resultado da consulta será exibido no painel inferior.
+
+### 5.  Mostre seus dados
+
+Quando a ação é criada com sucesso, você precisa vincular o resultado da ação ao componente. Você deve substituir a variável de valor no painel de inspeção pelo resultado das ações {{action1.data}}. Então os dados do componente serão combinados com o resultado da ação. 

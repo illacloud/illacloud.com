@@ -1,0 +1,40 @@
+---
+title: Conectați-vă la sursele de date
+metaTitle: ILLA Cloud Conectați-vă la sursele de date
+desc: Învață despre conectarea la sursa ta de date și sună-l în constructorul tău ILLA.
+tagCategory: click_doc_menu_data_source_connect_click
+---
+
+Învață despre conectarea la sursa ta de date și sună-l în constructorul tău ILLA.
+
+ILLA vă permite să vă conectați și să integrați o gamă largă de surse de date, inclusiv baze de date și API-uri, în organizația dvs. pentru a fi utilizate ca resurse.
+
+## Surse de date
+
+Sursele de date sunt locații unde datele sunt stocate și prelucrate. Exemple de surse de date includ bazele de date PostgreSQL, API-uri Twilio REST și Amazon S3. În ILLA, puteți adăuga mai multe surse de date și le puteți face accesibile utilizatorilor pentru a le căuta.
+
+### **Integrări**
+
+ILLA oferă integrări integrate pentru multe surse populare de date care necesită configurație minimă, cum ar fi bazele de date SQL și Stripe. Aceste integrări, cunoscute şi ca resurse, vă permit să vă conectaţi la şi să căutaţi sursele de date folosind Retool. în cazul în care un anumit tip de sursă de date nu este suportat de o integrare integrată; puteți utiliza integrările REST, GraphQL sau SOAP pentru a vă conecta la aproape orice API. Acest lucru vă permite să accesați o gamă largă de surse de date din interiorul constructorului ILLA.
+
+### Conectează-te la bazele de date
+
+Conectează-te la majoritatea bazelor de date și a depozitelor de date
+
+### Conectează-te la API-uri
+
+Conectează-te la REST și GraphQL.
+
+## Resurse
+
+O resursă în ILLA este o configurație salvată care specifică modul în care ILLA se conectează la o sursă de date. Pentru a utiliza o sursă de date în ILLA, trebuie să creați o resursă pentru ea. Puteți selecta resursa potrivită pentru a accesa datele la scrierea unei interogări.
+
+Fiecare resursă din ILLA are propriile opțiuni de configurare care determină modul în care ILLA se conectează la sursa de date corespunzătoare. Aceste opțiuni pot include autentificarea acreditărilor și fluxului, setările conexiunii bazei de date și setările API, cum ar fi URL-ul de bază și antetul implicit.
+
+### **Cum funcționează resursele**
+
+Resursele ILLA stochează setările necesare pentru a te conecta la sursa datelor în siguranță. Acest lucru vă permite să interogați cu ușurință datele fără a vă expune sursa de date direct utilizatorilor. Când o interogare este rulată pentru o resursă, Retool utilizează setările de configurare a resursei pentru a proxy solicitarea la sursa de date de pe partea serverului. Acest lucru garantează că numai Retool are acces direct la sursa de date.
+
+ILLA simplifică procesul de conectare la o sursă de date pentru utilizatorii dvs. Aceștia trebuie doar să selecteze resursa relevantă atunci când scriu o interogare, fără a se preocupa de detaliile sursei de date. De asemenea, poți adăuga mai multe resurse de același tip, cum ar fi mai multe găleţi Amazon S3, pentru a distinge între ele.
+
+Această abordare păstrează sursele de date ascunse de utilizatorii dvs. și se asigură că toate interacțiunile cu sursa datelor sunt tratate în siguranță. ILLA evită conectarea clienților la sursa de date care ar putea expune informații sensibile și utilizează aceleași condiții pentru toate interacțiunile. În plus, resursele permit interogarea cutiilor, ceea ce poate reduce numărul de cereri adresate unei surse de date și poate reduce costurile.

@@ -1,0 +1,40 @@
+---
+title: Połącz ze źródłami danych
+metaTitle: ILLA Cloud Connect to your data source
+desc: Dowiedz się więcej o połączeniu ze źródłem danych i zadzwoń do niego w swoim konstruktorze ILLA.
+tagCategory: "[PLACEHOLDER] doc_menu_data_source_connect"
+---
+
+Dowiedz się więcej o połączeniu ze źródłem danych i zadzwoń do niego w swoim konstruktorze ILLA.
+
+ILLA pozwala na połączenie i zintegrowanie szerokiego zakresu źródeł danych, w tym baz danych i API, z organizacją do wykorzystania jako zasoby.
+
+## Źródła danych
+
+Źródła danych to miejsca, w których dane są przechowywane i przetwarzane. Przykłady źródeł danych obejmują bazy danych PostgreSQL, API Twilio REST oraz wiaderki Amazon S3. W ILLA możesz dodać wiele źródeł danych i uczynić je dostępnymi dla użytkowników do zapytania.
+
+### **Integracje**
+
+ILLA zapewnia wbudowane integracje dla wielu popularnych źródeł danych, które wymagają minimalnej konfiguracji, takich jak bazy danych SQL i Stripe. Te integracje, znane również jako zasoby, pozwalają na podłączenie i zapytanie źródeł danych za pomocą Retool. Jeśli określony typ źródła danych nie jest wspierany przez wbudowaną integrację, możesz użyć integracji REST, GraphQL lub SOAP aby połączyć się z prawie dowolnym API. Pozwala to na dostęp do szerokiego zakresu źródeł danych z systemu ILLA-builder.
+
+### Połącz z bazami danych
+
+Połącz z większością baz danych i magazynów danych
+
+### Połącz z API
+
+Połącz z REST i GraphQL.
+
+## Zasoby
+
+Zasób w ILLA jest zapisaną konfiguracją, która określa, w jaki sposób ILLA łączy się ze źródłem danych. Aby użyć źródła danych w ILLA, musisz utworzyć dla niego zasób. Możesz wybrać odpowiedni zasób, aby uzyskać dostęp do danych podczas zapisywania zapytania.
+
+Każdy zasób w ILLA ma swoje własne opcje konfiguracyjne, które określają sposób połączenia ILLA z odpowiednim źródłem danych. Te opcje mogą obejmować poświadczenia uwierzytelniania i przepływ, ustawienia połączenia z bazą danych oraz ustawienia API, takie jak bazowy adres URL i domyślne nagłówki.
+
+### **Jak działają zasoby**
+
+Zasoby ILLA przechowują niezbędne ustawienia do bezpiecznego połączenia się ze źródłem danych. Pozwala to na łatwe wyszukiwanie danych bez bezpośredniego narażania źródła danych na kontakt z użytkownikami. Kiedy zapytanie jest uruchomione dla zasobu, Retool używa ustawień konfiguracji zasobu do proxy żądania do źródła danych po stronie serwera. Gwarantuje to, że tylko Retool ma bezpośredni dostęp do źródła danych.
+
+ILLA upraszcza proces łączenia się do źródła danych dla Twoich użytkowników. Wystarczy wybrać odpowiedni zasób przy pisaniu zapytania bez obaw co do szczegółów źródła danych. Możesz również dodać wiele zasobów tego samego typu, takich jak wiele wiader Amazon S3, aby odróżnić je od siebie.
+
+To podejście chroni Twoje źródła danych ukryte przed użytkownikami i gwarantuje, że wszystkie interakcje ze źródłem danych są bezpiecznie obsługiwane. ILLA unika połączenia po stronie klienta ze źródłem danych, które mogłyby narażać wrażliwe informacje i stosować te same warunki w odniesieniu do wszystkich interakcji. Ponadto zasoby umożliwiają buforowanie zapytań, co może zmniejszyć liczbę wniosków złożonych do źródła danych i potencjalnie obniżyć koszty.

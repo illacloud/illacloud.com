@@ -1,0 +1,49 @@
+---
+title: Se connecter à une base de données
+metaTitle: Connexion au Cloud ILLA à une base de données
+desc: ILLA se connecte à la plupart des bases de données, y compris PostgreSQL, MySQL, TiDB et MongoDB
+tagCategory: Cliquer sur la base de données
+---
+
+* * *
+
+## <Heading hidden>Se connecter à une base de données</Heading>
+
+ILLA se connecte à la plupart des bases de données, y compris PostgreSQL, MySQL, TiDB et MongoDB. Veuillez consulter cette liste ici pour connaître les sources de données actuellement supportées par ILLA. Les sources de données à venir que nous prévoyons de soutenir sont énumérées ici. S'il manque certaines ressources de données à l'ILLA que vous utilisez, veuillez remplir le formulaire ici.
+
+Les informations de connexion requises par ILLA dépendent du type de base de données que vous souhaitez connecter. Cette information comprend généralement un hôte, un port, des identifiants utilisateur et une chaîne de caractères de connexion. Veuillez vous référer à la configuration ou à la documentation de votre base de données pour obtenir cela.
+
+### 1.  Créer une ressource de base de données
+
+Les ressources représentent les connexions aux sources de données et sont ce que vous demandez dans vos applications ILLA.Connectez-vous à ILLA et accédez à l'onglet **Ressources** > cliquez sur **Créer nouveau** et sélectionnez la base de données à laquelle vous souhaitez vous connecter. Cela ouvre la modale **Configurer une ressource** où vous ajoutez vos informations de connexion.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Après avoir entré vos informations de connexion, cliquez sur **Tester la connexion** pour vérifier que ILLA peut se connecter avec succès. Une fois terminé, cliquez sur **Enregistrer la ressource** pour enregistrer la ressource.
+
+En outre, vous pouvez créer des ressources dans la liste d'actions sous **l'éditeur d'application**.
+
+### 2.  Interroger votre base de données
+
+Dans l'éditeur d'application, cliquez sur **+ Nouveau** dans **Liste d'actions** > sélectionnez le type de ressource et choisissez une ressource existante ou créez une nouvelle ressource > cliquez sur **Créer l'action** et mettez à jour les actions pour récupérer des informations à partir d'une table dans votre base de données.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Cliquez sur **Enregistrer** puis sur **Exécuter**. Les résultats de la requête sont affichés automatiquement une fois la requête terminée.
+
+Il y a des paramètres avancés, y compris le renommage, les paramètres d'exécution, la transformation des données et la configuration de la gestion du succès ou de l'échec, comme indiqué ci-dessous.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

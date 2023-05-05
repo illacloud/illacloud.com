@@ -1,23 +1,17 @@
 ---
 title: 图表（Chart）
 metaTitle: ILLA Cloud Chart doc
-description: The Chart component allows you to visualize data as graphs and charts. It's built using Chart.js.
+description: 图表（Chart）组件允许您将数据视化为图形和图表。 它是使用 Chart.js 构建的。
 tagCategory: doc_menu_chart_click
----
 ---
 
 ## <Heading hidden>图表（Chart）</Heading>
-您可以使用图表组件，将数据可视化为图表，包括柱状图、折线图、散点图、饼图。ILLA的图表使用Chart.js构建。
-<img
-  src={require('@/img/docs/assemble/chart.png').default}
-  alt=""
-/>
 
 ### 在图表中显示数据
 
-您可以使用Action和Transformer来构建图表。在图表的**数据源**字段中使用**{{ mysql1.data }}**等形式引用数据。
+您可以使用Action和Transformer来构建图表。 在图表的 **数据源** 字段中使用 **{{ mysql1.data }}** 等形式引用数据。 
 
-选择数据源之后，ILLA会解析数据并填充到图表中。默认情况下，第一个非数字列会填充到**X轴**，您也可以改变X轴的数据及其他数据配置，如**图表类型**，**分组**，**数据集**等。
+选择数据源之后，ILLA会解析数据并填充到图表中。 默认情况下，第一个非数字列会填充到**X轴**，您也可以改变X轴的数据及其他数据配置，如**图表类型**，**分组**，**数据集**等。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/chart1.png'

@@ -1,0 +1,52 @@
+---
+title: Page
+metaTitle: ILLA Cloud Page doc
+description: Build single-page apps and multi-page app on ILLA
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>Page</Heading>
+
+A multi-page demo built on ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+A single-page application is an app that can change pages without reloading all components on the page. Most resources(including HTML, CSS and Script) are only loaded once throughout the application's lifecycle, making a single-page application fast.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+In a multi-page application, every change, such as displaying the data or submitting data back to the server requests rendering a new page from the server. The multi-page application has a few levels, which makes the application structure simple and straightforward for users.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+In ILLA Builder, a single-page application can be built by setting the frame of the page and adding views to sections, and a multi-page application can be built by adding multiple pages, and developers can use both of these two design patterns in one application.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Set the layout of the pages
+
+Go to the page configuration as the following steps：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+You can use the Preset Layouts, or manually add and delete sections to set the layout. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Add views to a page
+
+`View path`: a string spliced after the page URL to access the specified view. After the app is deployed, the complete access address is as follows: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+You can also enter the homepage and default view via the following path:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Connect menu and pages
+
+Add event handlers to Menu items → set the `Action` to `Set router` → select the page and view
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />

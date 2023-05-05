@@ -1,0 +1,134 @@
+---
+title: Groupe radio
+metaTitle: Composant de groupe radio du nuage ILLA
+description: Affiche toutes les options sur le groupe radio et prend en charge pour sélectionner 1 option.
+tagCategory: Clique sur le bouton radio du menu Doc_menu_Radio.
+---
+
+* * *
+
+## <Heading hidden>Groupe radio</Heading>
+
+Un groupe de radio, également connu sous le nom de groupe à choix unique ou simplement un groupe de radio, est un composant qui permet aux utilisateurs de sélectionner une seule option dans une liste d'options prédéfinies. Chaque option du groupe est représentée par un bouton circulaire qui peut être sélectionné ou désélectionné par les utilisateurs. Lorsqu'une option est sélectionnée, toute option précédemment sélectionnée dans le groupe est automatiquement désélectionnée.
+
+Les groupes de radio sont couramment utilisés dans les formulaires web, les boîtes de dialogue, et d'autres applications interactives où les utilisateurs doivent faire un choix unique à partir d'un ensemble d'options. Ils sont utiles pour éviter les erreurs qui peuvent se produire lorsque les utilisateurs sélectionnent plusieurs options par erreur ou par confusion. De plus, les groupes de boutons radio sont faciles à utiliser et visuellement intuitifs, ce qui en fait un choix populaire pour les designers comme pour les développeurs.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Propriétés
+
+#### Options manuelles
+
+Ajoutez de nouvelles options ou supprimez manuellement les options et configurez les options une par une. Les propriétés des options sont les suivantes : 
+
+| Propriétés | Libellé                                      |
+| ---------- | -------------------------------------------- |
+| Étiquette  | Le texte affiché pour l'option               |
+| Valeur     | La valeur associée à l'option                |
+| Désactivé  | Si l'option est désactivée pour la sélection |
+
+#### Options de mappage
+
+Vous pouvez également ajouter des options à partir d'une source de données en associant les propriétés d'étiquette et de valeur aux champs de données correspondants. Vous pouvez ainsi obtenir des options dynamiquement à partir de la base de données. À la fin de cet article, nous montrerons comment l'utiliser par le biais d'un exemple.
+
+| Propriétés        | Libellé                                                                     |
+| ----------------- | --------------------------------------------------------------------------- |
+| Source de données | Définir la source de données des options                                    |
+| Étiquette         | Utilisez {{item}} pour définir l'étiquette des options                      |
+| Valeur            | Utilisez {{item}} pour définir la valeur des options                        |
+| Désactivé         | Utilisez {{item}} pour définir si l'option est désactivée pour la sélection |
+
+#### Autres propriétés
+
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valeur par défaut                | La valeur initiale du composant. Vous pouvez modifier dynamiquement la valeur initiale en tapant JavaScript dans {{}}.                                                          |
+| Placeholder                      | La valeur sera affichée lorsque le champ de saisie est vide.                                                                                                                    |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Définir l'alignement du libellé                                                                                                                                                 |
+| Width                            | Lorsque l'étiquette est sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette                                                                        |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Lecture seule                    | Contrôle l'état du composant en lecture seule. Un composant en lecture seule peut être sélectionné et concentré mais ne peut pas être modifié.                                  |
+| Afficher le bouton de nettoyage  | Définir si le bouton d'effacement doit être affiché                                                                                                                             |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Règle personnalisée              | Inspecter la règle personnalisée                                                                                                                                                |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Pour sélectionner la couleur du thème du composant                                                                                                                              |
+
+### Méthode
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les trois méthodes suivantes:
+
+#### définirValeur
+
+Pour définir l'option sélectionnée, par exemple, {{”value1”}}
+
+| Propriétés | Libellé             |
+| ---------- | ------------------- |
+| Valeur     | Valeur sélectionnée |
+
+#### effacer la valeur
+
+Effacer les options sélectionnées
+
+#### validate
+
+Vérifier que les informations saisies sont légales
+
+#### clearValider
+
+Effacer le message de validation
+
+### Gestionnaire d'événements
+
+Nous supportons l'écoute de l'événement `onChange` du groupe radio. 
+
+Lorsque l'option sélectionnée change, elle peut déclencher une action spécifiée. Cela signifie que lorsqu'un utilisateur sélectionne une option différente d'un groupe radio, une action particulière peut être effectuée en fonction de l'option sélectionnée. Par exemple, dans un formulaire web, sélectionner une option différente peut déclencher l'affichage de différents champs de formulaire ou la soumission du formulaire à une destination différente. De cette façon, l'option choisie par l'utilisateur peut affecter le comportement du logiciel ou de l'application Web qu'il utilise. La capacité de déclencher des actions spécifiques basées sur la saisie de l'utilisateur est un aspect important de la conception interactive de logiciels et peut améliorer la facilité d'utilisation et la fonctionnalité du logiciel.
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via {{componentName.propertyName}} dans l'application.
+
+| Nom de la propriété | Libellé             |
+| ------------------- | ------------------- |
+| valeur              | Valeur sélectionnée |
+
+### Cas d'utilisation
+
+Ensuite, nous montrerons comment utiliser le mode mappé pour obtenir dynamiquement des options. 
+
+#### Étape 1 Ajouter une action
+
+Nous avons créé une table nommée `selection`, incluant 5 colonnes: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Nous avons stocké les valeurs d'options dans `value` et stocké l'étiquette d'options dans différentes langues dans d'autres colonnes. 
+
+Créez une action pour lister toutes les données dans `selection` nommé `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+sélectionner * dans la sélection
+```
+
+#### Étape 2 Configurer le composant
+
+1.  Définissez les sources de données à `{{postgresql1.data}}` 
+2.  Configurez l'étiquette pour changer l'étiquette en fonction de la langue. 
+
+    1.  Utilisez {{ item.columnName }} pour définir la colonne. 
+    2.  Utilisez {{ currentUserInfo.language }} pour définir la langue utilisée par les utilisateurs en ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />

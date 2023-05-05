@@ -1,0 +1,91 @@
+---
+title: Teksti
+metaTitle: ILLA Cloud Text component doc
+description: Näytä tekstikomponentin tiedot
+tagCategory: doc_menu_text_click
+---
+
+* * *
+
+## <Heading hidden>Teksti</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Ominaisuudet
+
+| Ominaisuus               | Kuvaus                                                                                                                                                                                                          |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sisältö                  | Aseta teksti, joka näytetään tekstin osassa. Markdown ja pelkkää tekstiä tuetaan.                                                                                                                               |
+| Työkaluvihje             | Komponentin kohdalla näkyvä työkaluvihje kun käyttäjät leijuvat komponentin päällä.                                                                                                                             |
+| Vaakasuora suuntaus      | Jotta voidaan määrittää tekstin sisällön horisontaalinen sijainti osassa                                                                                                                                        |
+| Pystysuuntainen suuntaus | Jos haluat asettaa tekstin sisällön vertikaalisen sijainnin komponentissa                                                                                                                                       |
+| Hidden                   | Määrittää, näyttääkö tämä komponentti ja millä ehdoilla se näyttää. Esimerkiksi, jos nykyinen käyttäjä ei ole käyttäjä A, tämän komponentin pitäisi olla piilotettu: {{ currentUserInfo.nickname != 'User A' }} |
+| Väri                     | Valitaksesi tekstin värin maalin tekstimuodossa                                                                                                                                                                 |
+| Tekstin koko             | Valitaksesi tekstin koon maalin tekstimuodossa                                                                                                                                                                  |
+
+### Käytä Markdownia
+
+#### Otsikko
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Otsake 1
+## Otsake 2
+### Otsake 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Tehtäväluettelo
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Tehtäväluettelo
+
+1. [ ] 🚀 Rakenna uusi sovellus ILLA Cloudiin
+2. [ ] :puhelin: Soita Monica
+3. [x] 🍷 päivällinen **Elsa**
+4. [x] 💃 Pelaa `Just dance` puolen tunnin ajan
+```
+
+#### Bulletoitu luettelo
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Tiedotuslista
+– Reaaliaikainen yhteistyö: Voimme luoda kaiken reaaliaikaisesti yhdessä.
+- 🛠️ Mukautettu lisäosa: Rakenna mukautettu liitännäinen tehdäksesi mitä haluat.
+- 🤖 Automatisoi tuki: Yhdistä kaikki ja automatisoi ne 5 sekunnissa.
+- 🖥️ Itse hosted: tukee Docker & k8s
+```
+
+#### Taulukko
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Taulukko
+- Nimi: Linkki ¼ Kuvaus ¶
+¶ :-------- ☐ :------- ☐ :---- ¼
+¶ ILLA Cloud ¶ [https://cloud. llacloud.com/](https://cloud.illacloud.com/) ¶ Build apps on ILLA Cloud¶
+¶ ILLA GitHub ¶ [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) ¶ Star us GitHub¶
+¶ ILLA homepage pt [https://www.illacloud.com/](https://www.illacloud.com/) ¶ ILLA Cloud Offical -sivusto
+```
+
+### Näytä dynaaminen data
+
+Käytä `{{` saadaksesi tietoja muista komponenteista tai toiminnoista tai yleisistä muuttujista. Voit esimerkiksi näyttää nykyisen käyttäjän lempinimen:
+
+```jsx
+## {{ '👋 Hei! '+ nykyinenKäyttäjäInfo.nickname }}
+```

@@ -1,0 +1,29 @@
+---
+title: Transformador
+metaTitle: Documentos do Transformador Cloud ILLA
+desc: Transformador na ILLA permite que o usuário escreva JavaScript para refinar a lógica da aplicação
+tagCategory: link_menu_transformador_clique
+---
+
+* * *
+
+## <Heading hidden>Transformador</Heading>
+
+Colocamos um Transformador na ILLA para atender às suas exigências de escrita de JavaScript para refinar a sua lógica de aplicação. No Transformador, você não precisa codificar em JavaScript usando {{template syntax}} como faz na caixa de entrada de personagem, para que você possa escrever blocos longos e complexos de código JS mais fluentemente. Além disso o Transformador ajuda os desenvolvedores responsáveis pelo design e construção lógica de páginas a completar seu trabalho de desenvolvimento de forma mais eficiente, sem serem limitados pelo progresso uns dos outros.
+
+Você pode usar o Transformer não apenas para operações de dados estabelecidas, mas também para criar operações de transformador ao transformar dados. Seria melhor escolher um transformador independente quando você tem várias operações envolvidas na transformação de dados, ou precisa usar uma lógica JavaScript complexa para transformar dados.
+
+### Transformadores Criativos
+
+Clique na aba Transformers na lista de ações e clique em "+ Novo" para criar um transformador. Será exibido na lista de ações após a criação. Você pode alterar o nome, escrever código JS, salvá-lo e executá-lo no painel de configuração após a seleção.
+
+> Você pode usar o botão 'visualizar' para ver os resultados de um transformador. Note que você precisa salvar o transformador para o resto do aplicativo para obter o novo valor.
+
+A inserção chama o transformador com um valor igual aos dados retornados dentro do transformador, esses dados serão alterados conforme os dados inseridos no transformador alteram com o código do transformador. Como na caixa de entrada de caracteres, você ainda pode usar a sintaxe de modelo para chamar uma variável global. Quando você estiver escrevendo um código JS para chamar dados, você pode encontrar o nome da variável de dados específicos no espaço de trabalho dos dados no painel esquerdo para ajudá-lo a escrever o código mais rapidamente.
+[//]\: # ([Image])
+
+Você pode chamar a variável do transformador na caixa de entrada de dados usando o nome de `{{transformer. tag name}}` para chamar a variável do transformador na caixa de entrada de dados.
+
+### Consultar transformador
+
+Colocamos um Transformador na operação de consulta para permitir que você transforme os dados obtidos no formato desejado diretamente após completar a ação, você pode simplesmente passar {{actionName.data}} para recuperar os dados depois que você tiver concluído a conversão no transformador dentro da ação.

@@ -1,17 +1,17 @@
 ---
 title: Supabase DB
-metaTitle: ILLA Cloud Supabase DB Integration doc
-description: Connect to Supabase instance and show Supabase DB data on components
+metaTitle: ILLA Cloud集成DB
+description: 连接到 Supabase 实例并在组件上显示 Supabase DB 数据
 tagCategory: doc_menu_supabase_click
 ---
----
+
+* * *
 
 ## <Heading hidden>Supabase DB</Heading>
 
-Supabase 是一种开源的 Firebase 替代品，允许开发人员构建实时 Web 和移动应用程序。 它提供许多与 Firebase 相同的功能，例如实时数据库、用户身份验证和托管，但具有开源和提供 SQL API 的额外优势。 这允许开发人员使用他们现有的 SQL 知识和工具，从而很容易与其他系统集成。 此外，Supabase 提供了一个比 Firebase 更灵活和可定制的平台，后者在数据建模和使用方面可能更具限制性。
+Supabase 是一种开源的 Firebase 替代品，允许开发人员构建实时 Web 和移动应用程序。 提供许多与 Firebase 相同的功能，例如实时数据库、用户身份验证和托管，但具有开源和提供 SQL API 的额外优势。  这允许开发人员使用他们现有的 SQL 知识和工具，从而很容易与其他系统集成。  此外，Supabase 提供了一个比 Firebase 更灵活和可定制的平台，后者在数据建模和使用方面可能更具限制性。
 
-本教程概述了通过几个简单的步骤使用 ILLA Builder 和 Supabase 创建管理面板的过程。 ILLA 是面向开发人员的低代码平台，可实现内部工具的快速开发和部署。 它允许通过拖放 UI 组件、连接到任何数据库或 API 以及编写 JavaScript 来创建页面。 要了解有关Supabase的更多信息，请访问[https://supabase.com/](https://supabase.com/)。
-
+本教程概述了通过几个简单的步骤使用 ILLA Builder 和 Supabase 创建管理面板的过程。   ILLA 是面向开发人员的低代码平台，可实现内部工具的快速开发和部署。 它允许通过拖放 UI 组件、连接到任何数据库或 API 以及编写 JavaScript 来创建页面。 要了解有关Supabase的更多信息，请访问<https://supabase.com/>。 让我们开始吧！
 
 ### 步骤1: 在Supabase上配置您的后端
 
@@ -36,7 +36,7 @@ Supabase 提供了多种选项来将数据填充到表里，包括编写查询�
   alt=""
 />
 
-填充表内容，数据库创建完成。
+填充表内容， 数据库创建完成。
 
 ### 步骤2: 在ILLA Cloud上构建UI
 
@@ -60,7 +60,6 @@ Supabase 提供了多种选项来将数据填充到表里，包括编写查询�
 
 ### 步骤3: 连接到Supabase DB，并配置CRUD
 
-
 通过Supabase的[Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database)获取配置信息。
 
 <img
@@ -75,7 +74,7 @@ Supabase 提供了多种选项来将数据填充到表里，包括编写查询�
   alt=""
 />
 
-填充表单信息，以连接到Supabase实例。测试连接并保存资源。
+填充表单信息，以连接到Supabase实例。 测试连接并保存资源。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
@@ -89,7 +88,7 @@ Supabase 提供了多种选项来将数据填充到表里，包括编写查询�
   alt=""
 />
 
-使用 {{ 获取前端输入数据。 下面是在管理面板中，用户管理视图的配置示例。
+使用 {{ 获取前端输入数据 下面是在管理面板中，用户管理视图的配置示例。
 
 根据input1中输入的用户名称，查询表格：
 
@@ -100,10 +99,10 @@ WHERE name = "{{input1.value}}"
 ;
 ```
 
-更新用户数据，在id匹配时更新用户信息：
+更新用户数据。 在id匹配时更新用户信息：
 
 ```
-UPDATE user
+// 更新用户
 SET name = "{{input3.value}}"
 , email = "{{input4.value}}"
 WHERE id="{{input2.value}}"
@@ -123,8 +122,8 @@ DELETE FROM user WHERE id = "{{input2.value}}";
 ```
 
 ### 第四步: 在组件上展示数据
-使用h {{ 在组件的属性中使用Action的数据结果。如下图所示:
 
+使用h {{ 在组件的属性中使用Action的数据结果。 例如：
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
@@ -133,6 +132,6 @@ DELETE FROM user WHERE id = "{{input2.value}}";
 
 ## 相关链接
 
-- [Supabase官方网站](https://supabase.com/)
-- [Supabase GitHub](https://github.com/supabase/supabase)
-- [Supabase文档](https://supabase.com/docs)
+-   [Supabase官方网站](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Supabase文档](https://supabase.com/docs)

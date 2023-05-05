@@ -1,0 +1,29 @@
+---
+title: Transformator
+metaTitle: ILLA Cloud transformer doc
+desc: Transformator i ILLA giver brugeren mulighed for at skrive JavaScript for at forfine applikationslogikken
+tagCategory: doc_menu_transformer_click
+---
+
+* * *
+
+## <Heading hidden>Transformator</Heading>
+
+Vi har sat en Transformer i ILLA til at opfylde dine krav til at skrive JavaScript til at forfine din ansøgning logik. I Transformeren behøver du ikke kode i JavaScript ved hjælp af {{template syntax}} som du gør i tegnindtastningsfeltet, så du kan skrive lange og komplekse blokke af JS kode mere flydende. Desuden Transformeren hjælper udviklere, der er ansvarlige for sidedesign og logik, med at fuldføre deres udviklingsarbejde mere effektivt uden at blive begrænset af hinandens fremskridt.
+
+Du kan bruge Transformeren ikke kun til etablerede dataoperationer, men også til at oprette transformatoroperationer, når du transformerer data. Det ville være bedre at vælge en uafhængig transformer, når du har flere operationer involveret i at transformere data, eller skal bruge kompleks JavaScript logik for at omdanne data.
+
+### Kreative Transformere
+
+Klik på Transformers fanen i handlingslisten, og klik på "+ Ny" for at oprette en transformer. Det vil blive vist i handlingslisten efter oprettelse. Du kan ændre navnet, skrive JS-kode, gemme og køre den i konfigurationspanelet efter valget.
+
+> Du kan bruge 'preview' knappen for at se resultaterne af en transformer. Bemærk, at du skal gemme transformeren til resten af appen for at få den nye værdi.
+
+Indsæt kalder transformeren med en værdi lig med de data, der returneres inden for transformeren disse data vil ændre sig som de data, der indtastes i transformeren ændringer med koden for transformeren. Som med tegnindtastningsfeltet kan du stadig bruge skabelonsyntaksen til at kalde den globale variabel Nej. Når du skriver JS-kode til at ringe til data, du kan finde det specifikke data-variabelnavn i data-arbejdsområdet i venstre panel, så du hurtigere kan skrive kode.
+[//]\: # ([Image])
+
+Du kan ringe til transformervariablen i datapostboksen ved at bruge `{{transformer navn. tag navn}}` for at kalde transformervariablen i datapostboksen.
+
+### Forespørgsel Transformator
+
+Vi har sat en Transformer i forespørgselshandlingen for at give dig mulighed for at omdanne de hentede data til det ønskede format direkte efter fuldførelse af handlingen Du kan så blot videregive {{actionName.data}} for at hente dataene, når du har fuldført konverteringen i transformeren i handlingen.

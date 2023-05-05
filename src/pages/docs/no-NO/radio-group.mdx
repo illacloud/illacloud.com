@@ -1,0 +1,134 @@
+---
+title: Radio gruppe
+metaTitle: ILLA Cloud Radio-gruppekomponent
+description: Viser alle alternativer i radio gruppen og støtter for å velge 1 valg.
+tagCategory: doc_meny_radio_group_klikk
+---
+
+* * *
+
+## <Heading hidden>Radio gruppe</Heading>
+
+En radiokruppe, også kjent som en envalgsgruppe eller bare en radiogruppe. er en komponent som tillater brukere å velge bare ett alternativ fra en liste med forhåndsdefinerte alternativer. Hvert alternativ i gruppen representeres av en sirkulær knapp som kan velges eller desvelges av brukere. Når ett alternativ er valgt, vil et tidligere valgt alternativ i gruppen automatisk bli valgt.
+
+Radiokrupper brukes vanligvis i skjemaer, dialogbokser og andre interaktive applikasjoner der brukerne må foreta ett enkelt valg fra et sett med alternativer. De er nyttige for å hindre feil som kan oppstå når brukere velger flere alternativer ved en feiltakelse eller forvirring. I tillegg er radioknappgrupper enkle å bruke og visuelt intuitive, noe som gjør dem populært for både designere og utviklere.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Egenskaper
+
+#### Manuelle alternativer
+
+Legge til nye alternativer eller slett alternativer manuelt, og konfigurere alternativene én etter én. Alternativerenes egenskaper er som følger: 
+
+| Egenskaper | Beskrivelse                            |
+| ---------- | -------------------------------------- |
+| Etikett    | Teksten som vises for alternativet     |
+| Verdi      | Verdien knyttet til alternativet       |
+| Deaktivert | Om alternativet er deaktivert for valg |
+
+#### Tilordnede alternativer
+
+Du kan også legge til alternativer fra en datakilde ved å kartlegge etikett- og verdiegenskapene til de tilsvarende datafeltene. Du kan få dynamisk opsjoner fra databasen på denne måten. På slutten av denne artikkelen vil vi vise hvordan vi bruker den gjennom et eksempel.
+
+| Egenskaper | Beskrivelse                                                        |
+| ---------- | ------------------------------------------------------------------ |
+| Data kilde | Angi datakilden for alternativene                                  |
+| Etikett    | Bruk {{item}} for å angi etikett for alternativer                  |
+| Verdi      | Bruk {{item}} til å angi verdien av alternativene                  |
+| Deaktivert | Bruk {{item}} for å velge om alternativet er deaktivert for utvalg |
+
+#### Andre egenskaper
+
+| Egenskaper               | Beskrivelse                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard verdi           | Den opprinnelige verdien for komponenten. Du kan dynamisk endre innledende verdien ved å skrive JavaScript i {{}}.                                        |
+| Plassholder              | Verdien vil bli vist når inndatafeltet er tomt.                                                                                                           |
+| Etikett                  | Navnet på feltet som vises til brukeren                                                                                                                   |
+| Bildetekst               | Bildetekst som brukes til å beskrive feltet i detalj                                                                                                      |
+| Skjult etikett           | Angi om etiketten skal vises                                                                                                                              |
+| Posisjon                 | Still plasseringen av etiketten i forhold til komponenten                                                                                                 |
+| Justering                | Sett innretting av etikett                                                                                                                                |
+| Width                    | Når etiketten er på venstre side av komponenten, angir du forholdet bredden på etiketten                                                                  |
+| Arrangementshåndterer    | Utløse spørringer, kontroll-komponenter eller ringe andre APIer som respons på komponenthendelser.                                                        |
+| Deaktivert               | Kontroller statusen for hvorvidt komponenten er deaktivert. Komponenten kan ikke endres eller fokusert når den er deaktivert.                             |
+| Kun lese                 | Kontroller statusen for om komponenten bare er skrivebeskyttet. En skrivebeskyttet komponent kan velges og fokuseres men kan ikke endres.                 |
+| Vis null-knapp           | Velg om du vil vise tømmingsknappen                                                                                                                       |
+| Verktøytips              | Brukere kan skrive inn komponentens verktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes                            |
+| Obligatorisk felt        | Gyldig bare når bryteren er på.                                                                                                                           |
+| Egendefinert regel       | editor.inspect.setter_tooltip.custom_rule                                                                                                                 |
+| Skjul valideringsmelding | Du kan skjule feilmeldingen ved å bytte den skjulte statusen når inntastingsverdien er feil. Du kan dynamisk endre den skjulte statusen etter JavaScript. |
+| Skjema Datastøkkel       | Angi en nøkkel til en 'wrapping form'-komponent når du konstruerer dataattributtet.                                                                       |
+| Hidden                   | Dynamisk kontrollere om komponenten er skjult. Du kan endre skjult status gjennom dynamisk boolsk verdi.                                                  |
+| Tema farge               | Hvis du vil velge temafargen til komponenten                                                                                                              |
+
+### Metode
+
+Du kan bruke andre komponenter til å kontrollere komponenten. Følgende tre metoder støtter vi:
+
+#### settverdi
+
+For å sette det valgte alternativet, for eksempel, {{”value1”}}
+
+| Egenskaper | Beskrivelse |
+| ---------- | ----------- |
+| Verdi      | Valgt verdi |
+
+#### klar verdi
+
+For å fjerne de valgte alternativene
+
+#### validate
+
+For å verifisere at inndatainformasjonen er juridisk
+
+#### rydde
+
+For å fjerne valideringsmeldingen
+
+### Arrangement behandler
+
+Vi støtter at vi lytter til 'onChange' arrangementet i radiogruppen. 
+
+Når det valgte alternativet endres, kan det utløse en angitt handling. Det betyr at når en bruker velger et annet alternativ fra en radiogruppe, kan en bestemt handling iverksettes basert på det valgte alternativet. For eksempel i et webskjema å velge et annet alternativ kan utløse visning av forskjellige skjemafelter, eller sende inn skjemaet til en annen destinasjon. Dermed kan valget valgt av brukeren påvirke oppførselen til programvaren eller nettprogrammet de bruker. Muligheten til å utløse angitte handlinger basert på brukerinndata er et viktig aspekt ved utvikling av interaktiv programvare og kan forbedre programvarens brukervennlighet og funksjonalitet.
+
+### Data
+
+Komponenten har noen vanlig brukte data, som kan kalles via {{componentName.propertyName}} i appen.
+
+| Egenskap navn | Beskrivelse |
+| ------------- | ----------- |
+| verdi         | Valgt verdi |
+
+### Bruk kasse
+
+Deretter skal vi vise hvordan man bruker den kartlagte modusen for å få dynamisk valg. 
+
+#### Trinn 1 Legg til en handling
+
+Vi har opprettet en tabell med navnet `selection`, inkludert 5 kolonner: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Vi lagret valgverdiene i "verdi" og "Lagre alternativer" i forskjellige språk i andre kolonner. 
+
+Opprett en handling for å liste alle data i `selection` ved navn `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+velg * fra utvalg
+```
+
+#### Trinn 2 Konfigurere komponenten
+
+1.  Sett datakildene til `{{postgresql1.data}}` 
+2.  Konfigurer etiketten for å endre etiketten basert på språket. 
+
+    1.  Bruk {{ item.columnName }} for å angi kolonnen. 
+    2.  Bruk {{ currentUserInfo.language }} for å angi språk brukere bruk i ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />

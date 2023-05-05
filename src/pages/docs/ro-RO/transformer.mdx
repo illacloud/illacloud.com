@@ -1,0 +1,29 @@
+---
+title: Transformator
+metaTitle: Transformator ILLA Cloud
+desc: Transformer în ILLA permite utilizatorului să scrie JavaScript pentru a rafina logica aplicației
+tagCategory: click_doc_meniu_transformator
+---
+
+* * *
+
+## <Heading hidden>Transformat</Heading>
+
+Am pus un transformator în ILLA pentru a îndeplini cerințele dvs. de scriere JavaScript pentru a rafina logica aplicației. În Transformator nu trebuie să codezi în JavaScript folosind {{template syntax}} așa cum faci în căsuța de introducere a caracterului, astfel încât să poți scrie blocuri lungi și complexe ale codului JS mai fluent. În plus, Transparent ajută dezvoltatorii responsabili pentru proiectarea paginilor și construirea logică să își finalizeze activitatea de dezvoltare mai eficient fără a fi constrânși de progresul celuilalt.
+
+Poti folosi Transmiterea nu numai pentru operatiunile de date stabilite, dar si pentru crearea operatiilor de transformator la transformarea datelor. Ar fi mai bine să alegi un transformator independent atunci când ai mai multe operațiuni implicate în transformarea datelor, sau trebuie să utilizaţi logica complexă JavaScript pentru a transforma datele.
+
+### Transformatori creativi
+
+Faceți clic pe fila Transformers din lista de acțiuni și faceți clic pe "+ Nou" pentru a crea un transformator. Acesta va fi afișat în lista de acțiuni după creare. Poți schimba numele, scrie codul JS, îl poți salva și rula în panoul de configurare după selecție.
+
+> Puteți utiliza butonul „previzualizare” pentru a vedea rezultatele unui transformator. Țineți cont că trebuie să salvați transformatorul pentru ca restul aplicației să obțină noua valoare.
+
+Introduceți apelează transformatorul cu o valoare egală cu datele returnate în transformator, aceste date se vor schimba pe măsură ce datele introduse în transformator se modifică cu codul transformatorului. Ca şi în cazul cutiei de intrare a caracterelor, încă puteţi utiliza sintaxa şablonului pentru a apela numărul variabilei globale. Când scrieți codul JS pentru a apela date, poți găsi numele variabilă de date specific în spațiul de lucru al datelor din panoul din stânga pentru a te ajuta să scrii codul mai repede.
+[//]\: # ([Image])
+
+Puteți apela variabila de transformator în caseta de date utilizând numele `{{transformer. numele etichetei}` pentru a apela variabila de transformator în caseta de date.
+
+### Interogare Transformatoare
+
+Am pus un Transparent în operația de interogare pentru a vă permite să transformați datele preluate direct în formatul dorit după finalizarea acțiunii, puteți pur și simplu transmite {{actionName.data}} pentru a prelua datele odată ce ați finalizat conversia în transformator în cadrul acțiunii.

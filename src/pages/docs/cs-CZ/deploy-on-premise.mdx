@@ -1,0 +1,30 @@
+---
+title: Umístit na místě
+metaTitle: ILLA Cloudové nasazení na místě
+desc: ILLA může být na vašem serveru nebo počítači hostující místo používání poskytovatele služeb třetí strany
+tagCategory: doc_menu_deploy_premis_kliknutí
+---
+
+* * *
+
+# <Heading hidden>Umístit na premise</Heading>
+
+Self-hosting ILLA znamená hostování a správu platformy ILLA na vašem vlastním serveru nebo počítači namísto používání poskytovatele služeb třetí strany. Tento přístup je často považován za bezpečnější a soukromější, protože máte úplnou kontrolu nad svými daty a jejich používáním.
+
+ILLA nabídne verzi hostovanou cloudem a možnost brzy nastavit vaši instanci na různých platformách.
+
+## Samostatně hostované
+
+Samohostitelský ILLA na vaší vlastní infrastruktuře umožňuje ji bezproblémově integrovat s existujícím nastavením bez nutnosti udržovat samostatnou konfiguraci. To vám umožní využít funkce a schopnosti vaší stávající infrastruktury a rozšířit je na ILLA. Některé výhody nasazení ILLA na vaší infrastruktuře zahrnují:
+
+### Zabezpečení
+
+hostováním ILLA na vlastní infrastrukturu, můžete uchovávat data v prostorách a zajistit, aby vaše API klíče nebo bezpečnostní údaje nikdy neopustily váš server. To umožňuje použít stejná bezpečnostní pravidla na ILLA jako na jakoukoliv jinou aplikaci na vašem serveru. Aplikace, které vytváříte pomocí ILLA, budou umístěny na vaší infrastruktuře a ve vašich firemních sítích. Můžete se také rozhodnout hostit ILLA ve vnitřních sítích za firewallem a nakonfigurovat ji tak, aby fungovala s vlastní doménou a bezpečnostními pravidly.
+
+### Interní databáze
+
+Samostatným hostováním ILLA se můžete připojit k databázi běžící na stejném počítači nebo intranetu a použít ji k vytváření aplikací. ILLA používá MongoDB k ukládání dat aplikací a Redis k ukládání informací o relaci a nekritických keší. Pokud chcete integrovat ILLA s vlastními servery MongoDB nebo Redis hostovanými ve vaší infrastruktuře, budete muset změnit nastavení proměnných prostředí a upozornit je na vlastní instance MongoDB/Redis.
+
+### Aktualizace
+
+Samostatným hostováním ILLA můžete nakonfigurovat flexibilnější plány aktualizací a další činnosti údržby. Můžete postupovat podle poskytnutých kroků pro nastavení okna údržby a naplánovat automatické aktualizace. To vám umožní udržovat a aktualizovat vaši ILLA způsobem, který je vhodný pro vás a vaši organizaci.

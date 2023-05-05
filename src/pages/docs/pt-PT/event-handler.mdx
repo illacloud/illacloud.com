@@ -1,0 +1,36 @@
+---
+title: Manipulador de eventos
+metaTitle: Documento manipulador de eventos ILLA Cloud
+desc: Manipuladores de eventos são parte integral do refino lógica de uso interno da ferramenta
+tagCategory: link_menu_evnet_handler_clique
+---
+
+* * *
+
+## <Heading hidden>Manipulador de eventos</Heading>
+
+Manipuladores de eventos são parte integral do refino de sua lógica de uso interno da ferramenta. Qualquer inserção ou ação que responda a uma ação do usuário tem seus próprios eventos que podem ser acionados, como uma inserção de botão com um evento de 'clique', uma caixa de entrada de texto com um evento de 'enviar', o sucesso de uma ação, e assim por diante. Os manipuladores de eventos ajudam os usuários a acionar as instruções pré-definidas quando ocorrem eventos: você pode reagir a um único evento, ou você pode configurar vários manipuladores de eventos e configurá-los como fluxos de trabalho para fazer um trabalho mais complexo.
+
+Após a ocorrência do evento que você definiu, o manipulador de eventos pode ajudá-lo a executar uma variedade de ações: controlar instruções de ação, controles de inserção, scripts de execução e muito mais. Você também pode adicionar condições de gatilho JavaScript mais detalhadas na parte superior das condições de gatilho.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Manipuladores de eventos
+
+No evento manipuladores de eventos, você pode definir o resultado do evento com base em se os resultados da consulta falharam ou não. Você pode completar a lógica do gatilho definindo a condição de falha de consulta na aba de respostas.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Editar manipulador de envio
+
+Definimos uma condição de ativação para cada inserção interativa, e você pode selecionar um evento na lista de ações do manipulador como condição de gatilho. Por exemplo, você poderia definir 'Enviar' como condição de acionamento no manipulador de eventos para a caixa de entrada de dados, que insere automaticamente a entrada no banco de dados quando o usuário 'envia' a entrada, implementando assim uma função simples de inserção de dados.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Estados temporários
+
+Ao processar dados, você pode encontrar situações onde os dados processados não são chamados imediatamente. Por esta razão, criámos Estados temporários para armazenar Estados intermédios para o tratamento de dados. Você pode optar por definir um estado temporário nas opções de eventos de resposta de manipuladores de eventos e clique em Criar novo estado para armazenar os dados atuais no estado temporário, que pode ser colocado para qualquer propriedade.
+
+Fora do editor do projeto, você também pode armazenar dados em {{tempState1.setValue(data)}} ou chamar dados por {{tempState1.value}}.
+
+> Os valores no estado temporário serão apagados quando o projeto for reiniciado, e você precisará armazenar os valores localmente ou na nuvem para garantir a integridade dos dados.

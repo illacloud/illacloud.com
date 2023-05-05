@@ -1,0 +1,49 @@
+---
+title: Conectar ao Banco de Dados
+metaTitle: ILLA Cloud Connect to a database
+desc: ILLA conecta-se à maioria dos bancos de dados, incluindo PostgreSQL, MySQL, TiDB e MongoDB
+tagCategory: doc_banco_de_dados_clique
+---
+
+* * *
+
+## <Heading hidden>Conectar a um banco de dados</Heading>
+
+ILLA conecta-se à maioria dos bancos de dados, incluindo PostgreSQL, MySQL, TiDB e MongoDB. Por favor, verifique aqui esta lista de fontes de dados ILLA suportadas atualmente. As próximas fontes de dados que planejamos apoiar estão listadas aqui. Caso esteja faltando certos recursos de dados que você está usando, por favor preencha o formulário aqui.
+
+Os detalhes de conexão requeridos pela ILLA dependem do tipo de banco de dados que você deseja conectar. Estas informações geralmente incluem um host, porto, credenciais do usuário e string de conexão. Por favor, consulte a configuração do seu banco de dados ou documentação para obter isto.
+
+### 1.  Criar um recurso de banco de dados
+
+Os recursos representam conexões com fontes de dados e são o que você consulta em seus aplicativos ILLA.Faça o login para ILLA e navegue até a aba **Recursos** > clique em **Criar novo** e selecione o banco de dados que você deseja se conectar. Isso abre o modal **Configure um recurso** onde você adiciona suas informações de conexão.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Depois de inserir os detalhes da sua conexão, clique em **Testar conexão** para verificar a ILLA pode se conectar com êxito. Uma vez concluído, clique em **Salvar recurso** para salvar o recurso.
+
+Além disso, você pode criar recursos na lista de ações sob o **Editor de Aplicativos**.
+
+### 2.  Consultar seu banco de dados
+
+No editor de Aplicativos, clique em **+ Novo** na **Lista de Ações** > selecione o tipo de recurso e escolha um recurso existente ou crie um novo recurso > clique em **criar ação** e atualize as ações para obter algumas informações de uma tabela em seu banco de dados.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Clique em **Salvar** e depois em **Executar**. Os resultados da consulta são exibidos automaticamente após a conclusão da consulta.
+
+Existem algumas configurações avançadas, incluindo renomear, executar configurações, transformar dados e configurar a manipulação de sucesso ou falha, como mostrado abaixo.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>
