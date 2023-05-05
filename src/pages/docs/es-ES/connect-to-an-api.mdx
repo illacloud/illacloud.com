@@ -1,0 +1,34 @@
+---
+title: Conectar a una API
+metaTitle: Conectarse a una API de ILLA Cloud
+desc: Puede conectar ILLA a la mayoría de las APIs usando nuestras integraciones nativas. ILLA puede conectarse a cualquier API de REST, GraphQL
+tagCategory: doc_menu_api_clic
+---
+
+* * *
+
+## <Heading hidden>Conectar a una API</Heading>
+
+Conéctate a cualquier API de REST, GraphQL.
+
+Puede conectar ILLA a la mayoría de las APIs usando nuestras integraciones nativas. Si necesita conectarse a una API interna, o si no hay una integración compatible, puede conectarse usando nuestra integración REST API o integración GraphQL.
+
+### 1.  Crear un recurso API
+
+Los recursos representan conexiones a fuentes de datos y son lo que consulta dentro de sus aplicaciones ILLA.Los recursos representan conexiones a fuentes de datos y son lo que consulta dentro de sus aplicaciones ILLA.Inicie sesión en ILLA y vaya a la pestaña **Recursos** > haga clic en **Crear nuevo** y seleccione la API a la que desea conectarse como **API REST**. Esto abre la modal **Configurar un recurso** donde se añade la información de la conexión.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/config.png'
+  alt=""
+/>
+
+Como mínimo, necesitas la URL base de la API a la que quieres conectar. También puede pasar parámetros de URL, cabeceras, etc. Si tu API requiere autenticación, también puedes configurarlo en esta página. Por ejemplo, OAuth2.0 requiere una URL de Autorización, Access Token URL, etc. Después de introducir los detalles de su conexión, haga clic en **Guardar recurso.**
+
+### 2.  Consulta tu API
+
+En el editor de aplicaciones, haga clic en **+ Nuevo** en la **Lista de Acciones** > seleccione **API REST** y elija una API REST existente o cree una nueva > haga clic en **crear acción** y actualice las acciones con parámetros adicionales de URL, encabezados, etc.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-api/action.png'
+  alt=""
+/>
