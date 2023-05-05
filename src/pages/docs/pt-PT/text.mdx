@@ -1,0 +1,91 @@
+---
+title: texto
+metaTitle: Link para Componente de Texto ILLA Cloud
+description: Exibir dados com componente de texto
+tagCategory: link_menu_texto_clique
+---
+
+* * *
+
+## <Heading hidden>Texto</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### propriedades
+
+| Propriedade            | Descrição:                                                                                                                                                                                              |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Conteúdo               | Defina o texto exibido no componente de texto. Markdown e texto simples são suportados.                                                                                                                 |
+| Dica                   | Uma dica exibida no componente quando usuários passarem o mouse sobre o componente.                                                                                                                     |
+| Alinhamento horizontal | Para definir a posição horizontal do conteúdo de texto no componente                                                                                                                                    |
+| Alinhamento vertical   | Para definir a posição vertical do conteúdo de texto no componente                                                                                                                                      |
+| Hidden                 | Para definir se deve exibir este componente e em que condições exibi-lo. Por exemplo, se o usuário atual não é o Usuário A, este componente deve ser oculto: {{ currentUserInfo.nickname != 'User A' }} |
+| Cor                    | Para definir a cor do texto em formato de texto de tinta                                                                                                                                                |
+| Tamanho do texto       | Para definir o tamanho do texto em formato de texto de pintura                                                                                                                                          |
+
+### Usar Markdown
+
+#### Título
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Título 1
+## Título 2
+### Título 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Lista de tarefas
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Lista de tarefas
+
+1. [ ] 🚀 Crie um novo aplicativo na ILLA Cloud
+2. [ ] ☎️ Ligue com Monica
+3. [x] 🍷 Jante com **Elsa**
+4. [x] 💃 Jogue `Just dance` por meia hora
+```
+
+#### Lista com marcadores
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Lista com marcadores
+- Colaboração em tempo real: podemos criar tudo em tempo real juntos.
+- 🛠️ Plugin personalizado: Construa qualquer plugin personalizado para fazer o que você quer.
+- 🤖 Automatizar Suporte: Conectar tudo e automatizá-los em 5 segundos.
+- 🖥️ suporta Docker & k8s
+```
+
+#### Classificações
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tabela
+├Nome ├Link ├Description ├
+├:-------- ├:------- ├:---- ├
+├LA Cloud ├[https://cloud. llacloud.com/](https://cloud.illacloud.com/) ├Build apps on ILLA Cloud➲
+├ILLA GitHub Balk[https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) 'yStar para nós no GitHub├
+├ILLA homepage →[https://www.illacloud.com/](https://www.illacloud.com/) ├ILLA Cloud Offical site
+```
+
+### Exibir dados dinâmicos
+
+Use `{{` para obter dados de outros componentes ou ações ou variáveis globais. Por exemplo, para exibir o apelido do usuário atual:
+
+```jsx
+## {{ '👋 Olá! '+ currentUserInfo.nickname }}
+```
