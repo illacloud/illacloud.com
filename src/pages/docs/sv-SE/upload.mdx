@@ -1,0 +1,106 @@
+---
+title: Ladda upp
+metaTitle: ILLA Cloud Upload component doc
+description: Använd uppladdningskomponenten för att ladda upp filer från lokala maskiner till valfritt molnlagringsutrymme
+tagCategory: Ladda upp
+---
+
+* * *
+
+## <Heading hidden>Ladda upp</Heading>
+
+Uppladdningskomponenten används för att tillåta användare att ladda upp filer från sina lokala maskiner till ett molnlagringsutrymme via API. Därefter kommer vi att introducera hur man konfigurerar en uppladdningskomponent, hur man associerar uppladdningskomponenten med en molnlagringstjänst, hur du använder uppladdningskomponenten för att välja en bild och visa den med en bild, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Egenskaper
+
+| Egenskap                   | Beskrivning                                                                                                                                                                                                                                                                                             |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ                        | Ange typ av uppladdningskomponent, inklusive knapp och Dropzone.                                                                                                                                                                                                                                        |
+| Text                       | Texten som visas på uppladdningskomponenten.                                                                                                                                                                                                                                                            |
+| Urvalstyper                | Ställ in urvalstypen till flera filer, enstaka fil eller katalog.                                                                                                                                                                                                                                       |
+| Typ av fil                 | En lista över tillägg som får laddas upp. Inget värde tillåter alla filtyper.                                                                                                                                                                                                                           |
+| Lägg till nyvalda filer    | För att ställa in den valda nya filen att lägga till den valda filen eller ersätta den valda filen i urvalstypen för flera filer eller kataloger.                                                                                                                                                       |
+| Lista över filer           | Ange om du vill visa en lista över valda filer under uppladdningskomponenten. Höjden på uppladdaren kommer att ändras dynamiskt baserat på längden på fillistan.                                                                                                                                        |
+| Tolka värde                | Försök att tolka de valda filerna, med stöd för JSON, CSV, TSV, Excel och TXT-filer. Analyserade data kan nås via {{upload1.parsedValue}}. Filer som inte kan tolkas kommer att vara noll i matrisen. Alla filer är tillgängliga som base64-kodade strängar på värdematrisen, oavsett detta alternativ. |
+| Laddar                     | Om komponenten ska visa en laddningsindikator.                                                                                                                                                                                                                                                          |
+| Inaktiverad                | För att ställa in om du vill inaktivera denna komponent och under vilka villkor du vill inaktivera den. Till exempel, om input1-komponenten är noll, bör denna komponent inaktiveras: {{ input1.value == ‘ ’}}                                                                                          |
+| Verktygstips               | Ett verktygstips som visas på komponenten när användare svävar över komponenten.                                                                                                                                                                                                                        |
+| Obligatoriskt fält         | För att ställa in om det krävs.                                                                                                                                                                                                                                                                         |
+| Min size                   | För att ställa in den minsta filstorlek som får läggas till.                                                                                                                                                                                                                                            |
+| Max size                   | För att ställa in den maximala filstorleken som får läggas till.                                                                                                                                                                                                                                        |
+| Anpassad regel             | Att ställa in texten som visas när verifiering misslyckas.                                                                                                                                                                                                                                              |
+| Dölj valideringsmeddelande | Ange om valideringsmeddelandet ska visas när verifiering misslyckas.                                                                                                                                                                                                                                    |
+| Formulär dataknapp         | För att ställa in en nyckel för komponenten. Efter att denna komponent har lagts till i ett formulär, kommer denna nyckel att användas för att identifiera data för denna komponent när du skickar formuläret.                                                                                          |
+| Hidden                     | Ställ in om denna komponent ska visas och under vilka förutsättningar den ska visas. Till exempel, om den nuvarande användaren inte är Användare A, bör denna komponent döljas: {{ currentUserInfo.nickname != 'User A' }}                                                                              |
+| Variant                    | För att ställa in knappuppladdningskomponenten till kontur eller fylld.                                                                                                                                                                                                                                 |
+| Tema färg                  | För att ställa in färgen på knappen Ladda upp komponenten.                                                                                                                                                                                                                                              |
+
+### Metod
+
+Du kan använda andra komponenter för att styra uppladdningskomponenten. Vi stöder följande tre metoder:
+
+| rensning       | Används för att rensa valideringsmeddelandet                                       |
+| -------------- | ---------------------------------------------------------------------------------- |
+| rensa          | Används för att rensa valda                                                        |
+| setInaktiverad | Används för att ställa in uppladdningskomponenten till inaktiverad eller aktiverad |
+
+### Händelsehanterare
+
+För att utlösa åtgärder när de valda filerna ändras
+
+### Data för uppladdare
+
+Uppladdningskomponenten har en del vanligt använda data, som kan kallas i appen.
+
+`value` en array bestående av base64-data för filer. 
+
+`files` en samling objekt. Nycklarna till objekten inkluderar `lastModified`, `name`, `size`, `type`. Du kan använda `{{upload1.files.map(file =>fil. ame)}}` för att få en array med filnamn och du kan också få lastModifierad array, storleksarray, skriv arrayen på samma sätt. 
+
+### Ladda upp filer till en molnlagringstjänst
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Ladda upp en enda fil via en S3-resurs
+
+Konfigurationen av åtgärder är som följer. 
+
+Ladda upp objektnamn
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Ladda upp data
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Ladda upp flera filer via en S3-resurs
+
+Ladda upp objektnamnlista
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Ladda upp datalista
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Ladda upp en bild och visa den på bildkomponenten
+Ändra bildkällan till filbase64-data för uppladdningskomponent. Base64-data lagras i attributet värde i array. Och vi bör skarva filen prefix med fildata. Koden är som följer. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
