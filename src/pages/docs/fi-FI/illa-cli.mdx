@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: ILLA CLI mahdollistaa ILLA Builderin käyttöönoton nopeammin kuin mielikuvituksesi.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**Sinulla on oltava Docker ennen kuin käytät ILLA-CLI:tä, jotta voit ottaa käyttöön itse asennetun asennuksen. Kun käytät ILLA CLI:tä, sinun tulee lisätä nykyinen käyttäjä telakkoryhmään tai käyttää juurina.**
+
+## Ladataan ILLA CLI
+
+Jos Rust on asennettu, voit helposti rakentaa + asentaa uusimman ILLA CLI release **cargo**:
+
+```
+> cargo install illa
+```
+
+**lasti** -työkalu saattaa ILLA:n CLI:n lataamisen loppuun sen lähderiippuvuuksien kanssa, rakentaa ja asentaa se lastin bin polku jotta voimme ajaa sitä.
+Kun olet asentunut, voit ajaa ILLA CLI **illa** komennolla.
+
+Vaihtoehtoisesti voit vain ladata ILLA CLI käyttöjärjestelmäsi täältä:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Jos lataat yllä olevista linkeistä, vaiheet ovat hieman erilaisia verrattuna ILLA:n CLI:n lataamiseen **rahtista**. Kun olet ladannut CLI:n, sinun täytyy tehdä se suoritettavaksi. Otetaan esimerkiksi illa-linux esimerkiksi:
+
+```
+## lataa illa cli binary tiedosto
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## purkaa tiedoston
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## suorita illa cli
+> ./illa
+
+```
+
+### Itseisännöidyn asennuksen edellytysten tarkistaminen
+
+**Nämä 5432, 9999 ja 8000 satamat tulisi säilyttää ILLA-rakentajalle**
+
+Seuraava komento tarkistaa käyttöjärjestelmääsi asennettavan itse asennetun asennuksen edellytykset:
+
+```
+> illa doctor
+```
+
+### Julkaistaan ILLA-rakentaja
+
+Kun ILLA CLI on asennettu, voit suorittaa itse tai [cloud installation](https://cloud.illacloud.com/).
+
+Quickstart
+
+```
+> illa deploy --self --port=10000
+```
+
+Voit yksinkertaisesti ottaa käyttöön itse isännöidyn ILA Builderin suorittamalla seuraavan komennon:
+
+```
+# portti, johon ILLA Builder pääsee päällä, voidaan muuttaa
+# <MOUNT_PATH> on mukautettu mount polku ILLA Builder, oletusarvo on polku käyttäjän kotihakemiston alla, jos sitä ei ole täytetty
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
+```
+
+Nyt voit käyttää ILLA Builderia: http://localhost:10000
+
+## Päivitetään ILLA-rakentajaa
+
+Jos haluat päivittää ILLA Builderin uusimmilla telakkakuvilla, käytä seuraavaa komentoa:
+
+```
+> illa päivitys --self
+```
+
+## Muut operaatiot
+
+```
+# lista ILLA Builder
+> illa lista --self
+
+# pysäytä ILLA Builder
+> illa stop --self
+
+# poistaa ILLA Builder
+> illa remove --self
+
+# pakotettu poistaminen käynnissä ILLA Builder ja pysyviä tietoja
+> sudo illa remove --force --self --data
+
+# käynnistä ILLA Builder
+> illa uudelleenkäynnistys --self
+
+# ohjetiedot
+> illa ohje
+```
