@@ -1,0 +1,53 @@
+---
+title: Liste
+metaTitle: ILLA Cloud-Listen-Komponentendoc
+description: Die Listenkomponente erlaubt es, wiederholbare Datensätze zu erstellen, deren Aussehen und Gefühl von Ihnen definiert werden.
+tagCategory: doc-Menü klicken
+---
+
+* * *
+
+## <Heading hidden>Liste</Heading>
+
+Die Listenkomponente ähnelt einem Container, in dem Sie andere Komponenten innerhalb des Containers nesten können.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Teile zur Liste ziehen
+
+Wenn Sie eine Listenkomponente in den Rahmen ziehen, enthält sie automatisch einige Komponenten. Sie können sie löschen oder ändern und neue Komponenten in die Liste ziehen. 
+
+Nur das erste Element kann bearbeitet werden und andere ändern sich automatisch basierend auf dem ersten Element. Sie können sich auch auf das erste Element konzentrieren und die Leiste ziehen, um die Höhe zu ändern.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Suchergebnisse in einer Liste anzeigen
+
+Wenn Sie eine Listenkomponente in den Rahmen ziehen, werden die Testdaten automatisch im JSON-Format angezeigt. Du kannst die Datenquelle zu einer Aktion ändern, indem du `{{ mysql_list_query.data }} ` verwendest. 
+
+Nach dem Setzen der Datenquelle können Sie die Daten der Komponenten ändern:
+
+1.  Wählen Sie die Komponente im ersten Element. 
+2.  Wenn die Komponentendaten aus der Liste stammen, kannst du die Daten mit Hilfe von `{{ currentItem.columnName }}` festlegen. Zum Beispiel kannst du die Bildquelle mit dem `{{ currentItem.Avater }} `setzen. `Avater` ist eine Spalte aus der Datenquelle der Liste.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Du kannst `{{ currentItem.columnName }}` nur verwenden, wenn die Komponenten in der Liste sind. 
+
+### Die Daten der Liste verwenden
+
+Du kannst die Daten der ausgewählten Elemente mit `{{ list1.selectedItem.columnName }} ` verwenden. Oder benutze alle Daten der Liste durch Verwendung von `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
