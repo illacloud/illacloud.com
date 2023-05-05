@@ -37,7 +37,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_language_click',
-            label: router.locale === 'en-US' ? 'English' : '简体中文',
+            label: t(`language.${router.locale || "en-US"}`),
           })
           setExpandPanel(() => !expandPanel)
         }}

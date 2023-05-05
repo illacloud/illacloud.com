@@ -2,7 +2,6 @@ import { SidebarLayout } from '@/layouts/SidebarLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Title } from '@/components/Title'
-// import { documentationNav } from '@/navs/documentation'
 import { ILLADocumentationNav } from '@/navs/documentation'
 
 export function DocumentationLayout(props) {
@@ -13,7 +12,6 @@ export function DocumentationLayout(props) {
         {props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}
       </Title>
       <DocumentationHeader meta={props.layoutProps.meta} />
-      {/* <SidebarLayout nav={documentationNav} {...props} /> */}
       <SidebarLayout nav={ILLADocumentationNav(router.locale)} {...props} />
     </>
   )
@@ -95,5 +93,4 @@ export function DocumentationHeader(props) {
   )
 }
 
-// DocumentationLayout.nav = documentationNav
 DocumentationLayout.nav = ILLADocumentationNav()

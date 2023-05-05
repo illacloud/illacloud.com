@@ -1,136 +1,64 @@
-import { createPageList } from '@/utils/createPageList'
+import { newCreatePageList } from '@/utils/createPageList'
 
-const pages = createPageList(
+
+
+const allFiles = newCreatePageList(
   require.context(
-    `../pages/docs/?meta=title,shortTitle,description,published,tagCategory`,
-    false,
+    `../pages/docs/?meta=title,shortTitle,description,published,tagCategory,categoryName,categoryPriority,postPriority`,
+    true,
     /\.mdx$/,
   ),
   'docs',
 )
-const pagesUS = createPageList(
-  require.context(
-    `../pages/docs/en-US/?meta=title,shortTitle,description,published,tagCategory`,
-    false,
-    /\.mdx$/,
-  ),
-  'en-US/docs',
-)
-const pagesCN = createPageList(
-  require.context(
-    `../pages/docs/zh-CN/?meta=title,shortTitle,description,published,tagCategory`,
-    false,
-    /\.mdx$/,
-  ),
-  'zh-CN/docs',
-)
 
-export const documentationNav = {
-  'Getting Started': [
-    {
-      title: 'Installation',
-      href: '/docs/installation',
-      match: /^\/docs\/installation/,
-    },
-    // {
-    //   title: 'blog',
-    //   href: '/blog',
-    //   match: /^\/blog/
-    // }
-  ],
+const sortCategory = (allFiles) => {
+  return Object.values(allFiles).sort((a, b) => {
+    const aCategoryPriority = a.categoryPriority ?? 0
+    const bCategoryPriority = b.categoryPriority ?? 0
+    if (aCategoryPriority === bCategoryPriority) {
+      return 0
+    }
+    return aCategoryPriority - bCategoryPriority > 0 ? -1 : 1
+  }).map((item) => {
+    return item.categoryName ?? "others"
+  })
 }
 
+const sortPosts = (allFiles) => {
+  return Object.values(allFiles).sort((a, b) => {
+    const aPostPriority = a.postPriority ?? 0
+    const bPostPriority = b.postPriority ?? 0
+    if (aPostPriority === bPostPriority) {
+      return 0
+    }
+    return aPostPriority - bPostPriority > 0 ? -1 : 1
+  })
+}
+
+
+const categoryFiles = (allFiles) => {
+  const categorizedFiles = Object.values(allFiles).reduce((acc, cur) => {
+    const categoryName = cur.categoryName ?? "others"
+    return {
+      ...acc,
+      [categoryName]: [...acc[categoryName] || [], cur]
+    }
+  }, [])
+  const sortedCategoryNames = Array.from(new Set(sortCategory(allFiles)))
+  const result = sortedCategoryNames.reduce((acc, cur) => {
+    return {
+      ...acc,
+      [cur]: sortPosts(categorizedFiles[cur])
+    }
+  }, {})
+  return result;
+}
+
+
 export const ILLADocumentationNav = (locale) => {
-  if (locale === 'zh-CN') {
-    return {
-      '👋 Introduction': [
-        pagesCN['about-illa'],
-        pagesCN['connect-data-sources'],
-        pagesCN['build-your-apps'],
-        pagesCN['deploy-on-premise'],
-        pagesCN['collaboration'],
-      ],
-      '👷 Deploy ILLA': [pagesCN['illa-cli']],
-      '🔨 Integrations': [pagesCN['integration-list'], pagesCN['supabase'],
-      pagesCN['appwrite'],
-      pagesCN['hugging-face-endpoint'],
-      pagesCN['hugging-face-api'],
-      pagesCN['sql-generate'],],
-      '📲 Connect to Database and API': [
-        pagesCN['connect-to-a-database'],
-        pagesCN['connect-to-an-api'],
-        pagesCN['api-authentication'],
-        pagesCN['custom-api-authentication'],
-      ],
-      '🌀 构建Apps': [
-        pagesCN['app-editor'],
-        pagesCN['transformer'],
-        pagesCN['event-handler'],
-        pagesCN['javascript'],
-      ],
-      '🧬 Assemble components': [
-        pagesCN['illa-components'],
-        pagesCN['chart'],
-        pagesCN['container'],
-        pagesCN['list'],
-        pagesCN['radio-button'],
-        pagesCN['radio-group'],
-        pagesCN['select'],
-        pagesCN['table'],
-      ],
-      '📎 Contributing Guide': [pagesCN['beyond-coding']],
-    }
+  if (allFiles[locale]) {
+    return categoryFiles(allFiles[locale])
   } else {
-    return {
-      '👋 Introduction': [
-        pagesUS['about-illa'],
-        pagesUS['connect-data-sources'],
-        pagesUS['build-your-apps'],
-        pagesUS['deploy-on-premise'],
-        pagesUS['collaboration'],
-      ],
-      '👷 Deploy ILLA': [
-        pagesUS['quickly-deploy'],
-        pagesUS['illa-cli'],
-        pagesUS['docker-all-in-one-image'],
-        pagesUS['kubernetes'],
-        pagesUS['known-issues'],
-      ],
-      '🔨 Integrations': [
-        pagesUS['integration-list'],
-        pagesUS['supabase'],
-        pagesUS['appwrite'],
-        pagesUS['hugging-face-endpoint'],
-        pagesUS['hugging-face-api'],
-        pagesUS['sql-generate'],
-      ],
-      '📲 Connect to Database and API': [
-        pagesUS['connect-to-a-database'],
-        pagesUS['connect-to-an-api'],
-        pagesUS['api-authentication'],
-        pagesUS['custom-api-authentication'],
-      ],
-      '🌀 BUILD YOUR APPS': [
-        pagesUS['app-editor'],
-        pagesUS['transformer'],
-        pagesUS['event-handler'],
-        pagesUS['javascript'],
-      ],
-      '🧬 Assemble components': [
-        pagesUS['illa-components'],
-        pagesUS['chart'],
-        pagesUS['container'],
-        pagesUS['list'],
-        pagesUS['multi-select'],
-        pagesUS['page'],
-        pagesUS['radio-button'],
-        pagesUS['radio-group'],
-        pagesUS['select'],
-        pagesUS['table'],
-        pagesUS['text'],
-        pagesUS['upload'],
-      ],
-      '📎 Contributing Guide': [pagesUS['beyond-coding']],
-    }
+    return categoryFiles(allFiles["en-US"])
   }
 }

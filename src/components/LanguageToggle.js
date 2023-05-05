@@ -2,35 +2,43 @@ import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
+import { generateLanguageOptions } from '@/constants/language'
 import { useTranslation } from 'next-i18next'
 
-const languages = [
-  {
-    value: 'en-US',
-    label: 'English',
-  },
-  {
-    value: 'zh-CN',
-    label: '简体中文',
-  },
-  // todo 文档待补充翻译, 先不显示label
-  // {
-  //   value: 'ja-JP',
-  //   label: '日本語',
-  // },
-  // {
-  //   value: 'ko-KR',
-  //   label: '한국인'
-  // }
-]
+const finalLanguages = {
+  "en-US": "English",
+  "zh-CN": "简体中文",
+  "ko-KR": "한국인",
+  "ja-JP": "日本語",
+  "af-ZA": "Afrikaans",
+  "cs-CZ": "čeština",
+  "de-DE": "Deutsch",
+  "da-DK": "dansk",
+  "el-GR": "ελληνικά",
+  "es-ES": "español",
+  "fi-FI": "suomi",
+  "fr-FR": "français",
+  "it-IT": "italiano",
+  "nl-NL": "Nederlands",
+  "no-NO": "norsk",
+  "pl-PL": "polski",
+  "pt-PT": "português",
+  "ro-RO": "română",
+  "ru-RU": "русский",
+  "sv-SE": "svenska",
+  "uk-UA": "українська"
+}
+
+
+const languages = Object.keys(finalLanguages).map((key) => ({
+  value: key,
+  label: finalLanguages[key],
+}))
 
 export function LanguageToggle({ panelClassName = 'mt-4' }) {
   const router = useRouter()
   const curLanguage = router.locale
 
-  const findLanguage = languages.find(value => {
-    return router.locale === value.value
-  })?.label
 
 
   return (
@@ -43,12 +51,12 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
       <Listbox.Label className="sr-only">Language</Listbox.Label>
       <Listbox.Button type="button" className="mr-6">
         <span className="text-slate-700 text-sm font-semibold hover:text-sky-500">
-          {findLanguage ?? "English"}
+          {finalLanguages[curLanguage || "en-US"]}
         </span>
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
-          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300',
+          'absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300 max-h-[135px] overflow-y-scroll',
           panelClassName,
         )}
       >
