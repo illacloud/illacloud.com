@@ -1,0 +1,95 @@
+---
+title: Tabel
+metaTitle: ILLA Cloud tabel component doc
+description: Weergeven en interageren met gegevens met behulp van de tabelcomponent.
+tagCategory: doc_menu_tabel_klik
+---
+
+* * *
+
+## <Heading hidden>Tabel</Heading>
+
+Tabellen zijn een veelgebruikte manier om met je gegevens te bekijken en te communiceren. U kunt de rijen van informatie sorteren, filteren, pagineren en downloaden. Tabellen ondersteunen ook rij selectie en aangepaste kolommen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Gegevens laden in een tabel
+
+Wanneer u een tabelcomponent naar het Frame sleept, worden de testgegevens in JSON-formaat automatisch weergegeven. U kunt de weergegeven gegevens in een tabel wijzigen door de eigenschappen van de gegevensbron te bewerken. Gebruik het formaat '{{ actionName.data }}' om de actie te kiezen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+U kunt de gegevensbron ook instellen door een array in te wisselen.
+
+### Instellingen kolommen
+
+**aliassen voor data kolommen**
+
+Wanneer u de gegevensbron van tabellen instelt, zal de kolomnaam automatisch worden ingesteld op basis van de gegevensbron. Je kunt alle kolommen hernoemen door op de kolom in het **Inspect** tabblad te klikken en de **kolomtitel** in te stellen.
+
+**Kolom types wijzigen**
+
+Wanneer je de gegevensbron voor tabellen instelt, worden de kolommen op **Tekst** gezet. Je kunt kolomtypes handmatig instellen door op de kolom in het **Inspect** tabblad te klikken en het type uit de **Kolomtype** keuze\*\* te selecteren.
+
+De kolomtypes zijn:
+
+1.  Tekstveld
+2.  Datum, u kunt de weergave formaat van de datum instellen in het type datum.
+3.  Nummer, je kunt de decimalen instellen in het getaltype.
+4.  Percent, je kunt de decimalen instellen in het percentage type.
+5.  Koppeling
+6.  Button, u kunt gebeurtenis afhandelaars toevoegen in het knoptype.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Toegewezen waarde van aangepaste kolommen**
+
+Je kunt aangepaste kolommen toevoegen aan tabellen met behulp van de **+ Toevoegen** knop op het **Inspect** tabblad. Aangepaste kolommen worden vaak gebruikt om gegevens te berekenen op basis van andere waarden in uw app. Bijvoorbeeld, als je `revenue` en `user_num` kolommen hebt en je een `ARPU` kolom wilt berekenen, kun je `{{ currentRow.revenue/currentRow.user_num }}` gebruiken.
+
+Bovendien kun je na de berekening het kolomtype op aantal of procent zetten en de decimale plaatsen instellen om de leesbaarheid te verbeteren.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Toegang tot gegevens van tabel
+
+Gebruik `{{ table1.selectedRow[i].columnName }}` voor toegang tot de data van de geselecteerde rijen in andere componenten. Als je de **Multi-Row Selectie** niet hebt ingeschakeld, zal `i` altijd 0 zijn.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Tabel gegevens bijwerken**
+
+1.  Gebruik input component of andere data input cpmponents om te laten zien `{{ table1.selectedRow[i].columnName }}`.
+2.  Gebruik `{{ input1.value }}` om geselecteerde waarden en geüpdatete waarden te krijgen.
+3.  Voeg een event handler toe om bij te werken knop om de Update Actie uit te voeren wanneer wordt geklikt.
+4.  Werk de data van de geselecteerde rij bij door de invoerwaarde te wijzigen en op de knop Update te klikken.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Plaats een nieuwe rij in tafel**
+
+1.  Gebruik '{{ input1.value }}' in acties krijg waarden.
+2.  Voeg een event-handler toe om knop in te voegen om de "Voeg actie" uit te voeren wanneer geklikt wordt.
+3.  Nieuwe gegevens invoegen door waarden in invoercomponenten in te voeren en op de knop Invoegen te klikken.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
