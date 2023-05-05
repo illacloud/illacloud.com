@@ -1,0 +1,52 @@
+---
+title: Sivu
+metaTitle: ILLA Cloud Page doc
+description: Koosta yksisivuisia sovelluksia ja usean sivun sovelluksia ILLA:ssa
+tagCategory: doc_menu_page_click
+---
+
+* * *
+
+## <Heading hidden>Sivu</Heading>
+
+ILLAlle rakennettu monisivuinen demo: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Yhden sivun sovellus on sovellus, joka voi vaihtaa sivuja ilman kaikkien osien uudelleenlataamista sivulla. Suurin osa resursseista (mukaan lukien HTML, CSS ja Script) ladataan vain kerran koko sovelluksen elinkaaren ajan, mikä tekee yhden sivun sovelluksen nopeasti.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+Usean sivun sovelluksessa, jokainen muutos, kuten tietojen näyttäminen tai tietojen lähettäminen takaisin palvelimelle pyyntöjä, jotka tekevät uuden sivun palvelimelta. Monisivisessa sovelluksessa on muutamia tasoja, mikä tekee sovelluksen rakenteesta yksinkertaista ja yksinkertaista käyttäjille.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+ILLA Builderissa yhden sivun sovellus voidaan rakentaa asettamalla sivun runko ja lisäämällä näkymiä osiin, ja monisivuinen sovellus voidaan rakentaa lisäämällä useita sivuja, ja kehittäjät voivat käyttää molempia näistä kahdesta suunnittelu malleja yhdessä sovelluksessa.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Aseta sivujen asettelu
+
+Mene sivun kokoonpanoon seuraavina vaiheina：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Voit käyttää esiasetteluja tai manuaalisesti lisätä ja poistaa osioita asettaaksesi ulkoasun. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Lisää näkymiä sivulle
+
+`Näytä polku`: merkkijono, joka on leikattu sivun URL-osoitteen jälkeen päästäksesi määriteltyyn näkymään. Sovelluksen käyttöönoton jälkeen täydellinen pääsyosoite on seuraava: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Voit myös syöttää kotisivun ja oletusnäkymän seuraavan polun kautta:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Yhdistä valikko ja sivut
+
+Lisää tapahtumankäsittelijät valikon nimikkeisiin → aseta `Action` hakemistoon `Set router` → valitse sivu ja näytä
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
