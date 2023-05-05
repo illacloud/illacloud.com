@@ -1,0 +1,47 @@
+---
+title: Toiminto
+metaTitle: ILLA Cloud Action doc
+tagCategory: doc_menu_action_click
+desc: Toimet ovat silta datan ja komponenttien välillä ja ovat olennainen osa sovelluksen rakentamista.
+---
+
+* * *
+
+## <Heading hidden>Kysely</Heading>
+
+Kun olet luonut resurssin, sinun täytyy poimia tiedot resurssi, valitse suodatin, Yhdistä tiedot ja laita ne sitten Lisää, loogisten vaatimusten mukaisesti. Me kutsumme tätä tietojenkäsittelyprosessia toimeksi. Toimet ovat silta datan ja komponenttien välillä ja ovat olennainen osa sovelluksen rakentamista. Olemme jakaneet toimet kahteen ryhmään: toimet ja muuntajat.
+
+### SQL Toiminto
+
+#### Luo toiminto
+
+Prosessi käyttää SQL toimia on jaettu seuraaviin vaiheisiin:
+
+1.  Ensin sinun täytyy löytää toimintaluettelo sovelluseditorista ja klikkaa "Lisää" -painiketta.
+2.  Valitse sitten tietolähteen tyyppi resurssista valitse ruutu. Voit löytää luotu resurssit vastaavan resurssiluettelon, voit myös luoda uusia resursseja täältä. Valitse luotu resurssi ja napsauta "Vahvista "-painiketta. SQL toiminto luodaan onnistuneesti.
+3.  Luotu toiminto näytetään toimintoluettelossa. @ info: whatsthis Toimintoeditori näkyy kehyksen alapuolella sen jälkeen, kun toiminto on potkittu. Voit muuttaa toimintojen resurssia, kirjoittaa toimintalausekkeita, vastata sisältöön, lisätä muuntajia, tapahtumankäsittelijöitä.
+4.  Kun olet täyttänyt toimintoluettelon, voit klikata "Esikatselu" -painiketta tarkistaaksesi, onko kirjoittamasi toiminto kelvollinen. Konfiguraatiopaneeli näyttää toiminnon tuloksen. Kun toiminto on muokattu, voit klikata "Tallenna" painiketta lopettaaksesi prosessin. Jos vaihdat toiseen toimintoon tallentamatta tietoja, järjestelmä kehottaa sinua tallentamaan muutokset.
+
+#### Toimintojen Jaottelu
+
+1.  Toiminto: Voit syöttää toimintalausekkeesi toimintomoduuliin, johon olemme lisänneet Code Mirror -editorin, jotta toiminto korostuu ja koodin täydennys voidaan aloittaa. Myöhemmissä päivityksissä Tarjoamme graafisen käyttöliittymän syöttötavan toimintakertomusten kirjoittamiseen, jotta käyttäjät eivät tunne toimintakertomuksia ja voivat suorittaa myös datan toimet.
+2.  Transformer: Voit tarkentaa toimintalogiikkaa Javascript-lausekkeiden kanssa muuntaja, Esimerkiksi käyttämällä suodatinfunktiota JS:ssä sen sijaan, missä toiminto on toimintolausekkeessa.
+3.  Tapahtuman käsittelijä: Tapahtumien käsittelijät antavat sinun käynnistää toimintoja, ohjata lisäyksiä ja muita toimia vastauksena käyttäjän vuorovaikutukseen. Voit lisätä useita tapahtumakäsittelijöitä vastaamaan tapahtumaan lisäämättä mukautettuja JavaScript-lausekkeita. Esimerkiksi, kun käyttäjä klikkaa painiketta, voit (1) käynnistää toiminnon, joka suoritetaan, kun taas (2) palautetaan useiden avattavien listojen ja tekstien tila.
+4.  Vastaus: Vastausmoduulissa voit muokata ehtoja, joilla toiminto palauttaa virheellisiä tuloksia, siten, että varmistetaan toimenpiteen oikeellisuus ja että se voidaan toteuttaa.
+5.  Edistetty: Tarkenna yksityiskohtaiset asetukset toimintoihin, kuten tietokannan aikakatkaisun vasteaikoihin, tapahtumaprosessorin viivästyksiin jne. edistyneissä vaihtoehdoissa.
+
+### Api Toiminnot
+
+#### Luo toiminto
+
+Prosessi datan käyttämiseksi APIlla on samankaltainen kuin SQL:llä.
+
+1.  Ensimmäinen käyttäjän on löydettävä toimintaluettelo sovelluksen muokkaussivun vasemmasta alareunasta ja klikattava lisämerkintää toimintoluettelon oikeassa yläkulmassa olevan sivun kohdalla.
+2.  Seuraavaksi valitse vastaava tietolähteen luettelo resurssivalikosta joka ponnahtaa ylös. Voit löytää luotu resurssi vastaavasta tietolähdeluettelosta, tai voit luoda uuden resurssin täältä. Valitse luotu resurssi, klikkaa "Luo" ja API-toiminto luodaan onnistuneesti.
+3.  Onnistuneesti luotu toiminto näytetään alapaneelin Toiminnot -listassa, ja toiminnon yleinen välilehti ponnahtaa ylöspäin kehyksen alapuolelle, kun sitä napsautetaan. Voit tehdä pyynnön mille tahansa HTTP API ILLA . Katso API-dokumentaatio datan pyytämistä koskevia menetelmiä varten.
+4.  Kun olet täyttänyt oman toiminnan, voit klikata "Esikatselu" painiketta nähdä, onko toiminto olet kirjoittanut on voimassa ja asetuspaneeli antaa sinulle tuloksia. Kun olet suorittanut toiminnon muokkauksen, voit klikata Tallenna ja poistua lopettaaksesi prosessin. Jos vaihdat toiseen toimintoon tallentamatta, ponnahdusikkuna kehottaa sinua suorittamaan tallennuksen valmiiksi.
+
+#### Toimintojen Jaottelu
+
+1.  Transformer: Voit tarkentaa toimintalogiikkaa Javascript-lausekkeiden kanssa muuntaja, Esimerkiksi käyttämällä suodatinfunktiota JS:ssä sen sijaan, että funktio olisi toimintalausekkeessa.
+2.  Tapahtuman käsittelijät: Tapahtuman käsittelijöiden avulla voit laukaista toimintoja, hallita lisäyksiä ja muita toimia käyttäjän vuorovaikutuksessa. Voit lisätä useita tapahtumakäsittelijöitä vastaamaan tapahtumaan lisäämättä mukautettuja JavaScript-lausekkeita. Esimerkiksi, kun käyttäjä klikkaa painiketta, voit (1) käynnistää toiminnon, joka suoritetaan, kun taas (2) palautetaan useiden avattavien listojen ja tekstien tila.
