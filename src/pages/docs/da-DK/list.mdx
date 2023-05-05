@@ -1,0 +1,53 @@
+---
+title: Liste
+metaTitle: ILLA Cloud List Component doc
+description: Listen komponenten giver dig mulighed for at oprette gentagelige rækker af data, hvis udseende og følelse er defineret af dig.
+tagCategory: doc_menu_list_click
+---
+
+* * *
+
+## <Heading hidden>Liste</Heading>
+
+Liste komponenten ligner en Container i, at du kan nest andre komponenter inde i det.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Træk komponenter for at liste
+
+Når du trækker en liste komponent til rammen, det automatisk indeholder nogle komponenter. Du kan slette eller ændre dem og trække nye komponenter til listen. 
+
+Kun det første element kan redigeres, og andre vil automatisk ændre sig baseret på det første element. Du kan også fokusere på det første element og trække baren for at ændre højdeelementerne.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Vis forespørgselsresultater i en liste
+
+Når du trækker en listekomponent til rammen, vises testdata automatisk i JSON-format. Du kan ændre datakilden til en handling ved at bruge `{{ mysql_list_query.data }}`. 
+
+Efter indstilling af datakilde, kan du ændre data på komponenter:
+
+1.  Vælg komponenten i det første element. 
+2.  Hvis komponentdata er fra listen, kan du indstille dataene ved hjælp af `{{ currentItem.columnName }}` . For eksempel kan du indstille billedkilden med `{{ currentItem.Avater }}`. `Avater` er en kolonne fra datakilden til listen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Du kan kun bruge `{{ currentItem.columnName }}` når komponenterne er på listen. 
+
+### Brug data fra listen
+
+Du kan bruge data fra valgte elementer ved at bruge `{{ list1.selectedItem.columnName }}`. Eller brug alle data på listen ved at bruge `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>
