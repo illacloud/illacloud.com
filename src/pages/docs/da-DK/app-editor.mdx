@@ -1,0 +1,83 @@
+---
+title: App editor
+metaTitle: ILLA Cloud App editor doc
+desc: APP editor er grænsefladen til at udvikle programmet
+tagCategory: doc_menu_app_editor_click
+---
+
+* * *
+
+## <Heading hidden>App editor</Heading>
+
+APP editor er grænsefladen til at udvikle programmet og består af følgende hoveddele:
+
+-   Værktøjslinje
+-   Frame
+-   Redigering af handling
+-   Data arbejdsområde
+-   Insert
+-   Inspicer
+
+<img alt="editor" src={'https://cdn.illacloud.com/official-website/img/official-site/content.png'} />
+
+### Værktøjslinje
+
+Værktøjslinjen er placeret i toppen af APP Editor, som primært bruges til at konfigurere APP og kan bruges til følgende opgaver：
+
+-   Klik på ILLA-ikonet til venstre for at vende tilbage til startsiden.
+-   Se APP information og gem status.
+-   Vis/skjul elementer til venstre, højre, nederste panel.
+-   Justering af skalering af elementer.
+-   Vis alle nuværende udviklere af APP.
+-   Advisering af APP til aktuel fejlstatus.
+-   Del APP med andre udviklere.
+-   Kører APP.
+
+#### Flere funktioner kommer soom
+
+-   Importér APP'er fra json.
+-   Reproduktion APPs.
+-   Eksportér APP'er i json- format.
+-   Vælg den ønskede APP version.
+-   Se den redigerede historik.
+-   Genindlæs alle handlinger.
+
+[//]: # "[Image]"
+
+### Frame
+
+Ramme er det område af APP, hvor du kan redigere den grafiske grænseflade for APP. Du kan trække og slippe indsatser i rammen fra indsatspanelet på højre hånd; du kan også vælge indsatser, der er blevet placeret i rammen og bruge musen til at trække og slippe for at ændre placeringen og størrelsen af indsatserne.
+
+Når du trækker og slipper indsatser eller ændrer deres størrelse, en stiplet firkant vises i baggrunden af rammen for at hjælpe dig med at arrangere indsatserne pænt i rammen. Når du støder på overlappende indsatser, mens du trækker og slipper ILLA Builder vil give prioritet til den indsats, du bevæger dig, og automatisk flytte blokerende indsats ud af vejen for dig.
+
+#### Eksempelvisning
+
+Forhåndsvisningsknappen er placeret i øverste højre hjørne af rammen . Når der klikkes på vil editoren indtaste forhåndsvisningstilstand, de nederste venstre og højre paneler vil blive skjult og indsatserne i rammen vil ikke blive ændret alle indsatser vil blive præsenteret foran dig i 1:1 størrelse.
+
+> ### Understøttede browsere
+>
+> Vi anbefaler, at du åbner ILLA Builder i Google Chrome.
+
+### Handlingseditor
+
+Handlingseditoren er placeret under rammen og er det område, hvor du skriver kode til at interagere med data fra ressourcer. I dette område kan du finde oprettede operationer, vælge den aktuelle operationelle ressource, skrive forespørgselsudsagn og oprette transformere. ou kan redigere forespørgselserklæringen i handlingseditoren og når du opdaterer forespørgselserklæringen, APP-editoren opdaterer automatisk dine aktionsresultater.
+
+Når du indtaster SQL-handlingserklæringer, kan du vælge at bruge SQL-tilstand til at redigere dem via almindelig kode, eller du kan vælge GUI tilstand til at ændre dem under de handlingsrammer, vi giver dig til hurtigt at fuldføre handlingens redigering. eller detaljerede vejledninger, se venligst driftsdokumentationen.
+
+### Handling Liste
+
+Handlingslisten er placeret i venstre side af konfigurationspanelet, hvor du kan finde den handling, du har brug for at bruge og ændre den i redigeringsværktøjet. ou kan også tilføje en ny handling her, se detaljer om skabelsesprocessen.
+
+### Data Workspace
+
+Data-arbejdsområdet er placeret i panelet til venstre for rammen, hvor du kan se indsatserne, handlinger og global status for editoren, alle vises i Json-format. Du kan også redigere data ved at vælge det i arbejdsområdet eller slette det ved at klikke på knappen Flere indstillinger.
+
+### Insert
+
+Indsæt er placeret i panelet til højre for rammen, og du kan flytte indsats til rammen ved at trække og slippe den med musen. Du kan finde den indsats du har brug for ved at indsætte type, eller du kan søge efter den og finde den hurtigt.
+
+[//]: # "[Image]"
+
+### Inspicer
+
+Inspektionen er placeret i panelet til højre for rammen. Når du vælger en indsats i rammen eller dataarbejdsområdet, vil panelet til højre automatisk skifte til Indsæt siden. Fra denne side kan du indstille variabler, opdatere indsæt navnet, oprette event handlers eller udføre en Indsæt sletning operation. Værktøjslinjen for indsætten vil også blive indstillet forskelligt for forskellige indstik, så du kan ændre indholdet af de forskellige indstik.
