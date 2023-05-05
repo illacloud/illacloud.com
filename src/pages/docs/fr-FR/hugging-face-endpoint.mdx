@@ -1,0 +1,74 @@
+---
+title: Point d'extrémité de la face d'embrasement
+metaTitle: Se connecter au point d'embrochage de la face
+description: Apprenez à utiliser le point de terminaison de face d'embrochage en ILLA
+tagCategory: format@@0 doc_menu_hugging_face_endpoint_click
+---
+
+* * *
+
+## <Heading hidden>Point de terminaison de la face câlinée</Heading>
+
+Avec les points de terminaison de l'inférence faciale, vous pouvez facilement déployer des transformateurs, des diffuseurs ou n'importe quel modèle sur une infrastructure dédiée et entièrement gérée. [Cliquez ici](https://ui.endpoints.huggingface.co/new) pour créer un point d'extrémité. 
+
+### Créer une ressource de point de terminaison de face câlinée
+
+Il y a deux façons d'ajouter une ressource de point d'extrémité de la face d'embrochage. 
+
+1.  Entrez dans l'onglet `ILLA Builder` >> Cliquez sur `Resources` >> Cliquez sur `Create New` >> Choisissez `Hugging Face Endpoint` >> Configurer les informations de connexion et cliquez sur `Save Resource`
+2.  Accédez à la page d'édition >> cliquez sur `+ Nouveau` dans la liste d'action >> Choisissez `Point de terminaison de visage` >> Configurer les informations de connexion ou cliquez sur `+ Nouvelle ressource` pour ajouter de nouvelles informations de connexion
+
+### Configurer les informations de connexion
+
+| Propriétés   | Requis      | Libellé                                                                                        |
+| ------------ | ----------- | ---------------------------------------------------------------------------------------------- |
+| Nom          | Obligatoire | Définir un nom de ressource qui sera utilisé pour l'affichage dans ILLA                        |
+| Endpoint URL | Obligatoire | créez un point d'extrémité ici: https://ui.endpoints.huggingface.co/new et obtenez l'URL.      |
+| Jeton        | Obligatoire | Le jeton de l'organisation Vous pouvez l'obtenir dans https://huggingface.co/settings/tokens.  |
+
+### Créer des actions
+
+Entrez la page d'édition >> cliquez sur `+ Nouveau` dans la liste d'action >> Choisissez `Point de terminaison de la face` >> Choisissez une ressource existante ou ajoutez une nouvelle ressource
+
+### Configurer les actions
+
+| Propriétés        | Requis      | Libellé                                                                                                                                                                                                                                                                                           |
+| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type de paramètre | Obligatoire | Le type de paramètre de votre point d'extrémité. Par exemple, si votre point d'extrémité a besoin d'une entrée de texte, choisissez le paramètre "entrées" avec le texte. Si votre point d'extrémité a besoin d'une entrée JSON, choisissez le paramètre "entrées" avec le JSON ou la valeur clé. |
+| Paramètre         | Obligatoire | Entrez votre paramètre. Utilisez {{ componentName.value }} pour utiliser les données des composants.                                                                                                                                                                                              |
+
+### Cas d'utilisation
+
+Nous avons déployé `openai/whisper-base` qui récupère une entrée de fichier audio et convertit en texte. Il convient pour les minutes de réunion, podcasts au texte, etc. Ensuite, nous allons présenter comment utiliser ce modèle pour construire une application dans ILLA Cloud.
+
+#### Étape 1 : Construire l'interface frontale avec des composants
+
+Nous avons construit une interface en utilisant les composants tels que le téléchargement de fichiers et le bouton, comme suit.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Étape 2 : Ajouter une ressource de visage d'embrochage
+
+Remplissez les champs ci-dessous pour terminer la configuration de la ressource. [Créez un terminal](https://ui.endpoints.huggingface.co/new) et obtenez l'URL du terminal. Et obtenez le jeton de l'API de l'organisation dans les [paramètres de profil](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Étape 3 : Configurer une action
+
+Sélectionnez d'abord un type de paramètre. Prenez `openai/whisper-base` comme exemple, ce modèle nécessite une entrée de fichier binaire, donc nous changeons le paramètre en `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Définit le binaire à passer au modèle en tant que données de fichier envoyées depuis le composant de téléchargement de fichier. Par exemple, `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Étape 4 : Connectez les composants et les actions
+
+Ajouter un gestionnaire d'événements au bouton pour déclencher l'action exécutée lorsque le bouton est cliqué. Et définissez la valeur du composant de texte à {{whisper.data[0].text}} pour afficher le résultat de conversion sur le composant texte. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Une fois les étapes ci-dessus configurées, l'application est créée et les résultats d'exécution sont les suivants.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
