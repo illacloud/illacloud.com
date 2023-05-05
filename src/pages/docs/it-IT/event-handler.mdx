@@ -1,0 +1,36 @@
+---
+title: Gestore eventi
+metaTitle: Gestione eventi ILLA Cloud doc
+desc: I gestori degli eventi sono parte integrante della logica interna di utilizzo degli strumenti
+tagCategory: doc_menu_evnet_handler_click
+---
+
+* * *
+
+## <Heading hidden>Gestore eventi</Heading>
+
+I gestori degli eventi sono parte integrante della logica di utilizzo interno degli strumenti. Qualsiasi inserimento o azione che risponde a un'azione utente ha i propri eventi che possono essere attivati, come un inserto di pulsante con un evento 'clic', una casella di testo con un evento 'invia' ', il successo di un'azione, e così via. I gestori di eventi aiutano gli utenti a attivare istruzioni predefinite quando si verificano eventi: è possibile reagire a un singolo evento, o è possibile impostare più gestori di eventi e configurarli come flussi di lavoro per fare un lavoro più complesso.
+
+Dopo che l'evento impostato si è verificato, il gestore dell'evento può aiutarti a eseguire una serie di azioni: controllare le dichiarazioni d'azione, controllare gli inserti, eseguire script e altro ancora. È inoltre possibile aggiungere condizioni di attivazione JavaScript più dettagliate in aggiunta alle condizioni di attivazione.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Gestori eventi
+
+In caso di gestori, è possibile impostare il risultato dell'evento in base al fatto che i risultati della query falliscono o meno. È possibile completare la logica di attivazione impostando la condizione di errore della query nella scheda Risposta.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Modifica gestore invio
+
+Impostiamo una condizione di attivazione per ogni inserto interattivo e puoi selezionare un evento nell'elenco delle azioni del gestore come condizione di attivazione. Ad esempio, è possibile impostare 'Invia' come condizione di attivazione nel gestore di eventi per la casella di immissione dati, che inserisce automaticamente l'input nel database quando l'utente 'invia' l'input, implementando così una semplice funzione di inserimento dati.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Stati temporanei
+
+Quando si elaborano i dati, si possono incontrare situazioni in cui i dati trattati non vengono richiamati immediatamente. Per questo motivo, abbiamo istituito Stati temporanei per memorizzare gli stati intermedi per l'elaborazione dei dati. Puoi scegliere di impostare uno stato temporaneo nelle opzioni degli eventi di risposta dei gestori degli eventi e fare clic su Crea nuovo stato per memorizzare i dati attuali nello stato temporaneo, che può essere collocato per qualsiasi proprietà.
+
+Al di fuori dell'editor del progetto, puoi anche memorizzare i dati da {{tempState1.setValue(data)}} o chiamare i dati da {{tempState1.value}}.
+
+> I valori nello stato temporaneo verranno cancellati al riavvio del progetto, e sarà necessario memorizzare i valori localmente o nel cloud per garantire l'integrità dei dati.
