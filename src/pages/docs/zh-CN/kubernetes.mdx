@@ -1,7 +1,7 @@
 ---
 title: Kubernetes
 tagCategory: doc_menu_kubernetes_click
-desc: 构建全部内置图像并在您的机器上用 k8 运行它。
+desc: 构建all-in-one镜像并在您的机器上用 k8s 运行它。
 ---
 
 * * *
@@ -10,29 +10,29 @@ desc: 构建全部内置图像并在您的机器上用 k8 运行它。
 
 ### 描述
 
-构建全部内置图像并在您的机器上用 k8 运行它。 您可以在 [scripts]中查看脚本文件(https://github.com/illacloud/damy-illa-manualy/blob/main/kubernetes/scripts) 以了解更多详情。
+构建全部内置图像并在您的机器上用 k8s 运行它。 您可以在 [scripts]中查看脚本文件(https://github.com/illacloud/damy-illa-manualy/blob/main/kubernetes/scripts) 以了解更多详情。
 
 注：
 
 我们强烈建议使用我们的自动部署工具[illa-cli](https://github.com/illacloud/illa)。
 
-目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
+目前，我们不支持Apple Silicon M1 (darwin-arm64 arch)。
 
-### 使用官方的 slim 图像运行
+### 使用官方的 slim镜像运行
 
-安装 GNU 制造商和类型：
+安装 GNU make并输入：
 
 ```jsx
-进行部署
+make deploy
 ```
 
 或仅执行：
 
 ```jsx
-/bin/bash 脚本/部署.sh
+/bin/bash scripts/deploy.sh
 ```
 
-这个命令将把illasoft 官方的全部图像拉入您的Kubernetes集群。
+这个命令将把illa官方的全部镜像拉入您的Kubernetes集群。
 
 ### 数据库永久存储
 
