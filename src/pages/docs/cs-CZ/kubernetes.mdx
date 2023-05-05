@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_kliknutí
+desc: Postav iluci vně obrázku a spusť ho k8 na tvém počítači.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### L 343, 22.12.2009, s. 1).
+
+Postav iluci vně obrázku a spusť ho k8 na tvém počítači. Můžete se podívat na soubor skriptů ve složce [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) pro více informací.
+
+Pozn.:
+
+Důrazně jsme doporučili nasazení našich nástrojů pro automatické nasazení[illa-cli](https://github.com/illacloud/illa).
+
+A pro tuto chvíli nepodporujeme Apple Silicon M1 (archu Darwin-arm64).
+
+### Spustit s oficiálním obrázkem Slim
+
+Nainstalujte GNU značku a typ:
+
+```jsx
+nasadit
+```
+
+nebo jen provést:
+
+```jsx
+/bin/bash skripts/deploy.sh
+```
+
+tento příkaz vytáhne illasoft oficiální obrázek all-in-one a nasadí ho do svého Kubernetes clusteru.
+
+### Pro trvalé úložiště databáze
+
+Upravte[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) a přidejte do něj své IAAS trvalé úložiště.
+
+### Pro nastavení HTTPS
+
+Můžete směrovat NodePort do vaší ingresové brány Kubernetes a přepsat na 443 port a přidat https cert do vaší ingress brány.
+
+Nebo můžete manuálně nasadit ingress brána na váš server Kubernetes, konfiguraci takto:
+
+```jsx
+static_resources:
+  posluchače:
+  - jméno: https://_listener
+    adresa:
+      socket_adresa:
+        adresa: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtry:
+      - jméno: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: http_listener
+          route_config:
+            jméno: local_route
+            virtual_hosts:
+            - jméno: illa_builder
+              domén:
+              - "illa. urdomian. om" # nahraďte Vaší doménou
+              tras:
+              - shoda:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - jméno: envoy. ilters.http. outer
+            typed_config:
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        název: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # nahraďte toto souborem cert
+            - certifikate_chain:
+                název: /your-cert-folder/fullchain.
+              private_key:
+                název souboru: /your-cert-folder/privkey. em
+
+  clusterů:
+  - jméno: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      koncové body:
+      - lb_endpoints:
+        - koncový bod:
+            adresa:
+              socket_adresa:
+                adresa: illa-builder
+                port_value: 80
+```
