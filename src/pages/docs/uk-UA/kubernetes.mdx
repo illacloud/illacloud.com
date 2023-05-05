@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: Сконструюйте усі зображення в одному і виконайте його на вашому комп’ютері.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Опис
+
+Сконструюйте усі зображення в одному і виконайте його на вашому комп’ютері. Ви можете перевірити файл скриптів у теці [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) для деталей.
+
+Нотатка:
+
+Наполегливо рекомендуємо розгорнути наші інструменти авторозгортання[illa-cli](https://github.com/illacloud/illa).
+
+І на даний момент ми не підтримуємо арх Apple Silicon M1 (darwin-6).
+
+### Запустити з офіційним зображенням Slim
+
+Встановити GNU значення і тип:
+
+```jsx
+зробити розгортання
+```
+
+або просто виконати:
+
+```jsx
+/bin/bash скрипти/розгортання
+```
+
+ця команда буде витягувати illasoft офіційний весь в-одному зображенні і розгорнути його на вашому кластері Kubernetes.
+
+### Для постійного сховища бази даних
+
+Редагувати[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), і додати вашу IAAS стійку конфігурацію зберігання на ньому.
+
+### Для конфігурації HTTPS
+
+Ви можете маршрутизувати вузловий порт вашого Kubernetes-кластера і переписати до 443 порту, а також додати https cert в шлюзі ingress
+
+Або ви можете розмістити термостат ingress вручну до вашого сервера Kubernetes, конфігурація як тут:
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
