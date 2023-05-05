@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: link_menu_kubernetes_clique
+desc: Construa uma imagem completa e a rode por k8s em sua máquina.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Descrição:
+
+Construa uma imagem completa e a rode por k8s em sua máquina. Você pode conferir os arquivos de scripts na pasta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) para mais detalhes.
+
+Nota:
+
+Nós recomendamos fortemente implantar com nossas ferramentas de auto-deploy[illa-cli](https://github.com/illacloud/illa).
+
+E, por enquanto, não suportamos o Apple Silicon M1 (arca-darwin-arm6).
+
+### Executar com uma imagem com um slim oficial
+
+Instalar GNU fazer e tipo:
+
+```jsx
+fazer deploy
+```
+
+ou apenas execute:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+este comando irá puxar o illasoft oficial tudo em um e publicá-lo em seu cluster do Kubernetes.
+
+### Para armazenamento persistente do banco de dados
+
+Edite[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) e adicione sua configuração de armazenamento persistente IAAS nele.
+
+### Configuração HTTPS para
+
+Você pode encaminhar o NodePort para o seu gateway de agrupamento de cluster Kubernetes e reescrever para 443 porta e adicionar cert https em seu gateway de locância.
+
+Ou, você pode implantar um gateway de vela manualmente no servidor Kubernetes, configuração assim:
+
+```jsx
+static_resources:
+  ouvintes:
+  - Nome: https_listener
+    endereço:
+      socket_address:
+        endereço: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtros:
+      - nome: emissário. ilters.network.http_connection_manager
+        tipado_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            nome: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domínios:
+              - "illa. ourdomian. om" # substitui pelo seu domínio
+              rotas:
+              - match:
+                  prefixo: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - nome: envoy. ilters.http. outer
+            typed_config:
+              "@type": tipo. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        nome: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # substitui isso pelo seu arquivo do certificado
+            - certificate_chain:
+                nome: /your-cert-folder/fullchain. em
+              private_key:
+                nome: /your-cert-folder/privkey. em
+
+  clusters:
+  - nome: illa_builder
+    tipo: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoints:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```

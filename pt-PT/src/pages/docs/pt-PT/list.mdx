@@ -1,0 +1,53 @@
+---
+title: Lista
+metaTitle: Link da Lista de Listas das Nuvens ILLA
+description: O componente Lista permite que você crie linhas repetíveis de dados cuja aparência e aparência são definidos por você.
+tagCategory: link_do_menu_lista_clique
+---
+
+* * *
+
+## <Heading hidden>Listar</Heading>
+
+O componente Lista é semelhante a um Container no qual você pode aninhar outros componentes dentro dele.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Arraste componentes para listar
+
+Quando você arrastar um componente Lista para o Quadro, ele automaticamente inclui alguns componentes. Você pode excluí-los ou modificá-los e arrastar novos componentes para a lista. 
+
+Apenas o primeiro item pode ser editado, e outros automaticamente mudarão com base no primeiro item. Você também pode focar no primeiro item e arrastar a barra para alterar os itens de altura.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Exibir resultados de consultas em uma lista
+
+Quando você arrastar um componente Lista para o Frame, ele exibe automaticamente os dados de teste no formato JSON. Você pode alterar a fonte de dados para uma ação usando `{{ mysql_list_query.data }}`. 
+
+Depois de definir a fonte de dados, você pode alterar os dados dos componentes:
+
+1.  Selecione o componente no primeiro item. 
+2.  Se os dados do componente forem da lista, você pode definir os dados usando `{{ currentItem.columnName }}`. Por exemplo, você pode definir a fonte da imagem com o `{{ currentItem.Avater }}`. 'Avater' é uma coluna da fonte de dados da lista.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Você pode usar `{{ currentItem.columnName }}` somente quando os componentes estiverem na lista. 
+
+### Usar os dados da lista
+
+Você pode usar os dados de itens selecionados usando `{{ list1.selectedItem.columnName }}`. Ou use qualquer dado da lista usando `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

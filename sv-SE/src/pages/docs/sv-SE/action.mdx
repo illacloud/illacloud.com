@@ -1,0 +1,47 @@
+---
+title: Åtgärd
+metaTitle: ILLA Cloud Action doc
+tagCategory: Klicka
+desc: Åtgärder är en bro mellan data och komponenter och är en viktig del i att bygga en applikation.
+---
+
+* * *
+
+## <Heading hidden>Fråga</Heading>
+
+Efter att du skapat resursen, måste du extrahera data i resursen, välja, filtrera, sammanfoga data och sedan lägga den i infästningarna enligt de logiska kraven. Vi kallar den här processen för databehandling en åtgärd. Åtgärder är en bro mellan data och komponenter och är en viktig del i att bygga en applikation. Vi har delat in åtgärder i två kategorier: åtgärder och Transformers.
+
+### SQL åtgärd
+
+#### Skapa åtgärd
+
+Processen att använda SQL-åtgärder är uppdelad i följande steg:
+
+1.  Först måste du hitta åtgärdslistan i appredigeraren och klicka på knappen "Lägg till".
+2.  Välj sedan en datakälla typ i resursen välj rutan. Du hittar de skapade resurserna i motsvarande resurslista, du kan också skapa nya resurser här. Välj den skapade resursen och klicka på knappen "Bekräfta". En SQL-åtgärd kommer att skapas.
+3.  Den skapade åtgärden kommer att visas på åtgärdslistan. En åtgärdsredigerare kommer att visas under ramen efter att du sparkat åtgärden. Du kan ändra resursen för åtgärder, skriva uttalanden, svarsinnehåll, lägga till transformatorer, händelsehanterare.
+4.  Efter att du fyllt i åtgärdslistan kan du klicka på "Förhandsgranska" knappen för att kontrollera om åtgärden du skrev är giltig. Konfigurationspanelen visar åtgärdsresultatet. Efter att åtgärden har redigerats kan du klicka på knappen "Spara" för att avsluta processen. Om du byter till en annan åtgärd utan att spara informationen kommer systemet att uppmana dig att spara ändringen.
+
+#### Åtgärd fördelning
+
+1.  Åtgärd: Du kan ange dina åtgärdsuttalanden i åtgärdsmodulen där vi har lagt till redigeraren för Code Mirror för att aktivera åtgärdsuttryck markering och fullbordan av koden. I efterföljande uppdateringar, vi kommer att ge ett GUI-inmatningsläge för att skriva åtgärdsuttalanden så att användare som inte känner till åtgärdsuttalanden också kan slutföra dataåtgärder.
+2.  Transformator: Du kan förfina åtgärdslogiken med JavaScript-satser i transformatorn, till exempel genom att använda filterfunktionen i JS istället för den där funktionen i åtgärdssatsen.
+3.  Händelsehanterare: Händelsehanterare låter dig utlösa åtgärder, styra insatser och andra åtgärder som svar på användarens interaktion. Du kan lägga till flera händelsehanterare för att svara på en händelse utan att lägga till anpassade JavaScript-uttalanden. Till exempel, när en användare klickar på en knapp, kan du (1) utlösa en åtgärd att köra, medan (2) återställa tillståndet för flera rullgardinslistor och textinmatningar.
+4.  Svar: I Svarsmodulen kan du anpassa de villkor under vilka åtgärden returnerar felaktiga resultat, på ett sådant sätt att man ser till att åtgärden är korrekt.
+5.  Avancerat: Förfina detaljerade inställningar för åtgärder som databastimeout svarstider, fördröjningar händelseprocessorn etc. inom de avancerade alternativen.
+
+### API åtgärder
+
+#### Skapa åtgärd
+
+Processen för att åtgärda data med hjälp av API:et liknar den för SQL.
+
+1.  För det första, användaren måste hitta åtgärdslistan längst ner till vänster på programredigeringssidan och klicka på plustecknet längst upp till höger i åtgärdslistan.
+2.  Välj sedan motsvarande datakälllista i rutan för resursval som dyker upp. Du kan hitta den skapade resursen i motsvarande datakälllista, eller så kan du skapa en ny resurs här. Välj den skapade resursen, klicka på "Create" och en API-åtgärd kommer att skapas.
+3.  Den framgångsrikt skapade åtgärden kommer att visas i åtgärdslistan i den nedre panelen och fliken Allmänt för åtgärden kommer att dyka upp under ramen när du klickar. Du kan göra en förfrågan till alla HTTP API i ILLA . Se API:ets dokumentation för metoder för att begära data.
+4.  När du har fyllt i din åtgärd, du kan klicka på "Förhandsgranska" knappen för att se om åtgärden du har skrivit är giltig och konfigurationspanelen kommer att ge dig resultat. När du har redigerat din åtgärd, kan du klicka på Spara och avsluta processen. Om du byter till en annan operation utan att spara, kommer en popup att uppmana dig att slutföra sparoperationen.
+
+#### Åtgärd fördelning
+
+1.  Transformator: Du kan förfina åtgärdslogiken med JavaScript-satser i en transformator, t.ex. genom att använda filterfunktionen i JS istället för den där funktionen i ett åtgärdsuttryck.
+2.  Händelsehanterare: Händelsehanterare låter dig utlösa åtgärder, styra insatser och andra åtgärder som svar på användarens interaktion. Du kan lägga till flera händelsehanterare för att svara på en händelse utan att lägga till anpassade JavaScript-uttalanden. Till exempel, när en användare klickar på en knapp, kan du (1) utlösa en åtgärd att köra, medan (2) återställa tillståndet för flera rullgardinslistor och textinmatningar.

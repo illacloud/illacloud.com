@@ -1,0 +1,83 @@
+---
+title: App redigerare
+metaTitle: ILLA Cloud App editor doc
+desc: APP-editorn är gränssnittet för att utveckla applikationen
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Appredigerare</Heading>
+
+APP-editorn är gränssnittet för att utveckla applikationen och består av följande huvuddelar:
+
+-   Verktygsfält
+-   Frame
+-   Redigerare för åtgärd
+-   Data arbetsyta
+-   Insert
+-   Inspektera
+
+<img alt="editor" src={'https://cdn.illacloud.com/official-website/img/official-site/content.png'} />
+
+### Verktygsfält
+
+Verktygsfältet ligger högst upp i APP Editor som används främst för att konfigurera APP och kan användas för följande uppgifter：
+
+-   Klicka på ikonen ILLA till vänster för att återvända till startsidan.
+-   Visa APP-information och spara status.
+-   Visa/dölj objekt vänster, höger, nedre panelen.
+-   Justera skalning av objekt.
+-   Visa alla nuvarande utvecklare av APP.
+-   Avisera APP till aktuell felstatus.
+-   Dela APP med andra utvecklare.
+-   Kör APP.
+
+#### Fler funktioner kommer soom
+
+-   Importera APP:er från json.
+-   Reproduktion APPs.
+-   Exportera APPs i json-format.
+-   Välj önskad APP-version.
+-   Visa den redigerade historiken.
+-   Ladda om alla åtgärder.
+
+[//]: # "[Image]"
+
+### Frame
+
+Ramen är det område i APP där du kan redigera det grafiska gränssnittet för APP. Du kan dra och släppa insatser i ramen från insatspanelen på höger hand; du kan också välja insatser som har placerats i ramen och använda musen för att dra och släppa för att ändra läge och storlek på insatserna.
+
+När du släpa och släppa skär eller ändra deras storlek, en streckad kvadrat kommer att visas i bakgrunden av ramen för att hjälpa dig att ordna insatserna prydligt i ramen. När du stöter på överlappande insatser när du drar och släpper, ILLA Builder kommer att prioritera insatsen du flyttar och automatiskt flytta blockeringen in ur vägen för dig.
+
+#### Förhandsgranska
+
+Förhandsgranska växla knappen ligger i det övre högra hörnet av ramen . När du klickar på kommer redigeraren att gå in i förhandsgranskningsläge, nedre vänstra och högra panelerna kommer att döljas och insatserna i ramen kommer inte att ändras, alla insatser kommer att presenteras framför dig i storlek 1:1.
+
+> ### Webbläsare stöds
+>
+> Vi rekommenderar att du öppnar ILLA Builder i Google Chrome.
+
+### Åtgärd Editor
+
+Action Editor finns under ramen och är det område där du skriver kod för att interagera med data från resurser. I detta område kan du hitta skapade operationer, välja den aktuella operativa resursen, skriva frågeformuleringar och konfigurera transformatorer. ou kan redigera frågeuttrycket i åtgärdsredigeraren och när du uppdaterar frågeutdraget APP-redigeraren kommer automatiskt att uppdatera dina åtgärdsresultat.
+
+När du skriver in SQL-åtgärdssatser, kan du välja att använda SQL-läge för att redigera dem via vanlig kod, eller så kan du välja GUI-läge för att ändra dem enligt åtgärdsramverket som vi ger dig för att snabbt slutföra åtgärdsredigeringen. eller detaljerade handledningar, se den operativa dokumentationen.
+
+### Åtgärdslista
+
+Åtgärdslistan finns på vänster sida av konfigurationspanelen, där du kan hitta den åtgärd du behöver för att använda och ändra den i utgåvans redigerare. ou kan också lägga till en ny åtgärd här, se detaljer om skapandeprocessen.
+
+### Data arbetsyta
+
+Data Workspace ligger i panelen till vänster om ramen, där du kan se insatserna, åtgärder och global status för redaktören, alla visas i Json-format. Du kan också redigera data genom att välja den i arbetsytan eller ta bort den genom att klicka på knappen Fler inställningar.
+
+### Insert
+
+Insatsen ligger i panelen till höger om ramen, och du kan flytta insatsen till ramen genom att dra och släppa den med musen. Du kan hitta insatsen du behöver genom att infoga typ, eller så kan du söka efter den och hitta den snabbt.
+
+[//]: # "[Image]"
+
+### Inspektera
+
+Inspektionen ligger i panelen till höger om ramen. När du väljer en infogning i ramen eller arbetsytan kommer panelen till höger automatiskt att växla till infoga sidan. Från denna sida kan du ställa in variabler, uppdatera infoga namn, skapa händelsehanterare eller utföra en infoga ta bort åtgärden. Verktygsfältet för insatsen kommer också att ställas in på olika sätt för olika insatser, så att du kan ändra innehållet i de olika insatserna.

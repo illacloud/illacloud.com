@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: CLI ILLA umožňuje nasazení ILLA Builder rychleji než vaše představivost.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**Musíš mít Docker před použitím CLI ILLA pro nasazení vlastní instalace. Používáte-li ILLA CLI, měli byste přidat aktuálního uživatele do docker skupiny nebo použít v root.**
+
+## Stahování ILLA CLI
+
+Pokud máte Rust nainstalován, můžete snadno sestavit + nainstalovat nejnovější verzi ILLA CLI s **cargo**:
+
+```
+> cargo install illa
+```
+
+Nástroj **náklad** dokončí stahování ILLA CLI se zdrojovými závislostmi, postavit a nainstalovat ji do cesty nákladního koše, abychom ji mohli spustit.
+Po instalaci můžete spustit ILLA CLI příkazem **illa**.
+
+Alternativně si můžete stáhnout ILLA CLI pro váš operační systém zde:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Pokud stahujete z výše uvedených odkazů, kroky se mírně liší oproti stažení ILLA CLI z **cargo**. Po stažení CLI budete muset udělat spustitelný soubor. Vezměme si například illa-linux:
+
+```
+## stáhnout binární soubor illa cli
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## rozbalí soubor
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## spustí illa cli
+> ./illa
+
+```
+
+### Kontrola předpokladů vlastní instalace
+
+**Tyto přístavy 5432, 9999 a 8000 by měly zůstat pro Tvůrce ILLA **
+
+Následující příkaz zkontroluje předpoklady vlastní instalace na vašem operačním systému:
+
+```
+> illa doctor
+```
+
+### Nasazování Editoru ILLA
+
+Jakmile je ILLA CLI nainstalována, můžete spustit vlastní instalaci nebo [cloudovou instalaci](https://cloud.illacloud.com/).
+
+Rychlý start
+
+```
+> illa deploy --self --port=10000
+```
+
+Můžete jednoduše nasadit vlastní editor ILA spuštěním následujícího příkazu:
+
+```
+# the port which ILLA Builder can be accessed on can be changed
+# the <MOUNT_PATH> is the custom mount path of ILLA Builder, the default value is a path under the user home directory if not filled
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
+```
+
+Nyní můžete přistupovat k Editoru ILL: http://localhost:10000
+
+## Aktualizace Editoru ILLA
+
+Pro aktualizaci ILLA Builder s nejnovějšími obrázky v doku, použijte následující příkaz:
+
+```
+> illa update --sama
+```
+
+## Ostatní operace
+
+```
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart ILLA Builder
+> illa restart --self
+
+# help information
+> illa help
+```

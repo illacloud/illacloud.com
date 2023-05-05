@@ -1,0 +1,106 @@
+---
+title: Lähetä
+metaTitle: ILLA Cloud Upload component doc
+description: Käytä latauskomponenttia ladataksesi tiedostoja paikallisista koneista mihin tahansa pilvitallennustilaan
+tagCategory: doc_menu_upload_click
+---
+
+* * *
+
+## <Heading hidden>Lataa</Heading>
+
+Lähetyskomponenttia käytetään siihen, että käyttäjät voivat ladata tiedostoja paikallisista koneistaan mihin tahansa pilvitallennustilaan API:n kautta. Seuraavaksi esittelemme kuinka konfiguroida latauskomponentin, kuinka liittää latauskomponentti yhteen pilvipalvelun, jonka avulla voit tallentaa palvelun. miten voit käyttää latauskomponenttia valitaksesi kuvan, ja näyttää sen kuvan avulla jne.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Ominaisuudet
+
+| Ominaisuus                    | Kuvaus                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tyyppi                        | Aseta latauskomponentin tyyppi, mukaan lukien painike ja Dropzone.                                                                                                                                                                                                                                                                                     |
+| Teksti                        | Teksti näytetään ladattavan komponentin kohdalla.                                                                                                                                                                                                                                                                                                      |
+| Valinnan tyypit               | Set the selection type to multiple files, single file or directory. (Automatic Copy)                                                                                                                                                                                                                                                                   |
+| Tiedostotyypit                | Luettelo tiedostopäätteistä, jotka on sallittu ladata. Mikään arvo ei salli kaikkia tiedostotyyppejä.                                                                                                                                                                                                                                                  |
+| Lisää uudet valitut tiedostot | Voit asettaa valitun uuden tiedoston liittämään valitun tiedoston tai korvata valitun tiedoston valintatyyppiin useita tiedostoja tai hakemistoa.                                                                                                                                                                                                      |
+| Tiedoston luettelo            | Määrittää, näytetäänkö lista valituista tiedostoista ladattavan komponentin alapuolella. @ info: whatsthis Lähettimen korkeus muuttuu dynaamisesti sen mukaan, mikä on tiedostonlistan pituus.                                                                                                                                                         |
+| Jäsennuksen Arvo              | Yritetään jäsentää valitut tiedostot, jotka tukevat JSON-, CSV-, TSV-, Excel- ja TXT-tiedostoja. Jäsennettyjä tietoja voi käyttää sivuston {{upload1.parsedValue}} kautta. Tiedostot, joita ei voi jäsentää, ovat tyhjiä taulukossa. Kaikki tiedostot ovat saatavilla base64-koodatuina merkkijonoina arvotaulukossa, tästä vaihtoehdosta riippumatta. |
+| Ladataan                      | Onko komponentissa käytettävä kuormitusindikaattoria.                                                                                                                                                                                                                                                                                                  |
+| Pois Käytöstä                 | Määrittää, poistaako tämä komponentti käytöstä ja millä ehdoilla se käytöstä. Esimerkiksi, jos input1 komponentti on null, tämä komponentti pitäisi poistaa käytöstä: {{ input1.value == ‘ '}}                                                                                                                                                         |
+| Työkaluvihje                  | Komponentin kohdalla näkyvä työkaluvihje kun käyttäjät leijuvat komponentin päällä.                                                                                                                                                                                                                                                                    |
+| Vaadittu kenttä               | Määrittääkseen, onko se pakollinen.                                                                                                                                                                                                                                                                                                                    |
+| Min size                      | Jos haluat asettaa pienimmän tiedostokoon, joka voidaan lisätä.                                                                                                                                                                                                                                                                                        |
+| Max size                      | Jos haluat asettaa tiedoston enimmäiskoon, se voidaan lisätä.                                                                                                                                                                                                                                                                                          |
+| Mukautettu sääntö             | Näytettävän tekstin asettaminen kun vahvistus epäonnistuu.                                                                                                                                                                                                                                                                                             |
+| Piilota vahvistusviesti       | Määrittää, näytetäänkö validointiviesti kun vahvistus epäonnistuu.                                                                                                                                                                                                                                                                                     |
+| Lomakkeen Dataavain           | Jos haluat asettaa komponentin avaimen. Kun tämä komponentti on lisätty lomakkeeseen, tätä avainta käytetään tunnistamaan tämän komponentin tiedot kun lomake lähetetään.                                                                                                                                                                              |
+| Hidden                        | Määrittää, näyttääkö tämä komponentti ja millä ehdoilla se näyttää. Esimerkiksi, jos nykyinen käyttäjä ei ole käyttäjä A, tämän komponentin pitäisi olla piilotettu: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                        |
+| Variantti                     | Aseta painikkeen latauskomponentti ääriviivaan tai täytettäväksi.                                                                                                                                                                                                                                                                                      |
+| Teeman väri                   | Jos haluat asettaa painikkeen latauskomponentin värin.                                                                                                                                                                                                                                                                                                 |
+
+### Menetelmä
+
+Voit käyttää muita komponentteja Upload komponentin ohjaamiseen. Kannatamme seuraavia kolmea menetelmää:
+
+| tyhjennys   | Käytetään validointiviestin tyhjentämiseen                              |
+| ----------- | ----------------------------------------------------------------------- |
+| clearValue  | Käytetään tyhjentämään valitut                                          |
+| setDisabled | Käytetään latauksen komponentin asettamiseen pois käytöstä tai käytössä |
+
+### Tapahtuman käsittelijä
+
+Käynnistä toimintoja, kun valitut tiedostot muuttuvat
+
+### Lähettäjän tiedot
+
+Lataa komponentti on joitakin yleisesti käytettyjä tietoja, joita voidaan kutsua sovelluksessa.
+
+`value` taulukko, joka sisältää tiedostojen kanta64 tiedot. 
+
+`files` joukko esineitä. Objektien avaimiin kuuluvat `lastModified`, `name`, `size`, `type`. Voit käyttää `{{upload1.files.map(file =>tiedosto. nimi)}` saadaksesi joukon tiedostojen nimiä ja voit myös saada lastModified taulukon, kokotaulukon, kirjoittaa taulukkoa samalla tavalla. 
+
+### Lataa tiedostoja pilven tallennuspalveluun
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Lataa yksi tiedosto S3-resurssin kautta
+
+Toiminnan määrittely on seuraavanlainen: 
+
+Lataa objektin nimi
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Lataa tiedot
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Lataa useita tiedostoja S3-resurssin kautta
+
+Lataa objektin nimiluettelo
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Lataa tietoluettelo
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Lataa kuva ja näytä se kuvan komponentin
+Muuta kuvan lähde tiedostoon base64 datan latauskomponentti. The base64 data is stored in the value attribute in array. Ja meidän pitäisi splice tiedoston etuliite tiedoston tiedot. Koodi on seuraava: 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

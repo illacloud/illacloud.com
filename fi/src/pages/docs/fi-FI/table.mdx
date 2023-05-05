@@ -1,0 +1,95 @@
+---
+title: Taulukko
+metaTitle: ILLA Cloud table komponentti
+description: Näytä ja vuorovaikutuksessa datan kanssa taulukon komponentin avulla.
+tagCategory: doc_valikko_table_klikkaa
+---
+
+* * *
+
+## <Heading hidden>Taulukko</Heading>
+
+Taulukot ovat yhteinen tapa tarkastella ja olla vuorovaikutuksessa tietojesi kanssa. Voit lajitella, suodattaa, lievittää ja ladata rivejä tietoja. Taulut tukevat myös rivin valintaa ja mukautettuja sarakkeita.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Lataa tiedot tauluun
+
+Kun vedät kehykseen taulukon komponentin, se näyttää automaattisesti testitulokset JSON-muodossa. Voit muuttaa taulukossa näytettäviä tietoja muokkaamalla Data source -ominaisuutta. Käytä \`{{ actionName.data }}-muotoa valitaksesi toiminnon.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Voit myös asettaa tietolähteen syöttämällä taulukkoon.
+
+### Sarakkeen asetukset
+
+**Aseta tietosarakkeiden peitenimet**
+
+Kun olet valinnut taulukoiden tietolähteen, sarakkeen nimi asetetaan automaattisesti tietolähteen perusteella. Voit nimetä kaikki sarakkeet uudelleen klikkaamalla **Tarkasta** -välilehden saraketta ja aseta **Sarakkeen otsikko**.
+
+\*\*Muuta saraketyyppejä
+
+Kun asetat taulukoiden tietolähteen, sarakkeet on asetettu **Teksti**. Voit asettaa sarakkeiden tyypit manuaalisesti klikkaamalla **Tarkasta** -välilehden saraketta ja valitsemalla tyypin **Sarakkeen tyypistä** pudotusvalikosta.
+
+Sarakkeiden tyyppejä ovat:
+
+1.  Teksti
+2.  Päivämäärä, voit asettaa päivämäärän esitysmuodon päiväyksen ja päivämäärän tyypin.
+3.  Numero, voit asettaa desimaaliluvun numeron tyypissä.
+4.  Prosentti, voit asettaa desimaalipisteitä prosentteina tyypistä.
+5.  Linkki
+6.  Painikkeella voit lisätä tapahtumankäsittelijöitä painikkeen tyypissä.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Mukautettujen sarakkeiden yhdistetty arvo**
+
+Voit lisätä mukautettuja sarakkeita taulukoihin käyttämällä **+ Lisää** painiketta **Tutka** välilehti. Mukautettuja sarakkeita käytetään usein laskettaessa tietoja, jotka perustuvat sovelluksen muihin arvoihin. Jos sinulla on esimerkiksi `revenue`- ja `user_num`-sarakkeita ja haluat laskea `ARPU`-sarakkeen, voit käyttää `{{ currentRow.revenue/currentRow.user_num }}`
+
+Laskennan jälkeen voit lisäksi asettaa sarakkeen tyypin numeroon tai prosenttiosuuteen ja asettaa desimaalipaikat luettavuuden parantamiseksi.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Pääsy taulukkoon
+
+Käytä `{{ table1.selectedRow[i].columnName }}` päästäksesi muiden komponenttien valittujen rivien tietoihin. Jos et ole ottanut käyttöön **Multi-Row Valinta**, `i` on aina 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Päivitä taulukon tiedot**
+
+1.  Käytä syötekomponenttia tai muita syötecpmponentteja näytettäväksi `{{ table1.selectedRow[i].columnName }}`.
+2.  Käytä `{{ input1.value }}` päivitystoiminnoissa saadaksesi valitut arvot ja päivitetyt arvot.
+3.  Lisää tapahtuman käsittelijä päivityspainikkeeseen suorittaaksesi päivitystoiminnon, kun sitä napsautetaan.
+4.  Päivitä valitun rivin tiedot muuttamalla syötteen arvoa ja klikkaamalla päivityspainiketta.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Lisää uusi rivi taulukkoon**
+
+1.  Käytä `{{ input1.value }}` lisättäessä toimintoa saavat arvot.
+2.  Lisää tapahtuman käsittelijä Lisää painikkeeseen asettaaksesi Lisää toiminto -toiminnon kun napsautetaan.
+3.  Lisää uusia tietoja syöttämällä arvot syöttökomponentteihin ja napsauttamalla Lisää painike.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

@@ -1,0 +1,151 @@
+---
+title: Appwrite
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: ILLA クラウドのAppwriteのセットアップと統合に関するガイド
+tagCategory: doc_menu_appwrite_click
+---
+
+* * *
+
+## <Heading hidden>Appwrite Database</Heading>
+
+Appwriteのさまざまなサービスでは、ユーザー認証とアカウント管理、ユーザーの設定、データベースとストレージの永続性、クラウド機能、ローカライズ、画像操作などがあります。 
+
+サーバー側のローコードとフロントエンドのローコードを組み合わせたILLA CloudとAppwriteの組み合わせは、本当にローコードのフルスタック開発を実現します。
+
+format@@0(https://appwrite.io/) でAppwriteの詳細を確認できます。
+
+### ILLA Cloud にAppwriteリソースを設定する
+
+#### リソースを作成する2つの方法
+
+最初の方法は、 `Resources` タブ > `Create New`をクリックしてAppwriteを選択します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+別の方法は、`appエディタ`ページを入力することです>`+ New`をクリックしてAppwrite>`+ New Resources`をクリックして新しい設定を追加します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### 次の項目に記入してAppwriteを設定します
+
+Appwriteリソースを接続する前に、ローカルマシンまたはクラウドプロバイダにAppwriteをデプロイしていることを確認してください。 Appwriteのインストールの詳細については、format@@0(https://appwrite.io/docs/installation) をご覧ください。 
+
+| 属性       | is_required | 説明                                              |
+| -------- | ----------- | ----------------------------------------------- |
+| 名前       | 必須          | ILLAでアクションを作成する際のリソース名です。 識別しやすい名前をカスタマイズできます。  |
+| ホスト      | 必須          | ホスト名またはIP。                                      |
+| データベースID | 必須          | データベースID                                        |
+| プロジェクトID | 必須          | プロジェクトID                                        |
+| API キー   | 必須          | TOKEN（トーケン）                                     |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### アプリエディターでアクションを作成
+
+#### 次の方法でアクションを作成します
+
+アプリエディタのページで`+ 新規`をクリックし、Appwrite > 既存のAppwriteリソースを選択するか、新しいリソースを作成する>`Create Action`をクリックして新しいアクションを作成します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+アクションを作成したら、方法を選択してください。 リストドキュメント、ドキュメントの作成、ドキュメントの更新、ドキュメントの取得、ドキュメントの削除を行います。 各メソッドの構成は以下の通りです。 
+
+#### ドキュメントの一覧
+
+以下は簡単な構成例です: $id でドキュメントを一覧表示する 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| 属性       | is_required | 説明                                                                                                                              |
+| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| コレクションID | 必須          | データベースからコレクションIDを入力または選択してください                                                                                                  |
+| フィルター    | 省略可能        | 複数のフィルタをサポートします。 フィルターはキー、値、条件で構成されます。 1. キー: 属性を入力 2. 条件: 等しい、等しくない、等しくない、lessThanEqual、greaterThanなどの条件を選択します。 3. value: 値を入力 |
+| 並び順      | 省略可能        | 複数の属性による順序付けをサポート。 1. 2で注文する属性を入力します。 as( デフォルトでは ) または desc を選択                                                                |
+| 制限       | 省略可能        | レコード数                                                                                                                           |
+
+アクションでコンポーネントに入力されたデータを使用する例を次に示します。
+
+1.  ユーザーが見つけたいドキュメント ID を入力できるように、入力コンポーネントをフレームに追加します。  
+2.  フィルタを追加: 属性フィールドを $id に設定し、値フィールドに {{ input1.value }} と入力します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+出力
+
+左側のパネルのデータ構造を確認します。 例えば、最初のドキュメントのIDを取得するには、`{{list.data[0].documents[0].id}}`(`list`はアクションの名前です) を使用します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+`table` コンポーネント上のすべてのデータを表示するには、 `{{list.data[0].documents.map(documents => documents)}}` を使用することもできます。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### ドキュメントを作成
+
+| コレクションID | 必須 | データベースからコレクションIDを入力または選択してください                |
+| -------- | -- | --------------------------------------------- |
+| ドキュメントID | 必須 | IDを入力してください。このIDでドキュメントが作成されます。               |
+| データ      | 必須 | {{ }} で囲まれたオブジェクト。 例えば、{{ "key": "value" } }} |
+
+以下は、オブジェクト内でコンポーネントに入力されたデータを使用する例です。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### ドキュメントを更新
+
+| 属性       | 説明                                            |
+| -------- | --------------------------------------------- |
+| コレクションID | データベースからコレクションIDを入力または選択してください                |
+| ドキュメントID | 更新する既存のドキュメント ID を入力してください                    |
+| データ      | {{ }} で囲まれたオブジェクト。 例えば、{{ "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### ドキュメントを取得
+
+| 属性       | 説明                             |
+| -------- | ------------------------------ |
+| コレクションID | データベースからコレクションIDを入力または選択してください |
+| ドキュメントID | 既存のドキュメント ID を入力してください         |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+出力データは以下の通りです。 {{get.data[0]}} を使用してドキュメントオブジェクトを取得します。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### ドキュメントを削除
+
+| 属性       | 説明                             |
+| -------- | ------------------------------ |
+| コレクションID | データベースからコレクションIDを入力または選択してください |
+| ドキュメントID | 既存のドキュメント ID を入力してください         |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Appwrite からのデータをフロントエンドコンポーネントで接続します
+
+#### アクションの設定
+
+delete_document アクションを作成し、ドキュメントIDフィールドを {{ input1.value }} で埋めます。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+正常に実行されたときに応答を設定するアクションにイベントハンドラを追加します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### コンポーネントの設定
+
+ボタンにイベントハンドラを追加して、delete_document アクションをトリガーします。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+データを表示するテーブルのデータソースを設定します。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### 実行中の結果を表示
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />

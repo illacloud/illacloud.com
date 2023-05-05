@@ -1,0 +1,91 @@
+---
+title: Texto
+metaTitle: Doc del componente de texto de nube ILLA
+description: Mostrar datos con componente de texto
+tagCategory: doc_menú_texto_clic
+---
+
+* * *
+
+## <Heading hidden>Texto</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Propiedades
+
+| Propiedad             | Descripción                                                                                                                                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Contenido             | Establece el texto mostrado en el componente de texto. Markdown y texto plano son compatibles.                                                                                                                   |
+| Sugerencia            | Una descripción mostrada en el componente cuando los usuarios pasan el cursor sobre el componente.                                                                                                               |
+| Alineación horizontal | Establecer la posición horizontal del contenido del texto en el componente                                                                                                                                       |
+| Alineación vertical   | Para establecer la posición vercial del contenido del texto en el componente                                                                                                                                     |
+| Hidden                | Para establecer si mostrar este componente y bajo qué condiciones mostrarlo. Por ejemplo, si el usuario actual no es el usuario A, este componente debe estar oculto: {{ currentUserInfo.nickname != 'User A' }} |
+| Color                 | Para establecer el color del texto en formato de texto de pintura                                                                                                                                                |
+| Tamaño del texto      | Para establecer el tamaño del texto en formato de pintura                                                                                                                                                        |
+
+### Usar Markdown
+
+#### Título
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Lista de tareas
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### Lista de tareas
+
+1. [ ] 🚀 Construye una nueva aplicación en la nube de ILLA
+2. [ ] : telefono: Llamar con Monica
+3. [x] 🍷 Cena con **Elsa**
+4. [x] 💃 Juega `Sólo baile` durante media hora
+```
+
+#### Lista de viñetas
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Lista con balas
+- Colaboración en tiempo real: Podemos crear todo juntos en tiempo real.
+- 🛠️ Custom Plugin: Construye cualquier plugin personalizado para hacer lo que quieras.
+- 🤖 Automatizar soporte: Conectar todo y automatizar en 5 segundos.
+- 🖥️ Auto-hosted: soporta Docker & k8s
+```
+
+#### Tabla
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tabla
+| Nombre | Link | Descripción |
+| :-------- | :------- | :---- |
+| ILLA Cloud | [https://cloud. llacloud.com/](https://cloud.illacloud.com/) |Construir aplicaciones en ILLA Cloud|
+| ILLA GitHub | [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
+| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+```
+
+### Mostrar datos dinámicos
+
+Use `{{` para obtener datos de otros componentes o acciones o variables globales. Por ejemplo, para mostrar el apodo del usuario actual:
+
+```jsx
+## {{ '👋 ¡Hola! '+ currentUserInfo.nickname }}
+```

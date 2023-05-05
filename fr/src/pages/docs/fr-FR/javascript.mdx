@@ -1,0 +1,59 @@
+---
+title: Guide JavaScript
+metaTitle: Guide du tutoriel de JavaScript ILLA
+desc: JavaScript est le composant le plus important du constructeur ILLA, qui est l'outil que vous utilisez pour construire l'accès aux données et la construction logique de votre APP
+tagCategory: doc_menu_js_guider_click
+---
+
+* * *
+
+## <Heading hidden>Guide JavaScript</Heading>
+
+JavaScript est le composant le plus important du constructeur ILLA, qui est l'outil que vous utilisez pour construire l'accès aux données et la construction logique de votre APP. Maîtrisant comment appeler JavaScript, vous avez maîtrisé l'utilisation de ILLA Builder.
+
+Lors de la construction de votre APP dans le constructeur ILLA, vous pouvez utiliser `{{template syntax}}` pour écrire des instructions JavaScript personnalisées pour appeler et manipuler les données, ou écrire le code JS directement dans le transformateur.
+
+### Données d'opération
+
+#### Accès aux données sur les objets
+
+Dans ILLA Builder vous pouvez entrer des expressions JavaScript dans n'importe quelle zone de saisie de texte en utilisant la syntaxe du modèle. Les objets de données sont référentiels, et vous pouvez manipuler les données de tous les inserts, actions et transformateurs via JavaScript. Par exemple, vous pouvez utiliser `{{textInput.data}}` pour accéder au contenu d'une entrée de texte, `{{action.data}}` pour accéder aux données à partir d'une base de données d'action et `{{transformer.value}}` pour accéder aux données à partir d'un transformateur.
+
+Nous avons ajouté et modifié l'insertion du miroir de code au produit, l'adapter à l'environnement de programmation ILLA Builder, à la coloration syntaxique et à l'indentation automatique, et a ajouté des explications détaillées sur les variables et les fonctions qui se produisent pendant la programmation, afin que vous puissiez apprendre à utiliser ILLA Builder à faible coût. Après avoir entré le nom de l'objet, entrez un point. L'invite contiendra toutes les propriétés de l'objet, le type de données et une description partielle du texte, afin que vous puissiez identifier la propriété à accéder en un rien de temps.
+
+#### Accès aux numéros dans les tableaux
+
+Lorsque vous avez besoin d'accéder à une valeur dans un tableau spécifique, vous pouvez obtenir la valeur par la position ou l'abonnement des données dont vous avez besoin pour accéder.
+
+```javascript
+const list = ['a', 'b', 'c']
+return list[0] // Renvoie la première valeur dans la liste 'a'
+```
+
+### Voir les données
+
+Il y a quatre emplacements pour afficher les données dans le constructeur ILLA : l'espace de travail des données dans le panneau de gauche, l'invite de données en dessous de la zone de texte après avoir entré une expression JavaScript, et les données s'affichent à travers l'insertion de données pour afficher les données.
+
+#### Présentation de l'espace de travail des données
+
+Vous pouvez trouver l'espace de travail des données en ouvrant le panneau de gauche dans l'éditeur d'application, ainsi les données sont présentées en JSON structuré dans lequel chaque propriété et liste peut être étendue et toutes les données sont visuellement affichées dans l'espace de travail.
+
+[//]: # "[图片]"
+
+#### Aperçu en direct de l'entrée de données
+
+Lorsque vous appelez une action ou une opération de transformateur dans la zone de saisie, les données de cette opération apparaîtront automatiquement sous la zone de saisie. et vous pouvez confirmer que les données appelées sont correctes sur la base des informations ici.
+
+[//]: # "[图片]"
+
+#### Présentation des données
+
+L'insertion de l'affichage des données vous donne la vue la plus intuitive des données. Glissez et déposez simplement le composant dans le cadre, entrez le nom de la source de données correspondante dans le champ de données, filtrez et organisez-le, et vous aurez accès aux informations d'affichage des données.
+
+[//]: # "[图片]"
+
+### Transformateur
+
+Vous pouvez écrire plusieurs lignes de code JS dans le transformateur, et nous vous recommandons de choisir d'écrire dans le transformateur plutôt que dans les doubles accolades. Vous pouvez programmer JavaScript directement dans le transformateur ainsi que appeler les données dans l'opération avec l'aide de `{{}}`.
+
+Cliquez ici pour une utilisation détaillée du transformateur.

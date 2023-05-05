@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integrare document
+description: Conectează-te la instanța de Supabase și afișează date Supabase DB pe componente
+tagCategory: doc_meniu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Supabase este o alternativă de Firebase open-source care permite dezvoltatorilor să construiască în timp real web și aplicații mobile. Acesta oferă multe dintre aceleași caracteristici ca Firebase, cum ar fi bazele de date în timp real, autentificarea utilizatorului, și găzduire, dar cu beneficiile adăugate de a fi open-source și de a furniza un SQL API. Acest lucru permite dezvoltatorilor să utilizeze cunoștințele și instrumentele existente SQL, facilitând integrarea cu alte sisteme. În plus, Supabase oferă o platformă mai flexibilă și mai personalizabilă decât Firebase, care poate fi mai restrictivă în ceea ce privește modelarea și utilizarea datelor.
+
+Acest tutorial prezintă procesul de creare a unui Panou Administrator folosind ILLA Builder și Supabase în câțiva pași simpli. ILLA este o platformă cu coduri joase pentru dezvoltatori, care permite dezvoltarea și implementarea rapidă a instrumentelor interne. Permite crearea de pagini prin glisarea și fixarea componentelor UI, conectarea la orice bază de date sau API și scrierea JavaScript. Pentru a afla mai multe despre Supabase, vizitați site-ul lor la <https://supabase.com/>. Să începem!
+
+### Pasul 1: Configureaza-ti inapoi pe Supabase
+
+Pe [Supabase dashboard](https://app.supabase.com/projects), faceți clic pe `New project` și setați numele pe adminPanel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+Creați un tabel nou dând click pe `Creează un tabel nou` .
+
+Supabase oferă o varietate de opțiuni pentru popularea tabelelor cu date, inclusiv interogări de scriere, crearea schemelor printr-o interfață de utilizator și încărcarea fișierelor CSV.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+Completează informațiile din tabel. Baza de date este acum configurată.
+
+### Pasul 2: Construiește UI pe ILLA Cloud
+
+Pe [ILLA Cloud](https://cloud.illacloud.com), faceți clic pe Creare Nouă pentru a crea o aplicație nouă.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+Trage componentele din panoul `Insert` în pânză.
+
+Selectați componentele de pe planșă și configurați proprietatea în panoul `Inspectează`.
+
+După cum se vede în capturile de ecran de mai jos, am construit un simplu panou de administrare.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### Pasul 3: Conectează-te la Supabase și config CRUD
+
+Țineți cont de informațiile de conectare a bazei de date sub [Setări proiect](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) în Supabase.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+În lista de acțiuni, apăsați pe `+ New` și selectați Supabase DB.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+Completează formularul pentru a te conecta la instanța Supabase. Testează conexiunea și salvează resursa.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+Faceți clic pe \`Creare acțiune" pentru a crea o acțiune cu Resursa și configurați CRUD.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+Utilizaţi {{ pentru a obţine datele de intrare de pe front-end. Următoarea este un exemplu de pagina Administrare Utilizatori din Panoul de administrare.
+
+Căutați un utilizator după numele introdus în input1
+
+```
+SELECT *
+DE LA utilizator
+ÎN CÂND nume = "{{input1.value}}"
+;
+```
+
+Actualizați datele utilizatorului. Actualizează informațiile utilizatorului atunci când Id-ul se potrivește
+
+```
+UPDATE utilizatorul
+SET nume = "{{input3.value}}"
+, e-mail = "{{input4.value}}"
+WHERE id="{{input2.value}}"
+;
+```
+
+Introduceți datele utilizatorului
+
+```
+INTRODUCEŢI LA VALUES("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+```
+
+Șterge un utilizator prin ID
+
+```
+Şterge de la utilizator unde id = "{{input2.value}}";
+```
+
+### Pasul 4: Arată date despre componente
+
+Configuraţi proprietăţile componentelor cu {{ . De exemplu:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## Resurse
+
+-   [Site-ul oficial de supabază](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Documentație de supabază](https://supabase.com/docs)

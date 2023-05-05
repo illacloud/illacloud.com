@@ -1,0 +1,89 @@
+---
+title: Docker all-in-one Image
+tagCategory: doc_menu_docker-all-in-one-image_click
+desc: Build illa utils an all-in-one image and run it on your machine.
+---
+
+* * *
+
+## <Heading hidden>Docker all-in-one Image</Heading>
+
+### Description
+
+Build illa utils an all-in-one image and run it on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) folder for more details.
+
+Note:
+
+We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+
+And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+
+### Run an Official Image
+
+Install GNU make and type:
+
+```jsx
+make run-official-image
+```
+
+or just execute:
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
+
+```jsx
+make all
+```
+
+for podman, type:
+
+```jsx
+make run-by-podman
+```
+
+or execute shell scripts `run-by-podman.sh` in scripts folder.
+
+### Stop and Remove Container
+
+```jsx
+make stop-and-remove-container
+```
+
+### Clean Postgres Database File
+
+** THIS COMMAND WILL DELETE THE DATABASE FILE ON YOUR DISK!!! \*\*\*** BACKUP, AND DO IT CAREFULLY \*\*\*
+
+In Default, the Postgres database will storage in `/var/lib/illa/database/postgresql/` folder.
+
+Run the following command to delete it.
+
+```jsx
+make clean-postgres-database-file
+```
+
+### Config Runtime Environment Variables
+
+Edit `scripts/run.sh` when necessary:
+
+```jsx
+# postgres database password
+PG_PASS=mysecretpassword
+
+# repo home dir
+ILLA_HOME_DIR=/var/lib/illa
+
+# postgres database file storage folder
+PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
+DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+```

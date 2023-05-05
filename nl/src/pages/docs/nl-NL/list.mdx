@@ -1,0 +1,53 @@
+---
+title: Klantenlijst
+metaTitle: ILLA Cloud Lijst Component doc
+description: Met het lijstencomponent kunt u herhalende rijen van gegevens maken waarvan u de look en feel door u hebt gedefinieerd.
+tagCategory: menu_lijst_klik
+---
+
+* * *
+
+## <Heading hidden>Lijst</Heading>
+
+Het lijstencomponent is vergelijkbaar met een Container in dat je andere componenten erin kunt nesten.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Verplaats componenten naar lijst
+
+Wanneer je een lijstitem naar het Frame sleept, bevat het automatisch een aantal componenten. U kunt ze verwijderen of wijzigen en nieuwe componenten in de lijst slepen. 
+
+Alleen het eerste item kan worden bewerkt en andere zullen automatisch worden gewijzigd op basis van het eerste item. Je kunt je ook concentreren op het eerste item en sleep de balk om de hoogte items te veranderen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Zoekresultaten in een lijst weergeven
+
+Wanneer u een lijstcomponent naar het Frame sleept, worden de testgegevens in JSON-formaat automatisch weergegeven. Je kunt de gegevensbron veranderen in een actie door `{{ mysql_list_query.data }} ` te gebruiken. 
+
+Na het instellen van de gegevensbron kunt u de gegevens van de componenten wijzigen:
+
+1.  Selecteer het onderdeel in het eerste item. 
+2.  Als de gegevens van het component uit de lijst komen, kunt u de gegevens instellen met `{{ currentItem.columnName }}`. Je kunt bijvoorbeeld de afbeeldingsbron instellen met de `{{ currentItem.Avater }}`. `Avater` is een kolom van de gegevensbron van de lijst.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Je kunt `{{ currentItem.columnName }}` alleen gebruiken als de onderdelen in de lijst staan. 
+
+### Gebruik de data van lijst
+
+Je kunt de data van de geselecteerde items gebruiken met `{{ list1.selectedItem.columnName }}`. Of gebruik alle lijstgegevens door `{{ list1.dataSource[n].columnName }} ` te gebruiken
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

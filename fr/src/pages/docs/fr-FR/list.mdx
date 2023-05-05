@@ -1,0 +1,53 @@
+---
+title: Liste
+metaTitle: Liste des composants de la liste des composants ILLA
+description: Le composant Liste vous permet de créer des lignes de données répétables dont l'apparence et l'apparence sont définies par vous.
+tagCategory: Clique sur la liste
+---
+
+* * *
+
+## <Heading hidden>Liste</Heading>
+
+Le composant Liste est similaire à un conteneur dans lequel vous pouvez implanter d'autres composants à l'intérieur.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Faites glisser les composants vers la liste
+
+Lorsque vous faites glisser un composant List vers le cadre, il inclut automatiquement certains composants. Vous pouvez les supprimer ou les modifier et les faire glisser dans la liste. 
+
+Seul le premier élément peut être modifié, et les autres seront automatiquement modifiés en fonction du premier élément. Vous pouvez également vous concentrer sur le premier élément et faire glisser la barre pour changer les éléments de hauteur.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Afficher les résultats de la requête dans une liste
+
+Lorsque vous faites glisser un composant Liste vers le Frame, il affiche automatiquement les données de test au format JSON. Vous pouvez changer la source de données en une action en utilisant `{{ mysql_list_query.data }}`. 
+
+Après avoir défini la source de données, vous pouvez modifier les données des composants :
+
+1.  Sélectionnez le composant dans le premier élément. 
+2.  Si les données du composant proviennent de la liste, vous pouvez définir les données en utilisant `{{ currentItem.columnName }}` . Par exemple, vous pouvez définir la source de l'image avec le `{{ currentItem.Avater }}`. `Avater` est une colonne de la source de données de la liste.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Vous ne pouvez utiliser `{{ currentItem.columnName }}` que lorsque les composants sont dans la liste. 
+
+### Utiliser les données de la liste
+
+Vous pouvez utiliser les données des éléments sélectionnés en utilisant `{{ list1.selectedItem.columnName }}`. Ou utilisez n'importe quelles données de la liste en utilisant `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

@@ -1,0 +1,36 @@
+---
+title: Händelsehanterare
+metaTitle: ILLA Cloud Event handler doc
+desc: Händelsehanterare är en integrerad del av att förfina din interna verktygsanvändning logik
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Händelsehanterare</Heading>
+
+Händelsehanterare är en integrerad del av att förfina din interna verktygsanvändning logik. Alla inlägg eller åtgärder som svarar på en användaråtgärd har sina egna händelser som kan utlösas, som en knappsats med en "klick"-händelse, en textruta med en "submit"-händelse, framgång för en åtgärd, och så vidare. Händelsehanterare hjälper användare att utlösa fördefinierade instruktioner när händelser inträffar: du kan reagera på en enda händelsehändelse, eller så kan du ställa in flera händelsehanterare och ställa in dem som arbetsflöden för att göra mer komplext arbete.
+
+När händelsen du ställer in har inträffat kan händelsehanteraren hjälpa dig att utföra en mängd olika åtgärder: kontrollera åtgärdsuttalanden, styr insatser, kör skript och mycket mer. Du kan också lägga till mer detaljerade JavaScript-utlösarvillkor ovanpå utlösarvillkoren.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Händelsehanterare
+
+I händelsehanterare kan du ställa in resultatet av händelsen baserat på om frågeresultaten misslyckas eller inte. Du kan slutföra utlösarlogiken genom att ställa in frågefelet i fliken Svar.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Redigera skicka in hanteraren
+
+Vi sätter ett utlösarvillkor för varje interaktiv insats, och du kan välja en händelse i hanterarens åtgärdslista som utlösarvillkor. Du kan till exempel ställa in "Skicka" som utlösarvillkor i händelsehanteraren för datainmatningen, som automatiskt infogar inmatningen i databasen när användaren "skickar" inmatningen, vilket implementerar en enkel datainmatningsfunktion.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Tillfälliga stater
+
+Vid behandling av uppgifter kan du stöta på situationer där de behandlade uppgifterna inte hämtas omedelbart. Därför har vi inrättat tillfälliga stater för lagring av mellanliggande stater för databehandling. Du kan välja att ställa in ett tillfälligt tillstånd i svarshändelsealternativen för händelsehanterare och klicka på Skapa nytt tillstånd för att lagra aktuell data i det tillfälliga tillståndet, som kan placeras för alla fastigheter.
+
+Utanför projektredigeraren kan du även lagra data med {{tempState1.setValue(data)}} eller samtalsdata med {{tempState1.value}}.
+
+> Värdena i det tillfälliga tillståndet kommer att rensas när projektet startas om, och du kommer att behöva lagra värdena lokalt eller i molnet för att säkerställa integriteten av data.

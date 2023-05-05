@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: 构建全部内置图像并在您的机器上用 k8 运行它。
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### 描述
+
+构建全部内置图像并在您的机器上用 k8 运行它。 您可以在 [scripts]中查看脚本文件(https://github.com/illacloud/damy-illa-manualy/blob/main/kubernetes/scripts) 以了解更多详情。
+
+注：
+
+我们强烈建议使用我们的自动部署工具[illa-cli](https://github.com/illacloud/illa)。
+
+目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
+
+### 使用官方的 slim 图像运行
+
+安装 GNU 制造商和类型：
+
+```jsx
+进行部署
+```
+
+或仅执行：
+
+```jsx
+/bin/bash 脚本/部署.sh
+```
+
+这个命令将把illasoft 官方的全部图像拉入您的Kubernetes集群。
+
+### 数据库永久存储
+
+编辑[illa-builder.yaml](https://github.com/illacloud/deply-illa-manualy/blob/main/kubernetes/illa-builder.yaml)，并在其中添加您IAAS的持续存储配置。
+
+### HTTPS 配置
+
+您可以将NodePort 导入到您的Kubernetes集群网关并重写到443个端口，并在您的导入网关中添加 https 证书。
+
+或者，您可以手动将一个接口部署到您的 Kubernetes 服务器上，配置类似于：
+
+```jsx
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```

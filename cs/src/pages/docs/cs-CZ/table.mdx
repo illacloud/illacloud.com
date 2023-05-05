@@ -1,0 +1,95 @@
+---
+title: Stupeň úvěrové kvality 1
+metaTitle: Komponentní dok tabulky ILLA
+description: Zobrazení a interakce s daty za použití tabulkové komponenty.
+tagCategory: doc_menu_tabulka_kliknutí
+---
+
+* * *
+
+## <Heading hidden>Tabulka</Heading>
+
+Tabulky jsou běžným způsobem jak zobrazit a komunikovat s vašimi daty. Můžete roztřídit, filtrovat, stránkovat a stahovat řádky informací. Tabulky také podporují výběr řádků a vlastní sloupce.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Načíst data do tabulky
+
+Při přetažení komponenty tabulky do rámečku automaticky zobrazí testovací data ve formátu JSON. Data zobrazená v tabulce můžete změnit úpravou vlastnosti zdroje dat. Použijte formát `{{ actionName.data }}` k výběru akce.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Můžete také nastavit zdroj dat zadáním pole.
+
+### Nastavení sloupce
+
+**Nastavit aliasy pro datové sloupce**
+
+Pokud nastavíte zdroj dat tabulek, název sloupce bude automaticky nastaven na základě zdroje dat. Všechny sloupce můžete přejmenovat kliknutím na sloupec v záložce **Průzkum** a nastavením názvu sloupce\*\*.
+
+**Změnit typy sloupců**
+
+Když nastavíte zdroj dat tabulek, sloupce jsou nastaveny na **Text**. Můžete nastavit typy sloupců ručně kliknutím na sloupec v záložce **Průzkum** a výběrem tohoto typu z rozbalovacího menu **Typ sloupce**.
+
+Typy sloupců zahrnují:
+
+1.  Text
+2.  Datum, můžete nastavit formát zobrazení data v typu data.
+3.  Číslo, můžete nastavit desetinná místa v typu čísla.
+4.  Procent, můžete nastavit desetinná místa v procentech.
+5.  Odkaz
+6.  Tlačítko můžete přidat ovládače událostí v typu tlačítka.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Mapovaná hodnota vlastních sloupců**
+
+Můžete přidat vlastní sloupce do tabulek pomocí tlačítka **+ Přidat** v záložce **Průzkum**. Vlastní sloupce se často používají k výpočtu dat na základě jiných hodnot ve vaší aplikaci. Například pokud máte sloupce `revenue` a `user_num` a chcete vypočítat sloupec `ARPU`, můžete použít `{{ currentRow.revenue/currentRow.user_num }}`
+
+Kromě toho můžete po výpočtu nastavit typ sloupce na číslo nebo procenta a nastavit desetinná místa, aby se zlepšila čitelnost.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Přístup k údajům v tabulce
+
+Použij `{{ table1.selectedRow[i].columnName }}` pro přístup k datům vybraných řádků v jiných komponentách. Pokud jste nepovolili **Výběr více řádků**, `i` bude vždy 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Aktualizovat data tabulky **
+
+1.  Použij vstupní komponentu nebo jiné cpmponenty pro zobrazení `{{ table1.selectedRow[i].columnName }}`.
+2.  Použij `{{ input1.value }}` v akcích aktualizace k získání vybraných hodnot a aktualizovaných hodnot.
+3.  Přidat ovladač události pro aktualizaci tlačítka pro spuštění akce aktualizace.
+4.  Aktualizujte data vybraného řádku změnou vstupní hodnoty a klepnutím na tlačítko Aktualizovat.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Vložit nový řádek do tabulky**
+
+1.  Použij `{{ input1.value }}` pro vložení akcí získej hodnoty.
+2.  Přidejte ovladač události do tlačítka Vložit tlačítko pro spuštění akce po kliknutí.
+3.  Vložte nová data zadáním hodnot do vstupních komponent a kliknutím na tlačítko Vložit.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

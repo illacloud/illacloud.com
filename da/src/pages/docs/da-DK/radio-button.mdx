@@ -1,0 +1,132 @@
+---
+title: Radioknap
+metaTitle: Radioknap komponent
+description: Vis alle muligheder på radioknapper og støtte til at vælge 1 mulighed.
+tagCategory: doc_menu_radio_button_click
+---
+
+* * *
+
+## <Heading hidden>Radioknap</Heading>
+
+En radioknap er vælge input komponent, der giver brugerne mulighed for at vælge en mulighed fra en gruppe af foruddefinerede muligheder. Det vises som en afrundet firkantknap, som kan vælges eller fravælges af brugere. Når en radioknap er valgt, fravælges alle andre radioknapper i samme gruppe automatisk, at sikre, at der kun kan vælges én mulighed ad gangen. Radioknapper er almindeligt anvendt i formularer, spørgeskemaer og undersøgelser for at hjælpe brugerne med at foretage et enkelt valg fra en liste over muligheder.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio.png' alt="" />
+
+### Egenskaber
+
+#### Manuelle indstillinger
+
+Tilføj nye muligheder eller slet indstillinger manuelt og konfigurere mulighederne én efter én. Egenskaberne for muligheder er som følger: 
+
+| Egenskaber  | Varebeskrivelse                          |
+| ----------- | ---------------------------------------- |
+| Etiket      | Teksten som vises for indstillingen      |
+| Værdi       | Værdien associeret med indstillingen     |
+| Deaktiveret | Om indstillingen er deaktiveret for valg |
+
+#### Tilknyttede indstillinger
+
+Du kan også tilføje indstillinger fra en datakilde ved at kortlægge etiket og værdi egenskaber til de tilsvarende datafelter. Du kan få indstillinger dynamisk fra databasen på denne måde. I slutningen af denne artikel vil vi vise, hvordan vi kan bruge den gennem et eksempel.
+
+| Egenskaber  | Varebeskrivelse                                                       |
+| ----------- | --------------------------------------------------------------------- |
+| Datakilde   | Angiv datakilden for indstillinger                                    |
+| Etiket      | Brug {{item}} til at angive etiketten på indstillinger                |
+| Værdi       | Brug {{item}} til at indstille værdien af indstillinger               |
+| Deaktiveret | Brug {{item}} til at angive, om indstillingen er deaktiveret for valg |
+
+#### Andre egenskaber
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi          | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                            |
+| Pladsholder             | Værdien vil blive vist når inputfeltet er tomt.                                                                                                      |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justering af etiketten                                                                                                                       |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet på etiketten                                                             |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Vis ryd-knap            | Angiv, om ryd-knappen skal vises                                                                                                                     |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Brugerdefineret regel   | editor.inspect.setter_tooltip.custom_rule                                                                                                            |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema farve              | For at vælge temafarven på komponenten                                                                                                               |
+
+### Metode
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende tre metoder:
+
+#### setValue
+
+For at angive den valgte indstilling, for eksempel, {{”value1”}}
+
+| Egenskaber | Varebeskrivelse                        |
+| ---------- | -------------------------------------- |
+| Værdi      | En streng af valgt indstillingsværdi.  |
+
+#### clearValue
+
+For at rydde de valgte indstillinger
+
+#### validate
+
+At kontrollere, at inputoplysningerne er lovlige
+
+#### clearValidér
+
+For at rydde valideringsmeddelelsen
+
+### Hændelse handler
+
+Vi understøtter at lytte til begivenheden 'onChange' i radioknappen komponent. 
+
+Når den valgte indstilling ændres, kan den udløse en specificeret handling. Det betyder, at når en bruger vælger en anden mulighed end en gruppe af radioknapper, en særlig foranstaltning kan træffes på grundlag af den valgte mulighed. For eksempel i en webformular at vælge en anden mulighed kan udløse visningen af forskellige formularfelter eller indgivelsen af formularen til en anden destination. På denne måde kan den indstilling, der er valgt af brugeren påvirke adfærden af den software eller web-applikation, de bruger. Evnen til at udløse specificerede handlinger baseret på brugerinput er et vigtigt aspekt af interaktivt software design og kan forbedre anvendeligheden og funktionaliteten af softwaren.
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via {{componentName.propertyName}} i appen.
+
+| Egenskabens navn | Varebeskrivelse                                 |
+| ---------------- | ----------------------------------------------- |
+| værdi            | en streng af værdien af den valgte indstilling  |
+
+### Brug case
+
+Dernæst vil vi demonstrere, hvordan man bruger den kortlagte tilstand til dynamisk at opnå muligheder. 
+
+#### Trin 1 Tilføj en handling
+
+Vi har oprettet en tabel med navnet `selection`, herunder 5 kolonner: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Vi lagrede indstillingsværdierne i 'værdi' og gemte valgmuligheder etiket på forskellige sprog i andre kolonner. 
+
+Opret en handling for at liste alle data i 'selection' ved navn 'postgresql1'
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+vælg * fra valg
+```
+
+#### Trin 2 Konfigurér komponenten
+
+1.  Sæt datakilderne til `{{postgresql1.data}}` 
+2.  Indstil etiketten til at ændre etiketten baseret på sproget. 
+
+    1.  Brug {{ item.columnName }} til at angive kolonnen. 
+    2.  Benyt {{ currentUserInfo.language }} til at indstille sprogbrugernes brug i ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio2.png' alt="" />

@@ -1,0 +1,95 @@
+---
+title: Tabella
+metaTitle: Componente ILLA Cloud table doc
+description: Visualizzare e interagire con i dati utilizzando il componente della tabella.
+tagCategory: doc_menu_table_click
+---
+
+* * *
+
+## <Heading hidden>Tabella</Heading>
+
+Le tabelle sono un modo comune per visualizzare e interagire con i tuoi dati. È possibile ordinare, filtrare, paginare e scaricare righe di informazioni. Le tabelle supportano anche la selezione di righe e colonne personalizzate.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Carica i dati in una tabella
+
+Quando si trascina un componente della tabella sul frame, viene visualizzato automaticamente i dati di prova in formato JSON. È possibile modificare i dati visualizzati in una tabella modificando la proprietà di origine dati. Usa il formato `{{ actionName.data }}` per scegliere l'azione.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+È anche possibile impostare la sorgente di dati inserendo un array.
+
+### Impostazioni colonna
+
+**Imposta alias per le colonne di dati**
+
+Quando si imposta la sorgente dei dati delle tabelle, il nome della colonna verrà impostato automaticamente in base alla sorgente dei dati. Puoi rinominare tutte le colonne facendo clic sulla colonna nella scheda **Ispezione** e impostare il **Titolo colonna**.
+
+**Cambia tipi di colonne**
+
+Quando si imposta la sorgente dati delle tabelle, le colonne sono impostate su **Testo**. Puoi impostare manualmente i tipi di colonna facendo clic sulla colonna nella scheda **Ispezione** e selezionando il tipo dal menu a discesa **Tipo di colonna**.
+
+I tipi di colonna includono:
+
+1.  Testo
+2.  Data, è possibile impostare il formato di visualizzazione della data nel tipo di data.
+3.  Numero, è possibile impostare i decimali nel tipo di numero.
+4.  Percentuale, è possibile impostare le posizioni decimali nel tipo percentuale.
+5.  Link
+6.  Pulsante, è possibile aggiungere i gestori di eventi nel tipo di pulsante.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Valore Mappato delle colonne personalizzate**
+
+Puoi aggiungere colonne personalizzate alle tabelle usando il pulsante **+ Aggiungi** nella scheda **Ispezione**. Le colonne personalizzate sono spesso utilizzate per calcolare i dati in base ad altri valori della tua app. Ad esempio, se hai colonne `revenue` e `user_num` e vuoi calcolare una colonna `ARPU`, puoi usare `{{ currentRow.revenue/currentRow.user_num }}`
+
+Inoltre, dopo il calcolo, è possibile impostare il tipo di colonna su numero o percentuale e impostare le posizioni decimali per migliorare la leggibilità.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Accesso ai dati della tabella
+
+Usa `{{ table1.selectedRow[i].columnName }}` per accedere ai dati delle righe selezionate in altri componenti. Se non hai abilitato la **Selezione Multi-Riga**, `i` sarà sempre 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Aggiorna i dati della tabella**
+
+1.  Usa il componente di input o altri cpmponents di input per mostrare `{{ table1.selectedRow[i].columnName }}`.
+2.  Usa `{{ input1.value }}` nelle azioni di aggiornamento per ottenere i valori selezionati e i valori aggiornati.
+3.  Aggiungi un gestore eventi al pulsante Aggiorna per eseguire l'azione di aggiornamento quando si fa clic.
+4.  Aggiorna i dati della riga selezionata cambiando il valore di input e facendo clic sul pulsante Aggiorna.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Inserisci una nuova riga nella tabella**
+
+1.  Usa `{{ input1.value }}` in inserisci le azioni ottengono valori.
+2.  Aggiungi un gestore di eventi al pulsante Inserisci per eseguire l'azione Inserisci quando si fa clic.
+3.  Inserisci nuovi dati inserendo i valori nei componenti di input e facendo clic sul pulsante Inserisci.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

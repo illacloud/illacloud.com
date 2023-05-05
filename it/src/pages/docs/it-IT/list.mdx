@@ -1,0 +1,53 @@
+---
+title: Elenco
+metaTitle: Componente ILLA Cloud List doc
+description: Il componente Lista consente di creare righe ripetibili di dati il cui aspetto e la cui sensazione sono definiti da te.
+tagCategory: doc_menu_list_click
+---
+
+* * *
+
+## <Heading hidden>Elenco</Heading>
+
+Il componente Lista è simile a un contenitore in quanto è possibile nidificare altri componenti al suo interno.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Trascina i componenti per elencare
+
+Quando si trascina un componente Lista sul Frame, esso include automaticamente alcuni componenti. È possibile eliminarli o modificarli e trascinare i nuovi componenti nella lista. 
+
+Solo il primo elemento può essere modificato e altri cambieranno automaticamente in base al primo elemento. È inoltre possibile concentrarsi sul primo elemento e trascinare la barra per modificare gli elementi di altezza.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Visualizza i risultati della query in un elenco
+
+Quando si trascina un componente Lista sul Frame, viene visualizzato automaticamente i dati di prova in formato JSON. Puoi cambiare la sorgente dei dati in un'azione usando `{{ mysql_list_query.data }}`. 
+
+Dopo aver impostato la sorgente dati, è possibile modificare i dati dei componenti:
+
+1.  Selezionare il componente nel primo elemento. 
+2.  Se i dati del componente sono dall'elenco, puoi impostare i dati usando `{{ currentItem.columnName }}` . Ad esempio, puoi impostare la sorgente dell'immagine con il `{{ currentItem.Avater }}`. `Avater` è una colonna dalla sorgente dei dati dell'elenco.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Puoi usare `{{ currentItem.columnName }}` solo quando i componenti sono nella lista. 
+
+### Usa i dati della lista
+
+Puoi usare i dati degli elementi selezionati usando `{{ list1.selectedItem.columnName }}`. Oppure usa qualsiasi dato della lista usando `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

@@ -1,0 +1,59 @@
+---
+title: Ghid JavaScript
+metaTitle: Ghid JavaScript ILLA Cloud
+desc: JavaScript este cea mai importantă componentă a Constructorului ILLA, care este instrumentul pe care îl utilizați pentru a construi accesul la date și construcția logică a APP
+tagCategory: click_doc_meniu_js_guider_click
+---
+
+* * *
+
+## <Heading hidden>Ghid JavaScript</Heading>
+
+JavaScript este cea mai importantă componentă a Constructorului ILLA, care este instrumentul pe care îl utilizați pentru a construi accesul la date și construcția logică a APP-ului. Stăpânind cum să numești JavaScript, ai reușit să stăpânești utilizarea Constructorului ILLA.
+
+Când construiești APP în ILLA Builder, poți folosi `{{template syntax}}` pentru a scrie declarații personalizate JavaScript pentru apelarea și manipularea datelor, sau scrie codul JS direct în transformator.
+
+### Date de operare
+
+#### Accesarea datelor pe obiecte
+
+În Constructorul ILLA puteți introduce expresii JavaScript în orice căsuță de introducere a textului folosind sintaxa șablonului. Obiectele de date sunt preferabile și puteți manipula datele tuturor inserțiilor, acțiunilor și transformatorilor prin JavaScript. De exemplu, puteți utiliza `{{textInput.data}}` pentru a accesa conținutul unei introduceri de text, `{{action.data}}` pentru a accesa datele dintr-o bază de date de acţiune şi `{{transformer.value}}` pentru a accesa datele de la un transformator.
+
+Am adăugat și modificat inserția de cod oglindă la produs, a adaptat-o la mediul de programare al constructorilor ILLA, evidențierea sintaxei suportate și indentarea automată; şi a adăugat explicaţii detaliate ale variabilelor şi funcţiilor care apar în timpul programării, astfel încât să puteţi învăţa cum să utilizaţi ILLA Builder la preţuri mici. După ce ați introdus numele obiectului, introduceți un punct. Solicitarea va conține toate proprietățile obiectului, tipul de date și o descriere parțială a textului, astfel încât să puteți identifica proprietatea pentru a fi accesată în cel mai scurt timp.
+
+#### Accesarea numerelor în arrays
+
+Când ai nevoie să accesezi o valoare într-o listă specifică, puteți obține valoarea prin poziția sau abonamentul datelor de care aveți nevoie pentru a le accesa.
+
+```javascript
+const list = ['a', 'b', 'c']
+return list[0] // Returnează prima valoare din lista 'a'
+```
+
+### Vizualizați datele
+
+Există patru locații pentru a vizualiza datele în ILLA Builder: spațiul de lucru de date în panoul din stânga, solicitarea de date de sub căsuța de text după introducerea unei expresii JavaScript și afișarea datelor prin inserarea datelor pentru a afișa datele.
+
+#### Prezentarea spațiului de lucru
+
+Poți găsi spațiul de lucru pentru date deschizând panoul din stânga în editorul aplicației. astfel încât datele să fie prezentate ca fiind JSON structurat, în care fiecare proprietate și listă pot fi extinse și toate datele sunt afișate vizual în spațiul de lucru.
+
+[//]: # "[图片]"
+
+#### Previzualizare live a datelor introduse
+
+Când apelaţi o acţiune sau o operaţiune de transformator în caseta de intrare, datele pentru această operaţiune vor apărea automat sub caseta de intrare, şi puteţi confirma că datele apelate sunt corecte pe baza informaţiilor de aici.
+
+[//]: # "[图片]"
+
+#### Prezentare date
+
+Afișarea datelor vă oferă cea mai intuitivă imagine a datelor. Pur și simplu glisați și plasați componenta în cadru, introduceți numele sursei de date corespunzătoare în câmpul de date, filtrează și aranjează-l și vei avea acces la informațiile afișate de date.
+
+[//]: # "[图片]"
+
+### Transformator
+
+Poți scrie mai multe linii de cod JS în transformator, si iti recomandam sa alegi sa scrii in transformator mai degraba decat in paranteze duble. Puteți programa JavaScript direct în transformator, precum și prin apelarea datelor din operațiune cu ajutorul lui `{{}}`.
+
+Faceți clic aici pentru utilizarea detaliată a transformatorului.

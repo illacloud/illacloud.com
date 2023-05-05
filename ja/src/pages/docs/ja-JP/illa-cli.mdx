@@ -1,0 +1,105 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: ILLA CLI を使用すると、想像よりも速くILLA Builder を展開できます。
+tagCategory: doc_menu_illa_cli_click
+---
+
+**自己ホストのインストールをデプロイするには、ILLA CLI を使用する前に Docker が必要です。 ILLA CLI を使用する場合は、現在のユーザーを docker group または root で使用する必要があります。**
+
+## ILLA CLI のダウンロード
+
+Rust がインストールされている場合は、**cargo** を使って最新の ILLA CLI リリースを簡単にビルドしてインストールできます。
+
+```
+> cargo install illa
+```
+
+**cargo** ツールは、ILLA CLI のソース依存のダウンロードを完了します。 カーゴビンのパスに設置することでそれを実行できるようになります
+インストールが完了したら、**illa**コマンドでILLA CLIを実行できます。
+
+または、お使いのオペレーティングシステム用の ILLA CLI をダウンロードすることもできます:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+上記のリンクからダウンロードする場合、手順は**cargo**からILLA CLIをダウンロードするのと若干異なります。 CLIをダウンロードしたら、実行可能にする必要があります。 例えば、illa-linuxを見てみましょう。
+
+```
+## download illa cli binary file
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz
+
+## unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## run the illa cli
+> ./illa
+
+```
+
+### 自己ホストインストールの前提条件を確認する
+
+**これらのポート5432、9999、8000はILLAビルダーのために残す必要があります**
+
+以下のコマンドを実行すると、オペレーティングシステムにおける自己ホスト型インストールの前提条件を確認します。
+
+```
+> illa doctor
+```
+
+### ILLA ビルダーのデプロイ
+
+ILLA CLI がインストールされたら、セルフホストまたはformat@@0(https://cloud.illacloud.com/)を実行できます。
+
+クイックスタート
+
+```
+> illa deploy --self --port=10000
+```
+
+以下のコマンドを実行するだけで、自己ホストの ILA Builder をデプロイできます。
+
+```
+# the port which ILLA Builder can be accessed on can be changed
+# the <MOUNT_PATH> is the custom mount path of ILLA Builder, the default value is a path under the user home directory if not filled
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
+```
+
+これで、ILLA Builderにアクセスできます: http://localhost:10000
+
+## ILLA ビルダーの更新
+
+ILLA ビルダーを最新の docker イメージで更新するには、次のコマンドを使用します。
+
+```
+> illa update --self
+```
+
+## その他の操作
+
+```
+# ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# 強制的に実行されている ILLA Builder と永続的なデータの除去
+> sudo illa remove ---force --data
+
+# ILLA Builder を再起動
+> illa restart --self
+
+# help information
+> illa help 
+
+
+```

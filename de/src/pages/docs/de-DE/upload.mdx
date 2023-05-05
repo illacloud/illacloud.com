@@ -1,0 +1,106 @@
+---
+title: Hochladen
+metaTitle: ILLA Cloud Upload-Komponente doc
+description: Verwenden Sie die Upload-Komponente um Dateien von den lokalen Rechnern auf jeden Cloud-Speicher hochzuladen
+tagCategory: doc Menü hochladen_klicken
+---
+
+* * *
+
+## <Heading hidden>Hochladen</Heading>
+
+Die Upload-Komponente wird verwendet, um Benutzern das Hochladen von Dateien von ihren lokalen Rechnern auf jeden Cloud-Speicher via API zu ermöglichen. Als nächstes stellen wir vor, wie man eine Upload-Komponente konfiguriert, wie man die Upload-Komponente mit einem Cloud-Speicher-Dienst verknüpfen kann wie man die Upload-Komponente verwendet, um ein Bild auszuwählen und es mit einem Bild anzuzeigen, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Eigenschaften
+
+| Objekt                           | Beschreibung                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Typ                              | Legen Sie die Art der Upload-Komponente fest, einschließlich Button und Dropzone.                                                                                                                                                                                                                                                                                  |
+| Text                             | Der Text, der auf der Upload-Komponente angezeigt wird.                                                                                                                                                                                                                                                                                                            |
+| Auswahltypen                     | Setze den Auswahltyp auf mehrere Dateien, einzelne Dateien oder Verzeichnisse.                                                                                                                                                                                                                                                                                     |
+| Dateitypen                       | Eine Liste der Dateierweiterungen, die hochgeladen werden dürfen. Kein Wert erlaubt alle Dateitypen.                                                                                                                                                                                                                                                               |
+| Neu ausgewählte Dateien anhängen | Um die ausgewählte neue Datei an die ausgewählte Datei anzuhängen oder die ausgewählte Datei im Auswahl-Typ mehrerer Dateien oder Verzeichnisse zu ersetzen.                                                                                                                                                                                                       |
+| Dateiliste                       | Um festzulegen, ob eine Liste der ausgewählten Dateien unterhalb der Upload-Komponente angezeigt werden soll. Die Höhe des Uploaders ändert sich dynamisch, abhängig von der Länge der Dateiliste.                                                                                                                                                                 |
+| Parse Wert                       | Versuch, die ausgewählten Dateien mit Unterstützung für JSON, CSV, TSV, Excel und TXT zu analysieren. Auf geparste Daten kann über {{upload1.parsedValue}} zugegriffen werden. Dateien, die nicht geparst werden können, werden im Array null sein. Alle Dateien sind unabhängig von dieser Option als base64 kodierte Zeichenketten auf dem Wertearray verfügbar. |
+| Lädt                             | Gibt an, ob die Komponente eine Ladeanzeige angeben soll.                                                                                                                                                                                                                                                                                                          |
+| Deaktiviert                      | Um festzulegen, ob diese Komponente deaktiviert werden soll und unter welchen Bedingungen sie deaktiviert werden soll. Wenn beispielsweise die input1-Komponente null ist, sollte diese Komponente deaktiviert sein: {{ input1.value == ‘ ’}}                                                                                                                      |
+| Tooltip                          | Ein Tooltip auf der Komponente, wenn der Benutzer über der Komponente fährt.                                                                                                                                                                                                                                                                                       |
+| Pflichtfeld                      | Um festzulegen, ob es erforderlich ist.                                                                                                                                                                                                                                                                                                                            |
+| Min size                         | Um die minimale Dateigröße festzulegen, die hinzugefügt werden darf.                                                                                                                                                                                                                                                                                               |
+| Max size                         | Um die maximale Dateigröße festzulegen, die hinzugefügt werden darf.                                                                                                                                                                                                                                                                                               |
+| Eigene Regel                     | Um den angezeigten Text zu setzen, wenn die Verifizierung fehlschlägt.                                                                                                                                                                                                                                                                                             |
+| Validierungsnachricht ausblenden | Um festzulegen, ob die Validierungsmeldung angezeigt werden soll, wenn die Überprüfung fehlschlägt.                                                                                                                                                                                                                                                                |
+| Formular-Datenschlüssel          | Um einen Schlüssel für die Komponente zu setzen. Nach dem Hinzufügen dieser Komponente zu einem Formular, wird dieser Schlüssel verwendet, um die Daten dieser Komponente beim Absenden des Formulars zu identifizieren.                                                                                                                                           |
+| Hidden                           | Legt fest, ob diese Komponente angezeigt werden soll und unter welchen Bedingungen sie angezeigt werden soll. Zum Beispiel, wenn der aktuelle Benutzer nicht User A ist, sollte diese Komponente ausgeblendet werden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                   |
+| Variante                         | Um die Schaltfläche Upload-Komponente auf Outline oder gefüllt zu setzen.                                                                                                                                                                                                                                                                                          |
+| Theme-Farbe                      | Um die Farbe der Schaltfläche Upload-Komponente zu setzen.                                                                                                                                                                                                                                                                                                         |
+
+### Methode
+
+Sie können andere Komponenten verwenden, um die Upload-Komponente zu steuern. Wir unterstützen die folgenden drei Methoden:
+
+| löschen-Validierung | Zum Löschen der Validierungsnachricht verwendet                                   |
+| ------------------- | --------------------------------------------------------------------------------- |
+| clearWert           | Zum Löschen der Auswahl verwendet                                                 |
+| gesetzt             | Wird verwendet, um die Upload-Komponente auf deaktiviert oder aktiviert zu setzen |
+
+### Event-Handler
+
+Aktionen beim Ändern der ausgewählten Dateien auslösen
+
+### Daten des Uploaders
+
+Die Upload-Komponente enthält einige häufig verwendete Daten, die in der App aufgerufen werden können.
+
+`value` ein Array bestehend aus den base64-Daten von Dateien. 
+
+`files` ein Array von Objekten. Die Schlüssel der Objekte beinhalten `lastModified`, `name`, `size`, `type`. Sie können `{{upload1.files.map(file =>file. ame)}}` um ein Array mit Dateinamen zu erhalten, und du kannst auch das zuletzt modifizierte Array, Größenarray, Array auf die gleiche Art und Weise eingeben. 
+
+### Dateien in einen Cloud-Speicherdienst hochladen
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Eine einzelne Datei über ein S3-Werk hochladen
+
+Die Konfiguration des Handelns ist wie folgt. 
+
+Objektname hochladen
+
+```jsx
+{{upload1.files.map(Datei =>file.name)[0]}}
+```
+
+Daten hochladen
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Mehrere Dateien über eine S3-Ressource hochladen
+
+Objektnamenliste hochladen
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Datenliste hochladen
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Laden Sie ein Bild hoch und zeigen es auf der Bild-Komponente
+Ändern Sie die Bildquelle auf die base64-Datei der Upload-Komponente. Die base64-Daten werden im Attribut des Wertes im Array gespeichert. Und wir sollten das Datei-Präfix mit den Datei-Daten splizieren. Der Code ist wie folgt. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

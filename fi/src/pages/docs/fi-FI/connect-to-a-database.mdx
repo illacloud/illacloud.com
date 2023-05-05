@@ -1,0 +1,49 @@
+---
+title: Yhdistä tietokantaan
+metaTitle: ILLA Cloud Connect to a Database
+desc: ILLA yhdistää useimpiin tietokantoihin, kuten PostgreSQL, MySQL, TiDB ja MongoDB
+tagCategory: doc_menu_database_click
+---
+
+* * *
+
+## <Heading hidden>Yhdistä tietokantaan</Heading>
+
+ILLA yhdistää useimpiin tietokantoihin, kuten PostgreSQL, MySQL, TiDB ja MongoDB. Ole hyvä ja tarkista tämä luettelo tietolähteistä ILLA tällä hetkellä tuetaan. Tässä on lueteltu tulevat tietolähteet, joita aiomme tukea. Jos ILLA puuttuu tiettyjä käyttämiäsi tietoresursseja, täytä lomake tähän.
+
+ILLAn tarvitsemat yhteystiedot riippuvat siitä, minkä tyyppinen tietokanta haluat yhdistää. Näihin tietoihin kuuluvat yleensä isäntä, portti, käyttäjätunnukset ja yhteysmerkki. Ole hyvä ja tutustu tietokannan konfiguraatioon tai dokumentaatioon saadaksesi tämän.
+
+### 1.  Luo tietokannan resurssi
+
+Resurssit edustavat yhteyksiä tietolähteisiin ja mitä kysyt ILLA-sovelluksistasi.Kirjaudu ILLA:han ja siirry **Resurssit** -välilehteen > klikkaa **Luo uusi** ja valitse tietokanta, johon haluat yhdistää. Tämä avaa modaalin **Määritä resurssi** johon lisäät yhteystietosi.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/resources.png'
+  alt=""
+/>
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/config.png'
+  alt=""
+/>
+
+Kun olet syöttänyt yhteystietosi, napsauta **Testaa yhteyttä** tarkistaaksesi ILLA:n yhteyden onnistuneesti. Kun resurssi on valmis, napsauta **Tallenna resurssi** tallentaaksesi resurssin.
+
+Lisäksi voit luoda resursseja toiminnon listalle **Sovelluseditorin** alla.
+
+### 2.  Kysy tietokantaasi
+
+Sovelluksen editorissa klikkaa **+ Uusi** **Toimintoluettelossa** > valitse resurssityyppi ja valitse olemassa oleva resurssi tai luo uusi resurssi > klikkaa **Luo toiminto** ja päivitä toiminnot noutaaksesi joitakin tietoja tietokannassasi olevasta taulusta.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/action.png'
+  alt=""
+/>
+
+Klikkaa **Tallenna** ja sitten **Suorita**. Kyselyn tulokset näytetään automaattisesti kyselyn valmistuttua.
+
+On olemassa joitakin edistyneitä asetuksia, kuten uudelleennimeäminen, ajon asetukset, muuntaminen tietoja ja määrittämällä ajon onnistumisen tai epäonnistumisen käsittely, kuten alla esitetään.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/connect/connect-database/run.png'
+  alt=""
+/>

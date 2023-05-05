@@ -1,0 +1,23 @@
+---
+title: Kjente problemer
+tagCategory: doc_menu_known_issues_click
+desc: Kjente problemer og løsninger i ILLA Builder utplassering.
+---
+
+* * *
+
+## <Heading hidden>Kjente problemer</Heading>
+
+### Monter type problem
+
+Kjør `illa deploy --self -port=1000 -s={your-ip-address}` eller `run-official-image.sh`, kom tilbake følgende feil:
+
+`Docker svarte med statuskode 400: invalid mount config for type "binding": bind kilde banen eksisterer ikke: /tmp/illa-data`
+
+For nå, støtter monteringstypen kun `mount`, vennligst config `docker -v` som `mount` modus. Eller installer docker på nytt ved å følge skript.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Og kjør kommandoen en gang til.
+
+For flere problemer: https://github.com/illacloud/illa-builder/issues

@@ -1,0 +1,151 @@
+---
+title: Appwrite
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: Guiden för att konfigurera och integrera med Appwrite på ILLA Cloud
+tagCategory: Klicka
+---
+
+* * *
+
+## <Heading hidden>Appwrite-databas</Heading>
+
+I Appwrites olika tjänster kan du hitta användarautentisering och kontohantering, användarinställningar, databas och lagringsbeständighet, molnfunktioner, lokalisering, bildmanipulering med mera. 
+
+Kombinationen av ILLA Cloud och Appwrite, det vill säga kombinationen av server-side låg-kod och front-end låg-kod, kommer verkligen att inse låg-kod full-stack utveckling.
+
+[Klicka här](https://appwrite.io/) för att läsa mer om Appwrite.
+
+### Konfigurera appwrite-resurs i ILLA Cloud
+
+#### Två sätt att skapa resurser
+
+Det första sättet är att gå in i fliken 'Resurser' > klicka på 'Skapa ny' för att välja Appwrite. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+Det andra sättet är att gå in på 'app editor' sidan > klicka på '+ Ny' för att välja Appwrite > klicka på '+ Nya resurser' för att lägga till den nya konfigurationen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Setup Appwrite genom att fylla i följande fält
+
+Innan du ansluter en Appwrite-resurs, se till att du har distribuerat Appwrite på din lokala maskin eller en molnleverantör. [Klicka här](https://appwrite.io/docs/installation) för att läsa mer om installationen av Appwrite. 
+
+| Egenskap   | är obligatoriskt | Beskrivning                                                                                         |
+| ---------- | ---------------- | --------------------------------------------------------------------------------------------------- |
+| Namn       | obligatorisk     | Namnet på resursen när du skapar åtgärder i ILLA. Du kan anpassa ett namn för enkel identifiering.  |
+| Värd       | obligatorisk     | HOSTNAMN ELLER IP.                                                                                  |
+| Databas ID | obligatorisk     | Databas ID                                                                                          |
+| Projekt ID | obligatorisk     | Projekt ID                                                                                          |
+| Api nyckel | obligatorisk     | TOKEN                                                                                               |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Skapa åtgärder i appredigeraren
+
+#### Skapa åtgärder på följande sätt
+
+Klicka på `+ New` i appredigeringssidan > för att välja Appwrite > välj en befintlig Appwrite-resurs eller skapa en ny resurs > klicka på `Create Action` för att skapa en ny åtgärd. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+Efter att du skapat en åtgärd, välj en metod. Vi tillhandahåller följande metoder: Lista dokument, Skapa ett dokument, Uppdatera ett dokument, Hämta ett dokument och ta bort ett dokument. Konfigurationen av varje metod är som följer. 
+
+#### Lista dokument
+
+Följande är ett enkelt konfigurationsexempel: Lista dokumentet med $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Egenskap      | är obligatoriskt | Beskrivning                                                                                                                                                                                                                                        |
+| ------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Samlings-ID   | Krävs            | Skriv in eller välj ett samlings-id från databasen                                                                                                                                                                                                 |
+| Filtrera      | Valfri           | Stöd för flera filter. Ett filter består av en nyckel, ett värde och ett tillstånd. 1. nyckel: skriv in ett attribut 2. skick: välj ett tillstånd, inklusive lika, notEqual, lessThan, lessThanEqual, highaterThan, etc. 3. värde: skriv in värdet |
+| Sortera efter | Valfri           | Stöd för beställning av flera attribut. 1. mata in ett attribut till ordning med 2. Välj asc( som standard ) eller desc                                                                                                                            |
+| Gräns         | Valfri           | Antal poster                                                                                                                                                                                                                                       |
+
+Följande är ett exempel på hur man använder de data som anges i komponenten i åtgärden:
+
+1.  Lägg till en inmatningskomponent till ramen så att användarna kan ange dokument-id de vill hitta.  
+2.  Lägg till ett filter: sätt attributfältet till $id och ange {{ input1.value }} i värdefältet. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Utdata
+
+Kontrollera datastrukturen på vänster panel. Till exempel, använd `{{list.data[0].documents[0].id}}`(`list` är namnet på åtgärden) för att få id på det första dokumentet. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+Du kan också använda `{{list.data[0].documents.map(dokument => documents)}}` för att visa alla data på `table`-komponenten. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Skapa ett dokument
+
+| Samlings-ID | Krävs | Skriv in eller välj ett samlings-id från databasen                    |
+| ----------- | ----- | --------------------------------------------------------------------- |
+| Dokument ID | Krävs | ange ett ID. dokumentet kommer att skapas med detta ID                |
+| Data        | Krävs | Ett objekt inneslutet i {{ }}. Till exempel, {{ { "key": "value" } }} |
+
+Följande är ett exempel på hur man använder de data som anges i komponenten i ett objekt. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Uppdatera ett dokument
+
+| Egenskap    | Beskrivning                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| Samlings-ID | Skriv in eller välj ett samlings-id från databasen                    |
+| Dokument ID | ange ett befintligt dokument-ID som ska uppdateras                    |
+| Data        | Ett objekt inneslutet i {{ }}. Till exempel, {{ { "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Hämta ett dokument
+
+| Egenskap    | Beskrivning                                        |
+| ----------- | -------------------------------------------------- |
+| Samlings-ID | Skriv in eller välj ett samlings-id från databasen |
+| Dokument ID | mata in ett befintligt dokument-ID                 |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+Utgångsdata är som följer. Använd {{get.data[0]}} för att hämta dokumentobjektet.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Ta bort ett dokument
+
+| Egenskap    | Beskrivning                                        |
+| ----------- | -------------------------------------------------- |
+| Samlings-ID | Skriv in eller välj ett samlings-id från databasen |
+| Dokument ID | mata in ett befintligt dokument-ID                 |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Anslut data från Appwrite med front-end komponenter
+
+#### Konfigurera åtgärderna
+
+Skapa en delete_document åtgärd > fyll i fältet Document ID med {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Lägg till en händelsehanterare till åtgärden för att ange ett svar när den körs framgångsrikt. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Konfigurera komponenter
+
+Lägg till en händelsehanterare till knappen för att utlösa åtgärden delete_document . 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Ställ in datakällan för tabellen för att visa data. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### Visa resultat som körs
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />

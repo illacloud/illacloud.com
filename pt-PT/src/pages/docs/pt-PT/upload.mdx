@@ -1,0 +1,106 @@
+---
+title: Transferir
+metaTitle: ILLA Cloud Upload do componente
+description: Use o componente de upload para enviar arquivos das máquinas locais para qualquer armazenamento em nuvem
+tagCategory: link_menu_de_upload_clique
+---
+
+* * *
+
+## <Heading hidden>Carregar</Heading>
+
+O componente de upload é usado para permitir que os usuários façam upload de arquivos de suas máquinas locais para qualquer armazenamento de nuvem via API. Em seguida, apresentaremos como configurar um componente de upload, como associar o componente de upload com um serviço de armazenamento em nuvem. como usar o componente de upload para selecionar uma imagem e exibi-la com uma imagem, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### propriedades
+
+| Propriedade                             | Descrição:                                                                                                                                                                                                                                                                                                                                                |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| tipo                                    | Defina o tipo de componente de upload, incluindo Botão e Dropzone.                                                                                                                                                                                                                                                                                        |
+| texto                                   | O texto mostrado no componente de upload.                                                                                                                                                                                                                                                                                                                 |
+| Tipos de seleção                        | Defina o tipo de seleção para vários arquivos, arquivo único ou diretório. (Automatic Translation)                                                                                                                                                                                                                                                        |
+| Tipos de arquivo                        | Uma lista de extensões de arquivo permitidas para upload. Nenhum valor permitirá todos os tipos de arquivo.                                                                                                                                                                                                                                               |
+| Acrescentar arquivos recém-selecionados | Para definir o novo arquivo selecionado para anexar ao arquivo selecionado ou substituir o arquivo selecionado no tipo de seleção de vários arquivos ou diretório.                                                                                                                                                                                        |
+| Lista de arquivos                       | Para definir se deve mostrar uma lista dos arquivos selecionados abaixo do componente de upload. A altura do uploader mudará dinamicamente com base no comprimento da lista de arquivos.                                                                                                                                                                  |
+| Valor de análise                        | Tente analisar os arquivos selecionados, com suporte para arquivos JSON, CSV, TSV, Excel, e TXT. Dados analisados podem ser acessados via {{upload1.parsedValue}}. Arquivos que não podem ser analisados serão nulos na matriz. Todos os arquivos estão disponíveis como strings codificadas em base64 na matriz de valor, independentemente desta opção. |
+| Carregando...                           | Se o componente deve mostrar um indicador de carregamento.                                                                                                                                                                                                                                                                                                |
+| Desabilitado                            | Para definir se deseja desativar este componente e em que condições desativá-lo. Por exemplo, se o componente input1 é nulo, este componente deve ser desabilitado: {{ input1.value == ‘ ’}}                                                                                                                                                              |
+| Dica                                    | Uma dica exibida no componente quando usuários passarem o mouse sobre o componente.                                                                                                                                                                                                                                                                       |
+| Campo obrigatório                       | Para definir se é necessário.                                                                                                                                                                                                                                                                                                                             |
+| Min size                                | Para definir o tamanho mínimo de arquivo permitido para ser adicionado.                                                                                                                                                                                                                                                                                   |
+| Max size                                | Para definir o tamanho máximo de arquivo permitido para ser adicionado.                                                                                                                                                                                                                                                                                   |
+| Regra personalizada                     | Para definir o texto exibido quando a verificação falhar.                                                                                                                                                                                                                                                                                                 |
+| Ocultar mensagem de validação           | Para definir se deve exibir a mensagem de validação quando a verificação falhar.                                                                                                                                                                                                                                                                          |
+| Chave de Dados do Formulário            | Para definir uma key para o componente. Depois de adicionar este componente a um formulário, esta chave será usada para identificar os dados deste componente ao enviar o formulário.                                                                                                                                                                     |
+| Hidden                                  | Para definir se deve exibir este componente e em que condições exibi-lo. Por exemplo, se o usuário atual não é o Usuário A, este componente deve ser oculto: {{ currentUserInfo.nickname != 'User A' }}                                                                                                                                                   |
+| Variante                                | Para definir o componente de Upload do Botão para Outline ou Preenchido.                                                                                                                                                                                                                                                                                  |
+| Cor do tema                             | Para definir a cor do componente de Upload do botão.                                                                                                                                                                                                                                                                                                      |
+
+### Método
+
+Você pode usar outros componentes para controlar o componente de upload. Apoiamos os seguintes três métodos:
+
+| validacao           | Usado para limpar a mensagem de validação                                 |
+| ------------------- | ------------------------------------------------------------------------- |
+| clearValue          | Usado para limpar os selecionados                                         |
+| definirDesabilitado | Usado para definir o componente de upload para desabilitado ou habilitado |
+
+### Manipulador de eventos
+
+Para acionar ações quando os arquivos selecionados mudam
+
+### Dados do Upload
+
+O componente de upload tem alguns dados comumente usados, que podem ser chamados no aplicativo.
+
+`value` um array que consiste dos dados base64 dos arquivos. 
+
+`files` uma matriz de objetos. As chaves dos objetos incluem `lastModified`, `name`, `size`, `type`. Você pode usar `{{upload1.files.map(file =>file. ame)}}` para obter um array de nomes de arquivos e você também pode obter o lastModified array, size array, type array do mesmo jeito. 
+
+### Enviar arquivos para um serviço de armazenamento da nuvem
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Carregar um único arquivo através de um recurso S3
+
+A configuração da ação é a seguinte. 
+
+Carregar nome do objeto
+
+```jsx
+{{upload1.files.map(arquivo =>file.name)[0]}}
+```
+
+Enviar dados
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Enviar vários arquivos através de um recurso S3
+
+Carregar lista de nomes de objeto
+
+```jsx
+{{upload1.files.map(arquivo =>file.name)}}
+```
+
+Carregar lista de dados
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Envie uma imagem e exiba-a no componente de imagem
+Altere a fonte da imagem para o arquivo base64 de dados do componente de upload. Os dados base64 são armazenados no atributo de valor na matriz. E devemos cortar o prefixo do arquivo com os dados do arquivo. O código é o seguinte. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />

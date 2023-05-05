@@ -1,0 +1,134 @@
+---
+title: Gruppo radio
+metaTitle: ILLA Cloud Componente di gruppo radio
+description: Visualizza tutte le opzioni sul gruppo radio e supporta la selezione di 1 opzione.
+tagCategory: doc_menu_radio_group_click
+---
+
+* * *
+
+## <Heading hidden>Gruppo radio</Heading>
+
+Un gruppo radiofonico, noto anche come gruppo a scelta singola o semplicemente come gruppo radio, è un componente che consente agli utenti di selezionare una sola opzione da un elenco di opzioni predefinite. Ogni opzione del gruppo è rappresentata da un pulsante circolare che può essere selezionato o deselezionato dagli utenti. Quando una opzione è selezionata, qualsiasi opzione precedentemente selezionata nel gruppo viene automaticamente deselezionata.
+
+I gruppi radio sono comunemente usati nei moduli web, finestre di dialogo, e altre applicazioni interattive in cui gli utenti devono fare una sola scelta tra una serie di opzioni. Sono utili per prevenire errori che possono verificarsi quando gli utenti selezionano più opzioni per errore o confusione. Inoltre, i gruppi di pulsanti radio sono facili da usare e visivamente intuitivi, rendendoli una scelta popolare sia per progettisti che sviluppatori.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
+
+### Proprietà
+
+#### Opzioni manuali
+
+Aggiungi nuove opzioni o elimina opzioni manualmente e configura le opzioni una per una. Le proprietà delle opzioni sono le seguenti: 
+
+| Proprietà    | Descrizione                                         |
+| ------------ | --------------------------------------------------- |
+| Etichetta    | Il testo visualizzato per l'opzione                 |
+| Valore       | Il valore associato all'opzione                     |
+| Disabilitato | Indica se l'opzione è disabilitata per la selezione |
+
+#### Opzioni mappate
+
+È inoltre possibile aggiungere opzioni da una fonte di dati mappando le proprietà dell'etichetta e del valore ai campi di dati corrispondenti. È possibile ottenere le opzioni dinamicamente dal database in questo modo. Alla fine di questo articolo, dimostreremo come usarlo attraverso un esempio.
+
+| Proprietà      | Descrizione                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| Fonte dei dati | Imposta la sorgente dati delle opzioni                                  |
+| Etichetta      | Usa {{item}} per impostare l'etichetta delle opzioni                    |
+| Valore         | Usa {{item}} per impostare il valore delle opzioni                      |
+| Disabilitato   | Usa {{item}} per impostare se l'opzione è disabilitata per la selezione |
+
+#### Altre proprietà
+
+| Proprietà                       | Descrizione                                                                                                                                                                               |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valore predefinito              | Il valore iniziale del componente. È possibile modificare dinamicamente il valore iniziale digitando JavaScript in {{}}.                                                                  |
+| Segnaposto                      | Il valore verrà mostrato quando il campo di input è vuoto.                                                                                                                                |
+| Etichetta                       | Il nome del campo visualizzato all'utente                                                                                                                                                 |
+| Didascalia                      | Una didascalia utilizzata per descrivere in dettaglio il campo                                                                                                                            |
+| Etichetta nascosta              | Imposta se visualizzare l'etichetta                                                                                                                                                       |
+| Posizione                       | Imposta la posizione dell'etichetta rispetto al componente                                                                                                                                |
+| Allineamento                    | Imposta l'allineamento dell'etichetta                                                                                                                                                     |
+| Width                           | Quando l'etichetta è sul lato sinistro del componente, impostare il rapporto di larghezza dell'etichetta                                                                                  |
+| Gestore Eventi                  | Attiva interrogazioni, componenti di controllo o chiama altre API in risposta a eventi di componenti.                                                                                     |
+| Disabilitato                    | Controlla lo stato se il componente è disabilitato. Il componente non può essere modificato o focalizzato quando è disabilitato.                                                          |
+| Sola Lettura                    | Controllare lo stato se il componente è in sola lettura. Un componente di sola lettura può essere selezionato e messo a fuoco ma non può essere modificato.                               |
+| Mostra pulsante cancella        | Imposta se mostrare il pulsante cancella                                                                                                                                                  |
+| Suggerimento                    | Gli utenti possono inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato.                                  |
+| Campo obbligatorio              | Valido solo quando l'interruttore è attivo.                                                                                                                                               |
+| Regola personalizzata           | editor.inspect.setter_tooltip.custom_rule                                                                                                                                                 |
+| Nascondi messaggio di convalida | È possibile nascondere il messaggio di errore cambiando lo stato nascosto quando il valore di input non è corretto. È possibile modificare dinamicamente lo stato nascosto da JavaScript. |
+| Modulo Dati Chiave              | Specifica una chiave di un componente di un modulo di wrapping durante la costruzione dell'attributo dati.                                                                                |
+| Hidden                          | Controllare dinamicamente se il componente è nascosto. È possibile modificare lo stato nascosto attraverso il valore booleano dinamico.                                                   |
+| Colore tema                     | Per selezionare il colore del tema del componente                                                                                                                                         |
+
+### Metodo
+
+È possibile utilizzare altri componenti per controllare il componente. Sosteniamo i seguenti tre metodi:
+
+#### setValue
+
+Per impostare l'opzione selezionata, ad esempio, {{”value1”}}
+
+| Proprietà | Descrizione        |
+| --------- | ------------------ |
+| Valore    | Valore selezionato |
+
+#### clearValue
+
+Per pulire le opzioni selezionate
+
+#### validate
+
+Per verificare che le informazioni di input siano legali
+
+#### clearValidate
+
+Per cancellare il messaggio di convalida
+
+### Gestore eventi
+
+Supportiamo l'ascolto dell'evento `onChange` del gruppo radio. 
+
+Quando l'opzione selezionata cambia, può attivare un'azione specificata. Ciò significa che quando un utente seleziona un'opzione diversa da un gruppo radio, è possibile intraprendere un'azione particolare in base all'opzione selezionata. Ad esempio, in un modulo web, selezionando un'opzione diversa si può attivare la visualizzazione di diversi campi del modulo o la presentazione del modulo a una destinazione diversa. In questo modo, l'opzione selezionata dall'utente può influenzare il comportamento del software o dell'applicazione web che stanno utilizzando. La capacità di attivare azioni specificate in base all'input dell'utente è un aspetto importante del design del software interattivo e può migliorare l'usabilità e la funzionalità del software.
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite {{componentName.propertyName}} nell'app.
+
+| Nome proprietà | Descrizione        |
+| -------------- | ------------------ |
+| valore         | Valore selezionato |
+
+### Caso di utilizzo
+
+Successivamente, dimostreremo come utilizzare la modalità mappata per ottenere dinamicamente le opzioni. 
+
+#### Passo 1 Aggiungere un'azione
+
+Abbiamo creato una tabella chiamata `selection`, incluse 5 colonne: `options_en`, `options_jp`, `options_zh`, `options_kr`, `value`. Abbiamo memorizzato i valori dell'opzione in `value` e memorizzato l'etichetta delle opzioni in diverse lingue in altre colonne. 
+
+Crea un'azione per elencare tutti i dati nella `selection` chiamata `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+seleziona * dalla selezione
+```
+
+#### Passo 2 Configura il componente
+
+1.  Imposta le fonti dei dati su `{{postgresql1.data}}` 
+2.  Configura l'etichetta per cambiare l'etichetta in base alla lingua. 
+
+    1.  Usa {{ item.columnName }} per impostare la colonna. 
+    2.  Usa {{ currentUserInfo.language }} per impostare la lingua utilizzata dagli utenti in ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup2.png' alt="" />

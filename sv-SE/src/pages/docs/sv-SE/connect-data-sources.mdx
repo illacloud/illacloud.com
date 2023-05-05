@@ -1,0 +1,44 @@
+---
+title: Anslut till dina datakällor
+metaTitle: Illa Cloud Anslut till dina datakällor
+desc: Läs mer om att ansluta till din datakälla och anropa den i din ILLA Builder
+tagCategory: Koppla
+---
+
+* * *
+
+## <Heading hidden>Anslut till dina datakällor (Åtgärd)</Heading>
+
+Läs mer om att ansluta till din datakälla och anropa den i din ILLA Builder.
+
+Med ILLA kan du ansluta och integrera ett brett spektrum av datakällor, inklusive databaser och API:er, till din organisation för användning som resurser.
+
+### Datakällor
+
+Datakällor är platser där data lagras och behandlas. Exempel på datakällor är PostgreSQL-databaser, Twilio REST API:er och Amazon S3 hinkar. I ILLA kan du lägga till flera datakällor och göra dem tillgängliga för användare för frågor.
+
+#### Integrationer
+
+ILLA tillhandahåller inbyggda integrationer för många populära datakällor som kräver minimal konfiguration, såsom SQL-databaser och Stripe. Dessa integreringar, även kända som resurser, låter dig ansluta till och fråga dina datakällor med ILLA. Om en viss typ av datakälla inte stöds av en inbyggd integration, Du kan använda REST, GraphQL eller SOAP integrationer för att ansluta till nästan alla API. Detta ger dig tillgång till en mängd olika datakällor inifrån ILLA-byggaren.
+
+#### Anslut till databaser
+
+Anslut till de flesta databaser och datalager
+
+#### Anslut till API:er
+
+Anslut till REST och GraphQL.
+
+### Resurser
+
+En resurs i ILLA är en sparad konfiguration som anger hur ILLA ansluter till en datakälla. För att använda en datakälla i ILLA måste du skapa en resurs för den. Du kan välja lämplig resurs för att komma åt data när du skriver en fråga.
+
+Varje resurs i ILLA har sina egna konfigurationsalternativ som avgör hur ILLA ansluter till motsvarande datakälla. Dessa alternativ kan innehålla autentiseringsuppgifter och flöde, databasanslutningsinställningar och API-inställningar, såsom bas-URL och standardrubriker.
+
+#### Hur resurser fungerar
+
+ILLA resurser lagra nödvändiga inställningar för att ansluta till din datakälla på ett säkert sätt. Detta gör att du enkelt kan fråga data utan att exponera din datakälla direkt för dina användare. När en fråga körs för en resurs, ILLA använder resursens konfigurationsinställningar för att proxy begäran till datakällan på serversidan. Detta säkerställer att endast ILLA har direkt tillgång till datakällan.
+
+ILLA förenklar processen att ansluta till en datakälla för dina användare. De behöver bara välja relevant resurs när de skriver en fråga utan att behöva oroa sig över datakällans detaljer. Du kan också lägga till flera resurser av samma typ, såsom flera Amazon S3 hinkar, för att skilja mellan dem.
+
+Denna metod håller dina datakällor dolda för dina användare och ser till att alla interaktioner med datakällan hanteras säkert. ILLA undviker att göra klient-side anslutningar till datakällan som kan exponera känslig information och använder samma villkor för alla interaktioner. Dessutom aktiverar resurser sökcachelagring, vilket kan minska antalet förfrågningar som görs till en datakälla och potentiellt lägre kostnader.

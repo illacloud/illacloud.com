@@ -1,0 +1,29 @@
+---
+title: Trasformatore
+metaTitle: Trasformatore ILLA Cloud doc
+desc: Trasformatore in ILLA consente all'utente di scrivere JavaScript per affinare la logica dell'applicazione
+tagCategory: doc_menu_transformer_click
+---
+
+* * *
+
+## <Heading hidden>Trasformatore</Heading>
+
+Abbiamo messo un trasformatore in ILLA per soddisfare le vostre esigenze per scrivere JavaScript per affinare la vostra logica di applicazione. Nel Transformer, non è necessario codificare in JavaScript utilizzando {{template syntax}} come si fa nella casella di immissione dei caratteri, in modo da poter scrivere blocchi lunghi e complessi di codice JS più fluentemente. Inoltre, il trasformatore aiuta gli sviluppatori responsabili della progettazione delle pagine e della costruzione logica a completare il loro lavoro di sviluppo in modo più efficiente senza essere vincolati dai progressi reciproci.
+
+È possibile utilizzare il trasformatore non solo per le operazioni di dati stabiliti, ma anche per la creazione di operazioni di trasformatore durante la trasformazione dei dati. Sarebbe meglio scegliere un trasformatore indipendente quando si hanno più operazioni coinvolte nella trasformazione dei dati, o la necessità di utilizzare una logica JavaScript complessa per trasformare i dati.
+
+### Trasformatori Creativi
+
+Fare clic sulla scheda Trasformatori nell'elenco Azioni e fare clic su "+ Nuovo" per creare un trasformatore. Verrà visualizzato nell'elenco delle azioni dopo la creazione. È possibile modificare il nome, scrivere il codice JS, salvarlo ed eseguirlo nel pannello di configurazione dopo la selezione.
+
+> È possibile utilizzare il pulsante 'anteprima' per vedere i risultati di un trasformatore. Nota che devi salvare il trasformatore per il resto dell'app per ottenere il nuovo valore.
+
+L'inserimento chiama il trasformatore con un valore pari ai dati restituiti all'interno del trasformatore, questi dati cambiano come i dati inseriti nel trasformatore cambiano con il codice del trasformatore. Come con la casella di immissione dei caratteri, è ancora possibile utilizzare la sintassi del modello per chiamare la variabile globale No. Quando si sta scrivendo codice JS per chiamare i dati, è possibile trovare il nome specifico della variabile dati nello spazio di lavoro dati nel pannello a sinistra per aiutarti a scrivere il codice più velocemente.
+[//]\: # ([Image])
+
+È possibile chiamare la variabile del trasformatore nella casella di inserimento dati utilizzando `{{nome del trasformatore. tag name}}` per chiamare la variabile del trasformatore nella casella di immissione dati.
+
+### Trasformatore Query
+
+Abbiamo messo un trasformatore nell'operazione di interrogazione per permetterti di trasformare i dati recuperati nel formato desiderato direttamente dopo aver completato l'azione Puoi semplicemente passare {{actionName.data}} per recuperare i dati dopo aver completato la conversione nel trasformatore all'interno dell'azione.

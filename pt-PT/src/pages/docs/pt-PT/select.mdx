@@ -1,0 +1,138 @@
+---
+title: Selecionar
+metaTitle: Componente de Seleção ILLA Cloud
+description: Exibe todas as opções na caixa suspensa e suporta para selecionar 1 opção.
+tagCategory: link_menu_selecionar_clique
+---
+
+* * *
+
+## <Heading hidden>Selecionar</Heading>
+
+Um componente de seleção é comumente usado para apresentar usuários com uma lista de opções em um formato de menu suspenso. O usuário pode selecionar apenas uma opção da lista suspensa por vez.
+
+O componente de seleção única suspenso normalmente consiste em um rótulo de texto e um ícone de seta no menu suspenso, ao clicar ou tocar, abre uma lista de opções para o usuário escolher. Uma vez que o usuário seleciona uma opção, o menu suspenso fecha e a opção selecionada é exibida no componente.
+
+Este componente é frequentemente usado em formulários, pesquisas, e outros cenários de entrada de dados onde um usuário precisa selecionar uma opção em um conjunto predefinido de escolhas. Oferece uma maneira compacta e intuitiva de apresentar uma lista de opções sem pegar em muitas telas ou sobrecarregar o usuário com muitas opções de uma só vez.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select1.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select2.png' alt="" />
+
+### propriedades
+
+#### Opções de manual
+
+Adicione novas opções ou apague as opções manualmente e configure as opções uma por uma. As propriedades das opções são as seguintes: 
+
+| propriedades | Descrição:                                  |
+| ------------ | ------------------------------------------- |
+| Descrição    | O texto exibido para a opção                |
+| Valor        | O valor associado à opção                   |
+| Desabilitado | Se a opção está desabilitada para a seleção |
+
+#### Opções mapeadas
+
+Você também pode adicionar opções de uma fonte de dados mapeando as propriedades do rótulo e valor aos campos de dados correspondentes. Desta forma, você pode obter opções dinamicamente a partir do banco de dados. No final desse artigo, nós demonstraremos como usá-lo através de um exemplo.
+
+| propriedades   | Descrição:                                                          |
+| -------------- | ------------------------------------------------------------------- |
+| Fonte de dados | Definir a fonte de dados das opções                                 |
+| Descrição      | Use {{item}} para definir o rótulo de opções                        |
+| Valor          | Use {{item}} para definir o valor das opções                        |
+| Desabilitado   | Use {{item}} para definir se a opção está desabilitada para seleção |
+
+#### Outras propriedades
+
+| propriedades                  | Descrição:                                                                                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Valor padrão                  | O valor inicial do componente. Você pode alterar dinamicamente o valor inicial digitando JavaScript na {{}}.                                                             |
+| Espaço reservado              | O valor será exibido quando o campo de entrada estiver vazio.                                                                                                            |
+| Descrição                     | O nome do campo exibido ao usuário                                                                                                                                       |
+| Legenda                       | Uma legenda usada para descrever o campo em detalhes                                                                                                                     |
+| Etiqueta oculta               | Definir se deve exibir o rótulo                                                                                                                                          |
+| Posição                       | Definir a posição do rótulo relativo ao componente                                                                                                                       |
+| Alinhamento                   | Definir o alinhamento do rótulo                                                                                                                                          |
+| Width                         | Quando a etiqueta estiver no lado esquerdo do componente, defina a largura proporcional do rótulo                                                                        |
+| Gerenciador de Eventos        | Acionar consultas, componentes de controle ou chamar outras APIs em resposta a eventos de componentes.                                                                   |
+| Desabilitado                  | Controla o estado de se o componente está desabilitado. O componente não pode ser modificado ou focado quando está desabilitado.                                         |
+| Somente leitura               | Controla o status de se o componente é somente leitura. Um componente somente leitura pode ser selecionado e focado mas não pode ser modificado.                         |
+| Exibir botão Limpar           | Definir se deve mostrar o botão Limpar                                                                                                                                   |
+| Dica                          | Os usuários podem inserir a dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                          |
+| Campo obrigatório             | Válido somente quando o interruptor está ligado.                                                                                                                         |
+| Regra personalizada           | editor.inspect.setter_tooltip.regra_personalizada                                                                                                                        |
+| Ocultar mensagem de validação | Você pode ocultar a mensagem de erro alterando o status oculto quando o valor de entrada está incorreto. Você pode alterar dinamicamente o status oculto por JavaScript. |
+| Chave de Dados do Formulário  | Especificar uma chave de um componente de formulários de embalagem ao construir o atributo de dados.                                                                     |
+| Hidden                        | Controle dinamicamente se o componente está oculto. Você pode alterar o status oculto através de um valor booleano dinâmico.                                             |
+| Cor do tema                   | Para selecionar a cor do tema do componente                                                                                                                              |
+
+### Método
+
+Você pode usar outros componentes para controlar o componente. Apoiamos os seguintes três métodos:
+
+#### definirValor
+
+Para definir a opção selecionada, por exemplo, {{”value1”}}
+
+| propriedades | Descrição:        |
+| ------------ | ----------------- |
+| Valor        | Valor selecionado |
+
+#### clearValue
+
+Para limpar as opções selecionadas
+
+#### validate
+
+Para verificar se a informação de entrada é legal
+
+#### validar
+
+Para limpar a mensagem de validação
+
+### Manipulador de eventos
+
+Nós suportamos ouvir o evento `onChange` do grupo de rádio. 
+
+Quando a opção selecionada muda, ela pode acionar uma ação específica. Isto significa que, quando um usuário seleciona uma opção diferente de um grupo de rádio, uma determinada ação pode ser tomada com base na opção selecionada. Por exemplo, em um formulário web, selecionar uma opção diferente pode acionar a exibição de diferentes campos de formulário ou o envio do formulário para um destino diferente. Desta forma, a opção selecionada pelo usuário pode afetar o comportamento do software ou aplicativo da web que ele está usando. A capacidade de acionar ações especificadas com base na entrada do usuário é um aspecto importante do design de software interativo e pode melhorar a usabilidade e funcionalidade do software.
+
+### Dado
+
+O componente tem alguns dados comumente usados, que podem ser chamados através do {{componentName.propertyName}} no aplicativo.
+
+| Nome da propriedade | Descrição:        |
+| ------------------- | ----------------- |
+| Valor               | Valor selecionado |
+
+### Usar caso
+
+Em seguida, mostraremos como usar o modo mapeado para obter opções dinamicamente. 
+
+#### Passo 1 Adicionar uma ação
+
+Criamos uma tabela chamada `selection`, incluindo 5 colunas: `options_en`, `options_jp`, `options_zh`, `options_zh`, `options_kr`, `value`. Nós armazenamos os valores de opção em 'valor' e o rótulo de opções armazenadas em diferentes idiomas em outras colunas. 
+
+Crie uma ação para listar todos os dados em `selection` chamado `postgresql1`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radio1.png' alt="" />
+
+```jsx
+selecione * de seleção
+```
+
+#### Passo 2 configurar o componente
+
+1.  Define as fontes de dados para `{{postgresql1.data}}` 
+2.  Configure o rótulo para alterar o rótulo com base no idioma. 
+
+    1.  Use {{ item.columnName }} para definir a coluna. 
+    2.  Use {{ currentUserInfo.language }} para definir o idioma que os usuários usam na ILLA.
+
+    ```jsx
+    {{currentUserInfo.language=='ja-JP' ? item.options_jp 
+    : currentUserInfo.language == 'ko-KR' ? item.options_kr 
+    : currentUserInfo.language == 'zh-CN' ? item.options_zh 
+    : item.options_en }}
+    ```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/select3.png' alt="" />

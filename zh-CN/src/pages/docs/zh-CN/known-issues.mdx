@@ -1,0 +1,23 @@
+---
+title: 已知问题
+tagCategory: doc_menu_known issues_click
+desc: 已知的国际法协会建筑师部署的问题和解决方案。
+---
+
+* * *
+
+## <Heading hidden>已知问题</Heading>
+
+### 挂载类型问题
+
+运行`illa deprivation --self -port=1000 -s={your-ip-address}` 或 `run-official-image.sh`, 返回错误后：
+
+`Docker 响应状态代码 400: 类型"绑定"的挂载配置无效：绑定源路径不存在: /tmp/illa-data`
+
+现在，挂载类型只支持 `mount`，请将 `docker -v` 设置为 `mount` 模式。 或者通过以下脚本重新安装停靠。
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deply-illa-manualy/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+并再次运行部署命令。
+
+更多问题：https://github.com/illacloud/illa-builder/issues

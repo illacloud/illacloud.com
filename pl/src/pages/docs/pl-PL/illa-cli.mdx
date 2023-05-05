@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: CLI ILLA pozwala na szybsze wdrażanie budowniczego ILLA niż twoja wyobraźnia.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**Musisz mieć Docker przed użyciem CLI ILLA aby zainstalować własną instalację. Gdy używasz CLI ILLA, powinieneś dodać bieżącego użytkownika do grupy dockerów lub używać w rootu.**
+
+## Pobieranie CLI ILLA
+
+Jeśli masz zainstalowany Rust możesz z łatwością zbudować+zainstalować najnowszą wersję ILLA CLI z **ładunkiem**:
+
+```
+> cargo install illa
+```
+
+Narzędzie **ładunek** zakończy pobieranie CLI ILLA z zależnościami źródłowymi, zbudować i zainstalować go na trasie ładunkowej, abyśmy mogli go prowadzić.
+Po zainstalowaniu możesz uruchomić CLI ILLA za pomocą polecenia **illa**.
+
+Alternatywnie, możesz po prostu pobrać CLI ILLA dla systemu operacyjnego tutaj:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Jeśli pobierzesz z powyższych linków, kroki są nieco różne w porównaniu z pobieraniem CLI ILLA z **ładunku**. Po pobraniu CLI musisz sprawić, by był on wykonywalny. Weźmy na przykład illa-linux:
+
+```
+## Pobierz plik binarny illa cli
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## rozpakuj plik
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## uruchom illa cli
+> ./illa
+
+```
+
+### Sprawdzanie warunków instalacji własnej
+
+**Porty 5432, 9999 i 8000 powinny pozostać dla budowniczego ILLIA**
+
+Poniższe polecenie sprawdzi warunki instalacji własnej hostowanej w systemie operacyjnym:
+
+```
+> illa doctor
+```
+
+### Wdrożenie konstruktora ILLA
+
+Po zainstalowaniu CLI ILLA możesz uruchomić samodzielną instalację lub [instalację w chmurze](https://cloud.illacloud.com/).
+
+Szybki start
+
+```
+> illa deploy --self --port=10000
+```
+
+Możesz po prostu wdrożyć samodzielnego opiekuna ILA Builder uruchamiając następujące polecenie:
+
+```
+# port, na którym można uzyskać dostęp do konstruktora ILLA może zostać zmieniony
+# <MOUNT_PATH> jest niestandardową ścieżką montowania konstruktora ILLA, wartość domyślna to ścieżka w katalogu domowym użytkownika, jeśli nie jest wypełniona
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
+```
+
+Teraz możesz uzyskać dostęp do konstruktora ILLA: http://localhost:10000
+
+## Aktualizacja konstruktora ILLA
+
+Aby zaktualizować konstruktor ILLA z najnowszymi obrazkami dockera, użyj następującej komendy:
+
+```
+> aktualizacja illa --self
+```
+
+## Inne operacje
+
+```
+# listuj Kreator ILLA
+> lista illa --self
+
+# zatrzymaj Kreator ILLA
+> illa stop --self
+
+# usuń Kreator ILLA
+> illa remove --self
+
+# wymuszone usunięcie uruchomionego Kreatora ILLA i trwałe dane
+> sudo illa remove --force --data
+
+# zrestartuj Kreator ILLA
+> illa restart --self
+
+# informacje o pomocy
+> illa help
+```

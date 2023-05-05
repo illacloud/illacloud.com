@@ -1,0 +1,51 @@
+---
+title: Rychlý start
+metaTitle: Průvodce rychlým startem ILLA
+description: Zrychlete vývoj interních nástrojů
+tagCategory: doc_menu_quick_start_click
+---
+
+* * *
+
+## <Heading hidden>Přehled</Heading>
+
+### 1.  Nasadit ILLA Tvůrce
+
+Než začnete používat ILLA Builder, měli byste pro hostování aplikací použít ILLA Cloud nebo Self-host ILLA. Poskytujeme vám ILLA CLI, Docker Compose a K8 pro vlastní hostování ILLA v méně než 5 minut. Poskytneme vám ILLA Cloud později, abychom vám jednoduše pomohli začít s ILLA Builderem.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Získat uživatelská data
+
+Zaregistrujte se a přihlaste se do Editoru ILLA a pak zadejte záložku zdrojů. Klikněte na tlačítko "Vytvořit nové" a můžete zde vybrat typ dokumentu. Poskytujeme vám REST API a MySQL pro připojení vašich dat. Postgres, Redis a MongoDB budou k dispozici tento měsíc.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Přetáhněte vložky
+
+Až budou vaše data připravena, můžete se vrátit na záložku Aplikace a vytvořit aplikaci. Vložte seznam je na pravé straně stránky. Můžete si vybrat jednu z nich a přetáhnout ji do rámečku. Poté klepněte na tlačítko Vložit a upravte jeho parametry v průzkumném panelu. Poskytujeme Vám režim markdown pro úpravu popisku každého vloženého záznamu. Pokud znáte Markdown syntaxi, můžete rychle upravit velikost a tloušťku textu. Mezitím můžete použít {{double brackets}} k vyvolání akčních dat v textovém poli pro dosažení dalších výsledků v Editoru ILLA .
+
+### 4.  Přidat akci v aplikacích
+
+K přeměně dat ze zdrojů na vložení je třeba provést akci. Nazýváme to činy. Můžete napsat dotaz v akci pro získání dat z vašeho zdroje. Na tomto základě můžete psát JavaScript do akcí k provedení instrukcí pro zpracování dat, jako je filtr a sloučení. Příklad MySQL je uveden níže:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Vytvořte MySQL akci v editoru aplikací. Pojmenováno akce1.
+
+2.  Zadejte kód dotazu v panelu, např. SELECT \* OD uživatelů.
+
+3.  Spustit tuto akci, výsledek dotazu se zobrazí na spodním panelu.
+
+### 5.  Ukázat svá data
+
+Když je akce úspěšně vytvořena, musíte spojit výsledek akce s komponentou. Proměnná hodnoty v inspekčním panelu by měla být nahrazena výsledkem akcí {{action1.data}}. Pak budou data komponenty svázána s akčním výsledkem. 

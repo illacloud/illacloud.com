@@ -1,0 +1,36 @@
+---
+title: Arrangement behandler
+metaTitle: ILLA Sky-hendelsesdoktor
+desc: Hendelsesbehandlere er en integrert del av raffinering av dine interne verktøys brukerlogikk
+tagCategory: doc_menu_evnet_handler_klikk
+---
+
+* * *
+
+## <Heading hidden>Arrangementbehandler</Heading>
+
+Hendelse-håndteringsbrukere er en integrert del av å raffinere ditt interne verktøy brukslogikk. Alle innsatser eller tiltak som svarer på en brukerhandling har sine egne hendelser som kan aktiveres, for eksempel en knapp med et "klikk"-arrangement, en tekstinngang med en "sende" hendelse, suksessen av en handling og så videre. Hendelsesbehandlere hjelper brukere med å utløse forhåndsdefinerte instruksjoner når hendelser oppstår: Du kan reagere på en enkelt hendelseshendelse, eller du kan sette opp flere hendelsesbehandlere og sette dem opp som arbeidsflyter for å gjøre mer komplekse oppgaver.
+
+Etter at hendelsen du har angitt, kan hendelsesbehandleren hjelpe deg med å utføre en rekke handlinger: kontrollhandlinger, innsatser for styring, kjøre skript og mer. Du kan også legge til mer detaljerte JavaScript-utløserbetingelser øverst i utløserbetingelsene.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Hendelsesbehandling
+
+I håndteringsprosessen for arrangementet kan du angi resultatet av hendelsen basert på om spørringen mislyktes eller ikke. Du kan fullføre utløsningslogikken ved å sette spørringsfeilbetingelsen i Respons-fanen.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Rediger sendingsbehandler
+
+Vi setter en utløserbetingelse for hvert interaktivt innlegg. Du kan velge en hendelse i handlerlisten som utløsertilstand. Du kan for eksempel angi 'Send' som utløsningsbetingelse i hendelsesbehandlingen for data-inntastingsboksen. som automatisk setter inn inndata i databasen når brukeren "sender" innspillet, og dermed bruker en enkel innsetting av data.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Midlertidige tilstander
+
+Når du behandles data kan det oppstå situasjoner der du ikke får noen behandling med behandlede data umiddelbart Derfor har vi opprettet midlertidige stater for å lagre mellomliggende stater for databehandling. Du kan velge å angi en midlertidig stat i responsalternativene for håndtering av arrangementer, og klikk på Opprett ny tilstand for å lagre gjeldende data i midlertidig tilstand, som kan plasseres for en hvilken som helst eiendom.
+
+Utenfor prosjekteditoren kan du også lagre data fra {{tempState1.setValue(data)}} eller ringe data fra {{tempState1.value}}.
+
+> Verdiene i den midlertidige staten blir klarert når prosjektet er startet på nytt, og du må lagre verdiene lokalt eller i skyen for å sikre integriteten til dataene.

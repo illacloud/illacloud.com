@@ -1,0 +1,110 @@
+---
+title: API de cara abrazada
+metaTitle: Conectar a Hugging Face API
+description: Aprende cómo usar la API de Cara de Abuso en ILLA
+tagCategory: doc_menu_abugging_face_api_click
+---
+
+* * *
+
+## <Heading hidden>Hugging Face API</Heading>
+
+Hugging Face es el Github de la comunidad de aprendizaje de máquinas, con cientos de miles de modelos preformados y 10.000 conjuntos de datos disponibles actualmente. Usted puede acceder libremente a modelos y conjuntos de datos compartidos por otros expertos de la industria u hospedar y desplegar sus modelos en Hugging Face.
+
+Algunos ejemplos de modelos disponibles en la biblioteca Hugging Face incluyen:
+
+1.  BERT (Bidirectional Encoder Representations from Transformers): BERT es un modelo basado en transformadores desarrollado por Google para diversas tareas NLP. Ha logrado resultados de vanguardia en la comprensión del lenguaje y en las tareas de traducción automática.
+2.  GPT (Generative Pre-training Transformer): GPT es otro modelo desarrollado por OpenAI. Se utiliza principalmente para tareas de generación de idiomas, como traducción y resumen de texto.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa es una extensión del modelo BERT que se desarrolló para mejorar el rendimiento de BERT en varias tareas NLP.
+4.  XLNet (eXtraordinary LanguageNet): XLNet es un modelo basado en transformadores desarrollado por Google que está diseñado para mejorar el rendimiento de los modelos de transformación en tareas de comprensión del lenguaje.
+5.  ALBERT (A Lite BERT): ALBERT es una versión del modelo BERT que fue desarrollado para ser más eficiente y más rápido de entrenar, manteniendo al mismo tiempo un buen rendimiento en las tareas NLP.
+
+### Lo que puedes hacer con Hugging Face en ILLA Builder
+
+En Hugging Face, más de 130.000 modelos de aprendizaje de maquinaria están disponibles a través de la API pública, que puedes usar y probar gratis en \[**<https://huggingface.co/models>](<https://huggingface.co/models>**. Además, si necesitas una solución para escenarios de producción, puedes usar Endpoints de Inferencia de Hugging Face, que pueden ser implementados y accesibles en \[**<https://huggingface.co/docs/inference-endpoints/index>](<https://huggingface.co/docs/inference-endpoints/index>**.
+
+ILLA Builder proporciona docenas de componentes de front-end comúnmente utilizados, lo que le permite construir diferentes interfaces de front-end basadas en sus necesidades específicas rápidamente. Al mismo tiempo, ILLA ofrece una conexión a Hugging Face, lo que le permite conectarse rápidamente a la API, enviar solicitudes y recibir datos devueltos. Conectando la API y los componentes del front-end, puede implementar el requisito de que los usuarios puedan ingresar contenido a través del front-end y enviarlo a la API. La API devuelve el contenido generado que se mostrará en el front-end.
+
+### Configurar la Hugging Face API resource
+
+| Propiedades | Requerido | Descripción                                                                                       |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------- |
+| Nombre      | requerido | Definir un nombre de recurso que se utilizará para mostrar en ILLA                                |
+| Token       | requerido | El acceso de usuario o token de API. Puedes obtenerlo en https://huggingface.co/settings/tokens.  |
+
+### Configurar acción
+
+| Propiedades       | Requerido | Descripción                                                                                                                                                                                                                                                         |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID del modelo     | requerido | Buscar modelos: https://huggingface.co/models                                                                                                                                                                                                                       |
+| Tipo de parámetro | requerido | El tipo de parámetro de su punto final. Por ejemplo, si su punto final necesita una entrada de texto, elija rellenar el parámetro “entradas” con texto. Si su endpoint necesita una entrada JSON, elija rellenar el parámetro “entradas” con JSON o valor de clave. |
+| Parámetro         | requerido | Introduzca su parámetro. Usa {{ componentName.value }} para usar datos de componentes.                                                                                                                                                                              |
+
+# Cómo usar la cara abrazada en el Constructor de ILLA
+
+### Paso 1: Construye la interfaz de usuario con componentes en ILLA Builder
+
+Basado en el escenario de uso esperado que describió, construye una interfaz de interfaz front-end. Por ejemplo, puede utilizar componentes de entrada e imagen si su producto toma texto y produce una imagen. Si su producto toma texto y salidas de texto generado, puede utilizar los componentes de entrada y texto.
+
+La siguiente imagen es un ejemplo de una página front-end para un producto que responde a preguntas basadas en el contexto.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+
+### Paso 2: Crea un Recurso de Cara abrazando y configura las Acciones
+
+Haga clic en + Nuevo en la lista de acciones y seleccione la API de Inferencia facial.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+
+Rellena el formulario para conectarte a tu cara de abrazo:
+
+Nombre: El nombre que se mostrará en ILLA
+
+Token: Consigue tu Cara de abrazo [configuración de perfil]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+
+Confirme la información del modelo en Hugging Face antes de configurar las acciones:
+
+Selecciona un modelo en la [Página del Modelo de Cara]([https://huggingface.co/models](https://huggingface.co/models))
+
+Usemos [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) como ejemplo. Introduzca la página de detalles > haga clic en Desplegar > Haga clic en la API de Inferencia
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+
+Los parámetros después de `“entradas”` es lo que deberías rellenar en ILLA. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+
+En ILLA Builder, debemos rellenar el ID y parámetro del modelo. Tomando el modelo anterior como ejemplo, el `“entradas”` es un par clave-valor, así que podemos rellenarlo con llave-valor o JSON. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+
+Y también apoyamos la entrada de texto y la entrada binaria que puede reunir todas las conexiones API de Inferencia facial.
+
+### Paso 3: Conectar acciones a componentes
+
+Para pasar la entrada del front-end del usuario a la API, puedes usar {{ para recuperar los datos introducidos en el componente. Por ejemplo, input2 es el componente para introducir la pregunta e input1 es el componente para el contexto de entrada. podemos rellenar `pregunta` y `contexto` en la clave, y llenar `{{ input.value }}` en valor:
+
+```jsx
+{
+"question": {{input2.value}},
+"context": {{input1.value}}
+}
+```
+
+Antes de mostrar los datos de salida de la Acción en el componente front-end, debemos confirmar en qué campo se coloca la salida de los diferentes modelos. Aún tomando `deepset/roberta-base-squad2` como ejemplo, los resultados son los siguientes:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+
+Así que podemos obtener la respuesta con `{{ textQuestion.data[0].answer }}`(la `textQuestion` es el nombre de la acción). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+
+### Demo
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />

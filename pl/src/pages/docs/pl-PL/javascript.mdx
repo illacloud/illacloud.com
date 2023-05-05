@@ -1,0 +1,59 @@
+---
+title: Przewodnik JavaScript
+metaTitle: Dokumentacja obsługi JavaScript Guider ILLA
+desc: JavaScript jest najważniejszym składnikiem konstruktora ILLA, którego narzędzia używasz do budowania dostępu do danych i logicznej konstrukcji aplikacji
+tagCategory: doc_menu_js_guider_kliknij
+---
+
+* * *
+
+## <Heading hidden>JavaScript Guider</Heading>
+
+JavaScript jest najważniejszym składnikiem konstruktora ILLA, którego narzędzia używasz do budowania dostępu do danych i logicznej konstrukcji aplikacji. Opanowanie jak nazywać JavaScript, opanowało użycie konstruktora ILLA.
+
+Podczas tworzenia Twojej aplikacji w Edytorze ILLA możesz użyć `{{template syntax}}` do pisania niestandardowych instrukcji JavaScript do wywoływania i manipulowania danymi, lub zapisz kod JS bezpośrednio w transformatorze.
+
+### Dane operacji
+
+#### Dostęp do danych o obiektach
+
+W Edytorze ILLA możesz wprowadzić wyrażenia JavaScript w dowolnym polu wprowadzania tekstu przy użyciu składni szablonu. Obiekty danych są polecane i możesz manipulować danymi wszystkich wsadów, akcji i transformatorów za pomocą JavaScript. Na przykład możesz użyć `{{textInput.data}}` aby uzyskać dostęp do zawartości wstawionego tekstu, `{{action.data}}` aby uzyskać dostęp do danych z bazy akcji i `{{transformer.value}}` aby uzyskać dostęp do danych z transformatora.
+
+Dodaliśmy i zmodyfikowaliśmy kod lusterka do produktu, dostosował go do środowiska programistycznego ILLA, wspierając podświetlanie składni i automatyczne wcięcie, i dodał szczegółowe wyjaśnienia dotyczące zmiennych i funkcji, które pojawiają się podczas programowania, aby nauczyć się jak używać konstruktora ILLA po niskich kosztach. Po wprowadzeniu nazwy obiektu, wprowadź kropkę. Wskazówka będzie zawierać wszystkie właściwości obiektu, typ danych i częściowy opis tekstu, tak aby można było zidentyfikować właściwość, do której ma dostęp bez czasu.
+
+#### Dostęp do liczb w tablicach
+
+Kiedy potrzebujesz dostępu do wartości w określonej tablicy, możesz uzyskać wartość na podstawie pozycji lub subskrypcji danych potrzebnych do uzyskania dostępu.
+
+```javascript
+const list = ['a', 'b', 'c']
+zwraca listę[0] // Zwróć pierwszą wartość na liście 'a'
+```
+
+### Zobacz dane
+
+Istnieją cztery lokalizacje do wyświetlenia danych w konstruktorze ILLA: obszar roboczy danych w lewym panelu, monit danych poniżej pola tekstowego po wprowadzeniu wyrażenia JavaScript oraz wyświetlanie danych przez wstawianie danych w celu wyświetlenia danych.
+
+#### Prezentacja obszaru roboczego danych
+
+Obszar roboczy danych można znaleźć poprzez otwarcie lewego panelu w edytorze aplikacji, tak aby dane były prezentowane jako ustrukturyzowany JSON, w którym można rozszerzyć każdą właściwość i listę oraz wszystkie dane są wyświetlane wizualnie w obszarze roboczym.
+
+[//]: # "[图片]"
+
+#### Podgląd na żywo wprowadzania danych
+
+Gdy wywołujesz operację akcji lub transformatora w polu wejściowym, dane dla tej operacji pojawią się automatycznie poniżej pola wejściowego, i możesz potwierdzić, że wywołane dane są poprawne w oparciu o informacje tutaj.
+
+[//]: # "[图片]"
+
+#### Prezentacja danych
+
+Wyświetlanie danych daje najbardziej intuicyjny widok danych. Po prostu przeciągnij i upuść komponent do ramki, wpisz nazwę odpowiedniego źródła danych w polu danych, filtruj i uporządkuj je, a będziesz mieć dostęp do informacji na temat wyświetlania danych.
+
+[//]: # "[图片]"
+
+### Transformator
+
+Możesz zapisać wiele linii kodu JS w transformatorze, i zalecamy napisanie w transformatorze, a nie w podwójnych nawiasach klamrowych. Możesz zaprogramować JavaScript bezpośrednio w transformatorze, a także wywoływać dane w operacji za pomocą `{{}}`.
+
+Kliknij tutaj, aby uzyskać szczegółowe informacje o użyciu transformatora.

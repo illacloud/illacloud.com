@@ -1,0 +1,53 @@
+---
+title: Lista
+metaTitle: ILLA Cloud List -komponentin doc
+description: Luettelo komponentin avulla voit luoda toistuvia rivejä tietoja, joiden ulkoasu ja tunnelma on määritelty sinulle.
+tagCategory: doc_menu_list_click
+---
+
+* * *
+
+## <Heading hidden>Luettelo</Heading>
+
+Luettelo komponentti on samanlainen kuin säiliö että voit pistä muita komponentteja sen sisällä.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list.png'
+  alt=""
+/>
+
+### Vedä komponentit listalle
+
+Kun vedät Luettelon osan kehykseen, se sisältää automaattisesti joitakin komponentteja. Voit poistaa tai muokata niitä ja vetää uusia komponentteja luetteloon. 
+
+Vain ensimmäinen kohde voidaan muokata, ja muut muuttuvat automaattisesti ensimmäisen kohteen perusteella. Voit myös keskittyä ensimmäiseen kohteeseen ja vetää palkin muuttaa korkeus kohteita.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
+  alt=""
+/>
+
+### Näytä kyselyn tulokset luettelossa
+
+Kun vedät Luettelon osan kehykseen, se näyttää automaattisesti testitiedot JSON-muodossa. Voit muuttaa tietolähteen toimintoon käyttämällä `{{ mysql_list_query.data }}`. 
+
+Kun olet asettanut tietolähteen, voit muuttaa tietojen komponenttia:
+
+1.  Valitse komponentti ensimmäisessä kohteessa. 
+2.  Jos komponentin tiedot ovat luettelosta, voit asettaa tiedot käyttämällä `{{ currentItem.columnName }}` . Voit esimerkiksi asettaa kuvan lähteen `{{ currentItem.Avater }}`. `Avater` on sarake luettelon tietolähteestä.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
+  alt=""
+/>
+
+Voit käyttää `{{ currentItem.columnName }}` vain kun komponentit ovat luettelossa. 
+
+### Käytä listan tietoja
+
+Voit käyttää valittujen kohteiden tietoja käyttämällä `{{ list1.selectedItem.columnName }}`. Tai käytä mitä tahansa listaa käyttämällä `{{ list1.dataSource[n].columnName }}`
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'
+  alt=""
+/>

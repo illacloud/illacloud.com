@@ -1,0 +1,103 @@
+---
+title: ILLA CLI
+metaTitle: ILLA Cloud CLI doc
+description: De ILLA CLI stelt je in staat om ILLA Builder sneller te implementeren dan je fantasie.
+tagCategory: doc_menu_illa_cli_click
+---
+
+**U moet een Docker hebben voordat u de ILLA CLI kunt gebruiken om een zelf gehoste installatie te implementeren. Wanneer u ILLA CLI gebruikt, moet u huidige gebruiker toevoegen aan de koppelingsgroep of gebruik in de root.**
+
+## Downloaden ILLA CLI
+
+Als je Rust hebt geïnstalleerd, kun je gemakkelijk de nieuwste ILLA CLI release met **cargo** bouwen:
+
+```
+> cargo install illa
+```
+
+De **cargo** tool zal het downloaden van de ILLA CLI met zijn bron afhankelijkheden voltooien, bouw en installeer het in het cargobin pad zodat we het kunnen uitvoeren.
+Eenmaal geïnstalleerd, kunt u de ILLA CLI uitvoeren met het **illa** commando.
+
+U kunt ook de ILLA CLI voor uw besturingssysteem hier downloaden:
+
+-   [Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)
+-   [Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)
+-   [Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)
+
+Als u wel van de bovenstaande links downloadt, zijn de stappen iets anders dan het downloaden van de ILLA CLI van **vracht**. Na het downloaden van de CLI moet u het uitvoerbaar maken. Laten we de illa-linux bijvoorbeeld:
+
+```
+## download illa cli binary bestand
+> wget https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar. z
+
+## pak het bestand
+> tar -zxvf illa-x86_64-linux.tar. z
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+## draai de illa cli
+> ./illa
+
+```
+
+### Controleren van de voorwaarden van zelfgehoste installatie
+
+**Deze havens 5432, 9999 en 8000 moeten blijven voor de ILLA Builder**
+
+Het volgende commando controleert de voorwaarden van zelfgehoste installatie op je besturingssysteem:
+
+```
+> illa doctor
+```
+
+### ILLA Bouwer implementeren
+
+Zodra de ILLA CLI is geïnstalleerd, kan je een zelf-gehoste of [cloud installatie](https://cloud.illacloud.com/) uitvoeren.
+
+Snelstart
+
+```
+> illa deployen --zelf --port=10000
+```
+
+Je kunt gewoon een zelf gehoste ILA Builder implementeren door de volgende opdracht uit te voeren:
+
+```
+# de poort waarop ILLA Builder kan worden benaderd kan worden gewijzigd
+# de <MOUNT_PATH> is het aangepaste pad van ILLA Builder, de standaardwaarde is een pad onder de gebruiker home map indien niet ingevuld
+> illa deploy --port=10000 --mount=<MOUNT_PATH>
+```
+
+Nu heb je toegang tot de ILLA Builder: http://localhost:10000
+
+## ILLA Bouwer bijwerken
+
+Gebruik de volgende opdracht om de ILLA Builder te updaten met de nieuwste docker afbeeldingen:
+
+```
+> illa update --self
+```
+
+## Andere activiteiten
+
+```
+# lijst met de ILLA Builder
+> illa list --self
+
+# stop de ILLA Builder
+> illa stop --self
+
+# verwijder de ILLA Builder
+> illa remove --self
+
+# geforceerde verwijdering van de lopende ILLA Builder en aanhoudende gegevens
+> sudo illa remove --force --data
+
+# herstart de ILLA Builder
+> illa herstart de --self
+
+# help informatie
+> illa help
+```

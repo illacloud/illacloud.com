@@ -1,0 +1,95 @@
+---
+title: Tabel
+metaTitle: ILLA Cloud tabel komponent doc
+description: Vis og interagere med data ved hjælp af tabelkomponenten.
+tagCategory: doc_menu_table_click
+---
+
+* * *
+
+## <Heading hidden>Tabel</Heading>
+
+Tabeller er en almindelig måde at se og interagere med dine data. Du kan sortere, filtrere, paginere og downloade rækker af information. Tabeller understøtter også rækkevalg og brugerdefinerede kolonner.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Indlæs data i en tabel
+
+Når du trækker en tabelkomponent til rammen, vises testdata automatisk i JSON-format. Du kan ændre de data, der vises i en tabel ved at redigere egenskaben Datakilde. Brug `{{ actionName.data }}` formatet til at vælge handlingen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Du kan også indstille datakilden ved at indtaste et array.
+
+### Indstillinger for kolonne
+
+**Sæt aliaser for datakolonner**
+
+Når du indstiller datakilden til tabeller, vil kolonnenavnet automatisk blive indstillet baseret på datakilden. Du kan omdøbe alle kolonner ved at klikke på kolonnen i fanen **Inspekt** og indstille **Kolonne titel**.
+
+**Ændre kolonnetyper**
+
+Når du indstiller datakilden til tabeller, sættes kolonnerne til **Tekst**. Du kan indstille kolonnetyper manuelt ved at klikke på kolonnen i fanen **Inspekt** og vælge typen fra **Kolonnetype** rullemenuen.
+
+Kolonnetyperne omfatter:
+
+1.  Tekst
+2.  Dato, du kan angive visningsformatet for datoen i datotypen.
+3.  Tal, du kan angive decimaler i taltypen.
+4.  Procent, kan du indstille decimalerne i procent.
+5.  Link
+6.  Knappen kan du tilføje hændelseshandlere i knaptypen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Tilknyttede værdier af brugerdefinerede kolonner**
+
+Du kan tilføje brugerdefinerede kolonner til tabeller ved hjælp af **+ Tilføj**-knappen i fanen **Inspekt**. Brugerdefinerede kolonner bruges ofte til at beregne data baseret på andre værdier i din app. For eksempel, hvis du har `omsætning` og `user_num` kolonner, og du ønsker at beregne en `ARPU` kolonne, kan du bruge `{{ currentRow.revenue/currentRow.user_num }}`
+
+Desuden kan du efter beregning indstille kolonnens type til tal eller procent og indstille decimalerne for at forbedre læsbarheden.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Adgang til data i tabellen
+
+Brug `{{ table1.selectedRow[i].columnName }}` for at få adgang til data fra markerede rækker i andre komponenter. Hvis du ikke har aktiveret **Multi-Rækkevalg**, vil `i` altid være 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Opdater tabeldata**
+
+1.  Brug input komponent eller andre data input cpmponents til at vise `{{ table1.selectedRow[i].columnName }}`.
+2.  Brug `{{ input1.value }}` i Opdater handlinger for at få valgte værdier og opdaterede værdier.
+3.  Tilføj en hændelseshandler til opdateringsknap for at køre opdateringshandlingen når der klikkes.
+4.  Opdater data fra den markerede række ved at ændre inputværdien og klikke på knappen Opdatering.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Indsæt en ny række i tabel**
+
+1.  Brug `{{ input1.value }}` i indsæt handlinger få værdier.
+2.  Tilføj en hændelseshandler til Indsæt knap for at køre Indsæt handling når der klikkes.
+3.  Indsæt nye data ved at indtaste værdier i inputkomponenter og klikke på Indsæt knappen.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>

@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_menu_kubernetes_click
+desc: Rakenna all-in-one kuva ja suorita se k8s koneellasi.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Kuvaus
+
+Rakenna all-in-one kuva ja suorita se k8s koneellasi. Voit tarkistaa skriptit tiedostosta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/skriptit) saadaksesi lisätietoja.
+
+Huomautus:
+
+Suosittelemme, että otamme käyttöön automaattisesti käyttöön työkalujamme[illa-cli](https://github.com/illacloud/illa).
+
+Ja tällä hetkellä emme tue Apple Silicon M1 (darwin-arm64 arch).
+
+### Suorita virallinen ohut kuva
+
+Asenna GNU-merkki ja tyyppi:
+
+```jsx
+tee julkaisu
+```
+
+tai vain suorittaa:
+
+```jsx
+/bin/bash skriptit/deploy.sh
+```
+
+tämä komento vetää illasoft virallisen all-in-one -kuvan ja ottaa sen käyttöön Kubernetes-klusterissa.
+
+### Tietokannan Pysyvä Tallennustila
+
+Muokkaa[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) ja lisää IAAS:n pysyvä tallennusasetus.
+
+### HTTPS Configille
+
+Voit ohjata NodePortin Kubernetes-klusteriin ingress gateway -porttiin ja kirjoittaa 443 satamaan ja lisätä https sertin pukeutumisyhdyskäytävälle.
+
+Tai voit syöttää ingress Gateway manuaalisesti Kubernetes palvelimeen, config näin:
+
+```jsx
+static_resources:
+  kuuntelijat:
+  - nimi: 396_listener
+    osoite:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - suodattimet:
+      - nimi: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: ℃_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa. ourdomian. om" # korvaa verkkotunnuksellasi
+              reittejä:
+              - täsmää:
+                  etuliite: "/"reitti:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy. ilters.http. outer
+            typed_config:
+              "@type": type. oogleapis om/envoy.extensions.filters.http.router.v3.Reititin
+      transport_socket:
+        name: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # korvaa tämän sert tiedostolla
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain. em
+              private_key:
+                tiedostonimi: /your cert-folder/privkey. em
+
+  klusterit:
+  - name: illa_builder
+    tyyppi: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            osoite:
+              socket_address:
+                osoite: illa-builder
+                port_value: 80
+```
