@@ -1,0 +1,23 @@
+---
+title: Problemas conocidos
+tagCategory: doc_menu_conocidos_problemas_clic_
+desc: Problemas y soluciones conocidas del despliegue del Construidor de ILLA.
+---
+
+* * *
+
+## <Heading hidden>Problemas conocidos</Heading>
+
+### Montar tipo de asunto
+
+Ejecuta `illa deploy --self -port=1000 -s={your-ip-address}` o `run-official-image.sh`, devuelve el siguiente error:
+
+`Docker respondió con el código de estado 400: configuración de montaje no válida para el tipo "bind": la ruta de origen de enlace no existe: /tmp/illa-data`
+
+Por ahora, el tipo de montaje sólo soporta `mount`, por favor configura `docker -v` como modo `mount`. O reinstale el docker siguiendo los scripts.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Y ejecute el comando de despliegue de nuevo.
+
+Para más problemas: https://github.com/illacloud/illa-builder/issues
