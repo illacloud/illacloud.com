@@ -1,0 +1,29 @@
+---
+title: Transformator
+metaTitle: ILLA Cloud Transformator doc
+desc: Transformer in ILLA erlaubt es dem Benutzer JavaScript zu schreiben um die Anwendungslogik zu verfeinern
+tagCategory: doc_menu_transformierer_klick
+---
+
+* * *
+
+## <Heading hidden>Transformator</Heading>
+
+Wir haben einen Transformer in ILLA, um Ihre Anforderungen für das Schreiben von JavaScript zu verfeinern Ihre Anwendungslogik. Im Transformer müssen Sie nicht wie in der Zeicheneingabebox mit {{template syntax}} in JavaScript codieren so dass Sie lange und komplexe Blöcke von JS-Code flüssiger schreiben können. Zusätzlich Der Transformer hilft Entwicklern, die für das Seitendesign und den logischen Aufbau verantwortlich sind, ihre Entwicklungsarbeit effizienter zu vervollständigen, ohne durch den Fortschritt des anderen eingeschränkt zu werden.
+
+Sie können den Transformer nicht nur für gängige Datenoperationen verwenden, sondern auch für Transformator-Operationen bei der Datenübertragung. Es wäre besser, einen unabhängigen Transformator zu wählen, wenn Sie mehrere Operationen haben, die an der Datenübertragung beteiligt sind oder müssen komplexe JavaScript-Logik verwenden, um Daten zu transformieren.
+
+### Kreative Transformatoren
+
+Klicken Sie auf die Registerkarte Transformatoren in der Aktionsliste und klicken Sie auf "+ Neu", um einen Transformator zu erstellen. Es wird nach der Erstellung in der Aktionsliste angezeigt. Sie können den Namen ändern, JS-Code schreiben, speichern und nach Auswahl im Konfigurationsfenster ausführen.
+
+> Sie können die "Vorschau"-Taste verwenden, um die Ergebnisse eines Transformators zu sehen. Beachten Sie, dass Sie den Transformator für den Rest der App speichern müssen, um den neuen Wert zu erhalten.
+
+Die Einfügung ruft den Transformator mit einem Wert auf, der den im Transformator zurückgegebenen Daten entspricht Diese Daten werden sich ändern, wenn sich die in den Transformator eingegebenen Daten mit dem Code des Transformators ändern. Wie bei der Zeicheneingabe können Sie die Template-Syntax trotzdem verwenden, um die globale Variable Nr. aufzurufen. Wenn Sie JS-Code schreiben um Daten aufzurufen, finden Sie den spezifischen Namen der Datenvariablen im Datenbereich im linken Fenster, um Ihnen zu helfen, Code schneller zu schreiben.
+[//]\: # ([Image])
+
+Sie können die Transformator-Variable im Eingabefeld mit `{{Transformator-Namen` aufrufen. Tag name}}\` um die Transformator-Variable in der Dateneingabebox aufzurufen.
+
+### Abfrage-Transformer
+
+Wir haben einen Transformer in den Abfragevorgang eingefügt, damit Sie die abgerufenen Daten direkt nach Abschluss der Aktion in das gewünschte Format umwandeln können. Sie können dann einfach {{actionName.data}} übergeben, um die Daten abzurufen, sobald Sie die Konvertierung im Transformator innerhalb der Aktion abgeschlossen haben.
