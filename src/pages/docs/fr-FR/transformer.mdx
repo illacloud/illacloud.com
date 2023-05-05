@@ -1,0 +1,29 @@
+---
+title: Transformateur
+metaTitle: Convertisseur de nuage ILLA
+desc: Le transformateur en ILLA permet à l'utilisateur d'écrire du JavaScript pour affiner la logique de l'application
+tagCategory: Cliquez sur le transformateur
+---
+
+* * *
+
+## <Heading hidden>Transformateur</Heading>
+
+Nous avons mis un Transformateur en ILLA pour répondre à vos exigences d'écriture JavaScript pour affiner la logique de votre application. Dans le transformateur, vous n'avez pas besoin de coder en JavaScript en utilisant {{template syntax}} comme vous le faites dans la zone de saisie du caractère, pour que vous puissiez écrire des blocs longs et complexes de code JavaScript plus fluidement. De plus, Le Transformer aide les développeurs responsables de la conception de pages et de la construction logique à achever leur travail de développement plus efficacement sans être contraints par les progrès de chacun.
+
+Vous pouvez utiliser le Transformateur non seulement pour les opérations de données établies, mais aussi pour la création d'opérations de transformateurs lors de la transformation des données. Il serait préférable de choisir un transformateur indépendant lorsque vous avez plusieurs opérations impliquées dans la transformation des données, ou besoin d'utiliser une logique JavaScript complexe pour transformer les données.
+
+### Transformateurs Créatifs
+
+Cliquez sur l'onglet Transformers dans la liste d'Action et cliquez sur "+ Nouveau" pour créer un transformateur. Il sera affiché dans la liste des actions après création. Vous pouvez changer le nom, écrire le code JS, l'enregistrer et l'exécuter dans le panneau de configuration après la sélection.
+
+> Vous pouvez utiliser le bouton 'Aperçu' pour voir les résultats d'un transformateur. Notez que vous devez enregistrer le transformateur pour le reste de l'application pour obtenir la nouvelle valeur.
+
+L'insertion appelle le transformateur avec une valeur égale aux données retournées dans le transformateur, ces données changeront à mesure que les données entrées dans le transformateur changeront avec le code du transformateur. Comme avec la zone de saisie des caractères, vous pouvez toujours utiliser la syntaxe du modèle pour appeler la variable globale No. Lorsque vous écrivez le code JavaScript pour appeler les données, vous pouvez trouver le nom de la variable de données dans l'espace de travail des données dans le panneau de gauche pour vous aider à écrire du code plus rapidement.
+[//]\: # ([Image])
+
+Vous pouvez appeler la variable transformatrice dans la zone d'entrée de données en utilisant `{{transformateur name. nom de la balise}}` pour appeler la variable du transformateur dans la zone d'entrée de données.
+
+### Transformateur de requête
+
+Nous avons mis un Transformateur dans l'opération de requête pour vous permettre de transformer les données récupérées dans le format désiré immédiatement après avoir terminé l'action Vous pouvez ensuite passer {{actionName.data}} simplement pour récupérer les données une fois que vous avez terminé la conversion dans le transformateur dans l'action.
