@@ -80,7 +80,7 @@ export function LanguageToggle({ panelClassName = 'mt-4' }) {
             ))}
           </Listbox.Options>
           <Link href="https://crowdin.com/project/illacloud-website" legacyBehavior>
-            <a className='absolute z-50 top-[160px] right-0 bg-white ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300 max-h-[135px] overflow-y-scroll' target='_blank'>
+            <a className='absolute z-50 top-[170px] right-0 bg-white ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300 max-h-[135px] overflow-y-scroll' target='_blank'>
               <span className="text-grayBlue-03 text-sm font-semibold hover:text-sky-500 flex items-center justify-center gap-[4px]">
                 <img src={Language} alt='language' />By Crowdin</span></a>
           </Link>
