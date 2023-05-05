@@ -1,26 +1,30 @@
 ---
-title: Transformer
-metaTitle: ILLA Cloud transformer doc
-desc: Transformer in ILLA allows user to write JavaScript to refine the application logic
+title: 变压器
+metaTitle: ILLA 云变压器doc
+desc: ILLA 中的变压器允许用户写入 JavaScript 以改进应用逻辑。
 tagCategory: doc_menu_transformer_click
 ---
----
 
-## <Heading hidden>Transformer</Heading>
+* * *
+
+## <Heading hidden>变压器</Heading>
 
 我们在ILLA中内置了Transformer以满足您编写JavaScript完善应用逻辑的需求。在Transformer中，您不需要像在字符输入框中一样使用{{模版语法}}进行JavaScript编程，让您能更流畅的书写长且复杂的JS代码块。Transformer的存在还能帮助负责页面设计与逻辑搭建的开发者不受限于对方的进度，更高效的完成开发工作。
-您在转换数据时不仅可以在已建立好的数据操作中使用Transformer，也可以选择创建Transformer操作。当您的转换工作涉及到多个操作，或是需要使用复杂的JavaScript逻辑进行转换时，选择独立的Transformer将是更好的选择。
+您在转换数据时不仅可以在已建立好的数据操作中使用Transformer，也可以选择创建Transformer操作。当您的转换工作涉及到多个操作，或是需要使用复杂的JavaScript逻辑进行转换时，选择独立的Transformer将是更好的选择。 在转换器中，你不需要像在字符输入框中那样使用 {{template syntax}} 在 JavaScript 代码。 这样你可以更流畅地写入长而复杂的JS代码块。 此外， 变压器帮助负责页面设计和逻辑构建的开发者更有效地完成其开发工作，而不受彼此进步的限制。
+
+您可以使用变压器，不仅用于已经建立的数据操作，而且用于在转换数据时创建变压器操作。 当您有多个操作涉及转换数据时，最好选择一个独立的变压器。 或需要使用复杂的 JavaScript 逻辑来转换数据。
 
 ### 创建Transformer
-在操作列表中点击创建操作，选择Transformer，点击即创建成功。创建后Transformer会显示在操作列表中，选中后可以在配置面板中修改Transformer名字、编写JS代码、保存与运行。
 
->您可以使用预览按钮查看Transformer的结果。请注意，您项目中的数值只会在点击Transformer保存按钮后更新。
+点击动作列表中的变换器标签，然后点击“+新”创建变换器。 它将在创建后显示在动作列表中。 您可以更改名称，写JS代码，在选择后在配置面板中保存并运行它。
 
-组件调用Transformer的值等同于Transformer内返回的数据，这个数据会随着输入Transformer的数据与Transformer的代码改变而改变。与字符输入框相同的是，您仍然可以使用模版语法调用全局变量。当您在编写JS代码调用数据时，您可以在左侧面板的数据工作区中找到具体的数据变量名，帮助您更快编写代码。
+> 您可以使用预览按钮查看Transformer的结果。请注意，您项目中的数值只会在点击Transformer保存按钮后更新。 请注意，您必须为应用程序其余部分保存变压器才能获得新值。
 
-[//]: # ([Image])
+插入调用变压器的值等于在变压器中返回的数据的变压器。 此数据将随着输入变压器的数据与变压器代码的改变而改变。 和字符输入框一样，您仍然可以使用模板语法来调用全局变量编号： 当您写入JS代码来调用数据时 您可以在左手面板的数据工作区中找到特定的数据变量名，以帮助您更快地编写代码。
+[//]\: # ([Image])
 
-您可以通过{{Transformer名字.标签名}}的方式在数据输入框中调用Transformer变量
+您可以通过{{Transformer名字.标签名}}的方式在数据输入框中调用Transformer变量 标签名称}}\` 以调用数据输入框中的变量。
 
 ### 查询Transformer
+
 我们在查询操作中内置了一个转化器，方便您在完成查询后直接将获取的数据转换成需要的格式。当您在查询内的Transformer中完成了转换后，您只需要通过`{{queryName.data}}`即可获取数据。
