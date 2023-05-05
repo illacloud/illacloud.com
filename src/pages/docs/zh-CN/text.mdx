@@ -13,15 +13,15 @@ tagCategory: doc_menu_text_点击
 
 ### 属性
 
-| 财产     | 描述                                                                                       |
-| ------ | ---------------------------------------------------------------------------------------- |
-| 内容     | 设置文本组件中显示的文本。 支持Markdown和纯文本。                                                            |
-| 工具提示   | 当用户悬停在组件上时在组件上显示工具提示。                                                                    |
-| 水平对齐   | 设置组件中文本内容的水平位置                                                                           |
-| 垂直对齐   | 在组件中设置文本内容的顶点位置                                                                          |
-| Hidden | 设置是否显示此组件以及在什么条件下显示它。 例如，如果当前用户不是用户A，这个组件应该隐藏：{□ currentUserInfo.nickname != 'User A' }} |
-| 颜色     | 以油漆文本格式设置文本颜色                                                                            |
-| 文本大小   | 以油漆文本格式设置文本大小                                                                            |
+| 属性                   | 描述                                                                                       |
+| -------------------- | ---------------------------------------------------------------------------------------- |
+| Content              | 设置文本组件中显示的文本。 支持Markdown和纯文本。                                                            |
+| Tooltip              | 当用户悬停在组件上时在组件上显示工具提示。                                                                    |
+| Horizontal alignment | 设置组件中文本内容的水平位置                                                                           |
+| Vertical alignment   | 在组件中设置文本内容的顶点位置                                                                          |
+| Hidden               | 设置是否显示此组件以及在什么条件下显示它。 例如，如果当前用户不是用户A，这个组件应该隐藏：{{ currentUserInfo.nickname != 'User A' }} |
+| Color                | 以绘制文本格式设置文本颜色                                                                            |
+| Text size            | 设置绘制文本格式的文本大小                                                                            |
 
 ### 使用Markdown
 
@@ -35,7 +35,7 @@ tagCategory: doc_menu_text_点击
 ### 标题3
 ```
 
-#### Bold & Italics
+#### 加粗 & 斜体
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
 
@@ -87,5 +87,5 @@ tagCategory: doc_menu_text_点击
 使用 "{{" 从其他组件或动作或全局变量中获取数据。 例如，要显示当前用户的昵称：
 
 ```jsx
-## {● '👋 Hello! '+ currentUserInfo.nickname }}
+## {{ '👋 Hello! '+ currentUserInfo.nickname }}
 ```
