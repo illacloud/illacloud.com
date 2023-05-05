@@ -1,0 +1,36 @@
+---
+title: Obsługa zdarzeń
+metaTitle: Dokumentacja obsługi zdarzeń w chmurze ILLA
+desc: Obsługa zdarzeń stanowi integralną część procesu rafinacji logiki użycia wewnętrznych narzędzi
+tagCategory: "[PLACEHOLDER] doc_menu_evnet_handler_click"
+---
+
+* * *
+
+## <Heading hidden>Obsługa zdarzeń</Heading>
+
+Uchwyty wydarzeń stanowią integralną część procesu udoskonalania logiki użycia wewnętrznych narzędzi. Każdy wstaw lub działanie będące odpowiedzią na działanie użytkownika ma swoje własne zdarzenia, które mogą zostać wywołane, takie jak przycisk wstaw zdarzenie 'kliknięcie', pole wprowadzania tekstu z wydarzeniem 'zgłoś', powodzenie akcji i tak dalej. Uchwyty zdarzeń pomagają użytkownikom wyzwalać wstępnie zdefiniowane instrukcje w przypadku wystąpienia zdarzeń: można reagować na pojedyncze zdarzenie, lub możesz skonfigurować obsługę wielu zdarzeń i skonfigurować je jako przepływy pracy, aby wykonywać bardziej skomplikowane prace.
+
+Po zdarzeniu ustawionym przez ciebie zdarzenie obsługa zdarzeń może pomóc ci w wykonaniu różnych działań: polecenie kontroli działań, ładunki kontrolne, uruchamianie skryptów i więcej. Możesz również dodać bardziej szczegółowe warunki wyzwalania JavaScript na dole warunków wyzwalania.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Obsługa zdarzeń
+
+W przypadku obsługi zdarzeń, można ustawić wynik wydarzenia w zależności od tego, czy wyniki zapytania nie powiodą się czy nie. Możesz ukończyć logikę wyzwalacza ustawiając warunek niepowodzenia zapytania w karcie Odpowiedź.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Edytuj program obsługi zgłoszeń
+
+Ustawiamy warunek wyzwalacza dla każdego interaktywnego wkładu i możesz wybrać zdarzenie z listy akcji obsługi jako warunek wyzwalaczy. Na przykład, możesz ustawić 'Prześlij' jako warunek wyzwalacza w programie obsługi zdarzeń dla pola wprowadzania danych, który automatycznie wprowadza dane wejściowe do bazy danych, gdy użytkownik „przesyła” dane wejściowe, wdrażając w ten sposób prostą funkcję wprowadzania danych.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Stan tymczasowy
+
+Przetwarzanie danych może napotkać sytuacje, w których przetwarzane dane nie są uruchamiane natychmiast. Z tego powodu utworzyliśmy państwa tymczasowe, które przechowują kraje pośrednie do przetwarzania danych. Możesz ustawić tymczasowy stan w opcjach zdarzeń reakcji obsługi zdarzeń i kliknąć na Utwórz nowy stan, aby przechowywać bieżące dane w stanie tymczasowym, które mogą być umieszczone dla każdej nieruchomości.
+
+Poza edytorem projektu możesz również przechowywać dane przez {{tempState1.setValue(data)}} lub dane połączeń przez {{tempState1.value}}.
+
+> Wartości w stanie tymczasowym zostaną wyczyszczone po ponownym uruchomieniu projektu, i musisz przechowywać wartości lokalnie lub w chmurze, aby zapewnić integralność danych.
