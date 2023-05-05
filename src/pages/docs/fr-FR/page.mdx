@@ -1,0 +1,52 @@
+---
+title: Page
+metaTitle: ILLA Cloud Page doc
+description: Construire des applications sur une seule page et des applications sur plusieurs pages sur ILLA
+tagCategory: Clique sur la page de docs
+---
+
+* * *
+
+## <Heading hidden>Page</Heading>
+
+Une démo multi-pages construite sur ILLA : 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Une application d'une seule page est une application qui peut changer de page sans recharger tous les composants de la page. La plupart des ressources (y compris HTML, CSS et Script) ne sont chargées qu'une seule fois tout au long du cycle de vie de l'application, ce qui rend rapide une application d'une seule page.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+Dans une application multi-pages, chaque changement comme l'affichage des données ou l'envoi de données aux requêtes du serveur rendant une nouvelle page à partir du serveur. L'application multi-pages a quelques niveaux, ce qui rend la structure de l'application simple et simple pour les utilisateurs.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+Dans le constructeur ILLA, une application d'une seule page peut être construite en définissant le cadre de la page et en ajoutant des vues aux sections, et une application multi-pages peut être construite en ajoutant plusieurs pages, et les développeurs peuvent utiliser ces deux modèles de conception dans une seule application.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Définir la mise en page des pages
+
+Aller à la configuration de la page comme les étapes suivantes：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Vous pouvez utiliser les mises en page prédéfinies, ou ajouter et supprimer manuellement des sections pour définir la mise en page. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Ajouter des vues à une page
+
+`Chemin de vue`: une chaîne de caractères spliced after the page URL to access the specified view. Une fois l'application déployée, l'adresse d'accès complète est la suivante: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Vous pouvez également entrer la page d'accueil et la vue par défaut via le chemin suivant:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Connecter le menu et les pages
+
+Ajouter les gestionnaires d'événements aux éléments du Menu → définir l'`Action` à `Définir le routeur` → sélectionner la page et afficher
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
