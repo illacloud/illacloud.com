@@ -1,0 +1,30 @@
+---
+title: Implantar no local
+metaTitle: Implantação em Nuvem ILLA na premissa
+desc: ILLA pode ser auto-hostec em seu servidor ou máquina, em vez de usar um provedor de serviços de terceiros
+tagCategory: doc_menu_implantação_local_clique
+---
+
+* * *
+
+# <Heading hidden>Implantar no local</Heading>
+
+Auto-hospedagem ILLA significa hospedar e gerenciar a plataforma ILLA no seu próprio servidor ou máquina em vez de usar um provedor de serviços de terceiros. Esta abordagem é muitas vezes considerada mais segura e privada, já que você tem controle total sobre seus dados e seu uso.
+
+ILLA oferecerá uma versão hospedada em nuvem e a opção de configurar sua instância em várias plataformas em breve.
+
+## Auto-hospedado
+
+Auto-hospedagem de ILLA na sua própria infraestrutura permite que você integre perfeitamente a configuração existente sem a necessidade de manter uma configuração separada. Isso permite que você use os recursos e recursos da sua infraestrutura existente e amplie-os para a ILLA. Algumas vantagens em implantar a ILLA na sua infraestrutura incluem:
+
+### Segurança
+
+Ao hospedar ILLA na sua própria infraestrutura, você pode manter seus dados no local e garantir que suas chaves de API ou credenciais de segurança nunca deixem seu servidor. Isso permite que você aplique as mesmas regras de segurança que você aplica a qualquer outro aplicativo no seu servidor. As aplicações que você cria usando ILLA serão hospedadas na sua infraestrutura e dentro de suas redes corporativas. Você também pode optar por hospedar ILLA em redes internas por trás de um firewall, e configurá-lo para funcionar com suas políticas de domínio e segurança personalizadas.
+
+### Banco de dados interno
+
+Ao auto-hospedar ILLA, você pode conectar a um banco de dados executando na mesma máquina ou intranet e usá-lo para criar aplicativos. ILLA usa MongoDB para armazenar dados de aplicativos e Redis para armazenar informações de sessão e caches não críticos. Se você quer integrar a ILLA com o MongoDB ou servidores Redis personalizados hospedados na sua infraestrutura, você precisará modificar a configuração de variáveis de ambiente e apontá-las para suas instâncias customizadas do MongoDB/Redis.
+
+### Atualizações
+
+Ao se auto-hospedar ILLA, você pode configurar horários de atualização mais flexíveis e outras atividades de manutenção. Você pode seguir os passos fornecidos para configurar um janela de manutenção e agendar atualizações automáticas. Isso permite que você mantenha e atualize sua instância ILLA de uma forma conveniente para você e sua organização.
