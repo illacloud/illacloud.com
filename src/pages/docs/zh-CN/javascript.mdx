@@ -1,6 +1,6 @@
 ---
 title: JavaScript 指南
-metaTitle: ILLA Cloud JavaScript Guider doc
+metaTitle: ILLA Cloud JavaScript 指南
 desc: JavaScript 是ILLA 生成器中最重要的组件。 这是您用来构建您的 APP 数据访问和逻辑构造的工具
 tagCategory: doc_menu_js_guider_click
 ---
@@ -9,7 +9,7 @@ tagCategory: doc_menu_js_guider_click
 
 ## <Heading hidden>JavaScript 指南</Heading>
 
-JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说，掌握JavaScript的调用方式，您就已经掌握了ILLA Builder的使用方法。 掌握如何调用 JavaScript 的方法，你已经掌握了ILLA Builder的使用。
+JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中数据接入与逻辑建设的工具。可以说， 掌握调用 JavaScript 的方法，你已经掌握了ILLA Builder的使用。
 
 当您在ILLA Builder中搭建项目时，可以使用{{模版语法}}书写自定义的JavaScript语句，用于调用、操作数据，或是在Transformer中直接书写JS代码
 
@@ -17,9 +17,9 @@ JavaScript是ILLA Builder中最重要的组成部分，这是您搭建项目中�
 
 #### 访问对象中的数据
 
-在 ILLA 构建器中，您可以使用模板语法在任何文本输入框中输入 JavaScript 表达式。 数据对象是可引用的，你可以通过 JavaScript 操纵所有插入、动作和变压器的数据。 例如，您可以使用 `{{textInput.data}}` 来访问文本输入插入的内容，{{action.data}}`从一个动作数据库访问数据，以及`{{transformer.value}}\`从变压器访问数据。
+在 ILLA 构建器中，您可以使用模板语法在任何文本输入框中输入 JavaScript 表达式。 数据对象是可引用的，你可以通过 JavaScript 操纵所有Action和Transformer的数据。 例如，您可以使用 `{{textInput.data}}` 来访问文本输入插入的内容，{{action.data}}`从一个动作数据库访问数据，以及`{{transformer.value}}\`从变压器访问数据。
 
-我们已经添加和修改了插入到产品的代码镜像。 调整它以适应ILLA Builder 编程环境，支持语法高亮和自动缩进， 并添加详细说明编程期间出现的变量和函数，以便您可以学习如何低成本使用ILLA Builder。 在您输入对象名称后，请输入一个点。 提示将包含对象的所有属性、数据类型和部分文字描述， 这样您可以随时识别要访问的属性。
+我们已经添加和修改了插入到产品的代码镜像。 调整它以适应ILLA Builder 编程环境，支持语法高亮和自动缩进， 并添加详细说明编程期间出现的变量和函数，以便您可以学习如何低成本使用ILLA Builder。 在您输入对象名称后，请输入一个点（.）。 然后ILLA提示您包含的所有属性、数据类型和部分文字描述， 这样您可以随时识别要访问的属性。
 
 #### 访问数组中的数据
 
@@ -52,8 +52,8 @@ return list[0] // Return the first value in alist 'a'
 
 [//]: # "[图片]"
 
-### 变压器
+### Transformer
 
-您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法 您可以直接在变压器中编程JavaScript，并在操作中调用 "{{}}" 的帮助。
+您可以在Transformer中编写多行JS代码，我们建议您选择在Transformer中编写而不是在双大括号中编写。在Transformer中，您可以直接进行JavaScript编程，也可以借助{{}}调用Action里的数据。点击此处查看Transformer详细用法 您可以直接在Transformer中编写JavaScript，并在Action中使用"{{}}" 调用。
 
-点击此处查看变压器的详细使用情况。
+点击此处查看Transformer的详细使用情况。
