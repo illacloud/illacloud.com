@@ -18,7 +18,7 @@ const sortCategory = (allFiles) => {
     if (aCategoryPriority === bCategoryPriority) {
       return 0
     }
-    return aCategoryPriority - bCategoryPriority > 0 ? -1 : 1
+    return aCategoryPriority - bCategoryPriority > 0 ? 1 : -1
   }).map((item) => {
     return item.categoryName ?? "others"
   })
@@ -31,7 +31,7 @@ const sortPosts = (allFiles) => {
     if (aPostPriority === bPostPriority) {
       return 0
     }
-    return aPostPriority - bPostPriority > 0 ? -1 : 1
+    return aPostPriority - bPostPriority > 0 ? 1 : -1
   })
 }
 
