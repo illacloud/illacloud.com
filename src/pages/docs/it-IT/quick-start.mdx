@@ -1,0 +1,51 @@
+---
+title: Avvio rapido
+metaTitle: ILLA Cloud guida rapida
+description: Accelera lo sviluppo degli strumenti interni
+tagCategory: doc_menu_quick_start_click
+---
+
+* * *
+
+## <Heading hidden>Panoramica</Heading>
+
+### 1.  Dispiega ILLA Builder
+
+Prima di iniziare a usare ILLA Builder, dovresti scegliere di utilizzare ILLA Cloud o ILLA autohost per ospitare le tue applicazioni. Ti forniamo ILLA CLI, Docker Compose, e K8 per autoospitare ILLA in meno di 5 minuti. Ti forniremo ILLA Cloud più tardi, per aiutarti semplicemente a iniziare con ILLA Builder.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Ottieni dati utente
+
+Registrati e accedi a ILLA Builder, quindi inserisci la scheda risorse. Fare clic sul pulsante "Crea nuovo" quindi è possibile selezionare il tipo di risorsa qui. Ti forniamo REST API e MySQL per collegare i tuoi dati. Postgres, Redis e MongoDB saranno disponibili questo mese.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Trascina e rilascia gli inserti
+
+Quando i tuoi dati sono preparati, puoi tornare alla scheda App e creare un'app. L'elenco degli inserti è sul lato destro della pagina. È possibile scegliere uno di loro e trascinarlo nella cornice. Quindi fare clic su inserire e modificare i suoi parametri nel pannello Ispezione. Ti forniamo la modalità markdown per modificare l'etichetta di ogni inserto. Se hai familiarità con la sintassi Markdown, puoi regolare rapidamente la dimensione e lo spessore del testo. Nel frattempo, puoi usare {{double brackets}} per richiamare i dati di azione nella casella di testo per ottenere più risultati nel Costruttore ILLA.
+
+### 4.  Aggiungi azione nelle app
+
+È necessaria un'azione per trasformare i dati da risorse da inserire. La chiamiamo azione. Puoi scrivere una query in azione per catturare i dati dalla tua risorsa. Su questa base, è possibile scrivere JavaScript in azioni per eseguire le istruzioni per l'elaborazione dei dati, come il filtro e la fusione. Di seguito è riportato un esempio di MySQL:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Crea un'azione MySQL nell'editor App. L'ha nominata azione1.
+
+2.  Inserisci il codice di query nel pannello, ad esempio SELECT \* FROM Users.
+
+3.  Esegue questa azione, il risultato della query verrà visualizzato nel pannello inferiore.
+
+### 5.  Mostra i tuoi dati
+
+Quando l'azione è stata creata con successo, è necessario associare il risultato dell'azione al componente. Dovresti sostituire la variabile di valore sul pannello di ispezione con il risultato delle azioni {{action1.data}}. Quindi i dati del componente si legheranno con il risultato dell'azione. 
