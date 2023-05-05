@@ -1,0 +1,91 @@
+---
+title: テキスト
+metaTitle: ILLA クラウドテキストコンポーネントドキュメント
+description: テキストコンポーネントでデータを表示
+tagCategory: doc_menu_text_click
+---
+
+* * *
+
+## <Heading hidden>テキスト</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### プロパティー
+
+| 属性      | 説明                                                                                                                                        |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| コンテンツ   | テキストコンポーネントに表示されるテキストを設定します。 マークダウンとプレーンテキストがサポートされています。                                                                                  |
+| ツールチップ  | ユーザーがコンポーネントにカーソルを合わせたときにコンポーネントにツールチップが表示されます。                                                                                           |
+| 水平方向の配置 | コンポーネント内のテキストコンテンツの水平方向の位置を設定する                                                                                                           |
+| 縦方向の配置  | コンポーネント内のテキストコンテンツの位置を設定する                                                                                                                |
+| Hidden  | このコンポーネントを表示するかどうかを設定し、どのような条件で表示するかを設定します。 たとえば、現在のユーザが User A でない場合、このコンポーネントは非表示にする必要があります: {{ currentUserInfo.nickname != 'User A' }} |
+| 色       | テキスト形式でテキストの色を設定する                                                                                                                        |
+| 文字サイズ   | テキスト形式でテキストサイズを設定する                                                                                                                       |
+
+### マークダウンを使用
+
+#### 見出し
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### To-do リスト
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### To-do list
+
+1. [ ] 🚀 Build a new app on ILLA Cloud
+2. [ ] ☎️ Call with Monica
+3. [x] 🍷 Have dinner with **Elsa**
+4. [x] 💃 Play `Just dance` for half an hour
+```
+
+#### 箇条書きリスト
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Bulleted list
+- Real-time Collaboration: We can create everything in real-time together.
+- 🛠 Custom Plugin: Build any custom plugin to do what you want.
+- 🤖 Automate Support: Connect everything and automate them in 5 seconds.
+- 🖥 Self-hosted: supports Docker & k8s
+```
+
+#### 表
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Table
+| Name        | Link   |  Description  |
+| :--------  | :-------  | :----  |
+| ILLA Cloud | [https://cloud.illacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
+| ILLA GitHub | [https://github.com/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Star us on GitHub|
+| ILLA homepage | [https://www.illacloud.com/](https://www.illacloud.com/) |ILLA Cloud Offical website
+```
+
+### 動的データを表示
+
+他のコンポーネントやアクションやグローバル変数からデータを取得するには {{\` を使用してください。 たとえば、現在のユーザーのニックネームを表示するには、次のようにします。
+
+```jsx
+## {{ '👋 Hello! '+ currentUserInfo.nickname }}
+```
