@@ -1,0 +1,36 @@
+---
+title: Controlador de eventos
+metaTitle: Documento de manejador de eventos ILLA Cloud
+desc: Los manejadores de eventos son una parte integral de refinar la lógica de uso de la herramienta interna
+tagCategory: doc_menú_evnet_handler_clic
+---
+
+* * *
+
+## <Heading hidden>Controlador de eventos</Heading>
+
+Los gestores de eventos son una parte integral de la mejora de la lógica de uso de la herramienta interna. Cualquier inserción o acción que responda a una acción de usuario tiene sus propios eventos que pueden ser activados, como un botón insertar con un evento 'click', una casilla de texto con un evento 'enviado', el éxito de una acción, etc. Los gestores de eventos ayudan a los usuarios a activar instrucciones predefinidas cuando ocurren eventos: puede reaccionar a una única ocurrencia de eventos, o puede configurar múltiples gestores de eventos y configurarlos como flujos de trabajo para hacer un trabajo más complejo.
+
+Después de que el evento que ha establecido haya ocurrido, el controlador de eventos puede ayudarle a realizar una variedad de acciones: controlar las sentencias de acción, controlar insertos, ejecutar scripts y más. También puede añadir condiciones más detalladas de activación de JavaScript en la parte superior de las condiciones de activación.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+
+### Controladores de eventos
+
+En los controladores de eventos, puede establecer el resultado del evento basándose en si los resultados de la consulta fallan o no. Puede completar la lógica del disparador estableciendo la condición de fallo de consulta en la pestaña Response.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+
+### Editar manejador de envío
+
+Establecemos una condición de disparador para cada inserción interactiva, y puede seleccionar un evento en la lista de acciones del manejador como la condición de disparador. Por ejemplo, podría establecer 'Enviar' como la condición de disparador en el controlador de eventos para el cuadro de entrada de datos, que automáticamente inserta la entrada en la base de datos cuando el usuario 'envió' la entrada, implementando así una simple función de inserción de datos.
+
+<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+
+### Estados temporales
+
+Al procesar datos, puede encontrarse con situaciones en las que los datos procesados no se llaman inmediatamente. Por esta razón, hemos creado estados temporales para almacenar estados intermedios para el procesamiento de datos. Puede elegir establecer un estado temporal en las opciones del evento de respuesta de los controladores de eventos y hacer clic en Crear nuevo estado para almacenar los datos actuales en el estado temporal, que puede ser colocado para cualquier propiedad.
+
+Fuera del editor del proyecto, también puede almacenar datos mediante {{tempState1.setValue(data)}} o llamar a datos por {{tempState1.value}}.
+
+> Los valores en el estado temporal se borrarán cuando se reinicie el proyecto, y necesitará almacenar los valores localmente o en la nube para asegurar la integridad de los datos.
