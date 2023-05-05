@@ -1,0 +1,52 @@
+---
+title: Página
+metaTitle: ILLA Cloud Page doc
+description: Crie aplicativos de página única e app com várias páginas na ILLA
+tagCategory: doc_menu_página_clique
+---
+
+* * *
+
+## <Heading hidden>Página</Heading>
+
+Demonstração de várias páginas criada na ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Um aplicativo de página única é um aplicativo que pode alterar páginas sem recarregar todos os componentes na página. A maioria dos recursos (incluindo HTML, CSS e Script) são carregados apenas uma vez em todo o ciclo de vida da aplicação, tornando rápida uma aplicação de página única.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+Em um aplicativo de várias páginas, cada mudança tais como exibir os dados ou enviar dados de volta para as solicitações do servidor renderizando uma nova página do servidor. A aplicação para várias páginas tem alguns níveis, o que torna a estrutura do aplicativo simples e direta para os usuários.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+No ILLA Builder, uma aplicação de página única pode ser construída definindo o quadro da página e adicionando as views para seções, e um aplicativo de várias páginas pode ser construído adicionando várias páginas, e os desenvolvedores podem usar ambos esses dois padrões de design em uma aplicação.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Definir o layout das páginas
+
+Ir para a configuração da página como os seguintes passos：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Você pode usar os layouts predefinidos, ou adicionar e excluir seções manualmente para definir o layout. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Adicionar visualizações a uma página
+
+`Caminho da visualização`: uma sequência de caracteres foi gerada após a URL da página para acessar a visualização especificada. Depois que o aplicativo é implantado, o endereço de acesso completo é o seguinte: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Você também pode entrar na página inicial e na visualização padrão através do seguinte caminho:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Conectar menu e páginas
+
+Adicione manipuladores de eventos em Itens de menu → defina a `Ação` para `Definir roteador` → selecione a página e veja
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
