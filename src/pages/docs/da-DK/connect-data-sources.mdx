@@ -1,0 +1,44 @@
+---
+title: Opret forbindelse til dine datakilder
+metaTitle: Illa Cloud Forbind til dine datakilder
+desc: Lær om at forbinde til din datakilde, og ring til den i din ILLA Builder
+tagCategory: doc_menu_data_source_connect_click
+---
+
+* * *
+
+## <Heading hidden>Forbind til dine datakilder (Handling)</Heading>
+
+Lær om at forbinde til din datakilde, og kald den i din ILLA Builder.
+
+ILLA giver dig mulighed for at forbinde og integrere en bred vifte af datakilder, herunder databaser og API'er, i din organisation til brug som ressourcer.
+
+### Datakilder
+
+Datakilder er steder, hvor data lagres og behandles. Eksempler på datakilder omfatter PostgreSQL databaser, Twilio REST API'er, og Amazon S3 spande. I ILLA kan du tilføje flere datakilder og gøre dem tilgængelige for brugere til forespørgsel.
+
+#### Integrationer
+
+ILLA giver indbyggede integrationer til mange populære datakilder, der kræver minimal konfiguration, såsom SQL-databaser, og Stripe. Disse integrationer, også kendt som ressourcer, giver dig mulighed for at oprette forbindelse til og forespørge dine datakilder ved hjælp af ILLA. Hvis en bestemt type datakilde ikke understøttes af en indbygget integration du kan bruge REST, GraphQL, eller SOAP integrationer til at oprette forbindelse til næsten enhver API. Dette giver dig mulighed for at få adgang til en bred vifte af datakilder fra ILLA-builder.
+
+#### Opret forbindelse til databaser
+
+Opret forbindelse til de fleste databaser og datalagre
+
+#### Opret forbindelse til API'er
+
+Opret forbindelse til REST og GraphQL.
+
+### Ressourcer
+
+En ressource i ILLA er en gemt konfiguration, der angiver, hvordan ILLA forbinder til en datakilde. For at bruge en datakilde i ILLA, skal du oprette en ressource til det. Du kan vælge den passende ressource til at få adgang til data når du skriver en forespørgsel.
+
+Hver ressource i ILLA har sine egne konfigurationsmuligheder, der bestemmer, hvordan ILLA forbinder til den tilsvarende datakilde. Disse muligheder kan omfatte autentificeringsoplysninger og flow, database forbindelse indstillinger og API-indstillinger, såsom base URL og standard overskrifter.
+
+#### Sådan fungerer ressourcerne
+
+ILLA ressourcer gemmer de nødvendige indstillinger for at oprette sikker forbindelse til din datakilde. Dette giver dig mulighed for nemt at forespørge data uden at udsætte din datakilde direkte til dine brugere. Når en forespørgsel køres efter en ressource, ILLA bruger ressourcens konfigurationsindstillinger til at proxy anmodningen til datakilden på serversiden. Dette sikrer, at kun ILLA har direkte adgang til datakilden.
+
+ILLA forenkler processen med at oprette forbindelse til en datakilde for dine brugere. De behøver kun at vælge den relevante ressource, når du skriver en forespørgsel uden at bekymre sig om datakildens detaljer. Du kan også tilføje flere ressourcer af samme type, såsom flere Amazon S3 spande, at skelne mellem dem.
+
+Denne tilgang holder dine datakilder skjult for dine brugere og sikrer, at alle interaktioner med datakilden håndteres sikkert. ILLA undgår at gøre klientsiden forbindelser til datakilden, der kan afsløre følsomme oplysninger og bruger de samme betingelser for alle interaktioner. Derudover, ressourcer gør det muligt at forespørge caching, som kan reducere antallet af anmodninger til en datakilde og potentielt lavere omkostninger.
