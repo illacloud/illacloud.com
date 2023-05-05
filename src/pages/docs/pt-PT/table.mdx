@@ -1,0 +1,95 @@
+---
+title: Classificações
+metaTitle: Componente para tabelas ILLA Cloud
+description: Exibir e interagir com os dados usando o componente Table
+tagCategory: link_do_menu_tabela_clique
+---
+
+* * *
+
+## <Heading hidden>Tabela</Heading>
+
+As tabelas são uma maneira comum de visualizar e interagir com os seus dados. Você pode ordenar, filtrar, página e baixar linhas de informação. Tabelas também suportam seleção de linhas e colunas personalizadas.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
+  alt=""
+/>
+
+### Carregar dados em uma tabela
+
+Quando você arrastar um componente Table para o Frame, ele mostra automaticamente os dados de teste no formato JSON. Você pode alterar os dados exibidos em uma tabela, editando a propriedade de origem de dados. Use o formato `{{ actionName.data }}` para escolher a ação.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
+  alt=""
+/>
+
+Você também pode definir a fonte de dados inserindo um array.
+
+### Configurações da coluna
+
+**Define apelidos para colunas de dados**
+
+Ao definir a fonte de dados das tabelas, o nome da coluna será definido automaticamente com base na fonte de dados. Você pode renomear todas as colunas clicando na coluna na aba **Inspecionar** e define o **título da coluna**.
+
+**Alterar tipos de colunas**
+
+Quando você define a fonte de dados das tabelas, as colunas são definidas para **Texto**. Você pode definir os tipos de coluna manualmente clicando na coluna na aba **Inspecionar** e selecionando o tipo no menu suspenso **Coluna**.
+
+Os tipos de coluna incluem:
+
+1.  texto
+2.  Data, você pode definir o formato de exibição da data no tipo de data.
+3.  Número, você pode definir as casas decimais no tipo de número.
+4.  Por cento, você pode definir as casas decimais no tipo de porcentagem.
+5.  Vincular
+6.  Botão, você pode adicionar manipuladores de eventos no tipo de botão.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
+  alt=""
+/>
+
+**Valor mapeado de colunas personalizadas**
+
+Você pode adicionar colunas personalizadas às tabelas usando o botão **+ Adicionar** na aba **Inspecionar**. As colunas personalizadas são frequentemente usadas para calcular os dados com base em outros valores no seu aplicativo. Por exemplo, se você tem colunas `revenue` e `user_num` e você quer calcular uma coluna `ARPU`, você pode usar `{{ currentRow.receita/currentRow.user_num }}`
+
+Além disso, depois de calcular, você pode definir o tipo de coluna como número ou porcentagem e definir as casas decimais para melhorar a legibilidade.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
+  alt=""
+/>
+
+### Acessar dados da tabela
+
+Use `{{ table1.selectedRow[i].columnName }}` para acessar os dados das linhas selecionadas em outros componentes. Se você não ativou a seleção **Multi-Row **, `i` será sempre 0.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
+  alt=""
+/>
+
+**Atualizar os dados da tabela**
+
+1.  Use o componente de entrada ou outros dados de entrada cpmponents para mostrar `{{ table1.selectedRow[i].columnName }}`.
+2.  Use `{{ input1.value }}` em Atualizar ações para obter valores selecionados e valores atualizados.
+3.  Adicione um manipulador de eventos para o botão Atualizar para executar a Ação de Atualização quando clicado.
+4.  Atualize os dados da linha selecionada, alterando o valor de entrada e clicando no botão atualizar.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
+  alt=""
+/>
+
+**Insira uma nova linha na tabela**
+
+1.  Use `{{ input1.value }}` na inserção de ações obtêm valores.
+2.  Adicione um manipulador de eventos para inserir o botão para executar a ação de inserir quando clicado.
+3.  Insira novos dados inserindo valores nos componentes de entrada e clicando em inserir botão.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
+  alt=""
+/>
