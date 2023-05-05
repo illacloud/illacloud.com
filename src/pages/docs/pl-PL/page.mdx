@@ -1,0 +1,52 @@
+---
+title: Strona
+metaTitle: ILLA Cloud Page doc
+description: Tworzenie aplikacji jednostronicowych i wielostronicowych na ILLA
+tagCategory: kliknij_doc_menu_page_kliknij
+---
+
+* * *
+
+## <Heading hidden>Strona</Heading>
+
+Wielostronicowe demo zbudowane na ILLA: 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page1.gif' alt="" />
+
+Aplikacja jednostronicowa jest aplikacją, która może zmieniać strony bez przeładowania wszystkich komponentów na stronie. Większość zasobów (w tym HTML, CSS i Script) jest ładowana tylko raz w całym cyklu życia aplikacji, co sprawia, że aplikacja jednostronicowa jest szybka.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page2.png' alt="" />
+
+W aplikacji wielostronicowej każda zmiana, np. wyświetlanie danych lub przesyłanie danych z powrotem na serwer żądań renderowania nowej strony z serwera. Aplikacja wielostronicowa ma kilka poziomów, co sprawia, że struktura aplikacji jest prosta i prosta dla użytkowników.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page3.png' alt="" />
+
+W Builderze ILLA aplikacja jednostronicowa może być zbudowana przez ustawienie ramki strony i dodawanie widoków do sekcji, i aplikacja wielostronicowa może być zbudowana przez dodanie wielu stron, a deweloperzy mogą korzystać z obu wzorców w jednej aplikacji.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page4.png' alt="" />
+
+### Ustaw układ stron
+
+Przejdź do konfiguracji strony w następujących krokach：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page5.png' alt="" />
+
+Możesz użyć ustawień wstępnych lub ręcznie dodać i usunąć sekcje, aby ustawić układ. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page6.gif' alt="" />
+
+### Dodaj widoki do strony
+
+`Wyświetl ścieżkę`: ciąg znaków po adresie URL strony, aby uzyskać dostęp do określonego widoku. Po wdrożeniu aplikacji pełny adres dostępu jest następujący: https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}/{{page_name}}/{{view_path}}
+
+Możesz również wprowadzić stronę główną i domyślny widok za pomocą następującej ścieżki:
+
+https://builder.illacloud.com/{{team_identifier}}/deploy/app/{{app_id}}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page7.png' alt="" />
+
+### Połącz menu i strony
+
+Dodaj obsługę zdarzeń do pozycji menu → ustaw `Action` na `Set router` → wybierz stronę i zobacz
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/page8.gif' alt="" />
