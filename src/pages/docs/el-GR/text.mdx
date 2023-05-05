@@ -1,0 +1,91 @@
+---
+title: Κείμενο
+metaTitle: ILLA Cloud Text component doc
+description: Εμφάνιση δεδομένων με το στοιχείο κειμένου
+tagCategory: doc_menu_text_click
+---
+
+* * *
+
+## <Heading hidden>Κείμενο</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Ιδιότητες
+
+| Ιδιότητα            | Περιγραφή                                                                                                                                                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Περιεχόμενο         | Ορίστε το κείμενο που εμφανίζεται στην εφαρμογή Κείμενο. Υποστηρίζονται Markdown και απλό κείμενο.                                                                                                                                          |
+| Υπόδειξη            | Μια υπόδειξη που εμφανίζεται στο στοιχείο όταν οι χρήστες αιωρούνται πάνω από το στοιχείο.                                                                                                                                                  |
+| Οριζόντια στοίχιση  | Για να ορίσετε την οριζόντια θέση του περιεχομένου κειμένου στο στοιχείο                                                                                                                                                                    |
+| Κατακόρυφη στοίχιση | Για να ορίσετε την κάθετη θέση του περιεχομένου κειμένου στο στοιχείο                                                                                                                                                                       |
+| Hidden              | Για να ορίσετε αν θα εμφανίζεται αυτό το εξάρτημα και υπό ποιες συνθήκες θα εμφανίζεται. Για παράδειγμα, εάν ο τρέχων χρήστης δεν είναι χρήστης Α, αυτό το στοιχείο θα πρέπει να είναι κρυμμένο: {//currentUserInfo.nickname != 'User A' }} |
+| Χρώμα               | Για να ορίσετε το χρώμα κειμένου σε μορφή χρώματος κειμένου                                                                                                                                                                                 |
+| Μέγεθος κειμένου    | Για να ορίσετε το μέγεθος κειμένου σε μορφή κειμένου χρώματος                                                                                                                                                                               |
+
+### Χρήση Markdown
+
+#### Επικεφαλίδα
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Επικεφαλίδα 1
+## Κεφαλίδα 2
+### Κεφαλίδα 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Λίστα προς υλοποίηση
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### To-do list
+
+1. [ ] 🚀 Δημιουργήστε μια νέα εφαρμογή στο ILLA Cloud
+2. [ ] ☎️ Call with Monica
+3. [x] 🍷 δείπνο με **Έλσα**
+4. [x] 💃 Παίξτε `Just dance` για μισή ώρα
+```
+
+#### Λίστα με κουκκίδες
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Ενημερωμένη λίστα
+- Συνεργασία σε πραγματικό χρόνο: Μπορούμε να δημιουργήσουμε τα πάντα σε πραγματικό χρόνο μαζί.
+- 🛠️ Προσαρμοσμένο Plugin: Δημιουργήστε κάθε προσαρμοσμένο plugin για να κάνετε αυτό που θέλετε.
+- 🤖 Automate Support: Συνδέστε τα πάντα και αυτοματοποιήστε τα σε 5 δευτερόλεπτα.
+- 🖥️ Αυτο-φιλοξενείται: υποστηρίζει Docker & k8s
+```
+
+#### Πίνακας
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Πίνακα
+"Όνομα" "Δεσμός" Περιγραφή "
+":----------------"
+"Σύννεφος" ILLA "[https://cloud. llacloud.com/](https://cloud.illacloud.com/) "Build apps on ILLA Cloud",
+"ILLA GitHub "https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) God, Star μας στην αρχική σελίδα του GitHubś
+- [https://www.illacloud.com/](https://www.illacloud.com/) _ ILLA Cloud Offical
+```
+
+### Εμφάνιση δυναμικών δεδομένων
+
+Χρήση `{{` για λήψη δεδομένων από άλλα στοιχεία ή ενέργειες ή καθολικές μεταβλητές. Για παράδειγμα, για να εμφανίσετε το ψευδώνυμο του τρέχοντος χρήστη:
+
+```jsx
+## {{👋 Γεια σας! '+ currentUserInfo.nickname }}
+```
