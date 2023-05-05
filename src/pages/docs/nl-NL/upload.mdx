@@ -1,0 +1,106 @@
+---
+title: Uploaden
+metaTitle: ILLA Cloud Upload component doc
+description: Gebruik het upload-component om bestanden van lokale machines naar een cloud opslag te uploaden
+tagCategory: menu_upload_klik
+---
+
+* * *
+
+## <Heading hidden>Uploaden</Heading>
+
+Het upload-component wordt gebruikt om gebruikers bestanden van hun lokale machines via API naar elke cloud opslag te laten uploaden. Vervolgens zullen we introduceren hoe een upload component te configureren, hoe de upload component te koppelen aan een cloud opslagdienst. hoe je de upload component gebruikt om een afbeelding te selecteren, en met een afbeelding, etc.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Eigenschappen
+
+| Eigenschap                               | Beschrijving                                                                                                                                                                                                                                                                                                                                                           |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type                                     | Stel het type upload onderdeel in, inclusief Knop en Dropzone.                                                                                                                                                                                                                                                                                                         |
+| Tekstveld                                | De tekst getoond op het upload component.                                                                                                                                                                                                                                                                                                                              |
+| Type selectie                            | Stel het selectietype in op meerdere bestanden, één bestand of map.                                                                                                                                                                                                                                                                                                    |
+| Bestand types                            | Een lijst met bestandsextensies die mogen uploaden. Geen waarde staat alle bestandstypes toe.                                                                                                                                                                                                                                                                          |
+| Nieuwe geselecteerde bestanden toevoegen | Om het geselecteerde nieuwe bestand toe te voegen aan het geselecteerde bestand of vervang het geselecteerde bestand in het selectietype van meerdere bestanden of map.                                                                                                                                                                                                |
+| Bestand lijst                            | Om in te stellen of een lijst van de geselecteerde bestanden onder het upload component moet worden weergegeven. De hoogte van de uploader zal dynamisch veranderen op basis van de lengte van de bestandslijst.                                                                                                                                                       |
+| Parse Waarde                             | Poging om de geselecteerde bestanden te parsen, met ondersteuning voor JSON, CSV, TSV, Excel, en TXT-bestanden. Geïnstalleerde gegevens kunnen worden geopend via {{upload1.parsedValue}}. Bestanden die niet kunnen worden geparseerd, worden leeg in de array. Alle bestanden zijn beschikbaar als base64 gecodeerde tekenreeksen op de waarde, ongeacht deze optie. |
+| Laden...                                 | Of de component een laadindicator moet tonen.                                                                                                                                                                                                                                                                                                                          |
+| Uitgeschakeld                            | Om in te stellen of dit component moet worden uitgeschakeld en onder welke voorwaarden het moet worden uitgeschakeld. Als bijvoorbeeld het input1 component leeg is, moet dit component worden uitgeschakeld: {{ input1.value == ‘ ’}}                                                                                                                                 |
+| Knopinfo                                 | Een tooltip weergegeven op het onderdeel wanneer gebruikers over het onderdeel bewegen.                                                                                                                                                                                                                                                                                |
+| Verplicht veld                           | Om in te stellen of deze vereist is.                                                                                                                                                                                                                                                                                                                                   |
+| Min size                                 | Om de minimale bestandsgrootte in te stellen mag worden toegevoegd.                                                                                                                                                                                                                                                                                                    |
+| Max size                                 | Om de maximale bestandsgrootte die toegevoegd mag worden in te stellen                                                                                                                                                                                                                                                                                                 |
+| Aangepaste regel                         | Om de tekst die wordt weergegeven in te stellen wanneer verificatie mislukt                                                                                                                                                                                                                                                                                            |
+| Validatiebericht verbergen               | Om in te stellen of het valideringsbericht moet worden weergegeven wanneer verificatie mislukt is.                                                                                                                                                                                                                                                                     |
+| Formulier gegevenssleutel                | Het instellen van een sleutel voor het component Na het toevoegen van dit component aan een formulier, zal deze sleutel worden gebruikt om de gegevens van deze component te identificeren bij het verzenden van het formulier.                                                                                                                                        |
+| Hidden                                   | Om in te stellen of deze component weer te geven onder welke voorwaarden het moet worden weergegeven. Bijvoorbeeld, als de huidige gebruiker geen Gebruiker A is, moet dit component verborgen zijn: {{ currentUserInfo.nickname != 'Gebruiker A' }}                                                                                                                   |
+| Variant                                  | Om de knop uploadcomponent in te stellen op omlijning of ingevuld.                                                                                                                                                                                                                                                                                                     |
+| Thema kleur                              | Om de kleur van het button upload component in te stellen.                                                                                                                                                                                                                                                                                                             |
+
+### Methode
+
+U kunt andere componenten gebruiken om de upload component te beheren. Wij steunen de volgende drie methoden:
+
+| wissen            | Wordt gebruikt om het validatiebericht te wissen                           |
+| ----------------- | -------------------------------------------------------------------------- |
+| leeswaarde        | Gebruikt om de geselecteerde te wissen                                     |
+| stelUitgeschakeld | Gebruikt om de upload component op uitgeschakeld of ingeschakeld te zetten |
+
+### Event handler
+
+Om acties te starten wanneer de geselecteerde bestanden veranderen
+
+### Gegevens van uploader
+
+Het upload component heeft enkele vaak gebruikte gegevens, die kunnen worden aangeroepen in de app.
+
+`value` een array bestaande uit de base64 data van bestanden. 
+
+`files` een reeks objecten. De keys van de objecten bevatten `lastModified`, `name`, `size`, `type`. U kunt \`{{upload1.files.map(file =>file gebruiken. ame)}}' om een array van bestandsnamen te krijgen en je kunt ook matrix, grootte matrix krijgen, type array op dezelfde manier. 
+
+### Bestanden uploaden naar cloudopslag
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Upload een enkel bestand via een S3 bron
+
+De configuratie van de actie is als volgt. 
+
+Objectnaam uploaden
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Gegevens uploaden
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Upload meerdere bestanden via een S3 bron
+
+Upload objectnaam lijst
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Gegevenslijst uploaden
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Upload een afbeelding en toon het op de afbeeldingscomponent
+Wijzig de afbeeldingsbron naar de bestandsbase64 gegevens van het uploadende component. De base64 data wordt opgeslagen in het waarde attribuut in array. En we moeten de voorvoegsel van het bestand spliken met de bestandsgegevens. De code is als volgt. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
