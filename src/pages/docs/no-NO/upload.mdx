@@ -1,0 +1,106 @@
+---
+title: Last opp
+metaTitle: ILLA Cloud Opplasting komponent doc
+description: Bruk opplastet komponent for å laste opp filer fra lokale maskiner til hvilken som helst sky-lagring
+tagCategory: doc_menu_upload_Klikk
+---
+
+* * *
+
+## <Heading hidden>Last opp</Heading>
+
+Last opp komponenten brukes til å tillate brukere å laste opp filer fra deres lokale maskiner til en hvilken som helst sky-lagring via API. Neste, vi vil introdusere hvordan vi konfigurerer en laste opp komponent, hvordan å knytte opplastingskomponenten til en skylagringstjeneste. hvordan bruke opplastingskomponenten for å velge et bilde og vise det med et bilde osv.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
+
+### Egenskaper
+
+| Egenskap                    | Beskrivelse                                                                                                                                                                                                                                                                                   |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type:                       | Angi typen opplastingskomponent, inkludert knapp og Dropzone. (Automatic Translation)                                                                                                                                                                                                         |
+| Tekst                       | Teksten som vises på opplastings-komponenten.                                                                                                                                                                                                                                                 |
+| Utvalg typer                | Angi valgtypen til flere filer, én fil eller katalog. (Automatic Translation)                                                                                                                                                                                                                 |
+| Fil typer                   | En liste over filendelser har lov til å laste opp. Ingen verdi vil tillate alle filtyper.                                                                                                                                                                                                     |
+| Legg til nylig valgte filer | Hvis du vil angi valgt ny fil til å legge til den valgte filen, eller erstatte den valgte filen i valgt type filer eller mappe.                                                                                                                                                               |
+| Liste over filer            | Hvis du vil vise en liste over valgte filer under opplastingskomponenten. (Automatic Translation) Høyden på opplastingen vil endres dynamisk basert på lengden av fillisten.                                                                                                                  |
+| Analysere verdi             | Forsøk på å analysere valgte filer, med støtte for JSON, CSV, TSV, Excel, og TXT filer. Analyserte data kan nås via {{upload1.parsedValue}}. Filer som ikke kan analyseres er null i listen. Alle filer er tilgjengelige som base64 kodet strenger av verdi, uavhengig av dette alternativet. |
+| Laster                      | Om komponenten skal vise en belastningsindikator.                                                                                                                                                                                                                                             |
+| Deaktivert                  | For å angi om denne komponenten skal deaktivere og under hvilke betingelser den skal deaktiveres. For eksempel bør denne komponenten hvis inngangs-1 komponenten er null, deaktiveres: {{ input1.value =‘ ’}}                                                                                 |
+| Verktøytips                 | Et verktøytips vises på komponenten når brukerne holder over komponenten.                                                                                                                                                                                                                     |
+| Obligatorisk felt           | For å angi om det er påkrevd.                                                                                                                                                                                                                                                                 |
+| Min size                    | For å angi minimum filstørrelse som skal legges til.                                                                                                                                                                                                                                          |
+| Max size                    | For å angi maksimal filstørrelse som skal legges til.                                                                                                                                                                                                                                         |
+| Egendefinert regel          | For å angi teksten som vises når verifiseringen feiler.                                                                                                                                                                                                                                       |
+| Skjul valideringsmelding    | For å angi om valideringsmeldingen skal vises når verifiseringen mislykkes                                                                                                                                                                                                                    |
+| Skjema Datastøkkel          | Hvis du vil sette en nøkkel for komponenten. Etter å ha lagt denne komponenten til et skjema vil denne nøkkelen bli brukt til å identifisere dataene til denne komponenten når du sender skjemaet.                                                                                            |
+| Hidden                      | Angir om denne komponenten skal vises og under hvilke betingelser den skal vises. Hvis gjeldende bruker ikke er bruker A, bør denne komponenten skjules: {{ currentUserInfo.nickname != 'User A' }}                                                                                           |
+| Variant                     | Hvis du vil sette en knapp, last opp en komponent til Outline eller Filled.                                                                                                                                                                                                                   |
+| Tema farge                  | Hvis du vil angi fargen på knappen Last opp komponenten.                                                                                                                                                                                                                                      |
+
+### Metode
+
+Du kan bruke andre komponenter til å kontrollere opplastings-komponenten. Følgende tre metoder støtter vi:
+
+| klarering  | Brukes til å fjerne valideringsmeldingen                               |
+| ---------- | ---------------------------------------------------------------------- |
+| klar verdi | Brukes til å tømme valgte                                              |
+| Deaktivert | Brukes til å angi opplastingskomponenten til deaktivert eller aktivert |
+
+### Arrangement behandler
+
+Hvis du vil utløse handlinger når valgte filer endres
+
+### Data av opplaster
+
+Opplastingskomponenten har noen vanlig brukte data, som kan kalles i appen.
+
+«verdi» en liste som består av filenes base64-data. 
+
+'filer' en liste med objekter. Nøklene til objektene inneholder `lastModifisert`, `navn`, `størrelse`, `type`. Du kan bruke `{{upload1.files.map(fil =>file. ame)}}` for å få en liste med filnavn og du kan også bli sist modifisert matrise, størrelse matrise, type matrise på samme måte. 
+
+### Last opp filer til en sky-lagringstjeneste
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload2.gif' alt="" />
+
+#### Last opp en enkelt fil gjennom en S3-ressurs
+
+Konfigurasjonen til handlingen er som følger: 
+
+Last opp objektnavn
+
+```jsx
+{{upload1.files.map(file =>file.name)[0]}}
+```
+
+Laste opp data
+
+```jsx
+{{upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload3.png' alt="" />
+
+#### Laste opp flere filer gjennom en S3-ressurs
+
+Laste opp navn på objekter
+
+```jsx
+{{upload1.files.map(file =>file.name)}}
+```
+
+Laste opp dataliste
+
+```jsx
+{{upload1.value}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload4.png' alt="" />
+
+Last opp et bilde og vis det på bilde-komponenten
+Endre bildekilden til filens base64 data for opplastede komponenter. Base64 data er lagret i verdiattributtet i listen. Og vi skal sette filprefikset ut med fildataene. Koden er som følger. 
+
+```jsx
+{{'data:image/jpeg;base64,'+upload1.value[0]}}
+```
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/upload5.gif' alt="" />
