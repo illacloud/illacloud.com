@@ -1,0 +1,74 @@
+---
+title: Koncový bod obličeje
+metaTitle: Připojit ke konečnému bodu obličeje
+description: Naučte se používat Hugging Face Endpoint v ILLA
+tagCategory: doc_menu_hugging_face_endpoint_kliknutí
+---
+
+* * *
+
+## <Heading hidden>Koncový bod obličeje</Heading>
+
+S koncovými body rušení tváří v tvář můžete snadno nasadit transformátory, difuzory nebo libovolný model na vyhrazenou, plně spravovanou infrastrukturu. [Klikněte zde](https://ui.endpoints.huggingface.co/new) pro vytvoření koncového bodu. 
+
+### Vytvořit zdroj koncového bodu obličeje
+
+Existují dva způsoby, jak přidat zdroj z hugující koncovky tváře. 
+
+1.  Zadejte `ILLA Builder` >> Klepněte na záložku `Zdroje` >> Klikněte na `Vytvořit nové` >> Zvolte `Hugging Face Endpoint` >> Nastavte informace o připojení a klikněte na tlačítko `Uložit zdroje`
+2.  Zadejte editační stránku >> klikněte na `+ Nové` v seznamu akcí >> Vyberte `Hugging Face Endpoint` >> Nastavte informace o připojení nebo klikněte na `+ Nový dokument` pro přidání nových informací o připojení
+
+### Nastavit informace o připojení
+
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                                 |
+| ------------ | ---------- | ----------------------------------------------------------------------------------------- |
+| Název        | vyžadováno | Definujte název zdroje, který bude použit pro zobrazení v ILLA                            |
+| Endpoint URL | vyžadováno | vytvořte koncový bod zde: https://ui.endpoints.huggingface.co/new a získejte URL adresu.  |
+| Token        | vyžadováno | Token organizace. Můžete to získat v https://huggingface.co/settings/tokens.              |
+
+### Vytvořit akce
+
+Zadejte editační stránku >> klikněte na `+ Nové` v seznamu akcí >> Zvolte `Hugging Face Endpoint` >> Vyberte existující zdroj nebo přidejte nový zdroj
+
+### Konfigurace akcí
+
+| Vlastnosti    | Požadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                                                               |
+| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typ parametru | vyžadováno | Typ parametru vašeho koncového bodu. Například, pokud váš koncový bod vyžaduje textový vstup, zvolte možnost vyplnit parametr „inputs“ textem. Pokud váš koncový bod potřebuje JSON vstup, zvolte možnost vyplnit parametr "vstupy" pomocí JSON nebo klávesové hodnoty. |
+| Parametr      | vyžadováno | Zadejte svůj parametr. Pomocí {{ componentName.value }} můžete použít data komponentů.                                                                                                                                                                                  |
+
+### Případ použití
+
+Nainstalovali jsme `openai/whisper-base`, který získá vstup do audio souboru a převede na text. Je vhodný pro zápisy z jednání, podcasty do textu atd. Dále představíme jak použít tento model pro vytvoření aplikace v ILLA Cloud.
+
+#### Krok 1: Postav přední rozhraní s komponenty
+
+Vytvořili jsme rozhraní pomocí komponent, jako je nahrávání souborů a tlačítko následující.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Krok 2: Přidej zdroj obličeje
+
+Vyplňte pole níže pro dokončení konfigurace dokumentu. [Vytvořit koncový bod](https://ui.endpoints.huggingface.co/new) a získat Endpoint URL. A získejte API token organizace v [nastavení profilu](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Krok 3: Konfigurace akce
+
+Nejprve vyberte typ parametru. Vezměte si příklad `openai/whisper-base`, tento model vyžaduje vstup binárního souboru, abychom změnili parametr na `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Nastavte binární soubor, který má být předán modelu, jako data nahraná ze souborové komponenty. Například, `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Krok 4: Připojte komponenty a akce
+
+Přidat ovladač události k tlačítku pro spuštění akce po kliknutí na tlačítko. A nastavte hodnotu textové komponenty na {{whisper.data[0].text}} pro zobrazení výsledku konverze na textové komponenty. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+Po nastavení výše uvedených kroků je aplikace vytvořena a výsledky jsou následující.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
