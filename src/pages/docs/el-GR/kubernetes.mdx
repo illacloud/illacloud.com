@@ -1,0 +1,101 @@
+---
+title: Kubernetes
+tagCategory: doc_μενού_kubernetes_click
+desc: Φτιάξτε illa all-in-one εικόνα και εκτελέστε την από k8s στο μηχάνημά σας.
+---
+
+* * *
+
+## <Heading hidden>Kubernetes</Heading>
+
+### Περιγραφή
+
+Φτιάξτε illa all-in-one εικόνα και εκτελέστε την από k8s στο μηχάνημά σας. Μπορείτε να δείτε το αρχείο σεναρίων στο φάκελο [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) για περισσότερες λεπτομέρειες.
+
+Σημείωση:
+
+Προτείνουμε την ανάπτυξη με τα εργαλεία αυτόματης ανάπτυξης[illa-cli](https://github.com/illacloud/illa).
+
+Και προς το παρόν δεν υποστηρίζουμε το Apple Silicon M1 (darwin-arm64 arch).
+
+### Εκτέλεση με μια επίσημη εικόνα slim
+
+Εγκατάσταση του GNU make και Τύπος:
+
+```jsx
+κάνε ανάπτυξη
+```
+
+ή απλά εκτελέστε:
+
+```jsx
+/bin/bash scripts/deploy.sh
+```
+
+αυτή η εντολή θα τραβήξει illasoft επίσημη εικόνα all-in-one και να το αναπτύξει στο σύμπλεγμα Kubernetes σας.
+
+### Για Μόνιμη Αποθήκευση Βάσης Δεδομένων
+
+Επεξεργαστείτε το[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), και προσθέστε την επίμονη ρύθμιση αποθήκευσης του IAAS σε αυτό.
+
+### Για Ρυθμίσεις HTTPS
+
+Μπορείτε να δρομολογήσετε το NodePort στην πύλη εισόδου σύμπλεγμα Kubernetes σας και να ξαναγράψετε σε 443 θύρα, και να προσθέσετε https cert στην πύλη εισόδου σας.
+
+Ή, μπορείτε να αναπτύξετε μια πύλη εισόδου χειροκίνητα στο διακομιστή Kubernetes, όπως αυτό:
+
+```jsx
+static_resources:
+  listeners:
+  - name: Ř_listener
+    διεύθυνση:
+      socket_address:
+        διεύθυνση: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - φίλτρα:
+      - όνομα: απεσταλμένος. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: ġ_listener
+          route_config:
+            όνομα: local_route
+            virtual_hosts:
+            - όνομα: illa_builder
+              domains:
+              - "illa. ουδομιδική. om" # αντικαταστήστε με τον τομέα σας
+              διαδρομές:
+              - ταιριάζει:
+                  πρόθεμα: "/"διαδρομή:
+                  cluster: illa_builder
+          http_filters:
+          - όνομα: απεσταλμένος. ilters.http. outer
+            typed_config:
+              "@type": type. ογλεάπης. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        όνομα: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # αντικαταστήστε το με το αρχείο cert
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain. em
+              private_key:
+                όνομα: /your-cert-folder/privkey. em
+
+  clusters:
+  - όνομα: illa_builder
+    τύπος: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            διεύθυνση:
+              socket_address:
+                διεύθυνση: illa-builder
+                port_value: 80
+```
