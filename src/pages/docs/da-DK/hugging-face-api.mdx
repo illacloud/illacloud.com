@@ -1,0 +1,110 @@
+---
+title: Hugging Face API
+metaTitle: Opret forbindelse til Hugging Face API
+description: Lær at bruge Hugging Face API i ILLA
+tagCategory: doc_menu_hugging_face_api_click
+---
+
+* * *
+
+## <Heading hidden>Hugging Face API</Heading>
+
+Hugging Face er Github af machine learning samfund, med hundredtusindvis af præ-uddannede modeller og 10.000 datasæt i øjeblikket tilgængelige. Du kan frit få adgang til modeller og datasæt, der deles af andre brancheeksperter eller værter og implementere dine modeller på Hugging Face.
+
+Nogle eksempler på modeller til rådighed i Hugging Face bibliotek omfatter:
+
+1.  BERT (Bidirectional Encoder Repræsentationer fra Transformers): BERT er en transformer-baseret model udviklet af Google til forskellige NLP opgaver. Det har opnået state-of-the-art resultater i sprogforståelse og maskinoversættelse opgaver.
+2.  GPT (Generative Pre-training Transformer): GPT er en anden transformer-baseret model udviklet af OpenAI. Det bruges primært til sproggenerering opgaver, såsom oversættelse og tekst opsummering.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa er en forlængelse af BERT-modellen, der er udviklet for at forbedre BERT's ydeevne på forskellige NLP-opgaver.
+4.  XLNet (eXtraordinary LanguageNet): XLNet er en transformer-baseret model udviklet af Google, der er designet til at forbedre udførelsen af transformatormodeller på sprogforståelsesopgaver.
+5.  ALBERT (A Lite BERT): ALBERT er en version af BERT-modellen, der er udviklet til at være mere effektiv og hurtigere at træne og samtidig opretholde en god præstation på NLP-opgaver.
+
+### Hvad du kan gøre med Hugging Face i ILLA Builder
+
+I Hugging Face, er over 130.000 machine-learning modeller tilgængelige via den offentlige API, som du kan bruge og teste gratis på \[**<https://huggingface.co/models>](<https://huggingface.co/models>**. Derudover kan du bruge Hugging Face's Inference Endpoints, som kan implementeres og tilgås på [\*\*\[https://huggingface.co/docs/inference-endpoints/index\](https://huggingface.co/docs/inference-endpoints/index](https://huggingface.co/docs/inference-endpoints/index)](<https://huggingface.co/docs/inference-endpoints/index>\*\*.
+
+ILLA Builder giver snesevis af almindeligt anvendte front-end komponenter, så du kan bygge forskellige front-end grænseflader baseret på dine specifikke behov hurtigt. Samtidig tilbyder ILLA en forbindelse til Hugging Face, så du hurtigt kan oprette forbindelse til API, sende anmodninger og modtage returnerede data. Ved at forbinde API og front-end komponenter, du kan implementere kravet om, at brugere kan indtaste indhold gennem frontend og indsende det til API. API returnerer det genererede indhold, der skal vises på frontend.
+
+### Indstil Hugging Face API ressource
+
+| Egenskaber | Påkrævet | Varebeskrivelse                                                                         |
+| ---------- | -------- | --------------------------------------------------------------------------------------- |
+| Navn       | påkrævet | Definér et ressourcenavn, der vil blive brugt til visning i ILLA                        |
+| Token      | påkrævet | Brugeradgang eller API-token. Du kan få det på https://huggingface.co/settings/tokens.  |
+
+### Indstil Handling
+
+| Egenskaber     | Påkrævet | Varebeskrivelse                                                                                                                                                                                                                               |
+| -------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Model ID       | påkrævet | Søg efter modeller: https://huggingface.co/models                                                                                                                                                                                             |
+| Parameter type | påkrævet | Parameteren type af dit endepunkt. Hvis dit endepunkt f.eks. skal have et tekstinput, skal du udfylde “inputs” parameter med tekst. Hvis dit slutpunkt skal have et JSON-input, skal du udfylde “inputs” parameter med JSON eller nøgleværdi. |
+| Parameter      | påkrævet | Indtast din parameter. Brug {{ componentName.value }} til at bruge data fra komponenter.                                                                                                                                                      |
+
+# Sådan bruger du Hugging Face i ILLA Builder
+
+### Trin 1: Byg brugerflade med komponenter på ILLA Builder
+
+Baseret på den forventede brug scenarie du beskrev, opbygge en front-end interface. For eksempel kan du bruge input- og billedkomponenter, hvis dit produkt tager i tekst og udsender et billede. Hvis dit produkt tager i tekst og output genereret tekst, kan du bruge input og tekst komponenter.
+
+Følgende billede er et eksempel på en front-end side for et produkt, der besvarer spørgsmål baseret på kontekst.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+
+### Trin 2: Opret en Hugging Ansigt ressource og config handlingerne
+
+Klik + Nyt i handlingslisten og vælg Hugging Ansigt Inferens API.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+
+Udfyld formularen for at forbinde til din Hugging Face:
+
+Navn: Det navn, der vil blive vist i ILLA
+
+Token: Kom i din Hugging Face [profilindstillinger]([https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+
+Bekræft modeloplysningerne i Hugging Face før du konfigurerer handlingerne:
+
+Vælg en model på [Hugging Face Model Page]([https://huggingface.co/models](https://huggingface.co/models))
+
+Lad os bruge [deepset/roberta-base-squad2]([https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)) som eksempel. Indtast detalje siden > klik Deploy > Klik Inferens API
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+
+Parametrene efter `“inputs”` er, hvad du skal udfylde ILLA. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+
+I ILLA Builder, skal vi udfylde Model ID og Parameter. Med ovenstående model som eksempel er ''inputs'' et nøgleværdipar, så vi kan udfylde det med nøgleværdi eller JSON. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+
+Og vi understøtter også tekstinput og binære input, som kan opfylde alle Hugging Face Inferens API-forbindelser.
+
+### Trin 3: Tilslut handlinger til komponenter
+
+For at overføre brugerens front-end input til API, kan du bruge {{ til at hente data indtastet i komponenten. For eksempel er input2 den komponent, der skal indtaste spørgsmålet, og input1 er den komponent, der skal indtastes kontekst, vi kan udfylde `spørgsmål` og `context` i nøgle, og udfylde `{{ input.value }}` i værdi:
+
+```jsx
+{
+"spørgsmål": {{input2.value}},
+"kontekst": {{input1.value}}
+}
+```
+
+Før handlingens output data vises i front-end komponenten, bør vi bekræfte, hvilket felt output forskellige modeller er placeret i. Stadig tager `deepset/roberta-base-squad2` som et eksempel, resultaterne er som følger:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+
+Så vi kan få svaret med `{{ textQuestion.data[0].answer }}`(`textQuestion` er navnet på handlingen). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+
+### Demo
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
