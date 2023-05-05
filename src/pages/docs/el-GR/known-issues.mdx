@@ -1,0 +1,23 @@
+---
+title: Γνωστά Θέματα
+tagCategory: doc_menu_known_issues_click
+desc: Γνωστά θέματα και λύσεις ανάπτυξης του ILLA Builder.
+---
+
+* * *
+
+## <Heading hidden>Γνωστά θέματα</Heading>
+
+### Πρόβλημα Τύπου Προσάρτησης
+
+Εκτελέστε `illa deploy --self -port=1000 -s={your-ip-address}` ή `run-official-image.sh`, επιστρέψτε το ακόλουθο σφάλμα:
+
+`Docker απάντησε με κωδικό κατάστασης 400: μη έγκυρη ρύθμιση προσάρτησης για τον τύπο "bind": δεσμεύστε τη διαδρομή προέλευσης δεν υπάρχει: /tmp/illa-data`
+
+Προς το παρόν, ο τύπος mount υποστηρίζει μόνο το `mount`, παρακαλώ ρυθμίστε το `docker -v` ως λειτουργία `mount`. Ή επανεγκαταστήστε το docker ακολουθώντας scripts.
+
+[reinstall-docker-with-ubuntu.sh](https://github.com/illacloud/deploy-illa-manually/blob/main/utils/reinstall-docker-with-ubuntu.sh)
+
+Και να εκτελέσετε ξανά την εντολή ανάπτυξης
+
+Για περισσότερα ζητήματα: https://github.com/illacloud/illa-builder/issues
