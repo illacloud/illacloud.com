@@ -1,0 +1,137 @@
+---
+title: Supabase DB
+metaTitle: ILLA Cloud Supabase DB Integration doc
+description: Opret forbindelse til Supabase instans og vis Supabase DB data på komponenter
+tagCategory: doc_menu_supabase_click
+---
+
+* * *
+
+## <Heading hidden>Supabase DB</Heading>
+
+Supabase er et open source Firebase alternativ, der giver udviklere mulighed for at opbygge real-time web og mobile applikationer. Det giver mange af de samme funktioner som Firebase, såsom real-time databaser, brugergodkendelse, og hosting, men med de ekstra fordele ved at være open source og give en SQL API. Dette giver udviklere mulighed for at bruge deres eksisterende SQL viden og værktøjer, hvilket gør det nemt at integrere med andre systemer. Derudover Supabase giver en mere fleksibel og tilpasselig platform end Firebase, som kan være mere restriktiv med hensyn til datamodellering og brug.
+
+Denne tutorial skitserer processen med at oprette en Admin Panel ved hjælp af ILLA Builder og Supabase i et par enkle trin. ILLA er en lav-kode-platform for udviklere, der muliggør hurtig udvikling og implementering af interne værktøjer. Det giver mulighed for at oprette sider ved at trække og slippe UI komponenter, forbinde til enhver database eller API, og skrive JavaScript. For at lære mere om Supabase, besøg deres hjemmeside på <https://supabase.com/>. Lad os begynde!
+
+### Trin 1: Konfigurer din bagende på Supabase
+
+På [Supabase dashboard](https://app.supabase.com/projects), klik på `Nyt projekt` og sæt navnet til adminPanel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase1.png'
+  alt=""
+/>
+
+Opret en ny tabel ved at klikke på 'Opret en ny tabel'.
+
+Supabase tilbyder en række muligheder for at udfylde tabeller med data, herunder skriveforespørgsler, skabe skemaer gennem en brugergrænseflade, og uploade CSV-filer.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase2.png'
+  alt=""
+/>
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase3.png'
+  alt=""
+/>
+
+Udfyld oplysningerne i tabellen. Databasen er nu oprettet.
+
+### Trin 2: Byg brugergrænsefladen på ILLA Cloud
+
+På [ILLA Cloud](https://cloud.illacloud.com), klik på Opret ny for at oprette en ny applikation.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase4.png'
+  alt=""
+/>
+
+Træk komponenter fra panelet `Insert` til lærredet.
+
+Vælg komponenterne på lærredet og konfigurere egenskaben på `Inspekt` panelet.
+
+Som det ses i nedenstående skærmbillede, har vi bygget et simpelt admin panel.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase5.png'
+  alt=""
+/>
+
+### Trin 3: Tilslut til Supabase og config CRUD
+
+Note down the database connection information under [Project Settings](https://app.supabase.com/project/hdcfnsxpwwgboqomdrhp/settings/database) in Supabase.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase6.png'
+  alt=""
+/>
+
+Klik på `+ Ny` i handlingslisten, og vælg Supabase DB.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase7.png'
+  alt=""
+/>
+
+Udfyld formularen for at oprette forbindelse til din Supabase-instans. Test forbindelse og gem ressource.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase8.png'
+  alt=""
+/>
+
+Klik på `Opret handling` for at oprette en handling med Supabase ressource og konfigurere din CRUD.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase9.png'
+  alt=""
+/>
+
+Brug {{ for at hente front-end inputdata. Følgende er et eksempel på brugerhåndteringssiden i Administrationspanelet.
+
+Søg efter en bruger med navnet indtastet i input1
+
+```
+VÆLG *
+FRA bruger
+HER navn = "{{input1.value}}"
+;
+```
+
+Opdater brugerdata. Opdater brugeroplysninger, når id matcher
+
+```
+UPDATE bruger
+SET name = "{{input3.value}}"
+, email = "{{input4.value}}"
+HER id="{{input2.value}}"
+;
+```
+
+Indsæt brugerdata
+
+```
+INDSTILLING TIL brugernes VÆRDIER("{{input5.value}}","{{input6.value}}","{{input7.value}}");
+```
+
+Slet en bruger med id
+
+```
+SLET FRA bruger HERE id = "{{input2.value}}";
+```
+
+### Trin 4: Vis data om komponenter
+
+Indstil egenskaberne for komponenter med {{ . For eksempel:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/assemble/supabase10.png'
+  alt=""
+/>
+
+## Ressourcer
+
+-   [Supabase officielle hjemmeside](https://supabase.com/)
+-   [Supabase GitHub](https://github.com/supabase/supabase)
+-   [Supabase dokumentation](https://supabase.com/docs)
