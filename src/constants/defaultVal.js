@@ -1,1 +1,1 @@
-export const DefaultStars = 6000
+export const DefaultStars = 6500

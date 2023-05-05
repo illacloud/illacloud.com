@@ -6,6 +6,15 @@ const getHrefLan = (href) => {
   else if (href.includes('ja-JP')) return 'ja'
   else return 'en'
 }
+
+const transformUrl = async (list, config) => {
+  const res = []
+  await list.forEach(async (url) => {
+    res.push(await config.transform(config, url))
+  })
+  return res
+}
+
 module.exports = {
   siteUrl: site,
   generateRobotsTxt: true,
@@ -23,5 +32,35 @@ module.exports = {
         },
       ],
     }
+  },
+  additionalPaths: async (config) => {
+    const result = []
+    const list = [
+      "/integrations",
+      "/components",
+      "/integrations/MySQL",
+      "/integrations/PostgreSQL",
+      "/integrations/MariaDB",
+      "/integrations/TiDB",
+      "/integrations/Redis",
+      "/integrations/MongoDB",
+      "/integrations/Elastic%20Search",
+      "/integrations/Firebase",
+      "/integrations/Supabase%20DB",
+      "/integrations/Clickhouse",
+      "/integrations/Amazon%20DynamoDB",
+      "/integrations/Snowflake",
+      "/components/Upload",
+      "/components/Switch",
+      "/components/Select",
+      "/components/Radio%20group",
+      "/components/Checkbox%20Group",
+      "/components/Chart",
+      "/components/Tables",
+      "/components/PDF",
+      "/components/Video",
+    ]
+    result.push(...(await transformUrl(list, config)))
+    return result
   },
 }

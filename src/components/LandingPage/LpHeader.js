@@ -23,7 +23,7 @@ export const LpHeader = ({ pageName, title, description, isShowBack = false, btn
             </span>
           </Link>
         )}
-        <span className={style.headerTitle}>{title}</span>
+        <h1 className={style.headerTitle}>{title}</h1>
         <span className={style.headerDesc}>{description}</span>
         <Link legacyBehavior href="https://cloud.illacloud.com/">
           <a
