@@ -1,68 +1,68 @@
 ---
-title: 停靠全部内置图像
+title: Docker all-in-one Image
 tagCategory: doc_menu_docker-all-in-one-image_click
-desc: 构建程序使用一张全套的图像，并在您的机器上运行它。
+desc: 使用all-in-one image构建ILLA，并在您的机器上运行它。
 ---
 
 * * *
 
-## <Heading hidden>停靠所有内置图像</Heading>
+## <Heading hidden>Docker all-in-one Image</Heading>
 
 ### 描述
 
-构建程序使用一张全套的图像，并在您的机器上运行它。 您可以在 [scripts](https://github.com/illacloud/deply-illa-manually/blob/main/docker/scripts)文件夹中查看脚本文件以了解更多详情。
+使用all-in-one image构建ILLA，并在您的机器上运行它。 您可以在 [scripts](https://github.com/illacloud/deply-illa-manually/blob/main/docker/scripts)文件夹中查看脚本文件以了解更多详情。
 
 注：
 
 我们强烈建议使用我们的自动部署工具[illa-cli](https://github.com/illacloud/illa)。
 
-目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
+目前，我们不支持Macbook M1(darwin-arm64)。
 
-### 运行官方图像
+### 运行官方的Image
 
-安装 GNU 制造商和类型：
-
-```jsx
-制作运行官方图像
-```
-
-或仅执行：
+安装 GNU make
 
 ```jsx
-/bin/bash 脚本/run-official-image.sh
+make run-official-image
 ```
 
-这个命令将拉illasoft 官方图像并在你的停泊环境中运行它。
+或执行：
+
+```jsx
+/bin/bash scripts/run-official-image.sh
+```
+
+这个命令将拉下来ILLA官方镜像并在你的Docker中运行它。
 
 并使用默认用户名**`root`** 和密码**`password`** 登录。
 
-### 手动构建图像并运行
+### 手动构建镜像并运行
 
-安装 GNU making (或手动执行脚本文件夹中的 shell 脚本)。
+安装 GNU make (或手动执行脚本文件夹中的 shell 脚本)。
 
-为构建所有内置图像并运行，请输入：
-
-```jsx
-做所有
-```
-
-对于土豆，类型：
+为构建ILLA的all-in-one image并运行，请输入：
 
 ```jsx
-每个波德曼运行
+make all
 ```
 
-或在脚本文件夹中执行 shell 脚本 `runpodman.sh` 。
+对于podman，输入：
+
+```jsx
+make run-by-podman
+```
+
+或在script文件夹中执行 shell 脚本 `runpodman.sh` 。
 
 ### 停止并删除容器
 
 ```jsx
-制作停止和移除容器
+make stop-and-remove-container
 ```
 
 ### 清除 Postgres 数据库文件
 
-** 此商品将会删除您的数据库文件！！！ \*\*\*** BACKUP, 并使信息技术变得更加困难\*\*\*
+** 这个命令将会删除您的数据库文件！！！ \*\*\*** 请小心操作并备份 \*\*\*
 
 在默认情况下，Postgres数据库将存储在 `/var/lib/illa/database/postgresql/` 文件夹中。
 
