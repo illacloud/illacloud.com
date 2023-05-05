@@ -1,41 +1,51 @@
 ---
 title: 快速上手
-metaTitle: ILLA Cloud quick start guide
-description: 使用ILLA Builder快速构建企业内部系统
+metaTitle: ILLA 云快速启动指南
+description: 加速你的内部工具开发
 tagCategory: doc_menu_quick_start_click
 ---
----
+
+* * *
 
 ## <Heading hidden>快速上手</Heading>
 
 ### 1.  部署ILLA Builder
-在使用ILLA Builder前，您需要选择将其部署在本地或是云端，您可以选择CLI、Docker、K8s等方式在五分钟内完成Builder本地部署，也可以选择使用ILLA Cloud进行云端部署，随时随地使用ILLA Builder。
+
+在开始使用 ILLA Builder之前，您应该选择使用 ILLA 云端或自助ILLA 来托管您的应用程序。 我们在5分钟内为您提供ILLA CLI, Docker Compose, 和 K8s以便自行管理ILLA 。 稍后我们将为您提供ILLA 云，帮助您简单地开始使用ILLA Builder。
+
 <img
   src={require('@/img/docs/qs_c_1.png').default}
   alt=""
 />
 
-### 2. 获取数据
-登陆ILLA Builder，进入数据看版，在上方导航栏中找到资源选项卡，点击创建资源，在此您可以部署连接至APP中的资源。现已支持MySQL数据库与REST API，Postgres、Redis与MongoDB等数据源接口将于本月开通。
+### 2.  获取数据
+
+注册并登录到ILLA Builder，然后输入资源选项卡。 点击“创建新”按钮，然后您可以在此选择资源类型。 我们为您提供REST API 和 MySQL 来连接您的数据。 Postgres、Redis和MongoDB将于本月启用。
+
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
   alt=""
 />
 
-### 3. 拖拽组件
-创建完项目中需要资源后，在上方导航栏中找到项目选项卡，点击创建项目。进入项目编辑器后，您可以在右侧找到组件列表，选择一个组件，将其拖拽到画布上。选中该组件后，您可以在右侧的组件配置面板中修改该组件的属性。ILLA Builder支持Markdown输入，如果您熟悉markdown语法就能快速调整文字大小与粗细；同时，您可以通过双大括号在数据输入框中调用查询数据，帮助您完善应用功能。
+### 3.  拖拽组件
 
-### 4. 编写查询
-进入项目编辑器，在上方工具栏打开下方面板，在左侧操作列表中点击创建操作，您可以选择已创建的数据源或新建数据源后新建查询操作。ILLA支持编写MySQL，Postgres，REST API等数据源的查询请求。下面将以MySQL请求数据作为样例进行介绍：
-1. 选择MySQL类型的数据源，创建查询操作，命名为action1。
-2. 在配置面板中输入查询语句，例如 SELECT * FROM Users。
-3. 点击运行按钮，查询结果会出现在配置面板下方
+当您的数据准备好时，您可以返回应用选项卡并创建一个应用程序。 插入列表在页面右侧。 您可以选择其中一个并将其拖动到框架内。 然后点击在检查面板中插入并修改其参数。 我们为您提供了Markdown模式来编辑每个插入的标签。 如果您熟悉Markdown语法，您可以快速调整文本大小和厚度。 同时，您可以使用 {{double brackets}} 在文本输入框中调用动作数据，在ILLA Builder中取得更多结果。
+
+### 4.  编写查询
+
+需要采取行动将数据从资源转换为插入数据。 我们称之为行动。 您可以在操作中写一个查询来从您的资源获取数据。 在此基础上，您可以在执行数据处理指令的动作中写入 JavaScript ，如过滤器和合并。 MySQL 示例如下：
+
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
   alt=""
 />
 
-### 5. 展示数据
-完成查询操作后，将一个表格组件拖入画布中并选中，在右侧的组件配置面板中修改其组件数据，将原有的内容替换为{{action1.data}}，完成操作后，表格内容将自动更新为查询操作的结果。您可以在查询操作中添加筛选条件或者在组件配置中调整列顺序与内容排序，更改列表显示规则。至此，您已完成最基础的项目搭建。
+1.  在应用编辑器中创建 MySQL 操作。 命名它是动作。
 
+2.  在配置面板中输入查询语句，例如 SELECT \* FROM Users。
 
+3.  运行此操作，查询结果将显示在底面板上。
+
+### 5.  展示数据
+
+当操作被成功创建时，您需要将操作结果绑定到组件中。 您应该将检查面板上的值变量替换为操作 {{action1.data}} 的结果。 然后组件数据将与动作结果绑定。 
