@@ -1,0 +1,74 @@
+---
+title: Sfârșit de față
+metaTitle: Conectare la Hugging Face Endpoint
+description: Învățați cum să utilizați criteriul final al feței Hugging în ILLA
+tagCategory: click_menu_hugging_face_endpoint_endpoint_
+---
+
+* * *
+
+## <Heading hidden>Punct de sfârșit față față</Heading>
+
+Cu criteriile de evaluare a toleranței față față, poți implementa cu ușurință transformații, agenți diferiți sau orice model pe o infrastructură dedicată, complet gestionată. [Faceți clic aici](https://ui.endpoints.huggingface.co/new) pentru a crea un punct final. 
+
+### Creare resursă Face Face
+
+Există două modalități de a adăuga o resursă de la punctul final al faței. 
+
+1.  Introduceți `ILLA Builder` >> Faceți clic pe `Resources` tab >> faceți clic pe `Create New` >> alegeți `Hugging Face Endpoint` >> Configurați informațiile de conectare și faceți clic pe `Save Resource`
+2.  Introduceți pagina de editare >> faceți clic pe `+ Nou` din lista de acțiuni >> alegeți `Hugging Face Endpoint` >> Configurați informațiile despre conexiune sau faceți clic pe `+ Resurse noi` pentru a adăuga noi informații despre conexiune
+
+### Configurați informațiile de conectare
+
+| Proprietăți  | Necesar | Descriere                                                                           |
+| ------------ | ------- | ----------------------------------------------------------------------------------- |
+| Nume         | necesar | Definiți un nume de resursă care va fi utilizat pentru afișare în ILLA              |
+| Endpoint URL | necesar | creează punctul final aici: https://ui.endpoints.huggingface.co/new și obține URL.  |
+| Token        | necesar | Token organizatie. Îl poți obține în https://huggingface.co/settings/tokens.        |
+
+### Creați Acțiuni
+
+Introduceți pagina de editare >> apăsați `+ Nou` în lista de acțiuni >> Alegeți `Hugging Face Endpoint` >> Alegeți o resursă existentă sau adăugați o resursă nouă
+
+### Configurare acțiuni
+
+| Proprietăți      | Necesar | Descriere                                                                                                                                                                                                                                                                                          |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tip de parametru | necesar | Tipul parametrului de la punctul final. De exemplu, în cazul în care punctul final are nevoie de un text introdus, alegeți să completați parametrul "intrări" cu text. Dacă punctul dvs. final are nevoie de o intrare JSON, alegeți completarea parametrului "intrări" cu JSON sau valoare cheie. |
+| Parametru        | necesar | Introduceți parametrul dvs. Folosește {{ componentName.value }} pentru a utiliza datele componentelor.                                                                                                                                                                                             |
+
+### Utilizare majusculă
+
+Am trimis cu ajutorul lui `openai/whisper-base` care primește un fișier audio și se transformă în text. Este potrivit pentru întâlniri, podcast-uri pentru text, etc. Apoi vom introduce cum să folosim acest model pentru a construi o aplicație în ILLA Cloud.
+
+#### Pasul 1: Construiți interfața front-end cu componentele
+
+Am construit o interfață folosind componente precum încărcare fișier și buton, după cum urmează.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf1.png' alt="" />
+
+#### Pasul 2: Adaugă o resursă a feței
+
+Completează câmpurile afișate mai jos pentru a finaliza configurarea resurselor. [Creați un punct final](https://ui.endpoints.huggingface.co/new) și obțineți URL-ul de sfârșit. Și obțineți token-ul API al organizației în [setările profilului](https://huggingface.co/settings/tokens). 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf2.png' alt="" />
+
+#### Pasul 3: Configurați o acțiune
+
+Selectaţi mai întâi un parametru. Luaţi `openai/whisper-base` ca exemplu, acest model necesită introducerea fişierului binar astfel încât să schimbăm parametrul în `Binary`.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf3.png' alt="" />
+
+Setaţi binarul să fie trecut la model ca datele fişierului încărcat din componenta de încărcare a fişierului. (Automatic Translation) De exemplu, `{{upload1.value[0]}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf4.png' alt="" />
+
+#### Pasul 4: Conectaţi componentele şi acţiunile
+
+Adăugați un handler de evenimente la buton pentru a declanșa acțiunea când butonul este apăsat. Și setează valoarea componentei text la {{whisper.data[0].text}} pentru a afișa rezultatul conversiei în componenta text. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf5.png' alt="" />
+
+După pașii de mai sus sunt configurați, aplicația este creată și rezultatele de execuție sunt după cum urmează.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hf6.gif' alt="" />
