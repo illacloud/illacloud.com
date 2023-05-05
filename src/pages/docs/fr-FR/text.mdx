@@ -1,0 +1,91 @@
+---
+title: Texte du texte
+metaTitle: Composant du texte du nuage ILLA
+description: Afficher les données avec le composant texte
+tagCategory: Clique sur le texte du document
+---
+
+* * *
+
+## <Heading hidden>Texte</Heading>
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text1.png' alt="" />
+
+### Propriétés
+
+| Propriété             | Libellé                                                                                                                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Contenus              | Définir le texte affiché sur le composant texte. Le Markdown et le texte brut sont pris en charge.                                                                                                                                  |
+| Info-bulle            | Une infobulle affichée sur le composant lorsque les utilisateurs survolent le composant.                                                                                                                                            |
+| Alignement horizontal | Définir la position horizontale du contenu du texte dans le composant                                                                                                                                                               |
+| Alignement vertical   | Définir la position verticale du contenu du texte dans le composant                                                                                                                                                                 |
+| Hidden                | Pour définir s'il faut afficher ce composant et dans quelles conditions l'afficher. Par exemple, si l'utilisateur courant n'est pas utilisateur A, ce composant doit être masqué: {{ currentUserInfo.nickname != 'Utilisateur A' }} |
+| Couleur               | Pour définir la couleur du texte au format du texte de la peinture                                                                                                                                                                  |
+| Taille du texte       | Définir la taille du texte dans le format de texte de la peinture                                                                                                                                                                   |
+
+### Utiliser Markdown
+
+#### Titre
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text2.png' alt="" />
+
+```jsx
+# Titre 1
+## En-tête 2
+### En-tête 3
+```
+
+#### Bold & Italics
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text3.png' alt="" />
+
+```jsx
+**Bold**
+*Italics*
+```
+
+#### Liste à faire
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text4.png' alt="" />
+
+```jsx
+### To-do list
+
+1. [ ] 🚀 Build a new app on ILLA Cloud
+2. [ ] ☎️ Call with Monica
+3. [x] 🍷 Dînez avec **Elsa**
+4. [x] 💃 Jouez `Just dance` pendant une demi-heure
+```
+
+#### Liste à puces
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text5.png' alt="" />
+
+```jsx
+### Liste à puces
+- Collaboration en temps réel : Nous pouvons tout créer en temps réel ensemble.
+- 🛠️ Plugin personnalisé : Construisez n'importe quel plugin personnalisé pour faire ce que vous voulez.
+- 🤖 Prise en charge automatique : Connectez tout et automatisez en 5 secondes.
+- 🖥️ Auto-hébergé: support Docker & k8s
+```
+
+#### Tableau
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/text6.png' alt="" />
+
+```jsx
+### Tableau
+| Nom | Lien | Description |
+| :-------- | :------- | :---- |
+| Cloud ILLA | [https://cloud. llacloud.com/](https://cloud.illacloud.com/) |Build apps on ILLA Cloud|
+| ILLA GitHub | [https://github. om/illacloud/illa-builder](https://github.com/illacloud/illa-builder) |Étoile sur GitHub|
+| Page d'accueil ILLA | [https://www.illacloud.com/](https://www.illacloud.com/) |Site Offical du Cloud ILLA
+```
+
+### Afficher les données dynamiques
+
+Utilisez `{{` pour obtenir des données à partir d'autres composants ou actions ou variables globales. Par exemple, pour afficher le pseudo de l'utilisateur courant :
+
+```jsx
+## {{ '👋 Bonjour! '+ currentUserInfo.nickname }}
+```
