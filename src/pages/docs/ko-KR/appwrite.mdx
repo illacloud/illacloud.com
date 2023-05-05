@@ -1,0 +1,151 @@
+---
+title: Appwrite
+metaTitle: ILLA Cloud Appwrite Integration Document
+description: The guide to setup and integrate with Appwrite on ILLA Cloud
+tagCategory: doc_menu_appwrite_click
+---
+
+* * *
+
+## <Heading hidden>Appwrite Database</Heading>
+
+Within Appwrite's different services, you can find user authentication and account management, user preferences, database and storage persistence, cloud functions, localization, image manipulation, and more. 
+
+The combination of ILLA Cloud and Appwrite, that is, the combination of server-side low-code and front-end low-code, will truly realize low-code full-stack development.
+
+[Click here](https://appwrite.io/) to learn more about Appwrite.
+
+### Setup Appwrite resource on ILLA Cloud
+
+#### Two ways to create resources
+
+The first way is to enter the `Resources` tab > click `Create New` to select Appwrite. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+
+The another way is to enter the `app editor` page > click `+ New` to select Appwrite > click `+ New Resources` to add the new configuration. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+
+#### Setup Appwrite by filling in the following fields
+
+Before you connect an Appwrite resource, make sure you have deployed Appwrite on your local machine or a cloud provider. [Click here](https://appwrite.io/docs/installation) to learn more about the installation of Appwrite. 
+
+| Property    | is_required | Description                                                                                                 |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
+| Name        | required    | The name for resource when creating actions in the ILLA. You can customize a name for easy identification.  |
+| Host        | required    | HOSTNAME OR IP.                                                                                             |
+| Database ID | required    | Database ID                                                                                                 |
+| Project ID  | required    | Project ID                                                                                                  |
+| Api key     | required    | TOKEN                                                                                                       |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+
+### Create actions in the app editor
+
+#### Create actions in the following way
+
+Click `+ New` in the app editor page > to select Appwrite > select an existing Appwrite resource or create a new resource > click `Create Action` to create a new action. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+
+After creating an action, please select a method. We provide the following methods: List documents, Create a document, Update a document, Get a document, and Delete a document. The configuration of each method is as follows. 
+
+#### List documents
+
+The following is a simple configuration example: List the document with $id 5. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+
+| Property      | is_required | Description                                                                                                                                                                                                                                 |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Collection ID | Required    | Input or select a collection id from the database                                                                                                                                                                                           |
+| Filter        | Optional    | Support multiple filters. A filter consists of a key, a value and a condition. 1. key: input an attribute 2. condition: select a condition, including equal, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. value: input the value |
+| Order by      | Optional    | Support for ordering by multiple attributes. 1. input an attribute to order by 2. Select asc( by default ) or desc                                                                                                                          |
+| Limit         | Optional    | number of records                                                                                                                                                                                                                           |
+
+The following is an example of how to use the data entered in the component in the action:
+
+1.  Add an input component to the frame so that users can enter the document id they want to find.  
+2.  Add a filter: set the attribute field to $id and enter {{ input1.value }} in the value field. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+
+Output
+
+Check the data structure on the left panel. For example, use `{{list.data[0].documents[0].id}}`(`list` is the name of the action) to get the id of the first document. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+
+You can also use `{{list.data[0].documents.map(documents => documents)}}` to display all data on `table` component. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+
+#### Create a document
+
+| Collection ID | Required | Input or select a collection id from the database                  |
+| ------------- | -------- | ------------------------------------------------------------------ |
+| Document ID   | Required | input an ID. the document will be created with this ID             |
+| Data          | Required | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+
+The following is an example of how to use the data entered in the component in an object. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+
+#### Update a document
+
+| Property      | Description                                                        |
+| ------------- | ------------------------------------------------------------------ |
+| Collection ID | Input or select a collection id from the database                  |
+| Document ID   | input an existing document ID to be updated                        |
+| Data          | An object enclosed in {{ }}. For example, {{ { "key": "value" } }} |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+
+#### Get a document
+
+| Property      | Description                                       |
+| ------------- | ------------------------------------------------- |
+| Collection ID | Input or select a collection id from the database |
+| Document ID   | input an existing document ID                     |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+
+The output data is as follows. Use {{get.data[0]}} to get the document object.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+
+#### Delete a document
+
+| Property      | Description                                       |
+| ------------- | ------------------------------------------------- |
+| Collection ID | Input or select a collection id from the database |
+| Document ID   | input an existing document ID                     |
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+
+### Connect the data from Appwrite with front-end components
+
+#### Configure the actions
+
+Create a delete_document action > fill the Document ID field with {{ input1.value }}. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+
+Add an event handler to the action to set a response when run successfully. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+
+#### Configure components
+
+Add a event handler to button to trigger the delete_document action. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+
+Set the data source of the table to display data. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+
+#### View running results
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
