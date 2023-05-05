@@ -1,0 +1,51 @@
+---
+title: Snel starten
+metaTitle: ILLA Cloud snelle startgids
+description: Versnel je interne tools ontwikkeling
+tagCategory: doc_menu_quick_start_klik
+---
+
+* * *
+
+## <Heading hidden>Overzicht</Heading>
+
+### 1.  ILLA bouwer implementeren
+
+Voordat je ILLA Builder gaat gebruiken, moet je ervoor kiezen om ILLA Cloud of Self-host ILLA te gebruiken om je apps te plaatsen. We bieden je ILLA CLI, Docker Compose, en K8s aan om ILLA in minder dan 5 minuten zelf te organiseren. We zullen je later voorzien van ILLA Cloud om je te helpen eenvoudig aan de slag te gaan met ILLA Builder.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_1.png'
+  alt=""
+/>
+
+### 2.  Gebruikersgegevens ophalen
+
+Registreer en log in bij ILLA Builder, voer dan het resourcetabel in. Klik op de knop "Nieuwe maken" en dan kan je hier het type document selecteren. Wij voorzien u van REST API en MySQL om uw gegevens te koppelen. Postgres, Redis en MongoDB zullen deze maand beschikbaar zijn.
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_2.png'
+  alt=""
+/>
+
+### 3.  Slepen en neerzetten robotarmen
+
+Als uw gegevens zijn voorbereid, kunt u teruggaan naar het tabblad Apps om een app te maken. De invoeglijst staat aan de rechterkant van de pagina. U kunt er één kiezen en het in het kader slepen. Klik vervolgens op de parameters invoegen en aanpassen in het Inspect paneel. We voorzien je van de markdown modus om het label van elke insertie te bewerken. Als u bekend bent met Markdown syntaxis, kunt u snel tekst grootte en dikte aanpassen. In de tussentijd kun je {{double brackets}} gebruiken om actie gegevens in het tekstinvoerveld aan te roepen om meer resultaten te bereiken in ILLA Builder.
+
+### 4.  Actie toevoegen in Apps
+
+Er is een actie nodig om de gegevens te transformeren van bronnen naar invoegen. Wij noemen het actie. Je kunt een query schrijven in actie om gegevens van je bron op te halen. Op deze basis kunt u JavaScript schrijven in acties om gegevensverwerkingsinstructies uit te voeren, zoals filter en samenvoegen. Een MySQL voorbeeld wordt hieronder gegeven:
+
+<img
+  src='https://cdn.illacloud.com/official-website/img/docs/qs_e_3.png'
+  alt=""
+/>
+
+1.  Maak een MySQL actie in de App editor. Benoem het actie1.
+
+2.  Voer de querycode in het paneel in, bijv. SELECT \* FROM gebruikers.
+
+3.  Voer deze actie uit, het resultaat zal worden weergegeven op het onderste paneel.
+
+### 5.  Uw gegevens weergeven
+
+Wanneer de actie succesvol is aangemaakt, moet je het resultaat van de actie koppelen aan het component. U moet de waarde variabele in het inspectiescherm vervangen door het resultaat van de acties {{action1.data}}. Dan zijn de componentgegevens verbonden met het resultaat van de actie. 
