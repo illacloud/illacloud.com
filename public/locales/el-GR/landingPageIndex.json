@@ -87,48 +87,170 @@
     }
   },
   "integrations": {
+    "meta": {
+      "title": "ILLA Cloud Integrations",
+      "description": "ILLA integrates dozens of data sources and provides a very simple data connection method, which can connect to databases or APIs such as MySQL, PostgreSQL, and Hugging Face."
+    },
+    "headerContent": {
+      "title": "Connect to any data source",
+      "description": "With the ability to connect to mainstream databases or any data connected through APIs, ILLA Cloud allows developers to tightly integrate data obtained from the back-end with front-end components. This enables developers to easily write data calls and achieve extensive information interaction by adding resources and actions to response to user events.",
+      "btn_text": "Try for Free",
+      "left_image": "https://cdn.illacloud.com/official-website/img/official-site/features/dataSource.svg"
+    },
     "classify": {
       "database": {
-        "contentList": {
-          "12": {
+        "title": "Database Integrations",
+        "contentList": [
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/mySQL.svg",
+            "name": "MySQL",
+            "description": "An open-source relational database management system that enables efficient storage and retrieval of data.",
+            "sort": 0
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/postgres.svg",
+            "name": "PostgreSQL",
+            "description": "An advanced open-source relational database management system known for its stability and reliability.",
+            "sort": 1
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MariaDB.svg",
+            "name": "MariaDB",
+            "description": "A community-driven open-source fork of MySQL with enhanced features and performance improvements.",
+            "sort": "10"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/TiDB.svg",
+            "name": "TiDB",
+            "description": "A distributed SQL database that supports both SQL and NoSQL workloads with horizontal scalability and fault tolerance.",
+            "sort": "11"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/redis.svg",
+            "name": "Redis",
+            "description": "An in-memory data structure store often used as a database, cache, and message broker.",
+            "sort": "12"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MongoDB.svg",
+            "name": "MongoDB",
+            "description": "A NoSQL document database that stores data in flexible, JSON-like documents.",
+            "sort": "13"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Elastic%20search.svg",
+            "name": "Elastic Search",
+            "description": "A distributed, RESTful search and analytics engine capable of handling large volumes of data.",
+            "sort": "14"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/firebse.svg",
+            "name": "Firebase",
+            "description": "A platform that offers backend services, including a real-time database, authentication, cloud messaging, and more, for mobile and web applications.",
+            "sort": "15"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/supabase.svg",
+            "name": "Supabase DB",
+            "description": "An open-source alternative to Firebase that offers real-time database, authentication, and storage services.",
+            "sort": "16"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/clickhouse%201.svg",
+            "name": "Clickhouse",
+            "description": "An open-source column-oriented database management system designed for online analytical processing (OLAP) workloads.",
+            "sort": "17"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/dynamoDB.svg",
+            "name": "Amazon DynamoDB",
+            "description": "A fully managed NoSQL database service that offers high performance, scalability, and reliability.",
+            "sort": "20"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Snowflake.svg",
+            "name": "Snowflake",
+            "description": "A cloud-based data warehousing platform designed for large-scale data storage and analysis.",
+            "sort": "21"
+          },
+          {
             "name": "Appwrite",
+            "sort": "12",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/appwrite.svg",
             "description": "Μια πλατφόρμα εξυπηρετητών ανοιχτού κώδικα που παρέχει έλεγχο ταυτότητας, βάσεις δεδομένων και υπηρεσίες αποθήκευσης για εφαρμογές web και για κινητά."
           },
-          "13": {
+          {
             "name": "Oracle DB",
             "sort": "13",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/oracledb.svg",
             "description": "Ένα σύστημα διαχείρισης βάσης δεδομένων υψηλής απόδοσης, επεκτάσιμο σχετικό, που προσφέρει ένα ολοκληρωμένο σύνολο χαρακτηριστικών και εργαλείων."
           },
-          "14": {
+          {
             "name": "Κουπόνι",
             "sort": "14",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/couchDB.svg",
             "description": "Μια βάση δεδομένων τεκμηρίωσης NoSQL που παρέχει μια κατανεμημένη αρχιτεκτονική με σταδιακή αντιγραφή και ανίχνευση συγκρούσεων."
           },
-          "15": {
+          {
             "name": "Εξυπηρετητής Microsoft SQL",
             "sort": "15",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/msdb.svg",
             "description": "Ένα σχεσιακό σύστημα διαχείρισης βάσεων δεδομένων που αναπτύχθηκε από τη Microsoft και υποστηρίζει εφαρμογές επεξεργασίας συναλλαγών, επιχειρηματικής νοημοσύνης και ανάλυσης."
           },
-          "16": {
+          {
             "name": "Νέον",
             "sort": "16",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/NEON.svg",
             "description": "Το πλήρως διαχειριζόμενο multi-cloud Postgres με μια γενναιόδωρη ελεύθερη βαθμίδα. Διαχωρίσαμε την αποθήκευση και υπολογίσαμε να προσφέρουμε αυτόματη κατεδάφιση, διακλάδωση και απτή αποθήκευση."
           }
-        }
+        ]
       },
       "api": {
-        "contentList": {
-          "6": {
+        "title": "API Integrations",
+        "contentList": [
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/huggingface.svg",
+            "name": "Hugging Face Inference API ",
+            "description": "An API that offers easy-to-use pre-trained natural language processing models for inference tasks.",
+            "sort": "0"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/huggingface-1.svg",
+            "name": "Hugging Face Inference Endpoint",
+            "description": "An endpoint that allows for easy deployment and scaling of Hugging Face models for inference tasks.",
+            "sort": "1"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/rest%20api.svg",
+            "name": "REST API",
+            "description": "A web-based architectural style for building web services that use HTTP protocols to exchange data between client and server.",
+            "sort": "2"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Amazon%20S3.svg",
+            "name": "S3",
+            "description": "A cloud-based object storage service that provides scalable, secure, and durable data storage for various use cases.",
+            "sort": "3"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/SMTP.svg",
+            "name": "SMTP",
+            "description": "A protocol used for sending and receiving email messages over the internet.",
+            "sort": "4"
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/GraphQL.svg",
+            "name": "GraphQL",
+            "description": "A query language for APIs that provides a more efficient, powerful, and flexible alternative to traditional REST APIs.",
+            "sort": "5"
+          },
+          {
             "name": "Φύλλα Google",
             "sort": "6",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Google%20sheets.svg",
             "description": "Ένα λογισμικό υπολογιστικών φύλλων βασισμένο στο cloud που επιτρέπει στους χρήστες να δημιουργούν και να επεξεργάζονται υπολογιστικά φύλλα online ενώ συνεργάζονται με άλλους σε πραγματικό χρόνο."
           }
-        }
+        ]
       }
     }
   }
