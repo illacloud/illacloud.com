@@ -87,145 +87,11 @@
     }
   },
   "integrations": {
-    "meta": {
-      "title": "ILLA Cloud 数据集成",
-      "description": "ILLA集成了数十种数据源，提供了十分简单的数据连接方式，可以连接MySQL、PostgreSQL、Hugging Face等数据库或API"
-    },
-    "headerContent": {
-      "title": "连接到任何数据源",
-      "description": "LLA Cloud 能够连接主流数据库或通过 API 连接的任何数据，允许开发人员将从后端获取的数据与前端组件紧密集成。 这使得开发者可以轻松编写数据调用，通过添加资源和动作来响应用户事件，从而实现广泛的信息交互。",
-      "btn_text": "免费体验",
-      "left_image": "https://cdn.illacloud.com/official-website/img/official-site/features/dataSource.svg"
-    },
-    "classify": {
-      "database": {
-        "title": "数据库整合",
-        "contentList": [
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/mySQL.svg",
-            "name": "MySQL",
-            "description": "一种开源关系数据库管理系统，可实现高效的数据存储和检索。",
-            "sort": 0
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MariaDB.svg",
-            "name": "MariaDB",
-            "description": "一个社区驱动的 MySQL 开源分支，具有增强的功能和性能改进。",
-            "sort": 10
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MariaDB.svg",
-            "name": "TiDB",
-            "description": "一种分布式 SQL 数据库，支持 SQL 和 NoSQL 工作负载，具有水平可伸缩性和容错能力。",
-            "sort": "11"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/TiDB.svg",
-            "name": "Redis",
-            "description": "内存中的数据结构存储，通常用作数据库、缓存和消息代理。",
-            "sort": "12"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/redis.svg",
-            "name": "MongoDB",
-            "description": "一个 NoSQL 文档数据库，将数据存储在灵活的、类似 JSON 的文档中。",
-            "sort": "13"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MongoDB.svg",
-            "name": "Elastic Search",
-            "description": "能够处理大量数据的分布式 RESTful 搜索和分析引擎。",
-            "sort": "14"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Elastic%20search.svg",
-            "name": "Firebase",
-            "description": "一个为移动和 Web 应用程序提供后端服务的平台，包括实时数据库、身份验证、云消息传递等。",
-            "sort": "15"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/firebse.svg",
-            "name": "Supabase DB",
-            "description": "Firebase 的开源替代品，提供实时数据库、身份验证和存储服务。",
-            "sort": "16"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/supabase.svg",
-            "name": "Clickhouse",
-            "description": "一个开源的面向列的数据库管理系统，专为在线分析处理 (OLAP) 工作负载而设计。",
-            "sort": "17"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/clickhouse%201.svg",
-            "name": "Snowflake",
-            "description": "基于云的数据仓库平台，专为大规模数据存储和分析而设计。",
-            "sort": "21"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/dynamoDB.svg",
-            "name": "Amazon DynamoDB",
-            "description": "一种完全托管的 NoSQL 数据库服务，可提供高性能、可扩展性和可靠性。",
-            "sort": "20"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Snowflake.svg",
-            "name": "PostgreSQL",
-            "description": "一个先进的开源关系数据库管理系统，以其稳定性和可靠性着称。",
-            "sort": "1"
-          }
-        ]
-      },
-      "api": {
-        "title": "API 整合",
-        "contentList": [
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/huggingface.svg",
-            "name": "Hugging Face Inference API ",
-            "description": "一种 API，可为推理任务提供易于使用的预训练自然语言处理模型。",
-            "sort": "0"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/huggingface-1.svg",
-            "name": "Hugging Face Inference Endpoint",
-            "description": "允许轻松部署和扩展用于推理任务的拥抱面模型的端点。",
-            "sort": "1"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/rest%20api.svg",
-            "name": "REST API",
-            "description": "一种基于 Web 的架构风格，用于构建使用 HTTP 协议在客户端和服务器之间交换数据的 Web 服务。",
-            "sort": "2"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Amazon%20S3.svg",
-            "name": "S3",
-            "description": "一种基于云的对象存储服务，可为各种用例提供可扩展、安全且持久的数据存储。",
-            "sort": "3"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/SMTP.svg",
-            "name": "SMTP",
-            "description": "用于通过 Internet 发送和接收电子邮件消息的协议。",
-            "sort": "4"
-          },
-          {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/GraphQL.svg",
-            "name": "GraphQL",
-            "description": "一种 API 查询语言，它提供了比传统 REST API 更高效、更强大、更灵活的替代方案。",
-            "sort": "5"
-          }
-        ]
-      }
-    }
-  },
-  "intergrations": {
     "classify": {
       "database": {
         "contentList": {
           "12": {
-            "name": "Appwrite",
-            "sort": "12",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/appwrite.svg",
+            "name": "应用程序写",
             "description": "一个开放源码后端服务器平台，为网络和移动应用程序提供认证、数据库和存储服务。"
           },
           "13": {
@@ -241,7 +107,7 @@
             "description": "一个以文件为导向的数据库，它提供一个分布式架构，带有递增复制和冲突检测。"
           },
           "15": {
-            "name": "Microsoft SQL Server",
+            "name": "Microsoft SQL 服务器",
             "sort": "15",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/msdb.svg",
             "description": "微软开发的关系数据库管理系统支持交易处理、商业情报和分析应用。"
