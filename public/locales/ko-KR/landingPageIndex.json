@@ -16,7 +16,7 @@
     },
     "classify": {
       "inputs": {
-        "title": "입력",
+        "title": "Inputs",
         "contentList": [
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/components-new/type-upload.svg",
@@ -51,7 +51,7 @@
         ]
       },
       "data": {
-        "title": "데이터",
+        "title": "Data",
         "contentList": [
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/components-new/type-chart.svg",
@@ -68,18 +68,18 @@
         ]
       },
       "presentation": {
-        "title": "프레젠테이션",
+        "title": "Presentation",
         "contentList": [
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/components/pdf.svg",
             "name": "PDF",
-            "description": "The 'PDF' component in ILLA Cloud is a display element that allows users to view and interact with PDF files within the application.",
+            "description": "ILLA Cloud의 'PDF' 구성 요소는 사용자가 애플리케이션 내에서 PDF 파일을 보고 상호 작용할 수 있도록 하는 표시 요소입니다.",
             "sort": 0
           },
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/components/video.svg",
             "name": "Video",
-            "description": "The 'Video' component in ILLA Cloud is a display element that allows users to play and interact with videos within the application.",
+            "description": "ILLA 클라우드의 '비디오' 구성 요소는 사용자가 애플리케이션 내에서 비디오를 재생하고 상호 작용할 수 있도록 하는 표시 요소입니다.",
             "sort": 1
           }
         ]
@@ -105,18 +105,24 @@
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/mySQL.svg",
             "name": "MySQL",
             "description": "ILLA Cloud로 MySQL에 연결하고 몇 번의 클릭만으로 내부 도구를 구축하십시오.",
+            "sort": 0
+          },
+          {
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/postgres.svg",
+            "name": "PostgreSQL",
+            "description": "향상된 기능과 성능 개선을 갖춘 커뮤니티 중심의 MySQL 오픈 소스 포크입니다.",
             "sort": 1
           },
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MariaDB.svg",
             "name": "MariaDB",
-            "description": "향상된 기능과 성능 개선을 갖춘 커뮤니티 중심의 MySQL 오픈 소스 포크입니다.",
-            "sort": 10
+            "description": "수평적 확장성과 내결함성을 갖춘 SQL 및 NoSQL 워크로드를 모두 지원하는 분산 SQL 데이터베이스입니다.",
+            "sort": "10"
           },
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/TiDB.svg",
             "name": "TiDB",
-            "description": "수평적 확장성과 내결함성을 갖춘 SQL 및 NoSQL 워크로드를 모두 지원하는 분산 SQL 데이터베이스입니다.",
+            "description": "데이터베이스, 캐시 및 메시지 브로커로 자주 사용되는 메모리 내 데이터 구조 저장소입니다.",
             "sort": "11"
           },
           {
@@ -126,62 +132,86 @@
             "sort": "12"
           },
           {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/redis.svg",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MongoDB.svg",
             "name": "MongoDB",
-            "description": "유연한 JSON 유사 문서에 데이터를 저장하는 NoSQL 문서 데이터베이스입니다.",
+            "description": "A NoSQL document database that stores data in flexible, JSON-like documents.",
             "sort": "13"
           },
           {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/MongoDB.svg",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Elastic%20search.svg",
             "name": "Elastic Search",
-            "description": "대량의 데이터를 처리할 수 있는 분산형 RESTful 검색 및 분석 엔진입니다.",
+            "description": "A distributed, RESTful search and analytics engine capable of handling large volumes of data.",
             "sort": "14"
           },
           {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Elastic%20search.svg",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/firebse.svg",
             "name": "Firebase",
-            "description": "모바일 및 웹 애플리케이션을 위한 실시간 데이터베이스, 인증, 클라우드 메시징 등을 포함한 백엔드 서비스를 제공하는 플랫폼입니다.",
+            "description": "A platform that offers backend services, including a real-time database, authentication, cloud messaging, and more, for mobile and web applications.",
             "sort": "15"
           },
           {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/firebse.svg",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/supabase.svg",
             "name": "Supabase DB",
-            "description": "실시간 데이터베이스, 인증 및 스토리지 서비스를 제공하는 Firebase의 오픈 소스 대안입니다.",
+            "description": "An open-source alternative to Firebase that offers real-time database, authentication, and storage services.",
             "sort": "16"
           },
           {
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/supabase.svg",
-            "name": "Clickhouse",
-            "description": "OLAP(온라인 분석 처리) 워크로드용으로 설계된 오픈 소스 열 기반 데이터베이스 관리 시스템입니다.",
-            "sort": "17"
-          },
-          {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/clickhouse%201.svg",
-            "name": "Snowflake",
-            "description": "대규모 데이터 저장 및 분석을 위해 설계된 클라우드 기반 데이터 웨어하우징 플랫폼입니다.",
-            "sort": "21"
+            "name": "Clickhouse",
+            "description": "An open-source column-oriented database management system designed for online analytical processing (OLAP) workloads.",
+            "sort": "17"
           },
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/dynamoDB.svg",
             "name": "Amazon DynamoDB",
-            "description": "고성능, 확장성 및 안정성을 제공하는 완전 관리형 NoSQL 데이터베이스 서비스입니다.",
+            "description": "A fully managed NoSQL database service that offers high performance, scalability, and reliability.",
             "sort": "20"
           },
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Snowflake.svg",
-            "name": "PostgreSQL",
-            "description": "ILLA Cloud로 PostgreSQL에 연결하고 몇 번의 클릭만으로 내부 도구를 구축하십시오.",
-            "sort": "2"
+            "name": "Snowflake",
+            "description": "A cloud-based data warehousing platform designed for large-scale data storage and analysis.",
+            "sort": "21"
+          },
+          {
+            "name": "Appwrite",
+            "sort": "12",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/appwrite.svg",
+            "description": "An open-source backend server platform that provides authentication, database, and storage services for web and mobile applications."
+          },
+          {
+            "name": "Oracle DB",
+            "sort": "13",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/oracledb.svg",
+            "description": "A high-performance, scalable relational database management system that offers a comprehensive set of features and tools."
+          },
+          {
+            "name": "CouchDB",
+            "sort": "14",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/couchDB.svg",
+            "description": "A NoSQL document-oriented database that provides a distributed architecture with incremental replication and conflict detection."
+          },
+          {
+            "name": "Microsoft SQL Server",
+            "sort": "15",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/msdb.svg",
+            "description": "A relational database management system developed by Microsoft that supports transaction processing, business intelligence, and analytics applications."
+          },
+          {
+            "name": "Neon",
+            "sort": "16",
+            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/NEON.svg",
+            "description": "The fully managed multi-cloud Postgres with a generous free tier. We separated storage and compute to offer autoscaling, branching, and bottomless storage."
           }
         ]
       },
       "api": {
-        "title": "API 통합",
+        "title": "API Integrations",
         "contentList": [
           {
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/huggingface.svg",
             "name": "Hugging Face Inference API ",
-            "description": "추론 작업을 위해 사용하기 쉬운 사전 훈련된 자연어 처리 모델을 제공하는 API입니다.",
+            "description": "An API that offers easy-to-use pre-trained natural language processing models for inference tasks.",
             "sort": "0"
           },
           {
@@ -213,56 +243,14 @@
             "name": "GraphQL",
             "description": "기존 REST API에 대한 보다 효율적이고 강력하며 유연한 대안을 제공하는 API용 쿼리 언어입니다.",
             "sort": "5"
-          }
-        ]
-      }
-    }
-  },
-  "intergrations": {
-    "classify": {
-      "database": {
-        "contentList": {
-          "12": {
-            "name": "Appwrite",
-            "sort": "12",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/appwrite.svg",
-            "description": "An open-source backend server platform that provides authentication, database, and storage services for web and mobile applications."
           },
-          "13": {
-            "name": "Oracle DB",
-            "sort": "13",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/oracledb.svg",
-            "description": "A high-performance, scalable relational database management system that offers a comprehensive set of features and tools."
-          },
-          "14": {
-            "name": "CouchDB",
-            "sort": "14",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/couchDB.svg",
-            "description": "A NoSQL document-oriented database that provides a distributed architecture with incremental replication and conflict detection."
-          },
-          "15": {
-            "name": "Microsoft SQL Server",
-            "sort": "15",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/msdb.svg",
-            "description": "A relational database management system developed by Microsoft that supports transaction processing, business intelligence, and analytics applications."
-          },
-          "16": {
-            "name": "Neon",
-            "sort": "16",
-            "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/NEON.svg",
-            "description": "The fully managed multi-cloud Postgres with a generous free tier. We separated storage and compute to offer autoscaling, branching, and bottomless storage."
-          }
-        }
-      },
-      "api": {
-        "contentList": {
-          "6": {
+          {
             "name": "Google Sheets",
             "sort": "6",
             "logo": "https://cdn.illacloud.com/official-website/img/official-site/intergration/Google%20sheets.svg",
-            "description": "A cloud-based spreadsheet software that enables users to create and edit spreadsheets online while collaborating with others in real-time."
+            "description": "사용자가 실시간으로 다른 사람과 공동 작업하면서 온라인으로 스프레드시트를 만들고 편집할 수 있는 클라우드 기반 스프레드시트 소프트웨어입니다."
           }
-        }
+        ]
       }
     }
   }
