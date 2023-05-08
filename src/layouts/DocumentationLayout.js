@@ -46,7 +46,7 @@ export function DocumentationHeader(props) {
         key="og:description"
         name="og:description"
         property="og:description"
-        content={meta.description ?? meta.desc}
+        content={meta.desc}
       />
 
       <meta
@@ -57,7 +57,7 @@ export function DocumentationHeader(props) {
           }`}
       />
 
-      <meta name="description" content={meta.description ?? meta.desc}></meta>
+      <meta name="description" content={meta.desc}></meta>
       {meta.keywords ? (
         <meta name="keywords" content={meta.keywords?.toString()}></meta>
       ) : null}
