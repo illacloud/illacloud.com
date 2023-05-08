@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Nav } from '@/components/home/Nav'
 import { Footer } from '@/components/home/home-footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -16,9 +16,6 @@ import { getStars } from '@/utils/getStars';
 
 const LandingPageIndex = ({ pageName, starCounts }) => {
   const router = useRouter()
-  if (!pageMap[pageName]) {
-    router.replace('/404')
-  }
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
 
@@ -27,6 +24,13 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
     returnObjects: true
   })
 
+  useEffect(() => {
+     // use the router on the client side
+    if (!content || Object.keys(content).length <= 0) {
+      router.replace('/404')
+    }
+  }, [content, router])
+
   if (!content || Object.keys(content).length <= 0) return null
 
   return (
@@ -34,7 +38,7 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
       <Head>
         <title>{t(`${pageName}.meta.title`)}</title>
         <meta name="description" content={t(`${pageName}.meta.description`)} />
-        <link rel="canonical" href={`https://www.illacloud.com/${pageName}`} />
+        <link rel="canonical" href={`https://www.illacloud.com/${router.locale}/${pageName}`} />
       </Head>
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
