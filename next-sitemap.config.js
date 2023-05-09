@@ -1,10 +1,13 @@
 /** @type {import("next-sitemap").IConfig} */
+const { locales } = require('./src/constants/language')
+
 const site = process.env.SITE_URL || 'https://www.illacloud.com'
 const getHrefLan = (href) => {
-  if (href.includes('zh-CN')) return 'zh'
-  else if (href.includes('ko-KR')) return 'ko'
-  else if (href.includes('ja-JP')) return 'ja'
-  else return 'en'
+  for (let i = 0; i < locales.length; i++) {
+    if (href.includes(locales[i])) return locales[i].slice(0, 2).toLocaleLowerCase()
+  }
+
+  return "en";
 }
 
 const transformUrl = async (list, config) => {

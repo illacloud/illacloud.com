@@ -203,6 +203,8 @@ export function ContentsLayout({
         repo={meta.repo}
         badge={{ key: 'ILLA version', value: meta.featureVersion }}
         section={section}
+        crowdinRepo={meta.crowdinRepo}
+        categoryName={meta.categoryName}
       />
       <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>
         {classes ? (

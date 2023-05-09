@@ -38,7 +38,7 @@ export function DocumentationHeader(props) {
         key="og:image"
         name="og:image"
         property="og:image"
-        content={`https://illa.cloud${meta.image ??
+        content={`${meta.image ??
           `https://cdn.illacloud.com/official-website/img/illa_logo.png`
           }`}
       />
@@ -52,7 +52,7 @@ export function DocumentationHeader(props) {
       <meta
         key="image"
         name="image"
-        content={`https://illa.cloud${meta.image ??
+        content={`${meta.image ??
           `https://cdn.illacloud.com/official-website/img/illa_logo.png`
           }`}
       />
@@ -70,14 +70,14 @@ export function DocumentationHeader(props) {
       />
       <meta
         name="twitter:description"
-        content={meta.description ?? meta.desc}
+        content={meta.desc}
       />
       {meta.image ? (
         <>
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content={`https://illa.cloud${meta.image}`}
+            content={meta.image}
           />
         </>
       ) : (
