@@ -40,7 +40,7 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={`https://www.illacloud.com/${locale}/${pageName}/${name}`} />
+        <link rel="canonical" href={`https://www.illacloud.com/${locale === 'en-US' ? '' : `${locale}/`}${pageName}/${name}`} />
       </Head>
       <div className='w-full px-0 bg-white overflow-y-auto'>
         <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
@@ -53,7 +53,7 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <div className='lg:pt-[50px] overflow-hidden'>
+      <div className='lg:mt-[50px] overflow-hidden'>
         <Footer />
       </div>
     </>
