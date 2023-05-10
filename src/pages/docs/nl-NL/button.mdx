@@ -1,0 +1,87 @@
+---
+title: Knop
+metaTitle: Component Doc | ILLA Cloud
+desc: Ontdek hoe je het button component in ILLA Cloud gebruikt, een laag platform voor het bouwen van gereedschappen. Door op de knop te klikken kan een actie geactiveerd worden of een functie uitgevoerd worden.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Wat is Knop?</h2>
+
+Het Button component staat gebruikers toe om een actie te activeren of een functie uit te voeren door op de knop te klikken. 
+
+### Eigenschappen
+
+| Eigenschappen | Beschrijving                                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tekstveld     | De tekst die wordt weergegeven voor de knop                                                                                                |
+| Event Handler | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                         |
+| Laden...      | Of de component een laadindicator moet tonen.                                                                                              |
+| Uitgeschakeld | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.    |
+| Knopinfo      | Gebruiker kan component tooltip hier invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund. |
+| Hidden        | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                  |
+| Variant       | Sta gebruikers toe om te kiezen tussen twee verschillende stijlen voor de knop: vul of omlijning.                                          |
+| Thema kleur   | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                 |
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                               |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| Click       | Wanneer een gebruiker op deze knop klikt, voert een specifieke actie uit die is aangepast door gebruikers. |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap | Beschrijving                                                            |
+| ------------------- | ----------------------------------------------------------------------- |
+| kleurenschema       | achtergrondkleur van de knop                                            |
+| uitgeschakeld       | een booleaanse waarde geeft de uitgeschakelde status aan                |
+| weergavenaam        | de naam van dit onderdeel (bijv. knop1)                                 |
+| hidden              | een Booleaanse waarde geeft de verborgen status van knop aan            |
+| verborgendynamisch  | een booleaanse waarde geeft de verborgen dynamische status van knop aan |
+| laden               | waarde laden                                                            |
+| Tekst               | tekst waarde weergegeven op de knop                                     |
+| tooltipText         | waarde van tekst tooltip                                                |
+| Variant             | variant stijl van de knop (vul of omlijnd)                              |
+
+### Gebruik geval
+
+Vervolgens zullen we dynamisch laten zien hoe we de knop moeten gebruiken om het **`form`** component te beheren. 
+
+#### Stap 1 Voeg een actie toe
+
+We hebben een tabel met de naam **`countries`**, inclusief 5 kolommen: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. De namen van de landen zijn wat we willen gebruiken als optiewaarde, die worden opgeslagen de **`en_short_name`** kolom.
+
+Dan kunnen we een nieuwe actie voor Supabase maken uit de actielijst, waarin alle gegevens in **`landen`** staan en supabasedb1 genoemd worden 
+
+```sql
+Selecteer distinct en_short_name als waarde uit "Landen" volgorde op waarde;
+```
+
+Dit is wat we als resultaat hebben:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 2 Voeg een component toe
+
+Eerst voegen we de **`Formulier`** component toe en label het als 'Enquête'. Daarna slepen we een invoercomponent, een selecteer component en een getal invoer component in het formulier, waarbij ze worden aangeduid als **`Naam`, `nationality`,** en **`Age`.**
+
+Vervolgens brengen we de **`landen`** waarden in kaart om component te selecteren door 
+
+1.  in mapped modus, stel data bronnen in op{{supabasedb1.data}}\` 
+2.  in de mapped optie, stel waarde in om \`{{item.value}} te zijn
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Vervolgens kunnen we de **`Submit`** knop configureren om de **`Send`** methode van **`Formulier`** component te beheren. 
+
+1.  In de Event Handler bewerken, selecteer **`Control component`** in actie, selecteer het **`form`** onderdeel dat u wilt bijwerken als het doel van het event.
+2.  Kies de **`Submit`** actie. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
