@@ -1,0 +1,92 @@
+---
+title: Button
+metaTitle: Button Component Doc | ILLA Cloud 
+desc: Discover how to use the button component in ILLA Cloud, a low-code platform for building tools. Button allows users to trigger an action or perform a function by clicking.
+
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=en&filter=basic&value=0
+tagCategory: doc_menu_button_click
+
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 0
+
+---
+
+## <h2 hidden>What is Button?</h2>
+
+The Button component allows users to trigger an action or perform a function by clicking on the button. 
+
+### Properties
+
+| Properties | Description |
+| --- | --- |
+| Text | The text displayed for the button |
+| Event Handler | Trigger queries, control components, or call other APIs in response to component events. |
+| Loading | Whether the component should show a loading indicator. |
+| Disabled | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
+| Tooltip | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
+| Hidden | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value. |
+| Variant | Allow users to choose between two different styles for the button: fill or outline. |
+| Theme Color | Allows users to specify the button's background color and opacity |
+
+### Event handler
+
+| Event | Description |
+| --- | --- |
+| Click | When a user click this button, perform specific action customized by users. |
+
+### Data
+
+The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name | Description |
+| --- | --- |
+| colorScheme | background color of the button |
+| disabled | a Boolean value indicate the disabled status |
+| displayName | the name of this component (ie button1) |
+| hidden | a Boolean value indicate the hidden status of button |
+| hiddenDynamic | a Boolean value indicate the hidden dynamic status of button |
+| loading | loading value |
+| text | text value displayed on the button |
+| tooltipText | value of tooltip text |
+| variant | variant style of the button (fill or outlined) |
+
+### Use case
+
+Next, we will demonstrate how to use button to control the **`form`** component dynamically. 
+
+#### Step 1 Add an action
+
+We have created a table named **`countries`**, including 5 columns:  **`num_code`**,  **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. The countries’ names are what we want to use as options value, which are stored the **`en_short_name`** column.
+
+Then we can create a new action for Supabase from the action list, listing all data in **`countries`** and named supabasedb1 
+
+```sql
+select distinct en_short_name as value from "Countries" order by value;
+```
+
+This is what we have as output:
+
+<img src=”https://cdn.illacloud.com/official-website/img/docs/countries.png" alt=”” />
+
+Click **`Save`** and **`Run`** to activate this action.
+
+#### Step 2 Add a Component
+
+First we add the **`Form`** component and label it as “Survey”. Then we drag a Input component, a select component and a number input component into the form, labeling them as **`Name`, `Nationality`,** and **`Age`.**
+
+ 
+
+We then map the **`countries`** values to select component by 
+
+1. in mapped mode, set data sources to be `{{supabasedb1.data}}` 
+2. in mapped option, set value to be `{{item.value}}`
+
+<img src=”https://cdn.illacloud.com/official-website/img/docs/button1.png” alt=”” />
+
+Then we can configure the **`Submit`** button to control the **`Send`** method of **`Form`** component. 
+
+1. In the Edit event handler, select **`Control component`** in action, select the **`form`** component that you want to update as the target of the event.
+2. Choose the **`Submit`** action. 
+
+<img src=“https://cdn.illacloud.com/official-website/img/docs/countries2.png” alt=”” />
