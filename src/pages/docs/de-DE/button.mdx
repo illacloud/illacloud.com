@@ -1,0 +1,87 @@
+---
+title: Button
+metaTitle: Button Komponentendoc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Schaltflächenkomponente in ILLA Cloud, einer Low-Code-Plattform für die Erstellung von Werkzeugen verwenden können. Button erlaubt es Benutzern, eine Aktion auszulösen oder eine Funktion durch Klicken auszuführen.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=de&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Was ist Button?</h2>
+
+Die Schaltflächenkomponente erlaubt es Benutzern, eine Aktion zu starten oder eine Funktion auszuführen, indem Sie auf die Schaltfläche klicken. 
+
+### Eigenschaften
+
+| Eigenschaften | Beschreibung                                                                                                                                        |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Text          | Der angezeigte Text für den Button                                                                                                                  |
+| Event-Handler | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                             |
+| Lädt          | Gibt an, ob die Komponente eine Ladeanzeige angeben soll.                                                                                           |
+| Deaktiviert   | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist. |
+| Tooltip       | Der Benutzer kann hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.   |
+| Hidden        | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.        |
+| Variante      | Benutzern erlauben, zwischen zwei verschiedenen Stilen für den Knopf zu wählen: Füllen oder umreißen.                                               |
+| Theme-Farbe   | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                          |
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                         |
+| -------- | -------------------------------------------------------------------------------------------------------------------- |
+| Click    | Wenn ein Benutzer auf diesen Button klickt, führen Sie spezifische Aktionen aus, die von Benutzern angepasst wurden. |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname | Beschreibung                                                                     |
+| ---------------- | -------------------------------------------------------------------------------- |
+| farbenschema     | Hintergrundfarbe des Buttons                                                     |
+| deaktiviert      | ein boolescher Wert zeigt den deaktivierten Status an                            |
+| anzeiger         | der Name dieser Komponente (dh Button1)                                          |
+| hidden           | ein boolescher Wert zeigt den versteckten Status der Schaltfläche an             |
+| hiddenDynamic    | ein boolescher Wert zeigt den verborgenen dynamischen Status der Schaltfläche an |
+| lade             | ladewert                                                                         |
+| text             | auf der Schaltfläche angezeigter Textwert                                        |
+| tooltipText      | Wert des Tooltip-Textes                                                          |
+| variante         | varianter Stil des Buttons (Füllen oder umreißen)                                |
+
+### Fall
+
+Als nächstes zeigen wir, wie man die **`form`** Komponente dynamisch mit der Schaltfläche steuern kann. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Wir haben eine Tabelle namens **`Länder`** mit 5 Spalten erstellt: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Die Namen der Länder sind das, was wir als Optionswert verwenden wollen, der in der Spalte **`en_short_name`** gespeichert wird.
+
+Dann können wir eine neue Aktion für Supabase aus der Aktionsliste erstellen, die alle Daten in **`Länder`** auflistet und supabasedb1 
+
+```sql
+wählen Sie einen eindeutigen de_short_name als Wert aus der Reihenfolge "Länder" nach Wert;
+```
+
+Das ist es, was uns als Ergebnis vorliegt:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 2 Komponente hinzufügen
+
+Zuerst fügen wir die **`Form`** Komponente hinzu und benennen sie als 'Survey'. Dann ziehen wir eine Eingabekomponente, eine ausgewählte Komponente und eine Zahleneingabekomponente in das Formular und benennen sie als **`Name`, `Nationality`,** und **`Alter`.**
+
+Wir ordnen dann die **`Länder`** Werte zu, um die Komponente auszuwählen nach 
+
+1.  im zugeordneten Modus, setzen Sie Datenquellen auf `{{supabasedb1.data}}` 
+2.  in zugeordneter Option, setze Wert auf `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Dann können wir den **`Senden`** Button konfigurieren, um die **`Senden`** Methode der **`Form`** Komponente zu steuern. 
+
+1.  Wählen Sie im Ereignis-Handler **`Control component`** in Aktion aus, wählen Sie die Komponente **`form`** aus, die als Ziel des Ereignisses aktualisiert werden soll.
+2.  Wähle die **`Absenden`** Aktion. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

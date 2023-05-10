@@ -1,0 +1,87 @@
+---
+title: Bouton
+metaTitle: Doc de composant bouton | ILLA Cloud
+desc: Découvrez comment utiliser le composant de bouton dans ILLA Cloud, une plateforme à code bas pour les outils de construction. Le bouton permet aux utilisateurs de déclencher une action ou d'effectuer une fonction en cliquant dessus.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=fr&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Qu'est-ce que le Bouton ?</h2>
+
+Le composant Bouton permet aux utilisateurs de déclencher une action ou d'effectuer une fonction en cliquant sur le bouton. 
+
+### Propriétés
+
+| Propriétés                | Libellé                                                                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Texte du texte            | Le texte affiché pour le bouton                                                                                                                        |
+| Gestionnaire d'événements | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                   |
+| En cours de chargement    | Si le composant doit afficher un indicateur de chargement.                                                                                             |
+| Désactivé                 | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                          |
+| Info-bulle                | L'utilisateur peut entrer l'info-bulle de composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge. |
+| Hidden                    | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                               |
+| Variante                  | Permettre aux utilisateurs de choisir entre deux styles différents pour le bouton: remplir ou contourner.                                              |
+| Couleur du thème          | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                  |
+
+### Gestionnaire d'événements
+
+| Evénement | Libellé                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Click     | Quand un utilisateur clique sur ce bouton, effectuer une action spécifique personnalisée par les utilisateurs. |
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété    | Libellé                                                          |
+| ---------------------- | ---------------------------------------------------------------- |
+| Schéma de couleurs     | couleur de fond du bouton                                        |
+| désactivée             | une valeur booléenne indique le statut désactivé                 |
+| nomdeaffichage         | le nom de ce composant (par exemple : Bouton 1)                  |
+| hidden                 | une valeur booléenne indique l'état caché du bouton              |
+| cachéDynamique         | une valeur booléenne indique le statut dynamique caché du bouton |
+| en cours de chargement | valeur de chargement                                             |
+| texte                  | valeur du texte affichée sur le bouton                           |
+| Texte de l'infobulle   | valeur du texte de l'info-bulle                                  |
+| variante               | style de variante du bouton (remplissage ou contourné)           |
+
+### Cas d'utilisation
+
+Ensuite, nous allons montrer comment utiliser le bouton pour contrôler le composant **`form`** de façon dynamique. 
+
+#### Étape 1 Ajouter une action
+
+Nous avons créé une table nommée **`countries`**, incluant 5 colonnes : **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Les noms des pays sont ce que nous voulons utiliser comme valeur d'options, qui sont stockées dans la colonne **`en_short_name`**.
+
+Ensuite, nous pouvons créer une nouvelle action pour Supabase à partir de la liste d'actions, listant toutes les données dans **`pays`** et nommé supabasedb1 
+
+```sql
+sélectionner en_short_name distincte comme valeur à partir de "Pays" ordonner par valeur;
+```
+
+C'est ce que nous avons comme résultat:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Cliquez sur **`Save`** et **`Run`** pour activer cette action.
+
+#### Étape 2 Ajouter un composant
+
+Tout d'abord, nous ajoutons le composant **`Form`** et le nommons comme 'Enquête'. Ensuite, nous faisons glisser un composant Entrée, un composant de sélection et un composant de saisie de nombres dans le formulaire, en les étiquetant comme **`Name`, `Nationality`,** et **`Âge`.**
+
+Nous associons ensuite les valeurs **`pays`** pour sélectionner le composant par 
+
+1.  en mode mappé, définissez les sources de données à `{{supabasedb1.data}}` 
+2.  en option mappée, définir la valeur à `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Ensuite, nous pouvons configurer le bouton **`Submit`** pour contrôler la méthode **`Send`** du composant **`Form`**. 
+
+1.  Dans le gestionnaire d'édition d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`form`** que vous voulez mettre à jour comme cible de l'événement.
+2.  Choisissez l'action **`Submit`** . 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

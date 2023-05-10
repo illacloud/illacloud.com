@@ -1,0 +1,87 @@
+---
+title: Buton
+metaTitle: Componentă buton domeniu ILLA Cloud
+desc: Descoperiți cum să utilizați componenta butonului în ILLA Cloud, o platformă cu coduri joase pentru uneltele de construcție. Butonul permite utilizatorilor să declanșeze o acțiune sau să efectueze o funcție prin click.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/303?languages=ro&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Asamblarea componentelor
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Ce este Button?</h2>
+
+Componenta Buton permite utilizatorilor să declanșeze o acțiune sau să efectueze o funcție făcând clic pe buton. 
+
+### Proprietăți
+
+| Proprietăți             | Descriere                                                                                                                                       |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Text                    | Textul afişat pentru buton                                                                                                                      |
+| Gestionar de evenimente | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                |
+| Încărcare               | Dacă componenta ar trebui să afișeze un indicator de încărcare.                                                                                 |
+| Dezactivat              | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                 |
+| Tooltip                 | Utilizatorul poate introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat. |
+| Hidden                  | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                |
+| Variantă                | Permite utilizatorilor să aleagă între două stiluri diferite pentru buton: completare sau contur.                                               |
+| Culoare temă            | Permite utilizatorilor să specifice culoarea de fundal şi opacitatea butonului                                                                  |
+
+### Gestionar de evenimente
+
+| Eveniment | Descriere                                                                                                |
+| --------- | -------------------------------------------------------------------------------------------------------- |
+| Click     | Când un utilizator dă click pe acest buton, efectuează o acțiune specifică personalizată de utilizatori. |
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin **`{{componentName.propertyName}}`** în aplicație.
+
+| Nume proprietate | Descriere                                                     |
+| ---------------- | ------------------------------------------------------------- |
+| culori           | Culoarea de fundal a butonului                                |
+| dezactivat       | o valoare Booleană indică starea persoanelor cu handicap      |
+| AfișeazăNume     | numele acestei componente (de ex. buton1)                     |
+| hidden           | o valoare Booleană indică starea ascunsă a butonului          |
+| hiddenDinamic    | o valoare Booleană indică starea dinamică ascunsă a butonului |
+| încărcare        | valoare de încărcare                                          |
+| text             | valoarea textului afişată pe buton                            |
+| tooltipText      | valoarea textului cu înclinare unelte                         |
+| variantă         | stilul de variantă al butonului (umplere sau subliniere)      |
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să folosim butonul pentru a controla componenta **`form`** dinamic. 
+
+#### Pasul 1 Adăugare acţiune
+
+Am creat un tabel numit **`ţări`**, inclusiv 5 coloane: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Numele țărilor sunt ceea ce vrem să folosim ca valoare de opțiune, care sunt stocate ca coloana **en_short_name\`**.
+
+Apoi putem crea o nouă acţiune pentru Supabase din lista de acţiuni, enumerând toate datele în **`ţări`** şi numit supabasedb1 
+
+```sql
+selectează distinct en_short_name ca valoare din ordinul "Țari" după valoare;
+```
+
+Aceasta este ceea ce avem ca rezultate:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Faceţi clic pe **`Salvează`** şi **`Run`** pentru a activa această acţiune.
+
+#### Pasul 2 Adaugă o Componentă
+
+Mai întâi adăugăm componenta **`Format`** și o etichetăm ca 'Studiu'. Apoi glisăm o componentă de intrare, o componentă de selectare şi un număr de introducere a componentei în forma, etichetându-le ca **`Nume`, `Nationalitate`,** şi **`Age`.**
+
+Apoi cartografiem valorile **`ţări`** pentru a selecta componenta cu 
+
+1.  în modul mapat, setează sursele de date pentru a fi `{{supabasedb1.data}}` 
+2.  în opțiunea cartografiată, valoarea setată să fie `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Apoi putem configura butonul **`Submit`** pentru a controla metoda **`Trimite`** a componentei **`Form`**. 
+
+1.  În gestionarul de editare a evenimentului, selectaţi **`Componenta Control `** în acţiune, selectaţi componenta **`form`** pe care doriţi să o actualizaţi ca ţintă a evenimentului.
+2.  Alege **acţiunea `Submit`**. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

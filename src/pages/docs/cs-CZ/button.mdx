@@ -1,0 +1,87 @@
+---
+title: Tlačítko
+metaTitle: Tlačítko Komponenta | ILLA Cloud
+desc: Zjistěte, jak používat komponentu tlačítka v ILLA Cloud, nízkokódové platformě pro stavební nástroje. Tlačítko umožňuje uživatelům spustit akci nebo provést funkci kliknutím.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=cs&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Co je tlačítko?</h2>
+
+Komponenta tlačítka umožňuje uživatelům spustit akci nebo provést funkci kliknutím na tlačítko. 
+
+### Vlastnosti
+
+| Vlastnosti           | L 343, 22.12.2009, s. 1).                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Text                 | Text zobrazený pro tlačítko                                                                                    |
+| Zpracovatel událostí | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                       |
+| Načítání             | Zda má komponenta zobrazit indikátor načítání.                                                                 |
+| Zakázáno             | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.           |
+| Šipka nástroje       | Uživatel zde může zadat pomocný popisek. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován. |
+| Hidden               | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.     |
+| Varianta             | Povolit uživatelům vybrat mezi dvěma různými styly tlačítka: vyplnit nebo obrys.                               |
+| Barva šablony        | Umožňuje uživatelům určit barvu a průhlednost pozadí tlačítka                                                  |
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                               |
+| ------- | --------------------------------------------------------------------------------------- |
+| Click   | Když uživatel klikne na toto tlačítko, proveďte konkrétní akci přizpůsobenou uživateli. |
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti  | L 343, 22.12.2009, s. 1).                            |
+| ----------------- | ---------------------------------------------------- |
+| barevné schéma    | barva pozadí tlačítka                                |
+| vypnuto           | logická hodnota udává vypnutý stav                   |
+| zobrazované jméno | název této komponenty (tj. tlačítko1)                |
+| hidden            | logická hodnota udává skrytý stav tlačítka           |
+| hiddenDynamic     | logická hodnota udává skrytý dynamický stav tlačítka |
+| načítání          | načítání hodnoty                                     |
+| text              | textová hodnota zobrazená na tlačítku                |
+| tooltipText       | hodnota textu popisku                                |
+| Varianta          | Varianta tlačítka (vyplnit nebo nastínit)            |
+
+### Případ použití
+
+Dále ukážeme, jak použít tlačítko k dynamickému ovládání komponenty **`form`**. 
+
+#### Krok 1 Přidat akci
+
+Vytvořili jsme tabulku s názvem **`countries`**, včetně 5 sloupců: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Názvy zemí jsou tím, co chceme použít jako hodnotu možností, které jsou uloženy ve sloupci **`en_short_name`**.
+
+Pak můžeme vytvořit novou akci pro Supabase ze seznamu akcí, zobrazující všechna data v **`zemích`** a pojmenovaný supabasedb1 
+
+```sql
+vyberte odlišný c_short_name jako hodnotu z pořadí "Countries" podle hodnoty;
+```
+
+To je to, co máme jako výstup:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Klikněte na **`Uložit`** a **`Spustit`** pro aktivaci této akce.
+
+#### Krok 2 Přidat komponentu
+
+Nejprve přidáme komponentu **`Form`** a označíme ji jako 'Průzkum'. Přetáhneme složku vstupu, zvolenou složku a složkou čísla vstupů do formuláře a označíme je jako **`Name`, `národnostní`,** a **`Age`.**
+
+Poté namapováme **`zemi`** hodnoty k výběru komponenty podle 
+
+1.  v mapovaném režimu nastavte zdroje dat na `{{supabasedb1.data}}` 
+2.  v mapované volbě, nastavte hodnotu tak, aby byla `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Pak můžeme nakonfigurovat tlačítko **`Submit`** pro ovládání komponenty **`Send`**. 
+
+1.  V obsluze události Edit vyberte **`Control component`** v akci, zvolte složku **`form`**, kterou chcete aktualizovat jako cíl události.
+2.  Vyberte akci **`Submit`**. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

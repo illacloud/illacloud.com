@@ -1,0 +1,87 @@
+---
+title: Painike
+metaTitle: Painikkeen Komponentti Doc | ILLA Cloud
+desc: Tutustu miten käyttää painikkeen komponenttia ILLA Cloudissa, matalan koodin alusta rakennustyökaluille. Painikkeen avulla käyttäjät voivat käynnistää toiminnon tai suorittaa funktion klikkaamalla.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Mikä on painike?</h2>
+
+Painikkeen komponentin avulla käyttäjät voivat käynnistää toiminnon tai suorittaa funktion klikkaamalla painiketta. 
+
+### Ominaisuudet
+
+| Ominaisuudet         | Kuvaus                                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Teksti               | Painikkeelle näytettävä teksti                                                                                                 |
+| Tapahtuman Käsittely | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                             |
+| Ladataan             | Onko komponentissa käytettävä kuormitusindikaattoria.                                                                          |
+| Pois Käytöstä        | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                |
+| Työkaluvihje         | Käyttäjä voi syöttää komponentin työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu. |
+| Hidden               | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.              |
+| Variantti            | Salli käyttäjien valita kaksi eri tyylejä painikkeelle: täytä tai ääriviiva.                                                   |
+| Teeman Väri          | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                               |
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                               |
+| --------- | ------------------------------------------------------------------------------------ |
+| Click     | Kun käyttäjä klikkaa tätä painiketta, suorita käyttäjien räätälöimä erityistoiminto. |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi  | Kuvaus                                                         |
+| ------------------ | -------------------------------------------------------------- |
+| Väriteema          | painikkeen taustaväri                                          |
+| poistettu käytöstä | a Boolean arvo ilmaisevat käytöstä poistetun tilan             |
+| näyttönimi         | tämän komponentin nimi (ts. painike1)                          |
+| hidden             | a Boolean arvo ilmaisee painikkeen piilotetun tilan            |
+| hiddenDynaaminen   | a Boolean arvo ilmaisee painikkeen piilotetun dynaamisen tilan |
+| ladataan           | latausarvo                                                     |
+| teksti             | tekstin arvo näytetään painikkeessa                            |
+| tooltipText        | työkaluvihjeen tekstin arvo                                    |
+| variantti          | painikkeen variantti tyyli (täytä tai ulkoneva)                |
+
+### Tapaus
+
+Seuraavaksi osoitamme kuinka käyttää nappia **`form`** -komponentin hallitsemiseksi dynaamisesti. 
+
+#### Vaihe 1 Lisää toiminto
+
+Olemme luoneet taulukon nimeltä **`countries`**, mukaan lukien 5 saraketta: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Maiden nimet ovat sitä mitä haluamme käyttää vaihtoehtojen arvona, joka tallennetaan **`en_short_name`** sarakkeeseen.
+
+Sitten voimme luoda Supabase uuden toiminnon toimintaluettelosta, jossa luetellaan kaikki tiedot **`maissa`** ja nimeltä supabasedb1 
+
+```sql
+valitse erillinen en_short_name arvoksi "Maat" -järjestyksessä;
+```
+
+Tämä on se, mitä meillä on seuraavanlaisena:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Napsauta **`Tallenna`** ja **`Suorita`** aktivoidaksesi tämän toiminnon.
+
+#### Vaihe 2 Lisää komponentti
+
+Ensin lisätään **`Lomake`** komponentti ja nimetään se 'Survey'. Sitten vedämme Syöttökomponentin, valitse komponentin ja numeron syötteen komponentin lomakkeeseen, merkitsemme ne **`Nimi`, `Kansalaisuus`,** ja **`Ikä`.**
+
+Me sitten karttaamme **`maat`** arvot valitaksemme komponentin 
+
+1.  kartoitettu tila, aseta tietolähteet olemaan `{{supabasedb1.data}}` 
+2.  määritetyssä valinnassa, aseta arvo olemaan `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Sitten voimme määrittää **`Lähetä`** -painikkeen ohjataksemme **`Lähetä`** **`Lomake`** -komponentin menetelmää. 
+
+1.  Valitse Edit event handlerissa **`Ohjauskomponentti`** toiminnassa, valitse **`form`** komponentti jonka haluat päivittää tapahtuman kohteeksi.
+2.  Valitse **`Lähetä`** -toiminto. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

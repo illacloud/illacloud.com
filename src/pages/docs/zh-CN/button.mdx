@@ -1,0 +1,87 @@
+---
+title: 按钮
+metaTitle: 按钮组件Doc | ILLA Cloud
+desc: 了解如何在 ILLA Cloud 中使用按钮组件，这是一个用于构建工具的低代码平台。 按钮允许用户通过点击触发动作或执行函数。
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/303?languages=zhcn&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 集合组件
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>什么是按钮？</h2>
+
+按钮组件允许用户通过点击按钮触发动作或执行函数。 
+
+### 属性
+
+| 属性     | 描述                                         |
+| ------ | ------------------------------------------ |
+| 文本     | 按钮显示的文本                                    |
+| 事件处理程序 | 响应组件事件触发查询、控制组件或调用其他API。                   |
+| 正在加载   | 组件是否应显示加载指示器。                              |
+| 已禁用    | 控制组件是否被禁用的状态。 当组件被禁用时，它不能被修改或聚焦。           |
+| 工具提示   | 用户可以在此输入组件提示。 工具提示将在其焦点时显示。 支持Markdown 格式。 |
+| Hidden | 动态控制组件是否隐藏。 您可以通过动态布尔值更改隐藏状态。              |
+| 变体     | 允许用户在两种不同样式之间选择按钮：填充或轮廓。                   |
+| 主题颜色   | 允许用户指定按钮的背景颜色和不透明度                         |
+
+### 事件处理程序
+
+| 事件    | 描述                     |
+| ----- | ---------------------- |
+| Click | 当用户点击此按钮时，执行用户定制的特定操作。 |
+
+### 数据
+
+组件有一些常用的数据，可以通过应用程序中的 **`{{componentName.propertyName}}`** 调用。
+
+| 属性名称   | 描述               |
+| ------ | ---------------- |
+| 颜色方案   | 按钮的背景颜色          |
+| 已禁用    | 一个布尔值表示禁用状态      |
+| 显示名称   | 此组件的名称 (如: 按钮1)  |
+| hidden | 一个布尔值表示按钮的隐藏状态   |
+| 隐藏动态   | 一个布尔值表示按钮的隐藏动态状态 |
+| 正在加载   | 加载值              |
+| 文本     | 按钮上显示的文本值        |
+| 工具提示文本 | 工具提示文本的值         |
+| 变体     | 按钮的变体样式（填充或轮廓）   |
+
+### 使用案例
+
+接下来，我们将演示如何使用按钮动态控制**form\`** 组件. 
+
+#### 步骤 1 添加动作
+
+我们创建了一个叫做`countries`**的表格，包括5列：**`num_code`**、**`alpha_2_code`**、**`alpha_3_code`**、**`en_short_name`**、**`nationality`**。 词组名称是我们想要用作选项的值，这些值存储在 **`en_short_name`\*\* 列中。
+
+然后我们可以从行动列表创建一个新的 Supabase 动作，列出所有在 **`countries` ** 中的数据，并命名为supabasedb1 
+
+```sql
+从“国家”中按值顺序选择不同的en_short_name作为值;
+```
+
+这是我们的产出：
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+点击 **\`保存** 和 **`运行`** 激活此操作。
+
+#### 步骤 2 添加组件
+
+首先，我们添加 **`Form`** 组件，并将其标为“调查”。 然后我们将一个输入组件、一个选择组件和一个数字输入组件放入表单，将它们标记为 **`Name`、`Nationality`** 和 **`Age`**
+
+然后我们绘制**`countries`** 值来选择组件 
+
+1.  在映射模式下，将数据源设置为`{{supabasedb1.data}}` 
+2.  在映射的选项中，设置值为`{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+然后我们可以配置 **`Submit`** 按钮来控制 **`Form`**的**`Send`** 方法。 
+
+1.  在编辑事件处理器中，在动作中选择 **\`Control component** ，选择你想要更新的 **`form`** 组件作为事件的目标。
+2.  选择 **`Submit` ** 的操作。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />

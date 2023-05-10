@@ -1,0 +1,87 @@
+---
+title: Pulsante
+metaTitle: Componente Pulsante Doc I ILLA Cloud
+desc: Scopri come utilizzare il componente pulsante in ILLA Cloud, una piattaforma a basso codice per gli strumenti di costruzione. Pulsante consente agli utenti di attivare un'azione o eseguire una funzione facendo clic.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=it&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Assembla i componenti
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Cos'è il Pulsante?</h2>
+
+Il componente Pulsante consente agli utenti di attivare un'azione o eseguire una funzione facendo clic sul pulsante. 
+
+### Proprietà
+
+| Proprietà      | Descrizione                                                                                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Testo          | Il testo visualizzato per il pulsante                                                                                                              |
+| Gestore Eventi | Attiva interrogazioni, componenti di controllo o chiama altre API in risposta a eventi di componenti.                                              |
+| Caricamento    | Indica se il componente deve mostrare un indicatore di caricamento.                                                                                |
+| Disabilitato   | Controlla lo stato se il componente è disabilitato. Il componente non può essere modificato o focalizzato quando è disabilitato.                   |
+| Suggerimento   | L'utente può inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato. |
+| Hidden         | Controllare dinamicamente se il componente è nascosto. È possibile modificare lo stato nascosto attraverso il valore booleano dinamico.            |
+| Variante       | Consenti agli utenti di scegliere tra due stili diversi per il pulsante: riempire o contorno.                                                      |
+| Colore Tema    | Consente agli utenti di specificare il colore di sfondo e l'opacità del pulsante                                                                   |
+
+### Gestore eventi
+
+| Evento | Descrizione                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------- |
+| Click  | Quando un utente fa clic su questo pulsante, eseguire azioni specifiche personalizzate dagli utenti. |
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite **`{{componentName.propertyName}}`** nell'app.
+
+| Nome proprietà | Descrizione                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| colorScheme    | colore di sfondo del pulsante                                     |
+| disabilitato   | un valore booleano indica lo stato disabilitato                   |
+| displayName    | il nome di questo componente (cioè il pulsante1)                  |
+| hidden         | un valore booleano indica lo stato nascosto del pulsante          |
+| hiddenDynamic  | un valore booleano indica lo stato dinamico nascosto del pulsante |
+| caricamento    | valore di caricamento                                             |
+| testo          | valore di testo visualizzato sul pulsante                         |
+| tooltipText    | valore del testo del suggerimento                                 |
+| variante       | stile variante del pulsante (riempire o delineato)                |
+
+### Caso di utilizzo
+
+Successivamente, dimostreremo come utilizzare il pulsante per controllare dinamicamente il componente **`form`**. 
+
+#### Passo 1 Aggiungere un'azione
+
+Abbiamo creato una tabella chiamata **`countries`**, incluse 5 colonne: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. I nomi dei paesi sono quelli che vogliamo utilizzare come valore delle opzioni, che sono memorizzati nella colonna **`en_short_name`**.
+
+Quindi possiamo creare una nuova azione per Supabase dall'elenco delle azioni, elencando tutti i dati in **`countries`** e chiamato supabasedb1 
+
+```sql
+selezionare en_short_name distinto come valore dall'ordine "Paesi" per valore;
+```
+
+Questo è ciò che abbiamo come risultato:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Clicca su **`Salva`** e **`Esegui`** per attivare questa azione.
+
+#### Passo 2 Aggiungi un componente
+
+Per prima cosa aggiungiamo il componente **`Form`** ed etichettalo come 'Survey'. Poi trasciniamo un componente di input, un componente selezionato e un componente di input di numero nel modulo, etichettandolo come **`Name`, `Nationality`,** e **`Età`.**
+
+Mappare quindi i valori **`stati`** per selezionare il componente di 
+
+1.  in modalità mappata, imposta le fonti dei dati per essere `{{supabasedb1.data}}` 
+2.  nell'opzione mappata, imposta il valore per essere `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Quindi possiamo configurare il pulsante **`Submit`** per controllare il metodo **`Send`** del componente **`Form`**. 
+
+1.  Nel gestore degli eventi di Modifica, seleziona **`Componente di controllo`** in azione, seleziona il componente **`form`** che vuoi aggiornare come obiettivo dell'evento.
+2.  Scegli l'azione **`Submit`** 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
