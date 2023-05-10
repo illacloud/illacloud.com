@@ -1,0 +1,87 @@
+---
+title: Knap
+metaTitle: Knap Komponent Doc ● ILLA Cloud
+desc: Opdag, hvordan du bruger knapkomponenten i ILLA Cloud, en lav-kode-platform til at bygge værktøjer. Knap giver brugerne mulighed for at udløse en handling eller udføre en funktion ved at klikke.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/303?languages=da&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Hvad er knap?</h2>
+
+Knap komponenten giver brugerne mulighed for at udløse en handling eller udføre en funktion ved at klikke på knappen. 
+
+### Egenskaber
+
+| Egenskaber            | Varebeskrivelse                                                                                                                  |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Tekst                 | Teksten som vises for knappen                                                                                                    |
+| Begivenhedshåndtering | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                |
+| Indlæser              | Om komponenten skal vise en belastningsindikator.                                                                                |
+| Deaktiveret           | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.       |
+| Værktøjstip           | Bruger kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet. |
+| Hidden                | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                           |
+| Variant               | Tillad brugere at vælge mellem to forskellige stilarter til knappen: fyld eller omrids.                                          |
+| Tema Farve            | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                            |
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| Click      | Når en bruger klikker på denne knap, skal du udføre specifik handling tilpasset af brugere. |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn | Varebeskrivelse                                                  |
+| ---------------- | ---------------------------------------------------------------- |
+| colorScheme      | baggrundsfarve på knappen                                        |
+| deaktiveret      | en boolsk værdi angiver den deaktiverede status                  |
+| displayName      | navnet på denne komponent (dvs. knap1)                           |
+| hidden           | en boolsk værdi angiver den skjulte status for knappen           |
+| hiddenDynamisk   | en boolsk værdi angiver den skjulte dynamiske status for knappen |
+| indlæser         | indlæser værdi                                                   |
+| tekst            | tekstværdi vist på knappen                                       |
+| tooltipText      | værdi af tooltip tekst                                           |
+| variant          | variant stil af knappen (udfyld eller skitseret)                 |
+
+### Brug case
+
+Dernæst vil vi vise, hvordan du bruger knappen til at styre **`formular`** komponenten dynamisk. 
+
+#### Trin 1 Tilføj en handling
+
+Vi har oprettet en tabel med navnet **`lande`**, herunder 5 kolonner: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationalitet`**. Landes navne er, hvad vi ønsker at bruge som valgmuligheder værdi, som er gemt **`en_short_name`** kolonnen.
+
+Så kan vi oprette en ny handling til Supabase fra handlingslisten med alle data i **`lande`** og navngivet supabasedb1 
+
+```sql
+vælg særskilt en_short_name som værdi fra "Lande" rækkefølge efter værdi
+```
+
+Det er det, vi har som output:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Klik på **`Gem`** og **`Kør`** for at aktivere denne handling.
+
+#### Trin 2 Tilføj en komponent
+
+Først tilføjer vi **`Form`** komponenten og angiver den som 'Undersøgelse'. Så trækker vi en Input-komponent, en udvalgt komponent og en tal-input-komponent ind i formularen, der angiver dem som **`Navn`, `Nationalitet`,** og **`Alder`.**
+
+Vi kortlægger derefter **`lande`** værdier for at vælge komponent ved 
+
+1.  i kortlagt tilstand, indstille datakilder til at være `{{supabasedb1.data}}` 
+2.  i mappet indstilling, sæt værdien til at være `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Så kan vi konfigurere **`Indsende`**-knappen for at kontrollere **`Send`**-metoden for **`Form`**-komponenten. 
+
+1.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Redigér hændelsesbehandleren, vælg den **`formular`** komponent, som du ønsker at opdatere som målet for hændelsen.
+2.  Vælg handlingen **`Indsende`**. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
