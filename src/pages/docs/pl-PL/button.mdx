@@ -1,0 +1,87 @@
+---
+title: Przycisk
+metaTitle: Dokument komponentu przycisku | ILLA Cloud
+desc: Odkryj jak używać komponentu przycisku w chmurze ILLA, platformy o niskim kodzie do tworzenia narzędzi. Przycisk pozwala użytkownikom na wywołanie akcji lub wykonywanie funkcji kliknięciem.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/303?languages=pl&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>Co to jest przycisk?</h2>
+
+Komponent Przycisk pozwala użytkownikom na wywołanie akcji lub wykonywanie funkcji poprzez kliknięcie przycisku. 
+
+### Właściwości
+
+| Właściwości     | Opis                                                                                                                                         |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tekst           | Tekst wyświetlany dla przycisku                                                                                                              |
+| Obsługa zdarzeń | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                     |
+| Ładowanie       | Czy komponent powinien pokazywać wskaźnik obciążenia.                                                                                        |
+| Wyłączone       | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                      |
+| Wskazówka       | Użytkownik może wprowadzić tutaj podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany. |
+| Hidden          | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                           |
+| Wariant         | Zezwalaj użytkownikom na wybór pomiędzy dwoma różnymi stylami przycisku: wypełnij lub zarys.                                                 |
+| Kolor motywu    | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                          |
+
+### Obsługa zdarzeń
+
+| Wydarzenie | Opis                                                                                            |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| Click      | Gdy użytkownik kliknie ten przycisk, wykonaj określoną czynność dostosowaną przez użytkowników. |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności    | Opis                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| schemat kolorów    | Kolor tła przycisku                                          |
+| wyłączone          | wartość logiczna wskazuje status wyłączony                   |
+| nazwa wyświetlacza | nazwa tego składnika (tj. przycisk1)                         |
+| hidden             | wartość logiczna wskazuje ukryty status przycisku            |
+| ukrytyDynamiczny   | wartość logiczna wskazuje ukryty dynamiczny status przycisku |
+| ładowanie          | ładowanie wartości                                           |
+| tekst              | wartość tekstu wyświetlana na przycisku                      |
+| tekst              | wartość tekstu podpowiedzi                                   |
+| wariant            | styl wariantu przycisku (wypełnij lub zarysowany)            |
+
+### Przypadek użycia
+
+Następnie pokażemy jak użyć przycisku do dynamicznego sterowania komponentem **form\`**. 
+
+#### Krok 1 Dodaj akcję
+
+Stworzyliśmy tabelę o nazwie **`kraje`**, w tym 5 kolumn: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`narodowość`**. Nazwy krajów są tym, co chcemy użyć jako wartość opcji, które są przechowywane w kolumnie **`en_short_name`**.
+
+Następnie możemy utworzyć nową akcję dla Supabase z listy działań, wymieniając wszystkie dane w **`krajach`** i nazwane supabasedb1 
+
+```sql
+wybierz oddzielny en_short_name jako wartość z zamówienia "Kraja" według wartości;
+```
+
+To właśnie mamy do zrealizowania:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Kliknij **`Zapisz`** i **Uruchom\`**, aby aktywować tę akcję.
+
+#### Krok 2 Dodaj komponent
+
+Najpierw dodajemy komponent **formularza\`** i oznaczymy go jako 'Ankieta'. Następnie przeciągamy komponent wejściowy, wybierz komponent i komponent wejściowy liczby, oznaczając je jako **`Nazwa`, `Narodowość`,** i **`Wiek`.**
+
+Następnie mapujemy wartości **`krajów`** do wyboru komponentu przez 
+
+1.  w trybie mapowanym, ustaw źródła danych jako `{{supabasedb1.data}}` 
+2.  w opcji mapowania ustaw wartość jako `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Następnie możemy skonfigurować przycisk **Prześlij\`**, aby kontrolować metodę **Wyślij\`** dla komponentu **Form\`**. 
+
+1.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz komponent **formularz\`**, który chcesz zaktualizować jako cel wydarzenia.
+2.  Wybierz działanie **Prześlij\`**. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
