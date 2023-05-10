@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Gebruik de Cascader component in ILLA Cloud om multi-level menu's voor web apps te maken. Leer wat Cascader is en hoe je de Cascader opties kunt aanpassen en beheersen.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=nl&filter=basic&value=0
+tagCategory: menu_cascader_klik
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Wat is Cascader?</h2>
+
+Een cascader is een type invoercomponent waarmee gebruikers hiërarchische gegevens kunnen selecteren, zoals een categorie of subcategorie in een uitklapmenu. Wanneer een gebruiker een optie selecteert uit het dropdown menu, de cascader zal automatisch bijwerken om de relevante subcategorieën of opties in een genest uitklapmenu te tonen.
+
+Bijvoorbeeld, als u een cascader invoercomponent heeft om een productcategorie te selecteren, het eerste dropdown menu toont mogelijk alle beschikbare categorieën, zoals "Elektronica", "Kleding," en "Boeken" Wanneer een gebruiker "Electronics" selecteert, zal de cascader updaten om de subcategorieën van elektronica, zoals "Phones," "Laptops," en "Tablets." Dit stelt gebruikers in staat om snel en eenvoudig door hiërarchische gegevens te navigeren en de gewenste optie te selecteren.
+
+### **Eigenschappen\*\***
+
+Cascader beschikbaar eigenschappen. JavaScript kan worden geschreven om informatie over componenten te lezen of wijzigen.
+
+| Eigenschappen       | Beschrijving                                                                                                                                                                                                                 |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bron van gegevens   | Elke optie moet JSON formaat zijn en twee sleutels, waarde en label bevatten. Door arrays te gebruiken, kunt u opties maken op hetzelfde niveau. En subopties kunnen worden gemaakt met behulp van het "children" attribuut. |
+| Standaard waarde    | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                                                                                                  |
+| Plaatsaanduiding    | De waarde wordt getoond wanneer het invoerveld leeg is.                                                                                                                                                                      |
+| Omschrijving        | De naam van het veld weergegeven aan de gebruiker                                                                                                                                                                            |
+| Onderschrift        | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                                                               |
+| Verborgen label     | Stel in of het label moet worden weergegeven                                                                                                                                                                                 |
+| Positie             | Stel de positie van het label in ten opzichte van het component                                                                                                                                                              |
+| Uitlijning          | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                                                                         |
+| Width               | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                                                                     |
+| Event Handler       | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                                                                           |
+| Uitgeschakeld       | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                                                                      |
+| Alleen lezen        | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                                                             |
+| Toon wissen knop    | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                                                                    |
+| Uitbreiding methode | Stel in hoe cascader zich uitbreidt (door te klikken of te zweven)                                                                                                                                                           |
+| Knopinfo            | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                                                                     |
+| Hidden              | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                                                                    |
+
+### \***\*Methods\*\***
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende twee methoden:
+
+-   **setvalue**
+
+Om de geselecteerde optie in te stellen, bijvoorbeeld {{”value1”}}
+
+| Eigenschappen | Beschrijving |
+| ------------- | ------------ |
+| Waarde        | Input value  |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+Voorbeeld gebruik:
+
+Cascader component ondersteunt het luisteren naar het `onChange` evenement van andere componenten met behulp van het ingebouwde event systeem. Instellen door de volgende voorbeeld stappen te volgen:
+
+1.  Voeg een gebeurtenistrigger toe aan de component waarnaar u wilt luisteren. Bijvoorbeeld, als u wilt luisteren naar het **`onChange`** evenement van een Radio Group component, je zou een gebeurtenis trigger aan die Radio Group component toevoegen.
+2.  In de Event Handler bewerken, selecteer **`Control component`** in actie, selecteer het **`Cascader`** onderdeel dat u wilt bijwerken als het doel van het event.
+3.  Kies de **`SetValue`** actie en selecteer de juiste waarde voor de Cascader component. Dit zal de waarde zijn die de Cascader component heeft en zal updaten wanneer de gebeurtenis wordt geactiveerd.
+4.  Sla de instellingen voor de trigger van de gebeurtenis op en herhaal het proces voor alle andere componenten waarnaar u wilt luisteren.
+
+Zodra je de event triggers hebt ingesteld, wordt het Cascader invoercomponent automatisch bijgewerkt wanneer het **`onChange`** evenement wordt geactiveerd op de andere componenten. Dit stelt u in staat om dynamische interfaces te maken die reageren op gebruikersinvoer in realtime het makkelijker maken voor gebruikers om te navigeren en te communiceren met uw applicatie.
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                               |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| Veranderen  | Wanneer een gebruiker de geselecteerde optie wijzigt                                                       |
+| Focus       | Wanneer een gebruiker de muis cursor beweegt in het cascader component                                     |
+| Blur        | Wanneer een gebruiker klaar is met selecteren van opties en stoppen met focussen op het cascader-component |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap | Beschrijving                                                       |
+| ------------------- | ------------------------------------------------------------------ |
+| bronmodus           | de modus van de gegevensbron in cascader (standaard dynamisch)     |
+| weergavenaam        | de naam van dit onderdeel (bijv. cascader1)                        |
+| expandTrigger       | gebeurtenissen activeren (klik)                                    |
+| waarde              | Geselecteerde waarde                                               |
+| Label               | label waarde                                                       |
+| uitlijnen           | Uitlijning van cascader-label (links of rechts)                    |
+| labeling            | positie van het cascaderlabel (links of rechts)                    |
+| labelBreedte        | het geheel getal waarin de breedte van het label wordt voorgesteld |
+| placeholder         | placeholder waarde                                                 |
+
+Voorbeeld: {{cascader1.value[0]}
+
+### Gebruik geval
+
+Vervolgens zullen we dynamisch laten zien hoe we de gegevens van de gegevensbron kunnen toewijzen aan opties in cascader. 
+
+#### Stap 1 Voeg een actie toe
+
+Laat ons een tabel maken in Supabase genaamd **`project`,** en een subtable genaamd **`therapist`** die uitgelijnd zijn door **`project_id`**.
+
+Dan kunnen we een nieuwe actie voor Supabase maken uit de actielijst met alle gegevens in project en met de naam supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) as project_id, [therapist.name](http://therapist.name/) als therapist_name van een therapist die meedoet met project op therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Stap 2 Transformeer de gegevens
+
+Vervolgens kunnen we **`enable`** de **`transformer`** sectie onder de Selectie Sectie gebruiken. Binnen het tekstgebied kunnen we alleen de waarden en labels vastleggen die we nodig hebben van de gegevens en deze omzetten in cascadervriendelijke opties met behulp van JavaScript.
+
+```jsx
+const transformedArray = data.reduce(acc, huidig) => {
+  const bestaande = acc.find(item) => item.value === current. roject_id);
+  als (bestaande) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    bestaat. hildren.push(therapist);
+  } anders {
+    const project = { waarde: current. roject_id, label: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(therapist);
+    acc.push(project);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+De laatste actie moet hetzelfde zijn als
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 3 Configureer het component
+
+Na het slepen van een cascader component naar het canvas, kunnen we één klik gebruiken om de data bron te configureren naar{{supabasedb1.data}}\` 
+
+Optioneel: Hier zetten we een standaard waarde van `{{['a', '1']}}` voor overeenkomstige `{{['Psychotherapy'], ['James']}}` labels.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>
