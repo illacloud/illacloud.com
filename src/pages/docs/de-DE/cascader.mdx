@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Verwenden Sie die Cascader-Komponente in ILLA Cloud, um mehrstufige Menüs für Web-Apps zu erstellen. Erfahren Sie, was Cascader ist und wie Sie die Cascader-Optionen anpassen und steuern können.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=de&filter=basic&value=0
+tagCategory: doc-Menü Kascader_klicken
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Was ist Cascader?</h2>
+
+Ein Cascader ist eine Eingabekomponente, die es Benutzern erlaubt, hierarchische Daten wie eine Kategorie oder Unterkategorie aus einem Dropdown-Menü auszuwählen. Wenn ein Benutzer eine Option aus dem Dropdown-Menü wählt, wird der Cascader automatisch aktualisiert, um die relevanten Unterkategorien oder Optionen in einem verschachtelten Dropdown-Menü anzuzeigen.
+
+Zum Beispiel, wenn Sie eine Cascader-Eingabekomponente für die Auswahl einer Produktkategorie haben, das erste Dropdown-Menü kann alle verfügbaren Kategorien wie "Elektronik", "Kleidung" und "Bücher" anzeigen. Wenn ein Benutzer "Elektronik" wählt, wird der Kaskader aktualisiert, um die Unterkategorien der Elektronik anzuzeigen, wie "Telefon", "Laptops" und "Tablets". So können Benutzer schnell und einfach durch hierarchische Daten navigieren und die gewünschte Option auswählen.
+
+### \***\*Eigenschaften\*\***
+
+Cascaders verfügbare Eigenschaften. JavaScript kann zum Lesen oder Ändern von Informationen über Komponenten geschrieben werden.
+
+| Eigenschaften          | Beschreibung                                                                                                                                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Datenquelle            | Jede Option muss JSON-Format sein und zwei Schlüssel, Wert und Label enthalten. Durch die Verwendung von Arrays können Sie Optionen auf dem gleichen Level erstellen. Und Kinderoptionen können mit "Kind"-Attribut erstellt werden. |
+| Standardwert           | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                                                                  |
+| Platzhalter            | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                                                              |
+| Label                  | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                                                                 |
+| Überschrift            | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                                                                          |
+| Versteckte Bezeichnung | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                                                                   |
+| Position               | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                                                            |
+| Ausrichtung            | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                                                                 |
+| Width                  | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                                                                   |
+| Event-Handler          | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                                                              |
+| Deaktiviert            | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                                                                  |
+| Nur lesen              | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                                                                   |
+| Löschtaste anzeigen    | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                                                              |
+| Erweiterungsmethode    | Legen Sie fest, wie der Cascader erweitert wird (indem Sie klicken oder mit dem Mauszeigen)                                                                                                                                          |
+| Tooltip                | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                                                                      |
+| Hidden                 | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                                                                         |
+
+### * * *
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden zwei Methoden:
+
+-   **setValue**
+
+Um die ausgewählte Option zu setzen, zum Beispiel {{”value1”}}
+
+| Eigenschaften | Beschreibung |
+| ------------- | ------------ |
+| Wert          | Input value  |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+Beispiel Verwendung:
+
+Cascader-Komponentenunterstützung lauscht das `onChange` Ereignis anderer Komponenten mit integriertem Ereignissystem. Richten Sie es ein, indem Sie folgenden Beispielschritten folgen:
+
+1.  Füge einen Ereignis-Trigger der Komponente hinzu, auf die du hören möchtest. Zum Beispiel, wenn du die **`onChange`** Veranstaltung einer Funkgruppen-Komponente hören möchtest, Sie würden dieser Komponente einen Ereignis-Trigger hinzufügen.
+2.  Wählen Sie im Editier-Ereignishandler **`Control-Komponent`** in Aktion aus, wählen Sie die **`Cascader`** Komponente, die Sie als Ziel des Ereignisses aktualisieren möchten.
+3.  Wähle die Aktion **`SetValue`** aus und wähle den passenden Wert für die Cascader-Komponente. Dies ist der Wert, den die Cascader-Komponente hat und aktualisiert wird, wenn das Ereignis ausgelöst wird.
+4.  Speichern Sie die Ereignisauslöseeinstellungen und wiederholen Sie den Prozess für alle anderen Komponenten, die Sie hören möchten.
+
+Sobald Sie die Ereignisauslöser eingerichtet haben, wird die Cascader-Eingabekomponente automatisch aktualisiert, sobald das **`onChange`** Ereignis auf den anderen Komponenten ausgelöst wird. So können Sie dynamische Schnittstellen erstellen, die auf Benutzereingaben in Echtzeit reagieren die Navigation und Interaktion mit Ihrer Anwendung erleichtern.
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                   |
+| -------- | -------------------------------------------------------------------------------------------------------------- |
+| Ändern   | Wenn ein Benutzer den gewählten Optionswert ändert                                                             |
+| Fokus    | Wenn ein Benutzer den Mauszeiger auf die Cascader-Komponente bewegt                                            |
+| Blur     | Wenn ein Benutzer fertig ist, wählen Sie Optionen und beenden Sie die Fokussierung auf die Cascader-Komponente |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname | Beschreibung                                            |
+| ---------------- | ------------------------------------------------------- |
+| dataSourceMode   | der Modus der Datenquelle im Cascader (Standarddynamik) |
+| anzeiger         | der Name dieser Komponente (dh cascader1)               |
+| expandTrigger    | auslösen Ereignisse (klick)                             |
+| wert             | Ausgewählter Wert                                       |
+| bezeichnen       | label Wert                                              |
+| labelAlign       | Ausrichtung des Cascader-Labels (links oder rechts)     |
+| labelPosition    | Position des Cascader-Labels (links oder rechts)        |
+| labelBreite      | die Ganzzahl, die die Breite des Labels repräsentiert   |
+| Platzhalter      | Platzhalterwert                                         |
+
+Beispiel: {{cascader1.value[0]}
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie die Daten aus der Datenquelle dynamisch auf Optionen im Cascader abgebildet werden können. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Lassen Sie uns eine Tabelle in Supabase namens **`project`,** sowie eine Untertabelle namens **`therapist`** erstellen, die von **`project_id`** ausgerichtet ist.
+
+Dann können wir eine neue Aktion für Supabase aus der Aktionsliste erstellen, alle Daten im Projekt auflisten und supabasedb1 nennen 
+
+```sql
+SELECT [project.id](http://project.id/) als project_id, [therapist.name](http://therapist.name/) als Therapeut_name des Therapeuten treten auf dem therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Schritt 2 Daten transformieren
+
+Als nächstes können wir **`aktivieren`** den Abschnitt **`transformer`** unter der Sektion Auswahl auswählen. Im Textbereich können wir nur die Werte und Labels erfassen, die wir aus den Daten benötigen, und diese mittels JavaScript in kaskadenerfreundliche Optionen verwandeln.
+
+```jsx
+const transformedArray = data.reduce(acc, current) => {
+  const existing = acc.find((item) => item.value === current. roject_id);
+  if (existing) {
+    const therapeut = { value: current.therapist_id, label: current.therapist_name };
+    existiert. hildren.push(therapist);
+  } else {
+    const project = { value: aktuell. roject_id, label: current.project_name, children: [] };
+    const therapeut = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(therapist);
+    acc.push(project);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+Die finale Aktion sollte genauso angezeigt werden wie
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 3 die Komponente konfigurieren
+
+Nachdem wir eine Kaskadenkomponente auf die Leinwand gezogen haben, können wir mit einem Klick die Datenquelle zu `{{supabasedb1.data}} ` konfigurieren 
+
+Optional: Hier haben wir einen Standardwert von `{{['a', '1']}}` für entsprechende `{{['Psychotherapy'], ['James']}}` Labels gesetzt.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>
