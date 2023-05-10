@@ -67,13 +67,13 @@ select distinct en_short_name as value from "Countries" order by value;
 
 This is what we have as output:
 
-<img src=”https://cdn.illacloud.com/official-website/img/docs/countries.png" alt=”” />
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
 
 Click **`Save`** and **`Run`** to activate this action.
 
 #### Step 2 Add a Component
 
-First we add the **`Form`** component and label it as “Survey”. Then we drag a Input component, a select component and a number input component into the form, labeling them as **`Name`, `Nationality`,** and **`Age`.**
+First we add the **`Form`** component and label it as 'Survey'. Then we drag a Input component, a select component and a number input component into the form, labeling them as **`Name`, `Nationality`,** and **`Age`.**
 
  
 
@@ -82,11 +82,11 @@ We then map the **`countries`** values to select component by
 1. in mapped mode, set data sources to be `{{supabasedb1.data}}` 
 2. in mapped option, set value to be `{{item.value}}`
 
-<img src=”https://cdn.illacloud.com/official-website/img/docs/button1.png” alt=”” />
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
 
 Then we can configure the **`Submit`** button to control the **`Send`** method of **`Form`** component. 
 
 1. In the Edit event handler, select **`Control component`** in action, select the **`form`** component that you want to update as the target of the event.
 2. Choose the **`Submit`** action. 
 
-<img src=“https://cdn.illacloud.com/official-website/img/docs/countries2.png” alt=”” />
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
