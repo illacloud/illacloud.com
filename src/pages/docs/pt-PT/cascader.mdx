@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Use o componente Cascader na ILLA Cloud para criar menus de vários níveis para aplicativos web. Saiba o que é Cascader e como personalizar e controlar as opções de Cascata.
+crowdinRepo: https://crowdin.com/multilingues/illacloud-website/299?languages=pt&filter=basic&value=0
+tagCategory: menu_o_clique_de_cascader_doc_clique
+categoryName: 🧬 Montar componentes
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>O que é Cascader?</h2>
+
+Um cascader é um tipo de componente de entrada que permite aos usuários selecionar dados hierárquicos, como uma categoria ou subcategoria de um menu suspenso. Quando um usuário seleciona uma opção no menu suspenso, o cascata atualizará automaticamente para mostrar as subcategorias relevantes ou opções em um menu suspenso aninhado.
+
+Por exemplo, se você tem um componente de entrada de cascader para selecionar uma categoria de produto, o primeiro menu suspenso pode mostrar todas as categorias disponíveis, como "Eletrônicos", "Vestuário" e "Livros". Quando um usuário seleciona "Eletrônicos", o casco será atualizado para mostrar as subcategorias de eletrônicos, como "Telefones", "Notebooks" e "Tablets." Isto permite aos usuários navegar rápida e facilmente através de dados hierárquicos e selecionar a opção de que precisam.
+
+### \***\*Propriedades\*\***
+
+Propriedades disponíveis do Cascata. JavaScript pode ser escrito para ler ou alterar informações sobre componentes.
+
+| propriedades           | Descrição:                                                                                                                                                                                                |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fonte de Dados         | Cada opção deve ser um formato JSON e conter duas chaves, valor e etiqueta. Ao usar matrizes, você pode criar opções no mesmo nível. E as opções de criança podem ser criadas usando o atributo "filhos". |
+| Valor padrão           | O valor inicial do componente. Você pode alterar dinamicamente o valor inicial digitando JavaScript na {{}}.                                                                                              |
+| Espaço reservado       | O valor será exibido quando o campo de entrada estiver vazio.                                                                                                                                             |
+| Descrição              | O nome do campo exibido ao usuário                                                                                                                                                                        |
+| Legenda                | Uma legenda usada para descrever o campo em detalhes                                                                                                                                                      |
+| Etiqueta oculta        | Definir se deve exibir o rótulo                                                                                                                                                                           |
+| Posição                | Definir a posição do rótulo relativo ao componente                                                                                                                                                        |
+| Alinhamento            | Definir o alinhamento (alinhar com a esquerda ou direita) da etiqueta                                                                                                                                     |
+| Width                  | Quando a etiqueta estiver no lado esquerdo do componente, defina a largura proporcional do rótulo.                                                                                                        |
+| Gerenciador de Eventos | Acionar consultas, componentes de controle ou chamar outras APIs em resposta a eventos de componentes.                                                                                                    |
+| Desabilitado           | Controla o estado de se o componente está desabilitado. O componente não pode ser modificado ou focado quando está desabilitado.                                                                          |
+| Somente leitura        | Controla o status de se o componente é somente leitura. Um componente somente leitura pode ser selecionado e focado mas não pode ser modificado.                                                          |
+| Exibir botão Limpar    | controle se um botão limpar é exibido no campo de entrada                                                                                                                                                 |
+| Método de expansão     | Defina como a cascata se expande (clicando ou pairando)                                                                                                                                                   |
+| Dica                   | Os usuários podem inserir a dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                                                           |
+| Hidden                 | Controle dinamicamente se o componente está oculto. Você pode alterar o status oculto através de um valor booleano dinâmico.                                                                              |
+
+### **Métodos \*\***
+
+Você pode usar outros componentes para controlar o componente. Apoiamos os seguintes dois métodos:
+
+-   **definirValor**
+
+Para definir a opção selecionada, por exemplo, {{”value1”}}
+
+| propriedades | Descrição:  |
+| ------------ | ----------- |
+| Valor        | Input value |
+
+-   **ValorDeLimite**
+
+Para limpar o valor do componente selecionado 
+
+Exemplo de uso:
+
+O componente Cascader suporta escutar o evento `onChange` de outros componentes usando o sistema de eventos integrado. Configure seguindo estes passos de exemplo:
+
+1.  Adicionar um gatilho de eventos para o componente que você deseja ouvir. Por exemplo, se você quer ouvir o evento **`onChange`** de um componente do Grupo de Rádio, você adicionaria um gatilho para o evento ao componente do Grupo de Rádio.
+2.  No manipulador de Editar evento, selecione **`componente de controle`** em ação, selecione o componente **`Cascader`** que você deseja atualizar como o alvo do evento.
+3.  Escolha a ação **`SetValue`** e selecione o valor apropriado para o componente Cascaderno. Esse será o valor que o componente Cascader tem e atualizará quando o evento for acionado.
+4.  Salve as configurações de acionamento do evento e repita o processo para quaisquer outros componentes que você deseja ouvir.
+
+Depois de configurar o gatilho do evento, o componente de entrada do Cascader automaticamente atualizará sempre que o evento **`onChange`** for acionado em outros componentes. Isso permite que você crie interfaces dinâmicas que respondam à entrada do usuário em tempo real, tornando mais fácil para os usuários navegarem e interagirem com sua aplicação.
+
+### Manipulador de eventos
+
+| Evento | Descrição:                                                                                      |
+| ------ | ----------------------------------------------------------------------------------------------- |
+| Troca  | Quando um usuário muda o valor da opção selecionada                                             |
+| Focar  | Quando um usuário move o cursor do mouse sobre o componente cascader                            |
+| Blur   | Quando um usuário terminar a seleção de opções e deixar de se concentrar no componente cascader |
+
+### Dado
+
+O componente tem alguns dados comumente usados, que podem ser chamados via **`{{componentName.propertyName}}`** no aplicativo.
+
+| Nome da propriedade | Descrição:                                             |
+| ------------------- | ------------------------------------------------------ |
+| Modo                | o modo da fonte de dados no cascader (dinâmico padrão) |
+| mostrarNome         | o nome deste componente (ie cascader1)                 |
+| Disparador          | acionar eventos (clique)                               |
+| Valor               | Valor selecionado                                      |
+| Etiqueta            | valor de rótulo                                        |
+| Alinhar             | Alinhamento do rótulo de cascata (esquerda ou direita) |
+| posiçãoRótulo       | posição do rótulo de cascata (esquerda ou direita)     |
+| largura-rótulo      | o inteiro que representa a largura do rótulo           |
+| espaço reservado    | valor do espaço reservado                              |
+
+Exemplo: {{cascader1.value[0]}
+
+### Usar caso
+
+Em seguida, vamos demonstrar como mapear os dados da fonte de dados para opções no cascader de forma dinâmica. 
+
+#### Passo 1 Adicionar uma ação
+
+Vamos criar uma tabela em Suabase chamada **`project`,** bem como uma sub-tabela chamada **`therapist`** que são alinhadas por **`project_id`**.
+
+Em seguida, podemos criar uma nova ação para Suprimento a partir da lista de ações, listando todos os dados do projeto e nomeado supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) como project_id, [therapist.name](http://therapist.name/) como therapist_name do terapeuta junte-se ao projeto em therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Transformar os dados do passo 2
+
+Em seguida, podemos **habilitar\`** a seção **`transformer`** na seção Seleção. Dentro da área de texto, podemos capturar apenas os valores e rótulos de que precisamos a partir dos dados e transformá-los em opções de cascata amigável usando JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === atual. roject_id);
+  if (existente) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existindo. hildren.push(therapist);
+  } else {
+    const project = { value: current. roject_id, label: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    projeto.children. ush(therapist);
+    acc.push(projeto);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+A ação final deve ser mostrada como
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Clique em **`Salvar`** e **`Executar`** para ativar esta ação.
+
+#### Passo 3 Configure o componente
+
+Depois de arrastar um componente de cascader para a tela, nós podemos clicar individualmente para configurar sua fonte de dados para `{{supabasedb1.data}}` 
+
+Opcional: Aqui definimos um valor padrão de`{{['a', '1']}}` para os rótulos correspondentes de `{{['Psychotherapy'], ['James']}}`.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>
