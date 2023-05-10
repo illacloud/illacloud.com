@@ -5,12 +5,12 @@ import { useRouter } from 'next/router'
 import Language from '@/img/home/language_white.svg'
 import Link from 'next/link';
 
+
 const finalLanguages = {
   "en-US": "English",
   "zh-CN": "简体中文",
   "ko-KR": "한국인",
   "ja-JP": "日本語",
-  "af-ZA": "Afrikaans",
   "cs-CZ": "čeština",
   "de-DE": "Deutsch",
   "da-DK": "dansk",
