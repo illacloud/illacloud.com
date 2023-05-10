@@ -1,7 +1,7 @@
 ---
 title: リスト
 metaTitle: ILLA クラウドリストコンポーネントドキュメント
-desc: The List component allows you to create repeatable rows of data whose look and feel are defined by you.
+desc: Listコンポーネントを使用すると、ルックアンドフィールが定義されたデータの繰り返し行を作成できます。
 tagCategory: doc_menu_list_click
 categoryName: 🧬 コンポーネントを組み立てます
 categoryPriority: 6
@@ -10,7 +10,7 @@ postPriority: 1
 
 * * *
 
-## <h2 hidden>List</h2>
+## <h2 hidden>リスト</h2>
 
 Listコンポーネントはコンテナに似ており、他のコンポーネントを入れ子にすることができます。
 
@@ -21,9 +21,9 @@ Listコンポーネントはコンテナに似ており、他のコンポーネ�
 
 ### コンポーネントをドラッグして一覧にする
 
-List コンポーネントをフレームにドラッグすると、コンポーネントが自動的に含まれます。 削除または変更し、新しいコンポーネントをリストにドラッグできます。 
+List コンポーネントをフレームにドラッグすると、コンポーネントが自動的に含まれます。 削除または変更し、新しいコンポーネントをリストにドラッグできます。 削除または変更し、新しいコンポーネントをリストにドラッグできます。 
 
-最初の項目だけを編集でき、最初の項目に基づいて他の項目が自動的に変更されます。 最初の項目にフォーカスして、バーをドラッグして高さの項目を変更することもできます。
+最初の項目だけを編集でき、最初の項目に基づいて他の項目が自動的に変更されます。 最初の項目だけを編集でき、最初の項目に基づいて他の項目が自動的に変更されます。 最初の項目にフォーカスして、バーをドラッグして高さの項目を変更することもできます。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list1.png'
@@ -32,12 +32,12 @@ List コンポーネントをフレームにドラッグすると、コンポー
 
 ### クエリ結果をリストに表示する
 
-List コンポーネントをフレームにドラッグすると、自動的に JSON 形式でテストデータが表示されます。 データソースをアクションに変更するには、`{{ mysql_list_query.data }}`を使用します。 
+List コンポーネントをフレームにドラッグすると、自動的に JSON 形式でテストデータが表示されます。 データソースをアクションに変更するには、`{{ mysql_list_query.data }}`を使用します。 データソースをアクションに変更するには、`{{ mysql_list_query.data }}`を使用します。 
 
 データ ソースを設定した後、コンポーネントのデータを変更できます。
 
 1.  最初の項目でコンポーネントを選択します。 
-2.  コンポーネントデータがリストからの場合は、`{{ currentItem.columnName }}` を使用してデータを設定できます。 たとえば、`{{ currentItem.Avater }}`でイメージソースを設定できます。 `Avater` はリストのデータソースからの列です。
+2.  コンポーネントデータがリストからの場合は、`{{ currentItem.columnName }}` を使用してデータを設定できます。 たとえば、`{{ currentItem.Avater }}`でイメージソースを設定できます。 `Avater` はリストのデータソースからの列です。 たとえば、`{{ currentItem.Avater }}`でイメージソースを設定できます。 `Avater` はリストのデータソースからの列です。
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list2.png'
@@ -48,7 +48,7 @@ List コンポーネントをフレームにドラッグすると、自動的に
 
 ### リストのデータを使用
 
-`{{ list1.selectedItem.columnName }}`で選択したアイテムのデータを使用できます。 または、`{{ list1.dataSource[n].columnName }}`を使用してリストの任意のデータを使用してください
+`{{ list1.selectedItem.columnName }}`で選択したアイテムのデータを使用できます。 または、`{{ list1.dataSource[n].columnName }}`を使用してリストの任意のデータを使用してください または、`{{ list1.dataSource[n].columnName }}`を使用してリストの任意のデータを使用してください
 
 <img
   src='https://cdn.illacloud.com/official-website/img/docs/assemble/list3.png'

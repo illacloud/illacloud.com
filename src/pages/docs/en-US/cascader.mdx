@@ -1,0 +1,144 @@
+---
+
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud 
+desc: Use the Cascader component in ILLA Cloud to create multi-level menus for web apps. Learn what is Cascader and how to customize and control the Cascader options.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=en&filter=basic&value=0
+tagCategory: doc_menu_cascader_click
+
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 1
+
+---
+
+## <h2 hidden>What is Cascader?</h2>
+
+A cascader is a type of input component that allows users to select hierarchical data, such as a category or subcategory from a dropdown menu. When a user selects an option from the dropdown menu, the cascader will automatically update to show the relevant subcategories or options in a nested dropdown menu.
+
+For example, if you have a cascader input component for selecting a product category, the first dropdown menu may show all the available categories, such as "Electronics," "Clothing," and "Books." When a user selects "Electronics," the cascader will update to show the subcategories of electronics, such as "Phones," "Laptops," and "Tablets." This allows users to quickly and easily navigate through hierarchical data and select the option they need.
+
+### ****Properties****
+
+Cascader's available properties. JavaScript may be written to read or alter information about components.
+
+| Properties | Description |
+| --- | --- |
+| Data Source | Each option must be JSON format and contain two keys, value and label. By using arrays, you can create options at the same level. And child options can be created by using "children" attribute. |
+| Default value | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}. |
+| Placeholder | The value will be shown when the input field is empty. |
+| Label | The name of the field displayed to the user |
+| Caption | A caption used to describe the field in detail |
+| Hidden label | Set whether to display the label |
+| Position | Set the position of the label relative to the component |
+| Alignment | Set the alignment (align to left or right) of the label |
+| Width | When the label is on the left side of the component, set the width ratio of the label. |
+| Event Handler | Trigger queries, control components, or call other APIs in response to component events. |
+| Disabled | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
+| Read Only | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified. |
+| Show clear button | control whether or not a clear button is displayed in the input field |
+| Expansion method | Set how cascader expands (by clicking or hovering) |
+| Tooltip | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
+| Hidden | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value. |
+
+### ****Methods****
+
+You can use other components to control the component. We support the following two methods:
+
+- **setValue**
+
+To set the selected option, for example, {{”value1”}}
+
+| Properties | Description |
+| --- | --- |
+| Value | Input value |
+- **clearValue**
+
+To clear the value of the selected component 
+
+Example Usage:
+
+Cascader component support listening to the `onChange` event of other components using built-in event system. Set it up by following these example steps:
+
+1. Add an event trigger to the component that you want to listen to. For example, if you want to listen to the **`onChange`** event of a Radio Group component, you would add an event trigger to that Radio Group component.
+2. In the Edit event handler, select **`Control component`** in action, select the **`Cascader`** component that you want to update as the target of the event.
+3. Choose the **`SetValue`** action and select the appropriate value for the Cascader component. This will be the value that the Cascader component have and will update when the event is triggered.
+4. Save the event trigger settings and repeat the process for any other components that you want to listen to.
+
+Once you've set up the event triggers, the Cascader input component will automatically update whenever the **`onChange`** event is triggered on the other components. This allows you to create dynamic interfaces that respond to user input in real-time, making it easier for users to navigate and interact with your application.
+
+### Event handler
+
+| Event | Description |
+| --- | --- |
+| Change | When a user changes the selected option value |
+| Focus | When a user moves the mouse cursor on the cascader component |
+| Blur | When a user is done selecting options and quit from focusing on the cascader component |
+
+### Data
+
+The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name | Description |
+| --- | --- |
+| dataSourceMode | the mode of the data source in cascader (default dynamic) |
+| displayName | the name of this component (ie cascader1) |
+| expandTrigger | trigger events (click) |
+| value | Selected value |
+| label | label value |
+| labelAlign | alignment of cascader label (left or right) |
+| labelPosition | position of cascader label (left or right) |
+| labelWidth | the integer representing width of label |
+| placeholder | placeholder value |
+
+Example: {{cascader1.value[0]}
+
+### Use case
+
+Next, we will demonstrate how to map the data from the data source to options in cascader dynamically. 
+
+#### Step 1 Add an action
+
+Let us create a table in Supabase called **`project`,** as well as a subtable called **`therapist`** which are aligned by **`project_id`**.
+
+Then we can create a new action for Supabase from the action list, listing all data in project and named supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) as project_id, [therapist.name](http://therapist.name/) as therapist_name from therapist join project on therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Step 2 Transform the data
+
+Next, we can **`enable`** the **`transformer`** section under the Select Section. Within the text area, we can capture only the values and labels we need from the data and transform them into cascader-friendly options using JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === current.project_id);
+  if (existing) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existing.children.push(therapist);
+  } else {
+    const project = { value: current.project_id, label: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children.push(therapist);
+    acc.push(project);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+The final action should be displayed the same as
+
+<img src=’[https://cdn.illacloud.com/official-website/img/docs/cascader1.png](https://cdn.illacloud.com/official-website/img/docs/cascader1.png)’ alt=”” />
+
+Click **`Save`** and **`Run`** to activate this action.
+
+#### Step 3 Configure the component
+
+After dragging a cascader component to the canvas, we can single click to configure its data source to `{{supabasedb1.data}}` 
+
+Optional: Here we set a default value of `{{['a', '1']}}` for corresponding `{{['Psychotherapy'], ['James']}}` labels.
+
+<img src=’[https://cdn.illacloud.com/official-website/img/docs/cascader0.png](https://cdn.illacloud.com/official-website/img/docs/cascader0.png)’ alt=”” />
