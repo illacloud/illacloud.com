@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Käytä Cascader komponenttia ILLA Cloudissa luodaksesi monitasoisia valikoita verkkosovelluksiin. Opi mitä Cascader on ja miten muokata ja hallita Cascader vaihtoehtoja.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_cascader_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Mitä Cascader on?</h2>
+
+Kaskader on tyyppi syöte komponentti, jonka avulla käyttäjät voivat valita hierarkkisia tietoja, kuten kategoria tai alakategoria pudotusvalikosta. Kun käyttäjä valitsee valinnan pudotusvalikosta, kaskaattori päivittää automaattisesti näyttääkseen asiaankuuluvat alakategoriat tai vaihtoehdot sisäkkäisessä pudotusvalikossa.
+
+Esimerkiksi, jos sinulla on cascader syöttökomponentti valittaessa tuoteluokkaa, Ensimmäinen pudotusvalikko voi näyttää kaikki käytettävissä olevat kategoriat, kuten "Elektroniikka", "Vaatteet" ja "Kirjat". Kun käyttäjä valitsee "Elektroniikka", kascader päivittää näyttämään alakategoriat elektroniikka, kuten "Puhelimet", "Kannettavat" ja "Tablets." Näin käyttäjät voivat navigoida nopeasti ja helposti hierarkkisten tietojen kautta ja valita tarvitsemansa vaihtoehdon.
+
+### \***\*Ominaisuudet\*\***
+
+Cascaderin käytettävissä olevat ominaisuudet. Javascript voidaan kirjoittaa lukemaan tai muuttamaan tietoja komponenteista.
+
+| Ominaisuudet           | Kuvaus                                                                                                                                                                                                                                    |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tietojen Lähde         | Jokaisen valinnan on oltava JSON-formaatti, ja siinä on oltava kaksi näppäintä, arvo ja etiketti. Käyttämällä taulukoita, voit luoda vaihtoehtoja samalla tasolla. Ja lapsi vaihtoehtoja voidaan luoda käyttämällä "lapset" ominaisuutta. |
+| Oletus arvo            | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.                                                                                                                       |
+| Paikkamerkki           | Arvo näytetään, kun syöttökenttä on tyhjä.                                                                                                                                                                                                |
+| Tunniste               | The name of the field displayed to the user                                                                                                                                                                                               |
+| Kuvateksti             | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                                                                                                          |
+| Piilotettu etiketti    | Määritä näytetäänkö nimike                                                                                                                                                                                                                |
+| Sijainti               | Set the position of the label relative to the component                                                                                                                                                                                   |
+| Tasaus                 | Aseta merkin kohdistus (kohdistus vasemmalle tai oikealle)                                                                                                                                                                                |
+| Width                  | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                                                                                                          |
+| Tapahtuman Käsittely   | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                                                                                                        |
+| Pois Käytöstä          | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                                                                                                           |
+| Vain Luettu            | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                                                                                                          |
+| Näytä tyhjennyspainike | säätää, näkyykö syöttökentässä tyhjä painike vai ei                                                                                                                                                                                       |
+| Laajentamismenetelmä   | Määritä kuinka kascader laajenee (klikkaamalla tai leijumalla)                                                                                                                                                                            |
+| Työkaluvihje           | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                                                                                                               |
+| Hidden                 | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                                                                                                         |
+
+### **\*\***Menetelmät\*\*\*\*
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kahta menetelmää:
+
+-   **setValue**
+
+Valitun vaihtoehdon asettamiseksi esimerkiksi {{”arvo1”}}
+
+| Ominaisuudet | Kuvaus      |
+| ------------ | ----------- |
+| Arvo         | Input value |
+
+-   **clearValue**
+
+Poista valitun komponentin arvo 
+
+Esimerkki Käyttö:
+
+Cascader komponentin tuki kuunnellen muiden komponenttien `onChange`-tapahtumaa käyttäen sisäänrakennettua tapahtumajärjestelmää. Määritä se seuraamalla näitä esimerkkivaiheita:
+
+1.  Lisää tapahtuman käynnistäjä komponenttiin, jota haluat kuunnella. @ info: whatsthis Esimerkiksi, jos haluat kuunnella Radio Groupin komponentin **`onChange`** tapahtumaa, voit lisätä tapahtuman laukaista että Radio Group komponentti.
+2.  Valitse Edit event handlerissa **`Ohjaa komponentti`** toiminnassa, valitse **`Cascader`** komponentti jonka haluat päivittää tapahtuman kohteeksi.
+3.  Valitse **`SetValue`** toiminto ja valitse Cascader komponentin sopiva arvo. Tämä on se arvo, joka Cascader komponentilla on ja päivittyy, kun tapahtuma käynnistetään.
+4.  Tallenna tapahtuman käynnistäjän asetukset ja toista prosessi muille komponenteille, joita haluat kuunnella.
+
+Kun olet määrittänyt tapahtuman laukaisimet, Cascader syöttökomponentti päivittyy automaattisesti aina kun **`onChange`** tapahtuma käynnistyy muilla komponenteilla. Tämän avulla voit luoda dynaamisia rajapintoja, jotka vastaavat käyttäjän tulokseen reaaliajassa, helpottaa sovelluksen käyttäjiä navigointia ja vuorovaikutusta sen kanssa.
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valitun vaihtoehdon arvoa                                                    |
+| Kohdistus | Kun käyttäjä siirtää hiiren kursorin kascader komponentin                                         |
+| Blur      | Kun käyttäjä on valmis valitsemaan vaihtoehtoja ja lopettamaan keskittyminen cascader komponentti |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi | Kuvaus                                             |
+| ----------------- | -------------------------------------------------- |
+| dataSourceMode    | tietolähteen muoto kaskaattorissa (oletus dynamic) |
+| näyttönimi        | tämän komponentin nimi (ts. kascader1)             |
+| expandTrigger     | laukaista tapahtumat (klikkaa)                     |
+| arvo              | Valittu arvo                                       |
+| nimike            | tunnisteen arvo                                    |
+| labelAlign        | kascader merkin linjaus (vasemmalle tai oikealle)  |
+| labelPosition     | kascader merkin sijainti (vasemmalle tai oikealle) |
+| labelLeveys       | merkin leveyttä edustava kokonaisluku              |
+| paikkamerkki      | paikanmerkin arvo                                  |
+
+Esimerkki: {{cascader1.value[0]}
+
+### Käytä laatikkoa
+
+Seuraavaksi aiomme osoittaa, miten kartoittaa tiedot tietolähteestä vaihtoehtoihin kascader dynaamisesti. 
+
+#### Vaihe 1 Lisää toiminto
+
+Luodaan Supabaseen taulukko, jonka nimi on **`project`,** sekä alataulukko, jonka nimi on **`therapist`**, jonka on linjannut **`project_id`**.
+
+Sitten voimme luoda uuden toimen Supabase toimintaluettelosta, jossa luetellaan kaikki tiedot projektissa ja nimeltä supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) as project_id, [therapist.name](http://therapist.name/) as therapist_name from therapist join project on therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Vaihe 2 Muunna tiedot
+
+Seuraavaksi voimme **`ottaa käyttöön`** **`muuntaja`** -osion Valitse osiossa. Tekstialueella voimme kaapata vain datasta tarvitsemiamme arvoja ja tarroja ja muuntaa ne cascader-ystävällisiksi vaihtoehdoiksi JavaScriptin avulla.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === current. roject_id);
+  jos (olemassa) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    olemassa. hildren.push(therapist);
+  } else {
+    const project = { value: current. roject_id, label: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children ush(therapist);
+    acc.push(project);
+  }
+  paluu takaisin;
+}, []);
+
+paluu transformedArray;
+```
+
+Lopullisen toimen on oltava sama kuin
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Napsauta **`Tallenna`** ja **`Suorita`** aktivoidaksesi tämän toiminnon.
+
+#### Vaihe 3 Määritä komponentti
+
+Kun olet vetänyt kascader komponentin kankaalle, voimme yhdellä napsautuksella määrittää sen tietolähde `{{supabasedb1.data}}` 
+
+Valinnainen: Tässä asetamme oletusarvon `{{['a', '1']}}` vastaavalle `{{['Psychotherapy'], ['James']}}` etiketille.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>

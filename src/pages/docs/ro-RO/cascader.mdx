@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Folosește componenta Cascader în ILLA Cloud pentru a crea meniuri pe mai multe niveluri pentru aplicații web. Află ce este Cascader și cum să personalizezi și să controlezi opțiunile Cascader.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/299?languages=ro&filter=basic&value=0
+tagCategory: clic doc_meniu_cascader_cascader
+categoryName: 🧬 Asamblarea componentelor
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Ce este Cascader?</h2>
+
+Un cascadă este un tip de componentă de intrare care permite utilizatorilor să selecteze date ierarhice, cum ar fi o categorie sau o subcategorie dintr-un meniu derulant. Când un utilizator selectează o opțiune din meniul derulant, cascada va actualiza automat pentru a afișa subcategoriile sau opțiunile relevante într-un meniu derulant imbricat.
+
+De exemplu, dacă aveți o componentă de intrare în cascader pentru selectarea unei categorii de produs, primul meniu derulant poate afișa toate categoriile disponibile, cum ar fi Electronicele, îmbrăcămintea și cărțile. Atunci când un utilizator alege "Electronica", cascada se va actualiza pentru a afișa subcategoriile de produse electronice, cum ar fi "Telefone", "Laptopuri" şi "Tablete". Acest lucru permite utilizatorilor să navigheze rapid și ușor prin date ierarhice și să aleagă opțiunea de care au nevoie.
+
+### \***\*Proprietăți\*\***
+
+Proprietățile disponibile ale Cascaderului. JavaScript poate fi scris pentru a citi sau a modifica informații despre componente.
+
+| Proprietăți             | Descriere                                                                                                                                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Sursa de date           | Fiecare opțiune trebuie să aibă format JSON și să conțină două chei, valoare și etichetă. Folosind array-uri, puteţi crea opţiuni la acelaşi nivel. Iar opțiunile pentru copii pot fi create folosind atributul "copii". |
+| Valoare implicită       | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                                                                                    |
+| Substituent             | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                                                                                  |
+| Etichetă                | Numele câmpului afişat utilizatorului                                                                                                                                                                                    |
+| Legendă                 | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                                                                                    |
+| Etichetă ascunsă        | Setează dacă se afișează eticheta                                                                                                                                                                                        |
+| Poziție                 | Setați poziția etichetei în raport cu componenta                                                                                                                                                                         |
+| Aliniere                | Setați alinierea (aliniere la stânga sau la dreapta) a etichetei                                                                                                                                                         |
+| Width                   | Când eticheta este pe partea stângă a componentei, setaţi raportul lăţimii etichetei.                                                                                                                                    |
+| Gestionar de evenimente | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                                                                                         |
+| Dezactivat              | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                                                                                          |
+| Doar citire             | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.                                                                        |
+| Afişare buton ştergere  | controlează dacă în câmpul de intrare este sau nu afișat un buton de ștergere                                                                                                                                            |
+| Metoda de extindere     | Setează modul în care casierul se extinde (făcând clic sau plutire)                                                                                                                                                      |
+| Tooltip                 | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.                                                                            |
+| Hidden                  | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                                                                                         |
+
+### \***\*Metode\*\***
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele două metode:
+
+-   **setValue**
+
+Pentru a seta opțiunea selectată, de exemplu, {{”value1”}}
+
+| Proprietăți | Descriere   |
+| ----------- | ----------- |
+| Valoare     | Input value |
+
+-   **clearValue**
+
+Pentru a șterge valoarea componentei selectate 
+
+Exemplu de utilizare:
+
+Cascader component care ascultă evenimentul `onChange` al altor componente folosind sistemul de evenimente încorporat. Configurează-l urmând acești pași exemplari:
+
+1.  Adăugați un declanșator al evenimentului la componenta pe care doriți să o ascultați. De exemplu, dacă doriţi să ascultaţi evenimentul **`onChange`** al unei componente Radio Group, aţi adăuga un declanşator al evenimentului la acea componentă Radio Group.
+2.  În gestionarul de editare a evenimentului, selectaţi **`Componenta Control `** în acţiune, selectaţi componenta **`Cascader`** pe care doriţi să o actualizaţi ca ţintă a evenimentului.
+3.  Alegeți acțiunea **`SetValue`** și selectați valoarea potrivită pentru componenta Cascader. Aceasta va fi valoarea pe care componenta Cascader o are și o va actualiza atunci când evenimentul este declanșat.
+4.  Salvați setările de declanșare a evenimentului și repetați procesul pentru orice alte componente pe care doriți să le ascultați.
+
+Odată ce ați setat declanșatorul evenimentului, componenta de intrare a cascader se va actualiza automat ori de câte ori evenimentul **`onChange`** este declanșat pe celelalte componente. Acest lucru vă permite să creați interfețe dinamice care răspund la intrarea utilizatorului în timp real, facilitarea navigării și interacțiunii cu aplicația dvs.
+
+### Gestionar de evenimente
+
+| Eveniment  | Descriere                                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Schimbă    | Când un utilizator schimbă valoarea opțiunii selectate                                                                 |
+| Focalizare | Când un utilizator mută cursorul mouse-ului pe componenta cascader                                                     |
+| Blur       | Atunci când un utilizator a terminat selectarea opţiunilor şi a renunţat să se concentreze asupra componentei cascader |
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin **`{{componentName.propertyName}}`** în aplicație.
+
+| Nume proprietate | Descriere                                             |
+| ---------------- | ----------------------------------------------------- |
+| date SursăMod    | modul sursei de date în cascader (dinamică implicită) |
+| AfișeazăNume     | numele acestei componente (ie cascader1)              |
+| Declanșator      | declanşează evenimente (clic)                         |
+| valoare          | Valoare selectată                                     |
+| etichetă         | valoare etichetă                                      |
+| Aliniere         | aliniere etichetă cascadă (stânga sau dreapta)        |
+| Pozitie          | eticheta casierului (stânga sau dreapta)              |
+| Lățime etichetă  | integer reprezentând lăţimea etichetei                |
+| substituent      | valoare substituent                                   |
+
+Exemplu: {{cascader1.value[0]}
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să cartografiem datele de la sursa de date la opțiuni în cascadă dinamic. 
+
+#### Pasul 1 Adăugare acţiune
+
+Haideţi să creăm un tabel în Supabase numit **`proiect`,** precum şi un subtabel numit **`terapeutist`** care sunt aliniate de **`project_id`**.
+
+Apoi putem crea o nouă acțiune pentru Supabase din lista de acțiuni, enumerând toate datele din proiect și numind supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) ca project_id, [therapist.name](http://therapist.name/) ca therapist_name from therapist join project on therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Pasul 2 Transformați datele
+
+Apoi, putem **`activa`** secţiunea **`transformator`** sub secţiunea Selectare secţiune. În zona de text, putem captura doar valorile și etichetele de care avem nevoie din date și le putem transforma în opțiuni prietenoase cu cascaderul folosind JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, curent) => {
+  const existing = acc.find(item) => item.value == curent. roject_id);
+  dacă (există) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existent. hildren.push(therapist);
+  } else {
+    const project = { value: current roject_id, etichetă: current.project_name, copii: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(therapist);
+    acc.push(project);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+Acțiunea finală ar trebui afișată la fel ca
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Faceţi clic pe **`Salvează`** şi **`Run`** pentru a activa această acţiune.
+
+#### Pasul 3 Configurarea componentei
+
+După ce tragem o componentă cascader la pânză, putem face un singur clic pentru a configura sursa de date la `{{supabasedb1.data}}` 
+
+Opţional: Aici am stabilit o valoare implicită a `{{['a', '1']}}` pentru etichetele ` corespunzătoare{{['Psychotherapy'], ['James']}}` .
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>

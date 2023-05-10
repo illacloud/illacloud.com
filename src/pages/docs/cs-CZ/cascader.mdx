@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Pomocí kaskádové komponenty v ILLA Cloudu vytvořte víceúrovňové menu pro webové aplikace. Zjistěte, co je Cascader a jak přizpůsobit a ovládat možnosti kaskády.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=cs&filter=basic&value=0
+tagCategory: https://crowdin.com/multilingual/illacloud-website/299?languages=cs&filter=basic&value=0
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Co je to Cascader?</h2>
+
+Kaskader je typ vstupní komponenty, která umožňuje uživatelům vybrat hierarchická data, jako je kategorie nebo podkategorie z rozbalovacího menu. Když uživatel vybere možnost z rozbalovacího menu, kaskádový systém se automaticky aktualizuje, aby zobrazil příslušné podkategorie nebo možnosti v vnořené rozbalovací nabídce.
+
+Například, pokud máte pro výběr kategorie produktů vstupní komponentu kaskády, první rozbalovací menu může zobrazovat všechny dostupné kategorie, jako jsou "Elektroniky", "Oděvování", "Knihy" a "Knihy". Když uživatel vybere "Elektroniky", kaskádová poloha bude aktualizována tak, aby zobrazovala podkategorie elektroniky, jako jsou "telefony", "Laptopy", "tablety". To umožňuje uživatelům rychle a snadno procházet pomocí hierarchických dat a vybrat možnosti, které potřebují.
+
+### \***\*Vlastnosti\*\***
+
+Vlastnosti kaskaderu. JavaScript může být napsán pro čtení nebo změnu informací o komponentách.
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zdroj dat                    | Každá možnost musí být formátu JSON a musí obsahovat dvě klíče, hodnotu a popisek. Používáním polí můžete vytvořit možnosti na stejné úrovni. A podřízené možnosti mohou být vytvořeny pomocí atributu "děti". |
+| Výchozí hodnota              | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.                                                                                                            |
+| Zástupný symbol              | Hodnota bude zobrazena, když je vstupní pole prázdné.                                                                                                                                                          |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                                                                               |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                                                                                       |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                                                                                           |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                                                                                  |
+| Zarovnání                    | Nastavit zarovnání (zarovnat vlevo nebo vpravo) štítku                                                                                                                                                         |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku.                                                                                                                                        |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                                                                                       |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                                                                                           |
+| Pouze pro čtení              | Určuje, zda je komponenta určena pouze pro čtení. Komponentu, která je určena pouze pro čtení, může být vybrána a zaměřena, ale nelze ji upravit.                                                              |
+| Zobrazit tlačítko "Vyčistit" | určuje, zda je ve vstupním poli zobrazeno tlačítko "Vyčistit"                                                                                                                                                  |
+| Rozšiřovací metoda           | Nastavte jak se expanze kaskády (kliknutím nebo přejetímkou)                                                                                                                                                   |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                                                                               |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                                                                                     |
+
+### \***\*Metody\*\***
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto dva metody:
+
+-   **setValue**
+
+Pro nastavení vybrané volby například {{”value1”}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Input value               |
+
+-   **clearValue**
+
+Možnost vymazat hodnotu vybrané komponenty 
+
+Příklad použití:
+
+Kaskádový komponent podporuje poslechnutí události `onChange` ostatních komponent pomocí vestavěného systému událostí. Nastavte si pomocí následujících příkladů:
+
+1.  Přidejte spouštěč události k komponentě, kterou chcete poslouchat. Například, pokud chcete poslouchat **`onChange`** událost skupiny rádia, k této komponentě Rádiové skupiny přidáte událost.
+2.  V obsluze události Editace vyberte **`Control component`** v akci, vyberte komponentu **`Cascader`**, kterou chcete aktualizovat jako cíl události.
+3.  Vyberte akci **`SetValue`** a vyberte příslušnou hodnotu pro kaskádovou komponentu. Toto bude hodnota, kterou kaskádové komponenty mají a aktualizují při spuštění události.
+4.  Uložte nastavení spuštění události a opakujte proces pro všechny ostatní komponenty, které chcete poslouchat.
+
+Po nastavení události se kaskádové vstupní komponenty automaticky aktualizují vždy, když je událost **`onChange`** spuštěna na ostatních komponentách. To umožňuje vytvářet dynamická rozhraní, která reagují na vstup uživatele v reálném čase, usnadňuje uživatelům navigaci a komunikaci s vaší aplikací.
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                   |
+| ------- | --------------------------------------------------------------------------- |
+| Změnit  | Když uživatel změní vybranou hodnotu volby                                  |
+| Zaměřit | Když uživatel přesune kurzor myši na komponentu kaskády                     |
+| Blur    | Když uživatel vybere možnosti a přestane se zaměřovat na komponentu kaskády |
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti     | L 343, 22.12.2009, s. 1).                       |
+| -------------------- | ----------------------------------------------- |
+| Režim dataSourceMode | režim zdroje dat v kaskádě (výchozí dynamika)   |
+| zobrazované jméno    | název této komponenty (tj. kaskader1)           |
+| rozšířit spouštěč    | spouštěcí události (klikněte)                   |
+| hodnota              | Vybraná hodnota                                 |
+| štítek               | hodnota štítku                                  |
+| Zarovnat štítek      | zarovnání štítku kaskády (vlevo nebo vpravo)    |
+| Pozice štítku        | umístění kaskádového štítku (vlevo nebo vpravo) |
+| Šířka štítku         | celé číslo představující šířku štítku           |
+| zástupný znak        | zástupná hodnota                                |
+
+Příklad: {{cascader1.value[0]}
+
+### Případ použití
+
+Dále budeme demonstrovat, jak nastavit data ze zdroje dat na možnosti v kaskádu dynamicky. 
+
+#### Krok 1 Přidat akci
+
+Vytvořme tabulku v Supasě s názvem **`project`,** a také podtabulku s názvem **`therapist`** zarovnaný **`project_id`**.
+
+Pak můžeme vytvořit novou akci pro Supabase ze seznamu akcí, seznam všech dat v projektu a jménem supabasedb1 
+
+```sql
+VYBERTE [project.id](http://project.id/) jako projekt_id, [therapist.name](http://therapist.name/) jako terapist_name od terapeut se připojit k projektu na therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Krok 2 Transformovat údaje
+
+Dále můžeme **`povolit`** v sekci Vybrat sekci **`transformátor`**. V rámci textové oblasti můžeme zachytit pouze hodnoty a štítky, které potřebujeme z dat a přeměnit je na cascader-friendly možnosti pomocí JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, aktuální) => {
+  const existing = acc.find((item) => item.value === aktuální. roject_id);
+  pokud (existuje) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existuje. hildren.push(therapist);
+  } else {
+    const project = { value: current ent. roject_id, label: current.project_name, děti: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(therapist);
+    acc.push(projekt);
+  }
+  návrat k
+}, []);
+
+návrat transformedArray;
+```
+
+Konečná akce by měla být zobrazena stejně jako
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Klikněte na **`Uložit`** a **`Spustit`** pro aktivaci této akce.
+
+#### Krok 3 Konfigurace komponenty
+
+Po přetažení kaskádové komponenty do plátna můžeme jedním kliknutím nakonfigurovat zdroj dat na `{{supabasedb1.data}}` 
+
+Volitelně: Zde nastavíme výchozí hodnotu `{{['a', '1']}}` pro odpovídající `štítky`{{['Psychotherapy'], ['James']}}.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>

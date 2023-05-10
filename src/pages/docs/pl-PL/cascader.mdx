@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Użyj komponentu Cascader w chmurze ILLA, aby utworzyć wielopoziomowe menu dla aplikacji internetowych. Dowiedz się, co to jest Cascader i jak dostosować i kontrolować opcje Cascadera.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/299?languages=pl&filter=basic&value=0
+tagCategory: "[PLACEHOLDER] doc_menu_cascader_click"
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Czym jest Cascader?</h2>
+
+Kaskader jest typem komponentu wejściowego, który umożliwia użytkownikom wybieranie danych hierarchicznych, takich jak kategoria lub podkategoria z menu rozwijanego. Gdy użytkownik wybierze opcję z rozwijanego menu, kaskadowy automatycznie zaktualizuje się, aby wyświetlić odpowiednie podkategorie lub opcje w zagnieżdżonym menu rozwijanym.
+
+Na przykład, jeśli masz komponent wejściowy kaskadowy do wyboru kategorii produktu, pierwsze menu rozwijane może pokazywać wszystkie dostępne kategorie, takie jak "Elektroniczne", "Ubranie", "Książki". Gdy użytkownik wybierze "Elektroniki", kaskader zaktualizuje się w celu pokazania podkategorii elektroniki, takich jak "Telefony", "Laptopy", "Tablety". Pozwala to użytkownikom na szybką i łatwą nawigację za pomocą danych hierarchicznych i wybranie potrzebnej opcji.
+
+### **Właściwości\*\***
+
+Dostępne właściwości kaskadu. JavaScript może być napisany w celu przeczytania lub zmiany informacji o komponentach.
+
+| Właściwości            | Opis                                                                                                                                                                                                       |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Źródło danych          | Każda opcja musi mieć format JSON i zawierać dwa klucze, wartość i etykietę. Używając tablic, możesz tworzyć opcje na tym samym poziomie. A opcje podrzędne mogą być tworzone za pomocą atrybutu "dzieci". |
+| Wartość domyślna       | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                                                                                   |
+| Zastępca               | Wartość będzie wyświetlana, gdy pole wejściowe jest puste.                                                                                                                                                 |
+| Etykieta               | Nazwa pola wyświetlanego użytkownikowi                                                                                                                                                                     |
+| Podpis                 | Podpis używany do szczegółowego opisu pola                                                                                                                                                                 |
+| Ukryta etykieta        | Ustaw czy wyświetlić etykietę                                                                                                                                                                              |
+| Położenie              | Ustaw położenie etykiety względem komponentu                                                                                                                                                               |
+| Wyrównanie             | Ustaw wyrównanie (wyrównanie do lewej lub prawej) etykiety                                                                                                                                                 |
+| Width                  | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety.                                                                                                                |
+| Obsługa zdarzeń        | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                                                                   |
+| Wyłączone              | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                                                                    |
+| Tylko do odczytu       | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                                                                    |
+| Pokaż przycisk wyczyść | kontroluj, czy przycisk wyczyść jest wyświetlany w polu wejściowym                                                                                                                                         |
+| Metoda rozszerzenia    | Ustaw jak kaskadowy rozwija się (poprzez kliknięcie lub najechanie)                                                                                                                                        |
+| Wskazówka              | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                                                              |
+| Hidden                 | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                                                         |
+
+### **Metody \*\***
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące dwie metody:
+
+-   **setValue**
+
+Aby ustawić wybraną opcję, na przykład {{”value1”}}
+
+| Właściwości | Opis        |
+| ----------- | ----------- |
+| Wartość     | Input value |
+
+-   **clearValue**
+
+Aby wyczyścić wartość wybranego komponentu 
+
+Przykładowe użycie:
+
+Komponent kaskadowy obsługuje obsługę zdarzenia `onChange` innych komponentów za pomocą wbudowanego systemu zdarzeń. Skonfiguruj za pomocą poniższych przykładowych kroków:
+
+1.  Dodaj wyzwalacz zdarzenia do komponentu, którego chcesz słuchać. Na przykład, jeśli chcesz słuchać zdarzenia **`onChange`** komponentu grupy radiowej, dodałbyś wyzwalacz zdarzenia do tego komponentu grupy radiowej.
+2.  W edycji zdarzenia wybierz w akcji **`składnik kontroli`**, wybierz komponent **`Cascader`**, który chcesz zaktualizować jako cel wydarzenia.
+3.  Wybierz działanie **`SetValue`** i wybierz odpowiednią wartość komponentu Cascader. Będzie to wartość komponentu Cascader i zostanie zaktualizowana po uruchomieniu zdarzenia.
+4.  Zapisz ustawienia wyzwalacza zdarzenia i powtórz proces dla innych komponentów, których chcesz słuchać.
+
+Po skonfigurowaniu wyzwalaczy zdarzenia, komponent wejściowy Cascadera będzie automatycznie aktualizowany za każdym razem, gdy zdarzenie **onChange\`** zostanie wyzwalane na innych komponentach. Pozwala to na tworzenie dynamicznych interfejsów, które odpowiadają na dane wejściowe użytkownika w czasie rzeczywistym, ułatwianie użytkownikom nawigowania i interakcji z aplikacją.
+
+### Obsługa zdarzeń
+
+| Wydarzenie    | Opis                                                                                            |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| Zmiana        | Gdy użytkownik zmienia wybraną wartość opcji                                                    |
+| Skupienie się | Kiedy użytkownik przenosi kursor myszy na komponent kaskadowy                                   |
+| Blur          | Kiedy użytkownik jest gotowy, wybiera opcje i odejdź od skupienia się na komponencie kaskadowym |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności      | Opis                                                   |
+| -------------------- | ------------------------------------------------------ |
+| tryb źródłowy danych | tryb źródła danych w kaskadach (domyślna dynamiczność) |
+| nazwa wyświetlacza   | nazwa tego składnika (tj. kaskadowy1)                  |
+| Rozwiń Wyzwalacz     | wyzwalacz zdarzeń (kliknięcie)                         |
+| wartość              | Wybrana wartość                                        |
+| etykieta             | wartość etykiety                                       |
+| Wyrównanie etykiety  | wyrównanie etykiety kaskadowej (lewa lub prawa)        |
+| pozycja etykiety     | pozycja etykiety kaskadowej (lewa lub prawa)           |
+| Szerokość etykiety   | liczba całkowita reprezentująca szerokość etykiety     |
+| symbol zastępczy     | wartość zastępcza                                      |
+
+Przykład: {{cascader1.value[0]}
+
+### Przypadek użycia
+
+Następnie pokażemy dynamicznie mapować dane od źródła danych do opcji kaskadowych. 
+
+#### Krok 1 Dodaj akcję
+
+Utwórzmy tabelę w Supabase o nazwie **`project`,** oraz podtablicę o nazwie **`Therist`**, która jest dostosowana do **`project_id`**.
+
+Następnie możemy utworzyć nową akcję dla Supabase z listy działań, wymieniając wszystkie dane w projekcie i nazwaną supabasedb1 
+
+```sql
+WYBIERZ [project.id](http://project.id/) jako projekt_id, [therapist.name](http://therapist.name/) jako termoterapeutyk dołącza do projektu na therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Etap 2 Przekształć dane
+
+Następnie możemy **włączyć\`** sekcję **transformator\`** w sekcji Wybierz sekcję. W obszarze tekstowym możemy przechwycić tylko wartości i etykiety, których potrzebujemy, z danych i przekształcić je w opcje przyjazne kaskadowi za pomocą JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === current. roject_id);
+  jeśli (istnieje) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    istnieje. hildren.push(therapist);
+  } else {
+    const project = { value: current. roject_id, etykieta: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.potomne ush(terapi);
+    acc.push(project);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+Ostateczne działanie powinno być pokazane w taki sam sposób, jak
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Kliknij **`Zapisz`** i **Uruchom\`**, aby aktywować tę akcję.
+
+#### Krok 3 Skonfiguruj komponent
+
+Po przeciągnięciu komponentu kaskadowego do płótna, możemy kliknąć pojedynczo aby skonfigurować jego źródło danych do `{{supabasedb1.data}}` 
+
+Opcjonalnie: Ustawiamy domyślną wartość `{{['a', '1']}}` dla odpowiadających `{{['Psychotherapy'], ['James']}}`.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>

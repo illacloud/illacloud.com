@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Brug Cascader komponenten i ILLA Cloud til at oprette multi-level menuer til web-apps. Lær hvad der er Cascader, og hvordan du tilpasser og styrer Cascader muligheder.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=da&filter=basic&value=0
+tagCategory: doc_menu_cascader_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Hvad er Cascader?</h2>
+
+En kaskadestue er en type input-komponent, der giver brugerne mulighed for at vælge hierarkiske data, såsom en kategori eller underkategori fra en rullemenu. Når en bruger vælger en mulighed fra rullemenuen, kaskadehuset opdateres automatisk for at vise de relevante underkategorier eller indstillinger i en indlejret rullemenu.
+
+For eksempel, hvis du har en cascader input komponent til at vælge en produktkategori, den første rullemenu kan vise alle tilgængelige kategorier, såsom "Electronics", "Clothing" og "Books." Når en bruger vælger "Electronics", vil kaskaden opdatere for at vise underkategorierne af elektronik, såsom "Telefoner", "Laptops", og "Tablets." Dette giver brugerne mulighed for hurtigt og nemt at navigere gennem hierarkiske data og vælge den mulighed, de har brug for.
+
+### \***\*Egenskaber\*\***
+
+Cascaders tilgængelige egenskaber. JavaScript kan skrives for at læse eller ændre information om komponenter.
+
+| Egenskaber            | Varebeskrivelse                                                                                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Datakilde             | Hver mulighed skal være JSON-format og indeholde to nøgler, værdi og etiket. Ved at bruge arrays, kan du oprette indstillinger på samme niveau. Og børnemuligheder kan skabes ved hjælp af "børn" attribut. |
+| Standard værdi        | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                                                                                   |
+| Pladsholder           | Værdien vil blive vist når inputfeltet er tomt.                                                                                                                                                             |
+| Etiket                | Navnet på det felt, der vises til brugeren                                                                                                                                                                  |
+| Billedtekst           | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                                                                                 |
+| Skjult etiket         | Angiv, om etiketten skal vises                                                                                                                                                                              |
+| Placering             | Sæt placeringen af etiketten relativt til komponenten                                                                                                                                                       |
+| Justering             | Indstil justeringen (indstil til venstre eller højre) af etiketten                                                                                                                                          |
+| Width                 | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet for etiketten.                                                                                                                  |
+| Begivenhedshåndtering | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                                                                           |
+| Deaktiveret           | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                                                                                  |
+| Kun Læs               | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                                                                       |
+| Vis ryd-knap          | kontrollere, om en klar knap vises i inputfeltet                                                                                                                                                            |
+| Ekspansion metode     | Indstil hvordan kaskadestuen udvides (ved at klikke eller svæve)                                                                                                                                            |
+| Værktøjstip           | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                                                                           |
+| Hidden                | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                                                                                      |
+
+### \***\*Metoder\*\***
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende to metoder:
+
+-   **setValue**
+
+For at angive den valgte indstilling, for eksempel, {{”value1”}}
+
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Input value     |
+
+-   **clearValue**
+
+For at rydde værdien af den valgte komponent 
+
+Eksempel Anvendelse:
+
+Cascader komponent understøtter lytter til `onChange` begivenhed af andre komponenter ved hjælp af indbygget begivenhed system. Opsæt den ved at følge disse eksempel trin:
+
+1.  Tilføj en begivenhedsudløser til den komponent, du vil lytte til. For eksempel, hvis du ønsker at lytte til den **`onChange`** begivenhed af en Radio Group komponent, du vil tilføje en begivenhedsudløser til denne Radio Group komponent.
+2.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Redigér hændelseshandler, vælg den **`Cascader`** komponent, som du ønsker at opdatere som målet for hændelsen.
+3.  Vælg handlingen **`SetValue`** og vælg den relevante værdi for Cascader-komponenten. Dette vil være den værdi, som Cascader-komponenten har, og vil opdatere, når begivenheden udløses.
+4.  Gem indstillingerne for event trigger og gentag processen for alle andre komponenter, som du ønsker at lytte til.
+
+Når du har konfigureret begivenheden udløser, vil Cascader input komponenten automatisk opdateres, når **`onChange`** begivenheden udløses på de andre komponenter. Dette giver dig mulighed for at oprette dynamiske grænseflader, der reagerer på brugerinput i realtid, gør det lettere for brugerne at navigere og interagere med din applikation.
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| Skift      | Når en bruger ændrer den valgte valgmulighed værdi                                         |
+| Fokus      | Når en bruger flytter musemarkøren på kaskadekomponenten                                   |
+| Blur       | Når en bruger er færdig vælge muligheder og afslutte fra at fokusere på kaskadekomponenten |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn | Varebeskrivelse                                         |
+| ---------------- | ------------------------------------------------------- |
+| dataSourceMode   | datakildens tilstand i kaskadegører (standard dynamisk) |
+| displayName      | navnet på denne komponent (dvs. kaskade1)               |
+| expandTrigger    | udløse hændelser (klik)                                 |
+| værdi            | Valgt værdi                                             |
+| etiket           | etiket værdi                                            |
+| labelAlign       | justering af kaskadeetiket (venstre eller højre)        |
+| labelPosition    | placering af kaskadeetiket (venstre eller højre)        |
+| labelBredde      | det heltal, der repræsenterer etikettens bredde         |
+| pladsholder      | pladsholderens værdi                                    |
+
+Eksempel: {{cascader1.value[0]}
+
+### Brug case
+
+Dernæst vil vi demonstrere, hvordan man kortlægger data fra datakilden til muligheder i kaskadedyr dynamisk. 
+
+#### Trin 1 Tilføj en handling
+
+Lad os oprette en tabel i Supabase kaldet **`project`,** samt en undertabel kaldet **`terapeut`** som er justeret af **`project_id`**.
+
+Så kan vi oprette en ny handling for Supabase fra handlingslisten, med alle data i projektet og navngivet supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) as project_id, [therapist.name](http://therapist.name/) as therapist_name from therapist join project on therapist.project_id = [project.id](http://project.id/)
+```
+
+#### Trin 2 Omdan dataene
+
+Dernæst kan vi **`aktivere`** sektionen **`transformer`** under Vælg sektionen. Inden for tekstområdet, kan vi kun fange de værdier og etiketter, vi har brug for fra dataene og omdanne dem til kaskadevenlige muligheder ved hjælp af JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === current. roject_id);
+  if (existing) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existing. hildren.push(terapeut);
+  } else {
+    const project = { value: current. roject_id, label: current.project_name, children: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(terapeut);
+    acc.push(project);
+  }
+  returnerer acc;
+}, []);
+
+returnerer transformedArray;
+```
+
+Den endelige handling bør vises på samme måde som
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Klik på **`Gem`** og **`Kør`** for at aktivere denne handling.
+
+#### Trin 3 Konfigurer komponenten
+
+Efter at have trukket en kaskadekomponent til lærredet, kan vi enkeltklikke for at konfigurere dens datakilde til `{{supabasedb1.data}}` 
+
+Valgfri: Her sætter vi en standardværdi på `{{['a', '1']}}` for tilsvarende `{{['Psychotherapy'], ['James']}}` etiketter.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>

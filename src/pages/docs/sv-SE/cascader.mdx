@@ -1,0 +1,142 @@
+---
+title: Cascader
+metaTitle: Cascader Component Doc | ILLA Cloud
+desc: Använd Cascader-komponenten i ILLA Cloud för att skapa flernivåmenyer för webbappar. Lär dig vad som är Cascader och hur du anpassar och styr Cascader-alternativen.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=sv&filter=basic&value=0
+tagCategory: Klicka
+categoryName: 🧬 Montera komponenter
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Vad är Cascader?</h2>
+
+En cascader är en typ av inmatningskomponent som tillåter användare att välja hierarkiska data, till exempel en kategori eller underkategori från en rullgardinsmeny. När en användare väljer ett alternativ från rullgardinsmenyn, kaskadern uppdateras automatiskt för att visa relevanta underkategorier eller alternativ i en kapslad rullgardinsmeny.
+
+Till exempel, om du har en kaskader inmatningskomponent för att välja en produktkategori, den första rullgardinsmenyn kan visa alla tillgängliga kategorier, såsom "Elektronik", "Kläder" och "Böcker." När en användare väljer "Elektronik", kommer kaskadern uppdatera för att visa underkategorier av elektronik, såsom "telefoner", "bärbara datorer" och "surfplattor". Detta gör det möjligt för användare att snabbt och enkelt navigera genom hierarkiska data och välja det alternativ de behöver.
+
+### \***\*Egenskaper\*\***
+
+Cascaders tillgängliga egenskaper. JavaScript kan skrivas för att läsa eller ändra information om komponenter.
+
+| Egenskaper        | Beskrivning                                                                                                                                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Källa för data    | Varje alternativ måste vara JSON-format och innehålla två nycklar, värde och etikett. Genom att använda arrayer, kan du skapa alternativ på samma nivå. Och barnalternativ kan skapas genom att använda "barn" attribut. |
+| Förvalt värde     | Det initiala värdet av komponenten. Du kan dynamiskt ändra initialvärdet genom att skriva JavaScript i {{}}.                                                                                                             |
+| Platshållare      | Värdet kommer att visas när inmatningsfältet är tomt.                                                                                                                                                                    |
+| Etikett           | Namnet på fältet som visas för användaren                                                                                                                                                                                |
+| Bildtext          | En text som används för att beskriva fältet i detalj                                                                                                                                                                     |
+| Dold etikett      | Ange om etiketten ska visas                                                                                                                                                                                              |
+| Befattning        | Ställ in positionen för etiketten i förhållande till komponenten                                                                                                                                                         |
+| Justering         | Ange justering (anpassa till vänster eller höger) på etiketten                                                                                                                                                           |
+| Width             | När etiketten är på vänster sida av komponenten, ställ in breddförhållandet på etiketten.                                                                                                                                |
+| Händelsehanterare | Utlösa frågor, styra komponenter, eller ringa andra API:er som svar på komponenthändelser.                                                                                                                               |
+| Inaktiverad       | Kontrollera status för om komponenten är inaktiverad. Komponenten kan inte ändras eller fokuseras när den är inaktiverad.                                                                                                |
+| Läs endast        | Kontrollera status på om komponenten är skrivskyddad. En skrivskyddad komponent kan väljas och fokuseras men kan inte ändras.                                                                                            |
+| Visa tydlig knapp | kontrollera om en tydlig knapp visas i inmatningsfältet                                                                                                                                                                  |
+| Expansionsmetod   | Ställ in hur kaskadern expanderar (genom att klicka eller sväva)                                                                                                                                                         |
+| Verktygstips      | Användare kan ange komponenten verktygstips här. Verktygstipen kommer att visas när den är fokuserad. Markdown format stöds.                                                                                             |
+| Hidden            | Styr dynamiskt om komponenten är dold. Du kan ändra den dolda statusen genom dynamiskt booleskt värde.                                                                                                                   |
+
+### \***\*Metoder\*\***
+
+Du kan använda andra komponenter för att styra komponenten. Vi stöder följande två metoder:
+
+-   **setValue**
+
+För att ställa in det valda alternativet, till exempel, {{”value1”}}
+
+| Egenskaper | Beskrivning |
+| ---------- | ----------- |
+| Värde      | Input value |
+
+-   **clearValue**
+
+För att rensa värdet på den valda komponenten 
+
+Exempel Användning:
+
+Cascader komponent stöd lyssna på "onChange" händelsen av andra komponenter med hjälp av inbyggda händelsesystem. Ställ in det genom att följa dessa exempelsteg:
+
+1.  Lägg till en händelseutlösare till den komponent som du vill lyssna på. Till exempel, om du vill lyssna på **`onChange`** händelsen av en radiogruppskomponent, du skulle lägga till en händelseutlösare till den radiogruppskomponenten.
+2.  I händelsehanteraren Redigera, välj **`Control component`** i åtgärd, välj **`Cascader`** komponenten som du vill uppdatera som mål för händelsen.
+3.  Välj åtgärden **`SetValue`** och välj lämpligt värde för Cascader-komponenten. Detta kommer att vara det värde som Cascader komponenten har och kommer att uppdatera när händelsen utlöses.
+4.  Spara inställningarna för händelsen och upprepa processen för andra komponenter som du vill lyssna på.
+
+När du har konfigurerat händelseutlösarna, kommer Cascader indatakomponenten automatiskt att uppdateras när **`onChange`** händelsen utlöses på de andra komponenterna. Detta gör att du kan skapa dynamiska gränssnitt som svarar på användarens indata i realtid. göra det enklare för användare att navigera och interagera med din applikation.
+
+### Händelsehanterare
+
+| Händelse | Beskrivning                                                                           |
+| -------- | ------------------------------------------------------------------------------------- |
+| Ändra    | När en användare ändrar det valda alternativets värde                                 |
+| Fokus    | När en användare flyttar muspekaren på kaskadkomponenten                              |
+| Blur     | När en användare är klar att välja alternativ och sluta fokusera på kaskadkomponenten |
+
+### Data
+
+Komponenten har några vanliga data, som kan anropas via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskapens namn | Beskrivning                                         |
+| ---------------- | --------------------------------------------------- |
+| dataKällläge     | läget för datakällan i kaskader (standarddynamisk)  |
+| visningsnamn     | namnet på denna komponent (dvs cascader1)           |
+| expanderTrigger  | utlösande händelser (klicka)                        |
+| värde            | Valt värde                                          |
+| etikett          | etikett värde                                       |
+| etikettJustera   | justering av kaskader etikett (vänster eller höger) |
+| etikettPosition  | position för kaskader etikett (vänster eller höger) |
+| etikettBredd     | heltal som representerar bredden på etiketten       |
+| platshållare     | Platshållarens värde                                |
+
+Exempel: {{cascader1.value[0]}
+
+### Använd ärende
+
+Därefter kommer vi att visa hur man kartlägger data från datakällan till alternativ i kaskader dynamiskt. 
+
+#### Steg 1 Lägg till en åtgärd
+
+Låt oss skapa ett bord i Supabase som kallas **`project`,** samt en undertabell som kallas **`therapist`** som är justerad av **`project_id`**.
+
+Sedan kan vi skapa en ny åtgärd för Supabase från åtgärdslistan, som listar all data i projektet och heter supabasedb1 
+
+```sql
+SELECT [project.id](http://project.id/) som project_id, [therapist.name](http://therapist.name/) som terapeutnamn från terapeut går med i projektet terapeut.project_id = [project.id](http://project.id/)
+```
+
+#### Steg 2 Omvandla data
+
+Därefter kan vi **`aktivera`** **`transformator`**-sektionen under Välj sektion. Inom textområdet kan vi bara fånga de värden och etiketter vi behöver från data och omvandla dem till kaskadvänliga alternativ med JavaScript.
+
+```jsx
+const transformedArray = data.reduce((acc, current) => {
+  const existing = acc.find((item) => item.value === current. roject_id);
+  om (existerar) {
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    existerar. hildren.push(terapeut);
+  } else {
+    const project = { value: current. roject_id, etikett: current.project_name, barn: [] };
+    const therapist = { value: current.therapist_id, label: current.therapist_name };
+    project.children. ush(terapeut);
+    acc.push(projekt);
+  }
+  return acc;
+}, []);
+
+return transformedArray;
+```
+
+Den slutliga åtgärden ska visas samma som
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader1.png>
+
+Klicka på **`Save`** och **`Run`** för att aktivera denna åtgärd.
+
+#### Steg 3 Konfigurera komponenten
+
+Efter att ha dragit en kaskadkomponent till duken, kan vi enkelt klicka för att konfigurera dess datakälla till `{{supabasedb1.data}}` 
+
+Valfritt: Här sätter vi ett standardvärde på `{{['a', '1']}}` för motsvarande `{{['Psychotherapy'], ['James']}}` etiketter.
+
+<https://cdn.illacloud.com/official-website/img/docs/cascader0.png>
