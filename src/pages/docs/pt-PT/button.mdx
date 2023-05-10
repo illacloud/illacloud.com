@@ -1,0 +1,87 @@
+---
+title: Botão
+metaTitle: Componente de Botão Doc | ILLA Cloud
+desc: Descubra como usar o componente botão na Nuvem ILLA, uma plataforma com pouco código para construir ferramentas. O botão permite que os usuários acionem uma ação ou executem uma função ao clicar.
+crowdinRepo: https://crowdin.com/multilingues/illacloud-website/303?languages=pt&filter=basic&value=0
+tagCategory: doc_menu_button_click
+categoryName: 🧬 Montar componentes
+categoryPriority: 6
+postPriority: 0
+---
+
+## <h2 hidden>O que é o Botão?</h2>
+
+O componente botão permite aos usuários acionar uma ação ou executar uma função clicando no botão. 
+
+### propriedades
+
+| propriedades           | Descrição:                                                                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| texto                  | O texto exibido para o botão                                                                                                     |
+| Gerenciador de Eventos | Acionar consultas, componentes de controle ou chamar outras APIs em resposta a eventos de componentes.                           |
+| Carregando...          | Se o componente deve mostrar um indicador de carregamento.                                                                       |
+| Desabilitado           | Controla o estado de se o componente está desabilitado. O componente não pode ser modificado ou focado quando está desabilitado. |
+| Dica                   | O usuário pode inserir dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.       |
+| Hidden                 | Controle dinamicamente se o componente está oculto. Você pode alterar o status oculto através de um valor booleano dinâmico.     |
+| Variante               | Permitir que os usuários escolham entre dois estilos diferentes para o botão: preencha ou esboço.                                |
+| Cor do Tema            | Permite aos usuários especificar a cor e a opacidade do fundo do botão                                                           |
+
+### Manipulador de eventos
+
+| Evento | Descrição:                                                                                    |
+| ------ | --------------------------------------------------------------------------------------------- |
+| Click  | Quando um usuário clica neste botão, executar a ação específica personalizada pelos usuários. |
+
+### Dado
+
+O componente tem alguns dados comumente usados, que podem ser chamados via **`{{componentName.propertyName}}`** no aplicativo.
+
+| Nome da propriedade | Descrição:                                                 |
+| ------------------- | ---------------------------------------------------------- |
+| colorEsquema        | cor de fundo do botão                                      |
+| desabilitado        | um valor booleano indica o status de desabilitado          |
+| mostrarNome         | o nome deste componente (iie button1)                      |
+| hidden              | um valor booleano indica o status oculto do botão          |
+| dinâmica oculta     | um valor booleano indica o status dinâmico oculto do botão |
+| carregando          | valor de carregamento                                      |
+| Texto               | valor do texto exibido no botão                            |
+| dicaTexto           | valor da dica de texto                                     |
+| variante            | estilo variante do botão (preencha ou esboçado)            |
+
+### Usar caso
+
+Em seguida, vamos demonstrar como usar o botão para controlar o componente **`form`** dinamicamente. 
+
+#### Passo 1 Adicionar uma ação
+
+Criamos uma tabela chamada **`countries`**, incluindo 5 colunas: **`num_code`**, **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. Os nomes dos países são o que queremos usar como valor de opções, que são armazenados na coluna **`en_short_name`**.
+
+Então, podemos criar uma nova ação para Suabase a partir da lista de ações, listando todos os dados em **`países`** e nomeado supabasedb1 
+
+```sql
+selecionar distinto en_short_name como valor de "País" ordem por valor;
+```
+
+É isso que temos como saída:
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
+
+Clique em **`Salvar`** e **`Executar`** para ativar esta ação.
+
+#### Passo 2 Adicionar um Componente
+
+Primeiro nós adicionamos o componente **`Form`** e rotulamos como 'Survey'. Em seguida, arrastamos um componente de entrada, um componente de seleção e um componente de entrada numérica para o formulário, rotulando-o como **`Nome`, `Nationality`,** e **`Idade`.**
+
+Em seguida, mapeamos os valores **`países`** para selecionar o componente de 
+
+1.  no modo mapeado, defina as fontes de dados como `{{supabasedb1.data}}` 
+2.  na opção mapeada, defina o valor como `{{item.value}}`
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
+
+Então, podemos configurar o botão **`Submit`** para controlar o método **`Send`** do componente **`Form`**. 
+
+1.  No manipulador de Editar evento, selecione **`componente de controle`** em ação, selecione o componente **`form`** que você deseja atualizar como o alvo do evento.
+2.  Escolha a ação **`Enviar`**. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
