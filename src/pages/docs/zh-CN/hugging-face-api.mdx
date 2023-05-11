@@ -1,8 +1,9 @@
 ---
 title: Hugging Face API
-metaTitle: 连接到Hugging Face API
+metaTitle: Hugging Face API 集成doc | ILLA Cloud
 desc: 学习如何在 ILLA 中使用 Hugging Face API
-tagCategory: doc_menu_hugging_fac_api_click
+tagCategory: doc_menu_hugging_face_api_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/213?languages=zhcn&filter=basic&value=0
 categoryName: 🔨 数据集成
 categoryPriority: 3
 postPriority: 1
@@ -24,7 +25,7 @@ Hugging Face库中可用的一些模型示例包括：
 
 ### 在ILLA Builder中使用Hugging Face的方法
 
-在Hugging Face中，通过公共API可以访问超过130,000个机器学习模型，您可以在https://huggingface.co/models 中免费使用和测试。 此外，如果你需要生产场景的解决办法，你可以使用Hugging Face's Inference Endpoints，Endpoint可以在[\*\*https://huggingface.co/docs/inference-endpoints/index](https://huggingface.co/docs/inference-endpoints/index)上部署和访问<https://huggingface.co/docs/inference-endpoints/index>\*\*。
+在Hugging Face中，130,000多台机器学习模型可以通过公共API免费使用和测试<https://huggingface.co/model>。 此外，如果你需要生产场景的解决办法，你可以使用 Hugging Facebook的引导端点，可以在 <https://huggingface.co/docs/inference-endpoints/index>部署和访问。
 
 ILLA Builder提供了数十个常用的前端组件，允许您根据特定的需求快速构建不同的前端界面。 同时，ILLA 提供与 Hugging Face 的连接，允许您快速连接到 API，发送请求并接收返回的数据。 通过连接API和前端组件，您可以实现通过前端输入内容并将其提交到API的需求。 API返回生成的内容也可以在前端显示。
 
@@ -63,15 +64,15 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 名称：在ILLA中显示的名称
 
-Token：在您的Hugging Face [个人资料设置](https://huggingface.co/settings/tokens)中获取
+令牌：在你的Hugging Face [profile settings](https://huggingface.co/settings/tokens)
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
 
 在配置Action之前，请确认Hugging Face中的模型信息：
 
-在[Hugging Face Model Page]\(https://huggingface.co/models](https://huggingface.co/models) 中选择一个模型
+在 [Hugging Face Model Page](https://huggingface.co/model) 中选择一个模型
 
-我们以[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 为例。进入详细页面>单击“部署”>单击“Inference API” 进入详情页面 > 点击Deploy按钮 > 点击Inference API
+我们使用 [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 作为例子。 进入详情页面 > 点击Deploy按钮 > 点击Inference API
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
 
