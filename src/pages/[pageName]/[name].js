@@ -10,7 +10,7 @@ import { useRaf } from 'react-use'
 import { LpHeader } from '@/components/LandingPage/LpHeader';
 import { LpTemplate } from '@/components/LandingPage/LpTemplate';
 import { getStars } from '@/utils/getStars';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import { pageMap } from '@/constants/landingPage';
 
 
@@ -53,9 +53,7 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <div className='lg:mt-[50px] overflow-hidden'>
-        <Footer />
-      </div>
+      <Footer />
     </>
   )
 }
