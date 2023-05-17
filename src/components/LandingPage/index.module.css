@@ -34,15 +34,26 @@
 .item {
   @apply flex flex-col gap-[12px] p-[16px] justify-center items-start rounded-[16px];
   @apply xl:gap-[24px] xl:p-[32px];
+}
+.itemBg {
   background: linear-gradient(
     180deg,
     rgba(221, 225, 232, 0.2) 0%,
     rgba(221, 225, 232, 0) 100%
   );
 }
-.itemName {
-  @apply capitalize font-[600] text-[16px] leading-[20px] overflow-ellipsis line-clamp-1;
-  @apply xl:text-[18px] xl:leading-[26px];
+.itemImage {
+  @apply w-[120px] h-[120px] rounded-[13px] bg-tech-purple-07 flex justify-center items-center;
+}
+.itemNameCommon {
+  @apply capitalize font-[600] text-[16px] overflow-ellipsis line-clamp-1;
+  @apply xl:text-[18px];
+}
+.itemNameIntegrations {
+  @apply leading-[20px] xl:leading-[26px];
+}
+.itemNameComponents {
+  @apply leading-[24px];
 }
 .itemDescription {
   @apply font-[400] text-[12px] leading-[16px] overflow-ellipsis line-clamp-4;
