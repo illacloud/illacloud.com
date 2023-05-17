@@ -53,54 +53,54 @@ NodePortをKubernetesクラスタイングレスゲートウェイにルーテ�
 static_resources:
   listeners:
   - name: https_listener
-    address:
-      socket_address:
-        address: 0.0.0.0
+    adress:
+      socket_adress:
+        adress: 0. .0.0
         port_value: 443
-    filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
+    filter_kedjor:
+    - filter:
+      - namn: envoy. ilters.network.http_connection_manager
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
           stat_prefix: https_listener
           route_config:
-            name: local_route
+            namn: local_route
             virtual_hosts:
-            - name: illa_builder
-              domains:
-              - "illa.yourdomian.com" # replace with your domain
-              routes:
-              - match:
-                  prefix: "/"route:
-                  cluster: illa_builder
+            - namn: illa_builder
+              domäner:
+              - "illa. vår domian. om" # ersätt med din domän
+              rutter:
+              - matcha:
+                  prefix: "/"rutt:
+                  kluster: illa_builder
           http_filters:
-          - name: envoy.filters.http.router
+          - namn: envoy. ilters.http. yttre
             typed_config:
-              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
       transport_socket:
-        name: envoy.transport_sockets.tls
+        namn: envoy.transport_sockets. ls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
           common_tls_context:
             tls_certificates:
-            # replace this with your cert file
+            # ersätt detta med din cert-fil
             - certificate_chain:
-                filename: /your-cert-folder/fullchain.pem
+                filnamn: /your-cert-folder/fullchain. em
               private_key:
-                filename: /your-cert-folder/privkey.pem
+                filnamn: /your-cert-folder/privkey. em
 
-  clusters:
-  - name: illa_builder
-    type: STRICT_DNS
+  kluster:
+  - namn: illa_builder
+    -typ: STRICT_DNS
     lb_policy: ROUND_ROBIN
     connect_timeout: 10s
     load_assignment:
       cluster_name: illa_builder
-      endpoints:
+      slutpunkter:
       - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: illa-builder
+        - slutpunkt:
+            adress:
+              socket_adress:
+                adress: illa-builder
                 port_value: 80
 ```
