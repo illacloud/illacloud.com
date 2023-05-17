@@ -103,7 +103,7 @@ export const PricingContent = ({ onChangeShow }) => {
                   onClick={onChangeShow}
                 >{t(btnContent)}</span>
               )}
-              <div className='flex flex-col item-start w-[320px] h-[536px]'>
+              <div className='flex flex-col item-start w-[320px]'>
                 {
                   list.map(({ name, values }) => {
                     return (

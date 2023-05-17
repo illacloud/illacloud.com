@@ -24,7 +24,7 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand, setMenuExpand] = useState(false)
-  const { setPlayMaskShow, githubStarts, onSubscribe } = props
+  const { setPlayMaskShow, githubStarts } = props
 
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
@@ -60,6 +60,8 @@ export const MobileTitle = (props) => {
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
+                // eslint-disable-next-line no-undef
+                gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_body_live_demo_click',

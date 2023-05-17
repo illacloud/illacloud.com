@@ -12,7 +12,7 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 
 export const Title = (props) => {
-  const { githubStarts, setPlayMaskShow, onSubscribe } = props
+  const { githubStarts, setPlayMaskShow } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
@@ -151,6 +151,8 @@ export const Title = (props) => {
                 <a
                   className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                   onClick={() => {
+                    // eslint-disable-next-line no-undef
+                    gtagReportConversion && gtagReportConversion()
                     sendTagEvent({
                       action: 'click',
                       category: 'homepage_body_live_demo_click',

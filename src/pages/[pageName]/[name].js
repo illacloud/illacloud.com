@@ -7,19 +7,18 @@ import { useTranslation } from 'next-i18next'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import style from '@/components/LandingPage/index.module.css'
 import { useRaf } from 'react-use'
-import { LpHeader } from '@/components/LandingPage/LpHeader';
-import { LpTemplate } from '@/components/LandingPage/LpTemplate';
-import { getStars } from '@/utils/getStars';
+import { LpHeader } from '@/components/LandingPage/LpHeader'
+import { LpTemplate } from '@/components/LandingPage/LpTemplate'
+import { getStars } from '@/utils/getStars'
 import { useRouter } from 'next/router'
-import { pageMap } from '@/constants/landingPage';
-
+import { pageMap } from '@/constants/landingPage'
 
 const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
   const { t } = useTranslation('landingPageDetails')
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
   const content = t(`${pageName}.${name}`, {
-    returnObjects: true
+    returnObjects: true,
   })
   const { metaTitle, metaDescription } = content
   const step = useRaf(1000, 0)
@@ -40,12 +39,29 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={`https://www.illacloud.com/${locale === 'en-US' ? '' : `${locale}/`}${pageName}/${name}`} />
+        <link
+          rel="canonical"
+          href={`https://www.illacloud.com/${locale === 'en-US' ? '' : `${locale}/`
+            }${pageName}/${name}`}
+        />
       </Head>
-      <div className='w-full px-0 bg-white overflow-y-auto'>
-        <Nav hasButton whiteTheme onChangeShow={() => setIsBookShow(true)} githubStarts={Math.floor(starCounts * step)} />
+      <div className="w-full px-0 bg-white overflow-y-auto">
+        <Nav
+          hasButton
+          whiteTheme
+          onChangeShow={() => setIsBookShow(true)}
+          githubStarts={Math.floor(starCounts * step)}
+        />
         <div className={style.lpContainer}>
-          <LpHeader title={t(`${pageName}.${name}.title`)} description={t(`${pageName}.${name}.description`)} btnText={t("build_with", { name })} name={name} isShowBack backText={t(`back_to_${pageName}`)} pageName={pageName} />
+          <LpHeader
+            title={t(`${pageName}.${name}.title`)}
+            description={t(`${pageName}.${name}.description`)}
+            btnText={t('build_with', { name })}
+            name={name}
+            isShowBack
+            backText={t(`back_to_${pageName}`)}
+            pageName={pageName}
+          />
           <LpTemplate />
         </div>
       </div>
@@ -65,12 +81,16 @@ export const getServerSideProps = async ({ locale, params }) => {
         destination: '/404',
         permanent: false,
       },
-    };
+    }
   }
   const starCounts = await getStars()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['landingPageDetails', 'home', "common"])),
+      ...(await serverSideTranslations(locale, [
+        'landingPageDetails',
+        'home',
+        'common',
+      ])),
       starCounts,
       pageName,
       name,

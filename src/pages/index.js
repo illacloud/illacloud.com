@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Nav } from '@/components/home/Nav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { NewContent } from '@/components/home/NewContent'
 import { Footer } from '@/components/home/home-footer'
@@ -12,7 +12,7 @@ import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
-import { getStars } from '@/utils/getStars';
+import { getStars } from '@/utils/getStars'
 
 const Home = ({ starCounts }) => {
   const { t } = useTranslation('home')
@@ -119,11 +119,10 @@ export const getServerSideProps = async ({ locale }) => {
   const starCounts = await getStars()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home', "common"])),
+      ...(await serverSideTranslations(locale, ['home', 'common'])),
       starCounts,
     },
   }
-};
-
+}
 
 export default Home

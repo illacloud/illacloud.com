@@ -29,6 +29,8 @@ export const LpHeader = ({ pageName, title, description, isShowBack = false, btn
           <a
             className={style.headerGo}
             onClick={() => {
+              // eslint-disable-next-line no-undef
+              gtagReportConversion && gtagReportConversion()
               sendTagEvent({
                 action: 'click',
                 category: isShowBack ? 'landing_page_build_with' : 'landing_page_try_for_free',
