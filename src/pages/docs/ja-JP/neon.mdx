@@ -1,0 +1,161 @@
+---
+title: Neon
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/319?languages=ja&filter=basic&value=0
+metaTitle: ネオン統合ドキュメント | ILLA Cloud
+desc: ネオンデータベースをILLA Cloudに接続し、データの照会、操作、表示ができるアプリを作成します。 このガイドでは方法を説明します。
+tagCategory: doc_menu_neon_click
+categoryName: 🔨 統合
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Neonとは?</h2>
+
+IllaのNeonは、ネオンデータベースに接続して対話することができるデータベース統合です。 Neonは、速度、信頼性、使いやすさで知られている一般的なオープンソースのリレーショナルデータベース管理システムです。
+
+IllaでNeonを統合することで、SQLコマンドを使用してNeonデータベースからデータをクエリ、挿入、更新、および削除することができます。 また、カスタムSQLクエリを作成し、Ila内で実行することもできます。 これにより、ネオンデータベースのリアルタイムデータを表示するデータ駆動型アプリケーションやダッシュボードを簡単に構築できます。
+
+このチュートリアルでは、ILLA Builder と Neon を使用した Admin Panel をいくつかの簡単な手順で作成する方法について説明します。 ILLAは、社内ツールの迅速な開発と展開を可能にする開発者向けの低コードプラットフォームです。 UI コンポーネントをドラッグ&ドロップしたり、データベースや API に接続したり、JavaScript を書いたりすることで、ページを作成することができます。 Neonの詳細については、https://neon.tech/ でウェブサイトをご覧ください。
+
+### ネオンにバックエンドを設定する
+
+ネオンダッシュボードで、`New project` をクリックし、名前を `adminPanel` に設定します。
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+その後、プロジェクト ページに移動できます。
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+サンプル SQL クエリを介してデータをインポートします。
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+サンプルデータベースをセットアップしました。
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### 新規作成
+
+Illaアカウントにログインした後、Illaにリソースを作成するには2つの方法があります。 
+
+-   リソースに作成
+
+Illaアカウントにサインインし、ページ上部の「**リソース**」を選択し、「**新規作成**」ボタンをクリックします。 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+データベース リストから **`Neon`** を選択します。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+下の「接続設定」で説明されている必要なパラメータを使用してデータベースに接続します。 
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+リソースを作成すると、Ready Neonが次のように表示されます。
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   ビルダーで作成
+
+Illa アカウントにサインインし、`**App**` ページで Illa Builder でプロジェクトを作成します。 をクリックし、ページの下部にある **`Action List`** に移動します。 `**new**`をクリックし、データベースリストから**`Neon`**を選択します。 次に、下の「接続設定」で説明されている必要なパラメータを使用してデータベースに接続します。
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+### 接続設定
+
+ネオンデータベースに接続するための情報を提供する必要があります。
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| プロパティー   | 必須   | 説明                                                      |
+| -------- | ---- | ------------------------------------------------------- |
+| 名前       | 必須   | ILLAでアクションを作成する際のリソース名です。                               |
+| 接続文字列    | 省略可能 | データベースや API などの外部データソースへの接続の詳細を指定するために使用される設定。          |
+| Hostname | 必須   | データベースの URL または IP アドレス                                 |
+| ポート      | 必須   | 接続に使用するサーバーホストのポート番号。 ポートを指定しない場合、デフォルトのポートは '5432' です。 |
+| データベース   | 必須   | データベースの名前                                               |
+| ユーザー名    | 必須   | ネオンサーバーにログインするときに使用するユーザー名。                             |
+| パスワード    | 必須   | 認証にこのパスワードを使用してください。                                    |
+
+Neonを設定するための情報を入力する方法は2つあります。
+
+-   与えられた接続文字列を解析中
+
+Neon project のページでは、スクロールが完了し、**`直接接続`** に指定された接続文字列があります。
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+注意:ぼかしをタップすると、隠し番号が表示されます。
+
+設定で文字列を接続文字列テキストエリアに貼り付けたら、**`解析`**をクリックします。
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+私たちは自動的にすべての情報を記入しています。
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   手動で情報を入力します。
+
+プロジェクトのページから必要な情報を見つけて、Iraの設定に手動で入力することもできます。 
+
+### アクションを作成
+
+ネオンリソースを作成しました。アクションリストからネオンを選択し、**`アクションを作成`**ボタンを選択することでアクションを追加できます。
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ ビルドページにネオンサーバーをアクションとして追加しました。
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### ネオンを設定
+
+| プロパティー  | 説明                                        |
+| ------- | ----------------------------------------- |
+| SQL クエリ | データベースからデータを取得(選択)、挿入、更新、削除するための sql コマンド |
+| トランス    | JavaScriptを使用して好きなスタイルにデータを変換します          |
+
+使用例:
+
+-   選択
+
+```sql
+SELECT * FROM users ORDER BY last name;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first }}'
+  WHERE id = {{ form1.updatedProfile.uid }};
+```
+
+-   削除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
