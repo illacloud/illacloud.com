@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=nl&filter=basic&value=0
+metaTitle: MariaDB integratie Doc ・ILLA Cloud
+desc: Verbind je MariaDB-database met ILLA Cloud en maak apps die gegevens kunnen opslaan, bewerken en weergeven. Lees deze handleiding om te leren hoe.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Integraties
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Wat is MariaDB?</h2>
+
+MariaDB in Illa is een database-integratie waarmee je verbinding en interactie kunt maken met een MariaDB database. MariaDB is een populair open-source database management systeem dat is afgeleid van MySQL.
+
+Met de MariaDB integratie kun je gegevens opzoeken, invoegen, bijwerken en verwijderen van een MariaDB database met SQL commando's. U kunt ook aangepaste SQL-query's maken en uitvoeren binnen Illa. Dit maakt het gemakkelijk om data-driven applicaties en dashboards te bouwen die real-time gegevens weergeven uit een MariaDB database.
+
+### MariaDB aanmaken
+
+Er zijn twee manieren om een bron in Illa te maken nadat je bent ingelogd op je Illa account. 
+
+-   Maak in Bronnen
+
+Log in op je Illa account, selecteer `**Resources**` bovenaan de pagina, en klik op de `**Maak Nieuw**` knop. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Selecteer **\`MariaDB** uit de database lijst.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Maak verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder. 
+
+Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+
+Na het creëren van een bron zal MariaDB worden weergegeven zoals getoond.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Maak in Bouwer
+
+Log in op je Illa account, maak een project aan in Illa Builder in de `**App**` pagina en navigeer naar de **`Action List`** onderaan de pagina. Klik op `**new**`, en selecteer dan **`MariaDB`** uit de database lijst. Maak vervolgens verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
+
+Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+
+### Verbindingsinstellingen
+
+Hier moeten we informatie verstrekken om verbinding te maken met MariaDB database.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Eigenschappen  | vereist    | Beschrijving                                                                                                                      |
+| -------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| naam           | verplicht  | De naam voor resource bij het maken van acties in de ILLA.                                                                        |
+| Hostname       | verplicht  | De URL of het IP-adres van uw database                                                                                            |
+| Poort          | verplicht  | Het poortnummer van de server host dat u moet gebruiken om te verbinden. Als je geen poort opgeeft, is de standaard poort '3306'. |
+| Database       | verplicht  | De naam van de database                                                                                                           |
+| Gebruikersnaam | verplicht  | de gebruikersnaam die u wilt gebruiken bij het inloggen op de MariaDB-server.                                                     |
+| Wachtwoord     | verplicht  | Gebruik dit wachtwoord voor verificatie.                                                                                          |
+| SSL opties     | optioneel  | Bepaal hoe hoog een veilige SSL TCP/IP verbinding prioriteit heeft tijdens het onderhandelen met de server.                       |
+
+### Acties aanmaken
+
+We hebben een MariaDB bron aangemaakt. We kunnen de actie toevoegen door MariaDB uit de actielijst te selecteren en te kiezen voor de knop **`Create action`**.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Nu hebben we de MariaDB server toegevoegd als actie aan onze bouwpagina.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Eigenschappen | Beschrijving                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| SQL query     | sql commando's om op te halen (select), invoegen, bijwerken, gegevens uit de database verwijderen |
+| Transformator | data omzetten in de stijl die je leuk vindt met Javascript                                        |
+
+Voorbeeld gebruik:
+
+-   Selecteren
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Vernieuwen
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Verwijderen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
