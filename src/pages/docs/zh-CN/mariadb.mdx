@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/321?languages=zhcn&filter=basic&value=0
+metaTitle: MariaDB Integration Doc | ILLA 云
+desc: 将您的MariaDB 数据库连接到 ILLA Cloud并创建可以查询、操作和显示数据的应用程序。 阅读本指南以了解如何操作。
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 集成
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>MariaDB是什么？</h2>
+
+Illa 中的MariaDB 是一个数据库集成，您可以与MariaDB 数据库连接和交互。 MariaDB 是一个流行的 MySQL 开源数据库管理系统。
+
+通过MariaDB 集成，您可以通过 SQL 命令查询、插入、更新和删除MariaDB 数据库中的数据。 您也可以创建自定义 SQL 查询并在Illa中运行它们。 这便于建立数据驱动应用程序和仪表板，显示MariaDB数据库的实时数据。
+
+### 创建 MariaDB
+
+在登录到您的 Illa 帐户后，有两种方式在Illa 中创建资源。 
+
+-   在资源中创建
+
+登录到您的 Illa 帐户，在页面顶部选择 `**Resources**` 并点击 `**Create New**` 按钮。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+从数据库列表中选择 **`MariaDB`** 。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+使用下面`连接设定`描述的必填参数连接到数据库。 
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+创建资源后，准备好的MariaDB将显示。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   在构建器中创建
+
+登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`MariaDB`** 。 然后，用下面`连接设定`描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+### 连接设置
+
+这里我们需要提供连接到MariaDB数据库的信息。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| 属性       | 必填  | 描述                                         |
+| -------- | --- | ------------------------------------------ |
+| 名称       | 必填  | 在 ILLA 中创建动作时的资源名称。                        |
+| Hostname | 必填  | 您数据库的 URL 或 IP 地址                          |
+| 端口       | 必填  | 您应该使用服务器主机的端口号进行连接。 如果您没有指定端口，默认端口为“3306”。 |
+| 数据库      | 必填  | 数据库名称                                      |
+| 用户名      | 必填  | 登录到MariaDB 服务器时您想要使用的用户名。                  |
+| 密码       | 必填  | 使用此密码进行身份验证。                               |
+| SSL 选项   | 可选的 | 在与服务器谈判时，决定安全的 SSL TCP/IP 连接的优先级程度。        |
+
+### 创建动作
+
+我们创建了一个 MariaDB 资源，我们可以从动作列表中选择 MariaDB 并选择 **`Create action` ** 按钮来添加动作。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ 现在我们已经将MariaDB 服务器添加到我们的建筑页面。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| 属性     | 描述                                  |
+| ------ | ----------------------------------- |
+| SQL 查询 | 要获取的 sql 命令 (选择), 插入, 更新, 删除数据库中的数据 |
+| 转换器    | 转换数据到你喜欢使用 Javascript 的样式           |
+
+示例用法：
+
+-   选择
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   删除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
