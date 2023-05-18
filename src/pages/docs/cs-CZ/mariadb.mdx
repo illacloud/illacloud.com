@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=cs&filter=basic&value=0
+metaTitle: MariaDB integrační dokument | ILLA Cloud
+desc: Připojte databázi MariaDB k ILLA Cloudu a vytvořte aplikace, které mohou dotazovat, manipulovat a zobrazovat data. Přečtěte si tento návod, abyste se dozvěděli jak.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Integrace
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Co je MariaDB?</h2>
+
+MariaDB v Illa je integrace databáze, která vám umožňuje připojit a komunikovat s databází MariaDB. MariaDB je populární systém správy relačních databází s otevřeným zdrojem, který je odvozen od MySQL.
+
+S integrací MariaDB, můžete dotazovat, vkládat, aktualizovat a mazat data z databáze MariaDB pomocí SQL příkazů. Můžete také vytvořit vlastní SQL dotazy a spustit je v Ille. To usnadňuje vytváření aplikací a dashboardů, které zobrazují data v reálném čase z databáze MariaDB.
+
+### Vytvořit MariaDB
+
+Po přihlášení do vašeho účtu Illa existují dva způsoby, jak vytvořit zdroj v Illa. 
+
+-   Vytvořit ve zdrojích
+
+Přihlaste se ke svému účtu Illa, vyberte `**Zdroje**` v horní části stránky a klikněte na tlačítko `**Vytvořit nové**`. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Vyberte **`MariaDB`** z databázového seznamu.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Připojte se k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže. 
+
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+
+Po vytvoření zdroje, připravená MariaDB se zobrazí v zobrazení.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Vytvořit ve staviteli
+
+Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`MariaDB`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
+
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+
+### Nastavení připojení
+
+Zde musíme poskytnout informace pro připojení k databázi MariaDB.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Vlastnosti        | Požadováno  | L 343, 22.12.2009, s. 1).                                                                                       |
+| ----------------- | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| Název             | vyžadováno  | Název zdroje při vytváření akcí v ILLA.                                                                         |
+| Hostname          | vyžadováno  | URL nebo IP adresa pro vaši databázi                                                                            |
+| Přístav           | vyžadováno  | Číslo portu hostitele, které byste měli použít k připojení. Pokud nespecifikujete port, výchozí port je '3306'. |
+| Databáze          | vyžadováno  | Název databáze                                                                                                  |
+| Uživatelské jméno | vyžadováno  | uživatelské jméno, které chcete použít při přihlášení na MariaDB server.                                        |
+| Heslo             | vyžadováno  | Použít toto heslo pro ověření.                                                                                  |
+| Možnosti SSL      | volitelné   | rozhoduje o tom, jak vysoké je při vyjednávání se serverem upřednostněno bezpečné připojení SSL TCP/IP.         |
+
+### Vytvořit akce
+
+Vytvořili jsme zdroj MariaDB, akci můžeme přidat výběrem MariaDB ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Nyní jsme přidali MariaDB server jako akci k naší stavební stránce.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Vlastnosti    | L 343, 22.12.2009, s. 1).                                                     |
+| ------------- | ----------------------------------------------------------------------------- |
+| SQL dotaz     | sql příkazy pro načtení (výběr), vkládat, aktualizovat, mazat data z databáze |
+| Transformátor | přeměňuje data na styl, který se vám líbí pomocí Javascript                   |
+
+Příklad použití:
+
+-   Vybrat
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualizovat
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Vymazat
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

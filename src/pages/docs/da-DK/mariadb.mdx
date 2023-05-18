@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=da&filter=basic&value=0
+metaTitle: MariaDB Integration Doc ● ILLA Cloud
+desc: Tilslut din MariaDB-database til ILLA Cloud og opret apps, der kan spørge, manipulere og vise data. Læs denne guide for at lære hvordan.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Integrationer
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Hvad er MariaDB?</h2>
+
+MariaDB i Illa er en databaseintegration, der giver dig mulighed for at forbinde og interagere med en MariaDB database. MariaDB er et populært open source relationelle database management system, der er afledt af MySQL.
+
+Med MariaDB integration, kan du spørge, indsætte, opdatere og slette data fra en MariaDB database ved hjælp af SQL-kommandoer. Du kan også oprette brugerdefinerede SQL forespørgsler og køre dem i Illa. Dette gør det nemt at opbygge data-drevne applikationer og dashboards, der viser realtidsdata fra en MariaDB database.
+
+### Opret MariaDB
+
+Der er to måder at oprette en ressource på i Illa efter at have logget ind på din Illa-konto. 
+
+-   Opret i ressourcer
+
+Log ind på din Illa-konto, vælg `**Ressourcer**` øverst på siden, og klik på `**Opret ny**` knappen. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Vælg **`MariaDB`** fra databaselisten.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Opret forbindelse til databasen med de krævede parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor. 
+
+Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+
+Efter oprettelse af en ressource, vil MariaDB være klar som vist.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Opret i Builder
+
+Log ind på din Illa-konto, opret et projekt i Illa Builder på siden '**App**', og navigere til **`Action List`** nederst på siden. Klik på `**ny**`, vælg derefter **`MariaDB`** fra databaselisten. Opret derefter forbindelse til databasen med de nødvendige parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor.
+
+Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+
+### Forbindelsesindstillinger
+
+Her er vi nødt til at give oplysninger til tilslutning til MariaDB database.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Egenskaber        | Påkrævet  | Varebeskrivelse                                                                                                     |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Navn              | påkrævet  | Navnet på ressource når der oprettes handlinger i ILLA.                                                             |
+| Hostname          | påkrævet  | URL- eller IP-adressen for din database                                                                             |
+| Port              | påkrævet  | Serveren vært portnummer, som du skal bruge til at forbinde. Hvis du ikke angiver en port, er standard port '3306'. |
+| Database          | påkrævet  | Navnet på databasen                                                                                                 |
+| Brugernavn        | påkrævet  | det brugernavn du ønsker at bruge, når du logger ind på MariaDB serveren.                                           |
+| Adgangskode       | påkrævet  | Brug denne adgangskode til godkendelse.                                                                             |
+| SSL-indstillinger | valgfri   | beslutte, hvor højt en sikker SSL TCP/IP-forbindelse prioriteres under forhandlinger med serveren.                  |
+
+### Opret Handlinger
+
+Vi har oprettet en MariaDB ressource, vi kan tilføje handlingen ved at vælge MariaDB fra handlingslisten og vælge **`Opret handling`** knappen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Nu har vi tilføjet MariaDB serveren som en handling til vores byggeside.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Egenskaber       | Varebeskrivelse                                                                   |
+| ---------------- | --------------------------------------------------------------------------------- |
+| SQL forespørgsel | sql kommandoer til at hente (vælge), indsætte, opdatere, slette data fra database |
+| Transformator    | omdanne data til den stil du kan lide ved hjælp af Javascript                     |
+
+Eksempel på anvendelse:
+
+-   Vælg
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Opdater
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Slet
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

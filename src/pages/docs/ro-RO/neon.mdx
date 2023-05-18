@@ -1,0 +1,161 @@
+---
+title: Neon
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/319?languages=ro&filter=basic&value=0
+metaTitle: Document de integrare Neon | ILLA Cloud
+desc: Conectați baza de date Neon la ILLA Cloud și creați aplicații care pot interoga, manipula și afișa date. Acest ghid vă va arăta cum.
+tagCategory: doc_menu_neon_click
+categoryName: 🔨 Integrări
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Ce este Neon?</h2>
+
+Neon in Illa este o integrare a bazei de date care iti permite sa te conectezi si sa interactionezi cu o baza de date Neon. Neon este un sistem popular de gestionare a bazelor de date relaționale, cu sursă deschisă, cunoscut pentru viteză, fiabilitate și ușurință de utilizare.
+
+Cu integrarea Neon în Illa, puteţi interoga, insera, actualiza şi şterge date dintr-o bază de date cu Neon folosind comenzi SQL. De asemenea, poți crea interogări SQL personalizate și să le rulezi în Illa. Acest lucru facilitează construirea de aplicații și tablouri de bord bazate pe date care afișează în timp real date dintr-o bază de date Neon.
+
+Acest tutorial prezintă procesul de creare a unui Panou Administrator folosind ILLA Builder și Neon în câțiva pași simpli. ILLA este o platformă cu coduri joase pentru dezvoltatori, care permite dezvoltarea și implementarea rapidă a instrumentelor interne. Permite crearea de pagini prin glisarea și fixarea componentelor UI, conectarea la orice bază de date sau API și scrierea JavaScript. Pentru a afla mai multe despre Neon, vizitează site-ul lor la https://neon.tech/ Să începem!
+
+### Configurează-ți back-end-ul pe Neon
+
+Pe tabloul de bord al Neonului, apăsați pe `New project` și setați numele la `adminPanel`.
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+Apoi putem naviga la pagina proiectului.
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+Importă date prin eșantionul de interogări SQL.
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+Avem acum o bază de date demonstrativă.
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### Creare Neon
+
+Există două modalități de a crea o resursă în Illa după ce te autentifici în contul tău Illa. 
+
+-   Creează în resurse
+
+Conectează-te la contul tău Illa, selectează `**Resurse**` din partea de sus a paginii și apasă butonul `**Creează nou**`. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Selectaţi **`Neon`** din lista de baze de date.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos. 
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+După crearea unei resurse, Neonul pregătit se va afișa ca afișat.
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   Creează în Constructor
+
+Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `**App**`, şi navighează la **`Lista de Acţiuni`** în partea de jos a paginii. Faceţi clic pe `**nou**`, apoi selectaţi **`Neon`** din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+### Setări conexiune
+
+Aici trebuie să oferim informaţii pentru conectarea la baza de date Neon.
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| Proprietăți      | Necesar  | Descriere                                                                                                                                               |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nume             | necesar  | Numele pentru resurse la crearea de acțiuni în ILLA.                                                                                                    |
+| Șir de conexiune | opţional | o setare de configurare care este folosită pentru a specifica detaliile unei conexiuni la o sursă externă de date, cum ar fi o bază de date sau un API. |
+| Hostname         | necesar  | Adresa URL sau adresa IP a bazei de date                                                                                                                |
+| Portul           | necesar  | Numărul de port al serverului gazdă pe care ar trebui să-l utilizați pentru conectare. Dacă nu specificați un port, portul implicit este '5432'.        |
+| Baza de date     | necesar  | Numele bazei de date                                                                                                                                    |
+| Nume             | necesar  | numele de utilizator pe care dorești să îl folosești atunci când te conectezi la serverul Neon.                                                         |
+| Parolă           | necesar  | Utilizați această parolă pentru autentificare.                                                                                                          |
+
+Există două modalități de a completa informațiile pentru configurarea Neon.
+
+-   Șir de conexiune dat
+
+În pagina proiectului Neon, derulare efectuată, avem un anumit șir de conexiune în **`Conexiune directă`**.
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+Notă: atingând blur afișează numerele ascunse, putem copia.
+
+După inserarea șirului de caractere în zona de text a conexiunii în configurație, apăsați **`Parse`**.
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+Toate informațiile sunt completate automat pentru noi.
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   Completează manual informațiile.
+
+De asemenea, putem găsi informațiile necesare din pagina proiectului și le putem completa manual la configurația din Illa. 
+
+### Creați Acțiuni
+
+Am creat o resursă de Neon, putem adăuga acțiunea selectând Neon din lista de acțiuni și alegând butonul **`Creare acțiune`**.
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ Acum am adăugat serverul Neon ca acțiune la pagina noastră de construcție.
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### Configurare necesitate
+
+| Proprietăți    | Descriere                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| Interogare SQL | comenzi sql pentru a prelua (select), inserare, actualizare, ștergere date din baza de date |
+| Transformator  | Transformarea datelor în stilul care îți place să folosești JavaScript                      |
+
+Exemplu de utilizare:
+
+-   Selectare
+
+```sql
+SELECTARE * DE LA utilizatorii ORDUL DUPĂ Nume;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Actualizare
+
+```sql
+UPDATE utilizatorii
+  SET primul nume = '{{form1.updatedProfile.first }}'
+  WHERE id = {{ form1.updatedProfile.uid }};
+```
+
+-   Ștergere
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

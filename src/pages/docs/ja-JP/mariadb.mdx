@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=ja&filter=basic&value=0
+metaTitle: MariaDB Integration Doc | ILLA Cloud
+desc: MariaDBデータベースをILLA Cloudに接続し、データの照会、操作、表示が可能なアプリを作成します。 方法を学ぶには、このガイドをお読みください。
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 統合
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>MariaDBとは?</h2>
+
+IllaのMariaDBは、MariaDBデータベースに接続して対話することができるデータベース統合です。 MariaDBは、MySQLから派生した一般的なオープンソースのリレーショナルデータベース管理システムです。
+
+MariaDB統合により、SQLコマンドを使用してMariaDBデータベースからデータをクエリ、挿入、更新、および削除することができます。 また、カスタムSQLクエリを作成し、Ila内で実行することもできます。 これにより、MariaDBデータベースからリアルタイムデータを表示するデータ駆動型アプリケーションやダッシュボードを簡単に構築できます。
+
+### MariaDBを作成
+
+Illaアカウントにログインした後、Illaにリソースを作成するには2つの方法があります。 
+
+-   リソースに作成
+
+Illaアカウントにサインインし、ページ上部の「**リソース**」を選択し、「**新規作成**」ボタンをクリックします。 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+データベース リストから **`MariaDB`** を選択します。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+下の「接続設定」で説明されている必要なパラメータを使用してデータベースに接続します。 
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+リソースを作成すると、Ready MariaDBが次のように表示されます。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   ビルダーで作成
+
+Illa アカウントにサインインし、`**App**` ページで Illa Builder でプロジェクトを作成します。 をクリックし、ページの下部にある **`Action List`** に移動します。 `**new**`をクリックし、データベースリストから**`MariaDB`**を選択します。 次に、下の「接続設定」で説明されている必要なパラメータを使用してデータベースに接続します。
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+### 接続設定
+
+ここでは、MariaDBデータベースに接続するための情報を提供する必要があります。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| プロパティー    | 必須   | 説明                                                      |
+| --------- | ---- | ------------------------------------------------------- |
+| 名前        | 必須   | ILLAでアクションを作成する際のリソース名です。                               |
+| Hostname  | 必須   | データベースの URL または IP アドレス                                 |
+| ポート       | 必須   | 接続に使用するサーバーホストのポート番号。 ポートを指定しない場合、デフォルトのポートは '3306' です。 |
+| データベース    | 必須   | データベースの名前                                               |
+| ユーザー名     | 必須   | MariaDBサーバーにログインするときに使用するユーザー名。                         |
+| パスワード     | 必須   | 認証にこのパスワードを使用してください。                                    |
+| SSL オプション | 省略可能 | サーバとのネゴシエーション中にセキュアな SSL TCP/IP 接続が優先される方法を決定します。       |
+
+### アクションを作成
+
+MariaDBリソースを作成しました。アクションリストからMariaDBを選択し、**`Create action`**ボタンを選択することでアクションを追加できます。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ これで、私たちのビルディングページに、MariaDBサーバーをアクションとして追加しました。
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| プロパティー  | 説明                                        |
+| ------- | ----------------------------------------- |
+| SQL クエリ | データベースからデータを取得(選択)、挿入、更新、削除するための sql コマンド |
+| トランス    | Javascriptを使用して好きなスタイルにデータを変換します          |
+
+使用例:
+
+-   選択
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   削除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

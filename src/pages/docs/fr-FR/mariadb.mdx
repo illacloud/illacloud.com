@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=fr&filter=basic&value=0
+metaTitle: Doc d'intégration de MariaDB | Nuage ILLA
+desc: Connectez votre base de données MariaDB à ILLA Cloud et créez des applications qui peuvent interroger, manipuler et afficher des données. Lisez ce guide pour savoir comment.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Intégrations
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Qu'est-ce que MariaDB ?</h2>
+
+MariaDB dans Illa est une intégration de base de données qui vous permet de vous connecter et d'interagir avec une base de données MariaDB. MariaDB est un système de gestion de base de données relationnelle populaire qui est dérivé de MySQL.
+
+Grâce à l'intégration de MariaDB, vous pouvez interrompre, insérer, mettre à jour et supprimer des données d'une base de données MariaDB en utilisant des commandes SQL. Vous pouvez également créer des requêtes SQL personnalisées et les exécuter dans Illa. Cela facilite la création d'applications et de tableaux de bord basés sur des données qui affichent des données en temps réel à partir d'une base de données MariaDB.
+
+### Créer MariaDB
+
+Il y a deux façons de créer une ressource dans Illa après la connexion à votre compte Illa. 
+
+-   Créer dans les ressources
+
+Connectez-vous à votre compte Illa, sélectionnez `**Ressources**` en haut de la page, et cliquez sur le bouton `**Créer nouveau**`. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Sélectionnez **`MariaDB`** dans la liste des bases de données.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous. 
+
+Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
+
+Après avoir créé une ressource, la base de données MariaDB prête s'affichera comme indiqué.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Créer dans le constructeur
+
+Connectez-vous à votre compte Illa, créez un projet dans Illa Builder dans la page `**App**` et accédez à la **`Liste d'actions`** en bas de la page. Cliquez sur `**new**`, puis sélectionnez **`MariaDB`** dans la liste des bases de données. Ensuite, connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous.
+
+Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
+
+### Paramètres de connexion
+
+Ici, nous avons besoin de fournir des informations pour se connecter à la base de données MariaDB.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Propriétés        | Requis       | Libellé                                                                                                                                   |
+| ----------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Nom               | Obligatoire  | Le nom de la ressource lors de la création d'actions dans l'ILLA.                                                                         |
+| Hostname          | Obligatoire  | L'URL ou l'adresse IP de votre base de données                                                                                            |
+| Port              | Obligatoire  | Le numéro de port de l'hôte que vous devez utiliser pour vous connecter. Si vous ne spécifiez pas de port, le port par défaut est '3306'. |
+| Base de données   | Obligatoire  | Le nom de la base de données                                                                                                              |
+| Nom d'utilisateur | Obligatoire  | le nom d'utilisateur que vous souhaitez utiliser lors de votre connexion au serveur MariaDB.                                              |
+| Mot de passe      | Obligatoire  | Utilisez ce mot de passe pour l'authentification.                                                                                         |
+| Options SSL       | optionnel    | décide à quel point une connexion sécurisée TCP/IP est priorisée lors de la négociation avec le serveur.                                  |
+
+### Créer des actions
+
+Nous avons créé une ressource MariaDB, nous pouvons ajouter l'action en sélectionnant MariaDB dans la liste d'action et en choisissant le bouton **`Créer l'action`**.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Maintenant nous avons ajouté le serveur MariaDB comme une action à notre page de construction.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Propriétés     | Libellé                                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Requête SQL    | commandes sql pour récupérer (sélectionner), inserer, mettre à jour, supprimer les données de la base de données |
+| Transformateur | transformation des données dans le style que vous aimez en utilisant Javascript                                  |
+
+Exemple d'utilisation :
+
+-   Sélectionner
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Mise à jour
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Supprimez
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

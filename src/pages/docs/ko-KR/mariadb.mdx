@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=en&filter=basic&value=0
+metaTitle: MariaDB Integration Doc | ILLA Cloud
+desc: Connect your MariaDB database to ILLA Cloud and create apps that can query, manipulate, and display data. Read this guide to learn how.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Integrations
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>What is MariaDB?</h2>
+
+MariaDB in Illa is a database integration that allows you to connect and interact with a MariaDB database. MariaDB is a popular open-source relational database management system that is derived from MySQL.
+
+With the MariaDB integration, you can query, insert, update, and delete data from a MariaDB database using SQL commands. You can also create custom SQL queries and run them within Illa. This makes it easy to build data-driven applications and dashboards that display real-time data from a MariaDB database.
+
+### Create MariaDB
+
+There are two ways to create a resource in Illa after signing into your Illa account. 
+
+-   Create in Resources
+
+Sign into your Illa account, select `**Resources**` on the top of the page, and click `**Create New**` button. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Select **`MariaDB`** from the database list.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Connect to the database with the required parameters described in `Connection Settings` below. 
+
+Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
+
+After creating a resource, the ready MariaDB will display as shown.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Create in Builder
+
+Sign into your Illa account, create a project in Illa Builder in the `**App**` page, and navigate to the **`Action List`** at the bottom of the page. Click `**new**`, then select **`MariaDB`** from the database list. Then, connect to the database with required parameters described in `Connection Settings` below.
+
+Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
+
+### Connection Settings
+
+Here we need to provide information for connecting to MariaDB database.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Properties  | Required  | Description                                                                                                        |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
+| Name        | required  | The name for resource when creating actions in the ILLA.                                                           |
+| Hostname    | required  | The URL or IP address for your database                                                                            |
+| Port        | required  | The server host's port number that you should use to connect. If you don't specify a port, default port is '3306'. |
+| Database    | required  | The name of the database                                                                                           |
+| Username    | required  | the username you wish to use when logging in to the MariaDB server.                                                |
+| Password    | required  | Use this password for authentication.                                                                              |
+| SSL options | optional  | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
+
+### Create Actions
+
+We have created a MariaDB resource, we can add the action by selecting MariaDB from action list and choosing the **`Create action`** button.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Now we have added the MariaDB server as an action to our building page.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Properties  | Description                                                               |
+| ----------- | ------------------------------------------------------------------------- |
+| SQL query   | sql commands to fetch (select), insert, update, delete data from database |
+| Transformer | transforming data into the style you like using Javascript                |
+
+Example usage:
+
+-   Select
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Update
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Delete
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

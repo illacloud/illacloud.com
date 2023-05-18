@@ -1,0 +1,161 @@
+---
+title: Neon
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/319?languages=zhcn&filter=basic&value=0
+metaTitle: Neon Integration Doc | ILLA Cloud
+desc: 将您的Neon数据库连接到 ILLA ILLA Cloud并创建可以查询、操作和显示数据的应用程序。 本指南将向您展示如何操作。
+tagCategory: doc_menu_neon_click
+categoryName: 🔨 集成
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>什么是Neon？</h2>
+
+Illa还是一个数据库集成，使您能够连接并与Neon数据库交互。 Neon是一个受欢迎的开放源码关系数据库管理系统，它以其速度、可靠性和易用性而著称。
+
+随着Illa中的Neon集成，您可以通过 SQL 命令查询、插入、更新和删除Neton 数据库中的数据。 您也可以创建自定义 SQL 查询并在Illa中运行它们。 这就很容易建立显示来自Neon数据库的实时数据的数据驱动应用程序和仪表板。
+
+本教程概述了使用ILLA Builder和Neon在几个简单步骤创建管理员面板的过程。 国际地方当局协会是一个低码的开发者平台，能够快速开发和部署内部工具。 它允许通过拖放UI组件创建页面，并连接到任何数据库或API，以及写入 JavaScript。 要了解更多关于 Neon 的信息，请访问他们在 https://neon.tech/ 让我们开始吧！
+
+### 在Neon设置你的后端
+
+在Neon仪表板上，点击“新工程”并将名称设置为“adminPanel”。
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+然后我们可以导航到项目页面。
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+通过 SQL 查询导入数据。
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+我们现在已经建立了样本数据库。
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### 创建新的
+
+在登录到您的 Illa 帐户后，有两种方式在Illa 中创建资源。 
+
+-   在资源中创建
+
+登录到您的 Illa 帐户，在页面顶部选择 `**Resources**` 并点击 `**Create New**` 按钮。 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+从数据库列表中选择 **`Neon`** 。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+使用下面`Connectings`描述的必填参数连接到数据库。 
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+在创建资源后，随时准备好的Neon将显示。
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   在构建器中创建
+
+登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`Neon`** 。 然后，用下面`Connection settings`描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+### 连接设置
+
+这里我们需要提供连接到Neon数据库的信息。
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| 属性       | 必填  | 描述                                         |
+| -------- | --- | ------------------------------------------ |
+| 名称       | 必填  | 在 ILLA 中创建动作时的资源名称。                        |
+| 连接字符串    | 可选的 | 用于指定与外部数据源连接的详细配置，如数据库或 API。               |
+| Hostname | 必填  | 您数据库的 URL 或 IP 地址                          |
+| 端口       | 必填  | 您应该使用服务器主机的端口号进行连接。 如果您没有指定端口，默认端口为“5432”。 |
+| 数据库      | 必填  | 数据库名称                                      |
+| 用户名      | 必填  | 登录到Neon服务器时您想使用的用户名。                       |
+| 密码       | 必填  | 使用此密码进行身份验证。                               |
+
+配置Neon有两种方法来填写信息。
+
+-   正在解析给定的连接字符串
+
+在 Neon 项目页面滚动完成，我们在 **`直接连接`** 中有一个指定的连接字符串。
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+注意：抓取模糊显示隐藏的数字，然后我们可以复制它。
+
+在将字符串粘贴到配置中的连接字符串文本区域后，点击 **`解析`**。
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+我们已经自动填写了所有信息。
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   手动填写信息。
+
+我们也可以从项目页面找到所需的信息，并手动填写到Illa的配置。 
+
+### 创建动作
+
+我们已经创建了一个Neon资源，我们可以从操作列表中选择Neon并选择 **`Create action` ** 按钮来添加操作。
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ 现在我们已经将Neon服务器添加到我们的建筑页面作为一个动作。
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### 配置Neon
+
+| 属性     | 描述                                  |
+| ------ | ----------------------------------- |
+| SQL 查询 | 要获取的 sql 命令 (选择), 插入, 更新, 删除数据库中的数据 |
+| 转换器    | 将数据转换为你喜欢使用 JavaScript 的样式          |
+
+示例用法：
+
+-   选择
+
+```sql
+选择* 从用户排序按姓排列；
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first }}'
+  WHERE id = {{ form1.updatedProfile.uid }};
+```
+
+-   删除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

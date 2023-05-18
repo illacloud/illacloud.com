@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/321?languages=ro&filter=basic&value=0
+metaTitle: MariaDB Integrare Doc <unk> ILLA Cloud
+desc: Conectați baza de date MariaDB la ILLA Cloud și creați aplicații care pot interoga, manipula și afișa date. Citiți acest ghid pentru a învăța cum.
+tagCategory: doc_menu_mariadb_click
+categoryName: 🔨 Integrări
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Ce este MariaDB?</h2>
+
+MariaDB în Illa este o integrare a bazei de date care vă permite să vă conectaţi şi să interacţionaţi cu o bază de date MariaDB. MariaDB este un sistem popular de management al bazelor de date relaționale open-source care provine din MySQL.
+
+Cu integrarea MariaDB, puteţi interoga, insera, actualiza şi şterge date dintr-o bază de date MariaDB folosind comenzi SQL. De asemenea, poți crea interogări SQL personalizate și să le rulezi în Illa. Acest lucru facilitează construirea de aplicații și tablouri de bord bazate pe date care afișează date în timp real dintr-o bază de date MariaDB.
+
+### Creare MariaDB
+
+Există două modalități de a crea o resursă în Illa după ce te autentifici în contul tău Illa. 
+
+-   Creează în resurse
+
+Conectează-te la contul tău Illa, selectează `**Resurse**` din partea de sus a paginii și apasă butonul `**Creează nou**`. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Selectaţi **`MariaDB`** din lista de baze de date.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos. 
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+După crearea unei resurse, MariaDB gata va fi afișat ca afișat.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Creează în Constructor
+
+Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `**App**`, şi navighează la **`Lista de Acţiuni`** în partea de jos a paginii. Faceţi clic pe `**nou**`, apoi selectaţi **`MariaDB`** din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+### Setări conexiune
+
+Aici trebuie să oferim informaţii pentru conectarea la baza de date MariaDB.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Proprietăți  | Necesar  | Descriere                                                                                                                                        |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Nume         | necesar  | Numele pentru resurse la crearea de acțiuni în ILLA.                                                                                             |
+| Hostname     | necesar  | Adresa URL sau adresa IP a bazei de date                                                                                                         |
+| Portul       | necesar  | Numărul de port al serverului gazdă pe care ar trebui să-l utilizați pentru conectare. Dacă nu specificați un port, portul implicit este '3306'. |
+| Baza de date | necesar  | Numele bazei de date                                                                                                                             |
+| Nume         | necesar  | numele de utilizator pe care doriți să îl utilizați la conectarea la serverul MariaDB.                                                           |
+| Parolă       | necesar  | Utilizați această parolă pentru autentificare.                                                                                                   |
+| Opțiuni SSL  | opţional | decide cât de mare este prioritizată o conexiune SSL TCP/IP în timpul negocierilor cu serverul.                                                  |
+
+### Creați Acțiuni
+
+Am creat o resursă MariaDB, putem adăuga acțiunea selectând MariaDB din lista de acțiuni și alegând butonul **`Creare acțiune`**.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Acum am adăugat serverul MariaDB ca acțiune la pagina noastră de construcție.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Proprietăți    | Descriere                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| Interogare SQL | comenzi sql pentru a prelua (select), inserare, actualizare, ștergere date din baza de date |
+| Transformator  | Transformarea datelor în stilul care îți place folosind Javascript                          |
+
+Exemplu de utilizare:
+
+-   Selectare
+
+```sql
+SELECTARE * DE LA utilizatorii ORDUL DUPĂ Nume;
+```
+
+-   Insert
+
+```sql
+INTRODUCEŢI ÎN CADRUL utilizatorilor
+
+	(primul nume, nume, nume, e-mail)
+
+VALOARE
+
+	(
+
+		<unk>		{{ NewUser.data.firstNameInput }},
+
+		<unk>		{{ NewUser.data.lastNameInput }},
+
+		<unk>		{{ NewUser.data.emailInput }}
+
+	<unk> );
+```
+
+-   Actualizare
+
+```sql
+UPDATE utilizatorii
+  SET primul nume = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Ștergere
+
+```sql
+Şterge de la utilizatori unde id = {{ form1.updatedProfile.uid }};
+```
