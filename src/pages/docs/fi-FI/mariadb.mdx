@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=fi&filter=basic&value=0
+metaTitle: MariaDb Integration Doc ¶ ILLA Cloud
+desc: Yhdistä MariaDB tietokantasi ILLA Cloudiin ja luo sovelluksia, jotka voivat kysyä, manipuloida ja näyttää tietoja. Lue tämä opas oppiaksesi.
+tagCategory: doc_menu_mariadb_click
+categoryName: ":vasara: Integraatiot"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Mitä MariaDB on?</h2>
+
+MariaDB Illa on tietokannan integraatio, jonka avulla voit muodostaa yhteyden ja olla vuorovaikutuksessa MariaDB tietokantaan. MariaDB on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on johdettu MySQL:sta.
+
+MariaDB integraation avulla voit kysyä, lisätä, päivittää ja poistaa tietoja MariaDB tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän vuoksi on helppoa rakentaa datapohjaisia sovelluksia ja dashboardeja, jotka näyttävät reaaliaikaista dataa MariaDB-tietokannasta.
+
+### Luo MariaDB
+
+On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilillesi. 
+
+-   Luo resursseissa
+
+Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Valitse **`MariaDB`** tietokantaluettelosta.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa. 
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+Kun olet luonut resurssin, valmis MariaDB näyttää kuvatulla tavalla.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Luo rakentajaan
+
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, valitse **`MariaDB`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+### Yhteyden Asetukset
+
+Tässä yhteydessä meidän on annettava tietoja, jotka liittyvät MariaDB-tietokantaan.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Ominaisuudet   | Pakollinen  | Kuvaus                                                                                                              |
+| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| Nimi           | vaadittu    | Resurssin nimi kun luodaan toimia ILLA:ssa.                                                                         |
+| Hostname       | vaadittu    | Tietokannan URL-osoite tai IP-osoite                                                                                |
+| Portti         | vaadittu    | Palvelimen portti numero, jota sinun pitäisi käyttää yhdistämiseen. Jos et määritä porttia, oletusportti on '3306'. |
+| Tietokanta     | vaadittu    | The name of the database                                                                                            |
+| Käyttäjätunnus | vaadittu    | käyttäjätunnus, jota haluat käyttää, kun kirjaudut sisään MariaDB palvelimelle.                                     |
+| Salasana       | vaadittu    | Käytä tätä salasanaa tunnistautumiseen.                                                                             |
+| SSL asetukset  | valinnainen | päättää, kuinka korkea turvallinen SSL TCP / IP yhteys on priorisoitu neuvotellessaan palvelimen kanssa.            |
+
+### Luo Toiminnot
+
+Olemme luoneet MariaDB-resurssin, voimme lisätä toiminnon valitsemalla MariaDB toimintalistalta ja valitsemalla **`Create action`** -painikkeen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Nyt olemme lisänneet MariaDB palvelimen toiminnaksi meidän rakennussivulle.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Ominaisuudet | Kuvaus                                                                           |
+| ------------ | -------------------------------------------------------------------------------- |
+| SQL-kysely   | sql komentoja noutaaksesi (valita), lisää, päivitä, poista tietoja tietokannasta |
+| Muuntaja     | muuttamalla dataa tyyliin, jonka pidät Javascriptistä                            |
+
+Esimerkin käyttö:
+
+-   Valitse
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Päivitä
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Poista
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
