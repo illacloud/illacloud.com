@@ -1,0 +1,161 @@
+---
+title: Neon
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/319?languages=fi&filter=basic&value=0
+metaTitle: Neon Integration Doc - ILLA Cloud
+desc: Yhdistä Neon-tietokantaasi ILLA Cloudiin ja luo sovelluksia, jotka voivat kysyä, manipuloida ja näyttää tietoja. Tämä opas näyttää sinulle, miten.
+tagCategory: doc_menu_neon_click
+categoryName: ":vasara: Integraatiot"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Mikä on Neon?</h2>
+
+Neon in Illa on tietokantaintegrointi, jonka avulla voit muodostaa yhteyden ja olla vuorovaikutuksessa Neon-tietokannan kanssa. Neon on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on tunnettu sen nopeus, luotettavuus ja helppokäyttöisyys.
+
+Neon integraation avulla voit kysyä, lisätä, päivittää ja poistaa tietoja Neon tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja kojelautoja, jotka näyttävät reaaliaikaista dataa Neon-tietokannasta.
+
+Tässä tutoriaalissa hahmotellaan prosessi, jossa luodaan hallintapaneeli ILLA Builderilla ja Neonilla muutamissa yksinkertaisissa vaiheissa. ILLA on matalan koodin alusta kehittäjille, joka mahdollistaa sisäisten työkalujen nopean kehittämisen ja käyttöönoton. Se mahdollistaa sivujen luomisen vetämällä ja pudottamalla käyttöliittymän komponentteja, yhdistämällä mihin tahansa tietokantaan tai APIin ja kirjoittamalla JavaScriptiä. Lisätietoja Neonista saat osoitteessa https://neon.tech/ Aloitetaan!
+
+### Määritä takaisin loppusi Neonille
+
+Klikkaa Neonin kojelaudalla `New project` ja aseta nimi `adminPanel`.
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+Sitten voimme siirtyä projektin sivulle.
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+Tietojen tuominen näytteen SQL-kyselyiden avulla.
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+Meillä on nyt käytössä otostietokanta.
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### Luo Neon
+
+On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilillesi. 
+
+-   Luo resursseissa
+
+Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Valitse **`Neon`** tietokantaluettelosta.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa. 
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+Kun olet luonut resurssin, valmis Neon näyttää esitetyllä tavalla.
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   Luo rakentajaan
+
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, ja valitse **`Neon`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+### Yhteyden Asetukset
+
+Tässä yhteydessä meidän on annettava tietoja, joiden avulla voimme yhdistää Neon-tietokantaan.
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| Ominaisuudet        | Pakollinen  | Kuvaus                                                                                                                                              |
+| ------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nimi                | vaadittu    | Resurssin nimi kun luodaan toimia ILLA:ssa.                                                                                                         |
+| Yhteyden merkkijono | valinnainen | konfiguraatioasetus, jota käytetään ulkoiseen tietolähteeseen yhdistettävien tietojen, kuten tietokannan tai API:n, yksityiskohtien määrittämiseen. |
+| Hostname            | vaadittu    | Tietokannan URL-osoite tai IP-osoite                                                                                                                |
+| Portti              | vaadittu    | Palvelimen portti numero, jota sinun pitäisi käyttää yhdistämiseen. Jos et määritä porttia, oletusportti on '5432'.                                 |
+| Tietokanta          | vaadittu    | The name of the database                                                                                                                            |
+| Käyttäjätunnus      | vaadittu    | käyttäjätunnus, jota haluat käyttää, kun kirjaudut sisään Neon-palvelimelle.                                                                        |
+| Salasana            | vaadittu    | Käytä tätä salasanaa tunnistautumiseen.                                                                                                             |
+
+On olemassa kaksi tapaa täyttää tiedot määrittämiseen Neon.
+
+-   Jäsennetään annetun yhteyden merkkijonoa
+
+Neonin projektisivulla, vieritys tehty, meillä on tietty yhteysmerkkijono **`Suora yhteys`**.
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+Huomautus: Sammuttamalla sumennus näyttää piilotetut numerot, voimme kopioida sen.
+
+Kun merkkijono on liitetty yhteyden merkkijonon tekstialueelle asetuksissa, klikkaa **`Parse`**.
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+Meillä on kaikki meille automaattisesti täytetyt tiedot.
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   Täytä tiedot manuaalisesti.
+
+Voimme myös löytää tarvittavat tiedot projektin sivulta ja manuaalisesti täyttää ne konfiguraatio Illa. 
+
+### Luo Toiminnot
+
+Olemme luoneet Neon resurssin, voimme lisätä toiminnon valitsemalla Neon toimintalistalta ja valitsemalla **`Create action`** -painikkeen.
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ Nyt olemme lisänneet Neon palvelimen toiminnaksi meidän rakennussivulle.
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### Määritä Neon
+
+| Ominaisuudet | Kuvaus                                                                           |
+| ------------ | -------------------------------------------------------------------------------- |
+| SQL-kysely   | sql komentoja noutaaksesi (valita), lisää, päivitä, poista tietoja tietokannasta |
+| Muuntaja     | muuttamalla dataa tyyliin, jonka pidät JavaScriptin avulla                       |
+
+Esimerkin käyttö:
+
+-   Valitse
+
+```sql
+VALITSE * käyttäjistä ORDER BY sukunimi;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Päivitä
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first }}'
+  WHERE id = {{ form1.updatedProfile.uid }};
+```
+
+-   Poista
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
