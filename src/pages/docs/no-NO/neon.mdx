@@ -1,0 +1,161 @@
+---
+title: Neon
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/319?languages=no&filter=basic&value=0
+metaTitle: Neon Integration Doc ∙ILLA Cloud
+desc: Koble Neon-databasen til ILLA Cloud og opprett programmer som kan spørre, redigere og vise data. Denne veiledningen vil vise deg hvordan.
+tagCategory: doc_menu_neon_click
+categoryName: 🔨 Integrasjoner
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Hva er Neon?</h2>
+
+Neon i Illa er en databaseintegrasjon som lar deg koble til og samhandle med en Neon database. Neon er et populært relasjonssystem for database med åpen kildekode, kjent for sin hastighet, pålitelighet og brukshensyn.
+
+Med Neon integrasjon i Illa, kan du spørre, innstille, oppdatere og slette data fra en Neon-database ved å bruke SQL-kommandoer. Du kan også opprette egendefinerte SQL-spørringer og kjøre dem i Illa. Dette gjør det enkelt å bygge datadrevne programmer og dashbord som viser sanntidsdata fra en Neon database.
+
+Denne veiledningen beskriver prosessen med å lage et Admin-panel ved hjelp av ILLA Builder og Neon i noen få enkle trinn. ILLA er en lavkode-plattform for utviklere som gjør det mulig å raskt utvikle og ta i bruk interne verktøy. Det åpner for å opprette sider ved å dra og slippe UI komponenter, koble til database eller API, og skrive JavaScript. Gå til nettsiden https://neon.tech/ La oss begynne!
+
+### Sett opp backend på Neon
+
+På Neon dashbordet, klikk `Nytt prosjekt` og angi navnet til `adminPanel`.
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+Da kan vi navigere til prosjektsiden.
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+Importerer data gjennom sample SQL spørringer.
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+Nå har vi valgt eksempeldatabase.
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### Opprette Neon
+
+Det er to måter å lage en ressurs i Illa etter å ha logget på din Illa-konto. 
+
+-   Opprett i ressurser
+
+Logg deg på din Illa konto, velg `**Ressurser**` på toppen av siden, og klikk `**Opprett ny`-knappen. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Velg **`Neon`** fra databaselisten.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Koble til databasen med de nødvendige parametrene beskrevet i "Tilkoblingsinnstillinger" nedenfor. 
+
+Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
+
+Etter oppretting av en ressurs, vil det klare Neon vises som vist.
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   Opprett i bygger
+
+Logg deg på din Illa konto, opprett et prosjekt i Illa Builder på `**` siden, og naviger til **`Handlingslisten`** nederst på siden. Klikk `**new**`, og velg **`Neon`** fra databaselisten. Deretter kan du koble til databasen med nødvendige parametere beskrevet i "Tilkoblingsinnstillinger" nedenfor.
+
+Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
+
+### Tilkobling innstillinger
+
+Her må vi skaffe til veie informasjon for tilkobling til Neon database.
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| Egenskaper                 | Påkrevd       | Beskrivelse                                                                                                                                     |
+| -------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Navn                       | obligatorisk  | Navnet på ressursen når det skapes handlinger i ILLA.                                                                                           |
+| Database tilkoblingsstreng | valgfritt     | en konfigurasjonsinnstilling som brukes til å angi detaljene for en tilkobling til en ekstern datakilde, for eksempel en database eller en API. |
+| Hostname                   | obligatorisk  | URL-adressen eller IP-adressen for databasen din                                                                                                |
+| Port                       | obligatorisk  | Tjenerens portnummer som du bør bruke til å koble til. Hvis du ikke angir en port, er standard port '5432'.                                     |
+| Databasen                  | obligatorisk  | Navnet på databasen                                                                                                                             |
+| Brukernavn                 | obligatorisk  | brukernavnet du vil bruke når du logger inn på Neon serveren.                                                                                   |
+| Passord                    | obligatorisk  | Bruk dette passordet for godkjenning.                                                                                                           |
+
+Det er to måter å fylle inn informasjonen for å konfigurere Neon.
+
+-   Analyserer gitt tilkoblingstreng
+
+På Neon prosjektsiden, scrolling fullført, har vi en tilkoblingsstreng på **`Direkte tilkobling`**.
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+Merk: Ved å trykke på uskarpet viser skjulte numre, så kan vi kopiere dem.
+
+Etter å ha limt inn strengen i forbindelsesstrengen i konfigurasjon, klikk **`Parse`**.
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+Vi har automatisk utfylt all informasjon for oss.
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   Fyll ut informasjonen manuelt.
+
+Vi finner også nødvendig informasjon fra prosjektsiden og manuelt fylle dem inn til konfigurasjonen i Illa. 
+
+### Opprett handlinger
+
+Vi har laget Neon-ressursen, vi kan legge til handlingen ved å velge Neon fra handlingslisten og velge **`Opprett handling`** knappen.
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ Nå har vi lagt til Neon serveren som en handling til vår byggeside.
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### Konfigurer Neon
+
+| Egenskaper    | Beskrivelse                                                                  |
+| ------------- | ---------------------------------------------------------------------------- |
+| SQL spørring  | SQL-kommandoer å hente (velg), innstilt, oppdatere, slette data fra database |
+| Transformator | transformerer data til stilen du ønsker å bruke JavaScript                   |
+
+Eksempel bruk:
+
+-   Velg
+
+```sql
+VELG * FROM-brukere BY venstrenavn;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Oppdater
+
+```sql
+OPPDATERING brukere
+  SET fornavn = '{{form1.updatedProfile.first }}'
+  HVOR id = {{ form1.updatedProfile.uid }};
+```
+
+-   Slett
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
