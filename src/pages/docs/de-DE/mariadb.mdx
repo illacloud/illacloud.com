@@ -1,0 +1,119 @@
+---
+title: MariaDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=de&filter=basic&value=0
+metaTitle: MariaDB Integration Doc | ILLA Cloud
+desc: Verbinden Sie Ihre MariaDB-Datenbank mit ILLA Cloud und erstellen Sie Apps, die Daten abfragen, bearbeiten und anzeigen können. Lesen Sie diese Anleitung um zu erfahren, wie.
+tagCategory: doc_menu_mariadb_click
+categoryName: ":Hammer: Integrationen"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Was ist MariaDB?</h2>
+
+MariaDB in Illa ist eine Datenbank-Integration, mit der Sie sich mit einer MariaDB-Datenbank verbinden und interagieren können. MariaDB ist ein beliebtes Open-Source relationales Datenbank-Management-System, das von MySQL abgeleitet wird.
+
+Mit der MariaDB-Integration können Sie Daten aus einer MariaDB-Datenbank über SQL-Befehle abfragen, einfügen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und innerhalb von Illa ausführen. So lassen sich datengesteuerte Anwendungen und Dashboards erstellen, die Echtzeitdaten aus einer MariaDB-Datenbank anzeigen.
+
+### MariaDB erstellen
+
+Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressource in Illa zu erstellen. 
+
+-   In Ressourcen erstellen
+
+Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button. 
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/external_resource.png' alt='' />
+
+Wähle **`MariaDB`** aus der Datenbankliste.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/action_list.png' alt='' />
+
+Verbinden Sie sich mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind. 
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+Nach der Erstellung einer Ressource wird die bereitgestellte MariaDB wie gezeigt angezeigt.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_ex_ready.png' alt='' />
+
+-   Im Builder erstellen
+
+Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicke auf `**new**`, dann wähle **`MariaDB`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+### Verbindungseinstellungen
+
+Hier müssen wir Informationen zur Verbindung mit der MariaDB-Datenbank bereitstellen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_config.png' alt='' />
+
+| Eigenschaften | Benötigt  | Beschreibung                                                                                                                            |
+| ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Name          | benötigt  | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA.                                                                     |
+| Hostname      | benötigt  | Die URL oder IP-Adresse für Ihre Datenbank                                                                                              |
+| Port          | benötigt  | Die Portnummer des Servers, die Sie verwenden sollten, um sich zu verbinden. Wenn Sie keinen Port angeben, ist der Standardport '3306'. |
+| Datenbank     | benötigt  | Der Name der Datenbank                                                                                                                  |
+| Benutzername  | benötigt  | den Benutzernamen den Sie beim Einloggen auf dem MariaDB-Server verwenden möchten.                                                      |
+| Passwort      | benötigt  | Dieses Passwort für die Authentifizierung verwenden.                                                                                    |
+| SSL-Optionen  | optional  | entscheidet, wie hoch eine sichere SSL-TCP/IP-Verbindung bei der Verhandlung mit dem Server priorisiert wird.                           |
+
+### Aktionen erstellen
+
+Wir haben eine MariaDB Ressource erstellt. Wir können die Aktion hinzufügen, indem wir MariaDB aus der Aktionsliste auswählen und die **`Aktion erstellen`** Schaltfläche auswählen.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria_resource_list.png' alt='' />
+
+ Jetzt haben wir den MariaDB Server als Aktion auf unserer Bauseite hinzugefügt.
+
+<img src='https://cdn.illacloud.com/official-website/img/docs/maria.png' alt='' />
+
+### Configure MariaDB
+
+| Eigenschaften | Beschreibung                                                                                  |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| SQL-Abfrage   | sql Befehle zum Abrufen (auswählen), einfügen, aktualisieren, Daten aus der Datenbank löschen |
+| Transformator | Umwandlung von Daten in den Stil, den Sie möchten, mit Javascript                             |
+
+Beispiel Verwendung:
+
+-   Auswählen
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualisieren
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Löschen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
