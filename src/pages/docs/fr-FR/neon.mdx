@@ -1,0 +1,161 @@
+---
+title: Néon
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/319?languages=fr&filter=basic&value=0
+metaTitle: Doc d'intégration de Neon | ILLA Cloud
+desc: Connectez votre base de données Neon à ILLA Cloud et créez des applications qui peuvent interroger, manipuler et afficher des données. Ce guide vous montrera comment.
+tagCategory: doc_menu_neon_click
+categoryName: 🔨 Intégrations
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Qu'est-ce que le Neon ?</h2>
+
+Neon in Illa est une intégration de base de données qui vous permet de vous connecter et d'interagir avec une base de données Neon. Neon est un système de gestion de base de données relationnelle populaire reconnu pour sa rapidité, sa fiabilité et sa facilité d'utilisation.
+
+Grâce à l'intégration de Neon dans Illa, vous pouvez interrompre, insérer, mettre à jour et supprimer des données d'une base de données Neon en utilisant des commandes SQL. Vous pouvez également créer des requêtes SQL personnalisées et les exécuter dans Illa. Cela facilite la construction d'applications et de tableaux de bord basés sur des données qui affichent des données en temps réel à partir d'une base de données Neon.
+
+Ce tutoriel décrit le processus de création d'un panneau d'administration en utilisant ILLA Builder et Neon en quelques étapes simples. ILLA est une plate-forme à code faible pour les développeurs qui permet le développement rapide et le déploiement d'outils internes. Il permet de créer des pages en faisant glisser et déposer des composants de l'interface, en se connectant à n'importe quelle base de données ou API, et en écrivant du JavaScript. Pour en savoir plus sur le Néon, visitez leur site Web sur https://neon.tech/ Commençons !
+
+### Configurez votre back-end sur Neon
+
+Sur le tableau de bord de Neon, cliquez sur `Nouveau projet` et définissez le nom à `adminPanel`.
+
+![neon_create_project](https://cdn.illacloud.com/official-website/img/docs/neon_create_project.png)
+
+Ensuite, nous pouvons accéder à la page du projet.
+
+![neon_create_project_1](https://cdn.illacloud.com/official-website/img/docs/neon_create_project_1.png)
+
+Importation de données via des exemples de requêtes SQL.
+
+![neon_create_sql](https://cdn.illacloud.com/official-website/img/docs/neon_create_sql.png)
+
+Nous avons maintenant mis en place une base de données d'échantillons.
+
+![neon_sample_data](https://cdn.illacloud.com/official-website/img/docs/neon_sample_data.png)
+
+### Créer un néon
+
+Il y a deux façons de créer une ressource dans Illa après la connexion à votre compte Illa. 
+
+-   Créer dans les ressources
+
+Connectez-vous à votre compte Illa, sélectionnez `**Ressources**` en haut de la page, et cliquez sur le bouton `**Créer nouveau**`. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Sélectionnez **`Neon`** dans la liste des bases de données.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous. 
+
+Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
+
+Après avoir créé une ressource, le néon prêt s'affichera comme indiqué.
+
+![neon_ex_ready](https://cdn.illacloud.com/official-website/img/docs/neon_ex_ready.png)
+
+-   Créer dans le constructeur
+
+Connectez-vous à votre compte Illa, créez un projet dans Illa Builder dans la page `**App**` et accédez à la **`Liste d'actions`** en bas de la page. Cliquez sur `**new**`, puis sélectionnez **`Neon`** dans la liste des bases de données. Ensuite, connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous.
+
+Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
+
+### Paramètres de connexion
+
+Ici, nous avons besoin de fournir des informations pour se connecter à la base de données de Neon.
+
+![neon_config](https://cdn.illacloud.com/official-website/img/docs/neon_config.png)
+
+| Propriétés          | Requis       | Libellé                                                                                                                                                            |
+| ------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Nom                 | Obligatoire  | Le nom de la ressource lors de la création d'actions dans l'ILLA.                                                                                                  |
+| Chaîne de connexion | optionnel    | un paramètre de configuration qui est utilisé pour spécifier les détails d'une connexion à une source de données externe, telle qu'une base de données ou une API. |
+| Hostname            | Obligatoire  | L'URL ou l'adresse IP de votre base de données                                                                                                                     |
+| Port                | Obligatoire  | Le numéro de port de l'hôte que vous devez utiliser pour vous connecter. Si vous ne spécifiez pas de port, le port par défaut est '5432'.                          |
+| Base de données     | Obligatoire  | Le nom de la base de données                                                                                                                                       |
+| Nom d'utilisateur   | Obligatoire  | le nom d'utilisateur que vous souhaitez utiliser lors de votre connexion au serveur Neon.                                                                          |
+| Mot de passe        | Obligatoire  | Utilisez ce mot de passe pour l'authentification.                                                                                                                  |
+
+Il y a deux façons de remplir les informations pour la configuration de Neon.
+
+-   Analyse d'une chaîne de connexion donnée
+
+Dans la page du projet Neon, défilement effectué, nous avons une chaîne de connexion donnée dans **`Connexion directe`**.
+
+![neon_connection](https://cdn.illacloud.com/official-website/img/docs/neon_connection.png)
+
+Note: Appuyer sur le flou montre les nombres cachés, alors nous pouvons le copier.
+
+Après avoir collé la chaîne dans la zone de texte de la chaîne de connexion dans la configuration, cliquez sur **`Analyser`**.
+
+![neon_parsing](https://cdn.illacloud.com/official-website/img/docs/neon_parsing.png)
+
+Nous avons rempli automatiquement pour nous toutes les informations que nous avons fournies.
+
+![neon_parse_done](https://cdn.illacloud.com/official-website/img/docs/neon_parse_done.png)
+
+-   Remplissez manuellement les informations.
+
+Nous pouvons également trouver les informations requises à partir de la page du projet et les remplir manuellement à la configuration dans Illa. 
+
+### Créer des actions
+
+Nous avons créé une ressource néon, nous pouvons ajouter l'action en sélectionnant Neon dans la liste des actions et en choisissant le bouton **`Créer l'action`**.
+
+![neon_resource_list](https://cdn.illacloud.com/official-website/img/docs/neon_resource_list.png)
+
+ Maintenant nous avons ajouté le serveur Neon comme une action à notre page de construction.
+
+![neon](https://cdn.illacloud.com/official-website/img/docs/neon.png)
+
+### Configurer Neon
+
+| Propriétés     | Libellé                                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Requête SQL    | commandes sql pour récupérer (sélectionner), inserer, mettre à jour, supprimer les données de la base de données |
+| Transformateur | transformation des données dans le style que vous aimez en utilisant JavaScript                                  |
+
+Exemple d'utilisation :
+
+-   Sélectionner
+
+```sql
+SELECT * FROM utilisateurs ORDER BY nom;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Mise à jour
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first }}'
+  WHERE id = {{ form1.updatedProfile.uid }};
+```
+
+-   Supprimez
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
