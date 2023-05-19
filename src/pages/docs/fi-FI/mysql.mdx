@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/327?languages=fi&filter=basic&value=0
+metaTitle: MySQL Integration Doc ¶ ILLA Cloud
+desc: Yhdistä ja ole vuorovaikutuksessa MySQL-tietokantaan ILLA Cloudin avulla. Luo sovelluksia, jotka voivat kysyä, manipuloida ja visualisoida tietoa. Automatisoi ja optimoi datan työnkulku.
+tagCategory: doc_menu_mysql_click
+categoryName: ":vasara: Integraatiot"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Mitä MySQL on?</h2>
+
+MySQL Illa on tietokannan integraatio, jonka avulla voit yhdistää ja vuorovaikutuksessa MySQL tietokantaan. MySQL on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on tunnettu sen nopeus, luotettavuus ja helppokäyttöisyys.
+
+MySQL integraatio Illa, voit kysyä, lisätä, päivittää ja poistaa tietoja MySQL tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja kojelautoja, jotka näyttävät reaaliaikaista tietoa MySQL-tietokannasta.
+
+### Create MySQL
+
+On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilillesi.
+
+-   Luo resursseissa
+
+Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Valitse **`MySQL`** tietokantaluettelosta.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+Kun olet luonut resurssin, valmis MySQL näyttää esitetyllä tavalla.
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   Luo rakentajaan
+
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, ja valitse **`MySQL`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+### Yhteyden Asetukset
+
+Täällä meidän on annettava tietoja yhteyden MySQL tietokantaan.
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| Ominaisuudet      | Pakollinen  | Kuvaus                                                                                                                         |
+| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Nimi              | vaadittu    | Resurssin nimi kun luodaan toimia ILLA:ssa.                                                                                    |
+| Hostname          | vaadittu    | Tietokannan URL-osoite tai IP-osoite                                                                                           |
+| Portti            | vaadittu    | Palvelimen portti numero, jota sinun pitäisi käyttää yhdistämiseen. Jos et määritä porttia, oletusportti on '3306'.            |
+| Tietokanta        | vaadittu    | The name of the database                                                                                                       |
+| Käyttäjätunnus    | vaadittu    | käyttäjätunnus, jota haluat käyttää, kun kirjaudut sisään MySQL palvelimelle.                                                  |
+| Salasana          | vaadittu    | Käytä tätä salasanaa tunnistautumiseen.                                                                                        |
+| SSL asetukset     | valinnainen | päättää, kuinka korkea turvallinen SSL TCP / IP yhteys on priorisoitu neuvotellessaan palvelimen kanssa.                       |
+
+### Luo Toiminnot
+
+Olemme luoneet MySQL-resurssin, voimme lisätä toiminnon valitsemalla MySQL toimintalistalta ja valitsemalla **`Create action`** -painikkeen.
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+Nyt olemme lisänneet MySQL palvelimen toiminnaksi meidän rakennuksen sivu.
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### Määritä MySQL
+
+| Ominaisuudet  | Kuvaus                                                                           |
+| ------------- | -------------------------------------------------------------------------------- |
+| SQL-kysely    | sql komentoja noutaaksesi (valita), lisää, päivitä, poista tietoja tietokannasta |
+| Muuntaja      | muuttamalla dataa tyyliin, jonka pidät JavaScriptin avulla                       |
+
+Esimerkin käyttö:
+
+-   Valitse
+
+```sql
+VALITSE * käyttäjistä ORDER BY sukunimi;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Päivitä
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Poista
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

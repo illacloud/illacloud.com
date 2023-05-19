@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/327?languages=zhcn&filter=basic&value=0
+metaTitle: MySQL 集成Doc | ILLA Cloud
+desc: 使用 ILLA 云与 MySQL 数据库连接和交互。 创建可以查询、操作和可视化数据的应用。 自动化并优化数据工作流。
+tagCategory: doc_menu_mysql_click
+categoryName: 🔨 集成
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>MySQL是什么？</h2>
+
+Illa 中的 MySQL 是一个数据库集成，允许您连接并与 MySQL 数据库交互。 MySQL 是一个受欢迎的开源关系数据库管理系统，它以其速度、可靠性和易用性而著称。
+
+在Illa中使用 MySQL 集成，您可以通过 SQL 命令查询、插入、更新和删除MySQL 数据库中的数据。 您也可以创建自定义 SQL 查询并在Illa中运行它们。 这便于构建数据驱动应用程序和仪表板，显示来自MySQL数据库的实时数据。
+
+### Create MySQL
+
+在登录到您的 Illa 帐户后，有两种方式在Illa 中创建资源。
+
+-   在资源中创建
+
+登录到您的 Illa 帐户，在页面顶部选择 `**Resources**` 并点击 `**Create New**` 按钮。
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+从数据库列表中选择 **`MySQL`** 。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+使用下面`连接设置`描述的必填参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+创建资源后，准备好的 MySQL 将显示。
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   在构建器中创建
+
+登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`MySQL`** 。 然后，用下面`连接设置`描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+### 连接设置
+
+这里我们需要提供连接到 MySQL 数据库的信息。
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| 属性          | 必填  | 描述                                                                                                        |
+| ----------- | --- | --------------------------------------------------------------------------------------------------------- |
+| 名称          | 必填  | 在 ILLA 中创建动作时的资源名称。                                                                                       |
+| Hostname    | 必填  | 您数据库的 URL 或 IP 地址                                                                                         |
+| 端口          | 必填  | 您应该使用服务器主机的端口号进行连接。 如果您没有指定端口，默认端口为“3306”。                                                                |
+| 数据库         | 必填  | 数据库名称                                                                                                     |
+| 用户名         | 必填  | 登录到 MySQL 服务器时您想要使用的用户名。                                                                                  |
+| 密码          | 必填  | 使用此密码进行身份验证。                                                                                              |
+| SSL 选项      | 可选的 | 在与服务器谈判时，决定安全的 SSL TCP/IP 连接的优先级程度。                                                                       |
+
+### 创建动作
+
+我们创建了 MySQL 资源，我们可以从动作列表中选择 MySQL 并选择 **`Create action` ** 按钮来添加动作。
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+现在我们已经将 MySQL 服务器添加到我们的建筑页面中作为一个动作。
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### 配置 MySQL
+
+| 属性       | 描述                                                               |
+| -------- | ---------------------------------------------------------------- |
+| SQL 查询   | 要获取的 sql 命令 (选择), 插入, 更新, 删除数据库中的数据                              |
+| 转换器      | 将数据转换为你喜欢使用 JavaScript 的样式                                       |
+
+示例用法：
+
+-   选择
+
+```sql
+选择* 从用户排序按姓排列；
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   删除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

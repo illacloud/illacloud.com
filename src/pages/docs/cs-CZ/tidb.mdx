@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/323?languages=cs&filter=basic&value=0
+metaTitle: TiDB integrační dokument | ILLA Cloud
+desc: Použijte ILLA Cloud pro přístup k vašim datům TiDB. Vytváření aplikací, které mohou dotazovat, manipulovat a zobrazovat data. Postupujte podle tohoto návodu a začněte.
+tagCategory: doc_menu_tidb_click
+categoryName: 🔨 Integrace
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Co je TiDB?</h2>
+
+TiDB je integrace databáze, která umožňuje spojení a interakci s databází TiDB. Je distribuovaný, horizontálně rozšiřitelný systém pro správu relativních databází, který je navržen tak, aby zvládl vysoký objem a vysoké koncurrency pracovní zatížení.
+
+Díky integraci TiDB v Ille můžete pomocí SQL příkazů dotázat, aktualizovat a mazat data z databáze TiDB. Můžete také vytvořit vlastní SQL dotazy a spustit je v Ille. Díky tomu lze snadno sestavovat aplikace a dashboardy, které zobrazují data v reálném čase z databáze TiDB.
+
+### Vytvořit TiDB
+
+Po přihlášení do vašeho účtu Illa existují dva způsoby, jak vytvořit zdroj v Illa.
+
+-   Vytvořit ve zdrojích
+
+Přihlaste se ke svému účtu Illa, vyberte `**Zdroje**` v horní části stránky a klikněte na tlačítko `**Vytvořit nové**`.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Vyberte **`TiDB`** z databáze
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Připojte se k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
+
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+
+Po vytvoření zdroje se připravený TiDB zobrazí podle zobrazení.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Vytvořit ve staviteli
+
+Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`TiDB`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
+
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+
+### Nastavení připojení
+
+Zde musíme poskytnout informace pro připojení k databázi TiDB.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Vlastnosti                  | Požadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                                       |
+| --------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Název                       | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                                                                                                                                                         |
+| Hostname                    | vyžadováno | URL nebo IP adresa pro vaši databázi                                                                                                                                                                                                            |
+| Přístav                     | vyžadováno | Číslo portu hostitele, které byste měli použít k připojení. Pokud nespecifikujete port, výchozí port je '4000'.                                                                                                                                 |
+| Databáze                    | vyžadováno | Název databáze                                                                                                                                                                                                                                  |
+| Uživatelské jméno           | vyžadováno | uživatelské jméno, které chcete použít při přihlášení na TiDB server.                                                                                                                                                                           |
+| Heslo                       | vyžadováno | Použít toto heslo pro ověření.                                                                                                                                                                                                                  |
+| Možnosti SSL                | volitelné  | rozhoduje o tom, jak vysoké je při vyjednávání se serverem upřednostněno bezpečné připojení SSL TCP/IP.                                                                                                                                         |
+| Certifikát CA               | vyžadováno | digitální certifikát, který se používá k ověření totožnosti serveru a k zajištění bezpečného, šifrované spojení mezi klientem a TiDB cluster. Pokud to nespecifikujete, vyplnili jsme pro Vás výchozí certifikát.                               |
+| Klíč klienta                | volitelné  | parametr, který se používá k vytvoření zabezpečeného spojení mezi klientem TiDB a serverem TiDB.                                                                                                                                                |
+| Certifikát klienta          | volitelné  | bezpečnostní funkce, která umožňuje klientovi ověřit se na TiDB server                                                                                                                                                                          |
+
+### Vytvořit akce
+
+Vytvořili jsme zdroj TiDB, akci můžeme přidat výběrem TiDB ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Nyní jsme přidali TiDB server jako akci na naši stavební stránku.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### Konfigurace TiDB
+
+| Vlastnosti    | L 343, 22.12.2009, s. 1).                                                               |
+| ------------- | --------------------------------------------------------------------------------------- |
+| SQL dotaz     | sql příkazy pro načtení (výběr), vkládat, aktualizovat, mazat data z databáze           |
+| Transformátor | přeměňuje data na styl, který se vám líbí pomocí Javascript                             |
+
+Příklad použití:
+
+-   Vybrat
+
+```sql
+VYBRAT * ODPOVĚDÍ uživatelů PODLE příjmení;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualizovat
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Vymazat
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

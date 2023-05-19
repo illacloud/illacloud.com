@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilingues/illacloud-website/327?languages=pt&filter=basic&value=0
+metaTitle: Integração do MySQL Doc ├ILLA Cloud
+desc: Conectar e interagir com um banco de dados MySQL usando ILLA Cloud. Crie aplicativos que possam pesquisar, manipular e visualizar dados. Automatize e otimize fluxos de trabalho de dados.
+tagCategory: doc_menu_mysql_click
+categoryName: 🔨 Integrações
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>O que é MySQL?</h2>
+
+MySQL no Illa é uma integração de banco de dados que permite conectar e interagir com um banco de dados MySQL. MySQL é um popular sistema de gerenciamento de banco de dados de código aberto que é conhecido por sua velocidade, confiabilidade e facilidade de uso.
+
+Com a integração do MySQL no Illa, você pode consultar, inserir, atualizar e excluir dados de um banco de dados MySQL utilizando comandos SQL. Você também pode criar consultas SQL personalizadas e executá-las dentro do Illa. Isto facilita a criação de aplicativos e painéis orientados a dados que exibem dados em tempo real de um banco de dados MySQL.
+
+### Create MySQL
+
+Há duas maneiras de criar um recurso no Illa depois de entrar em sua conta do Illa.
+
+-   Criar em recursos
+
+Entre na sua conta Illa, selecione `**Recursos**` no topo da página, e clique no botão `**Criar Novo**`.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Selecione **`MySQL`** na lista de dados.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Conectar ao banco de dados com os parâmetros necessários descritos em `Configurações de Conexão` abaixo.
+
+Clique em `**Test Connection**` para ver se conseguimos nos conectar com sucesso ao banco de dados. Se sim, clique **`Salvar Recursos`**, outra coisa, verifique se o nome do host, porta, nome de usuário e senha está correto.
+
+Depois de criar um recurso, o MySQL pronto será exibido como mostrado.
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   Criar no Construtor
+
+Entre na sua conta do Illa, crie um projeto no Illa Builder na página `**App**`, e navegue para a **Lista de Ações\`** na parte inferior da página. Clique em `**novo**`, e então selecione **`MySQL`** na lista de dados. Em seguida, conecte ao banco de dados com os parâmetros necessários descritos em `Configurações de Conexão` abaixo.
+
+Clique em `**Test Connection**` para ver se conseguimos nos conectar com sucesso ao banco de dados. Se sim, clique **`Salvar Recursos`**, outra coisa, verifique se o nome do host, porta, nome de usuário e senha está correto.
+
+### Configurações de conexão
+
+Aqui precisamos fornecer informações para conexão com o banco de dados MySQL.
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| propriedades     | Obrigatório | Descrição:                                                                                                                           |
+| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Nome:            | Obrigatório | O nome do recurso ao criar ações na ILLA.                                                                                            |
+| Hostname         | Obrigatório | O URL ou endereço IP do seu banco de dados                                                                                           |
+| Porta            | Obrigatório | O número da porta do host do servidor que você deve usar para se conectar. Se você não especificar uma porta, porta padrão é '3306'. |
+| Banco            | Obrigatório | O nome do banco de dados                                                                                                             |
+| Usuário:         | Obrigatório | o nome de usuário que você deseja usar ao fazer login no servidor MySQL.                                                             |
+| Palavra-passe    | Obrigatório | Use esta senha para autenticação.                                                                                                    |
+| Opções SSL       | opcional    | decide quão alta uma conexão SSL TCP/IP é priorizada durante as negociações com o servidor.                                          |
+
+### Criar ações
+
+Criamos um recurso MySQL, podemos adicionar a ação selecionando o MySQL da lista de ações e escolhendo o botão **`Create action`**.
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+Agora nós adicionamos o servidor MySQL como uma ação à nossa página de construção.
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### Configure MySQL
+
+| propriedades   | Descrição:                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| Consulta SQL   | comandos sql para buscar (selecionar), inserir, atualizar, excluir dados do banco de dados |
+| Transformador  | Transformar dados em estilo que você gosta de usar JavaScript                              |
+
+Exemplo de uso:
+
+-   Selecionar
+
+```sql
+SELECIONE * DE usuários ORDEM POR sobrenome do usuário;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Atualização
+
+```sql
+ATUALIZAR usuários
+  DEFINIR o primeiro nome = '{{form1.updatedProfile.first}}'
+  SEM id = {{ form1.updatedProfile.uid}};
+```
+
+-   excluir
+
+```sql
+EXCLUIR DE usuários SEM IDE = {{ form1.updatedProfile.uid }};
+```

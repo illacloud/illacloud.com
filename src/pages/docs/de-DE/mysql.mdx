@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/327?languages=de&filter=basic&value=0
+metaTitle: MySQL-Integration Doc | ILLA-Cloud
+desc: Verbinden und interagieren Sie eine MySQL-Datenbank mit ILLA Cloud. Apps erstellen, die Daten abfragen, bearbeiten und visualisieren können. Automatisieren und optimieren Sie Datenworkflows.
+tagCategory: doc_menu_mysql_click
+categoryName: ":Hammer: Integrationen"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Was ist MySQL?</h2>
+
+MySQL in Illa ist eine Datenbank-Integration, mit der Sie sich mit einer MySQL-Datenbank verbinden und mit ihnen interagieren können. MySQL ist ein beliebtes Open-Source-relationales Datenbank-Management-System, das für seine Geschwindigkeit, Zuverlässigkeit und Benutzerfreundlichkeit bekannt ist.
+
+Mit der MySQL-Integration in Illa können Sie Daten aus einer MySQL-Datenbank über SQL-Befehle abfragen, einfügen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und innerhalb von Illa ausführen. Dies macht es einfach, datengesteuerte Anwendungen und Dashboards zu erstellen, die Echtzeitdaten aus einer MySQL-Datenbank anzeigen.
+
+### Create MySQL
+
+Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressource in Illa zu erstellen.
+
+-   In Ressourcen erstellen
+
+Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Wähle **`MySQL`** aus der Datenbankliste.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Verbinden Sie sich mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+Nach der Erstellung einer Ressource wird das bereitgestellte MySQL wie angezeigt angezeigt.
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   Im Builder erstellen
+
+Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicke auf `**new**`, dann wähle **`MySQL`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+### Verbindungseinstellungen
+
+Hier müssen wir Informationen zur Verbindung mit der MySQL-Datenbank zur Verfügung stellen.
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| Eigenschaften   | Benötigt | Beschreibung                                                                                                                                 |
+| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name            | benötigt | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA.                                                                          |
+| Hostname        | benötigt | Die URL oder IP-Adresse für Ihre Datenbank                                                                                                   |
+| Port            | benötigt | Die Portnummer des Servers, die Sie verwenden sollten, um sich zu verbinden. Wenn Sie keinen Port angeben, ist der Standardport '3306'.      |
+| Datenbank       | benötigt | Der Name der Datenbank                                                                                                                       |
+| Benutzername    | benötigt | den Benutzernamen verwenden, den Sie beim Einloggen auf dem MySQL-Server verwenden möchten.                                                  |
+| Passwort        | benötigt | Dieses Passwort für die Authentifizierung verwenden.                                                                                         |
+| SSL-Optionen    | optional | entscheidet, wie hoch eine sichere SSL-TCP/IP-Verbindung bei der Verhandlung mit dem Server priorisiert wird.                                |
+
+### Aktionen erstellen
+
+Wir haben eine MySQL-Ressource erstellt, wir können die Aktion hinzufügen, indem wir MySQL aus der Aktionsliste auswählen und die **`Aktion erstellen`** Schaltfläche auswählen.
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+Jetzt haben wir den MySQL-Server als Aktion zu unserer Build-Seite hinzugefügt.
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### Konfigurieren Sie MySQL
+
+| Eigenschaften  | Beschreibung                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| SQL-Abfrage    | sql Befehle zum Abrufen (auswählen), einfügen, aktualisieren, Daten aus der Datenbank löschen |
+| Transformator  | Umwandlung von Daten in den Stil, den Sie mögen, mit JavaScript                               |
+
+Beispiel Verwendung:
+
+-   Auswählen
+
+```sql
+AUSWÄHLEN * AUS Benutzer VON Nachname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualisieren
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Löschen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

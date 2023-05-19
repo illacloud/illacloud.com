@@ -1,0 +1,120 @@
+---
+title: Oracle DB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/325?languages=ro&filter=basic&value=0
+metaTitle: Oracle DB Integrare Doc <unk> ILLA Cloud
+desc: Învățați cum să utilizați caracteristica de integrare a bazei de date ILLA Cloud pentru a vă conecta și a interacționa cu baza de date OracleDB în câțiva pași simpli.
+tagCategory: doc_menu_oracle_db_click
+categoryName: 🔨 Integrări
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Ce este Oracle DB?</h2>
+
+Oracle DB în Illa este o integrare a bazei de date care vă permite să vă conectați și să interacționați cu o bază de date Oracle DB. Oracle DB este un popular sistem de management al bazelor de date relaționale, cu sursă deschisă, cunoscut pentru viteza, fiabilitatea și ușurința de utilizare.
+
+Cu integrarea Oracle DB în Illa, puteți interoga, insera, actualiza și șterge date dintr-o bază de date Oracle DB folosind comenzi SQL. De asemenea, poți crea interogări SQL personalizate și să le rulezi în Illa. Acest lucru facilitează construirea de aplicații și tablouri de bord bazate pe date care afișează date în timp real dintr-o bază de date cu Oracle DB.
+
+### Creează Oracle DB
+
+Există două modalități de a crea o resursă în Illa după ce te autentifici în contul tău Illa. 
+
+-   Creează în resurse
+
+Conectează-te la contul tău Illa, selectează `**Resurse**` din partea de sus a paginii și apasă butonul `**Creează nou**`. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Selectați **`Oracle DB`** din lista de baze de date.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos. 
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+După crearea unei resurse, DB Oracle gata va fi afișat ca afișat.
+
+![oracle_ex_ready](https://cdn.illacloud.com/official-website/img/docs/oracle_ex_ready.png)
+
+-   Creează în Constructor
+
+Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `**App**`, şi navighează la **`Lista de Acţiuni`** în partea de jos a paginii. Faceţi clic pe `**nou**`, apoi selectaţi **`Oracle DB`** din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+### Setări conexiune
+
+Aici trebuie să oferim informaţii pentru conectarea la baza de date Oracle DB.
+
+![oracle_config](https://cdn.illacloud.com/official-website/img/docs/oracle_config.png)
+
+| Proprietăți                      | Necesar  | Descriere                                                                                                                                        |
+| -------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Nume                             | necesar  | Numele pentru resurse la crearea de acțiuni în ILLA.                                                                                             |
+| Hostname                         | necesar  | Adresa URL sau adresa IP a bazei de date                                                                                                         |
+| Portul                           | necesar  | Numărul de port al serverului gazdă pe care ar trebui să-l utilizați pentru conectare. Dacă nu specificați un port, portul implicit este '3306'. |
+| Baza de date                     | necesar  | Numele bazei de date                                                                                                                             |
+| Tratează numele bazei de date ca | necesar  | identifică o instanță a bazei de date cu SID sau nume de serviciu.                                                                               |
+| Nume                             | necesar  | numele de utilizator pe care dorești să îl folosești atunci când te conectezi la serverul Oracle DB.                                             |
+| Parolă                           | necesar  | Utilizați această parolă pentru autentificare.                                                                                                   |
+| SSL                              | necesar  | decide cât de mare este prioritizată o conexiune SSL TCP/IP în timpul negocierilor cu serverul.                                                  |
+
+### Creați Acțiuni
+
+Am creat o resursă Oracle DB, putem adăuga acțiunea selectând Oracle DB din lista de acțiuni și alegând butonul **`Creare acțiune`**.
+
+![oracle_resource_list](https://cdn.illacloud.com/official-website/img/docs/oracle_resource_list.png)
+
+ Acum am adăugat serverul Oracle DB ca acțiune la pagina noastră de construcție.
+
+![oracle](https://cdn.illacloud.com/official-website/img/docs/oracle.png)
+
+### Configurați Oracle DB
+
+| Proprietăți    | Descriere                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| Interogare SQL | comenzi sql pentru a prelua (select), inserare, actualizare, ștergere date din baza de date |
+| Transformator  | Transformarea datelor în stilul care îți place să folosești JavaScript                      |
+
+Exemplu de utilizare:
+
+-   Selectare
+
+```sql
+SELECTARE * DE LA utilizatorii ORDUL DUPĂ Nume;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Actualizare
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Ștergere
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

@@ -1,0 +1,120 @@
+---
+title: Oracle DB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/325?languages=da&filter=basic&value=0
+metaTitle: Oracle DB Integration Doc ● ILLA Cloud
+desc: Lær at bruge ILLA Clouds databaseintegrationsfunktion til at forbinde og interagere med din OracleDB database i nogle få enkle trin.
+tagCategory: doc_menu_oracle_db_click
+categoryName: 🔨 Integrationer
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Hvad er Oracle DB?</h2>
+
+Oracle DB i Illa er en databaseintegration, der giver dig mulighed for at forbinde og interagere med en Oracle DB database. Oracle DB er et populært open source relationelle database management system, der er kendt for sin hastighed, pålidelighed og brugervenlighed.
+
+Med Oracle DB integration i Illa kan du forespørge, indsætte, opdatere og slette data fra en Oracle DB database ved hjælp af SQL-kommandoer. Du kan også oprette brugerdefinerede SQL forespørgsler og køre dem i Illa. Dette gør det nemt at opbygge data-drevne applikationer og dashboards, der viser realtidsdata fra en Oracle DB database.
+
+### Opret Oracle DB
+
+Der er to måder at oprette en ressource på i Illa efter at have logget ind på din Illa-konto. 
+
+-   Opret i ressourcer
+
+Log ind på din Illa-konto, vælg `**Ressourcer**` øverst på siden, og klik på `**Opret ny**` knappen. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Vælg **`Oracle DB`** fra databaselisten.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Opret forbindelse til databasen med de krævede parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor. 
+
+Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+
+Efter oprettelse af en ressource, vil den klar Oracle DB vises som vist.
+
+![oracle_ex_ready](https://cdn.illacloud.com/official-website/img/docs/oracle_ex_ready.png)
+
+-   Opret i Builder
+
+Log ind på din Illa-konto, opret et projekt i Illa Builder på siden '**App**', og navigere til **`Action List`** nederst på siden. Klik på `**ny**`, vælg derefter **`Oracle DB`** fra databaselisten. Opret derefter forbindelse til databasen med de nødvendige parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor.
+
+Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+
+### Forbindelsesindstillinger
+
+Her er vi nødt til at give oplysninger til tilslutning til Oracle DB database.
+
+![oracle_config](https://cdn.illacloud.com/official-website/img/docs/oracle_config.png)
+
+| Egenskaber               | Påkrævet  | Varebeskrivelse                                                                                                     |
+| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Navn                     | påkrævet  | Navnet på ressource når der oprettes handlinger i ILLA.                                                             |
+| Hostname                 | påkrævet  | URL- eller IP-adressen for din database                                                                             |
+| Port                     | påkrævet  | Serveren vært portnummer, som du skal bruge til at forbinde. Hvis du ikke angiver en port, er standard port '3306'. |
+| Database                 | påkrævet  | Navnet på databasen                                                                                                 |
+| Behandl databasenavn som | påkrævet  | identificere en database instans med SID eller Service Name.                                                        |
+| Brugernavn               | påkrævet  | det brugernavn du ønsker at bruge, når du logger på Oracle DB-serveren.                                             |
+| Adgangskode              | påkrævet  | Brug denne adgangskode til godkendelse.                                                                             |
+| SSL                      | påkrævet  | beslutte, hvor højt en sikker SSL TCP/IP-forbindelse prioriteres under forhandlinger med serveren.                  |
+
+### Opret Handlinger
+
+Vi har oprettet en Oracle DB-ressource, vi kan tilføje handlingen ved at vælge Oracle DB fra handlingslisten og vælge **`Opret handling`**-knappen.
+
+![oracle_resource_list](https://cdn.illacloud.com/official-website/img/docs/oracle_resource_list.png)
+
+ Nu har vi tilføjet Oracle DB serveren som en handling til vores byggeside.
+
+![oracle](https://cdn.illacloud.com/official-website/img/docs/oracle.png)
+
+### Indstil Oracle DB
+
+| Egenskaber       | Varebeskrivelse                                                                   |
+| ---------------- | --------------------------------------------------------------------------------- |
+| SQL forespørgsel | sql kommandoer til at hente (vælge), indsætte, opdatere, slette data fra database |
+| Transformator    | omdanne data til den stil, du ønsker at bruge JavaScript                          |
+
+Eksempel på anvendelse:
+
+-   Vælg
+
+```sql
+VÆLG * FRA brugere ORDER BY Efternavn;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Opdater
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Slet
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

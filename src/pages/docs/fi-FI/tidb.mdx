@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/323?languages=fi&filter=basic&value=0
+metaTitle: Tidb Integraatio Doc - ILLA Cloud
+desc: Käytä ILLA Cloud päästäksesi käsiksi TiDB dataan ja työskennelläsi. Luo sovelluksia, jotka voivat kysyä, manipuloida ja näyttää tietoja. Seuraa tätä opasta aloittaaksesi.
+tagCategory: doc_menu_tidb_click
+categoryName: ":vasara: Integraatiot"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Mitä TiDB on?</h2>
+
+TiDB on tietokannan integraatio, jonka avulla voit muodostaa yhteyden TiDB tietokantaan ja olla vuorovaikutuksessa sen kanssa. Se on hajautettu, horisontaalisesti skaalautuva relational tietokannan hallintajärjestelmä, joka on suunniteltu käsittelemään korkean määrän, korkean valuutan työkuormia.
+
+TiDB integraation Illa avulla voit kysyä, päivittää ja poistaa tietoja TiDB tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja kojelautoja, jotka näyttävät reaaliaikaista tietoa TiDB-tietokannasta.
+
+### Luo TiDB
+
+On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilillesi.
+
+-   Luo resursseissa
+
+Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Valitse **`TiDB`** tietokantaluettelosta.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+Kun resurssi on luotu, valmis TiDB näyttää kuvatulla tavalla.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Luo rakentajaan
+
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, valitse **`TiDB`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+### Yhteyden Asetukset
+
+Tässä yhteydessä meidän on annettava tietoja yhteyden TiDB tietokantaan.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Ominaisuudet             | Pakollinen  | Kuvaus                                                                                                                                                                                                                                        |
+| ------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nimi                     | vaadittu    | Resurssin nimi kun luodaan toimia ILLA:ssa.                                                                                                                                                                                                   |
+| Hostname                 | vaadittu    | Tietokannan URL-osoite tai IP-osoite                                                                                                                                                                                                          |
+| Portti                   | vaadittu    | Palvelimen portti numero, jota sinun pitäisi käyttää yhdistämiseen. Jos et määritä porttia, oletusportti on '4000'.                                                                                                                           |
+| Tietokanta               | vaadittu    | The name of the database                                                                                                                                                                                                                      |
+| Käyttäjätunnus           | vaadittu    | käyttäjätunnus, jota haluat käyttää, kun kirjaudut sisään TiDB palvelimelle.                                                                                                                                                                  |
+| Salasana                 | vaadittu    | Käytä tätä salasanaa tunnistautumiseen.                                                                                                                                                                                                       |
+| SSL asetukset            | valinnainen | päättää, kuinka korkea turvallinen SSL TCP / IP yhteys on priorisoitu neuvotellessaan palvelimen kanssa.                                                                                                                                      |
+| Varmenne                 | vaadittu    | digitaalinen varmenne, jota käytetään serverin henkilöllisyyden todentamiseen ja turvallisen aseman luomiseen, salattu yhteys asiakkaan ja TiDB klusterin välillä. Jos et määrittele sitä, olemme täyttäneet oletusvarmenteen sinua varten.   |
+| Asiakkaan Avain          | valinnainen | parametri, jota käytetään suojatun yhteyden luomiseksi TiDB-asiakkaan ja TiDB-palvelimen välille.                                                                                                                                             |
+| Asiakkaan Varmenne       | valinnainen | turvatoiminto, jonka avulla asiakas voi todentaa itsensä TiDB palvelimella                                                                                                                                                                    |
+
+### Luo Toiminnot
+
+Olemme luoneet TiDB-resurssin, voimme lisätä toiminnon valitsemalla TiDB toimintalistalta ja valitsemalla **`Create action`** -painikkeen.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Nyt olemme lisänneet TiDB palvelimen toiminnaksi meidän rakennussivulle.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### Määritä TiDB
+
+| Ominaisuudet  | Kuvaus                                                                           |
+| ------------- | -------------------------------------------------------------------------------- |
+| SQL-kysely    | sql komentoja noutaaksesi (valita), lisää, päivitä, poista tietoja tietokannasta |
+| Muuntaja      | muuttamalla dataa tyyliin, jonka pidät Javascriptistä                            |
+
+Esimerkin käyttö:
+
+-   Valitse
+
+```sql
+VALITSE * käyttäjistä ORDER BY sukunimi;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Päivitä
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Poista
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

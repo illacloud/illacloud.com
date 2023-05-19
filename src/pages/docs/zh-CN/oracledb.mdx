@@ -1,0 +1,120 @@
+---
+title: Oracle DB
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/325?languages=zhcn&filter=basic&value=0
+metaTitle: Oracle DB 集成文件 | ILLA Cloud
+desc: 学习如何使用 ILLA Cloud 的数据库集成功能，在几个简单步骤中连接和交互您的 OracleDB 数据库。
+tagCategory: doc_menu_oracle_db_click
+categoryName: 🔨 集成
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Oracle DB是什么？</h2>
+
+Illa 中的 Oracle DB 是一个数据库集成，允许您连接并与 Oracle DB 数据库交互。 Oracle DB是一个受欢迎的开放源码关系数据库管理系统，它以其速度、可靠性和易用性而著称。
+
+在 Illa 中有Oracle DB 集成，您可以通过 SQL 命令查询、插入、更新和删除Oracle DB 数据库中的数据。 您也可以创建自定义 SQL 查询并在Illa中运行它们。 这便于建立数据驱动应用程序和仪表板，显示Oracle DB数据库的实时数据。
+
+### 创建Oracle DB
+
+在登录到您的 Illa 帐户后，有两种方式在Illa 中创建资源。 
+
+-   在资源中创建
+
+登录到您的 Illa 帐户，在页面顶部选择 `**资源**` 并点击 `**创建新的**` 按钮。 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+从数据库列表中选择 **`Oracle DB`** 。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+使用下面`连接设置`描述的必填参数连接到数据库。 
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+创建资源后，随时可以显示Oracle DB。
+
+![oracle_ex_ready](https://cdn.illacloud.com/official-website/img/docs/oracle_ex_ready.png)
+
+-   在构建器中创建
+
+登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`Oracle DB`** 。 然后，用下面`连接设置`描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+### 连接设置
+
+这里我们需要提供连接Oracle DB数据库的信息。
+
+![oracle_config](https://cdn.illacloud.com/official-website/img/docs/oracle_config.png)
+
+| 属性        | 必填  | 描述                                         |
+| --------- | --- | ------------------------------------------ |
+| 名称        | 必填  | 在 ILLA 中创建动作时的资源名称。                        |
+| Hostname  | 必填  | 您数据库的 URL 或 IP 地址                          |
+| 端口        | 必填  | 您应该使用服务器主机的端口号进行连接。 如果您没有指定端口，默认端口为“3306”。 |
+| 数据库       | 必填  | 数据库名称                                      |
+| 将数据库名称处理为 | 必填  | 使用SID或服务名称识别数据库实例。                         |
+| 用户名       | 必填  | 登录Oracle DB 服务器时您想使用的用户名。                  |
+| 密码        | 必填  | 使用此密码进行身份验证。                               |
+| SSL       | 必填  | 在与服务器谈判时，决定安全的 SSL TCP/IP 连接的优先级程度。        |
+
+### 创建动作
+
+我们创建了一个Oracle DB资源，我们可以通过从操作列表中选择Oracle DB并选择 **`Create action`** 按钮来添加操作。
+
+![oracle_resource_list](https://cdn.illacloud.com/official-website/img/docs/oracle_resource_list.png)
+
+ 现在我们已经将 Oracle DB 服务器添加到我们的建筑页面。
+
+![oracle](https://cdn.illacloud.com/official-website/img/docs/oracle.png)
+
+### 配置Oracle DB
+
+| 属性     | 描述                                  |
+| ------ | ----------------------------------- |
+| SQL 查询 | 要获取的 sql 命令 (选择), 插入, 更新, 删除数据库中的数据 |
+| 转换器    | 将数据转换为你喜欢使用 JavaScript 的样式          |
+
+示例用法：
+
+-   选择
+
+```sql
+选择* 从用户排序按姓排列；
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   删除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/327?languages=sv&filter=basic&value=0
+metaTitle: MySQL Integration Doc ILLA Cloud
+desc: Anslut och interagera med en MySQL-databas med ILLA Cloud. Skapa appar som kan söka, manipulera och visualisera data. Automatisera och optimera dataarbetsflöden.
+tagCategory: doc_menu_mysql_click
+categoryName: 🔨 Integrationer
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Vad är MySQL?</h2>
+
+MySQL i Illa är en databasintegration som låter dig ansluta och interagera med en MySQL-databas. MySQL är ett populärt relationssystem med öppen källkod som är känt för sin hastighet, tillförlitlighet och användarvänlighet.
+
+Med MySQL-integrationen i Illa, kan du söka, infoga och uppdatera och ta bort data från en MySQL-databas med SQL-kommandon. Du kan också skapa anpassade SQL-frågor och köra dem inom Illa. Detta gör det enkelt att bygga datadrivna applikationer och instrumentpaneler som visar realtidsdata från en MySQL-databas.
+
+### Create MySQL
+
+Det finns två sätt att skapa en resurs i Illa efter att du loggat in på ditt Illa konto.
+
+-   Skapa i resurser
+
+Logga in på ditt Illa konto, välj `**Resurser**` högst upp på sidan och klicka på `**Skapa ny**`-knappen.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Välj **`MySQL`** från databaslistan.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Anslut till databasen med de parametrar som beskrivs i `Connection Settings` nedan.
+
+Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+
+Efter att ha skapat en resurs, kommer den färdiga MySQL att visas som visas.
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   Skapa i Builder
+
+Logga in på ditt Illa konto, skapa ett projekt i Illa Builder på sidan `**App**` och navigera till **`Action List`** längst ner på sidan. Klicka på `**new**`, välj sedan **`MySQL`** från databaslistan. Anslut sedan till databasen med nödvändiga parametrar som beskrivs i `Connection Settings` nedan.
+
+Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+
+### Inställningar för anslutning
+
+Här måste vi tillhandahålla information för att ansluta till MySQL-databasen.
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| Egenskaper      | Krävs        | Beskrivning                                                                                                           |
+| --------------- | ------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Namn            | obligatorisk | Namnet på resursen när du skapar åtgärder i ILLA.                                                                     |
+| Hostname        | obligatorisk | URL eller IP-adress för din databas                                                                                   |
+| Port            | obligatorisk | Serverns portnummer som du bör använda för att ansluta. Om du inte anger en port, är standardporten '3306'.           |
+| Databas         | obligatorisk | Namnet på databasen                                                                                                   |
+| Användarnamn    | obligatorisk | det användarnamn du vill använda när du loggar in på MySQL-servern.                                                   |
+| Lösenord        | obligatorisk | Använd detta lösenord för autentisering.                                                                              |
+| SSL-alternativ  | valfri       | bestämmer hur hög säker SSL TCP / IP-anslutning prioriteras medan man förhandlar med servern.                         |
+
+### Skapa åtgärder
+
+Vi har skapat en MySQL-resurs, vi kan lägga till åtgärden genom att välja MySQL från åtgärdslistan och välja **`Create action`**-knappen.
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+Nu har vi lagt till MySQL-servern som en åtgärd till vår byggsida.
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### Configure MySQL
+
+| Egenskaper    | Beskrivning                                                                         |
+| ------------- | ----------------------------------------------------------------------------------- |
+| SQL-fråga     | sql-kommandon för att hämta (välja), infoga, uppdatera, ta bort data från databasen |
+| Transformator | omvandlar data till den stil du vill använda JavaScript                             |
+
+Exempel användning:
+
+-   Välj
+
+```sql
+VÄLJ * FRÅN användare ORDER BY efternamn;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Uppdatera
+
+```sql
+UPPDATERA användare
+  SET förnamn = '{{form1.updatedProfile.first}}'
+  VAR id = {{ form1.updatedProfile.uid}};
+```
+
+-   Radera
+
+```sql
+RADERA FRÅN användare WHERE id = {{ form1.updatedProfile.uid }};
+```
