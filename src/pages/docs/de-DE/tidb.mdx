@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/323?languages=de&filter=basic&value=0
+metaTitle: TiDB Integration Doc | ILLA Cloud
+desc: Verwenden Sie ILLA Cloud, um auf Ihre TiDB-Daten zuzugreifen und mit ihnen zu arbeiten. Apps erstellen, die Daten abfragen, bearbeiten und anzeigen können. Folgen Sie dieser Anleitung um loszulegen.
+tagCategory: doc-Menü klicken
+categoryName: ":Hammer: Integrationen"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Was ist TiDB?</h2>
+
+TiDB ist eine Datenbank-Integration, mit der Sie sich mit einer TiDB-Datenbank verbinden und interagieren können. Es handelt sich um ein verteiltes, horizontal skalierbares relationales Datenbank-Management-System, das für den Umgang mit hochvolumigen und gleichzeitig hohen Arbeitsbelastungen konzipiert ist.
+
+Mit der TiDB-Integration in Illa können Sie Daten aus einer TiDB-Datenbank über SQL-Befehle abfragen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und innerhalb von Illa ausführen. So lassen sich datengesteuerte Anwendungen und Dashboards erstellen, die Echtzeitdaten aus einer TiDB-Datenbank anzeigen.
+
+### TiDB erstellen
+
+Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressource in Illa zu erstellen.
+
+-   In Ressourcen erstellen
+
+Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Wähle **`TiDB`** aus der Datenbankliste.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Verbinden Sie sich mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+Nach der Erstellung einer Ressource wird die fertige TiDB wie angezeigt angezeigt.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Im Builder erstellen
+
+Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicke `**new**`, dann wähle **`TiDB`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+### Verbindungseinstellungen
+
+Hier müssen wir Informationen zur Verbindung mit der TiDB-Datenbank bereitstellen.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Eigenschaften           | Benötigt | Beschreibung                                                                                                                                                                                                                                                                                  |
+| ----------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name                    | benötigt | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA.                                                                                                                                                                                                                           |
+| Hostname                | benötigt | Die URL oder IP-Adresse für Ihre Datenbank                                                                                                                                                                                                                                                    |
+| Port                    | benötigt | Die Portnummer des Servers, die Sie verwenden sollten, um sich zu verbinden. Wenn Sie keinen Port angeben, ist der Standardport '4000'.                                                                                                                                                       |
+| Datenbank               | benötigt | Der Name der Datenbank                                                                                                                                                                                                                                                                        |
+| Benutzername            | benötigt | den Benutzernamen den Sie beim Einloggen auf dem TiDB-Server verwenden möchten.                                                                                                                                                                                                               |
+| Passwort                | benötigt | Dieses Passwort für die Authentifizierung verwenden.                                                                                                                                                                                                                                          |
+| SSL-Optionen            | optional | entscheidet, wie hoch eine sichere SSL-TCP/IP-Verbindung bei der Verhandlung mit dem Server priorisiert wird.                                                                                                                                                                                 |
+| CA-Zertifikat           | benötigt | ein digitales Zertifikat, das verwendet wird, um die Identität eines Servers zu verifizieren und einen sicheren Server zu etablieren, verschlüsselte Verbindung zwischen einem Client und einem TiDB-Cluster. Wenn Sie es nicht angeben, haben wir ein Standardzertifikat für Sie ausgefüllt. |
+| Kundenschlüssel         | optional | ein Parameter, der verwendet wird, um eine sichere Verbindung zwischen dem TiDB-Client und dem TiDB-Server herzustellen.                                                                                                                                                                      |
+| Client-Zertifikat       | optional | eine Sicherheitsfunktion, die es einem Client erlaubt, sich bei einem TiDB-Server zu authentifizieren                                                                                                                                                                                         |
+
+### Aktionen erstellen
+
+Wir haben eine TiDB-Ressource erstellt. Wir können die Aktion hinzufügen, indem wir TiDB aus der Aktionsliste auswählen und die **`Aktion erstellen`** Schaltfläche auswählen.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Jetzt haben wir den TiDB Server als Aktion auf unserer Bauseite hinzugefügt.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### TiDB konfigurieren
+
+| Eigenschaften  | Beschreibung                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| SQL-Abfrage    | sql Befehle zum Abrufen (auswählen), einfügen, aktualisieren, Daten aus der Datenbank löschen |
+| Transformator  | Umwandlung von Daten in den Stil, den Sie möchten, mit Javascript                             |
+
+Beispiel Verwendung:
+
+-   Auswählen
+
+```sql
+AUSWÄHLEN * AUS Benutzer VON Nachname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualisieren
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Löschen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
