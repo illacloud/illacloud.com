@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/323?languages=it&filter=basic&value=0
+metaTitle: Integrazione TiDB Doc | ILLA Cloud
+desc: Usa ILLA Cloud per accedere e lavorare con i tuoi dati TiDB. Crea app che possono interrogare, manipolare e visualizzare dati. Segui questa guida per iniziare.
+tagCategory: doc_menu_tidb_click
+categoryName: 🔨 Integrazioni
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Cos'è TiDB?</h2>
+
+TiDB è un'integrazione di database che consente di connettersi e interagire con un database TiDB. Si tratta di un sistema di gestione relazionale del database distribuito e scalabile orizzontalmente progettato per gestire carichi di lavoro ad alto volume e ad alto contenuto di convaluta.
+
+Con l'integrazione TiDB in Illa, è possibile interrogare, aggiornare ed eliminare i dati da un database TiDB utilizzando i comandi SQL. È inoltre possibile creare query SQL personalizzate ed eseguirle all'interno di Illa. Ciò facilita la creazione di applicazioni e dashboard basati sui dati che visualizzano dati in tempo reale da un database TiDB.
+
+### Crea TiDB
+
+Ci sono due modi per creare una risorsa in Illa dopo aver effettuato l'accesso al tuo account Illa.
+
+-   Crea in Risorse
+
+Accedi al tuo account Illa, seleziona `**Risorse**` nella parte superiore della pagina e clicca sul pulsante `**Crea Nuovo**`.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Seleziona **`TiDB`** dalla lista dei database.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
+
+Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+
+Dopo aver creato una risorsa, il TiDB pronto verrà visualizzato come mostrato.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Crea in Costruttore
+
+Accedi al tuo account Illa, crea un progetto in Illa Builder nella pagina `**App**`, e vai alla **`Action List`** in fondo alla pagina. Clicca `**nuovo**`, quindi seleziona **`TiDB`** dalla lista dei database. Poi, connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
+
+Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+
+### Impostazioni Di Connessione
+
+Qui abbiamo bisogno di fornire informazioni per il collegamento al database TiDB.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Proprietà             | Richiesto    | Descrizione                                                                                                                                                                                                                                              |
+| --------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nome                  | obbligatorio | Il nome della risorsa quando si creano azioni nell'ILLA.                                                                                                                                                                                                 |
+| Hostname              | obbligatorio | L'URL o l'indirizzo IP per il tuo database                                                                                                                                                                                                               |
+| Porta                 | obbligatorio | Il numero di porta dell'host del server che dovresti usare per connetterti. Se non si specifica una porta, la porta predefinita è '4000'.                                                                                                                |
+| Database              | obbligatorio | Il nome della banca dati                                                                                                                                                                                                                                 |
+| Username              | obbligatorio | il nome utente che si desidera utilizzare quando si effettua l'accesso al server TiDB.                                                                                                                                                                   |
+| Password              | obbligatorio | Usa questa password per l'autenticazione.                                                                                                                                                                                                                |
+| Opzioni SSL           | opzionale    | decide quanto alta sia prioritaria una connessione SSL TCP/IP sicura durante le trattative con il server.                                                                                                                                                |
+| Certificato CA        | obbligatorio | un certificato digitale utilizzato per verificare l'identità di un server e stabilire un certificato sicuro, connessione crittografata tra un client e un cluster TiDB. Se non lo specifichi, abbiamo compilato un certificato predefinito per te.       |
+| Chiave Client         | opzionale    | un parametro utilizzato per stabilire una connessione sicura tra il client TiDB e il server TiDB.                                                                                                                                                        |
+| Certificato Client    | opzionale    | una funzione di sicurezza che consente a un client di autenticarsi su un server TiDB                                                                                                                                                                     |
+
+### Crea Azioni
+
+Abbiamo creato una risorsa TiDB, possiamo aggiungere l'azione selezionando TiDB dalla lista delle azioni e scegliendo il pulsante **`Crea azione`**.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Ora abbiamo aggiunto il server TiDB come azione alla nostra pagina di costruzione.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### Configura TiDB
+
+| Proprietà     | Descrizione                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| Query SQL     | comandi sql da recuperare (selezionare), inserire, aggiornare, eliminare i dati dal database |
+| Trasformatore | trasformare i dati nello stile che ti piace usare Javascript                                 |
+
+Esempio di utilizzo:
+
+-   Seleziona
+
+```sql
+SELEZIONA * Dagli utenti ORDINE PER cognome;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aggiorna
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Elimina
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
