@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/323?languages=ro&filter=basic&value=0
+metaTitle: Doc de integrare TiDB | ILLA Cloud
+desc: Folosește ILLA Cloud pentru a accesa și lucra cu datele tale TiDB. Creează aplicații care pot interoga, manipula și afișa date. Urmează acest ghid pentru a începe.
+tagCategory: doc_menu_tidb_click
+categoryName: 🔨 Integrări
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Ce este TiDB?</h2>
+
+TiDB este o integrare a bazei de date care vă permite să vă conectați și să interacționați cu o bază de date TiDB. Este un sistem distribuit orizontal de gestionare a bazelor de date relaționale, care este conceput pentru a gestiona volumul ridicat, sarcinile de lucru cu convalute ridicate.
+
+Cu integrarea TiDB în Illa, puteți interoga, actualiza și șterge date dintr-o bază de date TiDB folosind comenzi SQL. De asemenea, poți crea interogări SQL personalizate și să le rulezi în Illa. Acest lucru facilitează construirea de aplicații și tablouri de bord bazate pe date care afișează date în timp real dintr-o bază de date TiDB.
+
+### Creează TiDB
+
+Există două modalități de a crea o resursă în Illa după ce te autentifici în contul tău Illa.
+
+-   Creează în resurse
+
+Conectează-te la contul tău Illa, selectează `**Resurse**` din partea de sus a paginii și apasă butonul `**Creează nou**`.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Selectaţi **`TiDB`** din lista de baze de date.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+După crearea unei resurse, TiDB gata va fi afișat ca afișat.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Creează în Constructor
+
+Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `**App**`, şi navighează la **`Lista de Acţiuni`** în partea de jos a paginii. Faceţi clic pe `**nou**`, apoi selectaţi **`TiDB`** din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+
+Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+
+### Setări conexiune
+
+Aici trebuie să oferim informații pentru conectarea la baza de date TiDB.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Proprietăți            | Necesar  | Descriere                                                                                                                                                                                                                                                        |
+| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nume                   | necesar  | Numele pentru resurse la crearea de acțiuni în ILLA.                                                                                                                                                                                                             |
+| Hostname               | necesar  | Adresa URL sau adresa IP a bazei de date                                                                                                                                                                                                                         |
+| Portul                 | necesar  | Numărul de port al serverului gazdă pe care ar trebui să-l utilizați pentru conectare. Dacă nu specificați un port, portul implicit este '4000'.                                                                                                                 |
+| Baza de date           | necesar  | Numele bazei de date                                                                                                                                                                                                                                             |
+| Nume                   | necesar  | numele de utilizator pe care dorești să îl folosești atunci când te conectezi la serverul TiDB.                                                                                                                                                                  |
+| Parolă                 | necesar  | Utilizați această parolă pentru autentificare.                                                                                                                                                                                                                   |
+| Opțiuni SSL            | opţional | decide cât de mare este prioritizată o conexiune SSL TCP/IP în timpul negocierilor cu serverul.                                                                                                                                                                  |
+| Certificat CA          | necesar  | un certificat digital care este utilizat pentru a verifica identitatea unui server și pentru a stabili o securitate sigură, conexiune criptată între un client și un cluster TiDB. Dacă nu o specificați, am completat un certificat implicit pentru dvs.        |
+| Cheie client           | opţional | un parametru care este utilizat pentru a stabili o conexiune securizată între clientul TiDB și serverul TiDB.                                                                                                                                                    |
+| Certificat client      | opţional | o funcție de securitate care permite unui client să se autentifice la un server TiDB                                                                                                                                                                             |
+
+### Creați Acțiuni
+
+Am creat o resursă TiDB, putem adăuga acțiunea selectând TiDB din lista de acțiuni și alegând butonul **`Creare acțiune`**.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Acum am adăugat serverul TiDB ca acțiune la pagina noastră de construcție.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### Configurare TiDB
+
+| Proprietăți      | Descriere                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------- |
+| Interogare SQL   | comenzi sql pentru a prelua (select), inserare, actualizare, ștergere date din baza de date |
+| Transformator    | Transformarea datelor în stilul care îți place folosind Javascript                          |
+
+Exemplu de utilizare:
+
+-   Selectare
+
+```sql
+SELECTARE * DE LA utilizatorii ORDUL DUPĂ Nume;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Actualizare
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Ștergere
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
