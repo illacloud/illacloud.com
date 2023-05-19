@@ -1,0 +1,120 @@
+---
+title: Oracle DB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/325?languages=it&filter=basic&value=0
+metaTitle: Integrazione Oracle DB Doc | ILLA Cloud
+desc: Scopri come utilizzare la funzione di integrazione database di ILLA Cloud per connettersi e interagire con il database OracleDB in pochi semplici passaggi.
+tagCategory: doc_menu_oracle_db_click
+categoryName: 🔨 Integrazioni
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Cos'è Oracle DB?</h2>
+
+Oracle DB in Illa è una integrazione di database che consente di connettersi e interagire con un database Oracle DB. Oracle DB è un popolare sistema di gestione del database relazionale open-source noto per la sua velocità, affidabilità e facilità di utilizzo.
+
+Con l'integrazione Oracle DB in Illa, è possibile interrogare, inserire, aggiornare ed eliminare i dati da un database Oracle DB utilizzando i comandi SQL. È inoltre possibile creare query SQL personalizzate ed eseguirle all'interno di Illa. In questo modo è facile costruire applicazioni e dashboard basati sui dati che visualizzano dati in tempo reale da un database Oracle DB.
+
+### Crea Oracle DB
+
+Ci sono due modi per creare una risorsa in Illa dopo aver effettuato l'accesso al tuo account Illa. 
+
+-   Crea in Risorse
+
+Accedi al tuo account Illa, seleziona `**Risorse**` nella parte superiore della pagina e clicca sul pulsante `**Crea Nuovo**`. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Seleziona **`Oracle DB`** dall'elenco dei database.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto. 
+
+Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+
+Dopo aver creato una risorsa, il DB Oracle pronto verrà visualizzato come mostrato.
+
+![oracle_ex_ready](https://cdn.illacloud.com/official-website/img/docs/oracle_ex_ready.png)
+
+-   Crea in Costruttore
+
+Accedi al tuo account Illa, crea un progetto in Illa Builder nella pagina `**App**`, e vai alla **`Action List`** in fondo alla pagina. Fare clic su `**nuovo**`, quindi selezionare **`Oracle DB`** dall'elenco dei database. Poi, connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
+
+Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+
+### Impostazioni Di Connessione
+
+Qui abbiamo bisogno di fornire informazioni per il collegamento al database di Oracle DB.
+
+![oracle_config](https://cdn.illacloud.com/official-website/img/docs/oracle_config.png)
+
+| Proprietà                        | Richiesto     | Descrizione                                                                                                                             |
+| -------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Nome                             | obbligatorio  | Il nome della risorsa quando si creano azioni nell'ILLA.                                                                                |
+| Hostname                         | obbligatorio  | L'URL o l'indirizzo IP per il tuo database                                                                                              |
+| Porta                            | obbligatorio  | Il numero di porta dell'host del server che dovresti usare per connetterti. Se non specifichi una porta, la porta predefinita è '3306'. |
+| Database                         | obbligatorio  | Il nome della banca dati                                                                                                                |
+| Tratta il nome del database come | obbligatorio  | identificare un'istanza di database con SID o nome di servizio.                                                                         |
+| Username                         | obbligatorio  | il nome utente che si desidera utilizzare quando si accede al server Oracle DB.                                                         |
+| Password                         | obbligatorio  | Usa questa password per l'autenticazione.                                                                                               |
+| SSL                              | obbligatorio  | decide quanto alta sia prioritaria una connessione SSL TCP/IP sicura durante le trattative con il server.                               |
+
+### Crea Azioni
+
+Abbiamo creato una risorsa Oracle DB, possiamo aggiungere l'azione selezionando Oracle DB dalla lista di azioni e scegliendo il pulsante **`Crea azione`**.
+
+![oracle_resource_list](https://cdn.illacloud.com/official-website/img/docs/oracle_resource_list.png)
+
+ Ora abbiamo aggiunto il server Oracle DB come azione alla nostra pagina di costruzione.
+
+![oracle](https://cdn.illacloud.com/official-website/img/docs/oracle.png)
+
+### Configura Oracle DB
+
+| Proprietà     | Descrizione                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| Query SQL     | comandi sql da recuperare (selezionare), inserire, aggiornare, eliminare i dati dal database |
+| Trasformatore | trasformare i dati nello stile che ti piace usando JavaScript                                |
+
+Esempio di utilizzo:
+
+-   Seleziona
+
+```sql
+SELEZIONA * Dagli utenti ORDINE PER cognome;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aggiorna
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Elimina
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
