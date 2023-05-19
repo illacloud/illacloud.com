@@ -1,0 +1,119 @@
+---
+title: MySQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/327?languages=nl&filter=basic&value=0
+metaTitle: MySQL integratie Doc izi.ILLA Cloud
+desc: Verbind en communiceer met een MySQL database met behulp van ILLA Cloud. Maak apps die gegevens kunnen opzoeken, bewerken en visualiseren. Automatiseren en optimaliseren van data workflows.
+tagCategory: doc_menu_mysql_click
+categoryName: 🔨 Integraties
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Wat is MySQL?</h2>
+
+MySQL in Illa is een database integratie waarmee u verbinding en interactie met een MySQL database kunt maken. MySQL is een populair open-source database beheer systeem dat bekend staat om de snelheid, betrouwbaarheid en gebruiksgemak.
+
+Met de MySQL integratie in Illa kunt u gegevens opzoeken, invoegen, bijwerken en verwijderen uit een MySQL database met SQL commando's. U kunt ook aangepaste SQL-query's maken en uitvoeren binnen Illa. Dit maakt het eenvoudig om data-driven applicaties en dashboards te bouwen die real-time gegevens weergeven uit een MySQL database.
+
+### Create MySQL
+
+Er zijn twee manieren om een bron in Illa te maken nadat je bent ingelogd op je Illa account.
+
+-   Maak in Bronnen
+
+Log in op je Illa account, selecteer `**Resources**` bovenaan de pagina, en klik op de `**Maak Nieuw**` knop.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Selecteer **`MySQL`** uit de database lijst.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Maak verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
+
+Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+
+Na het aanmaken van een bron, wordt de MySQL weergegeven zoals getoond.
+
+![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+
+-   Maak in Bouwer
+
+Log in op je Illa account, maak een project aan in Illa Builder in de `**App**` pagina en navigeer naar de **`Action List`** onderaan de pagina. Klik `**nieuw**` en selecteer dan **`MySQL`** uit de database lijst. Maak vervolgens verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
+
+Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+
+### Verbindingsinstellingen
+
+Hier moeten we informatie verstrekken voor het verbinden met de MySQL database.
+
+![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+
+| Eigenschappen     | vereist   | Beschrijving                                                                                                                      |
+| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| naam              | verplicht | De naam voor resource bij het maken van acties in de ILLA.                                                                        |
+| Hostname          | verplicht | De URL of het IP-adres van uw database                                                                                            |
+| Poort             | verplicht | Het poortnummer van de server host dat u moet gebruiken om te verbinden. Als je geen poort opgeeft, is de standaard poort '3306'. |
+| Database          | verplicht | De naam van de database                                                                                                           |
+| Gebruikersnaam    | verplicht | de gebruikersnaam die u wilt gebruiken bij het inloggen op de MySQL server.                                                       |
+| Wachtwoord        | verplicht | Gebruik dit wachtwoord voor verificatie.                                                                                          |
+| SSL opties        | optioneel | Bepaal hoe hoog een veilige SSL TCP/IP verbinding prioriteit heeft tijdens het onderhandelen met de server.                       |
+
+### Acties aanmaken
+
+We hebben een MySQL bron gemaakt, we kunnen de actie toevoegen door de actie lijst met acties te selecteren en te kiezen voor de knop **`Create action`**.
+
+![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+
+Nu hebben we de MySQL server toegevoegd als actie aan onze bouwpagina.
+
+![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+
+### Configureer MySQL
+
+| Eigenschappen  | Beschrijving                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------- |
+| SQL query      | sql commando's om op te halen (select), invoegen, bijwerken, gegevens uit de database verwijderen |
+| Transformator  | data omzetten naar de stijl die je leuk vindt met behulp van JavaScript                           |
+
+Voorbeeld gebruik:
+
+-   Selecteren
+
+```sql
+SELECTEER * VAN gebruikers BY achternaam;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Vernieuwen
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Verwijderen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
