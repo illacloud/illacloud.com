@@ -19,11 +19,10 @@ import { BlackGithubIcon } from '@/img/public/blackGitHub'
 export const Nav = (props) => {
   const {
     githubStarts,
-    onSubscribe,
     whiteTheme = false,
     hasButton = true,
     onChangeShow,
-    customStyle
+    customStyle,
   } = props
   const { t } = useTranslation('home')
 
@@ -165,6 +164,8 @@ export const Nav = (props) => {
               <a
                 className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[8px] text-white-01 hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
+                  // eslint-disable-next-line no-undef
+                  gtagReportConversion && gtagReportConversion()
                   sendTagEvent({
                     action: 'click',
                     category: 'homepage_slide_menu_live_demo_click',

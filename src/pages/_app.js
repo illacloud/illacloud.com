@@ -156,6 +156,18 @@ function App({ Component, pageProps, router }) {
           title="JSON Feed"
           href="/feeds/feed.json"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtagReportConversion () {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-11158040052/PoXKCKuozaAYEPTbyMgp',
+                });
+                return false;
+              }
+            `,
+          }}
+        />
       </Head>
       <Script>
         {`(function(w, d, s, l, i) {

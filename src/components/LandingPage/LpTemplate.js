@@ -8,6 +8,8 @@ export const LpTemplate = () => {
   const { t } = useTranslation('landingPageDetails')
   const templateContent = t("second-page.classify", { returnObjects: true })
   const onClick = (target) => {
+    // eslint-disable-next-line no-undef
+    gtagReportConversion && gtagReportConversion()
     sendTagEvent({
       action: 'click',
       category: 'landing_page_try_now',
@@ -24,7 +26,7 @@ export const LpTemplate = () => {
             <h2 className={style.templateHeaderLabel}>{t(label)}</h2>
             <h3 className={style.templateHeaderTitle}>{t(title)}</h3>
             <span className={style.templateHeaderDesc}>{t(description)}</span>
-            <LearnMore href={link} btnText={btnText} onClick={() => onClick(target)} />
+            <LearnMore href={link} btnText={btnText} onClick={() => onClick(target)}/>
           </div>
           <div className={style.templateItemContainer}>
             {
