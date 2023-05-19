@@ -1,0 +1,124 @@
+---
+title: TiDB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/323?languages=sv&filter=basic&value=0
+metaTitle: TiDB Integration Doc | ILLA Cloud
+desc: Använd ILLA Cloud för att komma åt och arbeta med dina TiDB-data. Skapa appar som kan söka, manipulera och visa data. Följ denna guide för att komma igång.
+tagCategory: doc_menu_tidb_click
+categoryName: 🔨 Integrationer
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Vad är TiDB?</h2>
+
+TiDB är en databasintegration som låter dig ansluta och interagera med en TiDB-databas. Det är ett distribuerat, horisontellt skalbart relationellt databashanteringssystem som är utformat för att hantera hög volym, hög samverkande arbetsbelastning.
+
+Med TiDB-integrationen i Illa, kan du söka, uppdatera och ta bort data från en TiDB-databas med SQL-kommandon. Du kan också skapa anpassade SQL-frågor och köra dem inom Illa. Detta gör det enkelt att bygga datadrivna applikationer och instrumentpaneler som visar realtidsdata från en TiDB-databas.
+
+### Skapa TiDB
+
+Det finns två sätt att skapa en resurs i Illa efter att du loggat in på ditt Illa konto.
+
+-   Skapa i resurser
+
+Logga in på ditt Illa konto, välj `**Resurser**` högst upp på sidan och klicka på `**Skapa ny**`-knappen.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Välj **`TiDB`** från databaslistan.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Anslut till databasen med de parametrar som beskrivs i `Connection Settings` nedan.
+
+Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+
+Efter att ha skapat en resurs, kommer den färdiga TiDB att visas som visas.
+
+![ti_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ti_ex_ready.png)
+
+-   Skapa i Builder
+
+Logga in på ditt Illa konto, skapa ett projekt i Illa Builder på sidan `**App**` och navigera till **`Action List`** längst ner på sidan. Klicka på `**new**`, välj sedan **`TiDB`** från databaslistan. Anslut sedan till databasen med nödvändiga parametrar som beskrivs i `Connection Settings` nedan.
+
+Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+
+### Inställningar för anslutning
+
+Här behöver vi tillhandahålla information för att kunna ansluta till TiDB-databasen.
+
+![ti_config](https://cdn.illacloud.com/official-website/img/docs/ti_config.png)
+
+![ti_config_1](https://cdn.illacloud.com/official-website/img/docs/ti_config_1.png)
+
+| Egenskaper             | Krävs        | Beskrivning                                                                                                                                                                                                                           |
+| ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Namn                   | obligatorisk | Namnet på resursen när du skapar åtgärder i ILLA.                                                                                                                                                                                     |
+| Hostname               | obligatorisk | URL eller IP-adress för din databas                                                                                                                                                                                                   |
+| Port                   | obligatorisk | Serverns portnummer som du bör använda för att ansluta. Om du inte anger en port, är standardporten '4000'.                                                                                                                           |
+| Databas                | obligatorisk | Namnet på databasen                                                                                                                                                                                                                   |
+| Användarnamn           | obligatorisk | det användarnamn du vill använda när du loggar in på TiDB-servern.                                                                                                                                                                    |
+| Lösenord               | obligatorisk | Använd detta lösenord för autentisering.                                                                                                                                                                                              |
+| SSL-alternativ         | valfri       | bestämmer hur hög säker SSL TCP / IP-anslutning prioriteras medan man förhandlar med servern.                                                                                                                                         |
+| Certifikat från CA     | obligatorisk | ett digitalt certifikat som används för att verifiera identiteten på en server och etablera en säker, krypterad anslutning mellan en klient och ett TiDB-kluster. Om du inte anger det har vi fyllt i ett standardcertifikat för dig. |
+| Klientnyckel           | valfri       | en parameter som används för att upprätta en säker anslutning mellan TiDB-klienten och TiDB-servern.                                                                                                                                  |
+| Klientcertifikat       | valfri       | en säkerhetsfunktion som tillåter en klient att autentisera sig mot en TiDB-server                                                                                                                                                    |
+
+### Skapa åtgärder
+
+Vi har skapat en TiDB-resurs, vi kan lägga till åtgärden genom att välja TiDB från åtgärdslistan och välja **`Create action`**-knappen.
+
+![ti_resource_list](https://cdn.illacloud.com/official-website/img/docs/ti_resource_list.png)
+
+Nu har vi lagt till TiDB-servern som en åtgärd till vår byggsida.
+
+![ti](https://cdn.illacloud.com/official-website/img/docs/ti.png)
+
+### Konfigurera TiDB
+
+| Egenskaper    | Beskrivning                                                                         |
+| ------------- | ----------------------------------------------------------------------------------- |
+| SQL-fråga     | sql-kommandon för att hämta (välja), infoga, uppdatera, ta bort data från databasen |
+| Transformator | omvandlar data till den stil du vill använda Javascript                             |
+
+Exempel användning:
+
+-   Välj
+
+```sql
+VÄLJ * FRÅN användare ORDER BY efternamn;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Uppdatera
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Radera
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
