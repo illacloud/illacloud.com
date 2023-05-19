@@ -1,0 +1,120 @@
+---
+title: Oracle DB
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/325?languages=fi&filter=basic&value=0
+metaTitle: Oracle Db Integration Doc - ILLA Cloud
+desc: Opi käyttämään ILLA Cloudin tietokannan integrointitoimintoa yhdistääkseen OracleDB tietokantaasi ja ollakseen vuorovaikutuksessa sen kanssa muutamassa yksinkertaisessa vaiheessa.
+tagCategory: doc_menu_oracle_db_click
+categoryName: ":vasara: Integraatiot"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Mitä Oracle DB on?</h2>
+
+Oracle DB Illa on tietokantaintegraatio, jonka avulla voit muodostaa yhteyden Oracle DB -tietokannan kanssa. Oracle DB on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on tunnettu sen nopeudesta, luotettavuudesta ja helppokäyttöisyydestä.
+
+Oracle DB integroinnin Illa voit kysyä, lisätä, päivittää ja poistaa tietoja Oracle DB tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja dashboardeja, jotka näyttävät reaaliaikaista dataa Oracle DB -tietokannasta.
+
+### Luo Oracle DB
+
+On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilillesi. 
+
+-   Luo resursseissa
+
+Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta. 
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Valitse **`Oracle DB`** tietokantaluettelosta.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa. 
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+Kun resurssi on luotu, valmis Oracle DB näyttää kuvatulla tavalla.
+
+![oracle_ex_ready](https://cdn.illacloud.com/official-website/img/docs/oracle_ex_ready.png)
+
+-   Luo rakentajaan
+
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, valitse **`Oracle DB`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+
+Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+
+### Yhteyden Asetukset
+
+Tältä osin meidän on annettava tietoa Oracle DB -tietokannan yhdistämiseksi.
+
+![oracle_config](https://cdn.illacloud.com/official-website/img/docs/oracle_config.png)
+
+| Ominaisuudet                        | Pakollinen | Kuvaus                                                                                                              |
+| ----------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
+| Nimi                                | vaadittu   | Resurssin nimi kun luodaan toimia ILLA:ssa.                                                                         |
+| Hostname                            | vaadittu   | Tietokannan URL-osoite tai IP-osoite                                                                                |
+| Portti                              | vaadittu   | Palvelimen portti numero, jota sinun pitäisi käyttää yhdistämiseen. Jos et määritä porttia, oletusportti on '3306'. |
+| Tietokanta                          | vaadittu   | The name of the database                                                                                            |
+| Käsittele tietokannan nimeä nimellä | vaadittu   | tunnistaa tietokannan ilmentymän SID tai Service Name.                                                              |
+| Käyttäjätunnus                      | vaadittu   | käyttäjätunnus, jota haluat käyttää, kun kirjaudut Oracle DB -palvelimelle.                                         |
+| Salasana                            | vaadittu   | Käytä tätä salasanaa tunnistautumiseen.                                                                             |
+| SSL                                 | vaadittu   | päättää, kuinka korkea turvallinen SSL TCP / IP yhteys on priorisoitu neuvotellessaan palvelimen kanssa.            |
+
+### Luo Toiminnot
+
+Olemme luoneet Oracle DB -resurssin, voimme lisätä toiminnon valitsemalla Oracle DB toimintalistalta ja valitsemalla **`Create action`** -painikkeen.
+
+![oracle_resource_list](https://cdn.illacloud.com/official-website/img/docs/oracle_resource_list.png)
+
+ Nyt olemme lisänneet Oracle DB palvelimen toiminnaksi meidän rakennuksen sivulle.
+
+![oracle](https://cdn.illacloud.com/official-website/img/docs/oracle.png)
+
+### Aseta Oracle DB
+
+| Ominaisuudet | Kuvaus                                                                           |
+| ------------ | -------------------------------------------------------------------------------- |
+| SQL-kysely   | sql komentoja noutaaksesi (valita), lisää, päivitä, poista tietoja tietokannasta |
+| Muuntaja     | muuttamalla dataa tyyliin, jonka pidät JavaScriptin avulla                       |
+
+Esimerkin käyttö:
+
+-   Valitse
+
+```sql
+VALITSE * käyttäjistä ORDER BY sukunimi;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Päivitä
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Poista
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
