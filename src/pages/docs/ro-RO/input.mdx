@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Introducere Component DOC ILLA Cloud
+desc: Învață cum să folosești componenta de intrare pentru a crea și personaliza câmpuri text pentru aplicația ta în ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/335?languages=ro&filter=basic&value=0
+categoryName: 🧬 Asamblarea componentelor
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Ce este Input?</h2>
+
+Componenta de introducere a textului este un element de interfață a utilizatorului care permite utilizatorilor să introducă și să editeze textul într-un formular sau într-un câmp de introducere.
+
+### Proprietăți
+
+| Proprietăți                 | Descriere                                                                                                                                                |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valoare implicită           | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                    |
+| Substituent                 | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                  |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                    |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                    |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                        |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                         |
+| Aliniere                    | Setați alinierea (aliniere la stânga sau la dreapta) a etichetei                                                                                         |
+| Width                       | Când eticheta este pe partea stângă a componentei, setaţi raportul lăţimii etichetei.                                                                    |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                         |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                          |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.        |
+| Afişare buton ştergere      | controlează dacă în câmpul de intrare este sau nu afișat un buton de ștergere                                                                            |
+| Arată numărul de caractere  | controlează dacă este sau nu afișat numărul de caractere al intrărilor                                                                                   |
+| Prefix text                 | un text scurt care apare în partea stângă a câmpului de intrare, adesea folosit pentru a oferi un context suplimentar sau instrucțiuni utilizatorului    |
+| Text în completare          | un text scurt care pare în dreapta câmpului de intrare, utilizat adesea pentru a furniza informații suplimentare sau feedback utilizatorului             |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.            |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                                |
+| Model                       | specifica un model de expresie regulată pe care intrarea utilizatorului trebuie să îl corespundă pentru a fi considerat valid                            |
+| Lungime maximă              | setează numărul maxim de caractere care pot fi introduse în câmpul de introducere. (Automatic Translation)                                               |
+| Lungime minimă              | specifica numărul minim de caractere pe care utilizatorul trebuie să îl introducă în câmpul de introducere pentru ca intrarea să fie considerată validă. |
+| Regulă personalizată        | Crează-ți logica validării aici. Regulile ar trebui să fie stabilite în JavaScript și acoperite de {{}}.                                                 |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript.  |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                        |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                         |
+| Culoare temă                | Permite utilizatorilor să specifice culoarea de fundal şi opacitatea butonului                                                                           |
+
+### Metodă
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele două metode:
+
+-   **setValue**
+
+Pentru a seta valoarea de intrare, de exemplu, {{'value1'}}
+
+| Proprietăți | Descriere   |
+| ----------- | ----------- |
+| Valoare     | Input value |
+
+-   **clearValue**
+
+Pentru a șterge valoarea componentei selectate 
+
+-   **focus**
+
+Când se apelează metoda focalizată, câmpul de intrare va fi evidențiat și pregătit pentru utilizator pentru a începe să tasteze fără a fi nevoie ca utilizatorul să facă clic pe câmpul de intrare
+
+Exemplu de utilizare:
+
+Intrarea componentei suport ascultând evenimentul `onChange` al altor componente folosind sistemul de evenimente încorporat. Configurează-l urmând acești pași exemplari:
+
+1.  Adăugați un declanșator al evenimentului la componenta pe care doriți să o ascultați. De exemplu, dacă doriţi să ascultaţi evenimentul **`onChange`** al unei componente Radio Group, aţi adăuga un gestionar de evenimente la acea componentă a Grupului Radio
+2.  În gestionarul de editare a evenimentului, selectaţi **`Componenta Control `** în acţiune, selectaţi componenta **`Input`** pe care doriţi să o actualizaţi ca ţintă a evenimentului.
+3.  Alegeți acțiunea **`SetValue`** și selectați valoarea potrivită pentru componenta de intrare. Aceasta va fi valoarea pe care componenta de intrare o are și o va actualiza atunci când evenimentul este declanșat.
+4.  Salvați setările de declanșare a evenimentului și repetați procesul pentru orice alte componente pe care doriți să le ascultați.
+
+Odată ce ați setat declanșatorul evenimentului, componenta de intrare se va actualiza automat ori de câte ori evenimentul **`onChange`** este declanșat pe celelalte componente. Acest lucru vă permite să creați interfețe dinamice care răspund la intrarea utilizatorului în timp real, facilitarea navigării și interacțiunii cu aplicația dvs.
+
+### Gestionar de evenimente
+
+| Eveniment  | Descriere                                                                                                       |
+| ---------- | --------------------------------------------------------------------------------------------------------------- |
+| Schimbă    | Când un utilizator schimbă valoarea de intrare selectată                                                        |
+| Focalizare | Când un utilizator mută cursorul mouse-ului pe componenta de intrare                                            |
+| Blur       | Atunci când un utilizator a terminat de pus valoare şi a renunţat să se concentreze asupra componentei cascader |
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin **`{{componentName.propertyName}}`** în aplicație.
+
+| Nume proprietate       | Descriere                                                                  |
+| ---------------------- | -------------------------------------------------------------------------- |
+| valoare                | valoare de intrare utilizator                                              |
+| culori                 | Culoarea de fundal a butonului                                             |
+| dezactivat             | o valoare Booleană indică starea persoanelor cu handicap                   |
+| AfișeazăNume           | numele acestei componente (de ex. buton1)                                  |
+| formDataKey            | formularul de introducere a cheii de date                                  |
+| hidden                 | stare ascunsă (adevărată sau falsă)                                        |
+| etichetă               | valoare etichetă                                                           |
+| Aliniere               | alinierea etichetei de intrare (stânga sau dreapta)                        |
+| Pozitie                | eticheta de intrare (stanga sau dreapta)                                   |
+| Lățime etichetă        | numărul întreg reprezentând lăţimea etichetei.                             |
+| lungime maximă         | valoarea lungimii maxime                                                   |
+| Lungime minimă         | valoarea lungimii minime                                                   |
+| substituent            | valoare substituent                                                        |
+| prefixText             | valoarea prefixului textului                                               |
+| Sufix                  | valoarea sufixului textului                                                |
+| citire                 | o valoare Booleană indică starea de pregătire a intrărilor.                |
+| necesar                | a Valoarea booleană indică starea necesară a intrărilor.                   |
+| regex                  | exprimarea regulată a intrărilor                                           |
+| număr de showCharacter | o valoare Booleană indică dacă numărul de caractere de intrare este afișat |
+| tooltipText            | valoarea textului cu înclinare unelte                                      |
+
+Exemplu: {{input1.value}}
+
+### Utilizare majusculă
+
+Mai jos sunt câteva exemple pentru personalizarea componentei de intrare.
+
+-   Prefix:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Sufix:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Tooltip:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Model:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
