@@ -1,0 +1,143 @@
+---
+title: Tijd Kiezer
+metaTitle: Component Doc van de Tijdkiezer Component ILLA Cloud
+desc: Ontdek hoe u de Time Picker component uit ILLA Cloud kunt gebruiken om gebruikers een specifieke tijd te laten kiezen voor een UI van 24 uur in uw projecten.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Wat is de tijdkiezer?</h2>
+
+Tijd kiezer component is een UI component waarmee gebruikers een specifieke tijd kunnen selecteren vanaf een 24-uurs interface, Meestal gebruikt in formulieren of gegevensinvoer interfaces waar de gebruiker een specifieke tijd moet opgeven.
+
+Wanneer een tijdkiezer component aan het doosje wordt toegevoegd, toont het een 24-uurs interface die uren, minuten en seconden toont. De gebruiker kan de tijd aanpassen door de muiscursor te verplaatsen of de pijlen omhoog en omlaag te gebruiken.
+
+### Properties
+
+Beschikbare eigenschappen van tijdkiezer. JavaScript kan worden geschreven om informatie over componenten te lezen of wijzigen.
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standaard waarde           | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                                                     |
+| Formatteren                | Een geldige datumnotatie string. Zie dagJS.                                                                                                                                     |
+| Plaatsaanduiding           | De waarde wordt getoond wanneer het invoerveld leeg is.                                                                                                                         |
+| Stap grootte               | de stapgrootte in minuten                                                                                                                                                       |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                            |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                        |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Alleen lezen               | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Toon wissen knop           | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                       |
+| Knopinfo                   | Gebruiker kan component tooltip hier invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                                      |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Aangepaste regel           | Voer hier uw validatiedatatie logica in. De regels moeten in JavaScript worden gemaakt en door {{}}.                                                                            |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                                                      |
+
+### Methods
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende vier methoden:
+
+-   **setvalue**
+
+Om de invoerwaarde in te stellen, bijvoorbeeld {{"value1"}}
+
+| Eigenschappen | Beschrijving |
+| ------------- | ------------ |
+| Waarde        | Input value  |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+-   **validate**
+
+Om te controleren of de invoerinformatie legaal is
+
+-   **clearvalidatie**
+
+Om het validatiebericht te wissen
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Veranderen  | Wanneer een gebruiker de geselecteerde tijdwaarde wijzigt, voert een specifieke actie uit die is aangepast door de gebruikers. |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap      | Beschrijving                                                         |
+| ------------------------ | -------------------------------------------------------------------- |
+| kleurenschema            | de kleureneigenschap van de datum                                    |
+| aangepaste regel         | de aangepaste regel die gebruiker heeft opgegeven                    |
+| uitgeschakeld            | een booleaanse waarde geeft de uitgeschakelde status aan             |
+| weergavenaam             | de naam van dit onderdeel (bijv. knop1)                              |
+| evenementen              | een matrix waarde voor een reeks gebeurtenissen                      |
+| formaat                  | het formaat van datum en tijd                                        |
+| formDataKey              | de formuliergegevens sleutel van de datum                            |
+| hidden                   | verborgen status (waar of onwaar)                                    |
+| verbergValidationBericht | een Booleaanse waarde geeft aan of het validatiebericht verborgen is |
+| Label                    | label waarde                                                         |
+| uitlijnen                | uitlijning van schakellabel (links of rechts)                        |
+| labeling                 | positie van schakellabel (links of rechts)                           |
+| labelBreedte             | het geheel getal waarin de breedte van het label wordt weergegeven.  |
+| labelFull                | een Booleaanse waarde geeft aan of het label vol is.                 |
+| minuutstap               | minuut stap grootte waarde                                           |
+| placeholder              | placeholder waarde                                                   |
+| verplicht                | een Booleaanse waarde geeft de vereiste status van invoer aan.       |
+| toon leegmaken           | een Booleaanse waarde geeft aan dat de datum duidelijk is            |
+| tooltipText              | waarde van tekst tooltip                                             |
+| waarde                   | Waarde invoerdatum en tijd                                           |
+
+Voorbeeld: {{timePicker1.format}}
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de data van de gegevensbron in tijdkiezer kunnen koppelen en instellen op de huidige tijd met een knop. 
+
+#### Stap 1 Voeg een actie toe
+
+Laat ons een tabel aanmaken in REST API genaamd **`promoteCodes`,** inclusief 6 kolommen: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. We zullen de bijgewerkte versie op tijd gebruiken voor voorbeeldgebruik. 
+
+Dan kunnen we een nieuwe actie voor REST API maken uit de actielijst, waarin alle gegevens in promoteCodes en restapi1 worden weergegeven. 
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 2 Componenten toevoegen
+
+Vervolgens kunnen we een **`time picker`** component en een **`button`** component toevoegen aan de canvas. Voor de standaardwaarde van de tijd component, instellen we het als de laatste update tijd van de eerste promotiecode van de rest van de api gegevens.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+We noemden de knop ook als "Nu" zoals hieronder weergegeven
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Stap 3 Configureer het component
+
+Voor de **`button`** component kunnen we de datum in **`time picker`** op de huidige datum en tijd instellen.
+
+1.  In de Event Handler Bewerken Selecteer **`Control component`** in actie, selecteer de **`time picker`** component die u wilt bijwerken als doel van het event.
+2.  Kies de **`setValue`** actie en stel de waarde in als `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Stap 4 test
+
+Nu wanneer u op de knop "Nu" klikt, moet de tijd naar de huidige tijd gaan. Wat dit betreft hebben we 20:03:05 maar het kan anders zijn als je het testen.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)
