@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Inputter komponent Doc λ ILLA Cloud
+desc: Lær hvordan du bruker input komponenten for å lage og tilpasse tekstfelt for appen din i ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=no&filter=basic&value=0
+categoryName: 🧬 Sammensatte komponenter
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Hva er Input?</h2>
+
+Tekst inndatafeltet komponent er et brukergrensesnitt element som lar brukere skrive inn og redigere teksten i et skjema eller i inntastingsfeltet.
+
+### Egenskaper
+
+| Egenskaper               | Beskrivelse                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard verdi           | Den opprinnelige verdien for komponenten. Du kan dynamisk endre innledende verdien ved å skrive JavaScript i {{}}.                                        |
+| Plassholder              | Verdien vil bli vist når inndatafeltet er tomt.                                                                                                           |
+| Etikett                  | Navnet på feltet som vises til brukeren                                                                                                                   |
+| Bildetekst               | Bildetekst som brukes til å beskrive feltet i detalj                                                                                                      |
+| Skjult etikett           | Angi om etiketten skal vises                                                                                                                              |
+| Posisjon                 | Still plasseringen av etiketten i forhold til komponenten                                                                                                 |
+| Justering                | Sett justeringen (justert til venstre eller høyre) for etiketten                                                                                          |
+| Width                    | Når etiketten er på venstre side av komponenten, angir du forholdet bredden på etiketten.                                                                 |
+| Arrangementshåndterer    | Utløse spørringer, kontroll-komponenter eller ringe andre APIer som respons på komponenthendelser.                                                        |
+| Deaktivert               | Kontroller statusen for hvorvidt komponenten er deaktivert. Komponenten kan ikke endres eller fokusert når den er deaktivert.                             |
+| Kun lese                 | Kontroller statusen for om komponenten bare er skrivebeskyttet. En skrivebeskyttet komponent kan velges og fokuseres men kan ikke endres.                 |
+| Vis null-knapp           | kontrollere om en tydelig knapp vises i inntastingsfeltet eller ikke                                                                                      |
+| Vis antall tegn          | kontrollere om antall tegn i inndata vises eller ikke                                                                                                     |
+| Prefiks tekst            | en kort tekstdel som vises til venstre for inndatafeltet, ofte brukt til å gi en ekstra kontekst eller instruksjoner til brukeren                         |
+| Suffiks tekst            | en kort tekst som virker til høyre for inndatafeltet, ofte brukt til å gi mer informasjon eller tilbakemeldinger til brukeren                             |
+| Verktøytips              | Brukere kan skrive inn komponentens verktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes                            |
+| Obligatorisk felt        | Gyldig bare når bryteren er på.                                                                                                                           |
+| Mønster                  | angi et regulært uttrykksmønster som brukerens inngang må samsvare for å anse som gyldig                                                                  |
+| Maks lengde              | sett maksimalt antall tegn som kan skrives inn i inntastingsfeltet.                                                                                       |
+| Min lengde               | angi minimum antall tegn brukeren må fylle inn i inntastingsfeltet for at inntastingen skal anses som gyldig.                                             |
+| Egendefinert regel       | Opprett din valideringslogikk her. Reglene skal gjøres i JavaScript og dekkes av {{}}.                                                                    |
+| Skjul valideringsmelding | Du kan skjule feilmeldingen ved å bytte den skjulte statusen når inntastingsverdien er feil. Du kan dynamisk endre den skjulte statusen etter JavaScript. |
+| Skjema Datastøkkel       | Angi en nøkkel til en 'wrapping form'-komponent når du konstruerer dataattributtet.                                                                       |
+| Hidden                   | Dynamisk kontrollere om komponenten er skjult. Du kan endre skjult status gjennom dynamisk boolsk verdi.                                                  |
+| Tema farge               | Lar brukere angi knappens bakgrunnsfarge og tetthet                                                                                                       |
+
+### Metode
+
+Du kan bruke andre komponenter til å kontrollere komponenten. Vi støtter følgende to metoder:
+
+-   **setValue**
+
+For å sette inngang verdi, for eksempel, {{'value1'}}
+
+| Egenskaper | Beskrivelse |
+| ---------- | ----------- |
+| Verdi      | Input value |
+
+-   **clearValue**
+
+For å fjerne verdien for den valgte komponenten 
+
+-   **focus**
+
+Når fokusmetoden er kalt, inndatafeltet vil bli uthevet og klar til at brukeren kan begynne å skrive uten at du må klikke på inntastingsfeltet
+
+Eksempel Bruk:
+
+Sett inn komponent støtte ved å lytte til `onChange`-hendelsen til andre komponenter ved hjelp av innebygd hendelsessystem. Sette det opp med å følge disse eksemplene:
+
+1.  Legg til en hendelse som utløser på komponenten du vil lytte til. Hvis du for eksempel vil lytte til **`onChange`** hendelsen til en Radiorruppekomponent, du vil legge til en hendelsesbehandler til den Radio-gruppekomponenten.
+2.  I Redigeringshendelsesbehandleren velger du **`Control component`** i handlingen, velg **`Input`** komponenten du vil oppdatere som mål for hendelsen.
+3.  Velg handlingen **`SetValue`** og velg riktig verdi for inndatakomponenten. Dette vil være verdien som inngangskomponenten har og vil oppdatere når hendelsen aktiveres.
+4.  Lagre hendelsesutløserinnstillingene og gjenta prosessen for andre komponenter som du vil lytte til.
+
+Når du har satt opp hendelsen utløsere, oppdateres inngangskomponenten automatisk når **`onChange`** hendelsen utløses på de andre komponentene. Dette lar deg opprette dynamiske grensesnitt som svarer på inndata fra bruker i sanntid, gjøre det enklere for brukerne å navigere og samhandle med søknaden.
+
+### Arrangement behandler
+
+| Hendelse | Beskrivelse                                                                  |
+| -------- | ---------------------------------------------------------------------------- |
+| Endre    | Når en bruker endrer den valgte inndataverdien                               |
+| Fokus    | Når en bruker flytter musepekeren på inngangskomponenten                     |
+| Blur     | Når en bruker gjør input-verdi og slutter fra å fokusere på saks-komponenten |
+
+### Data
+
+Komponenten har noen vanlig brukte data, som kan kalles via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskap navn     | Beskrivelse                                             |
+| ----------------- | ------------------------------------------------------- |
+| verdi             | bruker setter inn verdi                                 |
+| colorScheme       | bakgrunnsfargen til knappen                             |
+| deaktivert        | en Boolsk verdi indikerer status som deaktivert         |
+| displayNavn       | navnet på denne komponenten (dvs. knapp1)               |
+| formDataKey       | skjemadatasten for inndata                              |
+| hidden            | skjult status (sann eller usann)                        |
+| etikett           | etikett verdi                                           |
+| labelJuster       | justering av inngangsetiketten (venstre eller høyre)    |
+| etikettposisjon   | posisjon for etikett (venstre eller høyre)              |
+| etikettbredde     | heltall som representerer bredden på etiketten.         |
+| maxLengde         | verdien av største lengde                               |
+| minimumslengde    | verdien av minste lengde                                |
+| plassholder       | plassholder verdi                                       |
+| prefixText        | verdi av tekstprefikset                                 |
+| suffikstekst      | verdi for tekstendelse                                  |
+| skrivebeskyttet   | en Boolsk verdi indikerer klaryKun status for inngang.  |
+| obligatorisk      | en Boolsk verdi angir påkrevd status for inngang.       |
+| regex             | vanlig uttrykk for inndata                              |
+| VisKarakterAntall | en Boolsk verdi viser om antall tegn som vises          |
+| verktøytipTekst   | verdi for tekst fra verktøytips                         |
+
+Eksempel: {{input1.value}}
+
+### Bruk kasse
+
+Under finner du noen eksempler for å tilpasse inngangskomponenten.
+
+-   Prefiks:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffiks:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Verktøytips:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Mønster:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
