@@ -1,0 +1,158 @@
+---
+title: Časový rozsah
+metaTitle: Komponenta časového rozsahu Doc | ILLA Cloud
+desc: Naučte se, jak používat komponentu časového rozsahu z ILLA Cloudu, aby uživatelé mohli ve svých aplikacích vybrat řadu časů z 24hodinového rozhraní.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=en&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Jaký je časový rozsah?</h2>
+
+komponenta časového intervalu je komponenta uživatelského rozhraní, která uživatelům umožňuje vybrat si čas z 24hodinového rozhraní, typicky používané ve formulářích nebo rozhraních zadávání dat, kde uživatel potřebuje zadat počáteční a koncový časový rozsah.
+
+Je-li součástí časového intervalu přidána do plátna, zobrazí se vedle sebe dvě rozhraní po 24 hodinách. Jedno rozhraní se používá k výběru počátečního času, zatímco druhé se používá k výběru koncového času. Uživatel může upravit čas pohybem kurzoru myší nebo použitím šipek nahoru a dolů.
+
+### Properties
+
+Dostupné vlastnosti časového rozsahu. JavaScript může být napsán pro čtení nebo změnu informací o komponentách.
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                       |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Čas zahájení                 | Výchozí počáteční hodnota komponenty                                                                                                            |
+| Čas ukončení                 | Výchozí koncová časová hodnota komponenty                                                                                                       |
+| Formát                       | Platný formát data. Viz https://day.js.org/docs/en/parse/string-format.                                                                         |
+| Počáteční zástupný znak      | Hodnota bude zobrazena, když je pole počáteční čas prázdné.                                                                                     |
+| Dočasný text                 | Hodnota se zobrazí, když je pole pro koncový čas prázdné.                                                                                       |
+| Velikost kroku               | velikost kroku v jednotkách minut                                                                                                               |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                        |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                            |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                   |
+| Zarovnání                    | Nastavit zarovnání (zarovnat vlevo nebo vpravo) štítku                                                                                          |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku.                                                                         |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                        |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                            |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                |
+| Zobrazit tlačítko "Vyčistit" | určuje, zda je ve vstupním poli zobrazeno tlačítko "Vyčistit"                                                                                   |
+| Povinné pole                 | Platné pouze při zapnutí přepínače                                                                                                              |
+| Vlastní pravidlo             | Zde vytvořte svou validační logiku. Pravidla by měla být vytvořena v JavaScriptu a pokryta {{}}.                                                |
+| Skrýt ověřovací zprávu       | Chybová zpráva můžete skrýt přepnutím skrytého stavu, pokud je zadaná hodnota nesprávná. Skrytý stav můžete dynamicky změnit pomocí JavaScript. |
+| Datový klíč formuláře        | Zadejte klíč pro balicí komponentu při vytváření atributu dat.                                                                                  |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                      |
+| Barva šablony                | Umožňuje uživatelům určit barvu a průhlednost pozadí tlačítka                                                                                   |
+
+### Methods
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto dva metody:
+
+-   **setStartTime**
+
+Pro nastavení počáteční hodnoty data například {{"value1"}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1).       |
+| ---------- | ------------------------------- |
+| Hodnota    | Hodnota počátečního času vstupu |
+
+-   **setEndTime**
+
+Pro nastavení konečné hodnoty data, například {{"value2"}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Vstupní koncová hodnota   |
+
+-   **clearValue**
+
+Možnost vymazat hodnotu vybrané komponenty 
+
+-   **validate**
+
+Ověření, zda jsou vstupní informace legální
+
+-   **vymazat**
+
+Pro vymazání zprávy o ověření
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                                       |
+| ------- | ----------------------------------------------------------------------------------------------- |
+| Změnit  | Pokud uživatel změní zvolenou časovou hodnotu, proveďte konkrétní akci přizpůsobenou uživateli. |
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti      | L 343, 22.12.2009, s. 1).                             |
+| --------------------- | ----------------------------------------------------- |
+| barevné schéma        | barevná vlastnost data                                |
+| vlastní Pravidlo      | vlastní pravidlo, které uživatel zadal                |
+| vypnuto               | logická hodnota udává vypnutý stav                    |
+| zobrazované jméno     | název této komponenty (tj. kaskader1)                 |
+| startTime             | počáteční hodnota času                                |
+| endTime               | hodnota konečného času                                |
+| zástupný znak         | zástupná hodnota pro počáteční čas                    |
+| endPlaceholder        | zástupná hodnota pro koncový čas                      |
+| události              | hodnota pole pro sekvenci událostí                    |
+| Formát                | formát data a času,                                   |
+| formDataKey           | Datový klíč formuláře datumu                          |
+| hidden                | logická hodnota udává skrytý stav tlačítka            |
+| hideValidationMessage | logická hodnota udává, zda je zpráva o ověření skrytá |
+| štítek                | hodnota štítku                                        |
+| Zarovnat štítek       | zarovnání štítku kaskády (vlevo nebo vpravo)          |
+| Pozice štítku         | umístění kaskádového štítku (vlevo nebo vpravo)       |
+| Šířka štítku          | celé číslo představující šířku štítku                 |
+| minutový krok         | hodnota velikosti kroku minuty                        |
+| vyžadováno            | logická hodnota udává požadovaný stav vstupu.         |
+| ukázat Vyčistit       | logická hodnota udávající datum bude vymazáno         |
+| hodnota               | Vybraná hodnota                                       |
+
+Příklad: {{rangeTime1.value[0]}}
+
+### Případ použití
+
+Dále ukážeme, jak mapovat data ze zdroje dat do časového rozmezí a pomocí tlačítka nastavit koncovou hodnotu na aktuální čas. 
+
+#### Krok 1 Přidat akci
+
+Vytvořme tabulku v REST API s názvem **`promoteCodes`,** včetně 6 sloupců: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Použijeme starttedIn a vypršela doba platnosti pro použití vzorku. 
+
+Pak můžeme vytvořit novou akci pro REST API ze seznamu akcí, seznam všech dat v promoteCodes a jménem restapi1. 
+
+Klikněte na **`Uložit`** a **`Spustit`** pro aktivaci této akce.
+
+#### Krok 2 Přidat komponenty
+
+Dále můžeme přidat komponentu **`časového pásma`** a komponentu **`tlačítka`**. Pro výchozí počáteční hodnotu složky rozsahu dat používáme začátkuV okamžiku prvního propagace kódu od ostatních api dat.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Obdobně používáme pro výchozí časovou hodnotu vypršela doba platnosti první propagace kódu z ostatních api dat.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Také jsme označili tlačítko jako "nyní", jak je znázorněno níže.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Krok 3 Konfigurace komponenty
+
+Pro komponentu **`button`** můžeme nakonfigurovat tak, aby byla nastavena konečná hodnota data v komponentě **`range`** k dnešnímu datu.
+
+1.  V obsluze události Editace vyberte **`Control component`** v akci, vyberte komponentu **`časového rozsahu`**, kterou chcete aktualizovat jako cíl události.
+2.  Vyberte akci **`setEndTime`** a nastavte **`Čas ukončení`** jako `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Krok 4 Zkouška
+
+Nyní, když klepnete na tlačítko "Nyní", čas ukončení by se měl změnit na dnešní datum. Pokud jde o tady, máme 20:03:05, ale může to být jiné, když to testujete.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
