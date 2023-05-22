@@ -1,0 +1,119 @@
+---
+title: PostgreSQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/329?languages=no&filter=basic&value=0
+metaTitle: PostgreSQL Integration Doc (A) ILLA Cloud
+desc: Koble til og samhandle med en PostgreSQL database med ILLA Cloud. Opprett programmer som kan spørre, redigere og visualisere data. Automatisere og optimalisere dataarbeidsflyter.
+tagCategory: doc_menu_postgresql_click
+categoryName: 🔨 Integrasjoner
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Hva er PostgreSQL?</h2>
+
+PostgreSQL i Illa er en databaseintegrasjon som lar deg koble til og samhandle med en PostgreSQL database. PostgreSQL er et populært relasjonssystem for basestasjon med åpen kildekode, som er kjent for dets stabilitet, pålitelighet og kraftige funksjoner.
+
+Med PostgreSQL integrasjon i Illa kan du spørre, innsette, oppdatere og slette data fra en PostgreSQL database ved å bruke SQL-kommandoer. Du kan også opprette egendefinerte SQL-spørringer og kjøre dem i Illa aksjon. Dette gjør det enkelt å bygge data-drevne programmer og dashbord som viser sanntidsdata fra en PostgreSQL database.
+
+### Opprett PostgreSQL
+
+Det er to måter å lage en ressurs i Illa etter å ha logget på din Illa-konto.
+
+-   Opprett i ressurser
+
+Logg deg på din Illa konto, velg `**Ressurser**` på toppen av siden, og klikk `**Opprett ny`-knappen.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Velg **`PostgreSQL`** fra databaselisten.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Koble til databasen med de nødvendige parametrene beskrevet i "Tilkoblingsinnstillinger" nedenfor.
+
+Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
+
+Etter oppretting av en ressurs, vil den klare PostgreSQL vises som vist.
+
+![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+
+-   Opprett i bygger
+
+Logg deg på din Illa konto, opprett et prosjekt i Illa Builder på `**` siden, og naviger til **`Handlingslisten`** nederst på siden. Klikk `**new**`, og velg **`PostgreSQL`** fra databaselisten. Deretter kan du koble til databasen med nødvendige parametere beskrevet i "Tilkoblingsinnstillinger" nedenfor.
+
+Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
+
+### Tilkobling innstillinger
+
+Her må vi skaffe informasjon for å koble til PostgreSQL databasen.
+
+![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+
+| Egenskaper    | Påkrevd      | Beskrivelse                                                                                                                 |
+| ------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| Navn          | obligatorisk | Navnet på ressursen når det skapes handlinger i ILLA.                                                                       |
+| Hostname      | obligatorisk | URL-adressen eller IP-adressen for databasen din                                                                            |
+| Port          | obligatorisk | Tjenerens portnummer som du bør bruke til å koble til. Hvis du ikke angir en port, er standard port '5432'.                 |
+| Databasen     | obligatorisk | Navnet på databasen                                                                                                         |
+| Brukernavn    | obligatorisk | brukernavnet du vil bruke når du logger inn på PostgreSQL serveren.                                                         |
+| Passord       | obligatorisk | Bruk dette passordet for godkjenning.                                                                                       |
+| SSL valg      | valgfritt    | avgjør hvor høyt en sikker SSL-TCP/IP-tilkobling prioriteres ved forhandlinger med tjeneren.                                |
+
+### Opprett handlinger
+
+Vi har opprettet en PostgreSQL ressurs, vi kan legge til handlingen ved å velge PostgreSQL fra handlingslisten og velge **`Create action`** knappen.
+
+![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+
+Nå har vi lagt til PostgreSQL serveren som en handling til vår byggeside.
+
+![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+
+### Konfigurer PostgreSQL
+
+| Egenskaper     | Beskrivelse                                                                  |
+| -------------- | ---------------------------------------------------------------------------- |
+| SQL spørring   | SQL-kommandoer å hente (velg), innstilt, oppdatere, slette data fra database |
+| Transformator  | transformerer data til stilen du ønsker å bruke JavaScript                   |
+
+Eksempel bruk:
+
+-   Velg
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Oppdater
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Slett
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
