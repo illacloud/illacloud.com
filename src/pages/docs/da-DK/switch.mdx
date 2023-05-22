@@ -1,0 +1,110 @@
+---
+title: Skift
+metaTitle: Skift Komponent Doc ● ILLA Cloud
+desc: Lær at bruge Switch komponenten i ILLA Cloud til at oprette en brugergrænseflade, der lader brugerne skifte mellem to muligheder. Se eksempler og egenskaber for Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=da&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Hvad er Switch?</h2>
+
+Switch komponenten er et brugergrænseflade element, der giver brugerne mulighed for at skifte mellem to tilstande: "on" og "off".
+
+### Egenskaber
+
+| Egenskaber            | Varebeskrivelse                                                                                                                  |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi        | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                        |
+| Etiket                | Navnet på det felt, der vises til brugeren                                                                                       |
+| Billedtekst           | En billedtekst der bruges til at beskrive feltet i detaljer                                                                      |
+| Skjult etiket         | Angiv, om etiketten skal vises                                                                                                   |
+| Placering             | Sæt placeringen af etiketten relativt til komponenten                                                                            |
+| Justering             | Indstil justering af etiketten                                                                                                   |
+| Begivenhedshåndtering | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                |
+| Indlæser              | Om komponenten skal vise en belastningsindikator.                                                                                |
+| Deaktiveret           | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.       |
+| Værktøjstip           | Bruger kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet. |
+| Hidden                | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                           |
+| Tema Farve            | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                            |
+
+### Metode
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende tre metoder:
+
+-   **setValue**
+
+For at indstille den valgte værdi, for eksempel, {{'value1'}}
+
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Valgt værdi     |
+
+-   **clearValue**
+
+For at rydde den valgte værdi
+
+-   **skifter**
+
+ændring af skiftet fra "off" tilstand til "on" tilstand, eller omvendt
+
+Eksempel Anvendelse:
+
+Skift komponent støtte lytning til `onClick` begivenhed af andre komponenter ved hjælp af indbygget begivenhed system. Opsæt den ved at følge disse eksempel trin:
+
+1.  Tilføj en begivenhedsudløser til den komponent, du vil lytte til. Hvis du for eksempel ønsker at lytte til begivenheden **`onClick`** i en knapkomponent, vil du tilføje en begivenhedsudløser til den knapkomponent.
+2.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Redigér hændelseshandler, vælg den **\`Skift '**-komponent, som du ønsker at opdatere som mål for hændelsen.
+3.  Vælg **`skiftet`** handlingen. Når begivenheden udløses (dvs. når der klikkes på knappen), vil kontakten komponenten med blive skiftet og dens status vil blive opdateret.
+4.  Gem indstillingerne for event trigger og gentag processen for alle andre komponenter, som du ønsker at lytte til.
+
+Når du har konfigureret begivenheden udløser, vil kontakt-komponenten automatisk opdateres, når **`onClick`** begivenheden udløses på de andre komponenter. Dette giver dig mulighed for at oprette dynamiske grænseflader, der reagerer på brugerinput i realtid, gør det lettere for brugerne at navigere og interagere med din applikation.
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------- |
+| Skift      | Når en bruger ændrer den valgte indstillingsværdi, skal du udføre specifik handling tilpasset af brugere. |
+
+### Data
+
+Knapkomponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn | Varebeskrivelse                                        |
+| ---------------- | ------------------------------------------------------ |
+| colorScheme      | baggrundsfarve på knappen                              |
+| displayName      | navnet på denne komponent (dvs. knap1)                 |
+| hidden           | en boolsk værdi angiver den skjulte status for knappen |
+| etiket           | etiket værdi                                           |
+| labelAlign       | justering af switch etiket (venstre eller højre)       |
+| labelPosition    | placering af switch etiket (venstre eller højre)       |
+| labelBredde      | det heltal, der repræsenterer mærkets bredde.          |
+| labelFuld        | en boolsk værdi angiver, om etiketten er fuld.         |
+| værdi            | En bruger sætter værdien til at være sand eller falsk  |
+
+### Brug case
+
+Dernæst vil vi vise, hvordan vi kan skifte status for andre komponenter dynamisk. 
+
+#### Trin 1 Tilføj en komponent
+
+Først tilføjer vi **`Switch`** komponenten og etiketter den som 'Skjul'. Så bruger vi **`text`** komponenten som en påvirket komponent, der skifter fra 'viset' til 'skjult'-tilstand. Vi ændrer dens indhold til 'Hej Verden' 
+
+#### Trin 2 Indstil en komponent
+
+I **`Hidden`** egenskaben for Tekst. Klik på **`fx`** ikonet, så vi kan styre komponentens skjulte tilstand ved at indstille det samme som værdien af vores switch ved hjælp af JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Nu, når kontakten er tændt, værdien for kontakten er **`sand`,** teksten vil være skjult, og omvendt.
+
+Skift **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Skift **`Off`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)
