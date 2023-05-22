@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Entrada Componente Doc ├ILLA Cloud
+desc: Aprenda a usar o componente de entrada para criar e personalizar campos de texto para seu aplicativo na ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingues/illacloud-website/335?languages=pt&filter=basic&value=0
+categoryName: 🧬 Montar componentes
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>O que é Entrada?</h2>
+
+Componente de Entrada de Texto é um elemento de interface de usuário que permite aos usuários inserir e editar texto em um campo de entrada ou formulário.
+
+### propriedades
+
+| propriedades                   | Descrição:                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Valor padrão                   | O valor inicial do componente. Você pode alterar dinamicamente o valor inicial digitando JavaScript na {{}}.                                                             |
+| Espaço reservado               | O valor será exibido quando o campo de entrada estiver vazio.                                                                                                            |
+| Descrição                      | O nome do campo exibido ao usuário                                                                                                                                       |
+| Legenda                        | Uma legenda usada para descrever o campo em detalhes                                                                                                                     |
+| Etiqueta oculta                | Definir se deve exibir o rótulo                                                                                                                                          |
+| Posição                        | Definir a posição do rótulo relativo ao componente                                                                                                                       |
+| Alinhamento                    | Definir o alinhamento (alinhar com a esquerda ou direita) da etiqueta                                                                                                    |
+| Width                          | Quando a etiqueta estiver no lado esquerdo do componente, defina a largura proporcional do rótulo.                                                                       |
+| Gerenciador de Eventos         | Acionar consultas, componentes de controle ou chamar outras APIs em resposta a eventos de componentes.                                                                   |
+| Desabilitado                   | Controla o estado de se o componente está desabilitado. O componente não pode ser modificado ou focado quando está desabilitado.                                         |
+| Somente leitura                | Controla o status de se o componente é somente leitura. Um componente somente leitura pode ser selecionado e focado mas não pode ser modificado.                         |
+| Exibir botão Limpar            | controle se um botão limpar é exibido no campo de entrada                                                                                                                |
+| Mostrar contagem de caracteres | controle se a contagem de caracteres da entrada é exibida ou não                                                                                                         |
+| Texto do prefixo               | um pequeno pedaço de texto que aparece à esquerda do campo de entrada, geralmente usado para fornecer contexto adicional ou instruções para o usuário                    |
+| Sufixo de texto                | um pequeno texto que aparece à direita do campo de entrada, geralmente usado para fornecer informações adicionais ou feedback ao usuário                                 |
+| Dica                           | Os usuários podem inserir a dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                          |
+| Campo obrigatório              | Válido somente quando o interruptor está ligado.                                                                                                                         |
+| Padrão                         | especifique um padrão de expressão regular que a entrada do usuário deve corresponder para ser considerada válida                                                        |
+| Comprimento Máximo             | defina o número máximo de caracteres que podem ser inseridos no campo de entrada.                                                                                        |
+| Comprimento Mínimo             | especifique o número mínimo de caracteres que o usuário deve digitar no campo de entrada para que a entrada seja considerada válida.                                     |
+| Regra personalizada            | Cria a sua lógica de validação aqui. As regras devem ser feitas em JavaScript e cobertas pela {{}}.                                                                      |
+| Ocultar mensagem de validação  | Você pode ocultar a mensagem de erro alterando o status oculto quando o valor de entrada está incorreto. Você pode alterar dinamicamente o status oculto por JavaScript. |
+| Chave de Dados do Formulário   | Especificar uma chave de um componente de formulários de embalagem ao construir o atributo de dados.                                                                     |
+| Hidden                         | Controle dinamicamente se o componente está oculto. Você pode alterar o status oculto através de um valor booleano dinâmico.                                             |
+| Cor do Tema                    | Permite aos usuários especificar a cor e a opacidade do fundo do botão                                                                                                   |
+
+### Método
+
+Você pode usar outros componentes para controlar o componente. Apoiamos os seguintes dois métodos:
+
+-   **definirValor**
+
+Para definir o valor de entrada, por exemplo, {{'value1'}}
+
+| propriedades | Descrição:  |
+| ------------ | ----------- |
+| Valor        | Input value |
+
+-   **ValorDeLimite**
+
+Para limpar o valor do componente selecionado 
+
+-   **focus**
+
+Quando o método de foco é chamado, o campo de entrada será destacado e pronto para o usuário começar a digitar sem a necessidade do usuário clicar no campo de entrada
+
+Exemplo de uso:
+
+Componente de entrada suporta ouvir o evento `onChange` de outros componentes usando o sistema de eventos integrado. Configure seguindo estes passos de exemplo:
+
+1.  Adicionar um gatilho de eventos para o componente que você deseja ouvir. Por exemplo, se você quer ouvir o evento **`onChange`** de um componente do Grupo de Rádio, você adicionaria um manipulador de eventos para o componente Radio Group
+2.  No manipulador de Editar evento, selecione **`componente de controle`** em ação, selecione o componente **`Input`** que você deseja atualizar como o alvo do evento.
+3.  Escolha a ação **`SetValue`** e selecione o valor apropriado para o componente de entrada. Este será o valor que o componente de entrada tem e atualizará quando o evento for acionado.
+4.  Salve as configurações de acionamento do evento e repita o processo para quaisquer outros componentes que você deseja ouvir.
+
+Depois de configurar o gatilho do evento, o componente de entrada irá atualizar automaticamente sempre que o evento **`onChange`** for acionado nos outros componentes. Isso permite que você crie interfaces dinâmicas que respondam à entrada do usuário em tempo real, tornando mais fácil para os usuários navegarem e interagirem com sua aplicação.
+
+### Manipulador de eventos
+
+| Evento | Descrição:                                                                                      |
+| ------ | ----------------------------------------------------------------------------------------------- |
+| Troca  | Quando um usuário muda o valor de entrada selecionado                                           |
+| Focar  | Quando um usuário move o cursor do mouse sobre o componente de entrada                          |
+| Blur   | Quando um usuário é feito para colocar o valor e deixar de se concentrar no componente cascader |
+
+### Dado
+
+O componente tem alguns dados comumente usados, que podem ser chamados via **`{{componentName.propertyName}}`** no aplicativo.
+
+| Nome da propriedade    | Descrição:                                                                |
+| ---------------------- | ------------------------------------------------------------------------- |
+| Valor                  | valor de entrada do usuário                                               |
+| colorEsquema           | cor de fundo do botão                                                     |
+| desabilitado           | um valor booleano indica o status de desabilitado                         |
+| mostrarNome            | o nome deste componente (iie button1)                                     |
+| formaChaveDeDados      | a Chave de Dados de Formulário de entrada                                 |
+| hidden                 | status oculto (verdadeiro ou falso)                                       |
+| Etiqueta               | valor de rótulo                                                           |
+| Alinhar                | Alinhamento da etiqueta de entrada (esquerda ou direita)                  |
+| posiçãoRótulo          | posição do rótulo de entrada (esquerda ou direita)                        |
+| largura-rótulo         | o inteiro que representa a largura da etiqueta.                           |
+| Comprimento            | O valor do comprimento máximo                                             |
+| Comprimento            | O valor do comprimento mínimo                                             |
+| espaço reservado       | valor do espaço reservado                                                 |
+| prefixText             | valor do prefixo de texto                                                 |
+| sufixText              | valor do sufixo de texto                                                  |
+| somenteLeitura         | um valor booleano indica o status somente pronto de entrada.              |
+| Obrigatório            | um valor booleano indica o status necessário de entrada.                  |
+| regex                  | expressão regular da entrada                                              |
+| mostrarCaracterísticas | um valor booleano indica se a contagem de caracteres da entrada é exibida |
+| dicaTexto              | valor da dica de texto                                                    |
+
+Exemplo: {{input1.value}}
+
+### Usar caso
+
+Abaixo estão alguns exemplos para personalizar o componente de entrada.
+
+-   Prefixo:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Sufixo:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Dica:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Padrão:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
