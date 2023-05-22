@@ -1,0 +1,149 @@
+---
+title: Dato Tid
+metaTitle: Dato Tid Komponent Doc Plads ILLA Cloud
+desc: Opdag, hvordan du bruger Date Time komponenten fra ILLA Cloud for at gøre det muligt for brugerne at vælge en dato og tid fra en kalender og 24 timers brugergrænseflade i dine applikationer.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/339?languages=da&filter=basic&value=0
+tagCategory: doc_menu_date_time_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Hvad er datotidspunktet?</h2>
+
+Date Time komponent er en komponent, der giver brugerne mulighed for at vælge en dato og tid fra en kalender og 24 timers interface, typisk anvendes i formularer eller grænseflader til dataindtastning, hvor brugeren skal angive en bestemt dato og tidspunkt.
+
+Når en datotidskomponent tilføjes til lærred, vises en kalender og ur interface. Brugeren kan navigere gennem kalenderen ved at klikke på de forrige eller næste pile til at flytte til en anden måned, eller ved at klikke på en bestemt dato for at vælge den. Uret interface viser timer, minutter og sekunder, som brugeren kan justere ved at flytte musemarkøren eller ved hjælp af op og ned pile.
+
+### Properties
+
+Dato Tid tilgængelige egenskaber. JavaScript kan skrives for at læse eller ændre information om komponenter.
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi          | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                            |
+| Formatér                | En gyldig datoformat streng. Se dayJS.                                                                                                               |
+| Pladsholder             | Værdien vil blive vist når inputfeltet er tomt.                                                                                                      |
+| Maks. dato              | sæt den maksimale dato som en bruger kan vælge fra kalendergrænsefladen.                                                                             |
+| Min. dato               | angive den tidligste dato, som en bruger kan vælge fra kalendergrænsefladen.                                                                         |
+| Trin størrelse          | trinstørrelsen i måleenhed for minutter                                                                                                              |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justeringen (indstil til venstre eller højre) af etiketten                                                                                   |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet for etiketten.                                                           |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Vis ryd-knap            | kontrollere, om en klar knap vises i inputfeltet                                                                                                     |
+| Værktøjstip             | Bruger kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                     |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Brugerdefineret regel   | Opret din valideringslogik her. Reglerne skal laves i JavaScript og dækket af {{}}.                                                                  |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema Farve              | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                                                |
+
+### Methods
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende fire metoder:
+
+-   **setValue**
+
+For at indstille indtastningsdatoen, for eksempel, {{"value1"}}
+
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Input value     |
+
+-   **clearValue**
+
+For at rydde værdien af den valgte komponent 
+
+-   **validate**
+
+At kontrollere, at inputoplysningerne er lovlige
+
+-   **clearValidate**
+
+For at rydde valideringsmeddelelsen
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------- |
+| Skift      | Når en bruger ændrer den valgte datotidsværdi, skal du udføre specifik handling tilpasset af brugere. |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn      | Varebeskrivelse                                              |
+| --------------------- | ------------------------------------------------------------ |
+| colorScheme           | farveegenskaben for dato                                     |
+| customRule            | den brugerdefinerede regel, som brugeren har angivet         |
+| deaktiveret           | en boolsk værdi angiver den deaktiverede status              |
+| displayName           | navnet på denne komponent (dvs. knap1)                       |
+| begivenheder          | en Array værdi for sekvens af begivenheder                   |
+| format                | formen af dato og klokkeslæt                                 |
+| formDataKey           | Formularens datakast for dato                                |
+| hidden                | skjult status (sand eller falsk)                             |
+| skjulValideringBesked | en boolsk værdi angiver, om valideringsmeddelelsen er skjult |
+| etiket                | etiket værdi                                                 |
+| labelAlign            | justering af switch etiket (venstre eller højre)             |
+| labelPosition         | placering af switch etiket (venstre eller højre)             |
+| labelBredde           | det heltal, der repræsenterer mærkets bredde.                |
+| labelFuld             | en boolsk værdi angiver, om etiketten er fuld.               |
+| maxDate               | værdien af den maksimale dato                                |
+| minDate               | værdien af minimumsdato                                      |
+| minutTrin             | minut trin størrelse værdi                                   |
+| pladsholder           | pladsholderens værdi                                         |
+| skrivebeskyttet       | en boolsk værdi angiver readyOnly status for input.          |
+| påkrævet              | en boolsk værdi angiver den krævede status for input.        |
+| showClear             | en boolsk værdi indikerer at datoen vil blive vist klart     |
+| tooltipText           | værdi af tooltip tekst                                       |
+| værdi                 | Input dato og klokkeslæt                                     |
+| validateMessage       | strengværdi for validering af besked                         |
+
+Eksempel: {{dateTime1.value}}
+
+### Brug case
+
+Dernæst vil vi vise, hvordan man kortlægger data fra datakilden til dato-tid og indstiller sig til nuværende dato og tidspunkt med en knap. 
+
+#### Trin 1 Tilføj en handling
+
+Lad os oprette en tabel i REST API kaldet **`promoteCodes`,** herunder 6 kolonner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vi vil bruge den opdateredeTil tiden til prøvebrug. 
+
+Så kan vi oprette en ny handling for REST API fra handlingslisten, liste alle data i promoteCodes og navngivet restapi1. 
+
+Klik på **`Gem`** og **`Kør`** for at aktivere denne handling.
+
+#### Trin 2 Tilføj Komponenter
+
+Dernæst kan vi tilføje en **`dato tid`** komponent og en **`knap `** komponent til lærredet. For standardværdien af datokomponenten, opsætter vi den som den sidste opdateringstid for første promoveringskode fra resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Vi har også mærket knappen som "Nu" som vist nedenfor
+
+![date_time_0](https://cdn.illacloud.com/official-website/img/docs/date_time_0.png)
+
+#### Trin 3 Konfigurer komponenten
+
+For **`-knappen`**-komponenten, kan vi konfigurere den til at sætte datoen i **`dato tid`** komponenten til aktuel dato og tid.
+
+1.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Rediger event handler, vælg den **`dato tid`** komponent, du ønsker at opdatere som målet for begivenheden.
+2.  Vælg handlingen **`setValue`** og sæt værdien som `{{currentUserInfo.updatedAt}}` 
+
+![date_time_config](https://cdn.illacloud.com/official-website/img/docs/date_time_config.png)
+
+#### Trin 4 Test
+
+Nu, når du klikker på knappen "Nu", bør tiden ændres til dagens dato. Hvad angår her, har vi 2023-5-6 11:19:47, men det kan være anderledes, når du tester det.
+
+![date_time_1](https://cdn.illacloud.com/official-website/img/docs/date_time_1.png)
