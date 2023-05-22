@@ -1,0 +1,143 @@
+---
+title: Selettore Tempo
+metaTitle: Time Picker Component Doc ILLA Cloud
+desc: Scopri come utilizzare il componente Time Picker da ILLA Cloud per consentire agli utenti di scegliere un tempo specifico da un'interfaccia utente di 24 ore nei tuoi progetti.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=it&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Assembla i componenti
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Che cos'è il Selettore di tempo?</h2>
+
+Il componente selettore tempo è un componente interfaccia utente che consente agli utenti di selezionare un tempo specifico da un'interfaccia 24 ore, tipicamente utilizzati in moduli o interfacce di inserimento dati in cui l'utente deve specificare un tempo specifico.
+
+Quando un componente del selettore di tempo viene aggiunto alla tela, viene visualizzata un'interfaccia di 24 ore che mostra ore, minuti e secondi. L'utente può regolare il tempo spostando il cursore del mouse o usando le frecce su e giù.
+
+### Properties
+
+Proprietà disponibili del selezionatore di tempo. JavaScript può essere scritto per leggere o modificare informazioni sui componenti.
+
+| Proprietà                       | Descrizione                                                                                                                                                                               |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valore predefinito              | Il valore iniziale del componente. È possibile modificare dinamicamente il valore iniziale digitando JavaScript in {{}}.                                                                  |
+| Formato                         | Una stringa di formato data valida. Vedi dayJS.                                                                                                                                           |
+| Segnaposto                      | Il valore verrà mostrato quando il campo di input è vuoto.                                                                                                                                |
+| Dimensione passo                | la dimensione del gradino in unità di minuti                                                                                                                                              |
+| Etichetta                       | Il nome del campo visualizzato all'utente                                                                                                                                                 |
+| Didascalia                      | Una didascalia utilizzata per descrivere in dettaglio il campo                                                                                                                            |
+| Etichetta nascosta              | Imposta se visualizzare l'etichetta                                                                                                                                                       |
+| Posizione                       | Imposta la posizione dell'etichetta rispetto al componente                                                                                                                                |
+| Allineamento                    | Imposta l'allineamento (allineare a sinistra o a destra) dell'etichetta                                                                                                                   |
+| Width                           | Quando l'etichetta è sul lato sinistro del componente, impostare il rapporto di larghezza dell'etichetta.                                                                                 |
+| Gestore Eventi                  | Attiva interrogazioni, componenti di controllo o chiama altre API in risposta a eventi di componenti.                                                                                     |
+| Disabilitato                    | Controlla lo stato se il componente è disabilitato. Il componente non può essere modificato o focalizzato quando è disabilitato.                                                          |
+| Sola Lettura                    | Controllare lo stato se il componente è in sola lettura. Un componente di sola lettura può essere selezionato e messo a fuoco ma non può essere modificato.                               |
+| Suggerimento                    | Gli utenti possono inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato.                                  |
+| Mostra pulsante cancella        | controllare se un pulsante chiaro è visualizzato nel campo di input                                                                                                                       |
+| Suggerimento                    | L'utente può inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato.                                        |
+| Campo obbligatorio              | Valido solo quando l'interruttore è attivo.                                                                                                                                               |
+| Regola personalizzata           | Crea qui la tua logica di convalida. Le regole devono essere fatte in JavaScript e coperte da {{}}.                                                                                       |
+| Nascondi messaggio di convalida | È possibile nascondere il messaggio di errore cambiando lo stato nascosto quando il valore di input non è corretto. È possibile modificare dinamicamente lo stato nascosto da JavaScript. |
+| Modulo Dati Chiave              | Specifica una chiave di un componente di un modulo di wrapping durante la costruzione dell'attributo dati.                                                                                |
+| Hidden                          | Controllare dinamicamente se il componente è nascosto. È possibile modificare lo stato nascosto attraverso il valore booleano dinamico.                                                   |
+| Colore Tema                     | Consente agli utenti di specificare il colore di sfondo e l'opacità del pulsante                                                                                                          |
+
+### Methods
+
+È possibile utilizzare altri componenti per controllare il componente. Sosteniamo i seguenti quattro metodi:
+
+-   **setValue**
+
+Per impostare il valore temporale in ingresso, ad esempio, {{"value1"}}
+
+| Proprietà | Descrizione |
+| --------- | ----------- |
+| Valore    | Input value |
+
+-   **clearValue**
+
+Per cancellare il valore del componente selezionato 
+
+-   **validate**
+
+Per verificare che le informazioni di input siano legali
+
+-   **clearValidate**
+
+Per cancellare il messaggio di convalida
+
+### Gestore eventi
+
+| Evento | Descrizione                                                                                                        |
+| ------ | ------------------------------------------------------------------------------------------------------------------ |
+| Cambia | Quando un utente cambia il valore temporale selezionato, eseguire un'azione specifica personalizzata dagli utenti. |
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite **`{{componentName.propertyName}}`** nell'app.
+
+| Nome proprietà        | Descrizione                                                       |
+| --------------------- | ----------------------------------------------------------------- |
+| colorScheme           | la proprietà colore di Data                                       |
+| customRule            | la regola personalizzata specificata dall'utente                  |
+| disabilitato          | un valore booleano indica lo stato disabilitato                   |
+| displayName           | il nome di questo componente (cioè il pulsante1)                  |
+| eventi                | un valore Array per la sequenza di eventi                         |
+| formato               | il formiato di data e ora                                         |
+| formDataKey           | il Modulo Data Key of Date                                        |
+| hidden                | stato nascosto (vero o falso)                                     |
+| hideValidationMessage | un valore booleano indica se il messaggio di convalida è nascosto |
+| etichetta             | valore dell'etichetta                                             |
+| labelAllinea          | allineamento dell'etichetta dell'interruttore (sinistra o destra) |
+| labelPosizione        | posizione dell'etichetta dell'interruttore (sinistra o destra)    |
+| labelWidth            | il numero intero che rappresenta la larghezza dell'etichetta.     |
+| labelFull             | un valore booleano indica se l'etichetta è piena.                 |
+| minuteStep            | valore di dimensione passo minuto                                 |
+| segnaposto            | valore segnaposto                                                 |
+| obbligatorio          | un valore booleano indica lo stato richiesto dell'input.          |
+| mostraPulisci         | un valore booleano indica che la data sarà mostrata pulita        |
+| tooltipText           | valore del testo del suggerimento                                 |
+| valore                | Inserisci valore data e ora                                       |
+
+Esempio: {{timePicker1.format}}
+
+### Caso di utilizzo
+
+Successivamente, dimostreremo come mappare i dati dalla fonte dati al selettore di tempo e impostare l'ora corrente con un pulsante. 
+
+#### Passo 1 Aggiungere un'azione
+
+Creiamo una tabella nell'API REST chiamata **`promoteCodes`,** con 6 colonne: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Useremo l'aggiornamentoAl momento per l'uso del campione. 
+
+Quindi possiamo creare una nuova azione per REST API dall'elenco di azioni, elencando tutti i dati in promoteCodes e chiamato restapi1. 
+
+Clicca su **`Salva`** e **`Esegui`** per attivare questa azione.
+
+#### Passo 2 Aggiungi Componenti
+
+Successivamente, possiamo aggiungere un componente **`time picker`** e un componente **\``button`** alla tela. Per il valore predefinito del componente di tempo, lo configuriamo come l'ultimo tempo di aggiornamento del primo codice di promozione dai dati API restanti.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Abbiamo anche etichettato il pulsante come "Now" come mostrato di seguito
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Passo 3 Configura il componente
+
+Per il componente **`button`** possiamo configurarlo per impostare la data nel componente **`time picker`** alla data e ora correnti.
+
+1.  Nel gestore degli eventi di Modifica, seleziona **`Componente di controllo`** in azione, seleziona il componente **`time picker`** che vuoi aggiornare come obiettivo dell'evento.
+2.  Scegli l'azione **`setValue`** e imposta il valore come `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Fase 4 Test
+
+Ora che quando si fa clic sul pulsante "Ora", l'ora dovrebbe passare all'ora corrente. Per quanto riguarda qui, abbiamo 20:03:05 ma può essere diverso quando si sta testando.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

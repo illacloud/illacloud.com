@@ -1,0 +1,143 @@
+---
+title: Výběr času
+metaTitle: Komponenta pro výběr času | ILLA Cloud
+desc: Zjistěte, jak používat komponentu pro výběr času z ILLA Cloudu, aby si uživatelé ve vašich projektech vybrali konkrétní čas v prostředí 24 hodin.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=cs&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Co je výběr času?</h2>
+
+komponenta pro výběr času je komponenta uživatelského rozhraní, která uživatelům umožňuje vybrat konkrétní čas z rozhraní 24 hodin denně, typicky používané ve formulářích nebo rozhraních zadávání dat, kde uživatel musí specifikovat určitý čas.
+
+Když je komponenta pro výběr času přidána do plátna, zobrazí se rozhraní 24 hodin denně, které zobrazuje hodiny, minuty a sekundy. Uživatel může upravit čas pohybem kurzoru myší nebo použitím šipek nahoru a dolů.
+
+### Properties
+
+Dostupné vlastnosti výběru času. JavaScript může být napsán pro čtení nebo změnu informací o komponentách.
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Výchozí hodnota              | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.                                               |
+| Formát                       | Platný formát data. Viz dny.                                                                                                                      |
+| Zástupný symbol              | Hodnota bude zobrazena, když je vstupní pole prázdné.                                                                                             |
+| Velikost kroku               | velikost kroku v jednotkách minut                                                                                                                 |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                  |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                          |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                              |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                     |
+| Zarovnání                    | Nastavit zarovnání (zarovnat vlevo nebo vpravo) štítku                                                                                            |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku.                                                                           |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                          |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                              |
+| Pouze pro čtení              | Určuje, zda je komponenta určena pouze pro čtení. Komponentu, která je určena pouze pro čtení, může být vybrána a zaměřena, ale nelze ji upravit. |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                  |
+| Zobrazit tlačítko "Vyčistit" | určuje, zda je ve vstupním poli zobrazeno tlačítko "Vyčistit"                                                                                     |
+| Šipka nástroje               | Uživatel zde může zadat pomocný popisek. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                    |
+| Povinné pole                 | Platné pouze při zapnutí přepínače                                                                                                                |
+| Vlastní pravidlo             | Zde vytvořte svou validační logiku. Pravidla by měla být vytvořena v JavaScriptu a pokryta {{}}.                                                  |
+| Skrýt ověřovací zprávu       | Chybová zpráva můžete skrýt přepnutím skrytého stavu, pokud je zadaná hodnota nesprávná. Skrytý stav můžete dynamicky změnit pomocí JavaScript.   |
+| Datový klíč formuláře        | Zadejte klíč pro balicí komponentu při vytváření atributu dat.                                                                                    |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                        |
+| Barva šablony                | Umožňuje uživatelům určit barvu a průhlednost pozadí tlačítka                                                                                     |
+
+### Methods
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto čtyři metody:
+
+-   **setValue**
+
+Možnost nastavit vstupní časovou hodnotu například {{"value1"}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Input value               |
+
+-   **clearValue**
+
+Možnost vymazat hodnotu vybrané komponenty 
+
+-   **validate**
+
+Ověření, zda jsou vstupní informace legální
+
+-   **vymazat**
+
+Pro vymazání zprávy o ověření
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                                       |
+| ------- | ----------------------------------------------------------------------------------------------- |
+| Změnit  | Pokud uživatel změní zvolenou časovou hodnotu, proveďte konkrétní akci přizpůsobenou uživateli. |
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti      | Popis                                                 |
+| --------------------- | ----------------------------------------------------- |
+| barevné schéma        | barevná vlastnost data                                |
+| vlastní Pravidlo      | vlastní pravidlo, které uživatel zadal                |
+| vypnuto               | logická hodnota udává vypnutý stav                    |
+| zobrazované jméno     | název této komponenty (tj. tlačítko1)                 |
+| události              | hodnota pole pro sekvenci událostí                    |
+| Formát                | formát data a času,                                   |
+| formDataKey           | Datový klíč formuláře datumu                          |
+| hidden                | skrytý stav (true nebo false)                         |
+| hideValidationMessage | logická hodnota udává, zda je zpráva o ověření skrytá |
+| štítek                | hodnota štítku                                        |
+| Zarovnat štítek       | zarovnání přepínače (vlevo nebo vpravo)               |
+| Pozice štítku         | umístění přepínače (vlevo nebo vpravo)                |
+| Šířka štítku          | celé číslo představující šířku štítku.                |
+| Štítek plný           | logická hodnota udává, zda je štítek plný.            |
+| minutový krok         | hodnota velikosti kroku minuty                        |
+| zástupný znak         | zástupná hodnota                                      |
+| vyžadováno            | logická hodnota udává požadovaný stav vstupu.         |
+| ukázat Vyčistit       | logická hodnota udávající datum bude vymazáno         |
+| tooltipText           | hodnota textu popisku                                 |
+| hodnota               | Hodnota vstupního data a času                         |
+
+Příklad: {{timePicker1.format}}
+
+### Případ použití
+
+Dále ukážeme, jak mapovat data ze zdroje dat na výběr času a pomocí tlačítka nastavit na aktuální čas. 
+
+#### Krok 1 Přidat akci
+
+Vytvořme tabulku v REST API s názvem **`promoteCodes`,** včetně 6 sloupců: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Pro vzorové použití použijeme aktualizovaný čas. 
+
+Pak můžeme vytvořit novou akci pro REST API ze seznamu akcí, seznam všech dat v promoteCodes a jménem restapi1. 
+
+Klikněte na **`Uložit`** a **`Spustit`** pro aktivaci této akce.
+
+#### Krok 2 Přidat komponenty
+
+Dále můžeme přidat komponentu **`Výběr času`** a komponentu **`tlačítka`**. Pro výchozí hodnotu časové složky jsme ji nastavili jako poslední aktualizovaný čas první propagace kódu z ostatních api dat.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Také jsme označili tlačítko jako "Nyní", jak je uvedeno níže
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Krok 3 Konfigurace komponenty
+
+Pro komponentu **\`tlačítko** můžeme nastavit datum v komponentě **`Výběr času`** na aktuální datum a čas.
+
+1.  V obsluze události Editace vyberte **`Control component`** v akci, vyberte komponentu **`Výběr času`**, kterou chcete aktualizovat jako cíl události.
+2.  Vyberte akci **`setValue`** a nastavte hodnotu jako `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Krok 4 Zkouška
+
+Nyní, když klepnete na tlačítko "Nyní", čas by se měl změnit na aktuální čas. Pokud jde o tady, máme 20:03:05, ale může to být jiné, když to testujete.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

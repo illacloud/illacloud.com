@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Dokument wejściowy komponentu | ILLA Cloud
+desc: Dowiedz się, jak używać komponentu wejściowego do tworzenia i dostosowywania pól tekstowych dla aplikacji w chmurze ILLA.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/335?languages=pl&filter=basic&value=0
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Co to jest wejście?</h2>
+
+Komponent wprowadzania tekstu jest elementem interfejsu użytkownika, który umożliwia użytkownikom wprowadzanie i edytowanie tekstu w polu formularza lub wpisu.
+
+### Właściwości
+
+| Właściwości                    | Opis                                                                                                                                                                        |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wartość domyślna               | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                                                    |
+| Zastępca                       | Wartość będzie wyświetlana, gdy pole wejściowe jest puste.                                                                                                                  |
+| Etykieta                       | Nazwa pola wyświetlanego użytkownikowi                                                                                                                                      |
+| Podpis                         | Podpis używany do szczegółowego opisu pola                                                                                                                                  |
+| Ukryta etykieta                | Ustaw czy wyświetlić etykietę                                                                                                                                               |
+| Położenie                      | Ustaw położenie etykiety względem komponentu                                                                                                                                |
+| Wyrównanie                     | Ustaw wyrównanie (wyrównanie do lewej lub prawej) etykiety                                                                                                                  |
+| Width                          | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety.                                                                                 |
+| Obsługa zdarzeń                | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                                    |
+| Wyłączone                      | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                                     |
+| Tylko do odczytu               | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                                     |
+| Pokaż przycisk wyczyść         | kontroluj, czy przycisk wyczyść jest wyświetlany w polu wejściowym                                                                                                          |
+| Pokaż liczbę znaków            | kontroluj, czy liczba znaków wejściowych jest wyświetlana                                                                                                                   |
+| Tekst prefiksu                 | krótki fragment tekstu, który pojawia się po lewej stronie pola wprowadzania, często używany do dostarczania użytkownikowi dodatkowego kontekstu lub instrukcji             |
+| Tekst sufiksu                  | krótki fragment tekstu, który pojawia się po prawej stronie pola wprowadzania, często używany do dostarczania użytkownikowi dodatkowych informacji lub informacji zwrotnych |
+| Wskazówka                      | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                               |
+| Pole wymagane                  | Ważne tylko wtedy, gdy przełącznik jest włączony.                                                                                                                           |
+| Wzorzec                        | określ wzorzec wyrażenia regularnego, który użytkownik musi się zgadzać, aby być uznany za ważny                                                                            |
+| Maksymalna długość             | ustaw maksymalną liczbę znaków, które można wprowadzić w polu wprowadzania.                                                                                                 |
+| Minimalna długość              | określ minimalną liczbę znaków, które użytkownik musi wprowadzić w polu wejściowym, aby dane zostały uznane za prawidłowe.                                                  |
+| Własna reguła                  | Utwórz tutaj swoją logikę sprawdzania. Reguły powinny być sporządzone w JavaScript i objęte {{}}.                                                                           |
+| Ukryj komunikat potwierdzający | Możesz ukryć komunikat o błędzie przełączając status ukrycia, gdy wartość wejściowa jest nieprawidłowa. Możesz dynamicznie zmienić status ukryty przez JavaScript.          |
+| Klucz danych formularza        | Określ klucz komponentu opakowania formularza podczas konstruowania atrybutu danych.                                                                                        |
+| Hidden                         | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                          |
+| Kolor motywu                   | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                                                         |
+
+### Metoda
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące dwie metody:
+
+-   **setValue**
+
+Aby ustawić wartość wejściową, na przykład {{'value1'}}
+
+| Właściwości | Opis        |
+| ----------- | ----------- |
+| Wartość     | Input value |
+
+-   **clearValue**
+
+Aby wyczyścić wartość wybranego komponentu 
+
+-   **focus**
+
+Po wywołaniu metody ogniskowej, pole wejściowe będzie wyróżnione i gotowe do rozpoczęcia pisania przez użytkownika bez potrzeby kliknięcia na pole wejściowe
+
+Przykładowe użycie:
+
+Wsparcie dla komponentu wejściowego słuchającego zdarzenia `onChange` innych komponentów za pomocą wbudowanego systemu zdarzeń. Skonfiguruj za pomocą poniższych przykładowych kroków:
+
+1.  Dodaj wyzwalacz zdarzenia do komponentu, którego chcesz słuchać. Na przykład, jeśli chcesz słuchać zdarzenia **`onChange`** komponentu grupy radiowej, dodałbyś narzędzie obsługi zdarzeń do tego komponentu grupy radiowej.
+2.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz komponent **`Input`**, który chcesz zaktualizować jako cel wydarzenia.
+3.  Wybierz działanie **`SetValue`** i wybierz odpowiednią wartość dla komponentu wejściowego. Będzie to wartość komponentu wejściowego i zaktualizowana po uruchomieniu zdarzenia.
+4.  Zapisz ustawienia wyzwalacza zdarzenia i powtórz proces dla innych komponentów, których chcesz słuchać.
+
+Po skonfigurowaniu wyzwalaczy zdarzeń, komponent wejściowy będzie automatycznie aktualizowany za każdym razem, gdy zdarzenie **onChange\`** zostanie wyzwalane na innych komponentach. Pozwala to na tworzenie dynamicznych interfejsów, które odpowiadają na dane wejściowe użytkownika w czasie rzeczywistym, ułatwianie użytkownikom nawigowania i interakcji z aplikacją.
+
+### Obsługa zdarzeń
+
+| Wydarzenie    | Opis                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| Zmiana        | Gdy użytkownik zmienia wybraną wartość wejściową                                                        |
+| Skupienie się | Kiedy użytkownik przenosi kursor myszy na komponent wejściowy                                           |
+| Blur          | Gdy użytkownik jest wykonywany wartość wejściowa i przestaje koncentrować się na komponencie kaskadowym |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności     | Opis                                                                      |
+| ------------------- | ------------------------------------------------------------------------- |
+| wartość             | wartość wprowadzana przez użytkownika                                     |
+| schemat kolorów     | Kolor tła przycisku                                                       |
+| wyłączone           | wartość logiczna wskazuje status wyłączony                                |
+| nazwa wyświetlacza  | nazwa tego składnika (tj. przycisk1)                                      |
+| formDataKey         | Formatowy klucz danych wejściowych                                        |
+| hidden              | ukryty status (prawda lub fałsz)                                          |
+| etykieta            | wartość etykiety                                                          |
+| Wyrównanie etykiety | wyrównanie etykiety wejścia (lewa lub prawa)                              |
+| pozycja etykiety    | umiejscowienie etykiety wejścia (w lewo lub w prawo)                      |
+| Szerokość etykiety  | liczba całkowita reprezentująca szerokość etykiety.                       |
+| maks. długość       | wartość maksymalnej długości                                              |
+| Minimalna długość   | wartość minimalnej długości                                               |
+| symbol zastępczy    | wartość zastępcza                                                         |
+| prefixText          | wartość prefiksu tekstu                                                   |
+| tekst przyrostka    | wartość sufiksu tekstu                                                    |
+| Tylko do odczytu    | wartość logiczna wskazuje tylko status danych wejściowych.                |
+| wymagane            | wartość logiczna wskazuje wymagany status wejścia.                        |
+| regex               | wyrażenie regularne wejścia                                               |
+| liczebność cech     | wartość logiczna wskazuje, czy liczba znaków wejściowych jest wyświetlana |
+| tekst               | wartość tekstu podpowiedzi                                                |
+
+Przykład: {{input1.value}}
+
+### Przypadek użycia
+
+Poniżej znajdują się kilka przykładów dostosowania komponentu wejściowego.
+
+-   Prefiks:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Sufiks:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Wskazówka:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Wzór:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)

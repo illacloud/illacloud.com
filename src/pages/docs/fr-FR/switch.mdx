@@ -1,0 +1,110 @@
+---
+title: Commuter
+metaTitle: Changer de Doc de Composant | ILLA Cloud
+desc: Apprenez comment utiliser le composant Switch dans ILLA Cloud pour créer une interface utilisateur qui permet aux utilisateurs de basculer entre deux options. Voir les exemples et les propriétés de Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=fr&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Qu'est-ce que le commutateur ?</h2>
+
+Le composant Switch est un élément d'interface utilisateur qui permet aux utilisateurs de basculer entre deux états: "on" et "off".
+
+### Propriétés
+
+| Propriétés                | Libellé                                                                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Valeur par défaut         | La valeur initiale du composant. Vous pouvez modifier dynamiquement la valeur initiale en tapant JavaScript dans {{}}.                                 |
+| Étiquette                 | Le nom du champ affiché à l'utilisateur                                                                                                                |
+| Légende                   | Une légende utilisée pour décrire le champ en détail                                                                                                   |
+| Libellé masqué            | Définir si le libellé doit être affiché                                                                                                                |
+| Position                  | Définir la position de l'étiquette par rapport au composant                                                                                            |
+| Alignement                | Définir l'alignement du libellé                                                                                                                        |
+| Gestionnaire d'événements | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                   |
+| En cours de chargement    | Si le composant doit afficher un indicateur de chargement.                                                                                             |
+| Désactivé                 | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                          |
+| Info-bulle                | L'utilisateur peut entrer l'info-bulle de composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge. |
+| Hidden                    | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                               |
+| Couleur du thème          | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                  |
+
+### Méthode
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les trois méthodes suivantes:
+
+-   **setValue**
+
+Pour définir la valeur sélectionnée, par exemple, {{'value1'}}
+
+| Propriétés | Libellé             |
+| ---------- | ------------------- |
+| Valeur     | Valeur sélectionnée |
+
+-   **clearValue**
+
+Pour effacer la valeur sélectionnée
+
+-   **activer**
+
+changer le passage de l'état "off" à l'état "on", ou vice versa
+
+Exemple d'utilisation :
+
+Basculer la prise en charge des composants à l'écoute de l'événement `onClick` d'autres composants en utilisant le système d'événements intégré. Configurez-le en suivant ces étapes d'exemple :
+
+1.  Ajouter un trigger sur événement au composant que vous voulez écouter. Par exemple, si vous voulez écouter l'événement **`onClick`** d'un composant Button, vous ajouterez un déclencheur d'événement à ce composant de bouton.
+2.  Dans le gestionnaire d'édition d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`Switch`** que vous voulez mettre à jour comme cible de l'événement.
+3.  Choisissez l'action **`toggle`** . Lorsque l'événement est déclenché (c'est à dire lorsque le bouton est cliqué), le composant de commutation avec être basculé et son état sera mis à jour.
+4.  Enregistrez les paramètres de déclenchement d'événement et répétez le processus pour tous les autres composants que vous voulez écouter.
+
+Une fois que vous avez configuré les déclencheurs d'événement, le composant de commutation sera automatiquement mis à jour chaque fois que l'événement **`onClick`** sera déclenché sur les autres composants. Cela vous permet de créer des interfaces dynamiques qui répondent en temps réel à la saisie de l'utilisateur permettant aux utilisateurs de naviguer et d'interagir plus facilement avec votre application.
+
+### Gestionnaire d'événements
+
+| Evénement  | Libellé                                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Changement | Lorsqu'un utilisateur change la valeur d'option sélectionnée, effectuer une action spécifique personnalisée par les utilisateurs. |
+
+### Donnée
+
+Le composant de bouton a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété   | Libellé                                                            |
+| --------------------- | ------------------------------------------------------------------ |
+| Schéma de couleurs    | couleur de fond du bouton                                          |
+| nomdeaffichage        | le nom de ce composant (bouton i.)                                 |
+| hidden                | une valeur booléenne indique l'état caché du bouton                |
+| Etiquette             | valeur de l'étiquette                                              |
+| Alignement du libellé | alignement de l'étiquette de l'interrupteur (à gauche ou à droite) |
+| Position du libellé   | position du libellé du commutateur (à gauche ou à droite)          |
+| Largeur du libellé    | l'entier représentant la largeur des étiquettes.                   |
+| Etiquette pleine      | une valeur booléenne indique si le label est plein.                |
+| valeur                | Un utilisateur définit la valeur à true ou false                   |
+
+### Cas d'utilisation
+
+Ensuite, nous montrerons comment basculer dynamiquement le statut des autres composants. 
+
+#### Étape 1 Ajouter un composant
+
+Tout d'abord, nous ajoutons le composant **`Switch`** et le nommons 'Cacher'. Ensuite, nous utilisons le composant **`text`** comme un composant influencé qui passe de l'état 'affiché' à 'caché'. Nous changeons son contenu en 'Hello World' 
+
+#### Étape 2 Configurer un composant
+
+Dans la propriété **`Caché`** pour le texte. Cliquez sur l'icône **`fx`** pour que nous puissions contrôler l'état caché du composant en le définissant comme la valeur de notre switch en utilisant JavaScript :
+
+```jsx
+{{switch1.value}}
+```
+
+Maintenant, lorsque l'interrupteur est allumé, la valeur pour le commutateur est **`true`,** le texte sera masqué, et vice versa.
+
+Basculer **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Commuter **`Désactivé`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

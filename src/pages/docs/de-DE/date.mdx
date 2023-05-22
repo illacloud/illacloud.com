@@ -1,0 +1,144 @@
+---
+title: Datum
+metaTitle: Date Component Doc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Datumskomponente verwenden, um Ihrer App einen Kalenderauswahl hinzuzufügen und ihr Aussehen und ihr Verhalten anzupassen.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/333?languages=de&filter=basic&value=0
+tagCategory: doc_menu_date_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Was ist Datum?</h2>
+
+Die Datumskomponente ist eine Komponente, mit der Benutzer ein Datum aus einer Kalenderschnittstelle auswählen können. Die Datumskomponente wird typischerweise in Formularen oder Dateneingabeschnittstellen verwendet, wo der Benutzer ein bestimmtes Datum auswählen muss.
+
+Wenn eine Datumskomponente zur Leinwand hinzugefügt wird, wird standardmäßig eine Kalenderschnittstelle angezeigt. Der Benutzer kann durch den Kalender navigieren, indem er auf die vorherigen oder nächsten Pfeile klickt, um sich in einen anderen Monat zu bewegen oder indem Sie auf ein bestimmtes Datum klicken, um es auszuwählen. Das ausgewählte Datum wird im Eingabefeld angezeigt.
+
+### Properties
+
+Verfügbare Eigenschaften des Datums. JavaScript kann zum Lesen oder Ändern von Informationen über Komponenten geschrieben werden.
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert                     | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                       |
+| Format                           | Ein gültiger Datumsformat-String. Siehe dayJS.                                                                                                                                            |
+| Platzhalter                      | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                   |
+| Max. Datum                       | legt das maximale Datum fest, das ein Benutzer aus der Kalenderschnittstelle wählen kann.                                                                                                 |
+| Min. Datum                       | geben Sie das früheste Datum an, das ein Benutzer aus der Kalenderschnittstelle wählen kann.                                                                                              |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                      |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                        |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Löschtaste anzeigen              | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                   |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | Erstellen Sie hier Ihre Validierungslogik. Die Regeln sollten in JavaScript gemacht werden und von {{alt}} abgedeckt werden.                                                              |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                                                                |
+
+### Methods
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden vier Methoden:
+
+-   **setValue**
+
+Um den Datumswert zu setzen, zum Beispiel {{'value1'}}
+
+| Eigenschaften | Beschreibung |
+| ------------- | ------------ |
+| Wert          | Input value  |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+-   **validate**
+
+Um zu überprüfen, ob die Eingabe zulässig ist
+
+-   **ClearValidate**
+
+Um die Validierungsmeldung zu löschen
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                                     |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Ändern   | Wenn ein Benutzer den ausgewählten Datumswert ändert, führen Sie eine spezifische Aktion aus, die von Benutzern angepasst wurde. |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname      | Beschreibung                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| farbenschema          | die Farbeigenschaften des Datums                                         |
+| benutzerregeln        | die benutzerdefinierte Regel, die von Benutzer angegeben wurde           |
+| Datumsformat          | das Format des Datums                                                    |
+| deaktiviert           | ein boolescher Wert zeigt den deaktivierten Status an                    |
+| anzeiger              | der Name dieser Komponente (dh Button1)                                  |
+| formDataKey           | der Formular-Datenschlüssel des Datums                                   |
+| hidden                | versteckter Status (true oder false)                                     |
+| hideValidationMessage | ein boolescher Wert gibt an, ob die Validierungsmeldung ausgeblendet ist |
+| bezeichnen            | label Wert                                                               |
+| labelAlign            | Ausrichtung des Schalternamens (links oder rechts)                       |
+| labelPosition         | Position des Schalternamens (links oder rechts)                          |
+| labelBreite           | die Ganzzahl, die die Breite des Labels darstellt.                       |
+| labelvoll             | ein boolescher Wert gibt an, ob das Label voll ist.                      |
+| maxDate               | der Wert des maximalen Datums                                            |
+| minDate               | der Wert des Mindestdatums                                               |
+| Platzhalter           | Platzhalterwert                                                          |
+| nur lesen             | ein boolscher Wert zeigt den readyOnly Status der Eingabe.               |
+| benötigt              | ein boolescher Wert zeigt den benötigten Status der Eingabe.             |
+| zeige Leer            | ein boolescher Wert gibt an, ob das Datum gelöscht wird                  |
+| tooltipText           | Wert des Tooltip-Textes                                                  |
+| wert                  | Input value                                                              |
+
+Beispiel: {{date1.value}}
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie man die Daten aus der Datenquelle bis heute kartiert und mit einem Knopf auf das aktuelle Datum setzt. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Lassen Sie uns eine Tabelle in REST API namens **`promoteCodes`,** mit 6 Spalten erstellen: **`code`**, **`id`**`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`\*\*. Wir werden die updatedAt Zeit für die Probenutzung verwenden. 
+
+Dann können wir eine neue Aktion für REST API aus der Aktionsliste erstellen, die alle Daten in promoteCodes auflistet und restapi1 heißt. 
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 2 Komponenten hinzufügen
+
+Als nächstes können wir eine **`date`** Komponente und eine **`button`** Komponente zur Leinwand hinzufügen. Für den Standardwert der Datumskomponente stellen wir sie als letzte Update-Zeit des ersten Promo-Codes aus den restlichen Api-Daten ein.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Wir haben den Button auch als "Heute" bezeichnet, wie unten gezeigt
+
+![date_time0](https://cdn.illacloud.com/official-website/img/docs/date_time0.png)
+
+#### Schritt 3 die Komponente konfigurieren
+
+Für die **`button`** Komponente können wir sie so konfigurieren, dass das Datum in der **`date`** Komponente auf das heutige Datum gesetzt wird.
+
+1.  Wählen Sie im Ereignis-Handler **`Control component`** in Aktion aus, wählen Sie die Komponente **`date`** aus, die als Ziel des Ereignisses aktualisiert werden soll.
+2.  Wähle die **`setValue`** Aktion und setze den Wert als `{{currentUserInfo.updatedAt}}` 
+
+![date_confg](https://cdn.illacloud.com/official-website/img/docs/date_confg.png)
+
+#### Schritt 4 Test
+
+Wenn Sie jetzt auf die Schaltfläche "heute" klicken, sollte sich die Zeit auf das heutige Datum ändern. Hier haben wir 2023-5-6, aber es kann anders sein, wenn Sie es testen.
+
+![date_time1](https://cdn.illacloud.com/official-website/img/docs/date_time1.png)

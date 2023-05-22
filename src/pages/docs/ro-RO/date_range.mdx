@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Învățați cum să utilizați componenta Date Range din ILLA Cloud pentru a permite utilizatorilor să selecteze o dată de început și de sfârșit din interfața calendarului în formularele sau interfețele intrărilor de date.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/337?languages=ro&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Asamblarea componentelor
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Ce este intervalul datelor?</h2>
+
+Componenta Interval de Date este o componentă UI care permite utilizatorilor să selecteze o gamă de date dintr-o interfață calendar. De obicei folosit în formulare sau interfețe de intrare de date în cazul în care utilizatorul trebuie să specifice un interval de început și de sfârșit.
+
+Atunci când o componentă Interval de Date este adăugată la pânză, aceasta afișează două interfețe calendaristice una lângă alta. O interfață calendar este utilizată pentru a selecta data de pornire, în timp ce cealaltă interfață este folosită pentru a selecta data de sfârșit. Utilizatorul poate naviga prin calendare dând click pe săgețile precedente sau următoare pentru a se muta la o lună diferită, sau făcând clic pe o anumită dată pentru a o selecta. Datele selectate vor fi afişate în câmpurile de intrare.
+
+### Properties
+
+Data intervalului de proprietăți disponibile. JavaScript poate fi scris pentru a citi sau a modifica informații despre componente.
+
+| Proprietăți                 | Descriere                                                                                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data de început             | Valoarea implicită dată de începere a componentei                                                                                                       |
+| Data de încheiere           | Valoarea implicită a datei de sfârșit a componentei                                                                                                     |
+| Format                      | Un șir de format de dată valid. Vezi https://day.js.org/docs/en/parse/string-format.                                                                    |
+| Începeți substituentul      | Valoarea va fi afișată atunci când câmpul data de începere este gol.                                                                                    |
+| Substituent final           | Valoarea va fi afișată atunci când câmpul dată de intrare este gol.                                                                                     |
+| Data maxima                 | setează data maximă pe care un utilizator o poate selecta din interfața calendarului.                                                                   |
+| Dată minimă                 | specificați data cea mai apropiată pe care un utilizator o poate selecta din interfața calendarului.                                                    |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                   |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                   |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                       |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                        |
+| Aliniere                    | Setați alinierea (aliniere la stânga sau la dreapta) a etichetei                                                                                        |
+| Width                       | Când eticheta este pe partea stângă a componentei, setaţi raportul lăţimii etichetei.                                                                   |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                        |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                         |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.       |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.           |
+| Afişare buton ştergere      | controlează dacă în câmpul de intrare este sau nu afișat un buton de ștergere                                                                           |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                               |
+| Regulă personalizată        | Crează-ți logica validării aici. Regulile ar trebui să fie stabilite în JavaScript și acoperite de {{}}.                                                |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript. |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                       |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                        |
+| Culoare temă                | Permite utilizatorilor să specifice culoarea de fundal şi opacitatea butonului                                                                          |
+
+### Methods
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele două metode:
+
+-   **setStartValue**
+
+Pentru a seta valoarea datei de începere, de exemplu, {{"value1"}}
+
+| Proprietăți | Descriere                      |
+| ----------- | ------------------------------ |
+| Valoare     | Introducere valoare de început |
+
+-   **setValoare finală**
+
+Pentru a seta valoarea datei de încheiere, de exemplu, {{"value2"}}
+
+| Proprietăți | Descriere       |
+| ----------- | --------------- |
+| Valoare     | Input end value |
+
+-   **clearValue**
+
+Pentru a șterge valoarea componentei selectate 
+
+-   **validate**
+
+Pentru a verifica dacă informațiile de intrare sunt legale
+
+-   **clearValidate**
+
+Pentru a șterge mesajul de validare
+
+### Gestionar de evenimente
+
+| Eveniment | Descriere                                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Schimbă   | Atunci când un utilizator schimbă valoarea de dată selectată, efectuează o acțiune specifică personalizată de către utilizatori. |
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin **`{{componentName.propertyName}}`** în aplicație.
+
+| Nume proprietate     | Descriere                                                      |
+| -------------------- | -------------------------------------------------------------- |
+| culori               | culoarea proprietății datei                                    |
+| regulă personalizată | regula personalizată specificată de utilizator                 |
+| Formatare dată       | formatul datei                                                 |
+| dezactivat           | o valoare Booleană indică starea persoanelor cu handicap       |
+| AfișeazăNume         | numele acestei componente (ie cascader1)                       |
+| startPlaceholder     | valoare substituent pentru data de început                     |
+| endPlaceholder       | valoare substituent pentru data de sfârșit                     |
+| evenimente           | o valoare Array pentru secvența evenimentelor                  |
+| formDataKey          | Formularul cheie de date al datei                              |
+| hidden               | o valoare Booleană indică starea ascunsă a butonului           |
+| hideValidationMesaj  | o valoare Booleană indică dacă mesajul de validare este ascuns |
+| etichetă             | valoare etichetă                                               |
+| Aliniere             | aliniere etichetă cascadă (stânga sau dreapta)                 |
+| Pozitie              | eticheta casierului (stânga sau dreapta)                       |
+| Lățime etichetă      | integer reprezentând lăţimea etichetei                         |
+| citire               | o valoare Booleană indică starea de pregătire a intrărilor.    |
+| necesar              | a Valoarea booleană indică starea necesară a intrărilor.       |
+| afişare              | o valoare Boolean indică noi data va fi afișată clar           |
+| valoare              | Valoare selectată                                              |
+
+Exemplu: {{dateRange1.value[0]}}
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să cartografiem datele din intervalul de date până la data și să setăm valoarea de sfârșit la data de azi cu un buton. 
+
+#### Pasul 1 Adăugare acţiune
+
+Să creăm un tabel în REST API numit **`promoteCode`,** inclusiv 6 coloane: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vom folosi începutul și timpul expirat la ora pentru utilizarea eșantionului. 
+
+Apoi putem crea o nouă acțiune pentru REST API din lista de acțiuni, enumerând toate datele în promoteCodes și numit restapi1. 
+
+Faceţi clic pe **`Salvează`** şi **`Run`** pentru a activa această acţiune.
+
+#### Pasul 2 Adaugă Componente
+
+Apoi, putem adăuga o componentă **`interval de date`** şi o componentă **`button`** la pânză. Pentru valoarea implicită a datei de începere a componentei de interval de date, folosim startedLa momentul primei promovări a codului din restul datelor API.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+In mod similar, pentru valoarea implicita a datei de sfarsit, folosim expiratLa momentul primului cod de promovare din restul datelor API.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+De asemenea, am etichetat butonul ca "Actualizare" după cum se arată mai jos.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Pasul 3 Configurarea componentei
+
+Pentru componenta **`button`**, o putem configura pentru a seta valoarea dată de sfârșit în componenta **`interval dată`** la data de astăzi.
+
+1.  În gestionarul de editare a evenimentului, selectați **`Componenta Control`** în acțiune, selectați **`interval dată`** pe care doriți să o actualizați ca țintă a evenimentului.
+2.  Alege **`setEndValue`** și setează **`Data de sfârșit`** ca `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Etapa 4 Test
+
+Acum că atunci când faceți clic pe butonul 'Actualizare', data de sfârșit ar trebui să se schimbe la data de astăzi. În ceea ce privește aici, avem 2023-5-6, dar poate fi diferit când îl testați.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)

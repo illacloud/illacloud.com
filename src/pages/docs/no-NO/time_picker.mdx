@@ -1,0 +1,143 @@
+---
+title: Tid velger
+metaTitle: Tidsvelger komponent Doc ∙ILLA Cloud
+desc: Finn ut hvordan du kan bruke Time Picker-komponenten fra ILLA Cloud for å la brukerne velge ett tidsintervall fra brukergrensesnittet på 24 timer i prosjektene dine.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=no&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Sammensatte komponenter
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Hva er tidsvelger?</h2>
+
+Tidsvelgerkomponent er en UI komponent som lar brukere velge et bestemt klokkeslett fra et 24-timers grensesnitt, som vanligvis brukes i form eller innkjøringsgrensesnitt der brukeren trenger å spesifisere et bestemt tidsrom.
+
+Når en tid-velger komponent er lagt til lerretet, vises det et grensesnitt over 24 timer som viser timer, minutter, og sekunder. Brukeren kan justere tiden ved å bevege musepekeren eller ved å bruke pilene opp og ned.
+
+### Properties
+
+Tilgjengelige tidsvelgere. JavaScript kan skrives til å lese eller endre informasjon om komponenter.
+
+| Egenskaper               | Beskrivelse                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard verdi           | Den opprinnelige verdien for komponenten. Du kan dynamisk endre innledende verdien ved å skrive JavaScript i {{}}.                                        |
+| Formatér                 | Ugyldig dato format-streng. Se dag JS.                                                                                                                    |
+| Plassholder              | Verdien vil bli vist når inndatafeltet er tomt.                                                                                                           |
+| Størrelse på steg        | trinnets størrelse i enhet av minutter                                                                                                                    |
+| Etikett                  | Navnet på feltet som vises til brukeren                                                                                                                   |
+| Bildetekst               | Bildetekst som brukes til å beskrive feltet i detalj                                                                                                      |
+| Skjult etikett           | Angi om etiketten skal vises                                                                                                                              |
+| Posisjon                 | Still plasseringen av etiketten i forhold til komponenten                                                                                                 |
+| Justering                | Sett justeringen (justert til venstre eller høyre) for etiketten                                                                                          |
+| Width                    | Når etiketten er på venstre side av komponenten, angir du forholdet bredden på etiketten.                                                                 |
+| Arrangementshåndterer    | Utløse spørringer, kontroll-komponenter eller ringe andre APIer som respons på komponenthendelser.                                                        |
+| Deaktivert               | Kontroller statusen for hvorvidt komponenten er deaktivert. Komponenten kan ikke endres eller fokusert når den er deaktivert.                             |
+| Kun lese                 | Kontroller statusen for om komponenten bare er skrivebeskyttet. En skrivebeskyttet komponent kan velges og fokuseres men kan ikke endres.                 |
+| Verktøytips              | Brukere kan skrive inn komponentens verktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes                            |
+| Vis null-knapp           | kontrollere om en tydelig knapp vises i inntastingsfeltet eller ikke                                                                                      |
+| Verktøytips              | Brukeren kan angi komponentverktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes                                     |
+| Obligatorisk felt        | Gyldig bare når bryteren er på.                                                                                                                           |
+| Egendefinert regel       | Opprett din valideringslogikk her. Reglene skal gjøres i JavaScript og dekkes av {{}}.                                                                    |
+| Skjul valideringsmelding | Du kan skjule feilmeldingen ved å bytte den skjulte statusen når inntastingsverdien er feil. Du kan dynamisk endre den skjulte statusen etter JavaScript. |
+| Skjema Datastøkkel       | Angi en nøkkel til en 'wrapping form'-komponent når du konstruerer dataattributtet.                                                                       |
+| Hidden                   | Dynamisk kontrollere om komponenten er skjult. Du kan endre skjult status gjennom dynamisk boolsk verdi.                                                  |
+| Tema farge               | Lar brukere angi knappens bakgrunnsfarge og tetthet                                                                                                       |
+
+### Methods
+
+Du kan bruke andre komponenter til å kontrollere komponenten. Vi støtter følgende fire metoder:
+
+-   **setValue**
+
+For å angi den inngående tidsverdien, for eksempel, {{"value1"}}
+
+| Egenskaper | Beskrivelse |
+| ---------- | ----------- |
+| Verdi      | Input value |
+
+-   **clearValue**
+
+For å fjerne verdien for den valgte komponenten 
+
+-   **validate**
+
+For å verifisere at inndatainformasjonen er juridisk
+
+-   **clearValidate**
+
+For å fjerne valideringsmeldingen
+
+### Arrangement behandler
+
+| Hendelse | Beskrivelse                                                                                     |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| Endre    | Når en bruker endrer den valgte tidsverdien, utfør en spesifikk handling tilpasset av brukerne. |
+
+### Data
+
+Komponenten har noen vanlig brukte data, som kan kalles via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskap navn         | Beskrivelse                                                 |
+| --------------------- | ----------------------------------------------------------- |
+| colorScheme           | fargeegenskapen til Datoen                                  |
+| customRegel           | den egendefinerte regelen som brukeren oppgav               |
+| deaktivert            | en Boolsk verdi indikerer status som deaktivert             |
+| displayNavn           | navnet på denne komponenten (dvs. knapp1)                   |
+| hendelser             | en listeverdi for hendelsessekvensen                        |
+| format                | formatet på dato og klokkeslett                             |
+| formDataKey           | formularet datastøkkelen for dato                           |
+| hidden                | skjult status (sann eller usann)                            |
+| hideValideringMelding | en Boolsk verdi indikerer om valideringsmeldingen er skjult |
+| etikett               | etikett verdi                                               |
+| labelJuster           | justering av bryteretikett (venstre eller høyre)            |
+| etikettposisjon       | plassering av bryteretikett (venstre eller høyre)           |
+| etikettbredde         | heltall som representerer bredden på etiketten.             |
+| merkelapp             | en Boolsk verdi indikerer om merkelappen er full.           |
+| minuttTrinn           | Steg størrelse på minutt                                    |
+| plassholder           | plassholder verdi                                           |
+| obligatorisk          | en Boolsk verdi angir påkrevd status for inngang.           |
+| VisRens               | en Boolsk verdi indikerer wether vil datoen vises klar      |
+| verktøytipTekst       | verdi for tekst fra verktøytips                             |
+| verdi                 | Lagt inn dato og tid verdi                                  |
+
+Eksempel: {{timePicker1.format}}
+
+### Bruk kasse
+
+Deretter vil vi vise hvordan vi skal kartlegge dataene fra datakilden til tidsvelgeren og sette til gjeldende klokkeslett med en knapp. 
+
+#### Trinn 1 Legg til en handling
+
+La oss lage en tabell i REST API kalt **`promoteCodes `,** inkludert 6 kolonner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, \*\*`startedAt`, `updatedAt`. Vi vil benytte oss av oppdateringen på tide til bruk i eksempel. 
+
+Da kan vi opprette en ny handling for REST API fra handlelisten, som viser alle data i promoteringskoder og navngitt restapi1. 
+
+Klikk **`Lagre`** og **`Kjør`** for å aktivere denne handlingen.
+
+#### Trinn 2 Legg til komponenter
+
+Deretter kan vi legge til en **`tid-velger`-komponent og en **`knappen`\*\* komponent til lerretet. For standardverdien for den tidskomponenten setter vi det opp som siste oppdateringstidspunkt for den første koden fra resten av API-dataene.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Vi merket også knappen som "nå" som vist nedenfor
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Trinn 3 Konfigurere komponenten
+
+For **`knappen`** komponenten, kan vi konfigurere den for å stille datoen inn **`time picker`** komponenten til gjeldende dato og klokkeslett.
+
+1.  I Redigeringshendelsesbehandleren velger du **`Kontrollkomponent`** i aksjonen, velg **`time picker`** komponenten som du vil oppdatere når målet til hendelsen.
+2.  Velg **`setValue`** handlingen og angi verdien som `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Trinn 4 Prøving
+
+Nå som når du klikker på "Nå"-knappen, skal klokkeslettet endres til gjeldende tidspunkt. Her har vi derimot 20:03:05, men det kan være annerledes når man tester det.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

@@ -1,0 +1,144 @@
+---
+title: "Datum:"
+metaTitle: Date Component Doc | ILLA Cloud
+desc: Leer hoe u de datumcomponent kunt gebruiken om een agendakiezer aan uw app toe te voegen en het uiterlijk en gedrag aan te passen.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/333?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_date_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Wat is datum?</h2>
+
+Het datumcomponent is een component waarmee gebruikers een datum uit een kalenderinterface kunnen selecteren. Het datumcomponent wordt meestal gebruikt in formulieren of interfaces voor gegevensinvoer waarbij de gebruiker een specifieke datum moet selecteren.
+
+Wanneer een datumcomponent aan het canvas wordt toegevoegd, toont het standaard een kalenderinterface. De gebruiker kan door de kalender navigeren door op de vorige of volgende pijlen te klikken om naar een andere maand te gaan of door te klikken op een specifieke datum om deze te selecteren. De geselecteerde datum zal worden weergegeven in het invoerveld.
+
+### Properties
+
+Beschikbare eigenschappen JavaScript kan worden geschreven om informatie over componenten te lezen of wijzigen.
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standaard waarde           | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                                                     |
+| Formatteren                | Een geldige datumnotatie string. Zie dagJS.                                                                                                                                     |
+| Plaatsaanduiding           | De waarde wordt getoond wanneer het invoerveld leeg is.                                                                                                                         |
+| Maximale datum             | de maximale datum instellen die een gebruiker uit de kalender interface kan selecteren.                                                                                         |
+| Min. datum                 | Geef de vroegste datum aan waarop een gebruiker uit de kalender interface kan selecteren.                                                                                       |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                            |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                        |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Alleen lezen               | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Toon wissen knop           | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                       |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Aangepaste regel           | Voer hier uw validatiedatatie logica in. De regels moeten in JavaScript worden gemaakt en door {{}}.                                                                            |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                                                      |
+
+### Methods
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende vier methoden:
+
+-   **setvalue**
+
+Om de invoerdatum in te stellen, bijvoorbeeld {{'value1'}}
+
+| Eigenschappen | Beschrijving |
+| ------------- | ------------ |
+| Waarde        | Input value  |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+-   **validate**
+
+Om te controleren of de invoerinformatie legaal is
+
+-   **clearvalidatie**
+
+Om het validatiebericht te wissen
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Veranderen  | Wanneer een gebruiker de geselecteerde datumwaarde wijzigt, voert een specifieke actie uit die is aangepast door de gebruikers. |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap      | Beschrijving                                                         |
+| ------------------------ | -------------------------------------------------------------------- |
+| kleurenschema            | de kleureneigenschap van de datum                                    |
+| aangepaste regel         | de aangepaste regel die gebruiker heeft opgegeven                    |
+| datumformaat             | het formaat van de datum                                             |
+| uitgeschakeld            | een booleaanse waarde geeft de uitgeschakelde status aan             |
+| weergavenaam             | de naam van dit onderdeel (bijv. knop1)                              |
+| formDataKey              | de formuliergegevens sleutel van de datum                            |
+| hidden                   | verborgen status (waar of onwaar)                                    |
+| verbergValidationBericht | een Booleaanse waarde geeft aan of het validatiebericht verborgen is |
+| Label                    | label waarde                                                         |
+| uitlijnen                | uitlijning van schakellabel (links of rechts)                        |
+| labeling                 | positie van schakellabel (links of rechts)                           |
+| labelBreedte             | het geheel getal waarin de breedte van het label wordt weergegeven.  |
+| labelFull                | een Booleaanse waarde geeft aan of het label vol is.                 |
+| maxDate                  | de waarde van de maximale datum                                      |
+| minDate                  | de waarde van de minimale datum                                      |
+| placeholder              | placeholder waarde                                                   |
+| alleen lezen             | een Booleaanse waarde geeft de readyOnly status van invoer aan.      |
+| verplicht                | een Booleaanse waarde geeft de vereiste status van invoer aan.       |
+| toon leegmaken           | een Booleaanse waarde geeft aan dat de datum duidelijk is            |
+| tooltipText              | waarde van tekst tooltip                                             |
+| waarde                   | Input value                                                          |
+
+Voorbeeld: {{date1.value}}
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de gegevens van de databron tot nu toe kunnen koppelen en instellen op huidige datum met een knop. 
+
+#### Stap 1 Voeg een actie toe
+
+Laat ons een tabel aanmaken in REST API genaamd **`promoteCodes`,** inclusief 6 kolommen: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. We zullen de bijgewerkte versie op tijd gebruiken voor voorbeeldgebruik. 
+
+Dan kunnen we een nieuwe actie voor REST API maken uit de actielijst, waarin alle gegevens in promoteCodes en restapi1 worden weergegeven. 
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 2 Componenten toevoegen
+
+Vervolgens kunnen we een **`date`** component en een **`button`** component toevoegen aan het canvas. Voor de standaardwaarde van het datumcomponent, hebben we het ingesteld als de laatste updatetijd van de eerste promotiecode van de rest van de api gegevens.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+We hebben de knop ook gelabeld als "Vandaag" zoals hieronder weergegeven
+
+![date_time0](https://cdn.illacloud.com/official-website/img/docs/date_time0.png)
+
+#### Stap 3 Configureer het component
+
+Voor het **`button`** component kunnen we het configureren om de datum in het **`date`** onderdeel op de datum van vandaag in te stellen.
+
+1.  In de Event Handler bewerken, selecteer **`Control component`** in actie, selecteer het **`date`** onderdeel dat u wilt bijwerken als het doel van het event.
+2.  Kies de **`setValue`** actie en stel de waarde in als `{{currentUserInfo.updatedAt}}` 
+
+![date_confg](https://cdn.illacloud.com/official-website/img/docs/date_confg.png)
+
+#### Stap 4 test
+
+Nu wanneer je op de knop "vandaag" klikt, moet de tijd veranderen naar de datum van vandaag. We hebben het hier over 2023-5-6, maar het kan anders zijn als je het testen.
+
+![date_time1](https://cdn.illacloud.com/official-website/img/docs/date_time1.png)

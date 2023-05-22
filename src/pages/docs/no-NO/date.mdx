@@ -1,0 +1,144 @@
+---
+title: Dato
+metaTitle: Date Component Doc | ILLA Cloud
+desc: Lær hvordan du bruker dato-komponenten for å legge til en kalendervelger til appen din og tilpasse utseendet og virkemåten.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/333?languages=no&filter=basic&value=0
+tagCategory: doc_menu_date_click
+categoryName: 🧬 Sammensatte komponenter
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Hva er dato?</h2>
+
+Datokomponenten er en komponent som tillater brukere å velge en dato fra kalengrensesnittet. Datokomponenten brukes vanligvis i skjema eller i innkjøringsgrensesnitt der brukeren trenger å velge en bestemt dato.
+
+Når en datokomponent er lagt til lerretet, viser den et kalendergrensesnitt som standard. Brukeren kan navigere gjennom kalenderen ved å klikke på forrige eller neste piler for å gå til en annen måned, eller ved å klikke på en bestemt dato for å velge den. Den valgte datoen vises i inndatafeltet.
+
+### Properties
+
+Tilgjengelige datoer. JavaScript kan skrives til å lese eller endre informasjon om komponenter.
+
+| Egenskaper               | Beskrivelse                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard verdi           | Den opprinnelige verdien for komponenten. Du kan dynamisk endre innledende verdien ved å skrive JavaScript i {{}}.                                        |
+| Formatér                 | Ugyldig dato format-streng. Se dag JS.                                                                                                                    |
+| Plassholder              | Verdien vil bli vist når inndatafeltet er tomt.                                                                                                           |
+| Maks dato                | angi maksimal dato som en bruker kan velge fra kalendergrensesnittet.                                                                                     |
+| Min dato                 | spesifiser den tidligste datoen som en bruker kan velge fra kalendergrensesnittet.                                                                        |
+| Etikett                  | Navnet på feltet som vises til brukeren                                                                                                                   |
+| Bildetekst               | Bildetekst som brukes til å beskrive feltet i detalj                                                                                                      |
+| Skjult etikett           | Angi om etiketten skal vises                                                                                                                              |
+| Posisjon                 | Still plasseringen av etiketten i forhold til komponenten                                                                                                 |
+| Justering                | Sett justeringen (justert til venstre eller høyre) for etiketten                                                                                          |
+| Width                    | Når etiketten er på venstre side av komponenten, angir du forholdet bredden på etiketten.                                                                 |
+| Arrangementshåndterer    | Utløse spørringer, kontroll-komponenter eller ringe andre APIer som respons på komponenthendelser.                                                        |
+| Deaktivert               | Kontroller statusen for hvorvidt komponenten er deaktivert. Komponenten kan ikke endres eller fokusert når den er deaktivert.                             |
+| Kun lese                 | Kontroller statusen for om komponenten bare er skrivebeskyttet. En skrivebeskyttet komponent kan velges og fokuseres men kan ikke endres.                 |
+| Verktøytips              | Brukere kan skrive inn komponentens verktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes                            |
+| Vis null-knapp           | kontrollere om en tydelig knapp vises i inntastingsfeltet eller ikke                                                                                      |
+| Obligatorisk felt        | Gyldig bare når bryteren er på.                                                                                                                           |
+| Egendefinert regel       | Opprett din valideringslogikk her. Reglene skal gjøres i JavaScript og dekkes av {{}}.                                                                    |
+| Skjul valideringsmelding | Du kan skjule feilmeldingen ved å bytte den skjulte statusen når inntastingsverdien er feil. Du kan dynamisk endre den skjulte statusen etter JavaScript. |
+| Skjema Datastøkkel       | Angi en nøkkel til en 'wrapping form'-komponent når du konstruerer dataattributtet.                                                                       |
+| Hidden                   | Dynamisk kontrollere om komponenten er skjult. Du kan endre skjult status gjennom dynamisk boolsk verdi.                                                  |
+| Tema farge               | Lar brukere angi knappens bakgrunnsfarge og tetthet                                                                                                       |
+
+### Methods
+
+Du kan bruke andre komponenter til å kontrollere komponenten. Vi støtter følgende fire metoder:
+
+-   **setValue**
+
+For å angi den inngående verdien, for eksempel, {{'value1'}}
+
+| Egenskaper | Beskrivelse |
+| ---------- | ----------- |
+| Verdi      | Input value |
+
+-   **clearValue**
+
+For å fjerne verdien for den valgte komponenten 
+
+-   **validate**
+
+For å verifisere at inndatainformasjonen er juridisk
+
+-   **clearValidate**
+
+For å fjerne valideringsmeldingen
+
+### Arrangement behandler
+
+| Hendelse | Beskrivelse                                                                                     |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| Endre    | Når en bruker endrer den valgte datoverdien, utfør en spesifikk handling tilpasset av brukerne. |
+
+### Data
+
+Komponenten har noen vanlig brukte data, som kan kalles via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskap navn         | Beskrivelse                                                 |
+| --------------------- | ----------------------------------------------------------- |
+| colorScheme           | fargeegenskapen til Datoen                                  |
+| customRegel           | den egendefinerte regelen som brukeren oppgav               |
+| datoformat            | formatet på dato                                            |
+| deaktivert            | en Boolsk verdi indikerer status som deaktivert             |
+| displayNavn           | navnet på denne komponenten (dvs. knapp1)                   |
+| formDataKey           | formularet datastøkkelen for dato                           |
+| hidden                | skjult status (sann eller usann)                            |
+| hideValideringMelding | en Boolsk verdi indikerer om valideringsmeldingen er skjult |
+| etikett               | etikett verdi                                               |
+| labelJuster           | justering av bryteretikett (venstre eller høyre)            |
+| etikettposisjon       | plassering av bryteretikett (venstre eller høyre)           |
+| etikettbredde         | heltall som representerer bredden på etiketten.             |
+| merkelapp             | en Boolsk verdi indikerer om merkelappen er full.           |
+| maxDate               | verdien av største dato                                     |
+| minDate               | verdien av minstedato                                       |
+| plassholder           | plassholder verdi                                           |
+| skrivebeskyttet       | en Boolsk verdi indikerer klaryKun status for inngang.      |
+| obligatorisk          | en Boolsk verdi angir påkrevd status for inngang.           |
+| VisRens               | en Boolsk verdi indikerer wether vil datoen vises klar      |
+| verktøytipTekst       | verdi for tekst fra verktøytips                             |
+| verdi                 | Input value                                                 |
+
+Eksempel: {{date1.value}}
+
+### Bruk kasse
+
+Deretter vil vi vise hvordan vi skal kartlegge data fra datakilden til dato og sette til gjeldende dato med en knapp. 
+
+#### Trinn 1 Legg til en handling
+
+La oss lage en tabell i REST API kalt **`promoteCodes `,** inkludert 6 kolonner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, \*\*`startedAt`, `updatedAt`. Vi vil benytte oss av oppdateringen på tide til bruk i eksempel. 
+
+Da kan vi opprette en ny handling for REST API fra handlelisten, som viser alle data i promoteringskoder og navngitt restapi1. 
+
+Klikk **`Lagre`** og **`Kjør`** for å aktivere denne handlingen.
+
+#### Trinn 2 Legg til komponenter
+
+Deretter kan vi legge til en **`date`-komponent og en **`knapp`\*\* komponent til lerretet. For standardverdien til den valgte dato-komponenten, satt vi det opp som siste oppdateringstidspunkt for den første koden fra resten av API-dataene.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Vi merket også knappen som "Dagens dato" som vist nedenfor
+
+![date_time0](https://cdn.illacloud.com/official-website/img/docs/date_time0.png)
+
+#### Trinn 3 Konfigurere komponenten
+
+For **`knappen`-komponenten, kan vi konfigurere den for å sette datoen i **`date`-komponenten til dagens dato.
+
+1.  I Redigeringshendelsesbehandleren velger du **`Control component`** i handlingen, velg **`date`** komponenten du vil oppdatere som mål for hendelsen.
+2.  Velg **`setValue`** handlingen og angi verdien som `{{currentUserInfo.updatedAt}}` 
+
+![date_confg](https://cdn.illacloud.com/official-website/img/docs/date_confg.png)
+
+#### Trinn 4 Prøving
+
+Nå som når du klikker på knappen "i dag", skal klokkeslettet endres til dagens dato. På samme måte som her har vi 2023-5-6, men det kan være noe annerledes når dere tester det.
+
+![date_time1](https://cdn.illacloud.com/official-website/img/docs/date_time1.png)

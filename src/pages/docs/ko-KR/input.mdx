@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Input Component Doc | ILLA Cloud
+desc: Learn how to use the input component to create and customize text fields for your app in ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=en&filter=basic&value=0
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>What is Input?</h2>
+
+Text Input component is a user interface element that allows users to enter and edit text in a form or input field.
+
+### Properties
+
+| Properties              | Description                                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
+| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
+| Label                   | The name of the field displayed to the user                                                                                                                  |
+| Caption                 | A caption used to describe the field in detail                                                                                                               |
+| Hidden label            | Set whether to display the label                                                                                                                             |
+| Position                | Set the position of the label relative to the component                                                                                                      |
+| Alignment               | Set the alignment (align to left or right) of the label                                                                                                      |
+| Width                   | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
+| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
+| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
+| Show clear button       | control whether or not a clear button is displayed in the input field                                                                                        |
+| Show character count    | control whether or not the character count of the input is displayed                                                                                         |
+| Prefix text             | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user                      |
+| Suffix text             | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user                     |
+| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| Required field          | Valid only when the switch is on.                                                                                                                            |
+| Pattern                 | specify a regular expression pattern that the user's input must match in order to be considered valid                                                        |
+| Max length              | set the maximum number of characters that can be entered into the input field.                                                                               |
+| Min Length              | specify the minimum number of characters that the user must enter into the input field in order for the input to be considered valid.                        |
+| Custom rule             | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
+| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
+| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| Theme Color             | Allows users to specify the button's background color and opacity                                                                                            |
+
+### Method
+
+You can use other components to control the component. We support the following two methods:
+
+-   **setValue**
+
+To set the input value, for example, {{'value1'}}
+
+| Properties | Description |
+| ---------- | ----------- |
+| Value      | Input value |
+
+-   **clearValue**
+
+To clear the value of the selected component 
+
+-   **focus**
+
+When the focus method is called, the input field will be highlighted and ready for the user to start typing without the need for the user to click on the input field
+
+Example Usage:
+
+Input component support listening to the `onChange` event of other components using built-in event system. Set it up by following these example steps:
+
+1.  Add an event trigger to the component that you want to listen to. For example, if you want to listen to the **`onChange`** event of a Radio Group component, you would add an event handler to that Radio Group component.
+2.  In the Edit event handler, select **`Control component`** in action, select the **`Input`** component that you want to update as the target of the event.
+3.  Choose the **`SetValue`** action and select the appropriate value for the input component. This will be the value that the input component has and will update when the event is triggered.
+4.  Save the event trigger settings and repeat the process for any other components that you want to listen to.
+
+Once you've set up the event triggers, the input component will automatically update whenever the **`onChange`** event is triggered on the other components. This allows you to create dynamic interfaces that respond to user input in real-time, making it easier for users to navigate and interact with your application.
+
+### Event handler
+
+| Event  | Description                                                                          |
+| ------ | ------------------------------------------------------------------------------------ |
+| Change | When a user changes the selected input value                                         |
+| Focus  | When a user moves the mouse cursor on the input component                            |
+| Blur   | When a user is done inputting value and quit from focusing on the cascader component |
+
+### Data
+
+The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name      | Description                                                                |
+| ------------------ | -------------------------------------------------------------------------- |
+| value              | user input value                                                           |
+| colorScheme        | background color of the button                                             |
+| disabled           | a Boolean value indicate the disabled status                               |
+| displayName        | the name of this component (ie button1)                                    |
+| formDataKey        | the Form Data Key of input                                                 |
+| hidden             | hidden status (true or false)                                              |
+| label              | label value                                                                |
+| labelAlign         | alignment of input label (left or right)                                   |
+| labelPosition      | position of input label (left or right)                                    |
+| labelWidth         | the integer representing width of label.                                   |
+| maxLength          | the value of maximum length                                                |
+| minLength          | the value of minimum length                                                |
+| placeholder        | placeholder value                                                          |
+| prefixText         | value of the text prefix                                                   |
+| suffixText         | value of the text suffix                                                   |
+| readOnly           | a Boolean value indicate the readyOnly status of input.                    |
+| required           | a Boolean value indicate the required status of input.                     |
+| regex              | regular expression of input                                                |
+| showCharacterCount | a Boolean value indicate whether the character count of input is displayed |
+| tooltipText        | value of tooltip text                                                      |
+
+Example: {{input1.value}}
+
+### Use case
+
+Below are some examples for customizing input component.
+
+-   Prefix:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffix:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Tooltip:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Pattern:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)

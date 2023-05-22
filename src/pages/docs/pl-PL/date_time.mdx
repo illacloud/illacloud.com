@@ -1,0 +1,149 @@
+---
+title: Data Godzina
+metaTitle: "Dokument: Data Time Component Doc | ILLA Cloud"
+desc: Odkryj jak używać komponentu Data Time z chmury ILLA, aby umożliwić użytkownikom wybór daty i godziny z kalendarza i 24-godzinnego interfejsu użytkownika w aplikacjach.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/339?languages=pl&filter=basic&value=0
+tagCategory: doc_menu_date_time_click
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Co to jest Data Czasu?</h2>
+
+Składnik daty czasu jest komponentem, który umożliwia użytkownikom wybór daty i godziny z kalendarza i 24 godzin interfejsu, zazwyczaj używane w formularzach lub interfejsach wprowadzania danych, w których użytkownik musi określić określoną datę i godzinę.
+
+Gdy komponent Data czasu jest dodany do płótna, wyświetla on kalendarz i interfejs zegara. Użytkownik może nawigować przez kalendarz klikając na poprzednie lub następne strzałki, aby przenieść się do innego miesiąca, lub klikając na określoną datę, aby ją wybrać. Interfejs zegara wyświetla godziny, minuty i sekundy, które użytkownik może dostosować przesuwając kursor myszy lub używając strzałek w górę i w dół.
+
+### Properties
+
+Dostępne właściwości daty czasu. JavaScript może być napisany w celu przeczytania lub zmiany informacji o komponentach.
+
+| Właściwości                    | Opis                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Wartość domyślna               | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                                           |
+| Formatowanie                   | Prawidłowy ciąg znaków formatu daty. Patrz dzień JS.                                                                                                               |
+| Zastępca                       | Wartość będzie wyświetlana, gdy pole wejściowe jest puste.                                                                                                         |
+| Maksymalna data                | ustaw maksymalną datę, którą użytkownik może wybrać z interfejsu kalendarza.                                                                                       |
+| Data min.                      | określ najwcześniejszą datę, którą użytkownik może wybrać z interfejsu kalendarza.                                                                                 |
+| Rozmiar kroku                  | rozmiar stopnia w jednostkach minut                                                                                                                                |
+| Etykieta                       | Nazwa pola wyświetlanego użytkownikowi                                                                                                                             |
+| Podpis                         | Podpis używany do szczegółowego opisu pola                                                                                                                         |
+| Ukryta etykieta                | Ustaw czy wyświetlić etykietę                                                                                                                                      |
+| Położenie                      | Ustaw położenie etykiety względem komponentu                                                                                                                       |
+| Wyrównanie                     | Ustaw wyrównanie (wyrównanie do lewej lub prawej) etykiety                                                                                                         |
+| Width                          | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety.                                                                        |
+| Obsługa zdarzeń                | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                           |
+| Wyłączone                      | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                            |
+| Tylko do odczytu               | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                            |
+| Wskazówka                      | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                      |
+| Pokaż przycisk wyczyść         | kontroluj, czy przycisk wyczyść jest wyświetlany w polu wejściowym                                                                                                 |
+| Wskazówka                      | Użytkownik może wprowadzić tutaj podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                       |
+| Pole wymagane                  | Ważne tylko wtedy, gdy przełącznik jest włączony.                                                                                                                  |
+| Własna reguła                  | Utwórz tutaj swoją logikę sprawdzania. Reguły powinny być sporządzone w JavaScript i objęte {{}}.                                                                  |
+| Ukryj komunikat potwierdzający | Możesz ukryć komunikat o błędzie przełączając status ukrycia, gdy wartość wejściowa jest nieprawidłowa. Możesz dynamicznie zmienić status ukryty przez JavaScript. |
+| Klucz danych formularza        | Określ klucz komponentu opakowania formularza podczas konstruowania atrybutu danych.                                                                               |
+| Hidden                         | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                 |
+| Kolor motywu                   | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                                                |
+
+### Methods
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące cztery metody:
+
+-   **setValue**
+
+Aby ustawić wartość czasu daty wejściowej, na przykład, {{"value1"}}
+
+| Właściwości | Opis        |
+| ----------- | ----------- |
+| Wartość     | Input value |
+
+-   **clearValue**
+
+Aby wyczyścić wartość wybranego komponentu 
+
+-   **validate**
+
+Sprawdzenie, czy informacje wejściowe są zgodne z prawem
+
+-   **clearValidate**
+
+Aby wyczyścić komunikat potwierdzający
+
+### Obsługa zdarzeń
+
+| Wydarzenie | Opis                                                                                                           |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| Zmiana     | Gdy użytkownik zmienia wybraną wartość czasu daty, wykonaj określone działanie dostosowane przez użytkowników. |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności       | Opis                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| schemat kolorów       | właściwość koloru daty                                              |
+| niestandardowa reguła | niestandardowa reguła określona przez użytkownika                   |
+| wyłączone             | wartość logiczna wskazuje status wyłączony                          |
+| nazwa wyświetlacza    | nazwa tego składnika (tj. przycisk1)                                |
+| wydarzenia            | wartość tablicy dla sekwencji zdarzeń                               |
+| format                | postać daty i godziny                                               |
+| formDataKey           | Formatowy klucz daty                                                |
+| hidden                | ukryty status (prawda lub fałsz)                                    |
+| ukryj Wiadomość       | wartość logiczna wskazuje, czy komunikat potwierdzający jest ukryty |
+| etykieta              | wartość etykiety                                                    |
+| Wyrównanie etykiety   | wyrównanie etykiety przełącznika (w lewo lub w prawo)               |
+| pozycja etykiety      | umiejscowienie etykiety przełącznika (z lewej lub prawej)           |
+| Szerokość etykiety    | liczba całkowita reprezentująca szerokość etykiety.                 |
+| etykieta pełna        | wartość logiczna wskazuje, czy etykieta jest pełna.                 |
+| maxDate               | wartość maksymalnej daty                                            |
+| minDate               | wartość minimalnej daty                                             |
+| krok minutowy         | wartość rozmiaru kroku minutowego                                   |
+| symbol zastępczy      | wartość zastępcza                                                   |
+| Tylko do odczytu      | wartość logiczna wskazuje tylko status danych wejściowych.          |
+| wymagane              | wartość logiczna wskazuje wymagany status wejścia.                  |
+| pokaż Wyczyść         | wartość logiczna wskazuje czy data zostanie wyczyszczona            |
+| tekst                 | wartość tekstu podpowiedzi                                          |
+| wartość               | Data i godzina wprowadzenia                                         |
+| potwierdź wiadomość   | wartość ciągu znaków dla potwierdzenia wiadomości                   |
+
+Przykład: {{dateTime1.value}}
+
+### Przypadek użycia
+
+Następnie pokażemy jak mapować dane ze źródła danych do daty i ustawić na bieżącą datę i godzinę za pomocą przycisku. 
+
+#### Krok 1 Dodaj akcję
+
+Utwórzmy tabelę w REST API o nazwie **`promoteCodes`,** zawierającą 6 kolumn: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Będziemy używać zaktualizowanego czasu do pobierania próbek. 
+
+Następnie możemy utworzyć nową akcję dla REST API z listy działań, wymieniając wszystkie dane w promoteCodes i nazwane restapi1. 
+
+Kliknij **`Zapisz`** i **Uruchom\`**, aby aktywować tę akcję.
+
+#### Krok 2 Dodaj komponenty
+
+Następnie możemy dodać komponent **`date time`** i komponent **`przycisk`** do płótna. Dla domyślnej wartości komponentu daty, ustawiliśmy go jako ostatnią aktualizację pierwszego kodu z pozostałych danych api.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Oznaczliśmy również przycisk jako "Teraz", jak pokazano poniżej
+
+![date_time_0](https://cdn.illacloud.com/official-website/img/docs/date_time_0.png)
+
+#### Krok 3 Skonfiguruj komponent
+
+Dla komponentu **przycisk\`** możemy go skonfigurować tak, aby ustawić datę w komponencie **data\`** na bieżącą datę i czas.
+
+1.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz komponent **data\`**, który chcesz zaktualizować jako cel wydarzenia.
+2.  Wybierz działanie **`setValue`** i ustaw wartość jako `{{currentUserInfo.updatedAt}}` 
+
+![date_time_config](https://cdn.illacloud.com/official-website/img/docs/date_time_config.png)
+
+#### Etap 4 Badanie
+
+Teraz, gdy klikniesz przycisk "Teraz", czas powinien zmienić się na dzisiejszą datę. W tej chwili mamy 2023-5-6 11:19:47, ale może być inny, gdy go testujesz.
+
+![date_time_1](https://cdn.illacloud.com/official-website/img/docs/date_time_1.png)

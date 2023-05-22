@@ -1,0 +1,110 @@
+---
+title: Cambiar
+metaTitle: Cambiar Doc de Componentes | ILLA Cloud
+desc: Aprende cómo usar el componente Switch en la nube ILLA para crear una interfaz de usuario que permite a los usuarios cambiar entre dos opciones. Ver ejemplos y propiedades de Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=es&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Componentes ensamblados
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>¿Qué es Cambio?</h2>
+
+El componente Switch es un elemento de interfaz de usuario que permite a los usuarios alternar entre dos estados: "encendido" y "apagado".
+
+### Propiedades
+
+| Propiedades          | Descripción                                                                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valor por defecto    | El valor inicial del componente. Puede cambiar dinámicamente el valor inicial escribiendo JavaScript en {{}}.                                |
+| Etiqueta             | El nombre del campo mostrado al usuario                                                                                                      |
+| Leyenda              | Un título usado para describir el campo en detalle                                                                                           |
+| Etiqueta oculta      | Establecer si mostrar o no la etiqueta                                                                                                       |
+| Posición             | Define la posición de la etiqueta relativa al componente                                                                                     |
+| Alineación           | Establecer la alineación de la etiqueta                                                                                                      |
+| Manejador del Evento | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                       |
+| Cargando             | Si el componente debe mostrar un indicador de carga.                                                                                         |
+| Deshabilitado        | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.           |
+| Sugerencia           | El usuario puede introducir la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado. |
+| Hidden               | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                 |
+| Color del tema       | Permite a los usuarios especificar el color de fondo y opacidad del botón                                                                    |
+
+### Método
+
+Puede usar otros componentes para controlar el componente. Apoyamos los tres métodos siguientes:
+
+-   **setValue**
+
+Para establecer el valor seleccionado, por ejemplo, {{'value1'}}
+
+| Propiedades | Descripción        |
+| ----------- | ------------------ |
+| Valor       | Valor seleccionado |
+
+-   **limpiarValor**
+
+Para borrar el valor seleccionado
+
+-   **cambiar**
+
+cambiar el cambio del estado "apagado" al estado "encendido", o viceversa
+
+Ejemplo:
+
+Cambia el soporte de componentes para escuchar el evento `onClick` de otros componentes usando el sistema de eventos integrado. Configurarlo siguiendo estos pasos de ejemplo:
+
+1.  Agrega un disparador de evento al componente que quieras escuchar. Por ejemplo, si quieres escuchar el evento **`onClick`** de un componente de botón, añadirías un disparador de evento a ese componente de botón.
+2.  En el manejador de eventos Editar seleccione **`Componente de control`** en acción, seleccione el componente **`Switch`** que desea actualizar como destino del evento.
+3.  Elige la acción **`toggle`** . Cuando el evento se activa (es decir, cuando se hace clic en el botón), el componente de interruptor se activa y se actualizará su estado.
+4.  Guarde la configuración del disparador del evento y repita el proceso para cualquier otro componente que desee escuchar.
+
+Una vez que hayas configurado los disparadores de eventos, el componente switch se actualizará automáticamente cada vez que se active el evento **`onClick`** en los otros componentes. Esto le permite crear interfaces dinámicas que responden a la entrada del usuario en tiempo real haciendo más fácil a los usuarios navegar e interactuar con su aplicación.
+
+### Controlador de eventos
+
+| Evento  | Descripción                                                                                                             |
+| ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Cambiar | Cuando un usuario cambia el valor de opción seleccionado, realice una acción específica personalizada por los usuarios. |
+
+### Datos
+
+El componente de botón tiene algunos datos comúnmente utilizados, que se pueden llamar a través de **`{{componentName.propertyName}}`** en la aplicación.
+
+| Nombre de la propiedad | Descripción                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| esquema de color       | color de fondo del botón                                      |
+| nombre de pantalla     | el nombre de este componente (es decir, botón1)               |
+| hidden                 | un valor booleano indica el estado oculto del botón           |
+| etiqueta               | valor de etiqueta                                             |
+| alineación de etiqueta | alineación de etiqueta de conmutación (izquierda o derecha)   |
+| posición de etiqueta   | posición de la etiqueta del interruptor (izquierda o derecha) |
+| ancho de etiqueta      | el entero que representa el ancho de la etiqueta.             |
+| etiqueta completa      | un valor booleano indica si la etiqueta está llena.           |
+| valor                  | Un usuario establece el valor para ser verdadero o falso      |
+
+### Caso de uso
+
+A continuación, demostraremos cómo cambiar el estado de otros componentes dinámicamente. 
+
+#### Paso 1 Añadir un componente
+
+Primero añadimos el componente **`Switch`** y lo etiquetamos como 'Hide'. Luego usamos el componente **`text`** como un componente influenciado que cambia de estado 'mostrado' a 'oculto'. Cambiamos su contenido a 'Hola Mundo' 
+
+#### Paso 2 Configurar un componente
+
+En la propiedad **`Hidden`** para Text. Haga clic en el icono **`fx`** para que podamos controlar el estado oculto del componente ajustándolo igual que el valor de nuestro interruptor usando JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Ahora, cada vez que el interruptor está encendido, el valor para el interruptor es **`verdad`,** el texto se ocultará, y viceversa.
+
+Cambiar **`Activado`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Cambiar **`Off`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

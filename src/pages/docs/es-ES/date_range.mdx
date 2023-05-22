@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Aprenda cómo utilizar el componente Date Range de la nube de ILLA para permitir a los usuarios seleccionar una fecha de inicio y fin de una interfaz de calendario en sus formularios o interfaces de entrada de datos.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=es&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Componentes ensamblados
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>¿Qué es el rango de fecha?</h2>
+
+El componente de rango de fecha es un componente de interfaz de usuario que permite a los usuarios seleccionar un rango de fechas de una interfaz de calendario, típicamente usado en formularios o interfaces de entrada de datos donde el usuario necesita especificar un rango de fechas de inicio y fin.
+
+Cuando se añade un componente de rango de fecha al lienzo, muestra dos interfaces de calendario uno al lado del otro. Una interfaz de calendario se utiliza para seleccionar la fecha de inicio, mientras que la otra se utiliza para seleccionar la fecha de finalización. El usuario puede navegar a través de los calendarios haciendo clic en las flechas anteriores o posteriores para moverse a un mes diferente. o haciendo clic en una fecha específica para seleccionarla. Las fechas seleccionadas se mostrarán en los campos de entrada.
+
+### Properties
+
+Propiedades disponibles en el Rango de fechas. JavaScript puede ser escrito para leer o alterar información sobre componentes.
+
+| Propiedades                   | Descripción                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fecha de inicio               | La fecha de inicio por defecto del componente                                                                                                                        |
+| Fecha de fin                  | El valor por defecto de fecha de finalización del componente                                                                                                         |
+| Formatear                     | Un formato de fecha válido. Vea https://day.js.org/docs/es/parse/string-format.                                                                                      |
+| Marcador de posición inicial  | El valor se mostrará cuando el campo de entrada de fecha de inicio esté vacío.                                                                                       |
+| Marcador de posición final    | El valor se mostrará cuando el campo de entrada de fecha final esté vacío.                                                                                           |
+| Fecha máxima                  | establecer la fecha máxima que un usuario puede seleccionar de la interfaz del calendario.                                                                           |
+| Fecha mínima                  | especificar la fecha más temprana que un usuario puede seleccionar desde la interfaz del calendario.                                                                 |
+| Etiqueta                      | El nombre del campo mostrado al usuario                                                                                                                              |
+| Leyenda                       | Un título usado para describir el campo en detalle                                                                                                                   |
+| Etiqueta oculta               | Establecer si mostrar o no la etiqueta                                                                                                                               |
+| Posición                      | Define la posición de la etiqueta relativa al componente                                                                                                             |
+| Alineación                    | Establecer el alineamiento (alinear a la izquierda o a la derecha) de la etiqueta                                                                                    |
+| Width                         | Cuando la etiqueta esté en el lado izquierdo del componente, establezca la proporción de ancho de la etiqueta.                                                       |
+| Manejador del Evento          | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                                               |
+| Deshabilitado                 | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.                                   |
+| Sólo lectura                  | Controlar el estado de si el componente es de sólo lectura. Un componente de sólo lectura puede ser seleccionado y enfocado, pero no puede ser modificado.           |
+| Sugerencia                    | Los usuarios pueden ingresar la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado.                        |
+| Mostrar botón de borrar       | controlar si se muestra o no un botón claro en el campo de entrada                                                                                                   |
+| Campo requerido               | Válido sólo cuando el interruptor está encendido.                                                                                                                    |
+| Regla personalizada           | Crea aquí tu lógica de validación. Las reglas deben ser hechas en JavaScript y cubiertas por {{}}.                                                                   |
+| Ocultar mensaje de validación | Puede ocultar el mensaje de error cambiando el estado oculto cuando el valor de entrada es incorrecto. Puedes cambiar dinámicamente el estado oculto por JavaScript. |
+| Clave de Formulario           | Especifique una clave de un componente de formulario de envoltura al construir el atributo de datos.                                                                 |
+| Hidden                        | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                                         |
+| Color del tema                | Permite a los usuarios especificar el color de fondo y opacidad del botón                                                                                            |
+
+### Methods
+
+Puede usar otros componentes para controlar el componente. Apoyamos los dos métodos siguientes:
+
+-   **setStartValue**
+
+Para establecer el valor de fecha de inicio, por ejemplo, {{"value1"}}
+
+| Propiedades | Descripción              |
+| ----------- | ------------------------ |
+| Valor       | Valor inicial de entrada |
+
+-   **setEndValue**
+
+Para establecer el valor de la fecha de finalización, por ejemplo, {{"value2"}}
+
+| Propiedades | Descripción     |
+| ----------- | --------------- |
+| Valor       | Input end value |
+
+-   **limpiarValor**
+
+Limpiar el valor del componente seleccionado 
+
+-   **validate**
+
+Para verificar que la información de entrada es legal
+
+-   **clearValidate**
+
+Para borrar el mensaje de validación
+
+### Controlador de eventos
+
+| Evento  | Descripción                                                                                                            |
+| ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Cambiar | Cuando un usuario cambia el valor de fecha seleccionado, realice una acción específica personalizada por los usuarios. |
+
+### Datos
+
+El componente tiene algunos datos comúnmente utilizados, que pueden llamarse a través de **`{{componentName.propertyName}}`** en la aplicación.
+
+| Nombre de la propiedad        | Descripción                                                      |
+| ----------------------------- | ---------------------------------------------------------------- |
+| esquema de color              | la propiedad de color de la fecha                                |
+| regla personalizada           | la regla personalizada especificada por el usuario               |
+| fechaFormato                  | el formato de fecha                                              |
+| deshabilitado                 | un valor booleano indica el estado deshabilitado                 |
+| nombre de pantalla            | el nombre de este componente (es decir, cascader1)               |
+| marcador inicial              | valor del marcador de posición para la fecha de inicio           |
+| endPlaceholder                | valor del marcador de posición para la fecha final               |
+| eventos                       | un valor de matriz para la secuencia de eventos                  |
+| formDataKey                   | la clave de datos de formulario de la fecha                      |
+| hidden                        | un valor booleano indica el estado oculto del botón              |
+| ocultar mensaje de validación | un valor booleano indica si el mensaje de validación está oculto |
+| etiqueta                      | valor de etiqueta                                                |
+| alineación de etiqueta        | alineación de la etiqueta de cascada (izquierda o derecha)       |
+| posición de etiqueta          | posición de la etiqueta de cascada (izquierda o derecha)         |
+| ancho de etiqueta             | el entero que representa el ancho de la etiqueta                 |
+| sólo lectura                  | un valor booleano indica el estado readyOnly de la entrada.      |
+| requerido                     | un valor booleano indica el estado requerido de la entrada.      |
+| limpiar                       | un valor booleano indica si la fecha se mostrará limpia          |
+| valor                         | Valor seleccionado                                               |
+
+Ejemplo: {{dateRange1.value[0]}}
+
+### Caso de uso
+
+A continuación, demostraremos cómo mapear los datos desde la fuente de datos hasta el rango de fecha y establecer el valor final a la fecha de hoy con un botón. 
+
+#### Paso 1 Añadir una acción
+
+Creemos una tabla en la API REST llamada **`promoteCodes`,** incluyendo 6 columnas: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Utilizaremos el startedAt y expiradoAt para uso de muestras. 
+
+Luego podemos crear una nueva acción para la API REST desde la lista de acciones, listando todos los datos en promoteCodes y llamado restapi1. 
+
+Haz clic en **`Guardar`** y **`Ejecutar`** para activar esta acción.
+
+#### Paso 2 Añadir componentes
+
+A continuación, podemos añadir un componente **`rango de fechas`** y un componente **`botón`** al lienzo. Para la fecha de inicio predeterminada del componente de rango de fechas, utilizamos el momento iniciadoAt del primer código promocional de los demás datos de api.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+De la misma manera, para la fecha de finalización por defecto, usamos el código caducadoAt cuando el código promocional de los datos del resto de api.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+También hemos etiquetado el botón como 'Actualizar' como se muestra a continuación.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Paso 3 Configurar el componente
+
+Para el componente **`button`** podemos configurarlo para establecer el valor de fecha de finalización en el componente **`fecha rango`** a la fecha de hoy.
+
+1.  En el controlador de edición de eventos, seleccione **`componente de control`** en acción, selecciona el componente **`rango de fechas`** que quieres actualizar como objetivo del evento.
+2.  Elige la acción **`setEndValue`** y establece la **`Fin fecha`** como `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Prueba de paso 4
+
+Ahora que al hacer clic en el botón 'Actualizar', la fecha de finalización debe cambiar a la fecha de hoy. En cuanto a aquí, tenemos 2023-5-6, pero puede ser diferente cuando lo pruebas.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)

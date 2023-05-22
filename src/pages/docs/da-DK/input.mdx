@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Input Komponent Doc ● ILLA Cloud
+desc: Lær at bruge inputkomponenten til at oprette og tilpasse tekstfelter til din app i ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=da&filter=basic&value=0
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Hvad er input?</h2>
+
+Tekst Input komponent er et brugergrænseflade element, der giver brugerne mulighed for at indtaste og redigere tekst i en form eller input felt.
+
+### Egenskaber
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standard værdi          | Den oprindelige værdi af komponenten. Du kan dynamisk ændre startværdien ved at skrive JavaScript i {{}}.                                            |
+| Pladsholder             | Værdien vil blive vist når inputfeltet er tomt.                                                                                                      |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justeringen (indstil til venstre eller højre) af etiketten                                                                                   |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet for etiketten.                                                           |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Vis ryd-knap            | kontrollere, om en klar knap vises i inputfeltet                                                                                                     |
+| Vis karakter antal      | styre, om tegnoptællingen for input vises eller ej                                                                                                   |
+| Præfiks tekst           | et kort stykke tekst, der vises til venstre for inputfeltet, ofte brugt til at give yderligere kontekst eller instruktioner til brugeren             |
+| Suffiks tekst           | en kort tekst, der vises til højre for inputfeltet, ofte brugt til at give yderligere oplysninger eller feedback til brugeren                        |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Mønster                 | angive et regulært udtryksmønster, som brugerens input skal matche for at blive betragtet som gyldigt                                                |
+| Maks. længde            | sæt det maksimale antal tegn, der kan indtastes i indtastningsfeltet.                                                                                |
+| Min. Længde             | angive det mindste antal tegn, som brugeren skal indtaste i inputfeltet for at inputtet kan betragtes som gyldigt.                                   |
+| Brugerdefineret regel   | Opret din valideringslogik her. Reglerne skal laves i JavaScript og dækket af {{}}.                                                                  |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema Farve              | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                                                |
+
+### Metode
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende to metoder:
+
+-   **setValue**
+
+For at indstille inputværdien, for eksempel, {{'value1'}}
+
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Input value     |
+
+-   **clearValue**
+
+For at rydde værdien af den valgte komponent 
+
+-   **focus**
+
+Når fokusmetoden kaldes, inputfeltet vil blive fremhævet og klar for brugeren at begynde at skrive uden at brugeren skal klikke på inputfeltet
+
+Eksempel Anvendelse:
+
+Input komponent støtte lytte til `onChange` begivenhed af andre komponenter ved hjælp af indbygget begivenhed system. Opsæt den ved at følge disse eksempel trin:
+
+1.  Tilføj en begivenhedsudløser til den komponent, du vil lytte til. For eksempel, hvis du ønsker at lytte til den **`onChange`** begivenhed af en Radio Group komponent, du vil tilføje en hændelsesbehandler til den Radio Group komponent.
+2.  Vælg **`Kontrolkomponent`** i aktionen i hændelseshåndteringen, vælg den **`Input`**-komponent, som du ønsker at opdatere som mål for hændelsen.
+3.  Vælg handlingen **`SetValue`** og vælg den relevante værdi for inputkomponenten. Dette vil være den værdi, som inputkomponenten har, og vil opdatere, når begivenheden udløses.
+4.  Gem indstillingerne for event trigger og gentag processen for alle andre komponenter, som du ønsker at lytte til.
+
+Når du har konfigureret begivenheden udløser, opdateres inputkomponenten automatisk, når **`onChange`** begivenheden udløses på de andre komponenter. Dette giver dig mulighed for at oprette dynamiske grænseflader, der reagerer på brugerinput i realtid, gør det lettere for brugerne at navigere og interagere med din applikation.
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                       |
+| ---------- | ------------------------------------------------------------------------------------- |
+| Skift      | Når en bruger ændrer den valgte inputværdi                                            |
+| Fokus      | Når en bruger flytter musemarkøren på inputkomponenten                                |
+| Blur       | Når en bruger er færdig input værdi og holde op fra at fokusere på kaskadekomponenten |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn   | Varebeskrivelse                                             |
+| ------------------ | ----------------------------------------------------------- |
+| værdi              | bruger input værdi                                          |
+| colorScheme        | baggrundsfarve på knappen                                   |
+| deaktiveret        | en boolsk værdi angiver den deaktiverede status             |
+| displayName        | navnet på denne komponent (dvs. knap1)                      |
+| formDataKey        | Formularens datakast for input                              |
+| hidden             | skjult status (sand eller falsk)                            |
+| etiket             | etiket værdi                                                |
+| labelAlign         | justering af inputetiket (venstre eller højre)              |
+| labelPosition      | placering af inputetiket (venstre eller højre)              |
+| labelBredde        | det heltal, der repræsenterer mærkets bredde.               |
+| maxLængde          | værdien af den maksimale længde                             |
+| minLængde          | værdien af mindste længde                                   |
+| pladsholder        | pladsholderens værdi                                        |
+| prefixText         | værdi af tekstpræfikset                                     |
+| suffixText         | værdi af tekstsuffikset                                     |
+| skrivebeskyttet    | en boolsk værdi angiver readyOnly status for input.         |
+| påkrævet           | en boolsk værdi angiver den krævede status for input.       |
+| regex              | regulært udtryk for input                                   |
+| showCharacterCount | en boolsk værdi angiver, om antallet af tegn på input vises |
+| tooltipText        | værdi af tooltip tekst                                      |
+
+Eksempel: {{input1.value}}
+
+### Brug case
+
+Nedenfor er nogle eksempler til tilpasning af input komponent.
+
+-   Præfiks:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffiks:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Værktøjstip:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Mønster:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)

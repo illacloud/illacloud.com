@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Apprenez comment utiliser le composant Plage de dates de ILLA Cloud pour permettre aux utilisateurs de sélectionner une date de début et de fin à partir d'une interface de calendrier dans vos formulaires ou dans vos interfaces de saisie de données.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=fr&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Qu'est-ce que la plage de dates ?</h2>
+
+Le composant Plage de dates est un composant UI qui permet aux utilisateurs de sélectionner une plage de dates à partir d'une interface de calendrier, généralement utilisé dans les interfaces de formulaires ou d'entrée de données où l'utilisateur doit spécifier une plage de dates de début et de fin.
+
+Lorsqu'un composant Plage de dates est ajouté à toile, il affiche deux interfaces de calendrier côte à côte. Une interface de calendrier est utilisée pour sélectionner la date de début tandis que l'autre est utilisée pour sélectionner la date de fin. L'utilisateur peut naviguer à travers les calendriers en cliquant sur les flèches précédentes ou suivantes pour passer à un mois différent, ou en cliquant sur une date spécifique pour la sélectionner. Les dates sélectionnées seront affichées dans les champs d'entrée.
+
+### Properties
+
+Propriétés disponibles dans la plage de dates. JavaScript peut être écrit pour lire ou modifier des informations sur les composants.
+
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Date de début                    | La valeur par défaut de la date de début du composant                                                                                                                           |
+| Date de fin                      | La valeur par défaut de la date de fin du composant                                                                                                                             |
+| Formater                         | Une chaîne de format de date valide. Voir https://day.js.org/docs/en/parse/string-format.                                                                                       |
+| Placeholder de début             | La valeur sera affichée lorsque le champ de saisie de la date de début est vide.                                                                                                |
+| Placeholder de fin               | La valeur sera affichée lorsque le champ de saisie de la date de fin est vide.                                                                                                  |
+| Date max                         | définir la date maximale qu'un utilisateur peut choisir à partir de l'interface du calendrier.                                                                                  |
+| Date minimale                    | spécifiez la date la plus ancienne qu'un utilisateur peut choisir dans l'interface du calendrier.                                                                               |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Régler l'alignement (alignement à gauche ou à droite) de l'étiquette                                                                                                            |
+| Width                            | Lorsque l'étiquette se trouve sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette.                                                                 |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Lecture seule                    | Contrôle l'état du composant en lecture seule. Un composant en lecture seule peut être sélectionné et concentré mais ne peut pas être modifié.                                  |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Afficher le bouton de nettoyage  | contrôler si un bouton d'effacement est affiché dans le champ de saisie                                                                                                         |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Règle personnalisée              | Créez ici votre logique de validation. Les règles doivent être rédigées en JavaScript et couvertes par {{}}.                                                                    |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                                           |
+
+### Methods
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les deux méthodes suivantes:
+
+-   **setStartValue**
+
+Pour définir la valeur de la date de début, par exemple, {{"value1"}}
+
+| Propriétés | Libellé                  |
+| ---------- | ------------------------ |
+| Valeur     | Valeur de début d'entrée |
+
+-   **setEndValue**
+
+Pour définir la date de fin, par exemple, {{"value2"}}
+
+| Propriétés | Libellé         |
+| ---------- | --------------- |
+| Valeur     | Input end value |
+
+-   **clearValue**
+
+Effacer la valeur du composant sélectionné 
+
+-   **validate**
+
+Vérifier que les informations saisies sont légales
+
+-   **clearValidate**
+
+Effacer le message de validation
+
+### Gestionnaire d'événements
+
+| Evénement  | Libellé                                                                                                                             |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Changement | Lorsqu'un utilisateur change la valeur de la date sélectionnée, effectuer une action spécifique personnalisée par les utilisateurs. |
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété              | Libellé                                                             |
+| -------------------------------- | ------------------------------------------------------------------- |
+| Schéma de couleurs               | la propriété couleur de Date                                        |
+| Règle personnalisée              | la règle personnalisée que l'utilisateur a spécifiée                |
+| Format de date                   | le format de la date                                                |
+| désactivée                       | une valeur booléenne indique le statut désactivé                    |
+| nomdeaffichage                   | le nom de ce composant (ie cascader1)                               |
+| format@@0 startPlaceholder       | valeur placeholder pour la date de début                            |
+| endPlaceholder                   | valeur placeholder pour la date de fin                              |
+| Evénements                       | une valeur de tableau pour la séquence d'événements                 |
+| Clé de données du formulaire     | la clé de données du formulaire de la date                          |
+| hidden                           | une valeur booléenne indique l'état caché du bouton                 |
+| masquer le message de validation | une valeur booléenne indique si le message de validation est masqué |
+| Etiquette                        | valeur de l'étiquette                                               |
+| Alignement du libellé            | alignement de l'étiquette en cascade (à gauche ou à droite)         |
+| Position du libellé              | position de l'étiquette en cascadeur (à gauche ou à droite)         |
+| Largeur du libellé               | l'entier représentant la largeur du libellé                         |
+| lecture seule                    | une valeur booléenne indique le statut readyOnly de l'entrée.       |
+| Obligatoire                      | une valeur booléenne indique le statut requis de l'entrée.          |
+| Montre Vider                     | une valeur booléenne indique si la date sera affichée clairement    |
+| valeur                           | Valeur sélectionnée                                                 |
+
+Exemple: {{dateRange1.value[0]}}
+
+### Cas d'utilisation
+
+Ensuite, nous montrerons comment cartographier les données de la source de données à la plage de dates et définir la valeur de fin à la date d'aujourd'hui avec un bouton. 
+
+#### Étape 1 Ajouter une action
+
+Créons une table dans l'API REST appelée **`promoteCodes`,** incluant 6 colonnes : **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Nous utiliserons le startedAt et expirerons pour un exemple d'utilisation. 
+
+Ensuite, nous pouvons créer une nouvelle action pour l'API REST à partir de la liste d'actions, listant toutes les données dans promoteCodes et nommé restapi1. 
+
+Cliquez sur **`Save`** et **`Run`** pour activer cette action.
+
+#### Étape 2 Ajouter des composants
+
+Ensuite, nous pouvons ajouter un composant **`plage de dates`** et un composant **`button`** à la toile. Pour la valeur par défaut de la date de début du composant de la plage de dates, nous utilisons la valeur startedAt du premier code de promotion des données api restantes.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+De même, pour la valeur par défaut de la date de fin, nous utilisons expiredAu moment du premier code de promotion des données api restantes.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Nous avons également étiqueté le bouton comme 'Mise à jour' comme indiqué ci-dessous.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Étape 3 Configurer le composant
+
+Pour le composant **`button`**, nous pouvons le configurer pour définir la date de fin dans le composant **`plage de dates`** à la date d'aujourd'hui.
+
+1.  Dans le gestionnaire d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`plage de dates`** que vous voulez mettre à jour comme cible de l'événement.
+2.  Choisissez l'action **`setEndValue`** et définissez la **`Date de fin`** comme `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Test de l'étape 4
+
+Maintenant que lorsque vous cliquez sur le bouton « Mettre à jour », la date de fin doit changer à la date d'aujourd'hui. Pour ce qui est de ce qui est ici, nous avons 2023-5-6 mais cela peut être différent lorsque vous le testez.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)

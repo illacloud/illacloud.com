@@ -1,0 +1,110 @@
+---
+title: Bytt
+metaTitle: Bytt komponent Doc openha ILLA Cloud
+desc: Lær hvordan du kan bruke bryterkomponenten i ILLA Cloud for å opprette et brukergrensesnitt som lar brukere bytte mellom to valg. Se eksempler på og egenskaper ved bryteren.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=no&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Sammensatte komponenter
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Hva er avslått?</h2>
+
+Bytte av komponent er et brukergrensesnittelement som lar brukere veksle mellom to stater: "på" og "av".
+
+### Egenskaper
+
+| Egenskaper            | Beskrivelse                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Standard verdi        | Den opprinnelige verdien for komponenten. Du kan dynamisk endre innledende verdien ved å skrive JavaScript i {{}}.            |
+| Etikett               | Navnet på feltet som vises til brukeren                                                                                       |
+| Bildetekst            | Bildetekst som brukes til å beskrive feltet i detalj                                                                          |
+| Skjult etikett        | Angi om etiketten skal vises                                                                                                  |
+| Posisjon              | Still plasseringen av etiketten i forhold til komponenten                                                                     |
+| Justering             | Sett innretting av etikett                                                                                                    |
+| Arrangementshåndterer | Utløse spørringer, kontroll-komponenter eller ringe andre APIer som respons på komponenthendelser.                            |
+| Laster                | Om komponenten skal vise en belastningsindikator.                                                                             |
+| Deaktivert            | Kontroller statusen for hvorvidt komponenten er deaktivert. Komponenten kan ikke endres eller fokusert når den er deaktivert. |
+| Verktøytips           | Brukeren kan angi komponentverktøytips her. Verktøytuppen vil bli vist når den er fokusert. Markdown formatet støttes         |
+| Hidden                | Dynamisk kontrollere om komponenten er skjult. Du kan endre skjult status gjennom dynamisk boolsk verdi.                      |
+| Tema farge            | Lar brukere angi knappens bakgrunnsfarge og tetthet                                                                           |
+
+### Metode
+
+Du kan bruke andre komponenter til å kontrollere komponenten. Følgende tre metoder støtter vi:
+
+-   **setValue**
+
+For å sette den valgte verdien, for eksempel, {{'value1'}}
+
+| Egenskaper | Beskrivelse |
+| ---------- | ----------- |
+| Verdi      | Valgt verdi |
+
+-   **clearValue**
+
+For å fjerne den valgte verdien
+
+-   **byttet**
+
+endre bryteren fra statusen "av" til "på" eller omvendt
+
+Eksempel Bruk:
+
+Slå komponentstøtte som lytter til `onClick` hendelsen til andre komponenter ved hjelp av innebygget hendelsessystem. Sette det opp med å følge disse eksemplene:
+
+1.  Legg til en hendelse som utløser på komponenten du vil lytte til. Hvis du for eksempel vil lytte til **`onClick`** hendelsen med en knappkomponent, vil du legge til en hendelse til den knappen komponenten.
+2.  I Redigeringshendelsesbehandleren velger du **`Control component`** i handlingen, velg **`Switch`** komponenten du vil oppdatere som mål for hendelsen.
+3.  Velg \*\*`toggle`-handlingen. Når hendelsen er utløst (dvs. når knappen blir klikket), vil bryterkomponenten med veksling og status bli oppdatert.
+4.  Lagre hendelsesutløserinnstillingene og gjenta prosessen for andre komponenter som du vil lytte til.
+
+Når du har satt opp hendelsen utløsere, oppdateres komponenten automatisk når når **`onClick`** hendelsen utløses på de andre komponentene. Dette lar deg opprette dynamiske grensesnitt som svarer på inndata fra bruker i sanntid, gjøre det enklere for brukerne å navigere og samhandle med søknaden.
+
+### Arrangement behandler
+
+| Hendelse | Beskrivelse                                                                                           |
+| -------- | ----------------------------------------------------------------------------------------------------- |
+| Endre    | Når en bruker endrer den valgte alternativverdien, utfør en spesifikk handling tilpasset av brukerne. |
+
+### Data
+
+Knappkomponenten har noen vanlig brukte data, som kan kalles via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskap navn   | Beskrivelse                                            |
+| --------------- | ------------------------------------------------------ |
+| colorScheme     | bakgrunnsfargen til knappen                            |
+| displayNavn     | navnet på denne komponenten (dvs. knapp1)              |
+| hidden          | en boolsk verdi indikerer en skjult status for knappen |
+| etikett         | etikett verdi                                          |
+| labelJuster     | justering av bryteretikett (venstre eller høyre)       |
+| etikettposisjon | plassering av bryteretikett (venstre eller høyre)      |
+| etikettbredde   | heltall som representerer bredden på etiketten.        |
+| merkelapp       | en Boolsk verdi indikerer om merkelappen er full.      |
+| verdi           | En bruker setter verdien som sann eller usann          |
+
+### Bruk kasse
+
+Deretter skal vi vise hvordan man bytter statusen for andre komponenter dynamisk. 
+
+#### Trinn 1 Legg til en komponent
+
+Først legger vi til **`Switch`** komponenten og etiketten den som 'Hide'. Deretter bruker vi **`tekst`** komponenten som en påvirket komponent som endres fra 'synlig' til 'skjult' tilstand. Vi endrer innholdet til 'Hello World' 
+
+#### Trinn 2 Konfigurere en komponent
+
+I **`Gjemte`-egenskapen for tekst. Klikk på **`fx`-ikonet slik at vi kan kontrollere komponentens skjulte tilstand ved å sette den samme som verdien av vår bryter med JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Når bryteren er på, er verdien for bryteren **`true`,** vil teksten skjule, og omvendt.
+
+Bytt **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Bytt **`Av`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

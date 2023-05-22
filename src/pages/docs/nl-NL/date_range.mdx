@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Leer hoe je het datumbereik onderdeel van ILLA Cloud kunt gebruiken om gebruikers een start- en einddatum uit een kalender UI te laten selecteren in uw formulieren of gegevensinvoerinterfaces.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Wat is een datumbereik?</h2>
+
+Datumbereik component is een UI component waarmee gebruikers een reeks data kunnen selecteren uit een kalender interface, Doorgaans gebruikt in formulieren of gegevensinvoerinterfaces waar de gebruiker een start- en einddatumbereik moet opgeven.
+
+Wanneer een datumbereik component aan een canvas wordt toegevoegd, toont het twee agenda-interfaces naast elkaar. Eén kalender interface wordt gebruikt om de startdatum te selecteren, de andere wordt gebruikt om de einddatum te selecteren. De gebruiker kan door de kalenders navigeren door op de vorige of volgende pijlen te klikken om naar een andere maand te gaan of door te klikken op een specifieke datum om deze te selecteren. De geselecteerde datums worden weergegeven in de invoervelden.
+
+### Properties
+
+Beschikbare datumbereik eigenschappen. JavaScript kan worden geschreven om informatie over componenten te lezen of wijzigen.
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start datum                | De standaard begindatum waarde van het component                                                                                                                                |
+| End Date                   | De standaard einddatum waarde van het component                                                                                                                                 |
+| Formatteren                | Een geldige datumnotatie string. Zie https://day.js.org/docs/en/parse/string-formaat.                                                                                           |
+| Start plaatsaanduiding     | De waarde wordt getoond wanneer het begindatumveld leeg is.                                                                                                                     |
+| Einde plaatshouder         | De waarde wordt getoond wanneer het einddatum invoerveld leeg is.                                                                                                               |
+| Maximale datum             | de maximale datum instellen die een gebruiker uit de kalender interface kan selecteren.                                                                                         |
+| Min. datum                 | Geef de vroegste datum aan waarop een gebruiker uit de kalender interface kan selecteren.                                                                                       |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                            |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                        |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Alleen lezen               | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Toon wissen knop           | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                       |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Aangepaste regel           | Voer hier uw validatiedatatie logica in. De regels moeten in JavaScript worden gemaakt en door {{}}.                                                                            |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                                                      |
+
+### Methods
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende twee methoden:
+
+-   **setStartValue**
+
+Om de begindatumwaarde in te stellen, bijvoorbeeld {{"value1"}}
+
+| Eigenschappen | Beschrijving       |
+| ------------- | ------------------ |
+| Waarde        | Beginwaarde invoer |
+
+-   **setEndValue**
+
+Om de einddatum waarde in te stellen, bijvoorbeeld {{"value2"}}
+
+| Eigenschappen | Beschrijving    |
+| ------------- | --------------- |
+| Waarde        | Input end value |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+-   **validate**
+
+Om te controleren of de invoerinformatie legaal is
+
+-   **clearvalidatie**
+
+Om het validatiebericht te wissen
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Veranderen  | Wanneer een gebruiker de geselecteerde datumwaarde wijzigt, voert een specifieke actie uit die is aangepast door de gebruikers. |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap      | Beschrijving                                                         |
+| ------------------------ | -------------------------------------------------------------------- |
+| kleurenschema            | de kleureneigenschap van de datum                                    |
+| aangepaste regel         | de aangepaste regel die gebruiker heeft opgegeven                    |
+| datumformaat             | het formaat van de datum                                             |
+| uitgeschakeld            | een booleaanse waarde geeft de uitgeschakelde status aan             |
+| weergavenaam             | de naam van dit onderdeel (bijv. cascader1)                          |
+| startPlaatsaanduiding    | placeholder waarde voor de startdatum                                |
+| endPlaceholder           | placeholder waarde voor einddatum                                    |
+| evenementen              | een matrix waarde voor een reeks gebeurtenissen                      |
+| formDataKey              | de formuliergegevens sleutel van de datum                            |
+| hidden                   | een Booleaanse waarde geeft de verborgen status van knop aan         |
+| verbergValidationBericht | een Booleaanse waarde geeft aan of het validatiebericht verborgen is |
+| Label                    | label waarde                                                         |
+| uitlijnen                | Uitlijning van cascader-label (links of rechts)                      |
+| labeling                 | positie van het cascaderlabel (links of rechts)                      |
+| labelBreedte             | het geheel getal waarin de breedte van het label wordt voorgesteld   |
+| alleen lezen             | een Booleaanse waarde geeft de readyOnly status van invoer aan.      |
+| verplicht                | een Booleaanse waarde geeft de vereiste status van invoer aan.       |
+| toon leegmaken           | een Booleaanse waarde geeft aan dat de datum duidelijk is            |
+| waarde                   | Geselecteerde waarde                                                 |
+
+Voorbeeld: {{dateRange1.value[0]}}
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de data van de gegevensbron kunnen koppelen aan het datumbereik en de eindwaarde kunnen instellen op de datum van vandaag met een knop. 
+
+#### Stap 1 Voeg een actie toe
+
+Laat ons een tabel aanmaken in REST API genaamd **`promoteCodes`,** inclusief 6 kolommen: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. We zullen het startedAt en verlopen voor voorbeeldgebruik. 
+
+Dan kunnen we een nieuwe actie voor REST API maken uit de actielijst, waarin alle gegevens in promoteCodes en restapi1 worden weergegeven. 
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 2 Componenten toevoegen
+
+Vervolgens kunnen we een **`date range`** component en een **`button`** component toevoegen aan het canvas. Voor de standaard start datum waarde van het datumbereik component, gebruiken we de startOp tijd van de eerste promotiecode van de rest van de api gegevens.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Evenzo gebruiken we voor standaard einddatum waarde VervaldatumOp het moment van de eerste promotiecode van de rest van de api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+We noemden ook de knop als 'Update' zoals hieronder weergegeven.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Stap 3 Configureer het component
+
+Voor het **`button`** component kunnen we het configureren om de einddatum waarde in **`date bereige`** op de datum van vandaag in te stellen.
+
+1.  In de Event Handler Bewerken Selecteer **`Control component`** in actie, selecteer de **`date range`** component die u wilt bijwerken als doel van het event.
+2.  Kies de **`setEndValue`** actie en zet de **`End date`** als `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Stap 4 test
+
+Nu wanneer u op de knop 'Bijwerken' klikt, moet de einddatum worden gewijzigd naar de datum van vandaag. We hebben het hier over 2023-5-6, maar het kan anders zijn als je het testen.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)

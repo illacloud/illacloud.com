@@ -1,0 +1,110 @@
+---
+title: Vaihda
+metaTitle: Vaihda Komponentin Doc - ILLA Cloud
+desc: Opi käyttämään ILLA Cloud -kytkinkomponenttia luodaksesi käyttöliittymän, jonka avulla käyttäjät voivat vaihtaa kahden vaihtoehdon välillä. Katso esimerkkejä ja ominaisuuksia Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Mikä on Switch?</h2>
+
+Vaihda komponentti on käyttöliittymän elementti, jonka avulla käyttäjät voivat vaihtaa kahden osavaltion välillä: "on" ja "off".
+
+### Ominaisuudet
+
+| Ominaisuudet         | Kuvaus                                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Oletus arvo          | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.            |
+| Tunniste             | The name of the field displayed to the user                                                                                    |
+| Kuvateksti           | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                               |
+| Piilotettu etiketti  | Määritä näytetäänkö nimike                                                                                                     |
+| Sijainti             | Set the position of the label relative to the component                                                                        |
+| Tasaus               | Aseta merkin kohdistus                                                                                                         |
+| Tapahtuman Käsittely | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                             |
+| Ladataan             | Onko komponentissa käytettävä kuormitusindikaattoria.                                                                          |
+| Pois Käytöstä        | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                |
+| Työkaluvihje         | Käyttäjä voi syöttää komponentin työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu. |
+| Hidden               | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.              |
+| Teeman Väri          | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                               |
+
+### Menetelmä
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kolmea menetelmää:
+
+-   **setValue**
+
+Valitun arvon asettaminen esimerkiksi {{'value1'}}
+
+| Ominaisuudet | Kuvaus       |
+| ------------ | ------------ |
+| Arvo         | Valittu arvo |
+
+-   **clearValue**
+
+Poista valittu arvo
+
+-   **vaihtaa**
+
+vaihtamalla "pois päältä" tilasta "päälle" -tilaan tai päinvastoin
+
+Esimerkki Käyttö:
+
+Vaihda komponentin tuki kuunnellen muiden komponenttien `onClick` tapahtumaa käyttäen sisäänrakennettua tapahtumajärjestelmää. Määritä se seuraamalla näitä esimerkkivaiheita:
+
+1.  Lisää tapahtuman käynnistäjä komponenttiin, jota haluat kuunnella. @ info: whatsthis Esimerkiksi, jos haluat kuunnella painikkeen komponentin **`onClick`** tapahtumaa, voit lisätä tapahtuman käynnistimen siihen painikkeen komponenttiin.
+2.  Valitse Edit event handlerissa **`Ohjaus komponentti`** toiminnassa, valitse **`Switch`** komponentti, jonka haluat päivittää tapahtuman kohteeksi.
+3.  Valitse **`toggle`** -toiminto. Kun tapahtuma käynnistyy (ts. kun painiketta napsautetaan), kytkin komponentti on kytketty päälle ja sen tila päivitetään.
+4.  Tallenna tapahtuman käynnistäjän asetukset ja toista prosessi muille komponenteille, joita haluat kuunnella.
+
+Kun olet määrittänyt tapahtuman käynnistimiä, kytkin komponentti päivittyy automaattisesti aina kun **`onClick`** tapahtuma käynnistyy muissa komponenteissa. Tämän avulla voit luoda dynaamisia rajapintoja, jotka vastaavat käyttäjän tulokseen reaaliajassa, helpottaa sovelluksen käyttäjiä navigointia ja vuorovaikutusta sen kanssa.
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                                    |
+| --------- | ----------------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valittua vaihtoehtoa, suorita käyttäjien räätälöimä erityistoiminto. |
+
+### Tiedot
+
+Painikkeen komponentilla on joitakin yleisesti käytettyjä tietoja, joita voi soittaa sovelluksen kautta **`{{componentName.propertyName}}`**.
+
+| Ominaisuuden nimi | Kuvaus                                                  |
+| ----------------- | ------------------------------------------------------- |
+| Väriteema         | painikkeen taustaväri                                   |
+| näyttönimi        | tämän komponentin nimi (ts. painike1)                   |
+| hidden            | a totuusarvo ilmaisee painikkeen piilotetun tilan       |
+| nimike            | tunnisteen arvo                                         |
+| labelAlign        | kytkimen etikettien kohdistus (vasemmalle tai oikealle) |
+| labelPosition     | kytkimen etiketti asento (vasemmalle tai oikealle)      |
+| labelLeveys       | kokonaisluku, joka edustaa etiketin leveyttä.           |
+| tarraTäynnä       | a Boolean arvo ilmaisee, onko merkki täynnä.            |
+| arvo              | Käyttäjä asettaa arvon olevan tosi tai epätosi          |
+
+### Käytä laatikkoa
+
+Seuraavaksi osoitamme, miten muiden komponenttien tila voidaan vaihtaa dynaamisesti. 
+
+#### Vaihe 1 Lisää komponentti
+
+Ensin lisätään **`Switch`** komponentti ja nimetään se 'Hide'. Sitten käytämme **`text`** -komponenttia vaikuttavana komponenttina, joka muuttuu 'näytetystä' 'piilotettu' tilaan. Muutamme sen sisällön ”Hello World” -muotoon. 
+
+#### Vaihe 2 Komponentin määrittäminen
+
+In the **`Hidden`** property for Text. Napsauta **`fx`** -kuvaketta, jotta voimme hallita komponentin piilotettua tilaa asettamalla sen saman kuin kytkimemme arvo JavaScriptin avulla:
+
+```jsx
+{{switch1.value}}
+```
+
+Nyt, kun kytkin on päällä, kytkimen arvo on **`true`,** teksti piilotetaan, ja päinvastoin.
+
+Vaihda \*\*\`On 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Vaihda \*\*\`Pois Käytöstä
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Input Component Doc - ILLA Cloud
+desc: Opi käyttämään syöttökomponenttia luodaksesi ja mukauttaaksesi tekstikenttiä sovelluksellesi ILLA Cloudissa.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=fi&filter=basic&value=0
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Mitä syöte on?</h2>
+
+Tekstin sisääntulon komponentti on käyttöliittymän elementti, jonka avulla käyttäjät voivat syöttää ja muokata tekstiä muodossa tai syöttökenttään.
+
+### Ominaisuudet
+
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Oletus arvo             | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.                                 |
+| Paikkamerkki            | Arvo näytetään, kun syöttökenttä on tyhjä.                                                                                                          |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus (kohdistus vasemmalle tai oikealle)                                                                                          |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Vain Luettu             | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                    |
+| Näytä tyhjennyspainike  | säätää, näkyykö syöttökentässä tyhjä painike vai ei                                                                                                 |
+| Näytä merkkien määrä    | ohjaa, onko syötteen merkkien määrä näytetty tai ei näytetty                                                                                        |
+| Etuliite teksti         | lyhyt teksti, joka näkyy syöttökentän vasemmalla puolella ja jota käytetään usein antamaan lisäasiayhteys tai -ohjeet käyttäjälle                   |
+| Pääte teksti            | lyhyt teksti, joka näyttää olevan syöttökentän oikeus, jota usein käytetään antamaan lisätietoa tai palautetta käyttäjälle                          |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Kuvio                   | määritellä säännöllisen lausekkeen kaava, joka käyttäjän syötteen on vastattava toisiaan, jotta sitä voidaan pitää pätevänä                         |
+| Maksimi pituus          | asettaa maksimimäärän merkkejä, jotka voidaan syöttää syöttää kenttään.                                                                             |
+| Minimi Pituus           | merkitään pienin mahdollinen merkkien lukumäärä, joka käyttäjän on syötettävä kenttään, jotta syöte voidaan pitää pätevänä.                         |
+| Mukautettu sääntö       | Luo validointilogiikka täällä. Sääntöjen tulee olla JavaScriptissä ja ne tulee kattaa {{}}.                                                         |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman Väri             | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                                                    |
+
+### Menetelmä
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kahta menetelmää:
+
+-   **setValue**
+
+Määrittääksesi syöttöarvon esimerkiksi, {{'value1'}}
+
+| Ominaisuudet | Kuvaus      |
+| ------------ | ----------- |
+| Arvo         | Input value |
+
+-   **clearValue**
+
+Poista valitun komponentin arvo 
+
+-   **focus**
+
+Kun tarkennusmenetelmä on kutsuttu syötekenttä on korostettu ja se on valmiina, jotta käyttäjä voi aloittaa kirjoittamisen ilman että käyttäjä tarvitsee klikkaa syötekenttää
+
+Esimerkki Käyttö:
+
+Syötä komponentin tuki kuunnellen muiden komponenttien `onChange`-tapahtumaa käyttäen sisäänrakennettua tapahtumajärjestelmää. Määritä se seuraamalla näitä esimerkkivaiheita:
+
+1.  Lisää tapahtuman käynnistäjä komponenttiin, jota haluat kuunnella. @ info: whatsthis Esimerkiksi, jos haluat kuunnella Radio Groupin komponentin **`onChange`** tapahtumaa, lisäät tapahtuman käsittelijän kyseiseen Radio Groupin komponenttiin.
+2.  Valitse Edit event handlerissa **`Ohjaus komponentti`** toiminnassa, valitse **`Input`** komponentti, jonka haluat päivittää tapahtuman kohteeksi.
+3.  Valitse **`SetValue`** toiminto ja valitse sopiva arvo syötekomponentille. Tämä on arvo, joka syöte komponentti on ja tulee päivittymään, kun tapahtuma käynnistetään.
+4.  Tallenna tapahtuman käynnistäjän asetukset ja toista prosessi muille komponenteille, joita haluat kuunnella.
+
+Kun olet määrittänyt tapahtuman laukaisimet, syötteen komponentti päivittyy automaattisesti aina kun **`onChange`** tapahtuma käynnistyy muissa komponenteissa. Tämän avulla voit luoda dynaamisia rajapintoja, jotka vastaavat käyttäjän tulokseen reaaliajassa, helpottaa sovelluksen käyttäjiä navigointia ja vuorovaikutusta sen kanssa.
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                              |
+| --------- | ----------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valittua syöttöarvoa                                           |
+| Kohdistus | Kun käyttäjä siirtää hiiren kursorin syöttökomponenttiin                            |
+| Blur      | Kun käyttäjä on tehnyt syötön arvo ja lopettaa keskittyminen kascader komponenttiin |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi  | Kuvaus                                                       |
+| ------------------ | ------------------------------------------------------------ |
+| arvo               | käyttäjän syöttöarvo                                         |
+| Väriteema          | painikkeen taustaväri                                        |
+| poistettu käytöstä | a Boolean arvo ilmaisevat käytöstä poistetun tilan           |
+| näyttönimi         | tämän komponentin nimi (ts. painike1)                        |
+| formDataKey        | tietolomakkeen tietoavain on syötetty                        |
+| hidden             | piilotila (tosi tai epäto)                                   |
+| nimike             | tunnisteen arvo                                              |
+| labelAlign         | syöttötunnuksen yhdenmukaistaminen (vasemmalle tai oikealle) |
+| labelPosition      | syöttötunnuksen sijainti (vasemmalle tai oikealle)           |
+| labelLeveys        | kokonaisluku, joka edustaa etiketin leveyttä.                |
+| Suurin Pituus      | suurin sallittu pituus                                       |
+| minPituus          | pienimmän pituuden arvo                                      |
+| paikkamerkki       | paikanmerkin arvo                                            |
+| prefixText         | tekstin etuliitteen arvo                                     |
+| jälkiliite         | tekstin jälkiliitteen arvo                                   |
+| Vain luku          | a Boolean arvo ilmaisee vain syötteen tilan.                 |
+| vaadittu           | a Boolean arvo ilmaisee vaaditun syötteen tilan.             |
+| regex              | syötteen säännöllinen lauseke                                |
+| showCharacterCount | a Boolean arvo ilmaisee, näkyykö syötteen merkkien määrä     |
+| tooltipText        | työkaluvihjeen tekstin arvo                                  |
+
+Esimerkki: {{input1.value}}
+
+### Käytä laatikkoa
+
+Alla on muutamia esimerkkejä syöttökomponentin muokkaamisesta.
+
+-   Etuliite:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Jälkiliite:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Työkaluvihje:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Malli:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)

@@ -1,0 +1,110 @@
+---
+title: Wechseln
+metaTitle: Wechseln Sie Komponentendoc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Wechsel-Komponente in ILLA Cloud verwenden, um eine Benutzeroberfläche zu erstellen, mit der Benutzer zwischen zwei Optionen wechseln können. Siehe Beispiele und Eigenschaften von Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=de&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Was ist Switch?</h2>
+
+Die Switch-Komponente ist ein Benutzeroberflächenelement, das es Benutzern erlaubt, zwischen zwei Zuständen zu wechseln: "ein" und "aus".
+
+### Eigenschaften
+
+| Eigenschaften          | Beschreibung                                                                                                                                        |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert           | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                 |
+| Label                  | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                |
+| Überschrift            | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                         |
+| Versteckte Bezeichnung | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                  |
+| Position               | Stelle die Position des Labels relativ zur Komponente ein                                                                                           |
+| Ausrichtung            | Ausrichtung des Labels festlegen                                                                                                                    |
+| Event-Handler          | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                             |
+| Lädt                   | Gibt an, ob die Komponente eine Ladeanzeige angeben soll.                                                                                           |
+| Deaktiviert            | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist. |
+| Tooltip                | Der Benutzer kann hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.   |
+| Hidden                 | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.        |
+| Theme-Farbe            | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                          |
+
+### Methode
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden drei Methoden:
+
+-   **setValue**
+
+Um den ausgewählten Wert zu setzen, zum Beispiel {{'value1'}}
+
+| Eigenschaften | Beschreibung      |
+| ------------- | ----------------- |
+| Wert          | Ausgewählter Wert |
+
+-   **clearValue**
+
+Um den ausgewählten Wert zu löschen
+
+-   **Umschalten**
+
+den Schalter vom "aus" zum "an" Zustand ändern oder umgekehrt
+
+Beispiel Verwendung:
+
+Wechseln Sie die Komponentenunterstützung, die auf das "onClick"-Ereignis anderer Komponenten lauscht, indem Sie das eingebaute Ereignissystem nutzen. Richten Sie es ein, indem Sie folgenden Beispielschritten folgen:
+
+1.  Füge einen Ereignis-Trigger der Komponente hinzu, auf die du hören möchtest. Wenn du zum Beispiel das **`onClick`** Ereignis einer Tastenkomponente hören möchtest, würdest du dieser Tastenkomponente einen Ereignis-Trigger hinzufügen.
+2.  Wählen Sie im Ereignis-Handler **`Control component`** in Aktion aus, wählen Sie die Komponente **`Switch`** aus, die als Ziel des Ereignisses aktualisiert werden soll.
+3.  Wähle die **`Umschalten`** Aktion. Wenn das Ereignis ausgelöst wird (z.B. wenn der Knopf geklickt wird), wird die Schalterkomponente umgeschaltet und der Status aktualisiert.
+4.  Speichern Sie die Ereignisauslöseeinstellungen und wiederholen Sie den Prozess für alle anderen Komponenten, die Sie hören möchten.
+
+Sobald Sie die Ereignisauslöser eingerichtet haben, wird die Schalterkomponente automatisch aktualisiert, sobald das **`onClick`** Ereignis auf den anderen Komponenten ausgelöst wird. So können Sie dynamische Schnittstellen erstellen, die auf Benutzereingaben in Echtzeit reagieren die Navigation und Interaktion mit Ihrer Anwendung erleichtern.
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Ändern   | Wenn ein Benutzer den gewählten Optionswert ändert, führen Sie eine spezifische Aktion aus, die von Benutzern angepasst wurde. |
+
+### Daten
+
+Die Schaltflächenkomponente enthält einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname | Beschreibung                                                         |
+| ---------------- | -------------------------------------------------------------------- |
+| farbenschema     | Hintergrundfarbe des Buttons                                         |
+| anzeiger         | der Name dieser Komponente (dh Button1)                              |
+| hidden           | ein boolescher Wert zeigt den versteckten Status der Schaltfläche an |
+| bezeichnen       | label Wert                                                           |
+| labelAlign       | Ausrichtung des Schalternamens (links oder rechts)                   |
+| labelPosition    | Position des Schalternamens (links oder rechts)                      |
+| labelBreite      | die Ganzzahl, die die Breite des Labels darstellt.                   |
+| labelvoll        | ein boolescher Wert gibt an, ob das Label voll ist.                  |
+| wert             | Ein Benutzer legt den Wert als wahr oder falsch fest                 |
+
+### Gehäuse verwenden
+
+Als nächstes werden wir zeigen, wie der Status anderer Komponenten dynamisch geändert werden kann. 
+
+#### Schritt 1 Komponente hinzufügen
+
+Zuerst fügen wir die **`Switch`** Komponente hinzu und benennen sie als 'Verbergen'. Dann verwenden wir die **`text`** Komponente als einflussreiche Komponente, die sich von 'displayed' auf 'hidden' Status ändert. Wir ändern seinen Inhalt in 'Hallo Welt' 
+
+#### Schritt 2 eine Komponente konfigurieren
+
+In der **`Verstecken`** Eigenschaft für Text. Klicke auf das **`fx`** Symbol, damit wir den versteckten Zustand der Komponente steuern können, indem wir ihn mit JavaScript festlegen:
+
+```jsx
+{{switch1.value}}
+```
+
+Nun, wenn der Schalter eingeschaltet ist, ist der Wert für den Schalter \*\*`true`, der Text wird versteckt und umgekehrt.
+
+Schalte **`Ein`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+**`Off`** wechseln
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

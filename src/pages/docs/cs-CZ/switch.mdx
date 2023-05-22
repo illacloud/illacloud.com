@@ -1,0 +1,110 @@
+---
+title: Přepínač
+metaTitle: Přepnout komponentu Doc | ILLA Cloud
+desc: Naučte se používat Přepnout komponentu v ILLA Cloudu k vytvoření uživatelského rozhraní, které umožní uživatelům přepínat mezi dvěma možnostmi. Viz příklady a vlastnosti přepínače.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=cs&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Co je přepnout?</h2>
+
+Přepínání komponenty je prvek uživatelského rozhraní, který umožňuje uživatelům přepínat mezi dvěma stavy: "zapnuto" a "vypnuto".
+
+### Vlastnosti
+
+| Vlastnosti           | Popis                                                                                                          |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Výchozí hodnota      | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.            |
+| Popisek              | Název pole zobrazeného uživateli                                                                               |
+| Titulek              | Popisek použitý k podrobnému popisu pole                                                                       |
+| Skrytý štítek        | Nastavte, zda chcete zobrazit štítek                                                                           |
+| Pozice               | Nastavte pozici štítku vzhledem k komponentě.                                                                  |
+| Zarovnání            | Nastavit zarovnání štítku                                                                                      |
+| Zpracovatel událostí | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                       |
+| Načítání             | Zda má komponenta zobrazit indikátor načítání.                                                                 |
+| Zakázáno             | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.           |
+| Šipka nástroje       | Uživatel zde může zadat pomocný popisek. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován. |
+| Hidden               | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.     |
+| Barva šablony        | Umožňuje uživatelům určit barvu a průhlednost pozadí tlačítka                                                  |
+
+### Metoda
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto tři metody:
+
+-   **setValue**
+
+Pro nastavení vybrané hodnoty například {{'value1'}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Vybraná hodnota           |
+
+-   **clearValue**
+
+Vyčistit vybranou hodnotu
+
+-   **přepnout**
+
+změna přepínače ze stavu "vypnuto" na stav "zapnuto", nebo naopak.
+
+Příklad použití:
+
+Přepnout podporu komponenty pro poslech události `onClick` ostatních komponent pomocí vestavěného systému událostí. Nastavte si pomocí následujících příkladů:
+
+1.  Přidejte spouštěč události k komponentě, kterou chcete poslouchat. Například, pokud chcete poslouchat **`onClick`** událost komponenty tlačítka, přidáte událost k komponentě tlačítka.
+2.  V obsluze události Editace vyberte **`Control component`** v akci, zvolte komponentu **`Switch`**, kterou chcete aktualizovat jako cíl události.
+3.  Vyberte akci **`toggle`**. Při spuštění události (tj. po kliknutí na tlačítko) se přepínač přepíná a bude aktualizován jeho stav.
+4.  Uložte nastavení spuštění události a opakujte proces pro všechny ostatní komponenty, které chcete poslouchat.
+
+Jakmile nastavíte spouštěče událostí, přepínač se automaticky aktualizuje vždy, když dojde k události **`onClick`** na ostatních komponentách. To umožňuje vytvářet dynamická rozhraní, která reagují na vstup uživatele v reálném čase, usnadňuje uživatelům navigaci a komunikaci s vaší aplikací.
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                                     |
+| ------- | --------------------------------------------------------------------------------------------- |
+| Změnit  | Pokud uživatel změní vybranou hodnotu volby, proveďte konkrétní akci přizpůsobenou uživateli. |
+
+### Údaje
+
+Komponenta tlačítka obsahuje některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti  | L 343, 22.12.2009, s. 1).                            |
+| ----------------- | ---------------------------------------------------- |
+| barevné schéma    | barva pozadí tlačítka                                |
+| zobrazované jméno | název této komponenty (tj. tlačítko1)                |
+| hidden            | logická hodnota udává skrytý stav tlačítka           |
+| štítek            | hodnota štítku                                       |
+| Zarovnat štítek   | zarovnání přepínače (vlevo nebo vpravo)              |
+| Pozice štítku     | umístění přepínače (vlevo nebo vpravo)               |
+| Šířka štítku      | celé číslo představující šířku štítku.               |
+| Štítek plný       | logická hodnota udává, zda je štítek plný.           |
+| hodnota           | Uživatel nastaví hodnotu na hodnotu true nebo false  |
+
+### Případ použití
+
+Dále budeme demonstrovat, jak dynamicky změnit stav ostatních součástí. 
+
+#### Krok 1 Přidat komponentu
+
+Nejprve přidáme komponentu **`Switch`** a označíme ji jako 'Skryté'. Pak použijeme komponentu **`text`** jako ovlivněnou komponentu, která se mění z stavu 'zobrazeno' na 'skryté'. Jeho obsah změníme na "Dobrý svět" 
+
+#### Krok 2 Konfigurace komponenty
+
+V vlastnosti **`Skryté`** pro Text. Klikněte na ikonu **`fx`**, abychom mohli ovládat skrytý stav komponenty nastavením hodnoty přepínače pomocí JavaScriptu:
+
+```jsx
+{{switch1.value}}
+```
+
+Když je přepínač zapnutý, hodnota přepínače je **`true`,** text bude skrytý a naopak.
+
+Přepnout **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Přepnout **`Off`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

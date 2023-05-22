@@ -1,0 +1,110 @@
+---
+title: Switch
+metaTitle: Switch Component Doc | ILLA Cloud
+desc: Learn how to use the Switch component in ILLA Cloud to create a user interface that lets users switch between two options. See examples and properties of Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=en&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>What is Switch?</h2>
+
+The Switch component is a user interface element that allows users to toggle between two states: "on" and "off".
+
+### Properties
+
+| Properties    | Description                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Default value | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.            |
+| Label         | The name of the field displayed to the user                                                                               |
+| Caption       | A caption used to describe the field in detail                                                                            |
+| Hidden label  | Set whether to display the label                                                                                          |
+| Position      | Set the position of the label relative to the component                                                                   |
+| Alignment     | Set the alignment of the label                                                                                            |
+| Event Handler | Trigger queries, control components, or call other APIs in response to component events.                                  |
+| Loading       | Whether the component should show a loading indicator.                                                                    |
+| Disabled      | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
+| Tooltip       | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.        |
+| Hidden        | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.    |
+| Theme Color   | Allows users to specify the button's background color and opacity                                                         |
+
+### Method
+
+You can use other components to control the component. We support the following three methods:
+
+-   **setValue**
+
+To set the selected value, for example, {{'value1'}}
+
+| Properties | Description    |
+| ---------- | -------------- |
+| Value      | Selected value |
+
+-   **clearValue**
+
+To clear the selected value
+
+-   **toggle**
+
+changing the switch from the "off" state to the "on" state, or vice versa
+
+Example Usage:
+
+Switch component support listening to the `onClick` event of other components using built-in event system. Set it up by following these example steps:
+
+1.  Add an event trigger to the component that you want to listen to. For example, if you want to listen to the **`onClick`** event of a Button component, you would add an event trigger to that Button component.
+2.  In the Edit event handler, select **`Control component`** in action, select the **`Switch`** component that you want to update as the target of the event.
+3.  Choose the **`toggle`** action. When the event is triggered (ie when the button is clicked), the switch component with be toggled and its status will be updated.
+4.  Save the event trigger settings and repeat the process for any other components that you want to listen to.
+
+Once you've set up the event triggers, the switch component will automatically update whenever the **`onClick`** event is triggered on the other components. This allows you to create dynamic interfaces that respond to user input in real-time, making it easier for users to navigate and interact with your application.
+
+### Event handler
+
+| Event  | Description                                                                                 |
+| ------ | ------------------------------------------------------------------------------------------- |
+| Change | When a user changes the selected option value, perform specific action customized by users. |
+
+### Data
+
+The button component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| colorScheme   | background color of the button                       |
+| displayName   | the name of this component (ie button1)              |
+| hidden        | a boolean value indicate the hidden status of button |
+| label         | label value                                          |
+| labelAlign    | alignment of switch label (left or right)            |
+| labelPosition | position of switch label (left or right)             |
+| labelWidth    | the integer representing width of label.             |
+| labelFull     | a Boolean value indicate if the label is full.       |
+| value         | A user sets the value to be true or false            |
+
+### Use case
+
+Next, we will demonstrate how to switch the status of other components dynamically. 
+
+#### Step 1 Add a Component
+
+First we add the **`Switch`** component and label it as 'Hide'. Then we use the **`text`** component as an influenced component that changes from 'displayed' to 'hidden' state. We change its content to 'Hello World' 
+
+#### Step 2 Configure a Component
+
+In the **`Hidden`** property for Text. Click on the **`fx`** icon so we can control the component's hidden state by setting it the same as the value of our switch using JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Now, whenever the switch is on, the value for switch is **`true`,** the text will be hide, and vice versa.
+
+Switch **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Switch **`Off`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)

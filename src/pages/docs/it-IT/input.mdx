@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Componente Di Ingresso Doc ILLA Cloud
+desc: Scopri come utilizzare il componente di input per creare e personalizzare i campi di testo per la tua app in ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=it&filter=basic&value=0
+categoryName: 🧬 Assembla i componenti
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Cos'è Input?</h2>
+
+Text Input component è un elemento di interfaccia utente che consente agli utenti di inserire e modificare testo in un modulo o campo di input.
+
+### Proprietà
+
+| Proprietà                       | Descrizione                                                                                                                                                                               |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valore predefinito              | Il valore iniziale del componente. È possibile modificare dinamicamente il valore iniziale digitando JavaScript in {{}}.                                                                  |
+| Segnaposto                      | Il valore verrà mostrato quando il campo di input è vuoto.                                                                                                                                |
+| Etichetta                       | Il nome del campo visualizzato all'utente                                                                                                                                                 |
+| Didascalia                      | Una didascalia utilizzata per descrivere in dettaglio il campo                                                                                                                            |
+| Etichetta nascosta              | Imposta se visualizzare l'etichetta                                                                                                                                                       |
+| Posizione                       | Imposta la posizione dell'etichetta rispetto al componente                                                                                                                                |
+| Allineamento                    | Imposta l'allineamento (allineare a sinistra o a destra) dell'etichetta                                                                                                                   |
+| Width                           | Quando l'etichetta è sul lato sinistro del componente, impostare il rapporto di larghezza dell'etichetta.                                                                                 |
+| Gestore Eventi                  | Attiva interrogazioni, componenti di controllo o chiama altre API in risposta a eventi di componenti.                                                                                     |
+| Disabilitato                    | Controlla lo stato se il componente è disabilitato. Il componente non può essere modificato o focalizzato quando è disabilitato.                                                          |
+| Sola Lettura                    | Controllare lo stato se il componente è in sola lettura. Un componente di sola lettura può essere selezionato e messo a fuoco ma non può essere modificato.                               |
+| Mostra pulsante cancella        | controllare se un pulsante chiaro è visualizzato nel campo di input                                                                                                                       |
+| Mostra conteggio caratteri      | controllare se è visualizzato o meno il conteggio dei caratteri dell'input                                                                                                                |
+| Prefisso testo                  | un breve pezzo di testo che appare a sinistra del campo di input, spesso utilizzato per fornire ulteriori contesti o istruzioni all'utente                                                |
+| Suffisso testo                  | un breve testo che appare a destra del campo di input, spesso utilizzato per fornire ulteriori informazioni o feedback all'utente                                                         |
+| Suggerimento                    | Gli utenti possono inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato.                                  |
+| Campo obbligatorio              | Valido solo quando l'interruttore è attivo.                                                                                                                                               |
+| Sequenza                        | specifica un modello di espressione regolare che il input dell'utente deve corrispondere per essere considerato valido                                                                    |
+| Lunghezza massima               | imposta il numero massimo di caratteri che possono essere inseriti nel campo di input.                                                                                                    |
+| Lunghezza Minima                | specifica il numero minimo di caratteri che l'utente deve inserire nel campo di input affinché l'input sia considerato valido.                                                            |
+| Regola personalizzata           | Crea qui la tua logica di convalida. Le regole devono essere fatte in JavaScript e coperte da {{}}.                                                                                       |
+| Nascondi messaggio di convalida | È possibile nascondere il messaggio di errore cambiando lo stato nascosto quando il valore di input non è corretto. È possibile modificare dinamicamente lo stato nascosto da JavaScript. |
+| Modulo Dati Chiave              | Specifica una chiave di un componente di un modulo di wrapping durante la costruzione dell'attributo dati.                                                                                |
+| Hidden                          | Controllare dinamicamente se il componente è nascosto. È possibile modificare lo stato nascosto attraverso il valore booleano dinamico.                                                   |
+| Colore Tema                     | Consente agli utenti di specificare il colore di sfondo e l'opacità del pulsante                                                                                                          |
+
+### Metodo
+
+È possibile utilizzare altri componenti per controllare il componente. Sosteniamo i due metodi seguenti:
+
+-   **setValue**
+
+Per impostare il valore in ingresso, ad esempio, {{'value1'}}
+
+| Proprietà | Descrizione |
+| --------- | ----------- |
+| Valore    | Input value |
+
+-   **clearValue**
+
+Per cancellare il valore del componente selezionato 
+
+-   **focus**
+
+Quando viene chiamato il metodo di messa a fuoco, il campo di input sarà evidenziato e pronto per l'utente per iniziare a digitare senza la necessità per l'utente di fare clic sul campo di input
+
+Esempio Di Utilizzo:
+
+Il componente di input supporta l'ascolto dell'evento `onChange` di altri componenti utilizzando il sistema di eventi integrato. Impostalo seguendo questi passaggi di esempio:
+
+1.  Aggiungi un trigger di evento al componente che vuoi ascoltare. Ad esempio, se vuoi ascoltare l'evento **`onChange`** di un componente di un gruppo radio, si aggiungerebbe un gestore di eventi a quel componente di Radio Group.
+2.  Nel gestore degli eventi di Modifica, seleziona **`Componente di controllo`** in azione, seleziona il componente **`Input`** che vuoi aggiornare come obiettivo dell'evento.
+3.  Scegli l'azione **`SetValue`** e seleziona il valore appropriato per il componente in ingresso. Questo sarà il valore che il componente di input ha e si aggiornerà quando l'evento viene attivato.
+4.  Salva le impostazioni di attivazione dell'evento e ripeti il processo per qualsiasi altro componente che desideri ascoltare.
+
+Una volta che hai impostato i trigger dell'evento, il componente di input verrà automaticamente aggiornato ogni volta che l'evento **`onChange`** viene attivato sugli altri componenti. Questo consente di creare interfacce dinamiche che rispondono all'input dell'utente in tempo reale, rendendo più facile per gli utenti la navigazione e l'interazione con la tua applicazione.
+
+### Gestore eventi
+
+| Evento | Descrizione                                                                                      |
+| ------ | ------------------------------------------------------------------------------------------------ |
+| Cambia | Quando un utente cambia il valore di input selezionato                                           |
+| Focus  | Quando un utente sposta il cursore del mouse sul componente di input                             |
+| Blur   | Quando un utente viene fatto inserendo valore e smettere di concentrarsi sul componente cascader |
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite **`{{componentName.propertyName}}`** nell'app.
+
+| Nome proprietà     | Descrizione                                                                     |
+| ------------------ | ------------------------------------------------------------------------------- |
+| valore             | valore dell'input utente                                                        |
+| colorScheme        | colore di sfondo del pulsante                                                   |
+| disabilitato       | un valore booleano indica lo stato disabilitato                                 |
+| displayName        | il nome di questo componente (cioè il pulsante1)                                |
+| formDataKey        | il Form Data Key di input                                                       |
+| hidden             | stato nascosto (vero o falso)                                                   |
+| etichetta          | valore dell'etichetta                                                           |
+| labelAllinea       | allineamento dell'etichetta di input (sinistra o destra)                        |
+| labelPosizione     | posizione dell'etichetta di input (sinistra o destra)                           |
+| labelWidth         | il numero intero che rappresenta la larghezza dell'etichetta.                   |
+| maxLength          | il valore della lunghezza massima                                               |
+| minLength          | il valore della lunghezza minima                                                |
+| segnaposto         | valore segnaposto                                                               |
+| prefixText         | valore del prefisso di testo                                                    |
+| suffixText         | valore del suffisso del testo                                                   |
+| readOnly           | un valore booleano indica lo stato readyOnly di input.                          |
+| obbligatorio       | un valore booleano indica lo stato richiesto dell'input.                        |
+| regex              | espressione regolare dell'input                                                 |
+| showCharacterCount | un valore booleano indica se è visualizzato il conteggio dei caratteri di input |
+| tooltipText        | valore del testo del suggerimento                                               |
+
+Esempio: {{input1.value}}
+
+### Caso di utilizzo
+
+Di seguito sono riportati alcuni esempi per personalizzare il componente di input.
+
+-   Prefisso:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffisso:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Suggerimento:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Motivo:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
