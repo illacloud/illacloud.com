@@ -1,0 +1,119 @@
+---
+title: PostgreSQL
+crowdinRepo: https://crowdin.com/multilal/illacloud-website/329?languages=zhcn&filter=basic&value=0
+metaTitle: PostgreSQL 集成Doc | ILLA Cloud
+desc: 使用 ILLA Cloud与 PostgreSQL 数据库连接和交互。 创建可以查询、操作和可视化数据的应用。 自动化并优化数据工作流。
+tagCategory: doc_menu_postgresql_click
+categoryName: 🔨 集成
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>PostgreSQL是什么？</h2>
+
+Illa 的 PostgreSQL 是一个数据库集成，允许您连接并与 PostgreSQL 数据库交互。 PostgreSQL 是一个受欢迎的开放源码关系数据库管理系统，它的稳定性、可靠性和强大功能。
+
+通过 Illa 的 PostgreSQL 集成，您可以通过 SQL 命令查询、插入、更新和删除PostgreSQL 数据库中的数据。 您也可以创建自定义 SQL 查询，并在 Illa 操作中运行它们。 这就很容易建立数据驱动应用程序和仪表板，从PostgreSQL数据库中显示实时数据。
+
+### 创建 PostgreSQL
+
+在登录到您的 Illa 帐户后，有两种方式在Illa 中创建资源。
+
+-   在资源中创建
+
+登录到您的 Illa 帐户，在页面顶部选择 `**资源**` 并点击 `**创建新的**` 按钮。
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+从数据库列表中选择 **`PostgreSQL` **。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+使用下面`连接设置`中描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+创建资源后，准备好的 PostgreSQL 将显示。
+
+![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+
+-   在构建器中创建
+
+登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`PostgreSQL`** 。 然后，用下面`连接设置`描述的参数连接到数据库。
+
+点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+
+### 连接设置
+
+这里我们需要提供连接到 PostgreSQL 数据库的信息。
+
+![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+
+| 属性          | 必填  | 描述                                                                                                        |
+| ----------- | --- | --------------------------------------------------------------------------------------------------------- |
+| 名称          | 必填  | 在 ILLA 中创建动作时的资源名称。                                                                                       |
+| Hostname    | 必填  | 您数据库的 URL 或 IP 地址                                                                                         |
+| 端口          | 必填  | 您应该使用服务器主机的端口号进行连接。 如果您没有指定端口，默认端口为“5432”。                                                                |
+| 数据库         | 必填  | 数据库名称                                                                                                     |
+| 用户名         | 必填  | 登录到 PostgreSQL 服务器时使用的用户名。                                                                                |
+| 密码          | 必填  | 使用此密码进行身份验证。                                                                                              |
+| SSL 选项      | 可选的 | 在与服务器谈判时，决定安全的 SSL TCP/IP 连接的优先级程度。                                                                       |
+
+### 创建动作
+
+我们创建了 PostgreSQL 资源，我们可以从动作列表中选择 PostgreSQL 并选择 **`Create action` ** 按钮来添加动作。
+
+![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+
+现在我们已经将 PostgreSQL 服务器添加到我们的建造页面。
+
+![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+
+### 配置 PostgreSQL
+
+| 属性       | 描述                                                               |
+| -------- | ---------------------------------------------------------------- |
+| SQL 查询   | 要获取的 sql 命令 (选择), 插入, 更新, 删除数据库中的数据                              |
+| 转换器      | 将数据转换为你喜欢使用 JavaScript 的样式                                       |
+
+示例用法：
+
+-   选择
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   删除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
