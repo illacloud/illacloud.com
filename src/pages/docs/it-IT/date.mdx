@@ -1,0 +1,144 @@
+---
+title: Data
+metaTitle: Date Component Doc | ILLA Cloud
+desc: Scopri come utilizzare il componente data per aggiungere un selettore calendario alla tua app e personalizzarne l'aspetto e il comportamento.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/333?languages=it&filter=basic&value=0
+tagCategory: doc_menu_date_click
+categoryName: 🧬 Assembla i componenti
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Che cos'è la Data?</h2>
+
+Il componente Data è un componente che consente agli utenti di selezionare una data da un'interfaccia di calendario. Il componente Data è tipicamente utilizzato in moduli o interfacce di inserimento dati in cui l'utente deve selezionare una data specifica.
+
+Quando un componente Data viene aggiunto alla superficie, viene visualizzata un'interfaccia di calendario per impostazione predefinita. L'utente può navigare attraverso il calendario facendo clic sulle frecce precedenti o successive per passare a un mese diverso, o facendo clic su una data specifica per selezionarla. La data selezionata verrà visualizzata nel campo di input.
+
+### Properties
+
+Proprietà disponibili della data. JavaScript può essere scritto per leggere o modificare informazioni sui componenti.
+
+| Proprietà                       | Descrizione                                                                                                                                                                               |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valore predefinito              | Il valore iniziale del componente. È possibile modificare dinamicamente il valore iniziale digitando JavaScript in {{}}.                                                                  |
+| Formato                         | Una stringa di formato data valida. Vedi dayJS.                                                                                                                                           |
+| Segnaposto                      | Il valore verrà mostrato quando il campo di input è vuoto.                                                                                                                                |
+| Data massima                    | imposta la data massima che un utente può selezionare dall'interfaccia del calendario.                                                                                                    |
+| Data minima                     | specifica la prima data in cui un utente può selezionare dall'interfaccia del calendario.                                                                                                 |
+| Etichetta                       | Il nome del campo visualizzato all'utente                                                                                                                                                 |
+| Didascalia                      | Una didascalia utilizzata per descrivere in dettaglio il campo                                                                                                                            |
+| Etichetta nascosta              | Imposta se visualizzare l'etichetta                                                                                                                                                       |
+| Posizione                       | Imposta la posizione dell'etichetta rispetto al componente                                                                                                                                |
+| Allineamento                    | Imposta l'allineamento (allineare a sinistra o a destra) dell'etichetta                                                                                                                   |
+| Width                           | Quando l'etichetta è sul lato sinistro del componente, impostare il rapporto di larghezza dell'etichetta.                                                                                 |
+| Gestore Eventi                  | Attiva interrogazioni, componenti di controllo o chiama altre API in risposta a eventi di componenti.                                                                                     |
+| Disabilitato                    | Controlla lo stato se il componente è disabilitato. Il componente non può essere modificato o focalizzato quando è disabilitato.                                                          |
+| Sola Lettura                    | Controllare lo stato se il componente è in sola lettura. Un componente di sola lettura può essere selezionato e messo a fuoco ma non può essere modificato.                               |
+| Suggerimento                    | Gli utenti possono inserire il suggerimento del componente qui. Il suggerimento verrà mostrato quando è messo a fuoco. Il formato Markdown è supportato.                                  |
+| Mostra pulsante cancella        | controllare se un pulsante chiaro è visualizzato nel campo di input                                                                                                                       |
+| Campo obbligatorio              | Valido solo quando l'interruttore è attivo.                                                                                                                                               |
+| Regola personalizzata           | Crea qui la tua logica di convalida. Le regole devono essere fatte in JavaScript e coperte da {{}}.                                                                                       |
+| Nascondi messaggio di convalida | È possibile nascondere il messaggio di errore cambiando lo stato nascosto quando il valore di input non è corretto. È possibile modificare dinamicamente lo stato nascosto da JavaScript. |
+| Modulo Dati Chiave              | Specifica una chiave di un componente di un modulo di wrapping durante la costruzione dell'attributo dati.                                                                                |
+| Hidden                          | Controllare dinamicamente se il componente è nascosto. È possibile modificare lo stato nascosto attraverso il valore booleano dinamico.                                                   |
+| Colore Tema                     | Consente agli utenti di specificare il colore di sfondo e l'opacità del pulsante                                                                                                          |
+
+### Methods
+
+È possibile utilizzare altri componenti per controllare il componente. Sosteniamo i seguenti quattro metodi:
+
+-   **setValue**
+
+Per impostare il valore della data di inserimento, ad esempio, {{'value1'}}
+
+| Proprietà | Descrizione |
+| --------- | ----------- |
+| Valore    | Input value |
+
+-   **clearValue**
+
+Per cancellare il valore del componente selezionato 
+
+-   **validate**
+
+Per verificare che le informazioni di input siano legali
+
+-   **clearValidate**
+
+Per cancellare il messaggio di convalida
+
+### Gestore eventi
+
+| Evento | Descrizione                                                                                                         |
+| ------ | ------------------------------------------------------------------------------------------------------------------- |
+| Cambia | Quando un utente cambia il valore della data selezionato, eseguire un'azione specifica personalizzata dagli utenti. |
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite **`{{componentName.propertyName}}`** nell'app.
+
+| Nome proprietà        | Descrizione                                                       |
+| --------------------- | ----------------------------------------------------------------- |
+| colorScheme           | la proprietà colore di Data                                       |
+| customRule            | la regola personalizzata specificata dall'utente                  |
+| dateFormat            | il formiato della data                                            |
+| disabilitato          | un valore booleano indica lo stato disabilitato                   |
+| displayName           | il nome di questo componente (cioè il pulsante1)                  |
+| formDataKey           | il Modulo Data Key of Date                                        |
+| hidden                | stato nascosto (vero o falso)                                     |
+| hideValidationMessage | un valore booleano indica se il messaggio di convalida è nascosto |
+| etichetta             | valore dell'etichetta                                             |
+| labelAllinea          | allineamento dell'etichetta dell'interruttore (sinistra o destra) |
+| labelPosizione        | posizione dell'etichetta dell'interruttore (sinistra o destra)    |
+| labelWidth            | il numero intero che rappresenta la larghezza dell'etichetta.     |
+| labelFull             | un valore booleano indica se l'etichetta è piena.                 |
+| maxDate               | il valore della data massima                                      |
+| minDate               | il valore della data minima                                       |
+| segnaposto            | valore segnaposto                                                 |
+| readOnly              | un valore booleano indica lo stato readyOnly di input.            |
+| obbligatorio          | un valore booleano indica lo stato richiesto dell'input.          |
+| mostraPulisci         | un valore booleano indica che la data sarà mostrata pulita        |
+| tooltipText           | valore del testo del suggerimento                                 |
+| valore                | Input value                                                       |
+
+Esempio: {{date1.value}}
+
+### Caso di utilizzo
+
+Successivamente, dimostreremo come mappare i dati dall'origine dei dati fino ad oggi e come impostare la data corrente con un pulsante. 
+
+#### Passo 1 Aggiungere un'azione
+
+Creiamo una tabella nell'API REST chiamata **`promoteCodes`,** con 6 colonne: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Useremo l'aggiornamentoAl momento per l'uso del campione. 
+
+Quindi possiamo creare una nuova azione per REST API dall'elenco di azioni, elencando tutti i dati in promoteCodes e chiamato restapi1. 
+
+Clicca su **`Salva`** e **`Esegui`** per attivare questa azione.
+
+#### Passo 2 Aggiungi Componenti
+
+Successivamente, possiamo aggiungere un componente **`date`** e un componente **`button`** alla tela. Per il valore predefinito del componente data, lo configuriamo come l'ultimo momento di aggiornamento del primo codice di promozione dai dati api restanti.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Abbiamo anche etichettato il pulsante come "Oggi" come mostrato di seguito
+
+![date_time0](https://cdn.illacloud.com/official-website/img/docs/date_time0.png)
+
+#### Passo 3 Configura il componente
+
+Per il componente **`button`** possiamo configurarlo per impostare la data nel componente **`date`** alla data odierna.
+
+1.  Nel gestore degli eventi di Modifica, seleziona **`Componente di controllo`** in azione, seleziona il componente **`date`** che vuoi aggiornare come obiettivo dell'evento.
+2.  Scegli l'azione **`setValue`** e imposta il valore come `{{currentUserInfo.updatedAt}}` 
+
+![date_confg](https://cdn.illacloud.com/official-website/img/docs/date_confg.png)
+
+#### Fase 4 Test
+
+Ora che quando si fa clic sul pulsante "oggi", l'ora dovrebbe cambiare alla data di oggi. Per quanto riguarda qui, abbiamo 2023-5-6, ma può essere diverso quando si sta testando.
+
+![date_time1](https://cdn.illacloud.com/official-website/img/docs/date_time1.png)
