@@ -1,0 +1,110 @@
+---
+title: Schakelaar
+metaTitle: Wissel Component Doc ×ILLA Cloud
+desc: Leer hoe je het component Switch in ILLA Cloud kunt gebruiken om een gebruikersinterface te maken die gebruikers laat schakelen tussen twee opties. Zie voorbeelden en eigenschappen van Switch.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/331?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Wat is Switch?</h2>
+
+Het schakelcomponent is een gebruikersinterface element waarmee gebruikers kunnen schakelen tussen twee staten: "aan" en "uit".
+
+### Eigenschappen
+
+| Eigenschappen    | Beschrijving                                                                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Standaard waarde | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                |
+| Omschrijving     | De naam van het veld weergegeven aan de gebruiker                                                                                          |
+| Onderschrift     | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                             |
+| Verborgen label  | Stel in of het label moet worden weergegeven                                                                                               |
+| Positie          | Stel de positie van het label in ten opzichte van het component                                                                            |
+| Uitlijning       | Stel de uitlijning van het label in                                                                                                        |
+| Event Handler    | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                         |
+| Laden...         | Of de component een laadindicator moet tonen.                                                                                              |
+| Uitgeschakeld    | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.    |
+| Knopinfo         | Gebruiker kan component tooltip hier invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund. |
+| Hidden           | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                  |
+| Thema kleur      | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                 |
+
+### Methode
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende drie methoden:
+
+-   **setvalue**
+
+Het instellen van de geselecteerde waarde, bijvoorbeeld {{'value1'}}
+
+| Eigenschappen | Beschrijving         |
+| ------------- | -------------------- |
+| Waarde        | Geselecteerde waarde |
+
+-   **clearvalue**
+
+Om de geselecteerde waarde te wissen
+
+-   **toggle**
+
+de schakelaar veranderen van de status "uit" naar de status "aan", of vice versa
+
+Voorbeeld gebruik:
+
+Schakel component ondersteuning luisteren naar het `onClick` event van andere componenten met behulp van ingebouwde gebeurtenissystemen. Instellen door de volgende voorbeeld stappen te volgen:
+
+1.  Voeg een gebeurtenistrigger toe aan de component waarnaar u wilt luisteren. Als je bijvoorbeeld wilt luisteren naar de **`onClick`** gebeurtenis van een Button component, zou je een event trigger aan die knop toevoegen.
+2.  In de Event Handler bewerken, selecteer **`Control component`** in actie, selecteer het **`Switch`** onderdeel dat u wilt bijwerken als het doel van het event.
+3.  Kies de **`toggle`** actie. Wanneer het evenement wordt geactiveerd (d.w.z. wanneer op de knop wordt geklikt), zal de schakelaar component worden uitgeschakeld en de status zal worden bijgewerkt.
+4.  Sla de instellingen voor de trigger van de gebeurtenis op en herhaal het proces voor alle andere componenten waarnaar u wilt luisteren.
+
+Zodra je de event triggers hebt ingesteld, wordt het schakelcomponent automatisch bijgewerkt wanneer het **`onClick`** evenement wordt geactiveerd op de andere componenten. Dit stelt u in staat om dynamische interfaces te maken die reageren op gebruikersinvoer in realtime het makkelijker maken voor gebruikers om te navigeren en te communiceren met uw applicatie.
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                                                 |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Veranderen  | Wanneer een gebruiker de geselecteerde optiewaarde wijzigt, voert een specifieke actie uit die is aangepast door gebruikers. |
+
+### Gegevens
+
+Het knop-component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap | Beschrijving                                                        |
+| ------------------- | ------------------------------------------------------------------- |
+| kleurenschema       | achtergrondkleur van de knop                                        |
+| weergavenaam        | de naam van dit onderdeel (bijv. knop1)                             |
+| hidden              | een booleaanse waarde geeft de verborgen status van knop aan        |
+| Label               | label waarde                                                        |
+| uitlijnen           | uitlijning van schakellabel (links of rechts)                       |
+| labeling            | positie van schakellabel (links of rechts)                          |
+| labelBreedte        | het geheel getal waarin de breedte van het label wordt weergegeven. |
+| labelFull           | een Booleaanse waarde geeft aan of het label vol is.                |
+| waarde              | Een gebruiker stelt de waarde in als waar of onwaar                 |
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de status van andere componenten dynamisch kunnen veranderen. 
+
+#### Stap 1 Voeg een component toe
+
+Eerst voegen we het onderdeel **\`Switch** toe en label het als 'Verbergen'. Vervolgens gebruiken we de **`text`** component als een beïnvloed component die verandert van 'displayed' naar 'verborgen' status. We veranderen de inhoud ervan in 'Hello World' 
+
+#### Stap 2 Configureer een component
+
+In de **`Hidden`** eigenschap voor Tekst. Klik op het **`fx`** pictogram zodat we de verborgen status van de component kunnen beheren door het dezelfde in te stellen als de waarde van onze schakelaar met behulp van JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Wanneer de schakelaar is ingeschakeld, is de waarde voor wisselen **`true`,** de tekst zal worden verborgen en vice versa.
+
+Wissel **`Aan`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Wissel **`Uit`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)
