@@ -1,0 +1,143 @@
+---
+title: Sélecteur de temps
+metaTitle: Sélecteur de temps Picker Composant Doc | ILLA Cloud
+desc: Découvrez comment utiliser le composant Time Picker d'ILLA Cloud pour permettre aux utilisateurs de choisir une heure spécifique à partir d'une interface utilisateur 24 heures sur 24 dans vos projets.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=fr&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Qu'est-ce que le sélecteur de temps ?</h2>
+
+Le composant sélecteur de temps est un composant UI qui permet aux utilisateurs de sélectionner une heure spécifique à partir d'une interface 24 heures sur 24, généralement utilisé dans les interfaces de formulaires ou d'entrée de données où l'utilisateur a besoin de spécifier une heure spécifique.
+
+Lorsqu'un composant de sélecteur de temps est ajouté à la toile, il affiche une interface de 24 heures qui affiche les heures, les minutes et les secondes. L'utilisateur peut régler le temps en déplaçant le curseur de la souris ou en utilisant les flèches haut et bas.
+
+### Properties
+
+Propriétés disponibles du sélecteur de temps. JavaScript peut être écrit pour lire ou modifier des informations sur les composants.
+
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valeur par défaut                | La valeur initiale du composant. Vous pouvez modifier dynamiquement la valeur initiale en tapant JavaScript dans {{}}.                                                          |
+| Formater                         | Une chaîne de format de date valide. Voir dayJS.                                                                                                                                |
+| Placeholder                      | La valeur sera affichée lorsque le champ de saisie est vide.                                                                                                                    |
+| Taille de l'étape                | la taille de l'étape en unité de minutes                                                                                                                                        |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Régler l'alignement (alignement à gauche ou à droite) de l'étiquette                                                                                                            |
+| Width                            | Lorsque l'étiquette se trouve sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette.                                                                 |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Lecture seule                    | Contrôle l'état du composant en lecture seule. Un composant en lecture seule peut être sélectionné et concentré mais ne peut pas être modifié.                                  |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Afficher le bouton de nettoyage  | contrôler si un bouton d'effacement est affiché dans le champ de saisie                                                                                                         |
+| Info-bulle                       | L'utilisateur peut entrer l'info-bulle de composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                          |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Règle personnalisée              | Créez ici votre logique de validation. Les règles doivent être rédigées en JavaScript et couvertes par {{}}.                                                                    |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                                           |
+
+### Methods
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les quatre méthodes suivantes:
+
+-   **setValue**
+
+Pour définir la valeur de la durée d'entrée, par exemple, {{"value1"}}
+
+| Propriétés | Libellé     |
+| ---------- | ----------- |
+| Valeur     | Input value |
+
+-   **clearValue**
+
+Effacer la valeur du composant sélectionné 
+
+-   **validate**
+
+Vérifier que les informations saisies sont légales
+
+-   **clearValidate**
+
+Effacer le message de validation
+
+### Gestionnaire d'événements
+
+| Evénement  | Libellé                                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Changement | Lorsqu'un utilisateur change la valeur de temps sélectionnée, effectuer une action spécifique personnalisée par les utilisateurs. |
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété              | Libellé                                                             |
+| -------------------------------- | ------------------------------------------------------------------- |
+| Schéma de couleurs               | la propriété couleur de Date                                        |
+| Règle personnalisée              | la règle personnalisée que l'utilisateur a spécifiée                |
+| désactivée                       | une valeur booléenne indique le statut désactivé                    |
+| nomdeaffichage                   | le nom de ce composant (bouton i.)                                  |
+| Evénements                       | une valeur de tableau pour la séquence d'événements                 |
+| format                           | le format de la date et de l'heure                                  |
+| Clé de données du formulaire     | la clé de données du formulaire de la date                          |
+| hidden                           | statut caché (vrai ou faux)                                         |
+| masquer le message de validation | une valeur booléenne indique si le message de validation est masqué |
+| Etiquette                        | valeur de l'étiquette                                               |
+| Alignement du libellé            | alignement de l'étiquette de l'interrupteur (à gauche ou à droite)  |
+| Position du libellé              | position du libellé du commutateur (à gauche ou à droite)           |
+| Largeur du libellé               | l'entier représentant la largeur des étiquettes.                    |
+| Etiquette pleine                 | une valeur booléenne indique si le label est plein.                 |
+| Pas de minute                    | valeur de la taille du pas de minute                                |
+| espace réservé                   | valeur du placeholder                                               |
+| Obligatoire                      | une valeur booléenne indique le statut requis de l'entrée.          |
+| Montre Vider                     | une valeur booléenne indique si la date sera affichée clairement    |
+| Texte de l'infobulle             | valeur du texte de l'info-bulle                                     |
+| valeur                           | Entrer la date et la valeur heure                                   |
+
+Exemple: {{timePicker1.format}}
+
+### Cas d'utilisation
+
+Ensuite, nous montrerons comment mapper les données de la source de données vers le sélecteur de temps et réglez l'heure actuelle avec un bouton. 
+
+#### Étape 1 Ajouter une action
+
+Créons une table dans l'API REST appelée **`promoteCodes`,** incluant 6 colonnes : **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Nous utiliserons la mise à jour au moment pour un exemple d'utilisation. 
+
+Ensuite, nous pouvons créer une nouvelle action pour l'API REST à partir de la liste d'actions, listant toutes les données dans promoteCodes et nommé restapi1. 
+
+Cliquez sur **`Save`** et **`Run`** pour activer cette action.
+
+#### Étape 2 Ajouter des composants
+
+Ensuite, nous pouvons ajouter un composant **`sélecteur de temps`** et un composant **`bouton`** à la toile. Pour la valeur par défaut du composant de temps, nous le configurons comme la dernière mise à jour de la première promotion du code des données api restantes.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Nous avons également étiqueté le bouton comme "maintenant" comme indiqué ci-dessous
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Étape 3 Configurer le composant
+
+Pour le composant **`button`**, nous pouvons le configurer pour définir la date dans le composant **`sélecteur de temps`** à la date et l'heure courantes.
+
+1.  Dans le gestionnaire d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`sélecteur de temps`** que vous voulez mettre à jour comme cible de l'événement.
+2.  Choisissez l'action **`setValue`** et définissez la valeur comme `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Test de l'étape 4
+
+Maintenant que lorsque vous cliquez sur le bouton "Maintenant", l'heure doit passer à l'heure actuelle. Pour ce qui est d'ici, nous avons 20:03:05 mais cela peut être différent lorsque vous le testez.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)
