@@ -1,0 +1,119 @@
+---
+title: PostgreSQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/329?languages=ja&filter=basic&value=0
+metaTitle: PostgreSQL統合ドキュメント | ILLA Cloud
+desc: ILLA Cloudを使用してPostgreSQLデータベースを接続して操作します。 データを照会、操作、および視覚化できるアプリを作成します。 データワークフローの自動化と最適化。
+tagCategory: doc_menu_postgresql_click
+categoryName: 🔨 統合
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>PostgreSQLとは?</h2>
+
+IllaのPostgreSQLは、PostgreSQLデータベースに接続して対話することができるデータベース統合です。 PostgreSQLは、一般的なオープンソースのリレーショナルデータベース管理システムで、安定性、信頼性、強力な機能で知られています。
+
+SQL コマンドを使用して PostgreSQL データベースからデータをクエリ、挿入、更新、および削除することができます。 カスタム SQL クエリを作成し、Illa アクション内で実行することもできます。 これにより、PostgreSQLデータベースからリアルタイムデータを表示するデータドリブンなアプリケーションやダッシュボードを簡単に構築できます。
+
+### PostgreSQLを作成
+
+Illaアカウントにログインした後、Illaにリソースを作成するには2つの方法があります。
+
+-   リソースに作成
+
+Illaアカウントにサインインし、ページ上部の「**リソース**」を選択し、「**新規作成**」ボタンをクリックします。
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+データベース一覧から **`PostgreSQL`** を選択します。
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+下記の「接続設定」で説明されているパラメータを使用してデータベースに接続します。
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+リソースを作成すると、準備済みの PostgreSQL が次のように表示されます。
+
+![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+
+-   ビルダーで作成
+
+Illa アカウントにサインインし、`**App**` ページで Illa Builder でプロジェクトを作成します。 をクリックし、ページの下部にある **`Action List`** に移動します。 `**new**`をクリックし、データベース一覧から**`PostgreSQL`**を選択します。 次に、下の「接続設定」で説明されている必要なパラメータを使用してデータベースに接続します。
+
+データベースに正常に接続できるかどうかを確認するには、`**接続をテスト**` をクリックします。 はいの場合は**`リソースを保存`**をクリックします。それ以外の場合は、ホスト名、ポート、ユーザー名、パスワードが正しいことを確認してください。
+
+### 接続設定
+
+ここではPostgreSQLデータベースに接続するための情報を提供する必要があります。
+
+![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+
+| プロパティー      | 必須   | 説明                                                                                                        |
+| ----------- | ---- | --------------------------------------------------------------------------------------------------------- |
+| 名前          | 必須   | ILLAでアクションを作成する際のリソース名です。                                                                                 |
+| Hostname    | 必須   | データベースの URL または IP アドレス                                                                                   |
+| ポート         | 必須   | 接続に使用するサーバーホストのポート番号。 ポートを指定しない場合、デフォルトのポートは '5432' です。                                                   |
+| データベース      | 必須   | データベースの名前                                                                                                 |
+| ユーザー名       | 必須   | PostgreSQLサーバへのログイン時に使用したいユーザー名です。                                                                        |
+| パスワード       | 必須   | 認証にこのパスワードを使用してください。                                                                                      |
+| SSL オプション   | 省略可能 | サーバとのネゴシエーション中にセキュアな SSL TCP/IP 接続が優先される方法を決定します。                                                         |
+
+### アクションを作成
+
+PostgreSQLリソースを作成しました。アクションリストからPostgreSQLを選択し、**`アクションを作成`**ボタンを選択することでアクションを追加できます。
+
+![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+
+これで、PostgreSQLサーバーをビルドページにアクションとして追加しました。
+
+![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+
+### PostgreSQLの設定
+
+| プロパティー    | 説明                                                               |
+| --------- | ---------------------------------------------------------------- |
+| SQL クエリ   | データベースからデータを取得(選択)、挿入、更新、削除するための sql コマンド                        |
+| トランス      | JavaScriptを使用して好きなスタイルにデータを変換します                                 |
+
+使用例:
+
+-   選択
+
+```sql
+SELECT * FROM users ORDER BY last name;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   更新
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   削除
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```

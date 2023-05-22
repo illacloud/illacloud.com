@@ -1,0 +1,119 @@
+---
+title: PostgreSQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/329?languages=de&filter=basic&value=0
+metaTitle: PostgreSQL Integration Doc | ILLA Cloud
+desc: Verbinden und interagieren Sie mit einer PostgreSQL-Datenbank mit ILLA Cloud. Apps erstellen, die Daten abfragen, bearbeiten und visualisieren können. Automatisieren und optimieren Sie Datenworkflows.
+tagCategory: doc_menu_postgresql_click
+categoryName: ":Hammer: Integrationen"
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>Was ist PostgreSQL?</h2>
+
+PostgreSQL in Illa ist eine Datenbank-Integration, mit der Sie sich mit einer PostgreSQL-Datenbank verbinden und mit ihnen interagieren können. PostgreSQL ist ein beliebtes relationales Datenbankverwaltungssystem, das für seine Stabilität, Zuverlässigkeit und leistungsstarke Funktionen bekannt ist.
+
+Mit der PostgreSQL-Integration in Illa können Sie Daten aus einer PostgreSQL-Datenbank mittels SQL-Befehlen abfragen, einfügen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und diese innerhalb der Illa-Aktion ausführen. So lassen sich datengesteuerte Anwendungen und Dashboards erstellen, die Echtzeitdaten aus einer PostgreSQL-Datenbank anzeigen.
+
+### PostgreSQL erstellen
+
+Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressource in Illa zu erstellen.
+
+-   In Ressourcen erstellen
+
+Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Wähle **`PostgreSQL`** aus der Datenbankliste.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Verbinden Sie sich mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+Nach dem Erstellen einer Ressource wird PostgreSQL wie angezeigt angezeigt.
+
+![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+
+-   Im Builder erstellen
+
+Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicken Sie auf `**new**`, dann wählen Sie **`PostgreSQL`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+### Verbindungseinstellungen
+
+Hier müssen wir Informationen zur Verbindung mit der PostgreSQL-Datenbank zur Verfügung stellen.
+
+![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+
+| Eigenschaften   | Benötigt | Beschreibung                                                                                                                            |
+| --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Name            | benötigt | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA.                                                                     |
+| Hostname        | benötigt | Die URL oder IP-Adresse für Ihre Datenbank                                                                                              |
+| Port            | benötigt | Die Portnummer des Servers, die Sie verwenden sollten, um sich zu verbinden. Wenn Sie keinen Port angeben, ist der Standardport '5432'. |
+| Datenbank       | benötigt | Der Name der Datenbank                                                                                                                  |
+| Benutzername    | benötigt | den Benutzernamen den Sie beim Einloggen auf dem PostgreSQL-Server verwenden möchten.                                                   |
+| Passwort        | benötigt | Dieses Passwort für die Authentifizierung verwenden.                                                                                    |
+| SSL-Optionen    | optional | entscheidet, wie hoch eine sichere SSL-TCP/IP-Verbindung bei der Verhandlung mit dem Server priorisiert wird.                           |
+
+### Aktionen erstellen
+
+Wir haben eine PostgreSQL-Ressource erstellt. Wir können die Aktion hinzufügen, indem wir PostgreSQL aus der Aktionsliste auswählen und die **`Aktion erstellen`** Schaltfläche auswählen.
+
+![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+
+Jetzt haben wir den PostgreSQL-Server als Aktion zu unserer Bauseite hinzugefügt.
+
+![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+
+### PostgreSQL konfigurieren
+
+| Eigenschaften  | Beschreibung                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| SQL-Abfrage    | sql Befehle zum Abrufen (auswählen), einfügen, aktualisieren, Daten aus der Datenbank löschen |
+| Transformator  | Umwandlung von Daten in den Stil, den Sie mögen, mit JavaScript                               |
+
+Beispiel Verwendung:
+
+-   Auswählen
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Aktualisieren
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Löschen
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
