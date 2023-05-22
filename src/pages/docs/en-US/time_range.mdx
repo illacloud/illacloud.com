@@ -1,0 +1,161 @@
+---
+
+title: Time Range
+metaTitle: Time Range Component Doc | ILLA Cloud 
+desc: Learn how to use the Time Range component from ILLA Cloud to let users select a range of times from a 24-hour interface in your applications.
+
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=en&filter=basic&value=0
+
+tagCategory: doc_menu_time_range_click
+
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 4
+
+---
+
+## <h2 hidden>What is Time range?</h2>
+
+Time Range component is a UI component that allows users to select a range of times from a 24-hour interface, typically used in forms or data entry interfaces where the user needs to specify a start and end time range.
+
+When a Time Range component is added to canvas, it displays two 24-hour interfaces side by side. One interface is used to select the start time, while the other is used to select the end time. The user can adjust the time by moving the mouse cursor or using the up and down arrows.
+
+## ****Properties****
+
+Time Range's available properties. JavaScript may be written to read or alter information about components.
+
+| Properties | Description |
+| --- | --- |
+| Start time | The default start time value of the component |
+| End time | The default end time value of the component |
+| Format | A valid date format string. See https://day.js.org/docs/en/parse/string-format. |
+| Start Placeholder | The value will be shown when the start time input field is empty. |
+| End Placeholder | The value will be shown when the end time input field is empty. |
+| Step size | the step size in unit of minutes |
+| Label | The name of the field displayed to the user |
+| Caption | A caption used to describe the field in detail |
+| Hidden label | Set whether to display the label |
+| Position | Set the position of the label relative to the component |
+| Alignment | Set the alignment (align to left or right) of the label |
+| Width | When the label is on the left side of the component, set the width ratio of the label. |
+| Event Handler | Trigger queries, control components, or call other APIs in response to component events. |
+| Disabled | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
+| Tooltip | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
+| Show clear button | control whether or not a clear button is displayed in the input field |
+| Required field | Valid only when the switch is on. |
+| Custom rule | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}. |
+| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| Form Data Key | Specify a key of a wrapping form component when constructing the data attribute. |
+| Hidden | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value. |
+| Theme Color | Allows users to specify the button's background color and opacity |
+
+## ****Methods****
+
+You can use other components to control the component. We support the following two methods:
+
+- **setStartTime**
+
+To set the start date value, for example, {{"value1"}}
+
+| Properties | Description |
+| --- | --- |
+| Value | Input start time value |
+- **setEndTime**
+
+To set the end date value, for example, {{"value2"}}
+
+| Properties | Description |
+| --- | --- |
+| Value | Input end time value |
+- **clearValue**
+
+To clear the value of the selected component 
+
+- **validate**
+
+To verify that the input information is legal
+
+- **clearValidate**
+
+To clear the validation message
+
+### Event handler
+
+| Event | Description |
+| --- | --- |
+| Change | When a user changes the selected time value, perform specific action customized by users. |
+
+## Data
+
+The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name | Description |
+| --- | --- |
+| colorScheme | the color property of Date |
+| customRule | the custom rule that user specified |
+| disabled | a Boolean value indicate the disabled status |
+| displayName | the name of this component (ie cascader1) |
+| startTime | start time value |
+| endTime | end time value |
+| startPlaceholder | placeholder value for start time |
+| endPlaceholder | placeholder value for end time |
+| events | an Array value for sequence of events |
+| format | the formate of date and time |
+| formDataKey | the Form Data Key of Date |
+| hidden | a Boolean value indicate the hidden status of button |
+| hideValidationMessage | a Boolean value indicate whether the validation message is hidden |
+| label | label value |
+| labelAlign | alignment of cascader label (left or right) |
+| labelPosition | position of cascader label (left or right) |
+| labelWidth | the integer representing width of label |
+| minuteStep | minute step size value |
+| required | a Boolean value indicate the required status of input.  |
+| showClear | a Boolean value indicate wether the date will be shown clear |
+| value | Selected value |
+
+Example: {{rangeTime1.value[0]}}
+
+## Use case
+
+Next, we will demonstrate how to map the data from the data source to time range and set end value to current time with a button. 
+
+#### Step 1 Add an action
+
+Let us create a table in REST API called **`promoteCodes`,** including 6 columns:  **`code`**,  **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. We will use the startedAt and expiredAt time for sample use. 
+
+Then we can create a new action for REST API from the action list, listing all data in promoteCodes and named restapi1. 
+
+Click **`Save`** and **`Run`** to activate this action.
+
+#### Step 2 Add Components
+
+Next, we can add a **`time range`** component and a **`button`** component to the canvas. For default start time value of the date range component, we use the startedAt time of the first promote code from the rest api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Similarly, for default end time value, we use expiredAt time of the first promote code from the rest api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+We also labeled the button as "Now" as shown below.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Step 3 Configure the component
+
+For the **`button`** component, we can configure it to set the end date value in **`time range`**  component to today's date.
+
+1. In the Edit event handler, select **`Control component`** in action, select the **`time range`** component that you want to update as the target of the event.
+2. Choose the **`setEndTime`** action and set the **`End time`**  as  `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Step 4 Test
+
+Now that when you click the "Now" button, the end time should change to today's date. As for here, we have 20:03:05 but it may be different when you are testing it.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
