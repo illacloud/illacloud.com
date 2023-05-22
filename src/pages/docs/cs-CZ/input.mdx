@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Vstupní komponenta Doc | ILLA Cloud
+desc: Naučte se použít vstupní komponentu k vytvoření a úpravě textových polí pro vaši aplikaci v ILLA Cloudu.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=cs&filter=basic&value=0
+categoryName: 🧬 Montážní součásti
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Co je to vstup?</h2>
+
+Textová komponenta je prvek uživatelského rozhraní, který uživatelům umožňuje vkládat a upravovat text ve formuláři nebo vstupním poli.
+
+### Vlastnosti
+
+| Vlastnosti                   | L 343, 22.12.2009, s. 1).                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Výchozí hodnota              | Počáteční hodnota komponenty. Počáteční hodnotu můžete dynamicky změnit zadáním JavaScriptu v {{}}.                                               |
+| Zástupný symbol              | Hodnota bude zobrazena, když je vstupní pole prázdné.                                                                                             |
+| Popisek                      | Název pole zobrazeného uživateli                                                                                                                  |
+| Titulek                      | Popisek použitý k podrobnému popisu pole                                                                                                          |
+| Skrytý štítek                | Nastavte, zda chcete zobrazit štítek                                                                                                              |
+| Pozice                       | Nastavte pozici štítku vzhledem k komponentě.                                                                                                     |
+| Zarovnání                    | Nastavit zarovnání (zarovnat vlevo nebo vpravo) štítku                                                                                            |
+| Width                        | Pokud je štítek na levé straně komponenty, nastavte poměr šířky štítku.                                                                           |
+| Zpracovatel událostí         | Spouštěcí dotazy, ovládací prvky nebo volání jiných API v reakci na události komponenty.                                                          |
+| Zakázáno                     | Určuje, zda je zakázaná komponenta. Komponenta nemůže být upravena nebo zaměřena, pokud je zakázána.                                              |
+| Pouze pro čtení              | Určuje, zda je komponenta určena pouze pro čtení. Komponentu, která je určena pouze pro čtení, může být vybrána a zaměřena, ale nelze ji upravit. |
+| Zobrazit tlačítko "Vyčistit" | určuje, zda je ve vstupním poli zobrazeno tlačítko "Vyčistit"                                                                                     |
+| Zobrazit počet znaků         | určuje, zda je zobrazen počet znaků vstupu                                                                                                        |
+| Text prefixu                 | krátký text, který se zobrazí nalevo od vstupního pole, často používaný k poskytnutí dalšího kontextu nebo instrukcí uživateli                    |
+| Přípona                      | krátký text, který se zobrazí vpravo od vstupního pole, často používaný k poskytování dodatečných informací nebo zpětné vazby uživateli           |
+| Šipka nástroje               | Uživatelé zde mohou zadat pomocný nástroj. Nápověda bude zobrazena při zaostření. Formát Markdown je podporován.                                  |
+| Povinné pole                 | Platné pouze při zapnutí přepínače                                                                                                                |
+| Vzor                         | specifikovat regulární vzorec výrazu, který se musí shodovat se vstupem uživatele, aby mohl být považován za platný                               |
+| Maximální délka              | nastavte maximální počet znaků, které lze vložit do vstupního pole.                                                                               |
+| Minimální délka              | specifikuje minimální počet znaků, které musí uživatel zadat do vstupního pole, aby byl vstup považován za platný.                                |
+| Vlastní pravidlo             | Zde vytvořte svou validační logiku. Pravidla by měla být vytvořena v JavaScriptu a pokryta {{}}.                                                  |
+| Skrýt ověřovací zprávu       | Chybová zpráva můžete skrýt přepnutím skrytého stavu, pokud je zadaná hodnota nesprávná. Skrytý stav můžete dynamicky změnit pomocí JavaScript.   |
+| Datový klíč formuláře        | Zadejte klíč pro balicí komponentu při vytváření atributu dat.                                                                                    |
+| Hidden                       | Dynamicky regulovat, zda je komponenta skrytá. Skrytý stav můžete změnit pomocí dynamické logické hodnoty.                                        |
+| Barva šablony                | Umožňuje uživatelům určit barvu a průhlednost pozadí tlačítka                                                                                     |
+
+### Metoda
+
+K ovládání komponenty můžete použít jiné komponenty. Podporujeme tyto dva metody:
+
+-   **setValue**
+
+Pro nastavení vstupní hodnoty například {{'value1'}}
+
+| Vlastnosti | L 343, 22.12.2009, s. 1). |
+| ---------- | ------------------------- |
+| Hodnota    | Input value               |
+
+-   **clearValue**
+
+Možnost vymazat hodnotu vybrané komponenty 
+
+-   **focus**
+
+Pokud se nazývá metoda zaměření, vstupní pole bude zvýrazněno a připraveno k tomu, aby uživatel začal psát, aniž by musel kliknout na vstupní pole
+
+Příklad použití:
+
+Vstupní komponenta podporuje poslechnutí události `onChange` ostatních komponent pomocí vestavěného systému událostí. Nastavte si pomocí následujících příkladů:
+
+1.  Přidejte spouštěč události k komponentě, kterou chcete poslouchat. Například, pokud chcete poslouchat **`onChange`** událost skupiny rádia, k této komponentě Rádiové skupiny přidáte obsluhu událostí.
+2.  V obsluze události Editace vyberte **`Control component`** v akci, zvolte komponentu **`Input`**, kterou chcete aktualizovat jako cíl události.
+3.  Vyberte akci **`SetValue`** a vyberte příslušnou hodnotu pro vstupní složku. Toto bude hodnota, kterou vstupní komponenta má a bude aktualizovat, když je událost spuštěna.
+4.  Uložte nastavení spuštění události a opakujte proces pro všechny ostatní komponenty, které chcete poslouchat.
+
+Jakmile nastavíte událost, vstupní komponenta se automaticky aktualizuje vždy, když dojde k události **`onChange`** na ostatních komponentách. To umožňuje vytvářet dynamická rozhraní, která reagují na vstup uživatele v reálném čase, usnadňuje uživatelům navigaci a komunikaci s vaší aplikací.
+
+### Manažer událostí
+
+| Událost | L 343, 22.12.2009, s. 1).                                                               |
+| ------- | --------------------------------------------------------------------------------------- |
+| Změnit  | Když uživatel změní vybranou vstupní hodnotu                                            |
+| Zaměřit | Když uživatel přesune kurzor myši na vstupní komponentě                                 |
+| Blur    | Když uživatel provádí zadávání hodnoty a ukončuje pozornost zaměřenou na složku kaskády |
+
+### Údaje
+
+Komponenta má některá běžně používaná data, která lze v aplikaci volat prostřednictvím **`{{componentName.propertyName}}`**.
+
+| Název vlastnosti     | L 343, 22.12.2009, s. 1).                                    |
+| -------------------- | ------------------------------------------------------------ |
+| hodnota              | vstupní hodnota uživatele                                    |
+| barevné schéma       | barva pozadí tlačítka                                        |
+| vypnuto              | logická hodnota udává vypnutý stav                           |
+| zobrazované jméno    | název této komponenty (tj. tlačítko1)                        |
+| formDataKey          | Datový klíč formuláře                                        |
+| hidden               | skrytý stav (true nebo false)                                |
+| štítek               | hodnota štítku                                               |
+| Zarovnat štítek      | zarovnání vstupního štítku (vlevo nebo vpravo)               |
+| Pozice štítku        | umístění vstupního štítku (vlevo nebo vpravo)                |
+| Šířka štítku         | celé číslo představující šířku štítku.                       |
+| Maximální délka      | hodnota maximální délky                                      |
+| Min. délka           | hodnota minimální délky                                      |
+| zástupný znak        | zástupná hodnota                                             |
+| prefixText           | hodnota textu prefixu                                        |
+| Text přípony         | hodnota přípony textu                                        |
+| Pouze pro čtení      | logická hodnota udává pouze stav vstupu.                     |
+| vyžadováno           | logická hodnota udává požadovaný stav vstupu.                |
+| Razítko:             | regulární vyjádření vstupů                                   |
+| Zobrazit počet znaků | logická hodnota označuje, zda je zobrazen počet znaků vstupu |
+| tooltipText          | hodnota textu popisku                                        |
+
+Příklad: {{input1.value}}
+
+### Případ použití
+
+Níže jsou uvedeny příklady pro přizpůsobení vstupní komponenty.
+
+-   Předpona:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Přípona:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Popisek nástroje:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Vzor:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
