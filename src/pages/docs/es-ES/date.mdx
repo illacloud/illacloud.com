@@ -1,0 +1,144 @@
+---
+title: Fecha
+metaTitle: Date Component Doc | ILLA Cloud
+desc: Aprende cómo utilizar el componente de fecha para añadir un selector de calendario a tu aplicación y personalizar su apariencia y comportamiento.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/333?languages=es&filter=basic&value=0
+tagCategory: doc_menu_date_click
+categoryName: 🧬 Componentes ensamblados
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>¿Qué es la fecha?</h2>
+
+El componente Date es un componente que permite a los usuarios seleccionar una fecha de una interfaz de calendario. El componente Date se utiliza típicamente en formularios o interfaces de entrada de datos donde el usuario necesita seleccionar una fecha específica.
+
+Cuando se añade un componente Date al lienzo, se muestra una interfaz de calendario por defecto. El usuario puede navegar a través del calendario haciendo clic en las flechas anteriores o posteriores para moverse a un mes diferente. o haciendo clic en una fecha específica para seleccionarla. La fecha seleccionada se mostrará en el campo de entrada.
+
+### Properties
+
+Propiedades disponibles de la fecha. JavaScript puede ser escrito para leer o alterar información sobre componentes.
+
+| Propiedades                   | Descripción                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valor por defecto             | El valor inicial del componente. Puede cambiar dinámicamente el valor inicial escribiendo JavaScript en {{}}.                                                        |
+| Formatear                     | Un formato de fecha válido. Ver diarioJS.                                                                                                                            |
+| Marcador de posición          | El valor se mostrará cuando el campo de entrada esté vacío.                                                                                                          |
+| Fecha máxima                  | establecer la fecha máxima que un usuario puede seleccionar de la interfaz del calendario.                                                                           |
+| Fecha mínima                  | especificar la fecha más temprana que un usuario puede seleccionar desde la interfaz del calendario.                                                                 |
+| Etiqueta                      | El nombre del campo mostrado al usuario                                                                                                                              |
+| Leyenda                       | Un título usado para describir el campo en detalle                                                                                                                   |
+| Etiqueta oculta               | Establecer si mostrar o no la etiqueta                                                                                                                               |
+| Posición                      | Define la posición de la etiqueta relativa al componente                                                                                                             |
+| Alineación                    | Establecer el alineamiento (alinear a la izquierda o a la derecha) de la etiqueta                                                                                    |
+| Width                         | Cuando la etiqueta esté en el lado izquierdo del componente, establezca la proporción de ancho de la etiqueta.                                                       |
+| Manejador del Evento          | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                                               |
+| Deshabilitado                 | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.                                   |
+| Sólo lectura                  | Controlar el estado de si el componente es de sólo lectura. Un componente de sólo lectura puede ser seleccionado y enfocado, pero no puede ser modificado.           |
+| Sugerencia                    | Los usuarios pueden ingresar la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado.                        |
+| Mostrar botón de borrar       | controlar si se muestra o no un botón claro en el campo de entrada                                                                                                   |
+| Campo requerido               | Válido sólo cuando el interruptor está encendido.                                                                                                                    |
+| Regla personalizada           | Crea aquí tu lógica de validación. Las reglas deben ser hechas en JavaScript y cubiertas por {{}}.                                                                   |
+| Ocultar mensaje de validación | Puede ocultar el mensaje de error cambiando el estado oculto cuando el valor de entrada es incorrecto. Puedes cambiar dinámicamente el estado oculto por JavaScript. |
+| Clave de Formulario           | Especifique una clave de un componente de formulario de envoltura al construir el atributo de datos.                                                                 |
+| Hidden                        | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                                         |
+| Color del tema                | Permite a los usuarios especificar el color de fondo y opacidad del botón                                                                                            |
+
+### Methods
+
+Puede usar otros componentes para controlar el componente. Apoyamos los siguientes cuatro métodos:
+
+-   **setValue**
+
+Para establecer el valor de fecha de entrada, por ejemplo, {{'value1'}}
+
+| Propiedades | Descripción |
+| ----------- | ----------- |
+| Valor       | Input value |
+
+-   **limpiarValor**
+
+Limpiar el valor del componente seleccionado 
+
+-   **validate**
+
+Para verificar que la información de entrada es legal
+
+-   **clearValidate**
+
+Para borrar el mensaje de validación
+
+### Controlador de eventos
+
+| Evento  | Descripción                                                                                                            |
+| ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Cambiar | Cuando un usuario cambia el valor de fecha seleccionado, realice una acción específica personalizada por los usuarios. |
+
+### Datos
+
+El componente tiene algunos datos comúnmente utilizados, que pueden llamarse a través de **`{{componentName.propertyName}}`** en la aplicación.
+
+| Nombre de la propiedad        | Descripción                                                      |
+| ----------------------------- | ---------------------------------------------------------------- |
+| esquema de color              | la propiedad de color de la fecha                                |
+| regla personalizada           | la regla personalizada especificada por el usuario               |
+| fechaFormato                  | el formato de fecha                                              |
+| deshabilitado                 | un valor booleano indica el estado deshabilitado                 |
+| nombre de pantalla            | el nombre de este componente (es decir, botón1)                  |
+| formDataKey                   | la clave de datos de formulario de la fecha                      |
+| hidden                        | estado oculto (verdadero o falso)                                |
+| ocultar mensaje de validación | un valor booleano indica si el mensaje de validación está oculto |
+| etiqueta                      | valor de etiqueta                                                |
+| alineación de etiqueta        | alineación de etiqueta de conmutación (izquierda o derecha)      |
+| posición de etiqueta          | posición de la etiqueta del interruptor (izquierda o derecha)    |
+| ancho de etiqueta             | el entero que representa el ancho de la etiqueta.                |
+| etiqueta completa             | un valor booleano indica si la etiqueta está llena.              |
+| maxDate                       | el valor de la fecha máxima                                      |
+| minDate                       | el valor de la fecha mínima                                      |
+| marcador de posición          | valor del marcador                                               |
+| sólo lectura                  | un valor booleano indica el estado readyOnly de la entrada.      |
+| requerido                     | un valor booleano indica el estado requerido de la entrada.      |
+| limpiar                       | un valor booleano indica si la fecha se mostrará limpia          |
+| tooltipText                   | valor del texto del tooltip                                      |
+| valor                         | Input value                                                      |
+
+Ejemplo: {{date1.value}}
+
+### Caso de uso
+
+A continuación, demostraremos cómo mapear los datos desde la fuente de datos hasta la fecha y establecer la fecha actual con un botón. 
+
+#### Paso 1 Añadir una acción
+
+Creemos una tabla en la API REST llamada **`promoteCodes`,** incluyendo 6 columnas: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Utilizaremos el tiempo actualizadoAt para uso de muestras. 
+
+Luego podemos crear una nueva acción para la API REST desde la lista de acciones, listando todos los datos en promoteCodes y llamado restapi1. 
+
+Haz clic en **`Guardar`** y **`Ejecutar`** para activar esta acción.
+
+#### Paso 2 Añadir componentes
+
+A continuación, podemos añadir un componente **`date`** y un componente **`button`** al lienzo. Para el valor por defecto del componente fecha, lo configuramos como la última actualización del primer código promocional de los datos del resto de api.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+También hemos etiquetado el botón como "Hoy" como se muestra a continuación
+
+![date_time0](https://cdn.illacloud.com/official-website/img/docs/date_time0.png)
+
+#### Paso 3 Configurar el componente
+
+Para el componente **`button`** podemos configurarlo para fijar la fecha en el componente **`date`** a la fecha de hoy.
+
+1.  En el manejador de eventos Editar seleccione **`Componente de control`** en acción, seleccione el componente **`fecha`** que desea actualizar como destino del evento.
+2.  Elige la acción **`setValue`** y establece el valor como `{{currentUserInfo.updatedAt}}` 
+
+![date_confg](https://cdn.illacloud.com/official-website/img/docs/date_confg.png)
+
+#### Prueba de paso 4
+
+Ahora que cuando haga clic en el botón "hoy", la hora debe cambiar a la fecha de hoy. En cuanto a aquí, tenemos 2023-5-6, pero puede ser diferente cuando lo pruebas.
+
+![date_time1](https://cdn.illacloud.com/official-website/img/docs/date_time1.png)
