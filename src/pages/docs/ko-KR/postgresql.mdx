@@ -1,0 +1,119 @@
+---
+title: PostgreSQL
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/329?languages=en&filter=basic&value=0
+metaTitle: PostgreSQL Integration Doc | ILLA Cloud
+desc: Connect and interact with a PostgreSQL database using ILLA Cloud. Create apps that can query, manipulate, and visualize data. Automate and optimize data workflows.
+tagCategory: doc_menu_postgresql_click
+categoryName: 🔨 Integrations
+categoryPriority: 3
+postPriority: 1
+---
+
+## <h2 hidden>What is PostgreSQL?</h2>
+
+PostgreSQL in Illa is a database integration that allows you to connect and interact with a PostgreSQL database. PostgreSQL is a popular open-source relational database management system that is known for its stability, reliability, and powerful features.
+
+With the PostgreSQL integration in Illa, you can query, insert, update, and delete data from a PostgreSQL database using SQL commands. You can also create custom SQL queries and run them within Illa action. This makes it easy to build data-driven applications and dashboards that display real-time data from a PostgreSQL database.
+
+### Create PostgreSQL
+
+There are two ways to create a resource in Illa after signing into your Illa account.
+
+-   Create in Resources
+
+Sign into your Illa account, select `**Resources**` on the top of the page, and click `**Create New**` button.
+
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+
+Select **`PostgreSQL`** from the database list.
+
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+
+Connect to the database with required parameters described in `Connection Settings` below.
+
+Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
+
+After creating a resource, the ready PostgreSQL will display as shown.
+
+![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+
+-   Create in Builder
+
+Sign into your Illa account, create a project in Illa Builder in the `**App**` page, and navigate to the **`Action List`** at the bottom of the page. Click `**new**`, then select **`PostgreSQL`** from the database list. Then, connect to the database with required parameters described in `Connection Settings` below.
+
+Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
+
+### Connection Settings
+
+Here we need to provide information for connecting to PostgreSQL database.
+
+![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+
+| Properties  | Required | Description                                                                                                        |
+| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| Name        | required | The name for resource when creating actions in the ILLA.                                                           |
+| Hostname    | required | The URL or IP address for your database                                                                            |
+| Port        | required | The server host's port number that you should use to connect. If you don't specify a port, default port is '5432'. |
+| Database    | required | The name of the database                                                                                           |
+| Username    | required | the username you wish to use when logging in to the PostgreSQL server.                                             |
+| Password    | required | Use this password for authentication.                                                                              |
+| SSL options | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
+
+### Create Actions
+
+We have created a PostgreSQL resource, we can add the action by selecting PostgreSQL from action list and choosing the **`Create action`** button.
+
+![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+
+Now we have added the PostgreSQL server as an action to our building page.
+
+![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+
+### Configure PostgreSQL
+
+| Properties  | Description                                                               |
+| ----------- | ------------------------------------------------------------------------- |
+| SQL query   | sql commands to fetch (select), insert, update, delete data from database |
+| Transformer | transforming data into the style you like using JavaScript                |
+
+Example usage:
+
+-   Select
+
+```sql
+SELECT * FROM users ORDER BY lastname;
+```
+
+-   Insert
+
+```sql
+INSERT INTO users
+
+	(firstname, lastname, email)
+
+VALUES
+
+	(
+
+		{{ NewUser.data.firstNameInput }},
+
+		{{ NewUser.data.lastNameInput }},
+
+		{{ NewUser.data.emailInput }}
+
+	);
+```
+
+-   Update
+
+```sql
+UPDATE users
+  SET firstname = '{{form1.updatedProfile.first}}'
+  WHERE id = {{ form1.updatedProfile.uid}};
+```
+
+-   Delete
+
+```sql
+DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
+```
