@@ -1,0 +1,158 @@
+---
+title: Intervalle de temps
+metaTitle: Doc des composants de l'intervalle de temps | ILLA Cloud
+desc: Apprenez à utiliser le composant Intervalle de temps d'ILLA Cloud pour permettre aux utilisateurs de sélectionner une gamme de temps à partir d'une interface 24 heures sur 24 dans vos applications.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=fr&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Qu'est-ce que la plage de temps ?</h2>
+
+Le composant Intervalle de temps est un composant UI qui permet aux utilisateurs de sélectionner une plage de temps à partir d'une interface 24 heures sur 24, généralement utilisé dans les interfaces de formulaires ou d'entrée de données où l'utilisateur doit spécifier une plage de temps de début et de fin.
+
+Lorsqu'un composant Intervalle de temps est ajouté à toile, il affiche deux interfaces 24 heures côte à côte. Une interface est utilisée pour sélectionner l'heure de départ, tandis que l'autre est utilisée pour sélectionner l'heure de fin. L'utilisateur peut régler le temps en déplaçant le curseur de la souris ou en utilisant les flèches haut et bas.
+
+### Properties
+
+Propriétés disponibles de la plage de temps. JavaScript peut être écrit pour lire ou modifier des informations sur les composants.
+
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Heure de début                   | La valeur par défaut de l'heure de début du composant                                                                                                                           |
+| Heure de fin                     | La valeur heure de fin par défaut du composant                                                                                                                                  |
+| Formater                         | Une chaîne de format de date valide. Voir https://day.js.org/docs/fr/parse/string-format.                                                                                       |
+| Placeholder de début             | La valeur sera affichée lorsque le champ de saisie de l'heure de début est vide.                                                                                                |
+| Placeholder de fin               | La valeur sera affichée lorsque le champ de saisie de l'heure de fin est vide.                                                                                                  |
+| Taille de l'étape                | la taille de l'étape en unité de minutes                                                                                                                                        |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Régler l'alignement (alignement à gauche ou à droite) de l'étiquette                                                                                                            |
+| Width                            | Lorsque l'étiquette se trouve sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette.                                                                 |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Afficher le bouton de nettoyage  | contrôler si un bouton d'effacement est affiché dans le champ de saisie                                                                                                         |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Règle personnalisée              | Créez ici votre logique de validation. Les règles doivent être rédigées en JavaScript et couvertes par {{}}.                                                                    |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                                           |
+
+### Methods
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les deux méthodes suivantes:
+
+-   **setStartTime**
+
+Pour définir la valeur de la date de début, par exemple, {{"value1"}}
+
+| Propriétés | Libellé                             |
+| ---------- | ----------------------------------- |
+| Valeur     | Valeur de l'heure de début d'entrée |
+
+-   **setEndTime**
+
+Pour définir la date de fin, par exemple, {{"value2"}}
+
+| Propriétés | Libellé                 |
+| ---------- | ----------------------- |
+| Valeur     | Valeur de fin de saisie |
+
+-   **clearValue**
+
+Effacer la valeur du composant sélectionné 
+
+-   **validate**
+
+Vérifier que les informations saisies sont légales
+
+-   **clearValidate**
+
+Effacer le message de validation
+
+### Gestionnaire d'événements
+
+| Evénement  | Libellé                                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Changement | Lorsqu'un utilisateur change la valeur de temps sélectionnée, effectuer une action spécifique personnalisée par les utilisateurs. |
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété              | Libellé                                                             |
+| -------------------------------- | ------------------------------------------------------------------- |
+| Schéma de couleurs               | la propriété couleur de Date                                        |
+| Règle personnalisée              | la règle personnalisée que l'utilisateur a spécifiée                |
+| désactivée                       | une valeur booléenne indique le statut désactivé                    |
+| nomdeaffichage                   | le nom de ce composant (ie cascader1)                               |
+| startTime                        | valeur de l'heure de début                                          |
+| endTime                          | durée de fin                                                        |
+| format@@0 startPlaceholder       | valeur placeholder pour l'heure de début                            |
+| endPlaceholder                   | valeur placeholder pour l'heure de fin                              |
+| Evénements                       | une valeur de tableau pour la séquence d'événements                 |
+| format                           | le format de la date et de l'heure                                  |
+| Clé de données du formulaire     | la clé de données du formulaire de la date                          |
+| hidden                           | une valeur booléenne indique l'état caché du bouton                 |
+| masquer le message de validation | une valeur booléenne indique si le message de validation est masqué |
+| Etiquette                        | valeur de l'étiquette                                               |
+| Alignement du libellé            | alignement de l'étiquette en cascade (à gauche ou à droite)         |
+| Position du libellé              | position de l'étiquette en cascadeur (à gauche ou à droite)         |
+| Largeur du libellé               | l'entier représentant la largeur du libellé                         |
+| Pas de minute                    | valeur de la taille du pas de minute                                |
+| Obligatoire                      | une valeur booléenne indique le statut requis de l'entrée.          |
+| Montre Vider                     | une valeur booléenne indique si la date sera affichée clairement    |
+| valeur                           | Valeur sélectionnée                                                 |
+
+Exemple: {{rangeTime1.value[0]}}
+
+### Cas d'utilisation
+
+Ensuite, nous montrerons comment mapper les données de la source de données à l'intervalle de temps et définirons la valeur de fin à l'heure actuelle avec un bouton. 
+
+#### Étape 1 Ajouter une action
+
+Créons une table dans l'API REST appelée **`promoteCodes`,** incluant 6 colonnes : **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Nous utiliserons le startedAt et expirerons pour un exemple d'utilisation. 
+
+Ensuite, nous pouvons créer une nouvelle action pour l'API REST à partir de la liste d'actions, listant toutes les données dans promoteCodes et nommé restapi1. 
+
+Cliquez sur **`Save`** et **`Run`** pour activer cette action.
+
+#### Étape 2 Ajouter des composants
+
+Ensuite, nous pouvons ajouter un composant **`intervalle de temps`** et un composant **`button`** à la toile. Pour la valeur heure de début par défaut du composant de la plage de dates, nous utilisons la valeur startedAt de la première promotion du code à partir des données api restantes.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+De même, pour la valeur par défaut, nous utilisons expiredAu moment de la première promotion du code des données api restantes.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Nous avons également étiqueté le bouton comme "Now" comme indiqué ci-dessous.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Étape 3 Configurer le composant
+
+Pour le composant **`button`**, nous pouvons le configurer pour définir la date de fin dans le composant **`intervalle de temps`** à la date d'aujourd'hui.
+
+1.  Dans le gestionnaire d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`intervalle de temps`** que vous voulez mettre à jour comme cible de l'événement.
+2.  Choisissez l'action **`setEndTime`** et définissez **`Heure de fin`** comme `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Test de l'étape 4
+
+Maintenant que lorsque vous cliquez sur le bouton "Maintenant", l'heure de fin doit changer à la date d'aujourd'hui. Pour ce qui est d'ici, nous avons 20:03:05 mais cela peut être différent lorsque vous le testez.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
