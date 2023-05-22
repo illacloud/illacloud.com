@@ -1,0 +1,110 @@
+---
+title: Przełącz
+metaTitle: Przełącz dokument komponentu | ILLA Cloud
+desc: Dowiedz się, jak używać komponentu Switch w chmurze ILLA, aby utworzyć interfejs użytkownika, który pozwala użytkownikom przełączać się między dwiema opcjami. Zobacz przykłady i właściwości przełącznika.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/331?languages=pl&filter=basic&value=0
+tagCategory: doc_menu_switch_click
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 10
+---
+
+## <h2 hidden>Czym jest przełącznik?</h2>
+
+Komponent Switch jest elementem interfejsu użytkownika, który pozwala użytkownikom przełączać się między dwoma stanami: "włączony" i "wyłączony".
+
+### Właściwości
+
+| Właściwości      | Opis                                                                                                                                         |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wartość domyślna | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                     |
+| Etykieta         | Nazwa pola wyświetlanego użytkownikowi                                                                                                       |
+| Podpis           | Podpis używany do szczegółowego opisu pola                                                                                                   |
+| Ukryta etykieta  | Ustaw czy wyświetlić etykietę                                                                                                                |
+| Położenie        | Ustaw położenie etykiety względem komponentu                                                                                                 |
+| Wyrównanie       | Ustaw wyrównanie etykiety                                                                                                                    |
+| Obsługa zdarzeń  | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                     |
+| Ładowanie        | Czy komponent powinien pokazywać wskaźnik obciążenia.                                                                                        |
+| Wyłączone        | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                      |
+| Wskazówka        | Użytkownik może wprowadzić tutaj podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany. |
+| Hidden           | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                           |
+| Kolor motywu     | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                          |
+
+### Metoda
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące trzy metody:
+
+-   **setValue**
+
+Aby ustawić wybraną wartość, na przykład {{'value1'}}
+
+| Właściwości | Opis            |
+| ----------- | --------------- |
+| Wartość     | Wybrana wartość |
+
+-   **clearValue**
+
+Aby wyczyścić wybraną wartość
+
+-   **przełącznik**
+
+zmiana stanu "wyłączenia" na stan "włączony" lub odwrotnie.
+
+Przykładowe użycie:
+
+Przełącz obsługę komponentu nasłuchując zdarzenia `onClick` innych komponentów za pomocą wbudowanego systemu zdarzeń. Skonfiguruj za pomocą poniższych przykładowych kroków:
+
+1.  Dodaj wyzwalacz zdarzenia do komponentu, którego chcesz słuchać. Na przykład, jeśli chcesz słuchać zdarzenia **`onClick`** komponentu Przycisku, dodałbyś wyzwalacz zdarzenia do komponentu Przycisku.
+2.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz komponent **`Switch`**, który chcesz zaktualizować jako cel wydarzenia.
+3.  Wybierz działanie \*\*'toggle''. Gdy zdarzenie jest wyzwalane (tj. gdy przycisk jest kliknięty), komponent przełącznika zostanie przełączony, a jego status zostanie zaktualizowany.
+4.  Zapisz ustawienia wyzwalacza zdarzenia i powtórz proces dla innych komponentów, których chcesz słuchać.
+
+Po skonfigurowaniu wyzwalaczy zdarzeń, komponent przełącznika będzie automatycznie aktualizowany za każdym razem, gdy zdarzenie **`onClick`** zostanie wyzwalone na innych komponentach. Pozwala to na tworzenie dynamicznych interfejsów, które odpowiadają na dane wejściowe użytkownika w czasie rzeczywistym, ułatwianie użytkownikom nawigowania i interakcji z aplikacją.
+
+### Obsługa zdarzeń
+
+| Wydarzenie | Opis                                                                                                |
+| ---------- | --------------------------------------------------------------------------------------------------- |
+| Zmiana     | Gdy użytkownik zmienia wybraną wartość, wykonaj określone działanie dostosowane przez użytkowników. |
+
+### Dane
+
+Komponent przycisku ma powszechnie używane dane, które mogą być wywołane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności     | Opis                                                        |
+| ------------------- | ----------------------------------------------------------- |
+| schemat kolorów     | Kolor tła przycisku                                         |
+| nazwa wyświetlacza  | nazwa tego składnika (tj. przycisk1)                        |
+| hidden              | wartość logiczna wskazuje ukryty status przycisku           |
+| etykieta            | wartość etykiety                                            |
+| Wyrównanie etykiety | wyrównanie etykiety przełącznika (w lewo lub w prawo)       |
+| pozycja etykiety    | umiejscowienie etykiety przełącznika (z lewej lub prawej)   |
+| Szerokość etykiety  | liczba całkowita reprezentująca szerokość etykiety.         |
+| etykieta pełna      | wartość logiczna wskazuje, czy etykieta jest pełna.         |
+| wartość             | Użytkownik ustawia, że wartość jest prawdziwa lub fałszywa  |
+
+### Przypadek użycia
+
+Następnie pokażemy jak dynamicznie zmienić status innych komponentów. 
+
+#### Krok 1 Dodaj komponent
+
+Najpierw dodajemy komponent **Switch\`** i oznacz go jako 'Ukryty'. Następnie używamy komponentu **`text`** jako komponentu, na który wpływa zmiana, z "wyświetlonych" na "ukryty". Zmieniamy jego zawartość na 'Hello World' 
+
+#### Krok 2 Konfiguracja komponentu
+
+W **Właściwości `Ukryty`** dla tekstu. Kliknij na ikonę **fx\`**, abyśmy mogli kontrolować stan ukrytego komponentu, ustawiając go tak samo, jak wartość naszego przełącznika za pomocą JavaScript:
+
+```jsx
+{{switch1.value}}
+```
+
+Teraz, gdy przełącznik jest włączony, wartość przełącznika wynosi **`true`,** tekst zostanie ukryty i odwrotnie.
+
+Przełącz **`On`** 
+
+![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+
+Przełącz **`Off`**
+
+![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)
