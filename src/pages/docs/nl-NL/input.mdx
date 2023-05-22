@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Component Doc - ILLA Cloud
+desc: Leer hoe u de invoercomponent kunt gebruiken om tekstvelden voor uw app in ILLA Cloud te maken en aan te passen.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=nl&filter=basic&value=0
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Wat is Input?</h2>
+
+Tekstinvoercomponent is een gebruikersinterface element waarmee gebruikers tekst in een formulier of invoerveld kunnen invoeren en bewerken.
+
+### Eigenschappen
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standaard waarde           | De initiële waarde van het component. U kunt de initiële waarde dynamisch wijzigen door JavaScript in {{}}.                                                                     |
+| Plaatsaanduiding           | De waarde wordt getoond wanneer het invoerveld leeg is.                                                                                                                         |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                            |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                        |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Alleen lezen               | Bepaal de status of de component alleen-lezen is. Een alleen-lezen component kan worden geselecteerd en gefocust maar kan niet worden gewijzigd.                                |
+| Toon wissen knop           | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                       |
+| Aantal tekens weergeven    | bepalen of het aantal tekens van de input wordt weergegeven of niet                                                                                                             |
+| Voorvoegsel tekst          | een kort stukje tekst dat aan de linkerkant van het invoerveld verschijnt, vaak gebruikt om extra context of instructies aan de gebruiker te geven                              |
+| Achtervoegsel tekst        | een kort stukje tekst dat aan de rechterkant van het invoerveld verschijnt, vaak gebruikt om extra informatie of feedback aan de gebruiker te geven                             |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Patroon                    | Geef een regulier expressiepatroon op dat de gebruiker moet overeenkomen om als geldig te worden beschouwd                                                                      |
+| Maximale lengte            | stel het maximum aantal tekens in dat ingevoerd kan worden in het invoerveld.                                                                                                   |
+| Min. lengte                | Geef het minimum aantal tekens op dat de gebruiker in het invoerveld moet invoeren om de invoer als geldig te beschouwen.                                                       |
+| Aangepaste regel           | Voer hier uw validatiedatatie logica in. De regels moeten in JavaScript worden gemaakt en door {{}}.                                                                            |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                                                      |
+
+### Methode
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende twee methoden:
+
+-   **setvalue**
+
+Om de invoerwaarde in te stellen, bijvoorbeeld {{'value1'}}
+
+| Eigenschappen | Beschrijving |
+| ------------- | ------------ |
+| Waarde        | Input value  |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+-   **focus**
+
+Wanneer de focus methode wordt gebeld, het invoerveld zal gemarkeerd worden en klaar voor de gebruiker om te beginnen met typen zonder dat de gebruiker hoeft te klikken op het invoerveld
+
+Voorbeeld gebruik:
+
+Input component support luisteren naar de `onChange` gebeurtenis van andere componenten met behulp van het ingebouwde event systeem. Instellen door de volgende voorbeeld stappen te volgen:
+
+1.  Voeg een gebeurtenistrigger toe aan de component waarnaar u wilt luisteren. Bijvoorbeeld, als u wilt luisteren naar het **`onChange`** evenement van een Radio Group component, je zou een event-handler aan dat component van Radio Group toevoegen.
+2.  In de Event Handler bewerken, selecteer **`Control component`** in actie, selecteer het **`Input`** onderdeel dat u wilt bijwerken als het doel van het event.
+3.  Kies de **`SetValue`** actie en selecteer de juiste waarde voor de input component. Dit zal de waarde zijn die de invoercomponent heeft en zal bijwerken wanneer de gebeurtenis wordt geactiveerd.
+4.  Sla de instellingen voor de trigger van de gebeurtenis op en herhaal het proces voor alle andere componenten waarnaar u wilt luisteren.
+
+Zodra u de event triggers hebt ingesteld, wordt het invoercomponent automatisch bijgewerkt wanneer het **`onChange`** evenement wordt geactiveerd op de andere componenten. Dit stelt u in staat om dynamische interfaces te maken die reageren op gebruikersinvoer in realtime het makkelijker maken voor gebruikers om te navigeren en te communiceren met uw applicatie.
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                             |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| Veranderen  | Wanneer een gebruiker de geselecteerde invoerwaarde wijzigt                                              |
+| Focus       | Wanneer een gebruiker de muiscursor beweegt op het invoercomponent                                       |
+| Blur        | Wanneer een gebruiker wordt gedaan om waarde in te voeren en stopt met focussen op de cascader component |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap | Beschrijving                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| waarde              | gebruiker invoerwaarde                                                               |
+| kleurenschema       | achtergrondkleur van de knop                                                         |
+| uitgeschakeld       | een booleaanse waarde geeft de uitgeschakelde status aan                             |
+| weergavenaam        | de naam van dit onderdeel (bijv. knop1)                                              |
+| formDataKey         | de formuliergegevenssleutel van invoer                                               |
+| hidden              | verborgen status (waar of onwaar)                                                    |
+| Label               | label waarde                                                                         |
+| uitlijnen           | uitlijning van invoerlabel (links of rechts)                                         |
+| labeling            | positie van invoerlabel (links of rechts)                                            |
+| labelBreedte        | het geheel getal waarin de breedte van het label wordt weergegeven.                  |
+| maxLengte           | de waarde van de maximale lengte                                                     |
+| minnLengte          | de waarde van de minimale lengte                                                     |
+| placeholder         | placeholder waarde                                                                   |
+| prefixText          | waarde van het tekstvoorvoegsel                                                      |
+| achtervoegseltekst  | waarde van het tekstachtervoegsel                                                    |
+| alleen lezen        | een Booleaanse waarde geeft de readyOnly status van invoer aan.                      |
+| verplicht           | een Booleaanse waarde geeft de vereiste status van invoer aan.                       |
+| regex               | reguliere expressie van input                                                        |
+| toon aantal         | een Booleaanse waarde geeft aan of het aantal tekens van de invoer wordt weergegeven |
+| tooltipText         | waarde van tekst tooltip                                                             |
+
+Voorbeeld: {{input1.value}}
+
+### Gebruik geval
+
+Hieronder staan enkele voorbeelden voor het aanpassen van invoercomponent.
+
+-   Voorvoegsel:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Achtervoegsel:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Gereedschap:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Patroon:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
