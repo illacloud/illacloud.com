@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Eingabekomponenten-Doc | ILLA Cloud
+desc: Erfahren Sie, wie Sie mit der Eingabekomponente Textfelder für Ihre App in ILLA Cloud erstellen und anpassen.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=de&filter=basic&value=0
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Was ist Eingabe?</h2>
+
+Texteingabekomponente ist ein Benutzeroberflächenelement, das es Benutzern erlaubt, Text in Form oder Eingabefeld einzugeben und zu bearbeiten.
+
+### Eigenschaften
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert                     | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                       |
+| Platzhalter                      | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                   |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                      |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                        |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Löschtaste anzeigen              | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                   |
+| Zeichenzahl anzeigen             | bestimmen, ob die Zeichenzahl der Eingabe angezeigt wird oder nicht                                                                                                                       |
+| Präfix Text                      | ein kurzer Text, der links neben dem Eingabefeld erscheint, der oft verwendet wird, um dem Benutzer zusätzliche Kontexte oder Anweisungen zu geben                                        |
+| Suffix Text                      | ein kurzer Text, der rechts neben dem Eingabefeld erscheint, oft verwendet, um dem Benutzer zusätzliche Informationen oder Rückmeldungen zu geben                                         |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Muster                           | geben Sie ein Muster für regulären Ausdruck an, das die Eingabe des Benutzers übereinstimmen muss, um als gültig zu betrachten                                                            |
+| Maximale Länge                   | legt die maximale Anzahl von Zeichen fest, die in das Eingabefeld eingegeben werden können.                                                                                               |
+| Min. Länge                       | geben Sie die minimale Anzahl von Zeichen an, die der Benutzer in das Eingabefeld eingeben muss, damit die Eingabe als gültig gilt.                                                       |
+| Eigene Regel                     | Erstellen Sie hier Ihre Validierungslogik. Die Regeln sollten in JavaScript gemacht werden und von {{alt}} abgedeckt werden.                                                              |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                                                                |
+
+### Methode
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden zwei Methoden:
+
+-   **setValue**
+
+Um den Eingabewert festzulegen, zum Beispiel {{'value1'}}
+
+| Eigenschaften | Beschreibung |
+| ------------- | ------------ |
+| Wert          | Input value  |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+-   **focus**
+
+Wenn die Fokusmethode aufgerufen wird, das Eingabefeld wird hervorgehoben und bereit für den Benutzer zu tippen, ohne dass der Benutzer auf das Eingabefeld klicken muss
+
+Beispiel Verwendung:
+
+Unterstützung für Eingabekomponenten, die auf das `onChange` Ereignis anderer Komponenten mit eingebautem Ereignissystem lauschen. Richten Sie es ein, indem Sie folgenden Beispielschritten folgen:
+
+1.  Füge einen Ereignis-Trigger der Komponente hinzu, auf die du hören möchtest. Zum Beispiel, wenn du die **`onChange`** Veranstaltung einer Funkgruppen-Komponente hören möchtest, Sie würden dieser Komponente einen Ereignis-Handler hinzufügen.
+2.  Wählen Sie im Ereignis-Handler **`Control component`** in Aktion aus, wählen Sie die **`Input`** Komponente, die als Ziel des Ereignisses aktualisiert werden soll.
+3.  Wähle die Aktion **`SetValue`** aus und wähle den passenden Wert für die Eingabekomponente. Dies ist der Wert, den die Eingabekomponente hat und aktualisiert wird, wenn das Ereignis ausgelöst wird.
+4.  Speichern Sie die Ereignisauslöseeinstellungen und wiederholen Sie den Prozess für alle anderen Komponenten, die Sie hören möchten.
+
+Sobald Sie die Ereignisauslöser eingerichtet haben, wird die Eingabekomponente automatisch aktualisiert, sobald das **`onChange`** Ereignis auf den anderen Komponenten ausgelöst wird. So können Sie dynamische Schnittstellen erstellen, die auf Benutzereingaben in Echtzeit reagieren die Navigation und Interaktion mit Ihrer Anwendung erleichtern.
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                           |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| Ändern   | Wenn ein Benutzer den gewählten Eingabewert ändert                                                     |
+| Fokus    | Wenn ein Benutzer den Mauszeiger auf die Eingabekomponente bewegt                                      |
+| Blur     | Wenn ein Benutzer einen Wert eingegeben hat und nicht mehr auf die Cascader-Komponente fokussiert wird |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname    | Beschreibung                                                               |
+| ------------------- | -------------------------------------------------------------------------- |
+| wert                | Benutzereingabewert                                                        |
+| farbenschema        | Hintergrundfarbe des Buttons                                               |
+| deaktiviert         | ein boolescher Wert zeigt den deaktivierten Status an                      |
+| anzeiger            | der Name dieser Komponente (dh Button1)                                    |
+| formDataKey         | der Formular-Datenschlüssel der Eingabe                                    |
+| hidden              | versteckter Status (true oder false)                                       |
+| bezeichnen          | label Wert                                                                 |
+| labelAlign          | Ausrichtung der Eingabebezeichnung (links oder rechts)                     |
+| labelPosition       | Position der Eingabebezeichnung (links oder rechts)                        |
+| labelBreite         | die Ganzzahl, die die Breite des Labels darstellt.                         |
+| maximale Länge      | der Wert der maximalen Länge                                               |
+| minütige Länge      | der Wert der minimalen Länge                                               |
+| Platzhalter         | Platzhalterwert                                                            |
+| prefixText          | Wert des Textpräfixes                                                      |
+| suffixText          | Wert des Textsuffix                                                        |
+| nur lesen           | ein boolscher Wert zeigt den readyOnly Status der Eingabe.                 |
+| benötigt            | ein boolescher Wert zeigt den benötigten Status der Eingabe.               |
+| regex               | regulärer Ausdruck der Eingabe                                             |
+| showcharakteranzahl | ein boolescher Wert gibt an, ob die Zeichenzahl der Eingabe angezeigt wird |
+| tooltipText         | Wert des Tooltip-Textes                                                    |
+
+Beispiel: {{input1.value}}
+
+### Gehäuse verwenden
+
+Unten finden Sie einige Beispiele für die Anpassung der Eingabekomponente.
+
+-   Präfix:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffix:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Tooltip:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Muster:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
