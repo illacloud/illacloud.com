@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Doc de composant d'entrée | ILLA Cloud
+desc: Apprenez à utiliser le composant d'entrée pour créer et personnaliser des champs de texte pour votre application dans ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=fr&filter=basic&value=0
+categoryName: 🧬 Assembler des composants
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Qu'est-ce que la saisie ?</h2>
+
+Le composant de saisie de texte est un élément de l'interface utilisateur qui permet aux utilisateurs d'entrer et de modifier du texte dans un formulaire ou un champ de saisie.
+
+### Propriétés
+
+| Propriétés                       | Libellé                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valeur par défaut                | La valeur initiale du composant. Vous pouvez modifier dynamiquement la valeur initiale en tapant JavaScript dans {{}}.                                                          |
+| Placeholder                      | La valeur sera affichée lorsque le champ de saisie est vide.                                                                                                                    |
+| Étiquette                        | Le nom du champ affiché à l'utilisateur                                                                                                                                         |
+| Légende                          | Une légende utilisée pour décrire le champ en détail                                                                                                                            |
+| Libellé masqué                   | Définir si le libellé doit être affiché                                                                                                                                         |
+| Position                         | Définir la position de l'étiquette par rapport au composant                                                                                                                     |
+| Alignement                       | Régler l'alignement (alignement à gauche ou à droite) de l'étiquette                                                                                                            |
+| Width                            | Lorsque l'étiquette se trouve sur le côté gauche du composant, définissez le rapport de largeur de l'étiquette.                                                                 |
+| Gestionnaire d'événements        | Déclencher des requêtes, contrôler des composants ou appeler d'autres APIs en réponse aux événements des composants.                                                            |
+| Désactivé                        | Contrôle l'état de la désactivation du composant. Le composant ne peut pas être modifié ou concentré lorsqu'il est désactivé.                                                   |
+| Lecture seule                    | Contrôle l'état du composant en lecture seule. Un composant en lecture seule peut être sélectionné et concentré mais ne peut pas être modifié.                                  |
+| Afficher le bouton de nettoyage  | contrôler si un bouton d'effacement est affiché dans le champ de saisie                                                                                                         |
+| Afficher le nombre de caractères | contrôle si le nombre de caractères de l'entrée est affiché ou non                                                                                                              |
+| Texte du préfixe                 | un morceau de texte court qui apparaît à gauche du champ de saisie, souvent utilisé pour fournir un contexte ou des instructions supplémentaires à l'utilisateur                |
+| Suffixe de texte                 | un texte court qui apparaît à droite du champ de saisie, souvent utilisé pour fournir des informations supplémentaires ou des commentaires à l'utilisateur                      |
+| Info-bulle                       | Les utilisateurs peuvent entrer l'infobulle du composant ici. L'infobulle s'affichera quand elle sera mise au point. Le format Markdown est pris en charge.                     |
+| Champ obligatoire                | Valable uniquement lorsque le commutateur est allumé.                                                                                                                           |
+| Schéma                           | spécifiez un motif d'expression régulière que l'entrée de l'utilisateur doit correspondre pour être considéré comme valide                                                      |
+| Longueur max                     | définir le nombre maximum de caractères qui peuvent être saisis dans le champ de saisie.                                                                                        |
+| Longueur minimale                | spécifiez le nombre minimum de caractères que l'utilisateur doit entrer dans le champ de saisie pour que l'entrée soit considérée comme valide.                                 |
+| Règle personnalisée              | Créez ici votre logique de validation. Les règles doivent être rédigées en JavaScript et couvertes par {{}}.                                                                    |
+| Masquer le message de validation | Vous pouvez masquer le message d'erreur en changeant l'état caché lorsque la valeur d'entrée est incorrecte. Vous pouvez modifier dynamiquement le statut caché par JavaScript. |
+| Clé de données du formulaire     | Spécifie une clé d'un composant de formulaire d'emballage lors de la construction de l'attribut de données.                                                                     |
+| Hidden                           | Contrôle dynamiquement si le composant est caché. Vous pouvez changer le statut caché par la valeur booléenne dynamique.                                                        |
+| Couleur du thème                 | Permet aux utilisateurs de spécifier la couleur d'arrière-plan et l'opacité du bouton                                                                                           |
+
+### Méthode
+
+Vous pouvez utiliser d'autres composants pour contrôler le composant. Nous soutenons les deux méthodes suivantes:
+
+-   **setValue**
+
+Pour définir la valeur d'entrée, par exemple, {{'value1'}}
+
+| Propriétés | Libellé     |
+| ---------- | ----------- |
+| Valeur     | Input value |
+
+-   **clearValue**
+
+Effacer la valeur du composant sélectionné 
+
+-   **focus**
+
+Quand la méthode de mise au point est appelée, le champ de saisie sera mis en surbrillance et prêt pour que l'utilisateur commence à taper sans avoir à cliquer sur le champ de saisie
+
+Exemple d'utilisation :
+
+Les composants d'entrée supportent l'écoute de l'événement `onChange` d'autres composants en utilisant le système d'événements intégré. Configurez-le en suivant ces étapes d'exemple :
+
+1.  Ajouter un trigger sur événement au composant que vous voulez écouter. Par exemple, si vous voulez écouter l'événement **`onChange`** d'un composant du Groupe Radio, vous ajouterez un gestionnaire d'événements à ce composant de Radio Group.
+2.  Dans le gestionnaire d'édition d'événements, sélectionnez **`Control component`** en action, sélectionnez le composant **`Input`** que vous voulez mettre à jour comme cible de l'événement.
+3.  Choisissez l'action **`SetValue`** et sélectionnez la valeur appropriée pour le composant d'entrée. Ce sera la valeur que le composant d'entrée a et mettra à jour lorsque l'événement sera déclenché.
+4.  Enregistrez les paramètres de déclenchement d'événement et répétez le processus pour tous les autres composants que vous voulez écouter.
+
+Une fois que vous avez configuré les déclencheurs d'événement, le composant d'entrée sera automatiquement mis à jour chaque fois que l'événement **`onChange`** sera déclenché sur les autres composants. Cela vous permet de créer des interfaces dynamiques qui répondent en temps réel à la saisie de l'utilisateur permettant aux utilisateurs de naviguer et d'interagir plus facilement avec votre application.
+
+### Gestionnaire d'événements
+
+| Evénement     | Libellé                                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| Changement    | Quand un utilisateur change la valeur d'entrée sélectionnée                                                |
+| Concentration | Lorsqu'un utilisateur déplace le curseur de la souris sur le composant d'entrée                            |
+| Blur          | Lorsqu'un utilisateur a terminé l'entrée de la valeur et quitte la mise au point sur le composant cascader |
+
+### Donnée
+
+Le composant a des données couramment utilisées, qui peuvent être appelées via **`{{componentName.propertyName}}`** dans l'application.
+
+| Nom de la propriété              | Libellé                                                                      |
+| -------------------------------- | ---------------------------------------------------------------------------- |
+| valeur                           | valeur de saisie de l'utilisateur                                            |
+| Schéma de couleurs               | couleur de fond du bouton                                                    |
+| désactivée                       | une valeur booléenne indique le statut désactivé                             |
+| nomdeaffichage                   | le nom de ce composant (bouton i.)                                           |
+| Clé de données du formulaire     | la clé de données du formulaire d'entrée                                     |
+| hidden                           | statut caché (vrai ou faux)                                                  |
+| Etiquette                        | valeur de l'étiquette                                                        |
+| Alignement du libellé            | alignement du libellé d'entrée (gauche ou droite)                            |
+| Position du libellé              | position du libellé d'entrée (à gauche ou à droite)                          |
+| Largeur du libellé               | l'entier représentant la largeur des étiquettes.                             |
+| Longueur max                     | la valeur de la longueur maximale                                            |
+| Longueur min                     | la valeur de longueur minimale                                               |
+| espace réservé                   | valeur du placeholder                                                        |
+| prefixText                       | valeur du préfixe du texte                                                   |
+| suffixe                          | valeur du suffixe du texte                                                   |
+| lecture seule                    | une valeur booléenne indique le statut readyOnly de l'entrée.                |
+| Obligatoire                      | une valeur booléenne indique le statut requis de l'entrée.                   |
+| regex                            | expression régulière de l'entrée                                             |
+| Afficher le nombre de caractères | une valeur booléenne indique si le nombre de caractères d'entrée est affiché |
+| Texte de l'infobulle             | valeur du texte de l'info-bulle                                              |
+
+Exemple: {{input1.value}}
+
+### Cas d'utilisation
+
+Voici quelques exemples de personnalisation du composant d'entrée.
+
+-   Préfixe :
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffixe :
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Info-bulle :
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Schéma :
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
