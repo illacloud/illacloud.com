@@ -1,0 +1,132 @@
+---
+title: Input
+metaTitle: Inmatnings-komponentdokument ILLA Cloud
+desc: Lär dig hur du använder inmatningskomponenten för att skapa och anpassa textfält för din app i ILLA Cloud.
+tagCategory: doc_menu_input_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/335?languages=sv&filter=basic&value=0
+categoryName: 🧬 Montera komponenter
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>Vad är Input?</h2>
+
+Text Inmatningskomponent är ett användargränssnitt element som tillåter användare att ange och redigera text i ett formulär eller inmatningsfält.
+
+### Egenskaper
+
+| Egenskaper                 | Beskrivning                                                                                                                                         |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Förvalt värde              | Det initiala värdet av komponenten. Du kan dynamiskt ändra initialvärdet genom att skriva JavaScript i {{}}.                                        |
+| Platshållare               | Värdet kommer att visas när inmatningsfältet är tomt.                                                                                               |
+| Etikett                    | Namnet på fältet som visas för användaren                                                                                                           |
+| Bildtext                   | En text som används för att beskriva fältet i detalj                                                                                                |
+| Dold etikett               | Ange om etiketten ska visas                                                                                                                         |
+| Befattning                 | Ställ in positionen för etiketten i förhållande till komponenten                                                                                    |
+| Justering                  | Ange justering (anpassa till vänster eller höger) på etiketten                                                                                      |
+| Width                      | När etiketten är på vänster sida av komponenten, ställ in breddförhållandet på etiketten.                                                           |
+| Händelsehanterare          | Utlösa frågor, styra komponenter, eller ringa andra API:er som svar på komponenthändelser.                                                          |
+| Inaktiverad                | Kontrollera status för om komponenten är inaktiverad. Komponenten kan inte ändras eller fokuseras när den är inaktiverad.                           |
+| Läs endast                 | Kontrollera status på om komponenten är skrivskyddad. En skrivskyddad komponent kan väljas och fokuseras men kan inte ändras.                       |
+| Visa tydlig knapp          | kontrollera om en tydlig knapp visas i inmatningsfältet                                                                                             |
+| Visa antal tecken          | kontrollera om antalet tecken i indata visas eller inte                                                                                             |
+| Prefix text                | en kort text som visas till vänster om inmatningsfältet, ofta används för att ge ytterligare sammanhang eller instruktioner till användaren         |
+| Suffix text                | en kort text som visas till höger om inmatningsfältet, ofta används för att ge ytterligare information eller feedback till användaren               |
+| Verktygstips               | Användare kan ange komponenten verktygstips här. Verktygstipen kommer att visas när den är fokuserad. Markdown format stöds.                        |
+| Obligatoriskt fält         | Gäller endast när strömbrytaren är aktiverad.                                                                                                       |
+| Mönster                    | ange ett reguljärt uttrycksmönster som användarens indata måste matcha för att anses vara giltigt                                                   |
+| Max längd                  | ange det maximala antalet tecken som kan anges i inmatningsfältet.                                                                                  |
+| Minsta längd               | ange det minsta antalet tecken som användaren måste ange i inmatningsfältet för att inmatningen ska anses giltig.                                   |
+| Anpassad regel             | Skapa din valideringslogik här. Reglerna ska göras i JavaScript och omfattas av {{}}.                                                               |
+| Dölj valideringsmeddelande | Du kan dölja felmeddelandet genom att byta dold status när inmatningsvärdet är felaktigt. Du kan dynamiskt ändra den dolda statusen med JavaScript. |
+| Formulär dataknapp         | Ange en nyckel till en omslagningsformulärkomponent när du konstruerar data-attributet.                                                             |
+| Hidden                     | Styr dynamiskt om komponenten är dold. Du kan ändra den dolda statusen genom dynamiskt booleskt värde.                                              |
+| Tema färg                  | Tillåter användare att ange knappens bakgrundsfärg och opacitet                                                                                     |
+
+### Metod
+
+Du kan använda andra komponenter för att styra komponenten. Vi stöder följande två metoder:
+
+-   **setValue**
+
+För att ställa in indatavärdet, till exempel, {{'value1'}}
+
+| Egenskaper | Beskrivning |
+| ---------- | ----------- |
+| Värde      | Input value |
+
+-   **clearValue**
+
+För att rensa värdet på den valda komponenten 
+
+-   **focus**
+
+När fokusmetoden kallas, inmatningsfältet kommer att markeras och redo för användaren att börja skriva utan att användaren behöver klicka på inmatningsfältet
+
+Exempel Användning:
+
+Input komponent stöd lyssna på `onChange`-händelsen av andra komponenter med hjälp av inbyggda händelsesystem. Ställ in det genom att följa dessa exempelsteg:
+
+1.  Lägg till en händelseutlösare till den komponent som du vill lyssna på. Till exempel, om du vill lyssna på **`onChange`** händelsen av en radiogruppskomponent, du skulle lägga till en händelsehanterare till den Radio Group komponenten.
+2.  I händelsehanteraren Redigera, välj **`Control component`** i åtgärd, välj **`Input`** komponenten som du vill uppdatera som mål för händelsen.
+3.  Välj åtgärden **`SetValue`** och välj lämpligt värde för inmatningskomponenten. Detta kommer att vara det värde som inmatningskomponenten har och kommer att uppdatera när händelsen utlöses.
+4.  Spara inställningarna för händelsen och upprepa processen för andra komponenter som du vill lyssna på.
+
+När du har konfigurerat händelseutlösarna, kommer indatakomponenten automatiskt att uppdateras när händelsen **`onChange`** utlöses på de andra komponenterna. Detta gör att du kan skapa dynamiska gränssnitt som svarar på användarens indata i realtid. göra det enklare för användare att navigera och interagera med din applikation.
+
+### Händelsehanterare
+
+| Händelse | Beskrivning                                                                        |
+| -------- | ---------------------------------------------------------------------------------- |
+| Ändra    | När en användare ändrar det valda inmatningsvärdet                                 |
+| Fokus    | När en användare flyttar muspekaren på inmatningskomponenten                       |
+| Blur     | När en användare är klar att mata in värde och sluta fokusera på kaskadkomponenten |
+
+### Data
+
+Komponenten har några vanliga data, som kan anropas via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskapens namn   | Beskrivning                                               |
+| ------------------ | --------------------------------------------------------- |
+| värde              | användarens inmatningsvärde                               |
+| colorScheme        | bakgrundsfärg på knappen                                  |
+| inaktiverad        | ett booleskt värde anger inaktiverad status               |
+| visningsnamn       | namnet på denna komponent (dvs knapp1)                    |
+| formDataKey        | formulärdataknappen för inmatning                         |
+| hidden             | dold status (sant eller falskt)                           |
+| etikett            | etikett värde                                             |
+| etikettJustera     | justering av inmatningsetiketten (vänster eller höger)    |
+| etikettPosition    | position för inmatningsetikett (vänster eller höger)      |
+| etikettBredd       | heltal som representerar bredden av etikett.              |
+| maxLängd           | värdet av maximal längd                                   |
+| minLängd           | värdet av minsta längd                                    |
+| platshållare       | Platshållarens värde                                      |
+| prefixText         | värdet av textprefixet                                    |
+| suffixText         | värdet av textsuffix                                      |
+| readOnly           | ett booleskt värde anger status readyOnly för indata.     |
+| obligatorisk       | ett booleskt värde anger status som krävs för inmatning.  |
+| regex              | reguljärt uttryck för indata                              |
+| showCharacterCount | ett booleskt värde anger om antalet tecken visas          |
+| tooltipText        | värdet av verktygstips text                               |
+
+Exempel: {{input1.value}}
+
+### Använd ärende
+
+Nedan följer några exempel för att anpassa inmatningskomponenten.
+
+-   Prefix:
+
+![input_prefix](https://cdn.illacloud.com/official-website/img/docs/input_prefix.png)
+
+-   Suffix:
+
+![input_suffix](https://cdn.illacloud.com/official-website/img/docs/input_suffix.png)
+
+-   Verktygstips:
+
+![input_tooltip](https://cdn.illacloud.com/official-website/img/docs/input_tooltip.png)
+
+-   Mönster:
+
+![input_pattern](https://cdn.illacloud.com/official-website/img/docs/input_pattern.png)
