@@ -1,0 +1,143 @@
+---
+title: Selector de timp
+metaTitle: Selector de timp Componenta fichar@@0ie ILLA Cloud
+desc: Aflați cum să utilizați componenta Time Picker din ILLA Cloud pentru a permite utilizatorilor să aleagă o anumită perioadă de timp dintr-o interfață de 24 de ore din proiectele dvs.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-site/341?languages=ro&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Asamblarea componentelor
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Ce este selectorul de timp?</h2>
+
+Componenta selector de timp este o componentă UI care permite utilizatorilor să aleagă o anumită perioadă de timp dintr-o interfață de 24 de ore, De regulă, utilizate în formulare sau interfețe de intrare de date în cazul în care utilizatorul trebuie să specifice un anumit timp.
+
+Când o componentă selector de timp este adăugată la pânză, afișează o interfață de 24 de ore care afișează ore, minute și secunde. Utilizatorul poate ajusta timpul mutând cursorul mouse-ului sau folosind săgeţile în sus şi în jos.
+
+### Properties
+
+Proprietățile disponibile ale selectorului de timp JavaScript poate fi scris pentru a citi sau a modifica informații despre componente.
+
+| Proprietăți                 | Descriere                                                                                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valoare implicită           | Valoarea inițială a componentei. Puteți schimba dinamic valoarea inițială tastând JavaScript în {{}}.                                                   |
+| Format                      | Un șir de format de dată valid. Vezi ziJS.                                                                                                              |
+| Substituent                 | Valoarea va fi afișată când câmpul de intrare este gol.                                                                                                 |
+| Dimensiune pas              | dimensiunea pasului în unitate de minute                                                                                                                |
+| Etichetă                    | Numele câmpului afişat utilizatorului                                                                                                                   |
+| Legendă                     | O legendă folosită pentru a descrie câmpul în detaliu                                                                                                   |
+| Etichetă ascunsă            | Setează dacă se afișează eticheta                                                                                                                       |
+| Poziție                     | Setați poziția etichetei în raport cu componenta                                                                                                        |
+| Aliniere                    | Setați alinierea (aliniere la stânga sau la dreapta) a etichetei                                                                                        |
+| Width                       | Când eticheta este pe partea stângă a componentei, setaţi raportul lăţimii etichetei.                                                                   |
+| Gestionar de evenimente     | Declanșează interogări, controlează componente sau apelează alte API-uri ca răspuns la evenimentele componentei.                                        |
+| Dezactivat                  | Controlează starea de dezactivare a componentei. Componenta nu poate fi modificată sau focalizată atunci când este dezactivată.                         |
+| Doar citire                 | Controlează starea dacă componenta este doar în citire. O componentă doar-în-citire poate fi selectată și focalizată, dar nu poate fi modificată.       |
+| Tooltip                     | Utilizatorii pot introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.           |
+| Afişare buton ştergere      | controlează dacă în câmpul de intrare este sau nu afișat un buton de ștergere                                                                           |
+| Tooltip                     | Utilizatorul poate introduce aici pontul componentei. Sfatul de instrumente va fi afișat când este concentrat. Formatul markdown este acceptat.         |
+| Câmp obligatoriu            | Valid numai când comutatorul este pornit.                                                                                                               |
+| Regulă personalizată        | Crează-ți logica validării aici. Regulile ar trebui să fie stabilite în JavaScript și acoperite de {{}}.                                                |
+| Ascunde mesajul de validare | Puteți ascunde eroarea prin comutarea stării ascunse atunci când valoarea de intrare este incorectă. Poți schimba dinamic starea ascunsă de JavaScript. |
+| Formular cheie date         | Specificați o cheie a unei componente de împachetare a formei la construirea atributului de date.                                                       |
+| Hidden                      | Controlează dinamic dacă componenta este ascunsă. Puteți schimba starea ascunsă prin valoarea booleană dinamică.                                        |
+| Culoare temă                | Permite utilizatorilor să specifice culoarea de fundal şi opacitatea butonului                                                                          |
+
+### Methods
+
+Puteţi utiliza alte componente pentru a controla componenta. Sprijinim următoarele patru metode:
+
+-   **setValue**
+
+Pentru a seta valoarea timpului de intrare, de exemplu, {{"value1"}}
+
+| Proprietăți | Descriere   |
+| ----------- | ----------- |
+| Valoare     | Input value |
+
+-   **clearValue**
+
+Pentru a șterge valoarea componentei selectate 
+
+-   **validate**
+
+Pentru a verifica dacă informațiile de intrare sunt legale
+
+-   **clearValidate**
+
+Pentru a șterge mesajul de validare
+
+### Gestionar de evenimente
+
+| Eveniment | Descriere                                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Schimbă   | Atunci când un utilizator schimbă valoarea timpului selectat, efectuează o acțiune specifică personalizată de către utilizatori. |
+
+### Date
+
+Componenta are niște date utilizate în mod obișnuit, care pot fi apelate prin **`{{componentName.propertyName}}`** în aplicație.
+
+| Nume proprietate     | Descriere                                                      |
+| -------------------- | -------------------------------------------------------------- |
+| culori               | culoarea proprietății datei                                    |
+| regulă personalizată | regula personalizată specificată de utilizator                 |
+| dezactivat           | o valoare Booleană indică starea persoanelor cu handicap       |
+| AfișeazăNume         | numele acestei componente (de ex. buton1)                      |
+| evenimente           | o valoare Array pentru secvența evenimentelor                  |
+| Format               | formatul datei și orei                                         |
+| formDataKey          | Formularul cheie de date al datei                              |
+| hidden               | stare ascunsă (adevărată sau falsă)                            |
+| hideValidationMesaj  | o valoare Booleană indică dacă mesajul de validare este ascuns |
+| etichetă             | valoare etichetă                                               |
+| Aliniere             | aliniere etichetă comutator (stânga sau dreapta)               |
+| Pozitie              | poziția de comutator (stânga sau dreapta)                      |
+| Lățime etichetă      | numărul întreg reprezentând lăţimea etichetei.                 |
+| labelComplet         | a Valoarea booleeană indică dacă eticheta este completă.       |
+| minutePasul          | valoare pas de minut                                           |
+| substituent          | valoare substituent                                            |
+| necesar              | a Valoarea booleană indică starea necesară a intrărilor.       |
+| afişare              | o valoare Boolean indică noi data va fi afișată clar           |
+| tooltipText          | valoarea textului cu înclinare unelte                          |
+| valoare              | Introducere dată și valoare oră                                |
+
+Exemplu: {{timePicker1.format}}
+
+### Utilizare majusculă
+
+Apoi, vom demonstra cum să cartografiem datele de la sursa de date la selectorul de timp și vom seta ora curentă cu un buton. 
+
+#### Pasul 1 Adăugare acţiune
+
+Să creăm un tabel în REST API numit **`promoteCode`,** inclusiv 6 coloane: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vom utiliza actualizareLa ora pentru a utiliza proba. 
+
+Apoi putem crea o nouă acțiune pentru REST API din lista de acțiuni, enumerând toate datele în promoteCodes și numit restapi1. 
+
+Faceţi clic pe **`Salvează`** şi **`Run`** pentru a activa această acţiune.
+
+#### Pasul 2 Adaugă Componente
+
+Apoi, putem adăuga o componentă **`selector de timp`** și o componentă **`button`** la pânză Pentru valoarea implicită a componentei de timp, am configurat-o ca ultima actualizare a primului cod de promovare din restul datelor API.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+De asemenea, am etichetat butonul ca "Acum" cum se arată mai jos
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Pasul 3 Configurarea componentei
+
+Pentru componenta **`button`**, o putem configura pentru a seta data în componenta **`selector de timp`** la data și ora curentă.
+
+1.  În gestionarul de editare a evenimentului, selectați **`Componenta Control`** în acțiune, selectați **`selectorul de timp`** pe care doriți să îl actualizați ca țintă a evenimentului.
+2.  Alegeți acțiunea **`setValue`** și setați valoarea ca `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Etapa 4 Test
+
+Acum, când apeși butonul "Acum", timpul ar trebui să se schimbe la ora curentă. În ceea ce privește aici, avem 20:03:05, dar poate fi diferit când îl testați.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)
