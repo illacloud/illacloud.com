@@ -3,8 +3,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Title } from '@/components/Title'
 import { ILLADocumentationNav } from '@/navs/documentation'
+import { locales } from '@/constants/language'
 
-export function DocumentationLayout(props) {
+export function DocumentationLayout (props) {
   let router = useRouter()
   return (
     <>
@@ -17,7 +18,7 @@ export function DocumentationLayout(props) {
   )
 }
 
-export function DocumentationHeader(props) {
+export function DocumentationHeader (props) {
   let router = useRouter()
 
   const { meta } = props
@@ -26,7 +27,7 @@ export function DocumentationHeader(props) {
       <meta
         key="og:url"
         property="og:url"
-        content={`https://illa.cloud.com${router.pathname}`}
+        content={`https://illacloud.com${router.pathname}`}
       />
       <meta key="og:type" property="og:type" content="article" />
       <meta
@@ -89,6 +90,26 @@ export function DocumentationHeader(props) {
           />
         </>
       )}
+      <link
+        rel="canonical"
+        href={`https://illacloud.com${router.pathname}`}
+      />
+      {
+        locales.filter((item) => item !== router.locale).map((locale) => (
+          <link
+            rel="alternate"
+            title={meta.metaTitle}
+            href={`https://illacloud.com/${locale}${router.asPath}`}
+            hrefLang={locale}
+          />
+        ))
+      }
+      <link
+        rel="alternate"
+        title={meta.metaTitle}
+        href={`https://illacloud.com${router.asPath}`}
+        hrefLang='en-US'
+      />
     </Head>
   )
 }
