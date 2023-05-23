@@ -92,22 +92,21 @@ export function DocumentationHeader (props) {
       )}
       <link
         rel="canonical"
-        href={`https://illacloud.com${router.pathname}`}
+        href={`http://www.illacloud.com/${router.locale}${router.asPath}`}
       />
       {
         locales.filter((item) => item !== router.locale).map((locale) => (
           <link
+            key={locale}
             rel="alternate"
-            title={meta.metaTitle}
-            href={`https://illacloud.com/${locale}${router.asPath}`}
+            href={`https://www.illacloud.com/${locale}${router.asPath}`}
             hrefLang={locale}
           />
         ))
       }
       <link
         rel="alternate"
-        title={meta.metaTitle}
-        href={`https://illacloud.com${router.asPath}`}
+        href={`https://www.illacloud.com${router.asPath}`}
         hrefLang='en-US'
       />
     </Head>
