@@ -22,14 +22,15 @@ module.exports = {
   siteUrl: site,
   generateRobotsTxt: true,
   transform: async (config, path) => {
+    const currentPath = path.replace('/en-US', '')
     return {
-      loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
+      loc: currentPath, // => this will be exported as http(s)://<config.siteUrl>/<path>
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: [
         {
-          href: site + path,
+          href: site + currentPath,
           hreflang: getHrefLan(path),
           hrefIsAbsolute: true,
         },

@@ -21,6 +21,8 @@ export function DocumentationLayout (props) {
 export function DocumentationHeader (props) {
   let router = useRouter()
 
+  const canonicalData = router.locale !== 'en-US' ? `/${router.locale}` : ''
+
   const { meta } = props
   return (
     <Head>
@@ -92,7 +94,7 @@ export function DocumentationHeader (props) {
       )}
       <link
         rel="canonical"
-        href={`https://www.illacloud.com/${router.locale}${router.asPath}`}
+        href={`https://www.illacloud.com${canonicalData}${router.asPath}`}
       />
       {
         locales.filter((item) => item !== router.locale).map((locale) => (
