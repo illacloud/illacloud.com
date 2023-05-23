@@ -89,6 +89,10 @@ export function DocumentationHeader(props) {
           />
         </>
       )}
+        <link
+          rel="canonical"
+          href={`https://illa.cloud.com${router.pathname}`}
+        />
     </Head>
   )
 }
