@@ -92,7 +92,7 @@ export function DocumentationHeader (props) {
       )}
       <link
         rel="canonical"
-        href={`http://www.illacloud.com/${router.locale}${router.asPath}`}
+        href={`https://www.illacloud.com/${router.locale}${router.asPath}`}
       />
       {
         locales.filter((item) => item !== router.locale).map((locale) => (
