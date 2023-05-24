@@ -23,5 +23,10 @@
     "source": "/blog/:path*",
     "destination": "https://blog.illacloud.com/:path*",
     "permanent": true
+  },
+  {
+    "source": "/:locale(en|en-US)/:path*",
+    "destination": "/:path*",
+    "permanent": true
   }
 ]

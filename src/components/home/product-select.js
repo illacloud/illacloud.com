@@ -76,7 +76,7 @@ export const ProductSelect = ({ buttonColorChange = true }) => {
       >
         {options.map((option) => (
           <a
-            href={option.value}
+            href={option.value.replace('/en-US', '')}
             target={option.openNewPage ? '_blank' : '_self'}
             className="w-full"
             key={option.label}

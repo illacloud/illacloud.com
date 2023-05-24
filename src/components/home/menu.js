@@ -113,7 +113,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         className="transition-height duration-200"
       >
         {productOptions.map(({ label, value, tagCategory, target }) => (
-          <Link legacyBehavior href={value} key={label}>
+          <Link legacyBehavior href={value.replace('/en-US', '')} key={label}>
             <a
               className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px]"
               onClick={() => {
