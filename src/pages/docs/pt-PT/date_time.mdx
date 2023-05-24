@@ -28,7 +28,7 @@ Propriedades disponíveis do Data Time. JavaScript pode ser escrito para ler ou 
 | Data max.                     | especifique a data mais recente que o usuário pode selecionar na interface do calendário.                                                                                |
 | Tamanho da etapa              | o tamanho da etapa na unidade de minutos                                                                                                                                 |
 | Descrição                     | O nome do campo exibido ao usuário                                                                                                                                       |
-| Legenda                       | Uma legenda usada para descrever o campo em detalhes                                                                                                                     |
+| Descrição                     | Uma legenda usada para descrever o campo em detalhes                                                                                                                     |
 | Etiqueta oculta               | Definir se deve exibir o rótulo                                                                                                                                          |
 | Posição                       | Definir a posição do rótulo relativo ao componente                                                                                                                       |
 | Alinhamento                   | Definir o alinhamento (alinhar com a esquerda ou direita) da etiqueta                                                                                                    |
@@ -36,9 +36,9 @@ Propriedades disponíveis do Data Time. JavaScript pode ser escrito para ler ou 
 | Gerenciador de Eventos        | Acionar consultas, componentes de controle ou chamar outras APIs em resposta a eventos de componentes.                                                                   |
 | Desabilitado                  | Controla o estado de se o componente está desabilitado. O componente não pode ser modificado ou focado quando está desabilitado.                                         |
 | Somente leitura               | Controla o status de se o componente é somente leitura. Um componente somente leitura pode ser selecionado e focado mas não pode ser modificado.                         |
-| Dica                          | Os usuários podem inserir a dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                          |
-| Exibir botão Limpar           | controle se um botão limpar é exibido no campo de entrada                                                                                                                |
 | Dica                          | O usuário pode inserir dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                               |
+| Exibir botão Limpar           | controle se um botão limpar é exibido no campo de entrada                                                                                                                |
+| Dica                          | Os usuários podem inserir a dica do componente aqui. A dica será exibida quando estiver focada. O formato Markdown é suportado.                                          |
 | Campo obrigatório             | Válido somente quando o interruptor está ligado.                                                                                                                         |
 | Regra personalizada           | Cria a sua lógica de validação aqui. As regras devem ser feitas em JavaScript e cobertas pela {{}}.                                                                      |
 | Ocultar mensagem de validação | Você pode ocultar a mensagem de erro alterando o status oculto quando o valor de entrada está incorreto. Você pode alterar dinamicamente o status oculto por JavaScript. |
@@ -76,7 +76,7 @@ Para limpar a mensagem de validação
 | ------ | -------------------------------------------------------------------------------------------------------------- |
 | Troca  | Quando um usuário muda o valor da data selecionada, executar uma ação específica personalizada pelos usuários. |
 
-### Dado
+### Data max.
 
 O componente tem alguns dados comumente usados, que podem ser chamados via **`{{componentName.propertyName}}`** no aplicativo.
 
