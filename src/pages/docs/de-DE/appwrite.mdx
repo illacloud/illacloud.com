@@ -1,155 +1,233 @@
 ---
-title: Appwrite
-metaTitle: Appwrite Integration Doc | ILLA Cloud
-desc: Lernen Sie, wie Sie Appwrite in ILLA Cloud einrichten und integrieren können, um auf eine Vielzahl von Backend-Diensten für Ihre Anwendungen zuzugreifen.
+title: AppWrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=de&filter=basic&value=0
+metaTitle: App-Integration Doc | ILLA Cloud
+desc: Verbinden und interagieren Sie mit der Appwrite-Datenbank mit ILLA Cloud. Apps erstellen, die Daten abfragen, bearbeiten und visualisieren können. Automatisieren und optimieren Sie Datenworkflows.
 tagCategory: doc_menu_appwrite_click
 categoryName: ":Hammer: Integrationen"
 categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
+## <h2 hidden>Was ist AppWrite?</h2>
 
-## <h2 hidden>Appwrite Datenbank</h2>
+AppSchreiben in Illa ist eine Datenbank-Integration, mit der Sie sich mit einer AppWrite-Datenbank verbinden und interagieren können. Appwrite ist ein beliebtes Open-Source-relationales Datenbank-Management-System, das für seine Geschwindigkeit, Zuverlässigkeit und Benutzerfreundlichkeit bekannt ist.
 
-In den verschiedenen Diensten von Appwrite finden Sie Benutzerauthentifizierung und Kontenverwaltung, Benutzereinstellungen, Datenbank- und Speicherpersistenz, Cloud-Funktionen, Lokalisierung, Bildbearbeitung und vieles mehr. 
+Mit der Appwrite-Integration in Illa können Sie Daten aus einer Appwrite-Datenbank mittels SQL-Befehlen abfragen, einfügen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und innerhalb von Illa ausführen. Dies macht es einfach, datengesteuerte Anwendungen und Dashboards zu erstellen, die Echtzeitdaten aus einer Appwrite-Datenbank anzeigen.
 
-Die Kombination von ILLA Cloud und Appwrite, das heißt die Kombination aus serverseitigem Low-Code und Frontend-Low-Code-Code, wird wirklich eine Low-Code-Komplett-Entwicklung realisieren.
+Dieses Tutorial beschreibt den Prozess der Erstellung eines Admin-Panels mit Hilfe von ILLA Builder und Appwrite in ein paar einfachen Schritten. ILLA ist eine Low-Code-Plattform für Entwickler, die die schnelle Entwicklung und den Einsatz von internen Tools ermöglicht. Es ermöglicht die Erstellung von Seiten durch Ziehen und Ablegen von UI-Komponenten, Verbindung zu jeder Datenbank oder API, und das Schreiben von JavaScript. Um mehr über Appwrite zu erfahren, besuchen Sie ihre Website unter https://appwrite.io/ Let’s beginnen!
 
-[Klicke hier](https://appwrite.io/) um mehr über Appwrite zu erfahren.
+### Backend auf AppWrite einrichten
 
-### Appwrite Ressource in der ILLA Cloud einrichten
+Nachdem Sie sich bei Ihrem Appwrite-Konto angemeldet haben, klicken Sie auf dem Appwrite-Dashboard auf `**Projekt erstellen**` und setzen Sie den Namen auf `First Project`.
 
-#### Zwei Wege, Ressourcen zu erstellen
+![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
-Der erste Weg ist, die `Resources` Registerkarte > klicken Sie auf `Create New` um Appwrite auszuwählen. 
+Dann können wir zur Projektseite navigieren. Appwrite bietet mehrere Plattformen zum Aufbau Ihrer App sowie zum Aufbau von Integrationen.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+![app_platforms](https://cdn.illacloud.com/official-website/img/docs/app_platforms.png)
 
-Die andere Möglichkeit ist, den `app editor` Seite > klicken Sie `+ New` um Appwrite auszuwählen > klicken Sie `+ New Resources`, um die neue Konfiguration hinzuzufügen. 
+Hier wählen wir die Web-App als Beispiel.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+Nach der Erstellung unseres Web-App-Projekts können wir auf die Datenbankseite gehen, da wir Appwrite bisher nur als Datenbankintegration verwenden.
 
-#### Appwrite einrichten, indem Sie die folgenden Felder ausfüllen
+![app_dashboard](https://cdn.illacloud.com/official-website/img/docs/app_dahsboard.png)
 
-Bevor Sie eine Appwrite-Ressource verbinden, stellen Sie sicher, dass Sie Appwrite auf Ihrem lokalen Rechner oder einem Cloud-Anbieter eingesetzt haben. [Klicke hier](https://appwrite.io/docs/installation) um mehr über die Installation von Appwrite zu erfahren. 
+Dann können wir Datenbank erstellen und Sammlungen innerhalb der Datenbank erstellen
 
-| Objekt       | ist_erforderlich | Beschreibung                                                                                                                            |
-| ------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Name         | benötigt         | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA. Sie können einen Namen für eine einfache Identifizierung anpassen.  |
-| Host         | benötigt         | HOSTNAME ODER IP.                                                                                                                       |
-| Datenbank-ID | benötigt         | Datenbank-ID                                                                                                                            |
-| Projekt-ID   | benötigt         | Projekt-ID                                                                                                                              |
-| Api Taste    | benötigt         | TOKEN                                                                                                                                   |
+![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
+Von hier können wir Attribute und Daten in der Sammlung erstellen.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
-### Aktionen im App-Editor erstellen
+Um Dokumente anhand von Attributen abzurufen, müssen für jedes Attribut entsprechende Indizes erstellt werden.
 
-#### Erstelle Aktionen auf folgende Weise
+![app_create_index](https://cdn.illacloud.com/official-website/img/docs/app_create_index.png)
 
-Klicken Sie auf `+ Neu` in der App-Editor-Seite > um Appwrite > wählen Sie eine vorhandene Appwrite-Ressource aus oder erstellen Sie eine neue Ressource > klicken Sie auf `Create Action`, um eine neue Aktion zu erstellen. 
+Diese Datenbank ist nun bereit für die Integration in Illa.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+### App-Schreiben erstellen
 
-Nach dem Erstellen einer Aktion, wählen Sie bitte eine Methode. Wir bieten folgende Methoden: Dokumente auflisten, Dokument erstellen, Dokument aktualisieren, Dokument holen und Dokument löschen. Die Konfiguration der einzelnen Methoden erfolgt wie folgt. 
+Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressource in Illa zu erstellen.
 
-#### Dokumente auflisten
+-   In Ressourcen erstellen
 
-Das folgende Beispiel ist ein einfaches Konfigurationsbeispiel: Das Dokument mit $id 5 auflisten. 
+Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-| Objekt         | ist_erforderlich | Beschreibung                                                                                                                                                                                                                                                                             |
-| -------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sammlungs-ID   | Benötigt         | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                                                                                                                                                                                                                             |
-| Filtern        | Optional         | Unterstütze mehrere Filter. Ein Filter besteht aus einem Schlüssel, einem Wert und einer Bedingung. 1. key: Geben Sie ein Attribut 2 ein. Bedingung: Wählen Sie eine Bedingung aus, einschließlich gleicher, notEqual, lessThan, lessThanEqual, greaterThan, etc. 3. wert: Wert eingeben |
-| Sortieren nach | Optional         | Unterstützung für die Bestellung nach mehreren Attributen. 1. geben Sie ein Attribut ein, um nach 2 zu sortieren. Wählen Sie asc(standardmäßig ) oder desc                                                                                                                               |
-| Limit          | Optional         | Anzahl der Datensätze                                                                                                                                                                                                                                                                    |
+Wähle **`AppWrite`** aus der Datenbankliste.
 
-Das folgende Beispiel zeigt, wie die in der Komponente eingegebenen Daten verwendet werden sollen:
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
-1.  Fügen Sie dem Frame eine Eingabekomponente hinzu, damit Benutzer die Dokumentennummer eingeben können, die sie finden möchten.  
-2.  Fügen Sie einen Filter hinzu: setzen Sie das Attributfeld auf $id und geben Sie {{ input1.value }} in das Wertefeld ein. 
+Verbinden Sie sich mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
 
-Ausgang
+Nach der Erstellung einer Ressource wird das fertige AppWrite wie angezeigt angezeigt.
 
-Prüfen Sie die Datenstruktur im linken Fenster. Verwende zum Beispiel `{{list.data[0].documents[0].id}}`(`list` ist der Name der Aktion) um die ID des ersten Dokuments zu erhalten. 
+![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+-   Im Builder erstellen
 
-Du kannst auch `{{list.data[0].documents.map(documents => documents)}}` verwenden, um alle Daten auf der `table` Komponente anzuzeigen. 
+Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicke auf `**new**`, dann wähle **`AppWrite`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+
+### Verbindungseinstellungen
+
+Hier müssen wir Informationen zur Verbindung mit der AppWrite Datenbank bereitstellen.
+
+![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
+
+| Eigenschaften     | Benötigt | Beschreibung                                                                                                        |
+| ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| Name              | benötigt | Der Name für die Ressource beim Erstellen von Aktionen in der ILLA.                                                 |
+| Host              | benötigt | Die URL oder IP-Adresse für Ihre Datenbank                                                                          |
+| Datenbank-ID      | benötigt | eindeutige Kennung für jede Datenbank, die innerhalb von Appwrite erstellt wurde                                    |
+| Projekt-ID        | benötigt | eindeutige Kennung, die Ihr gesamtes Appwrite-Projekt repräsentiert                                                 |
+| API-Schlüssel     | benötigt | ein geheimes Token, das als Form der Authentifizierung bei API-Anfragen an den Appwrite-Server dient                |
+
+Um die benötigte **`Host`**, **`Database ID`**, **`Project ID`** und **`API Schlüssel`** im Appwrite zu finden, gehen wir zuerst zum `**Einstellung**` Button in der unteren linken Ecke der Projektseite.
+
+Kopieren der `project ID` für **`project ID`** und `API Endpoint` für **`Host`** in der Appwrite Konfiguration in Illa.
+
+![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
+
+Dann klicken Sie auf die Schaltfläche **`API-Schlüssel anzeigen`** auf der gleichen Seite. Wenn Sie keine API für dieses Projekt erstellt haben Klicke auf den **`Erstelle API-Schlüssel`** Button und wähle nur den `Database`-Ordner, da das ist, was wir von Appwrite verwenden werden.
+
+![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
+
+Kopiere das `API Key Secret` für **`API Key`** in die Illa Konfiguration. Es kann für diese beiden Stellen kopiert werden.
+
+![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
+
+Was wir übrig haben, ist die **`Database ID`** die wir auf der `Database` Seite finden. Kopieren und Einfügen in die Appwrite Konfiguration in Illa.
+
+![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
+
+Das Endprodukt sollte so aussehen.
+
+![app_final_config](https://cdn.illacloud.com/official-website/img/docs/app_final_config.png)
+
+### Aktionen erstellen
+
+Wir haben eine AppWrite-Ressource erstellt. Wir können die Aktion hinzufügen, indem wir AppWrite-Aktion aus der Aktionsliste auswählen und die **`Erstelle Aktion`** Schaltfläche auswählen.
+
+![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
+
+Jetzt haben wir den AppWrite Server als Aktion zu unserer Bauseite hinzugefügt.
+
+![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
+
+### App-Schreiben konfigurieren
+
+#### Übersicht
+
+| Methodenname    | Beschreibung                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------ |
+| Methode         | Erstellen Sie ein Dokument, holen Sie ein Dokument, aktualisieren Sie ein Dokument, löschen Sie ein Dokument |
+| Sammlungs-ID    | ein eindeutiger Identifikator, der einer Datenbanksammlung zugewiesen wird                                   |
+| Transformator   | Umwandlung von Daten in den Stil, den Sie mögen, mit JavaScript                                              |
 
 #### Dokument erstellen
 
-| Sammlungs-ID | Benötigt | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                |
-| ------------ | -------- | --------------------------------------------------------------------------- |
-| Dokument-ID  | Benötigt | eine ID eingeben. Das Dokument wird mit dieser ID erstellt                  |
-| Daten        | Benötigt | Ein in {{ }} eingeschlossenes Objekt. Zum Beispiel {{ { "key": "value" } }} |
+ein neues Dokument in einer Sammlung erstellen
 
-Das Folgende ist ein Beispiel dafür, wie man die in der Komponente eingegebenen Daten in einem Objekt verwendet. 
+** Input **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+| Eigenschaften  | Benötigt | Beschreibung                                                                           |
+| -------------- | -------- | -------------------------------------------------------------------------------------- |
+| Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde  |
+| Daten          | optional | ein Objekt, das die Felder und Werte des neuen Dokuments enthält.                      |
 
-#### Dokument aktualisieren
+Zum Beispiel, um ein neues Dokument in einer Sammlung mit zwei Feldern zu erstellen - **`name`** und **`age`**, du kannst 1 als **`document ID`** und `{{ {"Name": "David", "Age": 18}}}` für **`data`** verwenden.
 
-| Objekt       | Beschreibung                                                                |
-| ------------ | --------------------------------------------------------------------------- |
-| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank                |
-| Dokument-ID  | eine existierende Dokument-ID eingeben                                      |
-| Daten        | Ein in {{ }} eingeschlossenes Objekt. Zum Beispiel {{ { "key": "value" } }} |
+** Ausgabe **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+ein Antwortobjekt, das die ID des neu erstellten Dokuments sowie zusätzliche Metadaten wie Datum und Uhrzeit der Erstellung enthält.
+
+![app_create_code](https://cdn.illacloud.com/official-website/img/docs/app_create_code.png)
 
 #### Dokument erhalten
 
-| Objekt       | Beschreibung                                                 |
-| ------------ | ------------------------------------------------------------ |
-| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank |
-| Dokument-ID  | eine existierende Dokument-ID eingeben                       |
+ein bestimmtes Dokument aus einer Sammlung in der Datenbank abrufen
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+** Input **
 
-Die Ausgabedaten sind wie folgt. Verwenden Sie {{get.data[0]}} , um das Dokumentenobjekt zu erhalten.
+| Eigenschaften  | Benötigt | Beschreibung                                                                          |
+| -------------- | -------- | ------------------------------------------------------------------------------------- |
+| Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde |
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+Zum Beispiel erhalten wir das Dokument mit der ID **`1`**.
+
+** Ausgabe **
+
+ein Antwortobjekt, das die Daten des angeforderten Dokuments enthält
+
+![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
+
+Verwende `{{appwrite1.data}}` um alle zurückgegebenen Werte zu erhalten.
+
+![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
+
+#### Dokument aktualisieren
+
+aktualisieren Sie die Daten eines vorhandenen Dokuments in einer Sammlung.
+
+** Input **
+
+| Eigenschaften  | Benötigt | Beschreibung                                                                                                       |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde                              |
+| Daten          | optional | Ein Objekt, das die aktualisierten Felder und Werte enthält, die dem Dokument zugewiesen werden sollen.            |
+
+Zum Beispiel, um ein Dokument in einer Sammlung mit der **`updateDocument`** Methode zu aktualisieren, du kannst **`1`** für Document-ID und `{{{"Name":"Fred"}}}` für Daten setzen.
+
+** Ausgabe **
+
+ein Antwortobjekt, das die Daten des angeforderten Dokuments enthält
+
+![app_update)data](https://cdn.illacloud.com/official-website/img/docs/app_update_data.png)
 
 #### Dokument löschen
 
-| Objekt       | Beschreibung                                                 |
-| ------------ | ------------------------------------------------------------ |
-| Sammlungs-ID | Eingeben oder wählen Sie eine Sammlungs-ID aus der Datenbank |
-| Dokument-ID  | eine existierende Dokument-ID eingeben                       |
+ein bestimmtes Dokument aus einer Sammlung in der Datenbank löschen
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+** Input **
 
-### Daten von Appwrite mit Frontend-Komponenten verbinden
+| Eigenschaften  | Benötigt | Beschreibung                                                                          |
+| -------------- | -------- | ------------------------------------------------------------------------------------- |
+| Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde |
 
-#### Aktionen konfigurieren
+Zum Beispiel können wir das Dokument mit der ID **`1`** löschen.
 
-Erstellen Sie eine delete_document Aktion > füllen Sie das Dokument ID Feld mit {{ input1.value }} aus. 
+** Ausgabe **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+ein Antwortobjekt, das die erfolgreiche Löschung des Dokuments bestätigt.
 
-Fügen Sie einen Ereignis-Handler der Aktion hinzu, um eine Antwort zu setzen, wenn sie erfolgreich ausgeführt wird. 
+![app_delete_data](https://cdn.illacloud.com/official-website/img/docs/app_delete_data.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+#### Dokument auflisten
 
-#### Komponenten konfigurieren
+mehrere Dokumente aus einer Sammlung in der Datenbank abrufen
 
-Fügen Sie einen Ereignis-Handler hinzu, um die Aktion delete_document auszulösen. 
+** Input **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+| Eigenschaften    | Benötigt | Beschreibung                                                                                  |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------- |
+| Filtern          | optional | definiere Bedingungen, um die Dokumente nach bestimmten Feldern und Werten zu filtern         |
+| Sortieren nach   | optional | geben Sie das Feld an, nach dem die resultierenden Dokumente sortiert werden sollen           |
+| Limit            | optional | die Anzahl der in der Ergebnismenge zurückgegebenen Dokumente einschränken                    |
 
-Legen Sie die Datenquelle der Tabelle fest, um Daten anzuzeigen. 
+Zum Beispiel, um alle Dokumente mit Name = James.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+** Ausgabe **
 
-#### Laufende Ergebnisse anzeigen
+Eine Reihe von Dokumenten, die den Filter erfüllen.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
+![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+
+Verwende `{{appwrite1.data[0].documents}}` um den Wert zurückzugeben.
+
+![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
