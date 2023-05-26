@@ -1,155 +1,233 @@
 ---
-title: Appwrite
-metaTitle: Integrace Appwrite Doc | ILLA Cloud
-desc: Naučte se nastavit a integrovat s Appwrite na ILLA Cloud pro přístup k různým administrativním službám pro vaše aplikace.
+title: AppWrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=cs&filter=basic&value=0
+metaTitle: AppWrite Integration Doc | ILLA Cloud
+desc: Připojit a interagovat s databází aplikací pomocí ILLA Cloud. Vytvářejte aplikace, které mohou dotazovat, manipulovat a vizualizovat data. Automatizovat a optimalizovat datové pracovní postupy.
 tagCategory: doc_menu_appwrite_click
 categoryName: 🔨 Integrace
 categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
+## <h2 hidden>Co je zápis aplikací?</h2>
 
-## <h2 hidden>Appwrite Database</h2>
+Aplikace Write v Illa je integrace databáze, která umožňuje spojení a interakci s databází AppWrite. Appwrite je populární systém pro správu relativních databází s otevřeným zdrojovým kódem, který je znám jeho rychlostí, spolehlivostí a snadností použití.
 
-V rámci různých služeb Appwriteru můžete najít uživatelskou autentizaci a správu účtu, uživatelské předvolby, databázi a vytrvalost úložiště, funkce cloudu, lokalizaci, manipulaci s obrázkem a další. 
+Díky integraci aplikací v Illa můžete pomocí SQL příkazů dotázat, vkládat, aktualizovat a mazat data z databáze Appwrite . Můžete také vytvořit vlastní SQL dotazy a spustit je v Ille. Díky tomu lze snadno sestavovat aplikace založené na datech a dashboardy, které zobrazují data z databáze Appwrite v reálném čase.
 
-Kombinace ILLA Cloud a Appwrite, to je, kombinace serverních nízkých kódů a front-end nízkonákladového kódu, bude skutečně realizovat nízkonákladový kompletní vývoj.
+Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Appwrite v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Chcete-li se dozvědět více o Appwrite, navštivte jejich webové stránky na https://appwrite.io/ Pojďme na začátku!
 
-[Klikněte zde](https://appwrite.io/) pro více informací o Appwrite.
+### Nastavte si svůj backend v AppWrite
 
-### Nastavit zdroj zápisu aplikací na ILLA Cloud
+Po přihlášení do vašeho účtu Appwrite klikněte na nástěnku Appwrite na `**Vytvořit projekt**` a nastavte jméno na `První projekt`.
 
-#### Dva způsoby vytváření zdrojů
+![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
-Prvním způsobem je zadat záložku `Zdroje` > klikněte na `Vytvořit nové` pro výběr zápisu aplikací. 
+Pak můžeme přejít na stránku projektu. Aplikace poskytuje více platforem pro vytváření vaší aplikace i integrace.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite1.png' alt="" />
+![app_platforms](https://cdn.illacloud.com/official-website/img/docs/app_platforms.png)
 
-Jiným způsobem je zadat stránku `editoru aplikací` > klikněte na `+ Nové` pro výběr appwrite > klikněte na `+ Nové zdroje` pro přidání nové konfigurace. 
+Zde si jako příklad zvolíme webovou aplikaci.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite2.png' alt="" />
+Po vytvoření našeho projektu webové aplikace můžeme přejít na databázovou stránku, protože zatím používáme Appwrite pouze jako integraci databáze.
 
-#### Nastavte Appwrite vyplněním následujících polí
+![app_dashboard](https://cdn.illacloud.com/official-website/img/docs/app_dahsboard.png)
 
-Než připojíte zdroj pro zápis aplikací, ujistěte se, že jste vložili zápis aplikací do svého lokálního počítače nebo do cloudu. [Klikněte zde](https://appwrite.io/docs/installation) pro více informací o instalaci Appwrite. 
+Pak můžeme vytvořit databázi a vytvořit kolekce v databázi
 
-| Majetek     | je vyžadováno | L 343, 22.12.2009, s. 1).                                                                      |
-| ----------- | ------------- | ---------------------------------------------------------------------------------------------- |
-| Název       | vyžadováno    | Název zdroje při vytváření akcí v ILLA. Můžete si přizpůsobit název pro snadnou identifikaci.  |
-| Hostitel    | vyžadováno    | HOSTNAME NEBO IP.                                                                              |
-| ID databáze | vyžadováno    | ID databáze                                                                                    |
-| ID projektu | vyžadováno    | ID projektu                                                                                    |
-| Api klíč    | vyžadováno    | MAĎARSKO                                                                                       |
+![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
+Odtud můžeme vytvářet atributy a data ve sbírce.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite3.png' alt="" />
+![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
-### Vytvořit akce v editoru aplikací
+Abychom mohli získat dokumenty podle atributů, musíme vytvořit odpovídající indexy pro každý atribut.
 
-#### Vytvořit akce následujícím způsobem
+![app_create_index](https://cdn.illacloud.com/official-website/img/docs/app_create_index.png)
 
-Klepnutím na tlačítko `+ Nový` v editoru aplikace > vyberte zápis aplikací> vyberte existující dokument pro zápis do aplikace, nebo vytvořte nový dokument > klikněte na `Vytvořit akci` pro vytvoření nové akce. 
+Tato databáze je nyní připravena k integraci s Illa.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite4.png' alt="" />
+### Vytvořit zápis aplikací
 
-Po vytvoření akce vyberte metodu. Poskytujeme následující metody: Dokumenty seznamu, Vytvořte dokument, aktualizujte dokument, Získejte dokument a odstraňte dokument. Konfigurace každé metody je následující: 
+Po přihlášení do vašeho účtu Illa existují dva způsoby, jak vytvořit zdroj v Illa.
 
-#### Seznam dokumentů
+-   Vytvořit ve zdrojích
 
-Následující je jednoduchý konfigurační příklad: Seznam dokumentu s $id 5. 
+Přihlaste se ke svému účtu Illa, vyberte `**Zdroje**` v horní části stránky a klikněte na tlačítko `**Vytvořit nové**`.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite5.png' alt="" />
+![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-| Majetek     | je vyžadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                         |
-| ----------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ID kolekce  | Požadováno    | Vložte nebo vyberte ID kolekce z databáze                                                                                                                                                                                         |
-| Filtr       | Nepovinné     | Podpořte více filtrů. Filtr se skládá z klíče, hodnoty a stavu. 1. klíč: zadejte atribut 2. podmínka: zvolte podmínku, včetně rovného, ne rovného, méněrového, Than, lessThanRoval, greaterThan, atd. 3. hodnota: zadejte hodnotu |
-| Řadit podle | Nepovinné     | Podpora pro řazení podle více atributů. 1. vložte atribut k řazení podle 2. Vyberte vzestupnou ( ve výchozím nastavení ) nebo sestupnou                                                                                           |
-| Limit       | Nepovinné     | počet záznamů                                                                                                                                                                                                                     |
+Vyberte **`AppWrite`** ze seznamu databází.
 
-Příkladem použití údajů vložených do složky opatření:
+![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
-1.  Přidejte do rámečku vstupní komponentu, aby uživatelé mohli zadat ID dokumentu, který chtějí najít.  
-2.  Přidat filtr: nastavte pole atributu na $id a zadejte {{ input1.value }} do pole hodnoty. 
+Připojte se k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite6.png' alt="" />
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
 
-Výstup
+Po vytvoření zdroje se bude zobrazovat připravený zápis aplikací.
 
-Zkontrolujte datovou strukturu v levém panelu. Například použijte `{{list.data[0].documents[0].id}}`(`list` je název akce), abyste získali ID prvního dokumentu. 
+![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite7.png' alt="" />
+-   Vytvořit ve staviteli
 
-Můžete také použít `{{list.data[0].documents.map(documents => documents)}}` k zobrazení všech dat na `table` komponentě. 
+Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`Write`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite8.png' alt="" />
+Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+
+### Nastavení připojení
+
+Zde musíme poskytnout informace pro připojení k databázi AppWrite.
+
+![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
+
+| Vlastnosti      | Požadováno | L 343, 22.12.2009, s. 1).                                                                                            |
+| --------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| Název           | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                              |
+| Hostitel        | vyžadováno | URL nebo IP adresa pro vaši databázi                                                                                 |
+| ID databáze     | vyžadováno | jedinečný identifikátor přiřazený každé databázi vytvořené v Appwrite                                                |
+| ID projektu     | vyžadováno | jedinečný identifikátor, který reprezentuje celý váš projekt Appwrite                                                |
+| Klíč API        | vyžadováno | tajný token, který slouží jako forma autentizace při zadávání API požadavků na Appwrite server                       |
+
+Pro nalezení požadovaného **`Host`**, **`Database ID`**, **`Project ID`**, a **`API klíč`** v Appwrite, nejprve přejdeme na tlačítko `**nastavení**` v levém dolním rohu stránky projektu.
+
+Kopírování `project ID` pro **`project ID`** a `API Endpoint` pro **`Host`** v konfiguraci Appwrite v Ille.
+
+![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
+
+Pak můžeme kliknout na **`Zobrazit API klíč`** na stejné stránce. Pokud jste nevytvořili API pro tento projekt, klikněte na tlačítko **`Vytvořit API klíč`** a vyberte pouze složku `Database`, protože to je to, co budeme používat z Appwrite.
+
+![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
+
+Zkopírujte `API Key Secret` pro **`API klíč`** v konfiguraci Illa. Lze ji zkopírovat pro tyto dva body.
+
+![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
+
+Zbývá nám **\`ID databáze**, kterou můžeme najít na stránce `Databáze`. Kopírování a vložení do konfigurace Appwrite v Illa.
+
+![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
+
+Konečný produkt by měl vypadat podobně.
+
+![app_final_config](https://cdn.illacloud.com/official-website/img/docs/app_final_config.png)
+
+### Vytvořit akce
+
+Vytvořili jsme zdroj AppWrite, akci můžeme přidat výběrem AppWrite ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
+
+![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
+
+Nyní jsme přidali AppWrite server jako akci na naši stránku budovy.
+
+![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
+
+### Konfigurovat zápis aplikací
+
+#### Přehled
+
+| Název metody    | L 343, 22.12.2009, s. 1).                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| Metoda          | Vytvořit dokument, získat dokument, aktualizovat dokument, smazat dokument, seznam dokumentů          |
+| ID kolekce      | jedinečný identifikátor přiřazený sbírce databáze                                                     |
+| Transformátor   | transformace dat do stylu, který se vám líbí pomocí JavaScriptu                                       |
 
 #### Vytvořit dokument
 
-| ID kolekce   | Požadováno | Vložte nebo vyberte ID kolekce z databáze                        |
-| ------------ | ---------- | ---------------------------------------------------------------- |
-| ID dokumentu | Požadováno | zadejte ID. Dokument bude vytvořen s tímto ID                    |
-| Údaje        | Požadováno | Objekt je přiložen v {{ }}. Například {{ { { "key": "value" } }} |
+vytvořit nový dokument ve sbírce
 
-Níže je uveden příklad, jak použít údaje zadané do komponenty v objektu. 
+** Input **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite9.png' alt="" />
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                     |
+| ------------ | ---------- | ----------------------------------------------------------------------------- |
+| ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi  |
+| Údaje        | volitelné  | objekt obsahující pole a hodnoty nového dokumentu.                            |
 
-#### Aktualizovat dokument
+Například vytvořit nový dokument ve sbírce se dvěma poli - **`name`** a **`age`**, můžete použít 1 jako **`document ID`** a `{{ {"Name": "David", "Age": 18}}}` pro **`data`**.
 
-| Majetek      | L 343, 22.12.2009, s. 1).                                        |
-| ------------ | ---------------------------------------------------------------- |
-| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze                        |
-| ID dokumentu | vložte existující ID dokumentu, které má být aktualizováno       |
-| Údaje        | Objekt je přiložen v {{ }}. Například {{ { { "key": "value" } }} |
+** Výstup **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite10.png' alt="" />
+objekt odezvy, který obsahuje ID nově vytvořeného dokumentu, jakož i další metadata, jako je datum a čas vytvoření.
+
+![app_create_code](https://cdn.illacloud.com/official-website/img/docs/app_create_code.png)
 
 #### Získat dokument
 
-| Majetek      | L 343, 22.12.2009, s. 1).                 |
-| ------------ | ----------------------------------------- |
-| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze |
-| ID dokumentu | vložte existující ID dokumentu            |
+načíst specifický dokument z kolekce v databázi
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite11.png' alt="" />
+** Input **
 
-Výstupní data jsou následující. Pomocí {{get.data[0]}} získáte objekt dokumentu.
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                    |
+| ------------ | ---------- | ---------------------------------------------------------------------------- |
+| ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi |
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite12.png' alt="" />
+Například dokument s ID **`1`**.
+
+** Výstup **
+
+objekt odpovědi, který obsahuje údaje požadovaného dokumentu
+
+![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
+
+Použij `{{appwrite1.data}}` k získání vrácené hodnoty.
+
+![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
+
+#### Aktualizovat dokument
+
+aktualizuje údaje o existujícím dokumentu ve sbírce.
+
+** Input **
+
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                                                 |
+| ------------ | ---------- | --------------------------------------------------------------------------------------------------------- |
+| ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi                              |
+| Údaje        | volitelné  | Objekt obsahující aktualizovaná pole a hodnoty, které chcete přiřadit k dokumentu.                        |
+
+Například aktualizovat dokument v kolekci pomocí metody **`updateDocument`** můžete vložit **`1`** pro ID dokumentu a `{{{"Name":"Fred"}}}` pro data.
+
+** Výstup **
+
+objekt odpovědi, který obsahuje údaje požadovaného dokumentu
+
+![app_update)data](https://cdn.illacloud.com/official-website/img/docs/app_update_data.png)
 
 #### Odstranit dokument
 
-| Majetek      | L 343, 22.12.2009, s. 1).                 |
-| ------------ | ----------------------------------------- |
-| ID kolekce   | Vložte nebo vyberte ID kolekce z databáze |
-| ID dokumentu | vložte existující ID dokumentu            |
+odstraní specifický dokument z kolekce v databázi
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite13.png' alt="" />
+** Input **
 
-### Připojit data z Appwrite s komponenty na front-end
+| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                    |
+| ------------ | ---------- | ---------------------------------------------------------------------------- |
+| ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi |
 
-#### Konfigurace akcí
+Například můžeme odstranit dokument s ID **`1`**.
 
-Vytvořte akci delete_document > vyplňte pole ID dokumentu {{ input1.value }}. 
+** Výstup **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite14.png' alt="" />
+objekt odpovědi, který potvrzuje úspěšné odstranění dokumentu.
 
-Přidat ovladač události k akci, aby se nastavila odezva při úspěšném spuštění. 
+![app_delete_data](https://cdn.illacloud.com/official-website/img/docs/app_delete_data.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite15.png' alt="" />
+#### Seznam dokumentů
 
-#### Konfigurace komponent
+načíst více dokumentů z kolekce v databázi
 
-Přidejte tlačítko pro ovládání události pro akci delete_dokument. 
+** Input **
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite16.png' alt="" />
+| Vlastnosti    | Požadováno | Popis                                                                           |
+| ------------- | ---------- | ------------------------------------------------------------------------------- |
+| Filtr         | volitelné  | definuje podmínky pro filtrování dokumentů na základě konkrétních polí a hodnot |
+| Řadit podle   | volitelné  | Upřesněte pole, do kterého by měly být výsledné dokumenty seřazeny              |
+| Limit         | volitelné  | omezit počet dokumentů vrácených v souboru výsledků                             |
 
-Nastavte zdroj dat v tabulce pro zobrazení dat. 
+Například uvést všechny dokumenty s názvem = James.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite17.png' alt="" />
+** Výstup **
 
-#### Zobrazit výsledky běhu
+Soubor dokumentů, které vyhovují filtru.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/assemble/appwrite18.gif' alt="" />
+![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+
+Použij `{{appwrite1.data[0].documents}}` k získání vrácené hodnoty.
+
+![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
