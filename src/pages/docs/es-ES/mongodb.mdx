@@ -152,9 +152,9 @@ contar el número de documentos que coinciden con una consulta dada en una colec
 
 ** Input **
 
-| Propiedades   | Requerido | Descripción                                                       |
-| ------------- | --------- | ----------------------------------------------------------------- |
-| Consulta      | opcional  | especifica los criterios de selección para la operación de conteo |
+| Propiedades    | Requerido | Descripción                                                       |
+| -------------- | --------- | ----------------------------------------------------------------- |
+| Requerido      | opcional  | especifica los criterios de selección para la operación de conteo |
 
 Por ejemplo, para contar el número de elemento con el tipo "carne", podemos poner debajo del código en **`Query`**:
 
@@ -230,10 +230,10 @@ recuperar un array de valores únicos para un campo especificado en una colecci�
 
 ** Input **
 
-| Propiedades   | Requerido | Descripción                                                      |
-| ------------- | --------- | ---------------------------------------------------------------- |
-| Consulta      | opcional  | especifica los criterios de selección para la operación distinta |
-| Campo         | requerido | especifica el campo para recuperar los valores distintos.        |
+| Propiedades    | Requerido | Descripción                                                      |
+| -------------- | --------- | ---------------------------------------------------------------- |
+| Requerido      | opcional  | especifica los criterios de selección para la operación distinta |
+| Campo          | requerido | especifica el campo para recuperar los valores distintos.        |
 
 Por ejemplo, podemos tener `{"type":"orange"}` para **`Query`** y `_id` para **`Field`**.
 
@@ -255,7 +255,7 @@ recuperar documentos de una colección que coincidan con un conjunto específico
 
 | Propiedades    | Requerido | Descripción                                                                                                               |
 | -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Consulta       | opcional  | especifica los criterios de selección para la operación de búsqueda                                                       |
+| Requerido      | opcional  | especifica los criterios de selección para la operación de búsqueda                                                       |
 | Proyección     | opcional  | especifica qué campos incluir o excluir en los resultados de la consulta                                                  |
 | Ordenar por    | opcional  | especificar el orden de ordenación de los documentos devueltos                                                            |
 | Límite         | opcional  | limitar el número de documentos que son devueltos, por defecto sin límite. Un límite de 0 es equivalente a ningún límite. |
@@ -286,11 +286,11 @@ recuperar el primer documento de una colección que coincida con un conjunto esp
 
 ** Input **
 
-| Propiedades   | Requerido | Descripción                                                                   |
-| ------------- | --------- | ----------------------------------------------------------------------------- |
-| Consulta      | opcional  | especifica los criterios de selección para la operación de búsqueda           |
-| Proyección    | opcional  | especifica qué campos incluir o excluir en los resultados de la consulta      |
-| Saltar        | opcional  | especificar el número de documentos a saltar, por defecto a 0.                |
+| Propiedades    | Requerido | Descripción                                                                   |
+| -------------- | --------- | ----------------------------------------------------------------------------- |
+| Requerido      | opcional  | especifica los criterios de selección para la operación de búsqueda           |
+| Proyección     | opcional  | especifica qué campos incluir o excluir en los resultados de la consulta      |
+| Saltar         | opcional  | especificar el número de documentos a saltar, por defecto a 0.                |
 
 Por ejemplo, para encontrar el id, el precio y el tipo de todas las naranjas ordenadas por su id.
 
