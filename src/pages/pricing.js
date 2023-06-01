@@ -10,11 +10,13 @@ import { OpenSource } from '@/components/home/Pricing/OpenSource'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { FAQ } from '@/components/home/Pricing/Faq'
 import style from '@/components/home/Pricing/index.module.css'
+import { useRouter } from 'next/router'
 
 
 const Pricing = () => {
   const { t } = useTranslation('pricing')
   const [isBookShow, setIsBookShow] = useState(false)
+  const router = useRouter()
 
   const customNavStyle = {
     background: 'transparent',
@@ -25,6 +27,11 @@ const Pricing = () => {
       <Head>
         <title>{t('title')}</title>
         <meta name="description" content={t('meta-desc')} />
+        <link
+          rel="canonical"
+          href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
+            }pricing`}
+        />
       </Head>
       <PricingMask />
       <div className='w-full px-0'>

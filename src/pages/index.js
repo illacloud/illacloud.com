@@ -13,6 +13,7 @@ import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
 import { getStars } from '@/utils/getStars'
+import { useRouter } from 'next/router'
 
 const Home = ({ starCounts }) => {
   const { t } = useTranslation('home')
@@ -22,6 +23,7 @@ const Home = ({ starCounts }) => {
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
+  const router = useRouter()
 
   return (
     <>
@@ -46,6 +48,10 @@ const Home = ({ starCounts }) => {
           async
           src="https://tag.clearbitscripts.com/v1/pk_2f29e3957a45fd04b8f4c8fe8a98a7d1/tags.js"
           referrerPolicy="strict-origin-when-cross-origin"
+        />
+        <link
+          rel="canonical"
+          href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}` }`}
         />
       </Head>
       <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
