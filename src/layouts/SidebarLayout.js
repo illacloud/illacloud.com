@@ -13,7 +13,7 @@ const NavItem = forwardRef(
   ({ href, children, isActive, isPublished, fallbackHref, onClick }, ref) => {
     return (
       <li ref={ref}>
-        <Link href={isPublished ? href : fallbackHref} legacyBehavior>
+        <Link href={isPublished ? href.replace('/en-US', '') : fallbackHref.replace('/en-US', '')} legacyBehavior>
           <a
             className={clsx('block border-l pl-4 -ml-px', {
               'text-sky-500 border-current font-semibold dark:text-sky-400':
