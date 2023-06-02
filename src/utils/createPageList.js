@@ -37,7 +37,7 @@ export function newCreatePageList(files, base) {
             [slug]: {
               ...cur.module.default,
               href: `/${lng}/${base}/${slug}`,
-              match: new RegExp(`^/docs/${slug}`),
+              match: new RegExp(`^/docs/${slug}\\b`),
             },
           }
         }
