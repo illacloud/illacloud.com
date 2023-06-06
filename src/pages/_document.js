@@ -17,7 +17,7 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html
-        lang="en-us"
+        lang={this?.props.__NEXT_DATA__?.locale || 'en-US'}
         className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>

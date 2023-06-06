@@ -67,4 +67,13 @@ module.exports = {
     result.push(...(await transformUrl(list, config)))
     return result
   },
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ["https://cloud.illacloud.com/*", "https://builder.illacloud.com/*"]
+      },
+    ],
+  },
 }
