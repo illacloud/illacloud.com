@@ -2,7 +2,6 @@ const locales = [
   "en-US",
   "zh-CN",
   "ja-JP",
-  "ko-KR",
   "cs-CZ",
   "da-DK",
   "de-DE",
