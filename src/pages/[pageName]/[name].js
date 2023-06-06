@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
-import { Nav } from '@/components/home/Nav'
-import { Footer } from '@/components/home/home-footer'
+import { Nav } from '@/components/home/NewNav'
+import { Footer } from '@/components/home/newFooter'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import style from '@/components/LandingPage/index.module.css'
-import { useRaf } from 'react-use'
 import { LpHeader } from '@/components/LandingPage/LpHeader'
 import { LpTemplate } from '@/components/LandingPage/LpTemplate'
-import { getStars } from '@/utils/getStars'
 import { useRouter } from 'next/router'
 import { pageMap } from '@/constants/landingPage'
+import { CommBottom } from '@/components/comm/commBottom'
 
-const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
+
+const LandingPageSecond = ({ pageName, name, locale }) => {
   const { t } = useTranslation('landingPageDetails')
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
@@ -21,7 +21,6 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
     returnObjects: true,
   })
   const { metaTitle, metaDescription } = content
-  const step = useRaf(1000, 0)
 
   useEffect(() => {
     // use the router on the client side
@@ -47,10 +46,8 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
       </Head>
       <div className="w-full px-0 bg-white overflow-y-auto">
         <Nav
-          hasButton
           whiteTheme
           onChangeShow={() => setIsBookShow(true)}
-          githubStarts={Math.floor(starCounts * step)}
         />
         <div className={style.lpContainer}>
           <LpHeader
@@ -69,7 +66,8 @@ const LandingPageSecond = ({ pageName, name, starCounts, locale }) => {
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <Footer />
+      <CommBottom whiteTheme scrollStart={0.71} scrollEnd={0.75} />
+      <Footer whiteTheme scrollStart={0.90} scrollEnd={1}/>
     </>
   )
 }
@@ -83,7 +81,6 @@ export const getServerSideProps = async ({ locale, params }) => {
       },
     }
   }
-  const starCounts = await getStars()
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -91,7 +88,6 @@ export const getServerSideProps = async ({ locale, params }) => {
         'home',
         'common',
       ])),
-      starCounts,
       pageName,
       name,
       locale,
