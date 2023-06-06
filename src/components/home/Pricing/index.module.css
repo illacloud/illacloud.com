@@ -2,7 +2,7 @@
   display: none;
 }
 .pricingMask {
-  @apply w-full overflow-hidden absolute z-[-1] h-[2600px] bg-black xl:rounded-b-[40px]
+  @apply w-full overflow-hidden absolute z-[-1] h-[2750px] bg-black;
 }
 .cardContainer {
   scrollbar-width: none;
@@ -10,8 +10,8 @@
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  @apply w-full overflow-y-scroll;
-  @apply overflow-hidden xl:h-[2600px];
+  @apply w-full overflow-y-scroll relative z-[1];
+  @apply overflow-hidden xl:h-[2750px];
 }
 .pricingMaskLeft {
   @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
@@ -126,27 +126,6 @@
 .tipContent{
   word-break: break-all;
   white-space: normal
-}
-.faqContainer {
-  @apply flex flex-col items-center gap-[24px] xl:gap-[48px] pb-[60px] xl:pb-[200px]
-}
-.faqTitle {
-  @apply font-[700] text-[24px] leading-[28px] text-center xl:text-[48px] xl:leading-[56px]
-}
-.faqListContainer {
-  @apply w-full flex flex-col items-start lg:w-[800px]
-}
-.faqListQuestion {
-  @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer
-}
-.faqListAnswer {
-  @apply w-full font-[400] text-[14px] leading-[16px] xl:leading-[20px] flex items-center rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line
-}
-.faqListAnswer a{
- @apply underline
-}
-.direction {
-  @apply w-[12px] h-[12px];
 }
 .pricingFooter {
   @apply lg:pt-[50px] bg-white overflow-hidden

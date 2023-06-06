@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import { Nav } from '@/components/home/Nav'
+import { Nav } from '@/components/home/NewNav'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
-import { NewContent } from '@/components/home/NewContent'
-import { Footer } from '@/components/home/home-footer'
+import { NewContent } from '@/components/home/Content3'
+import { Footer } from '@/components/home/newFooter'
 import { Title } from '@/components/home/title'
 import { MobileTitle, Modal } from '@/components/home/mobileTitle'
-import { SubscribeModal } from '@/components/home/Subscribe'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
@@ -22,7 +21,7 @@ const Home = ({ starCounts }) => {
   const [modalVisible, setModalVisible] = useState()
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
-  const step = useRaf(1000, 0)
+  // const step = useRaf(1000, 0)
   const router = useRouter()
 
   return (
@@ -54,9 +53,8 @@ const Home = ({ starCounts }) => {
           href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}` }`}
         />
       </Head>
-      <div className="bg-gray-01 w-full overflow-y-auto xs:rounded-b-[40px] z-[2] bg-mobileHeader bg-contain bg-no-repeat">
+      <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          githubStarts={Math.floor(starCounts * step)}
           onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
@@ -92,21 +90,17 @@ const Home = ({ starCounts }) => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={Math.floor(starCounts * step)}
+          githubStarts={123}
           setPlayMaskShow={setPlayMaskShow}
           onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={Math.floor(starCounts * step)}
+          githubStarts={123}
           onSubscribe={() => setModalVisible(true)}
         />
-        <NewContent onChangeShow={() => setIsPartnerShow(true)} />
+        <NewContent />
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
-        <SubscribeModal
-          visible={modalVisible}
-          onClose={() => setModalVisible(false)}
-        />
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}
@@ -116,7 +110,7 @@ const Home = ({ starCounts }) => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-      <Footer />
+      <Footer scrollStart={0.990} scrollEnd={1}/>
     </>
   )
 }

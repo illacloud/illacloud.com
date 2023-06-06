@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { VersionSwitcher } from '@/components/VersionSwitcher'
 import Router from 'next/router'
 import { Logo } from '@/components/Logo'
 import { Dialog } from '@headlessui/react'

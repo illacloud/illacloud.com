@@ -1,0 +1,114 @@
+
+/*-------*/
+.commBottomContainer {
+  @apply flex flex-col justify-center items-center gap-[8px] w-full relative rounded-b-[20px] pt-[60px] pb-[40px] px-[20px];
+  @apply xl:rounded-b-[40px] xl:pt-[120px] xl:pb-[80px] xl:px-[120px] xl:h-[410px];
+}
+.commBottomBtnBg {
+  @apply absolute w-full  z-[-1] bottom-0 rounded-b-[20px];
+}
+.bottomBg {
+  background: linear-gradient(180deg, rgba(101, 74, 236, 0) 0%, rgba(101, 74, 236, 0.5) 100%);
+}
+.whiteBottomBg {
+  background: linear-gradient(180deg, rgba(81, 106, 181, 0) 0%, rgba(81, 106, 181, 0.08) 100%);
+}
+.commBottomTitle {
+  @apply font-[700] text-[20px] leading-[24px] text-white-01 text-center;
+  @apply xl:text-[40px] xl:leading-[48px];
+}
+.bottomTitle {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    #ffffff 50%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.whiteBottomTitle {
+  background: linear-gradient(90deg, rgba(11, 12, 15, 0.5) 0%, #0B0C0F 50%, rgba(11, 12, 15, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.commBottomDesc {
+  @apply w-full  font-[400] text-[12px] leading-[16px] text-center overflow-ellipsis line-clamp-4;
+  @apply  text-[14px] leading-[22px];
+  @apply xl:w-[600px]
+}
+.commBottomBtn {
+  @apply flex flex-row justify-center items-center gap-[10px] font-[500] text-[16px] leading-[28px]  rounded-[8px] cursor-pointer px-[32px] py-[10px] w-full;
+  @apply xl:w-[320px]
+}
+.commBottomBtn svg {
+  width: 16px;
+}
+
+/*---------*/
+.partnerList {
+  @apply w-full   flex-row items-start gap-[16px];
+}
+/* .partnerItemCard:first-of-type {
+  @apply ml-[120px] ;
+} */
+.partnerItemCard {
+  @apply h-full w-full rounded-[8px] shrink-0 cursor-pointer;
+  @apply xl:rounded-[20px];
+  background: #332B6A;
+  transition: all 0.3s;
+}
+.partnerItemContainer {
+  @apply flex flex-col items-center h-full w-full rounded-[8px] p-[24px] shrink-0 cursor-pointer;
+  @apply xl:rounded-[16px] xl:p-[48px];
+  background: url('/img/partnerBg.svg');
+  transition: all 0.2s;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .5s;
+}
+.partnerItemContainer:hover {
+  /* transform-origin: center;
+  transform: scale(0.99);
+  border-radius: 20px; */
+  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+
+}
+.partnerItemContainer:hover .partnerItem {
+  transform: translateZ(50px);
+}
+.partnerItemCard:hover {
+  box-shadow: 0px 0px 40px rgba(97, 29, 184, 0.5);
+}
+.partnerItem {
+  @apply flex flex-col items-center gap-[32px] w-full h-full;
+}
+
+/*------*/
+.faqContainer {
+  @apply flex flex-col items-center gap-[24px] xl:gap-[48px] w-full;
+}
+.faqTitle {
+  @apply font-[700] text-[24px] leading-[28px] text-center xl:text-[48px] xl:leading-[56px]
+}
+.faqListContainer {
+  @apply w-full flex flex-col items-start lg:w-[800px]
+}
+.faqListQuestion {
+  @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer rounded-t-[8px];
+  @apply xl:rounded-t-[16px]
+}
+.faqListAnswer {
+  @apply w-full font-[400] text-[14px] leading-[16px] xl:leading-[20px] flex items-center rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line rounded-b-[8px];
+  @apply xl:rounded-b-[16px]
+}
+.faqListAnswer a{
+ @apply underline
+}
+.direction {
+  @apply w-[12px] h-[12px];
+}
