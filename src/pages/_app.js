@@ -1,5 +1,6 @@
 import '../css/fonts.css'
 import '../css/main.css'
+import '@/components/home/Content3/coverSwiper.css'
 import 'focus-visible'
 import { useState, useEffect, Fragment } from 'react'
 import { Header } from '@/components/Header'
@@ -61,10 +62,9 @@ function App({ Component, pageProps, router }) {
   const showHeader =
     router.pathname !== '/' &&
     router.pathname !== '/hire' &&
-    router.pathname !== '/subscribed' &&
-    router.pathname !== '/subscribe-failed' &&
     router.pathname !== '/pricing' &&
-    !/\/(components|integrations)/.test(router.asPath)
+    !/\/(components|integrations)/.test(router.asPath) && 
+    router.pathname !== '/drive'
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || t('meta.description')

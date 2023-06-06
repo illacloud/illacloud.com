@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Nav } from '@/components/home/Nav'
-import { Footer } from '@/components/home/home-footer'
+import { Nav } from '@/components/home/NewNav'
+import { Footer } from '@/components/home/newFooter'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -8,9 +8,10 @@ import { PricingContent } from '@/components/home/Pricing/PricingContent'
 import { PricingMask } from '@/components/home/Pricing/PricingMask'
 import { OpenSource } from '@/components/home/Pricing/OpenSource'
 import { BookDemo } from '@/components/home/Form/BookDemo'
-import { FAQ } from '@/components/home/Pricing/Faq'
+import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/home/Pricing/index.module.css'
 import { useRouter } from 'next/router'
+import { CommBottom } from '@/components/comm/commBottom'
 
 
 const Pricing = () => {
@@ -36,11 +37,12 @@ const Pricing = () => {
       <PricingMask />
       <div className='w-full px-0'>
         <div className={style.pricingContainer}>
-          <Nav hasButton={false} whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
+          <Nav whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
           <div className='w-full text-white xl:pt-[120px] bg-transparent'>
             <PricingContent onChangeShow={() => setIsBookShow(true)} />
             <OpenSource />
-            <FAQ />
+              <FAQ  translationSpace='pricing' />
+            <CommBottom scrollStart={0.670} scrollEnd={0.720}/>
           </div>
         </div>
         <BookDemo
@@ -48,9 +50,7 @@ const Pricing = () => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-      <div className={style.pricingFooter}>
-        <Footer />
-      </div>
+        <Footer scrollStart={0.90} scrollEnd={1}/>
     </>
   )
 }
