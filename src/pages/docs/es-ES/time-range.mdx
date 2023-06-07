@@ -1,0 +1,158 @@
+---
+title: Rango de Tiempo
+metaTitle: Intervalo de tiempo Doc Componente | ILLA Cloud
+desc: Aprenda cómo utilizar el componente de rango de tiempo de la nube de ILLA para permitir a los usuarios seleccionar un rango de horas desde una interfaz de 24 horas en sus aplicaciones.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=es&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Componentes ensamblados
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>¿Qué es el rango de tiempo?</h2>
+
+El componente de rango de tiempo es un componente de interfaz de usuario que permite a los usuarios seleccionar un rango de veces desde una interfaz de 24 horas, típicamente usado en formularios o interfaces de entrada de datos donde el usuario necesita especificar un rango de tiempo de inicio y fin.
+
+Cuando se agrega un componente de rango de tiempo al lienzo, muestra dos interfaces de 24 horas al lado del mismo. Una interfaz se utiliza para seleccionar la hora de inicio, mientras que la otra se utiliza para seleccionar la hora de finalización. El usuario puede ajustar el tiempo moviendo el cursor del ratón o usando las flechas arriba y abajo.
+
+### Properties
+
+Propiedades disponibles en el rango de tiempo. JavaScript puede ser escrito para leer o alterar información sobre componentes.
+
+| Propiedades                   | Descripción                                                                                                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hora de inicio                | El valor por defecto de la hora de inicio del componente                                                                                                             |
+| Hora de fin                   | El valor por defecto de la hora final del componente                                                                                                                 |
+| Formatear                     | Un formato de fecha válido. Vea https://day.js.org/docs/en/parse/string-format.                                                                                      |
+| Marcador de posición inicial  | El valor se mostrará cuando el campo de entrada de hora de inicio esté vacío.                                                                                        |
+| Marcador de posición final    | El valor se mostrará cuando el campo de entrada de hora final esté vacío.                                                                                            |
+| Tamaño de paso                | el tamaño del paso en la unidad de minutos                                                                                                                           |
+| Etiqueta                      | El nombre del campo mostrado al usuario                                                                                                                              |
+| Leyenda                       | Un título usado para describir el campo en detalle                                                                                                                   |
+| Etiqueta oculta               | Establecer si mostrar o no la etiqueta                                                                                                                               |
+| Posición                      | Define la posición de la etiqueta relativa al componente                                                                                                             |
+| Alineación                    | Establecer el alineamiento (alinear a la izquierda o a la derecha) de la etiqueta                                                                                    |
+| Width                         | Cuando la etiqueta esté en el lado izquierdo del componente, establezca la proporción de ancho de la etiqueta.                                                       |
+| Manejador del Evento          | Activar consultas, componentes de control o llamar a otras APIs en respuesta a eventos de componentes.                                                               |
+| Deshabilitado                 | Controla el estado de si el componente está desactivado. El componente no puede ser modificado o enfocado cuando está desactivado.                                   |
+| Sugerencia                    | Los usuarios pueden ingresar la descripción del componente aquí. La descripción se mostrará cuando esté enfocada. Formato Markdown soportado.                        |
+| Mostrar botón de borrar       | controlar si se muestra o no un botón claro en el campo de entrada                                                                                                   |
+| Campo requerido               | Válido sólo cuando el interruptor está encendido.                                                                                                                    |
+| Regla personalizada           | Crea aquí tu lógica de validación. Las reglas deben ser hechas en JavaScript y cubiertas por {{}}.                                                                   |
+| Ocultar mensaje de validación | Puede ocultar el mensaje de error cambiando el estado oculto cuando el valor de entrada es incorrecto. Puedes cambiar dinámicamente el estado oculto por JavaScript. |
+| Clave de Formulario           | Especifique una clave de un componente de formulario de envoltura al construir el atributo de datos.                                                                 |
+| Hidden                        | Controlar dinámicamente si el componente está oculto. Puede cambiar el estado oculto a través de un valor booleano dinámico.                                         |
+| Color del tema                | Permite a los usuarios especificar el color de fondo y opacidad del botón                                                                                            |
+
+### Methods
+
+Puede usar otros componentes para controlar el componente. Apoyamos los dos métodos siguientes:
+
+-   **setStartTime**
+
+Para establecer el valor de fecha de inicio, por ejemplo, {{"value1"}}
+
+| Propiedades | Descripción             |
+| ----------- | ----------------------- |
+| Valor       | Valor de hora de inicio |
+
+-   **setEndTime**
+
+Para establecer el valor de la fecha de finalización, por ejemplo, {{"value2"}}
+
+| Propiedades | Descripción                 |
+| ----------- | --------------------------- |
+| Valor       | Valor de la hora de entrada |
+
+-   **limpiarValor**
+
+Limpiar el valor del componente seleccionado 
+
+-   **validate**
+
+Para verificar que la información de entrada es legal
+
+-   **clearValidate**
+
+Para borrar el mensaje de validación
+
+### Controlador de eventos
+
+| Evento  | Descripción                                                                                                             |
+| ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Cambiar | Cuando un usuario cambia el valor de tiempo seleccionado, realice una acción específica personalizada por los usuarios. |
+
+### Datos
+
+El componente tiene algunos datos comúnmente utilizados, que pueden llamarse a través de **`{{componentName.propertyName}}`** en la aplicación.
+
+| Nombre de la propiedad        | Descripción                                                      |
+| ----------------------------- | ---------------------------------------------------------------- |
+| esquema de color              | la propiedad de color de la fecha                                |
+| regla personalizada           | la regla personalizada especificada por el usuario               |
+| deshabilitado                 | un valor booleano indica el estado deshabilitado                 |
+| nombre de pantalla            | el nombre de este componente (es decir, cascader1)               |
+| startTime                     | valor de hora de inicio                                          |
+| endTime                       | valor de la hora final                                           |
+| marcador inicial              | valor del marcador de posición para la hora de inicio            |
+| endPlaceholder                | valor del marcador de posición para la hora final                |
+| eventos                       | un valor de matriz para la secuencia de eventos                  |
+| formato                       | el formato de fecha y hora                                       |
+| formDataKey                   | la clave de datos de formulario de la fecha                      |
+| hidden                        | un valor booleano indica el estado oculto del botón              |
+| ocultar mensaje de validación | un valor booleano indica si el mensaje de validación está oculto |
+| etiqueta                      | valor de etiqueta                                                |
+| alineación de etiqueta        | alineación de la etiqueta de cascada (izquierda o derecha)       |
+| posición de etiqueta          | posición de la etiqueta de cascada (izquierda o derecha)         |
+| ancho de etiqueta             | el entero que representa el ancho de la etiqueta                 |
+| minutoPaso                    | valor del tamaño del paso minuto                                 |
+| requerido                     | un valor booleano indica el estado requerido de la entrada.      |
+| limpiar                       | un valor booleano indica si la fecha se mostrará limpia          |
+| valor                         | Valor seleccionado                                               |
+
+Ejemplo: {{rangeTime1.value[0]}}
+
+### Caso de uso
+
+A continuación, demostraremos cómo mapear los datos de la fuente de datos al rango de tiempo y establecer el valor final a la hora actual con un botón. 
+
+#### Paso 1 Añadir una acción
+
+Creemos una tabla en la API REST llamada **`promoteCodes`,** incluyendo 6 columnas: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Utilizaremos el startedAt y expiradoAt para uso de muestras. 
+
+Luego podemos crear una nueva acción para la API REST desde la lista de acciones, listando todos los datos en promoteCodes y llamado restapi1. 
+
+Haz clic en **`Guardar`** y **`Ejecutar`** para activar esta acción.
+
+#### Paso 2 Añadir componentes
+
+A continuación, podemos añadir un componente **`rango de tiempo`** y un componente **`botón`** al lienzo. Para el valor por defecto de la hora de inicio del componente de rango de fechas, utilizamos el momento iniciadoAt del primer código promocional de los demás datos de api.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+De la misma manera, para el valor de tiempo final por defecto, usamos expiredAt cuando el primer código promocional de los datos restantes de api.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+También etiquetamos el botón como "Ahora" como se muestra a continuación.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Paso 3 Configurar el componente
+
+Para el componente **`button`** podemos configurarlo para establecer el valor de fecha de finalización en el componente **`rango de tiempo`** a la fecha de hoy.
+
+1.  En el controlador de edición de eventos, seleccione **`componente de control`** en acción, selecciona el componente **`rango de tiempo`** que quieres actualizar como objetivo del evento.
+2.  Elige la acción **`setEndTime`** y establece la **`Hora de finalización`** como `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Prueba de paso 4
+
+Ahora que al hacer clic en el botón "Ahora", la hora final debe cambiar a la fecha de hoy. En cuanto a aquí, tenemos 20:03:05 pero puede ser diferente cuando lo pruebas.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
