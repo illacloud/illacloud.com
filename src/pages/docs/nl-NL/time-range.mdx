@@ -1,0 +1,158 @@
+---
+title: Tijd bereik
+metaTitle: Tijd Bereik Component Doc × ILLA Cloud
+desc: Leer hoe je het tijdbereik onderdeel van ILLA Cloud kunt gebruiken om gebruikers verschillende keren te laten selecteren van een 24-uurs interface in je applicaties.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=nl&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Assembly-onderdelen
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Wat is een tijdsbereik?</h2>
+
+Tijd Bereik component is een UI component waarmee gebruikers meerdere keren kunnen selecteren van een 24-uurs interface, Doorgaans gebruikt in formulieren of gegevensinvoerinterfaces waar de gebruiker een start- en eindtijdbereik moet opgeven.
+
+Wanneer een tijdbereik onderdeel wordt toegevoegd aan het canvas, wordt er 24 uur naast elkaar twee interfaces weergegeven. Eén interface wordt gebruikt om de starttijd te selecteren, de andere wordt gebruikt om de eindtijd te selecteren. De gebruiker kan de tijd aanpassen door de muiscursor te verplaatsen of de pijlen omhoog en omlaag te gebruiken.
+
+### Properties
+
+Beschikbare eigenschappen van tijdbereik. JavaScript kan worden geschreven om informatie over componenten te lezen of wijzigen.
+
+| Eigenschappen              | Beschrijving                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start Time                 | De standaard begintijdwaarde van het component                                                                                                                                  |
+| Einde tijd                 | De standaard eindtijdwaarde van het component                                                                                                                                   |
+| Formatteren                | Een geldige datumnotatie string. Zie https://day.js.org/docs/en/parse/string-formaat.                                                                                           |
+| Start plaatsaanduiding     | De waarde wordt getoond wanneer het start invoerveld leeg is.                                                                                                                   |
+| Einde plaatshouder         | De waarde wordt getoond wanneer het veld eindtijd leeg is.                                                                                                                      |
+| Stap grootte               | de stapgrootte in minuten                                                                                                                                                       |
+| Omschrijving               | De naam van het veld weergegeven aan de gebruiker                                                                                                                               |
+| Onderschrift               | Een onderschrift gebruikt om het veld in detail te beschrijven                                                                                                                  |
+| Verborgen label            | Stel in of het label moet worden weergegeven                                                                                                                                    |
+| Positie                    | Stel de positie van het label in ten opzichte van het component                                                                                                                 |
+| Uitlijning                 | Stel de uitlijning in (uitlijnen naar links of rechts) van het label                                                                                                            |
+| Width                      | Wanneer het label aan de linkerkant van het onderdeel staat, stel de breedteverhouding van het label in.                                                                        |
+| Event Handler              | Trigger query's, beheer componenten of bel andere API's in reactie op gebeurtenissen in component.                                                                              |
+| Uitgeschakeld              | Controleer de status of de component is uitgeschakeld. De component kan niet worden gewijzigd of gefocust wanneer het is uitgeschakeld.                                         |
+| Knopinfo                   | Gebruikers kunnen hier de tooltip van de component invoeren. De tooltip wordt getoond wanneer de focus is gefocuerd. Markdown formaat wordt ondersteund.                        |
+| Toon wissen knop           | bepalen of er al dan niet een wisknop wordt weergegeven in het invoerveld                                                                                                       |
+| Verplicht veld             | Geldig alleen wanneer de schakelaar ingeschakeld is.                                                                                                                            |
+| Aangepaste regel           | Voer hier uw validatiedatatie logica in. De regels moeten in JavaScript worden gemaakt en door {{}}.                                                                            |
+| Validatiebericht verbergen | U kunt de foutmelding verbergen door te schakelen naar verborgen status wanneer de ingevoerde waarde onjuist is. Je kunt de verborgen status dynamisch wijzigen per JavaScript. |
+| Formulier gegevenssleutel  | Specificeer een sleutel van een inpakformulier component bij het maken van de gegevensattribuut.                                                                                |
+| Hidden                     | Dynamisch beheren of het onderdeel verborgen is. Je kunt de verborgen status veranderen via dynamische booleaanse waarde.                                                       |
+| Thema kleur                | Sta gebruikers toe om de achtergrondkleur en ondoorzichtigheid van de knop te specificeren                                                                                      |
+
+### Methods
+
+U kunt andere componenten gebruiken om het onderdeel te beheren. Wij steunen de volgende twee methoden:
+
+-   **setStartTime**
+
+Om de begindatumwaarde in te stellen, bijvoorbeeld {{"value1"}}
+
+| Eigenschappen | Beschrijving           |
+| ------------- | ---------------------- |
+| Waarde        | Begintijdwaarde invoer |
+
+-   **setEndTime**
+
+Om de einddatum waarde in te stellen, bijvoorbeeld {{"value2"}}
+
+| Eigenschappen | Beschrijving          |
+| ------------- | --------------------- |
+| Waarde        | Invoer eindtijdwaarde |
+
+-   **clearvalue**
+
+Om de waarde van het geselecteerde component te wissen 
+
+-   **validate**
+
+Om te controleren of de invoerinformatie legaal is
+
+-   **clearvalidatie**
+
+Om het validatiebericht te wissen
+
+### Event handler
+
+| Gebeurtenis | Beschrijving                                                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Veranderen  | Wanneer een gebruiker de geselecteerde tijdwaarde wijzigt, voert een specifieke actie uit die is aangepast door de gebruikers. |
+
+### Gegevens
+
+Het component heeft enkele vaak gebruikte gegevens, die kunnen worden opgeroepen via **`{{componentName.propertyName}}`** in de app.
+
+| Naam van eigenschap      | Beschrijving                                                         |
+| ------------------------ | -------------------------------------------------------------------- |
+| kleurenschema            | de kleureneigenschap van de datum                                    |
+| aangepaste regel         | de aangepaste regel die gebruiker heeft opgegeven                    |
+| uitgeschakeld            | een booleaanse waarde geeft de uitgeschakelde status aan             |
+| weergavenaam             | de naam van dit onderdeel (bijv. cascader1)                          |
+| startTime                | start tijd waarde                                                    |
+| endTime                  | eindtijd waarde                                                      |
+| startPlaatsaanduiding    | placeholder waarde voor de begintijd                                 |
+| endPlaceholder           | placeholder waarde voor eindtijd                                     |
+| evenementen              | een matrix waarde voor een reeks gebeurtenissen                      |
+| formaat                  | het formaat van datum en tijd                                        |
+| formDataKey              | de formuliergegevens sleutel van de datum                            |
+| hidden                   | een Booleaanse waarde geeft de verborgen status van knop aan         |
+| verbergValidationBericht | een Booleaanse waarde geeft aan of het validatiebericht verborgen is |
+| Label                    | label waarde                                                         |
+| uitlijnen                | Uitlijning van cascader-label (links of rechts)                      |
+| labeling                 | positie van het cascaderlabel (links of rechts)                      |
+| labelBreedte             | het geheel getal waarin de breedte van het label wordt voorgesteld   |
+| minuutstap               | minuut stap grootte waarde                                           |
+| verplicht                | een Booleaanse waarde geeft de vereiste status van invoer aan.       |
+| toon leegmaken           | een Booleaanse waarde geeft aan dat de datum duidelijk is            |
+| waarde                   | Geselecteerde waarde                                                 |
+
+Voorbeeld: {{rangeTime1.value[0]}}
+
+### Gebruik geval
+
+Vervolgens zullen we laten zien hoe we de data van de gegevensbron kunnen koppelen aan tijdbereik en de eindwaarde kunnen instellen aan de huidige tijd met een knop. 
+
+#### Stap 1 Voeg een actie toe
+
+Laat ons een tabel aanmaken in REST API genaamd **`promoteCodes`,** inclusief 6 kolommen: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. We zullen het startedAt en verlopen voor voorbeeldgebruik. 
+
+Dan kunnen we een nieuwe actie voor REST API maken uit de actielijst, waarin alle gegevens in promoteCodes en restapi1 worden weergegeven. 
+
+Klik **`Opslaan`** en **`Run`** om deze actie te activeren.
+
+#### Stap 2 Componenten toevoegen
+
+Vervolgens kunnen we een **`time range`** component en een **`button`** component toevoegen aan het canvas. Voor de standaard begintijdwaarde van het datumbereik gebruiken we de startOp tijd van de eerste promotiecode van de rest van de api gegevens.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Evenzo gebruiken we voor de standaard eindtijdwaarde VervaldatumOp het moment van de eerste promotiecode van de rest van de api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+We noemden de knop ook als "Nu" zoals hieronder weergegeven.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Stap 3 Configureer het component
+
+Voor het **`button`** component kunnen we het configureren om de einddatum waarde in **`time range`** op de datum van vandaag in te stellen.
+
+1.  In de Event Handler Bewerken Selecteer **`Control component`** in actie, selecteer de **`time range`** component die u wilt bijwerken als doel van het event.
+2.  Kies de **`setEndTime`** actie en zet de **`End time`** als `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Stap 4 test
+
+Nu wanneer je op de knop "Nu" klikt, moet de eindtijd veranderen naar de datum van vandaag. Wat dit betreft hebben we 20:03:05 maar het kan anders zijn als je het testen.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
