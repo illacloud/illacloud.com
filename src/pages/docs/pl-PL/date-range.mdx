@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Dowiedz się, jak używać komponentu zakresu dat z Chmury ILLA, aby umożliwić użytkownikom wybranie daty rozpoczęcia i zakończenia z interfejsu kalendarza w formularzach lub interfejsach wprowadzania danych.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/337?languages=pl&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Czym jest zakres dat?</h2>
+
+Komponent zakresu dat jest komponentem interfejsu użytkownika, który umożliwia użytkownikom wybór szeregu dat z interfejsu kalendarza, zazwyczaj używane w formularzach lub interfejsach wprowadzania danych, w których użytkownik musi określić zakres daty rozpoczęcia i końcowego.
+
+Gdy komponent zakresu dat jest dodany do płótna, wyświetla dwa interfejsy kalendarza obok siebie. Jeden interfejs kalendarza jest używany do wyboru daty rozpoczęcia, podczas gdy drugi jest używany do wyboru daty końcowej. Użytkownik może nawigować przez kalendarze, klikając na poprzednie lub następne strzałki, aby przenieść się do innego miesiąca, lub klikając na określoną datę, aby ją wybrać. Wybrane daty będą wyświetlane w polach wejściowych.
+
+### Properties
+
+Dostępne właściwości zakresu dat. JavaScript może być napisany w celu przeczytania lub zmiany informacji o komponentach.
+
+| Właściwości                    | Opis                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Data rozpoczęcia               | Domyślna wartość daty rozpoczęcia komponentu                                                                                                                       |
+| Data zakończenia               | Domyślna wartość daty końcowej komponentu                                                                                                                          |
+| Formatowanie                   | Prawidłowy ciąg znaków formatu daty. Zob. https://day.js.org/docs/en/parse/string-format.                                                                          |
+| Zacznij miejsce                | Wartość będzie wyświetlana, gdy pole daty rozpoczęcia jest puste.                                                                                                  |
+| Zastępca Kresu                 | Wartość będzie wyświetlana, gdy pole daty końcowej jest puste.                                                                                                     |
+| Maksymalna data                | ustaw maksymalną datę, którą użytkownik może wybrać z interfejsu kalendarza.                                                                                       |
+| Data min.                      | określ najwcześniejszą datę, którą użytkownik może wybrać z interfejsu kalendarza.                                                                                 |
+| Etykieta                       | Nazwa pola wyświetlanego użytkownikowi                                                                                                                             |
+| Podpis                         | Podpis używany do szczegółowego opisu pola                                                                                                                         |
+| Ukryta etykieta                | Ustaw czy wyświetlić etykietę                                                                                                                                      |
+| Położenie                      | Ustaw położenie etykiety względem komponentu                                                                                                                       |
+| Wyrównanie                     | Ustaw wyrównanie (wyrównanie do lewej lub prawej) etykiety                                                                                                         |
+| Width                          | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety.                                                                        |
+| Obsługa zdarzeń                | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                           |
+| Wyłączone                      | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                            |
+| Tylko do odczytu               | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                            |
+| Wskazówka                      | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                      |
+| Pokaż przycisk wyczyść         | kontroluj, czy przycisk wyczyść jest wyświetlany w polu wejściowym                                                                                                 |
+| Pole wymagane                  | Ważne tylko wtedy, gdy przełącznik jest włączony.                                                                                                                  |
+| Własna reguła                  | Utwórz tutaj swoją logikę sprawdzania. Reguły powinny być sporządzone w JavaScript i objęte {{}}.                                                                  |
+| Ukryj komunikat potwierdzający | Możesz ukryć komunikat o błędzie przełączając status ukrycia, gdy wartość wejściowa jest nieprawidłowa. Możesz dynamicznie zmienić status ukryty przez JavaScript. |
+| Klucz danych formularza        | Określ klucz komponentu opakowania formularza podczas konstruowania atrybutu danych.                                                                               |
+| Hidden                         | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                 |
+| Kolor motywu                   | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                                                |
+
+### Methods
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące dwie metody:
+
+-   **setStartValue**
+
+Aby ustawić wartość daty początkowej, na przykład {{"value1"}}
+
+| Właściwości | Opis                        |
+| ----------- | --------------------------- |
+| Wartość     | Wprowadź wartość początkową |
+
+-   **setEndValue**
+
+Aby ustawić wartość daty końcowej, na przykład {{"value2"}}
+
+| Właściwości | Opis            |
+| ----------- | --------------- |
+| Wartość     | Input end value |
+
+-   **clearValue**
+
+Aby wyczyścić wartość wybranego komponentu 
+
+-   **validate**
+
+Sprawdzenie, czy informacje wejściowe są zgodne z prawem
+
+-   **clearValidate**
+
+Aby wyczyścić komunikat potwierdzający
+
+### Obsługa zdarzeń
+
+| Wydarzenie | Opis                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------- |
+| Zmiana     | Gdy użytkownik zmienia wybraną wartość daty, wykonaj określoną czynność dostosowaną przez użytkowników. |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności       | Opis                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| schemat kolorów       | właściwość koloru daty                                              |
+| niestandardowa reguła | niestandardowa reguła określona przez użytkownika                   |
+| Format daty           | postać daty                                                         |
+| wyłączone             | wartość logiczna wskazuje status wyłączony                          |
+| nazwa wyświetlacza    | nazwa tego składnika (tj. kaskadowy1)                               |
+| Zastępca startowy     | wartość zastępcza dla daty rozpoczęcia                              |
+| endPlaceholder        | wartość zastępcza dla daty końcowej                                 |
+| wydarzenia            | wartość tablicy dla sekwencji zdarzeń                               |
+| formDataKey           | Formatowy klucz daty                                                |
+| hidden                | wartość logiczna wskazuje ukryty status przycisku                   |
+| ukryj Wiadomość       | wartość logiczna wskazuje, czy komunikat potwierdzający jest ukryty |
+| etykieta              | wartość etykiety                                                    |
+| Wyrównanie etykiety   | wyrównanie etykiety kaskadowej (lewa lub prawa)                     |
+| pozycja etykiety      | pozycja etykiety kaskadowej (lewa lub prawa)                        |
+| Szerokość etykiety    | liczba całkowita reprezentująca szerokość etykiety                  |
+| Tylko do odczytu      | wartość logiczna wskazuje tylko status danych wejściowych.          |
+| wymagane              | wartość logiczna wskazuje wymagany status wejścia.                  |
+| pokaż Wyczyść         | wartość logiczna wskazuje czy data zostanie wyczyszczona            |
+| wartość               | Wybrana wartość                                                     |
+
+Przykład: {{dateRange1.value[0]}}
+
+### Przypadek użycia
+
+Następnie pokażemy jak mapować dane z zakresu źródła danych do chwili obecnej i ustawić wartość końcową na dzisiejszą datę za pomocą przycisku. 
+
+#### Krok 1 Dodaj akcję
+
+Utwórzmy tabelę w REST API o nazwie **`promoteCodes`,** zawierającą 6 kolumn: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Będziemy używać startedPrzy, a czas wygaśnięcia do próbki. 
+
+Następnie możemy utworzyć nową akcję dla REST API z listy działań, wymieniając wszystkie dane w promoteCodes i nazwane restapi1. 
+
+Kliknij **`Zapisz`** i **Uruchom\`**, aby aktywować tę akcję.
+
+#### Krok 2 Dodaj komponenty
+
+Następnie możemy dodać komponent **`date range`** i komponent **`przycisk`** do płótna. Dla domyślnej wartości daty rozpoczęcia komponentu zakresu dat, używamy startedAt czasu pierwszego kodu promocyjnego z pozostałych danych api.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Podobnie, dla domyślnej wartości daty końcowej, używamy wygasłegoW czasie pierwszego kodu promocyjnego z pozostałych danych api.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Oznawaliśmy również przycisk jako "Aktualizuj", jak pokazano poniżej.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Krok 3 Skonfiguruj komponent
+
+Dla komponentu **`button`** możemy go skonfigurować tak, aby ustawić wartość daty końcowej w komponencie **`date range`** na dzisiejszą datę.
+
+1.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz składnik **`zakres daty`**, który chcesz zaktualizować jako cel wydarzenia.
+2.  Wybierz działanie **`setEndValue`** i ustaw **`datę końcową`** na `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Etap 4 Badanie
+
+Teraz, gdy klikniesz przycisk "Aktualizuj", data końcowa powinna zmienić się na dzisiejszą datę. Jeśli chodzi o tę kwestię, mamy 2023-5-6, ale może się to różnić podczas testowania.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)
