@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Lär dig hur du använder komponenten Datumintervall från ILLA Cloud för att låta användarna välja ett start- och slutdatum från ett kalendergränssnitt i dina formulär eller datainmatningsgränssnitt.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=sv&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Montera komponenter
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Vad är datumintervall?</h2>
+
+Datum Range komponent är en UI-komponent som tillåter användare att välja ett antal datum från ett kalendergränssnitt, vanligtvis används i formulär eller datainmatningsgränssnitt där användaren behöver ange ett start- och slutdatumintervall.
+
+När en datumintervall komponent läggs till i duk, visar det två kalendergränssnitt sida vid sida. Ett kalendergränssnitt används för att välja startdatum medan den andra används för att välja slutdatum. Användaren kan navigera genom kalendrarna genom att klicka på föregående eller nästa pilar för att flytta till en annan månad, eller genom att klicka på ett specifikt datum för att välja det. De valda datumen kommer att visas i inmatningsfälten.
+
+### Properties
+
+Datumintervall tillgängliga fastigheter. JavaScript kan skrivas för att läsa eller ändra information om komponenter.
+
+| Egenskaper                 | Beskrivning                                                                                                                                         |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Startdatum                 | Standardvärdet för startdatumet för komponenten                                                                                                     |
+| Slutdatum                  | Standardvärdet för slutdatumet för komponenten                                                                                                      |
+| Formatera                  | En giltig datumformatsträng. Se https://day.js.org/docs/sv/parse/string-format.                                                                     |
+| Starta platshållare        | Värdet kommer att visas när fältet för startdatum är tomt.                                                                                          |
+| Slut platshållare          | Värdet kommer att visas när fältet för slutdatum är tomt.                                                                                           |
+| Max datum                  | ange det högsta datum som en användare kan välja från kalendergränssnittet.                                                                         |
+| Minsta datum               | ange det tidigaste datum som en användare kan välja från kalendergränssnittet.                                                                      |
+| Etikett                    | Namnet på fältet som visas för användaren                                                                                                           |
+| Bildtext                   | En text som används för att beskriva fältet i detalj                                                                                                |
+| Dold etikett               | Ange om etiketten ska visas                                                                                                                         |
+| Befattning                 | Ställ in positionen för etiketten i förhållande till komponenten                                                                                    |
+| Justering                  | Ange justering (anpassa till vänster eller höger) på etiketten                                                                                      |
+| Width                      | När etiketten är på vänster sida av komponenten, ställ in breddförhållandet på etiketten.                                                           |
+| Händelsehanterare          | Utlösa frågor, styra komponenter, eller ringa andra API:er som svar på komponenthändelser.                                                          |
+| Inaktiverad                | Kontrollera status för om komponenten är inaktiverad. Komponenten kan inte ändras eller fokuseras när den är inaktiverad.                           |
+| Läs endast                 | Kontrollera status på om komponenten är skrivskyddad. En skrivskyddad komponent kan väljas och fokuseras men kan inte ändras.                       |
+| Verktygstips               | Användare kan ange komponenten verktygstips här. Verktygstipen kommer att visas när den är fokuserad. Markdown format stöds.                        |
+| Visa tydlig knapp          | kontrollera om en tydlig knapp visas i inmatningsfältet                                                                                             |
+| Obligatoriskt fält         | Gäller endast när strömbrytaren är aktiverad.                                                                                                       |
+| Anpassad regel             | Skapa din valideringslogik här. Reglerna ska göras i JavaScript och omfattas av {{}}.                                                               |
+| Dölj valideringsmeddelande | Du kan dölja felmeddelandet genom att byta dold status när inmatningsvärdet är felaktigt. Du kan dynamiskt ändra den dolda statusen med JavaScript. |
+| Formulär dataknapp         | Ange en nyckel till en omslagningsformulärkomponent när du konstruerar data-attributet.                                                             |
+| Hidden                     | Styr dynamiskt om komponenten är dold. Du kan ändra den dolda statusen genom dynamiskt booleskt värde.                                              |
+| Tema färg                  | Tillåter användare att ange knappens bakgrundsfärg och opacitet                                                                                     |
+
+### Methods
+
+Du kan använda andra komponenter för att styra komponenten. Vi stöder följande två metoder:
+
+-   **setStartValue**
+
+För att ställa in startdatumets värde, till exempel, {{"value1"}}
+
+| Egenskaper | Beskrivning          |
+| ---------- | -------------------- |
+| Värde      | Inmatning startvärde |
+
+-   **setEndValue**
+
+För att ange slutdatumets värde, till exempel, {{"value2"}}
+
+| Egenskaper | Beskrivning     |
+| ---------- | --------------- |
+| Värde      | Input end value |
+
+-   **clearValue**
+
+För att rensa värdet på den valda komponenten 
+
+-   **validate**
+
+För att verifiera att indata informationen är laglig
+
+-   **clearValidate**
+
+Rensa valideringsmeddelandet
+
+### Händelsehanterare
+
+| Händelse | Beskrivning                                                                                         |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| Ändra    | När en användare ändrar det valda datumvärdet, utför specifika åtgärder som anpassats av användare. |
+
+### Data
+
+Komponenten har några vanliga data, som kan anropas via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskapens namn          | Beskrivning                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| colorScheme               | färgen egenskap av datum                                     |
+| standardregel             | den anpassade regeln som användaren angav                    |
+| datumformat               | formatet av datum                                            |
+| inaktiverad               | ett booleskt värde anger inaktiverad status                  |
+| visningsnamn              | namnet på denna komponent (dvs cascader1)                    |
+| startplatshållare         | Platshållarens värde för startdatum                          |
+| endPlaceholder            | Platshållarens värde för slutdatum                           |
+| händelser                 | ett Array värde för sekvens av händelser                     |
+| formDataKey               | formulärdataknappen för datum                                |
+| hidden                    | ett booleskt värde anger den dolda statusen för knappen      |
+| Göm valideringsmeddelande | ett booleskt värde anger om valideringsmeddelandet är dolt   |
+| etikett                   | etikett värde                                                |
+| etikettJustera            | justering av kaskader etikett (vänster eller höger)          |
+| etikettPosition           | position för kaskader etikett (vänster eller höger)          |
+| etikettBredd              | heltal som representerar bredden på etiketten                |
+| readOnly                  | ett booleskt värde anger status readyOnly för indata.        |
+| obligatorisk              | ett booleskt värde anger status som krävs för inmatning.     |
+| visaRensa                 | ett booleskt värde anger om datumet kommer att visas tydligt |
+| värde                     | Valt värde                                                   |
+
+Exempel: {{dateRange1.value[0]}}
+
+### Använd ärende
+
+Därefter kommer vi att visa hur man kartlägger data från datakällan till datumintervall och ställa in slutvärdet till dagens datum med en knapp. 
+
+#### Steg 1 Lägg till en åtgärd
+
+Låt oss skapa en tabell i REST API som heter **`promoteCodes`,** inklusive 6 kolumner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vi kommer att använda startedAt och utgångenAt tid för provanvändning. 
+
+Sedan kan vi skapa en ny åtgärd för REST API från åtgärdslistan, listar alla data i promoteCodes och heter restapi1. 
+
+Klicka på **`Save`** och **`Run`** för att aktivera denna åtgärd.
+
+#### Steg 2 Lägg till komponenter
+
+Därefter kan vi addera en **`date range`** komponent och en **`button`** komponent till duken. För standardvärdet för startdatumet för datumintervall komponent, använder vi den startadeVid tidpunkten för den första befordra koden från resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+På samma sätt, för standard slutdatum värde, använder vi utgångna Vid tidpunkten för den första befordra koden från resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Vi har också märkt knappen som "Uppdatera" som visas nedan.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Steg 3 Konfigurera komponenten
+
+För **`button`** komponenten kan vi konfigurera det så att värdet för slutdatum i **`date range`** komponent till dagens datum.
+
+1.  I händelsehanteraren Redigera, välj **`Control component`** i åtgärd, Välj **`date range`** komponenten som du vill uppdatera som mål för händelsen.
+2.  Välj **`setEndValue`** åtgärden och ställ in **`End date`** som `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Steg 4 Test
+
+Nu när du klickar på knappen "Uppdatera" bör slutdatumet ändras till dagens datum. När det gäller här har vi 2023-5-6 men det kan vara annorlunda när du testar den.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)
