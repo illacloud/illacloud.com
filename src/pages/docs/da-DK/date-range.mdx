@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Lær at bruge datarækkeviddekomponenten fra ILLA Cloud til at lade brugerne vælge en start- og slutdato fra en kalenderUI i dine formularer eller dataindtastningsgrænseflader.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=da&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Hvad er datointerval?</h2>
+
+Date Range komponent er en UI komponent, der giver brugerne mulighed for at vælge en række datoer fra en kalender interface, typisk anvendes i formularer eller dataindtastningsgrænseflader, hvor brugeren skal angive et start- og slutdatointerval.
+
+Når en datointerval komponent føjes til lærred, vises to kalendergrænseflader side om side. En kalender interface bruges til at vælge startdatoen, mens den anden bruges til at vælge slutdatoen. Brugeren kan navigere gennem kalendere ved at klikke på de forrige eller næste pile for at flytte til en anden måned, eller ved at klikke på en bestemt dato for at vælge den. De valgte datoer vil blive vist i indtastningsfelterne.
+
+### Properties
+
+Dato Range tilgængelige egenskaber. JavaScript kan skrives for at læse eller ændre information om komponenter.
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start dato              | Standard startdato værdi for komponenten                                                                                                             |
+| Slut dato               | Standard slutdato værdi af komponenten                                                                                                               |
+| Formatér                | En gyldig datoformat streng. Se https://day.js.org/docs/en/parse/string-format.                                                                      |
+| Start Pladsholder       | Værdien vil blive vist, når inputfeltet startdato er tomt.                                                                                           |
+| Slut Pladsholder        | Værdien vil blive vist når slutdatoen input feltet er tomt.                                                                                          |
+| Maks. dato              | sæt den maksimale dato som en bruger kan vælge fra kalendergrænsefladen.                                                                             |
+| Min. dato               | angive den tidligste dato, som en bruger kan vælge fra kalendergrænsefladen.                                                                         |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justeringen (indstil til venstre eller højre) af etiketten                                                                                   |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet for etiketten.                                                           |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Kun Læs                 | Kontrollere status for, om komponenten er skrivebeskyttet. En skrivebeskyttet komponent kan vælges og fokuseres, men kan ikke ændres.                |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Vis ryd-knap            | kontrollere, om en klar knap vises i inputfeltet                                                                                                     |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Brugerdefineret regel   | Opret din valideringslogik her. Reglerne skal laves i JavaScript og dækket af {{}}.                                                                  |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema Farve              | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                                                |
+
+### Methods
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende to metoder:
+
+-   **setStartValue**
+
+For at angive startdatoværdien, for eksempel, {{"value1"}}
+
+| Egenskaber | Varebeskrivelse  |
+| ---------- | ---------------- |
+| Værdi      | Input startværdi |
+
+-   **setEndValue**
+
+For at angive slutdatoen, for eksempel, {{"value2"}}
+
+| Egenskaber | Varebeskrivelse |
+| ---------- | --------------- |
+| Værdi      | Input end value |
+
+-   **clearValue**
+
+For at rydde værdien af den valgte komponent 
+
+-   **validate**
+
+At kontrollere, at inputoplysningerne er lovlige
+
+-   **clearValidate**
+
+For at rydde valideringsmeddelelsen
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------- |
+| Skift      | Når en bruger ændrer den valgte datoværdi, skal du udføre specifik handling tilpasset af brugere. |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn      | Varebeskrivelse                                              |
+| --------------------- | ------------------------------------------------------------ |
+| colorScheme           | farveegenskaben for dato                                     |
+| customRule            | den brugerdefinerede regel, som brugeren har angivet         |
+| datoformat            | datoens form                                                 |
+| deaktiveret           | en boolsk værdi angiver den deaktiverede status              |
+| displayName           | navnet på denne komponent (dvs. kaskade1)                    |
+| startPlaceholder      | pladsholderens værdi for startdato                           |
+| endPlaceholder        | pladsholderens værdi for slutdato                            |
+| begivenheder          | en Array værdi for sekvens af begivenheder                   |
+| formDataKey           | Formularens datakast for dato                                |
+| hidden                | en boolsk værdi angiver den skjulte status for knappen       |
+| skjulValideringBesked | en boolsk værdi angiver, om valideringsmeddelelsen er skjult |
+| etiket                | etiket værdi                                                 |
+| labelAlign            | justering af kaskadeetiket (venstre eller højre)             |
+| labelPosition         | placering af kaskadeetiket (venstre eller højre)             |
+| labelBredde           | det heltal, der repræsenterer etikettens bredde              |
+| skrivebeskyttet       | en boolsk værdi angiver readyOnly status for input.          |
+| påkrævet              | en boolsk værdi angiver den krævede status for input.        |
+| showClear             | en boolsk værdi indikerer at datoen vil blive vist klart     |
+| værdi                 | Valgt værdi                                                  |
+
+Eksempel: {{dateRange1.value[0]}}
+
+### Brug case
+
+Dernæst vil vi vise, hvordan man kortlægger data fra datakilden til datointerval og indstille slutværdi til dagens dato med en knap. 
+
+#### Trin 1 Tilføj en handling
+
+Lad os oprette en tabel i REST API kaldet **`promoteCodes`,** herunder 6 kolonner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vi vil bruge den startedeTil og udløbetTil tid til prøvebrug. 
+
+Så kan vi oprette en ny handling for REST API fra handlingslisten, liste alle data i promoteCodes og navngivet restapi1. 
+
+Klik på **`Gem`** og **`Kør`** for at aktivere denne handling.
+
+#### Trin 2 Tilføj Komponenter
+
+Dernæst kan vi tilføje en **`datoområde`** komponent og en **`knap`** komponent til lærredet. For standard startdato værdi for datointerval komponenten, vi bruger den startedePå tidspunktet for den første promoveringskode fra resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Tilsvarende bruger vi for standard slutdato værdienPå tidspunktet for den første promoveringskode fra resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Vi har også markeret knappen som 'Opdatér' som vist nedenfor.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Trin 3 Konfigurer komponenten
+
+For **`-knappen`**-komponenten kan vi konfigurere den til at sætte slutdatoværdien i **`datointerval`** komponenten til dags dato.
+
+1.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Rediger event handler, vælg den **`datointerval`** komponent, du ønsker at opdatere som målet for begivenheden.
+2.  Vælg handlingen **`setEndValue`** og sæt **`Slutdato`** som `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Trin 4 Test
+
+Nu hvor du klikker på knappen 'Opdater', skal slutdatoen ændres til dags dato. Hvad angår her, har vi 2023-5-6, men det kan være anderledes, når du tester det.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)
