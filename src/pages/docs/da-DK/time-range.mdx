@@ -1,0 +1,158 @@
+---
+title: Tidsinterval
+metaTitle: Time Range Component Doc ● ILLA Cloud
+desc: Lær at bruge Time Range komponenten fra ILLA Cloud til at lade brugerne vælge en række gange fra en 24-timers grænseflade i dine applikationer.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=en&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Saml komponenter
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Hvad er tidsinterval?</h2>
+
+Time Range komponent er en UI komponent, der giver brugerne mulighed for at vælge en række gange fra en 24-timers interface, typisk anvendes i formularer eller dataindtastningsgrænseflader, hvor brugeren skal angive et start- og sluttidsinterval.
+
+Når en Time Range komponent er tilføjet til lærred, viser det to 24-timers grænseflader side om side. En grænseflade bruges til at vælge starttid, mens den anden bruges til at vælge sluttidspunktet. Brugeren kan justere tiden ved at flytte musemarkøren eller ved hjælp af op- og nedpilene.
+
+### Properties
+
+Time Range tilgængelige egenskaber. JavaScript kan skrives for at læse eller ændre information om komponenter.
+
+| Egenskaber              | Varebeskrivelse                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start tid               | Standard starttid værdi for komponenten                                                                                                              |
+| Slut tid                | Standard sluttidspunkt værdi for komponenten                                                                                                         |
+| Formatér                | En gyldig datoformat streng. Se https://day.js.org/docs/en/parse/string-format.                                                                      |
+| Start Pladsholder       | Værdien vil blive vist, når starttidspunktet input feltet er tomt.                                                                                   |
+| Slut Pladsholder        | Værdien vil blive vist, når sluttidsindtastningsfeltet er tomt.                                                                                      |
+| Trin størrelse          | trinstørrelsen i måleenhed for minutter                                                                                                              |
+| Etiket                  | Navnet på det felt, der vises til brugeren                                                                                                           |
+| Billedtekst             | En billedtekst der bruges til at beskrive feltet i detaljer                                                                                          |
+| Skjult etiket           | Angiv, om etiketten skal vises                                                                                                                       |
+| Placering               | Sæt placeringen af etiketten relativt til komponenten                                                                                                |
+| Justering               | Indstil justeringen (indstil til venstre eller højre) af etiketten                                                                                   |
+| Width                   | Når etiketten er på venstre side af komponenten, indstilles breddeforholdet for etiketten.                                                           |
+| Begivenhedshåndtering   | Udløs forespørgsler, styrekomponenter eller ring til andre API'er som svar på komponenthændelser.                                                    |
+| Deaktiveret             | Kontroller status for, om komponenten er deaktiveret. Komponenten kan ikke ændres eller fokuseres, når den er deaktiveret.                           |
+| Værktøjstip             | Brugere kan indtaste komponentværktøjstip her. Værktøjsvink vil blive vist når den er fokuseret. Markdown format er understøttet.                    |
+| Vis ryd-knap            | kontrollere, om en klar knap vises i inputfeltet                                                                                                     |
+| Obligatorisk felt       | Gyldig kun, når kontakten er tændt.                                                                                                                  |
+| Brugerdefineret regel   | Opret din valideringslogik her. Reglerne skal laves i JavaScript og dækket af {{}}.                                                                  |
+| Skjul valideringsbesked | Du kan skjule fejlmeddelelsen ved at skifte den skjulte status, når inputværdien er forkert. Du kan dynamisk ændre den skjulte status af JavaScript. |
+| Formular Datanøgle      | Angiv en nøgle til en ombrydningsformularkomponent, når du konstruerer dataattributten.                                                              |
+| Hidden                  | Styr dynamisk om komponenten er skjult. Du kan ændre den skjulte status gennem dynamisk boolesk værdi.                                               |
+| Tema Farve              | Tillader brugere at angive knappens baggrundsfarve og gennemsigtighed                                                                                |
+
+### Methods
+
+Du kan bruge andre komponenter til at styre komponenten. Vi støtter følgende to metoder:
+
+-   **setStartTime**
+
+For at angive startdatoværdien, for eksempel, {{"value1"}}
+
+| Egenskaber | Varebeskrivelse      |
+| ---------- | -------------------- |
+| Værdi      | Input starttid værdi |
+
+-   **setEndTime**
+
+For at angive slutdatoen, for eksempel, {{"value2"}}
+
+| Egenskaber | Varebeskrivelse     |
+| ---------- | ------------------- |
+| Værdi      | Input sluttidsværdi |
+
+-   **clearValue**
+
+For at rydde værdien af den valgte komponent 
+
+-   **validate**
+
+At kontrollere, at inputoplysningerne er lovlige
+
+-   **clearValidate**
+
+For at rydde valideringsmeddelelsen
+
+### Hændelse handler
+
+| Begivenhed | Varebeskrivelse                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------- |
+| Skift      | Når en bruger ændrer den valgte tidsværdi, skal du udføre specifik handling tilpasset af brugere. |
+
+### Data
+
+Komponenten har nogle almindeligt anvendte data, som kan kaldes via **`{{componentName.propertyName}}`** i appen.
+
+| Egenskabens navn      | Varebeskrivelse                                              |
+| --------------------- | ------------------------------------------------------------ |
+| colorScheme           | farveegenskaben for dato                                     |
+| customRule            | den brugerdefinerede regel, som brugeren har angivet         |
+| deaktiveret           | en boolsk værdi angiver den deaktiverede status              |
+| displayName           | navnet på denne komponent (dvs. kaskade1)                    |
+| startTime             | start tidsværdi                                              |
+| endTime               | sluttidspunkt værdi                                          |
+| startPlaceholder      | pladsholderens værdi for starttid                            |
+| endPlaceholder        | pladsholderens værdi for sluttidspunkt                       |
+| begivenheder          | en Array værdi for sekvens af begivenheder                   |
+| format                | formen af dato og klokkeslæt                                 |
+| formDataKey           | Formularens datakast for dato                                |
+| hidden                | en boolsk værdi angiver den skjulte status for knappen       |
+| skjulValideringBesked | en boolsk værdi angiver, om valideringsmeddelelsen er skjult |
+| etiket                | etiket værdi                                                 |
+| labelAlign            | justering af kaskadeetiket (venstre eller højre)             |
+| labelPosition         | placering af kaskadeetiket (venstre eller højre)             |
+| labelBredde           | det heltal, der repræsenterer etikettens bredde              |
+| minutTrin             | minut trin størrelse værdi                                   |
+| påkrævet              | en boolsk værdi angiver den krævede status for input.        |
+| showClear             | en boolsk værdi indikerer at datoen vil blive vist klart     |
+| værdi                 | Valgt værdi                                                  |
+
+Eksempel: {{rangeTime1.value[0]}}
+
+### Brug case
+
+Dernæst vil vi demonstrere, hvordan man kortlægger data fra datakilden til tidsinterval og indstille slutværdi til aktuel tid med en knap. 
+
+#### Trin 1 Tilføj en handling
+
+Lad os oprette en tabel i REST API kaldet **`promoteCodes`,** herunder 6 kolonner: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Vi vil bruge den startedeTil og udløbetTil tid til prøvebrug. 
+
+Så kan vi oprette en ny handling for REST API fra handlingslisten, liste alle data i promoteCodes og navngivet restapi1. 
+
+Klik på **`Gem`** og **`Kør`** for at aktivere denne handling.
+
+#### Trin 2 Tilføj Komponenter
+
+Dernæst kan vi tilføje en **`tidsinterval`** komponent og en **`knap`** komponent til lærredet. For standardstarttidsværdien for datoområdekomponenten, bruger vi den startedePå tidspunktet for den første promoveringskode fra resten API-data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Tilsvarende bruger vi for standard sluttidsværdi udløbetPå tidspunktet for den første promoveringskode fra resten api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Vi har også mærket knappen som "Nu" som vist nedenfor.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Trin 3 Konfigurer komponenten
+
+For **`button`** komponenten, kan vi konfigurere den til at sætte slutdatoværdien i **`tidsinterval`** komponenten til dags dato.
+
+1.  Vælg **`Kontrolkomponent`** i aktion, i handlingen Rediger event handler, vælg den **`tidsinterval`** komponent, du ønsker at opdatere som målet for begivenheden.
+2.  Vælg **`setEndTime`** handlingen og sæt **`End time`** som `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Trin 4 Test
+
+Nu, når du klikker på knappen "Nu", bør sluttidspunktet ændres til dagens dato. Hvad angår her, har vi 20:03:05 men det kan være anderledes, når du tester det.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
