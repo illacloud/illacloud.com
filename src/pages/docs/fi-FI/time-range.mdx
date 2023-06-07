@@ -1,0 +1,158 @@
+---
+title: Aikaväli
+metaTitle: Aikaväli Komponentti Doc - ILLA Cloud
+desc: Opi käyttämään Time Range -komponenttia ILLA Cloudilta, jotta käyttäjät voivat valita erilaisia kertoja 24 tunnin käyttöliittymästä sovelluksissa.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Mikä on aikaväli?</h2>
+
+Aikaväli komponentti on UI komponentti, jonka avulla käyttäjät voivat valita erilaisia kertoja 24 tunnin käyttöliittymä, käytetään yleensä lomakkeissa tai tietojen syöttämisen liitännöissä, joissa käyttäjän on määriteltävä alkamis- ja päättymisaikaväli.
+
+Kun aikaväli komponentti lisätään kankaalle, se näyttää kaksi 24 tunnin rajapintoja rinnakkain. Yhtä käyttöliittymää käytetään alkamisajan valitsemiseen, kun taas toista käytetään päättymisajan valitsemiseen. Käyttäjä voi säätää aikaa liikuttamalla hiiren kohdistinta tai käyttämällä ylös ja alas nuolia.
+
+### Properties
+
+Aikaväli käytettävissä olevat ominaisuudet. Javascript voidaan kirjoittaa lukemaan tai muuttamaan tietoja komponenteista.
+
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Aloitus aika            | Tämän komponentin alkuajan oletusarvo                                                                                                               |
+| Loppu aika              | Komponentin oletuksena oleva lopetusajan arvo                                                                                                       |
+| Muoto                   | Voimassa oleva päivämäärän muoto merkkijono. Ks. https://day.js.org/docs/en/parse/string-format.                                                    |
+| Aloita Paikkamerkki     | Arvo näytetään, kun aloitusajan syöttökenttä on tyhjä.                                                                                              |
+| Lopeta Paikkamerkki     | Arvo näytetään, kun lopetusajan syöttökenttä on tyhjä.                                                                                              |
+| Vaiheen koko            | askelkoko minuutin mittaisena yksikkönä                                                                                                             |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus (kohdistus vasemmalle tai oikealle)                                                                                          |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Näytä tyhjennyspainike  | säätää, näkyykö syöttökentässä tyhjä painike vai ei                                                                                                 |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Mukautettu sääntö       | Luo validointilogiikka täällä. Sääntöjen tulee olla JavaScriptissä ja ne tulee kattaa {{}}.                                                         |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman Väri             | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                                                    |
+
+### Methods
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kahta menetelmää:
+
+-   **setStartTime**
+
+Määrittääksesi aloituspäivämäärän arvon, esimerkiksi {{"value1"}}
+
+| Ominaisuudet | Kuvaus                    |
+| ------------ | ------------------------- |
+| Arvo         | Syötteen aloitusaika arvo |
+
+-   **setEndTime**
+
+Määrittääksesi päättymispäivämäärän arvon, esimerkiksi {{"value2"}}
+
+| Ominaisuudet | Kuvaus                    |
+| ------------ | ------------------------- |
+| Arvo         | Syötteen lopetusajan arvo |
+
+-   **clearValue**
+
+Poista valitun komponentin arvo 
+
+-   **validate**
+
+Varmistetaan, että syöttötiedot ovat laillisia
+
+-   \*\*kirjoita
+
+Vahvistusviestin tyhjentämiseksi
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                                   |
+| --------- | ---------------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valittua aika-arvoa, suorita käyttäjien räätälöimä erityistoiminto. |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi     | Kuvaus                                                      |
+| --------------------- | ----------------------------------------------------------- |
+| Väriteema             | päivämäärän värillinen ominaisuus                           |
+| customRule            | mukautettu sääntö, jonka käyttäjä määritti                  |
+| poistettu käytöstä    | a Boolean arvo ilmaisevat käytöstä poistetun tilan          |
+| näyttönimi            | tämän komponentin nimi (ts. kascader1)                      |
+| startTime             | alkamisajan arvo                                            |
+| endTime               | lopetusajan arvo                                            |
+| StartPlaceholder      | paikanmerkin arvo alkamisajalle                             |
+| endPlaceholder        | paikanmerkin arvo päättymisajalle                           |
+| tapahtumat            | a Array-arvo tapahtumien järjestystä varten                 |
+| muoto                 | päivämäärän ja kellonajan muoto                             |
+| formDataKey           | Päivämäärän tietolomakkeen tietoavain                       |
+| hidden                | a Boolean arvo ilmaisee painikkeen piilotetun tilan         |
+| piiloValidointiViesti | a Boolean arvo ilmaisee, onko validointiviesti piilotettu   |
+| nimike                | tunnisteen arvo                                             |
+| labelAlign            | kascader merkin linjaus (vasemmalle tai oikealle)           |
+| labelPosition         | kascader merkin sijainti (vasemmalle tai oikealle)          |
+| labelLeveys           | merkin leveyttä edustava kokonaisluku                       |
+| minuuttiAskel         | minuutti askelkoon arvo                                     |
+| vaadittu              | a Boolean arvo ilmaisee vaaditun syötteen tilan.            |
+| näytä Tyhjennä        | a Boolean arvo ilmaisee, mitä päivämäärä näytetään selvästi |
+| arvo                  | Valittu arvo                                                |
+
+Esimerkki: {{rangeTime1.value[0]}}
+
+### Käytä laatikkoa
+
+Seuraavaksi osoitamme, miten tiedot voidaan kartoittaa tietolähteestä aikaväliin ja asettaa loppuarvo nykyiseen aikaan painikkeella. 
+
+#### Vaihe 1 Lisää toiminto
+
+Luodkaamme taulukko REST APIin nimellä **`promoteKoodit`,** sisältäen 6 saraketta: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Käytämme aloitettuAt ja vanhentuaAjankohtaan näytteen käyttö. 
+
+Sitten voimme luoda uuden toimen REST API toimintaluettelosta, jossa luetellaan kaikki tiedot promoteCodes ja nimetty restapi1. 
+
+Napsauta **`Tallenna`** ja **`Suorita`** aktivoidaksesi tämän toiminnon.
+
+#### Vaihe 2 Lisää Komponentit
+
+Seuraavaksi voimme lisätä kanavaan **`time range`** -komponentin ja **`button`** -komponentin Oletuksena aloitusaika arvo päivämäärä alue komponentti, me käytämme aloitettuAt time of the first promote code from the rest api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Vastaavasti oletuksena lopetusajan arvo, käytämme vanhentunutAt time of the first promote code from the rest api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Merkitsimme myös nappin "Nyt" alla esitetyllä tavalla.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Vaihe 3 Määritä komponentti
+
+Komponenttia **`button`** varten voimme määrittää sen asettaaksemme lopun päivämäärän **`time range`** -komponentin tämän päivän päivään.
+
+1.  Valitse Edit event handlerissa **`Ohjauskomponentti`** toiminnassa, valitse **`time range`** -komponentti, jonka haluat päivittää tapahtuman kohteeksi.
+2.  Valitse **`setEndTime`** toiminto ja aseta **`Päätä aika`** `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Vaihe 4 Testi
+
+Nyt kun klikkaat "Nyt" painiketta, loppuajan pitäisi muuttua tämän päivän päiväksi. Mitä täällä, meillä on 20:03:05 mutta se voi olla erilainen kun testaat sitä.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)
