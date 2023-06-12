@@ -1,0 +1,158 @@
+---
+title: Zeitbereich
+metaTitle: Zeitbereichs-Komponenten-Doc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Komponente des Zeitbereiches von ILLA Cloud nutzen können, damit Benutzer eine Reihe von Zeiten aus einer 24-Stundenschnittstelle in Ihren Anwendungen auswählen können.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/343?languages=de&filter=basic&value=0
+tagCategory: doc_menu_time_range_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Was ist Zeitbereich?</h2>
+
+Zeitbereichskomponente ist eine UI-Komponente, die es Benutzern ermöglicht, eine Reihe von Zeiten aus einer 24-Stunden-Schnittstelle auszuwählen typischerweise in Formularen oder Schnittstellen für Dateneinträge verwendet werden, bei denen der Benutzer einen Start- und Endzeitbereich angeben muss.
+
+Wird ein Teil des Zeitbereiches der Leinwand hinzugefügt, zeigt es zwei 24-Stunden Schnittstellen nebeneinander an. Eine Schnittstelle wird verwendet, um die Startzeit auszuwählen, die andere wird verwendet, um die Endzeit auszuwählen. Der Benutzer kann die Zeit anpassen, indem er den Mauszeiger bewegt oder die Pfeile nach oben und unten drückt.
+
+### Properties
+
+Verfügbare Eigenschaften des Zeitbereichs. JavaScript kann zum Lesen oder Ändern von Informationen über Komponenten geschrieben werden.
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Startzeit                        | Der Standard-Startzeitwert der Komponente                                                                                                                                                 |
+| Endzeit                          | Der Standard-Endzeitwert der Komponente                                                                                                                                                   |
+| Format                           | Ein gültiger Datumsformat-String. Siehe https://day.js.org/docs/de/parse/string-format.                                                                                                   |
+| Platzhalter starten              | Der Wert wird angezeigt, wenn das Startzeit-Eingabefeld leer ist.                                                                                                                         |
+| Platzhalter beenden              | Der Wert wird angezeigt, wenn das Eingabefeld für die Endzeit leer ist.                                                                                                                   |
+| Schrittgröße                     | die Schrittgröße in der Einheit der Minuten                                                                                                                                               |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                      |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                        |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Löschtaste anzeigen              | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                   |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | Erstellen Sie hier Ihre Validierungslogik. Die Regeln sollten in JavaScript gemacht werden und von {{alt}} abgedeckt werden.                                                              |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                                                                |
+
+### Methods
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden zwei Methoden:
+
+-   **setStartTime**
+
+Um den Startdatumwert festzulegen, zum Beispiel {{"value1"}}
+
+| Eigenschaften | Beschreibung           |
+| ------------- | ---------------------- |
+| Wert          | Startzeitwert eingeben |
+
+-   **setEndTime**
+
+Um zum Beispiel den Enddatumswert festzulegen, {{"value2"}}
+
+| Eigenschaften | Beschreibung         |
+| ------------- | -------------------- |
+| Wert          | Endzeitwert eingeben |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+-   **validate**
+
+Um zu überprüfen, ob die Eingabe zulässig ist
+
+-   **ClearValidate**
+
+Um die Validierungsmeldung zu löschen
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Ändern   | Wenn ein Benutzer den ausgewählten Zeitwert ändert, führen Sie eine spezifische Aktion aus, die von Benutzern angepasst wurde. |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname      | Beschreibung                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| farbenschema          | die Farbeigenschaften des Datums                                         |
+| benutzerregeln        | die benutzerdefinierte Regel, die von Benutzer angegeben wurde           |
+| deaktiviert           | ein boolescher Wert zeigt den deaktivierten Status an                    |
+| anzeiger              | der Name dieser Komponente (dh cascader1)                                |
+| startTime             | starte Zeitwert                                                          |
+| endTime               | Endzeitwert                                                              |
+| startPlaceholder      | Platzhalterwert für Startzeit                                            |
+| endPlaceholder        | Platzhalterwert für Endzeit                                              |
+| veranstaltungen       | ein Array-Wert für eine Folge von Ereignissen                            |
+| formatieren           | das Format von Datum und Uhrzeit                                         |
+| formDataKey           | der Formular-Datenschlüssel des Datums                                   |
+| hidden                | ein boolescher Wert zeigt den versteckten Status der Schaltfläche an     |
+| hideValidationMessage | ein boolescher Wert gibt an, ob die Validierungsmeldung ausgeblendet ist |
+| bezeichnen            | label Wert                                                               |
+| labelAlign            | Ausrichtung des Cascader-Labels (links oder rechts)                      |
+| labelPosition         | Position des Cascader-Labels (links oder rechts)                         |
+| labelBreite           | die Ganzzahl, die die Breite des Labels repräsentiert                    |
+| minuteStep            | minute-Schrittgröße                                                      |
+| benötigt              | ein boolescher Wert zeigt den benötigten Status der Eingabe.             |
+| zeige Leer            | ein boolescher Wert gibt an, ob das Datum gelöscht wird                  |
+| wert                  | Ausgewählter Wert                                                        |
+
+Beispiel: {{rangeTime1.value[0]}}
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie man die Daten aus der Datenquelle in den Zeitbereich abbilden und den Endwert auf die aktuelle Zeit mit einem Knopf festlegt. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Lassen Sie uns eine Tabelle in REST API namens **`promoteCodes`,** mit 6 Spalten erstellen: **`code`**, **`id`**`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`\*\*. Wir werden das startedAt und abgelaufen Zeit für die Probenutzung. 
+
+Dann können wir eine neue Aktion für REST API aus der Aktionsliste erstellen, die alle Daten in promoteCodes auflistet und restapi1 heißt. 
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 2 Komponenten hinzufügen
+
+Als nächstes können wir eine Komponente **`time range`** und eine Komponente **`button`** zur Leinwand hinzufügen. Für den voreingestellten Startzeitwert der Datumsbereichskomponente verwenden wir den startedAt Zeitpunkt des ersten Promo-Codes aus den restlichen Api Daten.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Gleichermaßen verwenden wir für den Standard-Endzeitwert abgelaufene Zeit zum Zeitpunkt der ersten Promo Code aus den restlichen Api Daten.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Wir haben den Button auch als "Jetzt" bezeichnet, wie unten gezeigt.
+
+![time_range_0](https://cdn.illacloud.com/official-website/img/docs/time_range_0.png)
+
+#### Schritt 3 die Komponente konfigurieren
+
+Für die **`button`** Komponente können wir sie so konfigurieren, dass sie den Enddatumswert im **`time range`** Komponente auf das heutige Datum setzt.
+
+1.  Wählen Sie im Editier-Ereignis-Handler **`Control component`** in Aktion wähle die Komponente **`time range`** aus, die du als Ziel des Events aktualisieren möchtest.
+2.  Wähle die **`setEndTime`** Aktion und setze die **`End time`** als `{{currentUserInfo.updatedAt}}` 
+
+![time_range_config](https://cdn.illacloud.com/official-website/img/docs/time_range_config.png)
+
+#### Schritt 4 Test
+
+Wenn Sie nun auf "Jetzt" klicken, sollte sich die Endzeit auf das heutige Datum ändern. Hier haben wir 20:03:05, aber es kann anders sein, wenn Sie es testen.
+
+![time_range_1](https://cdn.illacloud.com/official-website/img/docs/time_range_1.png)

@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Datumsbereichskomponente von ILLA Cloud nutzen können, damit Benutzer ein Start- und Enddatum aus einem Kalender-Interface in Ihren Formularen oder Dateneintragsschnittstellen auswählen können.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=de&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Was ist Datumsbereich?</h2>
+
+Datumsbereichskomponente ist eine UI-Komponente, mit der Benutzer einen Zeitraum von Daten aus einer Kalenderschnittstelle auswählen können typischerweise in Formularen oder Schnittstellen für Dateneinträge verwendet werden, bei denen der Benutzer einen Start- und Enddatumsbereich angeben muss.
+
+Wird eine Datumsbereichskomponente zur Leinwand hinzugefügt, werden zwei Kalenderschnittstellen nebeneinander angezeigt. Eine Kalenderschnittstelle wird verwendet, um das Startdatum auszuwählen, während der andere zur Auswahl des Enddatums verwendet wird. Der Benutzer kann durch die Kalender navigieren, indem er auf die vorherigen oder nächsten Pfeile klickt, um sich in einen anderen Monat zu bewegen oder indem Sie auf ein bestimmtes Datum klicken, um es auszuwählen. Die ausgewählten Termine werden in den Eingabefeldern angezeigt.
+
+### Properties
+
+Verfügbare Eigenschaften des Datumsbereichs. JavaScript kann zum Lesen oder Ändern von Informationen über Komponenten geschrieben werden.
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Startdatum                       | Der Standardwert für das Startdatum der Komponente                                                                                                                                        |
+| Enddatum                         | Der Standardwert des Enddatums der Komponente                                                                                                                                             |
+| Format                           | Ein gültiger Datumsformat-String. Siehe https://day.js.org/docs/de/parse/string-format.                                                                                                   |
+| Platzhalter starten              | Der Wert wird angezeigt, wenn das Startdatum-Eingabefeld leer ist.                                                                                                                        |
+| Platzhalter beenden              | Der Wert wird angezeigt, wenn das Eingabefeld für das Enddatum leer ist.                                                                                                                  |
+| Max. Datum                       | legt das maximale Datum fest, das ein Benutzer aus der Kalenderschnittstelle wählen kann.                                                                                                 |
+| Min. Datum                       | geben Sie das früheste Datum an, das ein Benutzer aus der Kalenderschnittstelle wählen kann.                                                                                              |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                      |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                        |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Löschtaste anzeigen              | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                   |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | Erstellen Sie hier Ihre Validierungslogik. Die Regeln sollten in JavaScript gemacht werden und von {{alt}} abgedeckt werden.                                                              |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                                                                |
+
+### Methods
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden zwei Methoden:
+
+-   **setStartValue**
+
+Um den Startdatumwert festzulegen, zum Beispiel {{"value1"}}
+
+| Eigenschaften | Beschreibung       |
+| ------------- | ------------------ |
+| Wert          | Startwert eingeben |
+
+-   **setEndwert**
+
+Um zum Beispiel den Enddatumswert festzulegen, {{"value2"}}
+
+| Eigenschaften | Beschreibung    |
+| ------------- | --------------- |
+| Wert          | Input end value |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+-   **validate**
+
+Um zu überprüfen, ob die Eingabe zulässig ist
+
+-   **ClearValidate**
+
+Um die Validierungsmeldung zu löschen
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                                     |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Ändern   | Wenn ein Benutzer den ausgewählten Datumswert ändert, führen Sie eine spezifische Aktion aus, die von Benutzern angepasst wurde. |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname      | Beschreibung                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| farbenschema          | die Farbeigenschaften des Datums                                         |
+| benutzerregeln        | die benutzerdefinierte Regel, die von Benutzer angegeben wurde           |
+| Datumsformat          | das Format des Datums                                                    |
+| deaktiviert           | ein boolescher Wert zeigt den deaktivierten Status an                    |
+| anzeiger              | der Name dieser Komponente (dh cascader1)                                |
+| startPlaceholder      | Platzhalterwert für Startdatum                                           |
+| endPlaceholder        | Platzhalterwert für Enddatum                                             |
+| veranstaltungen       | ein Array-Wert für eine Folge von Ereignissen                            |
+| formDataKey           | der Formular-Datenschlüssel des Datums                                   |
+| hidden                | ein boolescher Wert zeigt den versteckten Status der Schaltfläche an     |
+| hideValidationMessage | ein boolescher Wert gibt an, ob die Validierungsmeldung ausgeblendet ist |
+| bezeichnen            | label Wert                                                               |
+| labelAlign            | Ausrichtung des Cascader-Labels (links oder rechts)                      |
+| labelPosition         | Position des Cascader-Labels (links oder rechts)                         |
+| labelBreite           | die Ganzzahl, die die Breite des Labels repräsentiert                    |
+| nur lesen             | ein boolscher Wert zeigt den readyOnly Status der Eingabe.               |
+| benötigt              | ein boolescher Wert zeigt den benötigten Status der Eingabe.             |
+| zeige Leer            | ein boolescher Wert gibt an, ob das Datum gelöscht wird                  |
+| wert                  | Ausgewählter Wert                                                        |
+
+Beispiel: {{dateRange1.value[0]}}
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie die Daten aus der Datenquelle in den Datumsbereich abgebildet werden und mit einem Knopf Endwert auf das heutige Datum gesetzt werden können. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Lassen Sie uns eine Tabelle in REST API namens **`promoteCodes`,** mit 6 Spalten erstellen: **`code`**, **`id`**`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`\*\*. Wir werden das startedAt und abgelaufen Zeit für die Probenutzung. 
+
+Dann können wir eine neue Aktion für REST API aus der Aktionsliste erstellen, die alle Daten in promoteCodes auflistet und restapi1 heißt. 
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 2 Komponenten hinzufügen
+
+Als nächstes können wir eine Komponente **`date range`** und eine Komponente **`button`** zur Leinwand hinzufügen. Für den Standardwert des Startdatums der Datumsbereichskomponente verwenden wir den startedAt Zeitpunkt des ersten Promo-Codes aus den restlichen Api Daten.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Ebenso verwenden wir für den Standardwert des Enddatums abgelaufene Zeit des ersten Promo-Codes aus den restlichen Api-Daten.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Wir haben den Button auch als 'Update' bezeichnet, wie unten gezeigt.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Schritt 3 die Komponente konfigurieren
+
+Für die **`button`** Komponente können wir sie so konfigurieren, dass sie den Enddatumswert im **`date range`** Komponente auf das heutige Datum setzt.
+
+1.  Wählen Sie im Editier-Ereignis-Handler **`Control component`** in Aktion wähle die Komponente **`date range`** aus, die du als Ziel des Events aktualisieren möchtest.
+2.  Wähle die **`setEndValue`** Aktion und setze das **`End Datum`** als `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Schritt 4 Test
+
+Wenn Sie nun auf die Schaltfläche 'Aktualisieren' klicken, sollte sich das Enddatum auf das heutige Datum ändern. Hier haben wir 2023-5-6, aber es kann anders sein, wenn Sie es testen.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)

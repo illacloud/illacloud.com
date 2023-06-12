@@ -1,0 +1,143 @@
+---
+title: Zeitauswahl
+metaTitle: Time Picker Component Doc | ILLA Cloud
+desc: Erfahren Sie, wie Sie die Time-Picker-Komponente von ILLA Cloud nutzen können, damit die Benutzer eine bestimmte Zeit aus einer 24-Stunden-UI in Ihren Projekten auswählen können.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=de&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Komponenten hinzufügen
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Was ist Time Picker?</h2>
+
+Time-Picker-Komponente ist eine UI-Komponente, die es Benutzern ermöglicht, eine bestimmte Zeit aus einer 24-Stunden-Schnittstelle auszuwählen typischerweise in Formularen oder Schnittstellen für Dateneinträge verwendet werden, bei denen der Benutzer eine bestimmte Zeit angeben muss.
+
+Wenn eine Time-Picker-Komponente zur Leinwand hinzugefügt wird, zeigt sie eine 24-Stunden Schnittstelle an, die Stunden, Minuten und Sekunden anzeigt. Der Benutzer kann die Zeit anpassen, indem er den Mauszeiger bewegt oder die Pfeile nach oben und unten drückt.
+
+### Properties
+
+Zeitauswahl verfügbare Eigenschaften. JavaScript kann zum Lesen oder Ändern von Informationen über Komponenten geschrieben werden.
+
+| Eigenschaften                    | Beschreibung                                                                                                                                                                              |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Standardwert                     | Der Anfangswert der Komponente. Sie können den Anfangswert dynamisch ändern, indem Sie JavaScript in {{}} eingeben.                                                                       |
+| Format                           | Ein gültiger Datumsformat-String. Siehe dayJS.                                                                                                                                            |
+| Platzhalter                      | Der Wert wird angezeigt, wenn das Eingabefeld leer ist.                                                                                                                                   |
+| Schrittgröße                     | die Schrittgröße in der Einheit der Minuten                                                                                                                                               |
+| Label                            | Der Name des Feldes, das dem Benutzer angezeigt wird                                                                                                                                      |
+| Überschrift                      | Eine Beschriftung zur detaillierten Beschreibung des Feldes                                                                                                                               |
+| Versteckte Bezeichnung           | Legen Sie fest, ob das Label angezeigt werden soll                                                                                                                                        |
+| Position                         | Stelle die Position des Labels relativ zur Komponente ein                                                                                                                                 |
+| Ausrichtung                      | Setze die Ausrichtung (links oder rechts) des Labels                                                                                                                                      |
+| Width                            | Wenn sich das Label auf der linken Seite der Komponente befindet, legen Sie das Breitenverhältnis des Labels fest.                                                                        |
+| Event-Handler                    | Auslösen von Abfragen, Steuerung von Komponenten oder rufen Sie andere APIs als Reaktion auf Komponentenereignisse auf.                                                                   |
+| Deaktiviert                      | Legen Sie den Status fest, ob die Komponente deaktiviert ist. Die Komponente kann nicht verändert oder fokussiert werden, wenn sie deaktiviert ist.                                       |
+| Nur lesen                        | Legen Sie fest, ob die Komponente schreibgeschützt ist. Eine schreibgeschützte Komponente kann ausgewählt und fokussiert werden, kann aber nicht verändert werden.                        |
+| Tooltip                          | Benutzer können hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                           |
+| Löschtaste anzeigen              | bestimmen, ob im Eingabefeld ein Clear-Button angezeigt wird oder nicht                                                                                                                   |
+| Tooltip                          | Der Benutzer kann hier den Tooltip der Komponente eingeben. Der Tooltip wird angezeigt, wenn er fokussiert ist. Markdown Format wird unterstützt.                                         |
+| Pflichtfeld                      | Gültig nur, wenn der Schalter eingeschaltet ist.                                                                                                                                          |
+| Eigene Regel                     | Erstellen Sie hier Ihre Validierungslogik. Die Regeln sollten in JavaScript gemacht werden und von {{alt}} abgedeckt werden.                                                              |
+| Validierungsnachricht ausblenden | Sie können die Fehlermeldung ausblenden, indem Sie den versteckten Status wechseln, wenn der Eingabewert falsch ist. Sie können den versteckten Status dynamisch durch JavaScript ändern. |
+| Formular-Datenschlüssel          | Geben Sie einen Schlüssel einer Umwickelformularkomponente an, wenn Sie das Datenattribut erstellen.                                                                                      |
+| Hidden                           | Kontrollieren Sie dynamisch, ob die Komponente ausgeblendet ist. Sie können den versteckten Status durch dynamischen booleschen Wert ändern.                                              |
+| Theme-Farbe                      | Erlaubt Benutzern die Hintergrundfarbe und Deckkraft des Buttons anzugeben                                                                                                                |
+
+### Methods
+
+Sie können andere Komponenten verwenden, um die Komponente zu steuern. Wir unterstützen die folgenden vier Methoden:
+
+-   **setValue**
+
+Um den Zeitwert für die Eingabe festzulegen, zum Beispiel {{"value1"}}
+
+| Eigenschaften | Beschreibung |
+| ------------- | ------------ |
+| Wert          | Input value  |
+
+-   **clearValue**
+
+Um den Wert der ausgewählten Komponente zu löschen 
+
+-   **validate**
+
+Um zu überprüfen, ob die Eingabe zulässig ist
+
+-   **ClearValidate**
+
+Um die Validierungsmeldung zu löschen
+
+### Event-Handler
+
+| Ereignis | Beschreibung                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Ändern   | Wenn ein Benutzer den ausgewählten Zeitwert ändert, führen Sie eine spezifische Aktion aus, die von Benutzern angepasst wurde. |
+
+### Daten
+
+Die Komponente hat einige häufig verwendete Daten, die über **`{{componentName.propertyName}}`** in der App aufgerufen werden können.
+
+| Eigenschaftsname      | Beschreibung                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| farbenschema          | die Farbeigenschaften des Datums                                         |
+| benutzerregeln        | die benutzerdefinierte Regel, die von Benutzer angegeben wurde           |
+| deaktiviert           | ein boolescher Wert zeigt den deaktivierten Status an                    |
+| anzeiger              | der Name dieser Komponente (dh Button1)                                  |
+| veranstaltungen       | ein Array-Wert für eine Folge von Ereignissen                            |
+| formatieren           | das Format von Datum und Uhrzeit                                         |
+| formDataKey           | der Formular-Datenschlüssel des Datums                                   |
+| hidden                | versteckter Status (true oder false)                                     |
+| hideValidationMessage | ein boolescher Wert gibt an, ob die Validierungsmeldung ausgeblendet ist |
+| bezeichnen            | label Wert                                                               |
+| labelAlign            | Ausrichtung des Schalternamens (links oder rechts)                       |
+| labelPosition         | Position des Schalternamens (links oder rechts)                          |
+| labelBreite           | die Ganzzahl, die die Breite des Labels darstellt.                       |
+| labelvoll             | ein boolescher Wert gibt an, ob das Label voll ist.                      |
+| minuteStep            | minute-Schrittgröße                                                      |
+| Platzhalter           | Platzhalterwert                                                          |
+| benötigt              | ein boolescher Wert zeigt den benötigten Status der Eingabe.             |
+| zeige Leer            | ein boolescher Wert gibt an, ob das Datum gelöscht wird                  |
+| tooltipText           | Wert des Tooltip-Textes                                                  |
+| wert                  | Datums- und Zeitwert eingeben                                            |
+
+Beispiel: {{timePicker1.format}}
+
+### Gehäuse verwenden
+
+Als nächstes zeigen wir, wie man die Daten aus der Datenquelle zur Zeitauswahl abbilden und auf die aktuelle Uhrzeit mit einem Knopf einstellen kann. 
+
+#### Schritt 1 Eine Aktion hinzufügen
+
+Lassen Sie uns eine Tabelle in REST API namens **`promoteCodes`,** mit 6 Spalten erstellen: **`code`**, **`id`**`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`\*\*. Wir werden die updatedAt Zeit für die Probenutzung verwenden. 
+
+Dann können wir eine neue Aktion für REST API aus der Aktionsliste erstellen, die alle Daten in promoteCodes auflistet und restapi1 heißt. 
+
+Klicke **`Speichern`** und **`Run`** um diese Aktion zu aktivieren.
+
+#### Schritt 2 Komponenten hinzufügen
+
+Als nächstes können wir eine **`time picker`** Komponente und eine **`button`** Komponente zur Leinwand hinzufügen. Für den Standardwert der Zeitkomponente stellen wir sie als letzte Update-Zeit des ersten Promo-Codes aus den restlichen Api-Daten ein.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Wir haben den Button auch als "Jetzt" bezeichnet, wie unten gezeigt
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Schritt 3 die Komponente konfigurieren
+
+Für die **`button`** Komponente können wir sie so konfigurieren, dass das Datum in der **`time picker`** Komponente auf das aktuelle Datum und die aktuelle Zeit gesetzt wird.
+
+1.  Wählen Sie im Editier-Ereignis-Handler **`Control component`** in Aktion wähle die **`time picker`** Komponente aus, die du als Ziel des Events aktualisieren möchtest.
+2.  Wähle die **`setValue`** Aktion und setze den Wert als `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Schritt 4 Test
+
+Wenn Sie nun auf "Jetzt" klicken, sollte die Zeit auf die aktuelle Zeit geändert werden. Hier haben wir 20:03:05, aber es kann anders sein, wenn Sie es testen.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

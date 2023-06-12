@@ -1,0 +1,143 @@
+---
+title: Wybór czasu
+metaTitle: Dokumentacja komponentowa wyboru czasu | ILLA Cloud
+desc: Dowiedz się, jak używać komponentu wyboru czasu z Chmury ILLA, aby umożliwić użytkownikom wybranie określonego czasu z 24-godzinnego interfejsu użytkownika w twoich projektach.
+crowdinRepo: https://crowdin.com/wielojęzyczna/illacloud-website/341?languages=pl&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 Elementy montażowe
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Czym jest wybór czasu?</h2>
+
+komponent wyboru czasu jest komponentem interfejsu użytkownika, który pozwala użytkownikom wybrać określony czas z 24-godzinnego interfejsu, zazwyczaj używane w formularzach lub interfejsach wprowadzania danych, w których użytkownik musi określić określony czas.
+
+Gdy do płótna dodany jest komponent wyboru czasu, wyświetla on 24-godzinny interfejs, który pokazuje godziny, minuty i sekundy. Użytkownik może dostosować czas przesuwając kursor myszy lub używając strzałek górnych i dolnych.
+
+### Properties
+
+Dostępne właściwości selektora czasu. JavaScript może być napisany w celu przeczytania lub zmiany informacji o komponentach.
+
+| Właściwości                    | Opis                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Wartość domyślna               | Wartość początkowa komponentu. Możesz dynamicznie zmienić wartość początkową wpisując JavaScript w {{}}.                                                           |
+| Formatowanie                   | Prawidłowy ciąg znaków formatu daty. Patrz dzień JS.                                                                                                               |
+| Zastępca                       | Wartość będzie wyświetlana, gdy pole wejściowe jest puste.                                                                                                         |
+| Rozmiar kroku                  | rozmiar stopnia w jednostkach minut                                                                                                                                |
+| Etykieta                       | Nazwa pola wyświetlanego użytkownikowi                                                                                                                             |
+| Podpis                         | Podpis używany do szczegółowego opisu pola                                                                                                                         |
+| Ukryta etykieta                | Ustaw czy wyświetlić etykietę                                                                                                                                      |
+| Położenie                      | Ustaw położenie etykiety względem komponentu                                                                                                                       |
+| Wyrównanie                     | Ustaw wyrównanie (wyrównanie do lewej lub prawej) etykiety                                                                                                         |
+| Width                          | Kiedy etykieta znajduje się po lewej stronie składnika, ustaw stosunek szerokości etykiety.                                                                        |
+| Obsługa zdarzeń                | Wyzwalacz zapytań, sterowanie komponentami lub wywoływanie innych interfejsów API w odpowiedzi na zdarzenia komponentów.                                           |
+| Wyłączone                      | Kontroluj status czy komponent jest wyłączony. Komponent nie może być zmodyfikowany lub aktywowany, gdy jest wyłączony.                                            |
+| Tylko do odczytu               | Kontroluj status komponentu tylko do odczytu. Komponent tylko do odczytu może być wybrany i uaktywniony, ale nie może być modyfikowany.                            |
+| Wskazówka                      | Użytkownicy mogą tutaj wprowadzić podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                      |
+| Pokaż przycisk wyczyść         | kontroluj, czy przycisk wyczyść jest wyświetlany w polu wejściowym                                                                                                 |
+| Wskazówka                      | Użytkownik może wprowadzić tutaj podpowiedź składową. Podpowiedź zostanie wyświetlona, gdy jest ostrością. Format Markdown jest obsługiwany.                       |
+| Pole wymagane                  | Ważne tylko wtedy, gdy przełącznik jest włączony.                                                                                                                  |
+| Własna reguła                  | Utwórz tutaj swoją logikę sprawdzania. Reguły powinny być sporządzone w JavaScript i objęte {{}}.                                                                  |
+| Ukryj komunikat potwierdzający | Możesz ukryć komunikat o błędzie przełączając status ukrycia, gdy wartość wejściowa jest nieprawidłowa. Możesz dynamicznie zmienić status ukryty przez JavaScript. |
+| Klucz danych formularza        | Określ klucz komponentu opakowania formularza podczas konstruowania atrybutu danych.                                                                               |
+| Hidden                         | Dynamicznie kontroluj czy komponent jest ukryty. Możesz zmienić ukryty status poprzez dynamiczną wartość logiczną.                                                 |
+| Kolor motywu                   | Pozwala użytkownikom określić kolor tła i przezroczystość przycisku                                                                                                |
+
+### Methods
+
+Możesz użyć innych komponentów do kontroli komponentu. Popieramy następujące cztery metody:
+
+-   **setValue**
+
+Aby ustawić wartość czasu wejściowego, na przykład, {{"value1"}}
+
+| Właściwości | Opis        |
+| ----------- | ----------- |
+| Wartość     | Input value |
+
+-   **clearValue**
+
+Aby wyczyścić wartość wybranego komponentu 
+
+-   **validate**
+
+Sprawdzenie, czy informacje wejściowe są zgodne z prawem
+
+-   **clearValidate**
+
+Aby wyczyścić komunikat potwierdzający
+
+### Obsługa zdarzeń
+
+| Wydarzenie | Opis                                                                                                      |
+| ---------- | --------------------------------------------------------------------------------------------------------- |
+| Zmiana     | Gdy użytkownik zmienia wybraną wartość czasu, wykonaj określone działanie dostosowane przez użytkowników. |
+
+### Dane
+
+Komponent posiada powszechnie używane dane, które mogą być wywoływane przez **`{{componentName.propertyName}}`** w aplikacji.
+
+| Nazwa własności       | Opis                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| schemat kolorów       | właściwość koloru daty                                              |
+| niestandardowa reguła | niestandardowa reguła określona przez użytkownika                   |
+| wyłączone             | wartość logiczna wskazuje status wyłączony                          |
+| nazwa wyświetlacza    | nazwa tego składnika (tj. przycisk1)                                |
+| wydarzenia            | wartość tablicy dla sekwencji zdarzeń                               |
+| format                | postać daty i godziny                                               |
+| formDataKey           | Formatowy klucz daty                                                |
+| hidden                | ukryty status (prawda lub fałsz)                                    |
+| ukryj Wiadomość       | wartość logiczna wskazuje, czy komunikat potwierdzający jest ukryty |
+| etykieta              | wartość etykiety                                                    |
+| Wyrównanie etykiety   | wyrównanie etykiety przełącznika (w lewo lub w prawo)               |
+| pozycja etykiety      | umiejscowienie etykiety przełącznika (z lewej lub prawej)           |
+| Szerokość etykiety    | liczba całkowita reprezentująca szerokość etykiety.                 |
+| etykieta pełna        | wartość logiczna wskazuje, czy etykieta jest pełna.                 |
+| krok minutowy         | wartość rozmiaru kroku minutowego                                   |
+| symbol zastępczy      | wartość zastępcza                                                   |
+| wymagane              | wartość logiczna wskazuje wymagany status wejścia.                  |
+| pokaż Wyczyść         | wartość logiczna wskazuje czy data zostanie wyczyszczona            |
+| tekst                 | wartość tekstu podpowiedzi                                          |
+| wartość               | Data i godzina wprowadzenia                                         |
+
+Przykład: {{timePicker1.format}}
+
+### Przypadek użycia
+
+Następnie pokażemy jak mapować dane od źródła danych do wyboru czasu i ustawimy na bieżący czas za pomocą przycisku. 
+
+#### Krok 1 Dodaj akcję
+
+Utwórzmy tabelę w REST API o nazwie **`promoteCodes`,** zawierającą 6 kolumn: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Będziemy używać zaktualizowanego czasu do pobierania próbek. 
+
+Następnie możemy utworzyć nową akcję dla REST API z listy działań, wymieniając wszystkie dane w promoteCodes i nazwane restapi1. 
+
+Kliknij **`Zapisz`** i **Uruchom\`**, aby aktywować tę akcję.
+
+#### Krok 2 Dodaj komponenty
+
+Następnie możemy dodać do płótna komponent **`selektor czasu`** i komponent **`przycisk`**. Dla domyślnej wartości komponentu czasowego, ustawiliśmy go jako ostatnią aktualizację pierwszego kodu z pozostałych danych api.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Oznaczliśmy również przycisk jako "Teraz", jak pokazano poniżej
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Krok 3 Skonfiguruj komponent
+
+Dla komponentu **przycisk\`** możemy go skonfigurować tak, aby ustawić datę w komponencie **selektor czasu\`** na bieżącą datę i godzinę.
+
+1.  W obsłudze zdarzeń edytuj wybierz **`składnik kontroli`** w akcji, wybierz komponent **selektor czasu\`**, który chcesz zaktualizować jako cel wydarzenia.
+2.  Wybierz działanie **`setValue`** i ustaw wartość jako `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Etap 4 Badanie
+
+Teraz, gdy klikniesz przycisk "Teraz", czas powinien zmienić się na aktualny czas. Jak na razie mamy 20:03:05, ale może się to różnić podczas testowania.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

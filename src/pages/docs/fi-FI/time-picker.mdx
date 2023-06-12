@@ -1,0 +1,143 @@
+---
+title: Aika Valitsija
+metaTitle: Aika Valitsija Komponentti Doc ¶ ILLA Cloud
+desc: Selvitä, miten käyttää Time Picker -komponenttia ILLA Cloudista, jotta käyttäjät voivat valita tietyn ajan 24 tunnin mittaisesta käyttöliittymästä projekteissa.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/341?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_time_picker_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 3
+---
+
+## <h2 hidden>Mikä on ajan valitseminen?</h2>
+
+Aika poimija komponentti on UI komponentti, jonka avulla käyttäjät voivat valita tietyn ajan 24 tunnin käyttöliittymä, käytetään yleensä lomakkeissa tai tietojen syöttämisen liitännöissä, joissa käyttäjän on määriteltävä tietty aika.
+
+Kun Time picker komponentti on lisätty kankaalle, se näyttää 24-tunnin käyttöliittymä, joka näyttää tunnit, minuutit ja sekunnit. Käyttäjä voi säätää aikaa liikuttamalla hiiren kohdistinta tai käyttämällä ylös ja alas nuolia.
+
+### Properties
+
+Aikapoimijan käytettävissä olevat ominaisuudet. Javascript voidaan kirjoittaa lukemaan tai muuttamaan tietoja komponenteista.
+
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Oletus arvo             | Tämän komponentin alkuperäinen arvo. Voit muuttaa alkuperäistä arvoa dynaamisesti kirjoittamalla JavaScriptin {{}}.                                 |
+| Muoto                   | Voimassa oleva päivämäärän muoto merkkijono. Ks. päiväJS.                                                                                           |
+| Paikkamerkki            | Arvo näytetään, kun syöttökenttä on tyhjä.                                                                                                          |
+| Vaiheen koko            | askelkoko minuutin mittaisena yksikkönä                                                                                                             |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus (kohdistus vasemmalle tai oikealle)                                                                                          |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Vain Luettu             | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                    |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Näytä tyhjennyspainike  | säätää, näkyykö syöttökentässä tyhjä painike vai ei                                                                                                 |
+| Työkaluvihje            | Käyttäjä voi syöttää komponentin työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                      |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Mukautettu sääntö       | Luo validointilogiikka täällä. Sääntöjen tulee olla JavaScriptissä ja ne tulee kattaa {{}}.                                                         |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman Väri             | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                                                    |
+
+### Methods
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia neljää menetelmää:
+
+-   **setValue**
+
+Määrittääksesi syöttöajan esimerkiksi {{"value1"}}
+
+| Ominaisuudet | Kuvaus      |
+| ------------ | ----------- |
+| Arvo         | Input value |
+
+-   **clearValue**
+
+Poista valitun komponentin arvo 
+
+-   **validate**
+
+Varmistetaan, että syöttötiedot ovat laillisia
+
+-   \*\*kirjoita
+
+Vahvistusviestin tyhjentämiseksi
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                                   |
+| --------- | ---------------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valittua aika-arvoa, suorita käyttäjien räätälöimä erityistoiminto. |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi     | Kuvaus                                                      |
+| --------------------- | ----------------------------------------------------------- |
+| Väriteema             | päivämäärän värillinen ominaisuus                           |
+| customRule            | mukautettu sääntö, jonka käyttäjä määritti                  |
+| poistettu käytöstä    | a Boolean arvo ilmaisevat käytöstä poistetun tilan          |
+| näyttönimi            | tämän komponentin nimi (ts. painike1)                       |
+| tapahtumat            | a Array-arvo tapahtumien järjestystä varten                 |
+| muoto                 | päivämäärän ja kellonajan muoto                             |
+| formDataKey           | Päivämäärän tietolomakkeen tietoavain                       |
+| hidden                | piilotila (tosi tai epäto)                                  |
+| piiloValidointiViesti | a Boolean arvo ilmaisee, onko validointiviesti piilotettu   |
+| nimike                | tunnisteen arvo                                             |
+| labelAlign            | kytkimen etikettien kohdistus (vasemmalle tai oikealle)     |
+| labelPosition         | kytkimen etiketti asento (vasemmalle tai oikealle)          |
+| labelLeveys           | kokonaisluku, joka edustaa etiketin leveyttä.               |
+| tarraTäynnä           | a Boolean arvo ilmaisee, onko merkki täynnä.                |
+| minuuttiAskel         | minuutti askelkoon arvo                                     |
+| paikkamerkki          | paikanmerkin arvo                                           |
+| vaadittu              | a Boolean arvo ilmaisee vaaditun syötteen tilan.            |
+| näytä Tyhjennä        | a Boolean arvo ilmaisee, mitä päivämäärä näytetään selvästi |
+| tooltipText           | työkaluvihjeen tekstin arvo                                 |
+| arvo                  | Syöttöpäivä ja kellonaika                                   |
+
+Esimerkki: {{timePicker1.format}}
+
+### Käytä laatikkoa
+
+Seuraavaksi osoitamme, miten tiedot voidaan kartoittaa tietolähteestä aikapoimijaan ja asettaa nykyiseen aikaan painikkeella. 
+
+#### Vaihe 1 Lisää toiminto
+
+Luodkaamme taulukko REST APIin nimellä **`promoteKoodit`,** sisältäen 6 saraketta: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Käytämme päivitettynäAjankohtana, jolloin näytettä käytetään. 
+
+Sitten voimme luoda uuden toimen REST API toimintaluettelosta, jossa luetellaan kaikki tiedot promoteCodes ja nimetty restapi1. 
+
+Napsauta **`Tallenna`** ja **`Suorita`** aktivoidaksesi tämän toiminnon.
+
+#### Vaihe 2 Lisää Komponentit
+
+Seuraavaksi voimme lisätä kanavaan **`time picker`** -komponentin ja **`button`** -komponentin Oletuksena arvo aika komponentti, me asetamme sen kuin viimeinen päivitys aika ensimmäisen mainostaa koodia loput api tiedot.
+
+```sql
+{{restapi1.data.promoteCodes[0].updatedAt}}
+```
+
+Merkitsimme myös nappin "Nyt" alla esitetyllä tavalla
+
+![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+
+#### Vaihe 3 Määritä komponentti
+
+**`button`** -komponentin osalta voimme määrittää sen asettamalla päivämäärän **`time picker`** -komponentin nykyiseen päivämäärään ja aikaan.
+
+1.  Valitse Edit event handlerissa **`Ohjauskomponentti`** toiminnassa, valitse **`time picker`** komponentti jonka haluat päivittää tapahtuman kohteeksi.
+2.  Valitse **`setValue`** toiminto ja aseta arvo `{{currentUserInfo.updatedAt}}` 
+
+![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+
+#### Vaihe 4 Testi
+
+Nyt kun klikkaat "Nyt" painiketta, aika pitäisi muuttaa nykyiseen aikaan. Mitä täällä, meillä on 20:03:05 mutta se voi olla erilainen kun testaat sitä.
+
+![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)

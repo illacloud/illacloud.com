@@ -1,0 +1,158 @@
+---
+title: Date Range
+metaTitle: Date Range Component Doc | ILLA Cloud
+desc: Opi käyttämään ILLA-pilven Date Range -komponenttia, jotta käyttäjät voivat valita aloitus- ja päättymispäivän kalenterin käyttöliittymästä lomakkeissasi tai tietojen syöttämisen rajapinnoissa.
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/337?languages=fi&filter=basic&value=0
+tagCategory: doc_menu_date_range_click
+categoryName: 🧬 kootut osat
+categoryPriority: 6
+postPriority: 4
+---
+
+## <h2 hidden>Mikä on päiväysalue?</h2>
+
+Päivämäärä Range komponentti on UI komponentti, jonka avulla käyttäjät voivat valita erilaisia päivämääriä kalenterin käyttöliittymä, käytetään yleensä lomakkeissa tai tietojen syöttämisen liitännöissä, joissa käyttäjän on määriteltävä alkamis- ja päättymisaikaväli.
+
+Kun päiväysalue komponentti lisätään kankaalle, se näyttää kaksi kalenterin rajapintoja rinnakkain. Yhtä kalenteria käytetään aloituspäivän valitsemiseen, kun taas toista käytetään loppupäivän valitsemiseen. Käyttäjä voi navigoida kalentereiden läpi klikkaamalla edellistä tai seuraavaa nuolia siirtyäksesi toiseen kuukauteen, tai napsauttamalla tiettyä päivämäärää valitaksesi sen. The selected dates will be displayed in the input fields. (Automatic Copy)
+
+### Properties
+
+Päivämääräalueen käytettävissä olevat ominaisuudet. Javascript voidaan kirjoittaa lukemaan tai muuttamaan tietoja komponenteista.
+
+| Ominaisuudet            | Kuvaus                                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Aloitus päivämäärä      | The default start date value of the component                                                                                                       |
+| Päättymispäivä          | The default end date value of the component                                                                                                         |
+| Muoto                   | Voimassa oleva päivämäärän muoto merkkijono. Ks. https://day.js.org/docs/en/parse/string-format.                                                    |
+| Aloita Paikkamerkki     | Arvo näytetään, kun aloituspäivän syöttökenttä on tyhjä.                                                                                            |
+| Lopeta Paikkamerkki     | Arvo näytetään, kun päättymispäivän syöttökenttä on tyhjä.                                                                                          |
+| Maksimi päivämäärä      | asettaa enimmäispäivämäärän, jonka käyttäjä voi valita kalenterin käyttöliittymästä.                                                                |
+| Minimi päivämäärä       | täsmennettävä aikaisin päivämäärä, jonka käyttäjä voi valita kalenterin käyttöliittymästä.                                                          |
+| Tunniste                | The name of the field displayed to the user                                                                                                         |
+| Kuvateksti              | Kuvateksti, jota käytetään kuvaamaan kenttää yksityiskohtaisesti                                                                                    |
+| Piilotettu etiketti     | Määritä näytetäänkö nimike                                                                                                                          |
+| Sijainti                | Set the position of the label relative to the component                                                                                             |
+| Tasaus                  | Aseta merkin kohdistus (kohdistus vasemmalle tai oikealle)                                                                                          |
+| Width                   | Kun merkki on tämän osan vasemmalla puolella, ilmoitetaan merkin leveyden suhde.                                                                    |
+| Tapahtuman Käsittely    | Käynnistää kyselyt, hallita komponentteja tai soittaa muita API vastauksena komponenttitapahtumia.                                                  |
+| Pois Käytöstä           | Säädä tilaa, jossa osa on pois päältä. Komponenttia ei voi muokata tai tarkentaa, kun se on poistettu käytöstä.                                     |
+| Vain Luettu             | Säädä tilaa, onko komponentti vain luku -tilassa. Vain luku -komponentti voidaan valita ja tarkentaa, mutta sitä ei voi muokata.                    |
+| Työkaluvihje            | Käyttäjät voivat syöttää osan työkaluvihjeen tähän. Työkaluvihje näytetään kun se on kohdistettu. Markdown-muoto on tuettu.                         |
+| Näytä tyhjennyspainike  | säätää, näkyykö syöttökentässä tyhjä painike vai ei                                                                                                 |
+| Vaadittu kenttä         | Voimassa vain kun kytkin on päällä.                                                                                                                 |
+| Mukautettu sääntö       | Luo validointilogiikka täällä. Sääntöjen tulee olla JavaScriptissä ja ne tulee kattaa {{}}.                                                         |
+| Piilota vahvistusviesti | Voit piilottaa virheilmoituksen vaihtamalla piilotetun tilan kun syöte on virheellinen. Voit dynaamisesti muuttaa piilotettua tilaa JavaScriptillä. |
+| Lomakkeen Dataavain     | Määritä käärintälomakkeen komponentin avain, kun määrite rakennetaan.                                                                               |
+| Hidden                  | Määritä dynaamisesti onko komponentti piilotettu. Voit muuttaa piilotettua tilaa dynaamisen boolean-arvon kautta.                                   |
+| Teeman Väri             | Salli käyttäjien määrittää painikkeen taustaväri ja läpinäkyvyys                                                                                    |
+
+### Methods
+
+Voit käyttää muita komponentteja komponentin ohjaamiseen. Kannatamme seuraavia kahta menetelmää:
+
+-   **setStartValue**
+
+Määrittääksesi aloituspäivämäärän arvon, esimerkiksi {{"value1"}}
+
+| Ominaisuudet | Kuvaus               |
+| ------------ | -------------------- |
+| Arvo         | Syötteen aloitusarvo |
+
+-   **setEndValue**
+
+Määrittääksesi päättymispäivämäärän arvon, esimerkiksi {{"value2"}}
+
+| Ominaisuudet | Kuvaus          |
+| ------------ | --------------- |
+| Arvo         | Input end value |
+
+-   **clearValue**
+
+Poista valitun komponentin arvo 
+
+-   **validate**
+
+Varmistetaan, että syöttötiedot ovat laillisia
+
+-   \*\*kirjoita
+
+Vahvistusviestin tyhjentämiseksi
+
+### Tapahtuman käsittelijä
+
+| Tapahtuma | Kuvaus                                                                                 |
+| --------- | -------------------------------------------------------------------------------------- |
+| Muuta     | Kun käyttäjä muuttaa valitun päivämäärän arvoa, suorita käyttäjän räätälöimä toiminto. |
+
+### Tiedot
+
+Komponentilla on joitakin yleisesti käytettyjä tietoja, joita voidaan soittaa sovelluksen kautta **`{{componentName.propertyName}}`** .
+
+| Ominaisuuden nimi     | Kuvaus                                                      |
+| --------------------- | ----------------------------------------------------------- |
+| Väriteema             | päivämäärän värillinen ominaisuus                           |
+| customRule            | mukautettu sääntö, jonka käyttäjä määritti                  |
+| dateFormaatti         | päivämäärän muoto                                           |
+| poistettu käytöstä    | a Boolean arvo ilmaisevat käytöstä poistetun tilan          |
+| näyttönimi            | tämän komponentin nimi (ts. kascader1)                      |
+| StartPlaceholder      | paikanmerkin arvo aloituspäivälle                           |
+| endPlaceholder        | paikanmerkin arvo päättymispäivälle                         |
+| tapahtumat            | a Array-arvo tapahtumien järjestystä varten                 |
+| formDataKey           | Päivämäärän tietolomakkeen tietoavain                       |
+| hidden                | a Boolean arvo ilmaisee painikkeen piilotetun tilan         |
+| piiloValidointiViesti | a Boolean arvo ilmaisee, onko validointiviesti piilotettu   |
+| nimike                | tunnisteen arvo                                             |
+| labelAlign            | kascader merkin linjaus (vasemmalle tai oikealle)           |
+| labelPosition         | kascader merkin sijainti (vasemmalle tai oikealle)          |
+| labelLeveys           | merkin leveyttä edustava kokonaisluku                       |
+| Vain luku             | a Boolean arvo ilmaisee vain syötteen tilan.                |
+| vaadittu              | a Boolean arvo ilmaisee vaaditun syötteen tilan.            |
+| näytä Tyhjennä        | a Boolean arvo ilmaisee, mitä päivämäärä näytetään selvästi |
+| arvo                  | Valittu arvo                                                |
+
+Esimerkki: {{dateRange1.value[0]}}
+
+### Käytä laatikkoa
+
+Seuraavaksi aiomme osoittaa, miten kartoittaa tiedot tietolähteestä ajan mittaan ja asettaa loppuarvon nykyiseen päivämäärään painikkeella. 
+
+#### Vaihe 1 Lisää toiminto
+
+Luodkaamme taulukko REST APIin nimellä **`promoteKoodit`,** sisältäen 6 saraketta: **`code`**, **`id`**, **`createdAt`**, **`expiredAt`**, **`startedAt`, `updatedAt`**. Käytämme aloitettuAt ja vanhentuaAjankohtaan näytteen käyttö. 
+
+Sitten voimme luoda uuden toimen REST API toimintaluettelosta, jossa luetellaan kaikki tiedot promoteCodes ja nimetty restapi1. 
+
+Napsauta **`Tallenna`** ja **`Suorita`** aktivoidaksesi tämän toiminnon.
+
+#### Vaihe 2 Lisää Komponentit
+
+Seuraavaksi voimme lisätä kanavaan **`date range`** -komponentin ja **`button`** -komponentin Jos oletus alkaa päivämäärä päivämäärä alueen komponentti, me käytämme aloitettuAt time of the first promote code from the rest api data.
+
+```sql
+{{restapi1.data.promoteCodes[0].startedAt}}
+```
+
+Vastaavasti oletuksena päättymispäivä arvo, käytämme vanhentuiAt aikaan ensimmäinen mainostaa koodi loput api tiedot.
+
+```sql
+{{restapi1.data.promoteCodes[0].expiredAt}}
+```
+
+Merkitsimme myös nappin 'Update' alla esitetyllä tavalla.
+
+![date_range_0](https://cdn.illacloud.com/official-website/img/docs/date_range_0.png)
+
+#### Vaihe 3 Määritä komponentti
+
+Komponentin **`button`** osalta voimme määrittää sen asettaaksemme lopun päivämäärän **`date range`** komponentin tämän päivän päiväksi.
+
+1.  Valitse Edit event handlerissa **`Ohjauskomponentti`** toiminnassa, valitse **`date range`** komponentti jonka haluat päivittää tapahtuman kohteeksi.
+2.  Valitse **`setEndValue`** toiminto ja aseta **`End date`** nimellä `{{currentUserInfo.updatedAt}}` 
+
+![date_range_config](https://cdn.illacloud.com/official-website/img/docs/date_range_config.png)
+
+#### Vaihe 4 Testi
+
+Nyt kun klikkaat 'Päivitys'-painiketta, päättymispäivämäärän pitäisi muuttua tämän päivän päiväksi. Mitä täällä, meillä on 2023-5-6, mutta se voi olla erilainen, kun testaat sitä.
+
+![date_range_1](https://cdn.illacloud.com/official-website/img/docs/date_range_1.png)
