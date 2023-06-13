@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Face API</h2>
 
 Fața căpătată este Githubul comunității de învățare a mașinilor, cu sute de mii de modele prepregătite și 10 000 de seturi de date disponibile în prezent. Puteți accesa în mod liber modele și seturi de date partajate de alți experți din industrie sau puteți găzdui și puteți implementa modelele dvs. în măcelărie.
@@ -46,19 +44,21 @@ Constructorul ILLA furnizează zeci de componente front-end utilizate în mod ob
 
 # Cum să folosești Fața Hugging în Constructorul ILLA
 
+## Usecase 1
+
 ### Pasul 1: Construiește UI cu componente pe Constructorul ILLA
 
-Bazat pe scenariul de utilizare preconizat pe care l-ați descris, construiți o interfață front-end. De exemplu, poți folosi componente de intrare și imagine dacă produsul tău ia text și realizează o imagine. În cazul în care produsul dvs. primește text și ieșiri din textul generat, puteți utiliza componente de intrare și de text.
+Aici vom demonstra cum să construim un text simplu care să introducă un text prompt și o întrebare de text pentru a trimite un răspuns text. 
 
-Următoarea imagine este un exemplu de pagină front-end pentru un produs care răspunde la întrebări bazate pe context.
+Aveți nevoie de două componente ale zonei de text etichetate ca "Introduceți textul original" și "Introduceți întrebarea aici", și buton component etichetat ca "Rulează" și o componentă zonă de text etichetată ca "Anwer" pentru textul de ieșire. Următoarea imagine este un exemplu descris mai sus.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Pasul 2: Creează un Face Resurse și configurează Acțiunile
 
 Faceți clic pe + Nou în lista de acțiuni și selectați API-ul pentru Face Față.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Completează formularul pentru a te conecta la fața târgului:
 
@@ -66,7 +66,7 @@ Nume: Numele care va fi afișat în ILLA
 
 Token: Intră în fațeta ta Hugging [setările de profil](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Confirmați informațiile modelului în Face de Hugging înainte de configurarea acțiunilor:
 
@@ -74,17 +74,17 @@ Selectați un model în [Hugging Face Model Page](https://huggingface.co/models)
 
 Hai să folosim [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) ca exemplu. Introduceți pagina de detalii > apăsați pe Deploy > Click Inferență API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametrii după \`"intrări"' este ceea ce ar trebui să completați ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 În Constructorul ILLA, ar trebui să completăm modelul de ID și parametru. Luând modelul de mai sus ca un exemplu, `"intrări"` este o pereche cheie-valoare, astfel încât să o putem completa cu valoare cheie-cheie sau JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Și susținem, de asemenea, introducerea textului și introducerea binară care pot satisface toate conexiunile API pentru Înfățișarea feței Hugging Face Inference.
 
@@ -101,14 +101,64 @@ Pentru a trece intrarea de pe front-end a utilizatorului la API, puteţi utiliza
 
 Înainte de a afișa datele de ieșire ale acțiunii în componenta front-end, ar trebui să confirmăm în ce câmp sunt plasate rezultatele diferitelor modele. Cu toate acestea, luând ca exemplu `deepset/roberta-base-squad2`, rezultatele sunt următoarele:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Așa că putem obține răspunsul cu ````{{ textQuestion.data[0].answer }}```(````textQuestion\` este numele acțiunii). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Aici vom demonstra cum să folosim modelul de difuzie stabilă respiră API-ul Hugging Face în Illa Cloud.
+
+**Pasul 1: Construirea unei interfețe front-end**
+
+Construim o interfață front-end folosind o abordare drag-and-drop pentru a plasa componente esențiale cum ar fi câmpuri de intrare, butoane, imagini și multe altele. După ajustarea stilurilor componentelor, obținem următoarea pagină web completă.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Pasul 2: Crearea de resurse și acțiuni**
+
+Stabilim resurse și acțiuni folosind API-ul pentru facturile facute pentru a vă conecta la modelul Stable Diffusion model. Pot fi utilizate două modele: `runwayml/distribuţia-stable-v1-5` şi `stabilityai/stabile diffuzia-2-1`.
+
+Alegeți "Hugging Face Inference" în acest scop.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Furnizați un nume pentru această resursă și introduceți token-ul de pe platforma Față Hugging.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+În panoul de configurare Acțiune, vă rugăm să introduceți ID-ul modelului și parametrul. Vom prelua modelul selectat din radioGroup1, deci vom completa Modelul de ID ca "{{radioGroup1.value}}\` . Pentru intrare, deoarece este obţinut din câmpul de intrare, completaţi parametrul ca "{{input1.value}}". Configuratia trebuie sa fie asa cum este afisata in urmatoarea imagine.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Încercăm să introducem "Un robot meca într-o favela în stilul expresivist" în componenta `input` şi să rulăm Acţiunea. Execuția rezultată este următoarea. Din panoul din stânga, poți observa datele disponibile care pot fi apelate, inclusiv `base64binary` și `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Pasul 3: Afișarea datelor despre componente**
+
+Pentru a afișa imaginea obținută de la Pasul 2, modificăm sursa componentei imagine la "{{generateInput.fileData.dataURI}}\`. Acest lucru ne va permite să afișăm imaginea generată.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Pasul 4: Funcționarea acțiunii cu Componente**
+
+Pentru a rula acțiunea creată în Pasul 2 când se face clic pe componenta buton, adăugați un handler de evenimente în componenta buton.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Pasul 5: Testare**
+
+În urma celor patru pași anteriori, poți utiliza componente și surse de date suplimentare pentru a finaliza alte sarcini și pentru a construi un instrument mai cuprinzător. De exemplu, puteți utiliza alte modele pentru a ajuta la generarea de solicitări sau la stocarea solicitărilor în local de stocare sau o bază de date. Hai să aruncăm o privire la rezultatul complet când toți pașii sunt implementați.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Acum s-ar putea să te joci cu el! Încearcă alte modele de vârf care sunt furnizate de către fata Hugging prin acest API. Mai sunt multe de explorat, cum ar fi descărcarea modelelor stabile de anime de difuzare, formarea unui stil artistic, metoda de eșantionare pentru imagini realiste. Poți face mult mai mult!
