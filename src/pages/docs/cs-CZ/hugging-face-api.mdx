@@ -11,46 +11,46 @@ postPriority: 1
 
 ## <h2 hidden>Hugging Face API</h2>
 
-Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
+Hugging Face je Github z komunity strojového učení se statisíce předškolených modelů a 10 000 datových souborů, které jsou v současné době k dispozici. Můžete volně přistupovat k modelům a datovým souborům, které sdílejí ostatní odborníci z oboru nebo hostovat a nasazovat své modely na Hugging Face.
 
-Some examples of models available in the Hugging Face library include:
+Mezi příklady modelů dostupných v knihovně Hugging Face patří:
 
-1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
-2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
-3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
-4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
-5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
+1.  BERT (Bidirectional Encoder Representations from Transformers): BERT je transformátorový model vyvinutý společností Google pro různé úkoly NLP. Dosáhli nejmodernějších výsledků v oblasti porozumění jazykům a překladatelských úkolů.
+2.  GPT (obecný předškolní Transformátor): GPT je další model založený na transformátoru vyvinutý OpenAI. Používá se především pro úkoly spojené s vytvářením jazyků, jako je překlad a shrnutí textu.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa je rozšířením modelu BERT, který byl vyvinut s cílem zlepšit výkon BERT při různých úkolech NLP.
+4.  XLNet (eXtraordinary LanguageNet): XLNet je transformátorový model vyvinutý společností Google, který je navržen tak, aby zlepšil výkon transformátorových modelů o úlohách porozumění jazykům.
+5.  ALBERT (A Lite BERT): ALBERT je verze modelu BERT, který byl vyvinut tak, aby byl efektivnější a rychlejší pro výcvik při zachování dobré výkonnosti při plnění úkolů NLP.
 
-### What you can do with Hugging Face in ILLA Builder
+### Co můžete udělat s hugující obličejem v ILLA Builder
 
-In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at <https://huggingface.co/models>. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at <https://huggingface.co/docs/inference-endpoints/index>.
+V Hugging Face je přes veřejné API, které můžete zdarma použít a vyzkoušet na <https://huggingface.co/models>. Kromě toho, pokud potřebujete řešení pro scénáře výroby, můžete použít Hugging Facebook Inference Endpoints, které lze použít a zpřístupnit na <https://huggingface.co/docs/inference-endpoints/index>.
 
-ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
+ILLA Builder poskytuje desítky běžně používaných front-end komponentů, díky nimž můžete rychle vytvářet různá rozhraní na základě vašich specifických potřeb. ILLA zároveň nabízí spojení s Hugging Face, umožňuje vám rychle se připojit k API, odesílat žádosti a přijímat vrácená data. Připojením rozhraní API a front-end komponenty, můžete implementovat požadavek, aby uživatelé mohli vložit obsah přes přední konec a odeslat jej do API. API vrátí vygenerovaný obsah, který se zobrazí na frontové straně.
 
-### Configure Hugging Face API resource
+### Konfigurovat zdroj API Hugging Face
 
-| Properties | Required | Description                                                                              |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Name       | required | Define a resource name that will be used for display in ILLA                             |
-| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
+| Vlastnosti | Požadováno | L 343, 22.12.2009, s. 1).                                                                       |
+| ---------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| Název      | vyžadováno | Definujte název zdroje, který bude použit pro zobrazení v ILLA                                  |
+| Token      | vyžadováno | Uživatelský přístup nebo API token. Můžete to získat v https://huggingface.co/settings/tokens.  |
 
-### Configure Action
+### Konfigurace akce
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Vlastnosti    | Požadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                                                 |
+| ------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID modelu     | vyžadováno | Hledat modely: https://huggingface.co/models                                                                                                                                                                                                              |
+| Typ parametru | vyžadováno | Typ parametru vašeho koncového bodu. Například, pokud váš koncový bod vyžaduje textový vstup, vyberte parametr „inputs“ s textem. Pokud váš koncový bod vyžaduje JSON vstup, zvolte možnost vyplnit parametr "vstupy" pomocí JSON nebo klávesové hodnoty. |
+| Parametr      | vyžadováno | Zadejte svůj parametr. Pomocí {{ componentName.value }} můžete použít data komponentů.                                                                                                                                                                    |
 
-# How to use Hugging Face in ILLA Builder
+# Jak používat hugging Face v ILLA Builder
 
 ## Usecase 1
 
 ### Krok 1: Sestavit UI se komponenty na Editoru ILLA
 
-Here we will demonstrate how to build a simple text that input text prompt and a text question to output a text answer. 
+Zde ukážeme, jak vytvořit jednoduchý text, který vloží text pohotově a textovou otázku k vyplnění textové odpovědi. 
 
-You need two textarea components labeled as "Enter the original text" and "Enter the question here", and button component labeled as "Run", and a text area component labeled as "Anwer" for output text. The following image is an example as described above.
+Potřebujete dvě textarea komponenty označené jako "Zadejte původní text" a "Vložte otázku zde", a komponenta tlačítka označená jako "Spustit" a komponenta textové oblasti označená jako "Anwer" pro výstupní text. Následující obrázek je příkladem, jak je popsáno výše.
 
 ![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
@@ -115,50 +115,50 @@ Takže odpověď můžeme získat pomocí `{{ textQuestion.data[0].answer }}`(`t
 
 ## Usecase 2
 
-Here we will demonstrate how to use the Stable diffusion model thorugh the Hugging Face API in Illa Cloud.
+Zde ukážeme, jak používat model Stable diffusion thorugh Hugging Face API v Illa Cloud.
 
-**Step 1: Building a Front-end Interface**
+**Krok 1: Vybudování čelního rozhraní**
 
-We construct a front-end interface by utilizing a drag-and-drop approach to place essential components such as input fields, buttons, images, and more. After adjusting the styles of the components, we obtain the following complete webpage.
+Vytváříme přední rozhraní pomocí taženého přístupu k umístění základních komponentů, jako jsou vstupní pole, tlačítka, obrázky a další. Po úpravě stylů komponent získáme následující kompletní webovou stránku.
 
 ![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
 
-**Step 2: Creating Resources and Actions**
+**Krok 2: Vytváření zdrojů a akcí**
 
-We establish resources and actions by utilizing the Hugging Face Inference API to connect to the Stable Diffusion model. Two models can be utilized: `runwayml/stable-diffusion-v1-5` and `stabilityai/stable-diffusion-2-1`.
+Prostředky a akce vytváříme pomocí API Hugging Face pro připojení ke Stable Diffusion modelu. Lze použít dva modely: `runwayml/stable-diffusion-v1-5` a `stabilityai/stable-diffusion-2-1`.
 
-Choose the "Hugging Face Inference API" for this purpose.
+Vyberte "Hugging Face Inference API" pro tento účel.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
 
-Provide a name for this resource and enter your token from the Hugging Face platform.
+Zadejte název tohoto zdroje a zadejte token z platformy pro hugingovou tvář.
 
 ![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
 
-In the Action configuration panel, please enter the Model ID and Parameter. We will retrieve the selected model from radioGroup1, so fill in the Model ID as  `{{radioGroup1.value}}` . For the input, since it is obtained from the input field, fill in the parameter as `{{input1.value}}`. The configuration should be as shown in the following image.
+V panelu Nastavení akce zadejte ID a parametr modelu. Vybraný model získáme z radioGroup1, takže vyplňte ID modelu jako `{{radioGroup1.value}}` . Pro vstup, protože je získán ze vstupního pole, vyplňte parametr jako `{{input1.value}}`. Konfigurace by měla být uvedena v následujícím obrázku.
 
 ![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
 
-We attempt to input "A mecha robot in a favela in expressionist style" in the `input` component and run the Action. The resulting execution is as follows. From the left panel, you can observe the available data that can be called, including `base64binary` and `dataURI`.
+Snažíme se vložit "mecha robot ve favela v expresionistickém stylu" do komponenty `input` a spustit akci. Výsledný výkon je následující. Z levého panelu můžete vidět dostupná data, která lze volat, včetně `base64binary` a `dataURI`.
 
 ![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
 
-**Step 3: Displaying Data on Components**
+**Krok 3: Zobrazení dat na komponentách**
 
-To display the image obtained from Step 2, we modify the Image source of the image component to `{{generateInput.fileData.dataURI}}`. This will enable us to show the generated image.
+Pro zobrazení obrázku získaného z kroku 2 upravujeme zdroj obrazu komponenty na `{{generateInput.fileData.dataURI}}`. To nám umožní zobrazit vygenerovaný obrázek.
 
 ![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
 
-**Step 4: Running the Action with Components**
+**Krok 4: Spuštění akce s komponenty**
 
-To run the action created in Step 2 when the button component is clicked, add an event handler to the button component.
+Chcete-li spustit akci vytvořenou v kroku 2 po kliknutí na komponentu, přidejte do komponenty tlačítka ovladač událostí.
 
 ![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
 
-**Step 5: Testing**
+**Krok 5: Testování**
 
-Following the previous four steps, you can utilize additional components and data sources to complete other tasks and build a more comprehensive tool. For example, you can use other models to assist in generating prompts or store prompts in localStorage or a database. Let's take a look at the complete outcome when all the steps are implemented.
+Po předchozích čtyřech krocích můžete využít další komponenty a zdroje dat k dokončení dalších úkolů a vytvoření komplexnějšího nástroje. Například můžete použít jiné modely, abyste pomohli generovat výzvy nebo uložit výzvy v localStorage nebo v databázi. Podívejme se na úplný výsledek, až budou realizovány všechny kroky.
 
 ![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
 
-Now you may play around with it! Try other cutting-edge models that is provided by Hugging face through this API. You can do much more!
+Nyní s tím můžete hrát! Vyzkoušejte další špičkové modely, které poskytuje Hugging face skrz toto API. Existuje více k prozkoumání, jako je stažení stabilních difúzních animovaných modelů, trénink umělce, metoda odběru vzorků pro realistické obrázky. Můžete udělat mnohem víc!
