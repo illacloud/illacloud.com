@@ -85,7 +85,7 @@ export const CodeContent = () => {
                 {
                   values.map(({ title, desc }, index) => (
                     <div className={clsx(style.codeContentBgTab, activeIndex === index ? 'opacity-[1]' : 'opacity-[0.5]')} onClick={() => setActiveIndex(index)} key={title}>
-                      <div className='flex flex-row justify-center items-center gap-[8px]'>
+                      <div className='flex flex-row items-center gap-[8px]'>
                         <img src={jsIcon} alt='js svg' width='24' />
                         <h1 className={style.codeTitle}>{t(title)}</h1>
                       </div>
