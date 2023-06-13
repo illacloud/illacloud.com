@@ -9,56 +9,56 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Face API</h2>
 
-Hugging Face是机器学习领域的Github，目前提供数十万个预训练模型和1万多个数据集。您可以自由地访问由其他的行业专家共享的模型和数据集，或在Hugging Face上托管和部署自己的模型。 您可以免费使用由其他行业专家共享的模型和数据集，或者在Hugging Face上部署您的模型。
+Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
 
-Hugging Face库中可用的一些模型示例包括：
+Some examples of models available in the Hugging Face library include:
 
-1.  BERT（Bidirectional Encoder Representations from Transformers）：BERT是由Google开发的transformer-based模型，用于各种NLP任务。 它在语言理解和机器翻译任务方面取得了先进的成果。
-2.  GPT（Generative Pre-training Transformer)）：GPT是另一个transformer-based 模型，由OpenAI开发。 它主要用于语言生成任务，例如翻译和文本摘要。
-3.  RoBERTa（Robustly Optimized BERT）：RoBERTa是BERT模型的扩展，旨在改善BERT在各种NLP任务上的性能。
-4.  XLNet（eXtraordinary LanguageNet）：XLNet是由Google开发的transformer-based模型，旨在改善transformer模型在语言理解任务上的性能。
-5.  ALBERT（A Lite BERT）： ALBERT是BERT模型的一种版本，旨在在保持良好的NLP任务性能的同时更加高效和快速地训练。
+1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
+2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
+4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
+5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
 
-### 在ILLA Builder中使用Hugging Face的方法
+### What you can do with Hugging Face in ILLA Builder
 
-在Hugging Face中，130,000多台机器学习模型可以通过公共API免费使用和测试<https://huggingface.co/model>。 此外，如果你需要生产场景的解决办法，你可以使用 Hugging Facebook的引导端点，可以在 <https://huggingface.co/docs/inference-endpoints/index>部署和访问。
+In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at <https://huggingface.co/models>. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at <https://huggingface.co/docs/inference-endpoints/index>.
 
-ILLA Builder提供了数十个常用的前端组件，允许您根据特定的需求快速构建不同的前端界面。 同时，ILLA 提供与 Hugging Face 的连接，允许您快速连接到 API，发送请求并接收返回的数据。 通过连接API和前端组件，您可以实现通过前端输入内容并将其提交到API的需求。 API返回生成的内容也可以在前端显示。
+ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
 
-### 配置Hugging Face API资源
+### Configure Hugging Face API resource
 
-| 属性    | 必需 | 描述                                                          |
-| ----- | -- | ----------------------------------------------------------- |
-| 名称    | 必需 | 定义用于在ILLA中显示的资源名称                                           |
-| Token | 必需 | API Token。 您可以在https://huggingface.co/settings/tokens 中获取。  |
+| Properties | Required | Description                                                                              |
+| ---------- | -------- | ---------------------------------------------------------------------------------------- |
+| Name       | required | Define a resource name that will be used for display in ILLA                             |
+| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
 
-### 配置Action
+### Configure Action
 
-| 属性   | 必需 | 描述                                                                                                                                                |
-| ---- | -- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 模型ID | 必需 | 从这里获取您需要的模型：https://huggingface.co/models                                                                                                         |
-| 参数类型 | 必需 | 您的Endpoint的参数类型。 例如，如果您的Endpoint需要输入文本，请fill in “inputs” parameter with text. 如果您的端点需要JSON输入，请选择fill in “inputs” parameter with JSON or key-value |
-| 参数   | 必需 | 输入您的参数。 输入参数。通过{{componentName.value}}使用组件的数据。                                                                                                    |
+| Properties     | Required | Description                                                                                                                                                                                                                          |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
+| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
+| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
 
-# 在ILLA Builder中使用Hugging Face的方法
+# How to use Hugging Face in ILLA Builder
+
+## Usecase 1
 
 ### 步骤1：使用ILLA Builder上的组件构建UI
 
-基于您描述的预期使用情景，构建一个前端页面。 例如，如果您的产品在文本中采集并输出图像，您可以使用输入组件和图像组件。 如果您的产品需要输入文本并获取生成文本，您可以使用输入组件和文本组件。
+Here we will demonstrate how to build a simple text that input text prompt and a text question to output a text answer. 
 
-以下图像是基于上下文回答问题的产品的前端页面示例。
+You need two textarea components labeled as "Enter the original text" and "Enter the question here", and button component labeled as "Run", and a text area component labeled as "Anwer" for output text. The following image is an example as described above.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### 步骤2：创建Hugging Face资源并配置Action
 
 点击Action列表中的+New，然后选择Hugging Face Inference API。
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 填写表单以连接到您的Hugging Face：
 
@@ -66,7 +66,7 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 令牌：在你的Hugging Face [profile settings](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 在配置Action之前，请确认Hugging Face中的模型信息：
 
@@ -74,17 +74,17 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 我们使用 [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) 作为例子。 进入详情页面 > 点击Deploy按钮 > 点击Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 “inputs”后的参数是您应该在ILLA中填写的内容。 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 在ILLA Builder中，我们应该填写模型ID和参数。 以上面的模型为例，“inputs”是一个键值对，因此我们可以使用key-value或JSON填充它。 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 我们还支持文本输入和二进制输入，满足所有Hugging Face Inference API连接需求
 
@@ -102,14 +102,64 @@ ILLA Builder提供了数十个常用的前端组件，允许您根据特定的�
 
 在将Action的输出数据显示在前端组件中之前，我们应该确认不同模型的输出放置在哪个字段。仍以“deepset/roberta-base-squad2”为例，结果如下： 仍然以`deepset/roberta-base-squad2`为例，结果如下：
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 因此，我们可以使用“{{textQuestion.data [0] .answer}}”（“textQuestion”是操作的名称）获取API返回的答案。 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### 演示
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Here we will demonstrate how to use the Stable diffusion model thorugh the Hugging Face API in Illa Cloud.
+
+**Step 1: Building a Front-end Interface**
+
+We construct a front-end interface by utilizing a drag-and-drop approach to place essential components such as input fields, buttons, images, and more. After adjusting the styles of the components, we obtain the following complete webpage.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Step 2: Creating Resources and Actions**
+
+We establish resources and actions by utilizing the Hugging Face Inference API to connect to the Stable Diffusion model. Two models can be utilized: `runwayml/stable-diffusion-v1-5` and `stabilityai/stable-diffusion-2-1`.
+
+Choose the "Hugging Face Inference API" for this purpose.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Provide a name for this resource and enter your token from the Hugging Face platform.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+In the Action configuration panel, please enter the Model ID and Parameter. We will retrieve the selected model from radioGroup1, so fill in the Model ID as  `{{radioGroup1.value}}` . For the input, since it is obtained from the input field, fill in the parameter as `{{input1.value}}`. The configuration should be as shown in the following image.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+We attempt to input "A mecha robot in a favela in expressionist style" in the `input` component and run the Action. The resulting execution is as follows. From the left panel, you can observe the available data that can be called, including `base64binary` and `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Step 3: Displaying Data on Components**
+
+To display the image obtained from Step 2, we modify the Image source of the image component to `{{generateInput.fileData.dataURI}}`. This will enable us to show the generated image.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Step 4: Running the Action with Components**
+
+To run the action created in Step 2 when the button component is clicked, add an event handler to the button component.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Step 5: Testing**
+
+Following the previous four steps, you can utilize additional components and data sources to complete other tasks and build a more comprehensive tool. For example, you can use other models to assist in generating prompts or store prompts in localStorage or a database. Let's take a look at the complete outcome when all the steps are implemented.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Now you may play around with it! Try other cutting-edge models that is provided by Hugging face through this API. You can do much more!
