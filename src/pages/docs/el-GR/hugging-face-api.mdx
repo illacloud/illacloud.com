@@ -9,48 +9,48 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>Hugging Face API</h2>
+## <h2 hidden>Καλύπτει το Πρόσωπο API</h2>
 
-Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
+Hugging Face είναι το Github της κοινότητας μηχανικής μάθησης, με εκατοντάδες χιλιάδες προ-εκπαιδευμένα μοντέλα και 10.000 σύνολα δεδομένων που είναι διαθέσιμα σήμερα. Μπορείτε να έχετε ελεύθερα πρόσβαση σε μοντέλα και σύνολα δεδομένων που μοιράζονται άλλοι ειδικοί του κλάδου ή φιλοξενούν και να αναπτύξετε τα μοντέλα σας σε Hugging Face.
 
-Some examples of models available in the Hugging Face library include:
+Μερικά παραδείγματα μοντέλων που διατίθενται στη βιβλιοθήκη Hugging Face περιλαμβάνουν:
 
-1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
-2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
-3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
-4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
-5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
+1.  BERT (Bidirectional Encoder Representations from Transformers): Το BERT είναι ένα μοντέλο βασισμένο στον μετασχηματιστή που αναπτύχθηκε από την Google για διάφορες εργασίες NLP. Έχει επιτύχει υπερσύγχρονα αποτελέσματα στην κατανόηση γλωσσών και μεταφραστικών εργασιών.
+2.  GPT (Generative Pre-training Transformer): GPT είναι ένα άλλο μοντέλο βασισμένο στον μετασχηματιστή που αναπτύχθηκε από το OpenAI. Χρησιμοποιείται κυρίως για εργασίες δημιουργίας γλωσσών, όπως η μετάφραση και η σύνοψη κειμένου.
+3.  RoBERTa (Robustly Optimized BERT): RoBERTa είναι μια επέκταση του μοντέλου BERT που αναπτύχθηκε για τη βελτίωση της απόδοσης του BERT σε διάφορες εργασίες NLP.
+4.  XLNet (eXtraordinary LanguageNet): Το XLNet είναι ένα μοντέλο βασισμένο στον μετασχηματιστή που αναπτύχθηκε από την Google και έχει σχεδιαστεί για τη βελτίωση της απόδοσης των μοντέλων μετασχηματιστή σε εργασίες κατανόησης γλωσσών.
+5.  ALBERT (A Lite BERT): ALBERT είναι μια έκδοση του μοντέλου BERT που αναπτύχθηκε για να είναι πιο αποτελεσματική και ταχύτερη για να εκπαιδεύσει διατηρώντας παράλληλα καλή απόδοση σε εργασίες NLP.
 
-### What you can do with Hugging Face in ILLA Builder
+### Τι μπορείτε να κάνετε με το Hugging Face in ILLA Builder
 
-In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at <https://huggingface.co/models>. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at <https://huggingface.co/docs/inference-endpoints/index>.
+Στο Hugging Face, πάνω από 130.000 μοντέλα μάθησης μηχανημάτων διατίθενται μέσω του δημόσιου API, το οποίο μπορείτε να χρησιμοποιήσετε και να δοκιμάσετε δωρεάν στο <https://huggingface.co/models>. Επιπλέον, αν χρειάζεστε μια λύση για σενάρια παραγωγής, μπορείτε να χρησιμοποιήσετε τα σημεία εισόδου Hugging Face, τα οποία μπορούν να αναπτυχθούν και να προσπελαστούν στο <https://huggingface.co/docs/inference-endpoints/index>.
 
-ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
+Το ILLA Builder παρέχει δεκάδες κοινά χρησιμοποιούμενα εξαρτήματα front-end, επιτρέποντάς σας να κατασκευάσετε διαφορετικές διεπαφές πρόσοψης ανάλογα με τις συγκεκριμένες ανάγκες σας γρήγορα. Ταυτόχρονα, η ILLA προσφέρει μια σύνδεση στο Hugging Face, επιτρέποντάς σας να συνδεθείτε γρήγορα με το API, να στείλετε αιτήματα και να λάβετε επιστρεφόμενα δεδομένα. Συνδέοντας τα στοιχεία API και front-end, μπορείτε να εφαρμόσετε την απαίτηση ότι οι χρήστες μπορούν να εισέλθουν στο περιεχόμενο μέσα από το μπροστινό άκρο και να το υποβάλουν στο API. Το API επιστρέφει το παραγόμενο περιεχόμενο που θα εμφανίζεται στο μπροστινό μέρος.
 
-### Configure Hugging Face API resource
+### Ρύθμιση πόρου Hugging Face API
 
-| Properties | Required | Description                                                                              |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Name       | required | Define a resource name that will be used for display in ILLA                             |
-| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
+| Ιδιότητες  | Απαιτείται | Περιγραφή                                                                                         |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------- |
+| Όνομα      | απαιτείται | Ορίστε ένα όνομα πόρου που θα χρησιμοποιηθεί για την εμφάνιση στο ILLA                            |
+| Διακριτικό | απαιτείται | Η πρόσβαση χρήστη ή API token. Μπορείτε να το βρείτε στο https://huggingface.co/settings/tokens.  |
 
-### Configure Action
+### Ρύθμιση Ενέργειας
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| Ιδιότητες             | Απαιτείται | Περιγραφή                                                                                                                                                                                                                                                                                               |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Αναγνωριστικό Μοντέλο | απαιτείται | Αναζήτηση μοντέλων: https://huggingface.co/models                                                                                                                                                                                                                                                       |
+| Τύπος παραμέτρου      | απαιτείται | Ο τύπος παραμέτρου του τελικού σας σημείου. Για παράδειγμα, αν το τελικό σας σημείο χρειάζεται μια εισαγωγή κειμένου, επιλέξτε συμπληρώστε την παράμετρο "inputs" με κείμενο. Αν το τελικό σημείο σας χρειάζεται μια είσοδο JSON, επιλέξτε συμπληρώστε την παράμετρο "εισροές" με JSON ή τιμή κλειδιού. |
+| Παράμετρος            | απαιτείται | Εισάγετε την παράμετρο σας. Χρησιμοποιήστε {{ componentName.value }} για να χρησιμοποιήσετε τα δεδομένα των εφαρμογών.                                                                                                                                                                                  |
 
-# How to use Hugging Face in ILLA Builder
+# Πώς να χρησιμοποιήσετε Hugging Πρόσωπο σε ILLA Builder
 
 ## Usecase 1
 
 ### Βήμα 1: Κατασκευάστε το UI με εξαρτήματα σε ILLA Builder
 
-Here we will demonstrate how to build a simple text that input text prompt and a text question to output a text answer. 
+Εδώ θα δείξουμε πώς να οικοδομήσουμε ένα απλό κείμενο που εισάγει το κείμενο προτροπή και μια ερώτηση κειμένου για την έξοδο μιας απάντησης κειμένου. 
 
-You need two textarea components labeled as "Enter the original text" and "Enter the question here", and button component labeled as "Run", and a text area component labeled as "Anwer" for output text. The following image is an example as described above.
+Χρειάζεστε δύο συστατικά textarea με την ονομασία "Enter the original text" και "Enter the question here", και στοιχείο κουμπιού με την ένδειξη "Εκτέλεση" και ένα στοιχείο περιοχής κειμένου με την ένδειξη "Anwer" για το κείμενο εξόδου. Η παρακάτω εικόνα είναι ένα παράδειγμα όπως περιγράφεται παραπάνω.
 
 ![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
@@ -115,50 +115,50 @@ Token: Αποκτήστε στο μαγευτικό σας πρόσωπο [ρυ�
 
 ## Usecase 2
 
-Here we will demonstrate how to use the Stable diffusion model thorugh the Hugging Face API in Illa Cloud.
+Εδώ θα δείξουμε πώς να χρησιμοποιήσετε το μοντέλο σταθερής διάχυσης thorugh το API Προσώπου Hugging στο Illa Cloud.
 
-**Step 1: Building a Front-end Interface**
+**Βήμα 1: Χτίζοντας μια Διεπαφή Προσώπου**
 
-We construct a front-end interface by utilizing a drag-and-drop approach to place essential components such as input fields, buttons, images, and more. After adjusting the styles of the components, we obtain the following complete webpage.
+Κατασκευάζουμε ένα front-end interface χρησιμοποιώντας μια προσέγγιση drag-and-drop για να τοποθετήσετε βασικά στοιχεία, όπως πεδία εισαγωγής, κουμπιά, εικόνες και πολλά άλλα. Αφού ρυθμίσουμε τα στυλ των εξαρτημάτων, θα λάβουμε την ακόλουθη πλήρη ιστοσελίδα.
 
 ![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
 
-**Step 2: Creating Resources and Actions**
+**Βήμα 2: Δημιουργία Πόρων και Δράσεων**
 
-We establish resources and actions by utilizing the Hugging Face Inference API to connect to the Stable Diffusion model. Two models can be utilized: `runwayml/stable-diffusion-v1-5` and `stabilityai/stable-diffusion-2-1`.
+Δημιουργούμε πόρους και ενέργειες χρησιμοποιώντας το API πρόσληψης προσώπου Hugging για να συνδεθείτε στο μοντέλο Stable Diffusion. Μπορούν να χρησιμοποιηθούν δύο μοντέλα: `runwayml/stable-diffusion-v1-5` και `stabilityai/stable-diffusion-2-1`.
 
-Choose the "Hugging Face Inference API" for this purpose.
+Επιλέξτε το "Hugging Face Inference API" για το σκοπό αυτό.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
 
-Provide a name for this resource and enter your token from the Hugging Face platform.
+Δώστε ένα όνομα για αυτόν τον πόρο και εισάγετε το διακριτικό σας από την πλατφόρμα Hugging Face .
 
 ![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
 
-In the Action configuration panel, please enter the Model ID and Parameter. We will retrieve the selected model from radioGroup1, so fill in the Model ID as  `{{radioGroup1.value}}` . For the input, since it is obtained from the input field, fill in the parameter as `{{input1.value}}`. The configuration should be as shown in the following image.
+Στον πίνακα ρυθμίσεων Ενέργεια, παρακαλώ εισάγετε το Αναγνωριστικό μοντέλου και την Παράμετρο. Θα ανακτήσουμε το επιλεγμένο μοντέλο από το radioGroup1, οπότε συμπληρώστε το Model ID ως `{{radioGroup1.value}}`. Για την είσοδο, δεδομένου ότι λαμβάνεται από το πεδίο εισαγωγής, συμπληρώστε την παράμετρο ως `{{input1.value}}`. Η διαμόρφωση πρέπει να είναι όπως φαίνεται στην παρακάτω εικόνα.
 
 ![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
 
-We attempt to input "A mecha robot in a favela in expressionist style" in the `input` component and run the Action. The resulting execution is as follows. From the left panel, you can observe the available data that can be called, including `base64binary` and `dataURI`.
+Προσπαθούμε να εισάγουμε "Ένα ρομπότ mecha σε ένα φαβέλα σε εξπρεσιονιστικό στυλ" στο στοιχείο `input` και να εκτελέσουμε τη Δράση. Η εκτέλεση που προκύπτει είναι η ακόλουθη. Από τον αριστερό πίνακα, μπορείτε να δείτε τα διαθέσιμα δεδομένα που μπορούν να κληθούν, συμπεριλαμβανομένων των `base64binary` και `dataURI`.
 
 ![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
 
-**Step 3: Displaying Data on Components**
+**Βήμα 3: Εμφάνιση δεδομένων στα στοιχεία**
 
-To display the image obtained from Step 2, we modify the Image source of the image component to `{{generateInput.fileData.dataURI}}`. This will enable us to show the generated image.
+Για να εμφανίσετε την εικόνα που λαμβάνεται από το Βήμα 2, τροποποιούμε την πηγή εικόνας του στοιχείου εικόνα σε `{{generateInput.fileData.dataURI}}`. Αυτό θα μας επιτρέψει να εμφανίσουμε την παραγόμενη εικόνα.
 
 ![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
 
-**Step 4: Running the Action with Components**
+**Βήμα 4: Εκτέλεση της ενέργειας με στοιχεία**
 
-To run the action created in Step 2 when the button component is clicked, add an event handler to the button component.
+Για να εκτελέσετε την ενέργεια που δημιουργήθηκε στο Βήμα 2 όταν πατηθεί το εξάρτημα πλήκτρου, προσθέστε ένα χειριστή γεγονότων στο στοιχείο πλήκτρο.
 
 ![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
 
-**Step 5: Testing**
+**Βήμα 5: Δοκιμή**
 
-Following the previous four steps, you can utilize additional components and data sources to complete other tasks and build a more comprehensive tool. For example, you can use other models to assist in generating prompts or store prompts in localStorage or a database. Let's take a look at the complete outcome when all the steps are implemented.
+Ακολουθώντας τα προηγούμενα τέσσερα βήματα, μπορείτε να χρησιμοποιήσετε επιπλέον στοιχεία και πηγές δεδομένων για να ολοκληρώσετε άλλες εργασίες και να δημιουργήσετε ένα πιο ολοκληρωμένο εργαλείο. Για παράδειγμα, μπορείτε να χρησιμοποιήσετε άλλα μοντέλα για να βοηθήσετε στη δημιουργία προτροπών ή την αποθήκευση προτροπών στην τοπική αποθήκευση ή σε μια βάση δεδομένων. Ας ρίξουμε μια ματιά στο πλήρες αποτέλεσμα όταν όλα τα βήματα υλοποιούνται.
 
 ![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
 
-Now you may play around with it! Try other cutting-edge models that is provided by Hugging face through this API. You can do much more!
+Τώρα μπορείτε να παίξετε με αυτό! Δοκιμάστε άλλα μοντέλα αιχμής που παρέχονται από Hugging πρόσωπο μέσω αυτού του API. Υπάρχουν περισσότερα για να εξερευνήσετε, όπως σταθερή μετάδοση μοντέλα anime download, την κατάρτιση ενός στυλ καλλιτέχνη, τη μέθοδο δειγματοληψίας για ρεαλιστικές εικόνες. Μπορείτε να κάνετε πολλά περισσότερα!
