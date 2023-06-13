@@ -61,7 +61,7 @@ export const cardContent = [
     desc: 'content.collaboration.desc',
     moreLink: 'https://cloud.illacloud.com',
     moreTitle: 'content.collaboration.action',
-    cardImage: i1,
+    cardImage: 'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203340.svg',
     imageAlt: 'content.collaboration.alt'
   },
   {
