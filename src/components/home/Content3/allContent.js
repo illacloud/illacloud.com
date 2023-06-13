@@ -1,6 +1,6 @@
 import style from './index.module.css'
 import Image from 'next/image'
-import tempAllContent from '@/img/home3/tempAllContent.svg'
+import tempAllContent from '@/img/home3/allContent.jpeg'
 import { useTranslation } from 'next-i18next'
 export const AllContent = () => {
   const { t } = useTranslation('home')
