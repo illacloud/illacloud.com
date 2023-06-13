@@ -11,46 +11,46 @@ postPriority: 1
 
 ## <h2 hidden>Hugging Face API</h2>
 
-Hugging Face is the Github of the machine learning community, with hundreds of thousands of pre-trained models and 10,000 datasets currently available. You can freely access models and datasets shared by other industry experts or host and deploy your models on Hugging Face.
+Hugging Faceは機械学習コミュニティのGithubであり、現在数十万の事前訓練されたモデルと10,000のデータセットが利用可能です。 他の業界の専門家が共有するモデルやデータセットに自由にアクセスしたり、Hugging Faceにモデルをホストしてデプロイしたりできます。
 
-Some examples of models available in the Hugging Face library include:
+Hugging Faceライブラリで利用可能なモデルのいくつかの例は次のとおりです。
 
-1.  BERT (Bidirectional Encoder Representations from Transformers): BERT is a transformer-based model developed by Google for various NLP tasks. It has achieved state-of-the-art results in language understanding and machine translation tasks.
-2.  GPT (Generative Pre-training Transformer): GPT is another transformer-based model developed by OpenAI. It is primarily used for language generation tasks, such as translation and text summarization.
-3.  RoBERTa (Robustly Optimized BERT): RoBERTa is an extension of the BERT model that was developed to improve BERT's performance on various NLP tasks.
-4.  XLNet (eXtraordinary LanguageNet): XLNet is a transformer-based model developed by Google that is designed to improve the performance of transformer models on language understanding tasks.
-5.  ALBERT (A Lite BERT): ALBERT is a version of the BERT model that was developed to be more efficient and faster to train while maintaining good performance on NLP tasks.
+1.  BERT(双方向エンコーダ表現のトランスフォーマー):BERTはGoogleがさまざまなNLPタスクのために開発したトランスベースのモデルです。 言語理解と機械翻訳タスクにおいて、最先端の成果を達成しています。
+2.  GPT(Generative Pre-training Transformer):GPTは、OpenAIによって開発された別のトランスベースのモデルです。 これは、主に翻訳やテキスト要約などの言語生成タスクに使用されます。
+3.  RoBERTa(ロバスト最適化されたBERT):RoBERTaは、さまざまなNLPタスクでBERTのパフォーマンスを向上させるために開発されたBERTモデルの拡張機能です。
+4.  XLNet (eXtraordinary LanguageNet): XLNetは、言語理解タスクにおけるトランスモデルのパフォーマンスを向上させるために、Googleが開発したトランスベースのモデルです。
+5.  ALBERT(Lite BERT):ALBERTはNLPタスクで良好なパフォーマンスを維持しながら、より効率的でより速く訓練するように開発されたBERTモデルのバージョンです。
 
-### What you can do with Hugging Face in ILLA Builder
+### ILLAビルダーでHugging Faceでできること
 
-In Hugging Face, over 130,000 machine-learning models are available through the public API, which you can use and test for free at <https://huggingface.co/models>. In addition, if you need a solution for production scenarios, you can use Hugging Face's Inference Endpoints, which can be deployed and accessed at <https://huggingface.co/docs/inference-endpoints/index>.
+Hugging Faceでは、13万以上の機械学習モデルがパブリックAPIを通じて利用可能で、<https://huggingface.co/models>で無料でテストできます。 さらに、本番シナリオのソリューションが必要な場合は、[https://hugggingface.co/docs/conference-endpoints/index](https://huggingface.co/docs/conference-endpoints/index)でデプロイおよびアクセスできるHugging Faceの推論エンドポイントを使用できます。
 
-ILLA Builder provides dozens of commonly used front-end components, allowing you to build different front-end interfaces based on your specific needs quickly. At the same time, ILLA offers a connection to Hugging Face, allowing you to quickly connect to the API, send requests, and receive returned data. By connecting the API and front-end components, you can implement the requirement that users can enter content through the front end and submit it to the API. The API returns the generated content to be displayed on the front end.
+ILLA Builderには、数十の一般的なフロントエンドコンポーネントが用意されており、特定のニーズに基づいてさまざまなフロントエンドインターフェイスを迅速に構築できます。 同時に、ILLAはHugging Faceへの接続を提供し、APIに素早く接続し、リクエストを送信し、返されたデータを受け取ることができます。 APIとフロントエンドコンポーネントを接続することで ユーザーがフロントエンドからコンテンツを入力してAPIに送信できるという要件を実装できます。 APIは、フロントエンドに表示される生成されたコンテンツを返します。
 
-### Configure Hugging Face API resource
+### Hugging Face API リソースを設定します
 
-| Properties | Required | Description                                                                              |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Name       | required | Define a resource name that will be used for display in ILLA                             |
-| Token      | required | The user access or API token. You can get it in https://huggingface.co/settings/tokens.  |
+| プロパティー | 必須 | 説明                                                                    |
+| ------ | -- | --------------------------------------------------------------------- |
+| 名前     | 必須 | ILLA で表示するリソース名を定義します。                                                |
+| トークン   | 必須 | ユーザーアクセスまたは API トークン。 https://huggingface.co/settings/tokensで入手できます。  |
 
-### Configure Action
+### アクションの設定
 
-| Properties     | Required | Description                                                                                                                                                                                                                          |
-| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Model ID       | required | Search for models: https://huggingface.co/models                                                                                                                                                                                     |
-| Parameter type | required | The parameter type of your endpoint. For example, if your endpoint needs an text input, choose fill in “inputs” parameter with text. If your endpoint needs an JSON input, choose fill in “inputs” parameter with JSON or key-value. |
-| Parameter      | required | Enter your parameter. Use {{ componentName.value }} to use data of components.                                                                                                                                                       |
+| プロパティー   | 必須 | 説明                                                                                                                           |
+| -------- | -- | ---------------------------------------------------------------------------------------------------------------------------- |
+| モデル ID   | 必須 | モデルを検索: https://huggingface.co/models                                                                                        |
+| パラメータの種類 | 必須 | エンドポイントのパラメータタイプ。 たとえば、エンドポイントにテキスト入力が必要な場合は、「inputs」パラメータにテキストを入力します。 エンドポイントにJSON入力が必要な場合は、「inputs」パラメータをJSONまたはキー値で入力します。 |
+| パラメータ    | 必須 | パラメータを入力します。 コンポーネントのデータを使用するには {{ componentName.value }} を使用します。                                                            |
 
-# How to use Hugging Face in ILLA Builder
+# ILLA Builder で Hugging Face を使用する方法
 
 ## Usecase 1
 
 ### ステップ1: ILLA Builder上でコンポーネントを使用してUIを構築する
 
-Here we will demonstrate how to build a simple text that input text prompt and a text question to output a text answer. 
+ここでは、テキスト応答を出力するためのテキストプロンプトとテキスト質問を入力する単純なテキストを構築する方法を紹介します。 
 
-You need two textarea components labeled as "Enter the original text" and "Enter the question here", and button component labeled as "Run", and a text area component labeled as "Anwer" for output text. The following image is an example as described above.
+「元のテキストを入力」と「ここに質問を入力」とラベル付けされた2つのテキストエリアコンポーネントが必要です ボタンコンポーネントには「実行」というラベルが付けられ、テキストの出力テキストには「元」というラベルの付いたテキストエリアコンポーネントがあります。 以下の画像は、上記のような例です。
 
 ![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
@@ -115,50 +115,50 @@ Actionの出力データをフロントエンドコンポーネントに表示�
 
 ## Usecase 2
 
-Here we will demonstrate how to use the Stable diffusion model thorugh the Hugging Face API in Illa Cloud.
+ここでは、Illa Cloudで安定拡散モデルthorughのHugging Face APIを使用する方法を説明します。
 
-**Step 1: Building a Front-end Interface**
+**ステップ 1: フロントエンドインターフェースの構築**
 
-We construct a front-end interface by utilizing a drag-and-drop approach to place essential components such as input fields, buttons, images, and more. After adjusting the styles of the components, we obtain the following complete webpage.
+入力フィールド、ボタン、画像などの必須コンポーネントを配置するために、ドラッグアンドドロップ手法を利用してフロントエンドインターフェースを構築します。 コンポーネントのスタイルを調整した後、以下の完全なウェブページを取得します。
 
 ![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
 
-**Step 2: Creating Resources and Actions**
+**ステップ 2: リソースとアクションを作成**
 
-We establish resources and actions by utilizing the Hugging Face Inference API to connect to the Stable Diffusion model. Two models can be utilized: `runwayml/stable-diffusion-v1-5` and `stabilityai/stable-diffusion-2-1`.
+Hugging Face Inference API を利用して安定拡散モデルに接続するリソースとアクションを確立します。 `runwayml/stable-diffusion-v1-5` と `stabilityai/stable-diffusion-2-1` の2つのモデルを利用できます。
 
-Choose the "Hugging Face Inference API" for this purpose.
+この目的のために「顔推論APIを接続する」を選択します。
 
 ![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
 
-Provide a name for this resource and enter your token from the Hugging Face platform.
+このリソースの名前を入力し、Hugging Faceプラットフォームからトークンを入力します。
 
 ![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
 
-In the Action configuration panel, please enter the Model ID and Parameter. We will retrieve the selected model from radioGroup1, so fill in the Model ID as  `{{radioGroup1.value}}` . For the input, since it is obtained from the input field, fill in the parameter as `{{input1.value}}`. The configuration should be as shown in the following image.
+format@@0パネルにモデルIDとパラメータを入力してください。 選択したモデルをradioGroup1から取得しますので、モデルIDを`{{radioGroup1.value}}`と入力してください。 入力の場合は、入力フィールドから取得されるので、パラメータを`{{input1.value}}`と入力します。 以下の画像に示すように構成します。
 
 ![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
 
-We attempt to input "A mecha robot in a favela in expressionist style" in the `input` component and run the Action. The resulting execution is as follows. From the left panel, you can observe the available data that can be called, including `base64binary` and `dataURI`.
+「input」コンポーネントに「ファヴェーラ型のメカロボット」を入力し、アクションを実行しようとします。 実行結果は以下のとおりです。 左側のパネルから、`base64binary` と `dataURI` を含む、呼び出すことのできるデータを確認できます。
 
 ![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
 
-**Step 3: Displaying Data on Components**
+**ステップ 3: コンポーネントにデータを表示**
 
-To display the image obtained from Step 2, we modify the Image source of the image component to `{{generateInput.fileData.dataURI}}`. This will enable us to show the generated image.
+ステップ2から取得した画像を表示するには、イメージコンポーネントのイメージソースを`{{generateInput.fileData.dataURI}}`に変更します。 これにより、生成された画像を表示することができます。
 
 ![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
 
-**Step 4: Running the Action with Components**
+**ステップ 4: コンポーネントでアクションを実行**
 
-To run the action created in Step 2 when the button component is clicked, add an event handler to the button component.
+ボタンコンポーネントがクリックされたときにステップ2で作成されたアクションを実行するには、ボタンコンポーネントにイベントハンドラを追加します。
 
 ![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
 
-**Step 5: Testing**
+**ステップ 5: テスト**
 
-Following the previous four steps, you can utilize additional components and data sources to complete other tasks and build a more comprehensive tool. For example, you can use other models to assist in generating prompts or store prompts in localStorage or a database. Let's take a look at the complete outcome when all the steps are implemented.
+前の4つのステップに沿って、追加のコンポーネントとデータソースを利用して他のタスクを完了し、より包括的なツールを構築できます。 たとえば、他のモデルを使用してプロンプトの生成や、localStorage やデータベースへのプロンプトの保存を支援することができます。 すべてのステップが実行された場合の完全な結果を見てみましょう。
 
 ![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
 
-Now you may play around with it! Try other cutting-edge models that is provided by Hugging face through this API. You can do much more!
+今、あなたはそれを遊ぶことができます! このAPIを通じて顔をハグすることで提供される他の最先端モデルを試してみてください。 安定した拡散アニメモデルのダウンロード、アーティストスタイルのトレーニング、現実的な画像のサンプリング方法など、探求するべき多くがあります。 もっと多くのことができます！
