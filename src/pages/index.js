@@ -18,10 +18,9 @@ const Home = ({ starCounts }) => {
   const { t } = useTranslation('home')
 
   const [playMaskShow, setPlayMaskShow] = useState(false)
-  const [modalVisible, setModalVisible] = useState()
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
-  // const step = useRaf(1000, 0)
+  const step = useRaf(1000, 0)
   const router = useRouter()
 
   return (
@@ -50,12 +49,11 @@ const Home = ({ starCounts }) => {
         />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}` }`}
+          href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}`}`}
         />
       </Head>
       <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
-          onSubscribe={() => setModalVisible(true)}
           whiteTheme={false}
           onChangeShow={() => setIsBookShow(true)}
         />
@@ -90,14 +88,12 @@ const Home = ({ starCounts }) => {
           })(document, "script");`}
         </Script>
         <Title
-          githubStarts={123}
+          githubStarts={Math.floor(starCounts * step)}
           setPlayMaskShow={setPlayMaskShow}
-          onSubscribe={() => setModalVisible(true)}
         />
         <MobileTitle
           setPlayMaskShow={setPlayMaskShow}
-          githubStarts={123}
-          onSubscribe={() => setModalVisible(true)}
+          githubStarts={Math.floor(starCounts * step)}
         />
         <NewContent />
         <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
@@ -110,7 +106,7 @@ const Home = ({ starCounts }) => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-      <Footer scrollStart={0.990} scrollEnd={1}/>
+      <Footer scrollStart={0.990} scrollEnd={1} />
     </>
   )
 }
