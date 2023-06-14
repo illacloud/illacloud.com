@@ -63,8 +63,11 @@ function App({ Component, pageProps, router }) {
     router.pathname !== '/' &&
     router.pathname !== '/hire' &&
     router.pathname !== '/pricing' &&
-    !/\/(components|integrations)/.test(router.asPath) && 
-    router.pathname !== '/drive'
+    !/\/(components|integrations)/.test(router.asPath) &&
+    router.pathname !== '/drive' &&
+    router.pathname !== '/cloud' &&
+    router.pathname !== '/builder' &&
+    router.pathname !== '/selfhost'
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || t('meta.description')

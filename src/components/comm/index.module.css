@@ -51,41 +51,33 @@
 
 /*---------*/
 .partnerList {
-  @apply w-full   flex-row items-start gap-[16px];
-}
-/* .partnerItemCard:first-of-type {
-  @apply ml-[120px] ;
-} */
-.partnerItemCard {
-  @apply h-full w-full rounded-[8px] shrink-0 cursor-pointer;
-  @apply xl:rounded-[20px];
-  background: #332B6A;
-  transition: all 0.3s;
+  @apply w-full flex-row items-start gap-[16px];
 }
 .partnerItemContainer {
-  @apply flex flex-col items-center h-full w-full rounded-[8px] p-[24px] shrink-0 cursor-pointer;
+  @apply flex flex-col h-full items-center justify-center w-full rounded-[8px] p-[24px] shrink-0 cursor-pointer;
   @apply xl:rounded-[16px] xl:p-[48px];
-  background: url('/img/partnerBg.svg');
+  background: url('/img/partnerBg.svg')no-repeat;
+  background-size: 100% auto ;
   transition: all 0.2s;
-  transform-style: preserve-3d;
   will-change: transform;
-  transition: transform .5s;
 }
 .partnerItemContainer:hover {
-  /* transform-origin: center;
-  transform: scale(0.99);
-  border-radius: 20px; */
-  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
-
-}
-.partnerItemContainer:hover .partnerItem {
-  transform: translateZ(50px);
-}
-.partnerItemCard:hover {
-  box-shadow: 0px 0px 40px rgba(97, 29, 184, 0.5);
+  opacity: 0.8;
+  transform: scale(1.05)
 }
 .partnerItem {
   @apply flex flex-col items-center gap-[32px] w-full h-full;
+}
+.partnerline {
+  animation: progress 3s linear forwards;
+}
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 75;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 /*------*/
@@ -111,4 +103,23 @@
 }
 .direction {
   @apply w-[12px] h-[12px];
+}
+
+/*------*/
+.titleContainer {
+  @apply hidden xl:flex h-screen  z-30 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01 flex-col  items-center font-bold relative overflow-hidden;
+}
+.titlePurpleBtn {
+  @apply h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01;
+}
+
+/*------*/
+.mainContentTitle {
+  @apply font-[700] text-[24px] leading-[26px] text-white-01 text-center;
+  @apply xl:text-[48px] xl:leading-[58px];
+  background: linear-gradient(90deg, #a874ff 8.9%, #e65fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }

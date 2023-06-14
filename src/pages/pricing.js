@@ -12,12 +12,14 @@ import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/home/Pricing/index.module.css'
 import { useRouter } from 'next/router'
 import { CommBottom } from '@/components/comm/commBottom'
+import useMeasure from "react-use-measure"
 
 
 const Pricing = () => {
   const { t } = useTranslation('pricing')
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
+  const [ref, rect] = useMeasure()
 
   const customNavStyle = {
     background: 'transparent',
@@ -34,15 +36,15 @@ const Pricing = () => {
             }pricing`}
         />
       </Head>
-      <PricingMask />
-      <div className='w-full px-0'>
+      <PricingMask rect={rect}/>
+      <div ref={ref} className='w-full px-0'>
         <div className={style.pricingContainer}>
           <Nav whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
           <div className='w-full text-white xl:pt-[120px] bg-transparent'>
             <PricingContent onChangeShow={() => setIsBookShow(true)} />
             <OpenSource />
               <FAQ  translationSpace='pricing' />
-            <CommBottom scrollStart={0.670} scrollEnd={0.720}/>
+            <CommBottom scrollStart={0.55} scrollEnd={0.613}/>
           </div>
         </div>
         <BookDemo
@@ -50,7 +52,7 @@ const Pricing = () => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-        <Footer scrollStart={0.90} scrollEnd={1}/>
+        <Footer scrollStart={0.704} scrollEnd={1}/>
     </>
   )
 }

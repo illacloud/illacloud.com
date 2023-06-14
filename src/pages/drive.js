@@ -6,11 +6,16 @@ import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRouter } from 'next/router'
-import { Title } from '@/components/drive/title'
+import { Title } from '@/components/comm/title'
 import { MainContent } from '@/components/drive/mainContent'
+import { getGithubOauth } from '@/utils/getStars'
+import { DriveTitle} from '@/constants/driveContent'
+import BecomePartner from '@/components/home/Form/BecomePartner'
 
-const Drive = () => {
+
+const Drive = ({uri}) => {
   const { t } = useTranslation('pricing')
+  const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
 
@@ -28,22 +33,29 @@ const Drive = () => {
       </Head>
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
-        {/*TODO TITLE内容待完善*/}
-        <Title />
-        <MainContent />
+        <Title content={DriveTitle}/>
+        <MainContent uri={uri}/>
       </div>
-      <Footer />
+      <Footer scrollStart={0.866} scrollEnd={1}/>
       <BookDemo
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
+      <BecomePartner
+          visible={isPartnerShow}
+          onChangeShow={() => setIsPartnerShow(false)}
+        />
     </>
   )
 }
-export const getServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['drive', 'home', "common"])),
-  },
-})
+export const getServerSideProps = async ({ locale }) => {
+  const uri = await getGithubOauth()
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['drive', 'home', "common"])),
+      uri
+    },
+  }
+}
 
 export default Drive

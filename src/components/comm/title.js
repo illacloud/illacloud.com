@@ -1,26 +1,13 @@
 import { useTranslation } from 'next-i18next'
-import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import Image from 'next/image'
-import temp from '@/img/imageTemp/driveTitle.svg'
 import style from './index.module.css'
-import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 
 
-const DriveContent = {
-  title: 'ILLA Drive',
-  desc: 'With ILLA Drive, you can securely store documents, images, and other files in the cloud, eliminating the need for local storage and providing convenient access from anywhere with an internet connection. ',
-  btn1: 'Try now',
-  btn1Link: '#',
-  btn2: 'ILLA Drive Doc',
-  btn2Link: '#',
-  imageAlt: 'Screenshot of ILLA Cloud app editor',
-}
-
-export const Title = () => {
-  const { t } = useTranslation('home')
+export const Title = ({ translationName = 'home', content }) => {
+  const { t } = useTranslation(translationName)
   const { scrollYProgress } = useViewportScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.03], [1, 0])
   const titlePositionY = useTransform(scrollYProgress, [0, 0.03], [0, -24])
@@ -31,7 +18,7 @@ export const Title = () => {
     ['0vh', '-60vh'],
   )
 
-  const { title, desc, btn1, btn1Link = '', btn2, btn2Link = '', imageAlt } = DriveContent
+  const { title, desc, btn1, btn1Link = '', btn2, btn2Link = '', image, imageAlt } = content
 
   return (
     <>
@@ -51,7 +38,7 @@ export const Title = () => {
               <span className="font-normal text-[20px] px-[20px] sm:px-0 text-center">
                 {t(desc)}
               </span>
-              <div className="flex items-center flex-col content-between gap-[14px] text-[16px] leading-[28px] font-[500]">
+              <div className="flex items-center flex-col content-between gap-[24px] text-[16px] leading-[28px] font-[500]">
                 <Link legacyBehavior href={btn1Link}>
                   <a
                     className={style.titlePurpleBtn}
@@ -69,33 +56,37 @@ export const Title = () => {
                     {t(btn1)}
                   </a>
                 </Link>
-                <Link legacyBehavior href={btn2Link}>
-                  <a
-                    className="h-[19px] bg-blackAlpha-05 text-center leading-[19px]"
-                    onClick={() => {
-                      sendTagEvent({
-                        action: 'click',
-                        category: 'homepage_body_self_hosted_click',
-                        label: t('self-Hosted'),
-                      })
-                    }}
-                  >
-                    <span className='underline'>{t(btn2)} </span>
-                    <span>→</span>
-                  </a>
-                </Link>
+                {
+                  btn2 && (
+                    <Link legacyBehavior href={btn2Link}>
+                      <a
+                        className="h-[19px] bg-blackAlpha-05 text-center leading-[19px]"
+                        onClick={() => {
+                          sendTagEvent({
+                            action: 'click',
+                            category: 'homepage_body_self_hosted_click',
+                            label: t('self-Hosted'),
+                          })
+                        }}
+                      >
+                        <span className='underline'>{t(btn2)} </span>
+                        <span>→</span>
+                      </a>
+                    </Link>
+                  )
+                }
               </div>
             </div>
           </div>
         </motion.div>
         <motion.div
-          className="w-full flex items-center justify-center absolute top-[50vh] "
+          className="w-full flex items-center justify-center absolute top-[70vh] "
           style={{
             translateY: imgPositionY,
           }}
         >
           <motion.img
-            src={temp}
+            src={image}
             className="flex items-center justify-center"
             alt={imageAlt}
             style={{
@@ -143,8 +134,8 @@ export const Title = () => {
             </Link>
           </div>
         </div>
-        <div className='w-full h-[188px]'>
-          <Image src={temp} width="2080"height="1294" alt={imageAlt} />
+        <div className='w-full'>
+          <Image src={image} width="2080" height="1294" alt={imageAlt} />
         </div>
       </div>
     </>

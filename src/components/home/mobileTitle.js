@@ -21,11 +21,11 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand] = useState(false)
-  const { setPlayMaskShow, githubStarts } = props
-
+  const { githubStarts } = props
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
+
   return (
     <div className="w-full xl:hidden	">
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full gap-[32px]">
@@ -121,7 +121,6 @@ export const MobileTitle = (props) => {
               action: 'click',
               category: 'homepage_body_video_click',
             })
-            setPlayMaskShow(true)
           }}
         >
           <Image

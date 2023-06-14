@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
-import Image from 'next/image'
 import clsx from 'clsx'
 
 
@@ -87,7 +86,7 @@ export const SwipeContent = (props) => {
             imgList.map((item) => (
               <SwiperSlide>
                 <div className={style.swipeImage} key={item}>
-                  <Image src={item} alt={t(imageAlt)} height='400' width='516' />
+                  <img src={item} alt={t(imageAlt)} className='w-full' />
                 </div>
               </SwiperSlide>
             ))
@@ -110,7 +109,7 @@ export const SwipeContent = (props) => {
           <LearnMore title={moreTitle} href={moreLink} />
         </div>
         <div className='px-[12px] w-full rounded-t-[10px] rounded-r-[10px]'>
-          <Image src={imgList[0]} alt={t(imageAlt)} height='400' width='516' />
+          <img src={imgList[0]} alt={t(imageAlt)} className='w-full' />
         </div>
       </div >
     </>

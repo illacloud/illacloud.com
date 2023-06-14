@@ -61,7 +61,7 @@ export const cardContent = [
     desc: 'content.collaboration.desc',
     moreLink: 'https://cloud.illacloud.com',
     moreTitle: 'content.collaboration.action',
-    cardImage: 'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203340.svg',
+    cardImage: i1,
     imageAlt: 'content.collaboration.alt'
   },
   {
@@ -87,7 +87,7 @@ export const solutionContent = {
     {
       label: 'content.drive.title-2',
       desc: 'content.drive.desc-1',
-      image: i2
+      image: i1
     }
   ]
 }

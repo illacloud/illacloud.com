@@ -11,8 +11,9 @@ import { LpHeader } from '@/components/LandingPage/LpHeader'
 import { AsyncIndexContent } from '@/components/LandingPage/AsyncIndexContent'
 import { pageMap } from '@/constants/landingPage'
 import { CommBottom } from '@/components/comm/commBottom'
+import { getGithubOauth } from '@/utils/getStars'
 
-const LandingPageIndex = ({ pageName, starCounts }) => {
+const LandingPageIndex = ({ pageName, uri }) => {
   const router = useRouter()
   const [isBookShow, setIsBookShow] = useState(false)
 
@@ -41,7 +42,7 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
             }${pageName}`}
         />
       </Head>
-      <div className="w-full px-0 bg-white overflow-y-auto">
+      <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
         <Nav
           whiteTheme
           onChangeShow={() => setIsBookShow(true)}
@@ -56,13 +57,13 @@ const LandingPageIndex = ({ pageName, starCounts }) => {
           />
           <AsyncIndexContent content={content} pageName={pageName} />
         </div>
+      <CommBottom whiteTheme scrollStart={0.763} scrollEnd={0.81} uri={uri}/>
       </div>
       <BookDemo
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <CommBottom whiteTheme scrollStart={0.75} scrollEnd={0.79} />
-      <Footer whiteTheme scrollStart={0.92} scrollEnd={1}/>
+      <Footer whiteTheme scrollStart={0.81} scrollEnd={1}/>
     </>
   )
 }
@@ -76,6 +77,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       },
     }
   }
+  const uri = await getGithubOauth()
 
   return {
     props: {
@@ -85,6 +87,7 @@ export const getServerSideProps = async ({ locale, params }) => {
         'common',
       ])),
       pageName,
+      uri
     },
   }
 }
