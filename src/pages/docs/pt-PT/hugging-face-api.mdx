@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Abringing Face API</h2>
 
 Abraçar a cara é o Github da comunidade de aprendizado de máquina, com centenas de milhares de modelos pré-treinados e 10.000 datasets atualmente disponíveis. Você pode acessar livremente modelos e conjuntos de dados compartilhados por outros especialistas da indústria ou hospedeiros e implantar seus modelos na Face de abraçamento.
@@ -46,19 +44,21 @@ O Construtor ILLA fornece dezenas de componentes front-end comumente usados, per
 
 # Como usar a Face Abraçada no Construtor ILLA
 
+## Usecase 1
+
 ### Passo 1: Construa a interface com componentes no Construtor ILLA
 
-Com base no cenário de uso esperado que você descreveu, construa uma interface front-end. Por exemplo, você poderia usar componentes de entrada e imagem se o seu produto contém texto e produz uma imagem. Se o seu produto recebe texto e texto gerado pela saída, você pode usar os componentes de texto e entrada.
+Aqui vamos demonstrar como construir um texto simples que o prompt de texto de entrada e uma pergunta de texto para retornar um texto de resposta. 
 
-A imagem a seguir é um exemplo de uma página front-end para um produto que responde a perguntas com base no contexto.
+Precisa de dois componentes de texto rotulados como "Digite o texto original" e "Digite a questão aqui", e componente botão rotulado como "Run" e um componente de área de texto rotulado como "Anwer" para texto de saída. A imagem a seguir é um exemplo conforme descrito acima.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Passo 2: Crie um Recurso Face Abraçando e configure as Ações
 
 Clique em + Novo na lista de ações e selecione Hugging Face Inference API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Preencha o formulário para conectar sua fachada abraçada:
 
@@ -66,7 +66,7 @@ Nome: O nome que será exibido na ILLA
 
 Token: Entre em sua [configuração do perfil](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Confirme as informações do modelo na Face Abraçada antes de configurar as ações:
 
@@ -74,17 +74,17 @@ Selecione um modelo na [Página do Modelo de Face Abraço](https://abrggingface.
 
 Vamos usar o [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) como exemplo. Insira a página de detalhes > clique em Implantar > Click Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Os parâmetros depois de "entradas" é o que você deve preencher na ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 No ILLA Builder, devemos preencher o modelo de ID e parâmetro. Tomando o modelo acima como exemplo, o `"inputs` é um par de valor-chave, então nós podemos preenchê-lo com valor-chave ou JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 E também suportamos o input de texto e o input binário, que podem atender todas as conexões de API da Encantadora do Face Inferência.
 
@@ -101,14 +101,64 @@ Para passar a entrada front-end do usuário para a API, você pode usar {{ para 
 
 Antes de exibir os dados de saída da Ação no componente front-end, devemos confirmar em qual campo a saída de modelos diferentes é colocada. Ainda usando o `deepset/roberta-base-squad2` como exemplo, os resultados são os seguintes:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Então podemos obter a resposta com `{{ textQuestion.data[0].answer }}`(a `textQuestion` é o nome da ação). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demonstração
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Aqui vamos demonstrar como usar o modelo de difusão Estável thorugh a Hugging Face API na Illa Cloud.
+
+**Etapa 1: Construindo uma Interface Front-end**
+
+Construímos uma interface de front-end utilizando uma abordagem de arrastar e soltar para colocar componentes essenciais como campos de entrada, botões, imagens e muito mais. Após ajustar os estilos dos componentes, obtemos a seguinte página completa.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Etapa 2: Criando recursos e ações**
+
+Nós estabelecemos recursos e ações ao utilizar a API da Inferência Face Hugging para conectar ao modelo de Diffusão Estável. Dois modelos podem ser utilizados: `runwayml/stable-diffusion-v1-5` e `stabilityai/stable-diffusion-2-1`.
+
+Escolha a "API de Inferência na Face abraçada" para este propósito.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Forneça um nome para este recurso e insira seu token da plataforma Abraçar Cara.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+No painel de configuração de ação, por favor, digite o ID do modelo e o parâmetro. Nós recuperaremos o modelo selecionado do radioGroup1, então preencha o ID do modelo como `{{radioGroup1.value}}`. Para a entrada, uma vez que ela é obtida do campo de entrada, preencha o parâmetro como `{{input1.value}}`. A configuração deve ser como mostrado na seguinte imagem.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Nós tentamos inserir "Um robô mecha em um favela no estilo expressionista" no componente `input` e executar a ação. A execução resultante é a seguinte. No painel esquerdo, você pode observar os dados disponíveis que podem ser chamados, incluindo `base64binary` e `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Etapa 3: Exibindo dados nos Componentes**
+
+Para exibir a imagem obtida da Etapa 2, nós modificamos a fonte da imagem do componente da imagem para `{{generateInput.fileData.dataURI}}`. Isto nos permitirá mostrar a imagem gerada.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Etapa 4: Executando a Ação com Componentes**
+
+Para executar a ação criada no passo 2 quando o componente do botão é clicado, adicione um manipulador de eventos ao componente do botão.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Etapa 5: Teste**
+
+Seguindo as quatro etapas anteriores, você pode utilizar componentes adicionais e fontes de dados para concluir outras tarefas e criar uma ferramenta mais abrangente. Por exemplo, você pode usar outros modelos para auxiliar na geração de prompts ou armazenar prompts no localStorage ou um banco de dados. Vamos dar uma olhada no resultado completo quando todas as etapas forem implementadas.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Agora você pode brincar com isso! Tente outros modelos de ponta que são fornecidos abraçando o rosto através desta API. Há mais a explorar, como baixar modelos estáveis de animação de difusão, treinar um estilo de artista, método de amostragem para imagens realistas. Pode fazer muito mais!

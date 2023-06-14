@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Face API</h2>
 
 Hugging Face är Github of the machine learning community, med hundratusentals förtränade modeller och 10.000 dataset för närvarande tillgängliga. Du kan fritt få tillgång till modeller och dataset som delas av andra branschexperter eller vara värd för och distribuera dina modeller på Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder erbjuder dussintals vanliga front-end-komponenter, så att du kan b
 
 # Hur man använder Hugging Face i ILLA Builder
 
+## Usecase 1
+
 ### Steg 1: Bygg UI med komponenter på ILLA Builder
 
-Baserat på det förväntade användningsscenariot du beskrev, bygg ett front-end gränssnitt. Du kan till exempel använda inmatnings- och bildkomponenter om din produkt tar in text och skriver ut en bild. Om din produkt tar in text och utdata genererad text kan du använda indata och textkomponenter.
+Här kommer vi att visa hur man bygger en enkel text som inmatningstexten och en textfråga för att skriva ett textsvar. 
 
-Följande bild är ett exempel på en framsida för en produkt som svarar på frågor baserade på kontext.
+Du behöver två textarea komponenter märkta som "Ange originaltexten" och "Ange frågan här", och knappkomponent märkt som "Kör", och en textarea komponent märkt som "Anwer" för utskriftstext. Följande bild är ett exempel som beskrivs ovan.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Steg 2: Skapa en krånglig ansiktsresurs och konfigurera åtgärderna
 
 Klicka på + Ny i åtgärdslistan och välj Hugging Face Inference API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Fyll i formuläret för att ansluta till ditt Hugging Face:
 
@@ -66,7 +66,7 @@ Namn: Namnet som kommer att visas i ILLA
 
 Token: Få i ditt krångliga ansikte [profilinställningar](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Bekräfta modellinformationen i Hugging Face innan du konfigurerar åtgärderna:
 
@@ -74,17 +74,17 @@ Välj en modell i [Hugging Face Model Page](https://huggingface.co/models)
 
 Vi använder [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) som exempel. Ange detaljsidan > klicka på Distribuera > Klicka på Inferens API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametrarna efter `“inputs”` är vad du ska fylla i ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 I ILLA Builder ska vi fylla i Modell ID och Parameter. Med ovanstående modell som exempel är `”inputs”` ett nyckelvärde-par, så vi kan fylla i det med nyckelvärde eller JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Och vi stöder också textinmatning och binär ingång som kan uppfylla alla Hugging Face Inference API-anslutningar.
 
@@ -101,14 +101,64 @@ För att skicka användarens front-end-indata till API:et kan du använda {{ fö
 
 Innan du visar utdata från åtgärden i front-end-komponenten, bör vi bekräfta vilket fält utdata från olika modeller placeras i. Fortfarande med `deepset/roberta-base-squad2` som exempel, resultaten är följande:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Så vi kan få svaret med `{{ textQuestion.data[0].answer }}`(`textQuestion` är namnet på åtgärden). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Här kommer vi att visa hur man använder den stabila diffusionsmodellen genom Hugging Face API i Illa Cloud.
+
+**Steg 1: Bygga ett front-end gränssnitt**
+
+Vi konstruerar ett front-end-gränssnitt genom att använda en dra-och-släpp-metod för att placera viktiga komponenter som inmatningsfält, knappar, bilder och mer. Efter att ha justerat stilarna på komponenterna får vi följande kompletta webbsida.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Steg 2: Skapa resurser och åtgärder**
+
+Vi etablerar resurser och åtgärder genom att använda Hugging Face Inference API för att ansluta till den stabila diffusionsmodellen. Två modeller kan användas: `runwayml/stable-diffusion-v1-5` och `stabilityai/stable-diffusion-2-1`.
+
+Välj "Hugging Face Inference API" för detta ändamål.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Ange ett namn för denna resurs och ange din token från Hugging Face-plattformen.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+I panelen Åtgärd konfiguration, ange Modell ID och Parameter. Vi kommer att hämta den valda modellen från radioGroup1, så fyll i modell-ID som `{{radioGroup1.value}}` . För inmatningen, eftersom den erhålls från inmatningsfältet, fyll i parametern som `{{input1.value}}`. Konfigurationen ska vara som visas i följande bild.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Vi försöker mata in "En mecha robot i en favela i expressionistisk stil" i `input`-komponenten och kör åtgärden. Det resulterande utförandet är som följer. Från den vänstra panelen kan du observera tillgängliga data som kan kallas, inklusive `base64binary` och `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Steg 3: Visar data på komponenter**
+
+För att visa bilden som erhållits från Steg 2 modifierar vi bildkällan för bildkomponenten till `{{generateInput.fileData.dataURI}}`. Detta gör det möjligt för oss att visa den genererade bilden.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Steg 4: Kör åtgärden med komponenter**
+
+För att köra åtgärden som skapas i steg 2 när knappkomponenten klickas, lägg till en händelsehanterare till knappkomponenten.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Steg 5: Testar**
+
+Efter de tidigare fyra stegen kan du använda ytterligare komponenter och datakällor för att slutföra andra uppgifter och bygga ett mer omfattande verktyg. Till exempel kan du använda andra modeller för att hjälpa till med att generera prompter eller lagra uppmaningar i localStorage eller en databas. Vi tittar på det fullständiga resultatet när alla steg genomförs.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nu kan du leka med det! Prova andra banbrytande modeller som tillhandahålls av Hugging face genom detta API. Det finns mer att utforska, såsom stabil diffusion anime modeller nedladdning, utbildning en artist stil, sampling metod för realistiska bilder. Du kan göra mycket mer!

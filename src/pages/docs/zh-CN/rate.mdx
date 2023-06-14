@@ -1,9 +1,9 @@
 ---
-title: 速率
-metaTitle: 给组件文件评分 | ILLA 云
+title: 评分
+metaTitle: 给组件文件评分 | ILLA Cloud
 desc: 学习如何在ILLA Cloud中使用比率组件来创建和自定义你的应用的比率值。
 tagCategory: doc_menu_rate_click
-crowdinRepo: https://crowdin.com/multilal/illacloud-website/393?languages=en&filter=basic&value=0
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/393?languages=zhcn&filter=basic&value=0
 categoryName: 🧬 组装组件
 categoryPriority: 6
 postPriority: 1
@@ -11,7 +11,7 @@ postPriority: 1
 
 ## <h2 hidden>什么是评分？</h2>
 
-ILLA 云中的速率组件是一个强大的工具，用户可以将评分功能添加到他们的应用中。 带有率组件。 用户可以显示一组恒星或任何其他自定义符号，并允许用户给某个项目评级或提供反馈。
+ILLA Cloud中的评分组件是一个强大的工具，用户可以将评分功能添加到他们的应用中。 带有率组件。 用户可以显示一组恒星或任何其他自定义符号，并允许用户给某个项目评级或提供反馈。 带有率组件。 用户可以显示一组恒星或任何其他自定义符号，并允许用户给某个项目评级或提供反馈。
 
 ### 属性
 
@@ -29,17 +29,17 @@ ILLA 云中的速率组件是一个强大的工具，用户可以将评分功能
 | 对齐                      | 设置标签的对齐(对齐到左或右)                                                                                                                                     |
 | Width                   | 当标签位于组件左侧时，设置标签的宽度。                                                                                                                                 |
 | 事件处理程序                  | 响应组件事件触发查询、控制组件或调用其他API。                                                                                                                            |
-| 已禁用                     | 控制组件是否被禁用的状态。 当组件被禁用时，它不能被修改或聚焦。                                                                                                                    |
+| 已禁用                     | 控制组件是否为只读状态. 一个只读组件可以被选择和集中，但不能被修改。                                                                                                                 |
 | 只读                      | 控制组件是否为只读状态. 一个只读组件可以被选择和集中，但不能被修改。                                                                                                                 |
 | 工具提示                    | 用户可以在此输入组件工具提示。 工具提示将在其焦点时显示。 支持Markdown 格式。                                                                                                        |
 | 必填字段                    | 只有当开启开关时才有效。                                                                                                                                        |
-| 自定义规则                   | 在此创建您的验证逻辑。 规则应该在 JavaScript 中制定，并且由 {{}} 涵盖。                                                                                                       |
-| 隐藏验证消息                  | 当输入值不正确时，您可以通过切换隐藏状态来隐藏错误消息。 您可以用JavaScript动态地更改隐藏状态。                                                                                               |
-| Hidden                  | 动态控制组件是否隐藏。 您可以通过动态布尔值更改隐藏状态。                                                                                                                       |
+| 自定义规则                   | 在此创建您的验证逻辑。 在此创建您的验证逻辑。 规则应该在 JavaScript 中制定，并且由 {{}} 涵盖。                                                                                           |
+| 隐藏验证消息                  | 当输入值不正确时，您可以通过切换隐藏状态来隐藏错误消息。 您可以用JavaScript动态地更改隐藏状态。 您可以用JavaScript动态地更改隐藏状态。                                                                      |
+| Hidden                  | 动态控制组件是否隐藏。 您可以通过动态布尔值更改隐藏状态。 您可以通过动态布尔值更改隐藏状态。                                                                                                     |
 
 ### 方法
 
-您可以使用其他组件来控制组件。 我们支持以下两种方法：
+您可以使用其他组件来控制组件。 我们支持以下两种方法： 我们支持以下两种方法：
 
 -   **setValue** 值
 
@@ -99,39 +99,39 @@ ILLA 云中的速率组件是一个强大的工具，用户可以将评分功能
 
 #### 步骤 1 添加动作
 
-让我们在Amazon S3中创建一个表。 其中一个文件称为:
+让我们在Amazon S3中创建一个表。 其中一个文件称为: 其中一个文件称为:
 
-数字为“1.txt”，数字为“3.5”。 这是我们想要以比率值显示的值。
+数字为“1.txt”，数字为“3.5”。 这是我们想要以比率值显示的值。 这是我们想要以比率值显示的值。
 
-！[s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 然后我们可以从动作列表中为Amazon S3创建一个新的动作，列出桶中的所有数据并命名为s31。
 
-选择 `**Action Type**` 的`读取对象'。 放置`1.txt`为`\*\*对象键\`。\*\*
+选择 `**Action Type**` 的`读取对象'。 放置`1.txt`为`\*\*对象键\`。\*\* 放置`1.txt`为`**对象键`。\*\*
 
-点击 **\`保存** 和 **`Run`** 激活此操作。
+点击 **\`保存** 和 **`运行`** 激活此操作。
 
-！[rate_data](https://cdn.illacloud.com/official-website/img/official-site/components/rate_data.jpg)
+![rate_data](https://cdn.illacloud.com/official-website/img/official-site/components/rate_data.jpg)
 
 #### 步骤 2 添加组件
 
-接下来，我们可以在画布中添加一个 **`rate` ** 组件和 **`buton` **。
+接下来，我们可以在画布中添加一个 **`rate` ** 组件和 **`按钮` **。
 
 我们将比率组件的默认值设置为 0。 将其标为“评分”，并将按钮标为“设置值”，如下所示：
 
-！[rate_layout](https://cdn.illacloud.com/official-website/img/official-site/components/rate_layout.jpg)
+![rate_layout](https://cdn.illacloud.com/official-website/img/official-site/components/rate_layout.jpg)
 
 #### 步骤 3 配置组件
 
-**`buton`** 组件. 我们可以配置它来设置我们从 s31 api 读取的文档数据的 \*\*`rate` 组件中的值。
+**`按钮`** 组件. 我们可以配置它来设置我们从 s31 api 读取的文档数据的 \*\*`rate` 组件中的值。
 
 1.  在编辑事件处理器中，选择 **`Control component` ** 正在执行中。 并选择你想要更新的 **`rate` **组件作为事件的目标。
 2.  选择 **`setValue`** 动作并设为 `{{s31.data}}`
 
-！[rate_config](https://cdn.illacloud.com/official-website/img/official-site/components/rate_config.jpg)
+![rate_config](https://cdn.illacloud.com/official-website/img/official-site/components/rate_config.jpg)
 
 #### 步骤4 测试
 
 现在当您点击“设置值”按钮时，值应该更改为111。
 
-！[rate_test](https://cdn.illacloud.com/official-website/img/official-site/components/rate_test.jpg)
+![rate_test](https://cdn.illacloud.com/official-website/img/official-site/components/rate_test.jpg)

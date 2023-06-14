@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugl-Face API</h2>
 
 Hugging Face is de Github of the machine learning community, met honderdduizenden vooropgeleide modellen en 10.000 datasets momenteel beschikbaar. Je kunt gratis toegang krijgen tot modellen en datasets die worden gedeeld door andere deskundigen uit de industrie of host en installeer je modellen op Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder biedt tientallen vaak gebruikte front-end componenten waarmee je sn
 
 # Hoe gebruik je Hugging Face in ILLA Builder
 
+## Usecase 1
+
 ### Stap 1: Bouw de UI met componenten op ILLA Bouwer
 
-Gebaseerd op het verwachte gebruiksscenario dat u hebt beschreven, bouw een front-end interface. U kunt bijvoorbeeld invoer- en afbeeldingsonderdelen gebruiken als uw product tekst neemt en een afbeelding uitvoert. Als uw product tekst en outputs gegenereerde tekst opneemt, kunt u input en tekstcomponenten gebruiken.
+Hier zullen we laten zien hoe we een eenvoudige tekst kunnen maken die tekstprompt en een tekstvraag invoert om een tekstantwoord uit te geven. 
 
-De volgende afbeelding is een voorbeeld van een front-end pagina voor een product dat vragen beantwoordt op basis van context.
+U heeft twee tekstonderdelen nodig die als "Voer de oorspronkelijke tekst in" en "Voer de vraag hier in", en knop-component gelabeld als "Run", en een component in het tekstgebied gelabeld als "Enwer" voor uitvoertekst. De volgende afbeelding is een voorbeeld zoals hierboven beschreven.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Stap 2: Maak een Hugging Face Resource en configureer de Acties
 
 Klik + Nieuw in de actielijst en selecteer Hugging Face Inference API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Vul het formulier in om verbinding te maken met je Hugging face:
 
@@ -66,7 +66,7 @@ Naam: De naam die zal worden weergegeven in ILLA
 
 Token: Ga in je Hugging Face [profielinstellingen](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Bevestig de modelinformatie in Hugging Face voordat u de acties configureert:
 
@@ -74,17 +74,17 @@ Selecteer een model in [Hugging Face Model Pagina](https://huggingface.co/models
 
 Laten we [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) als voorbeeld gebruiken. Voer de detailpagina in > klik Deploy > Klik Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 De parameters na `inputs` is wat je moet invullen in ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 In ILLA Builder moeten we het model-ID en -parameter invullen. Neem het bovenstaande model als voorbeeld, de `inputs` is een sleutelwaarde pair, zodat we het kunnen vullen met sleutelwaarde of JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 En we ondersteunen ook de tekstinvoer en binaire input die kan voldoen aan alle Hugging Face Inference API-verbindingen.
 
@@ -101,14 +101,64 @@ Om de front-end invoer van de gebruiker te doorlopen naar de API, kun je {{ gebr
 
 Voordat de uitvoergegevens van de actie in het front-end onderdeel worden weergegeven, moeten we bevestigen in welk veld de output van verschillende modellen is geplaatst. Neem nog steeds `deepset/roberta-base-squad2` als voorbeeld, de resultaten zijn als volgt:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Dus, we kunnen het antwoord krijgen met `{{ textQuestion.data[0].answer }}`(de `textQuestion` is de naam van de actie). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Hier zullen we laten zien hoe we het Stable diffusion model doorheen de Hugging Face API in Illa Cloud kunnen gebruiken.
+
+**Stap 1: Bouw een front-end interface**
+
+We maken een front-end interface door een slep-and-drop benadering te gebruiken voor het plaatsen van essentiële onderdelen zoals invoervelden, knoppen, afbeeldingen en meer. Na het aanpassen van de stijlen van de componenten, krijgen we de volgende volledige webpagina.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Stap 2: Hulpmiddelen en acties maken**
+
+We creëren middelen en acties door de Hugging Face API te gebruiken om verbinding te maken met het Stable Diffusion model. Twee modellen kunnen worden gebruikt: `runwayml/stable-diffusion-v1-5` en `stabilityai/stable-diffusion-2-1`.
+
+Kies de "Hugende Face Inference API" voor dit doel.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Geef een naam op voor deze bron en voer je token in van het Hugging gezichtsplatform.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+Voer in het Actieconfiguratiescherm het model-ID en -parameter in. We halen het geselecteerde model van radiogroep op, dus vul het Model-ID in als '{{radioGroup1.value}}'. Voor de invoer, omdat het wordt verkregen uit het invoerveld, vul de parameter in als `{{input1.value}}`. De configuratie moet zoals getoond worden in de volgende afbeelding.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+We proberen "Een mecha robot in een favelistische stijl" in het onderdeel "invoer" in te voeren en de actie uit te voeren. De uiteindelijke uitvoering is als volgt. Vanuit het linker paneel kun je de beschikbare gegevens observeren die kunnen worden opgeroepen, inclusief `base64binary` en `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Stap 3: Toon Data op Components**
+
+Om de in Stap 2 verkregen afbeelding weer te geven, wijzigen we de bron van de afbeelding in{{generateInput.fileData.dataURI}}\`. Dit stelt ons in staat om de gegenereerde afbeelding te tonen.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Stap 4: De actie met Componenten uitvoeren**
+
+Om de actie uit te voeren die in Stap 2 is gemaakt wanneer op het knopcomponent wordt geklikt, voeg je een event-handler toe aan het knopcomponent.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Stap 5: Testen**
+
+Na de vorige vier stappen, kunt u extra componenten en gegevensbronnen gebruiken om andere taken te voltooien en een uitgebreider gereedschap te bouwen. U kunt bijvoorbeeld andere modellen gebruiken om te helpen bij het genereren van prompts of het opslaan van aanwijzingen in localStorage of een database. Laten we kijken naar de volledige uitkomst wanneer alle stappen worden uitgevoerd.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nu mag je er wel mee spelen! Probeer andere geavanceerde modellen die worden geleverd door Hugging met het gezicht via deze API. Er zijn meer te verkennen, zoals stabiele diffusie anime modellen downloaden, een kunstenaarstijl, sampling methode voor realistische beelden. Je kunt veel meer doen!

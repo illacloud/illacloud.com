@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Face API</h2>
 
 Hugging Face je Github z komunity strojového učení se statisíce předškolených modelů a 10 000 datových souborů, které jsou v současné době k dispozici. Můžete volně přistupovat k modelům a datovým souborům, které sdílejí ostatní odborníci z oboru nebo hostovat a nasazovat své modely na Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder poskytuje desítky běžně používaných front-end komponentů, d
 
 # Jak používat hugging Face v ILLA Builder
 
+## Usecase 1
+
 ### Krok 1: Sestavit UI se komponenty na Editoru ILLA
 
-Na základě očekávaného scénáře používání, který jste popsali, vytvořte front-end rozhraní. Například můžete použít vstupní údaje a komponenty obrázku, pokud váš produkt převezme text a výstupy obrázku. Pokud váš produkt převezme text generovaný textem a výstupy, můžete použít vstupní a textové komponenty.
+Zde ukážeme, jak vytvořit jednoduchý text, který vloží text pohotově a textovou otázku k vyplnění textové odpovědi. 
 
-Následující obrázek je ukázkou front-end stránky pro produkt, který odpovídá na otázky založené na kontextu.
+Potřebujete dvě textarea komponenty označené jako "Zadejte původní text" a "Vložte otázku zde", a komponenta tlačítka označená jako "Spustit" a komponenta textové oblasti označená jako "Anwer" pro výstupní text. Následující obrázek je příkladem, jak je popsáno výše.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Krok 2: Vytvořte zdroj obličeje a nastavte akci
 
 Klikněte + Nový v seznamu akcí a vyberte API pro odstranění závady.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Vyplňte formulář pro připojení k vaší Hugging Face:
 
@@ -66,7 +66,7 @@ Jméno: jméno, které bude zobrazeno v ILLA
 
 Token: Získejte si hugging Face [nastavení profilu](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Potvrďte informace o modelu v Hugging Face před nastavením akcí:
 
@@ -74,17 +74,17 @@ Vyberte model v [Hugging Face Model Page](https://huggingface.co/models)
 
 Použijme jako příklad [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2). Zadejte stránku podrobností > klikněte na Deploy > Click Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametry za `“inputs”` jsou tím, co byste měli vyplnit ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 V Editoru ILLA bychom měli vyplnit ID modelu a parametr. Vezměte výše uvedený model jako příklad "inputs"" je pár hodnot klíčů, takže jej můžeme vyplnit klíčovou hodnotou nebo JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 A také podporujeme textové vstupy a binární vstupy, které mohou splňovat všechna připojení API Hugging Face Inference.
 
@@ -101,14 +101,64 @@ Chcete-li předat přední vstup uživatele do API, můžete použít {{ pro na�
 
 Před zobrazením výstupních dat akce v přední složce bychom měli potvrdit, do kterého pole jsou umístěny výstupy různých modelů. Stále si jako příklad bereme `hluboké/roberta-base-squad2` výsledky jsou následující:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Takže odpověď můžeme získat pomocí `{{ textQuestion.data[0].answer }}`(`textQuestion` je název akce). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Zde ukážeme, jak používat model Stable diffusion thorugh Hugging Face API v Illa Cloud.
+
+**Krok 1: Vybudování čelního rozhraní**
+
+Vytváříme přední rozhraní pomocí taženého přístupu k umístění základních komponentů, jako jsou vstupní pole, tlačítka, obrázky a další. Po úpravě stylů komponent získáme následující kompletní webovou stránku.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Krok 2: Vytváření zdrojů a akcí**
+
+Prostředky a akce vytváříme pomocí API Hugging Face pro připojení ke Stable Diffusion modelu. Lze použít dva modely: `runwayml/stable-diffusion-v1-5` a `stabilityai/stable-diffusion-2-1`.
+
+Vyberte "Hugging Face Inference API" pro tento účel.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Zadejte název tohoto zdroje a zadejte token z platformy pro hugingovou tvář.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+V panelu Nastavení akce zadejte ID a parametr modelu. Vybraný model získáme z radioGroup1, takže vyplňte ID modelu jako `{{radioGroup1.value}}` . Pro vstup, protože je získán ze vstupního pole, vyplňte parametr jako `{{input1.value}}`. Konfigurace by měla být uvedena v následujícím obrázku.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Snažíme se vložit "mecha robot ve favela v expresionistickém stylu" do komponenty `input` a spustit akci. Výsledný výkon je následující. Z levého panelu můžete vidět dostupná data, která lze volat, včetně `base64binary` a `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Krok 3: Zobrazení dat na komponentách**
+
+Pro zobrazení obrázku získaného z kroku 2 upravujeme zdroj obrazu komponenty na `{{generateInput.fileData.dataURI}}`. To nám umožní zobrazit vygenerovaný obrázek.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Krok 4: Spuštění akce s komponenty**
+
+Chcete-li spustit akci vytvořenou v kroku 2 po kliknutí na komponentu, přidejte do komponenty tlačítka ovladač událostí.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Krok 5: Testování**
+
+Po předchozích čtyřech krocích můžete využít další komponenty a zdroje dat k dokončení dalších úkolů a vytvoření komplexnějšího nástroje. Například můžete použít jiné modely, abyste pomohli generovat výzvy nebo uložit výzvy v localStorage nebo v databázi. Podívejme se na úplný výsledek, až budou realizovány všechny kroky.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nyní s tím můžete hrát! Vyzkoušejte další špičkové modely, které poskytuje Hugging face skrz toto API. Existuje více k prozkoumání, jako je stažení stabilních difúzních animovaných modelů, trénink umělce, metoda odběru vzorků pro realistické obrázky. Můžete udělat mnohem víc!

@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Ansikt API</h2>
 
 Hugging ansikt er Github fra maskinens læringssamfunn, med hundretusener av forhåndsutdannede modeller og 10 000 datasett som for tiden er tilgjengelig. Du kan fritt få tilgang til modeller og datasett som andre industrieksperter eller -verter, og bruke modellene dine på Håpeing-Face.
@@ -46,19 +44,21 @@ ILLA-bygger gir dusinvis av vanlig brukte komponenter, slik at du kan bygge fors
 
 # Hvordan du bruker Hugging Ansikt i ILLA Builder
 
+## Usecase 1
+
 ### Trinn 1: Bygg UI med komponenter på ILLA-bygger
 
-Basert på det forventede bruksscenarioet du beskrevet, bygg et grensegrensesnitt. For eksempel kan du bruke inndata og bildekomponenter hvis produktet ditt tar inn tekst og skrive ut et bilde. Hvis produktet ditt tar i tekst og utdata generert tekst, kan du bruke inndata og tekstkomponenter.
+Her skal vi vise hvordan vi bygger en enkel tekst som setter inn tekst ledetekst og tekstspørsmål å skrive inn et tekstsvar. 
 
-Følgende bilde er et eksempel på en frontendeside for et produkt som svarer på spørsmål basert på kontekst.
+Du trenger to tekstområder merket som "Skriv inn den originale teksten" og "Skriv inn spørsmålet her", og knappen komponent er merket som "Kjør" og en tekstkomponent merket som "Anwer" for utdatatekst. Følgende bilde er et eksempel som beskrevet ovenfor.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Trinn 2: Opprett en Hugging Ansikts-ressurs og config handlingene
 
 Klikk + Ny i handlingslisten og velg Hugging Ansiktsinnhøst API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Fyll ut skjemaet for å koble til ditt Hugging Face:
 
@@ -66,7 +66,7 @@ Navn: Navnet som skal vises i ILLA
 
 Token: Få deg i dine Hugging Face [profilinnstillinger](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Bekreft modellinformasjonen i Hugging Face før du konfigurerer handlingene:
 
@@ -74,17 +74,17 @@ Velg en modell i [Hugging Face Model Page](https://huggingface.co/models)
 
 La oss bruke [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) som eksempel. Skriv inn detaljsiden > klikk deploy > Click Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parameterne etter «inputs» er hva du skal fylle inn i ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 I ILLA-byggeren skal vi fylle ut Model ID og Parameter. Ved å ta ovennevnte modell som et eksempel, er 'inputs'' et nøkkelverdipar, så vi kan fylle inn med nøkkelverdi eller JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Og vi støtter også tekstinngangen og binært inndata som kan møte alle Hugging Face Inference API tilkoblinger.
 
@@ -101,14 +101,64 @@ For å sende brukerens front-end inndata til API, kan du bruke {{ for å hente d
 
 Før det vises data fra handlingen i frontendens komponent bør vi bekrefte hvilket felt utdata av ulike modeller som er plassert i. Fortsatt å ta `dypset/roberta-base-squad2` som et eksempel, er resultatene som følger:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Så vi kan få svaret med `{{ textQuestion.data[0].answer }}`(`textQuestion` er navnet på handlingen). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demonstrasjon
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Her vil vi vise hvordan vi kan bruke Stable diffusjonsmodellen thorugh the Hugging Face API i Illa Cloud.
+
+**Trinn 1: Bygge ett grensesnitt (Front-end grensesnitt**
+
+Vi lager et frontend-grensesnitt ved å benytte dra-og-slipp-tilnærming for å plassere viktige komponenter som for eksempel inputfelt, knapper, bilder og mer. Etter justering av komponentenes stiler, får vi frem følgende fullstendige nettside.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Trinn 2: Opprette ressurser og handlinger**
+
+Vi oppretter ressurser og handlinger ved å benytte Hugging Face Inference API for å koble seg til Stable Diffusion modellen. To modeller kan benyttes: `rulwayml/stable-diffusion-v1-5` og `stabilityai/stable-diffusion-2-1`.
+
+Velg "Hugging Inference API" til dette formålet.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Oppgi et navn for denne ressursen og skriv inn ditt token fra Hugging Face platform.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+I konfigurasjonsfeltet for handlinger, skriv inn modell ID og Parameter. Vi vil hente den valgte modellen fra radiogruppen, så fyll ut Model ID som `{{radioGroup1.value}}. For input, siden det er hentet fra inntastingsfeltet, fyll inn parameteret som `{{input1.value}}. Konfigurasjonen skal være som vist i følgende bilde.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Vi prøver å skrive "En folk-robot i en favela i uttrykkslisten i "input"-komponenten og kjøre handlingen. Den resulterende utførelsen er som følger: Fra venstre side kan du observere tilgjengelige data som kan kalles, inkludert `base64binary` og `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+\*\*Trinn 3: Vis data for komponenter
+
+For å vise bildet hentet fra trinn 2, endrer vi bildekilden til komponenten bilde til `{{generateInput.fileData.dataURI}}`. Dette vil aktivere oss å vise det genererte bildet.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+\*\*Trinn 4: Kjør handlingen med komponenter
+
+For å kjøre handlingen opprettet i trinn 2 når knappkomponenten klikkes, legg til en hendelsesbehandler til knappkomponenten.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Trinn 5: Testing**
+
+Etter de fire forrige trinnene kan du bruke flere komponenter og datakilder for å fullføre andre oppgaver og bygge et mer omfattende verktøy. For eksempel kan du bruke andre modeller til å generere ledetekster eller lagre ledetekster i lokallagring eller en database. La oss ta en titt på hele resultatet når alle trinnene er implementert.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nå kan du spille med den! Prøv andre banemodeller som får Hugging face gjennom denne API-en. Det er mer å utforske, slik som stabile diffusjonsanimasjonsmodeller nedlasting, trener kunstnerstil, prøvetakingsmetode for realistiske bilder. Du kan gjøre mye mer!

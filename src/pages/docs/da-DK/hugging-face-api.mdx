@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hugging Face API</h2>
 
 Hugging Face er Github af machine learning samfund, med hundredtusindvis af præ-uddannede modeller og 10.000 datasæt i øjeblikket tilgængelige. Du kan frit få adgang til modeller og datasæt, der deles af andre brancheeksperter eller værter og implementere dine modeller på Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder giver snesevis af almindeligt anvendte front-end komponenter, så d
 
 # Sådan bruger du Hugging Face i ILLA Builder
 
+## Usecase 1
+
 ### Trin 1: Byg brugerflade med komponenter på ILLA Builder
 
-Baseret på den forventede brug scenarie du beskrev, opbygge en front-end interface. For eksempel kan du bruge input- og billedkomponenter, hvis dit produkt tager i tekst og udsender et billede. Hvis dit produkt tager i tekst og output genereret tekst, kan du bruge input og tekst komponenter.
+Her vil vi vise, hvordan man bygger en simpel tekst, der input tekst prompt og et tekstspørgsmål til at udsende et tekstsvar. 
 
-Følgende billede er et eksempel på en front-end side for et produkt, der besvarer spørgsmål baseret på kontekst.
+Du skal bruge to textarea komponenter mærket som "Indtast den oprindelige tekst" og "Indtast spørgsmålet her", og knap komponent mærket som "Kør", og en tekst område komponent mærket som "Anwer" for output tekst. Følgende billede er et eksempel som beskrevet ovenfor.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Trin 2: Opret en Hugging Ansigt ressource og config handlingerne
 
 Klik + Nyt i handlingslisten og vælg Hugging Ansigt Inferens API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Udfyld formularen for at forbinde til din Hugging Face:
 
@@ -66,7 +66,7 @@ Navn: Det navn, der vil blive vist i ILLA
 
 Token: Kom i din Hugging Ansigt [profilindstillinger](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Bekræft modeloplysningerne i Hugging Face før du konfigurerer handlingerne:
 
@@ -74,17 +74,17 @@ Vælg en model på [Hugging Face Model Page](https://huggingface.co/models)
 
 Lad os bruge [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) som eksempel. Indtast detalje siden > klik Deploy > Klik Inferens API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametrene efter `“inputs”` er, hvad du skal udfylde ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 I ILLA Builder, skal vi udfylde Model ID og Parameter. Med ovenstående model som eksempel er ''inputs'' et nøgleværdipar, så vi kan udfylde det med nøgleværdi eller JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Og vi understøtter også tekstinput og binære input, som kan opfylde alle Hugging Face Inferens API-forbindelser.
 
@@ -101,14 +101,64 @@ For at overføre brugerens front-end input til API, kan du bruge {{ til at hente
 
 Før handlingens output data vises i front-end komponenten, bør vi bekræfte, hvilket felt output forskellige modeller er placeret i. Stadig tager `deepset/roberta-base-squad2` som et eksempel, resultaterne er som følger:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Så vi kan få svaret med `{{ textQuestion.data[0].answer }}`(`textQuestion` er navnet på handlingen). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Her vil vi vise, hvordan man bruger den stabile diffusion model thorugh Hugging Face API i Illa Cloud.
+
+**Trin 1: Opbygning af front-end grænseflade**
+
+Vi konstruere en front-end interface ved at udnytte en træk-og-slip-tilgang til at placere væsentlige komponenter såsom input felter, knapper, billeder og meget mere. Efter justering af stilarter af komponenterne, får vi følgende komplette webside.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Trin 2: Oprettelse af ressourcer og handlinger**
+
+Vi etablerer ressourcer og handlinger ved at udnytte Hugging Face Inference API til at oprette forbindelse til den stabile diffusion model. To modeller kan benyttes: `runwayml/stable-diffusion-v1-5` og `stabilityai/stable-diffusion-2-1`.
+
+Vælg "Hugging Face Inference API" til dette formål.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Angiv et navn for denne ressource og indtast dit token fra Hugging Ansigtsplatformen.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+I indstillingspanelet Handling, angiv venligst model-ID og parameter. Vi vil hente den valgte model fra radioGroup1, så udfyld Model ID som `{{radioGroup1.value}}` . For input, da det er opnået fra input feltet, udfyld parameteren som `{{input1.value}}`. Konfigurationen skal være som vist i følgende billede.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Vi forsøger at indtaste "En mecha robot i en favela i ekspressionistisk stil" i 'input'-komponenten og køre handlingen. Den resulterende udførelse er som følger. Fra venstre panel, kan du observere de tilgængelige data, der kan kaldes, herunder `base64binary` og `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Trin 3: Viser data om komponenter**
+
+For at vise billedet fra trin 2 ændrer vi billedkomponentens billedkilde til `{{generateInput.fileData.dataURI}}`. Dette vil gøre det muligt for os at vise det genererede billede.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Trin 4: Løb handlingen med komponenter**
+
+For at køre den handling, der er oprettet i trin 2, når der klikkes på knapkomponenten, skal du tilføje en hændelseshandler til knapkomponenten.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Trin 5: Test**
+
+Efter de foregående fire trin, kan du bruge yderligere komponenter og datakilder til at fuldføre andre opgaver og opbygge et mere omfattende værktøj. For eksempel kan du bruge andre modeller til at hjælpe med at generere prompter eller gemme prompter i localStorage eller en database. Lad os tage et kig på det komplette resultat, når alle trin er gennemført.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nu kan du lege med det! Prøv andre banebrydende modeller, der leveres af Hugging ansigt gennem denne API. Der er mere at udforske, såsom stabil diffusion anime modeller downloade, træne en kunstner stil, prøvetagning metode til realistiske billeder. Du kan gøre meget mere!

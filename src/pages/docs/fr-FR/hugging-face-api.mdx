@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>API Face câlinage</h2>
 
 Hugging Face est le Github de la communauté d'apprentissage automatique, avec des centaines de milliers de modèles pré-formés et 10 000 jeux de données actuellement disponibles. Vous pouvez accéder librement à des modèles et des jeux de données partagés par d'autres experts de l'industrie ou héberger et déployer vos modèles sur Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder fournit des douzaines de composants front-end couramment utilisés,
 
 # Comment utiliser la face d'embrochage dans le constructeur ILLA
 
+## Usecase 1
+
 ### Étape 1 : Construire l'interface utilisateur avec des composants sur le constructeur ILLA
 
-Basé sur le scénario d'utilisation que vous avez décrit, construisez une interface frontale. Par exemple, vous pouvez utiliser des éléments d'entrée et d'image si votre produit prend du texte et envoie une image. Si votre produit prend du texte et des résultats générés, vous pouvez utiliser des composants de texte et de texte.
+Ici, nous allons montrer comment construire un texte simple qui saisit l'invite de texte et une question de texte pour afficher une réponse texte. 
 
-L'image suivante est un exemple de page d'accueil pour un produit qui répond à des questions basées sur le contexte.
+Vous avez besoin de deux composants textarea étiquetés comme "Entrez le texte original" et "Entrez la question ici", et le composant bouton étiquetés comme "Démarrer", et un composant de zone de texte étiqueté comme "Anwer" pour le texte de sortie. L'image suivante est un exemple comme décrit ci-dessus.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Étape 2 : Créer une ressource de face d'embrochage et configurer les actions
 
 Cliquez sur + Nouveau dans la liste d’actions et sélectionnez l’API d’Inférence de Visage.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Remplissez le formulaire pour vous connecter à votre Face:
 
@@ -66,7 +66,7 @@ Nom : Le nom qui sera affiché dans ILLA
 
 Token: Rendez-vous dans vos [paramètres de profil](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Confirmez les informations du modèle dans la face d'accrochage avant de configurer les actions :
 
@@ -74,17 +74,17 @@ Sélectionnez un modèle dans la \[page du modèle de visage Huggingface.co/mode
 
 Utilisons [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) comme exemple. Entrez la page de détail > cliquez sur Déployer > Cliquez sur Inférence API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Les paramètres après `“entrées”` sont ce que vous devez remplir en ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 Dans ILLA Builder, nous devons remplir l'ID du modèle et le paramètre. En prenant le modèle ci-dessus comme exemple, le `“inputs”` est une paire clé-valeur, donc nous pouvons le remplir avec clé-valeur ou JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Et nous prenons également en charge l'entrée de texte et l'entrée binaire qui peut répondre à toutes les connexions de l'API d'Inférence de Face Hugging.
 
@@ -101,14 +101,64 @@ Pour passer l'entrée front-end de l'utilisateur à l'API, vous pouvez utiliser 
 
 Avant d'afficher les données de sortie de l'Action dans le composant frontal, nous devons confirmer dans quel champ la sortie des différents modèles est placée. Toujours en prenant comme exemple `deepset/roberta-base-squad2`, les résultats sont les suivants:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Donc nous pouvons obtenir la réponse avec `{{ textQuestion.data[0].answer }}`(la `textQuestion` est le nom de l'action). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Démo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Ici, nous allons montrer comment utiliser le modèle de diffusion stable thorugh de l'API Hugging Face dans Illa Cloud.
+
+**Étape 1 : Construire une interface frontale**
+
+Nous construisons une interface frontale en utilisant une approche de glisser-déposer pour placer des composants essentiels tels que les champs d'entrée, les boutons, les images et plus encore. Après avoir ajusté les styles des composants, nous obtenons la page Web complète suivante.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Étape 2: Création de ressources et d'actions**
+
+Nous établissons des ressources et des actions en utilisant l’API d’Inférence pour se connecter au modèle Stable Diffusion. Deux modèles peuvent être utilisés : `runwayml/stable-diffusion-v1-5` et `stabilityai/stable-diffusion-2-1`.
+
+Choisissez l'API "Accrochage des Inférences de Visage" à cet effet.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Indiquez un nom pour cette ressource et entrez votre jeton depuis la plate-forme de la face d'embouteillage.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+Dans le panneau de configuration de l'action, veuillez entrer l'ID du modèle et le paramètre. Nous allons récupérer le modèle sélectionné à partir de radioGroup1, alors remplissez l'ID du modèle en tant que `{{radioGroup1.value}}` . Pour l'entrée, puisqu'elle est obtenue à partir du champ d'entrée, remplissez le paramètre comme `{{input1.value}}`. La configuration devrait être comme indiqué dans l'image suivante.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Nous essayons de saisir "Un robot mecha dans un favela dans le style expressionniste" dans le composant `input` et de lancer l'Action. L'exécution qui en résulte est la suivante. À partir du panneau de gauche, vous pouvez observer les données disponibles qui peuvent être appelées, y compris `base64binary` et `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Étape 3: Affichage des données sur les composants**
+
+Pour afficher l'image obtenue à partir de l'étape 2, nous modifions la source d'image du composant d'image à `{{generateInput.fileData.dataURI}}`. Cela nous permettra de montrer l'image générée.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Étape 4: Exécuter l'action avec des composants**
+
+Pour exécuter l'action créée à l'étape 2 lorsque le composant de bouton est cliqué, ajoutez un gestionnaire d'événements au composant de bouton.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Étape 5 : Tester**
+
+En suivant les quatre étapes précédentes, vous pouvez utiliser des composants et des sources de données supplémentaires pour accomplir d'autres tâches et construire un outil plus complet. Par exemple, vous pouvez utiliser d'autres modèles pour vous aider à générer des requêtes ou stocker des requêtes dans localStorage ou une base de données. Examinons le résultat complet lorsque toutes les étapes sont mises en œuvre.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Maintenant vous pouvez jouer avec ça ! Essayez d'autres modèles de pointe qui sont fournis par Hugging face à travers cette API. Il y en a plus à explorer, comme les modèles d'anime de diffusion stable télécharger, la formation d'un style d'artiste, la méthode d'échantillonnage pour des images réalistes. Vous pouvez faire beaucoup plus !

@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Гортаючий API</h2>
 
 Підключення до Github цієї спільноти машинного навчання з сотні тисяч дотренованих моделей і 10 000 знайомств на даний момент доступні в даний час. Ви можете вільно отримати доступ до моделей та даних спільно з іншими фахівцями з галузі або хостом і розгорнути свої моделі на Hugging Face.
@@ -46,19 +44,21 @@ ILLA Builder надає десятки часто використовувани
 
 # Як використовувати обличчя Hugging в ILLA Builder
 
+## Usecase 1
+
 ### Крок 1: Побудуйте інтерфейс з компонентами на конструкторі ILLA
 
-На основі очікуваного використання ви описали, побудувати інтерфейс переднього кінця. Наприклад, ви можете використовувати компоненти вводу і зображень, якщо ваш продукт приймає в текст і виводить зображення. Якщо ваш товар бере на себе текст і виводиться текст, ви можете використовувати вхідні і текстові компоненти.
+Тут ми продемонструємо, як створити простий текст, який вводиться текст і текстове питання для виводу текстової відповіді. 
 
-Наступне зображення є прикладом головної сторінки товару для відповідей, що базується на контексті.
+Вам потрібні два текстові компоненти, позначені як "Введіть оригінальний текст" та "Введи це питання тут", компонент, позначений як "Запустити", і компонент текстової області, позначений як "Anwer" для виведення тексту. Наступне зображення є прикладом як описано вище.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Крок 2: Створіть горючий ресурс і налаштуйте дії
 
 Натисніть + Нову з переліку дій та виберіть API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Заповніть форму для підключення до вашого Hugging Face:
 
@@ -66,7 +66,7 @@ ILLA Builder надає десятки часто використовувани
 
 Токен: Взяти собі (что налаштування профілю] (https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Підтвердіть інформацію про модель в Hugging Face перед налаштуванням дій:
 
@@ -74,17 +74,17 @@ ILLA Builder надає десятки часто використовувани
 
 Скористаймося [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) в прикладі. Введіть детальну сторінку > клікніть Розгортання > Натисніть кнопку API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Параметри після `“введення”` - це те, що ви повинні заповнити в ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 В ILLA Builder, ми повинні заповнити ID та параметр моделі. Візьмемо вищевказану модель як приклад, "вхідні дані" - це пара ключ-значення, щоб ми могли заповнити її ключовим значенням або JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 І ми також підтримуємо введення тексту і бінарний вхідний текст, який може задовольнити всі API-з'єднання, що приймають мишку.
 
@@ -101,14 +101,64 @@ ILLA Builder надає десятки часто використовувани
 
 Перед відображенням даних вихідної дії в зовнішньому компоненті, ми повинні підтвердити, які поля виході різних моделей розміщені. Все ще беручи до уваги "deepset/roberta-base-squad2" як приклад, результати є наступними:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Таким чином, ми можемо отримати відповідь за допомогою{{ textQuestion.data[0].answer }}`(`textQuestion\` - це назва дії). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Демо
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Тут ми продемонструємо, як використовувати модель дифузії стабільної поширення через API Hugging Face в Illa Cloud.
+
+**Крок 1: Створення інтерфейсу фронт-енду**
+
+Ми створюємо інтерфейс фронт-енду, використовуючи підхід перетягування, щоб розмістити необхідні компоненти, такі як вхідні поля, кнопки, зображення та інші. Після коригування стилів компонентів, ми отримуємо наступну повну веб-сторінку.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Крок 2: Створення ресурсів та дій**
+
+Ми встановлюємо ресурси та дії, використовуючи API налаштування облич для підключення до моделі стабільної дифузії. Можна використовувати дві моделі: `runwayml/stable-diffusion-v1-5` та `stability/stable-diffusion-2-1`.
+
+Оберіть "Hugging Face Inference API" для цієї мети.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Вкажіть ім'я для цього ресурсу та введіть свій токен з платформи плескання «Необійм».
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+У панелі Налаштування дій, будь ласка, введіть ID моделі та параметр. We will retrieve the selected model from radioGroup1, so fill in the Model ID as  `{{radioGroup1.value}}` . Для входу, оскільки він отримується з поля вводу, заповніть параметр{{input1.value}}\`. Конфігурацію має бути як показано на наступному зображенні.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Ми намагаємося ввести робота "Меча у фавели у стилі експресіоністів" в компоненті "Вхідні", і запустити Дію. Отримане виконання виглядає наступним чином. З лівої панелі ви можете спостерігати за доступними даними, які можуть бути викликані, включаючи `base64binary` та `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Крок 3: Відображаються дані з компонентами**
+
+Для відображення зображення, отриманого з кроку 2, ми змінюємо джерело зображення компонента зображення до{{generateInput.fileData.dataURI}}\`. Це дозволить нам показати згенероване зображення.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Крок 4: Запуск дії з компонентами**
+
+Щоб запустити дію, створену у у Step 2 коли клацнули компонент кнопки, додайте обробник подій до компонента кнопки.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Крок 5: Тестування**
+
+Після попередніх чотирьох кроків, ви можете використовувати додаткові джерела компонентів і даних, щоб завершити інші завдання і побудувати більш комплексний інструмент. Наприклад, ви можете використовувати інші моделі для допомоги у формуванні запиту або зберігання повідомлень у локальній пам'яті або в базі даних. Давайте розглянемо повний результат, коли всі кроки будуть виконані.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Тепер ви можете гратися з ним! Спробуйте інші передові моделі, які надаються Hugging face через цей API. Існує більше можливостей для вивчення, такі як завантажуються стабільні моделі дифузії, тренування стилю художника, метод вибору реалістичних зображень. Ви можете зробити набагато більше!

@@ -9,9 +9,7 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
-## <h2 hidden>Hugging Face API</h2>
+## <h2 hidden>Interfejs API twarzy</h2>
 
 Ostre twarze to Github społeczności nauki maszyn, z setkami tysięcy wstępnie przeszkolonych modeli i 10 000 zbiorów danych. Możesz swobodnie uzyskać dostęp do modeli i zbiorów danych udostępnianych przez innych ekspertów branżowych lub hostów i wdrażać swoje modele na twarzy.
 
@@ -46,19 +44,21 @@ Kreator ILLA dostarcza dziesiątki powszechnie używanych komponentów front-end
 
 # Jak używać wycisk twarzy w budownictwie ILLA
 
+## Usecase 1
+
 ### Krok 1: Zbuduj interfejs użytkownika z komponentami na konstruktorze ILLA
 
-W oparciu o opisany przez Ciebie scenariusz użytkowania zbuduj interfejs front-end. Na przykład możesz użyć komponentów wejściowych i obrazów, jeśli produkt przyjmuje tekst i wyśle obraz. Jeśli Twój produkt przyjmuje wygenerowany tekst tekstowy i wynikowy, możesz użyć komponentów wejściowych i tekstowych.
+Tutaj pokażemy jak zbudować prosty tekst, który wpisuje tekst i pytanie tekstowe, aby uzyskać odpowiedź tekstową. 
 
-Poniższy obraz jest przykładem strony front-end dla produktu, który odpowiada na pytania oparte na kontekście.
+Potrzebujesz dwóch komponentów obszaru tekstowego oznaczonych jako "Wprowadź oryginalny tekst" i "Wprowadź pytanie tutaj", i element przycisku oznaczony jako "Uruchom", a element obszaru tekstowego oznaczony jako "Odpowiedź" dla tekstu wyjściowego. Poniższy obraz jest przykładem opisanym powyżej.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Krok 2: Utwórz Ostre Zasoby i skonfiguruj działania
 
 Kliknij + Nowe na liście akcji i wybierz API Ociosania Face Inference API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Wypełnij formularz, aby połączyć się z twoją twardą twarzy:
 
@@ -66,7 +66,7 @@ Nazwa: nazwa, która będzie wyświetlana w ILLA
 
 Token: Uzyskaj swoją twarz z [ustawieniami profilu](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Potwierdź informacje modelowe w twarzy przed skonfigurowaniem akcji:
 
@@ -74,17 +74,17 @@ Wybierz model w [Stronie modelu twarzy](https://huggingface.co/models)
 
 Jako przykład użyjmy [głęboko set/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2). Wprowadź stronę szczegółów > kliknij Rozmieść > Kliknij API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametry po `"inputs"` to co powinieneś wypełnić ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 W konstruktorze ILLA powinniśmy wypełnić identyfikator modelu i parametry. Przyjmując za przykład powyższy model, `"wejście"` jest parą klucz-wartość, więc możemy wypełnić ją wartością kluczową lub JSON. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Wspieramy również dane wejściowe i dane wejściowe w systemie binarnym, które mogą spotkać się ze wszystkimi połączeniami interfejsu API Ostrzania Face.
 
@@ -101,14 +101,64 @@ Aby przekazać dane wejściowe użytkownika do API, możesz użyć {{ aby pobra�
 
 Przed wyświetleniem danych wyjściowych działania w komponencie front-end powinniśmy potwierdzić, w którym polu znajduje się dane wyjściowe różnych modeli. Wciąż przyjmując za przykład `deepset/roberta-base-squad2` wyniki są następujące:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Tak więc możemy uzyskać odpowiedź z `{{ textQuestion.data[0].answer }}`(`textQuestion` to nazwa akcji). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Tutaj pokażemy jak korzystać ze stabilnego modelu dyfuzji torugh Hugging Face API w Illa Cloud.
+
+**Krok 1: Budowanie interfejsu front-end**
+
+Tworzymy interfejs front-end poprzez zastosowanie podejścia „przeciągnij i upuść” do umieszczania istotnych komponentów, takich jak pola wejściowe, przyciski, obrazy i więcej. Po dostosowaniu stylów komponentów, otrzymujemy następującą kompletną stronę internetową.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Krok 2: Tworzenie zasobów i działań**
+
+Tworzymy zasoby i działania poprzez wykorzystanie interfejsu API Preferencji Ostrów do połączenia ze stabilnym modelem Dywersyfikacji. Można użyć dwóch modeli: `runwayml/stable-diffusion-v1-5` i `stabilityai/stable-diffusion-2-1`.
+
+Wybierz w tym celu "Utwardzanie interfejsu API".
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Podaj nazwę dla tego zasobu i wprowadź swój token z platformy Ostrzania twarzy.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+W panelu konfiguracji akcji wprowadź identyfikator modelu i parametry. Będziemy pobierać wybrany model z radioGroup1, więc wypełnij identyfikator modelu jako `{{radioGroup1.value}}`. Dla wejścia, ponieważ jest ono uzyskiwane z pola wejściowego, wypełnij parametr jako `{{input1.value}}`. Konfiguracja powinna być zgodna z poniższym obrazem.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Próbujemy wprowadzić "Robot mecha in favela in expressionist style" do komponentu "input" i uruchomić Action. Wynikająca z tego egzekucja jest następująca. Z lewego panelu możesz obserwować dostępne dane, które można wywołać, w tym `base64binary` i `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Krok 3: Wyświetlanie danych o komponentach**
+
+Aby wyświetlić obraz uzyskany z Kroku 2, modyfikujemy źródło obrazu komponentu na `{{generateInput.fileData.dataURI}}`. To umożliwi nam pokazanie wygenerowanego obrazu.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Krok 4: Uruchamianie akcji z komponentami**
+
+Aby uruchomić akcję utworzoną w Kroku 2 po kliknięciu komponentu przycisku, dodaj obsługę zdarzeń do komponentu przycisku.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Krok 5: Testowanie**
+
+Po czterech poprzednich krokach, możesz wykorzystać dodatkowe komponenty i źródła danych do wykonywania innych zadań i budowania bardziej kompleksowego narzędzia. Na przykład możesz użyć innych modeli, aby pomóc w generowaniu żądań lub przechowywaniu żądań w localStorage lub bazie danych. Spójrzmy na pełny wynik, gdy wszystkie kroki zostaną wdrożone.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Teraz możesz się z tym bawić! Wypróbuj inne nowatorskie modele, które są dostarczane przez ścieranie twarzy za pośrednictwem tego API. Jest jeszcze więcej do zbadania, jak np. pobieranie stabilnych modeli anime dyfuzyjnych, szkolenie stylu artysty, metoda pobierania próbek dla realistycznych obrazów. Możesz zrobić o wiele więcej!

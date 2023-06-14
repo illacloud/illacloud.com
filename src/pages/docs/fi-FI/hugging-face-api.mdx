@@ -9,8 +9,6 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-* * *
-
 ## <h2 hidden>Hyljellä Face API</h2>
 
 Hugging Face on koneenoppimisyhteisön Github, jossa on tällä hetkellä satoja tuhansia esikoulutettuja malleja ja 10.000 datakokonaisuutta. Voit käyttää vapaasti muiden alan asiantuntijoiden jakamia malleja ja tietokokonaisuuksia tai isännöidä ja ottaa mallejasi käyttöön hugging Facessa.
@@ -46,19 +44,21 @@ ILLA Builder tarjoaa kymmeniä yleisesti käytettyjä etupäähän komponentteja
 
 # Miten hugging Face in ILLA Builder -sovellusta käytetään
 
+## Usecase 1
+
 ### Vaihe 1: Rakenna käyttöliittymä ILLA Builderiin
 
-Perustuen kuvaamaasi odotettavissa olevaan käyttöskenaarioon, rakenna etupään käyttöliittymä. Voit esimerkiksi käyttää syöttö- ja kuvakomponentteja, jos tuote ottaa tekstiä ja tulostaa kuvan. Jos tuotteesi ottaa tekstiä ja tuotoksia luotua tekstiä, voit käyttää syöttö- ja tekstikomponentteja.
+Tässä näytämme, miten rakentaa yksinkertainen teksti, joka syöttää tekstin nopeasti ja tekstiä kysymys tuottaa tekstiä vastaus. 
 
-Seuraava kuva on esimerkki tuotteen etupään sivusta, joka vastaa asiayhteyteen perustuviin kysymyksiin.
+Tarvitset kaksi textarea-komponenttia, jotka on merkitty "Syötä alkuperäinen teksti" ja "Syötä kysymys tähän", ja painikkeen komponentti merkitty "Suorita" ja tekstialueen komponentti, joka on merkitty "Vastaus" tulostustekstille. Seuraava kuva on esimerkki edellä kuvatulla tavalla.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png' alt="" />
+![hfapi](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi1.png)
 
 ### Vaihe 2: Luo hugging Face Resource ja määritä toiminnot
 
 Napsauta + Uutta toimintoluettelossa ja valitse Hugging Face Inference API.
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png' alt="" />
+![hfapi2](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi2.png)
 
 Täytä lomake yhdistääksesi hugging Faceesi:
 
@@ -66,7 +66,7 @@ Nimi: Nimi joka näytetään ILLA:ssa
 
 Token: Get in your Hugging Face [profile settings](https://huggingface.co/settings/tokens)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png' alt="" />
+![hfapi3](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi3.png)
 
 Vahvista mallitiedot hugging Facessa ennen toimintojen määrittämistä:
 
@@ -74,17 +74,17 @@ Valitse malli [Hugging Face Model Page](https://huggingface.co/models)
 
 Käytetään esimerkkinä [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2). Anna yksityiskohta sivu > napsauta Deploy > Klikkaa Inference API
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png' alt="" />
+![hfapi4](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi4.png)
 
 Parametrit “”syötteet”” jälkeen on mitä sinun pitäisi täyttää ILLA. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png' alt="" />
+![hfapi5](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi5.png)
 
 ILLA Builderissa meidän pitäisi täyttää Model ID ja parametri. Edellä mainitun mallin esimerkkinä voidaan mainita `“syötteet”` on avainarvopari, joten voimme täyttää sen avausarvolla tai JSONilla. 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png' alt="" />
+![hfapi6](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi6.png)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png' alt="" />
+![hfapi7](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi7.png)
 
 Ja tuemme myös tekstin syöte ja binary syöttö, joka voi täyttää kaikki hugging Face Inference API yhteyksiä.
 
@@ -101,14 +101,64 @@ Jos haluat siirtää käyttäjän etupään syötteen APIlle, voit käyttää {{
 
 Ennen kuin näytetään Toiminnan tulostiedot etupäässä, meidän on vahvistettava, mihin kenttään eri mallien tuotos sijoitetaan. Kun esimerkkinä otetaan vielä `deepset/roberta-base-squad2`, tulokset ovat seuraavat:
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png' alt="" />
+![hfapi8](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi8.png)
 
 Joten voimme saada vastauksen komennolla `{{ textQuestion.data[0].answer }}`(`textQuestion` on toimen nimi). 
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png' alt="" />
+![hfapi9](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi9.png)
 
 ### Demo
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif' alt="" />
+![hfapi10](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi10.gif)
 
-<img src='https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif' alt="" />
+![hfapi11](https://cdn.illacloud.com/official-website/img/docs/connect/hfapi11.gif)
+
+## Usecase 2
+
+Tässä näytämme miten käyttää vakaata diffuusiomallia thorugh the Hugging Face API in Illa Cloud.
+
+**Vaihe 1: Front-end käyttöliittymän rakentaminen**
+
+Me rakennamme etupään käyttöliittymän käyttämällä pudottamalla lähestymistapa sijoittaa olennaiset osat, kuten kentät, painikkeet, kuvat ja enemmän. Kun olet säätänyt tyylejä komponentteja, saamme seuraavan täydellisen verkkosivun.
+
+![hugging_layout](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_layout.png)
+
+**Vaihe 2: Resurssien ja toimien luonti**
+
+Laadimme resursseja ja toimia hyödyntämällä hugging Face Inference API yhteyden vakaaseen Diffuusion malliin. Voidaan käyttää kahta mallia: `runwayml/stable-diffusion-v1-5` ja `stabilityai/stable-diffusion-2-1`.
+
+Valitse "Hugging Face Inference API" tähän tarkoitukseen.
+
+![action_list](https://cdn.illacloud.com/official-website/img/official-site/components/action_list.png)
+
+Anna nimi tälle resurssille ja kirjoita tunnuksesi huggaus Face -alustalla.
+
+![hugging_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_config.png)
+
+Syötä toiminnon asetuspaneeliin malli ID ja parametri. Noudatamme valitun mallin radioryhmästä1, joten täytä mallitunnus nimellä `{{radioGroup1.value}}` . Syötettä, koska se on saatu syöttökentästä, täytä parametri nimellä `{{input1.value}}`. Konfiguraation tulisi olla seuraavan kuvan mukainen.
+
+![hugging_demo](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_demo.png)
+
+Yritämme syöttää "Mecha robotti favela in a expressionist style" in the `input` component and run the Action. Tuloksena oleva toteutus on seuraava: Vasemmalta paneelilta voit tarkkailla saatavilla olevia tietoja, kuten `base64binary` ja `dataURI`.
+
+![hugging_output](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_output.png)
+
+**Vaihe 3: Tietojen näyttäminen komponenteilta**
+
+Jos haluat näyttää vaiheesta 2 saadun kuvan, muokaamme kuvan lähteen muotoon `{{generateInput.fileData.dataURI}}`. Tämä antaa meille mahdollisuuden näyttää luodun kuvan.
+
+![hugging_display](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_display.png)
+
+**Vaihe 4: Toiminnan suorittaminen komponenttien kanssa**
+
+Jos haluat suorittaa vaiheessa 2 luodun toiminnon, kun painikkeen komponenttia napsautetaan, lisää tapahtuman käsittelijä painikkeen komponenttiin.
+
+![hugging_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/hugging_event_config.png)
+
+**Vaihe 5: Testaus**
+
+Neljän edellisen vaiheen jälkeen voit käyttää muita komponentteja ja tietolähteitä muiden tehtävien suorittamiseen ja kokonaisvaltaisemman työkalun rakentamiseen. Voit esimerkiksi käyttää muita malleja apuna kehotteiden tai tallentaa kehotteita localStorageen tai tietokantaan. Katsotaan lopputulosta, kun kaikki vaiheet on pantu täytäntöön.
+
+![hugging_test](https://www.youtube.com/watch?v=SwAry_jIXns)
+
+Nyt voit pelata sen kanssa! Kokeile muita huippuluokan malleja, joita Hylkivät kasvot tämän API:n läpi. On enemmän tutkia, kuten vakaa diffuusio anime mallit lataus, koulutus taiteilija tyyli, näytteenottoa menetelmä realistisia kuvia. Voit tehdä paljon enemmän!
