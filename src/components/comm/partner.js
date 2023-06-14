@@ -1,98 +1,92 @@
 import style from './index.module.css'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import clsx from 'clsx'
-import Image from 'next/image'
-import { tempPartnerContent as partnerContent } from '@/constants/newContent'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef, useCallback, useEffect, useState } from 'react'
-
-// Import Swiper styles
+import { useRef } from 'react'
+import { sendTagEvent } from '@/utils/gtag'
+import { PartnerLine } from './becomePartnerLine'
+import { useViewportScroll, useTransform } from 'framer-motion'
 import "swiper/css";
 
-import { Autoplay, A11y} from "swiper";
 
-
-export const Partner = () => {
+export const Partner = ({onChangeShow}) => {
   const { t } = useTranslation('home')
+  const { scrollYProgress } = useViewportScroll()
+  const width = useTransform(scrollYProgress, [0.836, 0.865], [-75, 0])
   const swiperRef = useRef(null)
-  const [isView, setIsView] = useState(false)
+  const content = t('partner.partnerList', {
+    returnObjects: true,
+  })
+  if (Array.isArray(content)) {
+    content.sort(({ sort: a }, { sort: b }) => a - b)
+  }
 
-  useEffect(() => {
-    if (isView) {
-      // swiperRef.current?.swiper.autoplay?.start()
-    } else {
-      // swiperRef.current?.swiper.autoplay?.stop(true)
-    }
-  }, [isView])
-
-  useEffect(() => {
-    let target = swiperRef.current
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsView(true)
-        } else {
-          setIsView(false)
-        }
-      })
-    })
-    if (target) {
-      observer.observe(target)
-    }
-    return () => {
-      if (target) {
-        observer.unobserve(target)
-      }
-    }
-  }, [])
   return (
-    <div className='mt-[100px] w-full flex flex-col items-center gap-[40px] text-white-01 font-[700] text-center overflow-hidden'>
+    <div className='mt-[100px] w-full flex flex-col items-center gap-[40px] text-white-01 font-[700] text-center overflow-x-hidden'>
       <h1 className='text-[24px] leading-[24px] xl:text-[40px] xl:leading-[48px] '>{t('partner')}</h1>
       {
-        partnerContent.length > 0 && <Swiper
+        Array.isArray(content) && content.length > 0 && <Swiper
           ref={swiperRef}
-          // modules={[Autoplay, A11y]}
-          // loop
-          // noSwiping
           className={style.partnerList}
           spaceBetween={0}
           slidesPerView='auto'
-          // autoplay={{
-          //   delay: 0,
-          // }}
-          // speed={500}
           wrapperClass='partnerWrapper'
         >
           {
 
-            partnerContent.map(({ name, logo, href }) => (
+            content.map(({ name, logo, href = '', tagCategory, target }) => (
               <SwiperSlide
-                // className='swiper-no-swiping'
                 draggable={false}
                 key={name}
-                className='w-[280px]'
+                hidden={false}
+
               >
                 <Link key={name} href={href}>
-                  {/* <div className={style.partnerItemCard}> */}
                   <div
                     className={style.partnerItemContainer}
+                    onClick={() => {
+                      sendTagEvent({
+                        action: 'click',
+                        category: tagCategory,
+                        label: target,
+                        value: href,
+                      })
+                    }}
                   >
                     <div className={style.partnerItem}>
                       <div className='w-[32px] h-[32px] xl:w-[64px] xl:h-[64px]'>
-                        <Image src={logo} alt={name} width='64' height='64' />
+                        <img src={logo} alt={name} width='64' height='64' />
                       </div>
-                      <span className='text-[12px] leading-[17px] xl:text-[28px] xl:leading-[34px]'>{name}</span>
+                      <span className='text-[12px] leading-[17px] xl:text-[28px] xl:leading-[34px] overflow-ellipsis line-clamp-1'>{name}</span>
                     </div>
                   </div>
-                  {/* </div> */}
                 </Link>
               </SwiperSlide>
             ))
           }
         </Swiper>
       }
-
+      <div className='flex flex-col items-center gap-[4px] xl:gap-[8px]'>
+        <span
+          className='flex flex-row items-center gap-[4px] xl:gap-[8px] font-[500] text-[12px] leading-[12px] xl:text-[16px] xl:leading-[24px] cursor-pointer'
+          onClick={() => {
+            sendTagEvent({
+              action: 'click',
+              category: 'homepage_partner_apply_click',
+            })
+            onChangeShow && onChangeShow()
+          }}
+        >
+          <span>{t('becomePartner')}</span>
+          <span>→</span>
+        </span>
+        <div className='hidden xl:block'>
+          <PartnerLine width={width} />
+        </div>
+        <div className='block xl:hidden'>
+          <PartnerLine />
+        </div>
+      </div>
     </div>
   )
 }

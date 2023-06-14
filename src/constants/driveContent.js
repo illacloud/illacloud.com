@@ -1,6 +1,8 @@
 import driveEssy from '@/img/imageTemp/driveEssy.svg'
 import dirveTheft from '@/img/imageTemp/dirveTheft.svg'
 import driveFile from '@/img/imageTemp/driveFile.svg'
+import temp from '@/img/imageTemp/driveTitle.svg'
+
 
 import security from '@/img/drive/security.svg'
 import silmplicity from '@/img/drive/silmplicity.svg'
@@ -8,24 +10,26 @@ import silmplicity from '@/img/drive/silmplicity.svg'
 export const DriveContent = {
   feature: {
     title: 'Features',
-    item1: {
-      label: 'Easy to Use',
-      desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-      imageAlt: '',
-      image: driveEssy,
-    },
-    item2: {
-      label: 'Easy to Use',
-      desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-      imageAlt: '',
-      image: driveFile,
-    },
-    item3: {
-      label: 'Easy to Use',
-      desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-      imageAlt: '',
-      image: dirveTheft,
-    }
+    items: [
+      {
+        label: 'Easy to Use',
+        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
+        imageAlt: '',
+        image: driveEssy,
+      },
+      {
+        label: 'Easy to Use',
+        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
+        imageAlt: '',
+        image: driveFile,
+      },
+      {
+        label: 'Easy to Use',
+        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
+        imageAlt: '',
+        image: dirveTheft,
+      }
+    ]
   },
   advantage: {
     title: 'Advantage',
@@ -61,4 +65,15 @@ export const DriveContent = {
       }
     ]
   }
+}
+
+export const DriveTitle = {
+  title: 'ILLA Drive',
+  desc: 'With ILLA Drive, you can securely store documents, images, and other files in the cloud, eliminating the need for local storage and providing convenient access from anywhere with an internet connection. ',
+  btn1: 'Try now',
+  btn1Link: '#',
+  btn2: 'ILLA Drive Doc',
+  btn2Link: '#',
+  image: temp,
+  imageAlt: 'Screenshot of ILLA Cloud app editor',
 }

@@ -23,7 +23,7 @@ export const selectItems = [
     mobileCategory: 'homepage_menu_product_mob_click',
     values: [
       {
-        href: '/products',
+        href: '/cloud',
         category: '',
         title: 'sub_nav.product.cloud',
         openNewPage: true

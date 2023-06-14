@@ -2,14 +2,9 @@
   @apply w-full bg-black pt-[40px] w-full flex items-center flex-col relative z-[31] overflow-x-hidden;
   @apply xl:pt-[80px] xl:overflow-visible;
 }
-.contentContainer h1,
-.contentContainer h2,
-.contentContainer p {
-  @apply m-0 p-0;
-}
 .content {
-  @apply w-full px-[20px] text-white-01 flex flex-col gap-[100px] items-center relative;
-  @apply xl:p-0 xl:w-[1200px];
+  @apply w-full px-[20px] text-white-01 flex flex-col gap-[80px] items-center relative;
+  @apply xl:p-0 xl:w-[1200px] xl:gap-[200px];
 }
 .backedContent {
   @apply w-full h-[147px] mt-[27px] flex flex-col items-center gap-[24px]  mx-auto relative;
@@ -105,8 +100,8 @@
   @apply xl:gap-[32px] xl:flex-row;
 }
 .cardContent {
-  @apply flex flex-col items-start p-[16px] gap-[20px] rounded-[8px];
-  @apply xl:justify-between xl:items-center xl:p-[48px] xl:rounded-[16px] xl:h-[680px];
+  @apply w-full flex flex-col items-start p-[16px] gap-[20px] rounded-[8px];
+  @apply xl:justify-between xl:items-center xl:p-[48px] xl:rounded-[16px] xl:h-[640px];
   background-color: rgba(255, 255, 255, 0.06);
 }
 .cardTextContent {
@@ -121,9 +116,10 @@
   @apply xl:text-[14px] xl:leading-[22px]
 }
 .cardBg {
-  @apply w-full rounded-t-[10px];
+  @apply w-full rounded-t-[10px] overflow-hidden;
   @apply xl:w-[488px] xl:h-[360px] xl:rounded-[0];
-  background: url('/img/cardBg.svg');
+  background: url(/img/cardBg.svg) no-repeat;
+  background-size: 100% auto;
 }
 
 /*-----*/
@@ -170,10 +166,10 @@
 }
 .codeContentImg {
   @apply absolute transform;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .codeContentActiveImg {
-  animation: scale-in 0.5s ease-in-out;
+  animation: scale-in 0.3s ease-in-out;
   transform-origin: center;
 }
 
@@ -215,16 +211,19 @@
   @apply mt-[80px] xl:gap-[40px];
 }
 .solutionContent {
-  @apply flex flex-col items-start gap-[32px] w-full;
-  @apply xl:flex-row xl:gap-[40px] xl:h-[536px]
+  @apply flex flex-col items-start gap-[20px] w-full;
+  /* @apply xl:flex-row xl:gap-[40px]; */
+  @apply xl:grid xl:gap-x-[40px] xl:gap-y-[32px];
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: max-content;
 }
 .solutionItem {
   @apply flex flex-col justify-between  items-center gap-[20px] w-full;
   @apply xl:p-[24px] xl:w-[580] xl:h-full;
 }
 .solutionBg {
-  @apply w-full rounded-[5px] w-[335px] h-[270px];;
-  @apply xl:w-[532px] xl:h-[272px] xl:rounded-[8px];
+  @apply w-full rounded-[5px];
+  @apply xl:rounded-[8px];
   background-color: rgba(255, 255, 255, 0.06);
 }
 

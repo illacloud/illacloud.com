@@ -22,13 +22,17 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
 
   const mergeFooterContent = [...content, ...footerContent]
   const { scrollYProgress } = useViewportScroll()
-  const translateY = useTransform(scrollYProgress, [scrollStart, scrollEnd], [-40, 0])
+
+  scrollYProgress.onChange((v) => {
+    console.log(v)
+  })
+  const translateY = useTransform(scrollYProgress, [scrollStart, scrollEnd], [-150, 0])
   const router = useRouter()
   const curLanguage = router.locale
 
 
   return (
-    <motion.div className={clsx(style.footerContainer, whiteTheme ? 'bg-white-01' : 'bg-black')} style={{ translateY }}>
+    <motion.div className={clsx(style.footerContainer, style.mobileFooterContainer, whiteTheme ? 'bg-white-01' : 'bg-black')} style={{ translateY }}>
       <div className={style.footerContentContainer}>
         {
           mergeFooterContent.map(({ title, items }) => (

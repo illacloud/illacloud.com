@@ -26,8 +26,8 @@ export const Nav = (props) => {
     <>
       <div
         className={clsx(
-          'fixed hidden xl:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center justify-between backdrop-blur-[25px] text-[16px] leading-[24px] font-[500]',
-          whiteTheme ? 'bg-[rgba(255,255,255,0.1)] text-garyBlue-02' : 'bg-[rgba(0,0,0,0.1] text-white-01',
+          'fixed hidden xl:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center justify-between backdrop-blur-[50px] text-[16px] leading-[24px] font-[500]',
+          whiteTheme ? 'bg-[rgba(255,255,255,0.75)] text-garyBlue-02' : 'bg-[rgba(0,0,0,0.75)] text-white-01',
         )}
         style={customStyle || {}}
       >

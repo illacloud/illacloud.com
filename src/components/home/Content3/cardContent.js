@@ -1,7 +1,6 @@
 import style from './index.module.css'
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
-import Image from 'next/image'
 import { cardContent } from '@/constants/newContent'
 
 export const CardContent = () => {
@@ -18,7 +17,7 @@ export const CardContent = () => {
               <LearnMore title={moreTitle} href={moreLink} />
             </div>
             <div className={style.cardBg}>
-              <Image src={cardImage} width='488px' height='360px' alt={t(imageAlt)} style={{ opacity: 0 }} />
+              <img src={cardImage} className='w-full' alt={t(imageAlt)} />
             </div>
           </div>
         ))

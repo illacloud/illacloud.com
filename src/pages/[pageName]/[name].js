@@ -11,9 +11,10 @@ import { LpTemplate } from '@/components/LandingPage/LpTemplate'
 import { useRouter } from 'next/router'
 import { pageMap } from '@/constants/landingPage'
 import { CommBottom } from '@/components/comm/commBottom'
+import { getGithubOauth } from '@/utils/getStars'
 
 
-const LandingPageSecond = ({ pageName, name, locale }) => {
+const LandingPageSecond = ({ pageName, name, locale, uri }) => {
   const { t } = useTranslation('landingPageDetails')
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
@@ -44,7 +45,7 @@ const LandingPageSecond = ({ pageName, name, locale }) => {
             }${pageName}/${name}`}
         />
       </Head>
-      <div className="w-full px-0 bg-white overflow-y-auto">
+      <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
         <Nav
           whiteTheme
           onChangeShow={() => setIsBookShow(true)}
@@ -61,13 +62,13 @@ const LandingPageSecond = ({ pageName, name, locale }) => {
           />
           <LpTemplate />
         </div>
+      <CommBottom whiteTheme scrollStart={0.724} scrollEnd={0.777} uri={uri} />
       </div>
       <BookDemo
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <CommBottom whiteTheme scrollStart={0.71} scrollEnd={0.75} />
-      <Footer whiteTheme scrollStart={0.90} scrollEnd={1}/>
+      <Footer whiteTheme scrollStart={0.777} scrollEnd={1}/>
     </>
   )
 }
@@ -81,6 +82,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       },
     }
   }
+  const uri = await getGithubOauth()
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -91,6 +93,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       pageName,
       name,
       locale,
+      uri
     },
   }
 }

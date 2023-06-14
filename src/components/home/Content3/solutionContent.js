@@ -1,8 +1,9 @@
 import style from './index.module.css'
-import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
 import { solutionContent } from '@/constants/newContent'
+import { Fragment } from 'react'
+import clsx from 'clsx'
 
 
 
@@ -16,17 +17,17 @@ export const SolutionContent = () => {
       </div>
       <div className={style.solutionContent}>
         {
-          values.map(({ label, desc, image }) => (
-            <div className={style.solutionItem} key={label}>
-              <div className='flex flex-col items-start gap-[8px] xl:gap-[16px]' key={label}>
+          values.map(({ label, desc, image }, index) => (
+            <Fragment key={label}>
+              <div className={clsx('flex flex-col items-start gap-[8px] xl:gap-[16px]', index === 0 ? 'row-start-1 col-start-1' : 'row-start-1 col-start-2 mt-[12px] xl:mt-0')} key={label}>
                 <h2 className='font-[700] text-[16px] leading-[19px] xl:text-[36px] xl:leading-[44px] text-white-01'>{t(label)}</h2>
                 <p className='font-[400] text-[12px] leading-[16px] xl:text-[14px] xl:leading-[24px] text-white-02'>{t(desc)}</p>
               </div>
-              <div className={style.solutionBg}>
+              <div className={clsx(style.solutionBg, index === 0 ? 'row-start-2 col-start-1' : 'row-start-2 col-start-2')}>
                 {/* TODO 补充图片 */}
-                <Image src={image} width='532' height='272' alt={t(imageAlt)} />
+                <img src={image} className='w-full' alt={t(imageAlt)} />
               </div>
-            </div>
+            </Fragment>
           ))
         }
       </div>

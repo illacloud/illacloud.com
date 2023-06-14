@@ -19,16 +19,17 @@ import { useViewportScroll, useTransform, motion } from 'framer-motion'
 
 
 
-export const NewContent = () => {
+export const NewContent = ({onChangeShow, uri}) => {
   const { t } = useTranslation('home')
   const backgroundRef = useRef(null)
   const { scrollYProgress } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0.03, 0.04], [0, 1])
+  const opacity = useTransform(scrollYProgress, [0.036, 0.078], [0, 1])
+  const marginTop = useTransform(scrollYProgress, [0.036, 0.078], [50, 0])
 
   return (
     <div className={style.contentContainer}>
       <div className={style.content}>
-        <motion.div className={clsx(style.background, 'hidden xl:block')} style={{opacity}}>
+        <motion.div className={clsx(style.background, 'hidden xl:block')} style={{opacity, marginTop}}>
           <img ref={backgroundRef} alt='' className='h-full w-full' src={circleBackground} />
         </motion.div>
         <div className={clsx(style.background, 'block xl:hidden')}>
@@ -36,7 +37,7 @@ export const NewContent = () => {
         </div>
         <Backed />
         <AllContent />
-        <div className='flex flex-col gap-[20px] xl:gap-[32px]'>
+        <div className='flex flex-col gap-[20px] xl:gap-[32px] w-full'>
           <SwipeContent {...firstSwipeContent} />
           <CardContent />
           <SwipeContent {...lastSwipeContent} />
@@ -44,11 +45,11 @@ export const NewContent = () => {
         <CodeContent />
         <SolutionContent />
       </div>
-      <Partner />
-      <div className='mt-[50px] xl:mt-[100px] flex h-[500px] items-center text-white-01 w-full px-[20px] xl:px-0'>
+      <Partner onChangeShow={onChangeShow}/>
+      <div className='mt-[100px] xl:mt-[200px] flex items-center text-white-01 w-full px-[20px] xl:px-0'>
         <FAQ faqList={faqList} translationSpace={'home'} />
       </div>
-      <CommBottom scrollStart={0.956} scrollEnd={0.98}/>
+      <CommBottom scrollStart={0.925} scrollEnd={0.939} uri={uri}/>
     </div>
   )
 }

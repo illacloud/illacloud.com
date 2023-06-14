@@ -6,18 +6,16 @@ import { useTranslation } from 'next-i18next'
 import { NewContent } from '@/components/home/Content3'
 import { Footer } from '@/components/home/newFooter'
 import { Title } from '@/components/home/title'
-import { MobileTitle, Modal } from '@/components/home/mobileTitle'
+import { MobileTitle } from '@/components/home/mobileTitle'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
-import { getStars } from '@/utils/getStars'
+import { getStars, getGithubOauth } from '@/utils/getStars'
 import { useRouter } from 'next/router'
 
-const Home = ({ starCounts }) => {
+const Home = ({ starCounts, uri }) => {
   const { t } = useTranslation('home')
-
-  const [playMaskShow, setPlayMaskShow] = useState(false)
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
@@ -89,14 +87,11 @@ const Home = ({ starCounts }) => {
         </Script>
         <Title
           githubStarts={Math.floor(starCounts * step)}
-          setPlayMaskShow={setPlayMaskShow}
         />
         <MobileTitle
-          setPlayMaskShow={setPlayMaskShow}
           githubStarts={Math.floor(starCounts * step)}
         />
-        <NewContent />
-        <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
+        <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri}/>
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}
@@ -106,17 +101,19 @@ const Home = ({ starCounts }) => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-      <Footer scrollStart={0.990} scrollEnd={1} />
+      <Footer scrollStart={0.939} scrollEnd={1} />
     </>
   )
 }
 
 export const getServerSideProps = async ({ locale }) => {
   const starCounts = await getStars()
+  const uri = await getGithubOauth()
   return {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'common'])),
       starCounts,
+      uri
     },
   }
 }
