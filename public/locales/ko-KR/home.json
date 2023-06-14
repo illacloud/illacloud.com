@@ -7,6 +7,11 @@
     "title": "ILLA Cloud | Build internal tools at lightning speed!",
     "description": "ILLA Cloud is an open-source low-code platform with react component library to build internal applications in minutes. "
   },
+  "title": {
+    "github": "GitHub",
+    "stars": "Stars",
+    "star-us": "Star us"
+  },
   "join-community": "Discord",
   "stars": "Stars",
   "join-github": "STAR US ON",
@@ -25,7 +30,10 @@
     "integrations": "데이터 통합",
     "components": "구성 요소",
     "linkedIn": "LinkedIn",
-    "resource": "Resource"
+    "resource": "Resource",
+    "contact": "Contact sales",
+    "login": "Login",
+    "signup": "Sign up"
   },
   "sub_nav": {
     "product": {
@@ -248,6 +256,44 @@
       "desc-2": "ILLA Drive simplifies the content delivery process, allowing you to focus on delivering exceptional content.",
       "alt": "1. File storage and downloading: You can securely store files on ILLA Drive, and all members of your team can access them as needed.2. Public signed URLs with expiration: ILLA Drive allows you to generate public signed URLs for files, with the option to set an expiration time. This enables secure sharing of files with external parties for a limited time.3. Theft prevention links: You can enable theft prevention links on ILLA Drive, which restrict access to files only through your ILLA application. This ensures that files can only be accessed within the context of your ILLA application.4. Seamless integration with ILLA Builder: You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.",
       "action": "Learn more about ILLA Drive"
+    },
+    "sql-generate": {
+      "title-1": "SQL",
+      "title-2": "생성하다",
+      "title-3": "",
+      "title-4": "",
+      "introduction": "SQL 생성 기능을 사용하면 자연어를 입력하고 직접 실행할 수 있는 SQL 문을 얻을 수 있습니다. 이것은 MySQL, Postgre, Supabase 등과 같은 데이터베이스에서 작동합니다.",
+      "goto": "SQL 생성 방법"
+    },
+    "ui-library": {
+      "title-1": "A",
+      "title-2": "UI",
+      "title-3": "",
+      "title-4": "라이브러리",
+      "introduction": "우리는 다양한 시나리오에서 개발자의 요구를 충족하기 위해 ILLA Builder에 수십 개의 구성 요소를 구축했습니다. 개발자는 끌어서 놓기로 생산성을 높일 수 있으므로 내부 도구를 구축하는 시간을 크게 절약할 수 있습니다.",
+      "goto": "모든 구성 요소 보기"
+    },
+    "for-developer": {
+      "title-1": "내장",
+      "title-2": "개발자",
+      "introduction": "우리는 개발자에게 JavaScript를 통해 더 풍부한 기능을 구현할 수 있는 높은 수준의 자유를 제공합니다. {{Template Syntax}}로 JS 문을 래핑하여 출력의 다양성을 위해 모든 문자열 유형 변수 공간에 배치할 수 있습니다.",
+      "goto": "ILLA에서 JavaScript 작성"
+    },
+    "date-integrate": {
+      "title-1": "지원 통합",
+      "title-2": "",
+      "title-3": "어느",
+      "title-4": "데이터 소스",
+      "introduction": "ILLA는 주류 데이터베이스 또는 API를 통해 연결된 모든 데이터에 연결할 수 있으며 사용자 이벤트에 체인에 작업을 추가할 수 있습니다. 백엔드에서 얻은 데이터를 프런트 엔드 구성 요소와 긴밀하게 통합하여 개발자가 간단한 데이터 호출을 작성하여 달성할 수 있도록 합니다. 방대한 정보 상호 작용.",
+      "goto": "지원되는 리소스 유형 보기"
+    },
+    "collaborative-develop": {
+      "title-1": "실시간",
+      "title-2": "",
+      "title-3": "협동",
+      "title-4": "",
+      "introduction": "ILLA는 상상을 실제 코드와 디자인으로 바꿉니다. 개발자는 링크를 공유하여 ILLA Builder에서 동시에 작업할 수 있습니다. 개발자는 실시간으로 공동 편집하고 다른 사람과 소통하여 적시에 피드백을 제공할 수 있으므로 개발 효율성이 크게 향상됩니다.",
+      "goto": "협업하는 방법을 배우십시오"
     }
   },
   "faq": {
@@ -331,6 +377,60 @@
     "partner-6": "공동 앱 및 백엔드 기능을 구축하기 위한 오픈 소스 Airtable 대안입니다."
   },
   "partner": "파트너",
+  "partner-new": {
+    "title": "Partner",
+    "partnerList": [
+      {
+        "name": "Hugging Face",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/huggingface.svg",
+        "tagCategory": "homepage_partner_hf_click",
+        "target": "partner_hf",
+        "sort": 0
+      },
+      {
+        "name": "Supabase",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/supabase.svg",
+        "tagCategory": "homepage_partner_supabase_click",
+        "target": "partner_supabase",
+        "sort": 1
+      },
+      {
+        "name": "Pingcap",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/pingcap.svg",
+        "tagCategory": "homepage_partner_pingcap_click",
+        "target": "partner_pingcap",
+        "sort": 2
+      },
+      {
+        "name": "Appwrite",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/appwriteio-icon%201.svg",
+        "tagCategory": "homepage_partner_appwrite_click",
+        "target": "partner_appwrite",
+        "sort": 3
+      },
+      {
+        "name": "Lightly",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/Lightly%20Logo%201.svg",
+        "tagCategory": "homepage_partner_lightly_click",
+        "target": "partner_lightly",
+        "sort": 4
+      },
+      {
+        "name": "APITable",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/%E5%9B%BE%E5%B1%82%201.svg",
+        "tagCategory": "homepage_partner_apitable_click",
+        "target": "partner_apitable",
+        "sort": 5
+      },
+      {
+        "name": "Kanaries",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/kanaries-logo%201.svg",
+        "tagCategory": "homepage_partner_kanaries_click",
+        "target": "partner_kanaries",
+        "sort": 6
+      }
+    ]
+  },
   "becomePartner": "파트너가되다",
   "partnerFrom": {
     "title": "파트너가되다",
