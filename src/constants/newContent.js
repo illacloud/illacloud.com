@@ -1,4 +1,4 @@
-import temp from '@/lotties/temp.json'
+import drag from '@/lotties/drag.json'
 
 export const titleBottomContent = [
   {
@@ -26,7 +26,7 @@ export const firstSwipeContent = {
   showCategory: 'homepage_body_view_all_show',
   imgList: [
     'https://cdn.illacloud.com/official-website/img/home/new_beautiful_ui.svg',
-    temp,
+    drag,
   ]
 }
 
@@ -43,7 +43,7 @@ export const lastSwipeContent = {
   moreLink: '/integrations',
   imgList: [
     'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
-    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
+    'https://cdn.illacloud.com/official-website/img/home/Frame%203377.svg',
   ]
 }
 

@@ -109,11 +109,5 @@ export const ComponentsSchemaData = () => {
       }
     }
     />
-
-
-
-
-
-
   )
 }

@@ -1,26 +1,56 @@
-import {useRef, useEffect } from 'react'
+import { useRef, useEffect, useCallback } from 'react'
 import lottie from 'lottie-web'
 
-export const LottieItem = ({json}) => {
+export const LottieItem = ({ json }) => {
   const lottieRef = useRef(null)
   const animationRef = useRef(null)
-
-  useEffect(() => {
+  const loadAnimation = useCallback(() => {
     animationRef.current = lottie.loadAnimation({
       container: lottieRef.current,
       animationData: json,
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: true,
     });
+  }, [json])
+
+
+  useEffect(() => {
+    let target = lottieRef.current
+    const observer = new IntersectionObserver((entries) => {
+      if(entries[0].isIntersecting) {
+        loadAnimation()
+      } else {
+        if(animationRef.current) {
+          animationRef.current.destroy();
+          animationRef.current = null;
+        }
+      }
+    })
+    if(target) {
+      observer.observe(target)
+    }
     return () => {
+      if(target) {
+        observer.unobserve(target)
+      }
       if(animationRef.current) {
         animationRef.current.destroy();
         animationRef.current = null;
       }
+    }
+  }, [loadAnimation])
+
+
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.destroy();
+        animationRef.current = null;
+      }
     };
-  }, [json]);
+  }, []);
   return (
-    <div ref={lottieRef} className='h-full w-full'/>
+    <div ref={lottieRef} className='h-full w-full' />
   )
 }
