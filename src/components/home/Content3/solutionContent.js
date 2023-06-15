@@ -2,16 +2,26 @@ import style from './index.module.css'
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
 import { solutionContent } from '@/constants/newContent'
-import { Fragment } from 'react'
 import clsx from 'clsx'
+import {Fragment, useRef, useCallback } from 'react'
+import { sendTagEvent } from '@/utils/gtag'
+import { useElementFirstShow } from '@/hooks/useElementFirstShow'
 
 
 
 export const SolutionContent = () => {
-  const { title, moreLink, moreTitle, values, imageAlt } = solutionContent
+  const { title, moreLink, moreTitle, values, imageAlt, category } = solutionContent
   const { t } = useTranslation('home')
+  const ref = useRef(null)
+  const reportShow = useCallback(() => {
+    sendTagEvent({
+      action: 'click',
+      category: 'homepage_body_drive_show',
+    })
+  }, [])
+  useElementFirstShow(ref, reportShow)
   return (
-    <div className={style.solutionContainer}>
+    <div ref={ref} className={style.solutionContainer}>
       <div className='flex w-[1040px] flex-col items-center gap-[24px]'>
         <h1 className='w-full font-[700] text-[20px] leading-[24px]  xl:text-[40px] xl:leading-[48px] text-center text-white-01'>{t(title)}</h1>
       </div>
@@ -31,7 +41,7 @@ export const SolutionContent = () => {
           ))
         }
       </div>
-      <LearnMore title={moreTitle} href={moreLink} leftPadding />
+      <LearnMore title={moreTitle} href={moreLink} leftPadding category={category}/>
     </div>
   )
 }

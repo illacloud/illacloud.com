@@ -13,13 +13,11 @@ export const Publicize = ({ stars }) => {
     <Link href='https://github.com/illacloud/illa-builder'>
       <div
         className={style.publicize}
-        // TODO: 这里需要补充埋点
         onClick={() => {
           sendTagEvent({
             action: 'click',
-            category: 'homepage_body_announcement_click',
-            label: 'announcement',
-            value: 'https://github.com/illacloud/illa-builder',
+            category: 'homepage_body_github_banner_click',
+            label: 'github_banner',
           })
         }}
       >

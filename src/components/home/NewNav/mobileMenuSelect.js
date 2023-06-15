@@ -3,7 +3,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { sendTagEvent } from '@/utils/gtag'
 import { useTranslation } from 'next-i18next'
-import {getMobileCategory} from '@/utils/getMobileCategory'
 
 export const MobileMenuSelect = ({ options, closeMenu }) => {
   const { t } = useTranslation('home')
@@ -17,7 +16,7 @@ export const MobileMenuSelect = ({ options, closeMenu }) => {
         onClick={() => {
           sendTagEvent({
             action: 'click',
-            category: getMobileCategory(category),
+            category,
             label: t(title),
           })
           setExpend(() => !expend)
@@ -38,7 +37,7 @@ export const MobileMenuSelect = ({ options, closeMenu }) => {
                 closeMenu && closeMenu()
                 sendTagEvent({
                   action: 'click',
-                  category: getMobileCategory(category),
+                  category,
                   label: target || t(title),
                 })
               }}

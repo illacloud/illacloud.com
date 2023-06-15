@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useRef, useCallback } from 'react'
 import style from './index.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectCreative } from "swiper";
@@ -8,11 +8,23 @@ import "swiper/css/effect-creative";
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
 import clsx from 'clsx'
+import { useElementFirstShow } from '@/hooks/useElementFirstShow'
+import { sendTagEvent } from '@/utils/gtag'
 
 
 export const SwipeContent = (props) => {
-  const { title, imgList, descList, moreTitle, moreLink, imageAlt } = props
+  const { title, imgList, descList, moreTitle, moreLink, imageAlt, category, showCategory } = props
   const { t } = useTranslation('home')
+  const ref = useRef(null)
+  const mobileRef = useRef(null)
+  const reportShow = useCallback(() => {
+    sendTagEvent({
+      action: 'click',
+      category: showCategory,
+    })
+  }, [showCategory])
+  useElementFirstShow(ref, reportShow)
+  useElementFirstShow(mobileRef, reportShow)
   const pagination = useMemo(() => {
     return {
       clickable: true,
@@ -56,7 +68,7 @@ export const SwipeContent = (props) => {
   return (
     <>
       {/* pc */}
-      <div className={clsx(style.swipeContentContainer, 'swiperContent')}>
+      <div ref={ref} className={clsx(style.swipeContentContainer, 'swiperContent')}>
         <Swiper
           pagination={pagination}
           modules={[Pagination, Autoplay, EffectCreative]}
@@ -91,12 +103,12 @@ export const SwipeContent = (props) => {
               </SwiperSlide>
             ))
           }
-          <LearnMore title={moreTitle} href={moreLink} leftPadding />
+          <LearnMore title={moreTitle} href={moreLink} leftPadding category={category} />
         </Swiper>
       </div>
 
       {/* mobile */}
-      <div className={style.mobileSwipeContainer}>
+      <div ref={mobileRef} className={style.mobileSwipeContainer}>
         <div className={style.swipeText}>
           <h1>{t(title)}</h1>
           <ul className={style.swipeDescList}>
@@ -106,7 +118,7 @@ export const SwipeContent = (props) => {
               ))
             }
           </ul>
-          <LearnMore title={moreTitle} href={moreLink} />
+          <LearnMore title={moreTitle} href={moreLink} category={category}/>
         </div>
         <div className='px-[12px] w-full rounded-t-[10px] rounded-r-[10px]'>
           <img src={imgList[0]} alt={t(imageAlt)} className='w-full' />

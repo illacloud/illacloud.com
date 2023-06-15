@@ -23,7 +23,7 @@ export const Partner = ({onChangeShow}) => {
 
   return (
     <div className='mt-[100px] w-full flex flex-col items-center gap-[40px] text-white-01 font-[700] text-center overflow-x-hidden'>
-      <h1 className='text-[24px] leading-[24px] xl:text-[40px] xl:leading-[48px] '>{t('partner')}</h1>
+      <h1 className='text-[24px] leading-[24px] xl:text-[40px] xl:leading-[48px] '>{t('partner.title')}</h1>
       {
         Array.isArray(content) && content.length > 0 && <Swiper
           ref={swiperRef}
@@ -48,7 +48,6 @@ export const Partner = ({onChangeShow}) => {
                       sendTagEvent({
                         action: 'click',
                         category: tagCategory,
-                        label: target,
                         value: href,
                       })
                     }}

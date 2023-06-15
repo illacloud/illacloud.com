@@ -1,79 +1,71 @@
-import driveEssy from '@/img/imageTemp/driveEssy.svg'
-import dirveTheft from '@/img/imageTemp/dirveTheft.svg'
-import driveFile from '@/img/imageTemp/driveFile.svg'
-import temp from '@/img/imageTemp/driveTitle.svg'
-
-
-import security from '@/img/drive/security.svg'
-import silmplicity from '@/img/drive/silmplicity.svg'
-
 export const DriveContent = {
   feature: {
-    title: 'Features',
+    title: 'features.title',
     items: [
       {
-        label: 'Easy to Use',
-        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-        imageAlt: '',
-        image: driveEssy,
+        label: 'eatures.easy-to-use.title',
+        desc: 'features.easy-to-use.desc',
+        imageAlt: 'features.easy-to-use.alt',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Mask%20group.svg',
       },
       {
-        label: 'Easy to Use',
-        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-        imageAlt: '',
-        image: driveFile,
+        label: 'features.file-storage.title',
+        desc: 'features.file-storage.desc',
+        imageAlt: 'features.file-storage.alt',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%202890.svg',
       },
       {
-        label: 'Easy to Use',
-        desc: 'You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.',
-        imageAlt: '',
-        image: dirveTheft,
+        label: 'features.anti-leech.title',
+        desc: 'features.anti-leech.desc',
+        imageAlt: 'features.anti-leech.alt',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%203268.svg',
       }
     ]
   },
   advantage: {
-    title: 'Advantage',
+    title: 'advantages.title',
     items: [
       {
-        image: silmplicity,
-        imageAlt: '',
-        label: 'Simplicity',
-        desc: "ILLA Drive ensures the security of your files by offering options such as public signed URLs with expiration and theft prevention links."
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%202913.svg',
+        imageAlt: 'advantages.simplicity.alt',
+        label: 'advantages.simplicity.title',
+        desc: "advantages.simplicity.desc"
       },
       {
-        image: security,
-        imageAlt: '',
-        label: 'Security',
-        desc: "ILLA Drive ensures the security of your files by offering options such as public signed URLs with expiration and theft prevention links."
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Group%202912.svg',
+        imageAlt: 'advantages.security.alt',
+        label: 'advantages.security.title',
+        desc: "advantages.security.desc"
       }
     ]
   },
   benefits: {
-    title: 'Benefits',
+    title: 'benefit.title',
     items: [
       {
-        label: 'Cost-effective',
-        desc: "With ILLA Drive, there's no need to invest in separate content delivery network (CDN) services. You can fulfill your file storage and delivery requirements within the ILLA platform, reducing maintenance costs associated with additional CDN subscriptions or infrastructure.",
+        label: 'benefits.cost-effective.title',
+        desc: "benefits.cost-effective.desc",
       },
       {
-        label: 'Simplified development',
-        desc: "ILLA Drive allows you to store and access files for use in content management systems and other internal tools. This simplifies the process of incorporating files into your internal applications, accelerating development and making it more efficient.",
+        label: 'benefits.cost-effective.simplified-development.title',
+        desc: "benefits.cost-effective.simplified-development.desc",
       },
       {
-        label: 'Simplified development',
-        desc: "With ILLA Drive, there's no need to invest in separate content delivery network (CDN) services. You can fulfill your file storage and delivery requirements within the ILLA platform, reducing maintenance costs associated with additional CDN subscriptions or infrastructure.",
+        label: 'benefits.cost-effective.security-share.title',
+        desc: "benefits.cost-effective.security-share.desc",
       }
     ]
   }
 }
 
 export const DriveTitle = {
-  title: 'ILLA Drive',
-  desc: 'With ILLA Drive, you can securely store documents, images, and other files in the cloud, eliminating the need for local storage and providing convenient access from anywhere with an internet connection. ',
-  btn1: 'Try now',
-  btn1Link: '#',
-  btn2: 'ILLA Drive Doc',
-  btn2Link: '#',
-  image: temp,
-  imageAlt: 'Screenshot of ILLA Cloud app editor',
+  title: 'product.title',
+  desc: 'product.desc',
+  btn1: 'product.button',
+  btn1Category: 'cloud_menu_product_click',
+  btn1Link: 'https://cloud.illacloud.com',
+  btn2: 'product.doc',
+  btn2Link: '/docs/illa-drive',
+  image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Workspace%20-%20Drive.svg',
+  imageAlt: 'product.alt',
 }

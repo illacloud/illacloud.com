@@ -63,7 +63,7 @@ export const MenuSelect = ({ buttonColorChange = true, options }) => {
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
-                  category: option.tagCategory,
+                  category: option.category,
                   label: t(option.title),
                   value: option.href,
                 })

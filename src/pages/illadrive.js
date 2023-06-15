@@ -14,21 +14,20 @@ import BecomePartner from '@/components/home/Form/BecomePartner'
 
 
 const Drive = ({uri}) => {
-  const { t } = useTranslation('pricing')
+  const { t } = useTranslation('drive')
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
 
-
   return (
     <>
       <Head>
-        <title>{t('title')}</title>
-        <meta name="description" content={t('meta-desc')} />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
         <link
           rel="canonical"
           href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
-            }pricing`}
+            }drive`}
         />
       </Head>
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>

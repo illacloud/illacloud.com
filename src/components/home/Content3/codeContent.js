@@ -3,23 +3,32 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
 import jsIcon from '@/img/home3/jsIcon.svg'
-import { useState, useRef, Fragment } from 'react'
+import { useState, useRef, Fragment, useCallback } from 'react'
 import { useViewportScroll } from 'framer-motion'
 import clsx from 'clsx'
 import { codeContent } from '@/constants/newContent'
+import { useElementFirstShow } from '@/hooks/useElementFirstShow'
+import { sendTagEvent } from '@/utils/gtag'
 
 
 
 
 export const CodeContent = () => {
-  const { title, moreLink, moreTitle, values, bgImg, imageAlt, mobileBgImg } = codeContent
+  const { title, moreLink, moreTitle, values, bgImg, imageAlt, mobileBgImg, category } = codeContent
   const { t } = useTranslation('home')
+  const ref = useRef(null)
+  const mobileRef = useRef(null)
+  const reportShow = useCallback(() => {
+    sendTagEvent({
+      action: 'click',
+      category: 'homepage_body_code_anywhere_show',
+    })
+  }, [])
+  useElementFirstShow(ref, reportShow)
+  useElementFirstShow(mobileRef, reportShow)
   const [activeIndex, setActiveIndex] = useState(0)
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0)
   const { scrollYProgress } = useViewportScroll()
-  scrollYProgress.onChange((v) => {
-    console.log(v)
-  })
   const touchStartVal = useRef(0)
   scrollYProgress.onChange((v) => {
     if (v > 0.62) {
@@ -76,12 +85,12 @@ export const CodeContent = () => {
 
     <>
       {/* pc */}
-      <div className='hidden xl:block h-[120vh] w-[1200px] mx-auto'>
+      <div ref={ref} className='hidden xl:block h-[120vh] w-[1200px] mx-auto'>
         <div className={clsx('h-[731px] sticky top-[15%]')}>
           <div className='flex w-full flex-col justify-center items-center gap-[40px]'>
             <div className='flex flex-col items-center gap-[24px]'>
               <h1 className='font-[700] text-[40px] leading-[48px] text-center text-white-01'>{t(title)}</h1>
-              <LearnMore title={moreTitle} leftPadding href={moreLink} />
+              <LearnMore title={moreTitle} leftPadding href={moreLink} category={category}/>
             </div>
             <div className={style.codeContentBg}>
               <div className='flex flex-row flex-nowrap'>
@@ -104,10 +113,10 @@ export const CodeContent = () => {
       </div>
 
       {/* mobile */}
-      <div className='block xl:hidden w-full'>
+      <div ref={mobileRef} className='block xl:hidden w-full'>
         <div className='flex flex-col items-center gap-[12px]'>
           <h1 className='font-[700] text-[20px] leading-[24px] text-center text-white-01'>{t(title)}</h1>
-          <LearnMore title={moreTitle} leftPadding href={moreLink} />
+          <LearnMore title={moreTitle} leftPadding href={moreLink} category={category}/>
         </div>
         <div className='flex flex-col  flex-nowrap mt-[20px] gap-[12px]'>
           {

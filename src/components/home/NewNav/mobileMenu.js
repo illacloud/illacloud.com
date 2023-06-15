@@ -9,7 +9,6 @@ import { sendTagEvent } from '@/utils/gtag'
 import { generateLanguageOptions } from '@/constants/language'
 import { selectItems, menuItems } from '@/constants/navContents'
 import { MobileMenuSelect } from '@/components/home/NewNav/mobileMenuSelect'
-import { getMobileCategory } from '@/utils/getMobileCategory'
 
 
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
@@ -61,7 +60,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
             onClick={() => {
               sendTagEvent({
                 action: 'click',
-                category: getMobileCategory(category),
+                category,
                 label: t(title),
               })
             }}
@@ -74,15 +73,15 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         onClick={() => {
           sendTagEvent({
             action: 'click',
-            category: 'homepage_partner_apply_click',
-            label: t('nav.contact-sales'),
+            category: 'homepage_menu_contact_click',
+            label: t('nav.contact'),
           })
           closeMenu && closeMenu()
           onChangeShow()
         }}
         className="w-full cursor-pointer flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
       >
-        {t('nav.contact-sales')}
+        {t('nav.contact')}
       </span>
 
       {/* 翻译 */}
@@ -106,7 +105,6 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
             href={router.asPath}
             locale={value}
             key={value}
-            
           >
             <a
               style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}

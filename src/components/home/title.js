@@ -6,7 +6,7 @@ import { Publicize } from '@/components/home/NewNav/publicize'
 import Image from 'next/image'
 import ross from '@/img/home3/ross.svg'
 import procuct from '@/img/home3/procuct.svg'
-
+import { useUtmParams } from '@/hooks/useUtmParams'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 
@@ -15,6 +15,7 @@ export const Title = (props) => {
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 
   const { scrollYProgress, scrollY } = useViewportScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.038], [1, 0])
@@ -146,7 +147,7 @@ export const Title = (props) => {
               {t('description')}
             </span>
             <div className="flex items-center flex-col content-between gap-[24px] text-[16px] leading-[28px] font-[500]">
-              <Link legacyBehavior href="https://cloud.illacloud.com/">
+              <Link legacyBehavior href={cloudUrl}>
                 <a
                   className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                   onClick={() => {
@@ -154,7 +155,7 @@ export const Title = (props) => {
                     gtagReportConversion && gtagReportConversion()
                     sendTagEvent({
                       action: 'click',
-                      category: 'homepage_body_live_demo_click',
+                      category: 'homepage_body_try_cloud_free_click',
                       label: t('illa-Cloud'),
                       value: 'https://cloud.illacloud.com/',
                     })
@@ -169,7 +170,7 @@ export const Title = (props) => {
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
-                      category: 'homepage_body_self_hosted_click',
+                      category: 'homepage_body_selfhsot_click',
                       label: t('self-Hosted'),
                     })
                   }}

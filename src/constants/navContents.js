@@ -20,31 +20,11 @@ export const selectItems = [
   {
     title: 'nav.product',
     category: 'homepage_menu_product_click',
-    mobileCategory: 'homepage_menu_product_mob_click',
     values: [
       {
-        href: '/cloud',
-        category: '',
-        title: 'sub_nav.product.cloud',
-        openNewPage: true
-      },
-      {
-        href: '/drive',
-        category: '',
+        href: '/illadrive',
+        category: 'homepage_menu_product_drive_click',
         title: 'sub_nav.product.drive',
-        openNewPage: true
-      },
-      {
-        href: '/builder',
-        category: '',
-        title: 'sub_nav.product.builder',
-        openNewPage: true
-      },
-      {
-        href: '/selfhost',
-        category: '',
-        title: 'sub_nav.product.selfhost',
-        openNewPage: true
       },
     ]
   },
@@ -54,28 +34,16 @@ export const selectItems = [
     values: [
       {
         href: '/integrations',
-        category: 'homepage_menu_product_integration_click',
+        category: 'homepage_menu_resource_integration_click',
         title: 'sub_nav.resource.integrations',
         target: 'integrations',
       },
       {
         href: '/components',
-        category: 'homepage_menu_product_components_click',
+        category: 'homepage_menu_resource_components_click',
         title: 'sub_nav.resource.components',
         target: 'components'
       },
-      {
-        href: '/templates',
-        category: 'homepage_menu_product_template_click',
-        title: 'sub_nav.resource.templates',
-        target: 'template'
-      },
-      // {
-      //   href: '/tools',
-      //   category: 'homepage_menu_product_tools_click',
-      //   title: 'nav.tools',
-      //   target: 'tools'
-      // },
     ]
   }
 ]

@@ -87,7 +87,7 @@ export const MainContent = ({ uri }) => {
         </div>
       </div>
       <div className='mt-[50px] xl:mt-[100px] flex items-center text-white-01 w-full px-[20px] xl:px-0'>
-        <FAQ faqList={faqList} translationSpace={'home'} />
+        <FAQ faqList={faqList} translationSpace={'drive'} />
       </div>
       <CommBottom scrollStart={0.835} scrollEnd={0.866} uri={uri} />
     </div>

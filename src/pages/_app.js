@@ -64,7 +64,7 @@ function App({ Component, pageProps, router }) {
     router.pathname !== '/hire' &&
     router.pathname !== '/pricing' &&
     !/\/(components|integrations)/.test(router.asPath) &&
-    router.pathname !== '/drive' &&
+    router.pathname !== '/illadrive' &&
     router.pathname !== '/cloud' &&
     router.pathname !== '/builder' &&
     router.pathname !== '/selfhost'
