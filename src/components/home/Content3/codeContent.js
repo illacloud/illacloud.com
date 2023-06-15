@@ -64,7 +64,7 @@ export const CodeContent = () => {
                   activeIndex === index ? style.codeContentActiveImg : 'opacity-[0] scale-0',
                 )}
             >
-              <Image alt={t(imageAlt)} layout='fill' src={leftImage} />
+              <img alt={t(imageAlt)} className='w-full' src={leftImage} />
             </div>
             <div
               className={
@@ -73,7 +73,7 @@ export const CodeContent = () => {
                   activeIndex === index ? style.codeContentActiveImg : 'opacity-[0] scale-0',
                 )}
             >
-              <Image alt={t(imageAlt)} layout='fill' src={rightImage} />
+              <img alt={t(imageAlt)} className='w-full' src={rightImage} />
             </div>
           </Fragment>
         ))

@@ -9,11 +9,12 @@ import { useRouter } from 'next/router'
 import { Title } from '@/components/comm/title'
 import { MainContent } from '@/components/drive/mainContent'
 import { getGithubOauth } from '@/utils/getStars'
-import { DriveTitle} from '@/constants/driveContent'
+import { DriveTitle } from '@/constants/driveContent'
 import BecomePartner from '@/components/home/Form/BecomePartner'
+import { DriveSchemaData } from '@/components/schemaData/driveSchemaData'
 
 
-const Drive = ({uri}) => {
+const Drive = ({ uri }) => {
   const { t } = useTranslation('drive')
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
@@ -30,20 +31,21 @@ const Drive = ({uri}) => {
             }drive`}
         />
       </Head>
+      <DriveSchemaData />
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
-        <Title content={DriveTitle}/>
-        <MainContent uri={uri}/>
+        <Title content={DriveTitle} />
+        <MainContent uri={uri} />
       </div>
-      <Footer scrollStart={0.866} scrollEnd={1}/>
+      <Footer scrollStart={0.866} scrollEnd={1} />
       <BookDemo
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
       <BecomePartner
-          visible={isPartnerShow}
-          onChangeShow={() => setIsPartnerShow(false)}
-        />
+        visible={isPartnerShow}
+        onChangeShow={() => setIsPartnerShow(false)}
+      />
     </>
   )
 }

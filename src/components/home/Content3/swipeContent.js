@@ -96,8 +96,8 @@ export const SwipeContent = (props) => {
           </div>
           {
             imgList.map((item) => (
-              <SwiperSlide>
-                <div className={style.swipeImage} key={item}>
+              <SwiperSlide key={item}>
+                <div className={style.swipeImage}>
                   <img src={item} alt={t(imageAlt)} className='w-full' />
                 </div>
               </SwiperSlide>

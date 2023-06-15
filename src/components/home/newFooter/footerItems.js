@@ -22,43 +22,39 @@ export const FooterItems = ({ items, whiteTheme }) => {
     <>
       {
         items.slice(0, 6).map(({ label, href = '', tagCategory }) => (
-          <>
-            <Link key={label} href={href}>
-              <span
-                className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: tagCategory,
-                    label: t(label),
-                    value: href,
-                  })
-                }}
-              >{t(label)}</span>
-            </Link>
-          </>
+          <Link key={label} href={href}>
+            <span
+              className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: tagCategory,
+                  label: t(label),
+                  value: href,
+                })
+              }}
+            >{t(label)}</span>
+          </Link>
         ))
       }
       {
         showMore && items.slice(6).map(({ label, href = '', tagCategory }) => (
-          <>
-            <Link key={label} href={href}>
-              <span
-                className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: tagCategory,
-                    label: t(label),
-                    value: href,
-                  })
-                }}
-              >{t(label)}</span>
-            </Link>
-          </>
+          <Link key={label} href={href}>
+            <span
+              className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
+              onClick={() => {
+                sendTagEvent({
+                  action: 'click',
+                  category: tagCategory,
+                  label: t(label),
+                  value: href,
+                })
+              }}
+            >{t(label)}</span>
+          </Link>
         ))
       }
-      <span className={clsx(style.footerItem, 'underline' ,whiteTheme ? 'text-[#1D2129]' : 'text-white-02')} onClick={handleShowMore}>{showMore ? t('footer.less') : t('footer.more')}</span>
+      <span className={clsx(style.footerItem, 'underline', whiteTheme ? 'text-[#1D2129]' : 'text-white-02')} onClick={handleShowMore}>{showMore ? t('footer.less') : t('footer.more')}</span>
     </>
   )
 }
