@@ -7,6 +7,7 @@ import { Player } from '@/components/home/player'
 import { LinearGithubIcon } from '@/img/public/linearGithub'
 import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 import { sendTagEvent } from '@/utils/gtag'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -22,6 +23,7 @@ export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand] = useState(false)
   const { githubStarts } = props
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
@@ -44,7 +46,7 @@ export const MobileTitle = (props) => {
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
-                  category: 'homepage_body_self_hosted_click',
+                  category: 'homepage_body_selfhsot_click',
                   label: t('self-Hosted'),
                 })
               }}
@@ -52,7 +54,7 @@ export const MobileTitle = (props) => {
               {t('self-Hosted')}
             </a>
           </Link>
-          <Link legacyBehavior href="https://cloud.illacloud.com/">
+          <Link legacyBehavior href={cloudUrl}>
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -60,7 +62,7 @@ export const MobileTitle = (props) => {
                 gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
-                  category: 'homepage_body_live_demo_click',
+                  category: 'homepage_body_try_cloud_free_click',
                   label: t('illa-Cloud'),
                   value: 'https://cloud.illacloud.com/',
                 })

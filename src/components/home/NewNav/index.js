@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { Menu } from '@/components/home/NewNav/mobileMenu'
 import { sendTagEvent } from '@/utils/gtag'
 import { selectItems, menuItems } from '@/constants/navContents'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 
 
@@ -21,6 +22,7 @@ export const Nav = (props) => {
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 
   return (
     <>
@@ -78,7 +80,7 @@ export const Nav = (props) => {
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
-                  category: 'homepage_partner_apply_click',
+                  category: 'homepage_menu_contact_click',
                   label: t('nav.contact'),
                 })
                 onChangeShow()
@@ -86,19 +88,18 @@ export const Nav = (props) => {
             >
               {t('nav.contact')}
             </span>
-            {/* TODO: add login link 埋点 文案key  */}
-            <Link href="#">
+            <Link href={cloudUrl}>
               <span
                 className={clsx(
                   'h-[40px] border-0 rounded-[8px] backdrop-blur-[25px] px-[16px] py-[12px] cursor-pointer flex items-center justify-center',
                 )}
                 onClick={() => {
                   // eslint-disable-next-line no-undef
+                  gtagReportConversion && gtagReportConversion()
                   sendTagEvent({
                     action: 'click',
-                    category: '',
+                    category: 'homepage_menu_login_click',
                     label: t('nav.login'),
-                    value: '#',
                   })
                 }}
               >
@@ -106,8 +107,7 @@ export const Nav = (props) => {
               </span>
             </Link>
           </div>
-          {/* TODO: add  link  埋点 文案key*/}
-          <Link href="#">
+          <Link href={cloudUrl}>
             <span
               className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[12px] hover:bg-tech-purple-02 active:bg-tech-purple-n-01 cursor-pointer flex items-center justify-center text-white-01"
               onClick={() => {
@@ -115,9 +115,8 @@ export const Nav = (props) => {
                 gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
-                  category: '',
+                  category: 'homepage_menu_signup_click',
                   label: t('nav.signup'),
-                  value: 'https://cloud.illacloud.com/',
                 })
               }}
             >

@@ -20,7 +20,6 @@ import { useViewportScroll, useTransform, motion } from 'framer-motion'
 
 
 export const NewContent = ({onChangeShow, uri}) => {
-  const { t } = useTranslation('home')
   const backgroundRef = useRef(null)
   const { scrollYProgress } = useViewportScroll()
   const opacity = useTransform(scrollYProgress, [0.036, 0.078], [0, 1])

@@ -76,35 +76,11 @@ const AboutUs = [
 
 const Product = [
   {
-    label: 'footer.cloud',
-    href: '/cloud',
-    tagCategory: 'homepage_footer_cloud_click',
-    target: 'cloud'
-  },
-  {
     label: 'footer.drive',
-    href: '/drive',
+    href: '/illadrive',
     tagCategory: 'homepage_footer_drive_click',
     target: 'drive'
   },
-  {
-    label: 'footer.selfhost',
-    href: '/selfhost',
-    tagCategory: 'homepage_footer_selfhost_click',
-    target: 'selfhost'
-  },
-  {
-    label: 'footer.templates',
-    href: '/templates',
-    tagCategory: 'homepage_footer_templates_click',
-    target: 'templates'
-  },
-  // {
-  //   label: 'footer.tools',
-  //   href: '/tools',
-  //   tagCategory: 'homepage_footer_tools_click',
-  //   target: 'tools'
-  // },
 ]
 
 export const footerContent = [

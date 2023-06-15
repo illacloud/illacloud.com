@@ -3,8 +3,11 @@ import clsx from 'clsx'
 import style from './index.module.css'
 import Link from 'next/link'
 import { sendTagEvent } from '@/utils/gtag'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const LpHeader = ({ pageName, title, description, isShowBack = false, btnText = "", name = "", leftImage, backText }) => {
+
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 
   return (
     <div className={style.lpHeader}>
@@ -25,7 +28,7 @@ export const LpHeader = ({ pageName, title, description, isShowBack = false, btn
         )}
         <h1 className={style.headerTitle}>{title}</h1>
         <span className={style.headerDesc}>{description}</span>
-        <Link legacyBehavior href="https://cloud.illacloud.com/">
+        <Link legacyBehavior href={cloudUrl}>
           <a
             className={style.headerGo}
             onClick={() => {

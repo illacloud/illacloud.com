@@ -5,9 +5,18 @@ import { sendTagEvent } from '@/utils/gtag'
 import style from './index.module.css'
 import clsx from 'clsx'
 
+
 export const FooterItems = ({ items, whiteTheme }) => {
   const { t } = useTranslation('home')
   const [showMore, setShowMore] = useState(false)
+
+  const handleShowMore = () => {
+    setShowMore(!showMore)
+    sendTagEvent({
+      action: 'click',
+      category: showMore ? 'homepage_footer_show_less' : 'homepage_footer_show_more',
+    })
+  }
 
   return (
     <>
@@ -49,7 +58,7 @@ export const FooterItems = ({ items, whiteTheme }) => {
           </>
         ))
       }
-      <span className={clsx(style.footerItem, 'underline' ,whiteTheme ? 'text-[#1D2129]' : 'text-white-02')} onClick={() => setShowMore(!showMore)}>{showMore ? t('footer.less') : t('footer.more')}</span>
+      <span className={clsx(style.footerItem, 'underline' ,whiteTheme ? 'text-[#1D2129]' : 'text-white-02')} onClick={handleShowMore}>{showMore ? t('footer.less') : t('footer.more')}</span>
     </>
   )
 }

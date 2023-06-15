@@ -13,6 +13,8 @@ import { useRaf } from 'react-use'
 import Script from 'next/script'
 import { getStars, getGithubOauth } from '@/utils/getStars'
 import { useRouter } from 'next/router'
+import { HomeSchemaData } from '@/components/home/homeSchemaData'
+import { useSetUtmParams } from '@/hooks/useSetUtmParams'
 
 const Home = ({ starCounts, uri }) => {
   const { t } = useTranslation('home')
@@ -20,6 +22,7 @@ const Home = ({ starCounts, uri }) => {
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
   const router = useRouter()
+  useSetUtmParams()
 
   return (
     <>
@@ -50,6 +53,7 @@ const Home = ({ starCounts, uri }) => {
           href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}`}`}
         />
       </Head>
+      <HomeSchemaData />
       <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav
           whiteTheme={false}
@@ -91,7 +95,7 @@ const Home = ({ starCounts, uri }) => {
         <MobileTitle
           githubStarts={Math.floor(starCounts * step)}
         />
-        <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri}/>
+        <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri} />
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}

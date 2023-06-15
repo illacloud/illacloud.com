@@ -13,26 +13,35 @@ import { FooterItems } from './footerItems'
 import { useRouter } from 'next/router'
 import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
+import { useElementFirstShow } from '@/hooks/useElementFirstShow'
+import { useRef, useCallback } from 'react'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
   const { t } = useTranslation('home')
   const content = t('footer.footerList', {
     returnObjects: true,
   })
+  const ref = useRef(null)
+  const reportShow = useCallback(() => {
+    sendTagEvent({
+      action: 'click',
+      category: 'homepage_body_code_anywhere_show',
+    })
+  }, [])
+  useElementFirstShow(ref, reportShow)
 
   const mergeFooterContent = [...content, ...footerContent]
   const { scrollYProgress } = useViewportScroll()
-
-  scrollYProgress.onChange((v) => {
-    console.log(v)
-  })
   const translateY = useTransform(scrollYProgress, [scrollStart, scrollEnd], [-150, 0])
   const router = useRouter()
   const curLanguage = router.locale
+  const policyUrl = useUtmParams(`https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`)
+  const termsUrl = useUtmParams(`https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`)
 
 
   return (
-    <motion.div className={clsx(style.footerContainer, style.mobileFooterContainer, whiteTheme ? 'bg-white-01' : 'bg-black')} style={{ translateY }}>
+    <motion.div ref={ref} className={clsx(style.footerContainer, style.mobileFooterContainer, whiteTheme ? 'bg-white-01' : 'bg-black')} style={{ translateY }}>
       <div className={style.footerContentContainer}>
         {
           mergeFooterContent.map(({ title, items }) => (
@@ -111,7 +120,7 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
               <img src={whiteTheme ? WhiteLanguage : Language} alt='language' />
               <LanguageSelect buttonColorChange={!whiteTheme} />
             </div>
-            <Link href={`https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`}>
+            <Link href={policyUrl}>
               <span
                 className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
                 onClick={() => {
@@ -125,7 +134,7 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                 }
               >{t('footer.privacy-policy')}</span>
             </Link>
-            <Link href={`https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`} >
+            <Link href={termsUrl} >
               <span
                 className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
                 onClick={() => {
