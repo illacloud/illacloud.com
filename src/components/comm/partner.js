@@ -34,7 +34,7 @@ export const Partner = ({onChangeShow}) => {
         >
           {
 
-            content.map(({ name, logo, href = '', tagCategory, target }) => (
+            content.map(({ name, logo, href = '', tagCategory }) => (
               <SwiperSlide
                 draggable={false}
                 key={name}
@@ -77,7 +77,7 @@ export const Partner = ({onChangeShow}) => {
           }}
         >
           <span>{t('becomePartner')}</span>
-          <span>→</span>
+          <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
         </span>
         <div className='hidden xl:block'>
           <PartnerLine width={width} />

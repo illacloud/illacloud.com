@@ -10,5 +10,3 @@ export const addParams = (url, obj) => {
   if(url.includes('?')) return `${url}&${params.join('&')}`
   return `${url}?${params.join('&')}`
 }
-
-export const isCloudUrl = (url) => url.includes('https://cloud.illacloud.com')

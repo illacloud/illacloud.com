@@ -9,8 +9,8 @@ import {
 import { ClassTable } from '@/components/ClassTable'
 import { useRouter } from 'next/router'
 import { usePrevNext } from '@/hooks/usePrevNext'
-import { SidebarLayout, SidebarContext } from '@/layouts/SidebarLayout'
-import { PageHeader } from '@/components//PageHeader'
+import { SidebarContext } from '@/layouts/SidebarLayout'
+import { PageHeader } from '@/components/PageHeader'
 import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
 import { Heading } from '@/components/Heading'
@@ -151,29 +151,6 @@ function useTableOfContents(tableOfContents) {
   }, [headings, tableOfContents])
 
   return { currentSection, registerHeading, unregisterHeading }
-}
-
-export function ContentsLayoutOuter({ children, layoutProps, ...props }) {
-  const { currentSection, registerHeading, unregisterHeading } =
-    useTableOfContents(layoutProps.tableOfContents)
-
-  return (
-    <SidebarLayout
-      sidebar={
-        <div className="mb-8">
-          <TableOfContents
-            tableOfContents={layoutProps.tableOfContents}
-            currentSection={currentSection}
-          />
-        </div>
-      }
-      {...props}
-    >
-      <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>
-        {children}
-      </ContentsContext.Provider>
-    </SidebarLayout>
-  )
 }
 
 export function ContentsLayout({

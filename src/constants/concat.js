@@ -1,8 +1,8 @@
-import {Discord} from '@/img/public/whiteDiscord'
-import {Github} from '@/img/public/whiteGithub'
-import {LinkedIn} from '@/img/public/whiteLinkedIn'
-import {ProductHunt} from '@/img/public/whiteProductHunt'
-import {Twitter} from '@/img/public/whiteTwitter'
+import { Discord } from '@/img/public/whiteDiscord'
+import { Github } from '@/img/public/whiteGithub'
+import { LinkedIn } from '@/img/public/whiteLinkedIn'
+import { ProductHunt } from '@/img/public/whiteProductHunt'
+import { Twitter } from '@/img/public/whiteTwitter'
 
 import { DiscordIcon, GitHubIconGray, TwitterIcon } from '@/img/home/svg'
 import { ProductHuntIcon } from '@/img/public/productHunt'
@@ -79,6 +79,18 @@ const Product = [
     label: 'footer.drive',
     href: '/illadrive',
     tagCategory: 'homepage_footer_drive_click',
+    target: 'drive'
+  },
+  {
+    label: 'footer.cloud',
+    href: '/illacloud',
+    tagCategory: 'homepage_footer_cloud_click',
+    target: 'drive'
+  },
+  {
+    label: 'footer.selfhost',
+    href: '/illa-self-host',
+    tagCategory: 'homepage_footer_self_host_click',
     target: 'drive'
   },
 ]

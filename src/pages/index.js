@@ -14,7 +14,6 @@ import Script from 'next/script'
 import { getStars, getGithubOauth } from '@/utils/getStars'
 import { useRouter } from 'next/router'
 import { HomeSchemaData } from '@/components/schemaData/homeSchemaData'
-import { useSetUtmParams } from '@/hooks/useSetUtmParams'
 
 const Home = ({ starCounts, uri }) => {
   const { t } = useTranslation('home')
@@ -23,7 +22,6 @@ const Home = ({ starCounts, uri }) => {
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
   const router = useRouter()
-  useSetUtmParams()
 
   return (
     <>

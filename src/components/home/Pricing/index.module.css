@@ -24,7 +24,7 @@
   filter: blur(238.125px);
 }
 .pricingMaskPhone {
-  @apply w-[630px] h-[415.69px] left-[-204px] top-[46.5\px] opacity-30 z-[-1];
+  @apply w-[630px] h-[415.69px] left-[-204px] top-[46.5px] opacity-30 z-[-1];
   @apply block lg:hidden absolute;
   filter: blur(50px);
   transform: rotate(2.6deg);
@@ -129,4 +129,33 @@
 }
 .pricingFooter {
   @apply lg:pt-[50px] bg-white overflow-hidden
+}
+
+.deployment {
+  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] xl:pt-[300px] gap-[32px] my-0 mx-auto;
+}
+.deploymentDesc {
+  @apply font-[400] leading-[20px] text-[14px];
+  @apply xl:leading-[19px] xl:text-[16px];
+}
+.deploymentItem {
+  @apply flex flex-row rounded-[8px] justify-between p-[16px] cursor-pointer;
+  @apply xl:rounded-[16px] xl:p-[32px];
+  background: linear-gradient(
+    180deg,
+    rgba(108, 56, 255, 0.16) 0%,
+    rgba(0, 56, 255, 0) 100%
+  );
+}
+.deploymentItemTitle {
+  @apply font-[700] text-[16px] leading-[20px] mt-[12px] xl:mt-[24px];
+  @apply xl:text-[24px] xl:leading-[28px];
+}
+.deploymentItemDesc {
+  @apply font-[400] text-[12px] leading-[16px] mt-[8px];
+  @apply xl:text-[16px] xl:leading-[24px];
+}
+.deploymentLink {
+  @apply flex flex-none justify-center items-center w-[28px] h-[28px] border-solid border-white border-[1px] rounded-[20px] xl:w-[40px] xl:h-[40px];
+  @apply cursor-pointer
 }

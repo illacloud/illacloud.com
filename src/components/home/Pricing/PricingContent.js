@@ -5,8 +5,6 @@ import clsx from 'clsx'
 import { monthlyContent, annuallyContent } from '@/constants/content'
 import { CardList } from './CardList'
 import Link from 'next/link'
-import {useUtmParams} from '@/hooks/useUtmParams'
-import {isCloudUrl} from '@/utils/addParams'
 
 
 const Tooltip = ({ content, styles, isBound }) => {
@@ -44,7 +42,6 @@ export const PricingContent = ({ onChangeShow }) => {
   const [top, setTop] = useState(0)
   const [left, setLeft] = useState(0)
   const [tipContent, setTipContent] = useState('')
-  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
   const onMouseLeave = () => {
     setVisibility(false)
   }
@@ -94,7 +91,7 @@ export const PricingContent = ({ onChangeShow }) => {
                 </span>
               </div>
               {href && (
-                <Link href={isCloudUrl(href) ? cloudUrl : href} key={title} legacyBehavior >
+                <Link href={href} key={title} legacyBehavior >
                   <span
                     className={clsx(style.cardBtn, btnColor)}
                   >{t(btnContent)}</span>

@@ -4,89 +4,103 @@ export const DriveSchemaData = () => {
   return (
     <StructuredData data={
       {
-        "meta": {
-          "title": "ILLA Drive | friendly CDN in ILLA Cloud",
-          "description": "ILLA Drive is private cloud-based native storage for teams and businesses. Store and share files with your team. "
+        "@context": "https://schema.org",
+        "@graph": [{
+          "@type": "Organization",
+          "name": "ILLA Cloud",
+          "url": "https://www.illacloud.com/#organization",
+          "logo": "https://www.illacloud.com/#logo",
+          "sameAs": [
+            "https://twitter.com/illacloudhq",
+            "https://github.com/illacloud/illa-builder",
+            "https://www.illacloud.com/",
+            "https://www.youtube.com/@illacloud",
+            "https://www.linkedin.com/company/illacloud/"
+          ]
         },
-        "product": {
-          "title": "ILLA Drive",
-          "description": "ILLA Drive is a user-friendly CDN that provides faster and better global content delivery to support your business.",
-          "button": "Try Now",
-          "alt": "A friendly CDN",
-          "doc": "ILLA Drive Doc"
-        },
-        "features": {
-          "title": "Features",
-          "easy-to-use": {
-            "title": "Easy to use",
-            "desc": "Upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application.",
-            "alt": "You can upload or select files directly within the ILLA Builder interface, simplifying the process of incorporating files into your application. "
-          },
-          "file-storage": {
-            "title": "File storage",
-            "desc": "Securely store files on ILLA Drive, and all members of your team can access them as needed.",
-            "alt": "You can securely store files on ILLA Drive, and all members of your team can access them as needed."
-          },
-          "anti-leech": {
-            "title": "Anti-leech",
-            "desc": "Enable anti-leech to restrict access to files only through your ILLA application. ",
-            "alt": "You can enable anti-leech links on ILLA Drive, which restrict access to files only through your ILLA application. This ensures that files can only be accessed within the context of your ILLA application."
+        {
+          "@type": "WebSite",
+          "name": "ILLA Cloud",
+          "url": "https://www.illacloud.com/#Website",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.illacloud.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
-        "advantages": {
-          "title": "Advantages",
-          "simplicity": {
-            "title": "Simplicity",
-            "desc": "User-friendly interface and integration with ILLA Builder, make it easy  to store, manage, and access files without the need for complex configurations. ",
-            "alt": "1. Simplicity: ILLA Drive provides a user-friendly interface and seamless integration with ILLA Builder, making it easy for users to store, manage, and access files without the need for additional services or complex configurations. The straightforward file upload and selection process within ILLA Builder streamline the development of internal applications."
-          },
-          "security": {
-            "title": "Security",
-            "desc": "Public signed URLs with expiration and anti-leech allow you to control access to your files and protect them from unauthorized usage.",
-            "alt": "Security: ILLA Drive ensures the security of your files by offering options such as public signed URLs with expiration and theft prevention links. These features allow you to control access to your files and protect them from unauthorized usage. With ILLA Drive, you can confidently store and share sensitive information within a secure environment."
-          }
-        },
-        "benefits": {
-          "title": "benefit",
-          "cost-effective": {
-            "title": "Cost-effective",
-            "desc": "Fulfill your file storage and delivery requirements within the ILLA platform, reducing the costs associated with additional CDN subscriptions or infrastructure."
-          },
-          "simplified-development": {
-            "title": "Simplified development",
-            "desc": "ILLA Drive simplifies the process of incorporating files into your internal applications, accelerating development."
-          },
-          "security-share": {
-            "title": "Security sharing",
-            "desc": "ILLA Drive ensures efficient and secure file transmission which simplify your CDN usage and optimize internal collaboration."
-          }
-        },
-        "faq": {
-          "title": "Frequently Asked Questions",
-          "description": "Any other questions? Feel free to <0>ask ILLA on Discord</0>",
-          "content": [
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
             {
-              "question": "What is cloud storage?",
-              "answer": "Cloud storage is a type of data storage service that allows users to store their files remotely on servers that are accessed over the internet. Instead of storing data on a local hard drive or other physical storage device, users can upload their files to a cloud storage provider's servers.",
-              "sort": "0"
-            },
-            {
-              "question": "Can I share files at ILLA Drive to people from outside of my team?",
-              "answer": "Certainly! With ILLA Drive, sharing files is a breeze. Simply set the link to public and share it with anyone you want. This way, you can easily collaborate and share files with others without any hassle.",
-              "sort": "1"
-            },
-            {
-              "question": "Why should I use ILLA Drive as my cloud storage provider?",
-              "answer": "Use ILLA Drive as your cloud storage provider because it offers a secure, affordable, user-friendly, and accessible solution for all your storage needs. With end-to-end encryption, your data will remain safe and private. ILLA Drive is competitively priced, making it an affordable option for individuals and businesses. The user-friendly interface makes it easy to upload, access, and share files, while the collaboration feature allows teams to work together effectively. And finally, with accessibility from anywhere with an internet connection, you can easily access and manage your files on any device.",
-              "sort": "2"
-            },
-            {
-              "question": "How much free space does a team can get?",
-              "answer": "ILLA Drive provides a free usage of 100 Megabytes to each team.",
-              "sort": "3"
+              "@type": "Question",
+              "name": "What is cloud storage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cloud storage is a type of data storage service that allows users to store their files remotely on servers that are accessed over the internet. Instead of storing data on a local hard drive or other physical storage device, users can upload their files to a cloud storage provider's servers."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Can I share files at ILLA Drive to people from outside of my team?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Certainly! With ILLA Drive, sharing files is a breeze. Simply set the link to \"public\" and share it with anyone you want. This way, you can easily collaborate and share files with others without any hassle."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Why should I use ILLA Drive as my cloud storage provider?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use ILLA Drive as your cloud storage provider because it offers a secure, affordable, user-friendly, and accessible solution for all your storage needs. With end-to-end encryption, your data will remain safe and private. ILLA Drive is competitively priced, making it an affordable option for individuals and businesses. The user-friendly interface makes it easy to upload, access, and share files, while the collaboration feature allows teams to work together effectively. And finally, with accessibility from anywhere with an internet connection, you can easily access and manage your files on any device."
+              }
+            }, {
+              "@type": "Question",
+              "name": "How much free space does a team can get?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ILLA Drive provides a free usage of 100 Megabytes to each team."
+              }
             }
           ]
+        },
+        {
+          "@type": "WebPage",
+          "url": "www.illacloud.com/illadrive/#WebPage",
+          "name": "ILLA drive",
+          "description": "ILLA Drive is a user-friendly CDN that provides faster and better global content delivery to support your business.",
+        },
+        {
+          "@type": "ImageObject",
+          "author": "ILLA Cloud",
+          "contentUrl": "https://cdn.illacloud.com/official-website/img/product/illaDrive/Workspace%20-%20Drive.svg",
+          "datePublished": "2023-06-15",
+          "description": "ILLA Drive provides a dashboard to upload and preview all files.",
+          "name": "ILLA Drive dashboard"
+        },
+        {
+          "@type": "ImageObject",
+          "author": "ILLA Cloud",
+          "contentUrl": "https://cdn.illacloud.com/official-website/img/product/illaDrive/Mask%20group.svg",
+          "datePublished": "2023-06-15",
+          "description": "To load your files in ILLA Builder and directly select file and insert into your website",
+          "name": "ILLA Builder File list in ILLA Drive"
+        },
+        {
+          "@type": "ImageObject",
+          "author": "ILLA Cloud",
+          "contentUrl": "https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%202890.svg",
+          "datePublished": "2023-06-15",
+          "description": "Allow to storage files and share to anyone",
+          "name": "File storage of ILLA Cloud"
+        },
+        {
+          "@type": "ImageObject",
+          "author": "ILLA Cloud",
+          "contentUrl": "https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%203268.svg",
+          "datePublished": "2023-06-15",
+          "description": "Alow to generate links and enable hotlinking",
+          "name": "Share files"
         }
+        ]
       }
     }
     />

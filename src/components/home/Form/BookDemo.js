@@ -57,7 +57,7 @@ export const BookDemo = ({ visible, onChangeShow }) => {
         <div className={style.bookContainer}>
           <div className="hidden xl:block w-[280px]">
             <img
-              src='https://cdn.illacloud.com/official-website/img/home/book_image.png'
+              src='https://cdn.illacloud.com/official-website/img/selfhost/subscribe-cover.svg'
               alt="book a demo"
             />
           </div>

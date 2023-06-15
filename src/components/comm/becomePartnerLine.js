@@ -13,7 +13,7 @@ export const PartnerLine = ({ width }) => (
           </linearGradient>
         </defs>
       </motion.svg>) : (
-        <img src={partnerLine} width='50' alt=''/>
+        <img src={partnerLine} width='50' alt='' />
       )
     }
   </>

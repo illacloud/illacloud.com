@@ -14,7 +14,7 @@ import { sendTagEvent } from '@/utils/gtag'
 export const CommBottom = ({ scrollStart, scrollEnd, uri = '', whiteTheme = false }) => {
   const { t } = useTranslation('home')
   const { scrollYProgress } = useViewportScroll()
-  const height = useTransform(scrollYProgress, [scrollStart, scrollEnd], [200, 410])
+  const height = useTransform(scrollYProgress, [scrollStart, scrollEnd], [120, 410])
   const ref = useRef(null)
   const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 

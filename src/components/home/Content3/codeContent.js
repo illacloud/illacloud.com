@@ -16,6 +16,7 @@ import { sendTagEvent } from '@/utils/gtag'
 export const CodeContent = () => {
   const { title, moreLink, moreTitle, values, bgImg, imageAlt, mobileBgImg, category } = codeContent
   const { t } = useTranslation('home')
+  const swiperMinSection = 50
   const ref = useRef(null)
   const mobileRef = useRef(null)
   const reportShow = useCallback(() => {
@@ -44,9 +45,9 @@ export const CodeContent = () => {
 
   const handleTouchEnd = (e) => {
     const endVal = e.clientX ?? e.changedTouches[0]?.clientX
-    if (endVal - touchStartVal.current > 100 && mobileActiveIndex !== 0) {
+    if (endVal - touchStartVal.current > swiperMinSection && mobileActiveIndex !== 0) {
       setMobileActiveIndex(0)
-    } else if (endVal - touchStartVal.current < -100 && mobileActiveIndex !== 1) {
+    } else if (endVal - touchStartVal.current < -swiperMinSection && mobileActiveIndex !== 1) {
       setMobileActiveIndex(1)
     }
   }

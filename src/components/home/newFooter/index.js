@@ -72,7 +72,7 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                         <Link key={label} href={href}>
                           {
                             icon ? (
-                              <span className='flex flex-row items-start gap-[8px]'>
+                              <span className='flex flex-row items-center gap-[8px]'>
                                 {whiteTheme ? blackIcon : icon}
                                 <span
                                   className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}

@@ -165,7 +165,7 @@ export const Title = (props) => {
               </Link>
               <Link legacyBehavior href="/docs/illa-cli">
                 <a
-                  className="h-[19px] w-[113px] bg-blackAlpha-05 text-center leading-[19px]"
+                  className="h-[19px] w-[113px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px]"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
@@ -175,7 +175,7 @@ export const Title = (props) => {
                   }}
                 >
                   <span className='underline'>{t('self-Hosted')} </span>
-                  <span>→</span>
+                  <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
                 </a>
               </Link>
             </div>

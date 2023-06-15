@@ -40,19 +40,19 @@ export const DriveContent = {
     ]
   },
   benefits: {
-    title: 'benefit.title',
+    title: 'benefits.title',
     items: [
       {
         label: 'benefits.cost-effective.title',
         desc: "benefits.cost-effective.desc",
       },
       {
-        label: 'benefits.cost-effective.simplified-development.title',
-        desc: "benefits.cost-effective.simplified-development.desc",
+        label: 'benefits.simplified-development.title',
+        desc: "benefits.simplified-development.desc",
       },
       {
-        label: 'benefits.cost-effective.security-share.title',
-        desc: "benefits.cost-effective.security-share.desc",
+        label: 'benefits.security-share.title',
+        desc: "benefits.security-share.desc",
       }
     ]
   }

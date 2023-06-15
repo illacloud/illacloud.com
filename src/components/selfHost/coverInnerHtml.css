@@ -1,0 +1,21 @@
+.innerSection {
+  @apply flex flex-col items-start xl:gap-[16px];
+  @apply gap-[16px]
+}
+.innerSection h4 {
+  @apply font-[600] text-[16px] leading-[28px] text-white-02;
+}
+.innerSection p {
+  @apply font-[400] text-[14px] leading-[22px] text-white-03;
+}
+.innerSection p code {
+  @apply mx-[4px] text-[12px] px-[8px] py-[2px]
+}
+.innerSection code {
+  @apply py-[4px] px-[8px] border-[1px] border-white-09 bg-white/[0.06] rounded-[4px] font-[400] text-[14px] leading-[18px] text-white-03 text-center;
+  font-family: 'Fira Code';
+  width: fit-content;
+}
+.innerSection div {
+  @apply flex flex-col gap-[8px]
+}

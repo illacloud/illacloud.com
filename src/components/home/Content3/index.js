@@ -9,10 +9,8 @@ import { CodeContent } from './codeContent'
 import { Partner } from '../../comm/partner'
 import style from './index.module.css'
 import circleBackground from '@/img/home3/circleBackground.svg'
-import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { firstSwipeContent, lastSwipeContent } from '@/constants/newContent'
-import { faqList } from '@/constants/content'
 import { FAQ } from '@/components/comm/Faq'
 import { CommBottom } from '@/components/comm/commBottom'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
@@ -46,9 +44,9 @@ export const NewContent = ({onChangeShow, uri}) => {
       </div>
       <Partner onChangeShow={onChangeShow}/>
       <div className='mt-[100px] xl:mt-[200px] flex items-center text-white-01 w-full px-[20px] xl:px-0'>
-        <FAQ faqList={faqList} translationSpace={'home'} />
+        <FAQ translationSpace={'home'} />
       </div>
-      <CommBottom scrollStart={0.925} scrollEnd={0.939} uri={uri}/>
+      <CommBottom scrollStart={0.9368} scrollEnd={1} uri={uri}/>
     </div>
   )
 }

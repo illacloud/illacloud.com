@@ -16,7 +16,7 @@ export const LearnMore = ({ href, title, category, leftPadding = false }) => {
         })
       }}>
         <span className='underline'>{t(title)}</span>
-        <span>→</span>
+        <img src='/img/vector/purple.svg' className='w-[11px]' alt='vector'/>
       </div>
     </Link>
   )

@@ -26,6 +26,16 @@ export const selectItems = [
         category: 'homepage_menu_product_drive_click',
         title: 'sub_nav.product.drive',
       },
+      {
+        href: '/illacloud',
+        category: 'homepage_menu_product_cloud_click',
+        title: 'sub_nav.product.cloud',
+      },
+      {
+        href: '/illa-self-host',
+        category: 'homepage_menu_product_selfhost_click',
+        title: 'sub_nav.product.selfhost',
+      },
     ]
   },
   {

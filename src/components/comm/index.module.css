@@ -114,6 +114,10 @@
 }
 
 /*------*/
+.mainContent {
+  @apply w-full flex flex-col justify-center items-center gap-[32px];
+  @apply xl:gap-[64px];
+}
 .mainContentTitle {
   @apply font-[700] text-[24px] leading-[26px] text-white-01 text-center;
   @apply xl:text-[48px] xl:leading-[58px];
@@ -122,4 +126,23 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/*------*/
+.benefitsContent {
+  @apply flex flex-row justify-between items-start gap-[40px];
+}
+.mainLabel {
+  @apply font-[700] text-[17px] leading-[21px] text-white-01;
+  @apply xl:text-[32px] xl:leading-[39px];
+}
+.mainDesc {
+  @apply font-[400] text-[12px] leading-[16px] text-white-02;
+  @apply xl:text-[14px] xl:leading-[22px];
+}
+
+/*------*/
+.templateContent {
+  @apply xl:flex flex-row items-start xl:gap-[48px] grid grid-cols-2 gap-x-[12px] gap-y-[32px] w-full;
+  grid-auto-rows: max-content;
 }
