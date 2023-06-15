@@ -1,8 +1,3 @@
-import i1 from '@/img/imageTemp/1.png'
-import i2 from '@/img/imageTemp/2.png'
-import i3 from '@/img/imageTemp/3.png'
-
-
 export const firstSwipeContent = {
   title: 'content.components.title',
   descList: [
@@ -14,10 +9,9 @@ export const firstSwipeContent = {
   moreLink: '/components',
   category: 'homepage_body_view_all_click',
   showCategory: 'homepage_body_view_all_show',
-  // TODO 图片需要替换，以及图片的描述信息
   imgList: [
-    i1,
-    i2
+    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
+    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg'
   ]
 }
 
@@ -33,11 +27,10 @@ export const lastSwipeContent = {
   category: 'homepage_body_connect_datasource_click',
   showCategory: 'homepage_body_connect_datasourcel_show',
   moreLink: '/integrations',
-  // TODO 图片需要替换，以及图片的描述信息
   imgList: [
-    i1,
-    i2,
-    i3
+    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
+    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
+    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg'
   ]
 }
 

@@ -3,7 +3,7 @@ export const DriveContent = {
     title: 'features.title',
     items: [
       {
-        label: 'eatures.easy-to-use.title',
+        label: 'features.easy-to-use.title',
         desc: 'features.easy-to-use.desc',
         imageAlt: 'features.easy-to-use.alt',
         image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Mask%20group.svg',
@@ -60,7 +60,7 @@ export const DriveContent = {
 
 export const DriveTitle = {
   title: 'product.title',
-  desc: 'product.desc',
+  desc: 'product.description',
   btn1: 'product.button',
   btn1Category: 'cloud_menu_product_click',
   btn1Link: 'https://cloud.illacloud.com',

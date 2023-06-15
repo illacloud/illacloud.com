@@ -34,7 +34,7 @@ const Drive = ({ uri }) => {
       <DriveSchemaData />
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
-        <Title content={DriveTitle} />
+        <Title content={DriveTitle} translationName='drive' />
         <MainContent uri={uri} />
       </div>
       <Footer scrollStart={0.866} scrollEnd={1} />
