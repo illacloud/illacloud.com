@@ -13,7 +13,7 @@ import { useRaf } from 'react-use'
 import Script from 'next/script'
 import { getStars, getGithubOauth } from '@/utils/getStars'
 import { useRouter } from 'next/router'
-import { HomeSchemaData } from '@/components/home/homeSchemaData'
+import { HomeSchemaData } from '@/components/schemaData/homeSchemaData'
 import { useSetUtmParams } from '@/hooks/useSetUtmParams'
 
 const Home = ({ starCounts, uri }) => {

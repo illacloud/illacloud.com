@@ -1,13 +1,6 @@
 import i1 from '@/img/imageTemp/1.png'
 import i2 from '@/img/imageTemp/2.png'
 import i3 from '@/img/imageTemp/3.png'
-import l1 from '@/img/imageTemp/l1.svg'
-import r1 from '@/img/imageTemp/r1.svg'
-import l2 from '@/img/imageTemp/l2.svg'
-import r2 from '@/img/imageTemp/r2.svg'
-
-import codeContentBg from '@/img/home3/codeContentBg.svg'
-import mobileCodeContentBg from '@/img/home3/mobileCodeBg.svg'
 
 
 export const firstSwipeContent = {
@@ -107,22 +100,22 @@ export const codeContent = {
   title: 'content.code.title',
   moreLink: '/docs/javascript',
   moreTitle: 'content.code.action',
-  bgImg: codeContentBg,
-  mobileBgImg: mobileCodeContentBg,
+  bgImg: 'https://cdn.illacloud.com/official-website/img/home/Codepartbgweb.svg ',
+  mobileBgImg: 'https://cdn.illacloud.com/official-website/img/home/Codepartbgmobile.svg',
   category: 'homepage_body_code_anywhere_click',
   imageAlt: 'content.code.alt',
   values: [
     {
       title: 'content.code.title-1',
       desc: 'content.code.desc-1',
-      leftImage: l1,
-      rightImage: r1,
+      leftImage: 'https://cdn.illacloud.com/official-website/img/home/home3/javasript.svg',
+      rightImage: 'https://cdn.illacloud.com/official-website/img/home/home3/eventhandler.svg',
     },
     {
       title: 'content.code.title-2',
       desc: 'content.code.desc-2',
-      leftImage: l2,
-      rightImage: r2,
+      leftImage: 'https://cdn.illacloud.com/official-website/img/home/home3/Action%20List.svg',
+      rightImage: 'https://cdn.illacloud.com/official-website/img/home/home3/actionsetting.svg',
     },
   ]
 }

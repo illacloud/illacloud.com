@@ -12,6 +12,9 @@ import { AsyncIndexContent } from '@/components/LandingPage/AsyncIndexContent'
 import { pageMap } from '@/constants/landingPage'
 import { CommBottom } from '@/components/comm/commBottom'
 import { getGithubOauth } from '@/utils/getStars'
+import { IntegrationSchemaData } from '@/components/schemaData/integrationSchemaData'
+import { ComponentsSchemaData } from '@/components/schemaData/componentsSchemaData'
+
 
 const LandingPageIndex = ({ pageName, uri }) => {
   const router = useRouter()
@@ -42,6 +45,9 @@ const LandingPageIndex = ({ pageName, uri }) => {
             }${pageName}`}
         />
       </Head>
+      {
+        pageName === 'integrations' ? <IntegrationSchemaData /> : <ComponentsSchemaData />
+      }
       <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
         <Nav
           whiteTheme

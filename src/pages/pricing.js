@@ -13,6 +13,7 @@ import style from '@/components/home/Pricing/index.module.css'
 import { useRouter } from 'next/router'
 import { CommBottom } from '@/components/comm/commBottom'
 import useMeasure from "react-use-measure"
+import {PricingSchemaData} from '@/components/schemaData/pricingSchemaData'
 
 
 const Pricing = () => {
@@ -36,6 +37,7 @@ const Pricing = () => {
             }pricing`}
         />
       </Head>
+      <PricingSchemaData />
       <PricingMask rect={rect}/>
       <div ref={ref} className='w-full px-0'>
         <div className={style.pricingContainer}>
