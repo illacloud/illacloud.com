@@ -27,7 +27,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
     >
       <div
         className={clsx(
-          'text-[12px] h-full w-full flex flex-row items-center gap-[8px] xl:text-[16px]',
+          'text-[10px] h-full w-full flex flex-row items-center gap-[8px] xl:text-[16px]',
           {
             'text-white-01': buttonColorChange,
             'text-gray-01': !buttonColorChange,

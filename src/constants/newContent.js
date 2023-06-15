@@ -1,3 +1,18 @@
+import temp from '@/lotties/temp.json'
+
+export const titleBottomContent = [
+  {
+    title: 'title.ross-index',
+    desc: 'title.ross-desc',
+    image: 'https://cdn.illacloud.com/official-website/img/home/raveReviews/icons8-hacker-news%201.svg'
+  },
+  {
+    title: 'title.productivity',
+    desc: 'title.productivity-desc',
+    image: 'https://cdn.illacloud.com/official-website/img/home/raveReviews/Group%202949.svg'
+  }
+]
+
 export const firstSwipeContent = {
   title: 'content.components.title',
   descList: [
@@ -10,8 +25,8 @@ export const firstSwipeContent = {
   category: 'homepage_body_view_all_click',
   showCategory: 'homepage_body_view_all_show',
   imgList: [
-    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
-    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg'
+    'https://cdn.illacloud.com/official-website/img/home/new_beautiful_ui.svg',
+    temp,
   ]
 }
 
@@ -20,7 +35,6 @@ export const lastSwipeContent = {
   descList: [
     'content.datasource.desc-1',
     'content.datasource.desc-2',
-    'content.datasource.desc-3',
   ],
   imageAlt: 'content.datasource.alt',
   moreTitle: 'content.datasource.action',
@@ -30,7 +44,6 @@ export const lastSwipeContent = {
   imgList: [
     'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
     'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg',
-    'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203341.svg'
   ]
 }
 
@@ -41,7 +54,7 @@ export const cardContent = [
     moreLink: '/docs/sql-generate',
     moreTitle: 'content.SQL.action',
     category: 'homepage_body_sql_click',
-    cardImage: 'https://cdn.illacloud.com/official-website/img/home/home3/Frame%203340.svg',
+    cardImage: 'https://cdn.illacloud.com/official-website/img/home/new/Frame%203340.svg',
     imageAlt: 'content.SQL.alt'
   },
   {

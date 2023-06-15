@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next'
 import { NewContent } from '@/components/home/Content3'
 import { Footer } from '@/components/home/newFooter'
 import { Title } from '@/components/home/title'
-import { MobileTitle } from '@/components/home/mobileTitle'
+import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { useRaf } from 'react-use'
@@ -18,6 +18,7 @@ import { useSetUtmParams } from '@/hooks/useSetUtmParams'
 
 const Home = ({ starCounts, uri }) => {
   const { t } = useTranslation('home')
+  const [playMaskShow, setPlayMaskShow] = useState(false)
   const [isPartnerShow, setIsPartnerShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
@@ -90,12 +91,15 @@ const Home = ({ starCounts, uri }) => {
           })(document, "script");`}
         </Script>
         <Title
+          setPlayMaskShow={setPlayMaskShow}
           githubStarts={Math.floor(starCounts * step)}
         />
         <MobileTitle
+          setPlayMaskShow={setPlayMaskShow}
           githubStarts={Math.floor(starCounts * step)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri} />
+        <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}

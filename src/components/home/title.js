@@ -4,14 +4,13 @@ import Link from 'next/link'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { Publicize } from '@/components/home/NewNav/publicize'
 import Image from 'next/image'
-import ross from '@/img/home3/ross.svg'
-import procuct from '@/img/home3/procuct.svg'
 import { useUtmParams } from '@/hooks/useUtmParams'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
+import { titleBottomContent } from '@/constants/newContent'
 
 export const Title = (props) => {
-  const { githubStarts } = props
+  const { setPlayMaskShow, githubStarts } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
@@ -182,20 +181,17 @@ export const Title = (props) => {
             </div>
           </div>
           <div className="flex flex-row items-start gap-[40px] rounded-[16px] h-[56px] ">
-                <div className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]">
-                  <Image src={ross} width='32' height='32'/>
+            {
+              titleBottomContent.map(({ title, desc, image }) => (
+                <div key={title} className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]">
+                  <Image src={image} width='32' height='32' />
                   <div className='flex flex-col'>
-                    <span className='text-[12px] font-[600] leading-[16px] text-white-04'>{t('title.ross-index')}</span>
-                    <span className='text-[14px] font-[500] leading-[22px] text-white-01'>{t('title.ross-desc')}</span>
+                    <span className='text-[12px] font-[600] leading-[16px] text-white-04'>{t(title)}</span>
+                    <span className='text-[14px] font-[500] leading-[22px] text-white-01'>{t(desc)}</span>
                   </div>
                 </div>
-                <div className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]">
-                  <Image src={procuct} width='32' height='32'/>
-                  <div className='flex flex-col'>
-                    <span className='text-[12px] font-[600] leading-[16px] text-white-04'>{t('title.productivity')}</span>
-                    <span className='text-[14px] font-[500] leading-[22px] text-white-01'>{t('title.productivity-desc')}</span>
-                  </div>
-                </div>
+              ))
+            }
           </div>
         </div>
       </motion.div>
@@ -217,6 +213,7 @@ export const Title = (props) => {
               action: 'click',
               category: 'homepage_body_video_click',
             })
+            setPlayMaskShow && setPlayMaskShow(true)
           }}
         />
       </motion.div>

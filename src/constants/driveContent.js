@@ -6,19 +6,19 @@ export const DriveContent = {
         label: 'features.easy-to-use.title',
         desc: 'features.easy-to-use.desc',
         imageAlt: 'features.easy-to-use.alt',
-        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Mask%20group.svg',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/fileUpload.svg',
       },
       {
         label: 'features.file-storage.title',
         desc: 'features.file-storage.desc',
         imageAlt: 'features.file-storage.alt',
-        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%202890.svg',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/fileStorage.svg',
       },
       {
         label: 'features.anti-leech.title',
         desc: 'features.anti-leech.desc',
         imageAlt: 'features.anti-leech.alt',
-        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%203268.svg',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/hotlink.svg',
       }
     ]
   },
@@ -26,13 +26,13 @@ export const DriveContent = {
     title: 'advantages.title',
     items: [
       {
-        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Frame%202913.svg',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/simplicity.svg',
         imageAlt: 'advantages.simplicity.alt',
         label: 'advantages.simplicity.title',
         desc: "advantages.simplicity.desc"
       },
       {
-        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/Group%202912.svg',
+        image: 'https://cdn.illacloud.com/official-website/img/product/illaDrive/security.svg',
         imageAlt: 'advantages.security.alt',
         label: 'advantages.security.title',
         desc: "advantages.security.desc"

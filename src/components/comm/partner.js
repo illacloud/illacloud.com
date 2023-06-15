@@ -14,7 +14,7 @@ export const Partner = ({onChangeShow}) => {
   const { scrollYProgress } = useViewportScroll()
   const width = useTransform(scrollYProgress, [0.836, 0.865], [-75, 0])
   const swiperRef = useRef(null)
-  const content = t('partner.partnerList', {
+  const content = t('partner-new.partnerList', {
     returnObjects: true,
   })
   if (Array.isArray(content)) {
@@ -23,7 +23,7 @@ export const Partner = ({onChangeShow}) => {
 
   return (
     <div className='mt-[100px] w-full flex flex-col items-center gap-[40px] text-white-01 font-[700] text-center overflow-x-hidden'>
-      <h1 className='text-[24px] leading-[24px] xl:text-[40px] xl:leading-[48px] '>{t('partner.title')}</h1>
+      <h1 className='text-[24px] leading-[24px] xl:text-[40px] xl:leading-[48px] '>{t('partner-new.title')}</h1>
       {
         Array.isArray(content) && content.length > 0 && <Swiper
           ref={swiperRef}

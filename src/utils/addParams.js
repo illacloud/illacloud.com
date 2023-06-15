@@ -1,15 +1,14 @@
 export const addParams = (url, obj) => {
-  const params = Object.keys(obj)
-    .map((key) => {
+  const params = []
+  Object.keys(obj)
+    .forEach((key) => {
       if(obj[key]) {
-       return `${key}=${obj[key]}`
-      } else {
-        return ''
+       params.push(`${key}=${obj[key]}`)
       }
     })
-    .join('&')
-  if(url.includes('?')) return `${url}&${params}`
-  return `${url}?${params}`
+  if(params.length === 0) return url
+  if(url.includes('?')) return `${url}&${params.join('&')}`
+  return `${url}?${params.join('&')}`
 }
 
 export const isCloudUrl = (url) => url.includes('https://cloud.illacloud.com')

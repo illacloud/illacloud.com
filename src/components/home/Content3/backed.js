@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next'
 import { backedContent } from '@/constants/newContent'
 
 
-
 export const Backed = () => {
   const { t } = useTranslation('home')
 

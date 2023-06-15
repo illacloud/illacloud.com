@@ -22,7 +22,7 @@ export const Modal = ({ isOpen, onClose }) => {
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
   const [menuExpand] = useState(false)
-  const { githubStarts } = props
+  const { setPlayMaskShow, githubStarts } = props
   const cloudUrl = useUtmParams('https://cloud.illacloud.com')
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
@@ -123,6 +123,7 @@ export const MobileTitle = (props) => {
               action: 'click',
               category: 'homepage_body_video_click',
             })
+            setPlayMaskShow && setPlayMaskShow(true)
           }}
         >
           <Image

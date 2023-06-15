@@ -73,8 +73,13 @@
   transform: rotate(-90deg);
 }
 .swipeImage {
-  @apply h-[400px] w-[516px];
-  background: url('/img/contentBackground.svg');
+  @apply px-[12px] w-full rounded-t-[10px] rounded-r-[10px] min-h-[400px];
+  @apply xl:h-[400px] xl:w-[516px] xl:px-0 xl:rounded-[0];
+  background: url('/img/contentBackground.svg') no-repeat;
+  background-size: 100% auto;
+}
+.lottieBg {
+  background: url('/img/lottieBg.svg') no-repeat;
 }
 .swiperContainer {
   display: grid !important;
@@ -116,16 +121,17 @@
   @apply xl:text-[14px] xl:leading-[22px]
 }
 .cardBg {
-  @apply w-full rounded-t-[10px] overflow-hidden;
+  @apply w-full rounded-t-[10px] overflow-hidden min-h-[300px];
   @apply xl:w-[488px] xl:h-[360px] xl:rounded-[0];
-  background: url(/img/cardBg.svg) no-repeat;
+  background: url("/img/cardBg.svg") no-repeat;
   background-size: 100% auto;
 }
 
 /*-----*/
 .codeContentBg {
   @apply w-full h-[600px] rounded-[16px] overflow-hidden flex flex-col;
-  background: url('/img/codeContentBg.svg');
+  background: url('/img/codeContentBg.svg') no-repeat;
+  background-size: 100% auto;
 }
 .codeContentBgTab {
   @apply  flex-col gap-[12px] w-full cursor-pointer shrink-0;
@@ -146,7 +152,7 @@
   animation-fill-mode: forwards;
 }
 .mobileCodeContentBgImg {
-  @apply rounded-[8px] relative w-full h-full z-[0] opacity-[0.5];
+  @apply relative w-full h-full z-[0] opacity-[0.5];
 }
 .codeContentL0 {
   @apply bottom-[-1%] left-[10%] w-[160px] h-[156px];
@@ -212,7 +218,6 @@
 }
 .solutionContent {
   @apply flex flex-col items-start gap-[20px] w-full;
-  /* @apply xl:flex-row xl:gap-[40px]; */
   @apply xl:grid xl:gap-x-[40px] xl:gap-y-[32px];
   grid-template-columns: 50% 50%;
   grid-auto-rows: max-content;
@@ -222,9 +227,10 @@
   @apply xl:p-[24px] xl:w-[580] xl:h-full;
 }
 .solutionBg {
-  @apply w-full rounded-[5px];
+  @apply w-full rounded-[5px] min-h-[300px];
   @apply xl:rounded-[8px];
-  background-color: rgba(255, 255, 255, 0.06);
+  background: url("/img/cardBg.svg") no-repeat;
+  background-size: 100% auto;
 }
 
 

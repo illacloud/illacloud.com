@@ -1,4 +1,4 @@
-import { useMemo, useRef, useCallback } from 'react'
+import { useMemo, useRef, useCallback, useEffect } from 'react'
 import style from './index.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectCreative } from "swiper";
@@ -10,6 +10,7 @@ import { LearnMore } from './learnMore'
 import clsx from 'clsx'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
 import { sendTagEvent } from '@/utils/gtag'
+import { LottieItem } from '@/components/home/Content3/lottieItem'
 
 
 export const SwipeContent = (props) => {
@@ -97,9 +98,18 @@ export const SwipeContent = (props) => {
           {
             imgList.map((item) => (
               <SwiperSlide key={item}>
-                <div className={style.swipeImage}>
-                  <img src={item} alt={t(imageAlt)} className='w-full' />
-                </div>
+                {
+                  typeof item === 'object' ? (
+                    <div className={clsx(style.swipeImage, style.lottieBg)}>
+                      <LottieItem json={item} />
+                    </div>
+                  ) : (
+                    <div className={style.swipeImage}>
+                      <img src={item} alt={t(imageAlt)} className='w-full' />
+                    </div>
+                  )
+                }
+
               </SwiperSlide>
             ))
           }
@@ -118,9 +128,9 @@ export const SwipeContent = (props) => {
               ))
             }
           </ul>
-          <LearnMore title={moreTitle} href={moreLink} category={category}/>
+          <LearnMore title={moreTitle} href={moreLink} category={category} />
         </div>
-        <div className='px-[12px] w-full rounded-t-[10px] rounded-r-[10px]'>
+        <div className={style.swipeImage}>
           <img src={imgList[0]} alt={t(imageAlt)} className='w-full' />
         </div>
       </div >

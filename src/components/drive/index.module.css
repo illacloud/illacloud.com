@@ -11,7 +11,7 @@
   @apply xl:items-center xl:gap-[16px]
 }
 .mainLabel {
-  @apply font-[700] text-[17px] leading-[21px] text-white-01 overflow-ellipsis line-clamp-1;
+  @apply font-[700] text-[17px] leading-[21px] text-white-01;
   @apply xl:text-[32px] xl:leading-[39px];
 }
 .mainDesc {
@@ -21,13 +21,13 @@
 .mainLargeBg {
   @apply w-full rounded-t-[5px];
   @apply xl:rounded-t-[16px];
-  background-image: url('/img/driveLargeBg.svg') no-repeat;
+  background: url('/img/driveLargeBg.svg') no-repeat;
   background-size: 100% auto;
 }
 .mainSmallBg {
   @apply flex flex-col items-center p-[12px] gap-[8px] w-full rounded-[8px];
   @apply xl:w-[580px] xl:rounded-[16px] xl:p-[24px] xl:gap-[16px];
-  background-image: url('/img/dirveSmallBg.svg') no-repeat;
+  background: url('/img/dirveSmallBg.svg') no-repeat;
   background-size: 100% auto;
 }
 .featureBottom {
@@ -41,8 +41,10 @@
   @apply xl:gap-[16px]
 }
 .featureBottomImg {
-  @apply rounded-t-[8px] w-full;
+  @apply rounded-t-[8px] w-full min-h-[300px];
   @apply xl:w-[580px] xl:rounded-[16px];
+  background: url('/img/dirveSmallBg.svg') no-repeat;
+  background-size: 100% auto;
 }
 .benefitsContent {
   @apply flex flex-row justify-between items-start gap-[40px];
