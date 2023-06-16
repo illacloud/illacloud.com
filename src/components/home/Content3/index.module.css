@@ -42,12 +42,12 @@
   background: rgba(255, 255, 255, 0.06);
 }
 .mobileSwipeContainer {
-  @apply xl:hidden w-full rounded-[8px] flex flex-col items-center gap-[20px];
+  @apply xl:hidden w-full rounded-[8px] flex flex-col items-center gap-[20px] p-[16px];
   background: rgba(255, 255, 255, 0.06); 
 }
 .swipeText {
-  @apply flex flex-col gap-[16px] items-start w-full  p-[16px];
-  @apply xl:gap-[32px] xl:w-[596px] xl:p-0;
+  @apply flex flex-col gap-[16px] items-start w-full;
+  @apply xl:gap-[32px] xl:w-[596px];
 }
 .swipeText h1 {
   @apply font-[700] text-[20px] leading-[24px] text-white-01 overflow-ellipsis line-clamp-1;
@@ -73,7 +73,7 @@
   transform: rotate(-90deg);
 }
 .swipeImage {
-  @apply px-[12px] w-full rounded-t-[10px] rounded-r-[10px] min-h-[400px];
+  @apply w-full rounded-t-[10px] rounded-r-[10px] min-h-[150px];
   @apply xl:h-[400px] xl:w-[516px] xl:px-0 xl:rounded-[0];
   background: url('/img/contentBackground.svg') no-repeat;
   background-size: 100% auto;
@@ -95,7 +95,7 @@
   height: auto;
   grid-row: 3;
   grid-column: 1;
-  @apply flex flex-row gap-[8px] font-[500] text-[14px] leading-[17px] text-[#6E52FF] cursor-pointer;
+  @apply flex flex-row items-center gap-[8px] font-[500] text-[14px] leading-[17px] text-[#6E52FF] cursor-pointer;
   @apply xl:text-[16px] xl:leading-[19px];
 }
 
@@ -121,7 +121,7 @@
   @apply xl:text-[14px] xl:leading-[22px]
 }
 .cardBg {
-  @apply w-full rounded-t-[10px] overflow-hidden min-h-[300px];
+  @apply w-full rounded-t-[10px] overflow-hidden min-h-[150px];
   @apply xl:w-[488px] xl:h-[360px] xl:rounded-[0];
   background: url("/img/cardBg.svg") no-repeat;
   background-size: 100% auto;
@@ -155,8 +155,8 @@
   @apply relative w-full h-full z-[0] opacity-[0.5];
 }
 .codeContentL0 {
-  @apply bottom-[-1%] left-[10%] w-[160px] h-[156px];
-  @apply xl:w-[320px] xl:h-[212px] xl:bottom-[9%] xl:left-[17.5%];
+  @apply bottom-[9%] left-[10%] w-[160px] h-[110px];
+  @apply xl:w-[320px] xl:h-[212px] xl:bottom-[15%] xl:left-[17.5%];
 }
 .codeContentL1 {
   @apply top-[44%] left-[7.5%] w-[102px] h-[84px];
@@ -164,7 +164,7 @@
 }
 .codeContentR0 {
   @apply bottom-[10%] right-[10.5%] w-[144px] h-[110px];
-  @apply xl:w-[288px] xl:h-[220px] xl:bottom-[9%] xl:right-[11%];
+  @apply xl:w-[288px] xl:h-[220px] xl:bottom-[15%] xl:right-[11%];
 }
 .codeContentR1 {
   @apply top-[44%] right-[-14%] w-[295px] h-[99px];
@@ -227,10 +227,15 @@
   @apply xl:p-[24px] xl:w-[580] xl:h-full;
 }
 .solutionBg {
-  @apply w-full rounded-[5px] min-h-[300px];
+  @apply w-full rounded-[5px] min-h-[150px];
   @apply xl:rounded-[8px];
   background: url("/img/cardBg.svg") no-repeat;
   background-size: 100% auto;
 }
-
+.commPcCardImg {
+  @apply hidden xl:block w-full
+}
+.commMobileCardImg {
+  @apply block xl:hidden w-full
+}
 

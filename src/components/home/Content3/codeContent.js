@@ -1,5 +1,4 @@
 import style from './index.module.css'
-import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { LearnMore } from './learnMore'
 import jsIcon from '@/img/home3/jsIcon.svg'
@@ -56,7 +55,7 @@ export const CodeContent = () => {
     <div className='w-screen ml-[-20px] mt-[24px] xl:mt-0 xl:ml-0 xl:px-[48px] xl:w-full xl:h-full relative'>
       <img src={inMobile ? mobileBgImg : bgImg} alt='' className={inMobile ? style.mobileCodeContentBgImg : style.codeContentBgImg} />
       {
-        values.map(({ leftImage, rightImage }, index) => (
+        values.map(({ leftImage, rightImage, mobileLeftImg, mobileRightImg }, index) => (
           <Fragment key={leftImage}>
             <div
               className={
@@ -65,7 +64,7 @@ export const CodeContent = () => {
                   activeIndex === index ? style.codeContentActiveImg : 'opacity-[0] scale-0',
                 )}
             >
-              <img alt={t(imageAlt)} className='w-full' src={leftImage} />
+              <img alt={t(imageAlt)} className='w-full'  src={inMobile ? mobileLeftImg : leftImage} />
             </div>
             <div
               className={
@@ -74,7 +73,7 @@ export const CodeContent = () => {
                   activeIndex === index ? style.codeContentActiveImg : 'opacity-[0] scale-0',
                 )}
             >
-              <img alt={t(imageAlt)} className='w-full' src={rightImage} />
+              <img alt={t(imageAlt)} className='w-full' src={inMobile ? mobileRightImg  : rightImage} />
             </div>
           </Fragment>
         ))

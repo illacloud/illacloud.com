@@ -5,7 +5,7 @@ import { sendTagEvent } from '@/utils/gtag'
 import { Vector } from '@/img/public/vector'
 
 export const MobileTitle = ({ content, translationName }) => {
-  const { title, desc, btn1, btn1Link, btn2, btn2Link, image, imageAlt } = content
+  const { title, desc, btn1, btn1Link, btn2, btn2Link, mobileImg, imageAlt } = content
   const { t } = useTranslation(translationName)
 
   return (
@@ -47,7 +47,7 @@ export const MobileTitle = ({ content, translationName }) => {
         </div>
       </div>
       <div className='w-full'>
-        <Image src={image} width="2080" height="1294" alt={imageAlt} />
+        <Image src={mobileImg} width="2080" height="1294" alt={imageAlt} />
       </div>
     </div>
   )

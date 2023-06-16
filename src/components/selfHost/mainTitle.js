@@ -2,9 +2,11 @@ import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
 import Link from 'next/link'
+import { usePlatform } from '@/hooks/usePlatform'
 
 export const MainTitle = ({ titleContent }) => {
   const { t } = useTranslation('selfHost')
+  const isInMobile = usePlatform()
   return (
     <div className={style.title}>
       <div className={style.titleContent}>
@@ -25,7 +27,7 @@ export const MainTitle = ({ titleContent }) => {
           </span>
         </Link>
       </div>
-      <img src={titleContent.image} className='w-full' alt={titleContent.imageAlt} />
+      <img src={isInMobile ? titleContent.mobileImg : titleContent.image } className='w-full' alt={titleContent.imageAlt} />
     </div>
   )
 }

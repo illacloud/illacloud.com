@@ -5,6 +5,7 @@ export const SelfHostContent = {
     btnText: 'product.button',
     btnLink: 'https://www.illacloud.com/docs/illa-cli',
     image: 'https://cdn.illacloud.com/official-website/img/selfhost/selfhost.svg',
+    mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/selfhost/selfhost.png',
     imageAlt: 'product.alt',
     category: 'selfhost_button_click'
   },

@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 export const Benefits = ({ items, translationName }) => {
   const { t } = useTranslation(translationName)
   return (
-    <div className='w-full flex flex-col xl:flex-row items-start gap-[20px] xl:gap-[40px]'>
+    <div className='w-full flex flex-col xl:grid grid-cols-3 items-start gap-[20px] xl:gap-[40px]'>
       {
         items.length > 1 && items.map(({ label, desc }) => (
           <div className={style.benefitsContent} key={label}>

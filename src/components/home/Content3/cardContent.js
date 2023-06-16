@@ -5,10 +5,12 @@ import { cardContent } from '@/constants/newContent'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
 import { useRef, useCallback } from 'react'
 import { sendTagEvent } from '@/utils/gtag'
+import { usePlatform } from '@/hooks/usePlatform'
 
 export const CardContent = () => {
   const { t } = useTranslation('home')
   const ref = useRef(null)
+  const isInMobile = usePlatform()
   const reportShow = useCallback(() => {
     sendTagEvent({
       action: 'click',
@@ -20,7 +22,7 @@ export const CardContent = () => {
   return (
     <div ref={ref} className={style.cardContainer}>
       {
-        cardContent.map(({ title, desc, moreTitle, moreLink, cardImage, imageAlt, category }) => (
+        cardContent.map(({ title, desc, moreTitle, moreLink, cardImage, imageAlt, category, mobileImg }) => (
           <div className={style.cardContent} key={title}>
             <div className={style.cardTextContent}>
               <h1 className={style.cardTitle}>{t(title)}</h1>
@@ -28,7 +30,7 @@ export const CardContent = () => {
               <LearnMore title={moreTitle} href={moreLink} category={category} />
             </div>
             <div className={style.cardBg}>
-              <img src={cardImage} className='w-full' alt={t(imageAlt)} />
+              <img src={isInMobile ? mobileImg : cardImage} className='w-full' alt={t(imageAlt)} />
             </div>
           </div>
         ))

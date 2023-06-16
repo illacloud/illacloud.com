@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { MainContent } from '@/components/selfHost/mainContent'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import BecomePartner from '@/components/home/Form/BecomePartner'
+import { SelfHostSchemaData } from '@/components/schemaData/selfHostSchemaData'
 
 
 const Cloud = ({ uri }) => {
@@ -28,6 +29,7 @@ const Cloud = ({ uri }) => {
             }illa-self-host`}
         />
       </Head>
+      <SelfHostSchemaData />
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
         <MainContent uri={uri} />

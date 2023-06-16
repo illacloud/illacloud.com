@@ -11,6 +11,7 @@ import { MainContent } from '@/components/cloud/mainContent'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import { CloudTitle } from '@/constants/cloudContent'
 import BecomePartner from '@/components/home/Form/BecomePartner'
+import { CloudSchemaData } from '@/components/schemaData/cloudSchemaData'
 
 
 const Cloud = ({ uri }) => {
@@ -30,6 +31,7 @@ const Cloud = ({ uri }) => {
             }illacloud`}
         />
       </Head>
+      <CloudSchemaData />
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
         <Title content={CloudTitle} translationName='cloud'/>

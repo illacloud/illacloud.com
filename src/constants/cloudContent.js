@@ -8,21 +8,25 @@ export const CloudContent = {
         label: 'features.easy-to-use.title-1',
         imageAlt: 'features.easy-to-use.alt-1',
         image: 'https://cdn.illacloud.com/official-website/img/cloud/cloud2.svg',
+        mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/cloud/components.png'
       },
       {
         label: 'features.easy-to-use.title-2',
         imageAlt: 'features.easy-to-use.alt-2',
         image: 'https://cdn.illacloud.com/official-website/img/cloud/cloud3.svg',
+        mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/cloud/integration.png'
       },
       {
         label: 'features.easy-to-use.title-3',
         imageAlt: 'features.easy-to-use.alt-3',
         image: 'https://cdn.illacloud.com/official-website/img/cloud/cloud4.svg',
+        mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/cloud/sql.png'
       },
       {
         label: 'features.easy-to-use.title-4',
         imageAlt: 'features.easy-to-use.alt-4',
         image: 'https://cdn.illacloud.com/official-website/img/cloud/cloud5.svg',
+        mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/cloud/code.png'
       },
     ]
   },
@@ -77,5 +81,6 @@ export const CloudTitle = {
   btn1Category: 'selfhost_button_click',
   btn1Link: 'https://cloud.illacloud.com',
   image: 'https://cdn.illacloud.com/official-website/img/cloud/cloud1.svg',
+  mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/cloud/workspace.png',
   imageAlt: 'product.alt',
 }

@@ -1,6 +1,6 @@
 import { StructuredData } from '@/components/StructuredData'
 
-export const DriveSchemaData = () => {
+export const CloudSchemaData = () => {
   return (
     <StructuredData data={
       {

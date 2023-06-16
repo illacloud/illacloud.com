@@ -166,7 +166,7 @@ export const Title = (props) => {
               </Link>
               <Link legacyBehavior href="/docs/illa-cli">
                 <a
-                  className="h-[19px] w-[113px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] items-center"
+                  className="h-[19px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] items-center"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',

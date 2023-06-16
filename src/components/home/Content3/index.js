@@ -43,7 +43,7 @@ export const NewContent = ({onChangeShow, uri}) => {
         <SolutionContent />
       </div>
       <Partner onChangeShow={onChangeShow}/>
-      <div className='mt-[100px] xl:mt-[200px] flex items-center text-white-01 w-full px-[20px] xl:px-0'>
+      <div className='mt-[60px] xl:mt-[200px] flex items-center text-white-01 w-full px-[20px] xl:px-0'>
         <FAQ translationSpace={'home'} />
       </div>
       <CommBottom scrollStart={0.9368} scrollEnd={1} uri={uri}/>

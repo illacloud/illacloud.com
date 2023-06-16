@@ -14,7 +14,7 @@ import { LottieItem } from '@/components/home/Content3/lottieItem'
 
 
 export const SwipeContent = (props) => {
-  const { title, imgList, descList, moreTitle, moreLink, imageAlt, category, showCategory } = props
+  const { title, imgList, descList, moreTitle, moreLink, imageAlt, category, showCategory, mobileImg } = props
   const { t } = useTranslation('home')
   const ref = useRef(null)
   const mobileRef = useRef(null)
@@ -131,7 +131,7 @@ export const SwipeContent = (props) => {
           <LearnMore title={moreTitle} href={moreLink} category={category} />
         </div>
         <div className={style.swipeImage}>
-          <img src={imgList[0]} alt={t(imageAlt)} className='w-full' />
+          <img src={mobileImg} alt={t(imageAlt)} className='w-full' />
         </div>
       </div >
     </>
