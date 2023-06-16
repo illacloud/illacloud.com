@@ -8,6 +8,7 @@ import { useUtmParams } from '@/hooks/useUtmParams'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { titleBottomContent } from '@/constants/newContent'
+import { Vector } from '@/img/public/vector'
 
 export const Title = (props) => {
   const { setPlayMaskShow, githubStarts } = props
@@ -165,7 +166,7 @@ export const Title = (props) => {
               </Link>
               <Link legacyBehavior href="/docs/illa-cli">
                 <a
-                  className="h-[19px] w-[113px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px]"
+                  className="h-[19px] w-[113px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] items-center"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
@@ -175,7 +176,7 @@ export const Title = (props) => {
                   }}
                 >
                   <span className='underline'>{t('self-Hosted')} </span>
-                  <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
+                  <Vector />
                 </a>
               </Link>
             </div>

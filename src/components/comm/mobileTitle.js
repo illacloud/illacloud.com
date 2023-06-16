@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { sendTagEvent } from '@/utils/gtag'
+import { Vector } from '@/img/public/vector'
 
 export const MobileTitle = ({ content, translationName }) => {
   const { title, desc, btn1, btn1Link, btn2, btn2Link, image, imageAlt } = content
@@ -26,9 +27,9 @@ export const MobileTitle = ({ content, translationName }) => {
           </Link>
           {
             btn2 && (
-              <Link legacyBehavior href={ btn2Link}>
+              <Link legacyBehavior href={btn2Link}>
                 <span
-                  className='flex flex-row gap-[8px]'
+                  className='flex flex-row items-center gap-[8px]'
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
@@ -38,7 +39,7 @@ export const MobileTitle = ({ content, translationName }) => {
                   }}
                 >
                   <span className='underline'>{t(btn2)} </span>
-                  <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
+                  <Vector/>
                 </span>
               </Link>
             )

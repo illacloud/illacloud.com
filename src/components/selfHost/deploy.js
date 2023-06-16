@@ -25,7 +25,7 @@ export const Deploy = ({ deploy }) => {
         <div className='flex flex-col gap-[40px] xl:grid grid-cols-2 gap-x-[40px] xl:gap-y-[72px] w-full'>
           {
             deploy.items.map(({ icon, title, content, moreLink, moreTitle, clickCategory, showCategory }, index) => (
-              <div className={style.deployItem}>
+              <div className={style.deployItem} key={title}>
                 <img src={icon} className='w-[40px] xl:w-[80px]' alt='' />
                 <div className={clsx('flex flex-col items-start', content ? 'gap-[16px] xl:gap-[32px]' : 'gap-[8px] xl:gap-[16px]')}>
                   <h2 className={style.mainLabel}>{t(title)}</h2>

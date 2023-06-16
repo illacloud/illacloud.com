@@ -7,6 +7,7 @@ import { sendTagEvent } from '@/utils/gtag'
 import { PartnerLine } from './becomePartnerLine'
 import { useViewportScroll, useTransform } from 'framer-motion'
 import "swiper/css";
+import { Vector } from '@/img/public/vector'
 
 
 export const Partner = ({onChangeShow}) => {
@@ -77,7 +78,7 @@ export const Partner = ({onChangeShow}) => {
           }}
         >
           <span>{t('becomePartner')}</span>
-          <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
+          <Vector />
         </span>
         <div className='hidden xl:block'>
           <PartnerLine width={width} />

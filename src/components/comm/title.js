@@ -4,6 +4,7 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
 import { MobileTitle } from '@/components/comm/mobileTitle'
+import { Vector } from '@/img/public/vector'
 
 
 export const Title = ({ translationName = 'home', content }) => {
@@ -56,7 +57,7 @@ export const Title = ({ translationName = 'home', content }) => {
                   btn2 && (
                     <Link legacyBehavior href={btn2Link}>
                       <a
-                        className="h-[19px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px]"
+                        className="h-[19px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] flex flex-row items-center"
                         onClick={() => {
                           sendTagEvent({
                             action: 'click',
@@ -66,7 +67,7 @@ export const Title = ({ translationName = 'home', content }) => {
                         }}
                       >
                         <span className='underline'>{t(btn2)} </span>
-                        <img src='/img/vector/white.svg' className='w-[11px]' alt='vector'/>
+                        <Vector />
                       </a>
                     </Link>
                   )

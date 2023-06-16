@@ -84,7 +84,6 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         {t('nav.contact')}
       </span>
 
-      {/* 翻译 */}
       <span
         onClick={() => {
           sendTagEvent({

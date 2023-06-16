@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
+import { Vector } from '@/img/public/vector'
 
 export const LearnMore = ({ href, title, category, leftPadding = false }) => {
   const { t } = useTranslation('home')
@@ -16,7 +17,7 @@ export const LearnMore = ({ href, title, category, leftPadding = false }) => {
         })
       }}>
         <span className='underline'>{t(title)}</span>
-        <img src='/img/vector/purple.svg' className='w-[11px]' alt='vector'/>
+        <Vector />
       </div>
     </Link>
   )

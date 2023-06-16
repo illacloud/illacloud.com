@@ -3,10 +3,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { sendTagEvent } from '@/utils/gtag'
 import { useTranslation } from 'next-i18next'
+import { MobileSelectItemHeight } from '@/constants/defaultVal'
 
 export const MobileMenuSelect = ({ options, closeMenu }) => {
   const { t } = useTranslation('home')
-  const ItemHeight = 40
   const [expend, setExpend] = useState(false)
     const {title, values, category} = options
 
@@ -26,7 +26,7 @@ export const MobileMenuSelect = ({ options, closeMenu }) => {
         {t(title)} <SelectIcon />
       </span>
       <div
-        style={{ height: expend ? values.length * ItemHeight : 0, overflowY: 'hidden' }}
+        style={{ height: expend ? values.length * MobileSelectItemHeight : 0, overflowY: 'hidden' }}
         className="transition-height duration-200"
       >
         {values.map(({ href, title, category, target }) => (

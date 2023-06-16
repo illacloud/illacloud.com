@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/newFooter'
+import { Footer } from '@/components/home/NewFooter'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -11,7 +11,7 @@ import { LpTemplate } from '@/components/LandingPage/LpTemplate'
 import { useRouter } from 'next/router'
 import { pageMap } from '@/constants/landingPage'
 import { CommBottom } from '@/components/comm/commBottom'
-import { getGithubOauth } from '@/utils/getStars'
+import { getGithubOauth } from '@/utils/getGithubOauth'
 
 
 const LandingPageSecond = ({ pageName, name, locale, uri }) => {

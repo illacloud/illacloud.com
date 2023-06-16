@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/newFooter'
+import { Footer } from '@/components/home/NewFooter'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'

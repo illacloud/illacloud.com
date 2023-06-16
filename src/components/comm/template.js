@@ -20,7 +20,7 @@ export const Template = () => {
       <div className={style.templateContent}>
         {
           itemList.length > 0 && itemList.map(({ itemImage, itemName, itemDesc, itemLink, btnText, target }, index) => (
-            <div className='flex flex-col items-start gap-[12px] xl:gap-[24px] rounded-[16px] xl:w-[368px] text-white-01  h-full '>
+            <div key={itemName} className='flex flex-col items-start gap-[12px] xl:gap-[24px] rounded-[16px] xl:w-[368px] text-white-01  h-full '>
               <img src={itemImage} className='w-full' alt='' />
               <div className='flex flex-col items-start gap-[8px] relative h-full justify-between'>
                 <h2 className='font-[600] text-[14px] leading-[17px] xl:text-[24px] xl:leading-[29px] '>{itemName}</h2>

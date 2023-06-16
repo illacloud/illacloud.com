@@ -12,7 +12,7 @@ export const AllContent = () => {
         <span className={style.allContentDesc}>{t('content.all.desc')}</span>
       </div>
       <div className='xl:w-[1200px] xl:h-[696px] w-full'>
-        <Image src='https://cdn.illacloud.com/official-website/img/home/new/Frame%203376.svg' width='1200px' height='696px' alt={t('content.all.alt')} />
+        <Image src='https://cdn.illacloud.com/official-website/img/home/new/Frame%203376.svg' width='1200' height='696' alt={t('content.all.alt')} />
       </div>
     </div>
   )

@@ -6,13 +6,13 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { SelectItemHeight } from '@/constants/defaultVal'
 
 export const MenuSelect = ({ buttonColorChange = true, options }) => {
   const { t } = useTranslation('home')
-  const ItemHeight = 44
   const [expandPanel, setExpandPanel] = useState(false)
   const router = useRouter()
-  const {title, category, values} = options
+  const { title, category, values } = options
   const ref = useRef(null)
 
   useClickAway(ref, () => {
@@ -47,7 +47,7 @@ export const MenuSelect = ({ buttonColorChange = true, options }) => {
           },
         )}
         style={{
-          height: `${expandPanel ? ItemHeight * values.length : 0}px `,
+          height: `${expandPanel ? SelectItemHeight * values.length : 0}px `,
         }}
       >
         {values.map((option) => (
