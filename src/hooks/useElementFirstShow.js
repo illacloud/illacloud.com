@@ -19,6 +19,7 @@ export const useElementFirstShow = (el, callback) => {
       if(target) {
         observer.unobserve(target)
       }
+      firstShow.current = true
     }
   }, [callback, el])
 }
