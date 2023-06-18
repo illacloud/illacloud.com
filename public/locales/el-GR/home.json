@@ -55,7 +55,7 @@
   },
   "footer": {
     "product": "Προϊόντα",
-    "cloud": "Σύννεφο ILLA",
+    "cloud": "ILLA Cloud",
     "drive": "Κίνηση ILLA",
     "selfhost": "Ίδιος εξυπηρετητής",
     "tools": "Εργαλεία",
@@ -82,33 +82,33 @@
         "items": [
           {
             "label": "Πίνακας",
-            "href": "/εξαρτήματα/Πίνακες",
+            "href": "/components/Tables",
             "tagCategory": "homepage_footer_table_click",
-            "target": "υποσέλιδο_πίνακας"
+            "target": "footer_table"
           },
           {
             "label": "Γράφημα",
-            "href": "/components/Γράφημα",
+            "href": "/components/Chart",
             "tagCategory": "homepage_footer_chart_click",
             "target": "footer_chart"
           },
           {
-            "label": "Ανέβασμα",
-            "href": "/components/Ανέβασμα",
+            "label": "Upload",
+            "href": "/components/Upload",
             "tagCategory": "homepage_footer_upload_click",
             "target": "footer_upload"
           },
           {
-            "label": "Εναλλαγή",
-            "href": "/εξαρτήματα/Εναλλαγή",
+            "label": "Switch",
+            "href": "/components/Switch",
             "tagCategory": "homepage_footer_upload_click",
             "target": "footer_upload"
           },
           {
             "label": "Επιλογή",
-            "href": "/εξαρτήματα/Επιλογή",
+            "href": "/components/Select",
             "tagCategory": "homepage_footer_select_click",
-            "target": "υποσέλιδο_επιλογή"
+            "target": "footer_select"
           },
           {
             "label": "Ομάδα Ραδιοφώνου",
@@ -117,10 +117,10 @@
             "target": "footer_radio_group"
           },
           {
-            "label": "Ομάδα Πλαισίων Ελέγχου",
+            "label": "Checkbox Group",
             "href": "/components/Checkbox%20Group",
             "tagCategory": "homepage_footer_checkbox_group_click",
-            "target": "υποσέλιδος_ομάδα_πλαισίου ελέγχου"
+            "target": "footer_checkbox_group"
           },
           {
             "label": "PDF",
@@ -129,78 +129,78 @@
             "target": "footer_pdf"
           },
           {
-            "label": "Βίντεο",
-            "href": "/components/Βίντεο",
+            "label": "Video",
+            "href": "/components/Video",
             "tagCategory": "homepage_footer_video_click",
-            "target": "footer_βίντεο"
+            "target": "footer_video"
           }
         ]
       },
       {
-        "title": "Ενσωματώσεις",
+        "title": "Integrations",
         "items": [
           {
             "label": "MySQL",
-            "href": "/ενσωματώσεις/MySQL",
+            "href": "/integrations/MySQL",
             "tagCategory": "homepage_footer_mysql_click",
             "target": "footer_mysql"
           },
           {
             "label": "PostgreSQL",
-            "href": "/ενσωματώσεις/PostgreSQL",
+            "href": "/integrations/PostgreSQL",
             "tagCategory": "homepage_footer_postgre_click",
             "target": "footer_postgre"
           },
           {
             "label": "MongoDB",
-            "href": "/ενσωματώσεις/MongoDB",
+            "href": "/integrations/MongoDB",
             "tagCategory": "homepage_footer_mongodb_click",
             "target": "footer_mongodb"
           },
           {
             "label": "Firebase",
-            "href": "/ενσωματώσεις/Firebase",
+            "href": "/integrations/Firebase",
             "tagCategory": "homepage_footer_firebase_click",
             "target": "footer_firebase"
           },
           {
-            "label": "Ελαστική Αναζήτηση",
+            "label": "Elastic Search",
             "href": "/integrations/Elastic%20Search",
             "tagCategory": "homepage_footer_elastic_search_click",
             "target": "footer_elastic_search"
           },
           {
-            "label": "Εξυπηρετητής Microsoft SQL",
-            "href": "/ενσωματώσεις/Η Microsoft%20SQL%20Sδιακομιστής",
+            "label": "Microsoft SQL Server",
+            "href": "/integrations/Microsoft%20SQL%20Server",
             "tagCategory": "homepage_footer_mssql_click",
             "target": "footer_mssql"
           },
           {
             "label": "Supabase",
-            "href": "/Ενσωματώσεις/Υποβολή%20DΒ",
+            "href": "/integrations/Supabase%20DB",
             "tagCategory": "homepage_footer_supabase",
             "target": "footer_supabase"
           },
           {
-            "label": "ΔυναμόDB",
+            "label": "DynamoDB",
             "href": "/integrations/Amazon%20DynamoDB",
             "tagCategory": "homepage_footer_dynamo",
             "target": "footer_dynamo"
           },
           {
-            "label": "Καλύπτει Πρόσωπο Πρόσωπο Api",
+            "label": "Hugging Face Inference API",
             "href": "/integrations/Hugging%20Face%20Inference%20API",
             "tagCategory": "homepage_footer_hf_api_click",
-            "target": "υποσέλιδα_hf"
+            "target": "footer_hf"
           }
         ]
       }
     ]
   },
   "backed_by": {
-    "title": "Υποστηρίζεται από",
+    "title": "Backed by",
     "content-1": "GL Ventures",
-    "content-2": "Πηγαίος Κωδικός",
+    "content-2": "Source Code",
     "content-3": "MiraclePlus"
   },
   "call-to-action": {
@@ -247,19 +247,9 @@
       "title-1": "Επέκταση Συστατικών με Javascript",
       "title-2": "Επαναχρησιμοποιήσιμα μπλοκ κώδικα σε μετασχηματιστές",
       "desc-1": "Με την εγγραφή JavaScript, ελέγχετε δυναμικά τις ιδιότητες των συστατικών, τους χειριστές γεγονότων, τις ενέργειες και άλλες ρυθμίσεις.",
-      "desc-2": "1. Χρησιμοποιώντας τους μετασχηματιστές, μπορείτε να γράψετε μεγαλύτερους, επαναχρησιμοποιήσιμα μπλοκ κώδικα για το χειρισμό των δεδομένων.",
+      "desc-2": "Χρησιμοποιώντας Transformers, μπορείτε να γράψετε μεγαλύτερα, επαναχρησιμοποιήσιμα μπλοκ κώδικα για το χειρισμό των δεδομένων.",
       "alt": "1. Γράψτε JavaScript οπουδήποτε επιθυμείτε, ξεκλειδώστε τη δυνατότητα να δεσμεύσετε δυναμικά δεδομένα ή να προσθέσετε λογική επεξεργασίας χρησιμοποιώντας JavaScript. Ενσωματώστε την JavaScript στις εφαρμογές σας και απολαύστε την ευελιξία και δύναμη που φέρνει στη διαδικασία ανάπτυξής σας. 2. Γράψτε και αποθηκεύστε επαναχρησιμοποιήσιμα μπλοκ κώδικα που μπορούν να κληθούν από οπουδήποτε μέσα στην εφαρμογή σας σε μετασχηματιστές. Αυτοί οι μετασχηματιστές σας επιτρέπουν να χειριστείτε τη λογική, να μετατρέψει τα δεδομένα ή να εκτελέσει διάφορες λειτουργίες, απλοποιώντας τη διαδικασία ανάπτυξής σας. ",
       "action": "Μάθετε πώς να γράφετε κώδικα στο ILLA"
-    },
-    "ILLA Drive": {
-      "title": "Κίνηση ILLA",
-      "desc": "Μια φιλική προς το χρήστη λύση CDN για να επιταχύνει το περιεχόμενό σας χωρίς κόπο.",
-      "title-1": "Αποθ. χώρος αρχείου",
-      "title-2": "Εύκολο στη χρήση",
-      "desc-1": "Μπορείτε να χρησιμοποιήσετε το ILLA Drive για να αποθηκεύσετε με ασφάλεια τα αρχεία και να τα μοιραστείτε με όλα τα μέλη της ομάδας σας.",
-      "desc-2": "Το ILLA Drive απλοποιεί τη διαδικασία παράδοσης περιεχομένου, επιτρέποντάς σας να εστιάσετε στην παροχή εξαιρετικού περιεχομένου.",
-      "alt": "1. Αποθήκευση αρχείων και λήψη: Μπορείτε να αποθηκεύσετε με ασφάλεια αρχεία στο ILLA Drive, και όλα τα μέλη της ομάδας σας μπορούν να έχουν πρόσβαση σε αυτά, όπως απαιτείται.2. Δημόσια υπογεγραμμένα URL με λήξη: Η μονάδα δίσκου ILLA σάς επιτρέπει να δημιουργείτε δημόσια υπογεγραμμένα URL για αρχεία, με την επιλογή να ορίσετε χρόνο λήξης. Αυτό επιτρέπει την ασφαλή κοινή χρήση αρχείων με εξωτερικά μέρη για περιορισμένο χρονικό διάστημα.3. Σύνδεσμοι πρόληψης κλοπής: Μπορείτε να ενεργοποιήσετε τους συνδέσμους πρόληψης κλοπής στο ILLA Drive, που περιορίζουν την πρόσβαση σε αρχεία μόνο μέσω της εφαρμογής ILLA σας. Αυτό εξασφαλίζει ότι η πρόσβαση στα αρχεία μπορεί να γίνει μόνο στο πλαίσιο της εφαρμογής ILLA σας. . Χωρίς ραφή ενσωμάτωση με ILLA Builder: Μπορείτε να ανεβάσετε ή να επιλέξετε τα αρχεία απευθείας εντός της διεπαφής οικοδόμος ILLA, απλοποίηση της διαδικασίας ενσωμάτωσης αρχείων στην εφαρμογή σας.",
-      "action": "Μάθετε περισσότερα για το ILLA Drive"
     },
     "sql-generate": {
       "title-1": "SQL",
@@ -298,6 +288,16 @@
       "title-4": "",
       "introduction": "Η ILLA μετατρέπει τη φαντασία σε πραγματικούς κώδικες και σχέδια. Οι προγραμματιστές μπορούν να εργαστούν ταυτόχρονα στο ILLA Builder μοιράζοντας συνδέσμους. Οι προγραμματιστές μπορούν να συν-επεξεργάζονται και να επικοινωνούν με άλλους σε πραγματικό χρόνο για να δώσουν έγκαιρη ανατροφοδότηση, η οποία θα βελτιώσει σημαντικά την αποδοτικότητα της ανάπτυξης.",
       "goto": "Μάθετε πώς να συνεργάζεστε"
+    },
+    "drive": {
+      "title": "ILLA Drive",
+      "desc-1": "Μπορείτε να χρησιμοποιήσετε το ILLA Drive για να αποθηκεύσετε με ασφάλεια τα αρχεία και να τα μοιραστείτε με όλα τα μέλη της ομάδας σας.",
+      "alt": "1. Αποθήκευση αρχείων και λήψη: Μπορείτε να αποθηκεύσετε με ασφάλεια αρχεία στο ILLA Drive, και όλα τα μέλη της ομάδας σας μπορούν να έχουν πρόσβαση σε αυτά, όπως απαιτείται.2. Δημόσια υπογεγραμμένα URL με λήξη: Η μονάδα δίσκου ILLA σάς επιτρέπει να δημιουργείτε δημόσια υπογεγραμμένα URL για αρχεία, με την επιλογή να ορίσετε χρόνο λήξης. Αυτό επιτρέπει την ασφαλή κοινή χρήση αρχείων με εξωτερικά μέρη για περιορισμένο χρονικό διάστημα.3. Σύνδεσμοι πρόληψης κλοπής: Μπορείτε να ενεργοποιήσετε τους συνδέσμους πρόληψης κλοπής στο ILLA Drive, που περιορίζουν την πρόσβαση σε αρχεία μόνο μέσω της εφαρμογής ILLA σας. Αυτό εξασφαλίζει ότι η πρόσβαση στα αρχεία μπορεί να γίνει μόνο στο πλαίσιο της εφαρμογής ILLA σας. . Χωρίς ραφή ενσωμάτωση με ILLA Builder: Μπορείτε να ανεβάσετε ή να επιλέξετε τα αρχεία απευθείας εντός της διεπαφής οικοδόμος ILLA, απλοποίηση της διαδικασίας ενσωμάτωσης αρχείων στην εφαρμογή σας.",
+      "desc-2": "Το ILLA Drive απλοποιεί τη διαδικασία παράδοσης περιεχομένου, επιτρέποντάς σας να εστιάσετε στην παροχή εξαιρετικού περιεχομένου.",
+      "action": "Μάθετε περισσότερα για το ILLA Drive",
+      "desc": "Μια φιλική προς το χρήστη λύση CDN για να επιταχύνει το περιεχόμενό σας χωρίς κόπο.",
+      "title-1": "Αποθ. χώρος αρχείου",
+      "title-2": "Εύκολο στη χρήση"
     }
   },
   "faq": {
@@ -385,10 +385,10 @@
     "title": "Συνεργάτης",
     "partnerList": [
       {
-        "name": "Σχολιάζοντας Πρόσωπο",
+        "name": "Hugging Face",
         "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/huggingface.svg",
         "tagCategory": "homepage_partner_hf_click",
-        "target": "σύντροφος_hf",
+        "target": "partner_hf",
         "sort": 0
       },
       {
@@ -402,7 +402,7 @@
         "name": "Pingcap",
         "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/pingcap.svg",
         "tagCategory": "homepage_partner_pingcap_click",
-        "target": "σύντροφος_pingcap",
+        "target": "partner_pingcap",
         "sort": 2
       },
       {
@@ -413,21 +413,21 @@
         "sort": 3
       },
       {
-        "name": "Ελαφρώς",
-        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/Lightly%20Loπηγαίνετε%201.svg",
+        "name": "Lightly",
+        "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/Lightly%20Logo%201.svg",
         "tagCategory": "homepage_partner_lightly_click",
-        "target": "σύντροφος_ελαφρά",
+        "target": "partner_lightly",
         "sort": 4
       },
       {
-        "name": "Εφαρμόσιμο",
+        "name": "APITable",
         "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/%E5%9B%BE%E5%B1%82%201.svg",
         "tagCategory": "homepage_partner_apitable_click",
-        "target": "σύντροφος_εφαρμόσιμο",
+        "target": "partner_apitable",
         "sort": 5
       },
       {
-        "name": "Κανάρια",
+        "name": "Kanaries",
         "logo": "https://cdn.illacloud.com/official-website/img/home/Partner/kanaries-logo%201.svg",
         "tagCategory": "homepage_partner_kanaries_click",
         "target": "σύντροφος_κανάρια",
