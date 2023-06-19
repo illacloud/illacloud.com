@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "Konstruktor ILLA hosta",
+        "description": "Wdrożenie budowniczego ILLA na własną infrastrukturę w mniej niż 10 minut i dostęp do swoich danych bez względu na to, gdzie się znajduje."
+    },
+    "product": {
+        "title": "Konstruktor ILLA hosta",
+        "description": "Wspieramy użytkowników do samodzielnego hostowania open-source ILLA Builder. Przyczynia się do potrzeb zespołów rozruchowych, zapewniając im wszystkie narzędzia niezbędne do tworzenia własnych wewnętrznych aplikacji.",
+        "button": "Wypróbuj teraz",
+        "alt": "Wspieramy użytkowników do samodzielnego hostowania open-source ILLA Builder. Przyczynia się do potrzeb zespołów rozruchowych, zapewniając im wszystkie narzędzia niezbędne do tworzenia własnych wewnętrznych aplikacji."
+    },
+    "how-to-deploy": {
+        "title": "Jak wdrożyć",
+        "sub-title": "Wdrożenie konstruktora ILLA w minutach",
+        "desc": "Kreator ILLA zapewnia płynne doświadczenie wdrożeniowe, które pozwala na wdrażanie aplikacji z zaskakującą szybkością w ramach wirtualnej prywatnej chmury (VPC). ",
+        "docker": {
+            "title": "Dokujący",
+            "desc": "<div class='innerSection'>        <h4>Uruchom Oficjalny Obraz</h4>        <p>Zainstaluj GNU marki i wpisz:<code>utwórz run-official-image</code></p>        <div>          <p>lub po prostu wykonaj:</p>          <code>/bin/bash scripts/run-official-image. h</code>        </div>          <p>I zaloguj się przy użyciu domyślnego hasła użytkownika root i hasła.</p>          <p>            I zaloguj się domyślną nazwą użytkownika <code>root</code> i hasło            <code>hasło</code>          </p>      </div>      <div class='innerSection'>        <h4>Zbuduj obraz ręcznie i uruchom</h4>        <p>Narzędzie ładunkowe zakończy pobieranie CLI ILLA z jego zależnościami źródłowymi, zbudować i zainstalować go na trasie ładunkowej, abyśmy mogli go prowadzić. Po zainstalowaniu możesz uruchomić CLI ILLA za pomocą polecenia illi.</p>        <div>          <p>Dla zbudowania illi w jednym zdjęciu i uruchomienia, typ:</p>          <code>zrób wszystkie</code>        </div>        <div>          <p>dla podmana, type:</p>          <code>make run-by-podman</code>        </div>        <p>          pAnd log with a default username <code>root</code> and password          <code>password</code>        </p>      </div>",
+            "button": "Wdrożenie przewodnika"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>Downloading ILLA CLI</h4>        <p>  If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:<code>cargo install illa</code></p>        <p>  The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <p>  Alternatively, you can just download the ILLA CLI for your operating system here:</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from cargo. After downloading the CLI, you will have to make it executable. </p>      </div>      ",
+            "button": "Wdrożenie przewodnika"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "Wdrożenie przewodnika"
+        },
+        "quickly_deploy": {
+            "title": "Szybkie wdrożenie",
+            "desc": "",
+            "button": "Wdrożenie przewodnika"
+        }
+    },
+    "features": {
+        "title": "Funkcje",
+        "drag-and-drop": {
+            "title": "Zbuduj interfejs ze gładką metodą przeciągania i upuszczania",
+            "desc": "ILLA zrewolucjonizowała sposób tworzenia interfejsów aplikacji. Nasza skrupulatnie zaprojektowana metoda przeciągania i upuszczania pozwala na szybką budowę interfejsów front-end i przyśpieszenie procesu rozwoju."
+        },
+        "fost": {
+            "title": "Współpraca w czasie rzeczywistym z członkami zespołu",
+            "desc": "Pozwalamy wielu użytkownikom na jednoczesną edycję treści w tej samej aplikacji. Podejście oparte na współpracy na rzecz rozwoju promuje efektywność, umożliwiając sprawną współpracę osobom o różnych rolach. "
+        },
+        "components": {
+            "title": "Wybiórcza biblioteka komponentów",
+            "desc": "Oferujemy zróżnicowaną grupę komponentów dostosowanych specjalnie do rozwoju narzędzi wewnętrznych. Od tabel i list po interaktywne wykresy, mamy starannie stworzone gotowe do użycia komponenty."
+        },
+        "integrations": {
+            "title": "Integracja z szeregiem źródeł danych",
+            "desc": "Budowniczy ILLA przejmuje integrację z nowymi wysokościami. Nasza platforma bezproblemowo łączy się z popularnymi bazami danych i API, w tym Postgre, REST API, twarz Hugging Face, OpenAI, Supabase, Appwrite, itp."
+        },
+        "access": {
+            "title": "Usprawnienie zarządzania dostępem użytkowników",
+            "desc": "Bezpieczeństwo i kontrola są najważniejsze, jeśli chodzi o narzędzia wewnętrzne. Dzięki naszej wersji open source zyskujesz solidne możliwości zarządzania dostępem użytkowników. Łatwo zarządzaj członkami zespołu i przypisuj określone uprawnienia dostępu w oparciu o ich obowiązki. "
+        }
+    },
+    "compare": {
+        "title": "Porównaj z Chmurą ILLA",
+        "sub-title-1": "Chmura ILLA",
+        "sub-title-2": "Własny host",
+        "button": "Spróbuj teraz",
+        "list": {
+            "components": {
+                "title": "Rozszerzona biblioteka komponentów",
+                "desc": "Od elementów podstawowych po złożone funkcje starannie zaprojektowaliśmy i poddaliśmy szeroki wachlarz komponentów, aby zaspokoić Twoją potrzebę. "
+            },
+            "integration": {
+                "title": "Integracja z dowolnym źródłem danych",
+                "desc": "Budowniczy ILLA zapewnia płynną łączność z różnymi źródłami danych, co pozwala na bezproblemowe wykorzystanie mocy Twoich danych."
+            },
+            "team-member": {
+                "title": "Skuteczne zarządzanie członkami zespołu",
+                "desc": "Z budową ILLA możesz zarządzać członkami zespołu i ich rolami w procesie rozwoju. Przydziel konkretne obowiązki, przyznawać zróżnicowane uprawnienia dostępu oraz usprawniać przepływ pracy. "
+            },
+            "collaboration": {
+                "title": "Współpraca w czasie rzeczywistym",
+                "desc": "Wielu członków zespołu może pracować razem nad tym samym projektem, edytowując zawartość jednocześnie. Umocnij swój zespół do dzielenia się pomysłami, dostarczania natychmiastowych informacji zwrotnych i wspólnie napędzaj swoje projekty. "
+            },
+            "one-click-deploy": {
+                "title": "Wdrożenie jednym kliknięciem",
+                "desc": "Dzięki naszej funkcji wdrażania, możesz bez wysiłku wdrożyć swoje opracowane aplikacje za pomocą jednego kliknięcia, oszczędzając czas, zmniejszając błędy."
+            },
+            "multi-team": {
+                "title": "Utwórz wiele drużyn",
+                "desc": "Gdy Twoja firma rozwija się i posiada wiele działów biznesowych, możesz potrzebować wielu zespołów do zarządzania osobno użytkownikami, aplikacjami i zasobami. Ta funkcja odpowiada Twoim potrzebom."
+            },
+            "public-app": {
+                "title": "Wdrożenie jako publiczne aplikacje",
+                "desc": "Wspieramy ustawienie aplikacji jako aplikacji publicznej. Oznacza to, że każdy może uzyskać dostęp do aplikacji bez logowania się na konto ILLA. Dla celów bezpieczeństwa możesz dostosować metodę logowania w aplikacji."
+            },
+            "audit-log": {
+                "title": "Dzienniki audytu",
+                "desc": "Przechowujemy wszystkie dane o aktywności zespołu przez okres do jednego roku, co pozwala Ci na sprawdzanie i sprawdzanie go w każdej chwili."
+            },
+            "theme": {
+                "title": "Motyw",
+                "desc": "Możesz zapisać wiele zestawów motywów i zastosować je tylko jednym kliknięciem."
+            },
+            "branding": {
+                "title": "Marka",
+                "desc": "Dostosuj wygląd swojego budowniczego ILLA lub ILLA Cloud, nadając mu unikalną markę, która jest zgodna z tożsamością Twojej firmy."
+            }
+        }
+    },
+    "faq": {
+        "title": "Często zadawane pytania",
+        "description": "Jakieś inne pytania? Zapraszamy do <0>zapytaj ILLA na Discordzie</0>",
+        "content": [
+            {
+                "question": "Co to jest ILLA Cloud?",
+                "answer": "ILLA Cloud jest platformą o niskim kodzie odziedziczającą wiele możliwości od ILLA Builder i ILLA. Zapewnia on płynne doświadczenie poprzez umożliwienie użytkownikom logowania się i rejestracji w celu uzyskania dostępu do swoich funkcji. Z chmurą ILLA możesz bez wysiłku budować wewnętrzne narzędzia, pulpity, CRUD (tworzenie, czytanie, aktualizacja, usuwanie) aplikacje i wiele innych. Platforma znacznie poprawia wydajność pracy i pomaga przedsiębiorstwom w oszczędzaniu kosztów.",
+                "sort": "0"
+            },
+            {
+                "question": "Kto może korzystać z chmury ILLA",
+                "answer": "Czy jesteś menedżerem produktów, pełnym programistą, menedżerem projektów, analitykiem danych... nikone może używać chmury ILLA do budowania narzędzi: od projektowania interfejsów front-end z komponentami przeciągnij i upuść po integrację ze źródłami danych i generowanie zapytań z wykorzystaniem pomocy AI, ILLA zapewnia sprawniejsze doświadczenie, które usuwa niepotrzebne trudności. Nie musisz być ekspertem w dziedzinie technologii, aby tworzyć własne aplikacje.",
+                "sort": "1"
+            },
+            {
+                "question": "Jakiego rodzaju aplikacje możesz rozwinąć za pomocą chmury ILLa?",
+                "answer": "Z ILLA Cloud, możesz zbudować dowolną aplikację, której potrzebujesz, takie jak powszechnie używane narzędzia wewnętrzne, takie jak Dashboards, Panele administratora, aplikacje CRUD, CRM, CMS i inne. Dodatkowo, możesz rozwijać aplikacje AI, takie jak aplikacje tekstowo-obrazowe ze stabilnym dyfuzją, Aplikacje audio-tekstowe z Whisperem, a nawet osadzają modele GPT OpenAI, aby pomóc Ci w realizacji różnych zadań.",
+                "sort": "2"
+            },
+            {
+                "question": "Które źródła danych obsługują ILLa?",
+                "answer": "ILLA obsługuje integrację z różnymi źródłami danych, w tym PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, i innych. Możesz szybko połączyć się z dowolnym źródłem danych bez pisania kodu, umożliwiając płynny dostęp do żądanych danych.",
+                "sort": "3"
+            }
+        ]
+    }
+}
