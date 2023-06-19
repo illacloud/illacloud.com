@@ -27,7 +27,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
     >
       <div
         className={clsx(
-          'text-[16px] h-full w-full flex flex-row items-center gap-[8px]',
+          'text-[10px] h-full w-full flex flex-row items-center gap-[8px] xl:text-[14px]',
           {
             'text-white-01': buttonColorChange,
             'text-gray-01': !buttonColorChange,
@@ -49,7 +49,7 @@ export const LanguageSelect = ({ buttonColorChange = true }) => {
       </div>
       <div
         className={clsx(
-          'max-h-[180px] overflow-y-auto text-[14px] transition-height duration-200 absolute top-[48px] flex flex-col items-center  w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]',
+          'max-h-[180px] overflow-y-auto text-[14px] transition-height duration-200 absolute bottom-[48px] flex flex-col items-center  w-[121px] rounded-[8px] shadow-[0px_2px_16px_0px_rgba(0,0,0,0.16)]',
           {
             'bg-gray-02 text-white-01': buttonColorChange,
             'bg-white text-gray-01': !buttonColorChange,

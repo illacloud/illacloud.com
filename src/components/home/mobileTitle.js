@@ -4,12 +4,10 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import * as ReactDOM from 'react-dom'
 import { Player } from '@/components/home/player'
-import Publicize from '@/components/home/NewContent/Publicize'
-import { StarIcon } from '@/img/public/star'
-import { GoIcon } from '@/img/public/go'
 import { LinearGithubIcon } from '@/img/public/linearGithub'
 import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 import { sendTagEvent } from '@/utils/gtag'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -23,15 +21,15 @@ export const Modal = ({ isOpen, onClose }) => {
 
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')
-  const [menuExpand, setMenuExpand] = useState(false)
+  const [menuExpand] = useState(false)
   const { setPlayMaskShow, githubStarts } = props
-
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
   useEffect(() => {
     document.body.style.overflow = menuExpand ? 'hidden' : 'auto'
   }, [menuExpand])
+
   return (
     <div className="w-full xl:hidden	">
-      <Publicize />
       <div className="px-[20px] h-full flex flex-col items-center justify-center w-full gap-[32px]">
         <div className="flex flex-col items-center gap-[12px]">
           <h1 className="text-white-01 text-[40px] text-center font-bold leading-[48px] mt-[60px]">
@@ -48,7 +46,7 @@ export const MobileTitle = (props) => {
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
-                  category: 'homepage_body_self_hosted_click',
+                  category: 'homepage_body_selfhsot_click',
                   label: t('self-Hosted'),
                 })
               }}
@@ -56,7 +54,7 @@ export const MobileTitle = (props) => {
               {t('self-Hosted')}
             </a>
           </Link>
-          <Link legacyBehavior href="https://cloud.illacloud.com/">
+          <Link legacyBehavior href={cloudUrl}>
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
@@ -64,7 +62,7 @@ export const MobileTitle = (props) => {
                 gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
-                  category: 'homepage_body_live_demo_click',
+                  category: 'homepage_body_try_cloud_free_click',
                   label: t('illa-Cloud'),
                   value: 'https://cloud.illacloud.com/',
                 })
@@ -90,7 +88,6 @@ export const MobileTitle = (props) => {
             >
               <LinearGithubIcon />
               <div className="text-white-01 text-[13px] flex items-center font-medium">
-                <StarIcon />
                 <span className="ml-[5px]">
                   {`${(githubStarts / 1000).toFixed(1)}k`} {t('stars')}
                 </span>
@@ -112,7 +109,6 @@ export const MobileTitle = (props) => {
             >
               <LinearDiscordIcon />
               <div className="text-white-01 text-[13px] flex items-center font-medium items-center">
-                <GoIcon />
                 <span className="ml-[5px] align-middle">
                   {t('join-community')}
                 </span>
@@ -127,7 +123,7 @@ export const MobileTitle = (props) => {
               action: 'click',
               category: 'homepage_body_video_click',
             })
-            setPlayMaskShow(true)
+            setPlayMaskShow && setPlayMaskShow(true)
           }}
         >
           <Image

@@ -1,4 +1,4 @@
-import {DefaultStars} from '@/constants/defaultVal';
+import { DefaultStars } from '@/constants/defaultVal';
 export const getStars = async () => {
   try {
     const res = await fetch(

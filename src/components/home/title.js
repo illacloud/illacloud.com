@@ -2,20 +2,20 @@ import { useTranslation } from 'next-i18next'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
-import { DiscordIcon } from '@/img/public/discord'
-import { GithubIcon } from '@/img/public/github'
-import { StarIcon } from '@/img/public/star'
-import { GoIcon } from '@/img/public/go'
-import Publicize from '@/components/home/NewContent/Publicize'
-
+import { Publicize } from '@/components/home/NewNav/publicize'
+import Image from 'next/image'
+import { useUtmParams } from '@/hooks/useUtmParams'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
+import { titleBottomContent } from '@/constants/newContent'
+import { Vector } from '@/img/public/vector'
 
 export const Title = (props) => {
-  const { githubStarts, setPlayMaskShow } = props
+  const { setPlayMaskShow, githubStarts } = props
   const { t } = useTranslation('home')
   const containerRef = useRef(null)
   const [canClick, setCanClcik] = useState(true)
+  const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 
   const { scrollYProgress, scrollY } = useViewportScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.038], [1, 0])
@@ -137,25 +137,25 @@ export const Title = (props) => {
           'pointer-events-none': !canClick,
         })}
       >
-        <Publicize />
-        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px]">
-          <div className="flex flex-col items-center gap-[24px]">
-            <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px] mt-[60px]">
+        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px] gap-[48px]">
+          <div className="flex flex-col items-center gap-[24px] z-[-1]">
+            <Publicize stars={githubStarts} />
+            <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
               {t('slogan-1')}
             </h1>
             <span className="font-normal text-[20px] px-[20px] sm:px-0 text-center">
               {t('description')}
             </span>
-            <div className="flex items-center content-between gap-[16px] text-[20px]">
-              <Link legacyBehavior href="https://cloud.illacloud.com/">
+            <div className="flex items-center flex-col content-between gap-[24px] text-[16px] leading-[28px] font-[500]">
+              <Link legacyBehavior href={cloudUrl}>
                 <a
-                  className="h-[48px] w-[320px] bg-tech-purple-01 rounded-[8px] px-[64px] py-[8px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+                  className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                   onClick={() => {
                     // eslint-disable-next-line no-undef
                     gtagReportConversion && gtagReportConversion()
                     sendTagEvent({
                       action: 'click',
-                      category: 'homepage_body_live_demo_click',
+                      category: 'homepage_body_try_cloud_free_click',
                       label: t('illa-Cloud'),
                       value: 'https://cloud.illacloud.com/',
                     })
@@ -166,100 +166,45 @@ export const Title = (props) => {
               </Link>
               <Link legacyBehavior href="/docs/illa-cli">
                 <a
-                  className="h-[48px] w-[320px] bg-blackAlpha-05 border-[1px] font-normal	 border-white-01 text-center	rounded-[8px] px-[64px] py-[8px] text-white-01"
+                  className="h-[19px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] items-center"
                   onClick={() => {
                     sendTagEvent({
                       action: 'click',
-                      category: 'homepage_body_self_hosted_click',
+                      category: 'homepage_body_selfhsot_click',
                       label: t('self-Hosted'),
                     })
                   }}
                 >
-                  {t('self-Hosted')}
+                  <span className='underline'>{t('self-Hosted')} </span>
+                  <Vector />
                 </a>
               </Link>
             </div>
           </div>
-          <div className="flex gap-[16px]">
-            <Link
-              legacyBehavior
-              href="https://github.com/illacloud/illa-builder"
-            >
-              <a
-                target="__blank"
-                className="flex gap-[12px] items-center rounded-[8px] px-[27px] justify-start  bg-[#FFFFFF] bg-opacity-[0.12] w-[200px] hover:bg-opacity-[0.2] relative"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_github_click',
-                    label: `${githubStarts} ${t('stars')}`,
-                    value: 'https://github.com/illacloud/illa-builder',
-                  })
-                }}
-              >
-                <GithubIcon />
-                <div className="flex flex-col">
-                  <span className="text-white-01 text-[10px] font-medium">
-                    {t('join-github')}
-                  </span>
-                  <span className="text-white-01 text-[16px] font-bold">
-                    {t('github')}
-                  </span>
+          <div className="flex flex-row items-start gap-[40px] rounded-[16px] h-[56px] ">
+            {
+              titleBottomContent.map(({ title, desc, image }) => (
+                <div key={title} className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]">
+                  <Image src={image} width='32' height='32' />
+                  <div className='flex flex-col'>
+                    <span className='text-[12px] font-[600] leading-[16px] text-white-04'>{t(title)}</span>
+                    <span className='text-[14px] font-[500] leading-[22px] text-white-01'>{t(desc)}</span>
+                  </div>
                 </div>
-                <div className="flex flex-col absolute right-[27px]">
-                  <span className="flex justify-center">
-                    <StarIcon />
-                  </span>
-                  <span className="text-white-01 text-[14px] font-bold text-center">
-                    {githubStarts}
-                  </span>
-                </div>
-              </a>
-            </Link>
-            <Link legacyBehavior href="https://discord.com/invite/illacloud">
-              <a
-                target="__blank"
-                className="flex gap-[12px] items-center  rounded-[8px] py-[9px] px-[16px] justify-center bg-[#FFFFFF] bg-opacity-[0.12] w-[200px]  hover:bg-opacity-[0.2] inline-block"
-                onClick={() => {
-                  sendTagEvent({
-                    action: 'click',
-                    category: 'homepage_body_discord_click',
-                    label: t('join-community'),
-                    value: 'https://discord.com/invite/illacloud',
-                  })
-                }}
-              >
-                <DiscordIcon />
-                <div className="flex flex-col">
-                  <span className="text-white-01 text-[10px] font-medium">
-                    {t('join-discord')}
-                  </span>
-                  <span className="text-white-01 text-[16px] font-bold">
-                    {t('discord')}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="flex justify-center">
-                    <GoIcon />
-                  </span>
-                  <span className="text-white-01 text-[14px] font-bold text-center">
-                    {t('go')}
-                  </span>
-                </div>
-              </a>
-            </Link>
+              ))
+            }
           </div>
         </div>
       </motion.div>
       <motion.div
-        className="w-full flex items-center justify-center absolute top-[70vh]"
+        className="w-full flex items-center justify-center absolute top-[70vh] "
         style={{
           translateY: imgPositionY,
         }}
       >
         <motion.img
           src="https://cdn.illacloud.com/official-website/img/home/playVideoCover.png"
-          className="animate-coverage-visible  flex items-center justify-center "
+          className="flex items-center justify-center"
           alt="Screenshot of ILLA Cloud app editor"
           style={{
             width: width,
@@ -269,7 +214,7 @@ export const Title = (props) => {
               action: 'click',
               category: 'homepage_body_video_click',
             })
-            setPlayMaskShow(true)
+            setPlayMaskShow && setPlayMaskShow(true)
           }}
         />
       </motion.div>

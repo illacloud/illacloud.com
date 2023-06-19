@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { Button } from '../Button'
+import { Button } from '@/components/Button'
 
 export function IconContainer({
   as: Component = 'div',
