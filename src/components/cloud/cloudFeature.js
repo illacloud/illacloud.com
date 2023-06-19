@@ -21,7 +21,7 @@ export const CloudFeature = ({ feature }) => {
           {
             feature.items.map(({ label, image, imageAlt, mobileImg }) => (
               <div className='flex flex-col items-center gap-[20px] xl:gap-[32px] w-full' key={label}>
-                <h2 className={style.mainLabel}>{t(feature.label)}</h2>
+                <h2 className={style.mainLabel}>{t(label)}</h2>
                 <img src={isInMobile ? mobileImg : image} alt={imageAlt} className='w-full' />
               </div>
             ))
