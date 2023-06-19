@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "セルフホスト ILLA ビルダ",
+        "description": "10分以内に独自のインフラストラクチャにILLA Builderを導入し、どこにいてもデータにアクセスします。"
+    },
+    "product": {
+        "title": "セルフホスト ILLA ビルダ",
+        "description": "私たちは、オープンソースのILLAビルダーをセルフホストするユーザーをサポートします。 スタートアップチームのニーズに応え、独自の内部アプリケーションを構築するために必要なすべてのツールを提供します。",
+        "button": "今すぐ試す",
+        "alt": "私たちは、オープンソースのILLAビルダーをセルフホストするユーザーをサポートします。 スタートアップチームのニーズに応え、独自の内部アプリケーションを構築するために必要なすべてのツールを提供します。"
+    },
+    "how-to-deploy": {
+        "title": "展開方法",
+        "sub-title": "ILLA ビルダーを分単位でデプロイ",
+        "desc": "ILLA Builderは、アプリケーションを独自のVirtual Private Cloud(VPC)内で驚異的なスピードで展開できるシームレスなデプロイ環境を提供します。 ",
+        "docker": {
+            "title": "Docker",
+            "desc": "<div class='innerSection'>        <h4>Run an Official Image</h4>        <div><p>Install GNU make and type:</p> </div> <code>make run-official-image</code>      <div>          <p>or just execute:</p>          <code>/bin/bash scripts/run-official-image.sh</code>        </div>          <p>And log in with the default username root and password password.</p>          <p>            And log in with the default username <code>root</code> and password            <code>password</code>          </p>      </div>      <div class='innerSection'>        <h4>Build Image Manually and Run</h4>        <p>The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <div>          <p>For build illa all-in-one image and run, type:</p>          <code>make all</code>        </div>        <div>          <p>for podman, type:</p>          <code>make run-by-podman</code>        </div>        <p>          And log in with the default username <code>root</code> and password          <code>password</code>        </p>      </div>",
+            "button": "導入ガイド"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>Downloading ILLA CLI</h4>        <div><p>  If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:</p>        <p><code>cargo install illa</code></div>  The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <p>  Alternatively, you can just download the ILLA CLI for your operating system here:</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from cargo. After downloading the CLI, you will have to make it executable. </p>      </div>      ",
+            "button": "導入ガイド"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "導入ガイド"
+        },
+        "quickly_deploy": {
+            "title": "すばやくデプロイする",
+            "desc": "",
+            "button": "導入ガイド"
+        }
+    },
+    "features": {
+        "title": "特徴",
+        "drag-and-drop": {
+            "title": "スムーズなドラッグアンドドロップ方法でインターフェイスを構築します",
+            "desc": "ILLAは、アプリケーションインターフェースの構築方法に革命をもたらしました。 当社の細心の注意を払って設計されたドラッグアンドドロップ方法により、フロントエンドインターフェイスを迅速に構築し、開発プロセスを加速することができます。"
+        },
+        "fost": {
+            "title": "チームメンバーとリアルタイムでのコラボレーション",
+            "desc": "複数のユーザーが同じアプリケーション内のコンテンツを同時に編集できるようにします。 この共同開発アプローチは、効率を向上させ、異なる役割を持つ個人が円滑に協力できるようにします。 "
+        },
+        "components": {
+            "title": "精巧なコンポーネントライブラリ",
+            "desc": "当社は、内部工具開発に特化した多様な部品を取り揃えています。 テーブルやリストからインタラクティブチャートまで、すぐに使用できるコンポーネントに細心の注意を払って細工されています。"
+        },
+        "integrations": {
+            "title": "データソースの配列と統合",
+            "desc": "ILLAビルダーは、新たな高みに統合を取ります。 私たちのプラットフォームはPostgres、REST API、Hugging Face、OpenAI、Supabase、Appwriteなどの一般的なデータベースやAPIにシームレスに接続します。"
+        },
+        "access": {
+            "title": "ユーザーアクセス管理を合理化する",
+            "desc": "内部ツールに関しては、セキュリティと制御が最も重要です。当社のオープンソース版では、堅牢なユーザーアクセス管理機能を得ることができます。 チームメンバーを簡単に管理し、責任に基づいて特定のアクセス権限を割り当てます。 "
+        }
+    },
+    "compare": {
+        "title": "ILLA クラウドと比較",
+        "sub-title-1": "ILLA Cloud",
+        "sub-title-2": "自己ホスト",
+        "button": "今すぐ試す",
+        "list": {
+            "components": {
+                "title": "拡張コンポーネントライブラリ",
+                "desc": "基本的な要素から複雑な機能まで、私たちは慎重に設計し、あなたのニーズに応えるために、幅広いコンポーネントをキュレーションしてきました。 "
+            },
+            "integration": {
+                "title": "任意のデータソースと統合",
+                "desc": "ILLA Builderは、さまざまなデータソースとのシームレスな接続を提供し、データの力を簡単に活用できます。"
+            },
+            "team-member": {
+                "title": "効率的なチームメンバー管理",
+                "desc": "ILLA Builderを使用すると、チームメンバーとその役割を開発プロセス内で管理できます。 特定の責任を割り当て、さまざまなアクセス権限を付与し、ワークフローを合理化します。 "
+            },
+            "collaboration": {
+                "title": "リアルタイムコラボレーション",
+                "desc": "複数のチームメンバーは、同じプロジェクトで同時に作業でき、コンテンツを編集できます。 アイデアを共有し、即座にフィードバックを提供し、プロジェクトを進めるためにチームに力を与えます。 "
+            },
+            "one-click-deploy": {
+                "title": "ワンクリックで配置可能",
+                "desc": "当社の導入機能により、開発したアプリケーションをワンクリックで簡単にデプロイでき、時間を節約し、エラーを減らすことができます。"
+            },
+            "multi-team": {
+                "title": "複数のチームを作成",
+                "desc": "会社が複数の事業部門を展開している場合は、メンバー、アプリ、リソースを個別に管理するために複数のチームが必要になる場合があります。 この機能はあなたのニーズに対応します。"
+            },
+            "public-app": {
+                "title": "公開アプリとしてデプロイ",
+                "desc": "私たちはあなたのアプリを公開アプリとして設定することをサポートしています。これは誰でもILLAアカウントにログインせずにあなたのアプリにアクセスできることを意味します。 セキュリティ上の観点から、アプリ内のログイン方法をカスタマイズできます。"
+            },
+            "audit-log": {
+                "title": "監査ログ",
+                "desc": "すべてのチームアクティビティデータを最大1年間保存し、いつでもクエリとレビューを行うことができます。"
+            },
+            "theme": {
+                "title": "テーマ",
+                "desc": "複数のテーマを保存し、ワンクリックでアプリに適用できます。"
+            },
+            "branding": {
+                "title": "Branding",
+                "desc": "ILLA BuilderまたはILLA Cloudの外観をカスタマイズし、会社のアイデンティティと一致するユニークなブランディングを提供します。"
+            }
+        }
+    },
+    "faq": {
+        "title": "よく寄せられる質問",
+        "description": "他に質問はありますか？<0>DiscordでILLAに聞いてみてください </0>",
+        "content": [
+            {
+                "question": "ILLAクラウドとは?",
+                "answer": "ILLA Cloudは、ILLA BuilderとILLA Driveから複数の機能を継承したローコードプラットフォームです。 ユーザーがログインし、登録して機能にアクセスできるようにすることで、シームレスなエクスペリエンスを提供します。 ILLA Cloud を使用すると、内部ツール、ダッシュボード、CRUD (作成、読み取り、更新、削除) アプリケーションなどを簡単に構築できます。 このプラットフォームは、作業効率を大幅に向上させ、企業がコストを削減するのに役立ちます。",
+                "sort": "0"
+            },
+            {
+                "question": "ILLA Cloud を使用できる人",
+                "answer": "プロダクトマネージャー、フルスタック開発者、プロジェクトマネージャー、データアナリストのいずれでも... nynone は ILLA Cloud を使用してツールを構築することができます: ドラッグアンドドロップコンポーネントによるフロントエンドインターフェースの設計から、データソースとの統合、および AI アシスタントを使用したクエリの生成まで。 ILLAは、不必要な複雑性を排除する合理化された経験を提供します。 独自のアプリケーションを作成するために、技術の専門家である必要はありません。",
+                "sort": "1"
+            },
+            {
+                "question": "ILLA Cloudを使ってどのようなアプリケーションを開発できますか?",
+                "answer": "ILLA Cloud を使用すると、必要なアプリケーションを構築できます。 ダッシュボード、管理者パネル、CRUDアプリ、CRM、CMSなどの一般的に使用される内部ツールなど。 さらに、安定した拡散を使用したテキストツーイメージアプリケーションなど、AI アプリケーションを開発することができます。 Whisperを使用した音声からテキストへのアプリケーション、さらにはOpenAIのGPTモデルを埋め込んで、さまざまなタスクを完了するのに役立ちます。",
+                "sort": "2"
+            },
+            {
+                "question": "ILLAはどのデータソースをサポートしていますか?",
+                "answer": "ILLAは、PostgreSQL、MongoDB、REST API、GraphQL、Google Sheetなど、さまざまなデータソースとの統合をサポートしています。 コードを記述することなく、任意のデータソースにすばやく接続できるため、目的のデータにシームレスにアクセスできます。",
+                "sort": "3"
+            }
+        ]
+    }
+}
