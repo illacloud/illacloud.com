@@ -2,7 +2,7 @@ export const CloudContent = {
   feature: {
     title: 'features.title',
     label: 'features.easy-to-use.title',
-    desc: 'features.easy-to-use.title.desc',
+    desc: 'features.easy-to-use.desc',
     items: [
       {
         label: 'features.easy-to-use.title-1',
