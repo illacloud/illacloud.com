@@ -14,7 +14,7 @@ import { useRouter } from 'next/router'
 import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useMemo } from 'react'
 import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
@@ -38,6 +38,9 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
   const curLanguage = router.locale
   const policyUrl = useUtmParams(`https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`)
   const termsUrl = useUtmParams(`https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`)
+  const showWeChat = useMemo(() => {
+    return curLanguage === 'zh-CN'
+  }, [curLanguage])
 
 
   return (
@@ -102,6 +105,14 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                       )
                     }
                   })
+                }
+                {
+                  showWeChat && items.some(item => item.icon) && (
+                    <div className='flex flex-col mt-[16px] gap-[8px] w-[70px] hidden xl:block'>
+                      <img src='https://cdn.illacloud.com/official-website/img/home/wechat.png' className='w-full' alt=''/>
+                      <span className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}>加入微信群</span>
+                    </div>
+                  )
                 }
               </div>
             </div>

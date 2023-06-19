@@ -8,7 +8,7 @@ export const AllContent = () => {
   const isInMobile = usePlatform()
   return (
     <div className={style.allContentContainer}>
-      <div className="flex flex-col items-start justify-center gap-[16px]">
+      <div className="flex flex-col items-center justify-center gap-[16px]">
         <h1 className={style.allContentTitle}>{t('content.all.title')}</h1>
         <span className={style.allContentDesc}>{t('content.all.desc')}</span>
       </div>
