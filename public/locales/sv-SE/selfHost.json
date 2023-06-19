@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "Självvärd ILLA Builder",
+        "description": "Distribuera ILLA Builder på egen infrastruktur på mindre än 10 minuter och få tillgång till dina data oavsett var de befinner sig."
+    },
+    "product": {
+        "title": "Självvärd ILLA Builder",
+        "description": "Vi hjälper användare att själv vara värd för ILLA Builder med öppen källkod. Det tillgodoser behoven hos startup team, ger dem med alla nödvändiga verktyg för att bygga sina egna interna program.",
+        "button": "Prova nu",
+        "alt": "Vi hjälper användare att själv vara värd för ILLA Builder med öppen källkod. Det tillgodoser behoven hos startup team, ger dem med alla nödvändiga verktyg för att bygga sina egna interna program."
+    },
+    "how-to-deploy": {
+        "title": "Hur man distribuerar",
+        "sub-title": "Distribuera ILLA Builder på några minuter",
+        "desc": "ILLA Builder ger en sömlös driftsättningsupplevelse som gör att du kan distribuera dina appar med en häpnadsväckande hastighet i ditt eget virtuella privata moln (VPC). ",
+        "docker": {
+            "title": "Docker",
+            "desc": "<div class='innerSection'>        <h4>Kör en officiell bild</h4>        <p>Installera GNU make and typ:<code>make run-official-image</code></p>        <div>          <p>eller bara exekvera:</p>          <code>/bin/bash scripts/run-official-image. h</code>        </div>          <p>Och logga in med standard användarnamn root och lösenord lösenord.</p>          <p>            Och logga in med standardanvändarnamnet <code>root</code> och lösenord            <code>lösenord</code>          </p>      </div>      <div class='innerSection'>        <h4>Skapa bild Manuellt och Kör</h4>        <p>Lastverktyget kommer att slutföra nedladdning av ILLA CLI med källberoenden, bygga och installera den i lasten bin sökvägen så att vi kan köra den. En gång installerat kan du köra ILLA CLI med illa-kommandot.</p>        <div>          <p>För att bygga illa allt-i-ett bild och köra, typ:</p>          <code>gör alla</code>        </div>        <div>          <p>för podman, typ:</p>          <code>gör run-by-podman</code>        </div>        <p>          pAnd logga in med standardanvändarnamnet <code>root</code> och lösenord          <code>lösenord</code>        </p>      </div>",
+            "button": "Distribuera guide"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>Downloading ILLA CLI</h4>        <p>  If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:<code>cargo install illa</code></p>        <p>  The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <p>  Alternatively, you can just download the ILLA CLI for your operating system here:</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from cargo. After downloading the CLI, you will have to make it executable. </p>      </div>      ",
+            "button": "Distribuera guide"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "Distribuera guide"
+        },
+        "quickly_deploy": {
+            "title": "Distribuera snabbt",
+            "desc": "",
+            "button": "Distribuera guide"
+        }
+    },
+    "features": {
+        "title": "Funktioner",
+        "drag-and-drop": {
+            "title": "Bygg gränssnitt med smidig dra-och-släpp-metod",
+            "desc": "ILLA har revolutionerat hur du bygger applikationsgränssnitt. Med vår noggrant utformade dra-och-släpp-metod kan du snabbt bygga frontend gränssnitt och påskynda utvecklingsprocessen."
+        },
+        "fost": {
+            "title": "Realtidssamarbete med teammedlemmar",
+            "desc": "Vi tillåter flera användare att samtidigt redigera innehåll i samma program. Denna samarbetsstrategi främjar effektivitet, vilket gör det möjligt för individer med olika roller att arbeta tillsammans smidigt. "
+        },
+        "components": {
+            "title": "Utsökt komponentbibliotek",
+            "desc": "Vi erbjuder en mängd olika komponenter skräddarsydda för intern verktygsutveckling. Från tabeller och listor till interaktiva sjökort har vi noggrant skapat färdiga att använda komponenter."
+        },
+        "integrations": {
+            "title": "Integrera med en rad datakällor",
+            "desc": "ILLA Builder tar integration till nya höjder. Vår plattform ansluter sömlöst till populära databaser och API:er, inklusive Postgre, REST API, Hugging Face, OpenAI, Supabase, Appwrite, etc."
+        },
+        "access": {
+            "title": "Effektivisera hantering av användaråtkomst",
+            "desc": "Säkerhet och kontroll är av största vikt när det gäller interna verktyg. Med vår version med öppen källkod får du en robust hantering av användaråtkomster. Hantera dina teammedlemmar enkelt och tilldela specifika behörigheter baserat på deras ansvar. "
+        }
+    },
+    "compare": {
+        "title": "Jämför med ILLA Cloud",
+        "sub-title-1": "ILLA moln",
+        "sub-title-2": "Själv-värd",
+        "button": "Prova nu",
+        "list": {
+            "components": {
+                "title": "Omfattande komponentbibliotek",
+                "desc": "Från grundläggande element till komplexa funktioner har vi noggrant designat och kurerat ett brett spektrum av komponenter för att tillgodose dina behov. "
+            },
+            "integration": {
+                "title": "Integrera med alla datakällor",
+                "desc": "ILLA Builder ger sömlös anslutning med olika datakällor så att du enkelt kan utnyttja kraften i dina data."
+            },
+            "team-member": {
+                "title": "Effektiv teammedlemsledning",
+                "desc": "Med ILLA Builder kan du hantera dina teammedlemmar och deras roller inom utvecklingsprocessen. Tilldela specifika ansvarsområden, ge olika åtkomstbehörigheter och effektivisera arbetsflöden. "
+            },
+            "collaboration": {
+                "title": "Samarbete i realtid",
+                "desc": "Flera gruppmedlemmar kan arbeta tillsammans i samma projekt, redigera innehåll samtidigt. Ge ditt team möjlighet att dela idéer, ge omedelbar feedback och gemensamt driva dina projekt framåt. "
+            },
+            "one-click-deploy": {
+                "title": "Distribution med bara ett klick",
+                "desc": "Med vår distributionsfunktion kan du enkelt distribuera dina utvecklade program med bara ett enda klick, vilket sparar tid och minskar felen."
+            },
+            "multi-team": {
+                "title": "Skapa flera team",
+                "desc": "När ditt företag expanderar och har flera affärsavdelningar kan du behöva flera team för att hantera medlemmar, appar och resurser separat. Den här funktionen tillgodoser dina behov."
+            },
+            "public-app": {
+                "title": "Distribuera som offentliga appar",
+                "desc": "Vi stöder inställningen av din app som en offentlig app. Det innebär att vem som helst kan komma åt din app utan att logga in på ett ILLA-konto. Av säkerhetsskäl kan du anpassa inloggningsmetoden i appen."
+            },
+            "audit-log": {
+                "title": "Granskningsloggar",
+                "desc": "Vi lagrar all data för teamaktiviteter i upp till ett år, så att du kan fråga och granska det när som helst."
+            },
+            "theme": {
+                "title": "Tema",
+                "desc": "Du kan spara flera olika teman och tillämpa dem i din app med bara ett klick."
+            },
+            "branding": {
+                "title": "Varumärke",
+                "desc": "Anpassa utseendet på din ILLA Builder eller ILLA Cloud, vilket ger den ett unikt varumärke som passar ditt företags identitet."
+            }
+        }
+    },
+    "faq": {
+        "title": "Vanliga frågor",
+        "description": "Några andra frågor? Känn dig fri att <0>fråga ILLA på Discord</0>",
+        "content": [
+            {
+                "question": "Vad är ILLA Cloud?",
+                "answer": "ILLA Cloud är en plattform med låg kod som ärver flera funktioner från ILLA Builder och ILLA Drive. Det ger en sömlös upplevelse genom att tillåta användare att logga in och registrera sig för att komma åt sina funktioner. Med ILLA Cloud kan du enkelt bygga interna verktyg, instrumentpaneler, CRUD (skapa, läsa, uppdatera, ta bort) program med mera. Plattformen förbättrar avsevärt arbetseffektiviteten och hjälper företag att spara kostnader.",
+                "sort": "0"
+            },
+            {
+                "question": "Vem kan använda ILLA Cloud",
+                "answer": "Oavsett om du är en produktchef, fullstacksutvecklare, projektledare, dataanalytiker... nyone kan använda ILLA Cloud för att bygga verktyg: Från att designa front-end gränssnitt med dra-och-släpp-komponenter till att integrera med datakällor och generera frågor med hjälp av AI-hjälp, ILLA ger en strömlinjeformad upplevelse som avlägsnar onödig hy. Du behöver inte vara teknisk expert för att skapa dina egna applikationer.",
+                "sort": "1"
+            },
+            {
+                "question": "Vilka typer av applikationer kan du utveckla med ILLA Cloud?",
+                "answer": "Med ILLA Cloud kan du bygga alla program du behöver, såsom vanliga interna verktyg som instrumentpaneler, administratörspaneler, CRUD-appar, CRM, CMS, och mer. Dessutom kan du utveckla AI-applikationer, till exempel text-till-bild-applikationer med stabil spridning, ljud-till-text-program med Whisper, och även bädda in OpenAI:s GPT-modeller för att hjälpa dig att slutföra olika uppgifter.",
+                "sort": "2"
+            },
+            {
+                "question": "Vilka datakällor stöder ILLA?",
+                "answer": "ILLA stöder integration med en mängd olika datakällor, inklusive PostgreSQL, MongoDB, REST API, GraphQL, Google Kalkylark med mera. Du kan snabbt ansluta till alla datakällor utan att skriva kod, vilket ger sömlös åtkomst till dina önskade data.",
+                "sort": "3"
+            }
+        ]
+    }
+}
