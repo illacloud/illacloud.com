@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "Itsesisällön ILLA Builder",
+        "description": "Ota ILLA Builder käyttöön omassa infrastruktuurissasi alle 10 minuutissa ja käytä tietojasi riippumatta siitä, missä se on."
+    },
+    "product": {
+        "title": "Itsesisällön ILLA Builder",
+        "description": "Tuemme käyttäjiä toimimaan avoimen lähdekoodin ILLA Builderin isäntänä. Se vastaa startup-tiimien tarpeita, ja se tarjoaa heille kaikki tarvittavat työkalut omien sisäisten sovellustensa rakentamiseen.",
+        "button": "Kokeile Nyt",
+        "alt": "Tuemme käyttäjiä toimimaan avoimen lähdekoodin ILLA Builderin isäntänä. Se vastaa startup-tiimien tarpeita, ja se tarjoaa heille kaikki tarvittavat työkalut omien sisäisten sovellustensa rakentamiseen."
+    },
+    "how-to-deploy": {
+        "title": "Miten ottaa käyttöön",
+        "sub-title": "Julkaise ILLA Builder minuuteissa",
+        "desc": "ILLA Builder tarjoaa saumattoman käyttökokemuksen, jonka avulla voit ottaa sovelluksesi käyttöön hämmästyttävällä nopeudella oman Virtual Private Cloud (VPC). ",
+        "docker": {
+            "title": "Docker",
+            "desc": "<div class='innerSection'>        <h4>Run an Official Image</h4>        <div><p>Install GNU make and type:</p> <code>make run-official-image</code></div>       <div>          <p>or just execute:</p>          <code>/bin/bash scripts/run-official-image.sh</code>        </div>          <p>And log in with the default username root and password password.</p>          <p>            And log in with the default username <code>root</code> and password            <code>password</code>          </p>      </div>      <div class='innerSection'>        <h4>Build Image Manually and Run</h4>        <p>The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <div>          <p>For build illa all-in-one image and run, type:</p>          <code>make all</code>        </div>        <div>          <p>for podman, type:</p>          <code>make run-by-podman</code>        </div>        <p>          And log in with the default username <code>root</code> and password          <code>password</code>        </p>      </div>",
+            "button": "Julkaise opas"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>Downloading ILLA CLI</h4>        <div><p>  If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:</p>        <p><code>cargo install illa</code></div>  The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <p>  Alternatively, you can just download the ILLA CLI for your operating system here:</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from cargo. After downloading the CLI, you will have to make it executable. </p>      </div>      ",
+            "button": "Julkaise opas"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "Julkaise opas"
+        },
+        "quickly_deploy": {
+            "title": "Nopeasti käyttöön",
+            "desc": "",
+            "button": "Julkaise opas"
+        }
+    },
+    "features": {
+        "title": "Ominaisuudet",
+        "drag-and-drop": {
+            "title": "Rakenna käyttöliittymä sujuvan pudottamalla menetelmä",
+            "desc": "ILLA on mullistanut tavan rakentaa sovellusrajapintoja. Meidän huolellisesti suunniteltu pudottamalla menetelmä avulla voit rakentaa frontend rajapinnat nopeasti ja nopeuttaa kehitysprosessia."
+        },
+        "fost": {
+            "title": "Reaaliaikainen yhteistyö tiimin jäsenten kanssa",
+            "desc": "Sallimme useiden käyttäjien samanaikaisesti muokata sisältöä samassa sovelluksessa. Tämä yhteistyöhön perustuva kehittämislähestymistapa edistää tehokkuutta, mikä mahdollistaa eri rooleissa olevien henkilöiden sujuvan yhteistyön. "
+        },
+        "components": {
+            "title": "Hieno komponenttikirjasto",
+            "desc": "Tarjoamme monipuolisen kokoelman komponentteja, jotka on räätälöity erityisesti sisäisen työkalun kehittämiseen. Taulukoista ja listoista interaktiivisiin kaavioihin, meillä on huolella valmistettuja komponentteja."
+        },
+        "integrations": {
+            "title": "Integroida joukko tietolähteitä",
+            "desc": "ILLA Builder vie integroinnin uusiin korkeuksiin. Alustamme yhdistää saumattomasti suosittuja tietokantoja ja sovellusliittymiä, kuten Postgre, REST API, Hugging Face, OpenAI, Supabase, Appwrite, jne."
+        },
+        "access": {
+            "title": "Streamline user access management",
+            "desc": "Turvallisuus ja valvonta ovat ensiarvoisen tärkeitä sisäisiä työkaluja. Avoimen lähdekoodin versiomme avulla saat käyttöösi varmoja hallintaominaisuuksia. Hallitse helposti tiimin jäseniä ja määritä erityisiä käyttöoikeuksia heidän velvollisuuksiensa perusteella. "
+        }
+    },
+    "compare": {
+        "title": "Vertaa ILLA Pilveen",
+        "sub-title-1": "ILLA Pilvi",
+        "sub-title-2": "Itsenäinen isäntä",
+        "button": "Kokeile nyt",
+        "list": {
+            "components": {
+                "title": "Laaja komponenttikirjasto",
+                "desc": "Peruselementeistä monimutkaisiin toimintoihin olemme huolellisesti suunnitelleet ja kuratoineet laajan valikoiman komponentteja, jotka vastaavat tarpeitasi. "
+            },
+            "integration": {
+                "title": "Integroi mihin tahansa tietolähteeseen",
+                "desc": "ILLA Builder tarjoaa saumattoman yhteyden erilaisiin tietolähteisiin, joiden avulla voit vaivattomasti valjastaa tietojesi voiman."
+            },
+            "team-member": {
+                "title": "Tehokas tiimin jäsenten johto",
+                "desc": "ILLA Builderin avulla voit hallita tiimisi jäseniä ja heidän roolejaan kehitysprosessissa. Määritä erityisiä tehtäviä, myöntää erilaisia käyttölupia ja virtaviivaistaa työnkulkua. "
+            },
+            "collaboration": {
+                "title": "Reaaliaikainen yhteistyö",
+                "desc": "Useat tiimin jäsenet voivat työskennellä yhdessä samassa projektissa ja muokata sisältöä samanaikaisesti. Antaa tiimillesi mahdollisuus jakaa ideoita, antaa välitöntä palautetta ja ajaa yhdessä projektejasi eteenpäin. "
+            },
+            "one-click-deploy": {
+                "title": "Käyttöönotto yhdellä napsautuksella",
+                "desc": "Käyttöliittymämme ominaisuuden avulla voit helposti ottaa kehitetyt sovelluksesi käyttöön yhdellä napsautuksella, mikä säästää aikaa, mikä vähentää virheitä."
+            },
+            "multi-team": {
+                "title": "Luo Useita Tiimejä",
+                "desc": "Kun yrityksesi laajenee ja sillä on useita liiketoimintayksiköitä, saatat tarvita useita tiimejä jäsenten, sovellusten ja resurssien hallintaan erikseen. Tämä ominaisuus palvelee tarpeitasi."
+            },
+            "public-app": {
+                "title": "Julkaise julkisina sovelluksina",
+                "desc": "Tuemme sovelluksen asettamista julkiseksi sovellukseksi. Tämä tarkoittaa, että kuka tahansa voi käyttää sovellustasi kirjautumatta ILLA-tiliin. Turvallisuutta varten voit muokata kirjautumistapaa sovelluksen sisällä."
+            },
+            "audit-log": {
+                "title": "Tarkastuslokit",
+                "desc": "Tallennetaan kaikki tiimin aktiivisuustiedot enintään vuoden, jolloin voit kysyä ja tarkastella niitä milloin tahansa."
+            },
+            "theme": {
+                "title": "Teema",
+                "desc": "Voit tallentaa useita teemoja ja soveltaa niitä sovellukseen yhdellä napsautuksella."
+            },
+            "branding": {
+                "title": "Brändi",
+                "desc": "Mukauta ILLA Builderin tai ILLA Cloudin ulkonäköä antaen sille ainutlaatuisen brändin, joka vastaa yrityksesi identiteettiä."
+            }
+        }
+    },
+    "faq": {
+        "title": "Usein Kysytyt Kysymykset",
+        "description": "Muita kysymyksiä? Haluatko vapaasti <0>kysyä ILLA:lta Discord</0>",
+        "content": [
+            {
+                "question": "Mitä ILLA Cloud on?",
+                "answer": "ILLA Cloud on matalan koodin alusta, joka perii useita ominaisuuksia ILLA Builder ja ILLA Drive. Se tarjoaa saumattoman kokemuksen antamalla käyttäjille mahdollisuuden kirjautua sisään ja rekisteröidä sen ominaisuuksia. ILLA Cloud, voit vaivattomasti rakentaa sisäisiä työkaluja, dashboards, CRUD (luoda, lukea, päivittää, poistaa) sovelluksia ja enemmän. Alusta parantaa merkittävästi työn tehokkuutta ja auttaa yrityksiä säästämään kustannuksia.",
+                "sort": "0"
+            },
+            {
+                "question": "Kuka voi käyttää ILLA Cloudia",
+                "answer": "Olitpa sitten tuotepäällikkö, full-stack kehittäjä, projektipäällikkö, datan analyytikko... nyone voi käyttää ILLA Cloud rakentaa työkaluja: Suunnittelusta etupään rajapinnat pudottamalla komponentteja integroida tietolähteisiin ja tuottaa kyselyjä käyttäen tekoälyapua, ILLA tarjoaa virtaviivaisen kokemuksen, joka poistaa tarpeettomat monimutkaisuudet. Sinun ei tarvitse olla tekninen asiantuntija luoda omia sovelluksia.",
+                "sort": "1"
+            },
+            {
+                "question": "Minkälaisia sovelluksia voit kehittää käyttämällä ILLA Cloudia?",
+                "answer": "ILLA Cloudin avulla voit rakentaa minkä tahansa tarvitsemasi sovelluksen, kuten yleisesti käytetyt sisäiset työkalut, kuten Dashboards, Admin Panels, CRUD sovellukset, CRM, CMS ja paljon muuta. Lisäksi voit kehittää tekoälysovelluksia, kuten teksti-kuva-sovelluksia, joissa on Stable Diffuusio. Whisper, ja jopa upottaa OpenAI:n GPT-malleja, jotka auttavat sinua suorittamaan erilaisia tehtäviä.",
+                "sort": "2"
+            },
+            {
+                "question": "Mitä tietolähteitä ILLA tukee?",
+                "answer": "ILLA tukee integrointia erilaisia tietolähteitä, kuten PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, ja enemmän. Voit nopeasti muodostaa yhteyden mihin tahansa tietolähteeseen kirjoittamatta koodia, jolloin haluamasi tiedot ovat saumattomat.",
+                "sort": "3"
+            }
+        ]
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "Samohostitelský ILLA Tvůrce",
+        "description": "Nasaďte tvůrce ILLA na vlastní infrastrukturu za méně než 10 minut a přistupujte k vašim údajům bez ohledu na to, kde jsou."
+    },
+    "product": {
+        "title": "Samohostitelský ILLA Tvůrce",
+        "description": "Podporujeme uživatele pro vlastní hostování open-source ILLA Builderu. Zabývá se potřebami startupních týmů a poskytuje jim všechny potřebné nástroje pro budování jejich vlastních interních aplikací.",
+        "button": "Vyzkoušejte nyní",
+        "alt": "Podporujeme uživatele pro vlastní hostování open-source ILLA Builderu. Zabývá se potřebami startupních týmů a poskytuje jim všechny potřebné nástroje pro budování jejich vlastních interních aplikací."
+    },
+    "how-to-deploy": {
+        "title": "Jak nasadit",
+        "sub-title": "Nasadit Editor ILLA v minutách",
+        "desc": "ILLA Builder poskytuje bezproblémové nasazení, které vám umožní nasadit aplikace ohromující rychlostí v rámci vašeho vlastního virtuálního soukromého cloudu (VPC). ",
+        "docker": {
+            "title": "Docker",
+            "desc": "<div class='innerSection'>        <h4>Run an Official Image</h4>        <div><p>Install GNU make and type:</p> <code>make run-official-image</code></div>       <div>          <p>or just execute:</p>          <code>/bin/bash scripts/run-official-image.sh</code>        </div>          <p>And log in with the default username root and password password.</p>          <p>            And log in with the default username <code>root</code> and password            <code>password</code>          </p>      </div>      <div class='innerSection'>        <h4>Build Image Manually and Run</h4>        <p>The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <div>          <p>For build illa all-in-one image and run, type:</p>          <code>make all</code>        </div>        <div>          <p>for podman, type:</p>          <code>make run-by-podman</code>        </div>        <p>          And log in with the default username <code>root</code> and password          <code>password</code>        </p>      </div>",
+            "button": "Příručka pro nasazení"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>Downloading ILLA CLI</h4>        <p>  If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:<code>cargo install illa</code></p>        <p>  The cargo tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the illa command.</p>        <p>  Alternatively, you can just download the ILLA CLI for your operating system here:</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from cargo. After downloading the CLI, you will have to make it executable. </p>      </div>      ",
+            "button": "Příručka pro nasazení"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "Příručka pro nasazení"
+        },
+        "quickly_deploy": {
+            "title": "Rychle nasadit",
+            "desc": "",
+            "button": "Příručka pro nasazení"
+        }
+    },
+    "features": {
+        "title": "Vlastnosti",
+        "drag-and-drop": {
+            "title": "Sestavit rozhraní pomocí metody přetažení",
+            "desc": "ILLA revolučně změnila způsob, jakým vytváříte rozhraní aplikací. Naše pečlivě navržená metoda přetahování umožňuje vytvářet rozhraní na frontě rychle a urychlit vývojový proces."
+        },
+        "fost": {
+            "title": "Spolupráce se členy týmu v reálném čase",
+            "desc": "Umožňujeme více uživatelů současně upravovat obsah v rámci stejné aplikace. Tento přístup založený na spolupráci podporuje efektivitu a umožňuje hladce spolupracovat jednotlivci s různými roli. "
+        },
+        "components": {
+            "title": "Výborná knihovna komponent",
+            "desc": "Nabízíme různorodou sbírku komponentů přizpůsobenou speciálně pro vývoj vnitřních nástrojů. Z tabulek a seznamů až po interaktivní grafy jsme vytvořili pečlivě připravené komponenty."
+        },
+        "integrations": {
+            "title": "Integrovat s množinou zdrojů údajů",
+            "desc": "Stavitel ILLA převezme integraci do nových výšek. Naše platforma se bezproblémově spojuje s populárními databázemi a API, včetně Postgre, REST API, Hugging Face, OpenAI, Supabase, Appwrite, atd."
+        },
+        "access": {
+            "title": "Streamline správu přístupu uživatele",
+            "desc": "Zabezpečení a kontrola jsou prvořadé, pokud jde o interní nástroje. S naší verzí s otevřeným zdrojovým kódem získáte robustní možnosti pro správu přístupu uživatelů. Snadno spravujte členy vašeho týmu a přiřaďte konkrétní přístupová oprávnění na základě jejich odpovědnosti. "
+        }
+    },
+    "compare": {
+        "title": "Porovnat s ILLA Cloudem",
+        "sub-title-1": "ILLA Cloud",
+        "sub-title-2": "Samohostitelský",
+        "button": "Vyzkoušejte nyní",
+        "list": {
+            "components": {
+                "title": "Rozsáhlá knihovna komponent",
+                "desc": "Od základových prvků až po komplexní funkce jsme pečlivě navrhli a upravili širokou škálu komponentů, které odpovídají vaší potřebě. "
+            },
+            "integration": {
+                "title": "Integrovat s jakýmkoli zdrojem dat",
+                "desc": "ILLA Builder poskytuje bezproblémové spojení s různými datovými zdroji, umožňuje vám bez námahy využít sílu vašich dat."
+            },
+            "team-member": {
+                "title": "Efektivní řízení členů týmu",
+                "desc": "S ILLA Builderem můžete spravovat členy týmu a jejich role v procesu vývoje. Přiřadit konkrétní odpovědnosti, udělit různá přístupová oprávnění a zefektivnit pracovní postupy. "
+            },
+            "collaboration": {
+                "title": "Spolupráce v reálném čase",
+                "desc": "Více členů týmu může spolupracovat na stejném projektu, současně upravovat obsah. Zmocněte svůj tým ke sdílení nápadů, poskytněte okamžitou zpětnou vazbu a společně vraťte své projekty kupředu. "
+            },
+            "one-click-deploy": {
+                "title": "Nasazení pouze jedním kliknutím",
+                "desc": "S naší funkcí nasazení můžete bez námahy rozmístit své rozvinuté aplikace jediným kliknutím, ušetříte čas, čímž snížíte chyby."
+            },
+            "multi-team": {
+                "title": "Vytvořit více týmů",
+                "desc": "Když vaše společnost expanduje a má více obchodních oddělení, můžete potřebovat více týmů pro správu členů, aplikací a zdrojů odděleně. Tato funkce odpovídá vašim potřebám."
+            },
+            "public-app": {
+                "title": "Nasadit jako veřejné aplikace",
+                "desc": "Podporujeme nastavení vaší aplikace jako veřejné aplikace. To znamená, že kdokoliv může přistupovat k vaší aplikaci bez přihlášení k ILLA účtu. Z bezpečnostních důvodů si můžete přizpůsobit přihlašovací metodu v aplikaci."
+            },
+            "audit-log": {
+                "title": "Záznamy auditu",
+                "desc": "Ukládáme všechna týmová data o aktivitách až na jeden rok, což vám umožní kdykoliv se dotazovat a zkontrolovat."
+            },
+            "theme": {
+                "title": "Téma",
+                "desc": "Můžete uložit více sad motivů a použít je na vaši aplikaci jediným kliknutím."
+            },
+            "branding": {
+                "title": "Značka",
+                "desc": "Přizpůsobte si vzhled vaší ILLA Tvůj editor nebo ILLA Cloud, což mu dává unikátní značku, která odpovídá identitě vaší společnosti."
+            }
+        }
+    },
+    "faq": {
+        "title": "Často kladené otázky",
+        "description": "Všechny další otázky? Neváhejte se <0>zeptat se ILLA na Discord</0>",
+        "content": [
+            {
+                "question": "Co je to ILLA Cloud?",
+                "answer": "ILLA Cloud je nízkoprogramová platforma, která zdědí více možností z ILLA Builder a ILLA Drive. Poskytuje bezproblémový zážitek tím, že umožňuje uživatelům přihlásit se a registrovat se k jeho funkcím. S ILLA Cloudem můžete bez námahy vytvářet interní nástroje, nástěnky, CRUD (vytváření, čtení, aktualizace, mazání) aplikace a další. Platforma významně zlepšuje pracovní efektivitu a pomáhá společnostem šetřit náklady.",
+                "sort": "0"
+            },
+            {
+                "question": "Kdo může používat ILLA Cloud",
+                "answer": "Ať už jste produktový manažer, kompletní vývojář, správce projektu, analytik dat... nyone může použít ILLA Cloud pro sestavení nástrojů: Od navrhování rozhraní front-end s komponentami přetažení až po integraci se zdroji dat a generování dotazů pomocí pomoci AI, ILLA poskytuje zjednodušené zkušenosti, které odstraňují zbytečné komplikace. Nemusíte být technologickým expertem pro vytváření vlastních aplikací.",
+                "sort": "1"
+            },
+            {
+                "question": "Jaké druhy aplikací můžete vyvíjet pomocí ILLA Cloud?",
+                "answer": "S ILLA Cloudem můžete vytvořit jakoukoliv potřebnou aplikaci. jako běžně používané interní nástroje, jako jsou nástěnky, administrátorské panely, CRUD aplikace, CRM, CMS a další. Kromě toho můžete vyvíjet AI aplikace, jako jsou aplikace pro zobrazení textu na obrázek se stabilním difuzí, audio-textové aplikace s Whisperem a dokonce vloží modely GPT OpenAA, které vám pomohou při plnění různých úkolů.",
+                "sort": "2"
+            },
+            {
+                "question": "Které zdroje dat podporují ILLa?",
+                "answer": "ILLA podporuje integraci s různými zdroji dat, včetně PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets a dalších. Můžete se rychle připojit k libovolnému zdroji dat bez psaní kódu, což umožní bezproblémový přístup k požadovaným datům.",
+                "sort": "3"
+            }
+        ]
+    }
+}

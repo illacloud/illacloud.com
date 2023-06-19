@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "title": "私有化部署",
+        "description": "在您自己的设备上部署ILLA Builder，10 分钟内即可完成。"
+    },
+    "product": {
+        "title": "ILLA Builder的私有化部署",
+        "description": "我们支持用户自行管理开源的 ILLA Builder。 ILLA Builder提供了初创团队在搭建内部工具时的所需的必要功能。",
+        "button": "立即体验",
+        "alt": "我们支持用户自行管理开源的 ILLA Builder。 它满足了启动团队的需要，为他们提供了建立自己内部应用程序的所有必要工具。"
+    },
+    "how-to-deploy": {
+        "title": "如何部署",
+        "sub-title": "在几分钟内部署ILLA Builder",
+        "desc": "ILLA Builder 提供了极简的部署体验，使您能够在自己的设备或VPC上快速部署您的应用。 ",
+        "docker": {
+            "title": "Docker",
+            "desc": "<div class='innerSection'>        <h4>运行官方镜像</h4>       <div> <p>安装 GNU make并输入：</p>  <code>make run-official-image</code> </div>   <div>          <p>或仅执行：</p>          <code>/bin/bash scripts/run-official-image.sh</code>        </div>          <p>使用默认用户名根目录和密码登录。</p>          <p>            使用默认用户名 <code>root</code> 和密码            <code>password</code> 登录         </p>      </div>      <div class='innerSection'>        <h4>编译镜像并运行</h4>        <p>cargo工具将使用源依赖完成下载ILLA CLI， 将其安装到cargo bin路径中，以便我们能够运行它。一旦安装完毕，您就可以使用普通命令运行ILLA CLI了。</p>        <div>          <p>用于构建所有内置镜像并运行，输入：</p>          <code>make all</code>        </div>        <div>          <p>用于podman, 输入：</p>          <code>make run-by-podman</code>        </div>        <p>  使用默认用户名 <code>root</code> 和密码          <code>password</code>登录        </p>      </div><p>",
+            "button": "部署指南"
+        },
+        "ILLA-CLI": {
+            "title": "ILLA CLI",
+            "desc": "      <div class='innerSection'>        <h4>下载 ILLA CLI</h4>        <p>  如果您安装了Rust 您可以使用cargo轻松地构建+安装最新的 ILLA CLI ：<code>cargo install illa</code></p>        <p>  cargo工具将使用源依赖关系完成ILLA CLI下载， 将其安装到cargo bin路径中，以便我们能够运行它。 一旦安装完毕，您就可以使用普通命令运行ILLA CLI。</p>        <p>  此外，您可以在这里根据您的操作系统下载ILLA CLI：</p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'><a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Windows</a>          </p>          <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz'>Linux</a>                  </p>        <p>          <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz'>Mac</a>        </p>        <p>如果您从上述链接下载， 后续步骤会和从cargo上下载ILLA CLI略有不同。下载CLI后，您必须使其可以执行。 </p>      </div>      <a href='https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip'>",
+            "button": "部署指南"
+        },
+        "Kubernetes": {
+            "title": "Kubernetes",
+            "desc": "",
+            "button": "部署指南"
+        },
+        "quickly_deploy": {
+            "title": "快速部署",
+            "desc": "",
+            "button": "部署指南"
+        }
+    },
+    "features": {
+        "title": "功能",
+        "drag-and-drop": {
+            "title": "用拖拉拽组件的方式构建界面",
+            "desc": "ILLA Cloud改变了构建前端界面的方式。我们精心设计的拖拉拽组件的构建方式，使您能够快速构建前端界面并加速开发进程。"
+        },
+        "fost": {
+            "title": "与团队成员进行实时协作",
+            "desc": "我们允许多个用户同时编辑同一应用程序中的内容。 这种协同开发的方式提高了开发效率，使不同角色的成员能够顺利合作。"
+        },
+        "components": {
+            "title": "精美的组件库",
+            "desc": "我们提供了专门为内部工具设计的各种各样的组件。 从表格和列表到交互式图表，能够覆盖几乎全部内部应用开发场景。"
+        },
+        "integrations": {
+            "title": "与数据源集成",
+            "desc": "ILLA Builder将数据集成提升到了新的高度。 您可以连接到各种数据库或API，包括Postgre、REST API、Hugging Face、OpenAI、Supabase、Appwrite等。"
+        },
+        "access": {
+            "title": "简化用户访问控制",
+            "desc": "对于内部工具而言，安全和权限控制是至关重要的。通过我们的开源版本，您可以获得强大的用户访问管理能力。轻松管理您的团队成员并根据他们的责任分配特定的访问权限。 "
+        }
+    },
+    "compare": {
+        "title": "与ILLA Cloud比较",
+        "sub-title-1": "ILLA Cloud",
+        "sub-title-2": "私有化部署",
+        "button": "立即体验",
+        "list": {
+            "components": {
+                "title": "精美全面的组件库",
+                "desc": "从基本元素到复杂的功能，我们精心设计了各种各样的组件以满足您的需要。 "
+            },
+            "integration": {
+                "title": "与任何数据源集成",
+                "desc": "ILLA Builder提供了与各种数据源的连接的能力，使您能够轻松地处理您的数据。"
+            },
+            "team-member": {
+                "title": "团队成员管理",
+                "desc": "使用ILLA Builder，您可以管理您的团队成员以及他们在开发过程中的角色。 分配具体的责任，授予不同的访问权限，并简化工作流程。 "
+            },
+            "collaboration": {
+                "title": "实时协作",
+                "desc": "多个团队成员可以在同一个项目上一起工作，同时编辑内容。 让您的团队能够分享想法，提供即时反馈，并集体推动您的项目进程。 "
+            },
+            "one-click-deploy": {
+                "title": "一键部署",
+                "desc": "使用我们的部署功能，您可以轻松地部署应用程序，减少错误。"
+            },
+            "multi-team": {
+                "title": "创建多个团队",
+                "desc": "当您的公司规模扩大或拥有多个业务部门时，您可能需要多个团队来单独管理成员、应用和资源。 此功能可以满足您的需要。"
+            },
+            "public-app": {
+                "title": "作为公开APP部署",
+                "desc": "我们支持将您的应用设置为公开应用。这意味着任何人都可以访问您的应用而无需登录到 ILLA 帐户。 为了安全起见，您可以自定义应用程序内的登录方法。"
+            },
+            "audit-log": {
+                "title": "审计日志",
+                "desc": "我们将所有团队活动数据存储长达一年，允许您随时查找。"
+            },
+            "theme": {
+                "title": "主题",
+                "desc": "您可以保存多组主题，并只需一键点击即应用到您的应用程序中。"
+            },
+            "branding": {
+                "title": "品牌化",
+                "desc": "自定义您的 ILLA Builder或 ILLA Cloud的外观，给它一个独特的品牌，与您的公司身份相联系。"
+            }
+        }
+    },
+    "faq": {
+        "title": "常见问题",
+        "description": "任何其他问题？免费<0>询问Discord</0>",
+        "content": [
+            {
+                "question": "ILLA Cloud是什么？",
+                "answer": "ILLA Cloud是一个低代码平台，它集成了ILLA Builder 和 ILLA Drive。 通过 ILLA Cloud，您可以不费力地构建内部工具、仪表板、CRUD (创建、读取、更新、删除)应用程序等等。 该平台大大提高了工作效率，帮助各公司节省费用。",
+                "sort": "0"
+            },
+            {
+                "question": "谁可以使用 ILLA Cloud",
+                "answer": "无论您是产品经理、全栈开发、项目经理、数据分析员... 任何人都可以使用 ILLA Cloud构建工具：从通过拖拽组件的搭建前端页面到与数据源集成并使用 AI SQL生成器生成查询语句，ILLA Cloud提供了一种简单的构建方式，消除不必要的复杂性。任何人都可以创建的应用程序。",
+                "sort": "1"
+            },
+            {
+                "question": "您可以使用 ILLA Cloud开发何种应用程序？",
+                "answer": "通过 ILLA Cloud，您可以构建您需要的任何应用程序。 例如内部工具常用的仪表板、管理面板、CRUD应用、CRM、CMS等等。 此外，您可以开发 AI 应用程序，例如通过连接Stable Diffusion实现的text-to-image应用程序，使用 Whisper开发语音转文字的工具，甚至通入 OpenAI的 GPT 模型来完成各种任务。",
+                "sort": "2"
+            },
+            {
+                "question": "ILLA 支持哪些数据源？",
+                "answer": "ILLA Cloud支持与包括PostgreSQL、MongoDB、REST API、GraphQL、Google Sheets在内的各种数据源集成。 您可以在没有写入代码的情况下快速连接到任何数据源，允许无缝访问您所需的数据。",
+                "sort": "3"
+            }
+        ]
+    }
+}
