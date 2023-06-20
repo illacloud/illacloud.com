@@ -16,7 +16,7 @@ export const Title = ({ translationName = 'home', content }) => {
   const imgPositionY = useTransform(
     scrollYProgress,
     [0, 0.035],
-    ['0vh', '-60vh'],
+    ['0vh', '-50vh'],
   )
   const { title, desc, btn1, btn1Link = '', btn1Category, btn2, btn2Link = '', image, imageAlt, btn2Category } = content
 
@@ -77,7 +77,7 @@ export const Title = ({ translationName = 'home', content }) => {
           </div>
         </motion.div>
         <motion.div
-          className="w-full flex items-center justify-center absolute top-[70vh] "
+          className={style.titleImage}
           style={{
             translateY: imgPositionY,
           }}
