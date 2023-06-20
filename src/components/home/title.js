@@ -24,7 +24,7 @@ export const Title = (props) => {
   const imgPositionY = useTransform(
     scrollYProgress,
     [0, 0.04],
-    ['0vh', '-60vh'],
+    ['0vh', '-50vh'],
   )
 
   useEffect(() => {
@@ -197,7 +197,7 @@ export const Title = (props) => {
         </div>
       </motion.div>
       <motion.div
-        className="w-full flex items-center justify-center absolute top-[70vh] "
+        className="w-full top-[70vh] flex items-center justify-center absolute 2xl:top-[60vh]"
         style={{
           translateY: imgPositionY,
         }}
