@@ -31,20 +31,12 @@
   background: radial-gradient(37% 76.28% at 48.58% 50.06%, #654AEC 0%, rgba(101, 74, 236, 0) 100%) ;
 }
 .pricingContent {
-  @apply flex flex-col justify-center items-center gap-[10px] w-full my-0 mx-auto;
+  @apply flex flex-col justify-center items-center gap-[16px] w-full my-0 mx-auto;
   @apply xl:gap-[24px] lg:w-[1200px];
 }
 .pricingContentTitle {
-  @apply font-[700] text-[40px] leading-[48px] justify-self-center;
+  @apply font-[700] text-[40px] leading-[48px] justify-self-center px-[24px] w-full text-center;
   @apply xl:text-[64px] xl:leading-[72px];
-  position: relative;
-}
-.pricingContentTitleTag {
-  @apply hidden lg:inline-block gap-[8px] py-[3px] px-[16px] rounded-[20px] text-[14px] leading-[26px] text-center h-[32px] ml-[8px] ;
-  background-color: rgba(169, 63, 253, 0.22);
-  white-space: nowrap;
-  position: absolute;
-  bottom: 0;
 }
 .contentContainer {
   @apply flex flex-row gap-[2px] p-[1px] rounded-[4px];
