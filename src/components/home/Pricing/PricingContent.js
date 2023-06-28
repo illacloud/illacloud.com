@@ -62,11 +62,8 @@ export const PricingContent = ({ onChangeShow }) => {
 
   return (
     <div className={style.pricingContent} onTouchMove={resolveMobile}>
-      <div className='w-full flex flex-row justify-center items-end'>
-        <div className='relative'>
-          <span className={style.pricingContentTitle}>{t('title')} </span>
-          <span className={style.pricingContentTitleTag}>{t('sub-title')}</span>
-        </div>
+      <div className='w-full flex flex-row justify-center'>
+        <span className={style.pricingContentTitle}>{t('title')} </span>
       </div>
       <div className='px-[24px] font-[400] text-[14px] leading-[17px] xl:text-[16px] xl:leading-[19px] text-center lg:w-[1040px] w-full'>{t('page-desc')}</div>
       <div className={style.contentContainer} >
