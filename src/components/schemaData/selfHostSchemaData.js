@@ -96,32 +96,6 @@ export const SelfHostSchemaData = () => {
             "@type": "HowToStep",
             "text": "Deploying ILLA Builder"
           }]
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to self host ILLA Cloud with Kubernetes",
-          "description": "You can self-host locally with ILLA CLI, Docker compose, k8s helm etc. We’ve repeatedly optimised the self-host process to enable you to make self-host and software deployments in just a few minutes. Compared to the cloud, you can use ILLA products more securely and reliably, and you can use ILLA Builder by simply visiting the deployment site after hosting and deploying Builder locally.",
-          "image": "https://cdn.illacloud.com/official-website/img/selfhost/selfhost.svg",
-          "step": [{
-            "@type": "HowToStep",
-            "text": "Run with an official slim image"
-          }, {
-            "@type": "HowToStep",
-            "text": "Route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway"
-          }]
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to self host ILLA Cloud with Docker all-in-one Image",
-          "description": "You can self-host locally with ILLA CLI, Docker compose, k8s helm etc. We’ve repeatedly optimised the self-host process to enable you to make self-host and software deployments in just a few minutes. Compared to the cloud, you can use ILLA products more securely and reliably, and you can use ILLA Builder by simply visiting the deployment site after hosting and deploying Builder locally.",
-          "image": "https://cdn.illacloud.com/official-website/img/selfhost/selfhost.svg",
-          "step": [{
-            "@type": "HowToStep",
-            "text": "Run an Official Image"
-          }, {
-            "@type": "HowToStep",
-            "text": "Build Image Manually and Run"
-          }]
         }
         ]
       }
