@@ -30,12 +30,12 @@ const Home = ({ starCounts, uri }) => {
         <meta
           key="twitter:title"
           name="twitter:title"
-          content="ILLA Cloud | Accelerate your internal tools development."
+          content={t('meta.title')}
         />
         <meta
           key="og:title"
           property="og:title"
-          content="ILLA Cloud | Accelerate your internal tools development."
+          content={t('meta.title')}
         />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
