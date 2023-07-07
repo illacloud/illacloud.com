@@ -72,7 +72,7 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ["https://cloud.illacloud.com/*", "https://builder.illacloud.com/*"]
+        disallow: ["https://cloud.illacloud.com/*", "https://builder.illacloud.com/*", "https://status.illacloud.com/", ]
       },
     ],
   },

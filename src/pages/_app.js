@@ -119,14 +119,6 @@ function App({ Component, pageProps, router }) {
           content={`https://illa.cloud${router.pathname}`}
         />
         <meta key="og:type" property="og:type" content="website" />
-        {router.locale === 'zh-CN' ? (
-          <meta key="og:title" content="ILLA - 分钟级开发 轻松搭建内部工具" />
-        ) : (
-          <meta
-            key="og:title"
-            content="ILLA Cloud | Accelerate your internal tools development"
-          />
-        )}
         <meta
           key="og:description"
           property="og:description"
