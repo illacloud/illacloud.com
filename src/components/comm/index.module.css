@@ -119,13 +119,13 @@
 
 /*------*/
 .titleContainer {
-  @apply hidden xl:flex h-screen  z-30 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01 flex-col  items-center font-bold relative overflow-hidden;
+  @apply hidden xl:flex pt-[166px] bg-black text-title grow-0 text-[40px] text-white-01 flex-col  items-center font-bold overflow-hidden;
 }
 .titlePurpleBtn {
   @apply h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01;
 }
 .titleImage {
-  @apply w-full top-[70vh] flex items-center justify-center absolute 2xl:top-[60vh];
+  @apply w-full flex items-center justify-center mt-[56px];
 }
 
 /*------*/
@@ -161,7 +161,7 @@
   @apply xl:flex flex-row items-start xl:gap-[48px] grid grid-cols-2 gap-x-[12px] gap-y-[32px] w-full;
   grid-auto-rows: max-content;
 }
-@media screen and (min-width: 1536) {
+@media screen and (min-width: 1536px) {
   .mobileFooterContainer {
     transform: translateY(0)!important;
   }

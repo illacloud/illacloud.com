@@ -163,6 +163,7 @@ function App({ Component, pageProps, router }) {
             `,
           }}
         />
+        <script async src="https://tag.clearbitscripts.com/v1/pk_f16327730ef3bdec6215360e27413581/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
       </Head>
       <Script>
         {`(function(w, d, s, l, i) {

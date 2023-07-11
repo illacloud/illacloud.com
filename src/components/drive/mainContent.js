@@ -14,7 +14,7 @@ export const MainContent = ({ uri }) => {
   const { t } = useTranslation('drive')
   const { feature, advantage, benefits } = DriveContent
   return (
-    <div className='w-full bg-black relative z-[1] overflow-x-hidden'>
+    <div className='w-full bg-black overflow-x-hidden'>
       <div className={style.mainContentContainer}>
         <DriveFeature feature={feature} />
         <Advantage advantage={advantage} />
