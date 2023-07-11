@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { motion, useTransform, useViewportScroll } from 'framer-motion'
+import { useViewportScroll } from 'framer-motion'
 import { Publicize } from '@/components/home/NewNav/publicize'
 import Image from 'next/image'
 import { useUtmParams } from '@/hooks/useUtmParams'
@@ -18,14 +18,6 @@ export const Title = (props) => {
   const cloudUrl = useUtmParams('https://cloud.illacloud.com')
 
   const { scrollYProgress, scrollY } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0, 0.038], [1, 0])
-  const titlePositionY = useTransform(scrollYProgress, [0, 0.038], [0, -24])
-  const width = useTransform(scrollYProgress, [0, 0.038], [1040, 1200])
-  const imgPositionY = useTransform(
-    scrollYProgress,
-    [0, 0.04],
-    ['0vh', '-50vh'],
-  )
 
   useEffect(() => {
     return scrollYProgress.onChange((leatest) => {
@@ -115,11 +107,10 @@ export const Title = (props) => {
 
   return (
     <div
-      className="hidden xl:flex z-30 top-[80px] bg-black text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative overflow-hidden"
+      className="hidden xl:flex pt-[166px] bg-black text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold"
       ref={containerRef}
       id="firstPageCover"
       style={{
-        height: '100vh',
         '--magnet-color': 'rgb(101, 74, 236)',
         '--magnet-size': '1',
         '--magnet-gap': '32',
@@ -131,14 +122,13 @@ export const Title = (props) => {
       onMouseMove={mousemoveHandler}
       onMouseLeave={mouseleaveHandler}
     >
-      <motion.div
-        style={{ opacity: opacity, translateY: titlePositionY }}
-        className={clsx('fixed left-0 top-[10vh] w-full flex justify-center', {
+      <div
+        className={clsx('w-full flex justify-center', {
           'pointer-events-none': !canClick,
         })}
       >
-        <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px] gap-[48px]">
-          <div className="flex flex-col items-center gap-[24px] z-[-1]">
+        <div className="h-full flex flex-col items-center w-[1040px] gap-[40px] gap-[48px]">
+          <div className="flex flex-col items-center gap-[24px]">
             <Publicize stars={githubStarts} />
             <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
               {t('slogan-1')}
@@ -195,20 +185,16 @@ export const Title = (props) => {
             }
           </div>
         </div>
-      </motion.div>
-      <motion.div
-        className="w-full top-[70vh] flex items-center justify-center absolute 2xl:top-[60vh]"
-        style={{
-          translateY: imgPositionY,
-        }}
+      </div>
+      <div
+        className="w-full flex items-center justify-center mt-[56px]"
       >
-        <motion.img
+        <Image
           src="https://cdn.illacloud.com/official-website/img/home/playVideoCover.png"
           className="flex items-center justify-center"
           alt="Screenshot of ILLA Cloud app editor"
-          style={{
-            width: width,
-          }}
+          width={1040}
+          height={648}
           onClick={() => {
             sendTagEvent({
               action: 'click',
@@ -217,7 +203,7 @@ export const Title = (props) => {
             setPlayMaskShow && setPlayMaskShow(true)
           }}
         />
-      </motion.div>
+      </div>
     </div>
   )
 }

@@ -1,23 +1,14 @@
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
-import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import style from './index.module.css'
 import { sendTagEvent } from '@/utils/gtag'
 import { MobileTitle } from '@/components/comm/mobileTitle'
 import { Vector } from '@/img/public/vector'
+import Image from 'next/image'
 
 
 export const Title = ({ translationName = 'home', content }) => {
   const { t } = useTranslation(translationName)
-  const { scrollYProgress } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0, 0.03], [1, 0])
-  const titlePositionY = useTransform(scrollYProgress, [0, 0.03], [0, -24])
-  const width = useTransform(scrollYProgress, [0, 0.03], [1040, 1200])
-  const imgPositionY = useTransform(
-    scrollYProgress,
-    [0, 0.035],
-    ['0vh', '-50vh'],
-  )
   const { title, desc, btn1, btn1Link = '', btn1Category, btn2, btn2Link = '', image, imageAlt, btn2Category } = content
 
   return (
@@ -26,12 +17,11 @@ export const Title = ({ translationName = 'home', content }) => {
         className={style.titleContainer}
       >
         {/* pc */}
-        <motion.div
-          style={{ opacity: opacity, translateY: titlePositionY }}
-          className={'absolute left-0 top-[10vh] w-full flex justify-center'}
+        <div
+          className={'w-full flex justify-center'}
         >
-          <div className="h-full flex flex-col items-center animate-title-visible w-[1040px] gap-[40px] gap-[48px]">
-            <div className="flex flex-col items-center gap-[24px] z-[-1]">
+          <div className="h-full flex flex-col items-center w-[1040px] gap-[40px] gap-[48px]">
+            <div className="flex flex-col items-center gap-[24px]">
               <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
                 {t(title)}
               </h1>
@@ -75,22 +65,18 @@ export const Title = ({ translationName = 'home', content }) => {
               </div>
             </div>
           </div>
-        </motion.div>
-        <motion.div
+        </div>
+        <div
           className={style.titleImage}
-          style={{
-            translateY: imgPositionY,
-          }}
         >
-          <motion.img
+          <Image
             src={image}
             className="flex items-center justify-center"
             alt={imageAlt}
-            style={{
-              width: width,
-            }}
+            width={1040}
+            height={584}
           />
-        </motion.div>
+        </div>
       </div>
       <MobileTitle content={content} translationName={translationName} />
     </>
