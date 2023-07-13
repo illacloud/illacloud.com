@@ -20,8 +20,8 @@ import { useViewportScroll, useTransform, motion } from 'framer-motion'
 export const NewContent = ({onChangeShow, uri}) => {
   const backgroundRef = useRef(null)
   const { scrollYProgress } = useViewportScroll()
-  const opacity = useTransform(scrollYProgress, [0.036, 0.078], [0, 1])
-  const marginTop = useTransform(scrollYProgress, [0.036, 0.078], [50, 0])
+  const opacity = useTransform(scrollYProgress, [0.0377, 0.073], [0, 1])
+  const marginTop = useTransform(scrollYProgress, [0.0377, 0.073], [50, 0])
 
   return (
     <div className={style.contentContainer}>
