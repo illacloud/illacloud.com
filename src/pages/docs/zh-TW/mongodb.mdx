@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready MongoDB will display as shown.
 
-![mongo_ex_ready](https://cdn.illacloud.com/official-website/img/docs/mongo_ex_ready.png)
+![mongo_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/mongo_ex_ready.png)
 
 -   Create in Builder
 
@@ -47,7 +47,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to MongoDB database.
 
-![mongo_config](https://cdn.illacloud.com/official-website/img/docs/mongo_config.png)
+![mongo_config]\(https://cdn.illacloud.com/official-website/img/docs/mongo_config.png)
 
 | Properties        | Required | Description                                                                                                        |
 | ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -65,11 +65,11 @@ Here we need to provide information for connecting to MongoDB database.
 
 We have created a MongoDB resource, we can add the action by selecting MongoDB from action list and choosing the **`Create action`** button.
 
-![mongo_resource_list](https://cdn.illacloud.com/official-website/img/docs/mongo_resource_list.png)
+![mongo_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/mongo_resource_list.png)
 
 Now we have added the MongoDB server as an action to our building page.
 
-![mongodb](https://cdn.illacloud.com/official-website/img/docs/mongodb.png)
+![mongodb]\(https://cdn.illacloud.com/official-website/img/docs/mongodb.png)
 
 ### Configure MongoDB
 
@@ -108,11 +108,11 @@ For example, to get all the results whose size is medium=>group the results by t
 
 An array of the computed results.
 
-![mongo_agg_data](https://cdn.illacloud.com/official-website/img/docs/mongo_agg_data.png)
+![mongo_agg_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_agg_data.png)
 
 Use `{{mongodb1.data[0].result}}` to get all.
 
-![mongo_agg_code](https://cdn.illacloud.com/official-website/img/docs/mongo_agg_code.png)
+![mongo_agg_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_agg_code.png)
 
 #### Bulkwrite
 
@@ -142,7 +142,7 @@ An example for **`Operations`**:
 
 The updated message is showing below.
 
-![mongo_bulk_data](https://cdn.illacloud.com/official-website/img/docs/mongo_bulk_data.png)
+![mongo_bulk_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_bulk_data.png)
 
 Since this method make changes but does not return anything. There is no output data to access.
 
@@ -166,11 +166,11 @@ For example, to count the number of item with type “beef”, we may put below 
 
 The number of matching documents.
 
-![mongo_count_data](https://cdn.illacloud.com/official-website/img/docs/mongo_count_data.png)
+![mongo_count_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_count_data.png)
 
 Use `{{mongodb1.data}}` to get it.
 
-![mongo_count_code](https://cdn.illacloud.com/official-website/img/docs/mongo_count_code.png)
+![mongo_count_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_count_code.png)
 
 #### deleteMany
 
@@ -192,11 +192,11 @@ For example, to delete apples from items. We may put code below to **`Filter`**.
 
 The number of matching documents.
 
-![mongo_delete2_data](https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_data.png)
+![mongo_delete2_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_data.png)
 
 Use `{{mongodb1.data[0].result.DeletedCount}}` to get it. If no files are matched, the returned value will be 0.
 
-![mongo_delete2_code](https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_code.png)
+![mongo_delete2_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_code.png)
 
 #### deleteOne
 
@@ -218,11 +218,11 @@ For example, to delete an apple from items. We may put code below to **`Filter`*
 
 Delete result.
 
-![mongo_delete1_data](https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_data.png)
+![mongo_delete1_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_data.png)
 
 Use `{{mongodb1.data[0].result.DeletedCount}}` to get it. If no files are matched, the returned value will be 0 (Since we deleted all the apples in **`deleteMany`**, there is no apple left, thus return 0).
 
-![mongo_delete1_code](https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_code.png)
+![mongo_delete1_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_code.png)
 
 #### distinct
 
@@ -241,11 +241,11 @@ For example, we may have `{"type":"orange"}` for **`Query`** and `_id` for **`Fi
 
 an array of distinct values
 
-![mongo_dist_data](https://cdn.illacloud.com/official-website/img/docs/mongo_dist_data.png)
+![mongo_dist_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_dist_data.png)
 
 Use `{{mongodb1.data[0].result.map(item =>({"result":item}))}}` to get the array.
 
-![mongo_dist_code](https://cdn.illacloud.com/official-website/img/docs/mongo_dist_code.png)
+![mongo_dist_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_dist_code.png)
 
 #### find
 
@@ -274,11 +274,11 @@ Note: replace “1” with “true” still do it!
 
 An array of objects of documents
 
-![mongo_find_data](https://cdn.illacloud.com/official-website/img/docs/mongo_find_data.png)
+![mongo_find_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find_data.png)
 
 Use `{{mongodb1.data[0].result}}` to get the array.
 
-![mongo_find_code](https://cdn.illacloud.com/official-website/img/docs/mongo_find_code.png)
+![mongo_find_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find_code.png)
 
 #### findOne
 
@@ -304,8 +304,8 @@ Note: replace “1” with “true” still do it!
 
 An array of objects of documents
 
-![mongo_find1_data](https://cdn.illacloud.com/official-website/img/docs/mongo_find1_data.png)
+![mongo_find1_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find1_data.png)
 
 Use `{{[mongodb1.data[0].result]}}` to get the array.
 
-![mongo_find1_code](https://cdn.illacloud.com/official-website/img/docs/mongo_find1_code.png)
+![mongo_find1_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find1_code.png)
