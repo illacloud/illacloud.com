@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/351?languages=en
 metaTitle: MongoDB Integration Doc | ILLA Cloud
 desc: Learn how to use ILLA Cloud to build apps with MongoDB. Explore data querying, manipulation, and visualization features.
 tagCategory: doc_menu_mongodb_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready MongoDB will display as shown.
 
-![mongo_ex_ready](https://cdn.illacloud.com/official-website/img/docs/mongo_ex_ready.png)
+![mongo_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/mongo_ex_ready.png)
 
 -   Create in Builder
 
@@ -47,39 +47,39 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to MongoDB database.
 
-![mongo_config](https://cdn.illacloud.com/official-website/img/docs/mongo_config.png)
+![mongo_config]\(https://cdn.illacloud.com/official-website/img/docs/mongo_config.png)
 
-| Properties        | Required | Description                                                                                                        |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| Name              | required | The name for resource when creating actions in the ILLA.                                                           |
-| Config Type       | optional | a type of collection used to store configuration data for sharded clusters.                                        |
-| Hostname          | required | The URL or IP address for your database                                                                            |
-| Connection format | required | the syntax used to specify the connection string for connecting to a MongoDB database or cluster.                  |
-| Port              | required | The server host's port number that you should use to connect. If you don't specify a port, default port is '3306'. |
-| Database          | required | The name of the database                                                                                           |
-| Username          | required | the username you wish to use when logging in to the MongoDB server.                                                |
-| Password          | required | Use this password for authentication.                                                                              |
-| SSL options       | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
+| 속성               | 필수    | 설명                                                                                                                 |
+| ---------------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| 이름               | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                                           |
+| 구성 유형            | 선택 과목 | a type of collection used to store configuration data for sharded clusters.                                        |
+| 호스트 이름           | 필수    | The URL or IP address for your database                                                                            |
+| 연결 방법            | 필수    | the syntax used to specify the connection string for connecting to a MongoDB database or cluster.                  |
+| 포트               | 필수    | The server host's port number that you should use to connect. If you don't specify a port, default port is '3306'. |
+| 데이터 베이스          | 필수    | The name of the database                                                                                           |
+| 사용자 이름           | 필수    | the username you wish to use when logging in to the MongoDB server.                                                |
+| 비밀번호             | 필수    | Use this password for authentication.                                                                              |
+| SSL 옵션           | 선택 과목 | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
 
 ### Create Actions
 
 We have created a MongoDB resource, we can add the action by selecting MongoDB from action list and choosing the **`Create action`** button.
 
-![mongo_resource_list](https://cdn.illacloud.com/official-website/img/docs/mongo_resource_list.png)
+![mongo_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/mongo_resource_list.png)
 
 Now we have added the MongoDB server as an action to our building page.
 
-![mongodb](https://cdn.illacloud.com/official-website/img/docs/mongodb.png)
+![mongodb]\(https://cdn.illacloud.com/official-website/img/docs/mongodb.png)
 
 ### Configure MongoDB
 
 #### Overview
 
-| Method Name | Description                                                                 |
+| Method Name | 설명                                                                          |
 | ----------- | --------------------------------------------------------------------------- |
 | Action Type | aggregate, bulkwrite, count, deleteMany. deleteOne, distinct, find, findOne |
-| Collection  | group of related documents that are stored together in a database           |
-| Transformer | transforming data into the style you like using JavaScript                  |
+| 수집          | group of related documents that are stored together in a database           |
+| 변신 로봇       | transforming data into the style you like using JavaScript                  |
 
 #### Aggregate
 
@@ -87,9 +87,9 @@ process multiple documents and return computed results.
 
 ** Input **
 
-| Properties  | Required | Description                                        |
-| ----------- | -------- | -------------------------------------------------- |
-| Aggregation | optional | defines the operations to be performed on the data |
+| 속성  | 필수    | 설명                                                 |
+| --- | ----- | -------------------------------------------------- |
+| 집합  | 선택 과목 | defines the operations to be performed on the data |
 
 For example, to get all the results whose size is medium=>group the results by type=>Calculate the sum of prices in each type for **`Aggregation`**:
 
@@ -108,11 +108,11 @@ For example, to get all the results whose size is medium=>group the results by t
 
 An array of the computed results.
 
-![mongo_agg_data](https://cdn.illacloud.com/official-website/img/docs/mongo_agg_data.png)
+![mongo_agg_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_agg_data.png)
 
 Use `{{mongodb1.data[0].result}}` to get all.
 
-![mongo_agg_code](https://cdn.illacloud.com/official-website/img/docs/mongo_agg_code.png)
+![mongo_agg_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_agg_code.png)
 
 #### Bulkwrite
 
@@ -120,9 +120,9 @@ perform multiple write operations (insert, update, and delete) in a single reque
 
 ** Input **
 
-| Properties | Required | Description                                                                          |
-| ---------- | -------- | ------------------------------------------------------------------------------------ |
-| Operations | optional | an object that specifies the type of operation to perform and the data to be written |
+| 속성 | 필수    | 설명                                                                                   |
+| -- | ----- | ------------------------------------------------------------------------------------ |
+| 운영 | 선택 과목 | an object that specifies the type of operation to perform and the data to be written |
 
 An example for **`Operations`**:
 
@@ -142,7 +142,7 @@ An example for **`Operations`**:
 
 The updated message is showing below.
 
-![mongo_bulk_data](https://cdn.illacloud.com/official-website/img/docs/mongo_bulk_data.png)
+![mongo_bulk_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_bulk_data.png)
 
 Since this method make changes but does not return anything. There is no output data to access.
 
@@ -152,9 +152,9 @@ count the number of documents that match a given query in a collection
 
 ** Input **
 
-| Properties | Required | Description                                              |
-| ---------- | -------- | -------------------------------------------------------- |
-| Query      | optional | specifies the selection criteria for the count operation |
+| 속성         | 필수    | 설명                                                       |
+| ---------- | ----- | -------------------------------------------------------- |
+| Query      | 선택 과목 | specifies the selection criteria for the count operation |
 
 For example, to count the number of item with type “beef”, we may put below code into **`Query`**:
 
@@ -166,11 +166,11 @@ For example, to count the number of item with type “beef”, we may put below 
 
 The number of matching documents.
 
-![mongo_count_data](https://cdn.illacloud.com/official-website/img/docs/mongo_count_data.png)
+![mongo_count_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_count_data.png)
 
 Use `{{mongodb1.data}}` to get it.
 
-![mongo_count_code](https://cdn.illacloud.com/official-website/img/docs/mongo_count_code.png)
+![mongo_count_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_count_code.png)
 
 #### deleteMany
 
@@ -178,9 +178,9 @@ delete multiple documents that match a given filter in a collection.
 
 ** Input **
 
-| Properties | Required | Description                                                                                                                    |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Filter     | optional | specifies the selection criteria for the delete operation, If not specified, all documents in this collection will be deleted. |
+| 속성         | 필수    | 설명                                                                                                                             |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Filter     | 선택 과목 | specifies the selection criteria for the delete operation, If not specified, all documents in this collection will be deleted. |
 
 For example, to delete apples from items. We may put code below to **`Filter`**.
 
@@ -192,11 +192,11 @@ For example, to delete apples from items. We may put code below to **`Filter`**.
 
 The number of matching documents.
 
-![mongo_delete2_data](https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_data.png)
+![mongo_delete2_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_data.png)
 
 Use `{{mongodb1.data[0].result.DeletedCount}}` to get it. If no files are matched, the returned value will be 0.
 
-![mongo_delete2_code](https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_code.png)
+![mongo_delete2_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete2_code.png)
 
 #### deleteOne
 
@@ -204,9 +204,9 @@ delete one document that match a given filter in a collection.
 
 ** Input **
 
-| Properties | Required | Description                                               |
-| ---------- | -------- | --------------------------------------------------------- |
-| Filter     | optional | specifies the selection criteria for the delete operation |
+| 속성         | 필수    | 설명                                                        |
+| ---------- | ----- | --------------------------------------------------------- |
+| Filter     | 선택 과목 | specifies the selection criteria for the delete operation |
 
 For example, to delete an apple from items. We may put code below to **`Filter`**.
 
@@ -218,11 +218,11 @@ For example, to delete an apple from items. We may put code below to **`Filter`*
 
 Delete result.
 
-![mongo_delete1_data](https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_data.png)
+![mongo_delete1_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_data.png)
 
 Use `{{mongodb1.data[0].result.DeletedCount}}` to get it. If no files are matched, the returned value will be 0 (Since we deleted all the apples in **`deleteMany`**, there is no apple left, thus return 0).
 
-![mongo_delete1_code](https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_code.png)
+![mongo_delete1_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_delete1_code.png)
 
 #### distinct
 
@@ -230,10 +230,10 @@ retrieve an array of unique values for a specified field in a collection
 
 ** Input **
 
-| Properties | Required | Description                                                 |
-| ---------- | -------- | ----------------------------------------------------------- |
-| Query      | optional | specifies the selection criteria for the distinct operation |
-| Field      | required | specifies the field to retrieve the distinct values from.   |
+| 속성      | 필수    | 설명                                                          |
+| ------- | ----- | ----------------------------------------------------------- |
+| 질문      | 선택 과목 | specifies the selection criteria for the distinct operation |
+| 필드      | 필수    | specifies the field to retrieve the distinct values from.   |
 
 For example, we may have `{"type":"orange"}` for **`Query`** and `_id` for **`Field`**.
 
@@ -241,25 +241,25 @@ For example, we may have `{"type":"orange"}` for **`Query`** and `_id` for **`Fi
 
 an array of distinct values
 
-![mongo_dist_data](https://cdn.illacloud.com/official-website/img/docs/mongo_dist_data.png)
+![mongo_dist_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_dist_data.png)
 
 Use `{{mongodb1.data[0].result.map(item =>({"result":item}))}}` to get the array.
 
-![mongo_dist_code](https://cdn.illacloud.com/official-website/img/docs/mongo_dist_code.png)
+![mongo_dist_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_dist_code.png)
 
-#### find
+#### 찾다
 
 retrieve documents from a collection that match a specified set of criteria
 
 ** Input **
 
-| Properties | Required | Description                                                                                                |
-| ---------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| Query      | optional | specifies the selection criteria for the find operation                                                    |
-| Projection | optional | specifies which fields to include or exclude in the query results                                          |
-| Sort By    | optional | specify the sorting order of the returned documents                                                        |
-| Limit      | optional | limit the number of documents that are returned, default no limit. A limit of 0 is equivalent to no limit. |
-| Skip       | optional | specify the number of documents to skip, default to 0.                                                     |
+| 속성         | 필수    | 설명                                                                                                         |
+| ---------- | ----- | ---------------------------------------------------------------------------------------------------------- |
+| Query      | 선택 과목 | specifies the selection criteria for the find operation                                                    |
+| 투사         | 선택 과목 | specifies which fields to include or exclude in the query results                                          |
+| 정렬 기준      | 선택 과목 | specify the sorting order of the returned documents                                                        |
+| Limit      | 선택 과목 | limit the number of documents that are returned, default no limit. A limit of 0 is equivalent to no limit. |
+| Skip       | 선택 과목 | specify the number of documents to skip, default to 0.                                                     |
 
 For example, to find the id, price, and type of all oranges sorted by their id.
 
@@ -274,11 +274,11 @@ Note: replace “1” with “true” still do it!
 
 An array of objects of documents
 
-![mongo_find_data](https://cdn.illacloud.com/official-website/img/docs/mongo_find_data.png)
+![mongo_find_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find_data.png)
 
 Use `{{mongodb1.data[0].result}}` to get the array.
 
-![mongo_find_code](https://cdn.illacloud.com/official-website/img/docs/mongo_find_code.png)
+![mongo_find_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find_code.png)
 
 #### findOne
 
@@ -286,11 +286,11 @@ retrieve the first document from a collection that match a specified set of crit
 
 ** Input **
 
-| Properties | Required | Description                                                       |
-| ---------- | -------- | ----------------------------------------------------------------- |
-| Query      | optional | specifies the selection criteria for the find operation           |
-| Projection | optional | specifies which fields to include or exclude in the query results |
-| Skip       | optional | specify the number of documents to skip, default to 0.            |
+| 속성         | 필수    | 설명                                                                |
+| ---------- | ----- | ----------------------------------------------------------------- |
+| 질문         | 선택 과목 | specifies the selection criteria for the find operation           |
+| 투사         | 선택 과목 | specifies which fields to include or exclude in the query results |
+| Skip       | 선택 과목 | specify the number of documents to skip, default to 0.            |
 
 For example, to find the id, price, and type of all oranges sorted by their id.
 
@@ -304,8 +304,8 @@ Note: replace “1” with “true” still do it!
 
 An array of objects of documents
 
-![mongo_find1_data](https://cdn.illacloud.com/official-website/img/docs/mongo_find1_data.png)
+![mongo_find1_data]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find1_data.png)
 
 Use `{{[mongodb1.data[0].result]}}` to get the array.
 
-![mongo_find1_code](https://cdn.illacloud.com/official-website/img/docs/mongo_find1_code.png)
+![mongo_find1_code]\(https://cdn.illacloud.com/official-website/img/docs/mongo_find1_code.png)
