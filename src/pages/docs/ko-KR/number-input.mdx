@@ -1,5 +1,5 @@
 ---
-title: Number Input
+title: 숫자 입력 상자
 metaTitle: Number Input Component Doc | ILLA Cloud
 desc: Learn how to use the number input component to create and customize number input fields for your app in ILLA Cloud.
 tagCategory: doc_menu_number_input_click
@@ -13,36 +13,36 @@ postPriority: 1
 
 The number Input component is a user interface element that allows users to enter and edit the number in a form or input field.
 
-### Properties
+### 속성
 
-| Properties              | Description                                                                                                                                                  |
+| 속성                      | 설명                                                                                                                                                           |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Decimal place           | specify the number of decimal places that can be entered in the number input.                                                                                |
-| Minimum                 | minimum value that can be entered in the number input                                                                                                        |
-| Maximum                 | maximum value that can be entered in the number input                                                                                                        |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment (align to left or right) of the label                                                                                                      |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Loading                 | maximum value that can be entered in the number input                                                                                                        |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| 기본값                     | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
+| 자리 표시자                  | 입력에 값이 없을 때 표시할 메시지입니다.                                                                                                                                      |
+| 소수 자릿수                  | specify the number of decimal places that can be entered in the number input.                                                                                |
+| 최저한의                    | minimum value that can be entered in the number input                                                                                                        |
+| 최고                      | maximum value that can be entered in the number input                                                                                                        |
+| 상표                      | 사용자에게 표시되는 필드의 이름                                                                                                                                            |
+| 부제                      | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                       |
+| 숨겨진 라벨                  | 레이블 표시 여부 설정                                                                                                                                                 |
+| 위치                      | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                        |
+| 조정                      | Set the alignment (align to left or right) of the label                                                                                                      |
+| 너비                      | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
+| 이벤트 핸들러                 | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                    |
+| 로드 중                    | maximum value that can be entered in the number input                                                                                                        |
+| 장애가 있는                  | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
 | Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Prefix text             | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user                      |
-| Suffix text             | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user                     |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| 힌트                      | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| 접두사 텍스트                 | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user                      |
+| 접미사                     | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user                     |
+| 필수 입력 사항                | 스위치를 켠 후 입력 상자에서 유효성 검사를 수행합니다.                                                                                                                              |
+| 맞춤 규칙                   | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
+| 확인 정보 숨기기               | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| 양식 데이터 키                | 데이터 속성을 작성할 때 양식 구성요소를 감싸는 키를 지정하십시오.                                                                                                                        |
+| 숨다                      | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
 | Theme Color             | Allows users to specify the button's background color and opacity                                                                                            |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -54,7 +54,7 @@ When the focus method is called, the number input field will be highlighted and 
 
 To set the number input value, for example, {{”value1”}}
 
-| Properties | Description |
+| 속성         | 설명          |
 | ---------- | ----------- |
 | Value      | Input value |
 
@@ -70,39 +70,39 @@ To verify that the input information is legal
 
 To clear the validation message
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                                 |
+| 이벤트    | 설명                                                                          |
 | ------ | --------------------------------------------------------------------------- |
-| Change | When a user changes the input value                                         |
-| Focus  | When a user moves the mouse cursor on the input component                   |
-| Blur   | When a user is done inputting value and quit from focusing on the component |
+| 내용 변경  | When a user changes the input value                                         |
+| 집중하다   | When a user moves the mouse cursor on the input component                   |
+| 초점없는   | When a user is done inputting value and quit from focusing on the component |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name      | Description                                                                                    |
+| Property name      | 설명                                                                                             |
 | ------------------ | ---------------------------------------------------------------------------------------------- |
-| value              | user input value                                                                               |
+| 값                  | user input value                                                                               |
 | colorScheme        | background color of the button                                                                 |
 | customRule         | user-defined rule or validation logic that can be applied to the number input component        |
-| disabled           | a Boolean value indicate the disabled status                                                   |
+| 장애가 있는             | a Boolean value indicate the disabled status                                                   |
 | displayName        | the name of this component (ie button1)                                                        |
 | events             | generated or triggered when certain actions or events occur within the number input component. |
 | formDataKey        | the Form Data Key of input                                                                     |
-| hidden             | hidden status (true or false)                                                                  |
-| label              | label value                                                                                    |
+| 숨다                 | hidden status (true or false)                                                                  |
+| 상표                 | label value                                                                                    |
 | labelAlign         | alignment of input label (left or right)                                                       |
 | labelPosition      | position of input label (left or right)                                                        |
 | labelWidth         | the integer representing width of label.                                                       |
 | max                | the value of maximum                                                                           |
 | min                | the value of minimum                                                                           |
-| placeholder        | placeholder value                                                                              |
+| 자리 표시자             | placeholder value                                                                              |
 | prefix             | value of the prefix                                                                            |
 | suffix             | value of the suffix                                                                            |
 | readOnly           | a Boolean value indicate the readyOnly status of input.                                        |
-| required           | a Boolean value indicate the required status of input.                                         |
+| 필수                 | a Boolean value indicate the required status of input.                                         |
 | showCharacterCount | a Boolean value indicate whether the character count of input is displayed                     |
 | tooltipText        | value of tooltip text                                                                          |
 
@@ -118,7 +118,7 @@ Let us create a table in Amazon S3. One of the documents is called
 
 '111.txt' with the number '111' as its data. This is the value we want to show in number input.
 
-![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 Then we can create a new action for Amazon S3 from the action list, listing all the data in the bucket and named s31.
 
@@ -126,7 +126,7 @@ Select `Read an object` for `**Action Type**`. Put `111.txt` for `**Object Key`.
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![s3output](https://cdn.illacloud.com/official-website/img/official-site/components/s3output.jpg)
+![s3output]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3output.jpg)
 
 #### Step 2 Add Components
 
@@ -134,7 +134,7 @@ Next, we can add a **`number input`** component and a **`button`** component to 
 
 We set the default value of numberInput to be 1 and labeled the button as 'Set value' as shown below
 
-![default1](https://cdn.illacloud.com/official-website/img/official-site/components/default1.jpg)
+![default1]\(https://cdn.illacloud.com/official-website/img/official-site/components/default1.jpg)
 
 #### Step 3 Configure the component
 
@@ -143,10 +143,10 @@ For the **`button`** component, we can configure it to set the value in **`numbe
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`numberInput1`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{s31.data}}`
 
-![number_input_button_config](https://cdn.illacloud.com/official-website/img/official-site/components/number_input_button_config.jpg)
+![number_input_button_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/number_input_button_config.jpg)
 
 #### Step 4 Test
 
 Now that when you click the 'Set value' button, the value should change to 111.
 
-![number_input_test](https://cdn.illacloud.com/official-website/img/official-site/components/number_input_test.jpg)
+![number_input_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/number_input_test.jpg)
