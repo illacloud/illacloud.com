@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/347?languages=en
 metaTitle: Redis Integration Doc | ILLA Cloud
 desc: Discover how to connect and interact with your Redis database using ILLA Cloud's database integration feature. Check out this guide for more details.
 tagCategory: doc_menu_redis_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -13,7 +13,7 @@ postPriority: 1
 
 Redis in Illa is a database integration that allows you to connect and interact with a Redis database. Redis is a popular open-source relational database management system that is known for its speed, reliability, and ease of use.
 
-With the Redis integration in Illa, you can query, insert, update, and delete data from a Redis database using SQL commands. You can also create custom SQL queries and run them within Illa. This makes it easy to build data-driven applications and dashboards that display real-time data from a Redis database.
+With the Redis integration in Illa, you can query, insert, update, and delete data from a Redis database using SQL commands. With the Appwrite integration in Illa, you can query, insert, update, and delete data from a Appwrite database using SQL commands. This makes it easy to build data-driven applications and dashboards that display real-time data from a Redis database.
 
 ### Create Redis
 
@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready Redis will display as shown.
 
-![redis_ex_ready](https://cdn.illacloud.com/official-website/img/docs/redis_ex_ready.png)
+![redis_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/redis_ex_ready.png)
 
 -   Create in Builder
 
@@ -47,35 +47,35 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to Redis database.
 
-![redis_config](https://cdn.illacloud.com/official-website/img/docs/redis_config.png)
+![redis_config]\(https://cdn.illacloud.com/official-website/img/docs/redis_config.png)
 
-| Properties     | Required | Description                                                                                                            |
-| -------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Name           | required | The name for resource when creating actions in the ILLA.                                                               |
-| Hostname       | required | The URL or IP address for your database                                                                                |
-| Port           | required | The server host's port number that you should use to connect. If you don't specify a port, the default port is '6379'. |
-| Database Index | optional | a data structure that is used to optimize the performance of queries that retrieve data from a Redis database          |
-| Database       | required | The name of the database                                                                                               |
-| Username       | required | the username you wish to use when logging in to the Redis server.                                                      |
-| Password       | required | Use this password for authentication.                                                                                  |
-| SSL options    | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                      |
+| 속성            | 필수    | 설명                                                                                                                     |
+| ------------- | ----- | ---------------------------------------------------------------------------------------------------------------------- |
+| 이름            | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                                               |
+| 호스트 이름        | 필수    | The URL or IP address for your database                                                                                |
+| 포트            | 필수    | The server host's port number that you should use to connect. If you don't specify a port, the default port is '6379'. |
+| 데이터베이스 인덱스    | 선택 과목 | a data structure that is used to optimize the performance of queries that retrieve data from a Redis database          |
+| 데이터 베이스       | 필수    | The name of the database                                                                                               |
+| 사용자 이름        | 필수    | the username you wish to use when logging in to the Redis server.                                                      |
+| 비밀번호          | 필수    | Use this password for authentication.                                                                                  |
+| SSL 옵션        | 선택 과목 | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                      |
 
 ### Create Actions
 
 We have created a Redis resource, we can add the action by selecting Redis from action list and choosing the **`Create action`** button.
 
-![redis_resource_list](https://cdn.illacloud.com/official-website/img/docs/redis_resource_list.png)
+![redis_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/redis_resource_list.png)
 
 Now we have added the Redis server as an action to our building page.
 
-![redis](https://cdn.illacloud.com/official-website/img/docs/redis.png)
+![redis]\(https://cdn.illacloud.com/official-website/img/docs/redis.png)
 
 ### Configure Redis
 
-| Properties  | Description                                                |
-| ----------- | ---------------------------------------------------------- |
-| query       | commands to retrieve data from database                    |
-| Transformer | transforming data into the style you like using JavaScript |
+| 속성       | 설명                                                         |
+| -------- | ---------------------------------------------------------- |
+| 질문       | commands to retrieve data from database                    |
+| 변신 로봇    | transforming data into the style you like using JavaScript |
 
 Example usage:
 
