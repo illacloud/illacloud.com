@@ -19,54 +19,54 @@ Radio groups are commonly used in web forms, dialog boxes, and other interactive
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/assemble/radiogroup1.png' alt="" />
 
-### Properties
+### 속성
 
 #### Manual options
 
 Add new options or delete options manually and configure the options one by one. The properties of options are as follows: 
 
-| Properties | Description                                  |
-| ---------- | -------------------------------------------- |
-| Label      | The text displayed for the option            |
-| Value      | The value associated with the option         |
-| Disabled   | Whether the option is disabled for selection |
+| 속성     | 설명                                           |
+| ------ | -------------------------------------------- |
+| 상표     | The text displayed for the option            |
+| Value  | The value associated with the option         |
+| 장애가 있는 | Whether the option is disabled for selection |
 
 #### Mapped options
 
 You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
 
-| Properties  | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| Data source | Set the data source of options                                   |
-| Label       | Use {{item}} to set the label of options                         |
-| Value       | Use {{item}} to set the value of options                         |
-| Disabled    | Use {{item}} to set whether the option is disabled for selection |
+| 속성     | 설명                                                               |
+| ------ | ---------------------------------------------------------------- |
+| 데이터 소스 | Set the data source of options                                   |
+| 상표     | Use {{item}} to set the label of options                         |
+| Value  | Use {{item}} to set the value of options                         |
+| 장애가 있는 | Use {{item}} to set whether the option is disabled for selection |
 
 #### Other properties
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment of the label                                                                                                                               |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label                                                                        |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | Set whether to show the clear button                                                                                                                         |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme color             | To select the theme color of the component                                                                                                                   |
+| 속성        | 설명                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 기본값       | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
+| 자리 표시자    | 입력에 값이 없을 때 표시할 메시지입니다.                                                                                                                                      |
+| 상표        | 사용자에게 표시되는 필드의 이름                                                                                                                                            |
+| 부제        | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                       |
+| 숨겨진 라벨    | 레이블 표시 여부 설정                                                                                                                                                 |
+| 위치        | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                        |
+| 조정        | 레이블 정렬 설정                                                                                                                                                    |
+| 너비        | 라벨이 구성 요소의 왼쪽에 있을 때 라벨의 너비 비율을 설정합니다.                                                                                                                        |
+| 이벤트 핸들러   | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                    |
+| 장애가 있는    | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| Read Only | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
+| 지우기 버튼 표시 | Set whether to show the clear button                                                                                                                         |
+| 힌트        | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| 필수 입력 사항  | 스위치를 켠 후 입력 상자에서 유효성 검사를 수행합니다.                                                                                                                              |
+| 맞춤 규칙     | editor.inspect.setter_tooltip.custom_rule                                                                                                                    |
+| 확인 정보 숨기기 | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| 양식 데이터 키  | 데이터 속성을 작성할 때 양식 구성요소를 감싸는 키를 지정하십시오.                                                                                                                        |
+| 숨다        | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| 테마 색상     | To select the theme color of the component                                                                                                                   |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following three methods:
 
@@ -74,9 +74,9 @@ You can use other components to control the component. We support the following 
 
 To set the selected option, for example, {{”value1”}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| 속성    | 설명             |
+| ----- | -------------- |
+| Value | Selected value |
 
 #### clearValue
 
@@ -90,17 +90,17 @@ To verify that the input information is legal
 
 To clear the validation message
 
-### Event handler
+### 이벤트 핸들러
 
 We support listening to the `onChange` event of the radio group. 
 
 When the selected option changes, it can trigger a specified action. This means that when a user selects a different option from a radio group, a particular action can be taken based on the selected option. For example, in a web form, selecting a different option can trigger the display of different form fields or the submission of the form to a different destination. In this way, the option selected by the user can affect the behavior of the software or web application they are using. The ability to trigger specified actions based on user input is an important aspect of interactive software design and can improve the usability and functionality of the software.
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via {{componentName.propertyName}} in the app.
 
-| Property name | Description    |
+| Property name | 설명             |
 | ------------- | -------------- |
 | value         | Selected value |
 
