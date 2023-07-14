@@ -13,26 +13,26 @@ postPriority: 1
 
 The form component is a visual element that represents the progress or completion of a task or process. It displays a horizontal bar that fills up or shrinks based on the specified progress value.
 
-### Properties
+### 속성
 
-| Properties                    | Description                                                                                                                                    |
+| 속성                            | 설명                                                                                                                                             |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Event handler                 | detecting and responding to specific user actions or events, such as clicks, keypresses, or form submissions.                                  |
-| Disabled                      | non-interactive and cannot be modified or triggered by the user.                                                                               |
-| Disable submit                | disabling the form submission functionality.                                                                                                   |
-| Validate inputs on submit     | the form inputs should be validated for correctness or completeness when the form is submitted.                                                |
-| Reset after successful submit | automatically resets its values and state to their initial or default values after a successful submission                                     |
-| Tooltip                       | a small pop-up or informational message that appears when the user hovers over or interacts with a specific element, such as a form component. |
-| Show header                   | whether a form component should display a header or title section                                                                              |
-| Show footer                   | whether a form component should display a footer section                                                                                       |
-| Hidden                        | hides the form component from the user's view                                                                                                  |
+| 이벤트 핸들러                       | detecting and responding to specific user actions or events, such as clicks, keypresses, or form submissions.                                  |
+| 장애가 있는                        | non-interactive and cannot be modified or triggered by the user.                                                                               |
+| 제출 비활성화                       | disabling the form submission functionality.                                                                                                   |
+| 제출 시 입력 유효성 검사                | the form inputs should be validated for correctness or completeness when the form is submitted.                                                |
+| 성공적인 제출 후 입력 콘텐츠 재설정          | automatically resets its values and state to their initial or default values after a successful submission                                     |
+| 힌트                            | a small pop-up or informational message that appears when the user hovers over or interacts with a specific element, such as a form component. |
+| 제목 영역 표시                      | whether a form component should display a header or title section                                                                              |
+| 디스플레이 작동 영역                   | whether a form component should display a footer section                                                                                       |
+| 숨다                            | hides the form component from the user's view                                                                                                  |
 | Border Color                  | color of the border that surrounds a form component                                                                                            |
 | Border Radius                 | curvature of the corners of a form component's border                                                                                          |
-| Border Width                  | thickness or width of the border surrounding a form component                                                                                  |
-| Background                    | defines the color or image that fills the content area of a form component                                                                     |
-| Shadow                        | visual effect of adding a subtle, offset "shadow" to a form component, making it appear slightly raised or floating above the background       |
+| 테두리 폭                         | thickness or width of the border surrounding a form component                                                                                  |
+| 배경                            | defines the color or image that fills the content area of a form component                                                                     |
+| 그림자                           | visual effect of adding a subtle, offset "shadow" to a form component, making it appear slightly raised or floating above the background       |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -48,7 +48,7 @@ reset all input fields in the form component
 
 To set the text area input value, for example, {{"value1"}}
 
-| Properties | Description |
+| 속성         | 설명          |
 | ---------- | ----------- |
 | Value      | Input value |
 
@@ -56,28 +56,28 @@ To set the text area input value, for example, {{"value1"}}
 
 To verify that the input information is legal
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name         | Description                                                                                                                                      |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| backgroundColor       | specifies the background color of a form component                                                                                               |
-| borderColor           | defines the color of the border surrounding a form component                                                                                     |
-| borderWidth           | determines the thickness or width of the border surrounding a form component                                                                     |
-| disabled              | whether a form component is disabled or not                                                                                                      |
-| displayName           | represents the name or label assigned to a form component                                                                                        |
-| footerHeight          | specifies the height or size of the footer section of a form component                                                                           |
-| formData              | holds the data or values entered by the user in a form component                                                                                 |
-| headerHeight          | determines the height or size of the header section of a form component                                                                          |
-| invalid               | whether the input or value of a form component is considered invalid or not.                                                                     |
-| radius                | defines the border radius or curvature of the corners of a form component                                                                        |
-| resetAfterSuccessful  | indicates that a form component should automatically reset its values and state to their initial or default values after a successful submission |
-| shadow                | controls the presence and appearance of a shadow effect on a form component                                                                      |
-| showFooter            | determines whether the footer section of a form component should be displayed or not                                                             |
-| showHeader            | visibility of the header section of a form component                                                                                             |
-| tooltipText           | holds the text or content of a tooltip associated with a form component                                                                          |
-| validateInputOnSubmit | specifies that the input values of a form component should be validated for correctness or completeness when the form is submitted               |
+| Property name            | 설명                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| backgroundColor          | specifies the background color of a form component                                                                                               |
+| borderColor              | defines the color of the border surrounding a form component                                                                                     |
+| borderWidth              | determines the thickness or width of the border surrounding a form component                                                                     |
+| 장애가 있는                   | whether a form component is disabled or not                                                                                                      |
+| displayName              | represents the name or label assigned to a form component                                                                                        |
+| footerHeight             | specifies the height or size of the footer section of a form component                                                                           |
+| formData                 | holds the data or values entered by the user in a form component                                                                                 |
+| headerHeight             | determines the height or size of the header section of a form component                                                                          |
+| 검증에 실패했습니다               | whether the input or value of a form component is considered invalid or not.                                                                     |
+| 나사                       | defines the border radius or curvature of the corners of a form component                                                                        |
+| resetAfterSuccessful     | indicates that a form component should automatically reset its values and state to their initial or default values after a successful submission |
+| 그림자                      | controls the presence and appearance of a shadow effect on a form component                                                                      |
+| showFooter               | determines whether the footer section of a form component should be displayed or not                                                             |
+| showHeader               | visibility of the header section of a form component                                                                                             |
+| tooltipText              | holds the text or content of a tooltip associated with a form component                                                                          |
+| validateInputOnSubmit    | specifies that the input values of a form component should be validated for correctness or completeness when the form is submitted               |
 
 Example: {{form1.disabled}}
 
@@ -95,7 +95,7 @@ Label the input component to be "Name", the number input component to be "Age" a
 
 Set the placeholder of the input component to "Please put your name here" and the default value of the number input to 0 as shown below.
 
-![bar_layout](https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
+![bar_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
 
 #### Step 2 Configure the component
 
@@ -117,7 +117,7 @@ For the **`input`** and **`number input`** components, we can configure them to 
 }
 ```
 
-![bar_input_num_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
+![bar_input_num_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
 
 Note: need to set the event handler as described above to BOTH input and number input components.
 
@@ -127,15 +127,15 @@ For the **`button`** component, we can configure it to submit the form if the fo
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`form`** component that you want to update as the target of the event.
 3.  Choose the **`submit`** method and put `{{barProgress1.value == 100}}` in **`Only run when`**
 
-![bar_button_submit_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
+![bar_button_submit_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
 
 Similarly, we can configure the button to show warning when the user is trying to submit an uncompleted form.
 
 1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Error!" and **`description`** "Please fill out the form before submitting". Choose `Error` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds), and put `{{barProgress1.value<100}}` for **`Only run when`.**
 
-![bar_button_show_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
+![bar_button_show_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
 
 #### Step 4 Test
 
-![bar_test](https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
+![bar_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
