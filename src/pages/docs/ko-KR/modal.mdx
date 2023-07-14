@@ -13,20 +13,20 @@ postPriority: 1
 
 In ILLA Cloud, the modal component is a user interface element that is used to display content, information, or actions in a focused and overlayed window. The modal component typically appears on top of the main application screen, temporarily interrupting the user's workflow and drawing their attention to the modal content.
 
-### Properties
+### 속성
 
-| Properties                | Description                                                                                            |
+| 속성                        | 설명                                                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Event handler             | detecting and responding to specific user actions or events, such as clicks, keypresses, value changes |
-| Click mask to close modal | whether clicking on the background overlay or mask of the modal will close the modal window            |
-| Show header               | whether the component should display a header or title section                                         |
-| Show footer               | whether the component should display a footer section                                                  |
+| 이벤트 핸들러                   | detecting and responding to specific user actions or events, such as clicks, keypresses, value changes |
+| 마스크를 클릭하여 모달을 닫습니다.       | whether clicking on the background overlay or mask of the modal will close the modal window            |
+| 제목 영역 표시                  | whether the component should display a header or title section                                         |
+| 디스플레이 작동 영역               | whether the component should display a footer section                                                  |
 | Border Color              | color of the border that surrounds a modal component                                                   |
 | Border Radius             | curvature of the corners of a modal component's border                                                 |
-| Border Width              | thickness or width of the border surrounding a modal component                                         |
-| Background                | defines the color or image that fills the content area of a modal component                            |
+| 테두리 폭                     | thickness or width of the border surrounding a modal component                                         |
+| 배경                        | defines the color or image that fills the content area of a modal component                            |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -56,7 +56,7 @@ For the "Open Modal" **`button`** components, we can configure it to open the **
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`modal`** component that you want to update as the target of the event.
 3.  Choose the **`openModal`** method
 
-![open_modal](https://cdn.illacloud.com/official-website/img/docs/open_modal.jpg)
+![open_modal]\(https://cdn.illacloud.com/official-website/img/docs/open_modal.jpg)
 
 Click this button to open the modal component and you may put whatever you want in the middle area of the modal.
 
@@ -66,15 +66,15 @@ For the "Cancel" **`button`** component, we can configure it to close the modal 
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`modal`** component that you want to update as the target of the event.
 3.  Choose the **`closeModal`** method
 
-![close_modal](https://cdn.illacloud.com/official-website/img/docs/close_modal.jpg)
+![close_modal]\(https://cdn.illacloud.com/official-website/img/docs/close_modal.jpg)
 
 Similarly, we can configure the "Confirm" button to congrats
 
 1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Congrat!" and **`description`** "Congratulations!". Choose `Success` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds)
 
-![modal_confirm](https://cdn.illacloud.com/official-website/img/docs/modal_confirm.jpg)
+![modal_confirm]\(https://cdn.illacloud.com/official-website/img/docs/modal_confirm.jpg)
 
 #### Step 4 Test
 
-![modal_test](https://cdn.illacloud.com/official-website/img/docs/modal_test.gif)
+![modal_test]\(https://cdn.illacloud.com/official-website/img/docs/modal_test.gif)
