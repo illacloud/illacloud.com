@@ -13,24 +13,24 @@ postPriority: 1
 
 The Bar Progress component is a visual element that represents the progress or completion of a task or process. It displays a horizontal bar that fills up or shrinks based on the specified progress value.
 
-### Properties
+### 속성
 
-| Properties       | Description                                                                                                              |
+| 속성               | 설명                                                                                                                       |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | Value            | the percentage value represents the progress                                                                             |
-| Hide value label | whether the value label is hidden                                                                                        |
-| Label            | The name of the field displayed to the user                                                                              |
-| Hidden label     | Set whether to display the label                                                                                         |
-| Caption          | A caption used to describe the field in detail                                                                           |
-| Position         | Set the position of the label relative to the component                                                                  |
-| Alignment        | Set the alignment (align to left or right) of the label                                                                  |
-| Width            | When the label is on the left side of the component, set the width ratio of the label.                                   |
-| Tooltip          | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.  |
-| Hidden           | Dynamically control whether the component is hidden. You can change the hidden status through a dynamical boolean value. |
+| 숨겨진 값 레이블        | whether the value label is hidden                                                                                        |
+| 상표               | 사용자에게 표시되는 필드의 이름                                                                                                        |
+| 숨겨진 라벨           | 레이블 표시 여부 설정                                                                                                             |
+| 부제               | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                   |
+| 위치               | 구성 요소를 기준으로 레이블 위치 설정                                                                                                    |
+| 조정               | Set the alignment (align to left or right) of the label                                                                  |
+| 너비               | When the label is on the left side of the component, set the width ratio of the label.                                   |
+| 힌트               | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.  |
+| 숨다               | Dynamically control whether the component is hidden. You can change the hidden status through a dynamical boolean value. |
 | Theme Color      | Allows users to specify the button's background color and opacity                                                        |
-| Styles           | the stroke width of the bar represents the progress                                                                      |
+| 스타일              | the stroke width of the bar represents the progress                                                                      |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -38,7 +38,7 @@ You can use other components to control the component. We support the following 
 
 To set the text area input value, for example, {{"value1"}}
 
-| Properties | Description |
+| 속성         | 설명          |
 | ---------- | ----------- |
 | Value      | Input value |
 
@@ -46,22 +46,22 @@ To set the text area input value, for example, {{"value1"}}
 
 To clear the value of the selected component
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name | Description                              |
+| Property name | 설명                                       |
 | ------------- | ---------------------------------------- |
-| color         | color of the bar                         |
+| 색깔            | color of the bar                         |
 | displayName   | the name of this component (ie button1)  |
-| hidden        | hidden status (true or false)            |
-| label         | label value                              |
+| 숨다            | hidden status (true or false)            |
+| 상표            | label value                              |
 | labelAlign    | alignment of input label (left or right) |
 | labelPosition | position of input label (left or right)  |
 | labelWidth    | the integer representing width of label. |
 | strokeWidth   | width of the bar stroke                  |
 | tooltipText   | value of tooltip text                    |
-| value         | percentage value of the progress         |
+| 값             | percentage value of the progress         |
 
 Example: {{barProgress1.value}}
 
@@ -79,7 +79,7 @@ Label the input component to be "Name", the number input component to be "Age" a
 
 Set the placeholder of the input component to "Please put your name here" and the default value of the number input to 0 as shown below.
 
-![bar_layout](https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
+![bar_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
 
 #### Step 2 Configure the component
 
@@ -101,7 +101,7 @@ For the **`input`** and **`number input`** components, we can configure them to 
 }
 ```
 
-![bar_input_num_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
+![bar_input_num_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
 
 Note: need to set the event handler as described above to BOTH input and number input components.
 
@@ -111,15 +111,15 @@ For the **`button`** component, we can configure it to submit the form if the fo
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`form`** component that you want to update as the target of the event.
 3.  Choose the **`submit`** method and put `{{barProgress1.value == 100}}` in **`Only run when`**
 
-![bar_button_submit_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
+![bar_button_submit_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
 
 Similarly, we can configure the button to show warning when the user is trying to submit an uncompleted form.
 
 1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Error!" and **`description`** "Please fill out the form before submitting". Choose `Error` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds), and put `{{barProgress1.value<100}}` for **`Only run when`.**
 
-![bar_button_show_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
+![bar_button_show_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
 
 #### Step 4 Test
 
-![bar_test](https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
+![bar_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
