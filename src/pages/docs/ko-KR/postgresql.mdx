@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/329?languages=en
 metaTitle: PostgreSQL Integration Doc | ILLA Cloud
 desc: Connect and interact with a PostgreSQL database using ILLA Cloud. Create apps that can query, manipulate, and visualize data. Automate and optimize data workflows.
 tagCategory: doc_menu_postgresql_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -27,7 +27,7 @@ Sign into your Illa account, select `**Resources**` on the top of the page, and 
 
 Select **`PostgreSQL`** from the database list.
 
-![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+![action_list]\(https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connect to the database with required parameters described in `Connection Settings` below.
 
@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready PostgreSQL will display as shown.
 
-![ex_post_ready](https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
+![ex_post_ready]\(https://cdn.illacloud.com/official-website/img/docs/ex_post_ready.png)
 
 -   Create in Builder
 
@@ -47,34 +47,34 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to PostgreSQL database.
 
-![post_config](https://cdn.illacloud.com/official-website/img/docs/post_config.png)
+![post_config]\(https://cdn.illacloud.com/official-website/img/docs/post_config.png)
 
-| Properties  | Required | Description                                                                                                        |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| Name        | required | The name for resource when creating actions in the ILLA.                                                           |
-| Hostname    | required | The URL or IP address for your database                                                                            |
-| Port        | required | The server host's port number that you should use to connect. If you don't specify a port, default port is '5432'. |
-| Database    | required | The name of the database                                                                                           |
-| Username    | required | the username you wish to use when logging in to the PostgreSQL server.                                             |
-| Password    | required | Use this password for authentication.                                                                              |
-| SSL options | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
+| 속성         | 필수    | 설명                                                                                                                 |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| 이름         | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                                           |
+| 호스트 이름     | 필수    | The URL or IP address for your database                                                                            |
+| 포트         | 필수    | The server host's port number that you should use to connect. If you don't specify a port, default port is '5432'. |
+| 데이터 베이스    | 필수    | The name of the database                                                                                           |
+| 사용자 이름     | 필수    | the username you wish to use when logging in to the PostgreSQL server.                                             |
+| 비밀번호       | 필수    | Use this password for authentication.                                                                              |
+| SSL 옵션     | 선택 과목 | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
 
 ### Create Actions
 
 We have created a PostgreSQL resource, we can add the action by selecting PostgreSQL from action list and choosing the **`Create action`** button.
 
-![post_resource_list](https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
+![post_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/post_resource_list.png)
 
 Now we have added the PostgreSQL server as an action to our building page.
 
-![post](https://cdn.illacloud.com/official-website/img/docs/post.png)
+![post]\(https://cdn.illacloud.com/official-website/img/docs/post.png)
 
 ### Configure PostgreSQL
 
-| Properties  | Description                                                               |
+| 속성          | 설명                                                                        |
 | ----------- | ------------------------------------------------------------------------- |
 | SQL query   | sql commands to fetch (select), insert, update, delete data from database |
-| Transformer | transforming data into the style you like using JavaScript                |
+| 변신 로봇       | transforming data into the style you like using JavaScript                |
 
 Example usage:
 
@@ -84,7 +84,7 @@ Example usage:
 SELECT * FROM users ORDER BY lastname;
 ```
 
--   Insert
+-   구성 요소
 
 ```sql
 INSERT INTO users
@@ -104,7 +104,7 @@ VALUES
 	);
 ```
 
--   Update
+-   업데이트
 
 ```sql
 UPDATE users
@@ -112,7 +112,7 @@ UPDATE users
   WHERE id = {{ form1.updatedProfile.uid}};
 ```
 
--   Delete
+-   삭제
 
 ```sql
 DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
