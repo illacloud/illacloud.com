@@ -95,12 +95,12 @@ De exemplu, pentru a obţine toate rezultatele a căror dimensiune este medie=>g
 
 ```sql
 [
-	<unk> {
-		<unk> "$match": { "size": "medium" }
-	<unk> },
-	<unk> {
-		<unk> "$group": { "_id": "$type", "totalQuantity": { "$sum": "$price" }
-	<unk> }
+	 {
+		 "$match": { "size": "medium" }
+	 },
+	 {
+		 "$group": { "_id": "$type", "totalQuantity": { "$sum": "$price" }
+	 }
 ]
 ```
 
@@ -128,12 +128,12 @@ Un exemplu pentru **`Operațiuni`**:
 
 ```sql
 [
-	<unk> { "insertOne": { "document": { "_id": 3, "type": "beef", "size": "medium", "price": 6 } },
+	 { "insertOne": { "document": { "_id": 3, "type": "beef", "size": "medium", "price": 6 } },
 	{ "insertOne": { "document": { "_id": 4, "type": "sausage", "size": "large", "price": 10 } },
-	<unk> { "updateOne": {
-			<unk> <unk> "filter": { "type": "type": "brânză" },
+	 { "updateOne": {
+			  "filter": { "type": "type": "brânză" },
 			Ribavirin "update": { "$set": { "price": 8 }
-		<unk> }
+		 }
 	}
 ]
 ```
