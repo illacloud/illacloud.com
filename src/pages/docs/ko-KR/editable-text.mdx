@@ -1,5 +1,5 @@
 ---
-title: Editable Text
+title: 편집 가능한 텍스트
 metaTitle: Editable Text Component Doc | ILLA Cloud
 desc: Learn how to use the Editable Text component to create and customize text fields for your app in ILLA Cloud.
 tagCategory: doc_menu_editable_text_click
@@ -13,36 +13,36 @@ postPriority: 1
 
 Editable text allows users to create and manipulate text within their applications. With this component, users can easily input and edit text directly on the interface, making it ideal for creating dynamic and interactive content.
 
-### Properties
+### 속성
 
-| Properties              | Description                                                                                                                                                  |
+| 속성                      | 설명                                                                                                                                                           |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment (align to left or right) of the label                                                                                                      |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| 기본값                     | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
+| 자리 표시자                  | 입력에 값이 없을 때 표시할 메시지입니다.                                                                                                                                      |
+| 상표                      | 사용자에게 표시되는 필드의 이름                                                                                                                                            |
+| 부제                      | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                       |
+| 숨겨진 라벨                  | 레이블 표시 여부 설정                                                                                                                                                 |
+| 위치                      | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                        |
+| 조정                      | Set the alignment (align to left or right) of the label                                                                                                      |
+| 너비                      | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
+| 이벤트 핸들러                 | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                    |
+| 장애가 있는                  | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
 | Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Show clear button       | control whether or not a clear button is displayed in the input field                                                                                        |
-| Show character count    | control whether or not the character count of the input is displayed                                                                                         |
-| Prefix text             | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user                      |
-| Suffix text             | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user                     |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Pattern                 | specify a pattern that the input value must match                                                                                                            |
+| 지우기 버튼 표시               | control whether or not a clear button is displayed in the input field                                                                                        |
+| 문자 수 표시                 | control whether or not the character count of the input is displayed                                                                                         |
+| 접두사 텍스트                 | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user                      |
+| 접미사                     | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user                     |
+| 힌트                      | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| 필수 입력 사항                | 스위치를 켠 후 입력 상자에서 유효성 검사를 수행합니다.                                                                                                                              |
+| 모델                      | specify a pattern that the input value must match                                                                                                            |
 | Max length              | set the maximum number of characters that can be entered into the input field.                                                                               |
-| Min Length              | specify the minimum number of characters that the user must enter into the input field in order for the input to be considered valid.                        |
-| Custom rule             | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| 최소 길이                   | specify the minimum number of characters that the user must enter into the input field in order for the input to be considered valid.                        |
+| 맞춤 규칙                   | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
+| 확인 정보 숨기기               | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| 숨다                      | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
 | Theme Color             | Allows users to specify the button's background color and opacity                                                                                            |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following five methods:
 
@@ -50,7 +50,7 @@ You can use other components to control the component. We support the following 
 
 To set the text area input value, for example, {{"value1"}}
 
-| Properties | Description |
+| 속성         | 설명          |
 | ---------- | ----------- |
 | Value      | Input value |
 
@@ -70,41 +70,41 @@ To verify that the input information is legal
 
 To clear the validation message
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                        |
+| 이벤트    | 설명                                                                 |
 | ------ | ------------------------------------------------------------------ |
-| Change | When a user changes the input value                                |
-| Focus  | When a user moves the mouse cursor on the input component          |
-| Blur   | When a user is done inputting value and quit focusing on component |
+| 내용 변경  | When a user changes the input value                                |
+| 집중하다   | When a user moves the mouse cursor on the input component          |
+| 초점없는   | When a user is done inputting value and quit focusing on component |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name      | Description                                                                             |
-| ------------------ | --------------------------------------------------------------------------------------- |
-| value              | user input value                                                                        |
-| colorScheme        | background color of the button                                                          |
-| customRule         | user-defined rule or validation logic that can be applied to the number input component |
-| disabled           | a Boolean value indicate the disabled status                                            |
-| displayName        | the name of this component (ie button1)                                                 |
-| events             | generated or triggered when certain actions or events occur                             |
-| hidden             | hidden status (true or false)                                                           |
-| label              | label value                                                                             |
-| labelAlign         | alignment of input label (left or right)                                                |
-| labelPosition      | position of input label (left or right)                                                 |
-| labelWidth         | the integer representing width of label.                                                |
-| maxLength          | the value of maximum length                                                             |
-| minLength          | the value of minimum length                                                             |
-| placeholder        | placeholder value                                                                       |
-| prefixText         | value of the text prefix                                                                |
-| suffixText         | value of the text suffix                                                                |
-| readOnly           | a Boolean value indicate the readyOnly status of input.                                 |
-| required           | a Boolean value indicate the required status of input.                                  |
-| regex              | apply pattern-based validation to the input text in the text area                       |
-| showCharacterCount | a Boolean value indicate whether the character count of input is displayed              |
-| tooltipText        | value of tooltip text                                                                   |
+| Property name       | 설명                                                                                      |
+| ------------------- | --------------------------------------------------------------------------------------- |
+| 값                   | user input value                                                                        |
+| colorScheme         | background color of the button                                                          |
+| customRule          | user-defined rule or validation logic that can be applied to the number input component |
+| 장애가 있는              | a Boolean value indicate the disabled status                                            |
+| displayName         | the name of this component (ie button1)                                                 |
+| events              | generated or triggered when certain actions or events occur                             |
+| 숨다                  | hidden status (true or false)                                                           |
+| 상표                  | label value                                                                             |
+| labelAlign          | alignment of input label (left or right)                                                |
+| labelPosition       | position of input label (left or right)                                                 |
+| labelWidth          | the integer representing width of label.                                                |
+| maxLength           | the value of maximum length                                                             |
+| minLength           | the value of minimum length                                                             |
+| 자리 표시자              | placeholder value                                                                       |
+| prefixText          | value of the text prefix                                                                |
+| suffixText          | value of the text suffix                                                                |
+| readOnly            | a Boolean value indicate the readyOnly status of input.                                 |
+| 필수                  | a Boolean value indicate the required status of input.                                  |
+| 정규 표현식              | apply pattern-based validation to the input text in the text area                       |
+| showCharacterCount  | a Boolean value indicate whether the character count of input is displayed              |
+| tooltipText         | value of tooltip text                                                                   |
 
 Example: {{editable_text1.value}}
 
@@ -116,7 +116,7 @@ Next, we will demonstrate how to map the data from the data source to the editab
 
 Let us create a table in REST API with columns `id`, `name`, and `age`. The id 1 document is what we want to show in the form component.
 
-![rest_get_all](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
+![rest_get_all]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
 
 Then we can create a new action for REST API from the action list in the app we want to build, listing all the data in the bucket and named restapi1.
 
@@ -124,7 +124,7 @@ Select `GET` for `**Action Type**`. In URL Parameters, put `id` for key and `1` 
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![rest_get_1](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
+![rest_get_1]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
 
 #### Step 2 Add Components
 
@@ -132,7 +132,7 @@ Next, we can add an **`editable text`** component and a **`button`** component t
 
 We label editable text to be 'Name' and labeled the button as "Set value" as shown below
 
-![edit_layout](https://cdn.illacloud.com/official-website/img/official-site/components/edit_layout.jpg)
+![edit_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_layout.jpg)
 
 #### Step 3 Configure the component
 
@@ -141,10 +141,10 @@ For the **`button`** component, we can configure it to set the value in **`edita
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`editable text`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{restapi1.data[0]["name"]}}`
 
-![edit_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/edit_event.jpg)
+![edit_event_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_event.jpg)
 
 #### Step 4 Test
 
 Now that when you click the "Set value" button, the value should change to the text.
 
-![edit_test](https://cdn.illacloud.com/official-website/img/official-site/components/edit_test.jpg)
+![edit_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_test.jpg)
