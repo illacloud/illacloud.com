@@ -3,7 +3,7 @@ title: Statistics
 metaTitle: Statistics Component Doc | ILLA Cloud
 desc: Learn how to use the statistics component to create and customize the statistic value for your app in ILLA Cloud.
 tagCategory: doc_menu_statistics_click
-crowdinRepo: https://crowdin.com/multilingual/illacloud-website/395?languages=en&filter=basic&value=0
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/395?languages=en&filter=basic&value=0Ç
 categoryName: 🧬 Assemble components
 categoryPriority: 6
 postPriority: 1
@@ -110,7 +110,7 @@ Let us create a table in Amazon S3. One of the documents is called
 
 '1.txt' with the decimal '1.1111' as its data. This is the value we want to show in number input.
 
-![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 Then we can create a new action for Amazon S3 from the action list, listing all the data in the bucket and named s31.
 
@@ -118,7 +118,7 @@ Select `Read an object` for `**Action Type**`. Put `1.txt` for `**Object Key`.\*
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![stat_data](https://cdn.illacloud.com/official-website/img/official-site/components/stat_data.jpg)
+![stat_data]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_data.jpg)
 
 #### Step 2 Add Components
 
@@ -126,7 +126,7 @@ Next, we can add a **`statistics`** component and a **`button`** component to th
 
 We set the default primary value of statistics to 0 and labeled the button as "Set value" as shown below
 
-![stat_layout](https://cdn.illacloud.com/official-website/img/official-site/components/stat_layout.jpg)
+![stat_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_layout.jpg)
 
 #### Step 3 Configure the component
 
@@ -135,10 +135,10 @@ For the **`button`** component, we can configure it to set the value in **`stati
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`statistics`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{s31.data}}`
 
-![stat_button_config](https://cdn.illacloud.com/official-website/img/official-site/components/stat_config.jpg)
+![stat_button_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_config.jpg)
 
 #### Step 4 Test
 
 Now that when you click the "Set value" button, the value should change to 1.1111.
 
-![stat_test](https://cdn.illacloud.com/official-website/img/official-site/components/stat_test.gif)
+![stat_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_test.gif)
