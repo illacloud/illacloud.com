@@ -3,7 +3,7 @@ title: Circle progress
 metaTitle: Circle progress Component Doc | ILLA Cloud
 desc: Learn how to use the circle progress component to customize and decorate your app in ILLA Cloud.
 tagCategory: doc_menu_circle_progress_click
-crowdinRepo: https://crowdin.com/multilingual/illacloud-website/391?languages=en&filter=basic&value=0
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/391?languages=en&filter=basic&value=0Ç
 categoryName: 🧬 Assemble components
 categoryPriority: 6
 postPriority: 1
@@ -72,7 +72,7 @@ Label the input component to be "Name", the number input component to be "Age" a
 
 Set the placeholder of the input component to "Please put your name here" and the default value of the number input to 0 as shown below.
 
-![cir_layout](https://cdn.illacloud.com/official-website/img/official-site/components/cir_layout.jpg)
+![cir_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_layout.jpg)
 
 #### Step 2 Configure the component
 
@@ -94,7 +94,7 @@ For the **`input`** and **`number input`** components, we can configure them to 
 }
 ```
 
-![cir_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/cir_event_config.jpg)
+![cir_event_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_event_config.jpg)
 
 Note: need to set the event handler as described above to BOTH input and number input components.
 
@@ -104,22 +104,22 @@ For the "Submit" **`button`** component, we can configure it to submit the form 
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`form`** component that you want to update as the target of the event.
 3.  Choose the **`submit`** method and put `{{circleProgress1.value == 100}}` in **`Only run when`**
 
-![cir_sub_config](https://cdn.illacloud.com/official-website/img/official-site/components/cir_sub_config.jpg)
+![cir_sub_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_sub_config.jpg)
 
 Similarly, we can configure the button to show warning when the user is trying to submit an uncompleted form.
 
 1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Error!" and **`description`** "Please fill out the form before submitting". Choose `Error` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds), and put `{{circleProgress1.value<100}}` for **`Only run when`.**
 
-![cir_err_config](https://cdn.illacloud.com/official-website/img/official-site/components/cir_err_config.jpg)
+![cir_err_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_err_config.jpg)
 
 We can also configure the `**Form**` component to show a success message when submit.
 
 1.  Click the **`form`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Submitted Successfully". Choose `Success` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds).
 
-![cir_form_submit](https://cdn.illacloud.com/official-website/img/official-site/components/cir_form_submiy.jpg)
+![cir_form_submit]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_form_submiy.jpg)
 
 #### Step 4 Test
 
-![cir_test](https://cdn.illacloud.com/official-website/img/official-site/components/cir_test.gif)
+![cir_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/cir_test.gif)

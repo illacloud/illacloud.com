@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/385?languages=en
 metaTitle: REST API Integration Doc | ILLA Cloud
 desc: Learn how to use ILLA Cloud to access and work with REST API data. Build apps, visualize data, and automate workflows with ILLA Cloud.
 tagCategory: doc_menu_rest_api_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -23,11 +23,11 @@ There are two ways to create a resource in Illa after signing into your Illa acc
 
 Sign into your Illa account, select `**Resources**` on the top of the page, and click `**Create New**` button.
 
-![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+![external_resource]\(https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
 Select **`REST API`** from the database list.
 
-![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+![action_list]\(https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connect to the database with the required parameters described in `Connection Settings` below.
 
@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready REST API will display as shown.
 
-![rest_ex_ready](https://cdn.illacloud.com/official-website/img/official-site/components/rest_ex_ready.jpg)
+![rest_ex_ready]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_ex_ready.jpg)
 
 -   Create in Builder
 
@@ -47,35 +47,35 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to REST API database.
 
-![rest_config](https://cdn.illacloud.com/official-website/img/official-site/components/rest_config.jpg)
+![rest_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_config.jpg)
 
-| Properties     | Required | Description                                                                            |
-| -------------- | -------- | -------------------------------------------------------------------------------------- |
-| Name           | required | The name for resource when creating actions in the ILLA.                               |
-| Base URL       | required | The URL or IP address for your database                                                |
-| URL Parameters | optional | provide additional information or modify the behavior of API requests                  |
-| Headers        | optional | additional metadata about the API request or response                                  |
-| Cookies        | optional | small pieces of data that are stored on the client-side and sent with each API request |
-| Authentication | optional | verifying the identity of the user or application making the API request               |
+| 속성           | 필수    | 설명                                                                                     |
+| ------------ | ----- | -------------------------------------------------------------------------------------- |
+| 이름           | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                               |
+| 기본 URL       | 필수    | The URL or IP address for your database                                                |
+| URL 매개변수     | 선택 과목 | provide additional information or modify the behavior of API requests                  |
+| 헤더           | 선택 과목 | additional metadata about the API request or response                                  |
+| 쿠키           | 선택 과목 | small pieces of data that are stored on the client-side and sent with each API request |
+| 입증           | 선택 과목 | verifying the identity of the user or application making the API request               |
 
 ### Create Actions
 
 We have created a REST API resource; we can add the action by selecting REST API from the action list and choosing the **`Create action`** button.
 
-![rest_resource_list](https://cdn.illacloud.com/official-website/img/official-site/components/rest_resource_list.jpg)
+![rest_resource_list]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_resource_list.jpg)
 
 Now we have added the REST API server as an action to our building page.
 
-![rest](https://cdn.illacloud.com/official-website/img/official-site/components/rest.jpg)
+![rest]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest.jpg)
 
 ### Configure REST API
 
-| Properties    | Description                                                                                                  |
+| 속성            | 설명                                                                                                           |
 | ------------- | ------------------------------------------------------------------------------------------------------------ |
 | Action Type   | GET, POST, PUT, HEAD, PATCH, DELETE, OPTIONS                                                                 |
 | URL Parameter | provide additional information or modify the behavior of API requests if not specified in connection setting |
-| Headers       | additional metadata about the API request or response if not specified in connection setting                 |
-| Transformer   | transforming data into the style you like using JavaScript                                                   |
+| 헤더            | additional metadata about the API request or response if not specified in connection setting                 |
+| 변신 로봇         | transforming data into the style you like using JavaScript                                                   |
 
 #### GET
 
@@ -109,7 +109,7 @@ We will demonstrate how to auto fill the form information from REST API data.
 
 Let us create a table in REST API with columns `id`, `name`, and `age`. The id 1 document is what we want to show in the form component.
 
-![rest_get_all](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
+![rest_get_all]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
 
 Then we can create a new action for REST API from the action list in the app we want to build, listing all the data in the bucket and named restapi1.
 
@@ -117,7 +117,7 @@ Select `GET` for `**Action Type**`. In URL Parameters, put `id` for key and `1` 
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![rest_get_1](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
+![rest_get_1]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
 
 #### Step 2 Add Components
 
@@ -129,7 +129,7 @@ Label the input component to be "Name", the number input component to be "Age" a
 
 Set the placeholder of the input component to "Please put your name here" and the default value of the number input to 0 as shown below.
 
-![rest_layout](https://cdn.illacloud.com/official-website/img/official-site/components/rest_layout.jpg)
+![rest_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_layout.jpg)
 
 #### Step 3 Configure the component
 
@@ -139,7 +139,7 @@ For the "Auto Fill" **`button`** components, we can configure it to set the valu
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`input`** component that you want to update as the target of the event.
 3.  Choose the **`setValue`** action and set the value as `{{restapi1.data[0]["name"]}}`
 
-![rest_get_input](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_input.jpg)
+![rest_get_input]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_input.jpg)
 
 Similarly, for "Auto Fill" **`button`** components to set value in **`number input`** component.
 
@@ -147,7 +147,7 @@ Similarly, for "Auto Fill" **`button`** components to set value in **`number inp
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`number input`** component that you want to update as the target of the event.
 3.  Choose the **`setValue`** action and set the value as `{{restapi1.data[0]["age"]}}`
 
-![rest_get_num](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_num.jpg)
+![rest_get_num]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_num.jpg)
 
 For the "Submit" **`button`** component, we can configure it to submit the form if the form is completed
 
@@ -155,8 +155,8 @@ For the "Submit" **`button`** component, we can configure it to submit the form 
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`form`** component that you want to update as the target of the event.
 3.  Choose the **`submit`** method
 
-![rest_submit_config](https://cdn.illacloud.com/official-website/img/official-site/components/rest_submit_config.jpg)
+![rest_submit_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_submit_config.jpg)
 
 #### Step 4 Test
 
-![rest_test](https://cdn.illacloud.com/official-website/img/official-site/components/rest_test.gif)
+![rest_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_test.gif)

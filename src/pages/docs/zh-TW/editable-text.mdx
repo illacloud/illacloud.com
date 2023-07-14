@@ -3,7 +3,7 @@ title: Editable Text
 metaTitle: Editable Text Component Doc | ILLA Cloud
 desc: Learn how to use the Editable Text component to create and customize text fields for your app in ILLA Cloud.
 tagCategory: doc_menu_editable_text_click
-crowdinRepo: https://crowdin.com/multilingual/illacloud-website/389?languages=en&filter=basic&value=0
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/389?languages=en&filter=basic&value=0Ç
 categoryName: 🧬 Assemble components
 categoryPriority: 6
 postPriority: 1
@@ -116,7 +116,7 @@ Next, we will demonstrate how to map the data from the data source to the editab
 
 Let us create a table in REST API with columns `id`, `name`, and `age`. The id 1 document is what we want to show in the form component.
 
-![rest_get_all](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
+![rest_get_all]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_all.jpg)
 
 Then we can create a new action for REST API from the action list in the app we want to build, listing all the data in the bucket and named restapi1.
 
@@ -124,7 +124,7 @@ Select `GET` for `**Action Type**`. In URL Parameters, put `id` for key and `1` 
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![rest_get_1](https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
+![rest_get_1]\(https://cdn.illacloud.com/official-website/img/official-site/components/rest_get_1.jpg)
 
 #### Step 2 Add Components
 
@@ -132,7 +132,7 @@ Next, we can add an **`editable text`** component and a **`button`** component t
 
 We label editable text to be 'Name' and labeled the button as "Set value" as shown below
 
-![edit_layout](https://cdn.illacloud.com/official-website/img/official-site/components/edit_layout.jpg)
+![edit_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_layout.jpg)
 
 #### Step 3 Configure the component
 
@@ -141,10 +141,10 @@ For the **`button`** component, we can configure it to set the value in **`edita
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`editable text`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{restapi1.data[0]["name"]}}`
 
-![edit_event_config](https://cdn.illacloud.com/official-website/img/official-site/components/edit_event.jpg)
+![edit_event_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_event.jpg)
 
 #### Step 4 Test
 
 Now that when you click the "Set value" button, the value should change to the text.
 
-![edit_test](https://cdn.illacloud.com/official-website/img/official-site/components/edit_test.jpg)
+![edit_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/edit_test.jpg)
