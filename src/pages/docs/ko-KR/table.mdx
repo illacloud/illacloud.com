@@ -1,5 +1,5 @@
 ---
-title: Table
+title: 시트
 metaTitle: Table Component Doc | ILLA Cloud
 desc: Learn how to use the table component to customize your app in ILLA Cloud.
 tagCategory: doc_menu_table_click
@@ -13,45 +13,45 @@ postPriority: 1
 
 The Table component in ILLA Cloud is a powerful feature that allows users to display, organize, and manipulate tabular data within the application. It provides a structured layout with rows and columns, enabling users to view and interact with data in a convenient and structured manner.
 
-### Properties
+### 속성
 
-| Properties                    | Description                                                                                                            |
+| 속성                            | 설명                                                                                                                     |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Data source                   | source of data that populates the table                                                                                |
-| Empty state                   | the content or message displayed when the table has no data to show                                                    |
-| Loading                       | whether the Table component is currently in a loading state                                                            |
-| Columns                       | structure and configuration of the columns in the table. (See the section about Columns below for more detail)         |
-| Column                        | the number of columns                                                                                                  |
-| Multi-Row Selection           | Use {{table.selectedRow[n].columnName}} to access data.                                                                |
-| Cell Selection                | Whether allow users to select a cell                                                                                   |
-| Click outside to deselect     | Supported in the row single selection mode. After enabling it, click an area other than the table to unselect the row. |
-| Overflow                      | how the table handles content that exceeds the available space within the table's container (pagination or scroll)     |
-| Enable server side pagination | Whether to enable server pagination                                                                                    |
-| PageSize                      | the number of rows to be displayed per page when server-side pagination is enabled                                     |
-| Refresh                       | Whether to show the refresh icon.                                                                                      |
-| Download                      | Show download button in toolbar.                                                                                       |
-| Download raw data             | Whether to show the download raw data icon.                                                                            |
-| Filter                        | Show filter button in toolbar                                                                                          |
-| Event handler                 | detecting and responding to specific user actions or events, such as clicks, keypresses, or form submissions.          |
-| Disabled                      | non-interactive and cannot be modified or triggered by the user.                                                       |
+| 데이터 소스                        | source of data that populates the table                                                                                |
+| 빈 상태                          | the content or message displayed when the table has no data to show                                                    |
+| 로드 중                          | whether the Table component is currently in a loading state                                                            |
+| 열                             | structure and configuration of the columns in the table. (See the section about Columns below for more detail)         |
+| 열 정렬                          | the number of columns                                                                                                  |
+| 여러 행 선택                       | {{table.selectedRow[n].columnName}} 를 사용하여 데이터에 액세스합니다.                                                                |
+| Cell Selection                | 사용자가 셀을 선택하도록 허용할지 여부                                                                                                  |
+| 바깥쪽을 클릭하여 선택 해제               | Supported in the row single selection mode. After enabling it, click an area other than the table to unselect the row. |
+| 텍스트 오버플로                      | how the table handles content that exceeds the available space within the table's container (pagination or scroll)     |
+| 서버 측 페이지 매김 활성화               | Whether to enable server pagination                                                                                    |
+| 페이지당 라인                       | the number of rows to be displayed per page when server-side pagination is enabled                                     |
+| 새로 고치다                        | Whether to show the refresh icon.                                                                                      |
+| 다운로드                          | 툴바에 다운로드 버튼을 표시합니다.                                                                                                    |
+| 원시 데이터 다운로드                   | 원시 데이터 다운로드 아이콘 표시 여부입니다.                                                                                              |
+| Filter                        | 도구 모음에 필터 버튼을 표시합니다                                                                                                    |
+| 이벤트 핸들러                       | detecting and responding to specific user actions or events, such as clicks, keypresses, or form submissions.          |
+| 장애가 있는                        | non-interactive and cannot be modified or triggered by the user.                                                       |
 
 #### **Column Properties Overview**
 
 For each column, we can configure its properties to customize the data displayed for each column.
 
-| Properties                                    | Description                                                                                                                                                                                            |
+| 속성                                            | 설명                                                                                                                                                                                                     |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column title                                  | specifies the name or label of the column, which serves as a header to identify the data it represents                                                                                                 |
-| Column type                                   | defines the type of data that the column contains, including auto, text, date, tag, time, dateTime, number, percent, link, button, button group, boolean, image, iconGroup, Rating, Markdown, currency |
-| Mapped Value                                  | Use {{ currentRow }} to access the data of current row. For example, to calculate "cost per click" based on columns "cost" and "clickTimes":                                                           |
+| 열 머리글                                         | specifies the name or label of the column, which serves as a header to identify the data it represents                                                                                                 |
+| 열 유형                                          | defines the type of data that the column contains, including auto, text, date, tag, time, dateTime, number, percent, link, button, button group, boolean, image, iconGroup, Rating, Markdown, currency |
+| 맵 값                                           | Use {{ currentRow }} to access the data of current row. For example, to calculate "cost per click" based on columns "cost" and "clickTimes":                                                           |
 | {{ currentRow.cost / currentRow.clickTimes }} |                                                                                                                                                                                                        |
-| Enable Sorting                                | whether the column allows users to sort the table data based on the values in that specific column                                                                                                     |
-| Background                                    | Set the background of column. Use {{ write a conditional statement to set the color displayed by each cell under different conditions.                                                                 |
-| Alignment                                     | controls the horizontal alignment of the content within the column cells                                                                                                                               |
+| 정렬하다                                          | whether the column allows users to sort the table data based on the values in that specific column                                                                                                     |
+| 배경                                            | Set the background of column. Use {{ write a conditional statement to set the color displayed by each cell under different conditions.                                                                 |
+| 조정                                            | controls the horizontal alignment of the content within the column cells                                                                                                                               |
 
 #### Column types:
 
--   Auto
+-   방문 허용
 
 a dynamic type that automatically determines the data type based on the values within the column
 
@@ -63,52 +63,52 @@ represents a column that contains textual data
 
 represents data values that correspond to specific dates
 
-| Properties | Description                                                         |
-| ---------- | ------------------------------------------------------------------- |
-| Format     | accepts various formatting codes or patterns, default is YYYY-MM-DD |
+| 속성     | 설명                                                                  |
+| ------ | ------------------------------------------------------------------- |
+| 체재     | accepts various formatting codes or patterns, default is YYYY-MM-DD |
 
 -   Tag
 
 a specialized format for displaying tags or labels associated with data entries
 
-| Properties | Description                                                        |
-| ---------- | ------------------------------------------------------------------ |
-| Tag label  | represents the text or label assigned to a tag in the "tag" column |
-| Tag color  | defines the color assigned to the tag in the "tag" column          |
+| 속성      | 설명                                                                 |
+| ------- | ------------------------------------------------------------------ |
+| 태그 레이블  | represents the text or label assigned to a tag in the "tag" column |
+| 태그 색상   | defines the color assigned to the tag in the "tag" column          |
 
--   Time
+-   시간
 
 accurately represent and manipulate time values within the table
 
-| Properties | Description                                                                       |
-| ---------- | --------------------------------------------------------------------------------- |
-| Format     | the visual representation of the time data within the column, default is HH:mm:ss |
+| 속성     | 설명                                                                                |
+| ------ | --------------------------------------------------------------------------------- |
+| 체재     | the visual representation of the time data within the column, default is HH:mm:ss |
 
 -   DateTime
 
 stores and represents date and time values
 
-| Properties | Description                                                                                              |
-| ---------- | -------------------------------------------------------------------------------------------------------- |
-| Format     | specifies how the date and time values should be displayed in the column, default is YYYY-MM-DD HH:mm:ss |
+| 속성     | 설명                                                                                                       |
+| ------ | -------------------------------------------------------------------------------------------------------- |
+| 체재     | specifies how the date and time values should be displayed in the column, default is YYYY-MM-DD HH:mm:ss |
 
 -   Number
 
 handle numerical data
 
-| Properties               | Description                                                                                                                 |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Decimal places           | specify the number of decimal places to display for numeric values in the column                                            |
-| Show thousands separator | whether the column should display a thousands separator to improve readability and ease of interpretation for large numbers |
+| 속성               | 설명                                                                                                                          |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 소수 자릿수           | specify the number of decimal places to display for numeric values in the column                                            |
+| 천 단위 구분 기호 표시    | whether the column should display a thousands separator to improve readability and ease of interpretation for large numbers |
 
 -   Percent
 
 handle percentage values in a concise and visually appealing manner
 
-| Properties               | Description                                                                         |
-| ------------------------ | ----------------------------------------------------------------------------------- |
-| Decimal places           | specify the number of decimal places to display for percentage values in the column |
-| Show thousands separator | whether a thousands separator should be included in the displayed percentage values |
+| 속성               | 설명                                                                                  |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| 소수 자릿수           | specify the number of decimal places to display for percentage values in the column |
+| 천 단위 구분 기호 표시    | whether a thousands separator should be included in the displayed percentage values |
 
 -   Link
 
@@ -118,12 +118,12 @@ include clickable links within a specific column
 
 include interactive buttons within a specific column
 
-| Properties    | Description                                                                          |
-| ------------- | ------------------------------------------------------------------------------------ |
-| Event handler | defines the action or event that occurs when the button within the column is clicked |
-| Disabled      | whether the button within the column is enabled or disabled                          |
-| Theme color   | choose a theme color for the button                                                  |
-| Variant       | visual style or variant of the button (Fill or outline)                              |
+| 속성          | 설명                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------ |
+| 이벤트 핸들러     | defines the action or event that occurs when the button within the column is clicked |
+| 장애가 있는      | whether the button within the column is enabled or disabled                          |
+| 테마 색상       | choose a theme color for the button                                                  |
+| 스타일         | visual style or variant of the button (Fill or outline)                              |
 
 -   buttonGroup
 
@@ -131,25 +131,25 @@ allows users to create interactive button groups within a column
 
 For each button in the columns, we can configure its properties.
 
-| Properties    | Description                                                                                                                            |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Mapped Value  | associate each button in the button group with a specific value or field from the data source                                          |
-| Variant       | visual style or appearance of the buttons in the button group                                                                          |
-| Event handler | the action or function triggered when a button in the group is clicked or interacted with                                              |
-| Disabled      | whether the buttons in the button group are enabled or disabled                                                                        |
-| Theme color   | customize the color or styling of the buttons in the group to align with the overall theme or branding of their application or website |
+| 속성          | 설명                                                                                                                                     |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 맵 값         | associate each button in the button group with a specific value or field from the data source                                          |
+| 스타일         | visual style or appearance of the buttons in the button group                                                                          |
+| 이벤트 핸들러     | the action or function triggered when a button in the group is clicked or interacted with                                              |
+| 장애가 있는      | whether the buttons in the button group are enabled or disabled                                                                        |
+| 테마 색상       | customize the color or styling of the buttons in the group to align with the overall theme or branding of their application or website |
 
 -   Boolean
 
 represents data that has two possible states: true or false
 
--   Image
+-   그림
 
 populate a column in the table with image data
 
-| Properties | Description                                              |
-| ---------- | -------------------------------------------------------- |
-| Scale Type | how the image is scaled or resized within the table cell |
+| 속성       | 설명                                                       |
+| -------- | -------------------------------------------------------- |
+| 확대/축소 유형 | how the image is scaled or resized within the table cell |
 
 -   IconGroup
 
@@ -157,12 +157,12 @@ a specialized column that allows users to display icons within a group or collec
 
 For each button in the columns, we can configure its properties.
 
-| Properties    | Description                                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Icon          | allows users to select or specify the icon to be displayed within the IconGroup column                                 |
-| Theme color   | determines the color scheme or theme applied to the icon within the IconGroup column                                   |
-| Event handler | enables users to define an event or action triggered when the icon in the IconGroup column is interacted with by users |
-| Disabled      | state of the IconGroup column, determining whether it is disabled or enabled for user interaction                      |
+| 속성          | 설명                                                                                                                     |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 상           | allows users to select or specify the icon to be displayed within the IconGroup column                                 |
+| 테마 색상       | determines the color scheme or theme applied to the icon within the IconGroup column                                   |
+| 이벤트 핸들러     | enables users to define an event or action triggered when the icon in the IconGroup column is interacted with by users |
+| 장애가 있는      | state of the IconGroup column, determining whether it is disabled or enabled for user interaction                      |
 
 -   Rating
 
@@ -176,13 +176,13 @@ ability to render formatted text using Markdown syntax within the column cells
 
 handle and format currency values.
 
-| Properties               | Description                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------- |
-| Decimal places           | the number of decimal places to display for the currency values within the column |
-| Currency code            | specifies the code or abbreviation representing the currency used in the column   |
-| Show thousands separator | whether a thousands separator is displayed for large currency values              |
+| 속성               | 설명                                                                                |
+| ---------------- | --------------------------------------------------------------------------------- |
+| 소수 자릿수           | the number of decimal places to display for the currency values within the column |
+| 통화 코드            | specifies the code or abbreviation representing the currency used in the column   |
+| 천 단위 구분 기호 표시    | whether a thousands separator is displayed for large currency values              |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -190,7 +190,7 @@ You can use other components to control the component. We support the following 
 
 select all the rows on a specific page in a paginated table
 
-| Properties | Description                                         |
+| 속성         | 설명                                                  |
 | ---------- | --------------------------------------------------- |
 | End Value  | the page number or index of the page to be selected |
 
@@ -198,9 +198,9 @@ select all the rows on a specific page in a paginated table
 
 select a specific row in the table
 
-| Properties           | Description                                                                                                                                  |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Default selected row | default selected row value, can be the row index, a unique identifier, or any other property that uniquely identifies the row to be selected |
+| 속성           | 설명                                                                                                                                           |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 기본 선택 행      | default selected row value, can be the row index, a unique identifier, or any other property that uniquely identifies the row to be selected |
 
 -   **clearSelection**
 
@@ -210,10 +210,10 @@ clear the current selection in the table
 
 apply filters to the table data
 
-| Properties  | Description                            |
-| ----------- | -------------------------------------- |
-| Filters     | filtering conditions or criteria       |
-| Filter mode | determines how the filters are applied |
+| 속성     | 설명                                     |
+| ------ | -------------------------------------- |
+| 필터     | filtering conditions or criteria       |
+| 필터 모드  | determines how the filters are applied |
 
 -   **ClearFilters**
 
@@ -223,21 +223,21 @@ clears any applied filters in the table
 
 set the sorting for the table
 
-| Properties | Description                                                     |
-| ---------- | --------------------------------------------------------------- |
-| Column     | the column on which the sorting should be applied               |
-| Direction  | direction of the sort, which can be "ascending" or "descending" |
+| 속성       | 설명                                                              |
+| -------- | --------------------------------------------------------------- |
+| 열 정렬     | the column on which the sorting should be applied               |
+| 주문하다     | direction of the sort, which can be "ascending" or "descending" |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name                | Description                                                                                              |
+| Property name                | 설명                                                                                                       |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------- |
 | clickOutsideToResetSelection | whether clicking outside the Table component should reset the current selection                          |
 | columnMapper                 | an object that maps the data fields or keys in the table's data source to the corresponding column names |
 | columnNameIndices            | an object that stores the indices of the column names                                                    |
-| columns                      | an array that defines the configuration and properties of each column in the table                       |
+| 열                            | an array that defines the configuration and properties of each column in the table                       |
 | columnVisibility             | an object that stores the visibility status of each column in the table                                  |
 | customColumnIndices          | an object that stores the indices of the custom columns in the table                                     |
 | dataSource                   | the data source for the table                                                                            |
@@ -245,26 +245,26 @@ The component has some commonly used data, which can be called via **`{{componen
 | dataSourceMode               | the mode or type of the data source.                                                                     |
 | defaultSortKey               | default column key to be used for sorting the table initially                                            |
 | defaultSortOrder             | the default sorting order for the table                                                                  |
-| disabled                     | whether the Table component is disabled or not                                                           |
+| 장애가 있는                       | whether the Table component is disabled or not                                                           |
 | displayedData                | currently displayed data in the table                                                                    |
 | displayedDataIndices         | the indices of the displayed rows in the table                                                           |
 | displayName                  | specifies the name or label of the table component                                                       |
-| download                     | enables the ability to download the table data                                                           |
+| 다운로드                         | enables the ability to download the table data                                                           |
 | downloadRawData              | whether to download the raw data or the displayed data of the table                                      |
 | emptyState                   | the content or message to be displayed when the table is empty                                           |
 | enableServerSidePagination   | When set to true, the enableServerSidePagination property enables server-side pagination for the table   |
 | enableSingleCellSelection    | allows for single-cell selection in the table                                                            |
 | filter                       | the currently applied filter or filtering conditions in the table                                        |
 | hasNextPage                  | whether there is a next page available in the paginated table                                            |
-| loading                      | whether the Table component is in a loading state                                                        |
+| 로드 중                         | whether the Table component is in a loading state                                                        |
 | multiRowSelection            | enables multi-row selection in the table                                                                 |
 | nextAfterCursor              | the cursor or identifier for fetching the next set of data in server-side pagination                     |
 | nextBeforeCursor             | the cursor for fetching the previous set of data in server-side pagination                               |
-| overflow                     | the behavior of the table when the content exceeds the available space                                   |
+| 텍스트 오버플로                     | the behavior of the table when the content exceeds the available space                                   |
 | pageIndex                    | the current page index in a paginated table                                                              |
-| pageSize                     | determines the number of rows to be displayed per page in a paginated table                              |
+| 페이지당 라인                      | determines the number of rows to be displayed per page in a paginated table                              |
 | paginationOffset             | the number of pages to be offset in the pagination                                                       |
-| refresh                      | triggers a refresh of the table's data                                                                   |
+| 새로 고치다                       | triggers a refresh of the table's data                                                                   |
 | renamedColumnNames           | stores the renamed column names in the table                                                             |
 | rowEvents                    | allows for custom events or actions to be associated with specific rows in the table                     |
 | totalRowCount                | the total number of rows in the table                                                                    |
@@ -306,11 +306,11 @@ const mappedArray = jsonData.employees.map((employee) => ({
 return mappedArray;
 ```
 
-![up_code](https://cdn.illacloud.com/official-website/img/docs/up_code.jpg)
+![up_code]\(https://cdn.illacloud.com/official-website/img/docs/up_code.jpg)
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![up_data](https://cdn.illacloud.com/official-website/img/docs/up_data.jpg)
+![up_data]\(https://cdn.illacloud.com/official-website/img/docs/up_data.jpg)
 
 #### Step 2 Add Components
 
@@ -322,4 +322,4 @@ In the **`Data Source`** field in the Inspect page after clicking on the compone
 
 The final look should be as shown.
 
-![up_test](https://cdn.illacloud.com/official-website/img/docs/up_test.jpg)
+![up_test]\(https://cdn.illacloud.com/official-website/img/docs/up_test.jpg)
