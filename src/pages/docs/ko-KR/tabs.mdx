@@ -1,5 +1,5 @@
 ---
-title: Tabs
+title: 탭
 metaTitle: Tabs Component Doc | ILLA Cloud
 desc: Learn how to use the tabs component to customize your app in ILLA Cloud.
 tagCategory: doc_menu_tabs_click
@@ -13,31 +13,31 @@ postPriority: 1
 
 The Tabs component in ILLA Cloud is a versatile feature that allows users to organize and present content in a tabbed layout. It enables the creation of multiple tabs within a single container, allowing users to switch between different sections of content with ease. The Tabs component provides a user-friendly interface for navigating through related information, improving the overall user experience. With customizable styling options and the ability to add various types of content, such as text, images, or embedded components, the Tabs component in ILLA Cloud offers flexibility and enhances the organization and presentation of data.
 
-### Properties
+### 속성
 
-| Properties          | Description                                                                                                                                           |
+| 속성                  | 설명                                                                                                                                                    |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Link to a container | link the Tabs component to a specific container, enabling seamless navigation between tabs and the associated content.                                |
-| Event handler       | detecting and responding to specific user actions or events, such as clicks, keypresses, or value change.                                             |
-| Disabled            | disable specific tabs, preventing users from interacting with them                                                                                    |
-| Tooltip             | additional information or context about each tab                                                                                                      |
-| Layout              | offers different layout options, allowing you to arrange the tabs horizontally or vertically based on your design preferences or the available space. |
-| Align               | align the Tabs component to different positions within its parent container, such as left, center, or right alignment                                 |
-| Hidden              | hide specific tabs programmatically.                                                                                                                  |
+| 컨테이너와 연결되어 있습니까?    | link the Tabs component to a specific container, enabling seamless navigation between tabs and the associated content.                                |
+| 이벤트 핸들러             | detecting and responding to specific user actions or events, such as clicks, keypresses, or value change.                                             |
+| 장애가 있는              | disable specific tabs, preventing users from interacting with them                                                                                    |
+| 힌트                  | additional information or context about each tab                                                                                                      |
+| 형세                  | offers different layout options, allowing you to arrange the tabs horizontally or vertically based on your design preferences or the available space. |
+| 맞추다                 | align the Tabs component to different positions within its parent container, such as left, center, or right alignment                                 |
+| 숨다                  | hide specific tabs programmatically.                                                                                                                  |
 | Text Colors         | customizable text colors, allowing you to style the tab labels with different colors to match your application's design or branding.                  |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name         | Description                                                                                                      |
+| Property name         | 설명                                                                                                               |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| align                 | alignment of the tabs within the component, such as left, center, or right alignment                             |
+| 맞추다                   | alignment of the tabs within the component, such as left, center, or right alignment                             |
 | colorScheme           | defines the color of the text in the component                                                                   |
 | currentIndex          | represents the index of the currently selected tab within the tab list                                           |
 | currentKey            | unique identifier or key of the currently selected tab                                                           |
 | displayName           | represents the name or label assigned to the component                                                           |
-| hidden                | boolean value that determines whether the tabs component is visible or hidden                                    |
+| 숨다                    | boolean value that determines whether the tabs component is visible or hidden                                    |
 | linkWidgetDisplayName | display name or label of the link widget associated with a particular tab                                        |
 | navigateContainer     | container or destination where the tab content should be displayed or navigated to                               |
 | tabList               | list of tabs, including their display names, keys, and other relevant information                                |
@@ -67,7 +67,7 @@ For the **`button`** component, we can configure it to go to the next view (view
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`container`** component that you want to update as the target of the event.
 3.  Choose the **`showNextView`** method.
 
-![tab_view1](https://cdn.illacloud.com/official-website/img/docs/tab_view1.jpg)
+![tab_view1]\(https://cdn.illacloud.com/official-website/img/docs/tab_view1.jpg)
 
 -   View 2:
 
@@ -83,7 +83,7 @@ For the **`button`** component, we can configure it to go to the next view (view
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`container`** component that you want to update as the target of the event.
 3.  Choose the **`showNextView`** method.
 
-![tab_view2](https://cdn.illacloud.com/official-website/img/docs/tab_view2.jpg)
+![tab_view2]\(https://cdn.illacloud.com/official-website/img/docs/tab_view2.jpg)
 
 -   View 3
 
@@ -93,7 +93,7 @@ There is a form component in the middle of the container with input components l
 
 Change the text of the "submit" button in the bottom right corner to "Invite".
 
-![tab_view3](https://cdn.illacloud.com/official-website/img/docs/tab_view3.jpg)
+![tab_view3]\(https://cdn.illacloud.com/official-website/img/docs/tab_view3.jpg)
 
 For the "Invite" **`button`** component, we can configure it to submit the information in the form if clicked.
 
@@ -106,8 +106,8 @@ For the **`form`** component, we can configure it to show notification if submit
 1.  Click the **`form`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`submit`** in Event, select **`Show notification`** in **`action`**, Put "Submit successfully" for Title, "Friend request sent" for Description, and select `Success` for **`Type`**. We want the notification to show for 2s so put `{{2000}}` for the duration.
 
-![tab_form_event](https://cdn.illacloud.com/official-website/img/docs/tab_form_event.jpg)
+![tab_form_event]\(https://cdn.illacloud.com/official-website/img/docs/tab_form_event.jpg)
 
 #### Step 2 Test
 
-![tab_test](https://cdn.illacloud.com/official-website/img/docs/tab_test.gif)
+![tab_test]\(https://cdn.illacloud.com/official-website/img/docs/tab_test.gif)
