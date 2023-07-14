@@ -13,31 +13,31 @@ postPriority: 1
 
 The Rate component in ILLA Cloud is a powerful tool that allows users to add rating functionality to their applications. With the Rate component, users can display a set of stars or any other custom symbol and allow users to rate an item or provide feedback.
 
-### Properties
+### 속성
 
-| Properties              | Description                                                                                                                                                  |
+| 속성                      | 설명                                                                                                                                                           |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | sets the initial value for the rating                                                                                                                        |
-| Icon                    | customize the icon or symbol used for rating                                                                                                                 |
-| Max count               | the maximum number of icons or stars that can be displayed in the rate component                                                                             |
-| Allow half              | When the allow half property is enabled, it allows the user to select and display a rating with half-star increments                                         |
+| 기본값                     | sets the initial value for the rating                                                                                                                        |
+| 상                       | customize the icon or symbol used for rating                                                                                                                 |
+| 최대 수량                   | the maximum number of icons or stars that can be displayed in the rate component                                                                             |
+| 절반 허용                   | When the allow half property is enabled, it allows the user to select and display a rating with half-star increments                                         |
 | Allow Clear             | enables the option for the user to clear or reset the selected rating                                                                                        |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment (align to left or right) of the label                                                                                                      |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| 상표                      | 사용자에게 표시되는 필드의 이름                                                                                                                                            |
+| 부제                      | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                       |
+| 숨겨진 라벨                  | 레이블 표시 여부 설정                                                                                                                                                 |
+| 위치                      | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                        |
+| 조정                      | Set the alignment (align to left or right) of the label                                                                                                      |
+| 너비                      | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
+| 이벤트 핸들러                 | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                    |
+| 장애가 있는                  | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
 | Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| 힌트                      | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| 필수 입력 사항                | 스위치를 켠 후 입력 상자에서 유효성 검사를 수행합니다.                                                                                                                              |
+| 맞춤 규칙                   | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
+| 확인 정보 숨기기               | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| 숨다                      | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
@@ -45,7 +45,7 @@ You can use other components to control the component. We support the following 
 
 To set the rate value, for example, {{”value1”}}
 
-| Properties | Description |
+| 속성         | 설명          |
 | ---------- | ----------- |
 | Value      | Input value |
 
@@ -61,33 +61,33 @@ To verify that the input information is legal
 
 To clear the validation message
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                                |
-| ------ | -------------------------------------------------------------------------- |
-| Change | When a user change the value, perform specific action customized by users. |
+| 이벤트   | 설명                                                                         |
+| ----- | -------------------------------------------------------------------------- |
+| 내용 변경 | When a user change the value, perform specific action customized by users. |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name | Description                                                                       |
+| Property name | 설명                                                                                |
 | ------------- | --------------------------------------------------------------------------------- |
 | allowHalf     | a Boolean value indicted whether half rate is allowed                             |
 | customRule    | user-defined rule or validation logic that can be applied to the component        |
-| disabled      | a Boolean value indicates the disabled status                                     |
+| 장애가 있는        | a Boolean value indicates the disabled status                                     |
 | displayName   | the name of this component (ie button1)                                           |
 | events        | generated or triggered when certain actions or events occur within the component. |
-| hidden        | hidden status (true or false)                                                     |
-| icon          | the icon or symbol used for rating                                                |
-| label         | label value                                                                       |
+| 숨다            | hidden status (true or false)                                                     |
+| 상             | the icon or symbol used for rating                                                |
+| 상표            | label value                                                                       |
 | labelAlign    | alignment of input label (left or right)                                          |
 | labelPosition | position of input label (left or right)                                           |
 | labelWidth    | the integer representing width of label.                                          |
 | maxCount      | the value of maximum count                                                        |
-| placeholder   | placeholder value                                                                 |
+| 자리 표시자        | placeholder value                                                                 |
 | readOnly      | a Boolean value indicate the readyOnly status of input.                           |
-| required      | a Boolean value indicate the required status of input.                            |
+| 필수            | a Boolean value indicate the required status of input.                            |
 | tooltipText   | value of tooltip text                                                             |
 | value         | user input value                                                                  |
 
@@ -103,7 +103,7 @@ Let us create a table in Amazon S3. One of the documents is called
 
 ‘1.txt’ with the number ‘3.5’ as its data. This is the value we want to show in rate value.
 
-![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 Then we can create a new action for Amazon S3 from the action list, listing all the data in the bucket and named s31.
 
@@ -111,7 +111,7 @@ Select `Read an object` for `**Action Type**`. Put `1.txt` for `**Object Key`.\*
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![rate_data](https://cdn.illacloud.com/official-website/img/official-site/components/rate_data.jpg)
+![rate_data]\(https://cdn.illacloud.com/official-website/img/official-site/components/rate_data.jpg)
 
 #### Step 2 Add Components
 
@@ -128,10 +128,10 @@ For the **`button`** component, we can configure it to set the value in **`rate`
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`rate`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{s31.data}}`
 
-![rate_config](https://cdn.illacloud.com/official-website/img/official-site/components/rate_config.jpg)
+![rate_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/rate_config.jpg)
 
 #### Step 4 Test
 
 Now that when you click the “Set value” button, the value should change to 111.
 
-![rate_test](https://cdn.illacloud.com/official-website/img/official-site/components/rate_test.jpg)
+![rate_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/rate_test.jpg)
