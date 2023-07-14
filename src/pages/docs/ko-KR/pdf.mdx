@@ -13,17 +13,17 @@ postPriority: 1
 
 The PDF component is a feature or element that allows users to view and interact with PDF documents within the application. It provides functionality for rendering, navigating, and manipulating PDF files, enabling users to access and work with PDF content seamlessly.
 
-### Properties
+### 속성
 
-| Properties    | Description                                                                        |
+| 속성            | 설명                                                                                 |
 | ------------- | ---------------------------------------------------------------------------------- |
 | PDF source    | specify the source of the pdf to be displayed                                      |
-| Show tool bar | controls the visibility of the toolbar within the PDF component                    |
-| Tooltip       | add a tooltip or a descriptive text that appears when the user hovers over the pdf |
-| Scale page to | determines the scaling behavior of the PDF pages within the component              |
-| Hidden        | determines the visibility of the PDF component                                     |
+| 도구 모음 표시      | controls the visibility of the toolbar within the PDF component                    |
+| 힌트            | add a tooltip or a descriptive text that appears when the user hovers over the pdf |
+| 줌 페이지         | determines the scaling behavior of the PDF pages within the component              |
+| 숨다            | determines the visibility of the PDF component                                     |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following methods:
 
@@ -31,24 +31,24 @@ You can use other components to control the component. We support the following 
 
 dynamically change the source or URL of the pdf file.
 
-| Properties | Description    |
-| ---------- | -------------- |
-| PDF Source | pdf source url |
+| 속성     | 설명             |
+| ------ | -------------- |
+| PDF 소스 | pdf source url |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name | Description                                                                                                     |
+| Property name | 설명                                                                                                              |
 | ------------- | --------------------------------------------------------------------------------------------------------------- |
 | displayName   | A string value that represents the name or title of the pdf.                                                    |
-| height        | the vertical dimension or size of the PDF component                                                             |
-| hidden        | A boolean value that determines whether the pdf component is hidden from the user interface.                    |
+| 높은            | the vertical dimension or size of the PDF component                                                             |
+| 숨다            | A boolean value that determines whether the pdf component is hidden from the user interface.                    |
 | scaleMode     | specifies how the PDF document is scaled or fit within the available display area of the component              |
 | showToolBar   | whether a toolbar or control panel is displayed along with the PDF component                                    |
 | tooltipText   | string value that represents the tooltip or hovers text to display when the user hovers over the pdf component. |
 | url           | source of the PDF file to be displayed in the component                                                         |
-| width         | the horizontal dimension or size of the PDF component                                                           |
+| 너비            | the horizontal dimension or size of the PDF component                                                           |
 
 Example: {{pdf1.displayName}}
 
@@ -60,7 +60,7 @@ Next, we will demonstrate how to control the pdf display with a button.
 
 Add a **`PDF`** component and a **`button`** component to the canvas.
 
-![pdf_layout](https://cdn.illacloud.com/official-website/img/docs/pdf_layout.jpg)
+![pdf_layout]\(https://cdn.illacloud.com/official-website/img/docs/pdf_layout.jpg)
 
 #### Step 2 Configure the component
 
@@ -71,10 +71,10 @@ For the **`button`** component, we can configure it to set the image source of t
 3.  Choose the **`setFileUrl`** action
 4.  Put the new image address in the **`Value`** field
 
-![pdf_config](https://cdn.illacloud.com/official-website/img/docs/pdf_config.jpg)
+![pdf_config]\(https://cdn.illacloud.com/official-website/img/docs/pdf_config.jpg)
 
 #### Step 3 Test
 
 Now that when you click the "Play" button, the image should switch
 
-![pdf_test](https://cdn.illacloud.com/official-website/img/docs/pdf_test.jpg)
+![pdf_test]\(https://cdn.illacloud.com/official-website/img/docs/pdf_test.jpg)
