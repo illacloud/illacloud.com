@@ -15,34 +15,34 @@ Time picker component is a UI component that allows users to select a specific t
 
 When a Time picker component is added to canvas, it displays a 24-hour interface that shows hours, minutes, and seconds. The user can adjust the time by moving the mouse cursor or using the up and down arrows.
 
-### Properties
+### 속성
 
 Time picker's available properties. JavaScript may be written to read or alter information about components.
 
-| Properties              | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Default value           | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
-| Format                  | A valid date format string. See dayJS.                                                                                                                       |
-| Placeholder             | The value will be shown when the input field is empty.                                                                                                       |
-| Step size               | the step size in unit of minutes                                                                                                                             |
-| Label                   | The name of the field displayed to the user                                                                                                                  |
-| Caption                 | A caption used to describe the field in detail                                                                                                               |
-| Hidden label            | Set whether to display the label                                                                                                                             |
-| Position                | Set the position of the label relative to the component                                                                                                      |
-| Alignment               | Set the alignment (align to left or right) of the label                                                                                                      |
-| Width                   | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
-| Event Handler           | Trigger queries, control components, or call other APIs in response to component events.                                                                     |
-| Disabled                | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
-| Read Only               | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
-| Show clear button       | control whether or not a clear button is displayed in the input field                                                                                        |
-| Tooltip                 | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                           |
-| Required field          | Valid only when the switch is on.                                                                                                                            |
-| Custom rule             | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
-| Hide validation message | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
-| Form Data Key           | Specify a key of a wrapping form component when constructing the data attribute.                                                                             |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
-| Theme Color             | Allows users to specify the button's background color and opacity                                                                                            |
+| 속성          | 설명                                                                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 기본값         | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                               |
+| 체재          | A valid date format string. See dayJS.                                                                                                                       |
+| 자리 표시자      | 입력에 값이 없을 때 표시할 메시지입니다.                                                                                                                                      |
+| 단계 크기       | the step size in unit of minutes                                                                                                                             |
+| 상표          | 사용자에게 표시되는 필드의 이름                                                                                                                                            |
+| 부제          | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                       |
+| 숨겨진 라벨      | 레이블 표시 여부 설정                                                                                                                                                 |
+| 위치          | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                        |
+| 조정          | Set the alignment (align to left or right) of the label                                                                                                      |
+| 너비          | When the label is on the left side of the component, set the width ratio of the label.                                                                       |
+| 이벤트 핸들러     | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                    |
+| 장애가 있는      | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                    |
+| Read Only   | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                          |
+| 힌트          | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                      |
+| 지우기 버튼 표시   | control whether or not a clear button is displayed in the input field                                                                                        |
+| 힌트          | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                           |
+| 필수 입력 사항    | 스위치를 켠 후 입력 상자에서 유효성 검사를 수행합니다.                                                                                                                              |
+| 맞춤 규칙       | Create your validation logic here. The rules should be made in JavaScript and covered by {{}}.                                                               |
+| 확인 정보 숨기기   | You can hide the error message by switching the hidden status when the input value is incorrect. You can dynamically change the hidden status by JavaScript. |
+| 양식 데이터 키    | 데이터 속성을 작성할 때 양식 구성요소를 감싸는 키를 지정하십시오.                                                                                                                        |
+| 숨다          | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                       |
+| Theme Color | Allows users to specify the button's background color and opacity                                                                                            |
 
 ### Methods
 
@@ -52,9 +52,9 @@ You can use other components to control the component. We support the following 
 
 To set the input time value, for example, {{"value1"}}
 
-| Properties | Description |
-| ---------- | ----------- |
-| Value      | Input value |
+| 속성    | 설명          |
+| ----- | ----------- |
+| Value | Input value |
 
 -   **clearValue**
 
@@ -68,35 +68,35 @@ To verify that the input information is legal
 
 To clear the validation message
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                                               |
-| ------ | ----------------------------------------------------------------------------------------- |
-| Change | When a user changes the selected time value, perform specific action customized by users. |
+| 이벤트   | 설명                                                                                        |
+| ----- | ----------------------------------------------------------------------------------------- |
+| 내용 변경 | When a user changes the selected time value, perform specific action customized by users. |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name         | Description                                                       |
+| Property name         | 설명                                                                |
 | --------------------- | ----------------------------------------------------------------- |
 | colorScheme           | the color property of Date                                        |
 | customRule            | the custom rule that user specified                               |
-| disabled              | a Boolean value indicate the disabled status                      |
+| 장애가 있는                | a Boolean value indicate the disabled status                      |
 | displayName           | the name of this component (ie button1)                           |
 | events                | an Array value for sequence of events                             |
-| format                | the formate of date and time                                      |
+| 체재                    | the formate of date and time                                      |
 | formDataKey           | the Form Data Key of Date                                         |
-| hidden                | hidden status (true or false)                                     |
+| 숨다                    | hidden status (true or false)                                     |
 | hideValidationMessage | a Boolean value indicate whether the validation message is hidden |
-| label                 | label value                                                       |
+| 상표                    | label value                                                       |
 | labelAlign            | alignment of switch label (left or right)                         |
 | labelPosition         | position of switch label (left or right)                          |
 | labelWidth            | the integer representing width of label.                          |
 | labelFull             | a Boolean value indicate if the label is full.                    |
 | minuteStep            | minute step size value                                            |
-| placeholder           | placeholder value                                                 |
-| required              | a Boolean value indicate the required status of input.            |
+| 자리 표시자                | placeholder value                                                 |
+| 필수                    | a Boolean value indicate the required status of input.            |
 | showClear             | a Boolean value indicate wether the date will be shown clear      |
 | tooltipText           | value of tooltip text                                             |
 | value                 | Input date and time value                                         |
@@ -125,7 +125,7 @@ Next, we can add a **`time picker`** component and a **`button`** component to t
 
 We also labeled the button as "Now" as shown below
 
-![time_picker_0](https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
+![time_picker_0]\(https://cdn.illacloud.com/official-website/img/docs/time_picker_0.png)
 
 #### Step 3 Configure the component
 
@@ -134,10 +134,10 @@ For the **`button`** component, we can configure it to set the date in **`time p
 1.  In the Edit event handler, select **`Control component`** in action, select the **`time picker`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as  `{{currentUserInfo.updatedAt}}` 
 
-![time_picker_config](https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
+![time_picker_config]\(https://cdn.illacloud.com/official-website/img/docs/time_picker_config.png)
 
 #### Step 4 Test
 
 Now that when you click the "Now" button, the time should change to current time. As for here, we have 20:03:05 but it may be different when you are testing it.
 
-![time_picker_1](https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)
+![time_picker_1]\(https://cdn.illacloud.com/official-website/img/docs/time_picker_1.png)
