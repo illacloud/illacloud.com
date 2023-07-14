@@ -118,7 +118,7 @@ Let us create a table in Amazon S3. One of the documents is called
 
 '111.txt' with the number '111' as its data. This is the value we want to show in number input.
 
-![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 Then we can create a new action for Amazon S3 from the action list, listing all the data in the bucket and named s31.
 
@@ -126,7 +126,7 @@ Select `Read an object` for `**Action Type**`. Put `111.txt` for `**Object Key`.
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![s3output](https://cdn.illacloud.com/official-website/img/official-site/components/s3output.jpg)
+![s3output]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3output.jpg)
 
 #### Step 2 Add Components
 
@@ -134,7 +134,7 @@ Next, we can add a **`number input`** component and a **`button`** component to 
 
 We set the default value of numberInput to be 1 and labeled the button as 'Set value' as shown below
 
-![default1](https://cdn.illacloud.com/official-website/img/official-site/components/default1.jpg)
+![default1]\(https://cdn.illacloud.com/official-website/img/official-site/components/default1.jpg)
 
 #### Step 3 Configure the component
 
@@ -143,10 +143,10 @@ For the **`button`** component, we can configure it to set the value in **`numbe
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`numberInput1`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{s31.data}}`
 
-![number_input_button_config](https://cdn.illacloud.com/official-website/img/official-site/components/number_input_button_config.jpg)
+![number_input_button_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/number_input_button_config.jpg)
 
 #### Step 4 Test
 
 Now that when you click the 'Set value' button, the value should change to 111.
 
-![number_input_test](https://cdn.illacloud.com/official-website/img/official-site/components/number_input_test.jpg)
+![number_input_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/number_input_test.jpg)
