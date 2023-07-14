@@ -1,99 +1,325 @@
 ---
 title: Tabella
-metaTitle: Componente tabella doc <unk> ILLA Cloud
-desc: Visualizzare e interagire con i dati utilizzando il componente della tabella.
-crowdinRepo: https://crowdin.com/multilingual/illacloud-website/267?languages=it&filter=basic&value=0
+metaTitle: Componente Tabella Doc ILLA Cloud
+desc: Scopri come utilizzare il componente della tabella per personalizzare la tua app in ILLA Cloud.
 tagCategory: doc_menu_table_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/267?languages=it&filter=basic&value=0
 categoryName: 🧬 Assembla i componenti
 categoryPriority: 6
 postPriority: 1
 ---
 
-* * *
+## <h2 hidden>Cos'è la tabella?</h2>
 
-## <h2 hidden>Tabella</h2>
+Il componente Tabella in ILLA Cloud è una potente funzione che consente agli utenti di visualizzare, organizzare e manipolare i dati tabulari all'interno dell'applicazione. Fornisce un layout strutturato con righe e colonne, consentendo agli utenti di visualizzare e interagire con i dati in modo conveniente e strutturato.
 
-Le tabelle sono un modo comune per visualizzare e interagire con i tuoi dati. È possibile ordinare, filtrare, paginare e scaricare righe di informazioni. Le tabelle supportano anche la selezione di righe e colonne personalizzate.
+### Proprietà
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table.png'
-  alt=""
-/>
+| Proprietà                                  | Descrizione                                                                                                                                                  |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Fonte dei dati                             | fonte di dati che popolano la tabella                                                                                                                        |
+| Stato vuoto                                | il contenuto o il messaggio visualizzato quando la tabella non ha dati da mostrare                                                                           |
+| Caricamento                                | se la componente della tabella è attualmente in stato di carico                                                                                              |
+| Colonne                                    | struttura e configurazione delle colonne nella tabella. (Vedi la sezione sulle colonne qui sotto per maggiori dettagli)                                      |
+| Colonna                                    | il numero di colonne                                                                                                                                         |
+| Selezione Multi-Riga                       | Usa {{table.selectedRow[n].columnName}} per accedere ai dati.                                                                                                |
+| Selezione Cella                            | Indica se consentire agli utenti di selezionare una cella                                                                                                    |
+| Clicca fuori per deselezionare             | Supportato nella modalità di selezione singola riga. Dopo averlo abilitato, fare clic su un'area diversa dalla tabella per deselezionare la riga.            |
+| Overflow                                   | il modo in cui la tabella gestisce il contenuto che supera lo spazio disponibile all'interno del contenitore della tabella (impaginazione o scorrimento)     |
+| Abilita la paginazione laterale del server | Indica se abilitare la paginazione del server                                                                                                                |
+| PageSize                                   | il numero di righe da visualizzare per pagina quando la paginazione lato server è abilitata                                                                  |
+| Aggiorna                                   | Indica se mostrare l'icona di aggiornamento.                                                                                                                 |
+| Scarica                                    | Mostra il pulsante download nella barra degli strumenti.                                                                                                     |
+| Scarica dati grezzi                        | Indica se mostrare l'icona per scaricare i dati grezzi.                                                                                                      |
+| Filtro                                     | Mostra il pulsante filtro nella barra degli strumenti                                                                                                        |
+| Gestore eventi                             | rilevare e rispondere a specifiche azioni o eventi dell'utente, come click, tasti o presentazioni di moduli.                                                 |
+| Disabilitato                               | non interattivo e non può essere modificato o attivato dall'utente.                                                                                          |
 
-### Carica i dati in una tabella
+#### **Panoramica Delle Proprietà Delle Colonne**
 
-Quando si trascina un componente della tabella sul frame, viene visualizzato automaticamente i dati di prova in formato JSON. È possibile modificare i dati visualizzati in una tabella modificando la proprietà di origine dati. Usa il formato `{{ actionName.data }}` per scegliere l'azione.
+Per ogni colonna, possiamo configurare le sue proprietà per personalizzare i dati visualizzati per ogni colonna.
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table1.png'
-  alt=""
-/>
+| Proprietà                                          | Descrizione                                                                                                                                                                                                            |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Titolo colonna                                     | specifica il nome o l'etichetta della colonna, che serve come intestazione per identificare i dati che rappresenta                                                                                                     |
+| Tipo di colonna                                    | definisce il tipo di dati che la colonna contiene, inclusi auto, testo, data, tag, ora, dateTime, numero, percentuale, link, pulsante, gruppo di pulsanti, booleano, immagine, iconGroup, voto, Markdown, valuta       |
+| Valore Mappato                                     | Usa {{ currentRow }} per accedere ai dati della riga corrente. Ad esempio, per calcolare "costo per click" in base alle colonne "costo" e "clickTimes":                                                                |
+| {{ currentRow.cost / currentRow.clickTimes }}      |                                                                                                                                                                                                                        |
+| Abilita Ordinamento                                | se la colonna consente agli utenti di ordinare i dati della tabella in base ai valori in quella colonna specifica                                                                                                      |
+| Sfondo                                             | Imposta lo sfondo della colonna. Usa {{ scrivi un'istruzione condizionale per impostare il colore mostrato da ogni cella in condizioni diverse.                                                                        |
+| Allineamento                                       | controlla l'allineamento orizzontale del contenuto all'interno delle celle della colonna                                                                                                                               |
 
-È anche possibile impostare la sorgente di dati inserendo un array.
+#### Tipi di colonna:
 
-### Impostazioni colonna
+-   Automatico
 
-**Imposta alias per le colonne di dati**
+un tipo dinamico che determina automaticamente il tipo di dati in base ai valori all'interno della colonna
 
-Quando si imposta la sorgente dei dati delle tabelle, il nome della colonna verrà impostato automaticamente in base alla sorgente dei dati. Puoi rinominare tutte le colonne facendo clic sulla colonna nella scheda **Ispezione** e impostare il **Titolo colonna**.
+-   Testo
 
-**Cambia tipi di colonne**
+rappresenta una colonna che contiene dati testuali
 
-Quando si imposta la sorgente dati delle tabelle, le colonne sono impostate su **Testo**. Puoi impostare manualmente i tipi di colonna facendo clic sulla colonna nella scheda **Ispezione** e selezionando il tipo dal menu a discesa **Tipo di colonna**.
+-   Data
 
-I tipi di colonna includono:
+rappresenta i valori dei dati che corrispondono a date specifiche
 
-1.  Testo
-2.  Data, è possibile impostare il formato di visualizzazione della data nel tipo di data.
-3.  Numero, è possibile impostare i decimali nel tipo di numero.
-4.  Percentuale, è possibile impostare le posizioni decimali nel tipo percentuale.
-5.  Link
-6.  Pulsante, è possibile aggiungere i gestori di eventi nel tipo di pulsante.
+| Proprietà   | Descrizione                                                              |
+| ----------- | ------------------------------------------------------------------------ |
+| Formato     | accetta vari codici di formattazione o modelli, predefinito è AAAA-MM-DD |
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table2.png'
-  alt=""
-/>
+-   Tag
 
-**Valore Mappato delle colonne personalizzate**
+un formato specializzato per la visualizzazione di etichette o etichette associate alle voci di dati
 
-Puoi aggiungere colonne personalizzate alle tabelle usando il pulsante **+ Aggiungi** nella scheda **Ispezione**. Le colonne personalizzate sono spesso utilizzate per calcolare i dati in base ad altri valori della tua app. Ad esempio, se hai colonne `revenue` e `user_num` e vuoi calcolare una colonna `ARPU`, puoi usare `{{ currentRow.revenue/currentRow.user_num }}`
+| Proprietà            | Descrizione                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| Etichetta etichetta  | rappresenta il testo o l'etichetta assegnata a un tag nella colonna "tag" |
+| Colore etichetta     | definisce il colore assegnato al tag nella colonna "tag"                  |
 
-Inoltre, dopo il calcolo, è possibile impostare il tipo di colonna su numero o percentuale e impostare le posizioni decimali per migliorare la leggibilità.
+-   Tempo
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table3.png'
-  alt=""
-/>
+rappresentare e manipolare accuratamente i valori temporali all'interno della tabella
 
-### Accesso ai dati della tabella
+| Proprietà   | Descrizione                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------------------- |
+| Formato     | la rappresentazione visiva dei dati del tempo all'interno della colonna, di default è HH:mm:ss |
 
-Usa `{{ table1.selectedRow[i].columnName }}` per accedere ai dati delle righe selezionate in altri componenti. Se non hai abilitato la **Selezione Multi-Riga**, `i` sarà sempre 0.
+-   DataOra
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table4.png'
-  alt=""
-/>
+memorizza e rappresenta i valori di data e ora
 
-**Aggiorna i dati della tabella**
+| Proprietà   | Descrizione                                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Formato     | specifica come devono essere visualizzati i valori di data e ora nella colonna, il valore predefinito è AAAA-MM-GG HH:mm:ss |
 
-1.  Usa il componente di input o altri cpmponents di input per mostrare `{{ table1.selectedRow[i].columnName }}`.
-2.  Usa `{{ input1.value }}` nelle azioni di aggiornamento per ottenere i valori selezionati e i valori aggiornati.
-3.  Aggiungi un gestore eventi al pulsante Aggiorna per eseguire l'azione di aggiornamento quando si fa clic.
-4.  Aggiorna i dati della riga selezionata cambiando il valore di input e facendo clic sul pulsante Aggiorna.
+-   Numero
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table5.png'
-  alt=""
-/>
+gestire dati numerici
 
-**Inserisci una nuova riga nella tabella**
+| Proprietà                     | Descrizione                                                                                                                            |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Luoghi decimali               | specifica il numero di decimali da visualizzare per i valori numerici nella colonna                                                    |
+| Mostra separatore di migliaia | se la colonna deve mostrare un separatore di migliaia per migliorare la leggibilità e la facilità di interpretazione per grandi numeri |
 
-1.  Usa `{{ input1.value }}` in inserisci le azioni ottengono valori.
-2.  Aggiungi un gestore di eventi al pulsante Inserisci per eseguire l'azione Inserisci quando si fa clic.
-3.  Inserisci nuovi dati inserendo i valori nei componenti di input e facendo clic sul pulsante Inserisci.
+-   Percentuale
 
-<img
-  src='https://cdn.illacloud.com/official-website/img/docs/assemble/table6.png'
-  alt=""
-/>
+gestire i valori percentuali in modo conciso e visivamente attraente
+
+| Proprietà                     | Descrizione                                                                            |
+| ----------------------------- | -------------------------------------------------------------------------------------- |
+| Luoghi decimali               | specifica il numero di decimali da visualizzare per i valori percentuali nella colonna |
+| Mostra separatore di migliaia | se un separatore di migliaia debba essere incluso nei valori percentuali visualizzati  |
+
+-   Link
+
+includere link cliccabili all'interno di una colonna specifica
+
+-   Pulsante
+
+include i pulsanti interattivi all'interno di una colonna specifica
+
+| Proprietà         | Descrizione                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Gestore eventi    | definisce l'azione o l'evento che si verifica quando si fa clic sul pulsante all'interno della colonna |
+| Disabilitato      | se il pulsante all'interno della colonna è abilitato o disabilitato                                    |
+| Colore tema       | scegli un colore del tema per il pulsante                                                              |
+| Variante          | stile visivo o variante del pulsante (Riempire o contorno)                                             |
+
+-   buttonGroup
+
+permette agli utenti di creare gruppi di pulsanti interattivi all'interno di una colonna
+
+Per ogni pulsante nelle colonne, possiamo configurare le sue proprietà.
+
+| Proprietà         | Descrizione                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Valore Mappato    | associare ogni pulsante nel gruppo di pulsanti con un valore o un campo specifico dalla sorgente dati                                            |
+| Variante          | stile visivo o aspetto dei pulsanti nel gruppo di pulsanti                                                                                       |
+| Gestore eventi    | l'azione o la funzione attivata quando un pulsante nel gruppo viene cliccato o interagito con                                                    |
+| Disabilitato      | se i pulsanti nel gruppo di pulsanti sono abilitati o disabilitati                                                                               |
+| Colore tema       | personalizzare il colore o lo stile dei pulsanti nel gruppo per allinearsi con il tema generale o il branding della loro applicazione o sito web |
+
+-   Boolean
+
+rappresenta i dati che hanno due possibili stati: vero o falso
+
+-   Immagine
+
+popola una colonna nella tabella con i dati dell'immagine
+
+| Proprietà  | Descrizione                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| Tipo Scala | come l'immagine viene ridimensionata o ridimensionata all'interno della cella della tabella |
+
+-   IconGroup
+
+una colonna specializzata che consente agli utenti di visualizzare le icone all'interno di un gruppo o di una collezione
+
+Per ogni pulsante nelle colonne, possiamo configurare le sue proprietà.
+
+| Proprietà         | Descrizione                                                                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Icona             | permette agli utenti di selezionare o specificare l'icona da visualizzare nella colonna IconGroup                                      |
+| Colore tema       | determina lo schema di colori o il tema applicato all'icona nella colonna IconGroup                                                    |
+| Gestore eventi    | consente agli utenti di definire un evento o un'azione attivata quando l'icona nella colonna IconGroup viene interagire con gli utenti |
+| Disabilitato      | stato della colonna IconGroup, che determina se è disabilitata o abilitata per l'interazione dell'utente                               |
+
+-   Valutazione
+
+rappresenta i rating o i feedback forniti a voci o entità
+
+-   Markdown
+
+capacità di rendere il testo formattato usando la sintassi Markdown all'interno delle celle di colonna
+
+-   Valuta
+
+gestire e formattare i valori valutari.
+
+| Proprietà                     | Descrizione                                                                                  |
+| ----------------------------- | -------------------------------------------------------------------------------------------- |
+| Luoghi decimali               | il numero di cifre decimali da visualizzare per i valori di valuta all'interno della colonna |
+| Codice valuta                 | specifica il codice o l’abbreviazione che rappresenta la valuta utilizzata nella colonna     |
+| Mostra separatore di migliaia | se è visualizzato un separatore di migliaia per valori di valuta grandi                      |
+
+### Metodo
+
+È possibile utilizzare altri componenti per controllare il componente. Sosteniamo i due metodi seguenti:
+
+-   **selectPage**
+
+seleziona tutte le righe di una pagina specifica in una tabella paginata
+
+| Proprietà      | Descrizione                                                |
+| -------------- | ---------------------------------------------------------- |
+| Valore Finale  | il numero di pagina o l'indice della pagina da selezionare |
+
+-   **selectRow**
+
+seleziona una riga specifica nella tabella
+
+| Proprietà                    | Descrizione                                                                                                                                                                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Riga predefinita selezionata | il valore predefinito della riga selezionata, può essere l'indice della riga, un identificatore univoco o qualsiasi altra proprietà che identifichi univocamente la riga da selezionare |
+
+-   **clearSelection**
+
+cancella la selezione corrente nella tabella
+
+-   **setFilters**
+
+applica i filtri ai dati della tabella
+
+| Proprietà       | Descrizione                               |
+| --------------- | ----------------------------------------- |
+| Filtri          | condizioni o criteri di filtraggio        |
+| Modalità filtro | determina come vengono applicati i filtri |
+
+-   **ClearFilters**
+
+cancella tutti i filtri applicati nella tabella
+
+-   **setSort**
+
+imposta l'ordinamento per la tabella
+
+| Proprietà   | Descrizione                                                         |
+| ----------- | ------------------------------------------------------------------- |
+| Colonna     | la colonna su cui deve essere applicato l'ordinamento               |
+| Direzione   | direzione del genere, che può essere "ascendente" o "discendente"   |
+
+### Dati
+
+Il componente ha alcuni dati comunemente usati, che possono essere chiamati tramite **`{{componentName.propertyName}}`** nell'app.
+
+| Nome proprietà                   | Descrizione                                                                                                                  |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| clickOutsideToResetSelection     | se fare clic al di fuori del componente Tabella deve reimpostare la selezione corrente                                       |
+| columnMapper                     | un oggetto che mappa i campi o le chiavi dei dati nella sorgente dati della tabella con i nomi delle colonne corrispondenti  |
+| columnNameIndici                 | un oggetto che memorizza gli indici dei nomi delle colonne                                                                   |
+| colonne                          | un array che definisce la configurazione e le proprietà di ogni colonna nella tabella                                        |
+| columnVisibility                 | un oggetto che memorizza lo stato di visibilità di ogni colonna nella tabella                                                |
+| customColumnIndices              | un oggetto che memorizza gli indici delle colonne personalizzate nella tabella                                               |
+| dataSource                       | la fonte dei dati per la tabella                                                                                             |
+| dataSourceJS                     | una rappresentazione JavaScript della sorgente dati                                                                          |
+| dataSourceMode                   | la modalità o il tipo della sorgente dati.                                                                                   |
+| defaultSortKey                   | chiave di colonna predefinita da usare per ordinare inizialmente la tabella                                                  |
+| defaultSortOrder                 | l'ordine di ordinamento predefinito per la tabella                                                                           |
+| disabilitato                     | se la componente della tabella è disabilitata o no                                                                           |
+| displayedData                    | dati attualmente visualizzati nella tabella                                                                                  |
+| displayedDataIndices             | gli indici delle righe visualizzate nella tabella                                                                            |
+| displayName                      | specifica il nome o l'etichetta del componente della tabella                                                                 |
+| scarica                          | consente di scaricare i dati della tabella                                                                                   |
+| downloadRawData                  | se scaricare i dati grezzi o i dati visualizzati della tabella                                                               |
+| emptyState                       | il contenuto o il messaggio da visualizzare quando la tabella è vuota                                                        |
+| enableServerSidePagination       | Quando impostato a VERO, la proprietà enableServerSidePagination abilita la paginazione lato server per la tabella           |
+| enableSingleCellSelection        | consente di selezionare una singola cella nella tabella                                                                      |
+| filtro                           | le condizioni di filtro o di filtraggio attualmente applicate nella tabella                                                  |
+| hasNextPage                      | se c'è una pagina successiva disponibile nella tabella paginata                                                              |
+| caricamento                      | se la componente della tabella è in stato di carico                                                                          |
+| multiRowSelection                | abilita la selezione multi-riga nella tabella                                                                                |
+| nextAfterCursor                  | il cursore o l'identificatore per recuperare il successivo insieme di dati nella paginazione lato server                     |
+| nextBeforeCursor                 | il cursore per recuperare il precedente insieme di dati nella paginazione lato server                                        |
+| overflow                         | il comportamento della tabella quando il contenuto supera lo spazio disponibile                                              |
+| pageIndex                        | l'indice della pagina corrente in una tabella paginata                                                                       |
+| pageSize                         | determina il numero di righe da visualizzare per pagina in una tabella paginata                                              |
+| paginationOffset                 | il numero di pagine da compensare nella paginazione                                                                          |
+| aggiorna                         | innesca un aggiornamento dei dati della tabella                                                                              |
+| renamedColumnNames               | memorizza i nomi delle colonne rinominate nella tabella                                                                      |
+| rowEvents                        | consente di associare eventi o azioni personalizzati a righe specifiche nella tabella                                        |
+| totalRowCount                    | il numero totale di righe nella tabella                                                                                      |
+
+Esempio: {{table1.disabled}}
+
+## Caso di utilizzo
+
+Successivamente, mostreremo come mappare i dati da `**Upstash**` al componente `**table**`.
+
+#### Passo 1 Aggiungere un'azione
+
+Creiamo una tabella in Upstash chiamata **`employee_profile`,** che include 4 colonne `name`, `level`, `age`, e `sposato`.
+
+Quindi possiamo creare una nuova azione per Upstash dall'elenco di azioni in ILLA Cloud e chiamato upstash2.
+
+Per elencare tutti i dati nel profilo dipendente_inserire la snippet di codice qui sotto nella sezione Ricerca Redis.
+
+```sql
+GET dipendente_profilo
+```
+
+Poiché i dati di output sono un elenco di coppie di dizionari, vogliamo trasformarli in un array. In Transformer, abilitarlo e mettere giù il codice qui sotto.
+
+```jsx
+const jsonString = data[0].result;
+
+// Parse the JSON string into a JavaScript object
+const jsonData = JSON.parse(jsonString);
+
+// Access the "employees" property and map it to a new array
+const mappedArray = jsonData.employees.map((employee) => ({
+  name: employee.name,
+  level: employee.level,
+  age: employee.age,
+  married: employee.married,
+}));
+
+return mappedArray;
+```
+
+![up_code](https://cdn.illacloud.com/official-website/img/docs/up_code.jpg)
+
+Clicca su **`Salva`** e **`Esegui`** per attivare questa azione.
+
+![up_data](https://cdn.illacloud.com/official-website/img/docs/up_data.jpg)
+
+#### Passo 2 Aggiungi Componenti
+
+Successivamente, possiamo aggiungere un componente **`table`** alla tela.
+
+Nel campo **`Fonte dati`** nella pagina Inspect dopo aver cliccato sul componente, metti `{{upstash2.data}}` per recuperare i dati da Upstash.
+
+#### Fase 3 Test
+
+L'aspetto finale dovrebbe essere come mostrato.
+
+![up_test](https://cdn.illacloud.com/official-website/img/docs/up_test.jpg)

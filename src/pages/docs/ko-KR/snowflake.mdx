@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/349?languages=en
 metaTitle: Snowflake Integration Doc | ILLA Cloud
 desc: Connect and interact with a Snowflake database using ILLA Cloud. Create apps that can query, manipulate, and visualize data. Automate and optimize data workflows.
 tagCategory: doc_menu_snowflake_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -33,7 +33,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready Snowflake will display as shown.
 
-![snow_ex_ready](https://cdn.illacloud.com/official-website/img/docs/snow_ex_Ready.png)
+![snow_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/snow_ex_Ready.png)
 
 -   Create in Builder
 
@@ -45,36 +45,36 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to Snowflake database.
 
-![snow_config](https://cdn.illacloud.com/official-website/img/docs/snow_config.png)
+![snow_config]\(https://cdn.illacloud.com/official-website/img/docs/snow_config.png)
 
-| Properties     | Required | Description                                                                                                                                   |
-| -------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name           | required | The name for resource when creating actions in the ILLA.                                                                                      |
-| Account name   | required | unique identifier that is assigned to each Snowflake account                                                                                  |
-| Warehouse      | required | a cluster of compute resources that are used to process queries and run analytical workloads                                                  |
-| Database       | required | The name of the database                                                                                                                      |
-| Schema         | optional | a container that holds database objects such as tables, views, and procedures                                                                 |
-| Role           | optional | a named set of privileges that can be assigned to one or more users                                                                           |
-| Authentication | required | secure access to your data and resources in the Snowflake data warehouse (Basic Auth or Key Pair (only encrypted private keys are supported)) |
-| Username       | required | the username you wish to use when logging in to the Snowflake server.                                                                         |
-| Password       | required | Use this password for authentication.                                                                                                         |
+| 속성                   | 필수    | 설명                                                                                                                                            |
+| -------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 이름                   | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                                                                      |
+| Account Identifier   | 필수    | unique identifier that is assigned to each Snowflake account                                                                                  |
+| Warehouse            | 필수    | a cluster of compute resources that are used to process queries and run analytical workloads                                                  |
+| 데이터 베이스              | 필수    | The name of the database                                                                                                                      |
+| Schema               | 선택 과목 | a container that holds database objects such as tables, views, and procedures                                                                 |
+| 역할                   | 선택 과목 | a named set of privileges that can be assigned to one or more users                                                                           |
+| 입증                   | 필수    | secure access to your data and resources in the Snowflake data warehouse (Basic Auth or Key Pair (only encrypted private keys are supported)) |
+| 사용자 이름               | 필수    | the username you wish to use when logging in to the Snowflake server.                                                                         |
+| 비밀번호                 | 필수    | Use this password for authentication.                                                                                                         |
 
 ### Create Actions
 
 We have created a Snowflake resource, we can add the action by selecting Snowflake from action list and choosing the **`Create action`** button.
 
-![snow_resource_list](https://cdn.illacloud.com/official-website/img/docs/snow_resource_list.png)
+![snow_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/snow_resource_list.png)
 
 Now we have added the Snowflake server as an action to our building page.
 
-![snow](https://cdn.illacloud.com/official-website/img/docs/snow.png)
+![snow]\(https://cdn.illacloud.com/official-website/img/docs/snow.png)
 
 ### Configure Snowflake
 
-| Properties  | Description                                                               |
+| 속성          | 설명                                                                        |
 | ----------- | ------------------------------------------------------------------------- |
 | SQL query   | sql commands to fetch (select), insert, update, delete data from database |
-| Transformer | transforming data into the style you like using JavaScript                |
+| 변신 로봇       | transforming data into the style you like using JavaScript                |
 
 Example usage:
 
@@ -84,7 +84,7 @@ Example usage:
 SELECT * FROM users ORDER BY lastname;
 ```
 
--   Insert
+-   구성 요소
 
 ```sql
 INSERT INTO users
@@ -104,7 +104,7 @@ VALUES
 	);
 ```
 
--   Update
+-   업데이트
 
 ```sql
 UPDATE users
@@ -112,7 +112,7 @@ UPDATE users
   WHERE id = {{ form1.updatedProfile.uid}};
 ```
 
--   Delete
+-   삭제
 
 ```sql
 DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};

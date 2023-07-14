@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/377?languages=en
 metaTitle: Firebase Integration Doc | ILLA Cloud
 desc: Discover how to connect and interact with Firebase API using ILLA Cloud's integration feature.
 tagCategory: doc_menu_firebase_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -21,11 +21,11 @@ There are two ways to create a resource in Illa after signing into your Illa acc
 
 Sign in to your Illa account, select `**Resources**` on the top of the page, and click `**Create New**` button.
 
-![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+![external_resource]\(https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
 Select **`Firebase`** from the API list.
 
-![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+![action_list]\(https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connect to the database with the required parameters described in `Connection Settings` below.
 
@@ -33,7 +33,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready Firebase will display as shown.
 
-![firebase_ex_ready](https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_ex_ready.jpg)
+![firebase_ex_ready]\(https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_ex_ready.jpg)
 
 -   Create in Builder
 
@@ -45,24 +45,24 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to Firebase API.
 
-![firebase_config](https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_config.jpg)
+![firebase_config]\(https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_config.jpg)
 
-| Properties            | Required | Description                                                                                    |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- |
-| Name                  | required | The name for resource when creating actions in the ILLA.                                       |
-| Firebase Database URL | optional | the endpoint or URL where the Firebase Realtime Database is hosted                             |
-| Firestore Project ID  | optional | a unique identifier assigned to each Firebase project that uses the Firestore database service |
-| Private Key           | required | a security credential used for authenticating and accessing Firebase services programmatically |
+| 속성                    | 필수    | 설명                                                                                             |
+| --------------------- | ----- | ---------------------------------------------------------------------------------------------- |
+| 이름                    | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                       |
+| Firebase Database URL | 선택 과목 | the endpoint or URL where the Firebase Realtime Database is hosted                             |
+| Firestore Project ID  | 선택 과목 | a unique identifier assigned to each Firebase project that uses the Firestore database service |
+| 개인 키                  | 필수    | a security credential used for authenticating and accessing Firebase services programmatically |
 
 ### Create Actions
 
 We have created a Firebase resource, we can add the action by selecting Firebase from the action list and choosing the **`Create action`** button.
 
-![firebase_resource_list](https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_resource_list.jpg)
+![firebase_resource_list]\(https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase_resource_list.jpg)
 
 Now we have added the Firebase server as an action to our building page.
 
-![firebase](https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase.jpg)
+![firebase]\(https://cdn.illacloud.com/official-website/img/official-site/intergration/firebase.jpg)
 
 ### Configure Firebase
 
@@ -77,7 +77,7 @@ Now we have added the Firebase server as an action to our building page.
 |              | Update a user                                              | Delete a Document      |                       |
 |              | Delete a user                                              | Get Collections        |                       |
 |              | List user                                                  | Query Collection Group |                       |
-| Transformer  | transforming data into the style you like using JavaScript |                        |                       |
+| 변신 로봇        | transforming data into the style you like using JavaScript |                        |                       |
 
 #### Get user by UID
 
@@ -85,9 +85,9 @@ retrieve user information by specifying the user's unique identifier (UID). It e
 
 ** Input **
 
-| Properties | Required | Description                                                                                               |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| UID        | required | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
+| 속성         | 필수 | 설명                                                                                                        |
+| ---------- | -- | --------------------------------------------------------------------------------------------------------- |
+| UID        | 필수 | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
 
 #### Get user by email
 
@@ -95,9 +95,9 @@ retrieve user information by specifying the user's email address. It allows you 
 
 ** Input **
 
-| Properties | Required | Description                                                        |
-| ---------- | -------- | ------------------------------------------------------------------ |
-| email      | required | the registered email associated with the user you want to retrieve |
+| 속성       | 필수 | 설명                                                                 |
+| -------- | -- | ------------------------------------------------------------------ |
+| 이메일      | 필수 | the registered email associated with the user you want to retrieve |
 
 #### Get user by phone number
 
@@ -105,9 +105,9 @@ retrieve user information by specifying the user's phone number. It allows you t
 
 ** Input **
 
-| Properties   | Required | Description                                                               |
-| ------------ | -------- | ------------------------------------------------------------------------- |
-| phone number | required | the registered phone number associated with the user you want to retrieve |
+| 속성   | 필수 | 설명                                                                        |
+| ---- | -- | ------------------------------------------------------------------------- |
+| 전화번호 | 필수 | the registered phone number associated with the user you want to retrieve |
 
 #### Create a user
 
@@ -115,9 +115,9 @@ create a new user in the Firebase authentication system. You can provide the use
 
 ** Input **
 
-| Properties  | Required | Description                                |
-| ----------- | -------- | ------------------------------------------ |
-| User object | required | an object that contains user's information |
+| 속성          | 필수 | 설명                                         |
+| ----------- | -- | ------------------------------------------ |
+| User object | 필수 | an object that contains user's information |
 
 #### Update a user
 
@@ -125,10 +125,10 @@ update the attributes and properties of an existing user. You can modify the use
 
 ** Input **
 
-| Properties  | Required | Description                                                                                               |
-| ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| UID         | required | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
-| User object | required | an object that contains user's information                                                                |
+| 속성          | 필수 | 설명                                                                                                        |
+| ----------- | -- | --------------------------------------------------------------------------------------------------------- |
+| UID         | 필수 | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
+| User object | 필수 | an object that contains user's information                                                                |
 
 #### Delete a user
 
@@ -136,9 +136,9 @@ delete a user from the Firebase authentication system. This action permanently r
 
 ** Input **
 
-| Properties | Required | Description                                                                                               |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| UID        | required | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
+| 속성         | 필수 | 설명                                                                                                        |
+| ---------- | -- | --------------------------------------------------------------------------------------------------------- |
+| UID        | 필수 | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system. |
 
 #### List users
 
@@ -146,10 +146,10 @@ retrieve a list of all users registered in the Firebase authentication system. I
 
 ** Input **
 
-| Properties      | Required | Description                                                                    |
-| --------------- | -------- | ------------------------------------------------------------------------------ |
-| Length of list  | optional | number of users you want to retrieve in a single request                       |
-| Next page token | optional | pagination when there are more users than can be returned in a single response |
+| 속성              | 필수    | 설명                                                                             |
+| --------------- | ----- | ------------------------------------------------------------------------------ |
+| 리스트 길이          | 선택 과목 | number of users you want to retrieve in a single request                       |
+| Next page token | 선택 과목 | pagination when there are more users than can be returned in a single response |
 
 #### Query Firebase
 
@@ -157,13 +157,13 @@ perform queries on the database using various conditions and filters
 
 ** Input **
 
-| Properties         | Required | Description                                                    |
-| ------------------ | -------- | -------------------------------------------------------------- |
-| Collection         | required | can use dropdown to select or use a raw id                     |
-| where              | required | add conditions to your query                                   |
-| limit              | optional | limit the number of documents returned by the query.           |
-| Order by           | optional | specify the field by which you want to order the query results |
-| Ordering direction | optional | the direction of the ordering in the query results             |
+| 속성                 | 필수    | 설명                                                             |
+| ------------------ | ----- | -------------------------------------------------------------- |
+| 수집                 | 필수    | can use dropdown to select or use a raw id                     |
+| where              | 필수    | add conditions to your query                                   |
+| Limit              | 선택 과목 | limit the number of documents returned by the query.           |
+| Order by           | 선택 과목 | specify the field by which you want to order the query results |
+| Ordering direction | 선택 과목 | the direction of the ordering in the query results             |
 
 #### Insert Document
 
@@ -171,11 +171,11 @@ create a new document in a collection or subcollection within Firestore. You pro
 
 ** Input **
 
-| Properties  | Required | Description                                                                                                                   |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Collection  | required | specifies the name of the collection in which you want to insert the document. can use the dropdown to select or use a raw id |
-| Document ID | optional | specify a custom identifier for the document being inserted                                                                   |
-| value       | required | the actual data that you want to insert into the document                                                                     |
+| 속성      | 필수    | 설명                                                                                                                            |
+| ------- | ----- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 수집      | 필수    | specifies the name of the collection in which you want to insert the document. can use the dropdown to select or use a raw id |
+| 문서 ID   | 선택 과목 | specify a custom identifier for the document being inserted                                                                   |
+| 값       | 필수    | the actual data that you want to insert into the document                                                                     |
 
 #### Update Document
 
@@ -183,11 +183,11 @@ update an existing document in Firestore. You specify the document ID and provid
 
 ** Input **
 
-| Properties  | Required | Description                                                                                                                   |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Collection  | required | specifies the name of the collection in which you want to update the document. can use the dropdown to select or use a raw id |
-| Document ID | optional | specify a custom identifier for the document being updated                                                                    |
-| value       | required | the actual data that you want to update into the document                                                                     |
+| 속성      | 필수    | 설명                                                                                                                            |
+| ------- | ----- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 수집      | 필수    | specifies the name of the collection in which you want to update the document. can use the dropdown to select or use a raw id |
+| 문서 ID   | 선택 과목 | specify a custom identifier for the document being updated                                                                    |
+| 값       | 필수    | the actual data that you want to update into the document                                                                     |
 
 #### Get Document by ID
 
@@ -195,10 +195,10 @@ retrieves a specific document from Firestore based on its unique document ID
 
 ** Input **
 
-| Properties  | Required | Description                                                                                                                     |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Collection  | required | specifies the name of the collection in which you want to retrieve the document. can use the dropdown to select or use a raw id |
-| Document ID | optional | specify a custom identifier for the document being retrieved                                                                    |
+| 속성    | 필수    | 설명                                                                                                                              |
+| ----- | ----- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 수집    | 필수    | specifies the name of the collection in which you want to retrieve the document. can use the dropdown to select or use a raw id |
+| 문서 ID | 선택 과목 | specify a custom identifier for the document being retrieved                                                                    |
 
 #### Delete a Document
 
@@ -206,10 +206,10 @@ remove a document from Firestore based on its document ID
 
 ** Input **
 
-| Properties  | Required | Description                                                                                                                     |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Collection  | required | specifies the name of the collection in which you want to retrieve the document. can use the dropdown to select or use a raw id |
-| Document ID | optional | specify a custom identifier for the document being retrieved                                                                    |
+| 속성    | 필수    | 설명                                                                                                                              |
+| ----- | ----- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 수집    | 필수    | specifies the name of the collection in which you want to retrieve the document. can use the dropdown to select or use a raw id |
+| 문서 ID | 선택 과목 | specify a custom identifier for the document being retrieved                                                                    |
 
 #### Get Collections
 
@@ -217,9 +217,9 @@ retrieve all the collections within a Firestore database. It returns a list of c
 
 ** Input **
 
-| Properties         | Required | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| Parent Document ID | optional | specify a custom identifier for the document being retrieved |
+| 속성                 | 필수    | 설명                                                           |
+| ------------------ | ----- | ------------------------------------------------------------ |
+| Parent Document ID | 선택 과목 | specify a custom identifier for the document being retrieved |
 
 #### Query Collection Group
 
@@ -227,13 +227,13 @@ query documents across multiple collections with the same name. You can perform 
 
 ** Input **
 
-| Properties         | Required | Description                                                    |
-| ------------------ | -------- | -------------------------------------------------------------- |
-| Collection         | required | can use dropdown to select or use a raw id                     |
-| where              | required | add conditions to your query                                   |
-| limit              | optional | limit the number of documents returned by the query.           |
-| Order by           | optional | specify the field by which you want to order the query results |
-| Ordering direction | optional | the direction of the ordering in the query results             |
+| 속성                 | 필수    | 설명                                                             |
+| ------------------ | ----- | -------------------------------------------------------------- |
+| 수집                 | 필수    | can use dropdown to select or use a raw id                     |
+| where              | 필수    | add conditions to your query                                   |
+| Limit              | 선택 과목 | limit the number of documents returned by the query.           |
+| Order by           | 선택 과목 | specify the field by which you want to order the query results |
+| Ordering direction | 선택 과목 | the direction of the ordering in the query results             |
 
 #### Query database
 
@@ -241,9 +241,9 @@ query the Realtime Database to retrieve data that meets specific criteria. You c
 
 ** Input **
 
-| Properties   | Required | Description                                         |
-| ------------ | -------- | --------------------------------------------------- |
-| Database ref | required | a reference to a specific location in the database. |
+| 속성           | 필수 | 설명                                                  |
+| ------------ | -- | --------------------------------------------------- |
+| Database ref | 필수 | a reference to a specific location in the database. |
 
 #### Set data
 
@@ -251,10 +251,10 @@ write or replace data at a specific location in the Realtime Database
 
 ** Input **
 
-| Properties    | Required | Description                                                                                                |
-| ------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| Database ref  | required | a reference to a specific location in the database.                                                        |
-| Object to set | required | object contains the data that we want to write to the database, including the name, age, and email fields. |
+| 속성            | 필수 | 설명                                                                                                         |
+| ------------- | -- | ---------------------------------------------------------------------------------------------------------- |
+| Database ref  | 필수 | a reference to a specific location in the database.                                                        |
+| Object to set | 필수 | object contains the data that we want to write to the database, including the name, age, and email fields. |
 
 #### Update data
 
@@ -262,10 +262,10 @@ modify existing data at a specific location in the Realtime Database
 
 ** Input **
 
-| Properties  | Required | Description                                                                                                 |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| UID         | required | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system.   |
-| User object | required | object contains the data that we want to update to the database, including the name, age, and email fields. |
+| 속성          | 필수 | 설명                                                                                                          |
+| ----------- | -- | ----------------------------------------------------------------------------------------------------------- |
+| UID         | 필수 | "User Identifier." It is a unique identifier assigned to each user in the Firebase authentication system.   |
+| User object | 필수 | object contains the data that we want to update to the database, including the name, age, and email fields. |
 
 #### Append data to a list
 
@@ -273,7 +273,7 @@ use the "Push" method. It generates a unique key and appends the data as a new e
 
 ** Input **
 
-| Properties    | Required | Description                                                                                                 |
-| ------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| Database ref  | required | a reference to a specific location in the database.                                                         |
-| Object to set | required | object contains the data that we want to update to the database, including the name, age, and email fields. |
+| 속성            | 필수 | 설명                                                                                                          |
+| ------------- | -- | ----------------------------------------------------------------------------------------------------------- |
+| Database ref  | 필수 | a reference to a specific location in the database.                                                         |
+| Object to set | 필수 | object contains the data that we want to update to the database, including the name, age, and email fields. |

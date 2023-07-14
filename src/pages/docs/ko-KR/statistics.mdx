@@ -13,68 +13,68 @@ postPriority: 1
 
 The Statistics component in ILLA Cloud is a powerful tool for displaying and analyzing numerical data. It provides a visually appealing and customizable way to showcase key metrics and statistics.
 
-### Properties
+### 속성
 
-| Properties              | Description                                                                                                                              |
+| 속성                      | 설명                                                                                                                                       |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Label                   | The name of the field displayed to the user                                                                                              |
-| Primary value           | the primary value or rating displayed by the component.                                                                                  |
-| Secondary value         | an additional rating or value associated with the primary value, providing additional information or context.                            |
+| 상표                      | 사용자에게 표시되는 필드의 이름                                                                                                                        |
+| 기본 값                    | the primary value or rating displayed by the component.                                                                                  |
+| 보조 값                    | an additional rating or value associated with the primary value, providing additional information or context.                            |
 | Primary                 |                                                                                                                                          |
-| Decimal place           | specify the number of decimal places that can be entered in the component                                                                |
-| Show trend sign         | Enabling this property displays an arrow or sign indicating the trend or change in the rating value.                                     |
-| Show thousand separator | When enabled, this property adds a thousand separators (comma or period) to the primary and secondary values for better readability.     |
-| Enable trend color      | change color based on the trend or change in the rating value.                                                                           |
-| Prefix text             | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user  |
-| Suffix text             | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user |
+| 소수 자릿수                  | specify the number of decimal places that can be entered in the component                                                                |
+| 추세 표시 표시                | Enabling this property displays an arrow or sign indicating the trend or change in the rating value.                                     |
+| 천 단위 구분 기호 표시           | When enabled, this property adds a thousand separators (comma or period) to the primary and secondary values for better readability.     |
+| 트렌드 컬러                  | change color based on the trend or change in the rating value.                                                                           |
+| 접두사 텍스트                 | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user  |
+| 접미사                     | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user |
 | Secondary               |                                                                                                                                          |
-| Decimal place           | specify the number of decimal places that can be entered in the component                                                                |
-| Show trend sign         | Enabling this property displays an arrow or sign indicating the trend or change in the rating value.                                     |
-| Show thousand separator | When enabled, this property adds a thousand separators (comma or period) to the primary and secondary values for better readability.     |
-| Enable trend color      | change color based on the trend or change in the rating value.                                                                           |
-| Prefix text             | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user  |
-| Suffix text             | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user |
-| Event handler           | define custom actions or logic that trigger when the component is interacted with or the rating is changed.                              |
-| Tooltip                 | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                  |
-| Hidden                  | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                   |
-| Alignment               | alignment of the component, such as left, center, or right.                                                                              |
+| 소수 자릿수                  | specify the number of decimal places that can be entered in the component                                                                |
+| 추세 표시 표시                | Enabling this property displays an arrow or sign indicating the trend or change in the rating value.                                     |
+| 천 단위 구분 기호 표시           | When enabled, this property adds a thousand separators (comma or period) to the primary and secondary values for better readability.     |
+| 트렌드 컬러                  | change color based on the trend or change in the rating value.                                                                           |
+| 접두사 텍스트                 | a short piece of text that appears to the left of the input field, often used to provide additional context or instructions to the user  |
+| 접미사                     | a short piece of text that appears to the right of the input field, often used to provide additional information or feedback to the user |
+| 이벤트 핸들러                 | define custom actions or logic that trigger when the component is interacted with or the rating is changed.                              |
+| 힌트                      | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                  |
+| 숨다                      | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                   |
+| 조정                      | alignment of the component, such as left, center, or right.                                                                              |
 | Theme Color             | Allows users to specify the button's background color and opacity                                                                        |
-| Positive color          | determines the color used for positive or high ratings                                                                                   |
-| Negative color          | defines the color used for negative or low ratings.                                                                                      |
+| 긍정적인                    | determines the color used for positive or high ratings                                                                                   |
+| 부정적인                    | defines the color used for negative or low ratings.                                                                                      |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following two methods:
 
--   **setPrimaryValue**
+-   **기본 값 설정**
 
 To set the primary value, for example, {{"value1"}}
 
-| Properties    | Description         |
+| 속성            | 설명                  |
 | ------------- | ------------------- |
 | Primary Value | Input primary value |
 
--   **resetPrimaryValue**
+-   **기본 값 재설정**
 
 To reset the value to the default value of the selected component. If the default value is not specified, clear value.
 
-### Event handler
+### 이벤트 핸들러
 
-| Event | Description                                                                  |
-| ----- | ---------------------------------------------------------------------------- |
-| Click | When a user clicks this button, perform specific action customized by users. |
+| 이벤트      | 설명                                                                           |
+| -------- | ---------------------------------------------------------------------------- |
+| 딸깍 하는 소리 | When a user clicks this button, perform specific action customized by users. |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name             | Description                                                                                                    |
+| Property name             | 설명                                                                                                             |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | colorScheme               | background color of the button                                                                                 |
 | displayName               | the name of this component (ie button1)                                                                        |
 | events                    | generated or triggered when certain actions or events occur within the number input component.                 |
-| hidden                    | hidden status (true or false)                                                                                  |
-| label                     | label value                                                                                                    |
+| 숨다                        | hidden status (true or false)                                                                                  |
+| 상표                        | label value                                                                                                    |
 | negativeColorScheme       | determines the color scheme used for displaying negative values                                                |
 | positiveColorScheme       | sets the color scheme for positive values                                                                      |
 | primaryValue              | the primary numerical value to be displayed in the statistics component.                                       |
@@ -86,7 +86,7 @@ The component has some commonly used data, which can be called via **`{{componen
 | showSeparator             | whether displays a thousand separator (such as a comma) to improve readability of large numbers.               |
 | prefixText                | value of the prefix                                                                                            |
 | suffixText                | value of the suffix                                                                                            |
-| setPrimaryValue           | enables you to programmatically set or update the primary value of the statistics component.                   |
+| 기본 값 설정                   | enables you to programmatically set or update the primary value of the statistics component.                   |
 | secondaryValue            | a secondary numerical value that can be displayed alongside the primary value.                                 |
 | secondaryDecimalPlace     | specifies the number of decimal places to be shown for the secondary value.                                    |
 | secondaryEnableTrendColor | whether applies a color scheme to the secondary value based on its trend                                       |
@@ -110,7 +110,7 @@ Let us create a table in Amazon S3. One of the documents is called
 
 '1.txt' with the decimal '1.1111' as its data. This is the value we want to show in number input.
 
-![s3data](https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
+![s3data]\(https://cdn.illacloud.com/official-website/img/official-site/components/s3data.jpg)
 
 Then we can create a new action for Amazon S3 from the action list, listing all the data in the bucket and named s31.
 
@@ -118,7 +118,7 @@ Select `Read an object` for `**Action Type**`. Put `1.txt` for `**Object Key`.\*
 
 Click **`Save`** and **`Run`** to activate this action.
 
-![stat_data](https://cdn.illacloud.com/official-website/img/official-site/components/stat_data.jpg)
+![stat_data]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_data.jpg)
 
 #### Step 2 Add Components
 
@@ -126,7 +126,7 @@ Next, we can add a **`statistics`** component and a **`button`** component to th
 
 We set the default primary value of statistics to 0 and labeled the button as "Set value" as shown below
 
-![stat_layout](https://cdn.illacloud.com/official-website/img/official-site/components/stat_layout.jpg)
+![stat_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_layout.jpg)
 
 #### Step 3 Configure the component
 
@@ -135,10 +135,10 @@ For the **`button`** component, we can configure it to set the value in **`stati
 1.  In the Edit event handler, select **`Control component`** in action, and select the **`statistics`** component that you want to update as the target of the event.
 2.  Choose the **`setValue`** action and set the value as `{{s31.data}}`
 
-![stat_button_config](https://cdn.illacloud.com/official-website/img/official-site/components/stat_config.jpg)
+![stat_button_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_config.jpg)
 
 #### Step 4 Test
 
 Now that when you click the "Set value" button, the value should change to 1.1111.
 
-![stat_test](https://cdn.illacloud.com/official-website/img/official-site/components/stat_test.gif)
+![stat_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/stat_test.gif)

@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/367?languages=en
 metaTitle: Elastic Search Integration Doc | ILLA Cloud
 desc: Use ILLA Cloud to connect and interact with your Elastic Search data.
 tagCategory: doc_menu_elastic_search_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -33,7 +33,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready Elastic Search will display as shown.
 
-![ela_ex_ready](https://cdn.illacloud.com/official-website/img/docs/ela_ex_ready.png)
+![ela_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/ela_ex_ready.png)
 
 -   Create in Builder
 
@@ -45,36 +45,36 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to Elastic Search database.
 
-![ela_config](https://cdn.illacloud.com/official-website/img/docs/ela_config.png)
+![ela_config]\(https://cdn.illacloud.com/official-website/img/docs/ela_config.png)
 
-| Properties  | Required | Description                                                                                       |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------- |
-| Name        | required | The name for resource when creating actions in the ILLA.                                          |
-| Hostname    | required | The URL or IP address for your database                                                           |
-| Port        | required | The server host's port number that you should use to connect.                                     |
-| Database    | required | The name of the database                                                                          |
-| Username    | required | the username you wish to use when logging in to the Elastic Search server.                        |
-| Password    | required | Use this password for authentication.                                                             |
-| SSL options | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server. |
+| 속성         | 필수    | 설명                                                                                                |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------- |
+| 이름         | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                          |
+| 호스트 이름     | 필수    | The URL or IP address for your database                                                           |
+| 포트         | 필수    | The server host's port number that you should use to connect.                                     |
+| 데이터 베이스    | 필수    | The name of the database                                                                          |
+| 사용자 이름     | 필수    | the username you wish to use when logging in to the Elastic Search server.                        |
+| 비밀번호       | 필수    | Use this password for authentication.                                                             |
+| SSL 옵션     | 선택 과목 | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server. |
 
 ### Create Actions
 
 We have created an Elastic Search resource, we can add the action by selecting Elastic Search from action list and choosing the **`Create action`** button.
 
-![ela_resource_list](https://cdn.illacloud.com/official-website/img/docs/ela_resource_list.png)
+![ela_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/ela_resource_list.png)
 
 Now we have added the Elastic Search server as an action to our building page.
 
-![ela](https://cdn.illacloud.com/official-website/img/docs/ela.png)
+![ela]\(https://cdn.illacloud.com/official-website/img/docs/ela.png)
 
 ### Configure Elastic Search
 
 #### Overview
 
-| Method Name | Description                                                                     |
+| Method Name | 설명                                                                              |
 | ----------- | ------------------------------------------------------------------------------- |
 | Action Type | search, get a document, insert a document, update a document, delete a document |
-| Transformer | transforming data into the style you like using JavaScript                      |
+| 변신 로봇       | transforming data into the style you like using JavaScript                      |
 
 #### insert a document
 
@@ -82,10 +82,10 @@ sending an HTTP PUT request to the Elasticsearch cluster with a JSON document th
 
 ** Input **
 
-| Properties | Required | Description                                             |
-| ---------- | -------- | ------------------------------------------------------- |
-| Body       | optional | a JSON document that contains the data to be inserted   |
-| Index      | optional | name of the index where the document should be inserted |
+| 속성       | 필수    | 설명                                                      |
+| -------- | ----- | ------------------------------------------------------- |
+| 본체       | 선택 과목 | a JSON document that contains the data to be inserted   |
+| 인덱스      | 선택 과목 | name of the index where the document should be inserted |
 
 For example, to insert `value1`, `value2`, and `value3` into **`field1`**, **`field2`**, and **`field3`** into our Elastic search database, put the code snippet below into the `**Body`** and `insert2` for **`Index`\*\*.
 
@@ -101,23 +101,23 @@ For example, to insert `value1`, `value2`, and `value3` into **`field1`**, **`fi
 
 Success message of whether the document is inserted successfully and information of the inserted document.
 
-![ela_insert_data](https://cdn.illacloud.com/official-website/img/official-site/ela_insert_data.png)
+![ela_insert_data]\(https://cdn.illacloud.com/official-website/img/official-site/ela_insert_data.png)
 
 Use `{{insert.data}}` to get the message.
 
-![ela_insert_code](https://cdn.illacloud.com/official-website/img/official-site/ela_insert_code.png)
+![ela_insert_code]\(https://cdn.illacloud.com/official-website/img/official-site/ela_insert_code.png)
 
-#### update a document
+#### 문서 업데이트
 
 sending an HTTP **`POST`** or **`PUT`** request to the Elasticsearch cluster with the ID of the document that should be updated, and a JSON document that specifies the changes to be made.
 
 ** Input **
 
-| Properties | Required | Description                                         |
-| ---------- | -------- | --------------------------------------------------- |
-| Body       | optional | The new value to be assigned to the field.          |
-| Index      | optional | The name of the index where the document is stored. |
-| Id         | optional | The unique identifier for the document.             |
+| 속성         | 필수    | 설명                                                  |
+| ---------- | ----- | --------------------------------------------------- |
+| 본체         | 선택 과목 | The new value to be assigned to the field.          |
+| 인덱스        | 선택 과목 | The name of the index where the document is stored. |
+| ID         | 선택 과목 | The unique identifier for the document.             |
 
 For example, to update `value1`, `value2`, and `value3` for **`field1`**, **`field2`**, and **`field3`** into our Elastic search database, put the code snippet below into the **`Body,`** `insert2` for **`Index`** , and copy-paste the document **`Id`** from the insert message.
 
@@ -133,22 +133,22 @@ For example, to update `value1`, `value2`, and `value3` for **`field1`**, **`fie
 
 Success message of whether the document is updated successfully and information of the updated document.
 
-![ela_update_data](https://cdn.illacloud.com/official-website/img/official-site/ela_update_data.jpg)
+![ela_update_data]\(https://cdn.illacloud.com/official-website/img/official-site/ela_update_data.jpg)
 
 Use `{{update.data}}` to get the message.
 
-![ela_update_code](https://cdn.illacloud.com/official-website/img/official-site/ela_update_code.jpg)
+![ela_update_code]\(https://cdn.illacloud.com/official-website/img/official-site/ela_update_code.jpg)
 
-#### Search
+#### 찾다
 
 query and retrieve documents from an index
 
 ** Input **
 
-| Properties | Required | Description                                                          |
-| ---------- | -------- | -------------------------------------------------------------------- |
-| Query      | optional | specify the search query that is used to match documents in an index |
-| Index      | optional | specify the name of the index or indices that should be searched     |
+| 속성       | 필수    | 설명                                                                   |
+| -------- | ----- | -------------------------------------------------------------------- |
+| 질문       | 선택 과목 | specify the search query that is used to match documents in an index |
+| 인덱스      | 선택 과목 | specify the name of the index or indices that should be searched     |
 
 For example, to search the database to find documents with key-value pair `"field1": "value1"`, put the code snippet below into the **`Query` .**
 
@@ -166,22 +166,22 @@ For example, to search the database to find documents with key-value pair `"fiel
 
 Success message with the number of hits/documents it finds that matches the query and the info for every hit.
 
-![ela_search_data](https://cdn.illacloud.com/official-website/img/official-site/ela_search_data.jpg)
+![ela_search_data]\(https://cdn.illacloud.com/official-website/img/official-site/ela_search_data.jpg)
 
 Use `{{search.data}}` to get the message.
 
-![ela_search_code](https://cdn.illacloud.com/official-website/img/official-site/ela_search_code.jpg)
+![ela_search_code]\(https://cdn.illacloud.com/official-website/img/official-site/ela_search_code.jpg)
 
-#### get a document
+#### 문서 받기
 
 sending an HTTP **`GET`** request to the Elasticsearch cluster with the ID of the document that should be retrieved.
 
 ** Input **
 
-| Properties | Required | Description                                         |
-| ---------- | -------- | --------------------------------------------------- |
-| Index      | optional | The name of the index where the document is stored. |
-| Id         | optional | The unique identifier for the document.             |
+| 속성         | 필수    | 설명                                                  |
+| ---------- | ----- | --------------------------------------------------- |
+| 인덱스        | 선택 과목 | The name of the index where the document is stored. |
+| ID         | 선택 과목 | The unique identifier for the document.             |
 
 For example, to get the document info for the document we just updated, put `insert2` for **`Index`**, and copy-paste the document **`Id`** from the updated message.
 
@@ -189,22 +189,22 @@ For example, to get the document info for the document we just updated, put `ins
 
 returns the document with the specified ID, or a **`404 Not Found`** error if the document does not exist.
 
-![ela_get_data](https://cdn.illacloud.com/official-website/img/official-site/ela_get_data.jpg)
+![ela_get_data]\(https://cdn.illacloud.com/official-website/img/official-site/ela_get_data.jpg)
 
 Use `{{get.data}}` to get the message.
 
-![ela_get_code](https://cdn.illacloud.com/official-website/img/official-site/ela_get_code.jpg)
+![ela_get_code]\(https://cdn.illacloud.com/official-website/img/official-site/ela_get_code.jpg)
 
-#### delete a document
+#### 문서 삭제
 
 sending an HTTP DELETE request to the Elasticsearch cluster with the ID of the document that should be deleted.
 
 ** Input **
 
-| Properties | Required | Description                                         |
-| ---------- | -------- | --------------------------------------------------- |
-| Index      | optional | The name of the index where the document is stored. |
-| Id         | optional | The unique identifier for the document.             |
+| 속성         | 필수    | 설명                                                  |
+| ---------- | ----- | --------------------------------------------------- |
+| 인덱스        | 선택 과목 | The name of the index where the document is stored. |
+| ID         | 선택 과목 | The unique identifier for the document.             |
 
 For example, to delete document, put `insert2` for **`Index`,** and copy-paste the document **`Id`** from the updated message.
 
@@ -212,4 +212,4 @@ For example, to delete document, put `insert2` for **`Index`,** and copy-paste t
 
 returns the document with the specified ID, or a **`404 Not Found`** error if the document does not exist.
 
-![ela_delete_data](https://cdn.illacloud.com/official-website/img/official-site/ela_delete_data.jpg)
+![ela_delete_data]\(https://cdn.illacloud.com/official-website/img/official-site/ela_delete_data.jpg)

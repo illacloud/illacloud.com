@@ -79,7 +79,7 @@ Label the input component to be "Name", the number input component to be "Age" a
 
 Set the placeholder of the input component to "Please put your name here" and the default value of the number input to 0 as shown below.
 
-![bar_layout](https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
+![bar_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_layout.jpg)
 
 #### Step 2 Configure the component
 
@@ -101,7 +101,7 @@ For the **`input`** and **`number input`** components, we can configure them to 
 }
 ```
 
-![bar_input_num_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
+![bar_input_num_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_input_num_config.jpg)
 
 Note: need to set the event handler as described above to BOTH input and number input components.
 
@@ -111,15 +111,15 @@ For the **`button`** component, we can configure it to submit the form if the fo
 2.  In the Edit event handler, select **`Control component`** in action, and select the **`form`** component that you want to update as the target of the event.
 3.  Choose the **`submit`** method and put `{{barProgress1.value == 100}}` in **`Only run when`**
 
-![bar_button_submit_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
+![bar_button_submit_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_submit_config.jpg)
 
 Similarly, we can configure the button to show warning when the user is trying to submit an uncompleted form.
 
 1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
 2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Error!" and **`description`** "Please fill out the form before submitting". Choose `Error` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds), and put `{{barProgress1.value<100}}` for **`Only run when`.**
 
-![bar_button_show_config](https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
+![bar_button_show_config]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_button_show_config.jpg)
 
 #### Step 4 Test
 
-![bar_test](https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
+![bar_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/bar_test.gif)
