@@ -96,7 +96,7 @@ Till exempel, för att få alla resultat vars storlek är medium=>gruppera resul
 ```sql
 [
 	 {
-		 "$match": { "size": "medium" }
+		  "$match": { "size": "medium" }
 	 },
 	 {
 		 "$group": { "_id": "$type", "totalantal": { "$sum": "$price" }
@@ -131,8 +131,8 @@ Ett exempel för **`Operations`**:
 	 { "insertOne": { "document": { "_id": 3, "type": "beef", "size": "medium", "price": 6 } },
 	 { "insertOne": { "dokument": { "_id": 4, "typ": "korv", "storlek": "stor", "price": 10 } },
 	 { "updateOne": {
-			 "filter": { "type": "cheese" },
-			 "update": { "$set": { "price": 8 } }
+			  "filter": { "type": "cheese" },
+			   "update": { "$set": { "price": 8 } }
 		 }
 	 }
 ]
