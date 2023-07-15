@@ -1,0 +1,207 @@
+---
+title: 이벤트 캘린더
+metaTitle: Event calendar Component Doc | ILLA Cloud
+desc: Learn how to use the event calendar component to customize your app in ILLA Cloud.
+tagCategory: doc_menu_event_calendar_click
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/425?languages=en&filter=basic&value=0
+categoryName: 🧬 Assemble components
+categoryPriority: 6
+postPriority: 1
+---
+
+## <h2 hidden>What is Event calendar?</h2>
+
+The Event Calendar component in ILLA Cloud is a powerful tool for organizing and displaying events in a visually appealing and user-friendly manner. It allows users to create, manage, and showcase events with ease, providing features such as date navigation, event categorization, and detailed event information. The Event Calendar component offers customizable layouts, intuitive event creation interfaces, and options for integrating with other systems, making it an essential tool for businesses and organizations to effectively manage and promote their events.
+
+### 속성
+
+#### Manual options
+
+Add new options or delete options manually and configure the options one by one. The properties of options are as follows:
+
+| 속성               | 설명                                                                                                                                                  |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 이벤트 ID           | uniquely identifies each event in the calendar                                                                                                      |
+| 제목               | title or name of the event                                                                                                                          |
+| 설명               | 이벤트 설명                                                                                                                                              |
+| 시작 시간            | start date and time of the event                                                                                                                    |
+| 종료 시간            | end date and time of the event                                                                                                                      |
+| 리소스 ID           | identifies the resource or entity associated with the event                                                                                         |
+| 리소스 제목           | title or name of the resource associated with the event                                                                                             |
+| 하루 종일 이벤트        | whether the event is an all-day event or not                                                                                                        |
+| 드래그 가능           | whether the event can be dragged or moved within the calendar interface                                                                             |
+| 크기 조정 가능         | 사용자가 이벤트 시간 범위를 업데이트하고 이벤트의 테두리를 드래그하여 시간 범위를 늘리거나 줄이는 방식으로 시간 범위를 변경할 수 있도록 허용할지 여부                                                                |
+
+#### Mapped options
+
+You can also add options from a data source by mapping the label and value properties to the corresponding data fields. You can get options dynamically from the database in this way. At the end of this article, we will demonstrate how to use it through an example.
+
+| 속성               | 설명                                                                                                                                                  |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 데이터 소스           | Set the data source of options                                                                                                                      |
+| 이벤트 ID           | 이벤트를 식별하는 데 사용되는 고유 ID                                                                                                                              |
+| 제목               | 이벤트 제목                                                                                                                                              |
+| 설명               | 이벤트 설명                                                                                                                                              |
+| 시작 시간            | 이벤트 시작 시간                                                                                                                                           |
+| 종료 시간            | 이벤트 종료 시간                                                                                                                                           |
+| 리소스 ID           | The resource could be a person, a meeting room, etc. You can set a resource id and connect it to the event.                                         |
+| 리소스 제목           | 리소스 보기에 표시되는 리소스 이름                                                                                                                                 |
+| 하루 종일 이벤트        | Whether it's an all-day event                                                                                                                       |
+| 드래그 가능           | 사용자가 드래그하여 이벤트를 이동하여 이벤트 시간 범위를 업데이트하도록 허용할지 여부                                                                                                     |
+| 크기 조정 가능         | 사용자가 이벤트 시간 범위를 업데이트하고 이벤트의 테두리를 드래그하여 시간 범위를 늘리거나 줄이는 방식으로 시간 범위를 변경할 수 있도록 허용할지 여부                                                                |
+
+#### Other properties
+
+| 속성                                     | 설명                                                                                                                     |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 기본 날짜                                  | the default date value                                                                                                 |
+| 리소스 그리드                                | 리소스 그리드 표시 여부                                                                                                          |
+| 기본 보기                                  | 앱 실행 시 기본 보기                                                                                                           |
+| 이벤트 핸들러                                | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                              |
+| Custome message when disabled dragging | 끌기가 비활성화된 후 사용자가 이벤트를 끌 때 메시지가 표시됩니다.                                                                                  |
+| Custom message when disabled resizing  | 크기 조정이 비활성화된 후 사용자가 이벤트 크기를 조정하면 메시지가 표시됩니다.                                                                           |
+| 현재 시간 표시                               | 현재 타임라인 표시 여부 설정                                                                                                       |
+| 숨다                                     | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value. |
+| Calendar Background Color              | 달력 배경 설정                                                                                                               |
+| Calendar Text Color                    | 텍스트 색상 설정                                                                                                              |
+| Event Background Color                 | 이벤트 카드 배경 설정                                                                                                           |
+| Event Text Color                       | 이벤트 카드의 텍스트 색상 설정                                                                                                      |
+
+### 이벤트 핸들러
+
+| 이벤트                         | 설명                                              |
+| --------------------------- | ----------------------------------------------- |
+| 내용 변경                       | When a user changes the event value             |
+| Select                      | When a user selects the component               |
+| 이벤트가 없는 영역을 드래그 또는 클릭       | When a user drag or click an area with no event |
+
+### 응답 데이터
+
+The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+
+| Property name      | 설명                                                                                                         |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| borderColor        | specifies the color of the border around the calendar component or the events displayed within it          |
+| dataSource         | the source of event data for the calendar component                                                        |
+| defaultDate        | sets the initial date to be displayed when the calendar is loaded or rendered                              |
+| defaultView        | determines the default view or mode in which the calendar is displayed when initially loaded               |
+| displayName        | the name of this component (ie button1)                                                                    |
+| 드래그 가능             | enables or disables the ability to drag and move events within the calendar                                |
+| events             | generated or triggered when certain actions or events occur within the number input component.             |
+| eventBackground    | specifies the background color or styling for the event elements displayed in the calendar                 |
+| eventConfigureMode | determines the configuration mode for events in the calendar                                               |
+| eventList          | the list or collection of events to be displayed in a separate view or panel within the calendar component |
+| eventTextColor     | determines the color of the text or content within the event elements displayed in the calendar            |
+| 숨다                 | whether the event calendar component is hidden or not                                                      |
+| manualOptions      | manual configuration or customization of various options or settings within the event calendar             |
+| mappedOptions      | mapped or predefined options for the event calendar component                                              |
+| 크기 조정 가능           | enables or disables the ability to resize events in the calendar                                           |
+| resourceMapList    | defines the mapping or association between events and resources within the calendar                        |
+| selectEndTime      | determines the end time or date when selecting or creating a new event in the calendar                     |
+| selectEventValue   | the selected or currently active event value in the calendar                                               |
+| selectResource     | determines the resource or entity associated with the selected or focused event in the calendar            |
+| selectStartTime    | determines the start time or date when selecting or creating a new event in the calendar                   |
+| showCurrentTime    | determines whether the current time indicator or marker is displayed on the calendar                       |
+| showResource       | whether the resource or entity associated with events is displayed or shown in the calendar                |
+| slotBackground     | specifies the background color or styling for the time slots or cells in the calendar                      |
+| titleColor         | the color of the title or heading displayed for events in the calendar                                     |
+
+Example: {{eventCalendar1.events}}
+
+### Use case
+
+Next, we will demonstrate how to add new events displayed on event calendar with a button.
+
+#### Step 1 Add an action
+
+Let us create a table in Supabase called `events`. It has 9 columns: `title`, `description`, `resource_id`, `resource_title`, `all_day`, `draggable`, `resizable`, `start_time`, and `end_time` .
+
+Then we can create a new action for Supabase from the action list, listing all the data with the code snippet below and called `supabasedb1.`
+
+```sql
+select * from events;
+```
+
+Change from `Run action only when manually triggered` to `Run action automatically when inputs change` in the upper right corner below **`Save`** button.
+
+Click **`Save`** and **`Run`** to activate this action.
+
+![event_data]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_data.jpg)
+
+In order to add a new event, we also need another action. Choose the same Supabase resource from the action list called `supabasedb2`, and put the code snippet below.
+
+```sql
+INSERT INTO events (id, title, description, start_time, end_time, resource_id, resource_title, all_day, draggable, resizable)
+VALUES ((SELECT MAX(id) + 1 FROM events), '{{input1.value}}', '{{input2.value}}', '{{dateTime1.value}}', '{{dateTime2.value}}', {{numberInput1.value}}, '{{input4.value}}', {{switch1.value}}, {{switch2.value}}, {{switch3.value}});
+```
+
+The input, numberInput, dateTime, and switch components are from the modal components. There are more detailed descriptions of those components below.
+
+#### Step 2 Configure Actions
+
+For supabasedb2, we want to show a notification when the new event info is successfully added to the database.
+
+In the Actions, click `supabasedb2`, in the `General` page, scroll down to `Event handler`.
+
+1.  Click **`+ New`** to add a new event handler.
+2.  In the Edit event handler, select **`Show notification`** in action, **`title`** "Success" and **`description`** "Successfully add new event. Choose `Success` for **`type`**, put `{{2000}}` for the **`duration`** (2 seconds)
+
+![event_action_success]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_action_success.jpg)
+
+#### Step 2 Add Components
+
+Next, we can add an **`event calendar`** component, a **`button`** component, and a `**modal**` component to the canvas. Label the button component to `Add new event`.
+
+![event_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_layout.jpg)
+
+In the modal component, we change the text on the upper left corner to "New Event". We then add the `Title` and `Description` input components, `Start time` and `End time` date time components, `Resource ID` number input, and `Resource Title` input components, `All day`, `Draggable`, and `Resizable` switch components, and label them as needed.
+
+![event_modal_layout]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_modal_layout.jpg)
+
+#### Step 3 Configure the component
+
+For the `**event calendar**` component, we can map the data from `supabasedb1` to display. We first choose `mapped` from options, then we put `{{supabasedb1.data}}` in the Data source and fill out the `Mapped Option` fields as shown below.
+
+![event_data_source]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_data_source.jpg)
+
+For the **`button`** component, we can configure it to open the modal when clicked.
+
+1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
+2.  In the Edit event handler, select **`Control component`** in action, and select the **`modal`** component that you want to update as the target of the event.
+3.  Choose the **`openModal`** method
+
+![event_add_new_button]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_add_new_button.jpg)
+
+For the **`modal`** component, we can configure it to refresh the events display in the `**event calendar**` when the modal is closed.
+
+1.  Click the **`modal`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
+2.  In the Edit event handler, select **`Trigger action`** in action, and select the **`supabasedb`** component that you want to trigger for `Action name`. In our case, it's the `supabasedb1`.
+
+![event_modal]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_modal.jpg)
+
+For the "Cancel" **`button`** component, we can configure it to close the modal if clicked
+
+1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
+2.  In the Edit event handler, select **`Control component`** in action, and select the **`modal`** component that you want to update as the target of the event.
+3.  Choose the **`closeModal`** method
+
+![close_modal]\(https://cdn.illacloud.com/official-website/img/docs/close_modal.jpg)
+
+For the "Confirm" **`button`**, we want it to insert the new data filled out in the modal into the supabase **`events`** table and close modal.
+
+1.  Click the **`button`** component to open its inspect page. Under **`Event handler`**, click `**+ New**`.
+2.  In the Edit event handler, select **`Trigger action`** for action and choose `supabasedb2` for action name
+
+![event_db2]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_db2.jpg)
+
+1.  Click **`+ New`** to add a new event handler.
+2.  In the Edit event handler, select **`Control component`** in action, and select the **`modal`** component that you want to update as the target of the event.
+3.  Choose the **`closeModal`** method
+
+![close_modal]\(https://cdn.illacloud.com/official-website/img/docs/close_modal.jpg)
+
+#### Step 4 Test
+
+Now that we can test it as shown below.
+
+![event_test]\(https://cdn.illacloud.com/official-website/img/official-site/components/event_test_2.gif)

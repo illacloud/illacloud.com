@@ -13,24 +13,24 @@ postPriority: 10
 
 The Switch component is a user interface element that allows users to toggle between two states: "on" and "off".
 
-### Properties
+### 속성
 
-| Properties    | Description                                                                                                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Default value | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.            |
-| Label         | The name of the field displayed to the user                                                                               |
-| Caption       | A caption used to describe the field in detail                                                                            |
-| Hidden label  | Set whether to display the label                                                                                          |
-| Position      | Set the position of the label relative to the component                                                                   |
-| Alignment     | Set the alignment of the label                                                                                            |
-| Event Handler | Trigger queries, control components, or call other APIs in response to component events.                                  |
-| Loading       | Whether the component should show a loading indicator.                                                                    |
-| Disabled      | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
-| Tooltip       | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.        |
-| Hidden        | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.    |
-| Theme Color   | Allows users to specify the button's background color and opacity                                                         |
+| 속성          | 설명                                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 기본값         | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.            |
+| 상표          | 사용자에게 표시되는 필드의 이름                                                                                                         |
+| 부제          | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                    |
+| 숨겨진 라벨      | 레이블 표시 여부 설정                                                                                                              |
+| 위치          | 구성 요소를 기준으로 레이블 위치 설정                                                                                                     |
+| 조정          | 레이블 정렬 설정                                                                                                                 |
+| 이벤트 핸들러     | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                 |
+| 로드 중        | 구성 요소가 로드되는지 여부를 제어합니다.                                                                                                   |
+| 장애가 있는      | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
+| 힌트          | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.        |
+| 숨다          | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.    |
+| Theme Color | Allows users to specify the button's background color and opacity                                                         |
 
-### Method
+### 방법
 
 You can use other components to control the component. We support the following three methods:
 
@@ -38,9 +38,9 @@ You can use other components to control the component. We support the following 
 
 To set the selected value, for example, {{'value1'}}
 
-| Properties | Description    |
-| ---------- | -------------- |
-| Value      | Selected value |
+| 속성    | 설명             |
+| ----- | -------------- |
+| Value | Selected value |
 
 -   **clearValue**
 
@@ -61,22 +61,22 @@ Switch component support listening to the `onClick` event of other components us
 
 Once you've set up the event triggers, the switch component will automatically update whenever the **`onClick`** event is triggered on the other components. This allows you to create dynamic interfaces that respond to user input in real-time, making it easier for users to navigate and interact with your application.
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                                                 |
-| ------ | ------------------------------------------------------------------------------------------- |
-| Change | When a user changes the selected option value, perform specific action customized by users. |
+| 이벤트   | 설명                                                                                          |
+| ----- | ------------------------------------------------------------------------------------------- |
+| 내용 변경 | When a user changes the selected option value, perform specific action customized by users. |
 
-### Data
+### 응답 데이터
 
 The button component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name | Description                                          |
+| Property name | 설명                                                   |
 | ------------- | ---------------------------------------------------- |
 | colorScheme   | background color of the button                       |
 | displayName   | the name of this component (ie button1)              |
-| hidden        | a boolean value indicate the hidden status of button |
-| label         | label value                                          |
+| 숨다            | a boolean value indicate the hidden status of button |
+| 상표            | label value                                          |
 | labelAlign    | alignment of switch label (left or right)            |
 | labelPosition | position of switch label (left or right)             |
 | labelWidth    | the integer representing width of label.             |
@@ -103,8 +103,8 @@ Now, whenever the switch is on, the value for switch is **`true`,** the text wil
 
 Switch **`On`** 
 
-![switch0](https://cdn.illacloud.com/official-website/img/docs/switch0.png)
+![switch0]\(https://cdn.illacloud.com/official-website/img/docs/switch0.png)
 
 Switch **`Off`**
 
-![switch_off](https://cdn.illacloud.com/official-website/img/docs/switch_off.png)
+![switch_off]\(https://cdn.illacloud.com/official-website/img/docs/switch_off.png)
