@@ -21,28 +21,28 @@ This tutorial outlines the process of creating an Admin Panel using ILLA Builder
 
 After signing into your Appwrite account, on the Appwrite dashboard, click `**Create project**` and set the name to `First Project`.
 
-![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
+![app_create_project]\(https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
 Then we can navigate to the project page. Appwrite provides multiple platforms for building your app as well as integrations.
 
-![app_platforms](https://cdn.illacloud.com/official-website/img/docs/app_platforms.png)
+![app_platforms]\(https://cdn.illacloud.com/official-website/img/docs/app_platforms.png)
 
 Here we choose Web App as an example.
 
 After creating our Web app project, we may go to the database page since we only use Appwrite as a database integration so far.
 
-![app_dashboard](https://cdn.illacloud.com/official-website/img/docs/app_dahsboard.png)
+![app_dashboard]\(https://cdn.illacloud.com/official-website/img/docs/app_dahsboard.png)
 
 Then we may create database and create collections within the database
 
 ![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
 From here we may create attributes and data in the collection.
 
-![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
+![app_create_data]\(https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
 In order to retrieve documents by attributes, we need to make corresponding indexes for each attributes.
 
-![app_create_index](https://cdn.illacloud.com/official-website/img/docs/app_create_index.png)
+![app_create_index]\(https://cdn.illacloud.com/official-website/img/docs/app_create_index.png)
 
 This database is now ready for you to integrate with Illa.
 
@@ -54,11 +54,11 @@ There are two ways to create a resource in Illa after signing into your Illa acc
 
 Sign into your Illa account, select `**Resources**` on the top of the page, and click `**Create New**` button.
 
-![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
+![external_resource]\(https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
 Select **`AppWrite`** from the database list.
 
-![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+![action_list]\(https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connect to the database with the required parameters described in `Connection Settings` below.
 
@@ -66,7 +66,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready AppWrite will display as shown.
 
-![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
+![app_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
 -   Create in Builder
 
@@ -78,7 +78,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to AppWrite database.
 
-![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
+![app_config]\(https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
 | Properties  | Required | Description                                                                                            |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------ |
@@ -92,33 +92,33 @@ To find the required **`Host`**, **`Database ID`**, **`Project ID`**, and **`API
 
 Copying the `project ID` for **`project ID`** and `API Endpoint` for **`Host`** in the Appwrite configuration in Illa.
 
-![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
+![app_setting]\(https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
 Then we may click the **`View API Keys`** button on the same page. If you have not created an API for this project, click **`Create API Key`** button and select only `Database` folder since that’s what we will be using from Appwrite.
 
-![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
+![app_api_key]\(https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
 Copy the `API Key Secret` for **`API key`** in Illa configuration. It can be copied for these two spots.
 
-![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
+![app_key_secret]\(https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
 What we have left is the **`Database ID`** which we can find in the `Database` Page. Copying it and paste it at the Appwrite Configuration in Illa.
 
-![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
+![app_database]\(https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
 The final product should look something like this.
 
-![app_final_config](https://cdn.illacloud.com/official-website/img/docs/app_final_config.png)
+![app_final_config]\(https://cdn.illacloud.com/official-website/img/docs/app_final_config.png)
 
 ### Create Actions
 
 We have created a AppWrite resource, we can add the action by selecting AppWrite from action list and choosing the **`Create action`** button.
 
-![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
+![app_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
 Now we have added the AppWrite server as an action to our building page.
 
-![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
+![app]\(https://cdn.illacloud.com/official-website/img/docs/app.png)
 
 ### Configure AppWrite
 
@@ -147,7 +147,7 @@ For example, to create a new document in a collection with two fields - **`name`
 
 a response object that includes the ID of the newly created document, as well as additional metadata such as the date and time of creation.
 
-![app_create_code](https://cdn.illacloud.com/official-website/img/docs/app_create_code.png)
+![app_create_code]\(https://cdn.illacloud.com/official-website/img/docs/app_create_code.png)
 
 #### Get a document
 
@@ -165,11 +165,11 @@ For example, we can get the document with id **`1`**.
 
 a response object that includes the data of the requested document
 
-![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
+![app_get_data]\(https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
 Use `{{appwrite1.data}}` to get all returned value.
 
-![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
+![app_get_code]\(https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
 #### Update a document
 
@@ -206,7 +206,7 @@ For example, we can delete the document with id **`1`**.
 
 a response object that confirms the successful deletion of the document.
 
-![app_delete_data](https://cdn.illacloud.com/official-website/img/docs/app_delete_data.png)
+![app_delete_data]\(https://cdn.illacloud.com/official-website/img/docs/app_delete_data.png)
 
 #### List document
 
@@ -226,8 +226,8 @@ For example, to list all the documents with Name = James.
 
 An array of documents that satisfy the filter.
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+![app_list_data]\(https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
 
 Use `{{appwrite1.data[0].documents}}` to get returned value.
 
-![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
+![app_list_code]\(https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
