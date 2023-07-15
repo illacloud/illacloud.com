@@ -1,7 +1,7 @@
 ---
 title: MariaDB
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/321?languages=sv&filter=basic&value=0
-metaTitle: MariaDB Integration Doc <unk> ILLA Cloud
+metaTitle: MariaDB Integration Doc ILLA Cloud
 desc: Anslut din MariaDB-databas till ILLA Cloud och skapa appar som kan söka, manipulera och visa data. Läs den här guiden för att lära dig hur.
 tagCategory: doc_menu_mariadb_click
 categoryName: 🔨 Integrationer
@@ -89,19 +89,19 @@ VÄLJ * FRÅN användare ORDER BY efternamn;
 ```sql
 INSERT INTO användare
 
-	<unk> (förnamn, efternamn, e-post)
+	 (förnamn, efternamn, e-post)
 
 VÄRDEN
 
-	<unk> (
+	 (
 
-		<unk>		{{ NewUser.data.firstNameInput }},
+				{{ NewUser.data.firstNameInput }},
 
-		<unk>		{{ NewUser.data.lastNameInput }},
+				{{ NewUser.data.lastNameInput }},
 
-		<unk>		{{ NewUser.data.emailInput }}
+				{{ NewUser.data.emailInput }}
 
-	<unk> );
+	 );
 ```
 
 -   Uppdatera

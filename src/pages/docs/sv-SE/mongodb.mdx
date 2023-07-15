@@ -95,12 +95,12 @@ Till exempel, för att få alla resultat vars storlek är medium=>gruppera resul
 
 ```sql
 [
-	<unk> {
-		<unk> <unk> "$match": { "size": "medium" }
-	<unk> },
-	<unk> {
-		<unk> "$group": { "_id": "$type", "totalantal": { "$sum": "$price" }
-	<unk> }
+	 {
+		 "$match": { "size": "medium" }
+	 },
+	 {
+		 "$group": { "_id": "$type", "totalantal": { "$sum": "$price" }
+	 }
 ]
 ```
 
@@ -128,13 +128,13 @@ Ett exempel för **`Operations`**:
 
 ```sql
 [
-	<unk> { "insertOne": { "document": { "_id": 3, "type": "beef", "size": "medium", "price": 6 } },
-	<unk> { "insertOne": { "dokument": { "_id": 4, "typ": "korv", "storlek": "stor", "price": 10 } },
-	<unk> { "updateOne": {
-			<unk> <unk> "filter": { "type": "cheese" },
-			<unk> <unk> <unk> "update": { "$set": { "price": 8 } }
-		<unk> }
-	<unk> }
+	 { "insertOne": { "document": { "_id": 3, "type": "beef", "size": "medium", "price": 6 } },
+	 { "insertOne": { "dokument": { "_id": 4, "typ": "korv", "storlek": "stor", "price": 10 } },
+	 { "updateOne": {
+			 "filter": { "type": "cheese" },
+			 "update": { "$set": { "price": 8 } }
+		 }
+	 }
 ]
 ```
 
