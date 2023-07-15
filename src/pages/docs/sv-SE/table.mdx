@@ -271,11 +271,11 @@ Komponenten har några vanliga data, som kan anropas via **`{{componentName.prop
 
 Exempel: {{table1.disabled}}
 
-## Använd ärende
+### Använd ärende
 
 Därefter kommer vi att visa hur man mappar data från `**Upstash**` till `**table**`-komponenten.
 
-### Steg 1 Lägg till en åtgärd
+#### Steg 1 Lägg till en åtgärd
 
 Låt oss skapa en tabell i Upstash som heter **`employee_profile`,** inklusive 4 kolumner `name`, `level`, `age`, och `married`.
 
@@ -312,13 +312,13 @@ Klicka på **`Save`** och **`Run`** för att aktivera denna åtgärd.
 
 ![up_data](https://cdn.illacloud.com/official-website/img/docs/up_data.jpg)
 
-### Steg 2 Lägg till komponenter
+#### Steg 2 Lägg till komponenter
 
 Därefter kan vi addera en **`table`** komponent till duken.
 
 I **`Datakälla`** fältet i Inspektionssidan efter att ha klickat på komponenten, skriv `{{upstash2.data}}` för att hämta data från Upstash.
 
-### Steg 3 Test
+#### Steg 3 Test
 
 Den slutliga utseendet bör vara som visas.
 
