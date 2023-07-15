@@ -17,31 +17,31 @@ The upload component is used to allow users to upload files from their local mac
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/upload1.png' alt="" />
 
-### Properties
+### 속성
 
-| Property                    | Description                                                                                                                                                                                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type                        | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
-| Text                        | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
-| Selection types             | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
-| File types                  | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
-| Append newly selected files | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
-| File list                   | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
-| Parse Value                 | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
-| Loading                     | Whether the component should show a loading indicator.                                                                                                                                                                                                                                                        |
-| Disabled                    | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
-| Tooltip                     | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
-| Required field              | To set whether it is required.                                                                                                                                                                                                                                                                                |
-| Min size                    | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Max size                    | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
-| Custom rule                 | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
-| Hide validation message     | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
-| Form Data Key               | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
-| Hidden                      | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
-| Variant                     | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
-| Theme color                 | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
+| Property     | 설명                                                                                                                                                                                                                                                                                                            |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 유형           | Set the type of upload component, including Button and Dropzone.                                                                                                                                                                                                                                              |
+| Text         | The text shown on the upload component.                                                                                                                                                                                                                                                                       |
+| 선택 유형        | Set the selection type to multiple files, single file, or directory.                                                                                                                                                                                                                                          |
+| 파일 종류        | A list of file extensions allowed to upload. No value will permit all file types.                                                                                                                                                                                                                             |
+| 새로 선택한 파일 추가 | To set the selected new file to append to the selected file or replace the selected file in the selection type of multiple files or directory.                                                                                                                                                                |
+| 파일 목록        | To set whether to show a list of selected files below the upload component. The height of uploader will change dynamically based on the length of the file list.                                                                                                                                              |
+| 파싱 파일        | Attempt to parse the selected files, with support for JSON, CSV, TSV, Excel, and TXT files. Parsed data can be accessed via {{upload1.parsedValue}}. Files that can not be parsed will be null in the array. All files are available as base64 encoded strings on the value array, regardless of this option. |
+| 로드 중         | 구성 요소가 로드되는지 여부를 제어합니다.                                                                                                                                                                                                                                                                                       |
+| 장애가 있는       | To set whether to disable this component and under what conditions to disable it. For example, if the input1 component is null, this component should be disabled: {{ input1.value == ‘ ’}}                                                                                                                   |
+| 힌트           | A tooltip displayed on the component when users hover over the component.                                                                                                                                                                                                                                     |
+| 필수 입력 사항     | To set whether it is required.                                                                                                                                                                                                                                                                                |
+| 최소 크기        | To set the minimum file size allowed to be added.                                                                                                                                                                                                                                                             |
+| 최대 크기        | To set the maximum file size allowed to be added.                                                                                                                                                                                                                                                             |
+| 맞춤 규칙        | To set the text displayed when verification fails.                                                                                                                                                                                                                                                            |
+| 확인 정보 숨기기    | To set whether to display the validation message when verification fails.                                                                                                                                                                                                                                     |
+| 양식 데이터 키     | To set a key for the component. After adding this component to a form, this key will be used to identify the data of this component when submitting the form.                                                                                                                                                 |
+| 숨다           | To set whether to display this component and under what conditions to display it. For example, if the current user is not User A, this component should be hidden: {{ currentUserInfo.nickname != 'User A' }}                                                                                                 |
+| 스타일          | To set the Button Upload component to Outline or Filled.                                                                                                                                                                                                                                                      |
+| 테마 색상        | To set the color of the Button Upload component.                                                                                                                                                                                                                                                              |
 
-### Method
+### 방법
 
 You can use other components to control the Upload component. We support the following three methods:
 
@@ -50,7 +50,7 @@ You can use other components to control the Upload component. We support the fol
 | clearValue      | Used to clear the selected                              |
 | setDisabled     | Used to set the upload component to disabled or enabled |
 
-### Event handler
+### 이벤트 핸들러
 
 To trigger actions when the selected files change
 
@@ -70,13 +70,13 @@ The upload component has some commonly used data, which can be called in the app
 
 The configuration of action is as follows. 
 
-Upload object name
+객체 이름 업로드
 
 ```jsx
 {{upload1.files.map(file =>file.name)[0]}}
 ```
 
-Upload data
+데이터 업로드
 
 ```jsx
 {{upload1.value[0]}}
@@ -86,13 +86,13 @@ Upload data
 
 #### Upload multiple files through an S3 resource
 
-Upload object name list
+개체 이름 목록 업로드
 
 ```jsx
 {{upload1.files.map(file =>file.name)}}
 ```
 
-Upload data list
+데이터 목록 업로드
 
 ```jsx
 {{upload1.value}}
