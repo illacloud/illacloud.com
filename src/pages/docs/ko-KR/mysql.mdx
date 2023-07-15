@@ -4,7 +4,7 @@ crowdinRepo: https://crowdin.com/multilingual/illacloud-website/327?languages=en
 metaTitle: MySQL Integration Doc | ILLA Cloud
 desc: Connect and interact with a MySQL database using ILLA Cloud. Create apps that can query, manipulate, and visualize data. Automate and optimize data workflows.
 tagCategory: doc_menu_mysql_click
-categoryName: 🔨 Integrations
+categoryName: 🔨 통합
 categoryPriority: 3
 postPriority: 1
 ---
@@ -13,7 +13,7 @@ postPriority: 1
 
 MySQL in Illa is a database integration that allows you to connect and interact with a MySQL database. MySQL is a popular open-source relational database management system that is known for its speed, reliability, and ease of use.
 
-With the MySQL integration in Illa, you can query, insert, update, and delete data from a MySQL database using SQL commands. You can also create custom SQL queries and run them within Illa. This makes it easy to build data-driven applications and dashboards that display real-time data from a MySQL database.
+With the MySQL integration in Illa, you can query, insert, update, and delete data from a MySQL database using SQL commands. With the Appwrite integration in Illa, you can query, insert, update, and delete data from a Appwrite database using SQL commands. This makes it easy to build data-driven applications and dashboards that display real-time data from a MySQL database.
 
 ### Create MySQL
 
@@ -27,7 +27,7 @@ Sign into your Illa account, select `**Resources**` on the top of the page, and 
 
 Select **`MySQL`** from the database list.
 
-![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
+![action_list]\(https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connect to the database with the required parameters described in `Connection Settings` below.
 
@@ -35,7 +35,7 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 After creating a resource, the ready MySQL will display as shown.
 
-![my_ex_ready](https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
+![my_ex_ready]\(https://cdn.illacloud.com/official-website/img/docs/my_ex_ready.png)
 
 -   Create in Builder
 
@@ -47,34 +47,34 @@ Click `**Test Connection**` to see if we can successfully connect to the databas
 
 Here we need to provide information for connecting to MySQL database.
 
-![my_config](https://cdn.illacloud.com/official-website/img/docs/my_config.png)
+![my_config]\(https://cdn.illacloud.com/official-website/img/docs/my_config.png)
 
-| Properties  | Required | Description                                                                                                        |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| Name        | required | The name for resource when creating actions in the ILLA.                                                           |
-| Hostname    | required | The URL or IP address for your database                                                                            |
-| Port        | required | The server host's port number that you should use to connect. If you don't specify a port, default port is '3306'. |
-| Database    | required | The name of the database                                                                                           |
-| Username    | required | the username you wish to use when logging in to the MySQL server.                                                  |
-| Password    | required | Use this password for authentication.                                                                              |
-| SSL options | optional | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
+| 속성         | 필수    | 설명                                                                                                                 |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| 이름         | 필수    | ILLA에서 이 자원의 이름을 지정하십시오.                                                                                           |
+| 호스트 이름     | 필수    | The URL or IP address for your database                                                                            |
+| 포트         | 필수    | The server host's port number that you should use to connect. If you don't specify a port, default port is '3306'. |
+| 데이터 베이스    | 필수    | The name of the database                                                                                           |
+| 사용자 이름     | 필수    | the username you wish to use when logging in to the MySQL server.                                                  |
+| 비밀번호       | 필수    | Use this password for authentication.                                                                              |
+| SSL 옵션     | 선택 과목 | decides how high a secure SSL TCP/IP connection is prioritized while negotiating with the server.                  |
 
 ### Create Actions
 
 We have created a MySQL resource, we can add the action by selecting MySQL from action list and choosing the **`Create action`** button.
 
-![my_resource_list](https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
+![my_resource_list]\(https://cdn.illacloud.com/official-website/img/docs/my_resource_list.png)
 
 Now we have added the MySQL server as an action to our building page.
 
-![my](https://cdn.illacloud.com/official-website/img/docs/my.png)
+![my]\(https://cdn.illacloud.com/official-website/img/docs/my.png)
 
 ### Configure MySQL
 
-| Properties  | Description                                                               |
+| 속성          | 설명                                                                        |
 | ----------- | ------------------------------------------------------------------------- |
 | SQL query   | sql commands to fetch (select), insert, update, delete data from database |
-| Transformer | transforming data into the style you like using JavaScript                |
+| 변신 로봇       | transforming data into the style you like using JavaScript                |
 
 Example usage:
 
@@ -84,7 +84,7 @@ Example usage:
 SELECT * FROM users ORDER BY lastname;
 ```
 
--   Insert
+-   구성 요소
 
 ```sql
 INSERT INTO users
@@ -104,7 +104,7 @@ VALUES
 	);
 ```
 
--   Update
+-   업데이트
 
 ```sql
 UPDATE users
@@ -112,7 +112,7 @@ UPDATE users
   WHERE id = {{ form1.updatedProfile.uid}};
 ```
 
--   Delete
+-   삭제
 
 ```sql
 DELETE FROM users WHERE id = {{ form1.updatedProfile.uid }};
