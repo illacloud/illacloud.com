@@ -1,5 +1,5 @@
 ---
-title: Cascader
+title: 캐스케이드 선택
 metaTitle: Cascader Component Doc | ILLA Cloud
 desc: Learn how to customize and control the Cascader options in ILLA Cloud.
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/299?languages=en&filter=basic&value=0
@@ -15,28 +15,28 @@ A cascader is a type of input component that allows users to select hierarchical
 
 For example, if you have a cascader input component for selecting a product category, the first dropdown menu may show all the available categories, such as "Electronics," "Clothing," and "Books." When a user selects "Electronics," the cascader will update to show the subcategories of electronics, such as "Phones," "Laptops," and "Tablets." This allows users to quickly and easily navigate through hierarchical data and select the option they need.
 
-### Properties
+### 속성
 
 Cascader's available properties. JavaScript may be written to read or alter information about components.
 
-| Properties        | Description                                                                                                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Data Source       | Each option must be JSON format and contain two keys, value and label. By using arrays, you can create options at the same level. And child options can be created by using "children" attribute. |
-| Default value     | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                                                                    |
-| Placeholder       | The value will be shown when the input field is empty.                                                                                                                                            |
-| Label             | The name of the field displayed to the user                                                                                                                                                       |
-| Caption           | A caption used to describe the field in detail                                                                                                                                                    |
-| Hidden label      | Set whether to display the label                                                                                                                                                                  |
-| Position          | Set the position of the label relative to the component                                                                                                                                           |
-| Alignment         | Set the alignment (align to left or right) of the label                                                                                                                                           |
-| Width             | When the label is on the left side of the component, set the width ratio of the label.                                                                                                            |
-| Event Handler     | Trigger queries, control components, or call other APIs in response to component events.                                                                                                          |
-| Disabled          | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                                                         |
-| Read Only         | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                                                               |
-| Show clear button | control whether or not a clear button is displayed in the input field                                                                                                                             |
-| Expansion method  | Set how cascader expands (by clicking or hovering)                                                                                                                                                |
-| Tooltip           | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                                                           |
-| Hidden            | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                                                            |
+| 속성          | 설명                                                                                                                                                                                                |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data Source | Each option must be JSON format and contain two keys, value and label. By using arrays, you can create options at the same level. And child options can be created by using "children" attribute. |
+| 기본값         | The initial value of the component. You can dynamically change the initial value by typing JavaScript in {{}}.                                                                                    |
+| 자리 표시자      | 입력에 값이 없을 때 표시할 메시지입니다.                                                                                                                                                                           |
+| 상표          | 사용자에게 표시되는 필드의 이름                                                                                                                                                                                 |
+| 부제          | 필드를 자세히 설명하는 데 사용되는 캡션                                                                                                                                                                            |
+| 숨겨진 라벨      | 레이블 표시 여부 설정                                                                                                                                                                                      |
+| 위치          | 구성 요소를 기준으로 레이블 위치 설정                                                                                                                                                                             |
+| 조정          | Set the alignment (align to left or right) of the label                                                                                                                                           |
+| 너비          | When the label is on the left side of the component, set the width ratio of the label.                                                                                                            |
+| 이벤트 핸들러     | 구성 요소 이벤트에 대한 응답으로 쿼리를 트리거하거나 구성 요소를 제어하거나 다른 API를 호출합니다.                                                                                                                                         |
+| 장애가 있는      | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled.                                                                         |
+| Read Only   | Control the status of whether the component is read-only. A read-only component can be selected and focused but cannot be modified.                                                               |
+| 지우기 버튼 표시   | control whether or not a clear button is displayed in the input field                                                                                                                             |
+| 확장 방법       | Set how cascader expands (by clicking or hovering)                                                                                                                                                |
+| 힌트          | Users can enter the component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported.                                                                           |
+| 숨다          | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value.                                                                            |
 
 ### Methods
 
@@ -46,9 +46,9 @@ You can use other components to control the component. We support the following 
 
 To set the selected option, for example, {{”value1”}}
 
-| Properties | Description |
-| ---------- | ----------- |
-| Value      | Input value |
+| 속성    | 설명          |
+| ----- | ----------- |
+| Value | Input value |
 
 -   **clearValue**
 
@@ -65,19 +65,19 @@ Cascader component support listening to the `onChange` event of other components
 
 Once you've set up the event triggers, the Cascader input component will automatically update whenever the **`onChange`** event is triggered on the other components. This allows you to create dynamic interfaces that respond to user input in real-time, making it easier for users to navigate and interact with your application.
 
-### Event handler
+### 이벤트 핸들러
 
-| Event  | Description                                                                            |
-| ------ | -------------------------------------------------------------------------------------- |
-| Change | When a user changes the selected option value                                          |
-| Focus  | When a user moves the mouse cursor on the cascader component                           |
-| Blur   | When a user is done selecting options and quit from focusing on the cascader component |
+| 이벤트   | 설명                                                                                     |
+| ----- | -------------------------------------------------------------------------------------- |
+| 내용 변경 | When a user changes the selected option value                                          |
+| 집중하다  | When a user moves the mouse cursor on the cascader component                           |
+| 초점없는  | When a user is done selecting options and quit from focusing on the cascader component |
 
-### Data
+### 응답 데이터
 
 The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
 
-| Property name  | Description                                               |
+| Property name  | 설명                                                        |
 | -------------- | --------------------------------------------------------- |
 | dataSourceMode | the mode of the data source in cascader (default dynamic) |
 | displayName    | the name of this component (ie cascader1)                 |
