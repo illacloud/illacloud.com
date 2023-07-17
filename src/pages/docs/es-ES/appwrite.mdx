@@ -1,5 +1,5 @@
 ---
-title: Escribir
+title: AppWrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=es&filter=basic&value=0
 metaTitle: Doc de integración de AppWrite | ILLA Cloud
 desc: Aprende cómo conectar e interactuar con la base de datos de Appwrite usando ILLA Cloud.
@@ -13,7 +13,7 @@ postPriority: 1
 
 AppWrite in Illa es una integración de base de datos que te permite conectar e interactuar con una base de datos AppWrite. Appwrite es un sistema de gestión de bases de datos relacionales de código abierto conocido por su velocidad, fiabilidad y facilidad de uso.
 
-También puede crear consultas SQL personalizadas y ejecutarlas dentro de Illa. Con la integración de Appwrite en Illa, puede consultar, insertar, actualizar y eliminar datos de una base de datos de Appwrite usando comandos SQL. Esto hace que sea fácil construir aplicaciones basadas en datos y paneles que muestren datos en tiempo real desde una base de datos Appwrite.
+Con la integración de Appwrite en Illa, puede consultar, insertar, actualizar y eliminar datos de una base de datos de Appwrite usando comandos SQL. También puede crear consultas SQL personalizadas y ejecutarlas dentro de Illa. Esto hace que sea fácil construir aplicaciones basadas en datos y paneles que muestren datos en tiempo real desde una base de datos Appwrite.
 
 Este tutorial describe el proceso de creación de un Panel de Administración usando ILLA Builder y Appwrite en unos pocos pasos. ILLA es una plataforma de código bajo para desarrolladores que permite el rápido desarrollo y despliegue de herramientas internas. Permite crear páginas arrastrando y soltando componentes de la interfaz de usuario, conectando a cualquier base de datos o API, y escribiendo JavaScript. Para obtener más información sobre Appwrite, visite su sitio web en https://appwrite.io/(https://appwrite.io/) ¡Empecemos!
 
@@ -182,7 +182,7 @@ actualizar los datos de un documento existente en una colección.
 | ID del documento | requerido | un identificador único asignado a un documento de colección de base de datos                              |
 | Datos            | opcional  | Un objeto que contiene los campos y valores actualizados que desea asignar al documento.                  |
 
-Por ejemplo, para actualizar un documento en una colección utilizando el método **`updateDocument`**, puedes poner **`1`** para el id del documento y `{{{"Name":"Fred"}}}` para datos.
+Por ejemplo, para actualizar un documento en una colección utilizando el método **`updateDocument`**, puedes poner **`1`** para el id de documento y `{{{"Name":"Fred"}}}` para datos.
 
 ** Salida **
 
@@ -226,7 +226,7 @@ Por ejemplo, para listar todos los documentos con Nombre = James.
 
 Una matriz de documentos que satisfacen al filtro.
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
 Usa `{{appwrite1.data[0].documents}}` para obtener el valor devuelto.
 
