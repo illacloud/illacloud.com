@@ -36,7 +36,7 @@ Webアプリのプロジェクトを作成した後、Appwriteをデータベー
 データベースを作成し、データベース内にコレクションを作成することができます。
 
 ![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
-ここからコレクションに属性とデータを作成できます。
+コレクションに属性とデータを作成することができます。
 
 ![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
@@ -167,7 +167,7 @@ AppWrite リソースを作成しました。アクションリストから AppW
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-返された値を取得するには、`{{appwrite1.data}}`を使用します。
+返されるすべての値を取得するには、`{{appwrite1.data}}`を使用します。
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -182,7 +182,7 @@ AppWrite リソースを作成しました。アクションリストから AppW
 | ドキュメントID   | 必須   | データベースコレクションドキュメントに割り当てられた一意の識別子                                                   |
 | データ        | 省略可能 | ドキュメントに割り当てる更新されたフィールドと値を含むオブジェクト。                                                 |
 
-例えば、**`updateDocument`** メソッドを使用してコレクション内のドキュメントを更新するには ドキュメントIDには**`1`**、データには`{{{"Name":"Fred"}}}`を入れることができます。
+例えば、**`updateDocument`** メソッドを使用してコレクション内のドキュメントを更新するには ドキュメント ID には **`1`** 、データには `{{{"Name":"Fred"}}}` を入れることができます。
 
 ** 出力 **
 
@@ -226,8 +226,8 @@ AppWrite リソースを作成しました。アクションリストから AppW
 
 フィルタを満たす文書の配列。
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-戻り値を取得するには`{{appwrite1.data[0].documents}}`を使用してください。
+返された値を取得するには、`{{appwrite1.data[0].documents}}`を使用します。
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)

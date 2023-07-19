@@ -47,15 +47,15 @@ Zde musíme poskytnout informace pro připojení k rozhraní Amazon S3 API.
 
 ![amazon_config](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_config.jpg)
 
-| Vlastnosti                     | Požadováno | L 343, 22.12.2009, s. 1).                                                                                                                                                                                                       |
-| ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Název                          | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                                                                                                                                         |
-| Název kbelíku                  | volitelné  | Jedinečný identifikátor, který představuje úložiště v Amazon S3. Poskytuje logické oddělení pro organizaci a přístup k vašim souborům                                                                                           |
-| S3 ACL pro nahrané soubory     | volitelné  | umožňuje definovat jemně zrnná přístupová práva pro soubory ve vašem bloku. Určuje, kdo může provádět konkrétní operace, jako je čtení, psaní nebo mazání souborů.                                                              |
-| Oblasti                        | vyžadováno | zeměpisnou polohu, kde je uložen váš Amazon S3 kbelík. Určuje fyzickou polohu vašich dat a může ovlivnit faktory, jako je latence a náklady na přenos dat.                                                                      |
-| Vlastní koncový bod S3         | volitelné  | umožňuje nakonfigurovat konkrétní adresu URL koncového bodu pro přístup k zdrojům Amazon S3. Může být užitečný pro scénáře, kde chcete použít vlastní doménu nebo integrovat do CDN (Content Delivery Network).                 |
-| Přístupový klíč                | vyžadováno | přihlašovací údaje, které ověřují vaše žádosti o přístup k Amazon S3                                                                                                                                                            |
-| Tajný přístupový klíč          | vyžadováno | generováno při vytváření uživatele IAM (identita a správa přístupu) nebo přístupového klíče AWS (Amazon Web Services).                                                                                                          |
+| Vlastnosti                     | Požadováno | Popis                                                                                                                                                                                                                  |
+| ------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Název                          | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                                                                                                                                |
+| Název kbelíku                  | volitelné  | Jedinečný identifikátor, který představuje úložiště v Amazon S3. Poskytuje logické oddělení pro organizaci a přístup k vašim souborům                                                                                  |
+| S3 ACL pro nahrané soubory     | volitelné  | umožňuje definovat jemně zrnná přístupová práva pro soubory ve vašem bloku. Určuje, kdo může provádět konkrétní operace, jako je čtení, psaní nebo mazání souborů.                                                     |
+| Oblasti                        | vyžadováno | zeměpisnou polohu, kde je uložen váš Amazon S3 kbelík. Určuje fyzickou polohu vašich dat a může ovlivnit faktory, jako je latence a náklady na přenos dat.                                                             |
+| Vlastní koncový bod S3         | volitelné  | umožňuje nakonfigurovat konkrétní adresu URL koncového bodu pro přístup k zdrojům Amazon S3. Může být užitečný pro scénáře, kde chcete použít vlastní doménu nebo integrovat do CDN (Content Delivery Network).        |
+| Přístupový klíč                | vyžadováno | přihlašovací údaje, které ověřují vaše žádosti o přístup k Amazon S3                                                                                                                                                   |
+| Tajný přístupový klíč          | vyžadováno | generováno při vytváření uživatele IAM (identita a správa přístupu) nebo přístupového klíče AWS (Amazon Web Services).                                                                                                 |
 
 ### Vytvořit akce
 
@@ -108,10 +108,10 @@ načíst obsah konkrétního objektu uloženého v kbelíku
 
 ** Input **
 
-| Vlastnosti               | Požadováno | L 343, 22.12.2009, s. 1).                                                                     |
-| ------------------------ | ---------- | --------------------------------------------------------------------------------------------- |
-| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                            |
-| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu           |
+| Vlastnosti               | Požadováno | Popis                                                                               |
+| ------------------------ | ---------- | ----------------------------------------------------------------------------------- |
+| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                  |
+| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu |
 
 Pro získání obsahu dokumentu '1111.txt', vložte `1111.txt` pro **`Objektový klíč`**.
 
@@ -119,9 +119,9 @@ Pro získání obsahu dokumentu '1111.txt', vložte `1111.txt` pro **`Objektový
 
 vrací obsah a metadata dokumentu
 
-![amazon_read_data1](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_read_data1.jpg)
+![amazon_read_data1](https://cdn.illacloud.com/official-website/img/official-site/intergration/amazon_read_data1.jpg)
 
-![amazon_read_data2](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_read_data2.jpg)
+![amazon_read_data2](https://cdn.illacloud.com/official-website/img/official-site/intergration/amazon_read_data2.jpg)
 
 Použij `{{s31.data}}` k získání vrácených dat.
 
@@ -144,7 +144,7 @@ Například ke stažení dokumentu '1111.txt', vložte `1111.txt` pro **`Objekto
 
 vrátí obsah a metadata dokumentu a stáhnout dokument do lokálního místa
 
-![amazon_read_data1]\(https://cdn.illacloud.com/official-website/img/docs/assemble/Amazon \_download_data.jpg)
+![amazon_read_data1](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_download_data.jpg)
 
 #### Odstranit objekt
 
@@ -152,10 +152,10 @@ odstraní jeden objekt z kbelíku S3.
 
 ** Input **
 
-| Vlastnosti               | Požadováno | L 343, 22.12.2009, s. 1).                                                                     |
-| ------------------------ | ---------- | --------------------------------------------------------------------------------------------- |
-| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                            |
-| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu           |
+| Vlastnosti               | Požadováno | Popis                                                                               |
+| ------------------------ | ---------- | ----------------------------------------------------------------------------------- |
+| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                  |
+| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu |
 
 Například pro smazání dokumentu '1111.txt', vložte `1111.txt` pro **`Objektový klíč`**.
 
@@ -173,10 +173,10 @@ odstraní více objektů současně z kbelíku S3
 
 ** Input **
 
-| Vlastnosti               | Požadováno | L 343, 22.12.2009, s. 1).                                                                     |
-| ------------------------ | ---------- | --------------------------------------------------------------------------------------------- |
-| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                            |
-| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu           |
+| Vlastnosti               | Požadováno | Popis                                                                               |
+| ------------------------ | ---------- | ----------------------------------------------------------------------------------- |
+| Klíč objektu             | vyžadováno | jméno nebo cesta objektu v kbelíku                                                  |
+| Generovat podepsanou URL | volitelné  | vygenerovat časově omezenou URL, která poskytuje dočasný přístup k určitému objektu |
 
 Například pro smazání více dokumentů, vložte `{{["images.jpeg", "images-1.png"]}}` pro **`Objektový klíč`**.
 
@@ -207,9 +207,9 @@ Například pro smazání více dokumentů, vložte `text` pro **\`typ obsahu **
 
 vrátí zprávu, zda byl dokument úspěšně nahrán
 
-![amazon_upload_data1]\(https://cdn.illacloud.com/official-website/img/docs/assemble/Amazon \_upload_data1.jpg)
+![amazon_upload_data1](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_upload_data1.jpg)
 
-![amazon_upload_data2]\(https://cdn.illacloud.com/official-website/img/docs/assemble/Amazon \_upload_data2.jpg)
+![amazon_upload_data2](https://cdn.illacloud.com/official-website/img/docs/assemble/amazon_upload_data2.jpg)
 
 #### Nahrát více dat
 
@@ -217,12 +217,12 @@ nahrát seznam objektů do kbelíku
 
 ** Input **
 
-| Vlastnosti                                | Požadováno | L 343, 22.12.2009, s. 1).                                                                              |
-| ----------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------ |
-| Typ obsahu                                | vyžadováno | MIME typ objektu, který nahráváte.                                                                     |
-| Nahrát seznam názvů objektů               | vyžadováno | seznam názvů objektů, které nahráváte.                                                                 |
-| Nahrát datový seznam                      | vyžadováno | seznam dat, která chcete nahrát na Amazon S3.                                                          |
-| Časový limit pro nahrání souboru (Minute) | volitelné  | čas nahrávání v minutách, než je proces nahrávání zastaven chybou časového limitu                      |
+| Vlastnosti                                | Požadováno | Popis                                                                                |
+| ----------------------------------------- | ---------- | ------------------------------------------------------------------------------------ |
+| Typ obsahu                                | vyžadováno | MIME typ objektu, který nahráváte.                                                   |
+| Nahrát seznam názvů objektů               | vyžadováno | seznam názvů objektů, které nahráváte.                                               |
+| Nahrát datový seznam                      | vyžadováno | seznam dat, která chcete nahrát na Amazon S3.                                        |
+| Časový limit pro nahrání souboru (Minute) | volitelné  | čas nahrávání v minutách, než je proces nahrávání zastaven chybou časového limitu    |
 
 Například pro smazání více dokumentů, vložte `text` pro **`typ obsahu`**, `{{['text.txt', 'text2.txt']}}` pro **`upload object name list`**, a `{{['text', 'text2']}}` pro **`upload data list`**.
 

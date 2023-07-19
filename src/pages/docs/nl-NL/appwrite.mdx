@@ -1,7 +1,7 @@
 ---
-title: AppWrite
+title: AppSchrijven
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=nl&filter=basic&value=0
-metaTitle: AppWrite Integration Doc Whether ILLA Cloud
+metaTitle: AppWrite Integration Doc ILLA Cloud
 desc: Leer hoe je verbinding en interactie kunt maken met de Appwrite database met behulp van ILLA Cloud.
 tagCategory: doc_menu_appwrite_click
 categoryName: 🔨 Integraties
@@ -36,7 +36,7 @@ Na het aanmaken van ons web-app project kunnen we naar de databasepagina gaan om
 Daarna kunnen we database aanmaken en collecties aanmaken binnen de database
 
 ![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
-Vanaf hier kunnen we kenmerken en gegevens maken in de collectie.
+Vanaf hier kunnen we attributen en gegevens maken in de collectie.
 
 ![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
@@ -167,7 +167,7 @@ een antwoord object dat de gegevens van het gevraagde document bevat
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Gebruik `{{appwrite1.data}}` om alle geretourneerde waarde te krijgen.
+Gebruik `{{appwrite1.data}}` om alle geretourneerde waarden te krijgen.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -182,7 +182,7 @@ de gegevens van een bestaand document in een collectie bijwerken.
 | Document ID     | verplicht | een unieke id toegewezen aan een database collectie document                                 |
 | Gegevens        | optioneel | Een object met de bijgewerkte velden en waarden die u wilt toewijzen aan het document.       |
 
-Bijvoorbeeld, om een document in een verzameling bij te werken met behulp van de **`updateDocument`** methode. je kunt **`1`** voor document id en `{{{"Name":"Fred"}}}` plaatsen voor gegevens.
+Bijvoorbeeld, om een document in een verzameling bij te werken met behulp van de **`updateDocument`** methode. je kunt **`1`** plaatsen voor document id en `{{{"Name":"Fred"}}}` voor data.
 
 ** Uitvoer **
 
@@ -226,7 +226,7 @@ Bijvoorbeeld, het tonen van alle documenten met naam = James.
 
 Een reeks documenten die aan het filter voldoen.
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
 Gebruik `{{appwrite1.data[0].documents}}` om de waarde terug te krijgen.
 

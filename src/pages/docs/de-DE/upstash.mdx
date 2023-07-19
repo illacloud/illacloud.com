@@ -114,14 +114,14 @@ Beispiel Verwendung:
     -   Setze Feldwert-Paare in einem Hash: Benutze den Befehl **`HSET`** um ein Feldwert-Paar in einem Hash zu setzen. Zum Beispiel: **`HSET HashKey Feldwert`**.
     -   Holen Sie sich einen Wert von einem Hash: Benutzen Sie den **`HGET`** Befehl, um den Wert eines bestimmten Feldes in einem Hash abzurufen. Zum Beispiel: **`HGET HashKey Feld`**.
 4.  Listenoperationen:
-    -   Füge ein Element zu einer Liste hinzu: Benutze den Befehl **`LPUSH`** oder **`RPUSH`** um ein Element zum Anfang bzw. Ende einer Liste hinzuzufügen. Zum Beispiel: **`LPUSH listKey value`**.
     -   Elemente aus einer Liste abrufen: Benutzen Sie den Befehl **`LRANGE`** um einen Bereich von Elementen aus einer Liste zu holen. Zum Beispiel: **`LRANGE listKey start end`**.
+    -   Abrufen von Elementen aus einem sortierten Satz: Benutzen Sie den Befehl **`ZRANGE`** um einen Bereich von Elementen aus einem sortierten Satz basierend auf deren Punktzahlen abzurufen. Zum Beispiel: **`ZRANGE sortedSetKey start end`**.
 5.  Set-Operationen:
     -   Füge Elemente zu einem Set hinzu: Benutze den Befehl **`SADD`** um ein oder mehrere Elemente zu einem Set hinzuzufügen. Zum Beispiel: **`SADD setKey value1 value2`**.
     -   Rufe Elemente aus einem Set ab: Benutze den Befehl **`SMEMBERS`** um alle Mitglieder eines Sets zu erhalten. Zum Beispiel: **`SMEMBERS setKey`**.
 6.  Sortierte Set-Operationen:
     -   Fügen Sie Elemente zu einem sortierten Satz hinzu: Benutzen Sie den Befehl **`ZADD`** um Elemente zu einem sortierten Satz zusammen mit deren Punktzahl hinzuzufügen. Zum Beispiel: **`ZADD sortedSetKey score1 member1 score2 member2`**.
-    -   Abrufen von Elementen aus einem sortierten Satz: Benutzen Sie den Befehl **`ZRANGE`** um einen Bereich von Elementen aus einem sortierten Satz basierend auf deren Punktzahlen abzurufen. Zum Beispiel: **`ZRANGE sortedSetKey start end`**.
+    -   Abrufen von Elementen aus einem sortierten Satz: Benutzen Sie den Befehl **`ZRANGE`** um einen Bereich von Elementen aus einem sortierten Satz basierend auf deren Punktzahlen abzurufen. Zum Beispiel: **`LPUSH listKey value`**.
 
 Hinweis: Sie können die Redis-Dokumentation für eine vollständige Liste der Befehle und deren Verwendung verwenden.
 

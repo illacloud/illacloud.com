@@ -1,5 +1,5 @@
 ---
-title: AppWrite
+title: Zápis aplikací
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=cs&filter=basic&value=0
 metaTitle: AppWrite Integration Doc | ILLA Cloud
 desc: Naučte se propojit a komunikovat s databází aplikací pomocí ILLA Cloud.
@@ -80,13 +80,13 @@ Zde musíme poskytnout informace pro připojení k databázi AppWrite.
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
-| Vlastnosti      | Požadováno | L 343, 22.12.2009, s. 1).                                                                                            |
-| --------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
-| Název           | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                              |
-| Hostitel        | vyžadováno | URL nebo IP adresa pro vaši databázi                                                                                 |
-| ID databáze     | vyžadováno | jedinečný identifikátor přiřazený každé databázi vytvořené v Appwrite                                                |
-| ID projektu     | vyžadováno | jedinečný identifikátor, který reprezentuje celý váš projekt Appwrite                                                |
-| Klíč API        | vyžadováno | tajný token, který slouží jako forma autentizace při zadávání API požadavků na Appwrite server                       |
+| Vlastnosti      | Požadováno | Popis                                                                                                         |
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| Název           | vyžadováno | Název zdroje při vytváření akcí v ILLA.                                                                       |
+| Hostitel        | vyžadováno | URL nebo IP adresa pro vaši databázi                                                                          |
+| ID databáze     | vyžadováno | jedinečný identifikátor přiřazený každé databázi vytvořené v Appwrite                                         |
+| ID projektu     | vyžadováno | jedinečný identifikátor, který reprezentuje celý váš projekt Appwrite                                         |
+| Klíč API        | vyžadováno | tajný token, který slouží jako forma autentizace při zadávání API požadavků na Appwrite server                |
 
 Pro nalezení požadovaného **`Host`**, **`Database ID`**, **`Project ID`**, a **`API klíč`** v Appwrite, nejprve přejdeme na tlačítko `**nastavení**` v levém dolním rohu stránky projektu.
 
@@ -124,11 +124,11 @@ Nyní jsme přidali AppWrite server jako akci na naši stránku budovy.
 
 #### Přehled
 
-| Název metody    | L 343, 22.12.2009, s. 1).                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| Metoda          | Vytvořit dokument, získat dokument, aktualizovat dokument, smazat dokument, seznam dokumentů          |
-| ID kolekce      | jedinečný identifikátor přiřazený sbírce databáze                                                     |
-| Transformátor   | transformace dat do stylu, který se vám líbí pomocí JavaScriptu                                       |
+| Název metody    | Popis                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Metoda          | Vytvořit dokument, získat dokument, aktualizovat dokument, smazat dokument, seznam dokumentů |
+| ID kolekce      | jedinečný identifikátor přiřazený sbírce databáze                                            |
+| Transformátor   | transformace dat do stylu, který se vám líbí pomocí JavaScriptu                              |
 
 #### Vytvořit dokument
 
@@ -136,7 +136,7 @@ vytvořit nový dokument ve sbírce
 
 ** Input **
 
-| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                     |
+| Vlastnosti   | Požadováno | Popis                                                                         |
 | ------------ | ---------- | ----------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi  |
 | Údaje        | volitelné  | objekt obsahující pole a hodnoty nového dokumentu.                            |
@@ -182,7 +182,7 @@ aktualizuje údaje o existujícím dokumentu ve sbírce.
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi                              |
 | Údaje        | volitelné  | Objekt obsahující aktualizovaná pole a hodnoty, které chcete přiřadit k dokumentu.                        |
 
-Například aktualizovat dokument v kolekci pomocí metody **`updateDocument`** můžete vložit **`1`** pro ID dokumentu a `{{{"Name":"Fred"}}}` pro data.
+Například aktualizovat dokument v kolekci pomocí metody **`updateDocument`** můžete vložit **`1`** pro id dokumentu a `{{{"Name":"Fred"}}}` pro data.
 
 ** Výstup **
 
@@ -196,7 +196,7 @@ odstraní specifický dokument z kolekce v databázi
 
 ** Input **
 
-| Vlastnosti   | Požadováno | L 343, 22.12.2009, s. 1).                                                    |
+| Vlastnosti   | Požadováno | Popis                                                                        |
 | ------------ | ---------- | ---------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi |
 
@@ -226,7 +226,7 @@ Například uvést všechny dokumenty s názvem = James.
 
 Soubor dokumentů, které vyhovují filtru.
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
 Použij `{{appwrite1.data[0].documents}}` k získání vrácené hodnoty.
 

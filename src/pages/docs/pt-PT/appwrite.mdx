@@ -1,6 +1,6 @@
 ---
-title: Gravar
-crowdinRepo: https://crowdin.com/multilingues/illacloud-website/163?languages=pt&filter=basic&value=0
+title: AppWrite
+crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=pt&filter=basic&value=0
 metaTitle: AppWrite Integration Doc ├ILLA Cloud
 desc: Aprenda a se conectar e interagir com o banco de dados Appwrite usando a ILLA Cloud.
 tagCategory: doc_menu_appwrite_click
@@ -13,7 +13,7 @@ postPriority: 1
 
 AppWrite in Illa é uma integração de banco de dados que permite a você conectar e interagir com um banco de dados AppWrite Appwrite é um popular sistema de gerenciamento de banco de dados de código aberto que é conhecido por sua velocidade, confiabilidade e facilidade de uso.
 
-Você também pode criar consultas SQL personalizadas e executá-las dentro do Illa. Com a integração do Appwrite na Illa, você pode consultar, inserir, atualizar e excluir dados de um banco de dados Appwrite usando comandos SQL. Isto facilita a criação de aplicativos e painéis orientados a dados que exibem dados em tempo real de um banco de dados de escrita de aplicativos.
+Com a integração do Appwrite na Illa, você pode consultar, inserir, atualizar e excluir dados de um banco de dados Appwrite usando comandos SQL. Você também pode criar consultas SQL personalizadas e executá-las dentro do Illa. Isto facilita a criação de aplicativos e painéis orientados a dados que exibem dados em tempo real de um banco de dados de escrita de aplicativos.
 
 Este tutorial descreve o processo de criação de um Painel de Administração usando o Construtor ILLA e Appwrite em alguns passos simples. ILLA é uma plataforma de código baixo para desenvolvedores que permite o desenvolvimento rápido e a implantação de ferramentas internas. Isto permite criar páginas arrastando e soltando componentes UI (interface do usuário, em inglês) conectando-se a qualquer banco de dados ou API, e escrevendo JavaScript. Para saber mais sobre Appwrite, acesse o site deles em https://appwrite.io/(https://appwrite.io/) Vamos começar!
 
@@ -35,8 +35,8 @@ Depois de criar nosso projeto de aplicativo Web, podemos ir para a página do ba
 
 Então podemos criar o banco de dados e criar coleções dentro do banco de dados
 
-![app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
-A partir daqui, podemos criar atributos e dados na coleção.
+[app_create_database](https://cdn.illacloud.com/official-website/img/docs/app_create_database.png)
+A partir daqui podemos criar atributos e dados na coleção.
 
 ![app_create_data](https://cdn.illacloud.com/official-website/img/docs/app_create_data.png)
 
@@ -182,7 +182,7 @@ atualizar os dados de um documento existente em uma coleção.
 | ID do documento | Obrigatório | um identificador exclusivo atribuído a um documento de coleção de banco de dados                              |
 | Dado            | opcional    | Um objeto contendo os campos e valores atualizados que você deseja atribuir ao documento.                     |
 
-Por exemplo, para atualizar um documento em uma coleção usando o método **`updateDocument`**, você pode colocar **`1`** para o id do documento e `{{{"Name":"Fred"}}}` para os dados.
+Por exemplo, para atualizar um documento em uma coleção usando o método **`updateDocument`**, você pode colocar **`1`** para a ajuda do documento e `{{{"Name":"Fred"}}}` para os dados.
 
 ** Saída **
 
@@ -226,7 +226,7 @@ Por exemplo, para listar todos os documentos com o Nome = James.
 
 Um array de documentos que satisfaçam o filtro.
 
-![app_list_data](https://cdn.illacloud.com/official-website/img/docs/app_list_data.png)
+[app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
 Use `{{appwrite1.data[0].documents}}` para obter valor devolvido.
 
