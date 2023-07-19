@@ -114,7 +114,7 @@ Beispiel Verwendung:
     -   Setze Feldwert-Paare in einem Hash: Benutze den Befehl **`HSET`** um ein Feldwert-Paar in einem Hash zu setzen. Zum Beispiel: **`HSET HashKey Feldwert`**.
     -   Holen Sie sich einen Wert von einem Hash: Benutzen Sie den **`HGET`** Befehl, um den Wert eines bestimmten Feldes in einem Hash abzurufen. Zum Beispiel: **`HGET HashKey Feld`**.
 4.  Listenoperationen:
-    -   Elemente aus einer Liste abrufen: Benutzen Sie den Befehl **`LRANGE`** um einen Bereich von Elementen aus einer Liste zu holen. Zum Beispiel: **`LRANGE listKey start end`**.
+    -   Abrufen von Elementen aus einem sortierten Satz: Benutzen Sie den Befehl **`ZRANGE`** um einen Bereich von Elementen aus einem sortierten Satz basierend auf deren Punktzahlen abzurufen. Zum Beispiel: **`LRANGE listKey start end`**.
     -   Abrufen von Elementen aus einem sortierten Satz: Benutzen Sie den Befehl **`ZRANGE`** um einen Bereich von Elementen aus einem sortierten Satz basierend auf deren Punktzahlen abzurufen. Zum Beispiel: **`ZRANGE sortedSetKey start end`**.
 5.  Set-Operationen:
     -   Füge Elemente zu einem Set hinzu: Benutze den Befehl **`SADD`** um ein oder mehrere Elemente zu einem Set hinzuzufügen. Zum Beispiel: **`SADD setKey value1 value2`**.
