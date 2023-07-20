@@ -85,21 +85,18 @@ export const monthlyContent = [
         ]
       },
       {
-        name: 'featureList.drive.title',
+        name: 'security-support',
         values: [
           {
-            text: 'featureList.free.drive.storage'
-          },
-          {
-            text: 'featureList.free.drive.traffic'
-          },
+            text: 'security.historic-7'
+          }
         ]
-      },
+      }
     ],
   },
   {
-    title: 'Premium',
-    price: '$20',
+    title: 'Plus',
+    price: '$10',
     userMonth: 'editor-month',
     href: 'https://cloud.illacloud.com/',
     btnContent: 'plus-btn',
@@ -140,17 +137,6 @@ export const monthlyContent = [
           },
           {
             text: 'apps.watermark',
-          },
-        ]
-      },
-      {
-        name: 'featureList.drive.title',
-        values: [
-          {
-            text: 'featureList.drive.storage'
-          },
-          {
-            text: 'featureList.drive.traffic'
           },
         ]
       },
@@ -215,17 +201,6 @@ export const monthlyContent = [
           },
           {
             text: 'apps.watermark',
-          },
-        ]
-      },
-      {
-        name: 'featureList.drive.title',
-        values: [
-          {
-            text: 'featureList.enterprise.drive.storage'
-          },
-          {
-            text: 'featureList.enterprise.drive.traffic'
           },
         ]
       },
@@ -302,22 +277,19 @@ export const annuallyContent = [
         ]
       },
       {
-        name: 'featureList.drive.title',
+        name: 'security-support',
         values: [
           {
-            text: 'featureList.free.drive.storage'
-          },
-          {
-            text: 'featureList.free.drive.traffic'
-          },
+            text: 'security.historic-7'
+          }
         ]
-      },
+      }
     ],
   },
   {
-    title: 'Premium',
-    price: '$16.',
-    decimal: '7',
+    title: 'Plus',
+    price: '$8.',
+    decimal: '3',
     userMonth: 'editor-month',
     btnContent: 'plus-btn',
     btnColor: 'bg-[#FF0EA1]',
@@ -358,17 +330,6 @@ export const annuallyContent = [
           },
           {
             text: 'apps.watermark',
-          },
-        ]
-      },
-      {
-        name: 'featureList.drive.title',
-        values: [
-          {
-            text: 'featureList.drive.storage'
-          },
-          {
-            text: 'featureList.drive.traffic'
           },
         ]
       },
@@ -433,17 +394,6 @@ export const annuallyContent = [
           },
           {
             text: 'apps.watermark',
-          },
-        ]
-      },
-      {
-        name: 'featureList.drive.title',
-        values: [
-          {
-            text: 'featureList.enterprise.drive.storage'
-          },
-          {
-            text: 'featureList.enterprise.drive.traffic'
           },
         ]
       },
