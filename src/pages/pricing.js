@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { PricingContent } from '@/components/home/Pricing/PricingContent'
 import { PricingMask } from '@/components/home/Pricing/PricingMask'
 import { OpenSource } from '@/components/home/Pricing/OpenSource'
+import { EarlyBird } from '@/components/home/Pricing/EarlyBird'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/home/Pricing/index.module.css'
@@ -44,6 +45,7 @@ const Pricing = () => {
           <Nav whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
           <div className='w-full text-white xl:pt-[120px] bg-transparent'>
             <PricingContent onChangeShow={() => setIsBookShow(true)} />
+            <EarlyBird onChangeShow={() => setIsBookShow(true)} />
             <OpenSource />
               <FAQ  translationSpace='pricing' />
             <CommBottom scrollStart={0.55} scrollEnd={0.613}/>
