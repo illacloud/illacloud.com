@@ -1,6 +1,6 @@
 {
-  "title": "Betaal alleen voor editors",
-  "sub-title": "Binnenkort beschikbaar",
+  "sub-title": "Betaal alleen voor de editors✌️",
+  "title": "Binnenkort beschikbaar",
   "meta-desc": "Begin gratis met alle functies die individuele ontwikkelaars of kleine teams nodig hebben om interne applicaties te bouwen.",
   "page-desc": "ILLA Cloud zal functies voor teams en KMO's vrijgeven met veiligheid, toegangscontrole en technische ondersteuning. Na de introductie zullen we de volgende prijsnormen implementeren. ",
   "monthly": "maandelijks",
@@ -8,6 +8,20 @@
   "members": "Team",
   "app": "apps",
   "security-support": "Beveiliging & ondersteuning",
+  "annual-discount": "Koop 10 maanden, krijg 2 GRATIS!",
+  "cycle-month": "/maand",
+  "price-detail": {
+    "free": "slechts 1 gebruiker",
+    "paid-editor": "per editor",
+    "paid-viewer": "per kijker",
+    "enterprise": "per editor(start bij 100 tekstverwerkers)",
+    "early-bird": "Vroege vogel",
+    "discount": {
+      "free": "GRATIS gebruik",
+      "paid": "Koop 10 maanden, krijg 2 GRATIS!",
+      "enterprise": "Aangepaste prijzen"
+    }
+  },
   "apps": {
     "components": "Alle onderdelen",
     "resources": "Alle bronnen",
@@ -58,13 +72,56 @@
   "user-month": "per gebruiker/maand",
   "editor-month": "per editor/maand",
   "start-at": "start bij 100 gebruikers",
-  "free-members": "Slechts 1 lid voor persoonlijk gebruik",
+  "free-members": "Slechts 1 gebruiker toegestaan",
   "unlimited-viewer": "GRATIS voor onbeperkte kijkers",
   "unlimited-members": "Onbeperkt aantal leden",
   "free-btn": "Bouw gratis apps",
   "plus-btn": "Probeer gratis",
   "enterprise-btn": "Contacteer ons",
   "open-source": "Open bron",
+  "compare": {
+    "title": "Vergelijk",
+    "plan": {
+      "free": "Vrij",
+      "plus": "Plus",
+      "premium": "Premium"
+    },
+    "button": "Probeer dit",
+    "featureList": {
+      "title": {
+        "memberNum": "leden",
+        "component": "Alle onderdelen",
+        "data-source": "Alle bronnen",
+        "public": "App publiek",
+        "sql-generation": "vierkante meter genereren",
+        "watermark": "Watermerk verwijderen",
+        "audit-logs": "Audit logs",
+        "history": "Back-up bewerkingsgeschiedenis en herstel",
+        "storage": "ILLA Drive opslag",
+        "traffic": "ILLA Drive verkeer",
+        "ai-agent": "AI Agent(Binnenkort beschikbaar)",
+        "deployed-version": "Blijf geïmplementeerde versies & revert(Binnenkort beschikbaar)",
+        "theme": "Thema(binnenkort beschikbaar)",
+        "environment": "Multi-omgeving (binnenkort beschikbaar)"
+      },
+      "desc": {
+        "memberNum": "Alle gebruikers in je team zijn je leden. Editor betekent de leden die je apps kunnen bewerken, inclusief editor, admin, eigenaar. En kijker betekent de leden die de geïmplementeerde apps kunnen bekijken (zowel de privéapps als openbare apps). ",
+        "component": "ILLA biedt meerdere componenten die je kunt gebruiken om het frontend te bouwen.",
+        "data-source": "ILLA biedt 20+ bronnen wat integratie met API's of databases betekent. Je kunt gemakkelijk verbinding maken met je gegevensbron door het GUI-paneel in te vullen. ",
+        "public": "Stel de app als openbaar in. Gebruikers hebben toegang tot je app zonder in te loggen met een ILLA-account. ",
+        "sql-generation": "Vertaal de natuurtaal in SQL statement met AI. ",
+        "watermark": "Stel in of de app zijn watermerk moet verwijderen.",
+        "audit-logs": "Registreer de acties van uw teamleden en bekijk ze op elk gewenst moment, inclusief bewerkingen zoals het toevoegen, verwijderen en wijzigen van en zoeken naar teambronnen zoals APPs, Resources, Leden en Drives.",
+        "history": "Automatisch de bewerkingsgeschiedenis van de app opnemen tijdens het bewerkingsproces en op elk gewenst moment bekijken en herstellen.",
+        "storage": "Gebruik de opslagruimte van ILLA Drive om een van je bestanden op te slaan. De apps of geïntegreerde data die je gebouwd in ILLA nemen geen opslagruimte in.",
+        "traffic": "ILLA Drive is een CDN. U kunt het verkeer van ILLA Drive gebruiken om elk bestand te downloaden dat u hebt opgeslagen of distribueerd, zoals afbeeldingen of video's op uw website, zodat uw gebruikers kunnen bladeren.",
+        "ai-agent": "Maak uw eigen AI-agent aan of gebruik AI-agenten gemaakt door andere gebruikers om uw werkefficiëntie aanzienlijk te verhogen.",
+        "deployed-version": "Sla elke geïmplementeerde versie en weergave en terugzetten op elk gewenst moment op.",
+        "theme": "Maak uw eigen thema en vervang het thema van uw app door slechts één klik.",
+        "environment": "Je kunt het Grondstof overschakelen naar productie, test of andere aangepaste omgevingen met slechts één klik, om te voorkomen dat gegevens van invloed zijn op de productiegegevens."
+      }
+    }
+  },
   "source-desc": "Zelf-host met alle functies van individuele ontwikkelaars of kleine teams moeten interne applicaties bouwen. We bieden de ILLA CLI gratis aan om de gegevensveiligheid te waarborgen.",
   "faq": {
     "title": "Veelgestelde vragen (FAQ's)",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "ILLA Aandrijving",
-      "storage": "5GB opslag per maand om bestanden op te slaan in ILLA Drive",
-      "traffic": "5GB verkeer om bestanden van ILLA Drive te downloaden"
+      "storage": "5GB opslagruimte per maand",
+      "traffic": "5GB verkeer",
+      "tips": {
+        "storage": "Wordt gebruikt om een bestand op te slaan in de ILLA Drive. De apps die je aanmaakt in ILLA zullen geen opslagbronnen bezetten.",
+        "traffic": "Wordt gebruikt om elk bestand van de ILLA drive te downloaden, of om je bestanden zoals foto's en video's op je website te zetten en ze te verspreiden onder je gebruikers."
+      },
+      "ai-agent": {
+        "title": "AI Agent(Binnenkort beschikbaar)",
+        "token": "100K Token per maand"
+      }
     },
     "free": {
       "drive": {
-        "storage": "100MB opslag per maand om bestanden op te slaan in de ILLA Drive",
-        "traffic": "100 MB verkeer om bestanden van ILLA Drive te downloaden"
+        "storage": "100MB opslagruimte per maand",
+        "traffic": "100MB verkeer"
+      },
+      "ai-agent": {
+        "token": "1K Token per maand"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "100MB opslagruimte per maand",
+        "traffic": "100MB verkeer"
+      },
+      "ai-agent": {
+        "token": "1K Token per maand"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "Aangepaste opslag om bestanden in ILLA Drive op te slaan",
-        "traffic": "Aangepast verkeer om bestanden van ILLA Drive te downloaden"
+        "storage": "Aangepaste opslag",
+        "traffic": "Aangepast verkeer"
+      },
+      "ai-agent": {
+        "token": "Aangepast token"
       }
     }
   },
