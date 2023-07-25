@@ -1,6 +1,6 @@
 {
-  "title": "只为编辑者付费",
-  "sub-title": "即将推出",
+  "sub-title": "只为编辑者付费✌️",
+  "title": "即将推出",
   "meta-desc": "免费开始使用个人开发人员或小型团队构建内部应用程序所需的所有功能。",
   "page-desc": "ILLA Cloud的Billing即将上线，通过订阅ILLA Cloud，您将获得对审计日志和公共应用程序等专有功能的使用权限。 我们的计费系统基于具有编辑权限的成员，包括所有者、管理员和编辑者角色。订阅后，您可以免费添加无限个浏览者。",
   "monthly": "按月",
@@ -8,6 +8,20 @@
   "members": "团队",
   "app": "应用",
   "security-support": "安全和支持",
+  "annual-discount": "买10个月，免费赠送2个月！",
+  "cycle-month": "/月",
+  "price-detail": {
+    "free": "仅一个用户",
+    "paid-editor": "每个编辑者",
+    "paid-viewer": "每个浏览者",
+    "enterprise": "每个编辑者（100个编辑者起）",
+    "early-bird": "早鸟",
+    "discount": {
+      "free": "个人免费使用",
+      "paid": "买10个月，免费赠送2个月！",
+      "enterprise": "自定义定价"
+    }
+  },
   "apps": {
     "components": "所有组件",
     "resources": "所有资源",
@@ -39,7 +53,7 @@
     "title-2": "部署",
     "introduction": "ILLA为开发者们提供了全新的开发方式，您可以邀请成员加入您的团队，进行协同开发。成员们的操作将被实时同步给每一位协作者，并且可以实时与其他协作者沟通，及时给予反馈，提高开发效率。",
     "illa-cloud": {
-      "title": "ILLA 云",
+      "title": "ILLA Cloud",
       "des": "一键部署ILLA，体验最便捷的部署过程"
     },
     "illa-CLI": {
@@ -58,13 +72,56 @@
   "user-month": "每用户/月",
   "editor-month": "每编辑者/月",
   "start-at": "100个用户起",
-  "free-members": "仅一个用户，个人使用",
+  "free-members": "仅允许一个用户",
   "unlimited-viewer": "免费添加无限个浏览者",
   "unlimited-members": "不限成员数量",
   "free-btn": "免费创建应用",
   "plus-btn": "试用免费版本",
   "enterprise-btn": "联系我们",
   "open-source": "开源",
+  "compare": {
+    "title": "对比",
+    "plan": {
+      "free": "Free",
+      "plus": "Plus",
+      "premium": "Premium"
+    },
+    "button": "体验",
+    "featureList": {
+      "title": {
+        "memberNum": "成员",
+        "component": "所有组件",
+        "data-source": "所有资源",
+        "public": "公开App",
+        "sql-generation": "SQL生成",
+        "watermark": "移除水印",
+        "audit-logs": "审计日志",
+        "history": "备份编辑历史并恢复",
+        "storage": "ILLA Drive存储",
+        "traffic": "ILLA Drive流量",
+        "ai-agent": "AI Agent（即将推出）",
+        "deployed-version": "保存已部署版本并回滚（即将推出）",
+        "theme": "主题（即将推出）",
+        "environment": "多环境支持（即将推出）"
+      },
+      "desc": {
+        "memberNum": "您团队中的所有用户都是您的成员。编辑器表示可以编辑您的应用程序的成员，包括编辑器、管理员和所有者。查看器表示可以查看已部署应用程序的成员（包括私有应用程序和公共应用程序）。",
+        "component": "ILLA 提供多个组件供您构建前端。",
+        "data-source": "ILLA 提供 20 多个资源，也就是与 API 或数据库的集成。您可以通过填充 GUI 面板轻松连接数据源。",
+        "public": "将应用程序设为公开。用户可以在不使用 ILLA 帐户登录的情况下访问您的应用程序。",
+        "sql-generation": "使用 AI 将自然语言翻译成 SQL 语句。",
+        "watermark": "设置是否移除应用程序的水印。",
+        "audit-logs": "记录团队成员的操作并随时查看它们，包括添加、删除、修改和查询团队资源（如应用程序、资源、成员和驱动器）的操作。",
+        "history": "在您的编辑过程中自动记录应用程序的编辑历史，并随时查看和还原。",
+        "storage": "使用 ILLA Drive 的存储空间存储任何文件。您在 ILLA 中构建的应用程序或集成数据不会占用任何存储空间。",
+        "traffic": "ILLA Drive 是一个 CDN。您可以使用来自 ILLA Drive 的流量下载您存储的任何文件，或者分发文件（如图像或视频）在您的网站上供用户浏览。",
+        "ai-agent": "创建您自己的 AI 代理人或使用其他用户创建的 AI 代理人，极大地提高您的工作效率。",
+        "deployed-version": "保存每个已部署版本，随时查看或回滚。",
+        "theme": "创建自己的主题，并用一键替换您应用程序的主题。",
+        "environment": "您可以通过一键式操作将资源切换到生产、测试或其他自定义环境，避免测试数据影响生产数据。"
+      }
+    }
+  },
   "source-desc": "具有个人开发人员或小型团队构建内部应用程序所需的所有功能。 我们免费提供ILLA CLI，安全性更高，确保数据安全。",
   "faq": {
     "title": "常见问题",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "ILLA Drive",
-      "storage": "每月5GB存储，用于在ILLA Drive中存储任意文件",
-      "traffic": "5GB流量，用于从ILLA Drive中下载文件"
+      "storage": "每月5GB存储",
+      "traffic": "5GB流量",
+      "tips": {
+        "storage": "可用于在ILLA Drive中存储任意文件。您在ILLA中创建的APP不会占用任何storage资源。",
+        "traffic": "可用于下载ILLA Drive中的任意文件，或将您的图片、视频等文件放在您的网站里，向您的用户分发"
+      },
+      "ai-agent": {
+        "title": "AI Agent(即将来临)",
+        "token": "每月100K令牌"
+      }
     },
     "free": {
       "drive": {
-        "storage": "每月100MB存储，用于在ILLA Drive中存储任意文件",
-        "traffic": "100MB流量，用于从ILLA Drive中下载文件"
+        "storage": "每月100MB存储",
+        "traffic": "100MB流量"
+      },
+      "ai-agent": {
+        "token": "每月1K Token"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "每月100MB存储",
+        "traffic": "100MB流量"
+      },
+      "ai-agent": {
+        "token": "每月1K Token"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "自定义存储大小，用于在ILLA Drive中存储任意文件",
-        "traffic": "自定义流量额度，用于从ILLA Drive中下载文件"
+        "storage": "自定义存储大小",
+        "traffic": "自定义流量额度"
+      },
+      "ai-agent": {
+        "token": "自定义Token数量"
       }
     }
   },
