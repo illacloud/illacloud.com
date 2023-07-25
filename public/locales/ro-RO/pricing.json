@@ -1,6 +1,6 @@
 {
-  "title": "Plătește doar pentru editori",
-  "sub-title": "În curând",
+  "sub-title": "Plătește doar pentru editori:vicy_hand:",
+  "title": "În curând",
   "meta-desc": "Începe gratuit cu toate caracteristicile specifice dezvoltatorilor individuali sau echipelor mici pentru a construi aplicații interne.",
   "page-desc": "Odată cu lansarea Legii ILLA Cloud, vei avea acces la funcții exclusive precum jurnalele de audit și aplicația publică. Sistemul nostru de facturare se bazează pe membri cu drepturi de editare, inclusiv rolurile de proprietar, administrator și editor. Odată ce v-ați abonat, puteți adăuga telespectatori nelimitat fără costuri suplimentare.",
   "monthly": "Lunar",
@@ -8,6 +8,20 @@
   "members": "Echipă",
   "app": "aplicații",
   "security-support": "Securitate & Suport",
+  "annual-discount": "Cumpără 10 luni, primești 2 GRATUIT!",
+  "cycle-month": "/lună",
+  "price-detail": {
+    "free": "doar un utilizator",
+    "paid-editor": "pe editor",
+    "paid-viewer": "per vizualizator",
+    "enterprise": "per editor (început la 100 editori)",
+    "early-bird": "Pasărea precoce",
+    "discount": {
+      "free": "GRATUIT pentru uz personal",
+      "paid": "Cumpără 10 luni, primești 2 GRATUIT!",
+      "enterprise": "Prețuri personalizate"
+    }
+  },
   "apps": {
     "components": "Toate componentele",
     "resources": "Toate resursele",
@@ -58,13 +72,56 @@
   "user-month": "per utilizator/lună",
   "editor-month": "per editor/lună",
   "start-at": "pornește la 100 de utilizatori",
-  "free-members": "Doar 1 membru pentru uz personal",
+  "free-members": "Este permis doar un utilizator",
   "unlimited-viewer": "GRATUIT pentru telespectatori nelimitați",
   "unlimited-members": "Membri nelimitați",
   "free-btn": "Încearcă pe gratis",
   "plus-btn": "Încearcă pe gratis",
   "enterprise-btn": "Contactați-ne",
   "open-source": "Sursă deschisă",
+  "compare": {
+    "title": "Compară",
+    "plan": {
+      "free": "Gratuit",
+      "plus": "Plus",
+      "premium": "Premium"
+    },
+    "button": "Încearcă asta",
+    "featureList": {
+      "title": {
+        "memberNum": "Membri",
+        "component": "Toate componentele",
+        "data-source": "Toate resursele",
+        "public": "Aplicație publică",
+        "sql-generation": "Generare SQl",
+        "watermark": "Elimină filigran",
+        "audit-logs": "Jurnale de audit",
+        "history": "Salvare istoric editare & restaurare",
+        "storage": "ILLA memorie",
+        "traffic": "ILLA trafic unitate",
+        "ai-agent": "Agent AI (în curând)",
+        "deployed-version": "Păstrează versiunile implementate și revert(urmează în curând)",
+        "theme": "Tematica (în curând)",
+        "environment": "Multi-mediu (în curând)"
+      },
+      "desc": {
+        "memberNum": "Toți utilizatorii din echipa dvs. sunt membrii dvs. Editor înseamnă membrii care vă pot edita aplicațiile, inclusiv editor, admin, proprietar. Și Vizualizator înseamnă membrii care pot vizualiza aplicațiile implementate (atât aplicațiile private, cât și aplicațiile publice). ",
+        "component": "ILLA furnizează mai multe componente pe care le puteți folosi pentru a construi front-end.",
+        "data-source": "ILLA furnizează peste 20 de resurse, ceea ce înseamnă integrarea cu API-uri sau baze de date. Vă puteți conecta cu ușurință la baza de date completând panoul GUI. ",
+        "public": "Setați aplicația ca public. Utilizatorii vă pot accesa aplicația fără a vă conecta cu contul ILLA. ",
+        "sql-generation": "Traduceți limba naturii în declarația SQL cu AI. ",
+        "watermark": "Setați dacă să eliminați filigranul aplicației.",
+        "audit-logs": "Înregistrați acțiunile membrilor echipei dvs. și vizualizați-le în orice moment, inclusiv operațiunile cum ar fi adăugarea, ştergerea, modificarea şi căutarea resurselor echipei, cum ar fi APP, Resurse, membri şi drive;",
+        "history": "Înregistrați automat istoricul de editare a aplicației în timpul procesului de editare și vizualizați și restaurați-l în orice moment.",
+        "storage": "Folosiți spațiul de stocare al ILLA Drive pentru a stoca oricare dintre fișierele dumneavoastră. Aplicațiile sau datele integrate pe care le construiți în ILLA nu vor ocupa spațiu de stocare.",
+        "traffic": "Unitatea ILLA este un CDN. Puteți folosi traficul de pe ILLA Drive pentru a descărca orice fișier pe care l-ați stocat sau distribuit fișiere, cum ar fi imagini sau videoclipuri pe site-ul dumneavoastră, pentru ca utilizatorii să poată naviga.",
+        "ai-agent": "Creați-vă propriul agent AI sau utilizați agenți AI creați de alți utilizatori pentru a crește semnificativ eficiența muncii.",
+        "deployed-version": "Salvați fiecare versiune implementată și vizualizați sau reveniți în orice moment.",
+        "theme": "Creați-vă propria temă și înlocuiți tema aplicației cu un singur clic.",
+        "environment": "Puteți schimba Resursa în producție, test sau alte medii personalizate cu un singur click, evitând datele testului să afecteze datele de producție."
+      }
+    }
+  },
   "source-desc": "Auto-gazdă cu toate caracteristicile specifice dezvoltatorilor individuali sau echipelor mici trebuie să construiască aplicații interne. Oferim ILLA CLI gratuit cu o mai bună securitate pentru a asigura siguranța datelor.",
   "faq": {
     "title": "Întrebări frecvente",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "Unitate ILLA",
-      "storage": "5GB spațiu pe lună pentru a stoca orice fișier în ILLA Drive",
-      "traffic": "Trafic 5GB pentru descărcarea fişierelor de pe ILLA Drive"
+      "storage": "5 GB spațiu pe lună",
+      "traffic": "trafic 5GB",
+      "tips": {
+        "storage": "Folosit pentru a stoca orice fișier în unitatea ILLA. Aplicațiile pe care le creați în ILLA nu vor ocupa resurse de stocare.",
+        "traffic": "Folosit pentru a descărca orice fișier de pe ILLA Drive, sau pentru a pune fișierele tale precum imagini și videoclipuri pe site-ul tău web și a le distribui utilizatorilor."
+      },
+      "ai-agent": {
+        "title": "Agent AI (în curând)",
+        "token": "100K Token pe lună"
+      }
     },
     "free": {
       "drive": {
-        "storage": "100MB spațiu pe lună pentru a stoca orice fișier în ILLA Drive",
-        "traffic": "Trafic 100 MB pentru descărcarea fişierelor de pe ILLA Drive"
+        "storage": "100MB spațiu pe lună",
+        "traffic": "Trafic 100MB"
+      },
+      "ai-agent": {
+        "token": "1K Token pe lună"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "100MB spațiu pe lună",
+        "traffic": "Trafic 100MB"
+      },
+      "ai-agent": {
+        "token": "1K Token pe lună"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "Stocare personalizată pentru a stoca orice fișier în ILLA Drive",
-        "traffic": "Trafic personalizat pentru descărcarea fişierelor de pe ILLA Drive"
+        "storage": "Stocare personalizată",
+        "traffic": "Trafic personalizat"
+      },
+      "ai-agent": {
+        "token": "Token personalizat"
       }
     }
   },

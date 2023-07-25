@@ -1,6 +1,6 @@
 {
-  "title": "Zaplatit pouze pro editory",
-  "sub-title": "Již brzy",
+  "sub-title": "Zaplatit pouze pro editory✌️",
+  "title": "Již brzy",
   "meta-desc": "Začněte zdarma se všemi funkcemi, které potřebují jednotliví vývojáři nebo malé týmy pro vytváření interních aplikací.",
   "page-desc": "ILLA Cloud uvolní funkce pro týmy a malé a střední podniky s bezpečností, kontrolou přístupu a technickou podporou. Po vydání zavedeme následující cenové standardy. ",
   "monthly": "Měsíčně",
@@ -8,6 +8,20 @@
   "members": "Tým",
   "app": "aplikace",
   "security-support": "Bezpečnost a podpora",
+  "annual-discount": "Koupit 10 měsíců, získejte 2 ZDARMA!",
+  "cycle-month": "/měsíc",
+  "price-detail": {
+    "free": "pouze 1 uživatel",
+    "paid-editor": "podle editoru",
+    "paid-viewer": "za prohlížeč",
+    "enterprise": "každý editor (start ve 100 editorech)",
+    "early-bird": "Rané ptáky",
+    "discount": {
+      "free": "ZDARMA pro osobní použití",
+      "paid": "Koupit 10 měsíců, získejte 2 ZDARMA!",
+      "enterprise": "Vlastní ceny"
+    }
+  },
   "apps": {
     "components": "Všechny komponenty",
     "resources": "Všechny zdroje",
@@ -58,13 +72,56 @@
   "user-month": "na uživatele/měsíc",
   "editor-month": "za editor/měsíc",
   "start-at": "spustit u 100 uživatelů",
-  "free-members": "Pouze 1 člen pro osobní použití",
+  "free-members": "Pouze 1 uživatel povolen",
   "unlimited-viewer": "ZDARMA pro neomezený počet diváků",
   "unlimited-members": "Neomezený počet členů",
   "free-btn": "Zkus zadarmo",
   "plus-btn": "Zkus zadarmo",
   "enterprise-btn": "Kontaktujte nás",
   "open-source": "Open Source",
+  "compare": {
+    "title": "Porovnat",
+    "plan": {
+      "free": "Zdarma",
+      "plus": "Plus",
+      "premium": "Prémie"
+    },
+    "button": "Vyzkoušejte",
+    "featureList": {
+      "title": {
+        "memberNum": "Členové",
+        "component": "Všechny komponenty",
+        "data-source": "Všechny zdroje",
+        "public": "Veřejná aplikace",
+        "sql-generation": "Vytváření SQl",
+        "watermark": "Odstranit vodoznak",
+        "audit-logs": "Záznamy auditu",
+        "history": "Zálohovat historii úprav a obnovení",
+        "storage": "Úložiště ILLA",
+        "traffic": "ILLA Drive provoz",
+        "ai-agent": "AI Agent(již brzy)",
+        "deployed-version": "Ponechat nasazené verze a revert(již brzy)",
+        "theme": "Motiv (již brzy)",
+        "environment": "Multi-environment(již brzy)"
+      },
+      "desc": {
+        "memberNum": "Všichni uživatelé ve vašem týmu jsou vašimi členy. Editor znamená členy, kteří mohou upravovat své aplikace, včetně editoru, správce, vlastníka. A prohlížeč znamená členy, kteří mohou zobrazit nasazené aplikace (soukromé aplikace i veřejné aplikace). ",
+        "component": "ILLA poskytuje více komponent, které můžete použít pro sestavení front-endu.",
+        "data-source": "ILLA poskytuje 20+ zdrojů, což znamená integraci s API nebo databázemi. Můžete se snadno připojit k datovému souboru vyplněním panelu GUI. ",
+        "public": "Nastavte aplikaci jako veřejnou. Uživatelé mohou přistupovat k aplikaci bez přihlášení pomocí ILLA účtu. ",
+        "sql-generation": "Přeložte přímořský jazyk do SQL příkazu s AI. ",
+        "watermark": "Nastavte, zda chcete odstranit vodoznak.",
+        "audit-logs": "Zaznamenejte akce členů vašeho týmu a podívejte se na ně kdykoliv včetně operací, jako je přidávání, odstraňování, úpravy a dotazování na týmové zdroje, jako jsou APP, zdroje, členové a disky.",
+        "history": "Automaticky nahrávat historii úprav aplikace během procesu úprav, zobrazit ji a kdykoliv ji obnovit.",
+        "storage": "Použijte úložný prostor ILLA Disku pro ukládání všech vašich souborů. Aplikace nebo integrovaná data, která vytvoříte v ILLA, nebudou obývat žádný úložný prostor.",
+        "traffic": "ILLA Drive je CDN. Můžete použít provoz z ILLA Drive ke stažení souborů, které jste uložili nebo distribuovali na vašich webových stránkách, aby mohli uživatelé prohlížet.",
+        "ai-agent": "Vytvořte si vlastní AI agenta nebo použijte AI agenty vytvořené jinými uživateli k výraznému zvýšení vaší pracovní efektivity.",
+        "deployed-version": "Kdykoli uložte každou vloženou verzi a zobrazte nebo obnovte její zobrazení.",
+        "theme": "Vytvořte si vlastní šablonu a nahraďte šablonu aplikace jedním kliknutím.",
+        "environment": "Zdroj můžete přepnout na výrobu, testování nebo jiné vlastní prostředí jediným kliknutím a vyhnout se tomu, aby testovací data ovlivnila data výroby."
+      }
+    }
+  },
   "source-desc": "Samostatně hostitel se všemi funkcemi, které potřebují jednotliví vývojáři nebo malé týmy vytvářet interní aplikace. Poskytujeme zdarma ILLA CLI s lepší ochranou pro zajištění bezpečnosti údajů.",
   "faq": {
     "title": "Často kladené otázky",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "ILLA disk",
-      "storage": "Měsíční 5GB úložiště pro ukládání souborů v ILLA Drive",
-      "traffic": "5GB provozu ke stažení souborů z ILLA Drive"
+      "storage": "5 GB úložiště za měsíc",
+      "traffic": "5GB provozu",
+      "tips": {
+        "storage": "Používá se pro ukládání jakéhokoli souboru v ILLA Drive. Aplikace, které vytváříte v ILLA nebude obývat žádné zdroje úložiště.",
+        "traffic": "Používá se ke stažení jakéhokoli souboru z ILLA Drive, nebo vložit vaše soubory jako obrázky a videa na vaše webové stránky a distribuovat je vašim uživatelům."
+      },
+      "ai-agent": {
+        "title": "AI Agent(již brzy)",
+        "token": "100K token měsíčně"
+      }
     },
     "free": {
       "drive": {
-        "storage": "Měsíční úložiště 100MB pro ukládání souborů v ILLA Drive",
-        "traffic": "100MB provoz ke stažení souborů z ILLA Drive"
+        "storage": "100 MB úložiště měsíčně",
+        "traffic": "100MB doprava"
+      },
+      "ai-agent": {
+        "token": "1K token měsíčně"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "100 MB úložiště měsíčně",
+        "traffic": "100MB doprava"
+      },
+      "ai-agent": {
+        "token": "1K token měsíčně"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "Vlastní úložiště pro ukládání souborů v ILLA Drive",
-        "traffic": "Vlastní provoz ke stažení souborů z ILLA Drive"
+        "storage": "Vlastní úložiště",
+        "traffic": "Vlastní provoz"
+      },
+      "ai-agent": {
+        "token": "Vlastní token"
       }
     }
   },
