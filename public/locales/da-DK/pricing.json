@@ -1,6 +1,6 @@
 {
-  "title": "Betal kun for redaktører",
-  "sub-title": "Kommer snart",
+  "sub-title": "Betal kun for redaktører✌️",
+  "title": "Kommer snart",
   "meta-desc": "Start gratis med alle de funktioner, individuelle udviklere eller små teams har brug for at opbygge interne applikationer.",
   "page-desc": "ILLA Cloud vil frigive funktioner til teams og SMV'er med sikkerhed, adgangskontrol og teknisk support. Efter udgivelsen, vil vi implementere følgende prisstandarder. ",
   "monthly": "Månedligt",
@@ -8,6 +8,20 @@
   "members": "Hold",
   "app": "apps",
   "security-support": "Sikkerhed & understøttelse",
+  "annual-discount": "Køb 10 måneder, få 2 GRATIS!",
+  "cycle-month": "/måned",
+  "price-detail": {
+    "free": "kun 1 bruger",
+    "paid-editor": "pr. editor",
+    "paid-viewer": "pr. fremviser",
+    "enterprise": "pr. editor (start på 100 editorer)",
+    "early-bird": "Tidlig fugl",
+    "discount": {
+      "free": "GRATIS til personlig brug",
+      "paid": "Køb 10 måneder, få 2 GRATIS!",
+      "enterprise": "Tilpasset pris"
+    }
+  },
   "apps": {
     "components": "Alle komponenter",
     "resources": "Alle ressourcer",
@@ -58,13 +72,56 @@
   "user-month": "pr. bruger/måned",
   "editor-month": "pr. editor/måned",
   "start-at": "start ved 100 brugere",
-  "free-members": "Kun 1 medlem til personlig brug",
+  "free-members": "Kun 1 bruger tilladt",
   "unlimited-viewer": "GRATIS for ubegrænset seere",
   "unlimited-members": "Ubegrænsede medlemmer",
   "free-btn": "Byg apps gratis",
   "plus-btn": "Prøv gratis",
   "enterprise-btn": "Kontakt os",
   "open-source": "Open Source",
+  "compare": {
+    "title": "Sammenlign",
+    "plan": {
+      "free": "Gratis",
+      "plus": "Plus",
+      "premium": "Premium"
+    },
+    "button": "Prøv dette",
+    "featureList": {
+      "title": {
+        "memberNum": "Medlemmer",
+        "component": "Alle komponenter",
+        "data-source": "Alle ressourcer",
+        "public": "Offentlig app",
+        "sql-generation": "SQl generation",
+        "watermark": "Fjern vandmærke",
+        "audit-logs": "Revision logs",
+        "history": "Sikkerhedskopiér redigeringshistorik og gendan",
+        "storage": "ILLA drev lagerplads",
+        "traffic": "ILLA Drive trafik",
+        "ai-agent": "AI Agent(Kommer snart)",
+        "deployed-version": "Behold implementerede versioner & revert(Kommer snart)",
+        "theme": "Tema(Kommer snart)",
+        "environment": "Multi-miljø(Kommer snart)"
+      },
+      "desc": {
+        "memberNum": "Alle brugere i dit team er dine medlemmer. Editor betyder de medlemmer, der kan redigere dine apps, herunder editor, admin, ejer. Og Viewer betyder de medlemmer, der kan se de indsatte apps (både de private apps og offentlige apps). ",
+        "component": "ILLA giver flere komponenter, som du kan bruge til at opbygge front-end.",
+        "data-source": "ILLA leverer 20+ ressourcer, hvilket betyder integration med API'er eller databaser. Du kan nemt oprette forbindelse til dit datasource ved at udfylde GUI panelet. ",
+        "public": "Angiv app'en som offentlig. Brugere kan få adgang til din app uden at logge på med ILLA-konto. ",
+        "sql-generation": "Oversæt naturen sprog til SQL erklæring med AI. ",
+        "watermark": "Indstil om appens vandmærke skal fjernes.",
+        "audit-logs": "Optag dine teammedlemmers handlinger og se dem når som helst, herunder operationer som tilføjelse, slette, ændre og forespørge om holdressourcer såsom APP'er, ressourcer, medlemmer og drev.",
+        "history": "Registrer automatisk redigeringshistorikken for appen under din redigeringsproces og se og gendanne den når som helst.",
+        "storage": "Brug lagerpladsen på ILLA Drive til at gemme nogen af dine filer. De apps eller integrerede data, du opbygger i ILLA, vil ikke optage nogen lagerplads.",
+        "traffic": "ILLA Drive er en CDN. Du kan bruge trafikken fra ILLA Drive til at downloade en fil, du har gemt eller distribuere filer såsom billeder eller videoer på din hjemmeside for dine brugere at gennemse.",
+        "ai-agent": "Opret din egen AI agent eller bruge AI agenter skabt af andre brugere til at øge din arbejdseffektivitet.",
+        "deployed-version": "Gem hver indsat version og se eller rollback til enhver tid.",
+        "theme": "Opret dit eget tema og udskift din app tema med et enkelt klik.",
+        "environment": "Du kan skifte ressourcen til produktion, test eller andre brugerdefinerede miljøer med blot et enkelt klik, undgå testdata fra at påvirke produktionsdata."
+      }
+    }
+  },
   "source-desc": "Selv-vært med alle funktioner individuelle udviklere eller små teams har brug for at opbygge interne applikationer. Vi leverer gratis ILLA CLI med bedre sikkerhed for at sikre datasikkerheden.",
   "faq": {
     "title": "Ofte Stillede Spørgsmål",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "ILLA Drev",
-      "storage": "5 GB lagerplads pr. måned for at gemme filer i ILLA drev",
-      "traffic": "5 GB trafik for at downloade filer fra ILLA drev"
+      "storage": "5 GB lagerplads pr. måned",
+      "traffic": "5 GB trafik",
+      "tips": {
+        "storage": "Bruges til at gemme enhver fil i ILLA Drive. De apps, du opretter i ILLA vil ikke optage nogen lagerressourcer.",
+        "traffic": "Bruges til at downloade enhver fil fra ILLA drev, eller til at sætte dine filer såsom billeder og videoer på din hjemmeside og distribuere dem til dine brugere."
+      },
+      "ai-agent": {
+        "title": "AI Agent(Kommer snart)",
+        "token": "100K Token pr. måned"
+      }
     },
     "free": {
       "drive": {
-        "storage": "100MB lagerplads pr. måned til lagring af filer i ILLA drev",
-        "traffic": "100MB trafik for at downloade filer fra ILLA drev"
+        "storage": "100MB lagerplads pr. måned",
+        "traffic": "100MB trafik"
+      },
+      "ai-agent": {
+        "token": "1K Token pr. måned"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "100MB lagerplads pr. måned",
+        "traffic": "100MB trafik"
+      },
+      "ai-agent": {
+        "token": "1K Token pr. måned"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "Brugerdefineret lagerplads til at gemme filer i ILLA drev",
-        "traffic": "Brugerdefineret trafik for at downloade filer fra ILLA Drive"
+        "storage": "Tilpasset lagerplads",
+        "traffic": "Brugerdefineret trafik"
+      },
+      "ai-agent": {
+        "token": "Brugerdefineret token"
       }
     }
   },
