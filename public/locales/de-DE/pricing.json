@@ -1,6 +1,6 @@
 {
-  "title": "Nur für Redakteure bezahlen",
-  "sub-title": "Demnächst",
+  "sub-title": "Nur für Redakteure:victory_hand bezahlen:",
+  "title": "Demnächst",
   "meta-desc": "Beginnen Sie kostenlos mit allen Funktionen, die einzelne Entwickler oder kleine Teams benötigen, um interne Anwendungen zu erstellen.",
   "page-desc": "ILLA Cloud wird Funktionen für Teams und KMU mit Sicherheit, Zugangskontrolle und technischer Unterstützung freigeben. Nach der Freigabe setzen wir die folgenden Preisstandards um. ",
   "monthly": "Monatlich",
@@ -8,6 +8,20 @@
   "members": "Team",
   "app": "anwendungen",
   "security-support": "Sicherheit & Support",
+  "annual-discount": "Kaufe 10 Monate, bekomme 2 GRATIS!",
+  "cycle-month": "/Monat",
+  "price-detail": {
+    "free": "nur 1 Benutzer",
+    "paid-editor": "pro Editor",
+    "paid-viewer": "pro Betrachter",
+    "enterprise": "pro Editor (Start bei 100 Editoren)",
+    "early-bird": "Ehemaliger Vogel",
+    "discount": {
+      "free": "GRATIS für den persönlichen Gebrauch",
+      "paid": "Kaufe 10 Monate, bekomme 2 GRATIS!",
+      "enterprise": "Eigene Preisgestaltung"
+    }
+  },
   "apps": {
     "components": "Alle Komponenten",
     "resources": "Alle Ressourcen",
@@ -58,13 +72,56 @@
   "user-month": "pro Benutzer/Monat",
   "editor-month": "pro Editor/Monat",
   "start-at": "starte bei 100 Benutzern",
-  "free-members": "Nur ein Mitglied für den persönlichen Gebrauch",
+  "free-members": "Nur 1 Benutzer erlaubt",
   "unlimited-viewer": "GRATIS für unbegrenzte Zuschauer",
   "unlimited-members": "Unbegrenzte Mitglieder",
   "free-btn": "Kostenlos testen",
   "plus-btn": "Kostenlos testen",
   "enterprise-btn": "Kontaktiere uns",
   "open-source": "Open Source",
+  "compare": {
+    "title": "Vergleichen",
+    "plan": {
+      "free": "Kostenlos",
+      "plus": "Plus",
+      "premium": "Prämie"
+    },
+    "button": "Probiere das",
+    "featureList": {
+      "title": {
+        "memberNum": "Mitglieder",
+        "component": "Alle Komponenten",
+        "data-source": "Alle Ressourcen",
+        "public": "App öffentlich",
+        "sql-generation": "SQL-Erzeugung",
+        "watermark": "Wasserzeichen entfernen",
+        "audit-logs": "Audit-Logs",
+        "history": "Backup-Bearbeitungsverlauf & Wiederherstellung",
+        "storage": "ILLA Laufwerk Speicher",
+        "traffic": "ILLA Antrieb Verkehr",
+        "ai-agent": "KI Agent(Kommt bald)",
+        "deployed-version": "Bereitgestellte Versionen & rückgängig machen (demnächst verfügbar)",
+        "theme": "Theme(demnächst verfügbar)",
+        "environment": "Mehrere Umgebungen (demnächst verfügbar)"
+      },
+      "desc": {
+        "memberNum": "Alle Benutzer in Ihrem Team sind Ihre Mitglieder. Editor bezeichnet die Mitglieder, die Ihre Apps bearbeiten können, einschließlich Editor, Administrator, Eigentümer. Und Viewer bedeutet die Mitglieder, die die eingesetzten Apps (sowohl private Apps als auch öffentliche Apps) ansehen können. ",
+        "component": "ILLA liefert mehrere Komponenten, die Sie verwenden können, um das Frontend zu erstellen.",
+        "data-source": "ILLA stellt 20+ Ressourcen zur Verfügung, was die Integration mit APIs oder Datenbanken bedeutet. Sie können sich einfach mit Ihrer Datenquelle verbinden, indem Sie das GUI-Panel ausfüllen. ",
+        "public": "Legen Sie die App als öffentlich fest. Benutzer können auf Ihre App zugreifen, ohne sich mit dem ILLA-Konto anzumelden. ",
+        "sql-generation": "Übersetzen Sie die Natursprache in eine SQL-Anweisung mit der AI. ",
+        "watermark": "Legen Sie fest, ob das Wasserzeichen der App entfernt werden soll.",
+        "audit-logs": "Erfassen Sie die Aktionen Ihrer Teammitglieder und sehen Sie sie jederzeit an, einschließlich Operationen wie Hinzufügen, Löschen, Modifizieren und Abfragen nach Teamressourcen wie APPs, Ressourcen, Mitgliedern und Laufwerken.",
+        "history": "Erfassen Sie den Bearbeitungsverlauf der App während Ihres Bearbeitungsprozesses automatisch und sehen Sie ihn jederzeit wieder an.",
+        "storage": "Nutzen Sie den Speicherplatz von ILLA Drive um Ihre Dateien zu speichern. Die Apps oder integrierten Daten, die Sie in ILLA einbauen, belegen keinen Speicherplatz.",
+        "traffic": "ILLA Drive ist ein CDN. Sie können den Datenverkehr von ILLA Drive nutzen, um jede Datei, die Sie gespeichert haben, herunterzuladen oder zu verbreiten, wie Bilder oder Videos auf Ihrer Website, damit Ihre Benutzer sie durchsuchen können.",
+        "ai-agent": "Erstellen Sie Ihren eigenen KI-Agenten oder verwenden Sie von anderen Benutzern erstellte KI-Agenten, um Ihre Arbeitseffizienz deutlich zu erhöhen.",
+        "deployed-version": "Speichern Sie jede installierte Version und sehen Sie sie jederzeit und jederzeit an.",
+        "theme": "Erstellen Sie Ihr eigenes Theme und ersetzen Sie das Theme Ihrer App mit nur einem Klick.",
+        "environment": "Sie können die Ressource mit nur einem Klick auf Produktion, Test oder andere benutzerdefinierte Umgebungen umstellen, um zu verhindern, dass sich Testdaten auf Produktionsdaten auswirken."
+      }
+    }
+  },
   "source-desc": "Self-Host mit allen Features einzelner Entwickler oder kleiner Teams müssen interne Anwendungen erstellen. Wir bieten ILLA CLI kostenlos mit besserer Sicherheit zur Datensicherheit.",
   "faq": {
     "title": "Häufig gestellte Fragen",
@@ -100,19 +157,42 @@
   "featureList": {
     "drive": {
       "title": "ILLA-Laufwerk",
-      "storage": "5GB Speicher pro Monat, um alle Dateien im ILLA Drive zu speichern",
-      "traffic": "5GB Datenverkehr zum Herunterladen von Dateien von ILLA Drive"
+      "storage": "5GB Speicher pro Monat",
+      "traffic": "5GB Datenverkehr",
+      "tips": {
+        "storage": "Wird verwendet, um jede Datei im ILLA Laufwerk zu speichern. Die Apps, die Sie in ILLA erstellen, belegen keine Speicherressourcen.",
+        "traffic": "Zum Herunterladen von Dateien von ILLA Drive, oder Ihre Dateien wie Bilder und Videos auf Ihre Website zu stellen und an Ihre Benutzer weiterzugeben."
+      },
+      "ai-agent": {
+        "title": "KI Agent(Kommt bald)",
+        "token": "100K Token pro Monat"
+      }
     },
     "free": {
       "drive": {
-        "storage": "100MB Speicher pro Monat, um alle Dateien im ILLA Drive zu speichern",
-        "traffic": "100MB Datenverkehr, um Dateien von ILLA Drive herunterzuladen"
+        "storage": "100MB Speicher pro Monat",
+        "traffic": "100MB Datenverkehr"
+      },
+      "ai-agent": {
+        "token": "1K Token pro Monat"
+      }
+    },
+    "plus": {
+      "drive": {
+        "storage": "100MB Speicher pro Monat",
+        "traffic": "100MB Datenverkehr"
+      },
+      "ai-agent": {
+        "token": "1K Token pro Monat"
       }
     },
     "enterprise": {
       "drive": {
-        "storage": "Benutzerdefinierter Speicher, um Dateien im ILLA Drive zu speichern",
-        "traffic": "Benutzerdefinierter Datenverkehr zum Herunterladen von Dateien von ILLA Drive"
+        "storage": "Eigener Speicher",
+        "traffic": "Eigener Datenverkehr"
+      },
+      "ai-agent": {
+        "token": "Benutzerdefiniertes Token"
       }
     }
   },
