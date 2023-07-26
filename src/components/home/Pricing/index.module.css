@@ -10,8 +10,7 @@
   @apply w-full flex flex-row xl:flex-wrap items-center justify-start xl:gap-[16px] gap-[8px] overflow-x-scroll;
 }
 .pricingContainer {
-  @apply w-full overflow-y-scroll relative z-[1];
-  @apply overflow-hidden;
+  @apply w-full relative z-[1];
 }
 .pricingMaskLeft {
   @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
@@ -34,6 +33,11 @@
   @apply flex flex-col justify-center items-center gap-[16px] w-full my-0 mx-auto;
   @apply xl:gap-[24px] lg:w-[1200px];
 }
+.pricingContentTitleExtra {
+  @apply block rounded-[20px] py-[3px] px-[56px] text-center font-[500] text-[14px] leading-[26px] text-white-01;
+  width: fit-content;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 50.38%, rgba(255, 255, 255, 0.00) 100%);
+}
 .pricingContentTitle {
   @apply font-[700] text-[40px] leading-[48px] justify-self-center px-[24px] w-full text-center;
   @apply xl:text-[64px] xl:leading-[72px];
@@ -50,64 +54,81 @@
   @apply bg-tech-purple-01 font-[500] filter-none
 }
 .cardContainer {
-  @apply flex flex-row gap-[12px] xl:gap-[16px] w-full justify-start items-start mt-[16px] rounded-[16px];
-  @apply lg:justify-center overflow-x-scroll overflow-y-hidden lg:w-[1400px] w-full;
+  @apply grid gap-[12px] xl:gap-[16px] px-[32px] pt-[16px] pb-[2px] w-full justify-start items-start rounded-[16px];
+  @apply lg:justify-center overflow-x-auto overflow-y-hidden lg:w-auto lg:px-0;
+  grid-auto-rows: max-content;
+  grid-template-columns: repeat(4, 282px);
 }
 .card {
-  @apply w-[320px] flex flex-col gap-[24px] items-center rounded-[16px] pt-[32px] relative;
+  @apply w-[282px] h-full flex flex-col gap-[24px] rounded-[16px] relative p-[24px];
   @apply flex-shrink-0;
-  background: linear-gradient(180deg, rgba(120, 56, 255, 0.12) 67.93%, rgba(204, 0, 255, 0) 100%);
+}
+.darkCard {
+  outline: 1px solid rgba(255 ,255 ,255 ,0.16);
+  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
 }
 .lightCard{
-  @apply w-[320px] flex flex-col gap-[24px] items-center rounded-[16px] pt-[32px] relative cursor-pointer;
-  @apply flex-shrink-0;
-  background: linear-gradient(180deg, rgba(120, 56, 255, 0.4) 67.93%, rgba(204, 0, 255, 0) 100%);
+  outline: 1px solid rgba(255 ,255 ,255 ,0.16);
+  background: radial-gradient(377.75% 100% at 0.00% 0%, rgba(122, 239, 255, 0.12) 0%, rgba(122, 240, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
 }
 .cardTitle {
-  @apply flex flex-row items-start py-[7px] px-[16px] gap-[8px] rounded-[20px] font-[500] text-[18px] leading-[26px];
-  background: rgba(169, 63, 253, 0.16);
+  @apply flex flex-row items-start font-[700] text-[32px] flex justify-between items-center;
+}
+.cardDescContainer {
+  @apply inline-flex flex-row gap-[4px] justify-start items-center rounded-[32px] bg-white/[0.04] mt-[8px] px-[8px] py-[2px];
+}
+.cardDesc {
+  @apply font-[400] text-[12px] leading-[20px] text-white/[0.9];
+}
+.cardPriceContent {
+  @apply flex flex-col items-start gap-[8px]
+}
+.cardPrice {
+  @apply font-[700] text-[24px]
+}
+.priceExtra {
+  @apply font-[400] text-[12px] leading-[16px] text-white-04;
 }
 .cardBtn {
-  @apply flex flex-row items-center py-[10px] px-[32px] gap-[10px] font-[400] text-[16px] leading-[28px]  h-[48px] rounded-[8px] cursor-pointer;
+  @apply flex flex-row items-center justify-center py-[10px] px-[32px] gap-[10px] font-[400] text-[16px] leading-[28px]  h-[48px] rounded-[8px] cursor-pointer;
+  @apply bg-white-01/[0.03];
+  box-shadow: 0px 0px 16px 0px rgba(255, 255, 255, 0.06) inset;
+  transition: all 0.3s ease-in-out;
+}
+.cardBtn:hover {
+  @apply bg-white-01/[0.08];
+  box-shadow: 0px 0px 16px 0px rgba(255, 255, 255, 0.04) inset;
+}
+.lightCardBtn {
+  @apply border-[1px] border-solid border-white/[0.10];
+  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset, 0px 0px 16px 0px rgba(3, 34, 28, 0.64);
+  transition: all 0.3s ease-in-out;
+}
+.lightCardBtn:hover {
+  background: rgba(34, 255, 215, 0.08);
+  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset, 0px 0px 16px 0px rgba(3, 34, 28, 0.64);
 }
 .cardListTitle {
-  @apply flex flex-row items-center py-[4px] px-[24px] gap-[8px] font-[600] text-[16px] leading-[24px] mt-[24px];
+  @apply flex flex-row items-center py-[4px] gap-[8px] font-[600] text-[16px] leading-[24px] mt-[24px];
 }
 .cardListContent {
-  @apply flex flex-row items-center gap-[8px] font-[400] text-[14px] leading-[24px];
+  @apply flex flex-row items-center gap-[8px] font-[400] text-[14px] leading-[18px];
+}
+.cardListIcon {
+  @apply h-[16px] w-[16px] self-start mt-[3px] flex-none;
+}
+.lineThroughStyle {
+  @apply text-white-04 line-through ml-[24px];
 }
 .hiddenListContent {
-  @apply lg:block hidden lg:py-[4px] lg:px-[24px] py-0 px-0 lg:h-[32px]
+  @apply lg:block hidden lg:py-[4px] py-0 px-0 lg:h-[32px]
 }
 .blockListContent {
- @apply py-[4px] px-[24px]
+ @apply py-[4px]
 }
-.card:first-child {
-  @apply ml-[32px] xl:ml-0;
-}
-.card:last-child {
-  @apply mr-[32px] xl:mr-0;
-}
-.earlyBird {
-  @apply flex flex-col justify-center items-center gap-[16px] w-full my-0 mx-auto pt-[88px] pb-[24px] px-[20px];
-  @apply xl:gap-[32px] lg:w-[1200px] xl:px-0;
-}
-.earlyBirdTitle {
-  @apply font-[700] text-[24px] leading-[29px] xl:text-[48px] xl:leading-[56px] text-center;
-}
-.earlyBirdContent {
-  @apply w-full flex flex-col items-center gap-[24px] rounded-[16px] px-[32px] py-[48px];
-  background: linear-gradient(180deg, rgba(132, 56, 255, 0.17) 0%, rgba(132, 56, 255, 0.00) 100%);
-}
-.earlyBirdContentItem {
-  @apply flex flex-col items-center gap-[24px];
-}
-.openSource {
-  padding-top: 40px!important;
-  @apply px-[20px] lg:px-0 pb-[100px];
-}
+
 .doubt {
-  @apply cursor-pointer
+  @apply cursor-pointer w-[16px] h-[16px] inline-block ml-[8px] align-middle;
 }
 .doubt:hover .tips{
   display: block;
@@ -138,7 +159,8 @@
 }
 
 .deployment {
-  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] xl:pt-[300px] gap-[32px] my-0 mx-auto;
+  @apply w-full flex flex-col justify-center items-start xl:w-[1200px] gap-[32px] my-0 mx-auto;
+  @apply px-[20px] lg:px-0 pb-[100px] lg:pt-[118px] pt-[60px];
 }
 .deploymentDesc {
   @apply font-[400] leading-[20px] text-[14px];
@@ -146,12 +168,16 @@
 }
 .deploymentItem {
   @apply flex flex-row rounded-[8px] justify-between p-[16px] cursor-pointer;
-  @apply xl:rounded-[16px] xl:p-[32px];
-  background: linear-gradient(
-    180deg,
-    rgba(108, 56, 255, 0.16) 0%,
-    rgba(0, 56, 255, 0) 100%
-  );
+  @apply xl:rounded-[16px] xl:p-[32px] border-[1px] border-solid border-white/[0.14];
+  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease-in-out;
+}
+.deploymentItem:hover .deploymentLink {
+  @apply border-[#8D47FF] text-[#8D47FF];
+}
+.deploymentItem:hover {
+  border-color: rgba(141, 71, 255, 0.40);
+  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(159, 36, 255, 0.04);
 }
 .deploymentItemTitle {
   @apply font-[700] text-[16px] leading-[20px] mt-[12px] xl:mt-[24px];
@@ -163,5 +189,32 @@
 }
 .deploymentLink {
   @apply flex flex-none justify-center items-center w-[28px] h-[28px] border-solid border-white border-[1px] rounded-[20px] xl:w-[40px] xl:h-[40px];
-  @apply cursor-pointer
+  @apply cursor-pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* new pricing style */
+.switchContainer {
+  @apply flex py-[2px] w-[16px] items-center rounded-[32px] bg-white/[0.2] cursor-pointer;
+  transition: all 0.3s ease-in-out;
+}
+.activeSwitchContainer {
+  @apply bg-[#8CFFAC]/[0.2];
+}
+.switchDot {
+  @apply h-[6px] w-[6px] bg-white rounded-[50%];
+  transition: all 0.3s ease-in-out;
+  transform: translateX(2px)
+}
+.activeSwitchDot {
+  @apply bg-[#8CFFAC] ;
+  transform: translateX(8px)
+}
+.compareContainerStyle {
+  @apply flex flex-col items-center gap-[32px] mt-[60px] px-[20px] w-full;
+  @apply xl:gap-[64px] xl:mt-[120px] xl:px-0 xl:w-[1200px];
+}
+
+.compareTitle {
+  @apply font-[700] text-[24px] leading-[29px] xl:text-[48px] xl:leading-[56px] text-center;
 }

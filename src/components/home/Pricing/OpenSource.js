@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'next-i18next'
-import { openSourceContent } from '@/constants/content'
+import { openSourceContent } from '@/constants/pricingContent'
 import clsx from 'clsx'
 import styles from './index.module.css'
 import Link from 'next/link'
@@ -9,12 +9,12 @@ export const OpenSource = () => {
   const { t } = useTranslation('pricing')
   const { items, desc, tittle } = openSourceContent
   return (
-    <div className={clsx(styles.deployment, styles.openSource)}>
+    <div className={styles.deployment}>
       <div className="flex flex-col xl:gap-[16px] gap-[12px] my-0 mx-auto ">
         <div className='font-[700] text-[24px] leading-[29px] xl:text-[48px] xl:leading-[56px] text-center'>{t(tittle)}</div>
         <div className={clsx(styles.deploymentDesc, 'text-center lg:w-[800px] w-[335px]')}>{t(desc)}</div>
       </div>
-      <div className="flex xl:flex-row flex-wrap justify-between gap-[12px] xl:gap-0 xl:gap-y-[16px] ">
+      <div className="flex xl:flex-row flex-wrap justify-between gap-[12px] xl:gap-0 xl:gap-[16px] ">
         {items &&
           items.map(
             (
@@ -25,7 +25,7 @@ export const OpenSource = () => {
                 <div
                   className={clsx(
                     styles.deploymentItem,
-                    !index ? 'w-full' : 'xl:w-[388px] w-full',
+                    !index ? 'w-full' : 'xl:w-1/2 xl:flex-1 w-full ',
                     showArrow ? "items-center" : "items-start",
                   )}
                 >

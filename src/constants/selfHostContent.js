@@ -76,67 +76,70 @@ export const SelfHostContent = {
   },
   compare: {
     title: "compare.title",
-    label1: 'compare.sub-title-1',
-    btn1: 'compare.button',
-    btn1Link: 'https://cloud.illacloud.com/',
-    label2: 'compare.sub-title-2',
-    btn2: 'compare.button',
-    btn2Link: 'https://www.illacloud.com/docs/illa-cli',
+    tableHeader: [
+      {
+        label: 'compare.sub-title-1',
+        btnText: 'compare.button',
+        link: 'https://cloud.illacloud.com/'
+      },
+      {
+        label: 'compare.sub-title-2',
+        btnText: 'compare.button',
+        link: 'https://www.illacloud.com/docs/illa-cli'
+      }
+    ],
     items: [
       {
         label: 'compare.list.components.title',
         desc: 'compare.list.components.desc',
-        cloud: true,
-        self: true,
+        icons: [true, true],
       },
       {
         label: 'compare.list.integration.title',
         desc: 'compare.list.integration.desc',
-        cloud: true,
-        self: true,
+        icons: [true, true],
       },
       {
         label: 'compare.list.team-member.title',
         desc: 'compare.list.team-member.desc',
-        cloud: true,
-        self: true,
+        forward: true,
+        backward: true,
+        icons: [true, true],
       },
       {
         label: 'compare.list.collaboration.title',
         desc: 'compare.list.collaboration.desc',
-        cloud: true,
-        self: true,
+        icons: [true, true],
       },
       {
         label: 'compare.list.one-click-deploy.title',
         desc: 'compare.list.one-click-deploy.desc',
-        cloud: true,
-        self: true,
+        icons: [true, true],
       },
       {
         label: 'compare.list.multi-team.title',
         desc: 'compare.list.multi-team.desc',
-        cloud: true,
+        icons: [false, true],
       },
       {
         label: 'compare.list.public-app.title',
         desc: 'compare.list.public-app.desc',
-        cloud: true,
+        icons: [false, true],
       },
       {
         label: 'compare.list.audit-log.title',
         desc: 'compare.list.audit-log.desc',
-        cloud: true,
+        icons: [false, true],
       },
       {
         label: 'compare.list.theme.title',
         desc: 'compare.list.theme.desc',
-        cloud: true,
+        icons: [false, true],
       },
       {
         label: 'compare.list.branding.title',
         desc: 'compare.list.branding.desc',
-        cloud: true,
+        icons: [false, true],
       },
     ]
   }

@@ -10,7 +10,7 @@ import { LearnMore } from './learnMore'
 import clsx from 'clsx'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
 import { sendTagEvent } from '@/utils/gtag'
-import { LottieItem } from '@/components/home/Content3/lottieItem'
+import { LottieItem } from '@/components/home/Content/lottieItem'
 
 
 export const SwipeContent = (props) => {

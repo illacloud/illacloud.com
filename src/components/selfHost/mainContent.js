@@ -5,7 +5,7 @@ import { FAQ } from '@/components/comm/Faq'
 import { CommBottom } from '@/components/comm/commBottom'
 import { ProductContentTitle } from '@/components/comm/productContentTitle'
 import { Template } from '@/components/comm/template'
-import { Compare } from '@/components/selfHost/compare'
+import { Compare } from '@/components/comm/compare'
 import { MainTitle } from '@/components/selfHost/mainTitle'
 import { Deploy } from '@/components/selfHost/deploy'
 
