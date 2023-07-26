@@ -2,7 +2,7 @@
 import { useRef } from 'react'
 import { AllContent } from './allContent'
 import { SwipeContent } from './swipeContent'
-import { Backed } from '@/components/home/Content3/backed'
+import { Backed } from '@/components/home/Content/backed'
 import { CardContent } from './cardContent'
 import { SolutionContent } from './solutionContent'
 import { CodeContent } from './codeContent'

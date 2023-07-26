@@ -1,6 +1,6 @@
 import '../css/fonts.css'
 import '../css/main.css'
-import '@/components/home/Content3/coverSwiper.css'
+import '@/components/home/Content/coverSwiper.css'
 import '@/components/selfHost/coverInnerHtml.css'
 import 'focus-visible'
 import { useState, useEffect, Fragment } from 'react'

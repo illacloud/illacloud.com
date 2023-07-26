@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { PricingContent } from '@/components/home/Pricing/PricingContent'
 import { PricingMask } from '@/components/home/Pricing/PricingMask'
 import { OpenSource } from '@/components/home/Pricing/OpenSource'
-import { EarlyBird } from '@/components/home/Pricing/EarlyBird'
+import { PricingCompare } from '@/components/home/Pricing/PricingCompare'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/home/Pricing/index.module.css'
@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import { CommBottom } from '@/components/comm/commBottom'
 import useMeasure from "react-use-measure"
 import {PricingSchemaData} from '@/components/schemaData/pricingSchemaData'
+import { compare } from '@/constants/content'
 
 
 const Pricing = () => {
@@ -45,10 +46,10 @@ const Pricing = () => {
           <Nav whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
           <div className='w-full text-white xl:pt-[120px] bg-transparent'>
             <PricingContent onChangeShow={() => setIsBookShow(true)} />
-            <EarlyBird onChangeShow={() => setIsBookShow(true)} />
+            <PricingCompare needReport={false} showExtra={false} compare={compare}/>
             <OpenSource />
               <FAQ  translationSpace='pricing' />
-            <CommBottom scrollStart={0.55} scrollEnd={0.613}/>
+            <CommBottom scrollStart={0.88} scrollEnd={0.93}/>
           </div>
         </div>
         <BookDemo
@@ -56,7 +57,7 @@ const Pricing = () => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-        <Footer scrollStart={0.704} scrollEnd={1}/>
+        <Footer scrollStart={0.85} scrollEnd={1}/>
     </>
   )
 }
