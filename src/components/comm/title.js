@@ -20,7 +20,7 @@ export const Title = ({ translationName = 'home', content }) => {
         <div
           className={'w-full flex justify-center'}
         >
-          <div className="h-full flex flex-col items-center w-[1040px] gap-[40px] gap-[48px]">
+          <div className="h-full flex flex-col items-center w-[1200px] gap-[40px] gap-[48px]">
             <div className="flex flex-col items-center gap-[24px]">
               <h1 className=" px-[20px] sm:px-0  sm:whitespace-pre-line text-center text-[64px] leading-[72px]">
                 {t(title)}

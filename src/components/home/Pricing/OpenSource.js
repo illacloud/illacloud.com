@@ -14,7 +14,7 @@ export const OpenSource = () => {
         <div className='font-[700] text-[24px] leading-[29px] xl:text-[48px] xl:leading-[56px] text-center'>{t(tittle)}</div>
         <div className={clsx(styles.deploymentDesc, 'text-center lg:w-[800px] w-[335px]')}>{t(desc)}</div>
       </div>
-      <div className="flex xl:flex-row flex-wrap justify-between gap-[12px] xl:gap-0 xl:gap-[16px] ">
+      <div className="w-full flex xl:flex-row flex-wrap justify-between gap-[12px] xl:gap-0 xl:gap-[16px] ">
         {items &&
           items.map(
             (
