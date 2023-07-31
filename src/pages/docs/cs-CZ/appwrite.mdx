@@ -1,7 +1,7 @@
 ---
-title: AppWrite
+title: Appwrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=cs&filter=basic&value=0
-metaTitle: AppWrite Integration Doc | ILLA Cloud
+metaTitle: Integrace Appwrite Doc | ILLA Cloud
 desc: Naučte se propojit a komunikovat s databází aplikací pomocí ILLA Cloud.
 tagCategory: doc_menu_appwrite_click
 categoryName: 🔨 Integrace
@@ -9,15 +9,15 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>Co je zápis aplikací?</h2>
+## <h2 hidden>Co je to Appwrite?</h2>
 
-Aplikace Write v Illa je integrace databáze, která umožňuje spojení a interakci s databází AppWrite. Appwrite je populární systém pro správu relativních databází s otevřeným zdrojovým kódem, který je znám jeho rychlostí, spolehlivostí a snadností použití.
+Zápis aplikací v Illa je integrace databáze, která umožňuje připojení a interakci s databází zápisů aplikací. Appwrite je populární systém pro správu relativních databází s otevřeným zdrojovým kódem, který je znám jeho rychlostí, spolehlivostí a snadností použití.
 
 Díky integraci aplikací v Illa můžete pomocí SQL příkazů dotázat, vkládat, aktualizovat a mazat data z databáze Appwrite . Můžete také vytvořit vlastní SQL dotazy a spustit je v Ille. Díky tomu lze snadno sestavovat aplikace založené na datech a dashboardy, které zobrazují data z databáze Appwrite v reálném čase.
 
-Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Appwrite v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Chcete-li se dozvědět více o Appwrite, navštivte jejich webové stránky na https://appwrite.io/(https://appwrite.io/) Začněme!
+Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Appwrite v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Chcete-li se dozvědět více o Appwrite, navštivte jejich webové stránky na https://Appwrite.io/(https://Appwrite.io/) Začněme!
 
-### Nastavte si svůj backend v AppWrite
+### Nastavte si konec backu v Appwrite
 
 Po přihlášení do vašeho účtu Appwrite klikněte na nástěnku Appwrite na `**Vytvořit projekt**` a nastavte jméno na `První projekt`.
 
@@ -56,7 +56,7 @@ Přihlaste se ke svému účtu Illa, vyberte `**Zdroje**` v horní části strá
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Vyberte **`AppWrite`** ze seznamu databází.
+Vyberte **`Zápis aplikací`** z databáze
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
@@ -70,13 +70,13 @@ Po vytvoření zdroje se bude zobrazovat připravený zápis aplikací.
 
 -   Vytvořit ve staviteli
 
-Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`Write`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
+Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`Appwrite`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
 
 Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
 
 ### Nastavení připojení
 
-Zde musíme poskytnout informace pro připojení k databázi AppWrite.
+Zde musíme poskytnout informace pro připojení k databázi Appwrite .
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
@@ -112,15 +112,15 @@ Konečný produkt by měl vypadat podobně.
 
 ### Vytvořit akce
 
-Vytvořili jsme zdroj AppWrite, akci můžeme přidat výběrem AppWrite ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
+Vytvořili jsme zdroj pro zápis aplikací, akci můžeme přidat výběrem zápisu aplikací ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
-Nyní jsme přidali AppWrite server jako akci na naši stránku budovy.
+Nyní jsme přidali Appwrite server jako akci na naši stavební stránku.
 
 ![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
 
-### Konfigurovat zápis aplikací
+### Konfigurovat Appwrite
 
 #### Přehled
 
@@ -167,7 +167,7 @@ objekt odpovědi, který obsahuje údaje požadovaného dokumentu
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Použij `{{appwrite1.data}}` k získání vrácené hodnoty.
+Použij `{{Appwrite1.data}}` k získání vrácené hodnoty.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -228,6 +228,6 @@ Soubor dokumentů, které vyhovují filtru.
 
 ![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-Použij `{{appwrite1.data[0].documents}}` k získání vrácené hodnoty.
+Použij `{{Appwrite1.data[0].documents}}` k získání vrácené hodnoty.
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
