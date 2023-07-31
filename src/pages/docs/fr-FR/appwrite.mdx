@@ -1,7 +1,7 @@
 ---
-title: AppWrite
+title: Écriture de l'application
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=fr&filter=basic&value=0
-metaTitle: Doc d'intégration AppWrite | ILLA Cloud
+metaTitle: Doc d'intégration de l'écriture d'applications | ILLA Cloud
 desc: Apprenez comment vous connecter et interagir avec la base de données Appwrite en utilisant ILLA Cloud.
 tagCategory: doc_menu_appwrite_click
 categoryName: 🔨 Intégrations
@@ -9,15 +9,15 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>Qu'est-ce qu'AppWrite ?</h2>
+## <h2 hidden>What is Appwrite?</h2>
 
-AppWrite in Illa est une intégration de base de données qui vous permet de vous connecter et d'interagir avec une base de données AppWrite . Appwrite est un système de gestion de base de données relationnelle populaire reconnu pour sa rapidité, sa fiabilité et sa facilité d'utilisation.
+Appwrite dans Illa est une intégration de base de données qui vous permet de vous connecter et d'interagir avec une base de données Appwrit. Appwrite est un système de gestion de base de données relationnelle populaire reconnu pour sa rapidité, sa fiabilité et sa facilité d'utilisation.
 
 Avec l'intégration de l'Appwrite dans Illa, vous pouvez interroger, insérer, mettre à jour et supprimer des données d'une base de données Appwrite en utilisant des commandes SQL. Vous pouvez également créer des requêtes SQL personnalisées et les exécuter dans Illa. Cela facilite la construction d'applications et de tableaux de bord basés sur des données qui affichent des données en temps réel à partir d'une base de données Appwrit.
 
-Ce tutoriel décrit le processus de création d'un panneau d'administration en utilisant ILLA Builder et Appwrite en quelques étapes simples. ILLA est une plate-forme à code faible pour les développeurs qui permet le développement rapide et le déploiement d'outils internes. Il permet de créer des pages en faisant glisser et déposer des composants de l'interface, en se connectant à n'importe quelle base de données ou API, et en écrivant du JavaScript. Pour en savoir plus sur Appwrite, visitez leur site Web sur https://appwrite.io/(https://appwrite.io/) Commençons !
+Ce tutoriel décrit le processus de création d'un panneau d'administration en utilisant ILLA Builder et Appwrite en quelques étapes simples. ILLA est une plate-forme à code faible pour les développeurs qui permet le développement rapide et le déploiement d'outils internes. Il permet de créer des pages en faisant glisser et déposer des composants de l'interface, en se connectant à n'importe quelle base de données ou API, et en écrivant du JavaScript. Pour en savoir plus sur Appwrite, visitez leur site Web sur https://Appwrite.io/(https://Appwrite.io/) Commençons !
 
-### Configurez votre backend sur l'écriture d'applications
+### Configurez votre backend sur Appwrite
 
 Après vous être connecté à votre compte Appwrit, sur le tableau de bord Appwrite, cliquez sur `**Créer un projet**` et définissez le nom sur `Premier Project`.
 
@@ -46,7 +46,7 @@ Afin de récupérer des documents par attributs, nous devons créer des index co
 
 Cette base de données est maintenant prête à être intégrée à Illa.
 
-### Créer une écriture d'application
+### Créer une application d'écriture
 
 Il y a deux façons de créer une ressource dans Illa après la connexion à votre compte Illa.
 
@@ -56,7 +56,7 @@ Connectez-vous à votre compte Illa, sélectionnez `**Ressources**` en haut de l
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Sélectionnez **`AppWrite`** dans la liste des bases de données.
+Sélectionnez **`Appwrite`** dans la liste des bases de données.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
@@ -64,19 +64,19 @@ Connectez-vous à la base de données avec les paramètres requis décrits dans 
 
 Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
 
-Après avoir créé une ressource, l'AppWrite prêt s'affichera comme indiqué.
+Après avoir créé une ressource, l'Appwrite prêt s'affichera comme indiqué.
 
 ![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
 -   Créer dans le constructeur
 
-Connectez-vous à votre compte Illa, créez un projet dans Illa Builder dans la page `**App**` et accédez à la **`Liste d'actions`** en bas de la page. Cliquez sur `**new**`, puis sélectionnez **`AppWrite`** dans la liste des bases de données. Ensuite, connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous.
+Connectez-vous à votre compte Illa, créez un projet dans Illa Builder dans la page `**App**` et accédez à la **`Liste d'actions`** en bas de la page. Cliquez sur `**new**`, puis sélectionnez **`Appwrite`** dans la liste des bases de données. Ensuite, connectez-vous à la base de données avec les paramètres requis décrits dans `Paramètres de connexion` ci-dessous.
 
 Cliquez sur `**Tester la connexion**` pour voir si nous pouvons nous connecter avec succès à la base de données. Si oui, cliquez sur **`Enregistrer les ressources`**, sinon vérifiez que le nom d'hôte, le port, le nom d'utilisateur et le mot de passe sont corrects.
 
 ### Paramètres de connexion
 
-Ici, nous avons besoin de fournir des informations pour se connecter à la base de données AppWrite .
+Ici, nous avons besoin de fournir des informations pour nous connecter à la base de données Appwrit.
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
@@ -112,11 +112,11 @@ Le produit final devrait ressembler à cela.
 
 ### Créer des actions
 
-Nous avons créé une ressource AppWrite , nous pouvons ajouter l'action en sélectionnant AppWrite de la liste d'action et en choisissant le bouton **`Create action`**.
+Nous avons créé une ressource Appwrit, nous pouvons ajouter l'action en sélectionnant Appwrite de la liste d'action et en choisissant le bouton **`Create action`**.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
-Maintenant nous avons ajouté le serveur AppWrite comme une action à notre page de construction.
+Maintenant nous avons ajouté le serveur Appwrite comme une action à notre page de construction.
 
 ![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
 
@@ -167,7 +167,7 @@ un objet de réponse qui inclut les données du document demandé
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Utilisez `{{appwrite1.data}}` pour obtenir toute la valeur retournée.
+Utilisez `{{Appwrite1.data}}` pour obtenir toute la valeur retournée.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -228,6 +228,6 @@ Un tableau de documents qui satisfont le filtre.
 
 ![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-Utilisez `{{appwrite1.data[0].documents}}` pour obtenir la valeur retournée.
+Utilisez `{{Appwrite1.data[0].documents}}` pour obtenir la valeur retournée.
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
