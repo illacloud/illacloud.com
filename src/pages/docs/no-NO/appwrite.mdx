@@ -1,7 +1,7 @@
 ---
-title: AppWrite
+title: Appwrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=no&filter=basic&value=0
-metaTitle: AppWrite Integration Doc ∙ILLA Cloud
+metaTitle: Skriv inn IntegrasjonsDoc ∙ILLA Cloud
 desc: Lær hvordan du kobler til og samhandler med Appwrite database ved å bruke ILLA Cloud.
 tagCategory: doc_menu_appwrite_click
 categoryName: 🔨 Integrasjoner
@@ -9,15 +9,15 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>Hva er AppWrite?</h2>
+## <h2 hidden>Hva er Appwrite?</h2>
 
-AppWrite in Illa er en databaseintegrasjon som lar deg koble til og kommunisere med en AppWrite database. Appwrite er et populært relasjonssystem for database med åpen kildekode som er kjent for sin hastighet, pålitelighet og bruksfrihet.
+Appwrite in Illa is a database integration that allows you to connect and interact with a Appwrite database. Appwrite er et populært relasjonssystem for database med åpen kildekode som er kjent for sin hastighet, pålitelighet og bruksfrihet.
 
 Med integrasjonen Appwrite i Illa, kan du spørre, innstille, oppdatere og slette data fra en skrivedatabase ved å bruke SQL-kommandoer. Du kan også opprette egendefinerte SQL-spørringer og kjøre dem i Illa. Dette gjør det enkelt å bygge data-drevne programmer og dashbord som viser sanntidsdata fra en Appwrite database.
 
-Denne veiledningen viser prosessen med å lage et Admin-panel ved hjelp av ILLA Builder og Appwrite i noen enkle trinn. ILLA er en lavkode-plattform for utviklere som gjør det mulig å raskt utvikle og ta i bruk interne verktøy. Det åpner for å opprette sider ved å dra og slippe UI komponenter, koble til database eller API, og skrive JavaScript. For å lære mer om Appwrite, besøk nettsiden sin på https://appwrite.io/(https://appwrite.io/) La oss begynne!
+Denne veiledningen viser prosessen med å lage et Admin-panel ved hjelp av ILLA Builder og Appwrite i noen enkle trinn. ILLA er en lavkode-plattform for utviklere som gjør det mulig å raskt utvikle og ta i bruk interne verktøy. Det åpner for å opprette sider ved å dra og slippe UI komponenter, koble til database eller API, og skrive JavaScript. For å lære mer om Appwrite, besøk nettsiden sin på https://Appwrite.io/(https://Appwrite.io/) La oss begynne!
 
-### Sett opp din Bakside på AppWrite
+### Sett opp Back end på Appwrite
 
 Etter å ha logget deg inn på Appwrite dashboard, klikk `**Create project**` og la navnet `First Project`.
 
@@ -46,7 +46,7 @@ For å hente dokumenter fra attributter, må vi gjøre tilsvarende indekser for 
 
 Denne databasen er nå klar til å integrere med Illa.
 
-### Opprett applikasjon
+### Opprett Appwrite
 
 Det er to måter å lage en ressurs i Illa etter å ha logget på din Illa-konto.
 
@@ -56,7 +56,7 @@ Logg deg på din Illa konto, velg `**Ressurser**` på toppen av siden, og klikk 
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Velg **`AppWrite`** fra databaselisten.
+Velg **`Appwrite`** fra databaselisten.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
@@ -64,19 +64,19 @@ Koble til databasen med de nødvendige parametrene beskrevet i "Tilkoblingsinnst
 
 Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
 
-Etter oppretting av en ressurs, vil AppWrite vises som vist.
+Etter oppretting av en ressurs, vil Appwrite vises som vist.
 
 ![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
 -   Opprett i bygger
 
-Logg deg på din Illa konto, opprett et prosjekt i Illa Builder på `**` siden, og naviger til **`Handlingslisten`** nederst på siden. Klikk `**new**`, og velg **`AppWrite`** fra databaselisten. Deretter kan du koble til databasen med nødvendige parametere beskrevet i "Tilkoblingsinnstillinger" nedenfor.
+Logg deg på din Illa konto, opprett et prosjekt i Illa Builder på `**` siden, og naviger til **`Handlingslisten`** nederst på siden. Klikk `**new**`, og velg **`Appwrite`** fra databaselisten. Deretter kan du koble til databasen med nødvendige parametere beskrevet i "Tilkoblingsinnstillinger" nedenfor.
 
 Klikk `**Test oppkobling**` for å se om vi har lykkes i å koble til databasen. Hvis ja, klikk **`Lagre ressurser`**, eller dobbeltsjekk vertsnavn, port, brukernavn og passord er riktig.
 
 ### Tilkobling innstillinger
 
-Her må vi gi informasjon for å koble til AppWrite database.
+Her må vi gi informasjon for å koble til Appwrite database.
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
@@ -112,15 +112,15 @@ Det endelige produktet skal se omtrent slik ut.
 
 ### Opprett handlinger
 
-Vi har laget en AppWrite resource, vi kan legge til handlingen ved å velge AppWrite fra handlingslisten og velge **`Create action`** knappen.
+Vi har laget en Appwrite resource, vi kan legge til handlingen ved å velge Appwrite fra handling-listen og velge **`Create action`** knappen.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
-Nå har vi lagt til AppWrite server som en handling på byggesiden vår.
+Nå har vi lagt til Appwrite serveren som en handling på byggesiden vår.
 
 ![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
 
-### Konfigurer AppWrite
+### Konfigurer Appwrite
 
 #### Oversikt
 
@@ -167,7 +167,7 @@ et svarobjekt som omfatter dataene til det forespurte dokumentet
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Bruk "{{appwrite1.data}}" for å få alle verdier som returneres.
+Bruk "{{Appwrite1.data}}" for å få alle verdier som returneres.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -228,6 +228,6 @@ En rekke dokumenter som tilfredsstiller filteret.
 
 ![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-Bruk "{{appwrite1.data[0].documents}}" for å komme tilbake i verdi.
+Bruk "{{Appwrite1.data[0].documents}}" for å komme tilbake i verdi.
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
