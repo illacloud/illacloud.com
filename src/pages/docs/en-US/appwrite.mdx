@@ -1,8 +1,8 @@
 ---
-title: AppWrite
+title: Appwrite
 
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=en&filter=basic&value=0
-metaTitle: AppWrite Integration Doc | ILLA Cloud
+metaTitle: Appwrite Integration Doc | ILLA Cloud
 desc: Learn how to connect and interact with Appwrite database using ILLA Cloud. 
 tagCategory: doc_menu_appwrite_click
 
@@ -11,15 +11,15 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>What is AppWrite?</h2>
+## <h2 hidden>What is Appwrite?</h2>
 
-AppWrite in Illa is a database integration that allows you to connect and interact with a AppWrite database. Appwrite is a popular open-source relational database management system that is known for its speed, reliability, and ease of use.
+Appwrite in Illa is a database integration that allows you to connect and interact with a Appwrite database. Appwrite is a popular open-source relational database management system that is known for its speed, reliability, and ease of use.
 
 With the Appwrite integration in Illa, you can query, insert, update, and delete data from a Appwrite database using SQL commands. You can also create custom SQL queries and run them within Illa. This makes it easy to build data-driven applications and dashboards that display real-time data from a Appwrite database.
 
-This tutorial outlines the process of creating an Admin Panel using ILLA Builder and Appwrite in a few simple steps. ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Appwrite, visit their website at https://appwrite.io/(https://appwrite.io/) Let’s begin!
+This tutorial outlines the process of creating an Admin Panel using ILLA Builder and Appwrite in a few simple steps. ILLA is a low-code platform for developers that enables the rapid development and deployment of internal tools. It allows for creating pages by dragging and dropping UI components, connecting to any database or API, and writing JavaScript. To learn more about Appwrite, visit their website at https://Appwrite.io/(https://Appwrite.io/) Let’s begin!
 
-### Set up your Back end on AppWrite
+### Set up your Back end on Appwrite
 
 After signing into your Appwrite account, on the Appwrite dashboard, click `**Create project**` and set the name to `First Project`.
 
@@ -48,7 +48,7 @@ In order to retrieve documents by attributes, we need to make corresponding inde
 
 This database is now ready for you to integrate with Illa.
 
-### Create AppWrite
+### Create Appwrite
 
 There are two ways to create a resource in Illa after signing into your Illa account.
 
@@ -58,7 +58,7 @@ Sign into your Illa account, select `**Resources**` on the top of the page, and 
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Select **`AppWrite`** from the database list.
+Select **`Appwrite`** from the database list.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
@@ -66,19 +66,19 @@ Connect to the database with the required parameters described in `Connection Se
 
 Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
 
-After creating a resource, the ready AppWrite will display as shown.
+After creating a resource, the ready Appwrite will display as shown.
 
 ![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
 - Create in Builder
 
-Sign into your Illa account, create a project in Illa Builder in the `**App**` page, and navigate to the **`Action List`** at the bottom of the page. Click `**new**`, then select **`AppWrite`** from the database list. Then, connect to the database with required parameters described in `Connection Settings` below.
+Sign into your Illa account, create a project in Illa Builder in the `**App**` page, and navigate to the **`Action List`** at the bottom of the page. Click `**new**`, then select **`Appwrite`** from the database list. Then, connect to the database with required parameters described in `Connection Settings` below.
 
 Click `**Test Connection**` to see if we can successfully connect to the database. If yes, click **`Save Resources`**, else, double check the hostname, port, username, and password is correct.
 
 ### Connection Settings
 
-Here we need to provide information for connecting to AppWrite database.
+Here we need to provide information for connecting to Appwrite database.
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
@@ -114,15 +114,15 @@ The final product should look something like this.
 
 ### Create Actions
 
-We have created a AppWrite resource, we can add the action by selecting AppWrite from action list and choosing the **`Create action`** button.
+We have created a Appwrite resource, we can add the action by selecting Appwrite from action list and choosing the **`Create action`** button.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
-Now we have added the AppWrite server as an action to our building page.
+Now we have added the Appwrite server as an action to our building page.
 
 ![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
 
-### Configure AppWrite
+### Configure Appwrite
 
 #### Overview
 
@@ -169,7 +169,7 @@ a response object that includes the data of the requested document
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Use `{{appwrite1.data}}` to get all returned value.
+Use `{{Appwrite1.data}}` to get all returned value.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -230,6 +230,6 @@ An array of documents that satisfy the filter.
 
 ![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-Use `{{appwrite1.data[0].documents}}` to get returned value.
+Use `{{Appwrite1.data[0].documents}}` to get returned value.
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)

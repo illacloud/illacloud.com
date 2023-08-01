@@ -1,7 +1,7 @@
 ---
-title: AppWrite
+title: Appwrite
 crowdinRepo: https://crowdin.com/multilingual/illacloud-website/163?languages=fi&filter=basic&value=0
-metaTitle: AppWrite Integration Doc - ILLA Cloud
+metaTitle: Appwrite Integration Doc - ILLA Cloud
 desc: Opi luomaan yhteyden Appwrite tietokantaan ja olemaan vuorovaikutuksessa ILLA Cloudin kanssa.
 tagCategory: doc_menu_appwrite_click
 categoryName: ":vasara: Integraatiot"
@@ -9,15 +9,15 @@ categoryPriority: 3
 postPriority: 1
 ---
 
-## <h2 hidden>Mitä AppWrite?</h2>
+## <h2 hidden>Mitä Appwrite on?</h2>
 
-AppWrite in Illa on tietokanta integraatio, jonka avulla voit muodostaa yhteyden ja vuorovaikutuksessa AppWrite tietokantaan. Appwrite on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on tunnettu sen nopeus, luotettavuus ja helppokäyttöisyys.
+Appwrite in Illa on tietokannan integraatio, jonka avulla voit muodostaa yhteyden ja olla vuorovaikutuksessa Appwrite tietokantaan. Appwrite on suosittu avoimen lähdekoodin relaatiotietokannan hallintajärjestelmä, joka on tunnettu sen nopeus, luotettavuus ja helppokäyttöisyys.
 
 Appwrite integraation Illa avulla voit kysyä, lisätä, päivittää ja poistaa tietoja Appwrite tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja dashboardeja, jotka näyttävät reaaliaikaista dataa Appwrite tietokannasta.
 
-Tässä tutoriaalissa hahmotellaan prosessi, jolla luodaan hallintapaneeli ILLA Builderia ja Appwrite käyttäen muutamassa yksinkertaisessa vaiheessa. ILLA on matalan koodin alusta kehittäjille, joka mahdollistaa sisäisten työkalujen nopean kehittämisen ja käyttöönoton. Se mahdollistaa sivujen luomisen vetämällä ja pudottamalla käyttöliittymän komponentteja, yhdistämällä mihin tahansa tietokantaan tai APIin ja kirjoittamalla JavaScriptiä. Jos haluat lisätietoja Appwritesta, vieraile heidän verkkosivustollaan osoitteessa https://appwrite.io/(https://appwrite.io/) Aloitetaan!
+Tässä tutoriaalissa hahmotellaan prosessi, jolla luodaan hallintapaneeli ILLA Builderia ja Appwrite käyttäen muutamassa yksinkertaisessa vaiheessa. ILLA on matalan koodin alusta kehittäjille, joka mahdollistaa sisäisten työkalujen nopean kehittämisen ja käyttöönoton. Se mahdollistaa sivujen luomisen vetämällä ja pudottamalla käyttöliittymän komponentteja, yhdistämällä mihin tahansa tietokantaan tai APIin ja kirjoittamalla JavaScriptiä. Jos haluat lisätietoja Appwritesta, vieraile heidän verkkosivustollaan osoitteessa https://Appwrite.io/(https://Appwrite.io/) Aloitetaan!
 
-### Määritä takaisin loppu AppWrite
+### Määritä Takaisin loppu Appwrite
 
 Kun olet kirjautunut Appwrite tilillesi, klikkaa `**Create project**` ja aseta nimi `First Project`.
 
@@ -56,7 +56,7 @@ Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta 
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Valitse **`AppWrite`** tietokantaluettelosta.
+Valitse **`Appwrite`** tietokantaluettelosta.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
@@ -64,19 +64,19 @@ Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa
 
 Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
 
-Kun resurssi on luotu, valmis AppWrite näyttää kuvatulla tavalla.
+Kun resurssi on luotu, valmis Appwrite näyttää kuvatulla tavalla.
 
 ![app_ex_ready](https://cdn.illacloud.com/official-website/img/docs/app_ex_ready.png)
 
 -   Luo rakentajaan
 
-Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, ja valitse **`AppWrite`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, ja valitse **`Appwrite`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
 
 Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
 
 ### Yhteyden Asetukset
 
-Täällä meidän on annettava tietoa yhteyden AppWrite tietokantaan.
+Täällä meidän on annettava tietoa yhteyden Appwrite tietokantaan.
 
 ![app_config](https://cdn.illacloud.com/official-website/img/docs/app_config.png)
 
@@ -112,11 +112,11 @@ Lopullisen tuotteen pitäisi näyttää jotain tällaista.
 
 ### Luo Toiminnot
 
-Olemme luoneet AppWrite -resurssin, voimme lisätä toiminnon valitsemalla AppWrite toimintalistasta ja valitsemalla **`Create action`** -painikkeen.
+Olemme luoneet Appwrite resurssin, voimme lisätä toiminnon valitsemalla Appwrite toimintaluettelosta ja valitsemalla **`Create action`** -painikkeen.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
-Nyt olemme lisänneet AppWrite palvelimen toiminnaksi meidän rakennussivulle.
+Nyt olemme lisänneet Appwrite palvelimen toiminnaksi meidän rakennussivun.
 
 ![app](https://cdn.illacloud.com/official-website/img/docs/app.png)
 
@@ -167,7 +167,7 @@ vastausobjekti, joka sisältää pyydetyn asiakirjan tiedot.
 
 ![app_get_data](https://cdn.illacloud.com/official-website/img/docs/app_get_data.png)
 
-Käytä `{{appwrite1.data}}` saadaksesi kaikki palautetut arvot.
+Käytä `{{Appwrite1.data}}` saadaksesi kaikki palautetut arvot.
 
 ![app_get_code](https://cdn.illacloud.com/official-website/img/docs/app_get_code.png)
 
@@ -228,6 +228,6 @@ Valikoima asiakirjoja, jotka täyttävät suodatin.
 
 ![app_list_data](https://cdn.illacloud.com/official-website/img/official-site/intergration/app_list_data.png)
 
-Käytä `{{appwrite1.data[0].documents}}` saadaksesi palautetun arvon.
+Käytä `{{Appwrite1.data[0].documents}}` saadaksesi palautetun arvon.
 
 ![app_list_code](https://cdn.illacloud.com/official-website/img/docs/app_list_code.png)
