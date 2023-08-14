@@ -15,11 +15,11 @@ Appwrite in Illa ist eine Datenbank-Integration, mit der Sie sich verbinden und 
 
 Mit der Appwrite-Integration in Illa können Sie Daten aus einer Appwrite-Datenbank mittels SQL-Befehlen abfragen, einfügen, aktualisieren und löschen. Sie können auch benutzerdefinierte SQL-Abfragen erstellen und innerhalb von Illa ausführen. Dies macht es einfach, datengesteuerte Anwendungen und Dashboards zu erstellen, die Echtzeitdaten aus einer Appwrite-Datenbank anzeigen.
 
-Dieses Tutorial beschreibt den Prozess der Erstellung eines Admin-Panels mit Hilfe von ILLA Builder und Appwrite in ein paar einfachen Schritten. ILLA ist eine Low-Code-Plattform für Entwickler, die die schnelle Entwicklung und den Einsatz von internen Tools ermöglicht. Es ermöglicht die Erstellung von Seiten durch Ziehen und Ablegen von UI-Komponenten, Verbindung zu jeder Datenbank oder API, und das Schreiben von JavaScript. Um mehr über Appwrite zu erfahren, besuchen Sie ihre Website unter https://Appwrite.io/(https://Appwrite.io/) Let's beginnen!
+Dieses Tutorial beschreibt den Prozess der Erstellung eines Admin-Panels mit Hilfe von ILLA Builder und Appwrite in ein paar einfachen Schritten. ILLA ist eine Low-Code-Plattform für Entwickler, die die schnelle Entwicklung und den Einsatz von internen Tools ermöglicht. Es ermöglicht die Erstellung von Seiten durch Ziehen und Ablegen von UI-Komponenten, Verbindung zu jeder Datenbank oder API, und das Schreiben von JavaScript. Um mehr über Appwrite zu erfahren, besuche ihre Website unter <https://Appwrite.io/> Let's beginnen!
 
 ### Backend im Appwrite einrichten
 
-Nachdem Sie sich bei Ihrem Appwrite-Konto angemeldet haben, klicken Sie auf dem Appwrite-Dashboard auf `**Projekt erstellen**` und setzen Sie den Namen auf `First Project`.
+Nachdem Sie sich bei Ihrem Appwrite-Konto angemeldet haben, klicken Sie auf dem Appwrite-Dashboard auf `Projekt erstellen` und setzen Sie den Namen auf `First Project`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Es gibt zwei Möglichkeiten, nach der Anmeldung in Ihrem Illa-Konto eine Ressour
 
 -   In Ressourcen erstellen
 
-Melde dich in dein Illa Konto an, wähle `**Ressourcen**` oben auf der Seite und klicke auf `**Neu erstellen**` Button.
+Melde dich in dein Illa-Konto an, wähle `Ressourcen` oben auf der Seite und klicke auf `Neues erstellen`.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Wähle **`Appwrite`** aus der Datenbankliste.
+Wähle `Appwrite` aus der Datenbankliste.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Verbinden Sie sich mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
 
-Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+Klicke auf `Test Connection` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicken Sie auf `Ressourcen speichern`, andernfalls überprüfen Sie den Hostnamen, Port, Benutzernamen und Passwort korrekt.
 
 Nach dem Erstellen einer Ressource wird das fertige Appwrite wie angezeigt angezeigt.
 
@@ -70,9 +70,9 @@ Nach dem Erstellen einer Ressource wird das fertige Appwrite wie angezeigt angez
 
 -   Im Builder erstellen
 
-Melde dich bei deinem Illa Account an, erstelle ein Projekt in Illa Builder auf der `**App**` Seite und navigieren Sie zur **`Action List`** am unteren Ende der Seite. Klicke auf `**new**`, dann wähle **`Appwrite`** aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
+Melde dich bei deinem Illa-Konto an, erstelle ein Projekt in Illa Builder in der `App` Seite und navigieren Sie zur `Action List` unten auf der Seite. Klicken Sie auf `new`, dann wählen Sie `Appwrite` aus der Datenbankliste. Verbinden Sie sich dann mit der Datenbank mit den erforderlichen Parametern, die in `Verbindungseinstellungen` unten beschrieben sind.
 
-Klicke auf `**Verbindung testen**` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicke auf **`Ressourcen speichern`**, ansonsten überprüfe doppelt, ob der Hostname, der Port, der Benutzername und das Passwort korrekt sind.
+Klicke auf `Test Connection` um zu sehen, ob wir erfolgreich mit der Datenbank verbinden können. Wenn ja, klicken Sie auf `Ressourcen speichern`, andernfalls überprüfen Sie den Hostnamen, Port, Benutzernamen und Passwort korrekt.
 
 ### Verbindungseinstellungen
 
@@ -88,21 +88,21 @@ Hier müssen wir Informationen zur Verbindung mit der Appwrite-Datenbank bereits
 | Projekt-ID        | benötigt | eindeutige Kennung, die Ihr gesamtes Appwrite-Projekt repräsentiert                                                 |
 | API-Schlüssel     | benötigt | ein geheimes Token, das als Form der Authentifizierung bei API-Anfragen an den Appwrite-Server dient                |
 
-Um die benötigte **`Host`**, **`Database ID`**, **`Project ID`** und **`API Schlüssel`** im Appwrite zu finden, gehen wir zuerst zum `**Einstellung**` Button in der unteren linken Ecke der Projektseite.
+Um den erforderlichen `Host`, `Database ID`, `Project ID` und `API Key` im Appwrite zu finden, wir gehen zuerst zum `Einstellen`-Button in der unteren linken Ecke der Projektseite.
 
-Kopieren der `project ID` für **`project ID`** und `API Endpoint` für **`Host`** in der Appwrite Konfiguration in Illa.
+Kopieren der `project ID` für `project ID` und `API Endpoint` für `Host` in der Appwrite Konfiguration in Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Dann klicken Sie auf die Schaltfläche **`API-Schlüssel anzeigen`** auf der gleichen Seite. Wenn Sie keine API für dieses Projekt erstellt haben Klicke auf den **`Erstelle API-Schlüssel`** Button und wähle nur den `Database`-Ordner, da das ist, was wir von Appwrite verwenden werden.
+Dann können wir auf die Schaltfläche `API Keys` auf der gleichen Seite klicken. Wenn Sie keine API für dieses Projekt erstellt haben Klicken Sie auf den "API Key"-Button und wählen Sie nur den "Database"-Ordner, da dies das ist, was wir von Appwrite verwenden werden.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Kopiere das `API Key Secret` für **`API Key`** in die Illa Konfiguration. Es kann für diese beiden Stellen kopiert werden.
+Kopiere das `API Key Secret` für `API Key` in die Illa Konfiguration. Es kann für diese beiden Stellen kopiert werden.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Was wir übrig haben, ist die **`Database ID`** die wir auf der `Database` Seite finden. Kopieren und Einfügen in die Appwrite Konfiguration in Illa.
+Was wir noch übrig haben, ist die `Database ID`, die wir auf der `Database` Seite finden können. Kopieren und Einfügen in die Appwrite Konfiguration in Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Das Endprodukt sollte so aussehen.
 
 ### Aktionen erstellen
 
-Wir haben eine Appwrite-Ressource erstellt. Wir können die Aktion hinzufügen, indem wir Appwrite aus der Aktionsliste auswählen und die **`Erstelle Aktion`** Schaltfläche auswählen.
+Wir haben eine Appwrite-Ressource erstellt. Wir können die Aktion hinzufügen, indem wir Appwrite aus der Aktionsliste auswählen und die Schaltfläche `Aktion erstellen` auswählen.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Jetzt haben wir den Appwrite-Server als Aktion zu unserer Bauseite hinzugefügt.
 
 ein neues Dokument in einer Sammlung erstellen
 
-** Input **
+ Input 
 
 | Eigenschaften  | Benötigt | Beschreibung                                                                           |
 | -------------- | -------- | -------------------------------------------------------------------------------------- |
 | Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde  |
 | Daten          | optional | ein Objekt, das die Felder und Werte des neuen Dokuments enthält.                      |
 
-Zum Beispiel, um ein neues Dokument in einer Sammlung mit zwei Feldern zu erstellen - **`name`** und **`age`**, du kannst 1 als **`document ID`** und `{{ {"Name": "David", "Age": 18}}}` für **`data`** verwenden.
+Zum Beispiel, um ein neues Dokument in einer Sammlung mit zwei Feldern zu erstellen - `name` und `age`, du kannst 1 als `document ID` und `{{ {"Name": "David", "Age": 18}}}` für `data` verwenden.
 
-** Ausgabe **
+ Ausgang 
 
 ein Antwortobjekt, das die ID des neu erstellten Dokuments sowie zusätzliche Metadaten wie Datum und Uhrzeit der Erstellung enthält.
 
@@ -153,15 +153,15 @@ ein Antwortobjekt, das die ID des neu erstellten Dokuments sowie zusätzliche Me
 
 ein bestimmtes Dokument aus einer Sammlung in der Datenbank abrufen
 
-** Input **
+ Input 
 
 | Eigenschaften  | Benötigt | Beschreibung                                                                          |
 | -------------- | -------- | ------------------------------------------------------------------------------------- |
 | Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde |
 
-Zum Beispiel erhalten wir das Dokument mit der ID **`1`**.
+Zum Beispiel können wir das Dokument mit der ID `1` erhalten.
 
-** Ausgabe **
+ Ausgang 
 
 ein Antwortobjekt, das die Daten des angeforderten Dokuments enthält
 
@@ -175,16 +175,16 @@ Verwende `{{Appwrite1.data}}` um alle zurückgegebenen Werte zu erhalten.
 
 aktualisieren Sie die Daten eines vorhandenen Dokuments in einer Sammlung.
 
-** Input **
+ Input 
 
 | Eigenschaften  | Benötigt | Beschreibung                                                                                                       |
 | -------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
 | Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde                              |
 | Daten          | optional | Ein Objekt, das die aktualisierten Felder und Werte enthält, die dem Dokument zugewiesen werden sollen.            |
 
-Zum Beispiel, um ein Dokument in einer Sammlung mit der **`updateDocument`** Methode zu aktualisieren, du kannst **`1`** für Document-ID und `{{{"Name":"Fred"}}}` für Daten setzen.
+Zum Beispiel, um ein Dokument in einer Sammlung mit der Methode `updateDocument` zu aktualisieren, du kannst `1` für Document-ID und `{{{"Name":"Fred"}}}` für Daten setzen.
 
-** Ausgabe **
+ Ausgang 
 
 ein Antwortobjekt, das die Daten des angeforderten Dokuments enthält
 
@@ -194,15 +194,15 @@ ein Antwortobjekt, das die Daten des angeforderten Dokuments enthält
 
 ein bestimmtes Dokument aus einer Sammlung in der Datenbank löschen
 
-** Input **
+ Input 
 
 | Eigenschaften  | Benötigt | Beschreibung                                                                          |
 | -------------- | -------- | ------------------------------------------------------------------------------------- |
 | Dokument-ID    | benötigt | ein eindeutiger Identifikator, der einem Datenbank-Sammlungsdokument zugewiesen wurde |
 
-Zum Beispiel können wir das Dokument mit der ID **`1`** löschen.
+Zum Beispiel können wir das Dokument mit der ID `1` löschen.
 
-** Ausgabe **
+ Ausgang 
 
 ein Antwortobjekt, das die erfolgreiche Löschung des Dokuments bestätigt.
 
@@ -212,7 +212,7 @@ ein Antwortobjekt, das die erfolgreiche Löschung des Dokuments bestätigt.
 
 mehrere Dokumente aus einer Sammlung in der Datenbank abrufen
 
-** Input **
+ Input 
 
 | Eigenschaften    | Benötigt | Beschreibung                                                                                  |
 | ---------------- | -------- | --------------------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ mehrere Dokumente aus einer Sammlung in der Datenbank abrufen
 
 Zum Beispiel, um alle Dokumente mit Name = James.
 
-** Ausgabe **
+ Ausgang 
 
 Eine Reihe von Dokumenten, die den Filter erfüllen.
 
