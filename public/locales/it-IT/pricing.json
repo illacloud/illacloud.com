@@ -128,29 +128,44 @@
     "description": "Altre domande? Sentitevi liberi di <0>chiedere ILLA su Discord</0>",
     "content": [
       {
-        "question": "Che cos’è ILLA Cloud?",
-        "answer": "ILLA Cloud è una piattaforma a basso codice che eredita molteplici funzionalità da ILLA Builder e ILLA Drive. Fornisce un'esperienza senza soluzione di continuità, consentendo agli utenti di accedere e registrarsi per accedere alle sue funzionalità. Con ILLA Cloud, è possibile costruire facilmente strumenti interni, dashboard, CRUD (creare, leggere, aggiornare, eliminare) applicazioni e altro ancora. La piattaforma migliora notevolmente l'efficienza del lavoro e aiuta le aziende a risparmiare costi.",
-        "sort": "0"
-      },
-      {
-        "question": "Chi può usare ILLA Cloud",
-        "answer": "Se sei un product manager, full-stack developer, project manager, data analyst... nyone può utilizzare ILLA Cloud per costruire strumenti: Dalla progettazione di interfacce front-end con componenti drag-and-drop all'integrazione con le fonti di dati e alla generazione di query tramite l'assistenza AI, ILLA offre un'esperienza semplificata che rimuove le complessità inutili. Non è necessario essere un esperto di tecnologia per creare le proprie applicazioni.",
+        "question": "Chi sono gli utenti che vengono addebitati per il prodotto?",
+        "answer": "Gli utenti con i permessi di modifica (editor) sono addebitati per il prodotto.",
         "sort": "1"
       },
       {
-        "question": "Quali tipi di applicazioni puoi sviluppare usando ILLA Cloud?",
-        "answer": "1. Rapida attuazione dell'idea: Quando le imprese sperimentano una forte domanda di strumenti interni durante la rapida crescita, ILLA può accelerare significativamente la velocità di sviluppo e la qualità delle applicazioni interne. Questo aiuta ad accelerare la crescita della vostra azienda affrontando rapidamente le esigenze di attrezzatura. 2. Nessuna limitazione di abilità per gli editori: con ILLA, qualsiasi individuo all'interno dell'organizzazione può costruire gli strumenti di cui ha bisogno senza richiedere team specializzati o competenze tecniche. Ciò consente ai dipendenti di svolgere diversi ruoli di creare le proprie soluzioni, promuovendo l'innovazione e la produttività. Riduzione dei costi: facendo leva su ILLA, le imprese possono destinare tempo, forza lavoro e risorse finanziarie alle attività aziendali principali. Ciò si traduce in una riduzione dei costi in quanto ILLA semplifica il processo di sviluppo, elimina la necessità di team specializzati e riduce al minimo gli investimenti necessari per lo sviluppo degli utensili.",
+        "question": "Quali sono i diversi tipi di editori?",
+        "answer": "I diversi tipi di redattori sono proprietari, amministratori e redattore.",
         "sort": "2"
       },
       {
-        "question": "Quali problemi possono risolvere ILLA Cloud?",
-        "answer": "Con ILLA Cloud, è possibile costruire qualsiasi applicazione di cui hai bisogno, come strumenti interni comunemente utilizzati come Dashboards, Pannelli amministrativi, applicazioni CRUD, CRM, CMS e altro ancora. Inoltre, è possibile sviluppare applicazioni di intelligenza artificiale, come applicazioni testo-immagine con diffusione stabile, applicazioni audio-to-text con Whisper, e anche incorporare i modelli GPT di OpenAI per aiutarvi a completare varie attività.",
+        "question": "I telespettatori sono addebitati per l'utilizzo del prodotto?",
+        "answer": "No, gli spettatori non sono addebitati per l'utilizzo del prodotto.",
         "sort": "3"
       },
       {
-        "question": "Quali fonti di dati supporta ILLA?",
-        "answer": "ILLA supporta l'integrazione con una varietà di fonti di dati, tra cui PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, e altro ancora. È possibile connettersi rapidamente a qualsiasi sorgente di dati senza scrivere codice, abilitando l'accesso senza interruzioni ai dati desiderati.",
+        "question": "Come invitare uno spettatore?",
+        "answer": "Per invitare uno spettatore, è necessario aggiornare il team a uno qualsiasi dei più, premium, o piani aziendali e invitare l'utente via e-mail o link.",
         "sort": "4"
+      },
+      {
+        "question": "Quali servizi fornisce ILLA Cloud?",
+        "answer": "ILLA Builder, ILLA Drive e AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "Che cos’è ILLA Drive?",
+        "answer": "ILLA Drive è un CDN (Content Delivery Network) che consente di memorizzare tutti i file e distribuirli agli utenti attraverso i siti web dell'azienda o altri prodotti. L'utilizzo dello stoccaggio e del traffico è fatturato separatamente.",
+        "sort": "6"
+      },
+      {
+        "question": "Che cos’è l’agente AI?",
+        "answer": "AI Agent è una comunità di agenti AI open-source con migliaia di agenti AI forniti da esperti ed entusiasti solleciti. Gli utenti possono eseguire o modificare questi Agenti AI.",
+        "sort": "7"
+      },
+      {
+        "question": "Come si fa la fatturazione per l'uso dell'agente AI?",
+        "answer": "La fatturazione per l'utilizzo di AI Agent si basa su Colla, che è un concetto di fatturazione all'interno di ILLA. Colla misura le risorse consumate durante il runtime degli agenti AI.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB di traffico"
       },
       "ai-agent": {
-        "token": "10K Token al mese"
+        "token": "10K Colla al mese"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB di traffico"
       },
       "ai-agent": {
-        "token": "1K Token al mese"
+        "token": "10K Colla al mese"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Traffico personalizzato"
       },
       "ai-agent": {
-        "token": "Token personalizzato"
+        "token": "Colla personalizzata"
       }
     },
     "ai-agent": {
       "title": "Agente AI (prossimamente)",
-      "token": "100K Token al mese"
+      "token": "100K colla al mese"
     }
   },
   "early_bird": "Uccello precoce."
