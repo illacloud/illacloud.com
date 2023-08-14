@@ -128,29 +128,44 @@
     "description": "Weitere Fragen? Zögern Sie nicht, <0>ILLA auf Discord zu fragen</0>",
     "content": [
       {
-        "question": "Was ist ILLA Cloud?",
-        "answer": "ILLA Cloud ist eine Low-Code-Plattform, die verschiedene Funktionen von ILLA Builder und ILLA Drive erbet. Es bietet eine nahtlose Erfahrung, indem es Benutzern erlaubt sich anzumelden und sich zu registrieren, um auf seine Funktionen zuzugreifen. Mit ILLA Cloud können Sie problemlos interne Tools, Dashboards, CRUD (Erstellen, lesen, aktualisieren, löschen) Anwendungen und vieles mehr erstellen. Die Plattform verbessert die Arbeitseffizienz und hilft Unternehmen, Kosten zu sparen.",
-        "sort": "0"
-      },
-      {
-        "question": "Wer kann ILLA Cloud nutzen",
-        "answer": "Egal, ob Sie Produktmanager, Komplettentwickler, Projektmanager, Datenanalyse... nyone kann ILLA Cloud zur Erstellung von Werkzeugen verwenden: Von der Erstellung von Front-End-Schnittstellen mit Drag-and-Drop-Komponenten bis hin zur Integration in Datenquellen und der Generierung von Abfragen mit Hilfe von AI-Unterstützung, ILLA bietet eine vereinfachte Erfahrung, die unnötige Komplexitäten beseitigt. Sie müssen kein Technologieexperte sein, um Ihre eigenen Anwendungen zu erstellen.",
+        "question": "Wer sind die Nutzer, die für das Produkt berechnet werden?",
+        "answer": "Benutzer mit Bearbeitungsberechtigungen (Editor) werden für das Produkt belastet.",
         "sort": "1"
       },
       {
-        "question": "Welche Art von Anwendungen können Sie mit ILLA Cloud entwickeln?",
-        "answer": "1. Schnelle Ideenumsetzung: Wenn Unternehmen eine hohe Nachfrage nach internen Tools während des schnellen Wachstums erfahren ILLA kann die Entwicklungsgeschwindigkeit und die Qualität Ihrer internen Anwendungen erheblich beschleunigen. Dies hilft Ihnen, das Wachstum Ihres Unternehmens zu beschleunigen, indem Sie schnell auf die Bedürfnisse des Werkzeuges eingehen. Keine Qualifikationsbeschränkungen für Editoren: Mit ILLA kann jede Person innerhalb der Organisation die Werkzeuge aufbauen, die sie benötigt, ohne spezialisierte Teams oder technische Fertigkeiten zu erfordern. Dies ermöglicht den Mitarbeitern über verschiedene Rollen hinweg eigene Lösungen zu entwickeln und fördert Innovation und Produktivität. Kostensenkung: Durch den Einsatz von ILLA können Unternehmen ihre Zeit, Belegschaft und finanzielle Ressourcen für Kerngeschäfte bereitstellen. Dies führt zu geringeren Kosten, da ILLA den Entwicklungsprozess rationalisiert, die Notwendigkeit spezialisierter Teams beseitigt und die erforderlichen Investitionen für die Entwicklung von Werkzeugen minimiert.",
+        "question": "Was sind die verschiedenen Arten von Editoren?",
+        "answer": "Die verschiedenen Editortypen sind Eigentümer, Admin und Editor.",
         "sort": "2"
       },
       {
-        "question": "Welche Probleme kann ILLA Cloud lösen?",
-        "answer": "Mit ILLA Cloud können Sie jede benötigte Anwendung erstellen B. gängige interne Tools wie Dashboards, Admin-Panels, CRUD-Apps, CRM, CMS und vieles mehr. Zusätzlich können Sie AI-Anwendungen entwickeln, wie z. B. Text-zu-Bild-Anwendungen mit Stable Diffusion, Audio-to-Text-Anwendungen mit Whisper, und sogar die GPT-Modelle von OpenAI einbinden, um Ihnen bei der Durchführung verschiedener Aufgaben zu helfen.",
+        "question": "Werden die Zuschauer für die Verwendung des Produkts belastet?",
+        "answer": "Nein, der Betrachter wird für die Nutzung des Produkts nicht belastet.",
         "sort": "3"
       },
       {
-        "question": "Welche Datenquellen unterstützt ILLA?",
-        "answer": "ILLA unterstützt die Integration mit einer Vielzahl von Datenquellen, darunter PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets und mehr. Sie können sich schnell mit einer beliebigen Datenquelle verbinden, ohne Code zu schreiben, was den nahtlosen Zugriff auf Ihre gewünschten Daten ermöglicht.",
+        "question": "Wie lade ich einen Zuschauer ein?",
+        "answer": "Um einen Betrachter einzuladen, musst du das Team auf einen der Pluspunkte aufwerten Premium oder Enterprise-Pläne und laden Sie den Nutzer per E-Mail oder Link ein.",
         "sort": "4"
+      },
+      {
+        "question": "Welche Dienste bietet ILLA Cloud an?",
+        "answer": "ILLA Builder, ILLA Drive and AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "Was ist ILLA Drive?",
+        "answer": "ILLA Drive ist ein CDN (Content Delivery Network), das es ermöglicht, alle Dateien zu speichern und an Benutzer über die Webseiten oder andere Produkte des Unternehmens zu verteilen. Die Nutzung von Speicher- und Datenverkehr wird separat berechnet.",
+        "sort": "6"
+      },
+      {
+        "question": "Was ist KI Agent?",
+        "answer": "AI Agent ist eine Open-Source AI Agent-Community mit tausenden von AI Agenten, die von schnellen Experten und Enthusiasten zur Verfügung gestellt werden. Benutzer können diese KI-Agenten ausführen oder ändern.",
+        "sort": "7"
+      },
+      {
+        "question": "Wie wird die Abrechnung für die Nutzung von AI Agent gemacht?",
+        "answer": "Die Abrechnung für die Nutzung von AI Agent basiert auf Colla, einem Abrechnungskonzept innerhalb von ILLA. Colla misst die Ressourcen, die während der Laufzeit von AI Agenten benötigt werden.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB Datenverkehr"
       },
       "ai-agent": {
-        "token": "10K Token pro Monat"
+        "token": "10K Colla pro Monat"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB Datenverkehr"
       },
       "ai-agent": {
-        "token": "1K Token pro Monat"
+        "token": "10K Colla pro Monat"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Eigener Datenverkehr"
       },
       "ai-agent": {
-        "token": "Benutzerdefiniertes Token"
+        "token": "Eigene Colla"
       }
     },
     "ai-agent": {
       "title": "KI Agent(Kommt bald)",
-      "token": "100K Token pro Monat"
+      "token": "100K colla pro Monat"
     }
   },
   "early_bird": "Ehemaliger Vogel"

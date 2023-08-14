@@ -128,29 +128,44 @@
     "description": "Muita kysymyksiä? Haluatko vapaasti <0>kysyä ILLA:lta Discord</0>",
     "content": [
       {
-        "question": "Mitä ILLA Cloud on?",
-        "answer": "ILLA Cloud on matalan koodin alusta, joka perii useita ominaisuuksia ILLA Builder ja ILLA Drive. Se tarjoaa saumattoman kokemuksen antamalla käyttäjille mahdollisuuden kirjautua sisään ja rekisteröidä sen ominaisuuksia. ILLA Cloud, voit vaivattomasti rakentaa sisäisiä työkaluja, dashboards, CRUD (luoda, lukea, päivittää, poistaa) sovelluksia ja enemmän. Alusta parantaa merkittävästi työn tehokkuutta ja auttaa yrityksiä säästämään kustannuksia.",
-        "sort": "0"
-      },
-      {
-        "question": "Kuka voi käyttää ILLA Cloudia",
-        "answer": "Olitpa sitten tuotepäällikkö, full-stack kehittäjä, projektipäällikkö, datan analyytikko... nyone voi käyttää ILLA Cloud rakentaa työkaluja: Suunnittelusta etupään rajapinnat pudottamalla komponentteja integroida tietolähteisiin ja tuottaa kyselyjä käyttäen tekoälyapua, ILLA tarjoaa virtaviivaisen kokemuksen, joka poistaa tarpeettomat monimutkaisuudet. Sinun ei tarvitse olla tekninen asiantuntija luoda omia sovelluksia.",
+        "question": "Keitä käyttäjiä on veloitettu tuotteesta?",
+        "answer": "Tuotteesta veloitetaan käyttäjät, joilla on muokkausoikeudet (editor).",
         "sort": "1"
       },
       {
-        "question": "Minkälaisia sovelluksia voit kehittää käyttämällä ILLA Cloudia?",
-        "answer": "1. Nopea idean toteutus: Kun yrityksillä on nopean kasvun aikana suuri kysyntä sisäisille työkaluille ILLA voi merkittävästi nopeuttaa kehitystä nopeutta ja laatua sisäisten sovelluksia. Tämä auttaa nopeuttamaan yrityksesi kasvua puuttumalla nopeasti työkalutarpeisiin. 2. Toimittajille ei ole asetettu taitorajoituksia: ILLAn avulla kuka tahansa organisaation sisällä voi rakentaa tarvitsemansa työkalut vaatimatta erikoistuneita tiimejä tai teknisiä taitoja. Näin työntekijät voivat eri rooleissa luoda omat ratkaisunsa ja edistää innovointia ja tuottavuutta. 3. Kustannusten vähentäminen: Hyödyntämällä ILLAa yritykset voivat kohdentaa aikansa, työvoimansa ja taloudelliset resurssinsa keskeiseen liiketoimintaan. Tämä johtaa kustannusten vähenemiseen, sillä ILLA virtaviivaistaa kehitysprosessia, poistaa erikoistuneiden tiimien tarpeen ja minimoi työkalujen kehittämiseen tarvittavat investoinnit.",
+        "question": "Mitkä ovat eri tyyppisiä editoreita?",
+        "answer": "Erilaiset editorit ovat omistaja, ylläpitäjä ja editori.",
         "sort": "2"
       },
       {
-        "question": "Mitä ongelmia ILLA Cloud voi ratkaista?",
-        "answer": "ILLA Cloudin avulla voit rakentaa minkä tahansa tarvitsemasi sovelluksen, kuten yleisesti käytetyt sisäiset työkalut, kuten Dashboards, Admin Panels, CRUD sovellukset, CRM, CMS ja paljon muuta. Lisäksi voit kehittää tekoälysovelluksia, kuten teksti-kuva-sovelluksia, joissa on Stable Diffuusio. Whisper, ja jopa upottaa OpenAI:n GPT-malleja, jotka auttavat sinua suorittamaan erilaisia tehtäviä.",
+        "question": "Onko katsojilta veloitettu tuotteen käyttö?",
+        "answer": "Ei, katsojia ei veloiteta tuotteen käytöstä.",
         "sort": "3"
       },
       {
-        "question": "Mitä tietolähteitä ILLA tukee?",
-        "answer": "ILLA tukee integrointia erilaisia tietolähteitä, kuten PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, ja enemmän. Voit nopeasti muodostaa yhteyden mihin tahansa tietolähteeseen kirjoittamatta koodia, jolloin haluamasi tiedot ovat saumattomat.",
+        "question": "Miten kutsua katsoja?",
+        "answer": "Kutsuaksesi katsojan, sinun on päivitettävä tiimi mihin tahansa plus-ohjelmaan, premium, tai yrityksen suunnitelmia ja kutsua käyttäjä sähköpostitse tai linkin.",
         "sort": "4"
+      },
+      {
+        "question": "Mitä palveluita ILLA Cloud tarjoaa?",
+        "answer": "ILLA Builder, ILLA Drive ja AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "Mitä ILLA Drive on?",
+        "answer": "ILLA Drive on CDN (Content Delivery Network), jonka avulla voit tallentaa tiedostoja ja jakaa ne käyttäjille kautta yhtiön sivustot tai muut tuotteet. Varastoinnin ja liikenteen käyttö laskutetaan erikseen.",
+        "sort": "6"
+      },
+      {
+        "question": "Mitä tekoälyn agentti on?",
+        "answer": "AI Agent on avoimen lähdekoodin AI Agent -yhteisö, jolla on tuhansia älyagentteja, joita tarjoavat nopeat asiantuntijat ja harrastajat. Käyttäjät voivat ajaa tai muokata näitä tekoälyagentteja.",
+        "sort": "7"
+      },
+      {
+        "question": "Miten laskutus tehdään tekoälyagenttien käytöstä?",
+        "answer": "AI Agent -sovelluksen laskutus perustuu Collaan, joka on ILLAn sisäinen laskutuskonsepti. Colla mittaa tekoälyagenttien ajalla kulutetut resurssit.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100Mt liikenne"
       },
       "ai-agent": {
-        "token": "10 K Tunnus kuukaudessa"
+        "token": "Colla kuukaudessa 10 K"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100Mt liikenne"
       },
       "ai-agent": {
-        "token": "1K Tunnus kuukaudessa"
+        "token": "Colla kuukaudessa 10 K"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Mukautettu liikenne"
       },
       "ai-agent": {
-        "token": "Mukautettu tunnus"
+        "token": "Mukautettu colla"
       }
     },
     "ai-agent": {
       "title": "AI-agentti (tulossa pian)",
-      "token": "100K Tunnus kuukaudessa"
+      "token": "100 K colla kuukaudessa"
     }
   },
   "early_bird": "Varhainen lintu"

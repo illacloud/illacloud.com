@@ -128,29 +128,44 @@
     "description": "Všechny další otázky? Neváhejte se <0>zeptat se ILLA na Discord</0>",
     "content": [
       {
-        "question": "Co je to ILLA Cloud?",
-        "answer": "ILLA Cloud je nízkoprogramová platforma, která zdědí více možností z ILLA Builder a ILLA Drive. Poskytuje bezproblémový zážitek tím, že umožňuje uživatelům přihlásit se a registrovat se k jeho funkcím. S ILLA Cloudem můžete bez námahy vytvářet interní nástroje, nástěnky, CRUD (vytváření, čtení, aktualizace, mazání) aplikace a další. Platforma významně zlepšuje pracovní efektivitu a pomáhá společnostem šetřit náklady.",
-        "sort": "0"
-      },
-      {
-        "question": "Kdo může používat ILLA Cloud",
-        "answer": "Ať už jste produktový manažer, kompletní vývojář, správce projektu, analytik dat... nyone může použít ILLA Cloud pro sestavení nástrojů: Od navrhování rozhraní front-end s komponentami přetažení až po integraci se zdroji dat a generování dotazů pomocí pomoci AI, ILLA poskytuje zjednodušené zkušenosti, které odstraňují zbytečné komplikace. Nemusíte být technologickým expertem pro vytváření vlastních aplikací.",
+        "question": "Kdo jsou uživatelé, kteří jsou za tento produkt účtováni?",
+        "answer": "Uživatelé s oprávněním k úpravám (editor) jsou za produkt účtováni.",
         "sort": "1"
       },
       {
-        "question": "Jaké druhy aplikací můžete vyvíjet pomocí ILLA Cloud?",
-        "answer": "1. Rychlé implementace: Když podniky zaznamenávají vysokou poptávku po interních nástrojích během rychlého růstu, ILLA může výrazně urychlit vývojovou rychlost a kvalitu vašich interních aplikací. To pomáhá urychlit růst vaší společnosti rychlým řešením potřeb nástrojů. Žádné omezení dovedností pro editory: S ILLA může každý jednotlivec v rámci organizace vybudovat potřebné nástroje, aniž by vyžadoval specializované týmy nebo technické dovednosti. To umožňuje zaměstnancům napříč různými roli, aby vytvářeli vlastní řešení a podporovali inovace a produktivitu. Snížení nákladů: prostřednictvím pákového efektu ILLA mohou podniky přidělit svůj čas, pracovní sílu a finanční prostředky na hlavní podnikatelské činnosti. To má za následek snížení nákladů, neboť ILLA zefektivňuje vývojový proces, eliminuje potřebu specializovaných týmů a minimalizuje investice potřebné pro vývoj nástrojů.",
+        "question": "Jaké jsou různé typy editorů?",
+        "answer": "Různé typy editorů jsou vlastní, adminové a editory.",
         "sort": "2"
       },
       {
-        "question": "Jaké problémy mohou ILLA Cloudová řešení?",
-        "answer": "S ILLA Cloudem můžete vytvořit jakoukoliv potřebnou aplikaci. jako běžně používané interní nástroje, jako jsou nástěnky, administrátorské panely, CRUD aplikace, CRM, CMS a další. Kromě toho můžete vyvíjet AI aplikace, jako jsou aplikace pro zobrazení textu na obrázek se stabilním difuzí, audio-textové aplikace s Whisperem a dokonce vloží modely GPT OpenAA, které vám pomohou při plnění různých úkolů.",
+        "question": "Jsou za používání produktu účtováni diváci?",
+        "answer": "Ne, diváci nejsou za používání produktu účtováni.",
         "sort": "3"
       },
       {
-        "question": "Které zdroje dat podporují ILLa?",
-        "answer": "ILLA podporuje integraci s různými zdroji dat, včetně PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets a dalších. Můžete se rychle připojit k libovolnému zdroji dat bez psaní kódu, což umožní bezproblémový přístup k požadovaným datům.",
+        "question": "Jak pozvat diváka?",
+        "answer": "Chcete-li pozvat diváka, musíte povýšit tým na některý z plus prémiové nebo podnikové plány a pozvání uživatele prostřednictvím e-mailu nebo odkazu.",
         "sort": "4"
+      },
+      {
+        "question": "Jaké služby poskytuje ILLA Cloud?",
+        "answer": "ILLA Builder, ILLA Drive a agent AI.",
+        "sort": "5"
+      },
+      {
+        "question": "Co je to ILLA Drive?",
+        "answer": "ILLA Drive je CDN (Content Delivery Network), která umožňuje ukládání souborů a jejich distribuci uživatelům prostřednictvím webových stránek společnosti nebo jiných produktů. Použití úložiště a dopravy se účtuje odděleně.",
+        "sort": "6"
+      },
+      {
+        "question": "Co je agentem AI?",
+        "answer": "AI Agent je open-source komunita AI Agent s tisíci AI agentů poskytovanými rychlými odborníky a nadšenci. Uživatelé mohou spustit nebo upravit tato AI agenta.",
+        "sort": "7"
+      },
+      {
+        "question": "Jak se provádí fakturace pro používání AI agenta?",
+        "answer": "Vyúčtování za agenta AI je založeno na Colla, což je koncept fakturace v rámci ILLA. Colla měří zdroje spotřebované během provozu AI agentů.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB doprava"
       },
       "ai-agent": {
-        "token": "10K tokenů měsíčně"
+        "token": "10K Colla měsíčně"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB doprava"
       },
       "ai-agent": {
-        "token": "1K token měsíčně"
+        "token": "10K Colla měsíčně"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Vlastní provoz"
       },
       "ai-agent": {
-        "token": "Vlastní token"
+        "token": "Vlastní colla"
       }
     },
     "ai-agent": {
       "title": "AI Agent(již brzy)",
-      "token": "100K token měsíčně"
+      "token": "100 Kč měsíčně"
     }
   },
   "early_bird": "Rané ptáky"

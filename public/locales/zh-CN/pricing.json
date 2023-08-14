@@ -128,29 +128,44 @@
     "description": "任何其他问题？<0>询问Discord</0>",
     "content": [
       {
-        "question": "ILLA Cloud是什么？",
-        "answer": "ILLA Cloud是一个低代码平台，它集成了ILLA Builder 和 ILLA Drive。 通过 ILLA Cloud，您可以不费力地构建内部工具、仪表板、CRUD (创建、读取、更新、删除)应用程序等等。 该平台大大提高了工作效率，帮助各公司节省费用。",
-        "sort": "0"
-      },
-      {
-        "question": "谁可以使用 ILLA Cloud",
-        "answer": "无论您是产品经理、全栈开发、项目经理、数据分析员... 任何人都可以使用 ILLA Cloud构建工具：从通过拖拽组件的搭建前端页面到与数据源集成并使用 AI SQL生成器生成查询语句，ILLA Cloud提供了一种简单的构建方式，消除不必要的复杂性。任何人都可以创建的应用程序。",
+        "question": "该产品收取费用的用户是谁？",
+        "answer": "我们对有编辑权限的用户收取费用",
         "sort": "1"
       },
       {
-        "question": "您可以使用 ILLA Cloud开发何种应用程序？",
-        "answer": "1. 快速落地想法 ：企业在迅速增长期间对内部工具的需求量很高时， ILLA 可以大大加快您内部应用程序的开发速度和质量。 这有助于通过快速满足工具需求来加快您公司的成长。 2. 对使用者的技能没有限制：在ILLA Cloud的开发方式下，任何人都可以构建他们所需要的工具，而不需要专门的团队或技术技能。 这使得雇员能够发挥各种作用，创造自己的解决办法，促进创新和生产力。 3. 降低成本：企业通过利用ILLA Cloud，可以将时间、劳动力和财力分配给核心商业活动。 ILLA Cloud将工具开发所需的投资减少到更低限度，使得成本降低。",
+        "question": "哪些角色会作为Editor被收费？",
+        "answer": "包括团队里的编辑者、管理者、所有者",
         "sort": "2"
       },
       {
-        "question": "ILLA Cloud能解决什么问题？",
-        "answer": "通过 ILLA Cloud，您可以构建您需要的任何应用程序。 例如内部工具常用的仪表板、管理面板、CRUD应用、CRM、CMS等等。 此外，您可以开发 AI 应用程序，例如通过连接Stable Diffusion实现的text-to-image应用程序，使用 Whisper开发语音转文字的工具，甚至通入 OpenAI的 GPT 模型来完成各种任务。",
+        "question": "您团队内的浏览者是否会被收取费用",
+        "answer": "不，您团队内的浏览者只能查看部分内容，包括您部署过的APP等，不会因此被收费。",
         "sort": "3"
       },
       {
-        "question": "ILLA 支持哪些数据源？",
-        "answer": "ILLA Cloud支持与包括PostgreSQL、MongoDB、REST API、GraphQL、Google Sheets在内的各种数据源集成。 您可以在没有写入代码的情况下快速连接到任何数据源，允许无缝访问您所需的数据。",
+        "question": "如何邀请浏览者？",
+        "answer": "若要邀请浏览者，您需要将团队升级到Plus， Premium，或Enterprise，并通过电子邮件或链接邀请用户。",
         "sort": "4"
+      },
+      {
+        "question": "ILLA Cloud提供什么服务？",
+        "answer": "ILLA Builder, ILLA Drive and AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "什么是ILLA Drive？",
+        "answer": "ILLA Drive是一个 CDN (内容发送网络)，允许存储任何文件并通过公司网站或其他产品向用户分发。 储存和流量单独计费。",
+        "sort": "6"
+      },
+      {
+        "question": "什么是AI Agent？",
+        "answer": "我们提供了开源的 AI Agent社区，由快速专家和爱好者提供了数千名AI Agents。任何人可以运行或修改这些AI Agent。",
+        "sort": "7"
+      },
+      {
+        "question": "AI Agent如何计费？",
+        "answer": "AI Agent基于Colla计费，这是ILLA内的一个计费概念，代表AI Agent等运行时消耗的资源数量。",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB流量"
       },
       "ai-agent": {
-        "token": "每月10K Token"
+        "token": "每月10K Colla"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB流量"
       },
       "ai-agent": {
-        "token": "每月10K Token"
+        "token": "每月10K Colla"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "自定义流量额度"
       },
       "ai-agent": {
-        "token": "自定义Token数量"
+        "token": "自定义Colla数量"
       }
     },
     "ai-agent": {
       "title": "AI Agent(即将推出)",
-      "token": "每月100K Token"
+      "token": "每月100K Colla"
     }
   },
   "early_bird": "早鸟"

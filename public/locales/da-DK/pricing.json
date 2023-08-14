@@ -128,29 +128,44 @@
     "description": "Andre spørgsmål? Du er velkommen til <0>spørg ILLA på Discord</0>",
     "content": [
       {
-        "question": "Hvad er ILLA Cloud?",
-        "answer": "ILLA Cloud er en lav-kode-platform, der arver flere funktioner fra ILLA Builder og ILLA Drive. Det giver en problemfri oplevelse ved at tillade brugere at logge ind og registrere sig for at få adgang til sine funktioner. Med ILLA Cloud kan du ubesværet opbygge interne værktøjer, dashboards, CRUD (oprette, læse, opdatere, slette) og meget mere. Platformen forbedrer arbejdseffektiviteten betydeligt og hjælper virksomhederne med at spare omkostninger.",
-        "sort": "0"
-      },
-      {
-        "question": "Hvem kan bruge ILLA Cloud",
-        "answer": "Uanset om du er en produkt manager, fuld-stak udvikler, projektleder, dataanalytiker... nyone kan bruge ILLA Cloud til at bygge værktøjer: Fra at designe front-end grænseflader med træk-og-slip-komponenter til at integrere med datakilder og generere forespørgsler ved hjælp af AI assistance, ILLA giver en strømlinet oplevelse, der fjerner unødvendige kompleksiteter. Du behøver ikke at være en teknisk ekspert til at oprette dine egne applikationer.",
+        "question": "Hvem er de brugere, der er opkrævet for produktet?",
+        "answer": "Brugere med redigeringstilladelser (editor) er opkrævet for produktet.",
         "sort": "1"
       },
       {
-        "question": "Hvilke former for applikationer kan du udvikle ved hjælp af ILLA Cloud?",
-        "answer": "1. Hurtig implementering: Når virksomheder oplever en høj efterspørgsel efter interne værktøjer under hurtig vækst ILLA kan i væsentlig grad fremskynde udviklingshastigheden og kvaliteten af dine interne applikationer. Dette hjælper med at fremskynde din virksomheds vækst ved hurtigt at håndtere værktøjet behov. 2. Ingen færdighedsbegrænsninger for redaktører: Med ILLA kan enhver person i organisationen bygge de værktøjer, de har brug for, uden at kræve specialiserede teams eller tekniske færdigheder. Dette giver medarbejdere på tværs af forskellige roller til at skabe deres egne løsninger, fremme innovation og produktivitet. 3. Omkostningsreduktion: Ved at udnytte ILLA kan virksomhederne afsætte deres tid, arbejdsstyrke og finansielle ressourcer til kerneforretningsaktiviteter. Dette resulterer i reducerede omkostninger, da ILLA strømliner udviklingsprocessen, eliminerer behovet for specialiserede hold og minimerer den nødvendige investering til værktøjsudvikling.",
+        "question": "Hvad er de forskellige typer af redaktører?",
+        "answer": "De forskellige typer af redaktører er ejer, admin, og editor.",
         "sort": "2"
       },
       {
-        "question": "Hvilke problemer kan ILLA Cloud løse?",
-        "answer": "Med ILLA Cloud, kan du opbygge ethvert program, du har brug for, såsom almindeligt anvendte interne værktøjer som Dashboards, Admin Panels, CRUD apps, CRM, CMS og meget mere. Derudover kan du udvikle AI-programmer, såsom tekst-til-billede programmer med stabil diffusion, audio-til-tekst applikationer med Whisper, og endda indlejre OpenAI's GPT modeller til at hjælpe dig med at fuldføre forskellige opgaver.",
+        "question": "Er seerne opkrævet for at bruge produktet?",
+        "answer": "Nej, seerne bliver ikke opkrævet for at bruge produktet.",
         "sort": "3"
       },
       {
-        "question": "Hvilke datakilder understøtter ILLA?",
-        "answer": "ILLA understøtter integration med en række datakilder, herunder PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, og meget mere. Du kan hurtigt oprette forbindelse til enhver datakilde uden at skrive kode, hvilket muliggør problemfri adgang til dine ønskede data.",
+        "question": "Hvordan inviteres en seer?",
+        "answer": "For at invitere en seer, skal du opgradere teamet til noget af plus, premium, eller virksomhedens planer og invitere brugeren via e-mail eller link.",
         "sort": "4"
+      },
+      {
+        "question": "Hvilke tjenester leverer ILLA Cloud?",
+        "answer": "ILLA Builder, ILLA Drive og AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "Hvad er ILLA Drive?",
+        "answer": "ILLA Drive er et CDN (Content Delivery Network), der gør det muligt at gemme filer og distribuere dem til brugerne via virksomhedens websteder eller andre produkter. Anvendelse af oplagring og trafik faktureres separat.",
+        "sort": "6"
+      },
+      {
+        "question": "Hvad er AI Agent?",
+        "answer": "AI Agent er et open source AI Agent fællesskab med tusindvis af AI Agents leveret af hurtige eksperter og entusiaster. Brugere kan køre eller ændre disse AI agenter.",
+        "sort": "7"
+      },
+      {
+        "question": "Hvordan faktureres for AI Agent brug?",
+        "answer": "Fakturering for AI Agent brug er baseret på Colla, som er et faktureringskoncept i ILLA. Colla måler de ressourcer, der forbruges i løbet af AI Agents.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB trafik"
       },
       "ai-agent": {
-        "token": "10K Token pr. måned"
+        "token": "10K Colla pr. måned"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB trafik"
       },
       "ai-agent": {
-        "token": "1K Token pr. måned"
+        "token": "10K Colla pr. måned"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Brugerdefineret trafik"
       },
       "ai-agent": {
-        "token": "Brugerdefineret token"
+        "token": "Tilpasset colla"
       }
     },
     "ai-agent": {
       "title": "AI Agent(Kommer snart)",
-      "token": "100K Token pr. måned"
+      "token": "100K colla pr. måned"
     }
   },
   "early_bird": "Tidlig fugl"
