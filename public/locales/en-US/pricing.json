@@ -128,29 +128,44 @@
     "description": "Any other questions? Feel free to <0>ask ILLA on Discord</0>",
     "content": [
       {
-        "question": "What is ILLA Cloud?",
-        "answer": "ILLA Cloud is a low-code platform that inherits multiple capabilities from ILLA Builder and ILLA Drive. It provides a seamless experience by allowing users to log in and register to access its features. With ILLA Cloud, you can effortlessly build internal tools, dashboards, CRUD (create, read, update, delete) applications, and more. The platform significantly improves work efficiency and helps companies save costs.",
-        "sort": "0"
-      },
-      {
-        "question": "Who can use ILLA Cloud",
-        "answer": "Whether you are a product manager, full-stack developer, project manager, data analyst...anyone can use ILLA Cloud to build tools: From designing front-end interfaces with drag-and-drop components to integrating with data sources and generating queries using AI assistance, ILLA provides a streamlined experience that removes unnecessary complexities. You don't need to be a tech expert to create your own applications.",
+        "question": "Who are the users that are charged for the product?",
+        "answer": "Users with editing permissions (editor) are charged for the product.",
         "sort": "1"
       },
       {
-        "question": "What kinds of applications can you develop using ILLA Cloud?",
-        "answer": "1. Rapid idea implementation: When enterprises experience a high demand for internal tools during rapid growth, ILLA can significantly accelerate the development speed and quality of your internal applications. This helps expedite your company's growth by quickly addressing the tooling needs. 2. No skill limitations for editors: With ILLA, any individual within the organization can build the tools they need without requiring specialized teams or technical skills. This empowers employees across various roles to create their own solutions, fostering innovation and productivity. 3. Cost reduction: By leveraging ILLA, enterprises can allocate their time, workforce, and financial resources towards core business activities. This results in reduced costs as ILLA streamlines the development process, eliminates the need for specialized teams, and minimizes the investment required for tooling development.",
+        "question": "What are the different types of editors?",
+        "answer": "The different types of editors are owner, admin, and editor.",
         "sort": "2"
       },
       {
-        "question": "What problems can ILLA Cloud solve?",
-        "answer": "With ILLA Cloud, you can build any application you need, such as commonly used internal tools like Dashboards, Admin Panels, CRUD apps, CRM, CMS, and more. Additionally, you can develop AI applications, such as text-to-image applications with Stable Diffusion, audio-to-text applications with Whisper, and even embed OpenAI's GPT models to assist you in completing various tasks.",
+        "question": "Are viewers charged for using the product?",
+        "answer": "No, viewers are not charged for using the product.",
         "sort": "3"
       },
       {
-        "question": "Which data sources does ILLA support?",
-        "answer": "ILLA supports integration with a variety of data sources, including PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, and more. You can swiftly connect to any data source without writing code, enabling seamless access to your desired data.",
+        "question": "How to invite a viewer?",
+        "answer": "To invite a viewer, you need to upgrade the team to any of the Plus, Premium, or Enterprise plans and invite the user via email or link.",
         "sort": "4"
+      },
+      {
+        "question": "What services does ILLA Cloud provide?",
+        "answer": "ILLA Builder, ILLA Drive and AI Agent.",
+        "sort": "5"
+      },
+      {
+        "question": "What is ILLA Drive?",
+        "answer": "ILLA Drive is a CDN (Content Delivery Network) that allows storing any files and distributing them to users through the company's websites or other products. Usage of storage and traffic is billed separately.",
+        "sort": "6"
+      },
+      {
+        "question": "What is AI Agent?",
+        "answer": "We provide an open-source AI Agent community with thousands of AI Agents provided by prompt experts and enthusiasts. Everyone can run or modify these AI Agents.",
+        "sort": "7"
+      },
+      {
+        "question": "How is billing done for AI Agent usage?",
+        "answer": "Billing for AI Agent usage is based on Colla, which is a billing concept within ILLA. Colla measures the resources consumed during the runtime of AI Agents.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB traffic"
       },
       "ai-agent": {
-        "token": "10K Token per month"
+        "token": "10K Colla per month"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB traffic"
       },
       "ai-agent": {
-        "token": "10K Token per month"
+        "token": "10K Colla per month"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Custom traffic"
       },
       "ai-agent": {
-        "token": "Custom token"
+        "token": "Custom colla"
       }
     },
     "ai-agent": {
       "title": "AI Agent ( coming soon )",
-      "token": "100K Token per month"
+      "token": "100K colla per month"
     }
   },
   "early_bird": "Early bird"
