@@ -15,11 +15,11 @@ Appwrite in Illa este o integrare a bazei de date care vă permite să vă conec
 
 Cu integrarea Appwrite în Illa, puteți interoga, insera, actualiza și șterge date dintr-o bază de date Appwrite folosind comenzile SQL. De asemenea, poți crea interogări SQL personalizate și să le rulezi în Illa. Acest lucru facilitează construirea de aplicații și tablouri de bord bazate pe date care afișează date în timp real dintr-o bază de date Appwrite
 
-Acest tutorial subliniază procesul de creare a unui Panou Administrator folosind ILLA Builder și Appwrite în câțiva pași simpli. ILLA este o platformă cu coduri joase pentru dezvoltatori, care permite dezvoltarea și implementarea rapidă a instrumentelor interne. Permite crearea de pagini prin glisarea și fixarea componentelor UI, conectarea la orice bază de date sau API și scrierea JavaScript. Pentru a afla mai multe despre Appwrite, vizitați site-ul web la https://Appwrite.io/(https://Appwrite.io/) Să începem!
+Acest tutorial subliniază procesul de creare a unui Panou Administrator folosind ILLA Builder și Appwrite în câțiva pași simpli. ILLA este o platformă cu coduri joase pentru dezvoltatori, care permite dezvoltarea și implementarea rapidă a instrumentelor interne. Permite crearea de pagini prin glisarea și fixarea componentelor UI, conectarea la orice bază de date sau API și scrierea JavaScript. Pentru a afla mai multe despre Appwrite, vizitați site-ul lor la <https://Appwrite.io/> Începe!
 
 ### Configurează-ți spatele la Appwrite
 
-După ce te conectezi în contul tău Appwrite de pe tabloul de bord Appwrite dă click pe `**Creează proiect**` și setează numele în `First Project`.
+După ce te conectezi în contul tău Appwrite de pe tabloul de bord Appwrite dă click pe `Creează proiect` și setează numele în `Primul Proiect`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Există două modalități de a crea o resursă în Illa după ce te autentifici
 
 -   Creează în resurse
 
-Conectează-te la contul tău Illa, selectează `**Resurse**` din partea de sus a paginii și apasă butonul `**Creează nou**`.
+Loghează-te în contul tău Illa, selectează `Resources` din partea de sus a paginii și apasă butonul `Creează nou`.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Selectați **`Appwrite`** din lista de baze de date.
+Selectaţi `Appwrite` din lista de baze de date.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
 
-Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+Faceţi clic pe `Test Connection` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe `Salvează Resurse`, în caz contrar, verifică de două ori numele de gazdă, portul, numele de utilizator și parola sunt corecte.
 
 Dupa crearea unei resurse, Appwrite gata va fi afisat ca afisat.
 
@@ -70,9 +70,9 @@ Dupa crearea unei resurse, Appwrite gata va fi afisat ca afisat.
 
 -   Creează în Constructor
 
-Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `**App**`, şi navighează la **`Lista de Acţiuni`** în partea de jos a paginii. Faceţi clic pe `**nou**`, apoi selectaţi **`Appwrite`** din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
+Conectează-te la contul tău Illa, creează un proiect în Illa Builder în pagina `App`, şi navigaţi la `Lista de Acţiuni` din partea de jos a paginii. Faceţi clic pe `new`, apoi selectaţi `Appwrite` din lista de baze de date. Apoi, conectați-vă la baza de date cu parametrii necesari descriși în `Setări conexiuni` de mai jos.
 
-Faceți clic pe `**Test Connection**` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe **`Salvează Resurse`**, în caz contrar, verifică de două ori numele gazdei, portul, numele de utilizator și parola sunt corecte.
+Faceţi clic pe `Test Connection` pentru a vedea dacă ne putem conecta cu succes la baza de date. Dacă da, apasă pe `Salvează Resurse`, în caz contrar, verifică de două ori numele de gazdă, portul, numele de utilizator și parola sunt corecte.
 
 ### Setări conexiune
 
@@ -88,21 +88,21 @@ Aici trebuie să furnizăm informaţii pentru conectarea la baza de date Appwrit
 | ID Proiect          | necesar | identificator unic care reprezintă întregul dvs. proiect Appwrite                                           |
 | Cheie API           | necesar | un simbol secret care servește ca formă de autentificare atunci când fac cereri API către serverul Appwrite |
 
-Pentru a găsi **`Host`**, **`Database ID`**, **`ID proiect`** şi **`API key`** în Appwrite, mai întâi mergem la butonul `**setări**` din colțul din stânga jos al paginii proiectului.
+Pentru a găsi `Host`, `Database ID`, `Project ID`, şi `API key` necesare în Appwrite, mai întâi mergem la butonul `setări` din colțul din stânga jos al paginii proiectului.
 
-Se copiază `ID-ul proiectului` pentru **`ID-ul proiectului`** și `punctul de sfârșit API` pentru **`Host`** în configurația Appwrite din Illa.
+Se copiază `ID-ul proiectului` pentru `ID-ul proiectului` şi `Findpoint-ul API` pentru `Host` în configuraţia Appwrite din Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Apoi putem da click pe butonul **`Vezi API Keys`** de pe aceeași pagină. Dacă nu ați creat un API pentru acest proiect, faceţi clic pe butonul **`Creează API Key`** şi selectaţi doar folderul `Database` deoarece acesta este ceea ce vom folosi de la Appwrite.
+Apoi putem da click pe butonul `Vezi API Keys` de pe aceeași pagină. Dacă nu ați creat un API pentru acest proiect, faceţi clic pe butonul `Creează cheie API` şi selectaţi doar folderul `Database` deoarece acesta este ceea ce vom folosi de la Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Copiați `API Key Secre` pentru **`API key`** în configurația Illa. Acesta poate fi copiat în aceste două locuri.
+Copiați `API key Secre` pentru `API key` în configurarea Illa. Acesta poate fi copiat în aceste două locuri.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Ceea ce am mai rămas este **`ID-ul bazei de date`** pe care îl putem găsi în pagina `Database`. Se copiază și se lipește la configurația Appwrite din Illa.
+Ceea ce am mai rămas este `ID-ul bazei de date` pe care îl putem găsi în pagina `Database`. Se copiază și se lipește la configurația Appwrite din Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Produsul final ar trebui să arate cam așa.
 
 ### Creați Acțiuni
 
-Am creat o resursă Appwrite , putem adăuga acțiunea selectând Appwrite din lista de acțiuni și alegând butonul **`Creare acțiune`**.
+Am creat o resursă Appwrite , putem adăuga acțiunea selectând Appwrite din lista de acțiuni și alegând butonul `Creare acțiune`.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Acum am adăugat serverul Appwrite ca o acțiune la pagina noastră de construc�
 
 creează un nou document într-o colecție
 
-** Input **
+ Input 
 
 | Proprietăți  | Necesar  | Descriere                                                                  |
 | ------------ | -------- | -------------------------------------------------------------------------- |
 | ID document  | necesar  | un identificator unic atribuit unui document de colectare a bazei de date  |
 | Date         | opţional | un obiect care conține câmpurile și valorile documentului nou.             |
 
-De exemplu, pentru a crea un nou document într-o colecție cu două câmpuri - **`nume`** și **`age`**, puteţi utiliza 1 ca **`document ID`** şi `{{"Name": "David", "Age": 18}}` pentru **`data`**.
+De exemplu, pentru a crea un nou document într-o colecție cu două câmpuri - `name` și `age`, puteţi utiliza 1 ca `document ID` şi `{{ {"Name": "David", "Age": 18}}` pentru `data`.
 
-\*\* Rezultat
+ Ieșire 
 
 un obiect de răspuns care include ID-ul documentului nou creat, precum și metadate suplimentare, cum ar fi data și ora creării.
 
@@ -153,15 +153,15 @@ un obiect de răspuns care include ID-ul documentului nou creat, precum și meta
 
 preia un document specific dintr-o colecție din baza de date
 
-** Input **
+ Input 
 
 | Proprietăți  | Necesar | Descriere                                                                 |
 | ------------ | ------- | ------------------------------------------------------------------------- |
 | ID document  | necesar | un identificator unic atribuit unui document de colectare a bazei de date |
 
-De exemplu, putem obține documentul cu id-ul **`1`**.
+De exemplu, putem obține documentul cu id-ul `1`.
 
-\*\* Rezultat
+ Ieșire 
 
 un obiect de răspuns care include datele din documentul solicitat
 
@@ -175,16 +175,16 @@ Utilizaţi `{{Appwrite1.data}}` pentru a obţine toate valorile returnate.
 
 actualizează datele unui document existent într-o colecție.
 
-** Input **
+ Input 
 
 | Proprietăți  | Necesar  | Descriere                                                                                              |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------ |
 | ID document  | necesar  | un identificator unic atribuit unui document de colectare a bazei de date                              |
 | Date         | opţional | Un obiect care conține câmpurile și valorile actualizate pe care doriți să le atribuiți documentului.  |
 
-De exemplu, pentru a actualiza un document într-o colecție folosind metoda **`updateDocument`**, puteţi pune **`1`** pentru id-ul documentului şi `{{{"Name":"Fred"}}}` pentru date.
+De exemplu, pentru a actualiza un document într-o colecție folosind metoda `updateDocument`, puteţi pune `1` pentru id-ul documentului şi `{{{"Name":"Fred"}}}` pentru date.
 
-\*\* Rezultat
+ Ieșire 
 
 un obiect de răspuns care include datele din documentul solicitat
 
@@ -194,15 +194,15 @@ un obiect de răspuns care include datele din documentul solicitat
 
 şterge un document specific dintr-o colecţie din baza de date
 
-** Input **
+ Input 
 
 | Proprietăți  | Necesar | Descriere                                                                 |
 | ------------ | ------- | ------------------------------------------------------------------------- |
 | ID document  | necesar | un identificator unic atribuit unui document de colectare a bazei de date |
 
-De exemplu, putem șterge documentul cu id-ul **`1`**.
+De exemplu, putem șterge documentul cu id-ul `1`.
 
-\*\* Rezultat
+ Ieșire 
 
 un obiect de răspuns care confirmă eliminarea cu succes a documentului.
 
@@ -212,7 +212,7 @@ un obiect de răspuns care confirmă eliminarea cu succes a documentului.
 
 recuperează mai multe documente dintr-o colecție din baza de date
 
-** Input **
+ Input 
 
 | Proprietăți     | Necesar  | Descriere                                                                                    |
 | --------------- | -------- | -------------------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ recuperează mai multe documente dintr-o colecție din baza de date
 
 De exemplu, pentru a afișa toate documentele cu Nume = James.
 
-\*\* Rezultat
+ Ieșire 
 
 O serie de documente care satisfac filtrul.
 
