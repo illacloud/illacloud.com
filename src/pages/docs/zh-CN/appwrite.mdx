@@ -15,11 +15,11 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 在Illa中使用 Appwrite 集成，您可以通过 SQL 命令查询、插入、更新和删除应用写入数据库中的数据。 您也可以创建自定义 SQL 查询并在Illa中运行它们。 这就很容易建立数据驱动的应用程序和仪表板，从应用写入数据库中显示实时数据。
 
-本教程概述了使用 ILLA Builder 和 Appwrite 在几个简单步骤创建管理面板的过程。 ILLA Cloud是一个低码的开发者平台，能够快速开发和部署内部工具。 它允许通过拖放UI组件创建页面，并连接到任何数据库或API，以及写入 JavaScript。 要了解更多关于 Appwrite，请访问他们的网站 https://Appwrite.io/(https://Appwrite.io/) 开始吧！
+本教程概述了使用 ILLA Builder 和 Appwrite 在几个简单步骤创建管理面板的过程。 ILLA Cloud是一个低码的开发者平台，能够快速开发和部署内部工具。 它允许通过拖放UI组件创建页面，并连接到任何数据库或API，以及写入 JavaScript。 要了解更多关于 Appwrite，请访问他们的网站<https://Appwrite.io/> 让我们开始吧！
 
 ### 在 Appwrite 上设置您的后端
 
-登录到您的 Appwrite 帐户后，在Appwrite 仪表盘上点击`**创建项目**` 并将名称设置为 `First Project` 。
+登录到您的 Appwrite 帐户后，在Appwrite 仪表盘上点击“创建项目”并将名称设置为“First Project”。
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 -   在资源中创建
 
-登录到您的 Illa 帐户，在页面顶部选择 `**Resources**` 并点击 `**Create New**` 按钮。
+登录到您的 Illa 帐户，选择页面顶部的 `Resources` 并点击 `Create New` 按钮。
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-从数据库列表中选择 **`Appwrite` **。
+从数据库列表中选择 `Appwrite` 。
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 使用下面`链接设置`描述的必填参数连接到数据库。
 
-点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+点击“测试连接”查看我们是否可以成功连接到数据库。 如果是，请单击\`保存资源'，否则请重新检查主机名、端口、用户名和密码是否正确。
 
 在创建资源后，准备好的应用将显示。
 
@@ -70,9 +70,9 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 -   在构建器中创建
 
-登录您的 Illa 帐户，在`**App**` 页面中创建一个项目 并导航到页面底部的 **`Action List` **。 点击`**新**`，然后从数据库列表中选择 **`Appwrite`** 。 然后，用下面`链接设置`描述的参数连接到数据库。
+登录到您的Illa帐户，在`App`页面的Illa Builder创建一个项目 并导航到页面底部的“行动列表”。 点击`new`，然后从数据库列表中选择 `Appwrite` 。 然后，用下面`链接设置`描述的参数连接到数据库。
 
-点击 "**测试连接**" 查看我们是否可以成功地连接到数据库。 如果是，请点击 **\`保存资源** \*，请重新检查主机名、端口、用户名和密码是否正确。
+点击“测试连接”查看我们是否可以成功连接到数据库。 如果是，请单击\`保存资源'，否则请重新检查主机名、端口、用户名和密码是否正确。
 
 ### 连接设置
 
@@ -88,21 +88,21 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 | 项目 ID      | 必填 | 代表您整个应用写入项目的唯一标识符                                                                             |
 | API 密钥     | 必填 | 在向 Appwrite 服务器提出API 请求时作为一种身份验证形式的密钥。                                                        |
 
-要找到所需的 **`Host`**、 **`Database ID`**、 **`Project ID`\*\*** 和 **`API key`** 在 Appwrite， 我们首先到项目页面左下角的 `**setting**` 按钮。
+在Appwrite中找到所需的 `Host`、`Database ID`、`Project ID`和`API key` ， 我们首先转到项目页面左下角的 "setting" 按钮。
 
-将`project ID` 复制为 **`project ID` ** 和 `API 端点` 到 \*\*`Host` 在 Illa 的Appwrite 配置中。
+复制`project ID` for `project ID` and `API Endpoint` for the `Host` in Illa Appwrite configuration
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-然后我们可以点击同一页面上的 **`查看 API Keys`** 按钮。 如果您没有为此项目创建API， 点击 **`Create API Key`** 按钮，只选择 `Database` 文件夹，因为这是我们将从 Appwrite 使用的。
+然后我们可以点击同一页面上的 `View API Keys` 按钮。 如果您没有为此项目创建API， 点击 `Create API Key` 按钮，只选择 `Database` 文件夹，因为这是我们将从 Appwrite 中使用的。
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-在Illa配置中复制 `API 密钥秘书` 。 可以复制这两个地点。 可以复制这两个地点。 可以复制这两个地点。 可以复制这两个地点。
+在Illa配置中复制 `API 密钥秘书` 。 可以复制这两个地点。
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-我们剩下的是**`Database`页面** 。 复制并粘贴到Illa的Appwrite 配置中。
+我们剩下的是我们可以在 `Database` 页面找到的 `Database` 。 复制并粘贴到Illa的Appwrite 配置中。
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 ### 创建动作
 
-我们已经创建了一个应用写入资源，我们可以通过从操作列表中选择应用并选择 **`Create action` ** 按钮来添加动作。
+我们已经创建了一个应用写入资源，我们可以通过从操作列表中选择应用写入并选择 "Create action" 按钮来添加动作。
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 在集合中创建新文档
 
-** Input **
+ Input 
 
 | 属性        | 必填  | 描述                                                     |
 | --------- | --- | ------------------------------------------------------ |
 | 文档 ID     | 必填  | 分配给数据库收藏文档的唯一标识符                                       |
 | 数据        | 可选的 | 包含新文档字段和值的对象。                                          |
 
-例如，在集合中创建一个包含两个字段的新文档 - **`name`** 和 **`age`** 你可以使用 1 作为 **`document ID` ** 和 `{{"Name": "David", "Age": 18}} 为 **`data\`\*\*。
+例如，在集合中创建一个包含两个字段的新文档 - "name" 和 "age", 您可以使用 1 作为 `document ID` 和 `{{"Name": "David", "Age": 18}}}` for \`data.
 
-** 输出 **
+ 产出 
 
 一个响应对象，其中包括新创建的文档的 ID 以及创建日期和时间等附加元数据。
 
@@ -153,15 +153,15 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 从数据库中的收藏中检索特定文档
 
-** Input **
+ Input 
 
 | 属性    | 必填 | 描述                                                    |
 | ----- | -- | ----------------------------------------------------- |
 | 文档 ID | 必填 | 分配给数据库收藏文档的唯一标识符                                      |
 
-例如，我们可以使用 id **`1`**获取文档。
+例如，我们可以使用 id `1`获取文档。
 
-** 输出 **
+ 产出 
 
 包含请求文档数据的响应对象
 
@@ -175,16 +175,16 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 在集合中更新现有文档的数据。
 
-** Input **
+ Input 
 
 | 属性        | 必填  | 描述                                                                                 |
 | --------- | --- | ---------------------------------------------------------------------------------- |
 | 文档 ID     | 必填  | 分配给数据库收藏文档的唯一标识符                                                                   |
 | 数据        | 可选的 | 包含您想要分配给文档的更新字段和值的对象。                                                              |
 
-例如，使用**`updateDocument`**方法来更新一个集合中的文档，你可以把**`1`**作为文档的id，把`{{"Name": "Fred"}}`作为数据。
+例如，使用`updateDocument`方法来更新一个集合中的文档，你可以把`1`作为文档的id，把`{{"Name": "Fred"}}`作为数据。
 
-** 输出 **
+ 产出 
 
 包含请求文档数据的响应对象
 
@@ -194,15 +194,15 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 从数据库中的收藏中删除特定文档
 
-** Input **
+ Input 
 
 | 属性    | 必填 | 描述                                                    |
 | ----- | -- | ----------------------------------------------------- |
 | 文档 ID | 必填 | 分配给数据库收藏文档的唯一标识符                                      |
 
-例如，我们可以删除ID为 **`1`**的文档。
+例如，我们可以删除 id 为 1\`的文档。
 
-** 输出 **
+ 产出 
 
 确认成功删除文档的响应对象。
 
@@ -212,7 +212,7 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 从数据库中的收藏中检索多个文档
 
-** Input **
+ Input 
 
 | 属性      | 必填  | 描述                                                                   |
 | ------- | --- | -------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ Illa 中的 Appwrite 是一个数据库集成，允许您连接并与 Appwrite �
 
 例如，用Name = James列出所有文档。
 
-** 输出 **
+ 产出 
 
 符合过滤器的数组文档。
 

@@ -15,11 +15,11 @@ Zápis aplikací v Illa je integrace databáze, která umožňuje připojení a 
 
 Díky integraci aplikací v Illa můžete pomocí SQL příkazů dotázat, vkládat, aktualizovat a mazat data z databáze Appwrite . Můžete také vytvořit vlastní SQL dotazy a spustit je v Ille. Díky tomu lze snadno sestavovat aplikace založené na datech a dashboardy, které zobrazují data z databáze Appwrite v reálném čase.
 
-Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Appwrite v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Chcete-li se dozvědět více o Appwrite, navštivte jejich webové stránky na https://Appwrite.io/(https://Appwrite.io/) Začněme!
+Tento kurz nastiňuje proces vytváření Admin panelu pomocí ILLA Tvůrce a Appwrite v několika jednoduchých krocích. ILLA je nízkokódová platforma pro vývojáře, která umožňuje rychlý vývoj a zavádění interních nástrojů. Umožňuje vytvářet stránky přetažením a vypouštěním komponent uživatelského rozhraní, připojením k databázi nebo API a psaním JavaScript. Chcete-li se dozvědět více o Appwrite, navštivte jejich webové stránky na <https://Appwrite.io/> Pojďme na začátku!
 
 ### Nastavte si konec backu v Appwrite
 
-Po přihlášení do vašeho účtu Appwrite klikněte na nástěnku Appwrite na `**Vytvořit projekt**` a nastavte jméno na `První projekt`.
+Po přihlášení do vašeho účtu Appwrite na nástěnce Appwrite klikněte na `Vytvořit projekt`a nastavte jméno na `První projekt`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Po přihlášení do vašeho účtu Illa existují dva způsoby, jak vytvořit z
 
 -   Vytvořit ve zdrojích
 
-Přihlaste se ke svému účtu Illa, vyberte `**Zdroje**` v horní části stránky a klikněte na tlačítko `**Vytvořit nové**`.
+Přihlaste se ke svému účtu Illa, vyberte `Zdroje` v horní části stránky a klikněte na tlačítko `Vytvořit nové`.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Vyberte **`Zápis aplikací`** z databáze
+Vyberte "Appwrite" ze seznamu databází.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Připojte se k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
 
-Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+Klepněte na tlačítko `Test Connection` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na tlačítko "Uložit zdroje", jiné, dvakrát zkontrolujte jméno hostitele, port, uživatelské jméno a heslo je správné.
 
 Po vytvoření zdroje se bude zobrazovat připravený zápis aplikací.
 
@@ -70,9 +70,9 @@ Po vytvoření zdroje se bude zobrazovat připravený zápis aplikací.
 
 -   Vytvořit ve staviteli
 
-Přihlaste se ke svému účtu Illa, vytvořte projekt v Illa Builder na stránce `**App**` a přejděte na **`Seznam akcí`** v dolní části stránky. Klikněte na `**nové**`, pak vyberte **`Appwrite`** z databázového seznamu. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
+Přihlaste se ke svému účtu Illa, vytvořte projekt na stránce `App` a přejděte do `Seznam akcí` v dolní části stránky. Klikněte na `nové`, pak vyberte `Appwrite` ze seznamu databází. Poté se připojte k databázi s požadovanými parametry popsanými v části `Nastavení připojení` níže.
 
-Klepněte na tlačítko `**Test Connection**` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na **`Uložit zdroje`**, jinak dvakrát zkontrolujte hostname, port, uživatelské jméno a heslo je správné.
+Klepněte na tlačítko `Test Connection` a zjistěte, zda se můžeme úspěšně připojit k databázi. Pokud ano, klikněte na tlačítko "Uložit zdroje", jiné, dvakrát zkontrolujte jméno hostitele, port, uživatelské jméno a heslo je správné.
 
 ### Nastavení připojení
 
@@ -88,21 +88,21 @@ Zde musíme poskytnout informace pro připojení k databázi Appwrite .
 | ID projektu     | vyžadováno | jedinečný identifikátor, který reprezentuje celý váš projekt Appwrite                                         |
 | Klíč API        | vyžadováno | tajný token, který slouží jako forma autentizace při zadávání API požadavků na Appwrite server                |
 
-Pro nalezení požadovaného **`Host`**, **`Database ID`**, **`Project ID`**, a **`API klíč`** v Appwrite, nejprve přejdeme na tlačítko `**nastavení**` v levém dolním rohu stránky projektu.
+Pro nalezení požadovaného `Host`, `Database ID`, `Project ID`, a `API klíč` v Appwrite, nejprve přejdeme na tlačítko `nastavení` v levém dolním rohu stránky projektu.
 
-Kopírování `project ID` pro **`project ID`** a `API Endpoint` pro **`Host`** v konfiguraci Appwrite v Ille.
+Kopírování `project ID` pro `project ID` a `API Endpoint` pro `Host` v konfiguraci Appwrite v Ille.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Pak můžeme kliknout na **`Zobrazit API klíč`** na stejné stránce. Pokud jste nevytvořili API pro tento projekt, klikněte na tlačítko **`Vytvořit API klíč`** a vyberte pouze složku `Database`, protože to je to, co budeme používat z Appwrite.
+Pak můžeme kliknout na tlačítko "Zobrazit API klíč" na stejné stránce. Pokud jste nevytvořili API pro tento projekt, klikněte na tlačítko "Vytvořit API klíč" a vyberte pouze složku "Database", protože to je to, co budeme používat z appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Zkopírujte `API Key Secret` pro **`API klíč`** v konfiguraci Illa. Lze ji zkopírovat pro tyto dva body.
+Zkopírujte `API Key Secret` pro `API key` v konfiguraci Illa. Lze ji zkopírovat pro tyto dva body.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Zbývá nám **\`ID databáze**, kterou můžeme najít na stránce `Databáze`. Kopírování a vložení do konfigurace Appwrite v Illa.
+Zbývá nám `ID databáze`, které najdeme na stránce `Databáze`. Kopírování a vložení do konfigurace Appwrite v Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Konečný produkt by měl vypadat podobně.
 
 ### Vytvořit akce
 
-Vytvořili jsme zdroj pro zápis aplikací, akci můžeme přidat výběrem zápisu aplikací ze seznamu akcí a výběrem tlačítka **`Vytvořit akci`**.
+Vytvořili jsme zdroj pro zápis aplikací, akci můžeme přidat výběrem zápisu aplikací ze seznamu akcí a výběrem tlačítka "Vytvořit akci".
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Nyní jsme přidali Appwrite server jako akci na naši stavební stránku.
 
 vytvořit nový dokument ve sbírce
 
-** Input **
+ Input 
 
 | Vlastnosti   | Požadováno | Popis                                                                         |
 | ------------ | ---------- | ----------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi  |
 | Údaje        | volitelné  | objekt obsahující pole a hodnoty nového dokumentu.                            |
 
-Například vytvořit nový dokument ve sbírce se dvěma poli - **`name`** a **`age`**, můžete použít 1 jako **`document ID`** a `{{ {"Name": "David", "Age": 18}}}` pro **`data`**.
+Například vytvořit nový dokument ve sbírce se dvěma poli - `name` a `age`, můžete použít 1 jako `document ID` a `{{ {"Name": "David", "Age": 18}}}` pro `data`.
 
-** Výstup **
+ Výstup 
 
 objekt odezvy, který obsahuje ID nově vytvořeného dokumentu, jakož i další metadata, jako je datum a čas vytvoření.
 
@@ -153,15 +153,15 @@ objekt odezvy, který obsahuje ID nově vytvořeného dokumentu, jakož i dalš�
 
 načíst specifický dokument z kolekce v databázi
 
-** Input **
+ Input 
 
 | Vlastnosti   | Požadováno | Popis                                                                        |
 | ------------ | ---------- | ---------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi |
 
-Například dokument s ID **`1`**.
+Například dokument s ID `1`.
 
-** Výstup **
+ Výstup 
 
 objekt odpovědi, který obsahuje údaje požadovaného dokumentu
 
@@ -175,16 +175,16 @@ Použij `{{Appwrite1.data}}` k získání vrácené hodnoty.
 
 aktualizuje údaje o existujícím dokumentu ve sbírce.
 
-** Input **
+ Input 
 
 | Vlastnosti   | Požadováno | Popis                                                                                                     |
 | ------------ | ---------- | --------------------------------------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi                              |
 | Údaje        | volitelné  | Objekt obsahující aktualizovaná pole a hodnoty, které chcete přiřadit k dokumentu.                        |
 
-Například aktualizovat dokument v kolekci pomocí metody **`updateDocument`** můžete vložit **`1`** pro id dokumentu a `{{{"Name":"Fred"}}}` pro data.
+Například aktualizovat dokument v kolekci pomocí metody `updateDocument`, můžete dát `1` pro ID dokumentu a `{{{"Name":"Fred"}}}` pro data.
 
-** Výstup **
+ Výstup 
 
 objekt odpovědi, který obsahuje údaje požadovaného dokumentu
 
@@ -194,15 +194,15 @@ objekt odpovědi, který obsahuje údaje požadovaného dokumentu
 
 odstraní specifický dokument z kolekce v databázi
 
-** Input **
+ Input 
 
 | Vlastnosti   | Požadováno | Popis                                                                        |
 | ------------ | ---------- | ---------------------------------------------------------------------------- |
 | ID dokumentu | vyžadováno | jedinečný identifikátor přiřazený dokumentu o shromažďování údajů v databázi |
 
-Například můžeme odstranit dokument s ID **`1`**.
+Například můžeme odstranit dokument s ID `1`.
 
-** Výstup **
+ Výstup 
 
 objekt odpovědi, který potvrzuje úspěšné odstranění dokumentu.
 
@@ -212,7 +212,7 @@ objekt odpovědi, který potvrzuje úspěšné odstranění dokumentu.
 
 načíst více dokumentů z kolekce v databázi
 
-** Input **
+ Input 
 
 | Vlastnosti    | Požadováno | Popis                                                                           |
 | ------------- | ---------- | ------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ načíst více dokumentů z kolekce v databázi
 
 Například uvést všechny dokumenty s názvem = James.
 
-** Výstup **
+ Výstup 
 
 Soubor dokumentů, které vyhovují filtru.
 

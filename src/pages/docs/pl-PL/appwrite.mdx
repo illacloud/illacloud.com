@@ -15,11 +15,11 @@ Appwrite w Illa to integracja bazy danych, która pozwala na połączenie i inte
 
 Z integracją Appwrite w Illa, możesz zapytać, wstawiać, aktualizować i usuwać dane z bazy danych Appwrite za pomocą poleceń SQL. Możesz również tworzyć niestandardowe zapytania SQL i uruchamiać je w Illa. Ułatwia to tworzenie aplikacji opartych na danych i pulpitów nawigacyjnych, które wyświetlają dane w czasie rzeczywistym z bazy danych Appwrit.
 
-Ten samouczek zarysowuje proces tworzenia Panelu Administracyjnego za pomocą Edytora ILLA i Appwrite w kilku prostych krokach. ILLA jest platformą o niskim kodzie dla programistów, która umożliwia szybki rozwój i wdrażanie narzędzi wewnętrznych. Pozwala na tworzenie stron przeciągając i upuszczając składniki interfejsu użytkownika, łącząc się z dowolną bazą danych lub API, i pisując JavaScript. Aby dowiedzieć się więcej o Appwrite, odwiedź swoją stronę internetową na https://Appwrite.io/(https://Appwrite.io/) Zacznijmy!
+Ten samouczek zarysowuje proces tworzenia Panelu Administracyjnego za pomocą Edytora ILLA i Appwrite w kilku prostych krokach. ILLA jest platformą o niskim kodzie dla programistów, która umożliwia szybki rozwój i wdrażanie narzędzi wewnętrznych. Pozwala na tworzenie stron przeciągając i upuszczając składniki interfejsu użytkownika, łącząc się z dowolną bazą danych lub API, i pisując JavaScript. Aby dowiedzieć się więcej o Appwrite, odwiedź swoją stronę internetową pod adresem <https://Appwrite.io/> Zacznijmy!
 
 ### Skonfiguruj swój Backend na Appwrite
 
-Po zalogowaniu się do swojego konta Appwrite na panelu aplikacji kliknij `**Create project**` i ustaw nazwę na `First Project`.
+Po zalogowaniu się do swojego konta Appwrite w panelu aplikacji kliknij `Create project` i ustaw nazwę na `First Project`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Istnieją dwa sposoby na utworzenie zasobu w Illa po zalogowaniu się na swoje k
 
 -   Utwórz w zasobach
 
-Zaloguj się do swojego konta Illa wybierz `**Zasoby**` na górze strony i kliknij przycisk `**Utwórz nowy**`.
+Zaloguj się do swojego konta Illa wybierz `Zasoby` na górze strony i kliknij przycisk `Utwórz nowy`.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Wybierz **`Appwrite`** z listy baz danych.
+Wybierz `Appwrite` z listy baz danych.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Połącz się z bazą danych z wymaganymi parametrami opisanymi poniżej w "Ustawienia połączenia".
 
-Kliknij `**Test Connection**` aby sprawdzić, czy możemy połączyć się z bazą danych. Jeśli tak, kliknij **`Zapisz zasoby`**, sprawdź dwukrotnie nazwę hosta, port, nazwę użytkownika i hasło jest poprawne.
+Kliknij `Test Connection`, aby sprawdzić, czy możemy połączyć się z bazą danych. Jeśli tak, kliknij `Zapisz zasoby`, sprawdź dwukrotnie nazwę hosta, port, nazwę użytkownika i hasło jest poprawne.
 
 Po utworzeniu zasobu gotowy Appwrite będzie wyświetlany jak pokazano.
 
@@ -70,9 +70,9 @@ Po utworzeniu zasobu gotowy Appwrite będzie wyświetlany jak pokazano.
 
 -   Utwórz w Konstruktorze
 
-Zaloguj się na swoje konto Illa, utwórz projekt w Illa Builder na stronie `**App**`, i przejdź do **listy działań\`** na dole strony. Kliknij `**nowe**`, a następnie wybierz **`Appwrite`** z listy baz danych. Następnie połącz się z bazą danych z wymaganymi parametrami opisanymi w `Connection Settings` poniżej.
+Zaloguj się na swoje konto Illa, utwórz projekt na stronie `App`, i przejdź do `List` na dole strony. Kliknij `new`, a następnie wybierz `Appwrite` z listy bazy danych. Następnie połącz się z bazą danych z wymaganymi parametrami opisanymi w `Connection Settings` poniżej.
 
-Kliknij `**Test Connection**` aby sprawdzić, czy możemy połączyć się z bazą danych. Jeśli tak, kliknij **`Zapisz zasoby`**, sprawdź dwukrotnie nazwę hosta, port, nazwę użytkownika i hasło jest poprawne.
+Kliknij `Test Connection`, aby sprawdzić, czy możemy połączyć się z bazą danych. Jeśli tak, kliknij `Zapisz zasoby`, sprawdź dwukrotnie nazwę hosta, port, nazwę użytkownika i hasło jest poprawne.
 
 ### Ustawienia połączenia
 
@@ -88,21 +88,21 @@ Tutaj musimy podać informacje do połączenia z bazą danych Appwrit.
 | ID projektu     | wymagane | unikalny identyfikator, który reprezentuje cały projekt Appwrite                                                 |
 | Klucz API       | wymagane | tajny token, który służy jako forma uwierzytelniania przy wysyłaniu żądań API do serwera Appwrite                |
 
-Aby znaleźć wymagane **`Host`**, **`Database ID`**, **`Project ID`**, i **`API key`** w Appwrite, najpierw przejdziemy do przycisku `**setting**` w lewym dolnym rogu strony projektu.
+Aby znaleźć wymagane `Host`, `Database ID`, `Project ID`, i `API key` w Appwrite, najpierw przejdziemy do przycisku `setting` w lewym dolnym rogu strony projektu.
 
-Kopiowanie `ID projektu` dla **`ID projektu`** i `punktu końcowego API` dla **`Host`** w konfiguracji Appwrite w Illa.
+Kopiowanie `ID projektu` dla `ID projektu` i `API Endpoint` dla `Host` w konfiguracji Appwrite w Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Następnie możemy kliknąć przycisk **Zobacz klucze API\`** na tej samej stronie. Jeśli nie utworzyłeś API dla tego projektu, kliknij przycisk **Utwórz klucz API\`** i wybierz tylko folder \`Baza Danych, ponieważ to jest to, co będziemy używać z Appwrite.
+Następnie możemy kliknąć przycisk `View API Keys` na tej samej stronie. Jeśli nie utworzyłeś API dla tego projektu, kliknij przycisk `Create API Key` i wybierz tylko folder `Database`, ponieważ to jest to, co będziemy używać z Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Skopiuj `API Key Secret` dla **`API key`** w konfiguracji Illa. Można go skopiować do tych dwóch punktów.
+Skopiuj `API Key Secret` dla `API key` w konfiguracji Illa. Można go skopiować do tych dwóch punktów.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Pozostało nam jednak **`Database ID`**, który możemy znaleźć na stronie `Database`. Kopiowanie i wklej go w konfiguracji Appwrite w Illa.
+Pozostawiliśmy `Database ID`, który możemy znaleźć na stronie `Database`. Kopiowanie i wklej go w konfiguracji Appwrite w Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Ostateczny produkt powinien wyglądać czymś takim.
 
 ### Utwórz akcje
 
-Stworzyliśmy zasób Appwrit, możemy dodać akcję wybierając Appwrite z listy akcji i wybierając przycisk **Utwórz akcję\`**.
+Stworzyliśmy zasób Appwrit, możemy dodać akcję wybierając Appwrite z listy akcji i wybierając przycisk `Utwórz akcję`.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Teraz dodaliśmy serwer Appwrite jako działanie do naszej strony budynku.
 
 utwórz nowy dokument w kolekcji
 
-** Input **
+ Input 
 
 | Właściwości  | Wymagane     | Opis                                                                 |
 | ------------ | ------------ | -------------------------------------------------------------------- |
 | ID dokumentu | wymagane     | unikalny identyfikator przypisany do dokumentu kolekcji bazy danych  |
 | Dane         | fakultatywne | obiekt zawierający pola i wartości nowego dokumentu.                 |
 
-Na przykład, aby utworzyć nowy dokument w kolekcji z dwoma polami - **`name`** i **`age`**, możesz użyć 1 jako **`document ID`** i `{{ {"Nazwa": "David", "Age": 18}}}` dla **`data`**.
+Na przykład, aby utworzyć nowy dokument w kolekcji z dwoma polami - `name` i `age`, możesz użyć 1 jako `document ID` i `{{ {"Nazwa": "David", "Age": 18}}}` dla `data`.
 
-** Wyjście **
+ Wyjście 
 
 obiekt odpowiedzi, który zawiera identyfikator nowo utworzonego dokumentu, a także dodatkowe metadane, takie jak data i godzina utworzenia.
 
@@ -153,15 +153,15 @@ obiekt odpowiedzi, który zawiera identyfikator nowo utworzonego dokumentu, a ta
 
 pobierz określony dokument z kolekcji w bazie danych
 
-** Input **
+ Input 
 
 | Właściwości  | Wymagane | Opis                                                                |
 | ------------ | -------- | ------------------------------------------------------------------- |
 | ID dokumentu | wymagane | unikalny identyfikator przypisany do dokumentu kolekcji bazy danych |
 
-Na przykład możemy otrzymać dokument z id **`1`**.
+Na przykład możemy uzyskać dokument z id `1`.
 
-** Wyjście **
+ Wyjście 
 
 obiekt odpowiedzi, który zawiera dane żądanego dokumentu;
 
@@ -175,16 +175,16 @@ Użyj `{{Appwrite1.data}}` aby uzyskać wszystkie zwrócone wartości.
 
 aktualizuje dane istniejącego dokumentu w kolekcji.
 
-** Input **
+ Input 
 
 | Właściwości  | Wymagane     | Opis                                                                                             |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------ |
 | ID dokumentu | wymagane     | unikalny identyfikator przypisany do dokumentu kolekcji bazy danych                              |
 | Dane         | fakultatywne | Obiekt zawierający zaktualizowane pola i wartości, które chcesz przypisać do dokumentu.          |
 
-Na przykład, aby zaktualizować dokument w kolekcji używając metody **`updateDocument`**, możesz umieścić **`1`** dla identyfikatora dokumentu i `{{{"Name":"Fred"}}}` dla danych.
+Na przykład, aby zaktualizować dokument w kolekcji używając metody `updateDocument`, możesz umieścić `1` dla identyfikatora dokumentu i `{{{"Name":"Fred"}}}` dla danych.
 
-** Wyjście **
+ Wyjście 
 
 obiekt odpowiedzi, który zawiera dane żądanego dokumentu;
 
@@ -194,15 +194,15 @@ obiekt odpowiedzi, który zawiera dane żądanego dokumentu;
 
 usuń określony dokument z kolekcji w bazie danych
 
-** Input **
+ Input 
 
 | Właściwości  | Wymagane | Opis                                                                |
 | ------------ | -------- | ------------------------------------------------------------------- |
 | ID dokumentu | wymagane | unikalny identyfikator przypisany do dokumentu kolekcji bazy danych |
 
-Na przykład możemy usunąć dokument z id **`1`**.
+Na przykład możemy usunąć dokument z id `1`.
 
-** Wyjście **
+ Wyjście 
 
 obiekt odpowiedzi, który potwierdza pomyślne usunięcie dokumentu.
 
@@ -212,7 +212,7 @@ obiekt odpowiedzi, który potwierdza pomyślne usunięcie dokumentu.
 
 pobierz wiele dokumentów z kolekcji w bazie danych
 
-** Input **
+ Input 
 
 | Właściwości       | Wymagane     | Opis                                                                           |
 | ----------------- | ------------ | ------------------------------------------------------------------------------ |
@@ -222,7 +222,7 @@ pobierz wiele dokumentów z kolekcji w bazie danych
 
 Na przykład, aby wymienić wszystkie dokumenty z nazwą = James.
 
-** Wyjście **
+ Wyjście 
 
 Tablica dokumentów, które spełniają kryteria filtra.
 

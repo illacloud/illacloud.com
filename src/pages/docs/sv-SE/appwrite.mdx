@@ -15,11 +15,11 @@ Appwrite i Illa är en databasintegration som låter dig ansluta och interagera 
 
 Med Appwrite-integrationen i Illa, kan du söka, infoga och uppdatera och ta bort data från en Appwrite-databas med SQL-kommandon. Du kan också skapa anpassade SQL-frågor och köra dem inom Illa. Detta gör det enkelt att bygga datadrivna applikationer och instrumentpaneler som visar realtidsdata från en Appwrite-databas.
 
-Denna handledning beskriver processen att skapa en Admin Panel med hjälp av ILLA Builder och Appwrite i några få enkla steg. ILLA är en lågkodsplattform för utvecklare som möjliggör snabb utveckling och distribution av interna verktyg. Det gör det möjligt att skapa sidor genom att dra och släppa UI-komponenter, ansluta till någon databas eller API, och skriva JavaScript. För att lära dig mer om Appwrite, besök deras hemsida på https://Appwrite.io/(https://Appwrite.io/) Låt oss börja!
+Denna handledning beskriver processen att skapa en Admin Panel med hjälp av ILLA Builder och Appwrite i några få enkla steg. ILLA är en lågkodsplattform för utvecklare som möjliggör snabb utveckling och distribution av interna verktyg. Det gör det möjligt att skapa sidor genom att dra och släppa UI-komponenter, ansluta till någon databas eller API, och skriva JavaScript. För att lära dig mer om Appwrite, besök deras hemsida på <https://Appwrite.io/> Låt oss börja!
 
 ### Ställ in din baksida på appwrite
 
-Efter att du loggat in på ditt Appwrite-konto klickar du på `**Create project**` och anger namnet till `First Project`.
+Efter att du loggat in på ditt Appwrite-konto klickar du på "Skapa projekt" och sätter namnet till "Första projekt".
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Det finns två sätt att skapa en resurs i Illa efter att du loggat in på ditt 
 
 -   Skapa i resurser
 
-Logga in på ditt Illa konto, välj `**Resurser**` högst upp på sidan och klicka på `**Skapa ny**`-knappen.
+Logga in på ditt Illa konto, välj `Resources` högst upp på sidan och klicka på `Create New`-knappen.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Välj **`Appwrite`** från databaslistan.
+Välj 'Appwrite' från databaslistan.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Anslut till databasen med de parametrar som beskrivs i `Connection Settings` nedan.
 
-Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+Klicka på 'Test Connection' för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka på "Spara resurser", annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
 
 Efter att ha skapat en resurs, kommer den färdiga appwrite att visas som visas.
 
@@ -70,9 +70,9 @@ Efter att ha skapat en resurs, kommer den färdiga appwrite att visas som visas.
 
 -   Skapa i Builder
 
-Logga in på ditt Illa konto, skapa ett projekt i Illa Builder på sidan `**App**` och navigera till **`Action List`** längst ner på sidan. Klicka på `**new**`, välj sedan **`Appwrite`** från databaslistan. Anslut sedan till databasen med nödvändiga parametrar som beskrivs i `Connection Settings` nedan.
+Logga in på ditt Illa konto, skapa ett projekt i Illa Builder på sidan `App` och navigera till `Action List` längst ner på sidan. Klicka på 'new', välj 'Appwrite' från databaslistan. Anslut sedan till databasen med nödvändiga parametrar som beskrivs i `Connection Settings` nedan.
 
-Klicka på `**Test Connection**` för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka **`Spara resurser`**, annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
+Klicka på 'Test Connection' för att se om vi framgångsrikt kan ansluta till databasen. Om ja, klicka på "Spara resurser", annat, dubbelkolla värdnamn, port, användarnamn och lösenord är korrekt.
 
 ### Inställningar för anslutning
 
@@ -88,21 +88,21 @@ Här behöver vi tillhandahålla information för att ansluta till Appwrite-data
 | Projekt ID     | obligatorisk | unik identifierare som representerar hela ditt Appwrite-projekt                                              |
 | API nyckel     | obligatorisk | en hemlig token som fungerar som en form av autentisering när du gör API-förfrågningar till Appwrite-servern |
 
-För att hitta den nödvändiga **`Host`**, **`Databas-ID`**, **`Project ID`**, och **`API key`** i Appwrite, vi går först till `**setting**`-knappen längst ner till vänster på projektsidan.
+För att hitta den obligatoriska `Host`, `Databas-ID`, `Project ID` och `API key` i Appwrite, vi går först till `setting`-knappen längst ner till vänster på projektsidan.
 
-Kopierar `project ID` för **`project ID`** och `API Endpoint` för **`Host`** i Appwrite-konfigurationen i Illa.
+Kopierar `project ID` för `project ID` och `API Endpoint` för `Host` i appwrite-konfigurationen i Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Då kan vi klicka på **`View API Keys`** knappen på samma sida. Om du inte har skapat ett API för detta projekt, Klicka på **`Create API Key`**-knappen och välj bara `Database`-mappen eftersom det är vad vi kommer att använda från Appwrite.
+Då kan vi klicka på knappen 'Visa API-nycklar' på samma sida. Om du inte har skapat ett API för detta projekt, Klicka på knappen "Skapa API-nyckel" och välj bara "Database" -mappen eftersom det är vad vi kommer att använda från Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Kopiera `API Key Secret` för **`API key`** i Illa konfiguration. Det kan kopieras för dessa två fläckar.
+Kopiera 'API Key Secret' för 'API key' i Illa konfiguration. Det kan kopieras för dessa två fläckar.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Vad vi har kvar är **`Databas-ID`** som vi kan hitta i sidan `Database`. Kopiera den och klistra in den på Appwrite-konfigurationen i Illa.
+Vad vi har kvar är `Databas-ID` som vi kan hitta i `Database`-sidan. Kopiera den och klistra in den på Appwrite-konfigurationen i Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Slutprodukten bör se ut ungefär så här.
 
 ### Skapa åtgärder
 
-Vi har skapat en Appwrite-resurs, vi kan lägga till åtgärden genom att välja Appwrite från åtgärdslistan och välja **`Create action`**-knappen.
+Vi har skapat en Appwrite-resurs, vi kan lägga till åtgärden genom att välja Appwrite från åtgärdslistan och välja knappen "Skapa åtgärd".
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Nu har vi lagt till Appwrite-servern som en åtgärd till vår byggsida.
 
 skapa ett nytt dokument i en samling
 
-** Input **
+ Input 
 
 | Egenskaper  | Krävs        | Beskrivning                                                       |
 | ----------- | ------------ | ----------------------------------------------------------------- |
 | Dokument ID | obligatorisk | en unik identifierare tilldelad till ett databassamlingsdokument  |
 | Data        | valfri       | ett objekt som innehåller det nya dokumentets fält och värden.    |
 
-Till exempel för att skapa ett nytt dokument i en samling med två fält - **`name`** och **`age`**, du kan använda 1 som **`document ID`** och `{{"Name": "David", "Ålder": 18}}}` för **`data`**.
+Till exempel för att skapa ett nytt dokument i en samling med två fält - `namn` och `age`, du kan använda 1 som `document ID` och `{{"Name": "David", "Ålder": 18}}` för `data`.
 
-** utdata **
+ Utdata 
 
 ett svarsobjekt som innehåller ID för det nyskapade dokumentet, samt ytterligare metadata som datum och tid för skapelsen.
 
@@ -153,15 +153,15 @@ ett svarsobjekt som innehåller ID för det nyskapade dokumentet, samt ytterliga
 
 hämta ett specifikt dokument från en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaper  | Krävs        | Beskrivning                                                      |
 | ----------- | ------------ | ---------------------------------------------------------------- |
 | Dokument ID | obligatorisk | en unik identifierare tilldelad till ett databassamlingsdokument |
 
-Till exempel kan vi få dokumentet med id **`1`**.
+Till exempel kan vi få dokumentet med id `1`.
 
-** utdata **
+ Utdata 
 
 ett svarsobjekt som innehåller data från det begärda dokumentet
 
@@ -175,16 +175,16 @@ Använd `{{Appwrite1.data}}` för att få allt returnerat värde.
 
 uppdatera data för ett befintligt dokument i en samling.
 
-** Input **
+ Input 
 
 | Egenskaper  | Krävs        | Beskrivning                                                                                   |
 | ----------- | ------------ | --------------------------------------------------------------------------------------------- |
 | Dokument ID | obligatorisk | en unik identifierare tilldelad till ett databassamlingsdokument                              |
 | Data        | valfri       | Ett objekt som innehåller de uppdaterade fält och värden som du vill tilldela dokumentet.     |
 
-Till exempel för att uppdatera ett dokument i en samling med **`updateDocument`** metoden, du kan sätta **`1`** för dokument-id och `{{{"Name":"Fred"}}}` för data.
+Till exempel för att uppdatera ett dokument i en samling med hjälp av `updateDocument`-metoden, du kan sätta `1` för dokument-id och `{{{"Name":"Fred"}}}` för data.
 
-** utdata **
+ Utdata 
 
 ett svarsobjekt som innehåller data från det begärda dokumentet
 
@@ -194,15 +194,15 @@ ett svarsobjekt som innehåller data från det begärda dokumentet
 
 ta bort ett specifikt dokument från en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaper  | Krävs        | Beskrivning                                                      |
 | ----------- | ------------ | ---------------------------------------------------------------- |
 | Dokument ID | obligatorisk | en unik identifierare tilldelad till ett databassamlingsdokument |
 
-Till exempel kan vi ta bort dokumentet med id **`1`**.
+Till exempel kan vi ta bort dokumentet med id `1`.
 
-** utdata **
+ Utdata 
 
 ett svarsobjekt som bekräftar att dokumentet raderats framgångsrikt.
 
@@ -212,7 +212,7 @@ ett svarsobjekt som bekräftar att dokumentet raderats framgångsrikt.
 
 hämta flera dokument från en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaper      | Krävs  | Beskrivning                                                                        |
 | --------------- | ------ | ---------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ hämta flera dokument från en samling i databasen
 
 Till exempel för att lista alla dokument med Namn = James.
 
-** utdata **
+ Utdata 
 
 En rad dokument som uppfyller filtret.
 

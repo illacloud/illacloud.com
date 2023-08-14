@@ -15,11 +15,11 @@ Appwrite in Illa is een database-integratie waarmee u verbinding en interactie k
 
 Met de Appwrite integratie in Illa, kunt u de data van een Appwrite database opzoeken, invoegen, bijwerken en verwijderen met behulp van SQL commando's. U kunt ook aangepaste SQL-query's maken en uitvoeren binnen Illa. Dit maakt het makkelijk om data-driven applicaties en dashboards te bouwen die real-time gegevens weergeven uit een Appwrite database.
 
-Deze handleiding schetst het proces van het maken van een Admin Panel met behulp van ILLA Builder en Appwrite in een paar eenvoudige stappen. ILLA is een laag programmeerplatform voor ontwikkelaars dat het mogelijk maakt interne hulpmiddelen snel te ontwikkelen en te implementeren. Het maakt het mogelijk om pagina's te maken door UI-componenten te slepen en te laten vallen, door verbinding te maken met elke database of API en door JavaScript te schrijven. Voor meer informatie over Appwrite, ga naar hun website op https://Appwrite.io/(https://Appwrite.io/) Laten we beginnen!
+Deze handleiding schetst het proces van het maken van een Admin Panel met behulp van ILLA Builder en Appwrite in een paar eenvoudige stappen. ILLA is een laag programmeerplatform voor ontwikkelaars dat het mogelijk maakt interne hulpmiddelen snel te ontwikkelen en te implementeren. Het maakt het mogelijk om pagina's te maken door UI-componenten te slepen en te laten vallen, door verbinding te maken met elke database of API en door JavaScript te schrijven. Om meer te weten te komen over Appwrite, ga naar hun website via <https://Appwrite.io/> Laten we beginnen!
 
 ### Stel uw Back end in op Appwrite
 
-Na het inloggen op uw Appwrite account, op het Appwrite dashboard, klikt u op `**Create project**` en zet de naam op `First Project`.
+Na het inloggen op uw Appwrite account, op het Appwrite dashboard, klik op `Create project` en stel de naam in op `First Project`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Er zijn twee manieren om een bron in Illa te maken nadat je bent ingelogd op je 
 
 -   Maak in Bronnen
 
-Log in op je Illa account, selecteer `**Resources**` bovenaan de pagina, en klik op de `**Maak Nieuw**` knop.
+Log in op je Illa account, selecteer `Resources` bovenaan de pagina, en klik op de `Create New` knop.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Selecteer **`Appwrite`** uit de database lijst.
+Selecteer `Appwrite` uit de database lijst.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Maak verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
 
-Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+Klik op `Test Connection` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik op `Save Resources`, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
 
 Na het maken van een bron wordt de aangepaste Appwrite weergegeven zoals getoond.
 
@@ -70,9 +70,9 @@ Na het maken van een bron wordt de aangepaste Appwrite weergegeven zoals getoond
 
 -   Maak in Bouwer
 
-Log in op je Illa account, maak een project aan in Illa Builder in de `**App**` pagina en navigeer naar de **`Action List`** onderaan de pagina. Klik op `**nieuw**`, en selecteer dan **`Appwrite`** uit de database lijst. Maak vervolgens verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
+Log in op je Illa account, maak een project aan in Illa Builder in de `App` pagina en navigeer naar de `Action List` onderaan de pagina. Klik op `new` en selecteer `Appwrite` uit de database lijst. Maak vervolgens verbinding met de database met de vereiste parameters beschreven in `Connectie Instellingen` hieronder.
 
-Klik op `**Test Connection**` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik **`Resources`**, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
+Klik op `Test Connection` om te zien of we met succes verbinding kunnen maken met de database. Zo ja, klik op `Save Resources`, anders controleer je de hostnaam, port, gebruikersnaam en wachtwoord correct.
 
 ### Verbindingsinstellingen
 
@@ -88,21 +88,21 @@ Hier moeten we informatie verstrekken voor het verbinden met de Appwrite databas
 | Project ID      | verplicht | unieke id die uw hele Appwrite project vertegenwoordigt                                                             |
 | API sleutel     | verplicht | een geheime token die dient als een vorm van authenticatie bij het indienen van API-verzoeken op de Appwrite server |
 
-Om de vereiste **`Host`**, **`Database ID`**, **`Project ID`**, en **`API key`** in Appwrite, we gaan eerst naar de `**instelling**` knop in de linker onderhoek van de projectpagina.
+Om de vereiste `Host`, `Database ID`, `Project ID`, en `API key` te vinden in Appwrite, we gaan eerst naar de knop 'instellen' in de linker onderhoek van de projectpagina.
 
-Kopiëren van de `project ID` voor **`project ID`** en `API Endpoint` voor **`Host`** in de Appwrite configuratie in Illa.
+Kopiëren van de `project ID` voor `project ID` en `API Endpoint` voor `Host` in de Appwrite configuratie in Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Dan kunnen we op dezelfde pagina op de **`View API Keys`** knop klikken. Als je nog geen API hebt aangemaakt voor dit project, Klik op de **`Create API Key`** knop en selecteer alleen `Database` map, want dat is wat we zullen gebruiken vanuit Appwrite.
+Dan kunnen we op de `Bekijk API Keys` knop op dezelfde pagina klikken. Als je nog geen API hebt aangemaakt voor dit project, Klik op de knop 'API-sleutel maken' en selecteer alleen de map 'Database', omdat dat de map is die we zullen gebruiken vanuit Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Kopieer de `API Key Secret` voor **`API key`** in Illa configuratie. Het kan op deze twee plekken worden gekopieerd.
+Kopieer de `API Key Secret` voor `API key` in Illa configuratie. Het kan op deze twee plekken worden gekopieerd.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Wat we over hebben is de **`Database ID`** die we kunnen vinden in de `Database` pagina. Kopiëren en plakken in de Appwrite configuratie in Illa.
+Wat we over hebben is de `Database ID` die we kunnen vinden in de `Database` pagina. Kopiëren en plakken in de Appwrite configuratie in Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Het eindproduct zou er zo uit moeten zien.
 
 ### Acties aanmaken
 
-We hebben een Appwrite bron gemaakt, we kunnen de actie toevoegen door Appwrite uit de actielijst te selecteren en te kiezen voor de **`Create action`** knop.
+We hebben een Appwrite bron gemaakt, we kunnen de actie toevoegen door de Appwrite van de actie lijst te selecteren en te kiezen voor de knop 'Maak actie'.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Nu hebben we de Appwrite server toegevoegd als actie aan onze bouwpagina.
 
 maak een nieuw document aan in een collectie
 
-** Input **
+ Input 
 
 | Eigenschappen   | vereist   | Beschrijving                                                     |
 | --------------- | --------- | ---------------------------------------------------------------- |
 | Document ID     | verplicht | een unieke id toegewezen aan een database collectie document     |
 | Gegevens        | optioneel | een object met de velden en waarden van het nieuwe document.     |
 
-Bijvoorbeeld, om een nieuw document te maken in een collectie met twee velden - **`name`** en **`age`**, je kan 1 gebruiken als **`document ID`** en `{{ {"Name": "David", "Age": 18}}}` voor **`data`**.
+Bijvoorbeeld, het maken van een nieuw document in een collectie met twee velden - `name` en `age`, je kan 1 gebruiken als `document ID` en `{{ {"Name": "David", "Age": 18}}}` voor `data`.
 
-** Uitvoer **
+ Uitvoer 
 
 een responsobject dat de ID van het nieuwe document bevat, evenals extra metadata zoals de datum en tijd van de creatie.
 
@@ -153,15 +153,15 @@ een responsobject dat de ID van het nieuwe document bevat, evenals extra metadat
 
 een specifiek document ophalen uit een collectie in de database
 
-** Input **
+ Input 
 
 | Eigenschappen  | vereist   | Beschrijving                                                    |
 | -------------- | --------- | --------------------------------------------------------------- |
 | Document ID    | verplicht | een unieke id toegewezen aan een database collectie document    |
 
-We kunnen het document bijvoorbeeld krijgen met id **`1`**.
+We kunnen het document bijvoorbeeld krijgen met id `1`.
 
-** Uitvoer **
+ Uitvoer 
 
 een antwoord object dat de gegevens van het gevraagde document bevat
 
@@ -175,16 +175,16 @@ Gebruik `{{Appwrite1.data}}` om alle geretourneerde waarden te krijgen.
 
 de gegevens van een bestaand document in een collectie bijwerken.
 
-** Input **
+ Input 
 
 | Eigenschappen   | vereist   | Beschrijving                                                                                 |
 | --------------- | --------- | -------------------------------------------------------------------------------------------- |
 | Document ID     | verplicht | een unieke id toegewezen aan een database collectie document                                 |
 | Gegevens        | optioneel | Een object met de bijgewerkte velden en waarden die u wilt toewijzen aan het document.       |
 
-Bijvoorbeeld, om een document in een verzameling bij te werken met behulp van de **`updateDocument`** methode. je kunt **`1`** plaatsen voor document id en `{{{"Name":"Fred"}}}` voor data.
+Bijvoorbeeld, om een document in een verzameling bij te werken met behulp van de `updateDocument` methode. je kan `1` voor document id en `{{{"Name":"Fred"}}}` plaatsen voor gegevens.
 
-** Uitvoer **
+ Uitvoer 
 
 een antwoord object dat de gegevens van het gevraagde document bevat
 
@@ -194,15 +194,15 @@ een antwoord object dat de gegevens van het gevraagde document bevat
 
 verwijder een specifiek document uit een collectie in de database
 
-** Input **
+ Input 
 
 | Eigenschappen  | vereist   | Beschrijving                                                    |
 | -------------- | --------- | --------------------------------------------------------------- |
 | Document ID    | verplicht | een unieke id toegewezen aan een database collectie document    |
 
-We kunnen het document met id **`1`** verwijderen.
+We kunnen het document met id `1` verwijderen.
 
-** Uitvoer **
+ Uitvoer 
 
 een reactie-object dat het met succes verwijderen van het document bevestigt.
 
@@ -212,7 +212,7 @@ een reactie-object dat het met succes verwijderen van het document bevestigt.
 
 meerdere documenten ophalen uit een collectie in de database
 
-** Input **
+ Input 
 
 | Eigenschappen | vereist   | Beschrijving                                                                              |
 | ------------- | --------- | ----------------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ meerdere documenten ophalen uit een collectie in de database
 
 Bijvoorbeeld, het tonen van alle documenten met naam = James.
 
-** Uitvoer **
+ Uitvoer 
 
 Een reeks documenten die aan het filter voldoen.
 

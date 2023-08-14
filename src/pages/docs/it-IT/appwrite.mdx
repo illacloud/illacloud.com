@@ -15,11 +15,11 @@ Appwrite in Illa è un'integrazione di database che consente di connettersi e in
 
 Con l'integrazione Appwrite in Illa, è possibile interrogare, inserire, aggiornare ed eliminare i dati da un database Appwrite utilizzando i comandi SQL. È inoltre possibile creare query SQL personalizzate ed eseguirle all'interno di Illa. Ciò facilita la creazione di applicazioni e dashboard guidate dai dati che visualizzano dati in tempo reale da un database Appwrit.
 
-Questo tutorial delinea il processo di creazione di un pannello di amministrazione utilizzando ILLA Builder e Appwrite in pochi semplici passaggi. ILLA è una piattaforma a basso codice per gli sviluppatori che consente lo sviluppo rapido e la distribuzione di strumenti interni. Consente di creare pagine trascinando e rilasciando componenti UI, collegandosi a qualsiasi database o API e scrivendo JavaScript. Per saperne di più su Appwrite, visita il suo sito web su https://Appwrite.io/(https://Appwrite.io/) Cominciamo!
+Questo tutorial delinea il processo di creazione di un pannello di amministrazione utilizzando ILLA Builder e Appwrite in pochi semplici passaggi. ILLA è una piattaforma a basso codice per gli sviluppatori che consente lo sviluppo rapido e la distribuzione di strumenti interni. Consente di creare pagine trascinando e rilasciando componenti UI, collegandosi a qualsiasi database o API e scrivendo JavaScript. Per saperne di più su Appwrite, visita il suo sito web su <https://Appwrite.io/> Iniziamo!
 
 ### Imposta il tuo Back end su Appwrite
 
-Dopo aver effettuato l'accesso al tuo account Appwrite, nella dashboard Appwrite, clicca `**Crea progetto**` e imposta il nome su `First Project`.
+Dopo aver effettuato l'accesso al tuo account Appwrite, nella dashboard Appwrite, clicca su `Crea progetto` e imposta il nome su `First Project`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Ci sono due modi per creare una risorsa in Illa dopo aver effettuato l'accesso a
 
 -   Crea in Risorse
 
-Accedi al tuo account Illa, seleziona `**Risorse**` nella parte superiore della pagina e clicca sul pulsante `**Crea Nuovo**`.
+Accedi al tuo account Illa, seleziona `Resources` nella parte superiore della pagina e clicca sul pulsante `Crea Nuovo`.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Seleziona **`Appwrite`** dall'elenco dei database.
+Seleziona `Appwrite` dall'elenco dei database.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
 
-Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+Clicca su `Test Connection` per vedere se possiamo connetterci con successo al database. In caso affermativo, fare clic su `Salva risorse`, altro, controllare due volte il nome host, la porta, il nome utente e la password è corretto.
 
 Dopo aver creato una risorsa, l'app pronta verrà visualizzata come mostrato.
 
@@ -70,9 +70,9 @@ Dopo aver creato una risorsa, l'app pronta verrà visualizzata come mostrato.
 
 -   Crea in Costruttore
 
-Accedi al tuo account Illa, crea un progetto in Illa Builder nella pagina `**App**`, e vai alla **`Action List`** in fondo alla pagina. Fare clic su `**nuovo**`, quindi selezionare **`Appwrite`** dall'elenco dei database. Poi, connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
+Accedi al tuo account Illa, crea un progetto in Illa Builder nella pagina `App`, e vai al `Action List` in fondo alla pagina. Clicca su `new`, quindi seleziona `Appwrite` dall'elenco dei database. Poi, connettiti al database con i parametri richiesti descritti in `Impostazioni di connessione` qui sotto.
 
-Clicca su `**Test Connection**` per vedere se possiamo connetterci correttamente al database. Se sì, fai clic su **`Salva risorse`**, doppi controlli il nome host, la porta, il nome utente e la password sono corretti.
+Clicca su `Test Connection` per vedere se possiamo connetterci con successo al database. In caso affermativo, fare clic su `Salva risorse`, altro, controllare due volte il nome host, la porta, il nome utente e la password è corretto.
 
 ### Impostazioni Di Connessione
 
@@ -88,21 +88,21 @@ Qui abbiamo bisogno di fornire informazioni per la connessione al database Appwr
 | Id Progetto     | obbligatorio | identificatore univoco che rappresenta l'intero progetto Appwrite                                                  |
 | Chiave API      | obbligatorio | un token segreto che serve come forma di autenticazione quando si fanno richieste API al server Appwrite           |
 
-Per trovare il **`Host`**, **`Database ID`**, **`Project ID`**, e **`API key`** nell'Appwrite, prima andiamo al pulsante `**setting**` nell'angolo in basso a sinistra della pagina del progetto.
+Per trovare il `Host`, `Database ID`, `Project ID`, e `API key` richiesto in Appwrite, prima andiamo al pulsante `setting` nell'angolo in basso a sinistra della pagina del progetto.
 
-Copia del file `project ID` per **`project ID`** e `API Endpoint` per **`Host`** nella configurazione di Appwrite in Illa.
+Copia del file `project ID` per `project ID` e `API Endpoint` per `Host` nella configurazione Appwrite in Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Poi possiamo cliccare sul pulsante **`View API Keys`** nella stessa pagina. Se non hai creato un'API per questo progetto, clicca sul pulsante **`Crea chiave API`** e seleziona solo la cartella `Database` poiché è quello che useremo da Appwrite.
+Poi possiamo cliccare sul pulsante `View API Keys` nella stessa pagina. Se non hai creato un'API per questo progetto, clicca sul pulsante `Crea API Key` e seleziona solo la cartella `Database` poiché è quello che useremo da Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Copia il file `API Key Secret` per **`API key`** nella configurazione di illa. Può essere copiato per questi due punti.
+Copia il file `API Key Secret` per `API key` nella configurazione di illa. Può essere copiato per questi due punti.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Quello che abbiamo lasciato è il **`Database ID`** che possiamo trovare nella pagina `Database`. Copiarlo e incollarlo alla Configurazione Appwrite in Illa.
+Quello che abbiamo lasciato è il `Database ID` che possiamo trovare nella pagina `Database`. Copiarlo e incollarlo alla Configurazione Appwrite in Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Il prodotto finale dovrebbe assomigliare a questo.
 
 ### Crea Azioni
 
-Abbiamo creato una risorsa Appwrite, possiamo aggiungere l'azione selezionando Appwrite dall'elenco di azioni e scegliendo il pulsante **`Crea azione`**.
+Abbiamo creato una risorsa Appwrite, possiamo aggiungere l'azione selezionando Appwrite dall'elenco di azioni e scegliendo il pulsante `Crea azione`.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Ora abbiamo aggiunto il server Appwrite come azione alla nostra pagina di costru
 
 crea un nuovo documento in una collezione
 
-** Input **
+ Input 
 
 | Proprietà    | Richiesto    | Descrizione                                                                    |
 | ------------ | ------------ | ------------------------------------------------------------------------------ |
 | ID Documento | obbligatorio | un identificatore univoco assegnato a un documento di raccolta di banche dati  |
 | Dati         | opzionale    | un oggetto contenente i campi e i valori del nuovo documento.                  |
 
-Ad esempio, per creare un nuovo documento in una collezione con due campi - **`name`** e **`age`**, puoi usare 1 come **`document ID`** e `{{ {"Name": "David", "Età": 18}}}` per **`data`**.
+Ad esempio, per creare un nuovo documento in una collezione con due campi - `name` e `age`, puoi usare 1 come `document ID` e `{{ {"Name": "David", "Età": 18}}}` per `data`.
 
-** Uscita **
+ Output 
 
 un oggetto di risposta che include l'ID del documento appena creato, nonché metadati aggiuntivi come la data e l'ora di creazione.
 
@@ -153,15 +153,15 @@ un oggetto di risposta che include l'ID del documento appena creato, nonché met
 
 recuperare un documento specifico da una raccolta nel database
 
-** Input **
+ Input 
 
 | Proprietà    | Richiesto    | Descrizione                                                                   |
 | ------------ | ------------ | ----------------------------------------------------------------------------- |
 | ID Documento | obbligatorio | un identificatore univoco assegnato a un documento di raccolta di banche dati |
 
-Ad esempio, possiamo ottenere il documento con id **`1`**.
+Ad esempio, possiamo ottenere il documento con id `1`.
 
-** Uscita **
+ Output 
 
 un oggetto di risposta che include i dati del documento richiesto
 
@@ -175,16 +175,16 @@ Usa `{{Appwrite1.data}}` per ottenere tutti i valori restituiti.
 
 aggiornare i dati di un documento esistente in una raccolta.
 
-** Input **
+ Input 
 
 | Proprietà    | Richiesto    | Descrizione                                                                                                |
 | ------------ | ------------ | ---------------------------------------------------------------------------------------------------------- |
 | ID Documento | obbligatorio | un identificatore univoco assegnato a un documento di raccolta di banche dati                              |
 | Dati         | opzionale    | Un oggetto contenente i campi e i valori aggiornati che si desidera assegnare al documento.                |
 
-Ad esempio, per aggiornare un documento in una collezione usando il metodo **`updateDocument`** puoi mettere **`1`** per l'id del documento e `{{{"Name":"Fred"}}}` per i dati.
+Ad esempio, per aggiornare un documento in una collezione usando il metodo `updateDocument`, puoi mettere `1` per l'id del documento e `{{{"Name":"Fred"}}}` per i dati.
 
-** Uscita **
+ Output 
 
 un oggetto di risposta che include i dati del documento richiesto
 
@@ -194,15 +194,15 @@ un oggetto di risposta che include i dati del documento richiesto
 
 elimina un documento specifico da una raccolta nel database
 
-** Input **
+ Input 
 
 | Proprietà    | Richiesto    | Descrizione                                                                   |
 | ------------ | ------------ | ----------------------------------------------------------------------------- |
 | ID Documento | obbligatorio | un identificatore univoco assegnato a un documento di raccolta di banche dati |
 
-Ad esempio, possiamo eliminare il documento con id **`1`**.
+Ad esempio, possiamo eliminare il documento con id `1`.
 
-** Uscita **
+ Output 
 
 un oggetto di risposta che conferma la cancellazione riuscita del documento.
 
@@ -212,7 +212,7 @@ un oggetto di risposta che conferma la cancellazione riuscita del documento.
 
 recuperare più documenti da una raccolta nel database
 
-** Input **
+ Input 
 
 | Proprietà    | Richiesto | Descrizione                                                                         |
 | ------------ | --------- | ----------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ recuperare più documenti da una raccolta nel database
 
 Ad esempio, per elencare tutti i documenti con Nome = James.
 
-** Uscita **
+ Output 
 
 Una serie di documenti che soddisfano il filtro.
 

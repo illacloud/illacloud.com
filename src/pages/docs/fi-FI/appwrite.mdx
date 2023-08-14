@@ -15,11 +15,11 @@ Appwrite in Illa on tietokannan integraatio, jonka avulla voit muodostaa yhteyde
 
 Appwrite integraation Illa avulla voit kysyä, lisätä, päivittää ja poistaa tietoja Appwrite tietokannasta käyttäen SQL komentoja. Voit myös luoda mukautettuja SQL kyselyitä ja suorittaa ne Illa. Tämän ansiosta on helppoa rakentaa datapohjaisia sovelluksia ja dashboardeja, jotka näyttävät reaaliaikaista dataa Appwrite tietokannasta.
 
-Tässä tutoriaalissa hahmotellaan prosessi, jolla luodaan hallintapaneeli ILLA Builderia ja Appwrite käyttäen muutamassa yksinkertaisessa vaiheessa. ILLA on matalan koodin alusta kehittäjille, joka mahdollistaa sisäisten työkalujen nopean kehittämisen ja käyttöönoton. Se mahdollistaa sivujen luomisen vetämällä ja pudottamalla käyttöliittymän komponentteja, yhdistämällä mihin tahansa tietokantaan tai APIin ja kirjoittamalla JavaScriptiä. Jos haluat lisätietoja Appwritesta, vieraile heidän verkkosivustollaan osoitteessa https://Appwrite.io/(https://Appwrite.io/) Aloitetaan!
+Tässä tutoriaalissa hahmotellaan prosessi, jolla luodaan hallintapaneeli ILLA Builderia ja Appwrite käyttäen muutamassa yksinkertaisessa vaiheessa. ILLA on matalan koodin alusta kehittäjille, joka mahdollistaa sisäisten työkalujen nopean kehittämisen ja käyttöönoton. Se mahdollistaa sivujen luomisen vetämällä ja pudottamalla käyttöliittymän komponentteja, yhdistämällä mihin tahansa tietokantaan tai APIin ja kirjoittamalla JavaScriptiä. Jos haluat lisätietoja Appwritesta, vieraile heidän verkkosivustollaan osoitteessa <https://Appwrite.io/> Aloitetaan!
 
 ### Määritä Takaisin loppu Appwrite
 
-Kun olet kirjautunut Appwrite tilillesi, klikkaa `**Create project**` ja aseta nimi `First Project`.
+Kun olet kirjautunut Appwrite tilillesi, klikkaa `Create project` ja aseta nimi `First Project`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ On kaksi tapaa luoda resurssi Illa sen jälkeen, kun olet kirjautunut Illa tilil
 
 -   Luo resursseissa
 
-Kirjaudu Illa-tilillesi, valitse `**Resurssit**` sivun yläreunassa ja napsauta `**Luo uusi **` -painiketta.
+Kirjaudu Illa tilillesi, valitse `Resources` sivun yläreunassa ja napsauta `Create New` -painiketta.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Valitse **`Appwrite`** tietokantaluettelosta.
+Valitse `Appwrite` tietokantaluettelosta.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Yhdistä tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
 
-Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+Napsauta `Testaa yhteyttä`, jos voimme yhdistää onnistuneesti tietokantaan. Jos kyllä, klikkaa `Save Resources`, muu, kaksinkertainen tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
 
 Kun resurssi on luotu, valmis Appwrite näyttää kuvatulla tavalla.
 
@@ -70,9 +70,9 @@ Kun resurssi on luotu, valmis Appwrite näyttää kuvatulla tavalla.
 
 -   Luo rakentajaan
 
-Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `**App**`-sivulle, ja siirry sivun alareunassa olevaan **`Action List`** -luetteloon. Valitse `**new**`, ja valitse **`Appwrite`** tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
+Kirjaudu Illa tilillesi, luo projekti Illa Builderiin `App`-sivulle, ja siirry sivun alareunassa olevaan `Action List`-luetteloon. Valitse `new`, valitse `Appwrite` tietokantaluettelosta. Yhdistä sitten tietokantaan vaaditut parametrit alla olevassa `Connection Settings`ssa.
 
-Napsauta `**Testaa yhteyttä**` nähdäksesi, pystymmekö yhdistämään tietokantaan onnistuneesti. Jos kyllä, klikkaa **`Save Resources`**, muu, tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
+Napsauta `Testaa yhteyttä`, jos voimme yhdistää onnistuneesti tietokantaan. Jos kyllä, klikkaa `Save Resources`, muu, kaksinkertainen tarkista isäntänimi, portti, käyttäjätunnus ja salasana on oikea.
 
 ### Yhteyden Asetukset
 
@@ -88,21 +88,21 @@ Täällä meidän on annettava tietoa yhteyden Appwrite tietokantaan.
 | Projektin Tunnus   | vaadittu   | yksilöllinen tunniste, joka edustaa koko Appwrite projektiasi                                                        |
 | API avain          | vaadittu   | salainen tunniste, joka toimii eräänlaisena todennuksena, kun tehdään API pyyntöjä Appwrite palvelimella             |
 
-Löytääksesi vaaditun **`Host`**, **`Database ID`**, **`Project ID`**, ja **`API-avaimen`** Appwritessa, menemme ensin projektisivun vasemmassa alakulmassa olevaan kohtaan `**setting**`-painiketta.
+Löytääksesi vaaditun `Host`, `Database ID`, `Project ID`, ja `API key` Appwritesta, menemme ensin `setting`-näppäimeen, joka on projektin sivun vasemmassa alakulmassa.
 
-Kopioidaan `project ID` -tunnusta **`project ID`** ja `API Endpoint` varten **`Host`** Appwrite konfiguraatiossa Illa.
+Kopioidaan `project ID`- ja `API Endpoint`-tunnusta `project ID`- ja `API Endpoint`-tunnusta varten Appwrite konfiguraatio Illalla.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Sitten voimme klikata **`Näytä API-avaimet`** -painiketta samalla sivulla. Jos et ole luonut sovellusrajapintaa tälle projektille, klikkaa **`Luo API-avain`** painiketta ja valitse vain `Database`-kansio sen jälkeen mitä käytämme Appwritesta.
+Sitten voimme klikata `View API Keys` -painiketta samalla sivulla. Jos et ole luonut sovellusrajapintaa tälle projektille, klikkaa `Create API Key`-painiketta ja valitse vain `Database`-kansio sen jälkeen mitä käytämme Appwritesta.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Kopioi `API Key Secret` **`API-avaimen`** varten Illa-asetuksissa. Se voidaan kopioida nämä kaksi paikkaa.
+Kopioi `API Key Secret` \`API -avainta varten Illa asetuksissa. Se voidaan kopioida nämä kaksi paikkaa.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Mitä olemme jäljellä, on **`Database ID`** jonka löydämme `Database`-sivulta. Kopiointi ja liitä se Appwrite konfiguraatioon Illa.
+Mitä olemme jäljellä, on `Database ID`, jonka löydämme `Database`-sivulta. Kopiointi ja liitä se Appwrite konfiguraatioon Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Lopullisen tuotteen pitäisi näyttää jotain tällaista.
 
 ### Luo Toiminnot
 
-Olemme luoneet Appwrite resurssin, voimme lisätä toiminnon valitsemalla Appwrite toimintaluettelosta ja valitsemalla **`Create action`** -painikkeen.
+Olemme luoneet Appwrite resurssin, voimme lisätä toiminnon valitsemalla Appwrite toimintaluettelosta ja valitsemalla `Create action` -painikkeen.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Nyt olemme lisänneet Appwrite palvelimen toiminnaksi meidän rakennussivun.
 
 luo uusi asiakirja kokoelmaan
 
-** Input **
+ Input 
 
 | Ominaisuudet      | Pakollinen  | Kuvaus                                                                 |
 | ----------------- | ----------- | ---------------------------------------------------------------------- |
 | Asiakirjan Tunnus | vaadittu    | yksilöllinen tunniste, joka on annettu tietokannan keräysasiakirjalle  |
 | Tiedot            | valinnainen | esine, joka sisältää uuden asiakirjan kentät ja arvot.                 |
 
-Voit esimerkiksi luoda uuden asiakirjan kokoelmaan, jossa on kaksi kenttää - **`name`** ja **`age`**, voit käyttää nimillä **`document ID`** ja `{{ {"Nimi": "David", "Age": 18}}` **`data`**.
+Esimerkiksi luoda uusi asiakirja kokoelmaan, jossa on kaksi kenttää - `name` ja `age`, voit käyttää komentoa `document ID` ja `{{ {"Name": "David", "Age": 18}}` komentoa `data`.
 
-\*\* Tuotos
+ Ulostulo 
 
 vastausobjekti, joka sisältää uuden asiakirjan tunnisteen, sekä muita metatietoja, kuten luomispäivämäärän ja -ajan.
 
@@ -153,15 +153,15 @@ vastausobjekti, joka sisältää uuden asiakirjan tunnisteen, sekä muita metati
 
 hae tietty asiakirja tietokannassa olevasta kokoelmasta
 
-** Input **
+ Input 
 
 | Ominaisuudet      | Pakollinen | Kuvaus                                                                |
 | ----------------- | ---------- | --------------------------------------------------------------------- |
 | Asiakirjan Tunnus | vaadittu   | yksilöllinen tunniste, joka on annettu tietokannan keräysasiakirjalle |
 
-Voimme esimerkiksi saada asiakirjan tunnisteella **`1`**.
+Voimme esimerkiksi saada asiakirjan tunnisteella `1`.
 
-\*\* Tuotos
+ Ulostulo 
 
 vastausobjekti, joka sisältää pyydetyn asiakirjan tiedot.
 
@@ -175,16 +175,16 @@ Käytä `{{Appwrite1.data}}` saadaksesi kaikki palautetut arvot.
 
 päivittää olemassa olevan asiakirjan tiedot kokoelmassa.
 
-** Input **
+ Input 
 
 | Ominaisuudet      | Pakollinen  | Kuvaus                                                                                             |
 | ----------------- | ----------- | -------------------------------------------------------------------------------------------------- |
 | Asiakirjan Tunnus | vaadittu    | yksilöllinen tunniste, joka on annettu tietokannan keräysasiakirjalle                              |
 | Tiedot            | valinnainen | Objekti, joka sisältää päivitetyt kentät ja arvot, jotka haluat liittää asiakirjaan.               |
 
-Esimerkiksi päivittääksesi asiakirjan kokoelmassa käyttäen **`updateDocument`** -menetelmää, voit laittaa **`1`** asiakirjatunnuksen ja `{{{"Name":"Fred"}}}` dataa varten.
+Voit esimerkiksi päivittää asiakirjan kokoelmassa käyttäen 'updateDocument' -menetelmää, voit laittaa `1` asiakirjatunnukselle ja `{{{"Name":"Fred"}}}` datassa.
 
-\*\* Tuotos
+ Ulostulo 
 
 vastausobjekti, joka sisältää pyydetyn asiakirjan tiedot.
 
@@ -194,15 +194,15 @@ vastausobjekti, joka sisältää pyydetyn asiakirjan tiedot.
 
 poistaa tietyn asiakirjan kokoelmasta tietokannassa
 
-** Input **
+ Input 
 
 | Ominaisuudet      | Pakollinen | Kuvaus                                                                |
 | ----------------- | ---------- | --------------------------------------------------------------------- |
 | Asiakirjan Tunnus | vaadittu   | yksilöllinen tunniste, joka on annettu tietokannan keräysasiakirjalle |
 
-Voimme esimerkiksi poistaa asiakirjan tunnuksella **`1`**.
+Voimme esimerkiksi poistaa asiakirjan tunnisteella `1`.
 
-\*\* Tuotos
+ Ulostulo 
 
 vastausobjekti, joka vahvistaa asiakirjan poistamisen onnistuneesti.
 
@@ -212,7 +212,7 @@ vastausobjekti, joka vahvistaa asiakirjan poistamisen onnistuneesti.
 
 hae useita asiakirjoja tietokannan kokoelmasta
 
-** Input **
+ Input 
 
 | Ominaisuudet      | Pakollinen  | Kuvaus                                                                                               |
 | ----------------- | ----------- | ---------------------------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ hae useita asiakirjoja tietokannan kokoelmasta
 
 Esimerkiksi luetella kaikki asiakirjat Nimellä = James.
 
-\*\* Tuotos
+ Ulostulo 
 
 Valikoima asiakirjoja, jotka täyttävät suodatin.
 

@@ -15,11 +15,11 @@ Appwrite i Illa er en databaseintegration, der giver dig mulighed for at forbind
 
 Med Appwrite integrationen i Illa kan du forespørge, indsætte, opdatere og slette data fra en Appwrite database ved hjælp af SQL-kommandoer. Du kan også oprette brugerdefinerede SQL forespørgsler og køre dem i Illa. Dette gør det nemt at opbygge data-drevne applikationer og dashboards, der viser realtidsdata fra en Appwrite-database.
 
-Denne tutorial skitserer processen med at oprette en Admin Panel ved hjælp af ILLA Builder og Appwrite i et par enkle trin. ILLA er en lav-kode-platform for udviklere, der muliggør hurtig udvikling og implementering af interne værktøjer. Det giver mulighed for at oprette sider ved at trække og slippe UI komponenter, forbinde til enhver database eller API, og skrive JavaScript. Hvis du vil vide mere om Appwrite, kan du besøge deres hjemmeside på https://Appwrite.io/(https://Appwrite.io/) Lad os begynde!
+Denne tutorial skitserer processen med at oprette en Admin Panel ved hjælp af ILLA Builder og Appwrite i et par enkle trin. ILLA er en lav-kode-platform for udviklere, der muliggør hurtig udvikling og implementering af interne værktøjer. Det giver mulighed for at oprette sider ved at trække og slippe UI komponenter, forbinde til enhver database eller API, og skrive JavaScript. For at lære mere om Appwrite, besøg deres hjemmeside på <https://Appwrite.io/> Lad os begynde!
 
 ### Konfigurer din Back end på Appwrite
 
-Efter du har logget ind på din Appwrite konto på Appwrite dashboardet, klik på `**Opret projekt**` og angiv navnet til `Første projekt`.
+Efter du har logget ind på din Appwrite konto på Appwrite dashboardet, klik på `Opret projekt` og sæt navnet til `Første projekt`.
 
 ![app_create_project](https://cdn.illacloud.com/official-website/img/docs/app_create_project.png)
 
@@ -52,17 +52,17 @@ Der er to måder at oprette en ressource på i Illa efter at have logget ind på
 
 -   Opret i ressourcer
 
-Log ind på din Illa-konto, vælg `**Ressourcer**` øverst på siden, og klik på `**Opret ny**` knappen.
+Log ind på din Illa-konto, vælg `Ressourcer` øverst på siden, og klik på `Opret ny`-knappen.
 
 ![external_resource](https://cdn.illacloud.com/official-website/img/docs/external_resource.png)
 
-Vælg **`Appwrite`** fra databaselisten.
+Vælg `Appwrite` fra databaselisten.
 
 ![action_list](https://cdn.illacloud.com/official-website/img/docs/action_list.png)
 
 Opret forbindelse til databasen med de krævede parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor.
 
-Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+Klik på `Test Connection` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på `Gem Ressourcer`, ellers, dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
 
 Når du har oprettet en ressource, vil den færdige Appwrite blive vist som vist.
 
@@ -70,9 +70,9 @@ Når du har oprettet en ressource, vil den færdige Appwrite blive vist som vist
 
 -   Opret i Builder
 
-Log ind på din Illa-konto, opret et projekt i Illa Builder på siden '**App**', og navigere til **`Action List`** nederst på siden. Klik på `**ny**`, vælg derefter **`Appwrite`** fra databaselisten. Opret derefter forbindelse til databasen med de nødvendige parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor.
+Log ind på din Illa-konto, opret et projekt i Illa Builder på siden `App` og navigere til 'Action List' nederst på siden. Klik på `ny`, vælg derefter `Appwrite` fra databaselisten. Opret derefter forbindelse til databasen med de nødvendige parametre, der er beskrevet i 'Forbindelsesindstillinger' nedenfor.
 
-Klik på `**Test Connection**` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på **`Gem ressourcer`**, ellers dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
+Klik på `Test Connection` for at se, om vi kan oprette forbindelse til databasen. Hvis ja, klik på `Gem Ressourcer`, ellers, dobbelttjek værtsnavn, port, brugernavn og adgangskode er korrekt.
 
 ### Forbindelsesindstillinger
 
@@ -88,21 +88,21 @@ Her skal vi give oplysninger til at forbinde til Appwrite database.
 | Projekt ID    | påkrævet | entydig identifikator, der repræsenterer hele dit Appwrite projekt                                              |
 | API nøgle     | påkrævet | en hemmelig token, der fungerer som en form for godkendelse, når du laver API-anmodninger til Appwrite serveren |
 
-For at finde den krævede **`Host`**, **`Database ID`**, **`Projekt ID`**, og **`API nøgle`** i Appwrite, vi går først til '**indstillingen**'-knappen nederst til venstre på projektsiden.
+For at finde den krævede `Host`, `Database ID`, `Projekt-ID`, og `API-nøgle` i Appwrite, vi går først til knappen `indstilling` nederst til venstre på projektsiden.
 
-Kopiering af `projekt ID' for **`projekt ID`** og `API Endpoint` for **`Vært\`\*\* i Appwrite konfigurationen i Illa.
+Kopiering af 'projekt-ID' for 'projekt-ID' og 'API Endpoint' for 'Host' i Appwrite-konfigurationen i Illa.
 
 ![app_setting](https://cdn.illacloud.com/official-website/img/docs/app_setting.png)
 
-Så kan vi klikke på knappen **`Vis API Keys`** på samme side. Hvis du ikke har oprettet en API til dette projekt, klik på **`Opret API Key`** knappen og vælg kun `Database` mappe, da det er, hvad vi vil bruge fra Appwrite.
+Så kan vi klikke på knappen `Vis API Keys` på samme side. Hvis du ikke har oprettet en API til dette projekt, klik på `Opret API Key` knappen og vælg kun `Database` mappe, da det er, hvad vi vil bruge fra Appwrite.
 
 ![app_api_key](https://cdn.illacloud.com/official-website/img/docs/app_api_key.png)
 
-Kopier `API Key Secret` for **`API-nøgle`** i Illa konfiguration. Det kan kopieres til disse to steder.
+Kopier `API Key Secret` for `API-nøgle` i Illa konfiguration. Det kan kopieres til disse to steder.
 
 ![app_key_secret](https://cdn.illacloud.com/official-website/img/docs/app_key_secret.png)
 
-Hvad vi har tilbage, er **`Database ID`**, som vi kan finde på `Database` siden. Kopiering og indsæt den i Appwrite Configuration i Illa.
+Hvad vi har tilbage, er den `Database ID', som vi kan finde i `Database\` siden. Kopiering og indsæt den i Appwrite Configuration i Illa.
 
 ![app_database](https://cdn.illacloud.com/official-website/img/docs/app_database.png)
 
@@ -112,7 +112,7 @@ Det endelige produkt bør se sådan ud.
 
 ### Opret Handlinger
 
-Vi har oprettet en Appwrite ressource, vi kan tilføje handlingen ved at vælge Appwrite fra handlingslisten og vælge **`Opret handling`** knappen.
+Vi har oprettet en Appwrite ressource, vi kan tilføje handlingen ved at vælge Appwrite fra handlingslisten og vælge knappen 'Opret handling'.
 
 ![app_resource_list](https://cdn.illacloud.com/official-website/img/docs/app_resource_list.png)
 
@@ -134,16 +134,16 @@ Nu har vi tilføjet Appwrite serveren som en handling til vores byggeside.
 
 opret et nyt dokument i en samling
 
-** Input **
+ Input 
 
 | Egenskaber  | Påkrævet | Varebeskrivelse                                                     |
 | ----------- | -------- | ------------------------------------------------------------------- |
 | Dokument ID | påkrævet | en entydig identifikator tildelt et databaseindsamlingsdokument     |
 | Data        | valgfri  | et objekt, der indeholder det nye dokuments felter og værdier.      |
 
-For eksempel at oprette et nyt dokument i en samling med to felter - **`navn`** og **`age`**, du kan bruge 1 som **`dokument ID`** og `{{ {"Navn": "David", "Alder": 18}}` for **`data`**.
+For eksempel, at oprette et nyt dokument i en samling med to felter - `name` og `age`, du kan bruge 1 som `dokument ID` og `{{ {"Navn": "David", "Alder": 18}}` for `data`.
 
-** Output **
+ Output 
 
 et svarobjekt, der indeholder ID'et for det nyoprettede dokument, samt yderligere metadata såsom oprettelsesdato og -tidspunkt.
 
@@ -153,15 +153,15 @@ et svarobjekt, der indeholder ID'et for det nyoprettede dokument, samt yderliger
 
 hente et specifikt dokument fra en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaber  | Påkrævet | Varebeskrivelse                                                    |
 | ----------- | -------- | ------------------------------------------------------------------ |
 | Dokument ID | påkrævet | en entydig identifikator tildelt et databaseindsamlingsdokument    |
 
-For eksempel kan vi få dokumentet med id **`1`**.
+For eksempel kan vi få dokumentet med id `1`.
 
-** Output **
+ Output 
 
 et svarobjekt, der indeholder oplysningerne i det anmodede dokument
 
@@ -175,16 +175,16 @@ Brug `{{Appwrite1.data}}` for at få alle returnerede værdier.
 
 opdatere dataene for et eksisterende dokument i en samling.
 
-** Input **
+ Input 
 
 | Egenskaber  | Påkrævet | Varebeskrivelse                                                                                 |
 | ----------- | -------- | ----------------------------------------------------------------------------------------------- |
 | Dokument ID | påkrævet | en entydig identifikator tildelt et databaseindsamlingsdokument                                 |
 | Data        | valgfri  | Et objekt med de opdaterede felter og værdier, som du vil tildele til dokumentet.               |
 
-For eksempel, for at opdatere et dokument i en samling ved hjælp af **`updateDocument`** metoden, du kan angive **`1`** for dokument-id og `{{{"Name":"Fred"}}}` for data.
+For eksempel for at opdatere et dokument i en samling ved hjælp af 'updateDocument'-metoden, du kan angive `1` for dokument-id og `{{{"Name":"Fred"}}}` for data.
 
-** Output **
+ Output 
 
 et svarobjekt, der indeholder oplysningerne i det anmodede dokument
 
@@ -194,15 +194,15 @@ et svarobjekt, der indeholder oplysningerne i det anmodede dokument
 
 slette et specifikt dokument fra en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaber  | Påkrævet | Varebeskrivelse                                                    |
 | ----------- | -------- | ------------------------------------------------------------------ |
 | Dokument ID | påkrævet | en entydig identifikator tildelt et databaseindsamlingsdokument    |
 
-For eksempel kan vi slette dokumentet med id **`1`**.
+For eksempel kan vi slette dokumentet med id `1`.
 
-** Output **
+ Output 
 
 et svarobjekt, der bekræfter den vellykkede sletning af dokumentet.
 
@@ -212,7 +212,7 @@ et svarobjekt, der bekræfter den vellykkede sletning af dokumentet.
 
 hente flere dokumenter fra en samling i databasen
 
-** Input **
+ Input 
 
 | Egenskaber     | Påkrævet | Varebeskrivelse                                                                            |
 | -------------- | -------- | ------------------------------------------------------------------------------------------ |
@@ -222,7 +222,7 @@ hente flere dokumenter fra en samling i databasen
 
 For eksempel, at liste alle dokumenter med navn = James.
 
-** Output **
+ Output 
 
 En række dokumenter, der tilfredsstiller filteret.
 
