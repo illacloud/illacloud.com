@@ -128,29 +128,44 @@
     "description": "Jakieś inne pytania? Zapraszamy do <0>zapytaj ILLA na Discordzie</0>",
     "content": [
       {
-        "question": "Co to jest ILLA Cloud?",
-        "answer": "ILLA Cloud jest platformą o niskim kodzie odziedziczającą wiele możliwości od ILLA Builder i ILLA. Zapewnia on płynne doświadczenie poprzez umożliwienie użytkownikom logowania się i rejestracji w celu uzyskania dostępu do swoich funkcji. Z chmurą ILLA możesz bez wysiłku budować wewnętrzne narzędzia, pulpity, CRUD (tworzenie, czytanie, aktualizacja, usuwanie) aplikacje i wiele innych. Platforma znacznie poprawia wydajność pracy i pomaga przedsiębiorstwom w oszczędzaniu kosztów.",
-        "sort": "0"
-      },
-      {
-        "question": "Kto może korzystać z chmury ILLA",
-        "answer": "Czy jesteś menedżerem produktów, pełnym programistą, menedżerem projektów, analitykiem danych... nikone może używać chmury ILLA do budowania narzędzi: od projektowania interfejsów front-end z komponentami przeciągnij i upuść po integrację ze źródłami danych i generowanie zapytań z wykorzystaniem pomocy AI, ILLA zapewnia sprawniejsze doświadczenie, które usuwa niepotrzebne trudności. Nie musisz być ekspertem w dziedzinie technologii, aby tworzyć własne aplikacje.",
+        "question": "Kim są użytkownicy, którzy są obciążani za produkt?",
+        "answer": "Użytkownicy z uprawnieniami do edycji (edytor) są obciążeni opłatami za produkt.",
         "sort": "1"
       },
       {
-        "question": "Jakiego rodzaju aplikacje możesz rozwinąć za pomocą chmury ILLa?",
-        "answer": "1. Szybkie wdrożenie koncepcji: gdy przedsiębiorstwa odczuwają wysokie zapotrzebowanie na wewnętrzne narzędzia podczas szybkiego wzrostu, ILLA może znacznie przyspieszyć rozwój i jakość aplikacji wewnętrznych. Pomaga to przyspieszyć rozwój Twojej firmy, szybko zaspokajając potrzeby narzędzi2. Brak ograniczeń umiejętności dla edytorów: Z ILLA każda osoba w ramach organizacji może budować narzędzia potrzebne bez konieczności posiadania specjalistycznych zespołów lub umiejętności technicznych. Umożliwia to pracownikom różne role w tworzeniu własnych rozwiązań, sprzyjając innowacyjności i wydajności3. Redukcja kosztów: poprzez wykorzystanie ILLA, przedsiębiorstwa mogą przydzielić swój czas, siłę roboczą i zasoby finansowe na podstawową działalność gospodarczą. Prowadzi to do obniżenia kosztów, ponieważ ILLA usprawnia proces rozwoju, eliminuje potrzebę wyspecjalizowanych zespołów i minimalizuje inwestycje niezbędne do oprzyrządowania rozwoju.",
+        "question": "Jakie są różne typy edytorów?",
+        "answer": "Różne typy edytorów to właściciel, administrator i edytor.",
         "sort": "2"
       },
       {
-        "question": "Jakie problemy można rozwiązać w chmurze ILLA?",
-        "answer": "Z ILLA Cloud, możesz zbudować dowolną aplikację, której potrzebujesz, takie jak powszechnie używane narzędzia wewnętrzne, takie jak Dashboards, Panele administratora, aplikacje CRUD, CRM, CMS i inne. Dodatkowo, możesz rozwijać aplikacje AI, takie jak aplikacje tekstowo-obrazowe ze stabilnym dyfuzją, Aplikacje audio-tekstowe z Whisperem, a nawet osadzają modele GPT OpenAI, aby pomóc Ci w realizacji różnych zadań.",
+        "question": "Czy widzowie są obciążeni opłatą za korzystanie z produktu?",
+        "answer": "Nie, widzowie nie są obciążani za korzystanie z produktu.",
         "sort": "3"
       },
       {
-        "question": "Które źródła danych obsługują ILLa?",
-        "answer": "ILLA obsługuje integrację z różnymi źródłami danych, w tym PostgreSQL, MongoDB, REST API, GraphQL, Google Sheets, i innych. Możesz szybko połączyć się z dowolnym źródłem danych bez pisania kodu, umożliwiając płynny dostęp do żądanych danych.",
+        "question": "Jak zaprosić widza?",
+        "answer": "Aby zaprosić widza, musisz ulepszyć drużynę do dowolnego plusa premia lub plan firmy i zaproś użytkownika poprzez e-mail lub link.",
         "sort": "4"
+      },
+      {
+        "question": "Jakie usługi zapewnia ILLA Cloud?",
+        "answer": "Konstruktor ILLA, napęd ILLA i agent AI.",
+        "sort": "5"
+      },
+      {
+        "question": "Co to jest ILLA Drive?",
+        "answer": "ILLA Drive to CDN (Content Delivery Network), który umożliwia przechowywanie wszelkich plików i dystrybucję ich wśród użytkowników za pośrednictwem stron internetowych firmy lub innych produktów. Wykorzystanie magazynów i ruchu jest rozliczane oddzielnie.",
+        "sort": "6"
+      },
+      {
+        "question": "Co to jest AI Agent?",
+        "answer": "Agent AI jest otwartą społecznością agentów AI z tysiącami agentów AI dostarczanymi przez szybkich ekspertów i entuzjastów. Użytkownicy mogą uruchamiać lub modyfikować tych agentów AI.",
+        "sort": "7"
+      },
+      {
+        "question": "Jak naliczane są opłaty za korzystanie z AI Agent?",
+        "answer": "Rachunek za korzystanie z AI Agent opiera się na Colla, która jest koncepcją rozliczeń w ramach ILLA. Colla mierzy zasoby zużywane w czasie pracy agentów AI.",
+        "sort": "8"
       }
     ]
   },
@@ -170,7 +185,7 @@
         "traffic": "100MB ruch"
       },
       "ai-agent": {
-        "token": "10K Token miesięcznie"
+        "token": "10K Colla miesięcznie"
       }
     },
     "plus": {
@@ -179,7 +194,7 @@
         "traffic": "100MB ruch"
       },
       "ai-agent": {
-        "token": "1K Token miesięcznie"
+        "token": "10K Colla miesięcznie"
       }
     },
     "enterprise": {
@@ -188,12 +203,12 @@
         "traffic": "Niestandardowy ruch"
       },
       "ai-agent": {
-        "token": "Niestandardowy token"
+        "token": "Własna kolla"
       }
     },
     "ai-agent": {
       "title": "Agent AI (już wkrótce)",
-      "token": "100K Token miesięcznie"
+      "token": "100K kolla miesięcznie"
     }
   },
   "early_bird": "Wczesny ptak"
