@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/NewFooter'
+import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -63,13 +63,13 @@ const LandingPageIndex = ({ pageName, uri }) => {
           />
           <AsyncIndexContent content={content} pageName={pageName} />
         </div>
-      <CommBottom whiteTheme scrollStart={0.763} scrollEnd={0.81} uri={uri}/>
+        <CommBottom whiteTheme scrollStart={0.763} scrollEnd={0.81} uri={uri} />
       </div>
       <BookDemo
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <Footer whiteTheme scrollStart={0.81} scrollEnd={1}/>
+      <Footer whiteTheme scrollStart={0.81} scrollEnd={1} />
     </>
   )
 }

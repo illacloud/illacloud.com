@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/NewFooter'
+import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -34,7 +34,7 @@ const Cloud = ({ uri }) => {
       <CloudSchemaData />
       <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
-        <Title content={CloudTitle} translationName='cloud'/>
+        <Title content={CloudTitle} translationName='cloud' />
         <MainContent uri={uri} />
       </div>
       <Footer scrollStart={0.866} scrollEnd={1} />

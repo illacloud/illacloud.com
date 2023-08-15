@@ -15,7 +15,6 @@ import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
 import { useRef, useCallback, useMemo } from 'react'
-import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
   const { t } = useTranslation('home')
@@ -36,8 +35,6 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
   const translateY = useTransform(scrollYProgress, [scrollStart, scrollEnd], [-150, 0])
   const router = useRouter()
   const curLanguage = router.locale
-  const policyUrl = useUtmParams(`https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`)
-  const termsUrl = useUtmParams(`https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`)
   const showWeChat = useMemo(() => {
     return curLanguage === 'zh-CN'
   }, [curLanguage])
@@ -109,7 +106,7 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                 {
                   showWeChat && items.some(item => item.icon) && (
                     <div className='flex flex-col mt-[16px] gap-[8px] w-[70px] hidden xl:block'>
-                      <img src='https://cdn.illacloud.com/official-website/img/home/wechat.png' className='w-full' alt=''/>
+                      <img src='https://cdn.illacloud.com/official-website/img/home/wechat.png' className='w-full' alt='' />
                       <span className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}>加入微信群</span>
                     </div>
                   )
@@ -131,7 +128,7 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
               <img src={whiteTheme ? WhiteLanguage : Language} alt='language' />
               <LanguageSelect buttonColorChange={!whiteTheme} />
             </div>
-            <Link href={policyUrl}>
+            <Link href="/docs/privacy-policy">
               <span
                 className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
                 onClick={() => {
@@ -139,13 +136,12 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                     action: 'click',
                     category: 'homepage_footer_privacy_policy_click',
                     label: t('footer.privacy-policy'),
-                    value: `https://cloud.illacloud.com/privacy-policy?lng=${curLanguage}`,
                   })
                 }
                 }
               >{t('footer.privacy-policy')}</span>
             </Link>
-            <Link href={termsUrl} >
+            <Link href="/docs/terms-of-serivce" >
               <span
                 className={clsx(style.footerItem, whiteTheme ? 'text-[#1D2129]' : 'text-white-02')}
                 onClick={() => {
@@ -153,7 +149,6 @@ export const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                     action: 'click',
                     category: 'homepage_footer_terms_of_service_click',
                     label: t('footer.terms-of-service'),
-                    value: `https://cloud.illacloud.com/terms-and-conditions?lng=${curLanguage}`,
                   })
                 }
                 }
