@@ -1,0 +1,102 @@
+.allEventContainer {
+  @apply hidden xl:flex w-full h-[546px] relative flex items-center;
+}
+
+.bgContainer {
+  @apply w-full h-[480px];
+}
+.allEventBg {
+  @apply absolute w-full z-[-1];
+}
+
+.contentContainer {
+  @apply w-full h-full relative flex flex-col items-center justify-between;
+}
+
+.baseContentList {
+  @apply flex w-[944px] justify-between items-center;
+}
+
+.topContentList {
+  transform: translateY(-32px);
+}
+.bottomContentList {
+  transform: translateY(32px);
+}
+.centerContent {
+  @apply flex gap-[179px] justify-end items-center w-[944px];
+  @apply absolute top-[50%] left-[50%];
+  transform: translate(-50%, -50%);
+}
+
+.centerContentInfo {
+  @apply flex flex-col items-center gap-[16px] text-white-01;
+}
+.centerInfoTitle {
+  @apply w-full text-center font-jetBrains text-white-01 text-[24px] leading-[26px] font-[700];
+}
+.centerInfoDesc {
+  @apply flex gap-[8px]
+}
+.dateStyle {
+  @apply font-jetBrains font-[700] text-[16px] leading-[22px];
+}
+
+.timeStyle {
+  @apply font-sans font-[500] text-[14px] leading-[22px];
+}
+
+.startStyle {
+  @apply cursor-pointer flex-none w-[80px] h-[80px] rounded-[50%] flex items-center justify-center bg-white;
+}
+/* item */
+.baseItemContainer {
+  @apply w-full xl:w-[120px] flex items-center justify-center gap-[8px];
+}
+.itemAvatar {
+  @apply w-[40px] h-[40px] xl:w-[64px] xl:h-[64px] rounded-[50%] object-center object-cover overflow-hidden;
+
+}
+.itemLogo {
+  @apply w-[20px] xl:w-[64px];
+}
+.itemInfo {
+  @apply w-full flex flex-col items-center text-center ;
+}
+.itemPartner {
+  @apply font-eurostile text-[12px] leading-[15px] font-[400];
+  @apply xl:leading-[16px];
+}
+.itemCompany {
+  @apply font-jetBrains text-[14px] leading-[17px] font-[700];
+  @apply xl:leading-[22px];
+}
+
+/* mobile */
+
+.mobileAllEventContainer {
+  @apply flex xl:hidden w-full flex-col items-center justify-center px-[16px] py-[40px] gap-[32px];
+  @apply rounded-[20px] border border-[4px] border-white/[0.08] bg-white/[0.06];
+  box-shadow: 0px 4px 80px 0px rgba(240, 255, 207, 0.16) inset;
+}
+.mobileCenterContentInfo {
+  @apply flex w-full flex-col gap-[16px] text-white-01 items-center text-center;
+}
+.mobileCenterInfoTitle {
+  @apply font-eurostile font-[700] leading-[20px] text-[17px];
+}
+.mobileCenterInfoDesc {
+  @apply flex gap-[8px] items-center;
+}
+.mobileDateStyle {
+  @apply font-jetBrains font-[700] text-[12px] leading-[17px];
+}
+.mobileTimeStyle {
+  @apply font-sans font-[500] text-[14px] leading-[17px];
+}
+.mobileContentContainer {
+  @apply w-full grid grid-cols-3 gap-[32px];
+}
+.mobileStartStyle {
+  @apply cursor-pointer flex-none w-[48px] h-[48px] rounded-[50%] flex items-center justify-center bg-white;
+}

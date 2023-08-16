@@ -2,6 +2,7 @@ import '../css/fonts.css'
 import '../css/main.css'
 import '@/components/home/Content/coverSwiper.css'
 import '@/components/selfHost/coverInnerHtml.css'
+import '@/components/hacktoberfest/hackButton.css'
 import 'focus-visible'
 import { useState, useEffect, Fragment } from 'react'
 import { Header } from '@/components/Header'
@@ -60,14 +61,7 @@ function App({ Component, pageProps, router }) {
   const layoutProps = Component.layoutProps?.Layout
     ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
-  const showHeader =
-    router.pathname !== '/' &&
-    router.pathname !== '/hire' &&
-    router.pathname !== '/pricing' &&
-    !/\/(components|integrations)/.test(router.asPath) &&
-    router.pathname !== '/illadrive' &&
-    router.pathname !== '/illacloud' &&
-    router.pathname !== '/illa-self-host'
+  const showHeader = /docs/.test(router.pathname)
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || t('meta.description')
