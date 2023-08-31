@@ -13,6 +13,7 @@ import timezone from 'dayjs/plugin/timezone'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import { Modal } from '@/components/home/mobileTitle'
 import { CommBottom } from '@/components/comm/commBottom'
+import socialHack from '@/img/social-hack.jpeg'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -27,8 +28,35 @@ const Hacktoberfest = ({ uri }) => {
   return (
     <>
       <Head>
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={t('meta.title')}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={t('meta.description')}
+        />
+        <meta key="og:title" property="og:title" content={t('meta.title')} />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={`https://illa.cloud${socialHack}`}
+        />
+        <meta
+          key="og:url"
+          property="og:url"
+          content={`https://illa.cloud${router.pathname}`}
+        />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={`https://illa.cloud${socialHack}`}
+        />
         <link
           rel="canonical"
           href={`https://www.illacloud.com/${

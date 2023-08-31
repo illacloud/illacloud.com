@@ -34,7 +34,7 @@ export const Title = () => {
           <span className={style.titleInfoDesc}>{t('meta.description')}</span>
         </div>
         <img src="https://cdn.illacloud.com/official-website/img/hacktoberFest/h10.svg" width="90" alt="" />
-        <Link href="#swag" onClick={onClick}>
+        <Link href="#contribute" onClick={onClick}>
           <div className={style.titleBtn}>
             <img className={style.titleBtnBg} src={titleBtnBg} alt="" />
             <span className={style.titleBtnContent}>
