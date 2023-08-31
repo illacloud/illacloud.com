@@ -18,7 +18,7 @@ export const CardButton = ({ content }) => {
 
   return (
     <Link href={href} onClick={onClick}>
-      <>
+      <div>
         {longButton && (
           <div className={style.longCardButtonContainer}>
             <div className={clsx(style.longCardButton, extraStyle ?? 'xl:w-[235px]')}>
@@ -34,7 +34,7 @@ export const CardButton = ({ content }) => {
             <span className={style.cardButtonContent}>{t(text)}</span>
           </div>
         )}
-      </>
+      </div>
     </Link>
   )
 }

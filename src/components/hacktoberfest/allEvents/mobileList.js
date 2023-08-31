@@ -21,7 +21,7 @@ export const EventListMobile = ({
   return (
     <div className={style.mobileAllEventContainer}>
       <div>
-        {true ? (
+        {parseInt(kickOff['available']) !== 0 ? (
           <div className={style.mobileCenterContentInfo}>
             <span className={style.mobileCenterInfoTitle}>
               {t('event.kick-off.title')}
@@ -48,7 +48,7 @@ export const EventListMobile = ({
             <EventItem key={item.partner} content={item} />
           ))}
       </div>
-      {true && (
+      {parseInt(kickOff['available']) !== 0 && (
         <Link href={kickOff['link']}>
           <div className={style.mobileStartStyle}>
             <img

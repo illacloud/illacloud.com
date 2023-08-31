@@ -21,7 +21,7 @@ const Hacktoberfest = ({ uri }) => {
   const { t } = useTranslation('hacktober')
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [isBookShow, setIsBookShow] = useState(false)
-  const [activeKey, setActiveKey] = useState('#about-illa')
+  const [activeKey, setActiveKey] = useState('')
   const router = useRouter()
 
   return (

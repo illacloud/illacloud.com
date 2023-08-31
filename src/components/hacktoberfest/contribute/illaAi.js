@@ -26,7 +26,7 @@ export const IllaAi = ({ desc, options, people }) => {
         <Options options={options} />
       </div>
       <div className={style.partnerContainer}>
-        <div className={style.partnerIcons}>
+        <div className={style.aiPartnerIcons}>
           {peopleList.map(({ logo, link = '' }) => (
             <Link href={link} key={logo} onClick={() => onClick(link)}>
               <img

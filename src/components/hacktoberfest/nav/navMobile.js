@@ -3,9 +3,6 @@ import style from './index.module.css'
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { MobileNavItem } from './mobileNavItem'
 
-// contribute
-// swag
-// event
 export const NavMobile = ({
   tabsList,
   leftButtonGroup,
@@ -27,7 +24,7 @@ export const NavMobile = ({
         <div className={style.buttonList}>
           {leftButtonGroup.map((content) => (
             <Link href={content.href}>
-              <span className="w-[24px] h-[24px]">{content.icon}</span>
+              <span className={style.mobileIconContainer}>{content.icon}</span>
             </Link>
           ))}
         </div>
