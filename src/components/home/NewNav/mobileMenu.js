@@ -29,7 +29,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   return (
     <div
       className={clsx(
-        'h-screen w-full bg-gray-01 absolute top-0 left-0 px-[20px] z-50 font-medium text-[16px] text-white-01',
+        'h-screen w-full bg-gray-01 absolute top-0 left-0 px-[20px] z-[55] font-medium text-[16px] text-white-01',
         'overflow-x-hidden',
         menuExpand ? 'block' : 'hidden',
       )}

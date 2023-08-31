@@ -1,0 +1,279 @@
+.mainContentContainer {
+  @apply text-white-01 bg-gray-01 relative z-[1] overflow-x-hidden font-jetBrains mt-[112px] xl:mt-0;
+}
+/* overflow-x-hidden  */
+.allContentContainer {
+  @apply w-full px-[16px] mb-[80px];
+  @apply xl:mx-auto xl:w-[1200px] xl:px-0 xl:mb-[200px];
+}
+.titleContainer {
+  @apply w-full h-screen overflow-hidden relative  px-[16px] pt-[40px];
+  @apply xl:pt-[80px] xl:px-0;
+}
+
+.titleContentContainer {
+  @apply flex flex-col items-center relative z-[1] gap-[24px] box-border;
+  @apply xl:gap-[40px] xl:pt-[15%];
+}
+.titleInfo {
+  @apply flex flex-col gap-[24px]  items-center w-full text-center;
+  @apply xl:w-[1200px];
+}
+.titleInfoTitle {
+  @apply font-[700] text-[32px] leading-[40px] flex items-center flex-col;
+  @apply xl:text-[64px] xl:leading-[72px] xl:flex-row;
+}
+.titleInfoDesc {
+  @apply font-[400] text-[14px] leading-[17px];
+  @apply xl:w-[888px] xl:text-[16px] xl:leading-[22px];
+}
+.titleBtn {
+  @apply relative flex items-center justify-center cursor-pointer;
+  @apply w-[209px] h-[48px] mt-[51px];
+  @apply xl:w-[282px] xl:h-[65px] xl:mt-0;
+}
+.titleBtnBg {
+  @apply w-full absolute;
+}
+.titleBtnContent {
+  @apply text-center text-white-01 relative z-[1];
+  @apply text-[14px] leading-[17px] font-[500];
+  @apply xl:text-[16px] xl:leading-[28px] xl:font-[700];
+}
+
+.bannerContainer {
+  @apply flex flex-col items-center mt-[54px] gap-[40px];
+  @apply xl:mt-[33px];
+}
+.bannerImg {
+  @apply xl:px-0 px-[8px] w-[343px] xl:w-[940px];
+}
+.bannerTitle {
+  @apply text-[24px] font-[700] leading-[32px] text-center;
+  @apply xl:text-[40px] xl:leading-[48px];
+}
+.bannerDescription {
+  @apply flex flex-col text-[14px] leading-[17px] gap-[17px] w-full text-center items-center;
+  @apply xl:text-[16px] xl:gap-[22px] xl:leading-[22px] xl:w-[1032px] font-[400];
+}
+.bannerOption {
+  @apply flex w-full  justify-center items-center overflow-hidden gap-[12px];
+  @apply xl:flex-row xl:gap-[24px];
+}
+.hackButton {
+  @apply flex box-border items-center justify-center bg-[#FF99001F] text-[14px] font-[500] leading-[17px] cursor-pointer;
+  @apply p-[1px] xl:text-[18px] xl:font-[700] xl:leading-[28px];
+}
+.hackBtnContent {
+  @apply box-border px-[24px] py-[12px] w-[171px] xl:w-[320px] whitespace-nowrap overflow-ellipsis line-clamp-1;
+}
+
+.aboutContainer {
+  @apply w-full my-[95px] relative flex items-center relative z-[1];
+  @apply xl:mt-[64px] xl:mb-0 xl:h-[690px];
+}
+.illaBg {
+  @apply absolute  w-full z-[0] top-0 pt-[25%];
+  @apply xl:h-full xl:top-0;
+}
+.aboutContent {
+  @apply relative z-[2];
+  @apply flex w-full justify-center items-start gap-[32px] flex-col items-center text-center;
+  @apply xl:gap-[64px] xl:flex-row xl:text-left;
+}
+.aboutTextContainer {
+  @apply flex flex-col items-start gap-[32px] items-center;
+  @apply xl:pt-[24px] xl:gap-[40px] xl:items-start;
+}
+.contentTitle {
+  @apply text-[24px] font-[400] leading-[32px] text-center font-eurostile;
+  @apply xl:text-[64px] xl:leading-[72px] xl:text-start;
+}
+.contentDesc {
+  @apply text-[14px] leading-[17px] font-[400];
+  @apply xl:text-[16px] xl:leading-[22px];
+}
+/* swag */
+.swagContainer {
+  @apply w-full flex flex-col items-center gap-[40px] pt-[150px];
+  @apply xl:gap-[80px] xl:pt-[200px];
+}
+.swagInfoContent {
+  @apply w-full flex flex-col gap-[16px] items-center;
+  @apply xl:w-[800px] text-center;
+}
+.swagOptions {
+  @apply w-full flex flex-col gap-[40px];
+  @apply xl:gap-[80px];
+}
+.swagContent {
+  @apply flex flex-col items-center gap-[16px];
+  @apply xl:gap-[32px]
+}
+.swagCardContainer {
+  @apply w-full flex justify-between items-end min-h-0;
+  @apply xl:min-h-[473px];
+}
+.swagCard {
+  @apply flex flex-col items-center gap-[16px];
+  @apply xl:gap-[32px];
+}
+.swagItemTranslation {
+  transition: all 500ms ease-out;
+}
+.swagCardImg {
+  @apply w-[64px] rounded-[4px];
+  @apply xl:w-[200px] xl:rounded-[8px];
+}
+.swagOptionContent {
+  @apply flex flex-col items-center justify-between text-center w-[112px] py-[16px] px-[8px] rounded-t-[8px] rounded-r-[8px];
+  @apply xl:w-[384px] xl:py-[32px] xl:px-[16px];
+  background: linear-gradient(180deg, rgba(255, 198, 52, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+.swagContentTitle {
+  @apply text-[20px] font-[400] font-eurostile;
+  @apply xl:text-[32px];
+  background: linear-gradient(90deg, #FFE500 0%, #FFF176 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.swagContentDesc {
+  @apply w-full xl:w-[800px] text-[14px] xl:text-[12px] font-[400] text-white-01 font-sans;
+}
+.optionInfo {
+  @apply flex flex-col items-center justify-center font-eurostile gap-[8px];
+}
+.optionTitle {
+  @apply text-[20px] font-[400];
+  @apply xl:text-[32px];
+  -webkit-text-fill-color: transparent;
+}
+.optionDesc {
+  @apply text-[12px];
+  @apply xl:text-[20px] font-[400] text-white-01;
+}
+.optionsExtra {
+  @apply text-[12px] font-[400] leading-[15px];
+  @apply xl:text-[16px] xl:leading-[22px] text-white-01 font-sans;
+}
+
+.ossList {
+  @apply grid grid-cols-1 gap-[16px] w-full;
+  @apply xl:grid-cols-2 xl:gap-[24px];
+}
+.ossListItem {
+  @apply w-full flex items-start bg-white/[0.06] border-[1px] border-white-09 font-sans;
+  @apply p-[24px] gap-[16px] rounded-[8px];
+}
+.ossImage {
+  @apply w-[96px] h-[96px] xl:h-[128px] xl:w-[128px] rounded-[8px];
+}
+.ossItemContent {
+  @apply flex flex-col gap-[8px] justify-between h-full;
+}
+.ossItemTitle {
+  @apply flex items-center gap-[12px];
+  @apply text-[16px] font-[500] leading-[24px];
+  @apply xl:gap-[16px];
+}
+.ossItemTitle img {
+  @apply w-[24px]
+}
+.ossItemDesc {
+  @apply text-[12px] font-[400] leading-[15px] overflow-ellipsis line-clamp-2;
+  @apply xl:leading-[16px];
+}
+.ossLink {
+  @apply text-[14px] font-[500] leading-[22px] cursor-pointer;
+  background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* swag */
+.eventsContainer {
+  @apply w-full flex flex-col items-center relative mt-[144px] gap-[24px];
+  @apply xl:mt-[200px] xl:gap-[104px];
+}
+.line {
+  @apply hidden xl:block absolute top-[0] max-w-fit;
+  transform: translateY(-32%);
+}
+.eventInfo {
+  @apply flex flex-col items-center relative z-[1];
+  @apply xl:w-full xl:gap-[40px];
+}
+.eventDesc {
+  @apply text-[20px] leading-[25px] font-[700] text-center text-[#34E7FF];
+}
+.eventCardContainer {
+  @apply grid grid-cols-2 gap-[12px];
+  @apply xl:grid-cols-4 xl:gap-[56px];
+  /* @apply flex w-full items-start justify-start flex-wrap gap-[12px];
+  @apply xl:gap-[56px]; */
+}
+.borderContainer {
+  @apply p-[1px] rounded-[86px] flex flex-col;
+  @apply xl:rounded-[160px];
+  background: linear-gradient(180deg, #d6ff34 0%, #344446 100%);
+}
+.normalEventBg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+}
+.lightEventBg {
+  background: linear-gradient(180deg, #1d200e 0%, #070c03 100%);
+  box-shadow: 0px 4px 48px 0px rgba(63, 223, 244, 0.28);
+}
+.eventCard {
+  @apply w-[172px] h-[320px] shrink-0 rounded-[86px] flex flex-col items-center relative;
+  @apply xl:w-[258px] xl:h-[502px] xl:rounded-[160px];
+}
+.eventLightAvatarContainer {
+  @apply relative w-[140px] h-[140px] flex justify-center items-center shrink-0 my-[16px] box-content;
+  @apply xl:w-[176px] xl:h-[176px] xl:my-[41px];
+}
+.eventLightAvatar {
+  @apply w-[112px] h-[112px] rounded-[50%] object-center object-cover;
+  @apply xl:w-[146px] xl:h-[146px];
+}
+.eventAvatar {
+  @apply py-[16px] w-[140px] h-[140px] shrink-0  rounded-[50%] box-content object-center object-cover;
+  @apply xl:py-[32px] xl:h-[194px] xl:w-[194px];
+}
+.eventCardInfo {
+  @apply flex flex-col justify-between h-full items-center pb-[53px] gap-[12px];
+  @apply xl:pb-[116px];
+}
+.eventCardInfo img {
+  @apply w-[24px] h-[24px] xl:w-[48px] xl:h-[48px];
+}
+.eventCardTitle {
+  @apply text-[14px] font-[700] leading-[17px] overflow-ellipsis line-clamp-2 font-eurostile;
+  @apply xl:text-[18px] xl:leading-[20px];
+}
+.eventCardDesc {
+  @apply text-[12px] leading-[17px] font-[500] font-sans text-white-04;
+  @apply xl:text-[14px] xl:leading-[22px];
+}
+.eventGo {
+  @apply absolute top-[100%] flex justify-center items-center shrink-0 h-[48px] w-[48px] rounded-[50%] cursor-pointer;
+  @apply xl:h-[64px] xl:w-[64px];
+  transform: translateY(-60%);
+}
+.eventTimeContainer {
+  @apply pt-[28px]  flex flex-col gap-[4px] items-center;
+  @apply xl:gap-[8px] xl:pt-[40px];
+}
+.eventDate {
+  @apply text-[14px] leading-[17px] font-[700] font-sans text-white-01;
+  @apply xl:text-[16px] xl:leading-[22px];
+}
+.eventTime {
+  @apply text-[12px] leading-[16px] font-[500] font-sans text-white-04;
+  @apply xl:text-[12px] xl:leading-[22px];
+}

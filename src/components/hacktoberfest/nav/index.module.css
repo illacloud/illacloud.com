@@ -1,0 +1,59 @@
+
+.navContainer {
+  @apply w-full hidden xl:flex px-[40px] py-[16px] items-center justify-between fixed z-[99] top-0 bg-gray-01;
+}
+.navLeft {
+  @apply flex items-center gap-[24px];
+}
+.navRight {
+  @apply flex items-center gap-[16px];
+}
+.headerButtonContainer {
+  background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+  padding: 1px;
+  @apply rounded-[20px]  xl:rounded-[22px];
+}
+
+.headerButton {
+  @apply flex items-center justify-center cursor-pointer gap-[8px] text-white-01;
+  @apply py-[8px] px-[24px] rounded-[20px] min-w-[200px];
+  @apply font-[400px] text-[14px] leading-[22px];
+  background: linear-gradient(90deg, #1C1001 0%, #02171A 100%);
+  backdrop-filter: blur(5px);
+}
+.tabsList {
+  @apply flex gap-[4px];
+}
+.tabsItems {
+  @apply flex items-center justify-center cursor-pointer py-[12px] px-[16px] text-white-01 font-sans font-[26px] leading-[24px] font-[500];
+}
+
+/* mobile */
+
+.mobileNavContainer {
+  @apply flex xl:hidden w-full flex-col items-center justify-center fixed z-[99] top-0 bg-gray-01 overflow-hidden ;
+}
+.navTop {
+  @apply w-full flex justify-between items-center px-[20px] py-[12px];
+}
+.buttonList {
+  @apply flex items-center gap-[16px];
+}
+
+.tabsContainer {
+  @apply overflow-x-auto flex items-center px-[8px] py-[8px]
+}
+.mobileTabsItems {
+  @apply cursor-pointer flex flex-none items-center justify-center cursor-pointer px-[12px] py-[5px] font-sans font-[14px] leading-[22px] ;
+}
+.defaultTab {
+  @apply text-white-03 font-[400];
+}
+.activeTab {
+  @apply text-white-01 font-[500];
+  box-shadow: 0px -2px 0px 0px #FFF inset;
+}
+
+.mobileIconContainer {
+  @apply box-content w-[24px] h-[24px] px-[8px] py-[8px] flex items-center justify-center;
+}

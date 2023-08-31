@@ -1,0 +1,145 @@
+.contributeContainer {
+  @apply w-full flex flex-col items-center gap-[24px];
+  @apply xl:gap-[48px];
+}
+.eurostileFont {
+  @apply font-eurostile;
+}
+.interFont {
+  @apply font-sans;
+}
+
+.contributeInfoContainer {
+  @apply w-full xl:w-[800px] flex flex-col items-center gap-[40px] mb-[36px] xl:mb-[32px];
+}
+
+.contributeTitle {
+  @apply text-[24px] font-[400] leading-[32px] text-center;
+  @apply xl:text-[64px] xl:leading-[72px];
+}
+.contributeDesc {
+  @apply flex flex-col text-[14px] font-[400] leading-[17px] text-center gap-[17px];
+  @apply xl:text-[16px] xl:leading-[22px] xl:gap-[22px];
+}
+
+.infoBtn {
+  @apply text-[14px] leading-[17px] cursor-pointer text-center;
+  @apply xl:text-[16px] xl:leading-[24px];
+  background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cardContainer {
+  @apply w-full h-full flex flex-col gap-[24px] items-center  justify-start px-[20px] py-[28px] rounded-[16px];
+  @apply xl:p-[48px] xl:items-start xl:gap-[32px];
+  @apply border-white/[0.14] border-[1px] border;
+  background: linear-gradient(90deg, #1A1C19 0%, #0A0B0B 100%), #141414
+}
+.cardTitle {
+  @apply text-[32px] font-[400];
+}
+.cardTitleBtn {
+  @apply hidden xl:flex justify-center gap-[16px]
+}
+.mobileCardTitleBtn {
+  @apply block xl:hidden flex flex-col justify-center items-center gap-[8px]
+}
+.mobileCardTitle {
+  @apply block xl:hidden text-[24px] font-[400] text-center;
+}
+.longCardButtonContainer {
+  background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+  padding: 1px;
+  @apply rounded-[20px]  xl:rounded-[22px];
+}
+.longCardButton {
+  @apply flex items-center justify-center cursor-pointer py-[10px] rounded-[20px];
+  @apply xl:px-[16px] xl:py-[4px] xl:rounded-[22px] xl:w-auto;
+  @apply box-border w-[271px];
+  background: linear-gradient(90deg, #1C1001 0%, #02171A 100%);
+}
+
+/* ---- */
+.cardButton {
+  @apply flex items-center justify-center cursor-pointer py-[10px] rounded-[20px] w-[272px];
+  @apply xl:px-[16px] xl:py-[4px] xl:rounded-[22px] xl:w-auto;
+  background: linear-gradient(
+    90deg,
+    rgba(252, 142, 0, 0.12) 0%,
+    rgba(52, 231, 255, 0.12) 100%
+  );
+}
+
+.cardButtonContent {
+  @apply font-[500px] text-[15px] leading-[24px] flex gap-[8px];
+  @apply xl:text-[16px];
+  background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pureCardButton {
+  background: transparent;
+  color: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
+}
+
+.buildWithContainer {
+  @apply w-full h-full flex flex-col items-start gap-[24px];
+  @apply xl:justify-between xl:gap-0 xl:flex-row;
+}
+
+.buildWithListContainer {
+  @apply flex flex-col  items-start w-full gap-[24px];
+  @apply xl:w-[520px] xl:justify-start xl:gap-[64px];
+}
+.cardDesc {
+  @apply text-[14px] font-[400] leading-[20px] text-white-02;
+}
+.optionTitle {
+  @apply text-[14px] font-[400] leading-[22px] text-white-02;
+}
+.optionCount {
+  @apply text-[14px] font-[400] leading-[22px] text-[#FC8E00];
+}
+.partnerContainer {
+  @apply w-full flex flex-col  justify-center items-center gap-[8px];
+  @apply xl:px-[12px] xl:w-[488px];
+}
+.partnerIcons {
+  @apply w-full flex flex-wrap justify-center items-start gap-[16px] xl:gap-[40px];
+}
+.aiPartnerIcons {
+  @apply w-full flex flex-wrap justify-center items-start gap-[16px];
+}
+.partnerIconContent {
+  @apply w-[48px] h-[48px] flex items-center justify-center cursor-pointer p-[9px] overflow-hidden;
+  @apply xl:w-[80px] xl:h-[80px] relative xl:p-[15px];
+}
+.peopleIconContent {
+  @apply w-[48px] h-[48px] flex items-center justify-center cursor-pointer;
+  @apply xl:w-[80px] xl:h-[80px] relative rounded-[8px];
+}
+.partnerBg {
+  @apply absolute top-0 left-0 bottom-0 right-0;
+}
+.partnerTitle {
+  @apply text-[14px] font-[400] leading-[24px];
+}
+.awesomeDescContent {
+  @apply w-full flex items-start;
+  @apply xl:w-[520px];
+}
+.contributeCardsGroup {
+  @apply grid grid-cols-1 gap-[24px] w-full;
+  @apply xl:grid-cols-2 xl:gap-[32px];
+}
+.illAIContainer {
+  @apply w-full h-full flex flex-col items-start gap-[24px];
+  @apply xl:justify-between xl:gap-0 xl:flex-row;
+}
+.illAIListContainer {
+  @apply flex flex-col  items-start w-full gap-[24px];
+  @apply xl:w-[520px] xl:justify-start xl:gap-[56px];
+}

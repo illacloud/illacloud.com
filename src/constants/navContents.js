@@ -13,6 +13,10 @@ export const menuItems = [
     href: 'https://blog.illacloud.com/',
     category: 'homepage_menu_blog_click',
     title: 'nav.blog',
+  },
+  {
+    href: 'https://illa.ai',
+    title: 'nav.marketplace',
   }
 ]
 

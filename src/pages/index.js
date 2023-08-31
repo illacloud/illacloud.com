@@ -9,6 +9,7 @@ import { Title } from '@/components/home/title'
 import { MobileTitle, Modal } from '@/components/home/mobileTitle'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
+import { Campaign } from '@/components/home/Content/campaign'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
 import { getStars } from '@/utils/getStars'
@@ -108,6 +109,7 @@ const Home = ({ starCounts, uri }) => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
+      <Campaign />
       <Footer scrollStart={0.939} scrollEnd={1} />
     </>
   )
