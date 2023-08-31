@@ -4,7 +4,7 @@ export const bannerContent = {
   desc2: 'hacktober-illa.description.2',
   btn1Content: {
     text: 'hacktober-illa.button.1',
-    href: '#swag',
+    href: '#contribute',
     category: 'hacktober_contribute_2_click',
   },
   btn2Content: {
@@ -75,7 +75,7 @@ export const contributeContent = {
         },
         {
           text: 'contribute-method.button.build-with-illa.1',
-          href: 'https://issuegithub.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3A%22build+with+ILLA%22+label%3Ahacktoberfast',
+          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3A%22build+with+ILLA%22+label%3Ahacktoberfast',
           category: 'hacktober_build_issue_click',
           pureButton: true,
         },
