@@ -38,7 +38,7 @@ export const EventListMobile = ({
           </div>
         ) : (
           <span className={style.mobileCenterInfoTitle}>
-            {t('event.coming-soon')}
+            {t('coming-soon')}
           </span>
         )}
       </div>

@@ -69,7 +69,7 @@ export const EventListPc = ({
             </>
           ) : (
             <span className={style.centerInfoTitle}>
-              {t('event.coming-soon')}
+              {t('coming-soon')}
             </span>
           )}
         </div>
