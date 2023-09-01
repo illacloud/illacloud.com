@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import clsx from 'clsx'
 import { AllEvents } from './allEvents'
 import { getDayKey } from '@/utils/getFormatDate'
+import { useRouter } from 'next/router'
 import { useActiveTab } from './hooks/useActiveTab'
 
 const eventsContent = {
@@ -15,7 +16,8 @@ const eventsContent = {
 
 export const Events = ({ setActiveKey }) => {
   const { t } = useTranslation('hacktober')
-  const ref = useActiveTab("#event", setActiveKey)
+  const ref = useActiveTab('#event', setActiveKey)
+  const router = useRouter()
   const eventList = t('event.list', {
     returnObjects: true,
   })
@@ -46,9 +48,15 @@ export const Events = ({ setActiveKey }) => {
     }
   })
   return (
-    <div className={style.eventsContainer} id='event' ref={ref}>
+    <div className={style.eventsContainer} id="event" ref={ref}>
       <img src={line} className={style.line} alt="" />
-      <h1 className={clsx(style.contentTitle, 'relative z-[1]')}>
+      <h1
+        className={clsx(
+          style.contentTitle,
+          router.locale === 'zh-CN' ? style.zhTitle : style.otherTitle,
+          'relative z-[1]',
+        )}
+      >
         {t(eventsContent.title)}
       </h1>
       <AllEvents />
