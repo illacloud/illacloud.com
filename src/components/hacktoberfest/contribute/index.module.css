@@ -58,19 +58,19 @@
 .longCardButtonContainer {
   background: linear-gradient(90deg, #fc8e00 0%, #34e7ff 100%);
   padding: 1px;
-  @apply rounded-[20px]  xl:rounded-[22px];
+  @apply rounded-[22px]  xl:rounded-[20px];
 }
 .longCardButton {
-  @apply flex items-center justify-center cursor-pointer py-[10px] rounded-[20px];
-  @apply xl:px-[16px] xl:py-[4px] xl:rounded-[22px] xl:w-auto;
+  @apply flex items-center justify-center cursor-pointer py-[10px] px-[16px] rounded-[22px];
+  @apply xl:py-[8px] xl:rounded-[20px] xl:w-auto;
   @apply box-border w-[271px];
   background: linear-gradient(90deg, #1c1001 0%, #02171a 100%);
 }
 
 /* ---- */
 .cardButton {
-  @apply flex items-center justify-center cursor-pointer py-[10px] rounded-[20px] w-[272px];
-  @apply xl:px-[16px] xl:py-[4px] xl:rounded-[22px] xl:w-auto;
+  @apply flex items-center justify-center cursor-pointer px-[16px] py-[10px] rounded-[22px] w-[272px];
+  @apply xl:py-[8px] xl:rounded-[20px] xl:w-auto;
   background: linear-gradient(
     90deg,
     rgba(252, 142, 0, 0.12) 0%,
