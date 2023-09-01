@@ -5,12 +5,14 @@ import { useTranslation } from 'next-i18next'
 import { useEffect, useRef, useState } from 'react'
 import { useActiveTab } from './hooks/useActiveTab'
 import { swagContent } from '@/constants/hacktober'
+import { useRouter } from 'next/router'
 
 export const Swag = ({ setActiveKey }) => {
   const { t } = useTranslation('hacktober')
   const illaSwagRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const { title, desc, options } = swagContent
+  const router = useRouter()
   const ossSwag = t('swag.oss-swag', {
     returnObjects: true,
   })
@@ -37,7 +39,14 @@ export const Swag = ({ setActiveKey }) => {
   return (
     <div id="swag" className={style.swagContainer} ref={ref}>
       <div className={style.swagInfoContent}>
-        <h1 className={style.contentTitle}>{t('swag.title')}</h1>
+        <h1
+          className={clsx(
+            style.contentTitle,
+            router.locale === 'zh-CN' ? style.zhTitle : style.otherTitle,
+          )}
+        >
+          {t('swag.title')}
+        </h1>
         <p className={style.contentDesc}>{t('swag.description')}</p>
       </div>
       <div className={style.swagOptions}>

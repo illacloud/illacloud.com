@@ -4,11 +4,14 @@ import { HackButton } from './hackButton'
 import illaBg from '@/img/hacktoberfest/illaBg.svg'
 import { useActiveTab } from './hooks/useActiveTab'
 import { aboutILLAContent } from '@/constants/hacktober'
+import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
 export const AboutILLA = ({ setPlayMaskShow, setActiveKey }) => {
   const { t } = useTranslation('hacktober')
   const { title, desc, btnText, href, category } = aboutILLAContent
-  const ref = useActiveTab("#about-illa", setActiveKey)
+  const ref = useActiveTab('#about-illa', setActiveKey)
+  const router = useRouter()
 
   return (
     <div className={style.aboutContainer} id="about-illa" ref={ref}>
@@ -16,7 +19,14 @@ export const AboutILLA = ({ setPlayMaskShow, setActiveKey }) => {
       <div className={style.aboutContent}>
         <div className={style.aboutTextContainer}>
           <div className="flex flex-col gap-[16px]">
-            <h1 className={style.contentTitle}>{t(title)}</h1>
+            <h1
+              className={clsx(
+                style.contentTitle,
+                router.locale === 'zh-CN' ? style.zhTitle : style.otherTitle,
+              )}
+            >
+              {t(title)}
+            </h1>
             <p className={style.contentDesc}>{t(desc)}</p>
           </div>
           <HackButton text={btnText} href={href} category={category} />

@@ -14,8 +14,14 @@
 }
 
 .contributeTitle {
-  @apply text-[24px] font-[400] leading-[32px] text-center;
+  @apply text-[24px] leading-[32px] text-center;
   @apply xl:text-[64px] xl:leading-[72px];
+}
+.zhTitle {
+  @apply font-sans font-[700];
+}
+.otherTitle {
+  @apply font-[400] font-eurostile;
 }
 .contributeDesc {
   @apply flex flex-col text-[14px] font-[400] leading-[17px] text-center gap-[17px];
@@ -35,16 +41,16 @@
   @apply w-full h-full flex flex-col gap-[24px] items-center  justify-start px-[20px] py-[28px] rounded-[16px];
   @apply xl:p-[48px] xl:items-start xl:gap-[32px];
   @apply border-white/[0.14] border-[1px] border;
-  background: linear-gradient(90deg, #1A1C19 0%, #0A0B0B 100%), #141414
+  background: linear-gradient(90deg, #1a1c19 0%, #0a0b0b 100%), #141414;
 }
 .cardTitle {
   @apply text-[32px] font-[400];
 }
 .cardTitleBtn {
-  @apply hidden xl:flex justify-center gap-[16px]
+  @apply hidden xl:flex justify-center gap-[16px];
 }
 .mobileCardTitleBtn {
-  @apply block xl:hidden flex flex-col justify-center items-center gap-[8px]
+  @apply block xl:hidden flex flex-col justify-center items-center gap-[8px];
 }
 .mobileCardTitle {
   @apply block xl:hidden text-[24px] font-[400] text-center;
@@ -58,7 +64,7 @@
   @apply flex items-center justify-center cursor-pointer py-[10px] rounded-[20px];
   @apply xl:px-[16px] xl:py-[4px] xl:rounded-[22px] xl:w-auto;
   @apply box-border w-[271px];
-  background: linear-gradient(90deg, #1C1001 0%, #02171A 100%);
+  background: linear-gradient(90deg, #1c1001 0%, #02171a 100%);
 }
 
 /* ---- */

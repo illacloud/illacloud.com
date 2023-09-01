@@ -86,8 +86,14 @@
   @apply xl:pt-[24px] xl:gap-[40px] xl:items-start;
 }
 .contentTitle {
-  @apply text-[24px] font-[400] leading-[32px] text-center font-eurostile;
+  @apply text-[24px]  leading-[32px] text-center;
   @apply xl:text-[64px] xl:leading-[72px] xl:text-start;
+}
+.zhTitle {
+  @apply font-sans font-[700];
+}
+.otherTitle {
+  @apply font-[400] font-eurostile;
 }
 .contentDesc {
   @apply text-[14px] leading-[17px] font-[400];
@@ -108,7 +114,7 @@
 }
 .swagContent {
   @apply flex flex-col items-center gap-[16px];
-  @apply xl:gap-[32px]
+  @apply xl:gap-[32px];
 }
 .swagCardContainer {
   @apply w-full flex justify-between items-end min-h-0;
@@ -128,12 +134,16 @@
 .swagOptionContent {
   @apply flex flex-col items-center justify-between text-center w-[112px] py-[16px] px-[8px] rounded-t-[8px] rounded-r-[8px];
   @apply xl:w-[384px] xl:py-[32px] xl:px-[16px];
-  background: linear-gradient(180deg, rgba(255, 198, 52, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 198, 52, 0.16) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 .swagContentTitle {
   @apply text-[20px] font-[400] font-eurostile;
   @apply xl:text-[32px];
-  background: linear-gradient(90deg, #FFE500 0%, #FFF176 100%);
+  background: linear-gradient(90deg, #ffe500 0%, #fff176 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -178,7 +188,7 @@
   @apply xl:gap-[16px];
 }
 .ossItemTitle img {
-  @apply w-[24px]
+  @apply w-[24px];
 }
 .ossItemDesc {
   @apply text-[12px] font-[400] leading-[15px] overflow-ellipsis line-clamp-2;
