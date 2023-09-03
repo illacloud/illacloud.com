@@ -23,7 +23,7 @@ export const NavMobile = ({
         </Link>
         <div className={style.buttonList}>
           {leftButtonGroup.map((content) => (
-            <Link href={content.href}>
+            <Link key={content.href}  href={content.href}>
               <span className={style.mobileIconContainer}>{content.icon}</span>
             </Link>
           ))}
@@ -32,6 +32,7 @@ export const NavMobile = ({
       <div className={style.tabsContainer}>
         {tabsList.map(({ title, href = '' }) => (
           <MobileNavItem
+            key={title}
             href={href}
             isSelect={activeKey === href}
             title={title}

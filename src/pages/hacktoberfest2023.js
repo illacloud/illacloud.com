@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Nav } from '@/components/hacktoberfest/nav'
 import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -24,6 +24,20 @@ const Hacktoberfest = ({ uri }) => {
   const [isBookShow, setIsBookShow] = useState(false)
   const [activeKey, setActiveKey] = useState('')
   const router = useRouter()
+  const keyDownRef = useRef(null)
+
+  keyDownRef.current = (e) => {
+    if(e.key === 'Escape') {
+      setPlayMaskShow(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyDownRef.current)
+    return () => {
+      document.removeEventListener('keydown', keyDownRef.current)
+    }
+  }, [])
 
   return (
     <>
