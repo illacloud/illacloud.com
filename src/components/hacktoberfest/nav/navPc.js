@@ -17,7 +17,7 @@ export const NavPC = ({ tabsList, leftButtonGroup }) => {
         </Link>
         <div className={style.tabsList}>
           {tabsList.map(({ title, href = '' }) => (
-            <Link href={href}>
+            <Link key={href} href={href}>
               <span className={style.tabsItems}>{t(title)}</span>
             </Link>
           ))}
@@ -25,7 +25,7 @@ export const NavPC = ({ tabsList, leftButtonGroup }) => {
       </div>
       <div className={style.navRight}>
         {leftButtonGroup.map((content) => (
-          <HeaderButton content={content} />
+          <HeaderButton key={content.href} content={content} />
         ))}
       </div>
     </div>

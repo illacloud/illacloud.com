@@ -62,7 +62,7 @@ export const Events = ({ setActiveKey }) => {
       <AllEvents />
       <div className={style.eventCardContainer}>
         {curEventList.map((content) => (
-          <EventCard key={content.title} content={content} />
+          <EventCard key={content.partner} content={content} />
         ))}
       </div>
     </div>
