@@ -27,7 +27,7 @@ export const Title = () => {
       <div className={style.titleContentContainer}>
         <div className={style.titleInfo}>
           <h1 className={style.titleInfoTitle}>
-            <span>HacktoberFest2023</span>
+            <span>Hacktoberfest2023</span>
             <span className="hidden xl:block text-[32px] w-[32px]">|</span>
             <span>ILLA Cloud</span>
           </h1>
