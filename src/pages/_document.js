@@ -71,14 +71,14 @@ export default class Document extends NextDocument {
           </Script>
           <Script
             strategy="afterInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
+            src="https://www.googletagmanager.com/gtag/js?id=AW-11099522928"
           />
           <Script strategy="afterInteractive" id="google-analytics">
             {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-4VKRNGN7GE');
+          gtag('config', 'AW-11099522928');
         `}
           </Script>
           <script
