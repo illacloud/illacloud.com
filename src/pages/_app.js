@@ -150,14 +150,18 @@ function App({ Component, pageProps, router }) {
             __html: `
               function gtagReportConversion () {
                 gtag('event', 'conversion', {
-                  'send_to': 'AW-11158040052/PoXKCKuozaAYEPTbyMgp',
+                  'send_to': 'AW-11099522928/Jx0mCJK59OAYEPCO1awp',
                 });
                 return false;
               }
             `,
           }}
         />
-        <script async src="https://tag.clearbitscripts.com/v1/pk_f16327730ef3bdec6215360e27413581/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+        <script
+          async
+          src="https://tag.clearbitscripts.com/v1/pk_f16327730ef3bdec6215360e27413581/tags.js"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></script>
       </Head>
       <Script>
         {`(function(w, d, s, l, i) {
@@ -186,17 +190,17 @@ function App({ Component, pageProps, router }) {
       {/*End Google Tag Manager (noscript)*/}
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11099522928"
       />
       <Script strategy="afterInteractive" id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-4VKRNGN7GE');
+          gtag('config', 'AW-11099522928');
         `}
       </Script>
-      <Script strategy="afterInteractive" >
+      <Script strategy="afterInteractive">
         {` _linkedin_partner_id = "4707852";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
         window._linkedin_data_partner_ids.push(_linkedin_partner_id);`}
@@ -213,7 +217,13 @@ function App({ Component, pageProps, router }) {
           `}
       </Script>
       <noscript>
-        <img height="1" width="1" style={{ display: "none" }} alt="" src="https://px.ads.linkedin.com/collect/?pid=4707852&fmt=gif" />
+        <img
+          height="1"
+          width="1"
+          style={{ display: 'none' }}
+          alt=""
+          src="https://px.ads.linkedin.com/collect/?pid=4707852&fmt=gif"
+        />
       </noscript>
       <SearchProvider>
         {showHeader && (
