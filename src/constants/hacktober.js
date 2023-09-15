@@ -75,7 +75,7 @@ export const contributeContent = {
         },
         {
           text: 'contribute-method.button.build-with-illa.1',
-          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3A%22build+with+ILLA%22+label%3Ahacktoberfast',
+          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3A%22build+with+ILLA%22+label%3Ahacktoberfest',
           category: 'hacktober_build_issue_click',
           pureButton: true,
         },
@@ -115,7 +115,7 @@ export const contributeContent = {
         },
         {
           text: 'contribute-method.button.illa-ai.1',
-          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3Ahacktoberfast+label%3A%22ILLA+with+AI%22',
+          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3Ahacktoberfest+label%3A%22ILLA+with+AI%22',
           category: 'hacktober_ai_issue_click',
           pureButton: true,
         },
@@ -152,7 +152,7 @@ export const contributeContent = {
       button: [
         {
           text: 'contribute-method.button.pr',
-          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3Ahacktoberfast+label%3A%22hacktoberfest+developing%22',
+          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3Ahacktoberfest+label%3A%22hacktoberfest+developing%22',
           category: 'hacktober_pr_click',
           longButton: true,
           extraStyle: 'xl:w-[154px]',
@@ -177,7 +177,7 @@ export const swagContent = {
         '-webkit-background-clip': 'text',
       },
       height: 'xl:h-[256px]',
-      mobileHeight: 'h-[170px]'
+      mobileHeight: 'h-[170px]',
     },
     {
       title: 'swag.illa-swag.ace.title',
@@ -190,7 +190,7 @@ export const swagContent = {
         '-webkit-background-clip': 'text',
       },
       height: 'xl:h-[320px]',
-      mobileHeight: 'h-[200px]'
+      mobileHeight: 'h-[200px]',
     },
     {
       title: 'swag.illa-swag.rookie.title',
@@ -203,7 +203,7 @@ export const swagContent = {
         '-webkit-background-clip': 'text',
       },
       height: 'xl:h-[224px]',
-      mobileHeight: 'h-[140px]'
+      mobileHeight: 'h-[140px]',
     },
   ],
 }
