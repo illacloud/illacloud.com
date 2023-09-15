@@ -135,7 +135,7 @@ export const Swag = ({ setActiveKey }) => {
                     </div>
                     <Link href={link}>
                       <span className={style.ossLink}>
-                        {t('swag.oss-swag.take-look')}&nbsp;&gt;
+                        {t('swag.oss-swag.take-look')}
                       </span>
                     </Link>
                   </div>
