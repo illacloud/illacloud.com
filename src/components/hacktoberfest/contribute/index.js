@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { useActiveTab } from '../hooks/useActiveTab'
 import { contributeContent } from '@/constants/hacktober'
 
-export const Contribute = ({ setActiveKey }) => {
+export const Contribute = ({ setPlayMaskShow, setActiveKey }) => {
   const { t } = useTranslation('hacktober')
   const partner = t('contribute-method.label.build-with-illa', {
     returnObjects: true,
@@ -27,8 +27,14 @@ export const Contribute = ({ setActiveKey }) => {
 
   return (
     <div ref={ref} className={style.contributeContainer} id="contribute">
-      <ContributeHeader {...contributeContent.info} />
-      <ContributeHeaderMobile {...contributeContent.info} />
+      <ContributeHeader
+        setPlayMaskShow={setPlayMaskShow}
+        {...contributeContent.info}
+      />
+      <ContributeHeaderMobile
+        setPlayMaskShow={setPlayMaskShow}
+        {...contributeContent.info}
+      />
       <ContributeCards title={card1.title} button={card1.button}>
         <BuildWith
           descList={card1.desc}

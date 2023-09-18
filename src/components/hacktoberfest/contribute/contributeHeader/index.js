@@ -8,7 +8,7 @@ import docIcon from '@/img/hacktoberfest/doc.svg'
 import playIcon from '@/img/hacktoberfest/play.svg'
 import { ContributeStepCard } from '@/constants/hacktober'
 
-export const ContributeHeader = ({ title }) => {
+export const ContributeHeader = ({ setPlayMaskShow, title }) => {
   const { t } = useTranslation('hacktober')
   const router = useRouter()
 
@@ -42,7 +42,7 @@ export const ContributeHeader = ({ title }) => {
           </span>
         </Link>
         <div className={style.separateStyle} />
-        <span className={style.contributeButton} onClick={() => {}}>
+        <span className={style.contributeButton} onClick={setPlayMaskShow}>
           <img src={playIcon} alt="" />
           <span className={style.contributeButtonItem}>
             {t('contribute-method.steps.video')}

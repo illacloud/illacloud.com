@@ -8,7 +8,7 @@ import docIcon from '@/img/hacktoberfest/doc.svg'
 import playIcon from '@/img/hacktoberfest/play.svg'
 import { CardButton } from '../cardButton'
 
-export const ContributeHeaderMobile = ({ title }) => {
+export const ContributeHeaderMobile = ({ setPlayMaskShow, title }) => {
   const { t } = useTranslation('hacktober')
   const router = useRouter()
   const contents = [
@@ -21,7 +21,7 @@ export const ContributeHeaderMobile = ({ title }) => {
     {
       text: 'contribute-method.steps.video',
       pureButton: true,
-      onClick: () => {},
+      onClick: setPlayMaskShow,
       leftIcon: playIcon,
     },
   ]
