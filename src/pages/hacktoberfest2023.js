@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import { getGithubOauth } from '@/utils/getGithubOauth'
-import { Modal } from '@/components/home/mobileTitle'
+import { Modal } from '@/components/comm/player'
 import { CommBottom } from '@/components/comm/commBottom'
 import socialHack from '@/img/social-hack.jpeg'
 
@@ -27,7 +27,7 @@ const Hacktoberfest = ({ uri }) => {
   const keyDownRef = useRef(null)
 
   keyDownRef.current = (e) => {
-    if(e.key === 'Escape') {
+    if (e.key === 'Escape') {
       setPlayMaskShow(false)
     }
   }
@@ -94,7 +94,11 @@ const Hacktoberfest = ({ uri }) => {
         visible={isBookShow}
         onChangeShow={() => setIsBookShow(false)}
       />
-      <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
+      <Modal
+        isOpen={playMaskShow}
+        onClose={() => setPlayMaskShow(false)}
+        link=""
+      />
     </>
   )
 }

@@ -4,21 +4,37 @@ import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
 import { sendTagEvent } from '@/utils/gtag'
 
-export const HackButton = ({ text, href = '', category }) => {
+export const HackButton = ({
+  text,
+  href = '',
+  category,
+  onClick,
+  pureButton = false,
+}) => {
   const { t } = useTranslation('hacktober')
 
-  const onClick = () => {
+  const handleClick = () => {
     sendTagEvent({
       action: 'click',
       category,
     })
+    onClick && onClick()
   }
 
   return (
-    <Link href={href} onClick={onClick}>
-      <button className={clsx("glow-button", style.hackButton)}>
-        <span className={style.hackBtnContent}>{t(text)}</span>
-      </button>
-    </Link>
+    <>
+      {!pureButton && (
+        <Link href={href} onClick={handleClick}>
+          <button className={clsx('glow-button', style.hackButton)}>
+            <span className={style.hackBtnContent}>{t(text)}</span>
+          </button>
+        </Link>
+      )}
+      {pureButton && (
+        <button className={clsx('glow-button', style.hackButton)}>
+          <span className={style.hackBtnContent}>{t(text)}</span>
+        </button>
+      )}
+    </>
   )
 }

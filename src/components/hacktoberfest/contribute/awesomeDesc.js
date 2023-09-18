@@ -5,7 +5,7 @@ import clsx from 'clsx'
 export const AwesomeDesc = ({ desc }) => {
   const { t } = useTranslation('hacktober')
   return (
-    <div className="w-full flex flex-col items-start gap-[16px]">
+    <div className="w-full h-full flex flex-col items-start gap-[16px]">
       {desc.map(({ icon, text, count }) => (
         <div key={text} className={style.awesomeDescContent}>
           <img src={icon} width="16" alt="" />

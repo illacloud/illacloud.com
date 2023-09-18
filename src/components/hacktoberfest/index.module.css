@@ -68,23 +68,6 @@
   @apply box-border px-[24px] py-[12px] w-[171px] xl:w-[320px] whitespace-nowrap overflow-ellipsis line-clamp-1;
 }
 
-.aboutContainer {
-  @apply w-full my-[95px] relative flex items-center relative z-[1];
-  @apply xl:mt-[64px] xl:mb-0 xl:h-[690px];
-}
-.illaBg {
-  @apply absolute  w-full z-[0] top-0 pt-[25%];
-  @apply xl:h-full xl:top-0;
-}
-.aboutContent {
-  @apply relative z-[2];
-  @apply flex w-full justify-center items-start gap-[32px] flex-col items-center text-center;
-  @apply xl:gap-[64px] xl:flex-row xl:text-left;
-}
-.aboutTextContainer {
-  @apply flex flex-col items-start gap-[32px] items-center;
-  @apply xl:pt-[24px] xl:gap-[40px] xl:items-start;
-}
 .contentTitle {
   @apply text-[24px]  leading-[32px] text-center;
   @apply xl:text-[64px] xl:leading-[72px] xl:text-start;
@@ -101,7 +84,7 @@
 }
 /* swag */
 .swagContainer {
-  @apply w-full flex flex-col items-center gap-[40px] pt-[150px];
+  @apply w-full flex flex-col items-center gap-[40px] pt-[100px];
   @apply xl:gap-[80px] xl:pt-[200px];
 }
 .swagInfoContent {
@@ -116,21 +99,7 @@
   @apply flex flex-col items-center gap-[16px];
   @apply xl:gap-[32px];
 }
-.swagCardContainer {
-  @apply w-full flex justify-between items-end min-h-0;
-  @apply xl:min-h-[473px];
-}
-.swagCard {
-  @apply flex flex-col items-center gap-[16px];
-  @apply xl:gap-[32px];
-}
-.swagItemTranslation {
-  transition: all 500ms ease-out;
-}
-.swagCardImg {
-  @apply w-[64px] rounded-[4px];
-  @apply xl:w-[200px] xl:rounded-[8px];
-}
+
 .swagOptionContent {
   @apply flex flex-col items-center justify-between text-center w-[112px] py-[16px] px-[8px] rounded-t-[8px] rounded-r-[8px];
   @apply xl:w-[384px] xl:py-[32px] xl:px-[16px];
@@ -153,19 +122,6 @@
 }
 .optionInfo {
   @apply flex flex-col items-center justify-center font-eurostile gap-[8px];
-}
-.optionTitle {
-  @apply text-[20px] font-[400];
-  @apply xl:text-[32px];
-  -webkit-text-fill-color: transparent;
-}
-.optionDesc {
-  @apply text-[12px];
-  @apply xl:text-[20px] font-[400] text-white-01;
-}
-.optionsExtra {
-  @apply text-[12px] font-[400] leading-[15px];
-  @apply xl:text-[16px] xl:leading-[22px] text-white-01 font-sans;
 }
 
 .ossList {
@@ -203,12 +159,12 @@
 }
 /* swag */
 .eventsContainer {
-  @apply w-full flex flex-col items-center relative mt-[144px] gap-[24px];
-  @apply xl:mt-[200px] xl:gap-[104px];
+  @apply w-full flex flex-col items-center relative pt-[100px] gap-[24px];
+  @apply xl:pt-[200px] xl:gap-[104px];
 }
 .line {
   @apply hidden xl:block absolute top-[0] max-w-fit;
-  transform: translateY(-32%);
+  transform: translateY(14%);
 }
 .eventInfo {
   @apply flex flex-col items-center relative z-[1];

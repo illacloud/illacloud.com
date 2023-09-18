@@ -1,7 +1,8 @@
 import style from './index.module.css'
 import { ContributeCards } from './contributeCards'
 import { useTranslation } from 'next-i18next'
-import { ContributeInfo } from './contributeInfo'
+import { ContributeHeader } from './contributeHeader'
+import { ContributeHeaderMobile } from './contributeHeaderMobile'
 import { BuildWith } from './buildWith'
 import { AwesomeDesc } from './awesomeDesc'
 import { IllaAi } from './illaAi'
@@ -27,7 +28,8 @@ export const Contribute = ({ setActiveKey }) => {
 
   return (
     <div ref={ref} className={style.contributeContainer} id="contribute">
-      <ContributeInfo {...contributeContent.info} />
+      <ContributeHeader {...contributeContent.info} />
+      <ContributeHeaderMobile {...contributeContent.info} />
       <ContributeCards title={card1.title} button={card1.button}>
         <BuildWith
           descList={card1.desc}

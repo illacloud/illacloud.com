@@ -14,14 +14,6 @@ export const bannerContent = {
   },
 }
 
-export const aboutILLAContent = {
-  title: 'illa.title',
-  desc: 'illa.description',
-  btnText: 'illa.button',
-  href: 'https://www.illacloud.com',
-  category: 'hacktober_learn_more_click',
-}
-
 export const contributeContent = {
   info: {
     title: 'contribute-method.title.all',
@@ -162,48 +154,21 @@ export const contributeContent = {
   },
 }
 
-export const swagContent = {
-  title: 'swag.illa-swag.title',
-  desc: 'swag.illa-swag.desc',
-  options: [
-    {
-      title: 'swag.illa-swag.master.title',
-      label: 'swag.illa-swag.master.desc',
-      extra: 'swag.illa-swag.master.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/master.jpeg',
-      titleColor: {
-        background: 'linear-gradient(90deg, #B1B6C3 0%, #EBF0FF 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[256px]',
-      mobileHeight: 'h-[170px]',
-    },
-    {
-      title: 'swag.illa-swag.ace.title',
-      label: 'swag.illa-swag.ace.desc',
-      extra: 'swag.illa-swag.ace.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/ace.png',
-      titleColor: {
-        background: 'linear-gradient(90deg, #FFE500 0%, #FFF176 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[320px]',
-      mobileHeight: 'h-[200px]',
-    },
-    {
-      title: 'swag.illa-swag.rookie.title',
-      label: 'swag.illa-swag.rookie.desc',
-      extra: 'swag.illa-swag.rookie.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/rookie.png',
-      titleColor: {
-        background: 'linear-gradient(90deg, #C66C03 0%, #FFC27B 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[224px]',
-      mobileHeight: 'h-[140px]',
-    },
-  ],
-}
+export const ContributeStepCard = [
+  {
+    label: 'contribute-method.steps.title.1',
+    desc: 'contribute-method.steps.desc.1',
+  },
+  {
+    label: 'contribute-method.steps.title.2',
+    desc: 'contribute-method.steps.desc.2',
+  },
+  {
+    label: 'contribute-method.steps.title.3',
+    desc: 'contribute-method.steps.desc.3',
+  },
+  {
+    label: 'contribute-method.steps.title.4',
+    desc: 'contribute-method.steps.desc.4',
+  },
+]
