@@ -81,7 +81,9 @@ const Hacktoberfest = ({ uri }) => {
       <div className="bg-gray-01 overflow-visible w-full bg-mobileHeader bg-contain bg-no-repeat">
         <Nav activeKey={activeKey} setActiveKey={setActiveKey} />
         <MainContent
-          setPlayMaskShow={setPlayMaskShow}
+          setPlayMaskShow={() => {
+            setPlayMaskShow(true)
+          }}
           activeKey={activeKey}
           setActiveKey={setActiveKey}
         />
@@ -97,7 +99,7 @@ const Hacktoberfest = ({ uri }) => {
       <Modal
         isOpen={playMaskShow}
         onClose={() => setPlayMaskShow(false)}
-        link=""
+        link="https://cdn.illacloud.com/official-website/img/hacktoberFest/guide1.mp4"
       />
     </>
   )

@@ -6,7 +6,7 @@ import { Swag } from './swag'
 import { Events } from './events'
 import { useInitHackBtn } from './hooks/useInitHackBtn'
 
-export const MainContent = ({ setActiveKey }) => {
+export const MainContent = ({ setPlayMaskShow, setActiveKey }) => {
   useInitHackBtn()
   return (
     <div className={style.mainContentContainer}>
@@ -14,7 +14,10 @@ export const MainContent = ({ setActiveKey }) => {
       <div className={style.allContentContainer}>
         <Banner />
         <Swag setActiveKey={setActiveKey} />
-        <Contribute setActiveKey={setActiveKey} />
+        <Contribute
+          setActiveKey={setActiveKey}
+          setPlayMaskShow={setPlayMaskShow}
+        />
         <Events setActiveKey={setActiveKey} />
       </div>
     </div>
