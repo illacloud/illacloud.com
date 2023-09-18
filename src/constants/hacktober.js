@@ -2,16 +2,6 @@ export const bannerContent = {
   title: 'hacktober-illa.title',
   desc1: 'hacktober-illa.description.1',
   desc2: 'hacktober-illa.description.2',
-  btn1Content: {
-    text: 'hacktober-illa.button.1',
-    href: '#contribute',
-    category: 'hacktober_contribute_2_click',
-  },
-  btn2Content: {
-    text: 'hacktober-illa.button.2',
-    href: '#swag',
-    category: 'hacktober_swag_click',
-  },
 }
 
 export const contributeContent = {

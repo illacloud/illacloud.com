@@ -3,12 +3,28 @@ import style from './index.module.css'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { ContributeHeaderCard } from './card'
-import { HackButton } from '@/components/hacktoberfest/hackButton'
 import { ContributeStepCard } from '@/constants/hacktober'
+import docIcon from '@/img/hacktoberfest/doc.svg'
+import playIcon from '@/img/hacktoberfest/play.svg'
+import { CardButton } from '../cardButton'
 
 export const ContributeHeaderMobile = ({ title }) => {
   const { t } = useTranslation('hacktober')
   const router = useRouter()
+  const contents = [
+    {
+      text: 'contribute-method.steps.doc',
+      href: 'https://github.com/illacloud/illa-builder/blob/main/Hacktoberfest%202023/README.md',
+      longButton: true,
+      leftIcon: docIcon,
+    },
+    {
+      text: 'contribute-method.steps.video',
+      pureButton: true,
+      onClick: () => {},
+      leftIcon: playIcon,
+    },
+  ]
 
   return (
     <div className={style.contributeInfoContainer}>
@@ -33,16 +49,10 @@ export const ContributeHeaderMobile = ({ title }) => {
         </div>
       </div>
 
-      <div className={style.buttonGroupStyle}>
-        <HackButton
-          text={t('contribute-method.steps.doc')}
-          href="https://github.com/illacloud/illa-builder/blob/main/Hacktoberfest%202023/README.md"
-        />
-        <HackButton
-          text={t('contribute-method.steps.video')}
-          pureButton
-          onClick={() => {}}
-        />
+      <div className={style.mobileCardTitleBtn}>
+        {contents.map((content) => {
+          return <CardButton key={content.title} content={content} />
+        })}
       </div>
     </div>
   )
