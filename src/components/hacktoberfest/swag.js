@@ -2,10 +2,10 @@ import Link from 'next/link'
 import style from './index.module.css'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useActiveTab } from './hooks/useActiveTab'
-import { swagContent } from '@/constants/hacktober'
 import { useRouter } from 'next/router'
+import { swagContent } from '@/constants/hacktober'
 
 export const Swag = ({ setActiveKey }) => {
   const { t } = useTranslation('hacktober')
@@ -111,7 +111,6 @@ export const Swag = ({ setActiveKey }) => {
             )}
           </div>
         </div>
-
         <div className={style.swagContent}>
           <div
             className="flex flex-col gap-[4px] xl:gap-[8px] text-center"

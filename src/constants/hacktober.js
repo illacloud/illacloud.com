@@ -2,24 +2,6 @@ export const bannerContent = {
   title: 'hacktober-illa.title',
   desc1: 'hacktober-illa.description.1',
   desc2: 'hacktober-illa.description.2',
-  btn1Content: {
-    text: 'hacktober-illa.button.1',
-    href: '#contribute',
-    category: 'hacktober_contribute_2_click',
-  },
-  btn2Content: {
-    text: 'hacktober-illa.button.2',
-    href: '#swag',
-    category: 'hacktober_swag_click',
-  },
-}
-
-export const aboutILLAContent = {
-  title: 'illa.title',
-  desc: 'illa.description',
-  btnText: 'illa.button',
-  href: 'https://www.illacloud.com',
-  category: 'hacktober_learn_more_click',
 }
 
 export const contributeContent = {
@@ -122,30 +104,6 @@ export const contributeContent = {
       ],
     },
     card3: {
-      title: 'contribute-method.title.awesome',
-      desc: [
-        {
-          text: 'contribute-method.description.awesome.1',
-          count: '+1',
-          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/awesome1.svg',
-        },
-        {
-          text: 'contribute-method.description.awesome.2',
-          count: '+1',
-          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/awesome2.svg',
-        },
-      ],
-      button: [
-        {
-          text: 'contribute-method.button.awesome',
-          href: 'https://github.com/illacloud/illa-builder/issues',
-          category: 'hacktober_awesome_click',
-          longButton: true,
-          extraStyle: 'xl:w-[154px]',
-        },
-      ],
-    },
-    card4: {
       title: 'contribute-method.title.pr',
       desc: 'contribute-method.description.pr',
       options: 'contribute-method.option.oss',
@@ -207,3 +165,22 @@ export const swagContent = {
     },
   ],
 }
+
+export const ContributeStepCard = [
+  {
+    label: 'contribute-method.steps.title.1',
+    desc: 'contribute-method.steps.desc.1',
+  },
+  {
+    label: 'contribute-method.steps.title.2',
+    desc: 'contribute-method.steps.desc.2',
+  },
+  {
+    label: 'contribute-method.steps.title.3',
+    desc: 'contribute-method.steps.desc.3',
+  },
+  {
+    label: 'contribute-method.steps.title.4',
+    desc: 'contribute-method.steps.desc.4',
+  },
+]

@@ -7,34 +7,82 @@ import add from '@/img/hacktoberfest/add.svg'
 
 export const CardButton = ({ content }) => {
   const { t } = useTranslation('hacktober')
-  const { text, href = '', category, pureButton, longButton, extraStyle } = content
+  const {
+    text,
+    href = '',
+    category,
+    pureButton,
+    longButton,
+    extraStyle,
+    onClick,
+    leftIcon,
+  } = content
 
-  const onClick = () => {
+  const handleClick = () => {
     sendTagEvent({
       action: 'click',
       category,
     })
+    onClick && onClick()
   }
 
   return (
-    <Link href={href} onClick={onClick}>
-      <div>
-        {longButton && (
-          <div className={style.longCardButtonContainer}>
-            <div className={clsx(style.longCardButton, extraStyle ?? 'xl:w-[235px]')}>
+    <>
+      {onClick ? (
+        <div onClick={handleClick}>
+          {longButton && (
+            <div className={style.longCardButtonContainer}>
+              <div
+                className={clsx(
+                  style.longCardButton,
+                  extraStyle ?? 'xl:w-[235px]',
+                )}
+              >
+                <span className={style.cardButtonContent}>
+                  <img src={leftIcon ?? add} alt="" width="16" />
+                  {t(text)}
+                </span>
+              </div>
+            </div>
+          )}
+          {pureButton && (
+            <div className={clsx(style.cardButton, style.pureCardButton)}>
               <span className={style.cardButtonContent}>
-                <img src={add} alt='' width="16" />
+                <img src={leftIcon ?? add} alt="" width="16" />
                 {t(text)}
               </span>
             </div>
+          )}
+        </div>
+      ) : (
+        <Link href={href} onClick={handleClick}>
+          <div>
+            {longButton && (
+              <div className={style.longCardButtonContainer}>
+                <div
+                  className={clsx(
+                    style.longCardButton,
+                    extraStyle ?? 'xl:w-[235px]',
+                  )}
+                >
+                  <span className={style.cardButtonContent}>
+                    <img src={leftIcon ?? add} alt="" width="16" />
+                    {t(text)}
+                  </span>
+                </div>
+              </div>
+            )}
+            {pureButton && (
+              <div className={clsx(style.cardButton, style.pureCardButton)}>
+                <span className={style.cardButtonContent}>
+                  <img src={leftIcon ?? add} alt="" width="16" />
+                  {t(text)}
+                </span>
+              </div>
+            )}
           </div>
-        )}
-        {pureButton && (
-          <div className={clsx(style.cardButton, style.pureCardButton)}>
-            <span className={style.cardButtonContent}>{t(text)}</span>
-          </div>
-        )}
-      </div>
-    </Link>
+        </Link>
+      )}
+    </>
   )
 }

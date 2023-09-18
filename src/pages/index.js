@@ -6,7 +6,8 @@ import { useTranslation } from 'next-i18next'
 import { NewContent } from '@/components/home/Content'
 import { Footer } from '@/components/home/Footer'
 import { Title } from '@/components/home/title'
-import { MobileTitle, Modal } from '@/components/home/mobileTitle'
+import { MobileTitle } from '@/components/home/mobileTitle'
+import { Modal } from '@/components/comm/player'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { Campaign } from '@/components/home/Content/campaign'
@@ -33,11 +34,7 @@ const Home = ({ starCounts, uri }) => {
           name="twitter:title"
           content={t('meta.title')}
         />
-        <meta
-          key="og:title"
-          property="og:title"
-          content={t('meta.title')}
-        />
+        <meta key="og:title" property="og:title" content={t('meta.title')} />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
         <meta
@@ -51,15 +48,14 @@ const Home = ({ starCounts, uri }) => {
         />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com${router.locale === 'en-US' ? '' : `/${router.locale}`}`}
+          href={`https://www.illacloud.com${
+            router.locale === 'en-US' ? '' : `/${router.locale}`
+          }`}
         />
       </Head>
       <HomeSchemaData />
       <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
-        <Nav
-          whiteTheme={false}
-          onChangeShow={() => setIsBookShow(true)}
-        />
+        <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
 
         {/*Global site tag (gtag.js) - Google Analytics */}
         <Script
@@ -99,7 +95,11 @@ const Home = ({ starCounts, uri }) => {
           githubStarts={Math.floor(starCounts * step)}
         />
         <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri} />
-        <Modal isOpen={playMaskShow} onClose={() => setPlayMaskShow(false)} />
+        <Modal
+          isOpen={playMaskShow}
+          onClose={() => setPlayMaskShow(false)}
+          link="https://cdn.illacloud.com/official-website/img/home/video.mp4"
+        />
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}
@@ -122,7 +122,7 @@ export const getServerSideProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale, ['home', 'common'])),
       starCounts,
-      uri
+      uri,
     },
   }
 }
