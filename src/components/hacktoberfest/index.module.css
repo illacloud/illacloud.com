@@ -118,12 +118,24 @@
   -webkit-text-fill-color: transparent;
 }
 .swagContentDesc {
-  @apply w-full xl:w-[800px] text-[14px] xl:text-[12px] font-[400] text-white-01 font-sans;
+  @apply w-full xl:w-[800px] text-[14px] font-[400] text-white-01 font-sans;
 }
 .optionInfo {
   @apply flex flex-col items-center justify-center font-eurostile gap-[8px];
 }
-
+.optionTitle {
+  @apply text-[20px] font-[400];
+  @apply xl:text-[32px];
+  -webkit-text-fill-color: transparent;
+}
+.optionDesc {
+  @apply text-[12px];
+  @apply xl:text-[20px] font-[400] text-white-01;
+}
+.optionsExtra {
+  @apply text-[12px] font-[400] leading-[15px];
+  @apply xl:text-[16px] xl:leading-[22px] text-white-01 font-sans;
+}
 .ossList {
   @apply grid grid-cols-1 gap-[16px] w-full;
   @apply xl:grid-cols-2 xl:gap-[24px];
@@ -158,6 +170,21 @@
   -webkit-text-fill-color: transparent;
 }
 /* swag */
+.swagCardContainer {
+  @apply w-full flex justify-between items-end min-h-0;
+  @apply xl:min-h-[473px];
+}
+.swagCard {
+  @apply flex flex-col items-center gap-[16px];
+  @apply xl:gap-[32px];
+}
+.swagItemTranslation {
+  transition: all 500ms ease-out;
+}
+.swagCardImg {
+  @apply w-[64px] rounded-[4px];
+  @apply xl:w-[200px] xl:rounded-[8px];
+}
 .eventsContainer {
   @apply w-full flex flex-col items-center relative pt-[100px] gap-[24px];
   @apply xl:pt-[200px] xl:gap-[104px];

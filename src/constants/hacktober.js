@@ -114,30 +114,6 @@ export const contributeContent = {
       ],
     },
     card3: {
-      title: 'contribute-method.title.awesome',
-      desc: [
-        {
-          text: 'contribute-method.description.awesome.1',
-          count: '+1',
-          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/awesome1.svg',
-        },
-        {
-          text: 'contribute-method.description.awesome.2',
-          count: '+1',
-          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/awesome2.svg',
-        },
-      ],
-      button: [
-        {
-          text: 'contribute-method.button.awesome',
-          href: 'https://github.com/illacloud/illa-builder/issues',
-          category: 'hacktober_awesome_click',
-          longButton: true,
-          extraStyle: 'xl:w-[154px]',
-        },
-      ],
-    },
-    card4: {
       title: 'contribute-method.title.pr',
       desc: 'contribute-method.description.pr',
       options: 'contribute-method.option.oss',
@@ -152,6 +128,52 @@ export const contributeContent = {
       ],
     },
   },
+}
+
+export const swagContent = {
+  title: 'swag.illa-swag.title',
+  desc: 'swag.illa-swag.desc',
+  options: [
+    {
+      title: 'swag.illa-swag.master.title',
+      label: 'swag.illa-swag.master.desc',
+      extra: 'swag.illa-swag.master.swag',
+      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/master.jpeg',
+      titleColor: {
+        background: 'linear-gradient(90deg, #B1B6C3 0%, #EBF0FF 100%)',
+        'background-clip': 'text',
+        '-webkit-background-clip': 'text',
+      },
+      height: 'xl:h-[256px]',
+      mobileHeight: 'h-[170px]',
+    },
+    {
+      title: 'swag.illa-swag.ace.title',
+      label: 'swag.illa-swag.ace.desc',
+      extra: 'swag.illa-swag.ace.swag',
+      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/ace.png',
+      titleColor: {
+        background: 'linear-gradient(90deg, #FFE500 0%, #FFF176 100%)',
+        'background-clip': 'text',
+        '-webkit-background-clip': 'text',
+      },
+      height: 'xl:h-[320px]',
+      mobileHeight: 'h-[200px]',
+    },
+    {
+      title: 'swag.illa-swag.rookie.title',
+      label: 'swag.illa-swag.rookie.desc',
+      extra: 'swag.illa-swag.rookie.swag',
+      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/rookie.png',
+      titleColor: {
+        background: 'linear-gradient(90deg, #C66C03 0%, #FFC27B 100%)',
+        'background-clip': 'text',
+        '-webkit-background-clip': 'text',
+      },
+      height: 'xl:h-[224px]',
+      mobileHeight: 'h-[140px]',
+    },
+  ],
 }
 
 export const ContributeStepCard = [

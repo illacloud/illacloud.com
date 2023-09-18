@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next'
 import { ContributeHeader } from './contributeHeader'
 import { ContributeHeaderMobile } from './contributeHeaderMobile'
 import { BuildWith } from './buildWith'
-import { AwesomeDesc } from './awesomeDesc'
 import { IllaAi } from './illaAi'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -20,7 +19,7 @@ export const Contribute = ({ setActiveKey }) => {
     returnObjects: true,
   })
   const {
-    cards: { card1, card2, card3, card4 },
+    cards: { card1, card2, card3 },
   } = contributeContent
   contributeContent.cards.card1['partner'] = partner
   contributeContent.cards.card2['peoples'] = peoples
@@ -44,34 +43,29 @@ export const Contribute = ({ setActiveKey }) => {
           people={card2.peoples}
         />
       </ContributeCards>
-      <div className={style.contributeCardsGroup}>
-        <ContributeCards title={card3.title} button={card3.button}>
-          <AwesomeDesc desc={card3.desc} />
-        </ContributeCards>
-        <ContributeCards
-          title={card4.title}
-          button={card4.button}
-          titleChildren={
-            <Link href="#swag">
-              <span
-                className={clsx(
-                  style.partnerTitle,
-                  'text-[#FC8E00] cursor-pointer',
-                )}
-              >
-                {t(card4.options)}
-              </span>
-            </Link>
-          }
-        >
-          <div className="flex flex-col gap-[12px] xl:gap-[32px]">
+      <ContributeCards
+        title={card3.title}
+        button={card3.button}
+        titleChildren={
+          <Link href="#swag">
             <span
-              className={clsx(style.cardDesc, style.interFont)}
-              dangerouslySetInnerHTML={{ __html: t(card4.desc) }}
-            />
-          </div>
-        </ContributeCards>
-      </div>
+              className={clsx(
+                style.partnerTitle,
+                'text-[#FC8E00] cursor-pointer',
+              )}
+            >
+              {t(card3.options)}
+            </span>
+          </Link>
+        }
+      >
+        <div className="flex flex-col gap-[12px] xl:gap-[32px]">
+          <span
+            className={clsx(style.cardDesc, style.interFont)}
+            dangerouslySetInnerHTML={{ __html: t(card3.desc) }}
+          />
+        </div>
+      </ContributeCards>
     </div>
   )
 }
