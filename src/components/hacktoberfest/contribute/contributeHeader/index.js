@@ -33,7 +33,7 @@ export const ContributeHeader = ({ setPlayMaskShow, title }) => {
         ))}
       </div>
       <div className={style.buttonGroupStyle}>
-        <Link href="https://github.com/illacloud/illa-builder/blob/main/Hacktoberfest%202023/README.md">
+        <Link href="https://github.com/illacloud/illa-builder/blob/main/hacktoberfest2023/README.md">
           <span className={style.contributeButton}>
             <img src={docIcon} alt="" />
             <span className={style.contributeButtonItem}>

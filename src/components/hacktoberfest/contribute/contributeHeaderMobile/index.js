@@ -14,7 +14,7 @@ export const ContributeHeaderMobile = ({ setPlayMaskShow, title }) => {
   const contents = [
     {
       text: 'contribute-method.steps.doc',
-      href: 'https://github.com/illacloud/illa-builder/blob/main/Hacktoberfest%202023/README.md',
+      href: 'https://github.com/illacloud/illa-builder/blob/main/hacktoberfest2023/README.md',
       longButton: true,
       leftIcon: docIcon,
     },
