@@ -38,7 +38,7 @@ export const ContributeHeaderMobile = ({ setPlayMaskShow, title }) => {
       </div>
       <div className={style.mobileCardTitleBtn}>
         {contents.map((content) => {
-          return <CardButton key={content.title} content={content} />
+          return <CardButton key={content.text} content={content} />
         })}
       </div>
     </div>

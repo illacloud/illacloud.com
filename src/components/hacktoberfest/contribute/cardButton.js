@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { sendTagEvent } from '@/utils/gtag'
 import clsx from 'clsx'
 import add from '@/img/hacktoberfest/add.svg'
+import { Fragment } from 'react'
 
 export const CardButton = ({ content }) => {
   const { t } = useTranslation('hacktober')
@@ -26,7 +27,7 @@ export const CardButton = ({ content }) => {
   }
 
   return (
-    <>
+    <Fragment>
       {onClick ? (
         <div onClick={handleClick}>
           {longButton && (
@@ -72,6 +73,6 @@ export const CardButton = ({ content }) => {
           </div>
         </Link>
       )}
-    </>
+    </Fragment>
   )
 }

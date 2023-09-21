@@ -134,8 +134,8 @@ export const swagContent = [
     icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/package.png',
     titleColor: {
       background: 'linear-gradient(90deg, #A9730B -0.94%, #FFF176 99.06%)',
-      'background-clip': 'text',
-      '-webkit-background-clip': 'text',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
     },
   },
   {
@@ -144,8 +144,8 @@ export const swagContent = [
     icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/digtal.svg',
     titleColor: {
       background: 'linear-gradient(90deg, #949EB7 2.8%, #FFF 99.53%)',
-      'background-clip': 'text',
-      '-webkit-background-clip': 'text',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
     },
   },
 ]
