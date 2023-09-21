@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "HacktoberFest2023|ILLA Cloud",
-    "description": "Juhli HacktoberFestiä ILLA Cloudilla. Osallistumalla ILLA Cloudiin voit vaikuttaa avoimen lähdekoodin yhteisöön ja saada kokemusta ja kiertoajeluja."
+    "description": "Hacktoberfest on avoimen lähdekoodin projektien juhla, niiden loistavat ylläpitäjät ja osallistujien yhteisö. Koko kuukauden ajan me tulemme yhdessä antamaan takaisin yhteisölle ja juhlimaan avoimen lähdekoodin voimaa. Osallistumalla ILLA Cloudiin voit vaikuttaa avoimen lähdekoodin yhteisöön ja saada kokemusta ja swags."
   },
   "hacktober-introduction": {
     "title": "Juhli Hacktoberfest ILLA Cloudilla",
@@ -42,7 +42,15 @@
       "video": "Katso opetusohjelma"
     },
     "title": {
-      "all": "Miten voit osallistua",
+      "all": "Miten voittaa ILLA-swapin",
+      "package": {
+        "title": "Voita ILLA-paketti",
+        "desc": "Ansaitse pisteitä seuraavien 2 menetelmän kautta. Osallistujat jotka sijoittuvat 30 % alkuun saavat ILLA-paketin."
+      },
+      "badge": {
+        "title": "Voita digitaalinen merkki",
+        "desc": "Valmis kaksi tehtävää kerätä kaikki neljä merkkiä."
+      },
       "build-with-illa": "Rakenna ILLAlla",
       "illa-ai": "ILLA with AI",
       "pr": "Lähetä PR ILLAlle",
@@ -55,12 +63,15 @@
         "3": "ILLAHACKTOBERFEST"
       },
       "build-with-illa": {
-        "1": "Rakenna sovellus, jossa käytetään ILLAa ja osallistu sen tuottamiseen ILLA-yhteisölle saadaksesi pisteitä. ",
-        "2": "Käytä ILLA:n kumppaneiden resursseja sovellusten rakentamisessa saadaksesi lisää pisteitä. ",
+        "1": "Rakenna sovellus ja avusta sitä ILLA-yhteisöön ansaitaksesi pisteitä. PR lähettäminen GitHubille ja yhdistäminen ansaitsee bonuspisteitä. ",
+        "2": "Käytä ILLAn kumppaneiden resursseja rakennettaessa sovelluksia ansaitaksesi enemmän pisteitä. ",
         "3": "Olemme järjestäneet joitakin ideoita, ja voit tarkastella niitä, jotka kiinnostavat sinua. Voit ottaa meihin yhteyttä määrittääksesi idean sinulle, ja voit täydentää sen. "
       },
-      "illa-ai": "Rakenna ILLAa käyttävä tekoälyagentti ja auta sitä ILLA-yhteisön luokse saadaksesi pisteitä. ",
-      "pr": "Lähetä pull-pyyntö korjataksesi avoimet ongelmat ja saadaksesi ILLA-paketin, jonka voi yhdistää ILLA. Meillä on kuratoitu luettelo Hacktoberfest asioista, jotka ovat valmiit ottamaan vastaan. Voit lähettää sekä front-end että back-end pull requests.👉 <a href='https://github.com/illacloud/illa-builder/blob/main/CONTRIBUTING.md'>Klikkaa tästä oppia osallistumaan</a>",
+      "illa-ai": "Rakenna AI Agent ja myötävaikuttaa sen ILLA-yhteisön ansaita pisteitä. Lähettämällä PR:n GitHubista ja yhdistämällä se ansaitsee bonuspisteitä. ",
+      "pr": {
+        "1": "1. Voita 2 ensimmäistä merkkiä seuraavalla menetelmällä: Luo ILLA-sovellus > Osallistu ILLA-yhteisöön > Lähetä PR Githubissa > PR yhdistettäväksi",
+        "2": "2. Voita 2 viimeistä merkkiä seuraavalla menetelmällä: Luo AI Agent > Contribute to ILLA Community > Lähetä PR Github > PR on yhdistetty"
+      },
       "awesome": {
         "1": "Lähetä ongelma sovelluksesi tai agenttisi kanssa",
         "2": "Lähetä ominaisuusehdotuksia tai vikailmoituksia"
@@ -182,12 +193,13 @@
       "partner": "Kumppanien resurssi",
       "contribute": "Osallistu",
       "run": "Suorita",
-      "oss": "🎁 Saada OSS paketti"
+      "oss": "🎁 Saada OSS paketti",
+      "submit-pr": "Lähetä PR"
     }
   },
   "swag": {
-    "title": "Voita meidän swapimme",
-    "description": "Tarjoamme kahdenlaisia palkintoja, ja voit voittaa yhden vain osallistumalla kilpailuun. Toinen suuri palkinto myönnetään perusteella lopullinen pistemäärä sijoitukset. Otamme sinuun yhteyttä sen jälkeen, kun tapahtuma on ohi.",
+    "title": "Voita ILLA-swapi",
+    "description": "ILLA Swag ja OSS Swag tarjoavat ILLA:n ja ILLA:n kumppanin.",
     "illa-swag": {
       "title": "ILLA SWAG",
       "desc": "Ansaitse pisteitä osallistumalla ILLA: n kautta jokin edellä mainituista tavoista ja seistä mahdollisuus voittaa jännittäviä palkintoja perustuu pisteitä rankingissa.",
@@ -205,6 +217,16 @@
         "title": "Rookie",
         "desc": "Digitaalinen merkki",
         "swag": "1 <= Pisteet"
+      },
+      "illa-package": {
+        "title": "ILLA Package",
+        "desc": "Swag paketti sisältäen Stickers, puuro magneetti ja Canvas laukku. "
+      },
+      "badge": {
+        "title": "Digitaalinen merkki",
+        "desc": "4 digitaalista merkkiä, jotka voidaan lisätä GitHub, LinkedIn, jne.",
+        "sub-desc-1": "Osallistu ILLA-sovellukseen ja lähetä PR",
+        "sub-desc-2": "Contribute AI Agent and submit PR"
       }
     },
     "oss-swag": {
@@ -320,10 +342,14 @@
       "unknown-1": "???",
       "unknown-2": "Kuka minä olen",
       "title": "Hacktoberfest Kick Pois",
-      "start-time": "2023-01-02 01:00",
-      "end-time": "2023-01-02 04:00",
-      "link": "https://www.illacloud.com",
-      "available": "0",
+      "start-time": "2023-09-27 23:00",
+      "end-time": "2023-09-28 03:00",
+      "link": "https://www.youtube.com/watch?v=qSZ9JhjZ7HM",
+      "available": "1",
+      "google-calendar": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230927T150000Z%2F20230927T190000Z&details=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&text=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "outlook": "https://outlook.live.com/calendar/0/action/compose?allday=false&body=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&enddt=2023-09-27T19%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-09-27T15%3A00%3A00%2B00%3A00&subject=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "office": "https://outlook.office.com/calendar/action/compose?allday=false&body=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&enddt=2023-09-27T19%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-09-27T15%3A00%3A00%2B00%3A00&subject=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "yahoo": "https://calendar.yahoo.com/?desc=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&dur=&et=20230927T190000Z&st=20230927T150000Z&title=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off&v=60",
       "list-top": [
         {
           "company": "Appwrite",

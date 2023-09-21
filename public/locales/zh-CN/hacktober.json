@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Hacktoberfest2023｜ILLA Cloud",
-    "description": "与ILLA Cloud一同庆祝Hacktoberfest。贡献到ILLA Cloud，即有机会获得精美礼物。"
+    "description": "Hacktoberfest是开源项目及其杰出的维护者和贡献者们的庆典。 在整整一个月里，我们一同回馈社区，为开源的力量欢呼。希望您参与其中，与我们共同庆祝。通过贡献给ILLA Cloud，您能够从开源社区汲取到经验并对其产生影响，同时能够赢取ILLA的奖励。"
   },
   "hacktober-introduction": {
     "title": "与ILLA Cloud一同庆祝Hacktoberfest",
@@ -42,7 +42,15 @@
       "video": "观看教程"
     },
     "title": {
-      "all": "如何贡献",
+      "all": "如何赢得ILLA swag",
+      "package": {
+        "title": "赢得ILLA礼包",
+        "desc": "通过以下两种方法赚取积分。参与者在30%的排名中的积分将收到一个ILLA礼包。"
+      },
+      "badge": {
+        "title": "赢得数字徽章",
+        "desc": "完成两项任务来集齐四张徽章"
+      },
       "build-with-illa": "使用 ILLA 构建",
       "illa-ai": "ILLA with AI",
       "pr": "将PR提交给ILLA",
@@ -55,12 +63,15 @@
         "3": "ILLAHACKTOBERFEST"
       },
       "build-with-illa": {
-        "1": "使用 ILLA 构建应用，并将其贡献到ILLA社区以获取积分。 ",
-        "2": "在构建应用程序，将ILLA的合作伙伴作为Resource，能获得更多积分。",
+        "1": "创建一个应用并将其贡献到ILLA社区来赚取积分。在GitHub上提交PR 并被合并将获得额外积分。",
+        "2": "在构建应用程序时，将ILLA的合作伙伴作为Resource，能获得更多积分。",
         "3": "我们已经整理了一些想法，您可以寻找那些你感兴趣的想法，联系我们分配给您，并完成它。"
       },
-      "illa-ai": "使用 ILLA 创建AI Agent，并将其贡献到ILLA社区以获取积分。 ",
-      "pr": "解决我们的Open issue并提交PR，被ILLA合并后即可获得ILLA Package大礼包。 我们已经准备好了 Hacktoberfest issue列表供您挑选。 👉 <a href='https://github.com/illacloud/illa-builder/blob/main/CONTRIBUTING.md'>单击此处了解如何贡献 </a>",
+      "illa-ai": "创建一个AI Agent并将其贡献到ILLA 社区以赚取积分。在GitHub上提交PR 并被合并将获得额外积分。",
+      "pr": {
+        "1": "1. 通过以下方法赢得前两个徽章：创建一个ILLA app > 贡献给ILLA Community > 提交PR 在 Github > PR 被合并",
+        "2": "2. 通过以下方法赢得后两个徽章：创建一个 AI Agent > 对ILLA 社区的贡献 > 在Github > PR 被合并"
+      },
       "awesome": {
         "1": "提交一个issue说明您贡献的应用或Agent",
         "2": "提交功能建议或错误报告"
@@ -182,15 +193,16 @@
       "partner": "合作伙伴资源",
       "contribute": "贡献",
       "run": "运行",
-      "oss": "🎁 获取开源礼包"
+      "oss": "🎁 获取开源礼包",
+      "submit-pr": "提交 PR"
     }
   },
   "swag": {
-    "title": "赢得奖励",
-    "description": "我们提供两种奖项，你只需参加比赛就能赢得一种。 另外一个主要奖项将根据最终评分等级授予。我们将在活动结束后与您联系。",
+    "title": "赢得ILLA Swag",
+    "description": "ILLA Swag和OSS Swag分别由ILLA和ILLA的合作伙伴提供",
     "illa-swag": {
       "title": "ILLA SWAG",
-      "desc": "通过以上任何方式为ILLA做出贡献获得积分，就有机会根据您的积分排名赢得奖励。",
+      "desc": "ILLA Swag共有三个等级。只要您贡献到ILLA，就可以赢得ILLA的Rookie级别的swag。赢得Master和Ace级别的swag的资格，将由您的积分排名决定。增加您的贡献数量将有助于快速提高您的积分，并有可能获得Master和Ace级别的swag资格。",
       "ace": {
         "title": "Ace",
         "desc": "开源礼包",
@@ -205,6 +217,16 @@
         "title": "Rookie",
         "desc": "数字徽章",
         "swag": "1 <= 积分"
+      },
+      "illa-package": {
+        "title": "ILLA礼包",
+        "desc": "包含贴纸、冰箱贴和帆布袋的大礼包。"
+      },
+      "badge": {
+        "title": "数字徽章",
+        "desc": "可添加到您的 GitHub 、 LinkedIn等的4个数字徽章。",
+        "sub-desc-1": "贡献ILLA 应用并提交 PR",
+        "sub-desc-2": "贡献AI Agent并提交 PR"
       }
     },
     "oss-swag": {
@@ -312,7 +334,7 @@
       "november": "十一月",
       "december": "十二月"
     },
-    "google-calenar": "添加至Google Calendar",
+    "google-calenar": "Google Calendar",
     "outlook": "添加至Outlook",
     "yahoo": "添加至Yahoo",
     "office": "添加至Office 365",
@@ -320,10 +342,14 @@
       "unknown-1": "???",
       "unknown-2": "Who am I",
       "title": "Hacktoberfest Kick Off",
-      "start-time": "2023-01-02 01:00",
-      "end-time": "2023-01-02 04:00",
-      "link": "https://www.illacloud.com",
-      "available": "0",
+      "start-time": "2023-09-27 23:00",
+      "end-time": "2023-09-28 03:00",
+      "link": "https://www.youtube.com/watch?v=qSZ9JhjZ7HM",
+      "available": "1",
+      "google-calendar": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230927T150000Z%2F20230927T190000Z&details=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&text=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "outlook": "https://outlook.live.com/calendar/0/action/compose?allday=false&body=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&enddt=2023-09-27T19%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-09-27T15%3A00%3A00%2B00%3A00&subject=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "office": "https://outlook.office.com/calendar/action/compose?allday=false&body=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&enddt=2023-09-27T19%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-09-27T15%3A00%3A00%2B00%3A00&subject=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off",
+      "yahoo": "https://calendar.yahoo.com/?desc=ILLA%20Cloud%20teams%20up%20with%2012%20partners%20to%20host%20the%20Hacktoberfest%20Kick-off%20live%20event.%20During%20the%20live%20stream%2C%20we%20will%20introduce%20our%20event%20prizes%20and%20participation%20methods.%20Live%20stream%20link%3A%20https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqSZ9JhjZ7HM&dur=&et=20230927T190000Z&st=20230927T150000Z&title=ILLA%20Cloud%20Hacktoberfest%20Kick%20Off&v=60",
       "list-top": [
         {
           "company": "Appwrite",
