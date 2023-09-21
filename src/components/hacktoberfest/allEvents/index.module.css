@@ -30,7 +30,8 @@
 }
 
 .centerContentInfo {
-  @apply flex flex-col items-center gap-[16px] text-white-01;
+  @apply absolute left-[50%] flex flex-col items-center gap-[16px] text-white-01;
+  transform: translateX(-50%);
 }
 .centerInfoTitle {
   @apply w-full text-center font-jetBrains text-white-01 text-[24px] leading-[26px] font-[700];
