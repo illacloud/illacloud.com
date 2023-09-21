@@ -2,26 +2,10 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import * as ReactDOM from 'react-dom'
-import { Player } from '@/components/comm/player'
 import { LinearGithubIcon } from '@/img/public/linearGithub'
 import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 import { sendTagEvent } from '@/utils/gtag'
 import { useUtmParams } from '@/hooks/useUtmParams'
-
-export const Modal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null
-  return ReactDOM.createPortal(
-    <div className="fixed top-0 left-0 w-full z-50">
-      <Player
-        menuExpand
-        closeMenu={onClose}
-        link="https://cdn.illacloud.com/official-website/img/home/video.mp4"
-      />
-    </div>,
-    document.body,
-  )
-}
 
 export const MobileTitle = (props) => {
   const { t } = useTranslation('home')

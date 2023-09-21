@@ -1,8 +1,8 @@
 import style from './index.module.css'
 import { Title } from './title'
-import { Banner } from './banner'
 import { Contribute } from './contribute'
-import { Swag } from './swag'
+import { OSSSwag } from './ossSwag'
+import { WinSwag } from './winSwag'
 import { Events } from './events'
 import { useInitHackBtn } from './hooks/useInitHackBtn'
 
@@ -12,12 +12,12 @@ export const MainContent = ({ setPlayMaskShow, setActiveKey }) => {
     <div className={style.mainContentContainer}>
       <Title />
       <div className={style.allContentContainer}>
-        <Banner />
-        <Swag setActiveKey={setActiveKey} />
+        <WinSwag setActiveKey={setActiveKey} />
         <Contribute
           setActiveKey={setActiveKey}
           setPlayMaskShow={setPlayMaskShow}
         />
+        <OSSSwag setActiveKey={setActiveKey} />
         <Events setActiveKey={setActiveKey} />
       </div>
     </div>

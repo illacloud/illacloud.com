@@ -3,6 +3,8 @@ import { ContributeCards } from './contributeCards'
 import { useTranslation } from 'next-i18next'
 import { ContributeHeader } from './contributeHeader'
 import { ContributeHeaderMobile } from './contributeHeaderMobile'
+import { StepCard } from './stepCard'
+import { StepCardMobile } from './stepCardMobile'
 import { BuildWith } from './buildWith'
 import { IllaAi } from './illaAi'
 import clsx from 'clsx'
@@ -35,43 +37,63 @@ export const Contribute = ({ setPlayMaskShow, setActiveKey }) => {
         setPlayMaskShow={setPlayMaskShow}
         {...contributeContent.info}
       />
-      <ContributeCards title={card1.title} button={card1.button}>
-        <BuildWith
-          descList={card1.desc}
-          options={card1.options}
-          partner={card1.partner}
-        />
-      </ContributeCards>
-      <ContributeCards title={card2.title} button={card2.button}>
-        <IllaAi
-          desc={card2.desc}
-          options={card2.options}
-          people={card2.peoples}
-        />
-      </ContributeCards>
-      <ContributeCards
-        title={card3.title}
-        button={card3.button}
-        titleChildren={
-          <Link href="#swag">
-            <span
-              className={clsx(
-                style.partnerTitle,
-                'text-[#FC8E00] cursor-pointer',
-              )}
-            >
-              {t(card3.options)}
-            </span>
-          </Link>
-        }
-      >
-        <div className="flex flex-col gap-[12px] xl:gap-[32px]">
-          <span
-            className={clsx(style.cardDesc, style.interFont)}
-            dangerouslySetInnerHTML={{ __html: t(card3.desc) }}
-          />
+      <div className={style.contributeContentContainer}>
+        <div className={style.contributeContentInfoContainer}>
+          <span className={clsx(style.winTitle, style.winSwagTitle)}>
+            {t('contribute-method.title.package.title')}
+          </span>
+          <span className={style.winSwagDesc}>
+            {t('contribute-method.title.package.desc')}
+          </span>
         </div>
-      </ContributeCards>
+        <ContributeCards title={card1.title} button={card1.button}>
+          <BuildWith
+            descList={card1.desc}
+            options={card1.options}
+            partner={card1.partner}
+          />
+        </ContributeCards>
+        <ContributeCards title={card2.title} button={card2.button}>
+          <IllaAi
+            desc={card2.desc}
+            options={card2.options}
+            people={card2.peoples}
+          />
+        </ContributeCards>
+      </div>
+      <div className={style.contributeContentContainer}>
+        <span className={clsx(style.winTitle, style.winDigtalTitle)}>
+          {t('contribute-method.title.package.title')}
+        </span>
+        <StepCard />
+        <StepCardMobile />
+        <ContributeCards
+          title={card3.title}
+          button={card3.button}
+          titleChildren={
+            <Link href="#swag">
+              <span
+                className={clsx(
+                  style.partnerTitle,
+                  'text-[#FC8E00] cursor-pointer',
+                )}
+              >
+                {t(card3.options)}
+              </span>
+            </Link>
+          }
+        >
+          <div className="flex flex-col gap-[12px] xl:gap-[32px]">
+            <span
+              className={clsx(style.cardDesc, style.interFont, 'flex flex-col')}
+            >
+              {card3.desc.map((val) => (
+                <span key={val}>{t(val)}</span>
+              ))}
+            </span>
+          </div>
+        </ContributeCards>
+      </div>
     </div>
   )
 }

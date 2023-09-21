@@ -8,7 +8,7 @@ const Player = forwardRef(({ menuExpand, closeMenu, link }, ref) => {
     <div
       ref={ref}
       className={clsx(
-        'h-screen w-full  absolute left-0 xl:px-[200px]   z-50 font-bold text-[16px] bg-black/[0.64]',
+        'h-screen flex justify-center items-center w-full  absolute left-0 xl:px-[200px]   z-50 font-bold text-[16px] bg-black/[0.64]',
         'overflow-y-hidden',
         menuExpand ? 'flex' : 'hidden',
       )}

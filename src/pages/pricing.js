@@ -13,10 +13,8 @@ import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/home/Pricing/index.module.css'
 import { useRouter } from 'next/router'
 import { CommBottom } from '@/components/comm/commBottom'
-import useMeasure from "react-use-measure"
+import useMeasure from 'react-use-measure'
 import { PricingSchemaData } from '@/components/schemaData/pricingSchemaData'
-import { compare } from '@/constants/content'
-
 
 const Pricing = () => {
   const { t } = useTranslation('pricing')
@@ -35,20 +33,25 @@ const Pricing = () => {
         <meta name="description" content={t('meta-desc')} />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
-            }pricing`}
+          href={`https://www.illacloud.com/${
+            router.locale === 'en-US' ? '' : `${router.locale}/`
+          }pricing`}
         />
       </Head>
       <PricingSchemaData />
       <PricingMask rect={rect} />
-      <div ref={ref} className='w-full px-0'>
+      <div ref={ref} className="w-full px-0">
         <div className={style.pricingContainer}>
-          <Nav whiteTheme={false} customStyle={customNavStyle} onChangeShow={() => setIsBookShow(true)} />
-          <div className='w-full text-white xl:pt-[120px] bg-transparent'>
+          <Nav
+            whiteTheme={false}
+            customStyle={customNavStyle}
+            onChangeShow={() => setIsBookShow(true)}
+          />
+          <div className="w-full text-white xl:pt-[120px] bg-transparent">
             <PricingContent onChangeShow={() => setIsBookShow(true)} />
-            <PricingCompare needReport={false} showExtra={false} compare={compare} />
+            <PricingCompare needReport={false} showExtra={false} />
             <OpenSource />
-            <FAQ translationSpace='pricing' />
+            <FAQ translationSpace="pricing" />
             <CommBottom scrollStart={0.88} scrollEnd={0.93} />
           </div>
         </div>
@@ -63,7 +66,7 @@ const Pricing = () => {
 }
 export const getServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['pricing', 'home', "common"])),
+    ...(await serverSideTranslations(locale, ['pricing', 'home', 'common'])),
   },
 })
 

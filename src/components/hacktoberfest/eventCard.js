@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { sendTagEvent } from '@/utils/gtag'
 import { useTranslation } from 'next-i18next'
 
-export const EventCard = ({ content }) => {
+export const EventCard = ({ content, handleCalendarClick }) => {
   const { t } = useTranslation('hacktober')
   const {
     title,
@@ -31,6 +31,16 @@ export const EventCard = ({ content }) => {
       category: 'hacktober_live_click',
       label: title,
     })
+  }
+  const onCalendarClick = (e) => {
+    e.stopPropagation()
+    const optionsCardValue = {
+      googleLink: content['google-calendar'],
+      microsoftLink: content['outlook'],
+      officeLink: content['office'],
+      yahooLink: content['yahoo'],
+    }
+    handleCalendarClick && handleCalendarClick(e, optionsCardValue)
   }
   return (
     <div className="flex flex-col mt-[16px] xl:mt-0">
@@ -72,17 +82,29 @@ export const EventCard = ({ content }) => {
             </div>
             <img src={logo} alt="" />
           </div>
-          {parseInt(available) !== 0 && (
-            <Link href={link} onClick={onClick}>
-              <div className={clsx(style.eventGo, 'bg-white-01')}>
+          {parseInt(available) !== 0 &&
+            (state === 'isComing' ? (
+              <div
+                className={clsx(style.eventGo, 'bg-white-01')}
+                onClick={onCalendarClick}
+              >
                 <img
-                  src={state === 'isComing' ? eventComingIcon : eventGoIcon}
+                  src={eventComingIcon}
                   className="w-[18px] xl:w-[24px]"
                   alt=""
                 />
               </div>
-            </Link>
-          )}
+            ) : (
+              <Link href={link} onClick={onClick}>
+                <div className={clsx(style.eventGo, 'bg-white-01')}>
+                  <img
+                    src={eventGoIcon}
+                    className="w-[18px] xl:w-[24px]"
+                    alt=""
+                  />
+                </div>
+              </Link>
+            ))}
         </div>
       )}
       <div className={style.eventTimeContainer}>

@@ -4,7 +4,7 @@ import { getDayKey } from '@/utils/getFormatDate'
 import { EventListPc } from './pcList'
 import { EventListMobile } from './mobileList'
 
-export const AllEvents = () => {
+export const AllEvents = ({ handleCalendarClick }) => {
   const { t } = useTranslation('hacktober')
   const kickOff = t('event.kick-off', { returnObjects: true })
   const startTime = dayjs(kickOff['start-time'])
@@ -20,6 +20,17 @@ export const AllEvents = () => {
     state = 'isComing'
   } else {
     state = 'isIn'
+  }
+
+  const onCalendarClick = (e) => {
+    e.stopPropagation()
+    const optionsCardValue = {
+      googleLink: kickOff['google-calendar'],
+      microsoftLink: kickOff['outlook'],
+      officeLink: kickOff['office'],
+      yahooLink: kickOff['yahoo'],
+    }
+    handleCalendarClick && handleCalendarClick(e, optionsCardValue)
   }
 
   const eventGoIcon =
@@ -39,6 +50,7 @@ export const AllEvents = () => {
         eventComingIcon={eventComingIcon}
         eventGoIcon={eventGoIcon}
         dateState={state}
+        onCalendarClick={onCalendarClick}
       />
       <EventListMobile
         kickOff={kickOff}
@@ -50,6 +62,7 @@ export const AllEvents = () => {
         eventComingIcon={eventComingIcon}
         eventGoIcon={eventGoIcon}
         dateState={state}
+        onCalendarClick={onCalendarClick}
       />
     </>
   )

@@ -1,0 +1,30 @@
+.cardsContainer {
+  @apply w-full flex xl:hidden flex-col items-center justify-start gap-[16px];
+}
+.cardContainer {
+  @apply flex items-start gap-[16px] font-sans;
+}
+
+.labelStyle {
+  @apply flex flex-col items-center gap-[8px];
+}
+
+.labelNumStyle {
+  @apply shrink-0 text-[14px] font-[500] w-[24px] h-[24px] rounded-[50%] bg-[#EDFF7C] flex items-center justify-center text-[#1D2129] leading-[22px];
+}
+
+.labelLineStyle {
+  @apply w-[1px] h-[60px] bg-white-01;
+}
+
+.labelContentContainerStyle {
+  @apply flex flex-col items-start gap-[4px];
+}
+
+.labelContentStyle {
+  @apply text-[16px] font-[500] text-white-01 leading-[24px] whitespace-nowrap;
+}
+
+.labelDescStyle {
+  @apply w-[280px] text-[12px] font-[400] text-white-04 leading-[16px];
+}

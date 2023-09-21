@@ -87,7 +87,7 @@ const Hacktoberfest = ({ uri }) => {
           activeKey={activeKey}
           setActiveKey={setActiveKey}
         />
-        <div className="bg-gray-01 relative z-[1]">
+        <div className="bg-gray-01 relative z-[0] xl:z-[1]">
           <CommBottom scrollStart={0.9} scrollEnd={1} uri={uri} />
         </div>
       </div>
