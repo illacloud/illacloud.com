@@ -13,6 +13,10 @@ const tabsList = [
     href: '#contribute',
   },
   {
+    title: 'swag.oss-swag.title',
+    href: '#oss',
+  },
+  {
     title: 'event.title',
     href: '#event',
   },

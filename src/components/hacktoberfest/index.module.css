@@ -41,21 +41,6 @@
   @apply xl:text-[16px] xl:leading-[28px] xl:font-[700];
 }
 
-.bannerContainer {
-  @apply flex flex-col items-center mt-[54px] gap-[40px];
-  @apply xl:mt-[33px];
-}
-.bannerImg {
-  @apply xl:px-0 px-[8px] w-[343px] xl:w-[940px];
-}
-.bannerTitle {
-  @apply text-[24px] font-[700] leading-[32px] text-center;
-  @apply xl:text-[40px] xl:leading-[48px];
-}
-.bannerDescription {
-  @apply flex flex-col text-[14px] leading-[17px] gap-[17px] w-full text-center items-center;
-  @apply xl:text-[16px] xl:gap-[22px] xl:leading-[22px] xl:w-[1032px] font-[400];
-}
 .contentTitle {
   @apply text-[24px]  leading-[32px] text-center;
   @apply xl:text-[64px] xl:leading-[72px] xl:text-start;
@@ -76,53 +61,30 @@
   @apply xl:gap-[80px] xl:pt-[200px];
 }
 .swagInfoContent {
-  @apply w-full flex flex-col gap-[16px] items-center;
-  @apply xl:w-[800px] text-center;
-}
-.swagOptions {
-  @apply w-full flex flex-col gap-[40px];
-  @apply xl:gap-[80px];
-}
-.swagContent {
-  @apply flex flex-col items-center gap-[16px];
-  @apply xl:gap-[32px];
+  @apply w-full text-center flex flex-col items-center gap-[8px];
+  @apply xl:w-[800px] xl:gap-[16px];
 }
 
-.swagOptionContent {
-  @apply flex flex-col items-center justify-between text-center w-[112px] py-[16px] px-[8px] rounded-t-[8px] rounded-r-[8px];
-  @apply xl:w-[384px] xl:py-[32px] xl:px-[16px];
-  background: linear-gradient(
-    180deg,
-    rgba(255, 198, 52, 0.16) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-.swagContentTitle {
-  @apply text-[20px] font-[400] font-eurostile;
-  @apply xl:text-[32px];
-  background: linear-gradient(90deg, #ffe500 0%, #fff176 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .swagContentDesc {
   @apply w-full xl:w-[800px] text-[14px] font-[400] text-white-01 font-sans;
 }
 .optionInfo {
-  @apply flex flex-col items-center justify-center font-eurostile gap-[8px];
+  @apply flex flex-col items-center text-center gap-[8px];
 }
 .optionTitle {
-  @apply text-[20px] font-[400];
+  @apply text-[20px] font-[400] font-eurostile;
   @apply xl:text-[32px];
   -webkit-text-fill-color: transparent;
 }
 .optionDesc {
-  @apply text-[12px];
-  @apply xl:text-[20px] font-[400] text-white-01;
+  @apply text-[12px] font-sans;
+  @apply xl:text-[16px] font-[400] text-white-01;
 }
-.optionsExtra {
-  @apply text-[12px] font-[400] leading-[15px];
-  @apply xl:text-[16px] xl:leading-[22px] text-white-01 font-sans;
+
+/* oss swag */
+.ossSwagContainer {
+  @apply w-full flex flex-col items-center gap-[40px] pt-[100px];
+  @apply xl:pt-[200px];
 }
 .ossList {
   @apply grid grid-cols-1 gap-[16px] w-full;
@@ -159,19 +121,16 @@
 }
 /* swag */
 .swagCardContainer {
-  @apply w-full flex justify-between items-end min-h-0;
-  @apply xl:min-h-[473px];
+  @apply w-full flex justify-between flex-col xl:flex-row gap-[20px];
 }
 .swagCard {
-  @apply flex flex-col items-center gap-[16px];
-  @apply xl:gap-[32px];
+  @apply flex flex-col items-center gap-[20px] w-full p-[20px] shrink-0 rounded-[4px] bg-white/[0.08] border border-white-09;
+  @apply xl:gap-[40px] xl:w-[588px] xl:py-[40px] xl:px-[0] xl:rounded-[8px];
 }
-.swagItemTranslation {
-  transition: all 500ms ease-out;
-}
+
 .swagCardImg {
-  @apply w-[64px] rounded-[4px];
-  @apply xl:w-[200px] xl:rounded-[8px];
+  @apply w-full rounded-[4px];
+  @apply xl:w-[320px] xl:rounded-[8px];
 }
 .eventsContainer {
   @apply w-full flex flex-col items-center relative pt-[100px] gap-[24px];

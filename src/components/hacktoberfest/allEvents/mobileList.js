@@ -13,6 +13,7 @@ export const EventListMobile = ({
   eventGoIcon,
   eventComingIcon,
   dateState,
+  onCalendarClick,
 }) => {
   const { t } = useTranslation('hacktober')
   const listTop = kickOff['list-top']
@@ -49,17 +50,20 @@ export const EventListMobile = ({
           ))}
       </div>
       {parseInt(kickOff['available']) !== 0 && (
-        <Link href={kickOff['link']}>
-          <div className={style.mobileStartStyle}>
-            <img
-              src={dateState === 'isComing' ? eventComingIcon : eventGoIcon}
-              className="w-[18px]"
-              alt=""
-            />
-          </div>
-        </Link>
+        <>
+          {dateState === 'isComing' ? (
+            <div className={style.mobileStartStyle} onClick={onCalendarClick}>
+              <img src={eventComingIcon} className="w-[18px]" alt="" />
+            </div>
+          ) : (
+            <Link href={kickOff['link']}>
+              <div className={style.mobileStartStyle}>
+                <img src={eventGoIcon} className="w-[18px]" alt="" />
+              </div>
+            </Link>
+          )}
+        </>
       )}
     </div>
   )
 }
-// parseInt(kickOff['available']) !== 0

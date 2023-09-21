@@ -13,7 +13,6 @@ export const CardButton = ({ content }) => {
     category,
     pureButton,
     longButton,
-    extraStyle,
     onClick,
     leftIcon,
   } = content
@@ -32,12 +31,7 @@ export const CardButton = ({ content }) => {
         <div onClick={handleClick}>
           {longButton && (
             <div className={style.longCardButtonContainer}>
-              <div
-                className={clsx(
-                  style.longCardButton,
-                  extraStyle ?? 'xl:w-[235px]',
-                )}
-              >
+              <div className={clsx(style.longCardButton)}>
                 <span className={style.cardButtonContent}>
                   <img src={leftIcon ?? add} alt="" width="16" />
                   {t(text)}
@@ -59,12 +53,7 @@ export const CardButton = ({ content }) => {
           <div>
             {longButton && (
               <div className={style.longCardButtonContainer}>
-                <div
-                  className={clsx(
-                    style.longCardButton,
-                    extraStyle ?? 'xl:w-[235px]',
-                  )}
-                >
+                <div className={clsx(style.longCardButton)}>
                   <span className={style.cardButtonContent}>
                     <img src={leftIcon ?? add} alt="" width="16" />
                     {t(text)}

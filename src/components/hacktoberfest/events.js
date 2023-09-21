@@ -8,6 +8,8 @@ import { AllEvents } from './allEvents'
 import { getDayKey } from '@/utils/getFormatDate'
 import { useRouter } from 'next/router'
 import { useActiveTab } from './hooks/useActiveTab'
+import { useState } from 'react'
+import { OptionsCard } from './optionsCard'
 
 const eventsContent = {
   title: 'event.title',
@@ -18,9 +20,23 @@ export const Events = ({ setActiveKey }) => {
   const { t } = useTranslation('hacktober')
   const ref = useActiveTab('#event', setActiveKey)
   const router = useRouter()
+  const [visibility, setVisibility] = useState(false)
+  const [top, setTop] = useState(0)
+  const [left, setLeft] = useState(0)
+  const [content, setContent] = useState('')
+
+  const handleCalendarClick = (e, value) => {
+    const { left, top } = e.currentTarget.getBoundingClientRect()
+    setVisibility(!visibility)
+    setTop(top)
+    setLeft(left)
+    setContent(value)
+  }
+
   const eventList = t('event.list', {
     returnObjects: true,
   })
+
   eventList.sort((a, b) => a.sort - b.sort)
   const curEventList = eventList.map((content) => {
     const startTime = dayjs(content['start-time'])
@@ -59,12 +75,22 @@ export const Events = ({ setActiveKey }) => {
       >
         {t(eventsContent.title)}
       </h1>
-      <AllEvents />
+      <AllEvents handleCalendarClick={handleCalendarClick} />
       <div className={style.eventCardContainer}>
         {curEventList.map((content) => (
-          <EventCard key={content.partner} content={content} />
+          <EventCard
+            key={content.partner}
+            content={content}
+            handleCalendarClick={handleCalendarClick}
+          />
         ))}
       </div>
+      <OptionsCard
+        content={content}
+        visible={visibility}
+        styles={{ left, top }}
+        handleVisible={setVisibility}
+      />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 .contributeContainer {
-  @apply w-full flex flex-col items-center gap-[24px]  pt-[100px];
-  @apply xl:gap-[48px] xl:pt-[200px];
+  @apply w-full flex flex-col items-center gap-[60px]  pt-[100px];
+  @apply xl:gap-[80px] xl:pt-[200px];
 }
 .eurostileFont {
   @apply font-eurostile;
@@ -8,7 +8,33 @@
 .interFont {
   @apply font-sans;
 }
-
+.contributeContentContainer {
+  @apply w-full flex flex-col items-center gap-[24px];
+  @apply xl:gap-[32px];
+}
+.contributeContentInfoContainer {
+  @apply w-full flex flex-col justify-center items-center gap-[8px];
+  @apply xl:gap-[16px];
+}
+.winTitle {
+  @apply text-[20px] font-[400] font-eurostile;
+  @apply xl:text-[32px];
+  -webkit-text-fill-color: transparent;
+}
+.winSwagTitle {
+  background: linear-gradient(90deg, #a9730b -0.94%, #fff176 99.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.winDigtalTitle {
+  background: linear-gradient(90deg, #949eb7 2.8%, #fff 99.53%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.winSwagDesc {
+  @apply text-[12px] font-sans text-center;
+  @apply xl:text-[16px] font-[400] text-white-01;
+}
 .contributeTitle {
   @apply text-[24px] leading-[32px] text-center;
   @apply xl:text-[64px] xl:leading-[72px];
@@ -58,15 +84,15 @@
 }
 .longCardButton {
   @apply flex items-center justify-center cursor-pointer py-[10px] px-[16px] rounded-[22px];
-  @apply xl:py-[8px] xl:rounded-[20px] xl:w-auto;
-  @apply box-border w-[271px];
+  @apply xl:py-[8px] xl:rounded-[20px];
+  @apply box-border w-[271px] xl:w-auto;
   background: linear-gradient(90deg, #1c1001 0%, #02171a 100%);
 }
 
 /* ---- */
 .cardButton {
-  @apply flex items-center justify-center cursor-pointer px-[16px] py-[10px] rounded-[22px] w-[272px];
-  @apply xl:py-[8px] xl:rounded-[20px] xl:w-auto;
+  @apply flex items-center justify-center cursor-pointer px-[16px] py-[10px] rounded-[22px];
+  @apply xl:py-[8px] xl:rounded-[20px] w-[271px] xl:w-auto;
   background: linear-gradient(
     90deg,
     rgba(252, 142, 0, 0.12) 0%,
@@ -110,7 +136,7 @@
   @apply xl:px-[12px] xl:w-[488px];
 }
 .partnerIcons {
-  @apply w-full flex flex-wrap justify-center items-start gap-[16px] xl:gap-[40px];
+  @apply w-full flex flex-wrap justify-center items-start gap-[25px] xl:gap-[40px];
 }
 .aiPartnerIcons {
   @apply w-full flex flex-wrap justify-center items-start gap-[16px];

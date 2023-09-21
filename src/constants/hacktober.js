@@ -1,9 +1,3 @@
-export const bannerContent = {
-  title: 'hacktober-illa.title',
-  desc1: 'hacktober-illa.description.1',
-  desc2: 'hacktober-illa.description.2',
-}
-
 export const contributeContent = {
   info: {
     title: 'contribute-method.title.all',
@@ -47,6 +41,11 @@ export const contributeContent = {
           count: '+3',
           icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/partner.svg',
         },
+        {
+          text: 'contribute-method.option.submit-pr',
+          count: '+6',
+          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/github.svg',
+        },
       ],
       button: [
         {
@@ -87,6 +86,11 @@ export const contributeContent = {
           count: '+1',
           icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/run.svg',
         },
+        {
+          text: 'contribute-method.option.submit-pr',
+          count: '+6',
+          icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/github.svg',
+        },
       ],
       button: [
         {
@@ -105,12 +109,15 @@ export const contributeContent = {
     },
     card3: {
       title: 'contribute-method.title.pr',
-      desc: 'contribute-method.description.pr',
+      desc: [
+        'contribute-method.description.pr.1',
+        'contribute-method.description.pr.2',
+      ],
       options: 'contribute-method.option.oss',
       button: [
         {
           text: 'contribute-method.button.pr',
-          href: 'https://github.com/illacloud/illa-builder/issues?q=is%3Aopen+is%3Aissue+label%3Ahacktoberfest+label%3A%22hacktoberfest+developing%22',
+          href: 'https://github.com/illacloud/illa-builder/tree/beta/hacktoberfest2023',
           category: 'hacktober_pr_click',
           longButton: true,
           extraStyle: 'xl:w-[154px]',
@@ -120,51 +127,28 @@ export const contributeContent = {
   },
 }
 
-export const swagContent = {
-  title: 'swag.illa-swag.title',
-  desc: 'swag.illa-swag.desc',
-  options: [
-    {
-      title: 'swag.illa-swag.master.title',
-      label: 'swag.illa-swag.master.desc',
-      extra: 'swag.illa-swag.master.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/master.jpeg',
-      titleColor: {
-        background: 'linear-gradient(90deg, #B1B6C3 0%, #EBF0FF 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[256px]',
-      mobileHeight: 'h-[170px]',
+export const swagContent = [
+  {
+    title: 'swag.illa-swag.illa-package.title',
+    desc: 'swag.illa-swag.illa-package.desc',
+    icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/package.png',
+    titleColor: {
+      background: 'linear-gradient(90deg, #A9730B -0.94%, #FFF176 99.06%)',
+      'background-clip': 'text',
+      '-webkit-background-clip': 'text',
     },
-    {
-      title: 'swag.illa-swag.ace.title',
-      label: 'swag.illa-swag.ace.desc',
-      extra: 'swag.illa-swag.ace.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/ace.png',
-      titleColor: {
-        background: 'linear-gradient(90deg, #FFE500 0%, #FFF176 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[320px]',
-      mobileHeight: 'h-[200px]',
+  },
+  {
+    title: 'swag.illa-swag.badge.title',
+    desc: 'swag.illa-swag.badge.desc',
+    icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/digtal.svg',
+    titleColor: {
+      background: 'linear-gradient(90deg, #949EB7 2.8%, #FFF 99.53%)',
+      'background-clip': 'text',
+      '-webkit-background-clip': 'text',
     },
-    {
-      title: 'swag.illa-swag.rookie.title',
-      label: 'swag.illa-swag.rookie.desc',
-      extra: 'swag.illa-swag.rookie.swag',
-      icon: 'https://cdn.illacloud.com/official-website/img/hacktoberFest/rookie.png',
-      titleColor: {
-        background: 'linear-gradient(90deg, #C66C03 0%, #FFC27B 100%)',
-        'background-clip': 'text',
-        '-webkit-background-clip': 'text',
-      },
-      height: 'xl:h-[224px]',
-      mobileHeight: 'h-[140px]',
-    },
-  ],
-}
+  },
+]
 
 export const ContributeStepCard = [
   {

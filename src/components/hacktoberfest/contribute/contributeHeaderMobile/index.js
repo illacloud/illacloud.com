@@ -2,8 +2,6 @@ import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
-import { ContributeHeaderCard } from './card'
-import { ContributeStepCard } from '@/constants/hacktober'
 import docIcon from '@/img/hacktoberfest/doc.svg'
 import playIcon from '@/img/hacktoberfest/play.svg'
 import { CardButton } from '../cardButton'
@@ -37,18 +35,7 @@ export const ContributeHeaderMobile = ({ setPlayMaskShow, title }) => {
         >
           {t(title)}
         </h1>
-        <div className={style.cardsContainer}>
-          {ContributeStepCard.map((card, index) => (
-            <ContributeHeaderCard
-              key={index}
-              content={card}
-              index={index + 1}
-              isShowLine={index !== ContributeStepCard.length - 1}
-            />
-          ))}
-        </div>
       </div>
-
       <div className={style.mobileCardTitleBtn}>
         {contents.map((content) => {
           return <CardButton key={content.title} content={content} />

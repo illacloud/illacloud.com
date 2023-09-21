@@ -15,6 +15,7 @@ export const EventListPc = ({
   eventGoIcon,
   eventComingIcon,
   dateState,
+  onCalendarClick,
 }) => {
   const { t } = useTranslation('hacktober')
   const listTop = kickOff['list-top']
@@ -55,22 +56,20 @@ export const EventListPc = ({
                   </span>
                 </span>
               </div>
-              <Link href={kickOff['link']}>
-                <div className={style.startStyle}>
-                  <img
-                    src={
-                      dateState === 'isComing' ? eventComingIcon : eventGoIcon
-                    }
-                    className="w-[24px]"
-                    alt=""
-                  />
+              {dateState === 'isComing' ? (
+                <div className={style.startStyle} onClick={onCalendarClick}>
+                  <img src={eventComingIcon} className="w-[24px]" alt="" />
                 </div>
-              </Link>
+              ) : (
+                <Link href={kickOff['link']}>
+                  <div className={style.startStyle}>
+                    <img src={eventGoIcon} className="w-[24px]" alt="" />
+                  </div>
+                </Link>
+              )}
             </>
           ) : (
-            <span className={style.centerInfoTitle}>
-              {t('coming-soon')}
-            </span>
+            <span className={style.centerInfoTitle}>{t('coming-soon')}</span>
           )}
         </div>
       </div>
