@@ -13,7 +13,6 @@ import { CloudTitle } from '@/constants/cloudContent'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { CloudSchemaData } from '@/components/schemaData/cloudSchemaData'
 
-
 const Cloud = ({ uri }) => {
   const { t } = useTranslation('cloud')
   const [isPartnerShow, setIsPartnerShow] = useState(false)
@@ -23,18 +22,25 @@ const Cloud = ({ uri }) => {
   return (
     <>
       <Head>
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={t('meta.title')}
+        />
+        <meta key="og:title" property="og:title" content={t('meta.title')} />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
-            }illacloud`}
+          href={`https://www.illacloud.com/${
+            router.locale === 'en-US' ? '' : `${router.locale}/`
+          }illacloud`}
         />
       </Head>
       <CloudSchemaData />
-      <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
+      <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
-        <Title content={CloudTitle} translationName='cloud' />
+        <Title content={CloudTitle} translationName="cloud" />
         <MainContent uri={uri} />
       </div>
       <Footer scrollStart={0.866} scrollEnd={1} />
@@ -53,8 +59,13 @@ export const getServerSideProps = async ({ locale }) => {
   const uri = await getGithubOauth()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['cloud', 'landingPageDetails', 'home', "common"])),
-      uri
+      ...(await serverSideTranslations(locale, [
+        'cloud',
+        'landingPageDetails',
+        'home',
+        'common',
+      ])),
+      uri,
     },
   }
 }
