@@ -29,6 +29,8 @@ const Pricing = () => {
   return (
     <>
       <Head>
+        <meta key="twitter:title" name="twitter:title" content={t('title')} />
+        <meta key="og:title" property="og:title" content={t('title')} />
         <title>{t('title')}</title>
         <meta name="description" content={t('meta-desc')} />
         <link

@@ -15,7 +15,6 @@ import { getGithubOauth } from '@/utils/getGithubOauth'
 import { IntegrationSchemaData } from '@/components/schemaData/integrationSchemaData'
 import { ComponentsSchemaData } from '@/components/schemaData/componentsSchemaData'
 
-
 const LandingPageIndex = ({ pageName, uri }) => {
   const router = useRouter()
   const [isBookShow, setIsBookShow] = useState(false)
@@ -37,22 +36,42 @@ const LandingPageIndex = ({ pageName, uri }) => {
   return (
     <>
       <Head>
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={t(`${pageName}.meta.title`)}
+        />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={t(`${pageName}.meta.title`)}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={t(`${pageName}.meta.description`)}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={t(`${pageName}.meta.description`)}
+        />
         <title>{t(`${pageName}.meta.title`)}</title>
         <meta name="description" content={t(`${pageName}.meta.description`)} />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
-            }${pageName}`}
+          href={`https://www.illacloud.com/${
+            router.locale === 'en-US' ? '' : `${router.locale}/`
+          }${pageName}`}
         />
       </Head>
-      {
-        pageName === 'integrations' ? <IntegrationSchemaData /> : <ComponentsSchemaData />
-      }
+      {pageName === 'integrations' ? (
+        <IntegrationSchemaData />
+      ) : (
+        <ComponentsSchemaData />
+      )}
       <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
-        <Nav
-          whiteTheme
-          onChangeShow={() => setIsBookShow(true)}
-        />
+        <Nav whiteTheme onChangeShow={() => setIsBookShow(true)} />
         <div className={style.lpContainer}>
           <LpHeader
             title={t(`${pageName}.headerContent.title`)}
@@ -93,7 +112,7 @@ export const getServerSideProps = async ({ locale, params }) => {
         'common',
       ])),
       pageName,
-      uri
+      uri,
     },
   }
 }

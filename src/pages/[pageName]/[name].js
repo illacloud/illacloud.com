@@ -13,7 +13,6 @@ import { pageMap } from '@/constants/landingPage'
 import { CommBottom } from '@/components/comm/commBottom'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 
-
 const LandingPageSecond = ({ pageName, name, locale, uri }) => {
   const { t } = useTranslation('landingPageDetails')
   const [isBookShow, setIsBookShow] = useState(false)
@@ -37,19 +36,29 @@ const LandingPageSecond = ({ pageName, name, locale, uri }) => {
   return (
     <>
       <Head>
+        <meta key="twitter:title" name="twitter:title" content={metaTitle} />
+        <meta key="og:title" property="og:title" content={metaTitle} />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={metaDescription}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={metaDescription}
+        />
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com/${locale === 'en-US' ? '' : `${locale}/`
-            }${pageName}/${name}`}
+          href={`https://www.illacloud.com/${
+            locale === 'en-US' ? '' : `${locale}/`
+          }${pageName}/${name}`}
         />
       </Head>
       <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
-        <Nav
-          whiteTheme
-          onChangeShow={() => setIsBookShow(true)}
-        />
+        <Nav whiteTheme onChangeShow={() => setIsBookShow(true)} />
         <div className={style.lpContainer}>
           <LpHeader
             title={t(`${pageName}.${name}.title`)}
@@ -62,7 +71,12 @@ const LandingPageSecond = ({ pageName, name, locale, uri }) => {
           />
           <LpTemplate />
         </div>
-        <CommBottom whiteTheme scrollStart={0.724} scrollEnd={0.777} uri={uri} />
+        <CommBottom
+          whiteTheme
+          scrollStart={0.724}
+          scrollEnd={0.777}
+          uri={uri}
+        />
       </div>
       <BookDemo
         visible={isBookShow}
@@ -93,7 +107,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       pageName,
       name,
       locale,
-      uri
+      uri,
     },
   }
 }

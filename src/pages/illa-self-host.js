@@ -11,7 +11,6 @@ import { getGithubOauth } from '@/utils/getGithubOauth'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { SelfHostSchemaData } from '@/components/schemaData/selfHostSchemaData'
 
-
 const Cloud = ({ uri }) => {
   const { t } = useTranslation('selfHost')
   const [isPartnerShow, setIsPartnerShow] = useState(false)
@@ -21,16 +20,23 @@ const Cloud = ({ uri }) => {
   return (
     <>
       <Head>
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={t('meta.title')}
+        />
+        <meta key="og:title" property="og:title" content={t('meta.title')} />
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
         <link
           rel="canonical"
-          href={`https://www.illacloud.com/${router.locale === 'en-US' ? '' : `${router.locale}/`
-            }illa-self-host`}
+          href={`https://www.illacloud.com/${
+            router.locale === 'en-US' ? '' : `${router.locale}/`
+          }illa-self-host`}
         />
       </Head>
       <SelfHostSchemaData />
-      <div className='bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat'>
+      <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
         <MainContent uri={uri} />
       </div>
@@ -50,8 +56,13 @@ export const getServerSideProps = async ({ locale }) => {
   const uri = await getGithubOauth()
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['selfHost', 'landingPageDetails', 'home', "common"])),
-      uri
+      ...(await serverSideTranslations(locale, [
+        'selfHost',
+        'landingPageDetails',
+        'home',
+        'common',
+      ])),
+      uri,
     },
   }
 }
