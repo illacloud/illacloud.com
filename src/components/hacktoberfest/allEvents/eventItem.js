@@ -14,7 +14,10 @@ export const EventItem = ({ content, isTop }) => {
       <Link href={content['partner-link'] || ''}>
         <img src={avatar} alt="" className={style.itemAvatar} />
       </Link>
-      <img src={logo} alt="" width="20" />
+      <span className={style.eventLogoStyle}>
+        <img src={logo} alt="" width="20" />
+      </span>
+
       <div className={style.itemInfo}>
         <span className={style.itemCompany}>{company}</span>
         <span className={style.itemPartner}>{partner}</span>
