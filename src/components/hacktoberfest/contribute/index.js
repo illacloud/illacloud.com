@@ -63,7 +63,7 @@ export const Contribute = ({ setPlayMaskShow, setActiveKey }) => {
       </div>
       <div className={style.contributeContentContainer}>
         <span className={clsx(style.winTitle, style.winDigtalTitle)}>
-          {t('contribute-method.title.package.title')}
+          {t('contribute-method.title.badge.title')}
         </span>
         <StepCard />
         <StepCardMobile />
