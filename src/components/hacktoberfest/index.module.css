@@ -154,11 +154,12 @@
   @apply xl:gap-[56px]; */
 }
 .borderContainer {
-  @apply p-[1px] rounded-[86px] flex flex-col;
+  @apply p-[1px] rounded-[86px] flex flex-col items-center justify-center;
   @apply xl:rounded-[160px];
   background: linear-gradient(180deg, #d6ff34 0%, #344446 100%);
 }
 .normalEventBg {
+  @apply w-[172px] h-[320px] xl:w-[258px] xl:h-[502px];
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.12) 0%,
@@ -166,15 +167,16 @@
   );
 }
 .lightEventBg {
+  @apply w-[172px] h-[320px] xl:w-[256px] xl:h-[502px];
   background: linear-gradient(180deg, #1d200e 0%, #070c03 100%);
   box-shadow: 0px 4px 48px 0px rgba(63, 223, 244, 0.28);
 }
 .eventCard {
-  @apply w-[172px] h-[320px] shrink-0 rounded-[86px] flex flex-col items-center relative;
-  @apply xl:w-[258px] xl:h-[502px] xl:rounded-[160px];
+  @apply shrink-0 rounded-[86px] flex flex-col items-center relative;
+  @apply xl:rounded-[160px];
 }
 .eventLightAvatarContainer {
-  @apply cursor-pointer relative w-[140px] h-[140px] flex justify-center items-center shrink-0 my-[16px] box-content;
+  @apply cursor-pointer relative w-[140px] h-[140px] flex justify-center items-center shrink-0 my-[16px] box-content border border-[#34E7FF] rounded-[50%];
   @apply xl:w-[176px] xl:h-[176px] xl:my-[41px];
 }
 .eventLightAvatar {
