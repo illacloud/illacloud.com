@@ -57,19 +57,6 @@ const Home = ({ starCounts, uri }) => {
       <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
         <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
 
-        {/*Global site tag (gtag.js) - Google Analytics */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-4VKRNGN7GE"
-        />
-        <Script strategy="afterInteractive" id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4VKRNGN7GE');
-        `}
-        </Script>
         <Script>
           {`(function (d, t) {
             var BASE_URL = "https://app.chatwoot.com";
