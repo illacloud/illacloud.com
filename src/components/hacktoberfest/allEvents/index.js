@@ -13,13 +13,15 @@ export const AllEvents = ({ handleCalendarClick }) => {
   const weekDay = getDayKey(startTime.day(), 0),
     dateInMonth = startTime.date(),
     month = getDayKey(startTime.month(), 1)
+  const difference =
+    (startTime.valueOf() - now.valueOf()) / (1000 * 60 * 60 * 24)
   let state
   if (now.isAfter(endTime)) {
     state = 'isEnd'
-  } else if (now.isBefore(startTime)) {
-    state = 'isComing'
-  } else {
+  } else if (difference < 1 && now.isBefore(endTime)) {
     state = 'isIn'
+  } else {
+    state = 'isComing'
   }
 
   const onCalendarClick = (e) => {
