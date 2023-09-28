@@ -47,7 +47,6 @@ export const MobileTitle = (props) => {
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
                 // eslint-disable-next-line no-undef
-                gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_body_try_cloud_free_click',

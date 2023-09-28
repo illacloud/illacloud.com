@@ -54,20 +54,20 @@ export default class Document extends NextDocument {
             content={v('/favicons/browserconfig.xml')}
           />
           <meta name="theme-color" content="#000000" />
-
-          <Script
-            strategy="afterInteractive"
+          <script
+            async
             src="https://www.googletagmanager.com/gtag/js?id=G-QW745VE33W"
           />
-          <Script strategy="afterInteractive" id="google-analytics">
-            {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-QW745VE33W')
-        `}
-          </Script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QW745VE33W');
+              `,
+            }}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
