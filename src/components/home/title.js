@@ -141,8 +141,6 @@ export const Title = (props) => {
                 <a
                   className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                   onClick={() => {
-                    // eslint-disable-next-line no-undef
-                    gtagReportConversion && gtagReportConversion()
                     sendTagEvent({
                       action: 'click',
                       category: 'homepage_body_try_cloud_free_click',
@@ -165,30 +163,33 @@ export const Title = (props) => {
                     })
                   }}
                 >
-                  <span className='underline'>{t('self-Hosted')} </span>
+                  <span className="underline">{t('self-Hosted')} </span>
                   <Vector />
                 </a>
               </Link>
             </div>
           </div>
           <div className="flex flex-row items-start gap-[40px] rounded-[16px] h-[56px] ">
-            {
-              titleBottomContent.map(({ title, desc, image }) => (
-                <div key={title} className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]">
-                  <Image src={image} width='32' height='32' />
-                  <div className='flex flex-col'>
-                    <span className='text-[12px] font-[600] leading-[16px] text-white-04'>{t(title)}</span>
-                    <span className='text-[14px] font-[500] leading-[22px] text-white-01'>{t(desc)}</span>
-                  </div>
+            {titleBottomContent.map(({ title, desc, image }) => (
+              <div
+                key={title}
+                className="flex flex-row justify-center items-center px-[9px] gap-[16px] rounded-[8px]"
+              >
+                <Image src={image} width="32" height="32" />
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-[600] leading-[16px] text-white-04">
+                    {t(title)}
+                  </span>
+                  <span className="text-[14px] font-[500] leading-[22px] text-white-01">
+                    {t(desc)}
+                  </span>
                 </div>
-              ))
-            }
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div
-        className="w-full flex items-center justify-center mt-[56px]"
-      >
+      <div className="w-full flex items-center justify-center mt-[56px]">
         <Image
           src="https://cdn.illacloud.com/official-website/img/home/playVideoCover.png"
           className="flex items-center justify-center"

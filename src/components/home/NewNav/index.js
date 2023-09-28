@@ -11,14 +11,8 @@ import { sendTagEvent } from '@/utils/gtag'
 import { selectItems, menuItems } from '@/constants/navContents'
 import { useUtmParams } from '@/hooks/useUtmParams'
 
-
-
 export const Nav = (props) => {
-  const {
-    whiteTheme = false,
-    onChangeShow,
-    customStyle,
-  } = props
+  const { whiteTheme = false, onChangeShow, customStyle } = props
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
@@ -29,41 +23,47 @@ export const Nav = (props) => {
       <div
         className={clsx(
           'fixed hidden xl:flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center justify-between backdrop-blur-[50px] text-[16px] leading-[24px] font-[500]',
-          whiteTheme ? 'bg-[rgba(255,255,255,0.75)] text-garyBlue-02' : 'bg-[rgba(0,0,0,0.75)] text-white-01',
+          whiteTheme
+            ? 'bg-[rgba(255,255,255,0.75)] text-garyBlue-02'
+            : 'bg-[rgba(0,0,0,0.75)] text-white-01',
         )}
         style={customStyle || {}}
       >
         {/* logo */}
-        <div className='flex flex-row items-center p-0 gap-[24px]'>
+        <div className="flex flex-row items-center p-0 gap-[24px]">
           <Link legacyBehavior href="/">
             <a className=" w-[51px] h-[24px] flex items-center">
               {whiteTheme ? <IllaLogo /> : <IllaLogoWhiteIcon />}
             </a>
           </Link>
-          <div className={clsx(
-            "flex items-center w-full justify-center gap-[8px] rounded-[24px] drop-shadow-[0_2px_16px_rgba(0,0,0,0.2)] ",
-          )}>
+          <div
+            className={clsx(
+              'flex items-center w-full justify-center gap-[8px] rounded-[24px] drop-shadow-[0_2px_16px_rgba(0,0,0,0.2)] ',
+            )}
+          >
             {selectItems.map((values, index) => (
-              <MenuSelect buttonColorChange={!whiteTheme} options={values} key={index} />
+              <MenuSelect
+                buttonColorChange={!whiteTheme}
+                options={values}
+                key={index}
+              />
             ))}
-            {
-              menuItems.map(({ href, category, title }) => (
-                <Link href={href} key={title}>
-                  <span
-                    className="px-[16px] text-center cursor-pointer"
-                    onClick={() => {
-                      sendTagEvent({
-                        action: 'click',
-                        category,
-                        label: t(title),
-                      })
-                    }}
-                  >
-                    {t(title)}
-                  </span>
-                </Link>
-              ))
-            }
+            {menuItems.map(({ href, category, title }) => (
+              <Link href={href} key={title}>
+                <span
+                  className="px-[16px] text-center cursor-pointer"
+                  onClick={() => {
+                    sendTagEvent({
+                      action: 'click',
+                      category,
+                      label: t(title),
+                    })
+                  }}
+                >
+                  {t(title)}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
         {/* button */}
@@ -95,7 +95,6 @@ export const Nav = (props) => {
                 )}
                 onClick={() => {
                   // eslint-disable-next-line no-undef
-                  gtagReportConversion && gtagReportConversion()
                   sendTagEvent({
                     action: 'click',
                     category: 'homepage_menu_login_click',
@@ -111,8 +110,6 @@ export const Nav = (props) => {
             <span
               className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[12px] hover:bg-tech-purple-02 active:bg-tech-purple-n-01 cursor-pointer flex items-center justify-center text-white-01"
               onClick={() => {
-                // eslint-disable-next-line no-undef
-                gtagReportConversion && gtagReportConversion()
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_menu_signup_click',
