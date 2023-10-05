@@ -6,7 +6,7 @@ export const monthlyContent = [
     desc: 'price-detail.discount.free',
     editor: {
       price: '$0',
-      content: "price-detail.free",
+      content: 'price-detail.free',
     },
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
@@ -15,61 +15,48 @@ export const monthlyContent = [
         name: 'members',
         values: [
           {
-            text: 'free-members'
+            text: 'free-members',
           },
           {
             text: 'unlimited-members',
-            hasLineThrough: true
-          }
-        ]
+            hasLineThrough: true,
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.plugins',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.sql',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.watermark',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.free.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.free.ai-agent.token',
           },
-          {
-            text: 'featureList.free.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.free.ai-agent.token'
-          }
-        ]
+        ],
       },
     ],
   },
@@ -78,90 +65,77 @@ export const monthlyContent = [
     desc: 'price-detail.discount.paid',
     editor: {
       price: '$10',
-      content: "price-detail.paid-editor",
+      content: 'price-detail.paid-editor',
     },
     viewer: {
       price: '$0',
-      content: "price-detail.paid-viewer",
+      content: 'price-detail.paid-viewer',
     },
     hasSwitch: true,
-    earlyBird: "price-detail.early-bird",
+    earlyBird: 'price-detail.early-bird',
     btnContent: 'enterprise-btn',
     list: [
       {
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.plus.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.plus.ai-agent.token',
           },
-          {
-            text: 'featureList.plus.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.plus.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -169,11 +143,11 @@ export const monthlyContent = [
     desc: 'price-detail.discount.paid',
     editor: {
       price: '$20',
-      content: "price-detail.paid-editor",
+      content: 'price-detail.paid-editor',
     },
     viewer: {
       price: '$0',
-      content: "price-detail.paid-viewer",
+      content: 'price-detail.paid-viewer',
     },
     hasSwitch: true,
     href: 'https://cloud.illacloud.com/',
@@ -184,76 +158,63 @@ export const monthlyContent = [
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.ai-agent.token',
           },
-          {
-            text: 'featureList.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -261,7 +222,7 @@ export const monthlyContent = [
     desc: 'price-detail.discount.enterprise',
     editor: {
       price: '$50',
-      content: "price-detail.enterprise",
+      content: 'price-detail.enterprise',
     },
     btnContent: 'enterprise-btn',
     list: [
@@ -269,86 +230,73 @@ export const monthlyContent = [
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.enterprise.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.enterprise.ai-agent.token',
           },
-          {
-            text: 'featureList.enterprise.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.enterprise.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
           {
             text: 'security.deployed',
-            tip: 'tips.deployed'
+            tip: 'tips.deployed',
           },
           {
             text: 'security.dedicated',
-            tip: 'tips.dedicated'
+            tip: 'tips.dedicated',
           },
-        ]
-      }
+        ],
+      },
     ],
-  }
+  },
 ]
 export const annuallyContent = [
   {
@@ -356,7 +304,7 @@ export const annuallyContent = [
     desc: 'price-detail.discount.free',
     editor: {
       price: '$0',
-      content: "price-detail.free",
+      content: 'price-detail.free',
     },
     btnContent: 'free-btn',
     href: 'https://cloud.illacloud.com/',
@@ -365,61 +313,48 @@ export const annuallyContent = [
         name: 'members',
         values: [
           {
-            text: 'free-members'
+            text: 'free-members',
           },
           {
             text: 'unlimited-members',
-            hasLineThrough: true
-          }
-        ]
+            hasLineThrough: true,
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.plugins',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.sql',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
           {
             text: 'apps.watermark',
-            hasLineThrough: true
+            hasLineThrough: true,
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.free.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.free.ai-agent.token',
           },
-          {
-            text: 'featureList.free.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.free.ai-agent.token'
-          }
-        ]
+        ],
       },
     ],
   },
@@ -428,90 +363,77 @@ export const annuallyContent = [
     desc: 'price-detail.discount.paid',
     editor: {
       price: '$8.3',
-      content: "price-detail.paid-editor",
+      content: 'price-detail.paid-editor',
     },
     viewer: {
       price: '$0',
-      content: "price-detail.paid-viewer",
+      content: 'price-detail.paid-viewer',
     },
     hasSwitch: true,
-    earlyBird: "price-detail.early-bird",
+    earlyBird: 'price-detail.early-bird',
     btnContent: 'enterprise-btn',
     list: [
       {
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.plus.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.plus.ai-agent.token',
           },
-          {
-            text: 'featureList.plus.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.plus.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -519,11 +441,11 @@ export const annuallyContent = [
     desc: 'price-detail.discount.paid',
     editor: {
       price: '$16.7',
-      content: "price-detail.paid-editor",
+      content: 'price-detail.paid-editor',
     },
     viewer: {
       price: '$0',
-      content: "price-detail.paid-viewer",
+      content: 'price-detail.paid-viewer',
     },
     hasSwitch: true,
     href: 'https://cloud.illacloud.com/',
@@ -534,76 +456,63 @@ export const annuallyContent = [
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.ai-agent.token',
           },
-          {
-            text: 'featureList.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -611,7 +520,7 @@ export const annuallyContent = [
     desc: 'price-detail.discount.enterprise',
     editor: {
       price: '$50',
-      content: "price-detail.enterprise",
+      content: 'price-detail.enterprise',
     },
     btnContent: 'enterprise-btn',
     list: [
@@ -619,86 +528,73 @@ export const annuallyContent = [
         name: 'members',
         values: [
           {
-            text: 'unlimited-viewer'
+            text: 'unlimited-viewer',
           },
           {
-            text: 'unlimited-members'
-          }
-        ]
+            text: 'unlimited-members',
+          },
+        ],
       },
       {
         name: 'app',
         values: [
           {
-            text: 'apps.components'
+            text: 'apps.components',
           },
           {
-            text: 'apps.resources'
+            text: 'apps.resources',
           },
           {
             text: 'security.app-public',
-            tip: 'tips.app-public'
+            tip: 'tips.app-public',
           },
           {
             text: 'apps.plugins',
-            tip: 'tips.plugins'
+            tip: 'tips.plugins',
           },
           {
             text: 'apps.sql',
-            tip: 'tips.sql'
+            tip: 'tips.sql',
           },
           {
             text: 'apps.watermark',
           },
-        ]
+        ],
       },
       {
-        name: 'featureList.drive.title',
+        name: 'Colla',
         values: [
           {
-            text: 'featureList.enterprise.drive.storage',
-            tip: 'featureList.drive.tips.storage'
+            text: 'featureList.enterprise.ai-agent.token',
           },
-          {
-            text: 'featureList.enterprise.drive.traffic',
-            tip: 'featureList.drive.tips.traffic'
-          },
-        ]
-      },
-      {
-        name: 'featureList.ai-agent.title',
-        values: [
-          {
-            text: 'featureList.enterprise.ai-agent.token'
-          }
-        ]
+        ],
       },
       {
         name: 'security-support',
         values: [
           {
-            text: 'security.historic-30'
+            text: 'security.historic-30',
           },
           {
             text: 'security.develop-environment',
-            tip: 'tips.staging'
+            tip: 'tips.staging',
           },
           {
             text: 'security.restore-data',
-            tip: 'tips.restore-data'
+            tip: 'tips.restore-data',
           },
           {
             text: 'security.deployed',
-            tip: 'tips.deployed'
+            tip: 'tips.deployed',
           },
           {
             text: 'security.dedicated',
-            tip: 'tips.dedicated'
+            tip: 'tips.dedicated',
           },
-        ]
-      }
+        ],
+      },
     ],
-  }
+  },
 ]
 
 export const compare = {
@@ -706,17 +602,17 @@ export const compare = {
     {
       label: 'compare.plan.free',
       btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com'
+      link: 'https://cloud.illacloud.com',
     },
     {
       label: 'compare.plan.plus',
       btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com'
+      link: 'https://cloud.illacloud.com',
     },
     {
       label: 'compare.plan.premium',
       btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com'
+      link: 'https://cloud.illacloud.com',
     },
   ],
   items: [
@@ -761,19 +657,13 @@ export const compare = {
       icons: [false, true, true],
     },
     {
-      label: 'compare.featureList.title.storage',
-      desc: 'compare.featureList.desc.storage',
-      texts: ['100MB', '100MB', '5GB'],
-    },
-    {
-      label: 'compare.featureList.title.traffic',
-      desc: 'compare.featureList.desc.traffic',
-      texts: ['100MB', '100MB', '5GB'],
-    },
-    {
-      label: 'compare.featureList.title.ai-agent',
-      desc: 'compare.featureList.desc.ai-agent',
-      texts: ['1k token', '1k token', '100k token'],
+      label: 'compare.featureList.title.colla',
+      desc: 'compare.featureList.desc.colla',
+      texts: [
+        'featureList.free.ai-agent.token',
+        'featureList.plus.ai-agent.token',
+        'featureList.ai-agent.token',
+      ],
     },
     {
       label: 'compare.featureList.title.deployed-version',
@@ -790,7 +680,7 @@ export const compare = {
       desc: 'compare.featureList.desc.environment',
       icons: [false, true, true],
     },
-  ]
+  ],
 }
 
 export const openSourceContent = {
@@ -815,6 +705,6 @@ export const openSourceContent = {
       title: 'deployment.docker.title',
       des: 'deployment.docker.des',
       linkUrl: 'https://github.com/illacloud/deploy-illa-manually/',
-    }
+    },
   ],
 }

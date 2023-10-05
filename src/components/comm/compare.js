@@ -44,7 +44,7 @@ export const Compare = ({
             className={clsx(
               style.tableHeader,
               style.tableSticky,
-              'border-l-[1px] border-[#292929] rounded-r-[16px]'
+              'border-l-[1px] border-[#292929] rounded-r-[16px]',
             )}
           >
             <h2 className="font-[500] text-[22px] leading-[28px] text-center">
@@ -67,12 +67,7 @@ export const Compare = ({
             </div>
             {icons
               ? icons.map((val, i) => (
-                  <div
-                    className={clsx(
-                      style.tableSelect,
-                     'border-l-[1px]',
-                    )}
-                  >
+                  <div className={clsx(style.tableSelect, 'border-l-[1px]')}>
                     {val && (
                       <img
                         src={tableSelect}
@@ -83,12 +78,7 @@ export const Compare = ({
                   </div>
                 ))
               : texts.map((val, i) => (
-                  <div
-                    className={clsx(
-                      style.tableSelect,
-                     'border-l-[1px]',
-                    )}
-                  >
+                  <div className={clsx(style.tableSelect, 'border-l-[1px]')}>
                     <span className="font-[400] text-[14px] leading-[20px] text-white-03">
                       {t(val)}
                     </span>
@@ -97,7 +87,11 @@ export const Compare = ({
           </Fragment>
         ))}
       </div>
-      <MobileCompare compare={compare} reportShow={reportShow} translationScope={translationScope}/>
+      <MobileCompare
+        compare={compare}
+        reportShow={reportShow}
+        translationScope={translationScope}
+      />
     </>
   )
 }
