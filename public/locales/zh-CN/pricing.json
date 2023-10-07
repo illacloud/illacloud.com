@@ -99,7 +99,7 @@
         "history": "备份编辑历史并恢复",
         "storage": "ILLA Drive存储",
         "traffic": "ILLA Drive流量",
-        "ai-agent": "Colla",
+        "ai-agent": "科拉",
         "deployed-version": "保存已部署版本并回滚（即将推出）",
         "theme": "主题（即将推出）",
         "environment": "多环境支持（即将推出）",
@@ -213,5 +213,591 @@
       "token": "2.5k Colla/坐席/月"
     }
   },
-  "early_bird": "早鸟"
+  "early_bird": "早鸟",
+  "billing": {
+    "menu": {
+      "billing": "计费",
+      "license": "所有订阅",
+      "drive": "驱动器",
+      "appsumo": "Appsumo",
+      "colla_transaction": "Colla 交易记录",
+      "billing_portal": "账单门户网站",
+      "overview": "所有订阅",
+      "pricing": "定价",
+      "balance": "余额",
+      "colla": "Colla 使用情况"
+    },
+    "title": {
+      "overview": "所有订阅",
+      "pricing": "定价",
+      "balance": "余额",
+      "colla_usage": "Colla 使用情况",
+      "billing": "计费",
+      "license": "坐席",
+      "drive": "Drive",
+      "colla": "Colla",
+      "appsumo": "Appsumo"
+    },
+    "pricing": {
+      "premium": {
+        "desc": "升级您的团队以访问高级功能",
+        "feature": {
+          "builder": {
+            "viewer": "免费添加无限个浏览者",
+            "audit_log": "审计日志",
+            "public": "发布公开应用",
+            "sql": "SQL 智能生成",
+            "history": "备份编辑历史和恢复",
+            "theme": "自定义主题（即将推出）",
+            "multi_environment": "多开发环境 (即将推出)",
+            "deployed_version": "保留已部署的版本并恢复(即将推出)"
+          },
+          "agent": {
+            "gpt": "访问更多模型，如GPT-4, \nGPT-3.5-turbo-16k",
+            "colla": "2.5k Colla /坐席"
+          }
+        },
+        "price": "/月/编辑器"
+      },
+      "colla": {
+        "desc": "用于支付ILLA Cloud的增值服务",
+        "feature": {
+          "storage": "文件存储。用于在 ILLA Drive上存储文件。",
+          "traffic": "流量。用于从 ILLA Drive 下载文件。",
+          "token": "AI Agent Token. 用于运行 AI Agents.",
+          "conversion": {
+            "1": "5k Colla",
+            "2": "5GB 存储空间",
+            "3": "5GB 流量",
+            "4": "50k 令牌"
+          }
+        },
+        "price": "/month/5k Colla",
+        "button": "管理Colla"
+      }
+    },
+    "monthly": "每月的",
+    "yearly": "每年一次",
+    "members": "团队",
+    "app": "应用",
+    "security-support": "安保和支助",
+    "apps": {
+      "components": "所有组件",
+      "resources": "所有资源",
+      "plugins": "无限插件(即将来临)",
+      "sql": "AI SQL 生成",
+      "watermark": "移除水标"
+    },
+    "security": {
+      "historic-7": "备份编辑历史和恢复",
+      "historic-30": "保持部署版本与逆向(即将到来)",
+      "develop-environment": "多环境(即将到来)",
+      "app-public": "公开应用",
+      "restore-data": "备份编辑历史记录和恢复",
+      "deployed": "访问ILLA 支持",
+      "dedicated": "专用解决方案工程"
+    },
+    "tips": {
+      "plugins": "导入插件并在您所有的团队中使用它",
+      "sql": "输入自然语言并生成 SQL 语句",
+      "staging": "在预览环境中测试您的应用",
+      "app-public": "让应用程序公开，任何有链接的人都可以访问它",
+      "restore-data": "随时备份或恢复历史记录",
+      "deployed": "部署的工程师可以帮助您更快地登陆。",
+      "dedicated": "专职客户解决工程师通过 Slack/email/phone",
+      "preview_insufficient": "由于容量不足，文件无法预览，请先扩展容量。"
+    },
+    "deployment": {
+      "title": "灵活部署",
+      "title-1": "弹性的",
+      "title-2": "部署",
+      "introduction": "ILLA 提供了两种部署方式。开发者可以使用 ILLA 云在任何设备上快速开始构建他们的应用。 我们还向ILLA CLI免费提供更好的安全保障，以确保数据安全。",
+      "illa-cloud": {
+        "title": "ILLA 云",
+        "des": "尝试一次点击部署并享受最简单的部署体验"
+      },
+      "illa-CLI": {
+        "title": "ILLA CLI",
+        "des": "最快和最简单的方法来自我主机 ILLA"
+      },
+      "kubernetes": {
+        "title": "Kubernetes",
+        "des": "使用 ILLA Helm 图将ILLA 部署到 Kubernetes"
+      },
+      "docker": {
+        "title": "停靠栏",
+        "des": "在 30 秒内本地部署 ILLA"
+      }
+    },
+    "user-month": "每个用户/月",
+    "editor-month": "每个编辑器/月",
+    "start-at": "开始于 100 个用户",
+    "free-members": "仅供个人使用的成员",
+    "unlimited-viewer": "免费给无限查看者",
+    "unlimited-members": "无限成员",
+    "free-btn": "当前计划",
+    "plus-btn": "升级",
+    "enterprise-btn": "联系我们",
+    "colla_usage": {
+      "used": "已使用",
+      "token": "令牌",
+      "storage": "存储",
+      "traffic": "流量"
+    },
+    "subscription_general": {
+      "team_type": {
+        "free": "免费的",
+        "plus": "加号",
+        "premium": "高级版"
+      },
+      "colla": {
+        "desc": "用于支付ILLA Cloud内增值服务的费用 包括用于 ILLA 驱动器、ILLA 驱动器的流量和 AI 代理人的令牌。",
+        "table_title": {
+          "colla": "订阅的Colla",
+          "seats": "订阅的座位数"
+        },
+        "table_desc": {
+          "bouns": "当您当前循环的Colla余额不足时，我们将自动为您添加Colla。 “红包”是一个额外的收费，不包括在周期订阅中。 当您的订阅在下一个周期自动续订时，它不会包含红包Colla。"
+        },
+        "table_button": {
+          "seats": "管理座席",
+          "colla": "管理Colla"
+        }
+      },
+      "plan": {
+        "free": "免费的",
+        "plus": "高级版"
+      },
+      "sub_cycle": {
+        "yearly": "每年一次",
+        "monthly": "每月的",
+        "lifetime": "寿命"
+      },
+      "billing_cyle": {
+        "year": "/ 年份",
+        "month": "/ 月"
+      },
+      "table_title": {
+        "next_payment_date": "下次付款日期",
+        "expiration_date": "过期日期",
+        "licenses": "座位数",
+        "storage": "存储",
+        "traffic": "流量",
+        "colla": "剩余Colla",
+        "colla_sub": "订阅的Colla",
+        "colla_unsub": "余额",
+        "seats": "订阅的座位数",
+        "bouns": "Bouns Colla"
+      },
+      "period": {
+        "current": "当前的",
+        "next": "下一个"
+      },
+      "cycle": {
+        "month": "/ 月",
+        "year": "/ 年"
+      },
+      "table_desc": {
+        "bouns": "当您当前循环的Colla余额不足时，我们将自动为您添加Colla。 “红包”是一个额外的收费，不包括在周期订阅中。 当您的订阅在下一个周期自动续订时，它不会包含红包Colla。 "
+      },
+      "table_button": {
+        "seats": "管理座席",
+        "colla": "管理Colla"
+      }
+    },
+    "subscription_card": {
+      "title": {
+        "License": "座位数",
+        "Storage": "存储",
+        "Traffic": "流量",
+        "balance": "余额",
+        "colla": "科拉"
+      },
+      "button": {
+        "License": "管理座席",
+        "Storage": "管理存储",
+        "Traffic": "展开流量",
+        "colla": "管理Colla"
+      },
+      "capacity": {
+        "License": "used (total of {{total}} seats) ",
+        "Storage": "{{used}}GB used (total of {{total}}GB) ",
+        "Traffic": "{{used}}GB used (total of {{total}}GB) ",
+        "colla": "{{used}} Colla used (total of {{total}} Colla)"
+      },
+      "colla_usage": {
+        "token": "令牌",
+        "traffic": "流量",
+        "storage": "存储"
+      }
+    },
+    "colla_transaction": {
+      "table_title": {
+        "month": "月",
+        "event": "事件",
+        "usage": "Colla 使用情况"
+      },
+      "event": {
+        "increase_storage": "增加存储",
+        "increase_colla": "彩色增益",
+        "increase_traffic": "增加流量"
+      },
+      "usage": {
+        "change_num": "{{changeNum}} Colla"
+      }
+    },
+    "payment_sidebar": {
+      "price": {
+        "colla_monthly": "{{price}} / monthly / 5k Colla",
+        "colla_yearly": "{{price}} / yearly / 60k Colla"
+      },
+      "title": {
+        "manage_storage": "管理存储",
+        "manage_licenses": "管理座席",
+        "expand_traffic_capac": "扩展流量能力",
+        "colla": "管理Colla"
+      },
+      "plan_label": {
+        "License": "座位数",
+        "Storage": "存储",
+        "Traffic": "流量",
+        "colla": "科拉"
+      },
+      "plan_number_input_label": {
+        "License": "座位数",
+        "Storage_traffic": "5GB",
+        "colla": "科拉"
+      },
+      "select_option": {
+        "Yearly": "每年一次",
+        "Monthly": "每月的"
+      },
+      "price_label": {
+        "total": "总计"
+      },
+      "price_type": {
+        "this_period_remove": "此期间",
+        "this_period": "此期间",
+        "next_period": "下一周期",
+        "next_period_remove": "下一周期",
+        "payment": "费用",
+        "this_period_storage": "此期间",
+        "next_period_storage": "下一周期",
+        "this_period_remove_storage": "此期间",
+        "next_period_remove_storage": "下一周期",
+        "payment_storage": "费用",
+        "payment_traffic": "费用",
+        "payment_description_traffic": "{{unitPrice}} × {{trafficNum}} GB"
+      },
+      "price_cal": {
+        "this_period": "{{unitPrice}} × {{licenseNum}} seats × {{remainDays}} days / {{totalDays}} days",
+        "next_period_yearly": "{{unitPrice}} × {{licenseNum}} seats",
+        "next_period_monthly": "{{unitPrice}} × {{licenseNum}} seats",
+        "this_period_remove": "{{unitPrice}} × {{licenseNum}} seats × {{remainDays}} days / {{totalDays}} days",
+        "next_period_yearly_remove": "{{unitPrice}} × {{licenseNum}} seats",
+        "next_period_monthly_remove": "{{unitPrice}} × {{licenseNum}} seats",
+        "payment_year": "{{unitPrice}} × {{licenseNum}} seats",
+        "payment_month": "{{unitPrice}} × {{licenseNum}} seats",
+        "this_period_storage": "{{unitPrice}} × {{storageNum}} GB × {{remainDays}} days / {{totalDays}} days",
+        "next_period_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "next_period_monthly_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "this_period_remove_storage": "{{unitPrice}} × {{storageNum}} GB × {{remainDays}} days / {{totalDays}} days",
+        "next_period_yearly_remove_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "next_period_monthly_remove_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "payment_year_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "payment_month_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "colla": "{{unitPrice}} * {{purchaseNum}} "
+      },
+      "button": {
+        "unsubscribe": "取消订阅",
+        "subscribe": "订阅",
+        "change_plan": "更改计划",
+        "storage_traffic_increase": "Increase {{changeNum}} GB",
+        "storage_traffic_remove": "Remove {{changeNum}} GB",
+        "license_increase": "Increase {{changeNum}} seats",
+        "license_remove": "Remove {{changeNum}} seats",
+        "colla_increase": "Increase {{changeNum}} Colla",
+        "colla_remove": "Remove {{changeNum}} Colla"
+      },
+      "colla": {
+        "1": "{{purchaseNum}} Colla",
+        "2": "{{storageNum}} storage",
+        "3": "{{trafficNum}} traffic",
+        "4": "{{tokenNum}} token"
+      },
+      "description_title": {
+        "add_storage": "You are going to add {{changeNum}} GB storage. Once confirmed, we will immediately deduct the payment for the new storage for this billing cycle. <0>Learn more</0>",
+        "remove_storage": "You are going to remove {{changeNum}} GB storage. Once confirmed, the changes will take effect in the next billing cycle. <0>Learn more</0>",
+        "update_plan_year": "您将更新到年度付款计划。 一旦确认，更改将从下一个计费周期开始生效。<0>了解更多</0>",
+        "update_plan_monthly": "您将更新到每月付款计划。 一旦确认，更改将从下一个计费周期开始生效。<0>了解更多</0>",
+        "add_license": "You are going to add {{changeNum}} seats. Once confirmed, we will immediately deduct the payment for the new seats for this billing cycle. <0>Learn more</0>",
+        "remove_license": "You are going to remove {{changeNum}} seats. Once confirmed, the changes will take effect in the next billing cycle. <0>Learn more</0>",
+        "add_traffic": "You are going to add {{changeNum}}GB traffic. Once confirmed, we will deduct the cost of the additional traffic immediately. <0>Learn more</0>",
+        "subscribe_storage": "您将订阅 ILLA 云端高级版。 我们将在每个付款周期开始时自动从您的帐户中扣除费用。<0>了解更多</0>",
+        "subscribe_license": "您将订阅 ILLA 驱动程序。 我们将在每个付款周期开始时自动从您的帐户中扣除费用。<0>了解更多</0>",
+        "update_plan_increase_license": "You are going to add {{changeNum}} seats and update your subscription period. <0>Learn more</0>",
+        "update_plan_remove_license": "You are going to remove {{changeNum}} seats and update your subscription period. <0>Learn more</0>",
+        "update_plan_increase_storage": "You are going to add {{changeNum}} GB storage and update your subscription period. <0>Learn more</0>",
+        "update_plan_remove_storage": "You are going to remove {{changeNum}} GB storage and update your subscription period. <0>Learn more</0>",
+        "unsubscribe_license": "您将取消订阅 ILLA 云高级版。 取消后，从下一个计费周期开始，高级功能将无法访问。<0>了解更多</0>",
+        "unsubscribe_storage": "您将取消订阅 ILLA 驱动器存储。 注销后，从下一个计费周期开始，存储容量将恢复到100MB。<0>了解更多</0>",
+        "subscribe_license_monthly": "您将订阅LA 云端高级版每月订阅。<0>了解更多</0>",
+        "subscribe_license_yearly": "您将每年订阅ILLA 云端高级版。<0>了解更多</0>",
+        "subscribe_storage_monthly": "You are going to add {{changeNum}}GB storage. Once confirmed, we will deduct the cost of the storage immediately. <0>Learn more</0>",
+        "subscribe_storage_yearly": "You are going to add {{changeNum}}GB storage. Once confirmed, we will deduct the cost of the storage immediately. <0>Learn more</0>",
+        "colla_sub": "您将订阅Colla。 一旦确认，我们将在每个计费周期开始时自动扣除费用，并在您需要更多的 Colla 时自动升级您的订阅。 <0>了解更多</0>",
+        "colla_increase": "You are going to add {{changeNum}} Colla. Once confirmed, we will immediately deduct the remaining amount due for this billing cycle. <0>Learn more</0>",
+        "colla_remove": "You are going to remove {{changeNum}} Colla. Once confirmed, it will take effect from the next billing cycle. <0>Learn more</0>",
+        "colla_unsubscribe": "您将取消您的 Colla 订阅。一旦确认，它将从下一个计费周期起生效。 请注意，取消后，您可能会遇到您的 ILLA 驱动器和 AI 代理使用问题。<0>了解更多</0>",
+        "colla_update": "您将修改您的 Colla 订阅。一旦确认，更改将从下一个账单周期开始生效。 <0>了解更多</0>"
+      },
+      "description": {
+        "remove_storage": "如果您的文件占用的存储容量在下一个计费周期开始时超过订阅的存储容量， 所有文件都将被禁用，直到您删除文件或增加可用范围内的存储容量。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "update_plan_year": "从下一个时期开始，订阅将改为每年订阅。 而且收费将根据年度订阅价格自动扣除。 如果你想要减少席位或对订阅作其他更改，请在下一个期间开始之前更新。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "update_plan_monthly": "从下一个时期开始，订阅将改为每月订阅， 而且收费将根据每月订阅价格自动扣除。 如果你想要减少席位或对订阅作其他更改，请在下一个期间开始之前更新。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "add_license": "计算规则使用每月的座位订阅作为示例。让我们考虑一种情景，即你最初订阅了5个席位，从3月14日起， 而且账单周期从本月第14个月到下个月第13个月。 5月10日，你决定增加一个席位。 当时， 到5月13日本周期结束时还剩下4天（从4月14日至5月13日总共30天）。 为计算调整后的付款，我们将扣除1个座位的费用。 它相当于大约10美元，与30天周期内4天的期限相称。 因此，扣减额估计为1个座位* 10/130天* 4天，结果约为1.33美元。 从下一个计费周期开始，所有议席费用都将合并并一起支付。 如果你想要减少席位或对订阅作其他更改，请在下一个期间开始之前更新。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "remove_license": "如果拥有编辑权限的用户数目超过下一个计费周期开始时的座位数， 除所有者外，所有用户都将被禁用，直到您移除成员或增加可用范围内的座位数。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "add_traffic": "扣除成功后，您的流量将实时增加。 使用通信量后，无法退还费用。未使用的通信量可以用GB单位退还。 例如，如果您购买10GB流量并使用4.5GB，您可以申请5GB的退款。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "subscribe_storage_yearly": "您将订阅ILLA Drive 存储的年度订阅。 我们将在每个付款周期开始时从您的帐户中自动扣除费用。 实际扣除的金额取决于您在 GB 中订阅的存储容量。 例如，如果您在2023年2月25日开始第一次订阅，年订阅费为9美元。 如果你拥有3GB，我们将扣除29美元。 贸发会议秘书处的说明 如果你在2023年3月25日添加2GB，我们将首先在2023年3月25日扣除剩余的11个月付款。 然后，到2024年2月25日，我们将扣除5GB(2+3)*9.9=49的付款。 。如果您想要减少存储空间或对订阅作其他更改，请在下一个期间开始之前更新它。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "subscribe_license_monthly": "您即将订阅LA Cloud Plus的每月订阅。 我们将在每个付款周期开始时从您的帐户中自动扣除费用。 扣除的实际数额取决于你拥有的席位数目。 例如，如果您在2023年2月25日开始第一次订阅，每月订阅费用为每个座位12美元， 你们共有3个席位，我们将在2023年2月25日扣除36个席位。 如果你在2023年3月21日再增加两个席位，我们将首先从2023年3月21日的剩余5天付款中扣除。 然后，到2023年3月25日，我们将扣除5个席位(2+3)*12=60美元的付款。 如果你想要减少席位或对订阅作其他更改，请在下一个期间开始之前更新。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "update_plan_increase_license": "费用将根据更新的席位数目和下一个期间新的计费周期的定价自动扣除。 这一次，我们将根据目前的计费周期扣除增加席位的费用。 使用每月的座位订阅来计算增加席位的规则作为示例。让我们考虑一种情景，即你最初从3月14日起订阅5个席位， 而且账单周期从本月第14个月到下个月第13个月。 5月10日，你决定增加一个新的席位。 当时， 到5月13日本周期结束时还剩下4天（从4月14日至5月13日总共30天）。 为计算调整后的付款，我们将扣除1个座位的费用。 它相当于大约10美元，与30天周期内4天的期限相称。 因此，扣减额估计为1个座位* 10/130天* 4天，结果约为1.33美元。 从下一个计费周期开始，所有议席费用都将合并并一起支付。 如果你想要减少席位或对订阅作其他更改，请在下一个期间开始之前更新。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "update_plan_remove_license": "费用将根据更新的席位数目和下一个期间新的计费周期的定价自动扣除。 如果拥有编辑权限的用户数目超过下一个计费周期开始时的座位数， 除所有者外，所有用户都将被禁用，直到您移除成员或增加可用范围内的座位数。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。",
+        "update_plan_remove_storage": "费用将根据更新的储存和下一个时期新的计费周期的定价自动扣除。 如果您的文件占用的存储容量在下一个计费周期开始时超过订阅的存储容量， 所有文件都将被禁用，直到您删除文件或增加可用范围内的存储容量。 欲了解更多信息，请参阅我们的<0>隐私政策</0>和<1>服务条款</1>。"
+      },
+      "colla_redeem": {
+        "title": "With {{changeNum}} Colla, you can purchase: ",
+        "storage": "存储",
+        "traffic": "流量",
+        "token": "令牌"
+      }
+    },
+    "message": {
+      "failed_to_subscribe": "订阅失败。请重试。",
+      "failed_to_add_traffic": "添加流量失败。请重试。 ",
+      "failed_to_add_storage": "添加存储失败。请重试。 ",
+      "failed_to_remove_storage": "删除存储失败。请重试。 ",
+      "failed_to_add_licens": "添加座位失败。请重试。 ",
+      "failed_to_remove_lic": "删除座位失败。请重试。 ",
+      "failed_to_change_pla": "更改计划失败。请重试。 ",
+      "failed_to_unsubscrib": "取消订阅失败。请重试。 ",
+      "successfully_removed": "Successfully removed.  The change will take effect from {{nextPaymentDate}}.",
+      "unsubscription_succe": "Unsubscription successful.  The change will take effect from {{nextPaymentDate}}",
+      "cancel_subscribe": "订阅未完成，请重试或联系 billing@illasoft.com。",
+      "cancel_purchase": "购买未完成，请重试或联系 billing@illasoft.com",
+      "successfully_changed": "订阅已成功更改。它将在几分钟后生效",
+      "failed_to_change": "订阅更改失败",
+      "unsubscription_suc": "订阅已成功取消，并将在下一阶段生效",
+      "failed_to_join_no_license": "由于座位不足，无法加入 ",
+      "storage_insufficient_modal": "此团队的存储或流量不够。请联系您的管理员。",
+      "appsumo": {
+        "suc": "兑换成功",
+        "fail": "赎回失败。请稍后再试。",
+        "transfer": "操作失败。此用户已绑定到终身订阅。 ",
+        "leave": "操作失败。此用户已绑定到终身订阅。 "
+      },
+      "no_license_operate_failed": "由于订阅异常，操作失败。",
+      "failed_to_invite_no_license": "由于许可证不足，一些成员邀请失败。",
+      "error_subscribe": "订阅失败。请稍后再试。",
+      "unsubscription_fail": "取消订阅失败。请稍后再试。",
+      "failed_to_update": "订阅更新失败。请重试。 ",
+      "update_suc": "订阅已成功更新",
+      "no_traffic": "流量不足。请联系管理员以增加 Colla。",
+      "no_storage": "存储不足。请联系管理员以增加 Colla。"
+    },
+    "modal": {
+      "colla_insufficient_modal": {
+        "storage": {
+          "title": "存储空间不足",
+          "desc": {
+            "1": "您的存储空间不足。请订阅Colla或添加Colla以增加您的存储空间。",
+            "2": "在订阅Colla后，您的Colla可以用来增加存储，提升流量， 并增加令牌，它将根据您的需要自动分配。"
+          }
+        },
+        "traffic": {
+          "title": "流量不足",
+          "desc": {
+            "1": "您的流量不足。请订阅Colla或添加Colla以增加您的流量。",
+            "2": "在订阅Colla后，您的Colla可以用来增加存储，提升流量， 并增加令牌，它将根据您的需要自动分配。"
+          }
+        },
+        "token": {
+          "title": "令牌不足",
+          "desc": {
+            "1": "您的令牌还不够。请订阅Colla或添加Colla以增加您的令牌。",
+            "2": "在订阅Colla后，您的Colla可以用来增加存储，提升流量， 并增加令牌，它将根据您的需要自动分配。"
+          }
+        },
+        "button": "彩色增益",
+        "cycle": "每月5k Colla",
+        "failed": {
+          "title": "增加 Colla 失败",
+          "storage": {
+            "desc": "您的 Colla 余额不足以满足当前存储需求。我们在增加您的 Colla 时遇到了一些问题。请手动提升Colla。"
+          },
+          "traffic": {
+            "desc": "您的Colla余额不足以满足当前的流量需求。我们在增加您的Colla时遇到了一些问题。请手动提升Colla。"
+          },
+          "token": {
+            "desc": "您的 Colla 余额不足以满足当前的令牌要求。我们在增加您的 Colla 时遇到了一些问题。请手动增加Colla。"
+          },
+          "button": "彩色增益"
+        }
+      },
+      "storage_insufficient_modal": {
+        "owner_title_drive": "容量不足",
+        "owner_description_drive": "存储或流量不足。请升级并重试。",
+        "owner_button_drive": "升级",
+        "not_owner_title_drive": "操作失败",
+        "not_owner_description_drive": "此团队的存储或流量不够。请联系您的管理员。",
+        "not_owner_button_drive": "明白了",
+        "out_title_drive": "下载失败",
+        "out_description_drive": "由于流量不足，下载失败。请联系文件所有者",
+        "out_button_drive": "明白了"
+      },
+      "sub_suc": {
+        "subscription_success": "订阅成功",
+        "you_can_now_invite_m": "它将在几分钟后生效。 您可以邀请会员并稍后开始使用高级功能。继续试试！",
+        "you_can_now_upload_m": "它将在几分钟后生效。您现在可以上传更多文件。",
+        "payment_successful": "支付成功",
+        "we_have_added_the_li": "它将在几分钟后生效。我们已经为你添加了席位。 订阅期的任何变动都将从下一个计费周期开始生效。",
+        "we_have_added_the_st": "它将在几分钟后生效。我们已经为您添加了存储。 订阅期的任何变动都将从下一个计费周期开始生效。",
+        "we_have_added_the_tr": "它将在几分钟后生效。我们稍后会为您添加流量。您现在可以下载更多文件。",
+        "successfully_updated": "成功更新",
+        "the_change_to_the_su": "订阅期的变动将从下一个计费周期开始生效。",
+        "got_it": "明白了"
+      },
+      "upgrade_now_admin": {
+        "upgrade_to_plus": "升级到高级版",
+        "this_feature_is_avai": "此功能仅供高级用户使用。要使用它，请升级至Plus。 通过升级到高级版，您也可以访问以下功能。 ",
+        "add_unlimited_viewer": "为免费添加无限查看成员",
+        "publish_public_appli": "发布公共应用程序",
+        "ai_sql_generation": "AI SQL 生成",
+        "audit_logs": "审核日志",
+        "learn_more": "了解更多",
+        "upgrade": "升级",
+        "insufficient_license_title": "席位不足",
+        "insufficient_license_description": "要邀请更多编辑器，请先增加座位。您团队的所有成员都可以使用 ILLA 云端高级版功能。 每个功能的具体准入取决于每个成员的作用。 ",
+        "insufficient_license_button": "添加座席",
+        "pricing": "编辑/月, 每年(每月20美元/编辑)"
+      },
+      "expired": {
+        "owner": "您的订阅已过期。要继续使用，请更新它。",
+        "others": "您的帐户已被禁用，因为团队的订阅已经过期。",
+        "your_subscription_ha_not_owner": "订阅异常",
+        "all_members_except_f_not_owner": "您的团队订阅具有例外情况，请与团队所有者联系。",
+        "upgrade_not_owner": "明白了",
+        "your_subscription_ha": "订阅已过期",
+        "all_members_except_f": "您的团队订阅已过期。请及时续期",
+        "upgrade": "升级"
+      },
+      "blank_page": {
+        "insufficient_license_disable": "由于团队座位不足，您的帐户已被禁用。请联系团队所有者寻求帮助。"
+      },
+      "upgrade_not_admin": {
+        "insufficient_license_title": "席位不足",
+        "insufficient_license_description": "由于座位不足，操作失败。请联系团队所有者。",
+        "insufficient_license_button": "好的"
+      },
+      "storage_insufficient": {
+        "owner_title": "存储容量不足",
+        "owner_description": "为了正常存储文件，请及时增加存储。 ",
+        "owner_button": "增加能力",
+        "not_owner_title": "存储容量不足",
+        "not_owner_description": "为了正常存储文件，请联系您的管理员及时增加存储容量。",
+        "not_owner_button": "好的",
+        "owner_pricing": "5 GB/月"
+      },
+      "traffic_insufficient": {
+        "owner_title": "交通容量不足",
+        "owner_description": "为了正常访问文件，请及时增加流量容量。 ",
+        "owner_button": "增加能力",
+        "not_owner_title": "流量不足",
+        "not_owner_description": "要正常访问文件，请联系您的管理员以增加流量流量。",
+        "not_owner_button": "好的",
+        "owner_pricing": "5 GB"
+      },
+      "cancel_confirm": {
+        "description": "取消后，您的团队将从下一个计费周期开始恢复免费计划。 订阅计划中包含的功能将不再可用。",
+        "title": "取消订阅？",
+        "button_cancel": "取消",
+        "button_confirm": "确认"
+      },
+      "change_confirm": {
+        "description": "一旦减少，这些变动将在下一个计费周期内生效。 如果资源超过新分配的能力，所有资源都可能无法获得。",
+        "title": "更改计划？",
+        "button_cancel": "取消",
+        "button_confirm": "确认"
+      }
+    },
+    "homepage": {
+      "get_access_to_advanc": "获取高级功能访问权限",
+      "upgrade": "升级",
+      "cancel": "取消"
+    },
+    "appsumo": {
+      "button": {
+        "redeem_appsumo": "Redeem AppSumo"
+      },
+      "modal": {
+        "title": "Redeem AppSumo",
+        "description": "Are you sure you want to redeem AppSumo in {{teamName}} team? ",
+        "cancel": "取消",
+        "confirm": "Redeem",
+        "select_team": {
+          "title": "选择要兑换的团队",
+          "create_button": "创建新团队",
+          "redeem_button": "Redeem"
+        }
+      },
+      "landingpage": {
+        "button": "Validate AppSumo email"
+      },
+      "forget_password": {
+        "button": "创建帐户"
+      },
+      "update": "更新 AppSumo 计划"
+    },
+    "alert": {
+      "expired": {
+        "owner": "座位不足或过期订阅，请及时升级。 ",
+        "others": "由于座位不足，您已被禁用。请联系团队所有者"
+      }
+    },
+    "yearly_discount": "(几乎16.7%)",
+    "license_price_new": {
+      "monthly": "{{ price }}/editor/month",
+      "yearly": "{{ price }}/editor/year"
+    },
+    "redirect_page": {
+      "title": "支付成功",
+      "desc1": "感谢您购买。ILLA 云将继续为您提供更多功能。",
+      "desc2": "Redirecting to ILLA Cloud in {{time}} seconds...",
+      "button": "返回ILLA 云"
+    },
+    "redirect_to_stripe": "重定向到Stripe",
+    "featureList": {
+      "free": {
+        "drive": {
+          "storage": "每月100 MB 存储来存储ILLA 驱动器中的任何文件",
+          "traffic": "要从 ILLA 驱动器下载文件的 100 MB 流量"
+        }
+      },
+      "drive": {
+        "title": "ILLA 驱动器",
+        "storage": "每月5 GB 存储来存储ILLA 驱动器",
+        "traffic": "5 GB 流量从ILLA 驱动器下载文件"
+      },
+      "enterprise": {
+        "drive": {
+          "storage": "每月自定义存储在 ILLA 驱动器中存储任何文件",
+          "traffic": "自定义流量从ILLA 驱动器下载文件"
+        }
+      }
+    },
+    "label": {
+      "canceled": "已取消",
+      "expired": "已过期",
+      "paused": "已暂停"
+    }
+  }
 }
