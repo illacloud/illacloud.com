@@ -1,6 +1,3 @@
-import clsx from 'clsx'
-import { Button } from '@/components/Button'
-
 export function IconContainer({
   as: Component = 'div',
   className = '',
@@ -44,16 +41,6 @@ export function BigText({ className = '', ...props }) {
       {...props}
     />
   )
-}
-
-export function Paragraph({ as: Component = 'p', className = '', ...props }) {
-  return (
-    <Component className={`mt-4 max-w-3xl space-y-6 ${className}`} {...props} />
-  )
-}
-
-export function Link({ className, ...props }) {
-  return <Button className={clsx('mt-8', className)} {...props} />
 }
 
 export function InlineCode({ className = '', ...props }) {

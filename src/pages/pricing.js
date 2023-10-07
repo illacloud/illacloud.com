@@ -4,13 +4,13 @@ import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
-import { PricingContent } from '@/components/home/Pricing/PricingContent'
-import { PricingMask } from '@/components/home/Pricing/PricingMask'
-import { OpenSource } from '@/components/home/Pricing/OpenSource'
-import { PricingCompare } from '@/components/home/Pricing/PricingCompare'
+import { PricingContent } from '@/components/pricing/PricingContent'
+import { PricingMask } from '@/components/pricing/PricingMask'
+import { OpenSource } from '@/components/pricing/OpenSource'
+import { CompareCard } from '@/components/pricing/CompareCard'
 import { BookDemo } from '@/components/home/Form/BookDemo'
 import { FAQ } from '@/components/comm/Faq'
-import style from '@/components/home/Pricing/index.module.css'
+import style from '@/components/pricing/index.module.css'
 import { useRouter } from 'next/router'
 import { CommBottom } from '@/components/comm/commBottom'
 import useMeasure from 'react-use-measure'
@@ -50,8 +50,8 @@ const Pricing = () => {
             onChangeShow={() => setIsBookShow(true)}
           />
           <div className="w-full text-white xl:pt-[120px] bg-transparent">
-            <PricingContent onChangeShow={() => setIsBookShow(true)} />
-            <PricingCompare needReport={false} showExtra={false} />
+            <PricingContent />
+            <CompareCard onChangeShow={() => setIsBookShow(true)} />
             <OpenSource />
             <FAQ translationSpace="pricing" />
             <CommBottom scrollStart={0.88} scrollEnd={0.93} />

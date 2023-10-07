@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import style from './index.module.css'
@@ -20,7 +19,11 @@ export const CardList = ({ name, values, mouseLeave, mouseOver, index }) => {
             key={`${text}${i}`}
           >
             {text && !hasLineThrough && (
-              <img className={style.cardListIcon} src={pricing_} alt="pricing" />
+              <img
+                className={style.cardListIcon}
+                src={pricing_}
+                alt="pricing"
+              />
             )}
             <span
               className={clsx(hasLineThrough ? style.lineThroughStyle : '')}
