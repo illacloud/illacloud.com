@@ -27,23 +27,38 @@
   @apply block lg:hidden absolute;
   filter: blur(50px);
   transform: rotate(2.6deg);
-  background: radial-gradient(37% 76.28% at 48.58% 50.06%, #654AEC 0%, rgba(101, 74, 236, 0) 100%) ;
+  background: radial-gradient(
+    37% 76.28% at 48.58% 50.06%,
+    #654aec 0%,
+    rgba(101, 74, 236, 0) 100%
+  );
 }
 .pricingContent {
-  @apply flex flex-col justify-center items-center gap-[16px] w-full my-0 mx-auto;
+  @apply flex flex-col justify-center items-center gap-[16px] w-full my-0 mx-auto px-[20px];
   @apply xl:gap-[24px] lg:w-[1200px];
 }
 .pricingContentTitleExtra {
   @apply block rounded-[20px] py-[3px] px-[56px] text-center font-[500] text-[14px] leading-[26px] text-white-01;
   width: fit-content;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 50.38%, rgba(255, 255, 255, 0.00) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50.38%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 .pricingContentTitle {
   @apply font-[700] text-[40px] leading-[48px] justify-self-center px-[24px] w-full text-center;
   @apply xl:text-[64px] xl:leading-[72px];
 }
-.contentContainer {
-  @apply flex flex-row gap-[2px] p-[1px] rounded-[4px];
+.cardContainerStyle {
+  @apply w-full pt-[8px] flex flex-col gap-[20px] xl:gap-[40px];
+}
+.compareContentContainerStyle {
+  @apply flex flex-col w-full items-center;
+}
+.buttonGroupContainer {
+  @apply inline-flex flex-row gap-[2px] p-[1px] rounded-[4px] mx-auto;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -51,25 +66,35 @@
   @apply text-[14px] leading-[22px] flex items-center rounded-[3px] justify-center text-center w-[88px] h-[30px] cursor-pointer font-[400];
 }
 .pricingContentBtnActive {
-  @apply bg-tech-purple-01 font-[500] filter-none
+  @apply bg-tech-purple-01 font-[500] filter-none;
 }
 .cardContainer {
   @apply grid gap-[12px] xl:gap-[16px] px-[32px] pt-[16px] pb-[2px] w-full justify-start items-start rounded-[16px];
-  @apply lg:justify-center overflow-x-auto overflow-y-hidden lg:w-auto lg:px-0;
+  @apply lg:justify-center overflow-x-auto overflow-y-hidden lg:w-auto lg:px-[1px];
   grid-auto-rows: max-content;
-  grid-template-columns: repeat(4, 282px);
+  grid-template-columns: repeat(3, 282px);
 }
 .card {
   @apply w-[282px] h-full flex flex-col gap-[24px] rounded-[16px] relative p-[24px];
   @apply flex-shrink-0;
 }
 .darkCard {
-  outline: 1px solid rgba(255 ,255 ,255 ,0.16);
-  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
+  outline: 1px solid rgba(255, 255, 255, 0.16);
+  background: radial-gradient(
+      98.85% 129.62% at 6.76% 2.06%,
+      rgba(186, 193, 255, 0.03) 0%,
+      rgba(220, 223, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.04);
 }
-.lightCard{
-  outline: 1px solid rgba(255 ,255 ,255 ,0.16);
-  background: radial-gradient(377.75% 100% at 0.00% 0%, rgba(122, 239, 255, 0.12) 0%, rgba(122, 240, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
+.lightCard {
+  outline: 1px solid rgba(255, 255, 255, 0.16);
+  background: radial-gradient(
+      377.75% 100% at 0% 0%,
+      rgba(122, 239, 255, 0.12) 0%,
+      rgba(122, 240, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.04);
 }
 .cardTitle {
   @apply flex flex-row items-start font-[700] text-[32px] flex justify-between items-center;
@@ -81,10 +106,10 @@
   @apply font-[400] text-[12px] leading-[20px] text-white/[0.9];
 }
 .cardPriceContent {
-  @apply flex flex-col items-start gap-[8px]
+  @apply flex flex-col items-start gap-[8px];
 }
 .cardPrice {
-  @apply font-[700] text-[24px]
+  @apply font-[700] text-[24px];
 }
 .priceExtra {
   @apply font-[400] text-[12px] leading-[16px] text-white-04;
@@ -101,12 +126,14 @@
 }
 .lightCardBtn {
   @apply border-[1px] border-solid border-white/[0.10];
-  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset, 0px 0px 16px 0px rgba(3, 34, 28, 0.64);
+  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset,
+    0px 0px 16px 0px rgba(3, 34, 28, 0.64);
   transition: all 0.3s ease-in-out;
 }
 .lightCardBtn:hover {
   background: rgba(34, 255, 215, 0.08);
-  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset, 0px 0px 16px 0px rgba(3, 34, 28, 0.64);
+  box-shadow: 0px 0px 16px 0px rgba(34, 255, 215, 0.08) inset,
+    0px 0px 16px 0px rgba(3, 34, 28, 0.64);
 }
 .cardListTitle {
   @apply flex flex-row items-center py-[4px] gap-[8px] font-[600] text-[16px] leading-[24px] mt-[24px];
@@ -121,41 +148,41 @@
   @apply text-white-04 line-through ml-[24px];
 }
 .hiddenListContent {
-  @apply lg:block hidden lg:py-[4px] py-0 px-0 lg:h-[32px]
+  @apply lg:block hidden lg:py-[4px] py-0 px-0 lg:h-[32px];
 }
 .blockListContent {
- @apply py-[4px]
+  @apply py-[4px];
 }
 
 .doubt {
   @apply cursor-pointer w-[16px] h-[16px] inline-block ml-[8px] align-middle;
 }
-.doubt:hover .tips{
+.doubt:hover .tips {
   display: block;
 }
-.tooltip{
+.tooltip {
   @apply w-[200px] bg-tech-purple-01 flex fixed items-center text-white z-[20] text-[14px] leading-[22px];
-  @apply flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] rounded-[2px]
+  @apply flex-row justify-center items-center py-[8px] px-[12px] gap-[10px] rounded-[2px];
 }
 .tooltip::after {
   @apply absolute border-[5px] border-solid;
-  content: " ";
-  border-color:  transparent transparent #654AEC transparent;
+  content: ' ';
+  border-color: transparent transparent #654aec transparent;
 }
-.rightTip::after  {
+.rightTip::after {
   @apply left-[-5px];
   transform-origin: 0;
   transform: rotate(-90deg);
 }
 .bottomTip::after {
-  @apply bottom-[100%] left-[67%] ml-[-5px]
+  @apply bottom-[100%] left-[67%] ml-[-5px];
 }
-.tipContent{
+.tipContent {
   word-break: break-all;
-  white-space: normal
+  white-space: normal;
 }
 .pricingFooter {
-  @apply lg:pt-[50px] bg-white overflow-hidden
+  @apply lg:pt-[50px] bg-white overflow-hidden;
 }
 
 .deployment {
@@ -169,15 +196,25 @@
 .deploymentItem {
   @apply flex flex-row rounded-[8px] justify-between p-[16px] cursor-pointer;
   @apply xl:rounded-[16px] xl:p-[32px] border-[1px] border-solid border-white/[0.14];
-  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(255, 255, 255, 0.04);
+  background: radial-gradient(
+      98.85% 129.62% at 6.76% 2.06%,
+      rgba(186, 193, 255, 0.03) 0%,
+      rgba(220, 223, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.04);
   transition: all 0.3s ease-in-out;
 }
 .deploymentItem:hover .deploymentLink {
   @apply border-[#8D47FF] text-[#8D47FF];
 }
 .deploymentItem:hover {
-  border-color: rgba(141, 71, 255, 0.40);
-  background: radial-gradient(98.85% 129.62% at 6.76% 2.06%, rgba(186, 193, 255, 0.03) 0%, rgba(220, 223, 255, 0.00) 100%), rgba(159, 36, 255, 0.04);
+  border-color: rgba(141, 71, 255, 0.4);
+  background: radial-gradient(
+      98.85% 129.62% at 6.76% 2.06%,
+      rgba(186, 193, 255, 0.03) 0%,
+      rgba(220, 223, 255, 0) 100%
+    ),
+    rgba(159, 36, 255, 0.04);
 }
 .deploymentItemTitle {
   @apply font-[700] text-[16px] leading-[20px] mt-[12px] xl:mt-[24px];
@@ -204,11 +241,11 @@
 .switchDot {
   @apply h-[6px] w-[6px] bg-white rounded-[50%];
   transition: all 0.3s ease-in-out;
-  transform: translateX(2px)
+  transform: translateX(2px);
 }
 .activeSwitchDot {
-  @apply bg-[#8CFFAC] ;
-  transform: translateX(8px)
+  @apply bg-[#8CFFAC];
+  transform: translateX(8px);
 }
 .compareContainerStyle {
   @apply flex flex-col items-center gap-[32px] mt-[60px] px-[20px] w-full;

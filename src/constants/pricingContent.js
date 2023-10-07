@@ -61,84 +61,6 @@ export const monthlyContent = [
     ],
   },
   {
-    title: 'Plus',
-    desc: 'price-detail.discount.paid',
-    editor: {
-      price: '$10',
-      content: 'price-detail.paid-editor',
-    },
-    viewer: {
-      price: '$0',
-      content: 'price-detail.paid-viewer',
-    },
-    hasSwitch: true,
-    earlyBird: 'price-detail.early-bird',
-    btnContent: 'enterprise-btn',
-    list: [
-      {
-        name: 'members',
-        values: [
-          {
-            text: 'unlimited-viewer',
-          },
-          {
-            text: 'unlimited-members',
-          },
-        ],
-      },
-      {
-        name: 'app',
-        values: [
-          {
-            text: 'apps.components',
-          },
-          {
-            text: 'apps.resources',
-          },
-          {
-            text: 'security.app-public',
-            tip: 'tips.app-public',
-          },
-          {
-            text: 'apps.plugins',
-            tip: 'tips.plugins',
-          },
-          {
-            text: 'apps.sql',
-            tip: 'tips.sql',
-          },
-          {
-            text: 'apps.watermark',
-          },
-        ],
-      },
-      {
-        name: 'Colla',
-        values: [
-          {
-            text: 'featureList.plus.ai-agent.token',
-          },
-        ],
-      },
-      {
-        name: 'security-support',
-        values: [
-          {
-            text: 'security.historic-30',
-          },
-          {
-            text: 'security.develop-environment',
-            tip: 'tips.staging',
-          },
-          {
-            text: 'security.restore-data',
-            tip: 'tips.restore-data',
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: 'Premium',
     desc: 'price-detail.discount.paid',
     editor: {
@@ -359,84 +281,6 @@ export const annuallyContent = [
     ],
   },
   {
-    title: 'Plus',
-    desc: 'price-detail.discount.paid',
-    editor: {
-      price: '$8.3',
-      content: 'price-detail.paid-editor',
-    },
-    viewer: {
-      price: '$0',
-      content: 'price-detail.paid-viewer',
-    },
-    hasSwitch: true,
-    earlyBird: 'price-detail.early-bird',
-    btnContent: 'enterprise-btn',
-    list: [
-      {
-        name: 'members',
-        values: [
-          {
-            text: 'unlimited-viewer',
-          },
-          {
-            text: 'unlimited-members',
-          },
-        ],
-      },
-      {
-        name: 'app',
-        values: [
-          {
-            text: 'apps.components',
-          },
-          {
-            text: 'apps.resources',
-          },
-          {
-            text: 'security.app-public',
-            tip: 'tips.app-public',
-          },
-          {
-            text: 'apps.plugins',
-            tip: 'tips.plugins',
-          },
-          {
-            text: 'apps.sql',
-            tip: 'tips.sql',
-          },
-          {
-            text: 'apps.watermark',
-          },
-        ],
-      },
-      {
-        name: 'Colla',
-        values: [
-          {
-            text: 'featureList.plus.ai-agent.token',
-          },
-        ],
-      },
-      {
-        name: 'security-support',
-        values: [
-          {
-            text: 'security.historic-30',
-          },
-          {
-            text: 'security.develop-environment',
-            tip: 'tips.staging',
-          },
-          {
-            text: 'security.restore-data',
-            tip: 'tips.restore-data',
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: 'Premium',
     desc: 'price-detail.discount.paid',
     editor: {
@@ -597,90 +441,37 @@ export const annuallyContent = [
   },
 ]
 
-export const compare = {
-  tableHeader: [
-    {
-      label: 'compare.plan.free',
-      btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com',
-    },
-    {
-      label: 'compare.plan.plus',
-      btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com',
-    },
-    {
-      label: 'compare.plan.premium',
-      btnText: 'compare.button',
-      link: 'https://cloud.illacloud.com',
-    },
-  ],
-  items: [
-    {
-      label: 'compare.featureList.title.memberNum',
-      desc: 'compare.featureList.desc.memberNum',
-      texts: ['free-members', 'unlimited-viewer', 'unlimited-viewer'],
-    },
-    {
-      label: 'compare.featureList.title.component',
-      desc: 'compare.featureList.desc.component',
-      icons: [true, true, true],
-    },
-    {
-      label: 'compare.featureList.title.data-source',
-      desc: 'compare.featureList.desc.data-source',
-      icons: [true, true, true],
-    },
-    {
-      label: 'compare.featureList.title.public',
-      desc: 'compare.featureList.desc.public',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.sql-generation',
-      desc: 'compare.featureList.desc.sql-generation',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.watermark',
-      desc: 'compare.featureList.desc.watermark',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.audit-logs',
-      desc: 'compare.featureList.desc.audit-logs',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.history',
-      desc: 'compare.featureList.desc.history',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.colla',
-      desc: 'compare.featureList.desc.colla',
-      texts: [
-        'featureList.free.ai-agent.token',
-        'featureList.plus.ai-agent.token',
-        'featureList.ai-agent.token',
-      ],
-    },
-    {
-      label: 'compare.featureList.title.deployed-version',
-      desc: 'compare.featureList.desc.deployed-version',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.theme',
-      desc: 'compare.featureList.desc.theme',
-      icons: [false, true, true],
-    },
-    {
-      label: 'compare.featureList.title.environment',
-      desc: 'compare.featureList.desc.environment',
-      icons: [false, true, true],
-    },
-  ],
+export const PRICE_BUILDER_LIST = [
+  'billing.pricing.premium.feature.builder.viewer',
+  'billing.pricing.premium.feature.builder.audit_log',
+  'billing.pricing.premium.feature.builder.public',
+  'billing.pricing.premium.feature.builder.sql',
+  'billing.pricing.premium.feature.builder.history',
+  'billing.pricing.premium.feature.builder.theme',
+  'billing.pricing.premium.feature.builder.multi_environment',
+  'billing.pricing.premium.feature.builder.deployed_version',
+]
+
+export const PRICE_AGENT_LIST = [
+  'billing.pricing.premium.feature.agent.gpt',
+  'billing.pricing.premium.feature.agent.colla',
+]
+
+export const PRICE_COLLAR_LIST = [
+  'billing.pricing.colla.feature.storage',
+  'billing.pricing.colla.feature.traffic',
+  'billing.pricing.colla.feature.token',
+]
+
+export const LICENSE_UNIT_PRICE = {
+  FREE: 0,
+  MONTHLY: 20,
+  YEARLY: 200,
+}
+export const COLLAR_UNIT_PRICE = {
+  FREE: 0,
+  MONTHLY: 10,
+  YEARLY: 100,
 }
 
 export const openSourceContent = {
