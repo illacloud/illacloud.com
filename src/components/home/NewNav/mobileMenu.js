@@ -18,10 +18,10 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const router = useRouter()
 
   useEffect(() => {
-    if(menuExpand) {
-      document.body.style.overflow='hidden';
+    if (menuExpand) {
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow='visible';
+      document.body.style.overflow = 'visible';
     }
   }, [menuExpand])
 
@@ -35,7 +35,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
       )}
     >
       <div className="justify-between  w-full h-[64px] flex items-center mb-[40px]">
-        <Link legacyBehavior href="/">
+        <Link legacyBehavior href="/" passHref>
           <a className="flex items-center w-[42.5px] h-[20px]">
             <IllaLogoWhiteIcon />
           </a>
@@ -54,7 +54,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         ))
       }
       {menuItems.map(({ href, category, title }) => (
-        <Link href={href} key={title}>
+        <Link href={href} key={title} passHref>
           <span
             className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
             onClick={() => {
@@ -104,6 +104,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
             href={router.asPath}
             locale={value}
             key={value}
+            passHref
           >
             <a
               style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}

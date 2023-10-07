@@ -51,7 +51,7 @@ export const MenuSelect = ({ buttonColorChange = true, options }) => {
         }}
       >
         {values.map((option) => (
-          <Link href={`${router.locale === 'en-US' ? '' : `/${router.locale}`}${option.href}`} className="w-full" key={option.title} target={option.openNewPage ? '_blank' : '_self'}>
+          <Link href={`${router.locale === 'en-US' ? '' : `/${router.locale}`}${option.href}`} className="w-full" key={option.title} target={option.openNewPage ? '_blank' : '_self'} passHref>
             <div
               className={clsx(
                 'h-[40px] leading-[40px] text-center w-full hover:bg-white-09',
@@ -69,6 +69,7 @@ export const MenuSelect = ({ buttonColorChange = true, options }) => {
                 })
                 setExpandPanel(() => !expandPanel)
               }}
+              role='link'
             >
               {t(option.title)}
             </div>
