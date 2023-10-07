@@ -99,7 +99,7 @@
         "history": "Historia i przywracanie kopii zapasowej",
         "storage": "ILLA na dysku",
         "traffic": "Ruch napędowy ILLA",
-        "ai-agent": "Colla",
+        "ai-agent": "Kolla",
         "deployed-version": "Zachowaj wdrożone wersje i cofnij (Już wkrótce)",
         "theme": "Temat (wkrótce)",
         "environment": "Wielu środowisk (wkrótce)",
@@ -209,9 +209,595 @@
       }
     },
     "ai-agent": {
-      "title": "Colla",
+      "title": "Kolla",
       "token": "2,5k kolczyków / siedzisko / miesiąc"
     }
   },
-  "early_bird": "Wczesny ptak"
+  "early_bird": "Wczesny ptak",
+  "billing": {
+    "menu": {
+      "billing": "Płatność",
+      "license": "Wszystkie subskrypcje",
+      "drive": "Napęd",
+      "appsumo": "Appsumo",
+      "colla_transaction": "Historia transakcji Colla",
+      "billing_portal": "Portal rozliczeniowy",
+      "overview": "Wszystkie subskrypcje",
+      "pricing": "Cennik",
+      "balance": "Saldo",
+      "colla": "Użycie Colla"
+    },
+    "title": {
+      "overview": "Wszystkie subskrypcje",
+      "pricing": "Cennik",
+      "balance": "Saldo",
+      "colla_usage": "Użycie Colla",
+      "billing": "Płatność",
+      "license": "Siedziba",
+      "drive": "Napęd",
+      "colla": "Kolla",
+      "appsumo": "Appsumo"
+    },
+    "pricing": {
+      "premium": {
+        "desc": "Ulepsz swój zespół, aby uzyskać dostęp do zaawansowanych funkcji",
+        "feature": {
+          "builder": {
+            "viewer": "DARMOWA dla nieograniczonej liczby widzów",
+            "audit_log": "Dzienniki audytu",
+            "public": "Publiczna aplikacja",
+            "sql": "Generowanie AI SQL",
+            "history": "Historia i przywracanie kopii zapasowej",
+            "theme": "Custom themes for your apps ( coming soon )",
+            "multi_environment": "Wielośrodowiskowy (wkrótce )",
+            "deployed_version": "Zachowaj wdrożone wersje i przywróć (wkrótce )"
+          },
+          "agent": {
+            "gpt": "Dostęp do większej liczby modeli, takich jak GPT-4, \nGPT-3.5-turbo-16k",
+            "colla": "2,5k Colla na siedzenie"
+          }
+        },
+        "price": "/miesiąc/edytor"
+      },
+      "colla": {
+        "desc": "Wykorzystywane do zapłacenia za usługi o wartości dodanej w chmurze ILLA",
+        "feature": {
+          "storage": "Przechowywanie plików. Używane do przechowywania plików na dysku ILLA.",
+          "traffic": "Traffic. Używane do pobierania plików z Dysku ILLA.",
+          "token": "Token AI Agent. Używany do uruchamiania agentów AI.",
+          "conversion": {
+            "1": "5k Colla",
+            "2": "5GB przestrzeni dyskowej",
+            "3": "5GB ruchu",
+            "4": "50k tokenu"
+          }
+        },
+        "price": "/miesiąc/5k Colla",
+        "button": "Zarządzaj Colla"
+      }
+    },
+    "monthly": "Miesięczny",
+    "yearly": "Rocznie",
+    "members": "Drużyna",
+    "app": "aplikacje",
+    "security-support": "Bezpieczeństwo i wsparcie",
+    "apps": {
+      "components": "Wszystkie komponenty",
+      "resources": "Wszystkie zasoby",
+      "plugins": "Nieograniczona liczba wtyczek (wkrótce)",
+      "sql": "Generowanie AI SQL",
+      "watermark": "Usuń znak wodny"
+    },
+    "security": {
+      "historic-7": "Historia i przywracanie kopii zapasowej",
+      "historic-30": "Zachowaj wdrożone wersje i cofnij (Już wkrótce)",
+      "develop-environment": "Wielu środowisk (wkrótce)",
+      "app-public": "Publiczna aplikacja",
+      "restore-data": "Historia i przywracanie kopii zapasowej",
+      "deployed": "Dostęp do wsparcia ILLA",
+      "dedicated": "Dedykowany inżynier Rozwiązań"
+    },
+    "tips": {
+      "plugins": "Importuj wtyczki i użyj ich we wszystkich aplikacjach w zespołach",
+      "sql": "Wprowadź język naturalny i wygeneruj wyrażenie SQL",
+      "staging": "Przetestuj swoją aplikację w środowisku testowym",
+      "app-public": "Uczyń aplikację publiczną i każdy z linkiem ma do niej dostęp",
+      "restore-data": "Kopia zapasowa lub przywracanie historii w dowolnym momencie",
+      "deployed": "Wdrożeni inżynierowie mogą pomóc Ci na pokładzie szybciej",
+      "dedicated": "Dedykowany inżynier rozwiązań dla klientów przez Slack/email/telefon",
+      "preview_insufficient": "Plik nie może wyświetlić podglądu ze względu na niewystarczającą pojemność, najpierw zwiększ pojemność."
+    },
+    "deployment": {
+      "title": "Elastyczne wdrażanie",
+      "title-1": "Elastyczne",
+      "title-2": "wdrażanie",
+      "introduction": "ILLA oferuje dwa sposoby wdrożenia. Deweloperzy mogą korzystać z chmury ILLA, aby szybko rozpocząć tworzenie swoich aplikacji na dowolnym urządzeniu. Dostarczamy również bezpłatnie CLI ILLA w celu zapewnienia lepszego bezpieczeństwa danych.",
+      "illa-cloud": {
+        "title": "Chmura ILLA",
+        "des": "Wypróbuj wdrożenie jednego kliknięcia i ciesz się najprostszym doświadczeniem w zakresie wdrażania"
+      },
+      "illa-CLI": {
+        "title": "ILLA CLI",
+        "des": "Najszybszy i najłatwiejszy sposób na samodzielne goszczenie ILLA"
+      },
+      "kubernetes": {
+        "title": "Kubernetes",
+        "des": "Rozmieść ILLA w Kubernetes za pomocą mapy Helm ILLA"
+      },
+      "docker": {
+        "title": "Dokujący",
+        "des": "Rozmieść ILLA lokalnie w 30 s"
+      }
+    },
+    "user-month": "na użytkownika/miesiąc",
+    "editor-month": "według edytora/miesiąca",
+    "start-at": "rozpocznij od 100 użytkowników",
+    "free-members": "Tylko 1 członek do użytku osobistego",
+    "unlimited-viewer": "DARMOWA dla nieograniczonej liczby widzów",
+    "unlimited-members": "Nieograniczona liczba członków",
+    "free-btn": "Aktualny plan",
+    "plus-btn": "Ulepsz",
+    "enterprise-btn": "Skontaktuj się z nami",
+    "colla_usage": {
+      "used": "Używane",
+      "token": "Token",
+      "storage": "Pamięć",
+      "traffic": "Ruch"
+    },
+    "subscription_general": {
+      "team_type": {
+        "free": "Darmowe",
+        "plus": "+ +",
+        "premium": "Premia"
+      },
+      "colla": {
+        "desc": "Wykorzystywane do opłacenia opłat za usługi o wartości dodanej w chmurze ILLA, w tym pamięć dla sterownika ILLA, ruch dla napędu ILLA i token dla AI Agent.",
+        "table_title": {
+          "colla": "Subskrybowane Colla",
+          "seats": "Zasubskrybowane miejsca"
+        },
+        "table_desc": {
+          "bouns": "Kiedy saldo Twojego bieżącego cyklu jest niewystarczające, automatycznie dodamy Colla dla Ciebie. Bonus Colla jest dodatkową opłatą i nie jest uwzględniony w subskrypcji w cyklu. Gdy subskrypcja zostanie automatycznie odnowiona w następnym cyklu, nie będzie zawierać bonusu Colla."
+        },
+        "table_button": {
+          "seats": "Zarządzaj miejscami",
+          "colla": "Zarządzaj Colla"
+        }
+      },
+      "plan": {
+        "free": "Darmowe",
+        "plus": "Premia"
+      },
+      "sub_cycle": {
+        "yearly": "Rocznie",
+        "monthly": "Miesięczny",
+        "lifetime": "Dożywotni"
+      },
+      "billing_cyle": {
+        "year": "/ Rok",
+        "month": "/ Miesiąc"
+      },
+      "table_title": {
+        "next_payment_date": "Następna data płatności",
+        "expiration_date": "Data wygaśnięcia",
+        "licenses": "Siedzenia",
+        "storage": "Pamięć",
+        "traffic": "Ruch",
+        "colla": "Pozostało Colla",
+        "colla_sub": "Subskrybowane Colla",
+        "colla_unsub": "Saldo",
+        "seats": "Zasubskrybowane miejsca",
+        "bouns": "Colla Bouns"
+      },
+      "period": {
+        "current": "Bieżący",
+        "next": "Następny"
+      },
+      "cycle": {
+        "month": "/ miesiąc",
+        "year": "/ rok"
+      },
+      "table_desc": {
+        "bouns": "Kiedy saldo Twojego bieżącego cyklu jest niewystarczające, automatycznie dodamy Colla dla Ciebie. Bonus Colla jest dodatkową opłatą i nie jest uwzględniony w subskrypcji w cyklu. Gdy subskrypcja zostanie automatycznie odnowiona w następnym cyklu, nie będzie zawierać bonusu Colla. "
+      },
+      "table_button": {
+        "seats": "Zarządzaj miejscami",
+        "colla": "Zarządzaj Colla"
+      }
+    },
+    "subscription_card": {
+      "title": {
+        "License": "Siedzenia",
+        "Storage": "Pamięć",
+        "Traffic": "Ruch",
+        "balance": "Saldo",
+        "colla": "Kolla"
+      },
+      "button": {
+        "License": "Zarządzaj miejscami",
+        "Storage": "Zarządzaj pamięcią",
+        "Traffic": "Rozwiń ruch",
+        "colla": "Zarządzaj Colla"
+      },
+      "capacity": {
+        "License": "użyty (suma miejsc {{total}}) ",
+        "Storage": "{{used}}GB użyty (suma {{total}}GB) ",
+        "Traffic": "{{used}}GB użyty (suma {{total}}GB) ",
+        "colla": "{{used}} Colla (łącznie {{total}} Colla)"
+      },
+      "colla_usage": {
+        "token": "Token",
+        "traffic": "Ruch",
+        "storage": "Pamięć"
+      }
+    },
+    "colla_transaction": {
+      "table_title": {
+        "month": "Miesiąc",
+        "event": "Wydarzenie",
+        "usage": "Użycie Colla"
+      },
+      "event": {
+        "increase_storage": "Zwiększ pamięć",
+        "increase_colla": "Zwiększ Colla",
+        "increase_traffic": "Zwiększ ruch"
+      },
+      "usage": {
+        "change_num": "{{changeNum}} Colla"
+      }
+    },
+    "payment_sidebar": {
+      "price": {
+        "colla_monthly": "{{price}} / miesięcznie / 5k Colla",
+        "colla_yearly": "{{price}} / rok / 60k Colla"
+      },
+      "title": {
+        "manage_storage": "Zarządzaj pamięcią",
+        "manage_licenses": "Zarządzaj miejscami",
+        "expand_traffic_capac": "Rozwiń przepustowość",
+        "colla": "Zarządzaj Colla"
+      },
+      "plan_label": {
+        "License": "Siedzenia",
+        "Storage": "Pamięć",
+        "Traffic": "Ruch",
+        "colla": "Kolla"
+      },
+      "plan_number_input_label": {
+        "License": "Siedzenia",
+        "Storage_traffic": "5GB",
+        "colla": "Kolla"
+      },
+      "select_option": {
+        "Yearly": "Rocznie",
+        "Monthly": "Miesięczny"
+      },
+      "price_label": {
+        "total": "Łącznie"
+      },
+      "price_type": {
+        "this_period_remove": "Ten okres",
+        "this_period": "Ten okres",
+        "next_period": "Następny okres",
+        "next_period_remove": "Następny okres",
+        "payment": "Koszt",
+        "this_period_storage": "Ten okres",
+        "next_period_storage": "Następny okres",
+        "this_period_remove_storage": "Ten okres",
+        "next_period_remove_storage": "Następny okres",
+        "payment_storage": "Koszt",
+        "payment_traffic": "Koszt",
+        "payment_description_traffic": "{{unitPrice}} × {{trafficNum}} GB"
+      },
+      "price_cal": {
+        "this_period": "{{unitPrice}} × {{licenseNum}} miejsca × {{remainDays}} dni / {{totalDays}} dni",
+        "next_period_yearly": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "next_period_monthly": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "this_period_remove": "{{unitPrice}} × {{licenseNum}} miejsca × {{remainDays}} dni / {{totalDays}} dni",
+        "next_period_yearly_remove": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "next_period_monthly_remove": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "payment_year": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "payment_month": "{{unitPrice}} × {{licenseNum}} miejsc",
+        "this_period_storage": "{{unitPrice}} × {{storageNum}} GB × {{remainDays}} dni / {{totalDays}} dni",
+        "next_period_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "next_period_monthly_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "this_period_remove_storage": "{{unitPrice}} × {{storageNum}} GB × {{remainDays}} dni / {{totalDays}} dni",
+        "next_period_yearly_remove_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "next_period_monthly_remove_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "payment_year_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "payment_month_storage": "{{unitPrice}} × {{storageNum}} GB",
+        "colla": "{{unitPrice}} * {{purchaseNum}} "
+      },
+      "button": {
+        "unsubscribe": "Anuluj subskrypcję",
+        "subscribe": "Subskrybuj",
+        "change_plan": "Zmień plan",
+        "storage_traffic_increase": "Zwiększ {{changeNum}} GB",
+        "storage_traffic_remove": "Usuń {{changeNum}} GB",
+        "license_increase": "Zwiększ liczbę miejsc {{changeNum}}",
+        "license_remove": "Usuń miejsca {{changeNum}}",
+        "colla_increase": "Zwiększ {{changeNum}} Colla",
+        "colla_remove": "Usuń {{changeNum}} Colla"
+      },
+      "colla": {
+        "1": "{{purchaseNum}} Colla",
+        "2": "Pamięć {{storageNum}}",
+        "3": "Ruch {{trafficNum}}",
+        "4": "Token {{tokenNum}}"
+      },
+      "description_title": {
+        "add_storage": "Zamierzasz dodać {{changeNum}} GB pamięci. Po potwierdzeniu, natychmiast odliczymy płatność za nową pamięć w tym cyklu rozliczeniowym. <0>Dowiedz się więcej</0>",
+        "remove_storage": "Zamierzasz usunąć pamięć {{changeNum}} GB. Po potwierdzeniu, zmiany zaczną obowiązywać w następnym cyklu rozliczeniowym. <0>Dowiedz się więcej</0>",
+        "update_plan_year": "Zamierzasz zaktualizować do rocznego planu płatności. Po potwierdzeniu, zmiana zacznie obowiązywać od początku następnego cyklu rozliczeniowego. <0>Dowiedz się więcej</0>",
+        "update_plan_monthly": "Zamierzasz zaktualizować do miesięcznego planu płatności. Po potwierdzeniu, zmiana zacznie obowiązywać od początku następnego cyklu rozliczeniowego. <0>Dowiedz się więcej</0>",
+        "add_license": "Zamierzasz dodać miejsca {{changeNum}} . Po potwierdzeniu, natychmiast odliczymy płatność za nowe miejsca za ten cykl rozliczeniowy. <0>Dowiedz się więcej</0>",
+        "remove_license": "Zamierzasz usunąć miejsca {{changeNum}} . Po potwierdzeniu, zmiany zaczną obowiązywać w następnym cyklu rozliczeniowym. <0>Dowiedz się więcej</0>",
+        "add_traffic": "Dodasz ruch {{changeNum}}GB. Po potwierdzeniu, natychmiast odliczymy koszt dodatkowego ruchu. <0>Dowiedz się więcej</0>",
+        "subscribe_storage": "Zamierzasz subskrybować ILLA Cloud Premium. Automatycznie odliczymy opłaty z Twojego konta na początku każdego cyklu płatności. <0>Dowiedz się więcej</0>",
+        "subscribe_license": "Zamierzasz subskrybować dysk ILLA. Automatycznie odliczymy opłaty z Twojego konta na początku każdego cyklu płatności. <0>Dowiedz się więcej</0>",
+        "update_plan_increase_license": "Zamierzasz dodać miejsca {{changeNum}} i zaktualizować okres subskrypcji. <0>Dowiedz się więcej</0>",
+        "update_plan_remove_license": "Zamierzasz usunąć miejsca {{changeNum}} i zaktualizować okres subskrypcji. <0>Dowiedz się więcej</0>",
+        "update_plan_increase_storage": "Masz zamiar dodać {{changeNum}} GB przestrzeni dyskowej i zaktualizować okres subskrypcji. <0>Dowiedz się więcej</0>",
+        "update_plan_remove_storage": "Zamierzasz usunąć pamięć {{changeNum}} GB i zaktualizować okres subskrypcji. <0>Dowiedz się więcej</0>",
+        "unsubscribe_license": "Zamierzasz zrezygnować z subskrypcji ILLA Cloud Premium. Po anulowaniu, począwszy od następnego cyklu rozliczeniowego, funkcje Premium nie będą już dostępne. <0>Dowiedz się więcej</0>",
+        "unsubscribe_storage": "Zamierzasz zrezygnować z subskrypcji pamięci dyskowej ILLA. Po anulowaniu, począwszy od następnego cyklu rozliczeniowego, pojemność magazynowa zostanie przywrócona do 100MB. <0>Dowiedz się więcej</0>",
+        "subscribe_license_monthly": "Zamierzasz subskrybować miesięczną subskrypcję ILLA Cloud Premium. <0>Dowiedz się więcej</0>",
+        "subscribe_license_yearly": "Zamierzasz subskrybować roczną subskrypcję ILLA Cloud Premium. <0>Dowiedz się więcej</0>",
+        "subscribe_storage_monthly": "Dodasz magazyn {{changeNum}}GB. Po potwierdzeniu, natychmiast odliczymy koszt pamięci. <0>Dowiedz się więcej</0>",
+        "subscribe_storage_yearly": "Dodasz magazyn {{changeNum}}GB. Po potwierdzeniu, natychmiast odliczymy koszt pamięci. <0>Dowiedz się więcej</0>",
+        "colla_sub": "Zamierzasz subskrybować Colla. Po potwierdzeniu, automatycznie odliczymy opłaty na początku każdego cyklu rozliczeniowego i zaktualizujemy subskrypcję automatycznie, gdy potrzebujesz więcej Colla. <0>Dowiedz się więcej</0>",
+        "colla_increase": "Dodasz {{changeNum}} Colla. Po potwierdzeniu, natychmiast odliczymy pozostałą kwotę należną za ten cykl rozliczeniowy. <0>Dowiedz się więcej</0>",
+        "colla_remove": "Zamierzasz usunąć {{changeNum}} Colla. Po potwierdzeniu, wejdzie on w życie z następnym cyklem rozliczeniowym. <0>Dowiedz się więcej</0>",
+        "colla_unsubscribe": "Zamierzasz anulować subskrypcję Colla. Po potwierdzeniu, wejdzie ona w życie z następnym cyklem rozliczeniowym. Pamiętaj, że po anulowaniu możesz doświadczyć problemów z twoim użytkowaniem napędu ILLA i AI Agent. <0>Dowiedz się więcej</0>",
+        "colla_update": "Zamierzasz zmodyfikować subskrypcję Colli. Po potwierdzeniu, zmiany zaczną obowiązywać od następnego cyklu rozliczeniowego. <0>Dowiedz się więcej</0>"
+      },
+      "description": {
+        "remove_storage": "Jeśli pojemność magazynowa zajmowana przez twoje pliki przekracza pojemność subskrybowanego magazynu na początku następnego cyklu rozliczeniowego, wszystkie pliki zostaną wyłączone, aż usuniesz pliki lub zwiększ pojemność pamięci w dostępnym zakresie. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "update_plan_year": "Począwszy od następnego okresu, subskrypcja zostanie zmieniona na subskrypcję roczną, a opłaty będą automatycznie odliczane na podstawie ceny rocznego abonamentu. Jeśli chcesz zmniejszyć liczbę miejsc lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "update_plan_monthly": "Począwszy od następnego okresu, subskrypcja zostanie zmieniona na subskrypcję miesięczną, a opłaty będą automatycznie potrącane w oparciu o miesięczną cenę abonamentu. Jeśli chcesz zmniejszyć liczbę miejsc lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "add_license": "Reguły obliczeniowe za pomocą miesięcznej subskrypcji miejsc na przykładzie: Rozważmy scenariusz, w którym początkowo subskrybowałeś 5 miejsc począwszy od 14 marca, a cykl rozliczeniowy obejmuje okres od 14 dnia bieżącego miesiąca do 13 dnia następnego miesiąca. 10 maja zdecydują Państwo o dodaniu 1 dodatkowych miejsc. W tym momencie pozostało 4 dni do końca bieżącego cyklu 13 maja (łącznie 30 dni od 14 kwietnia do 13 maja). Aby obliczyć skorygowaną płatność, odliczymy koszt 1 miejsca, co odpowiada około 10 dolarów, proporcjonalnie do długości 4 dni w ciągu 30-dniowego cyklu. W związku z tym odliczenie szacuje się na 1 miejsce * 10$ / 30 dni * 4 dni, co daje około 1,33 USD. Począwszy od następnego cyklu rozliczeniowego, wszystkie opłaty za miejsce zostaną skonsolidowane i zapłacone razem. Jeśli chcesz zmniejszyć liczbę miejsc lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "remove_license": "Jeśli liczba użytkowników z uprawnieniami do edycji przekracza liczbę miejsc na początku następnego cyklu rozliczeniowego, wszyscy użytkownicy z wyjątkiem właściciela zostaną wyłączeni do czasu usunięcia członków lub zwiększenia liczby miejsc w dostępnym zakresie. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "add_traffic": "Po pomyślnym odliczeniu, Twój ruch będzie wzrastał w czasie rzeczywistym. Po wykorzystaniu ruchu opłaty nie mogą zostać zwrócone. Niewykorzystany ruch może zostać zwrócony w jednostkach GB. Na przykład, jeśli kupujesz 10GB ruchu i korzystasz z 4,5GB, możesz złożyć wniosek o zwrot 5GB. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "subscribe_storage_yearly": "Zamierzasz subskrybować roczną subskrypcję magazynu ILLA Drive. Automatycznie odliczymy opłaty z Twojego konta na początku każdego cyklu płatności. Rzeczywista kwota odliczona zależy od ilości pojemności magazynowej subskrybowanej w GB. Na przykład, jeśli rozpoczniesz swoją pierwszą subskrypcję 25 lutego 2023 r. z roczną prowizją abonamentową w wysokości 9 dolarów. za GB, a masz w sumie 3 GB, odliczymy 29 dolarów. 25 lutego 2023 r. Jeśli dodasz 2 GB w dniu 25 marca 2023 r., najpierw odliczymy pozostałe 11 miesięcy w dniu 25 marca 2023 r. Następnie, do 25 lutego 2024 r., odejmiemy płatność za 5 GB, która wynosi (2+3)*9,9 USD =49 USD. . Jeśli chcesz zmniejszyć pamięć lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "subscribe_license_monthly": "Zamierzasz subskrybować miesięczną subskrypcję ILLA Cloud Plus. Automatycznie odliczymy opłaty z Twojego konta na początku każdego cyklu płatności. Rzeczywista kwota potrącona zależy od liczby miejsc, które posiadasz. Na przykład, jeśli rozpoczniesz swoją pierwszą subskrypcję 25 lutego 2023 r. z miesięczną opłatą abonamentową w wysokości 12 USD za miejsce, a masz w sumie 3 miejsca, odliczymy 36 dolarów w dniu 25 lutego 2023 r. Jeżeli w dniu 21 marca 2023 r. dodamy jeszcze 2 miejsca, najpierw odjęmy pozostałe 5 dni w dniu 21 marca 2023 r. Następnie, do 25 marca 2023 r., odejmiemy płatność za 5 miejsc, czyli (2+3)*$12=60$. Jeśli chcesz zmniejszyć liczbę miejsc lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "update_plan_increase_license": "Opłaty będą automatycznie odliczane w oparciu o zaktualizowaną liczbę miejsc i cenę nowego cyklu rozliczeniowego od następnego okresu. Tym razem odliczymy płatność za zwiększenie liczby miejsc zgodnie z obecnym cyklem rozliczeniowym. Zasady obliczania zwiększenia liczby miejsc za pomocą miesięcznej subskrypcji miejsc jako przykładu: Rozważmy scenariusz, w którym początkowo subskrybowałeś 5 miejsc począwszy od 14 marca, a cykl rozliczeniowy obejmuje okres od 14 dnia bieżącego miesiąca do 13 dnia następnego miesiąca. 10 maja zdecydują Państwo o dodaniu 1 dodatkowego miejsca. W tym momencie pozostało 4 dni do końca bieżącego cyklu 13 maja (łącznie 30 dni od 14 kwietnia do 13 maja). Aby obliczyć skorygowaną płatność, odliczymy koszt 1 miejsca, co odpowiada około 10 dolarów, proporcjonalnie do długości 4 dni w ciągu 30-dniowego cyklu. W związku z tym odliczenie szacuje się na 1 miejsce * 10$ / 30 dni * 4 dni, co daje około 1,33 USD. Począwszy od następnego cyklu rozliczeniowego, wszystkie opłaty za miejsce zostaną skonsolidowane i zapłacone razem. Jeśli chcesz zmniejszyć liczbę miejsc lub wprowadzić inne zmiany w subskrypcji, zaktualizuj ją przed rozpoczęciem następnego okresu. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "update_plan_remove_license": "Opłaty będą automatycznie odliczane w oparciu o zaktualizowaną liczbę miejsc i cenę nowego cyklu rozliczeniowego od następnego okresu. Jeśli liczba użytkowników z uprawnieniami do edycji przekracza liczbę miejsc na początku następnego cyklu rozliczeniowego, wszyscy użytkownicy z wyjątkiem właściciela zostaną wyłączeni do czasu usunięcia członków lub zwiększenia liczby miejsc w dostępnym zakresie. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>",
+        "update_plan_remove_storage": "Opłaty będą automatycznie odliczane w oparciu o zaktualizowaną pamięć i cenę nowego cyklu rozliczeniowego od następnego okresu. Jeśli pojemność magazynowa zajmowana przez twoje pliki przekracza pojemność subskrybowanego magazynu na początku następnego cyklu rozliczeniowego, wszystkie pliki zostaną wyłączone, aż usuniesz pliki lub zwiększ pojemność pamięci w dostępnym zakresie. Aby uzyskać więcej informacji, zapoznaj się z naszą <0>Polityką prywatności</0> i <1>Warunkiem korzystania z usługi</1>"
+      },
+      "colla_redeem": {
+        "title": "Z {{changeNum}} Colla możesz kupić: ",
+        "storage": "Pamięć",
+        "traffic": "Ruch",
+        "token": "Token"
+      }
+    },
+    "message": {
+      "failed_to_subscribe": "Nie udało się zasubskrybować. Spróbuj ponownie.",
+      "failed_to_add_traffic": "Nie udało się dodać ruchu. Spróbuj ponownie. ",
+      "failed_to_add_storage": "Nie udało się dodać pamięci. Spróbuj ponownie. ",
+      "failed_to_remove_storage": "Nie udało się usunąć pamięci. Spróbuj ponownie. ",
+      "failed_to_add_licens": "Nie udało się dodać miejsc. Spróbuj ponownie. ",
+      "failed_to_remove_lic": "Nie udało się usunąć miejsc. Spróbuj ponownie. ",
+      "failed_to_change_pla": "Zmiana planu nie powiodła się. Spróbuj ponownie. ",
+      "failed_to_unsubscrib": "Wypisanie subskrypcji nie powiodło się. Spróbuj ponownie. ",
+      "successfully_removed": "Pomyślnie usunięto. Zmiana zacznie obowiązywać od {{nextPaymentDate}}.",
+      "unsubscription_succe": "Pomyślnie zrezygnowano z subskrypcji. Zmiana zacznie obowiązywać od {{nextPaymentDate}}",
+      "cancel_subscribe": "Subskrypcja nie została zakończona, spróbuj ponownie lub skontaktuj się z billing@illasoft.com",
+      "cancel_purchase": "Zakup nie został zakończony, spróbuj ponownie lub skontaktuj się z billing@illasoft.com",
+      "successfully_changed": "Subskrypcja zmieniona pomyślnie. Będzie ona obowiązywać za kilka minut",
+      "failed_to_change": "Zmiana subskrypcji nie powiodła się",
+      "unsubscription_suc": "Subskrypcja została anulowana pomyślnie i wejdzie w życie od następnego okresu",
+      "failed_to_join_no_license": "Nie można dołączyć z powodu niewystarczających miejsc ",
+      "storage_insufficient_modal": "Pamięć lub ruch tego zespołu nie wystarcza. Skontaktuj się z administratorem.",
+      "appsumo": {
+        "suc": "Pomyślnie wykupiono",
+        "fail": "Nie udało się zrealizować. Spróbuj ponownie później.",
+        "transfer": "Operacja nie powiodła się. Ten użytkownik jest związany z dożywotnią subskrypcją. ",
+        "leave": "Operacja nie powiodła się. Ten użytkownik jest związany z dożywotnią subskrypcją. "
+      },
+      "no_license_operate_failed": "Z powodu wyjątku subskrypcji operacja nie powiodła się.",
+      "failed_to_invite_no_license": "Z powodu niewystarczającej licencji, niektóre zaproszenia użytkowników nie powiodły się.",
+      "error_subscribe": "Subskrypcja nie powiodła się. Spróbuj ponownie później.",
+      "unsubscription_fail": "Nie udało się anulować subskrypcji. Spróbuj ponownie później.",
+      "failed_to_update": "Nie udało się zaktualizować subskrypcji. Spróbuj ponownie. ",
+      "update_suc": "Subskrypcja zaktualizowana pomyślnie",
+      "no_traffic": "Niewystarczająca ilość ruchu. Skontaktuj się z administratorem, aby zwiększyć Colla.",
+      "no_storage": "Niewystarczająca ilość pamięci. Skontaktuj się z administratorem, aby zwiększyć liczbę Colla."
+    },
+    "modal": {
+      "colla_insufficient_modal": {
+        "storage": {
+          "title": "Niewystarczająca pojemność",
+          "desc": {
+            "1": "Twoja pamięć jest niewystarczająca. Proszę subskrybuj Colla lub dodaj Colla aby zwiększyć pamięć.",
+            "2": "Po subskrybowaniu Colla możesz użyć twojego Colla do zwiększenia pamięci, zwiększenia ruchu, i token wspomagający, który zostanie automatycznie przydzielony w zależności od Twoich potrzeb."
+          }
+        },
+        "traffic": {
+          "title": "Niewystarczający ruch",
+          "desc": {
+            "1": "Twój ruch jest niewystarczający. Proszę subskrybuj Colla lub dodaj Colla, aby zwiększyć swój ruch.",
+            "2": "Po subskrybowaniu Colla możesz użyć twojego Colla do zwiększenia pamięci, zwiększenia ruchu, i token wspomagający, który zostanie automatycznie przydzielony w zależności od Twoich potrzeb."
+          }
+        },
+        "token": {
+          "title": "Niewystarczający token",
+          "desc": {
+            "1": "Twój token jest niewystarczający. Proszę subskrybuj Colla lub dodaj Colla, aby zwiększyć swój token.",
+            "2": "Po subskrybowaniu Colla możesz użyć twojego Colla do zwiększenia pamięci, zwiększenia ruchu, i token wspomagający, który zostanie automatycznie przydzielony w zależności od Twoich potrzeb."
+          }
+        },
+        "button": "Zwiększ Colla",
+        "cycle": "co miesiąc / 5k Colla",
+        "failed": {
+          "title": "Nie udało się zwiększyć Colla",
+          "storage": {
+            "desc": "Twoje saldo Colla jest niewystarczające, aby zaspokoić bieżące zapotrzebowanie na pamięć. Napotkaliśmy pewne problemy podczas zwiększania Twojego Colla. Proszę, zwiększ Colla ręcznie."
+          },
+          "traffic": {
+            "desc": "Twoje saldo Colla jest niewystarczające, aby zaspokoić bieżące zapotrzebowanie na ruch. Napotkaliśmy pewne problemy podczas zwiększania Twojego Colla. Proszę zwiększyć Colla ręcznie."
+          },
+          "token": {
+            "desc": "Twoje saldo Colla jest niewystarczające, aby zaspokoić bieżący wymóg dotyczący tokenu. Napotkaliśmy pewne problemy podczas zwiększania Twojego Colla. Proszę, zwiększ Colla ręcznie."
+          },
+          "button": "Zwiększ Colla"
+        }
+      },
+      "storage_insufficient_modal": {
+        "owner_title_drive": "Niewystarczająca pojemność",
+        "owner_description_drive": "Pamięć lub ruch nie wystarcza. Zaktualizuj i spróbuj ponownie.",
+        "owner_button_drive": "Ulepsz",
+        "not_owner_title_drive": "Nie udało się uruchomić",
+        "not_owner_description_drive": "Pamięć lub ruch tego zespołu nie wystarcza. Skontaktuj się z administratorem.",
+        "not_owner_button_drive": "Zrozumiałe",
+        "out_title_drive": "Pobieranie nie powiodło się",
+        "out_description_drive": "Z powodu niewystarczającego ruchu pobieranie nie powiodło się. Skontaktuj się z właścicielem pliku",
+        "out_button_drive": "Zrozumiałe"
+      },
+      "sub_suc": {
+        "subscription_success": "Subskrypcja zakończona powodzeniem",
+        "you_can_now_invite_m": "Wejdzie on w życie za kilka minut. Możesz zaprosić członków i zacząć korzystać z zaawansowanych funkcji później. Kontynuuj i spróbuj!",
+        "you_can_now_upload_m": "Będzie to skuteczne za kilka minut. Możesz teraz przesłać więcej plików.",
+        "payment_successful": "Płatność zakończona powodzeniem",
+        "we_have_added_the_li": "To wejdzie w życie za kilka minut. Dodaliśmy dla Ciebie miejsca. Wszelkie zmiany w okresie subskrypcji zaczną obowiązywać od następnego cyklu rozliczeniowego.",
+        "we_have_added_the_st": "To wejdzie w życie za kilka minut. Dodaliśmy dla Ciebie pamięć. Wszelkie zmiany w okresie subskrypcji zaczną obowiązywać od następnego cyklu rozliczeniowego.",
+        "we_have_added_the_tr": "To wejdzie w życie za kilka minut. Dodamy dla Ciebie ruch sieciowy. Możesz teraz pobrać więcej plików.",
+        "successfully_updated": "Pomyślnie zaktualizowano",
+        "the_change_to_the_su": "Zmiana okresu subskrypcji zacznie obowiązywać od następnego cyklu rozliczeniowego.",
+        "got_it": "Zrozumiałe"
+      },
+      "upgrade_now_admin": {
+        "upgrade_to_plus": "Uaktualnij do Premium",
+        "this_feature_is_avai": "Ta funkcja jest dostępna tylko dla użytkowników Premium. Aby z niej korzystać, uaktualnij do Plus. Ulepszając do Premium, będziesz miał również dostęp do następujących funkcji. ",
+        "add_unlimited_viewer": "Dodaj nieograniczoną liczbę członków przeglądarki za DARMO",
+        "publish_public_appli": "Opublikuj aplikacje publiczne",
+        "ai_sql_generation": "Generowanie AI SQL",
+        "audit_logs": "Dzienniki audytu",
+        "learn_more": "Poznaj więcej",
+        "upgrade": "Ulepsz",
+        "insufficient_license_title": "Niewystarczająca ilość miejsc",
+        "insufficient_license_description": "Aby zaprosić więcej edytorów, najpierw zwiększ liczbę miejsc. Wszyscy członkowie twojego zespołu mogą korzystać z funkcji ILLA Cloud Premium. Określony dostęp do każdej funkcji zależy od roli każdego z członków. ",
+        "insufficient_license_button": "Dodaj miejsca",
+        "pricing": "edytor/mies. rocznie($20/edytor, miesięcznie)"
+      },
+      "expired": {
+        "owner": "Twoja subskrypcja wygasła. Aby kontynuować korzystanie z niej, proszę ją odnowić.",
+        "others": "Twoje konto zostało wyłączone, ponieważ subskrypcja zespołu wygasła.",
+        "your_subscription_ha_not_owner": "Wyjątek subskrypcji",
+        "all_members_except_f_not_owner": "Subskrypcja twojej drużyny ma wyjątek, prosimy o kontakt z właścicielem zespołu.",
+        "upgrade_not_owner": "Zrozumiałe",
+        "your_subscription_ha": "Subskrypcja wygasła",
+        "all_members_except_f": "Subskrypcja twojej drużyny wygasła. Proszę odnowić ją na czas",
+        "upgrade": "Ulepsz"
+      },
+      "blank_page": {
+        "insufficient_license_disable": "Twoje konto zostało wyłączone z powodu niewystarczającej ilości miejsc w zespole. Skontaktuj się z właścicielem zespołu, aby uzyskać pomoc."
+      },
+      "upgrade_not_admin": {
+        "insufficient_license_title": "Niewystarczająca ilość miejsc",
+        "insufficient_license_description": "Z powodu niewystarczającej ilości miejsc operacja nie powiodła się. Skontaktuj się z właścicielem zespołu.",
+        "insufficient_license_button": "OK"
+      },
+      "storage_insufficient": {
+        "owner_title": "Niewystarczająca pojemność magazynowa",
+        "owner_description": "W celu normalnego przechowywania plików, proszę zwiększyć czas przechowywania. ",
+        "owner_button": "Zwiększ pojemność",
+        "not_owner_title": "Niewystarczająca pojemność magazynowa",
+        "not_owner_description": "Aby przechowywać pliki normalnie, skontaktuj się z administratorem, aby zwiększyć pojemność pamięci w czasie.",
+        "not_owner_button": "OK",
+        "owner_pricing": "5 GB/miesiąc"
+      },
+      "traffic_insufficient": {
+        "owner_title": "Niewystarczająca przepustowość",
+        "owner_description": "Aby uzyskać normalny dostęp do plików, zwiększ przepustowość ruchu w czasie. ",
+        "owner_button": "Zwiększ pojemność",
+        "not_owner_title": "Niewystarczający ruch",
+        "not_owner_description": "Aby uzyskać normalny dostęp do plików, skontaktuj się z administratorem, aby zwiększyć przepustowość ruchu w czasie.",
+        "not_owner_button": "OK",
+        "owner_pricing": "5 GB"
+      },
+      "cancel_confirm": {
+        "description": "Po anulowaniu, Twój zespół powróci do darmowego planu, począwszy od następnego cyklu rozliczeniowego. Funkcje zawarte w planach subskrypcji nie będą już dostępne.",
+        "title": "Anulować subskrypcję?",
+        "button_cancel": "Anuluj",
+        "button_confirm": "Potwierdź"
+      },
+      "change_confirm": {
+        "description": "Po skróceniu zmiany wejdą w życie w kolejnym cyklu rozliczeniowym. Jeżeli istnieją zasoby przekraczające nowo alokowane zdolności, wszystkie zasoby mogą stać się niedostępne.",
+        "title": "Zmienić plan?",
+        "button_cancel": "Anuluj",
+        "button_confirm": "Potwierdź"
+      }
+    },
+    "homepage": {
+      "get_access_to_advanc": "Uzyskaj dostęp do zaawansowanych funkcji",
+      "upgrade": "Ulepsz",
+      "cancel": "Anuluj"
+    },
+    "appsumo": {
+      "button": {
+        "redeem_appsumo": "Redeem AppSumo"
+      },
+      "modal": {
+        "title": "Redeem AppSumo",
+        "description": "Czy na pewno chcesz wykupić AppSumo w drużynie {{teamName}}? ",
+        "cancel": "Anuluj",
+        "confirm": "Redeem",
+        "select_team": {
+          "title": "Wybierz zespół do wykupu",
+          "create_button": "Utwórz nowy zespół",
+          "redeem_button": "Redeem"
+        }
+      },
+      "landingpage": {
+        "button": "Validate AppSumo email"
+      },
+      "forget_password": {
+        "button": "Utwórz konto"
+      },
+      "update": "Aktualizuj plan AppSumo"
+    },
+    "alert": {
+      "expired": {
+        "owner": "Niewystarczająca liczba miejsc lub subskrypcja wygasła, proszę zaktualizować na czas. ",
+        "others": "Ze względu na niewystarczającą ilość miejsc, zostałeś wyłączony. Skontaktuj się z właścicielem zespołu"
+      }
+    },
+    "yearly_discount": "(Zaoszczędzić prawie 16,7%)",
+    "license_price_new": {
+      "monthly": "{{ price }}/editor/miesiąc",
+      "yearly": "{{ price }}/editor/rok"
+    },
+    "redirect_page": {
+      "title": "Płatność zakończona powodzeniem",
+      "desc1": "Dziękujemy za zakup. ILLA Cloud będzie nadal zapewniać więcej funkcji.",
+      "desc2": "Redirecting to ILLA Cloud in {{time}} seconds...",
+      "button": "Wróć do chmury ILLA"
+    },
+    "redirect_to_stripe": "Przekierowanie do Stripe",
+    "featureList": {
+      "free": {
+        "drive": {
+          "storage": "100 MB pamięci miesięcznie do przechowywania plików w Dysku ILLA",
+          "traffic": "Strumień 100 MB do pobrania plików z Dysku ILLA"
+        }
+      },
+      "drive": {
+        "title": "Dysk ILLA",
+        "storage": "5 GB przestrzeni miesięcznie do przechowywania plików na dysku ILLA",
+        "traffic": "5 GB ruchu do pobierania plików z Dysku ILLA"
+      },
+      "enterprise": {
+        "drive": {
+          "storage": "Własna pamięć miesięczna do przechowywania dowolnych plików w Dysku ILLA",
+          "traffic": "Niestandardowy ruch do pobierania plików z Dysku ILLA"
+        }
+      }
+    },
+    "label": {
+      "canceled": "Anulowane",
+      "expired": "Wygasły",
+      "paused": "Zatrzymano"
+    }
+  }
 }
