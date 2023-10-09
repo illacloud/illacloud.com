@@ -76,6 +76,9 @@ export const CommBottom = ({
                 action: 'click',
                 category: 'homepage_call_action_try_cloud_click',
               })
+              sendTagEvent({
+                action: 'click_try',
+              })
             }}
           >
             <a
@@ -96,6 +99,9 @@ export const CommBottom = ({
               sendTagEvent({
                 action: 'click',
                 category: 'homepage_call_action_try_cloud_click',
+              })
+              sendTagEvent({
+                action: 'click_signin',
               })
             }}
           >
