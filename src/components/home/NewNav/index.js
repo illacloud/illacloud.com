@@ -49,8 +49,8 @@ export const Nav = (props) => {
               />
             ))}
             {menuItems.map(({ href, category, title }) => (
-              <Link href={href} key={title}>
-                <span
+              <Link legacyBehavior href={href} key={title}>
+                <a
                   className="px-[16px] text-center cursor-pointer"
                   onClick={() => {
                     sendTagEvent({
@@ -61,7 +61,7 @@ export const Nav = (props) => {
                   }}
                 >
                   {t(title)}
-                </span>
+                </a>
               </Link>
             ))}
           </div>
@@ -88,13 +88,12 @@ export const Nav = (props) => {
             >
               {t('nav.contact')}
             </span>
-            <Link href={cloudUrl}>
-              <span
+            <Link legacyBehavior href={cloudUrl}>
+              <a
                 className={clsx(
                   'h-[40px] border-0 rounded-[8px] backdrop-blur-[25px] px-[16px] py-[12px] cursor-pointer flex items-center justify-center',
                 )}
                 onClick={() => {
-                  // eslint-disable-next-line no-undef
                   sendTagEvent({
                     action: 'click',
                     category: 'homepage_menu_login_click',
@@ -103,11 +102,11 @@ export const Nav = (props) => {
                 }}
               >
                 {t('nav.login')}
-              </span>
+              </a>
             </Link>
           </div>
-          <Link href={cloudUrl}>
-            <span
+          <Link legacyBehavior href={cloudUrl}>
+            <a
               className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[12px] hover:bg-tech-purple-02 active:bg-tech-purple-n-01 cursor-pointer flex items-center justify-center text-white-01"
               onClick={() => {
                 sendTagEvent({
@@ -118,7 +117,7 @@ export const Nav = (props) => {
               }}
             >
               {t('nav.signup')}
-            </span>
+            </a>
           </Link>
         </div>
       </div>

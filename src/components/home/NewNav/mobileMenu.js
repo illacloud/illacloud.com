@@ -10,21 +10,19 @@ import { generateLanguageOptions } from '@/constants/language'
 import { selectItems, menuItems } from '@/constants/navContents'
 import { MobileMenuSelect } from '@/components/home/NewNav/mobileMenuSelect'
 
-
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [languageListExpand, setLanguageListExpand] = useState(false)
   const { t } = useTranslation('home')
-  const { t: publicT } = useTranslation("common")
+  const { t: publicT } = useTranslation('common')
   const router = useRouter()
 
   useEffect(() => {
-    if(menuExpand) {
-      document.body.style.overflow='hidden';
+    if (menuExpand) {
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow='visible';
+      document.body.style.overflow = 'visible'
     }
   }, [menuExpand])
-
 
   return (
     <div
@@ -48,14 +46,12 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           <CloseWhiteIcon />
         </span>
       </div>
-      {
-        selectItems.map((options, index) => (
-          <MobileMenuSelect options={options} key={index} />
-        ))
-      }
+      {selectItems.map((options, index) => (
+        <MobileMenuSelect options={options} key={index} />
+      ))}
       {menuItems.map(({ href, category, title }) => (
-        <Link href={href} key={title}>
-          <span
+        <Link legacyBehavior href={href} key={title}>
+          <a
             className="w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
             onClick={() => {
               sendTagEvent({
@@ -66,7 +62,7 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
             }}
           >
             {t(title)}
-          </span>
+          </a>
         </Link>
       ))}
       <span
@@ -89,37 +85,45 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           sendTagEvent({
             action: 'click',
             category: 'homepage_menu_language_mob_click',
-            label: publicT(`language.${router.locale || "en-US"}`),
+            label: publicT(`language.${router.locale || 'en-US'}`),
           })
           setLanguageListExpand(() => !languageListExpand)
         }}
         className="w-full flex flex-row cursor-pointer flex-nowrap items-center h-[40px] gap-[8px]  "
       >
-        {publicT(`language.${router.locale || "en-US"}`)} <SelectIcon />
+        {publicT(`language.${router.locale || 'en-US'}`)} <SelectIcon />
       </span>
-      <div className='max-h-[180px] overflow-y-auto'>
-        {generateLanguageOptions(publicT).map(({ value, label, tagCategory }) => (
-          <Link
-            legacyBehavior
-            href={router.asPath}
-            locale={value}
-            key={value}
-          >
-            <a
-              style={{ height: languageListExpand ? 40 : 0, overflowY: 'hidden' }}
-              className={clsx('transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px] ', { 'hidden': router.locale === value })}
-              onClick={() => {
-                sendTagEvent({
-                  action: 'click',
-                  category: tagCategory,
-                  label,
-                })
-              }}
+      <div className="max-h-[180px] overflow-y-auto">
+        {generateLanguageOptions(publicT).map(
+          ({ value, label, tagCategory }) => (
+            <Link
+              legacyBehavior
+              href={router.asPath}
+              locale={value}
+              key={value}
             >
-              {publicT(`language.${value}`)}
-            </a>
-          </Link>
-        ))}
+              <a
+                style={{
+                  height: languageListExpand ? 40 : 0,
+                  overflowY: 'hidden',
+                }}
+                className={clsx(
+                  'transition-height duration-200 w-full flex flex-row flex-nowrap items-center h-[40px] gap-[8px]  pl-[32px] ',
+                  { hidden: router.locale === value },
+                )}
+                onClick={() => {
+                  sendTagEvent({
+                    action: 'click',
+                    category: tagCategory,
+                    label,
+                  })
+                }}
+              >
+                {publicT(`language.${value}`)}
+              </a>
+            </Link>
+          ),
+        )}
       </div>
     </div>
   )
