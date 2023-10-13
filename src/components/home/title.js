@@ -147,6 +147,9 @@ export const Title = (props) => {
                       label: t('illa-Cloud'),
                       value: 'https://cloud.illacloud.com/',
                     })
+                    sendTagEvent({
+                      action: 'click_try',
+                    })
                   }}
                 >
                   {t('illa-Cloud')}

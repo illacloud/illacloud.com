@@ -46,7 +46,9 @@ export const MobileTitle = (props) => {
             <a
               className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {
-                // eslint-disable-next-line no-undef
+                sendTagEvent({
+                  action: 'click_try',
+                })
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_body_try_cloud_free_click',

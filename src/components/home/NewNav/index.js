@@ -96,6 +96,9 @@ export const Nav = (props) => {
                 )}
                 onClick={() => {
                   sendTagEvent({
+                    action: 'click_signin',
+                  })
+                  sendTagEvent({
                     action: 'click',
                     category: 'homepage_menu_login_click',
                     label: t('nav.login'),
@@ -110,6 +113,9 @@ export const Nav = (props) => {
             <a
               className="h-[40px] bg-tech-purple-01 rounded-[8px] px-[24px] py-[12px] hover:bg-tech-purple-02 active:bg-tech-purple-n-01 cursor-pointer flex items-center justify-center text-white-01"
               onClick={() => {
+                sendTagEvent({
+                  action: 'click_signup',
+                })
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_menu_signup_click',
