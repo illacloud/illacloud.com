@@ -11,9 +11,9 @@ export const NavPC = ({ tabsList, leftButtonGroup }) => {
     <div className={style.navContainer}>
       <div className={style.navLeft}>
         <Link href={'/'}>
-          <span className="w-[51px] h-[24px] flex items-center">
+          <a className="w-[51px] h-[24px] flex items-center">
             <IllaLogoWhiteIcon />
-          </span>
+          </a>
         </Link>
         <div className={style.tabsList}>
           {tabsList.map(({ title, href = '' }) => (
