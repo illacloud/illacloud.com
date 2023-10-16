@@ -55,6 +55,7 @@ const Cloud = ({ uri }) => {
     </>
   )
 }
+
 export const getServerSideProps = async ({ locale }) => {
   const uri = await getGithubOauth()
   return {
