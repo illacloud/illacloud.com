@@ -1,383 +1,419 @@
 {
-  "title": {
-    "ai-agent": {
-      "title-1": "Open bron",
-      "title-2": "gemeenschap",
-      "feature": "AI Agent"
-    },
-    "app": {
-      "title-1": "Creatief",
-      "title-2": "Sjablonen",
-      "feature": "ILLA App"
-    }
-  },
-  "description": {
-    "ai-agent": "Open-source AI-agenten aangeboden door deskundigen op het gebied van machine-leren, professionele prompte ingenieurs en enthousiastelingen, kunnen met 1 klik gerund worden op basis van deze Agents.",
-    "app": "Gebouwd door uitstekende bijdragers van ILLA, inclusief kant-en-klare tools en websjablonen die eenvoudig kunnen worden gewijzigd en gepubliceerd, die je werk aanzienlijk efficiënter kunnen maken."
-  },
-  "meta": {
-    "meta-title": {
-      "ai-agent": "Open source AI Agent gemeenschap",
-      "app": "Creative ILLA App templates"
-    },
-    "meta-description": {
-      "ai-agent": "Open-source AI-agenten aangeboden door deskundigen op het gebied van machine-leren, professionele prompte ingenieurs en enthousiastelingen, kunnen met 1 klik gerund worden op basis van deze Agents.",
-      "app": "Gebouwd door uitstekende bijdragers van ILLA, inclusief kant-en-klare tools en websjablonen die eenvoudig kunnen worden gewijzigd en gepubliceerd, die je werk aanzienlijk efficiënter kunnen maken."
-    }
-  },
-  "login": "Aanmelden",
-  "sign-up": "Meld je gratis aan",
-  "settings": "Instellingen",
-  "logout": "Log uit",
-  "logout_failed": "Afmelden mislukt. Probeer het later opnieuw.",
-  "create": "Nieuwe aanmaken",
-  "copied": "Gekoppeld",
-  "empty_copied_tips": "De te kopiëren inhoud is leeg",
-  "size_exceed_copied_tips": "De inhoud is te lang om te kopiëren. (huidige grootte: {{current_size}} bytes, limiet: {{limit_size}} bytes)",
-  "keywords_agent": "ILLA Cloud, AI Agent, chat gpt prompt, schrijf prompt, prompt engineering, open source prompt, openai, stabiele diffusie, middenreis",
-  "keywords_app": "ILLA Cloud, template, crud app, sql database, geen code, lage code, interne tools, dashboard, admin panel, website bouwer",
-  "back": "Achterzijde",
-  "create-type": {
-    "title": "Nieuwe aanmaken",
-    "ai-agent": {
-      "title": "AI Agent",
-      "desc": "Schrijf prompt"
-    },
-    "app": {
-      "title": "App",
-      "desc": "Bouw website"
-    }
-  },
-  "marketplace-type": {
-    "ai-agent": "AI Agent",
-    "app": "ILLA App"
-  },
-  "status": {
-    "404": {
-      "des": "Het lijkt erop dat de pagina die u zocht niet kon worden gevonden.",
-      "again": "Vernieuwen"
-    },
-    "403": {
-      "des": "Toegang geweigerd"
-    },
-    "back": "Terug naar homepage",
-    "blank": "Geen resultaat gevonden"
-  },
-  "load": {
-    "before": "Meer laden",
-    "after": "Meer laden"
-  },
-  "dashboard": {
-    "list-type": {
-      "ai-agent": "AI agenten",
-      "app": "ILLA Apps"
-    },
-    "sort-type": {
-      "popular": "Populair",
-      "recent": "Nieuwste",
-      "star": "Sterren"
-    },
-    "search": "Zoeken",
-    "no-result": "Geen resultaten gevonden. Gelieve uw zoektermen te vernieuwen of te wijzigen.",
-    "message": {
-      "next-page-error": "Fout bij laden van de volgende pagina. Probeer het opnieuw. ",
-      "create-failed": "Kan agent niet maken. Probeer het opnieuw. ",
-      "sort-failed": "Het wijzigen van het filtertype is mislukt. Probeer het opnieuw.",
-      "fork-failed": "Fork mislukt, probeer het opnieuw.",
-      "create-suc": "Aanmaken mislukt, probeer het opnieuw.",
-      "fork-suc": "Succesvol opgeforkt.",
-      "star-failed": "Werken mislukt, probeer het opnieuw.",
-      "star-suc": "Werkt goed.",
-      "mobile-fork-suc": "Succesvol afgebroken. Bewerk op bureaublad."
-    },
-    "detail-load-failed": "Gegevens ophalen mislukt, probeer het opnieuw."
-  },
-  "team": {
-    "select_team": {
-      "title": {
-        "create": "Selecteer een team om aan te maken",
-        "run": "Selecteer een team om uit te voeren"
-      },
-      "create_button": "Nieuw team aanmaken",
-      "select_button": "Selecteren"
-    },
-    "create_team": {
-      "team_name": "Team naam",
-      "team_identifier": "Team identificatie",
-      "create": "Creëer team",
-      "message": {
-        "team_create": {
-          "suc": "Succesvol aangemaakt. ",
-          "failed": {
-            "failed": "Aanmaken mislukt. ",
-            "identifier_duplicate": "Identificatie bestaat al. Wijzig het en probeer opnieuw."
-          }
-        }
-      }
-    },
-    "create": {
-      "fail_invite_code_used": "De uitnodigingscode is gebruikt. ",
-      "fail_same_identifier": "De identifier is al in gebruik. Wijzig deze en probeer het opnieuw.",
-      "fail": "Aanmaken mislukt",
-      "fail_network": "Netwerkfout, probeer het later alstublieft opnieuw.",
-      "error_invite_code": "Onjuiste uitnodigingscode"
-    }
-  },
-  "homepage": {
-    "team_modal": {
-      "title": "Creëer team",
-      "team_name": "Team naam",
-      "team_domain": "Team identificatie",
-      "domain": ".illacloud.com",
-      "save": "Opslaan",
-      "cancel": "annuleren",
-      "existed": "Bestaat al",
-      "available": "Beschikbaar.",
-      "invite_code": "Uitnodigingscode",
-      "invite_code_description": "Optioneel. Als je een uitnodigingscode hebt, vul deze dan hier in.",
-      "contact": "Uitnodigingscode nodig? <0>Neem contact op met ILLA</0>",
-      "team_name_empty": "Voer de naam van het team in",
-      "create": "Aanmaken",
-      "team_domain_invalid": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer. Kan niet meer dan 200 tekens lang zijn. ",
-      "team_identifier": "Team identificatie",
-      "team_identifier_empty": "Voer het team-id in",
-      "team_domain_empty": "Voer het team-id in",
-      "team_id_invalid": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer. Kan niet meer dan 200 tekens lang zijn. ",
-      "invite_code_empty": "Voer de uitnodigingscode in.",
-      "team_domain_invalid_character": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer.",
-      "team_domain_invalid_length": "Kan niet meer dan 200 tekens lang zijn.",
-      "tip": {
-        "team_identifier": "Dit zal worden toegevoegd aan de URL van uw team. Gebruik letters of cijfers binnen 200 tekens (bijv. illa)"
-      },
-      "get_invite_code": "Ontvang een uitnodigingscode",
-      "invite_code_tips": "(Optioneel)"
-    },
-    "mes": {
-      "team_create_suc": "Succesvol aangemaakt."
-    },
-    "create_new_team": "Maak een nieuw team",
-    "no_team": "Je hebt geen teams"
-  },
-  "detail": {
-    "operation": {
-      "run": "Uitvoeren",
-      "fork": "Fork {{ operationNum }}",
-      "star": "Ster {{ operationNum }}",
-      "share": "Delen"
-    },
-    "label": {
-      "prompt": "Prompt",
-      "variable": "Variabele",
-      "model": "Model"
-    },
-    "contributor": "Medewerker",
-    "contributor-name": "{{ userName }}, enz",
-    "contributed_team": "Bijgedragen door {{ teamName }}",
-    "contributed_team_app": "Team",
-    "components": {
-      "title": "Onderdelen",
-      "list": {
-        "input": "Input",
-        "number-input": "Number Input",
-        "editable-text": "Bewerkbare tekst",
-        "textarea-input": "Textarea Input",
-        "upload": "Uploaden",
-        "slider": "Schuifbalk",
-        "range-slider": "Range Slider",
-        "recording": "Opnemenchar@@0",
-        "json-editor": "JSON Editor",
-        "rich-text-editor": "Rich Text Editor",
-        "json-schema-form": "Json Schema Formulier",
-        "drive-file-picker": "Schijf bestandskiezer",
-        "switch": "Schakelaar",
-        "switch-group": "Wissel van groep",
-        "select": "Selecteren",
-        "multiselect": "Multiselect",
-        "checkbox-group": "Selectievakje groep",
-        "cascader": "Cascader",
-        "radio-group": "Radio groep",
-        "radio-button": "Radio Knop",
-        "event-calendar": "Evenement kalender",
-        "date": "Datum:",
-        "date-range": "Date Range",
-        "date-time": "Datum tijd",
-        "time-picker": "Tijd Kiezer",
-        "time-range": "Tijd bereik",
-        "chart": "Grafiek",
-        "table": "Tabel",
-        "container": "Container",
-        "form": "Vorm",
-        "modal": "Modal",
-        "list": "Klantenlijst",
-        "menu": "Menu",
-        "tabs": "Tabs",
-        "steps": "Stappen",
-        "text": "Tekstveld",
-        "image": "Afbeelding",
-        "button": "Knop",
-        "chat": "Chatten",
-        "icon": "Pictogram",
-        "statistics": "Statistieken",
-        "rate": "Beoordelen",
-        "bar-progress": "Balk Voortgang",
-        "circle-progress": "Voortgang cirkel",
-        "timeline": "Tijdlijn",
-        "divider": "Scheidingslijn",
-        "pdf": "PDF-bestand",
-        "video": "Video",
-        "audio": "Geluid",
-        "carousel": "Carousel",
-        "map": "Kaart"
-      }
-    },
-    "resources": {
-      "title": "Hulpmiddelen"
-    },
-    "ai-agents": {
-      "title": "AI agenten"
-    }
-  },
-  "new_share": {
-    "title": "Delen",
-    "label": {
-      "link": "Deel met link",
-      "social-media": "Delen op"
-    },
-    "options": {
-      "social-media": {
-        "twitter": "Twitter",
-        "reddit": "Reddit",
-        "linkedin": "LinkedIn",
-        "hackernews": "Hacker Nieuws",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp"
-      }
-    },
-    "default-text": {
-      "social-media": {
-        "twitter": "Hey daar! Ik heb net dit geweldige AI-agent ontdekt. Misschien ben je geïnteresseerd in het ook proberen te proberen! Bekijk het! {{promptName}}:{{promptLink}} #AIwriting #Snelbeheer #ProductivityBoost",
-        "reddit": "Bekijk deze geweldige AI Agent [{{promptName}}]",
-        "linkedin": "Let op alle AI enthousiastelingen en professionals die op zoek zijn om hun productiviteit te verhogen! Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!",
-        "hackernews": "Vereenvoudig je werkdruk met [{{promptName}}] - De AI Agent die de Job Gereed krijgt",
-        "facebook": "Let op alle AI enthousiastelingen en professionals die op zoek zijn om hun productiviteit te verhogen! Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!",
-        "whatsapp": "Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!"
-      },
-      "contribute": "Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!"
-    },
-    "default-text-apps": {
-      "social-media": {
-        "twitter": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
-        "reddit": "Bekijk deze geweldige app [{{appName}}]",
-        "linkedin": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
-        "hackernews": "Makkelijk te gebruiken web app sjabloon [{{appName}}]",
-        "facebook": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
-        "whatsapp": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}"
-      },
-      "contribute": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}"
-    }
-  },
-  "user_management": {
-    "role": {
-      "owner": "Eigenaar",
-      "admin": "Administer",
-      "editor": "Tekstverwerker",
-      "viewer": "Bekijker",
-      "tips": {
-        "admin": "Het lid dat alle leden behalve de Eigenaar kan beheren, APP's kan bewerken en APP's kan bekijken",
-        "editor": "Het lid dat de APP's kan beheren en bekijken",
-        "viewer": "Het lid dat de APP's kan beheren en bekijken"
-      }
-    },
-    "modal": {
-      "title": {
-        "invite_members": "Nodig leden uit",
-        "invite_to_use": "Uitnodigen om te gebruiken",
-        "invite_to_edit": "Uitnodigen om te bewerken",
-        "contribute": "Marktplaats"
-      },
-      "link": {
-        "invite_title": "Uitnodigings link",
-        "copy": "Kopiëren",
-        "turn_off": "Uitnodigingslinks uitschakelen",
-        "update": "Uitnodigingslinks bijwerken",
-        "description": "Schakel leden in en nodig uit via link. ",
-        "turn_on": "Uitnodigingslinks inschakelen",
-        "fail": "Fout bij het verkrijgen van de link, probeer het later opnieuw",
-        "copied_suc": "Gekopieerd!",
-        "failed_to_copy": "Kopiëren mislukt",
-        "turn_off_fail": "Uitschakelen mislukt",
-        "turn_on_fail": "Fout bij inschakelen",
-        "make_public_title": "Maak de app openbaar",
-        "make_public_copy": "Kopiëren",
-        "marketplace": {
-          "label": "Deel met link"
-        }
-      },
-      "email": {
-        "invite_title": "Uitnodigen per e-mail",
-        "invite": "Uitnodigen",
-        "placeholder": "Voer e-mailadres in",
-        "invited": "Heeft u uitgenodigd",
-        "in_list": "Deze gebruiker is al lid van je team.",
-        "duplicate": "{{ email }} is gedupliceerd",
-        "not_mail": "{{ email }} is geen e-mail"
-      },
-      "invalid_email": "Voer een geldig e-mailadres in",
-      "message": {
-        "make_public_suc": "Succesvol ingesteld",
-        "make_public_failed": "Fout bij instellen",
-        "app_share_in_team": "{{ email }} zit al in je team, deel de link met hem. "
-      },
-      "tab": {
-        "invite": "Uitnodigen",
-        "public": "Openbaar",
-        "with_team": "Deel met teamleden"
-      },
-      "custom_copy_text_app_invite": "{{userName}} heeft je een app van +unnamed@@0{{teamName}}gedeeld . Klik op de link om deel te nemen aan het team en bekijk de APP: {{inviteLink}}",
-      "custom_copy_text_public": "{{userName}} heeft een app met u gedeeld van +unnamed@@0{{teamName}}. Klik op de link om de APP te controleren: {{inviteLink}}",
-      "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
-      "tips": {
-        "license_insufficient": "Resterende licenties"
-      },
-      "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
-      "contribute": {
-        "label": "Draag bij aan de marktplaats",
-        "default_text": {
-          "app": "Ik heb net een indrukwekkende app ontdekt genaamd {{ appName }}. Bekijk het: {{ appLink }}",
-          "agent": "Ik heb net een indrukwekkende AI Agent genaamd {{ agentName }}ontdekt. Controleer het: {{ agentLink }}"
+    "title": {
+        "ai-agent": {
+            "title-1": "Open bron",
+            "title-2": "gemeenschap",
+            "feature": "AI Agent"
         },
-        "desc": "Na het bijdragen aan de Marketplace, kunnen alle gebruikers uw agent draaien, ster maken en forken. Wanneer gebruikers van andere teams deze Agent uitvoeren, zal het uw bronnen niet verbruiken."
-      },
-      "social_media": {
-        "label": "Delen op",
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "reddit": "Reddit",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp",
-        "hackernews": "Hacker Nieuws",
-        "default_text": {
-          "app": "Ik heb net een indrukwekkende app ontdekt genaamd {{ appName }}",
-          "agent": "Ik heb net een indrukwekkende AI Agent ontdekt genaamd {{ agentName }}"
+        "app": {
+            "title-1": "ILLA",
+            "title-2": "gemeenschap",
+            "feature": "AI Native App"
         }
-      },
-      "custom_copy_text_agent_invite": "{{ userName }} deelt je een AI Agent van Kof{{ teamName }}. Sluit je aan bij het team en controleer het: {{ inviteLink }}"
     },
-    "mes": {
-      "invite_suc": "Succesvol uitgenodigd",
-      "invite_fail": "Uitnodiging mislukt",
-      "update_suc": "Succesvol bijgewerkt",
-      "update_fail": "Bijwerken mislukt",
-      "transfer_suc": "Succesvol overgedragen",
-      "transfer_fail": "Overdracht mislukt",
-      "remove_suc": "Succesvol verwijderd",
-      "remove_fail": "Verwijderen mislukt",
-      "change_role_fail": "Bijwerken mislukt",
-      "change_role_suc": "Succesvol bijgewerkt"
+    "team_create_suc": "Succesvol aangemaakt.",
+    "team_create_fail": "Aanmaken mislukt, probeer het later opnieuw. ",
+    "network_error": "Netwerkfout, probeer het later alstublieft opnieuw. ",
+    "create_fail": "Aanmaken mislukt. Probeer het later opnieuw",
+    "create_agent": "Maak AI Agent",
+    "create_app": "App maken",
+    "new_dashboard": {
+        "desc": {
+            "no_description": "Geen beschrijving"
+        }
+    },
+    "contribute": {
+        "tag": {
+            "recommended": "Aanbevolen",
+            "add_tag": "Labels toevoegen",
+            "failed_to_save": "Opslaan mislukt",
+            "tag": "Tagnaam"
+        },
+        "update": "Labels bewerken",
+        "copy_link": "Koppeling kopiëren"
+    },
+    "description": {
+        "ai-agent": "Open-source AI-agenten aangeboden door deskundigen op het gebied van machine-leren, professionele prompte ingenieurs en enthousiastelingen, kunnen met 1 klik gerund worden op basis van deze Agents.",
+        "app": "Gebouwd door uitstekende bijdragers van ILLA, inclusief kant-en-klare tools en websjablonen die eenvoudig kunnen worden gewijzigd en gepubliceerd, die je werk aanzienlijk efficiënter kunnen maken."
+    },
+    "meta": {
+        "meta-title": {
+            "ai-agent": "Open source AI Agent gemeenschap",
+            "app": "AI Native App community"
+        },
+        "meta-description": {
+            "ai-agent": "Ontdek open-source AI-agenten die ontwikkeld zijn door machine-lerende experts. Werk ze netjes en pas ze aan met één klik eenvoud",
+            "app": "Verhoog uw productiviteit met ILLA's uitzonderlijke hulpmiddelen en aanpasbare webtemplates. Bespaar tijd en inspanning met eenvoudige modificatie en publicatie."
+        }
+    },
+    "free": "Vrij",
+    "login": "Aanmelden",
+    "sign-up": "Meld je gratis aan",
+    "settings": "Instellingen",
+    "logout": "Log uit",
+    "logout_failed": "Afmelden mislukt. Probeer het later opnieuw.",
+    "create": "Nieuwe aanmaken",
+    "copied": "Gekoppeld",
+    "empty_copied_tips": "De te kopiëren inhoud is leeg",
+    "size_exceed_copied_tips": "De inhoud is te lang om te kopiëren. (huidige grootte: {{current_size}} bytes, limiet: {{limit_size}} bytes)",
+    "keywords_agent": "ILLA Cloud, AI Agent, chat gpt prompt, schrijf prompt, prompt engineering, open source prompt, openai, stabiele diffusie, middenreis",
+    "keywords_app": "ILLA Cloud, template, crud app, sql database, geen code, lage code, interne tools, dashboard, admin panel, website bouwer",
+    "back": "Achterzijde",
+    "create-type": {
+        "title": "Nieuwe aanmaken",
+        "ai-agent": {
+            "title": "AI Agent",
+            "desc": "Schrijf prompt"
+        },
+        "app": {
+            "title": "App",
+            "desc": "Bouw website"
+        }
+    },
+    "marketplace-type": {
+        "ai-agent": "AI Agent",
+        "app": "ILLA App"
     },
     "status": {
-      "pending": "Lopende",
-      "current-user": "Jij"
+        "404": {
+            "des": "Het lijkt erop dat de pagina die u zocht niet kon worden gevonden.",
+            "again": "Vernieuwen"
+        },
+        "403": {
+            "des": "Toegang geweigerd"
+        },
+        "back": "Terug naar homepage",
+        "blank": "Geen resultaat gevonden"
+    },
+    "load": {
+        "before": "Meer laden",
+        "after": "Meer laden"
+    },
+    "dashboard": {
+        "list-type": {
+            "ai-agent": "AI agenten",
+            "app": "ILLA Apps"
+        },
+        "sort-type": {
+            "popular": "Populair",
+            "recent": "Nieuwste",
+            "star": "Sterren"
+        },
+        "search": "Zoeken",
+        "no-result": "Geen resultaten gevonden. Gelieve uw zoektermen te vernieuwen of te wijzigen.",
+        "message": {
+            "next-page-error": "Fout bij laden van de volgende pagina. Probeer het opnieuw. ",
+            "create-failed": "Kan agent niet maken. Probeer het opnieuw. ",
+            "sort-failed": "Het wijzigen van het filtertype is mislukt. Probeer het opnieuw.",
+            "fork-failed": "Fork mislukt, probeer het opnieuw.",
+            "create-suc": "Aanmaken mislukt, probeer het opnieuw.",
+            "fork-suc": "Succesvol opgeforkt.",
+            "star-failed": "Werken mislukt, probeer het opnieuw.",
+            "star-suc": "Werkt goed.",
+            "mobile-fork-suc": "Succesvol afgebroken. Bewerk op bureaublad."
+        },
+        "detail-load-failed": "Gegevens ophalen mislukt, probeer het opnieuw."
+    },
+    "team": {
+        "select_team": {
+            "title": {
+                "create": "Selecteer een team om aan te maken",
+                "run": "Selecteer een team om uit te voeren"
+            },
+            "create_button": "Nieuw team aanmaken",
+            "select_button": "Selecteren"
+        },
+        "create_team": {
+            "team_name": "Team naam",
+            "team_identifier": "Team identificatie",
+            "create": "Creëer team",
+            "message": {
+                "team_create": {
+                    "suc": "Succesvol aangemaakt. ",
+                    "failed": {
+                        "failed": "Aanmaken mislukt. ",
+                        "identifier_duplicate": "Identificatie bestaat al. Wijzig het en probeer opnieuw."
+                    }
+                }
+            }
+        },
+        "create": {
+            "fail_invite_code_used": "De uitnodigingscode is gebruikt. ",
+            "fail_same_identifier": "De identifier is al in gebruik. Wijzig deze en probeer het opnieuw.",
+            "fail": "Aanmaken mislukt",
+            "fail_network": "Netwerkfout, probeer het later alstublieft opnieuw.",
+            "error_invite_code": "Onjuiste uitnodigingscode"
+        }
+    },
+    "homepage": {
+        "team_modal": {
+            "title": "Creëer team",
+            "team_name": "Team naam",
+            "team_domain": "Team identificatie",
+            "domain": ".illacloud.com",
+            "save": "Opslaan",
+            "cancel": "annuleren",
+            "existed": "Bestaat al",
+            "available": "Beschikbaar.",
+            "invite_code": "Uitnodigingscode",
+            "invite_code_description": "Optioneel. Als je een uitnodigingscode hebt, vul deze dan hier in.",
+            "contact": "Uitnodigingscode nodig? <0>Neem contact op met ILLA</0>",
+            "team_name_empty": "Voer de naam van het team in",
+            "create": "Aanmaken",
+            "team_domain_invalid": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer. Kan niet meer dan 200 tekens lang zijn. ",
+            "team_identifier": "Team identificatie",
+            "team_identifier_empty": "Voer het team-id in",
+            "team_domain_empty": "Voer het team-id in",
+            "team_id_invalid": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer. Kan niet meer dan 200 tekens lang zijn. ",
+            "invite_code_empty": "Voer de uitnodigingscode in.",
+            "team_domain_invalid_character": "Alleen letters, cijfers en \"_\" zijn toegestaan. Moet beginnen en eindigen met een letter of cijfer.",
+            "team_domain_invalid_length": "Kan niet meer dan 200 tekens lang zijn.",
+            "tip": {
+                "team_identifier": "Dit zal worden toegevoegd aan de URL van uw team. Gebruik letters of cijfers binnen 200 tekens (bijv. illa)"
+            },
+            "get_invite_code": "Ontvang een uitnodigingscode",
+            "invite_code_tips": "(Optioneel)"
+        },
+        "mes": {
+            "team_create_suc": "Succesvol aangemaakt."
+        },
+        "create_new_team": "Maak een nieuw team",
+        "no_team": "Je hebt geen teams"
+    },
+    "detail": {
+        "tag": "Tagnaam",
+        "hacktober": {
+            "banner": "Laten we :backhand_index_pointing_right gaan",
+            "submit": {
+                "desc": "Verstuur PR om de prijs te winnen",
+                "button": "Verstuur PR"
+            }
+        },
+        "operation": {
+            "run": "Uitvoeren",
+            "fork": "Fork",
+            "star": "Ster",
+            "share": "Delen"
+        },
+        "label": {
+            "prompt": "Prompt",
+            "variable": "Variabele",
+            "model": "Model"
+        },
+        "contributor": "Medewerker",
+        "contributor-name": "{{ userName }}, enz",
+        "contributed_team": "Bijgedragen door {{ teamName }}",
+        "contributed_team_app": "Team",
+        "components": {
+            "title": "Onderdelen",
+            "list": {
+                "input": "Input",
+                "number-input": "Number Input",
+                "editable-text": "Bewerkbare tekst",
+                "textarea-input": "Textarea Input",
+                "upload": "Uploaden",
+                "slider": "Schuifbalk",
+                "range-slider": "Range Slider",
+                "recording": "Opnemenchar@@0",
+                "json-editor": "JSON Editor",
+                "rich-text-editor": "Rich Text Editor",
+                "json-schema-form": "Json Schema Formulier",
+                "drive-file-picker": "Schijf bestandskiezer",
+                "switch": "Schakelaar",
+                "switch-group": "Wissel van groep",
+                "select": "Selecteren",
+                "multi-select": "Multiselect",
+                "checkbox-group": "Selectievakje groep",
+                "cascader": "Cascader",
+                "radio-group": "Radio groep",
+                "radio-button": "Radio Knop",
+                "event-calendar": "Evenement kalender",
+                "date": "Datum:",
+                "date-range": "Date Range",
+                "date-time": "Datum tijd",
+                "time-picker": "Tijd Kiezer",
+                "time-range": "Tijd bereik",
+                "chart": "Grafiek",
+                "table": "Tabel",
+                "container": "Container",
+                "form": "Vorm",
+                "modal": "Modal",
+                "list": "Klantenlijst",
+                "menu": "Menu",
+                "tabs": "Tabs",
+                "steps": "Stappen",
+                "text": "Tekstveld",
+                "image": "Afbeelding",
+                "button": "Knop",
+                "chat": "Chatten",
+                "icon": "Pictogram",
+                "statistics": "Statistieken",
+                "rate": "Beoordelen",
+                "bar-progress": "Balk Voortgang",
+                "circle-progress": "Voortgang cirkel",
+                "timeline": "Tijdlijn",
+                "divider": "Scheidingslijn",
+                "pdf": "PDF-bestand",
+                "video": "Video",
+                "audio": "Geluid",
+                "carousel": "Carousel",
+                "map": "Kaart"
+            }
+        },
+        "resources": {
+            "title": "Hulpmiddelen"
+        },
+        "ai-agents": {
+            "title": "AI agenten"
+        }
+    },
+    "new_share": {
+        "title": "Delen",
+        "label": {
+            "link": "Deel met link",
+            "social-media": "Delen op"
+        },
+        "options": {
+            "social-media": {
+                "twitter": "Twitter",
+                "reddit": "Reddit",
+                "linkedin": "LinkedIn",
+                "hackernews": "Hacker Nieuws",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp"
+            }
+        },
+        "default-text": {
+            "social-media": {
+                "twitter": "Hey daar! Ik heb net dit geweldige AI-agent ontdekt. Misschien ben je geïnteresseerd in het ook proberen te proberen! Bekijk het! {{promptName}}:{{promptLink}} #AIwriting #Snelbeheer #ProductivityBoost",
+                "reddit": "Bekijk deze geweldige AI Agent [{{promptName}}]",
+                "linkedin": "Let op alle AI enthousiastelingen en professionals die op zoek zijn om hun productiviteit te verhogen! Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!",
+                "hackernews": "Vereenvoudig je werkdruk met [{{promptName}}] - De AI Agent die de Job Gereed krijgt",
+                "facebook": "Let op alle AI enthousiastelingen en professionals die op zoek zijn om hun productiviteit te verhogen! Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!",
+                "whatsapp": "Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!"
+            },
+            "contribute": "Ik ben een AI Agent platform tegengekomen dat geavanceerde oplossingen biedt voor het vereenvoudigen van complexe taken en het integreren met je interne tools. Ik heb persoonlijk [{{promptName}}] uitgeprobeerd en werd weggeblazen door haar capaciteiten. Het is een game-wisselaar voor iedereen die op zoek is vooruit te blijven op de curve. Bekijk het zelf in {{promptLink}} en laat me weten wat je ervan vindt!"
+        },
+        "default-text-apps": {
+            "social-media": {
+                "twitter": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
+                "reddit": "Bekijk deze geweldige app [{{appName}}]",
+                "linkedin": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
+                "hackernews": "Makkelijk te gebruiken web app sjabloon [{{appName}}]",
+                "facebook": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}",
+                "whatsapp": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}"
+            },
+            "contribute": "Ik heb zojuist een interessante app gevonden. Bekijk het! {{appName}}:{{appLink}}"
+        }
+    },
+    "user_management": {
+        "role": {
+            "owner": "Eigenaar",
+            "admin": "Administer",
+            "editor": "Tekstverwerker",
+            "viewer": "Bekijker",
+            "tips": {
+                "admin": "Het lid dat alle leden behalve de Eigenaar kan beheren, APP's kan bewerken en APP's kan bekijken",
+                "editor": "Het lid dat de APP's kan beheren en bekijken",
+                "viewer": "Het lid dat de APP's kan beheren en bekijken"
+            }
+        },
+        "modal": {
+            "title": {
+                "invite_members": "Nodig leden uit",
+                "invite_to_use": "Uitnodigen om te gebruiken",
+                "invite_to_edit": "Uitnodigen om te bewerken",
+                "contribute": "Gemeenschap"
+            },
+            "link": {
+                "invite_title": "Uitnodigings link",
+                "copy": "Kopiëren",
+                "turn_off": "Uitnodigingslinks uitschakelen",
+                "update": "Uitnodigingslinks bijwerken",
+                "description": "Schakel leden in en nodig uit via link. ",
+                "turn_on": "Uitnodigingslinks inschakelen",
+                "fail": "Fout bij het verkrijgen van de link, probeer het later opnieuw",
+                "copied_suc": "Gekopieerd!",
+                "failed_to_copy": "Kopiëren mislukt",
+                "turn_off_fail": "Uitschakelen mislukt",
+                "turn_on_fail": "Fout bij inschakelen",
+                "make_public_title": "Maak de app openbaar",
+                "make_public_copy": "Kopiëren",
+                "marketplace": {
+                    "label": "Deel met link"
+                }
+            },
+            "email": {
+                "invite_title": "Uitnodigen per e-mail",
+                "invite": "Uitnodigen",
+                "placeholder": "Voer e-mailadres in",
+                "invited": "Heeft u uitgenodigd",
+                "in_list": "Deze gebruiker is al lid van je team.",
+                "duplicate": "{{ email }} is gedupliceerd",
+                "not_mail": "{{ email }} is geen e-mail"
+            },
+            "invalid_email": "Voer een geldig e-mailadres in",
+            "message": {
+                "make_public_suc": "Succesvol ingesteld",
+                "make_public_failed": "Fout bij instellen",
+                "app_share_in_team": "{{ email }} zit al in je team, deel de link met hem. "
+            },
+            "tab": {
+                "invite": "Uitnodigen",
+                "public": "Openbaar",
+                "with_team": "Deel met team"
+            },
+            "custom_copy_text_app_invite": "{{userName}} heeft je een app van +unnamed@@0{{teamName}}gedeeld . Klik op de link om deel te nemen aan het team en bekijk de APP: {{inviteLink}}",
+            "custom_copy_text_public": "{{userName}} heeft een app met u gedeeld van +unnamed@@0{{teamName}}. Klik op de link om de APP te controleren: {{inviteLink}}",
+            "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
+            "tips": {
+                "license_insufficient": "Resterende licenties"
+            },
+            "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
+            "contribute": {
+                "label": "Koppeling",
+                "app": {
+                    "desc": "Iedereen heeft toegang tot de app via deze link"
+                },
+                "default_text": {
+                    "app": "Ik heb net een indrukwekkende app ontdekt genaamd {{ appName }}. Bekijk het: {{ appLink }}",
+                    "agent": "Ik heb net een indrukwekkende AI Agent genaamd {{ agentName }}ontdekt. Controleer het: {{ agentLink }}"
+                },
+                "desc": "Na het bijdragen aan de community, kunnen alle gebruikers uw Agent gebruiken, ster en forken. Wanneer gebruikers van andere teams deze Agent uitvoeren, zal het uw bronnen niet verbruiken."
+            },
+            "social_media": {
+                "label": "Delen op",
+                "twitter": "Twitter",
+                "linkedin": "LinkedIn",
+                "reddit": "Reddit",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp",
+                "hackernews": "Hacker Nieuws",
+                "default_text": {
+                    "app": "Ik heb net een indrukwekkende app ontdekt genaamd {{ appName }}",
+                    "agent": "Ik heb net een indrukwekkende AI Agent ontdekt genaamd {{ agentName }}"
+                }
+            },
+            "custom_copy_text_agent_invite": "{{ userName }} deelt je een AI Agent van Kof{{ teamName }}. Sluit je aan bij het team en controleer het: {{ inviteLink }}"
+        },
+        "mes": {
+            "invite_suc": "Succesvol uitgenodigd",
+            "invite_fail": "Uitnodiging mislukt",
+            "update_suc": "Succesvol bijgewerkt",
+            "update_fail": "Bijwerken mislukt",
+            "transfer_suc": "Succesvol overgedragen",
+            "transfer_fail": "Overdracht mislukt",
+            "remove_suc": "Succesvol verwijderd",
+            "remove_fail": "Verwijderen mislukt",
+            "change_role_fail": "Bijwerken mislukt",
+            "change_role_suc": "Succesvol bijgewerkt"
+        },
+        "status": {
+            "pending": "Lopende",
+            "current-user": "Jij"
+        }
+    },
+    "customer": {
+        "title": "Trusted by thousands of teams"
     }
-  }
 }

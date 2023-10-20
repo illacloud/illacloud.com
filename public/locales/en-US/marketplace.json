@@ -1,383 +1,419 @@
 {
-  "title":{
-    "ai-agent":{
-      "title-1": "Open source",
-      "title-2": "community",
-      "feature": "AI Agent"
-    },
-    "app":{
-      "title-1": "Creative",
-      "title-2": "templates",
-      "feature": "ILLA App"
-    }
-},
-  "description": {
-    "ai-agent":"Open-source AI Agents provided by experts in the field of machine learning, professional prompt engineers and enthusiasts, can be run with 1 click and modified based on these Agents.",
-    "app":"Built by outstanding contributors of ILLA, including ready-to-use tools and web templates that can be easily modified and published, which can significantly enhance your work efficiency."
-  },
-  "meta":{
-    "meta-title":{
-      "ai-agent":"Open source AI Agent community",
-      "app":"Creative ILLA App templates"
-    },
-    "meta-description":{
-      "ai-agent":"Open-source AI Agents provided by experts in the field of machine learning, professional prompt engineers and enthusiasts, can be run with 1 click and modified based on these Agents.",
-      "app":"Built by outstanding contributors of ILLA, including ready-to-use tools and web templates that can be easily modified and published, which can significantly enhance your work efficiency."
-    }
-  },
-  "login": "Login",
-  "sign-up": "Sign up for free",
-  "settings": "Settings",
-  "logout": "Log out",
-  "logout_failed":"Failed to logout. Please try again later.",
-  "create": "Create new",
-  "copied":"Copied",
-  "empty_copied_tips":"The content to be copied is empty",
-  "size_exceed_copied_tips":"The content is too long to copy.  (current size: {{current_size}} bytes, limit: {{limit_size}} bytes)",
-  "keywords_agent":"ILLA Cloud, AI Agent, chat gpt prompt, write prompt, prompt engineering, open source prompt, openai, stable diffusion, midjourney",
-  "keywords_app":"ILLA Cloud, template, crud app, sql database, no code, low code, internal tools, dashboard, admin panel, website builder",
-  "back":"Back",
-  "create-type": {
-    "title":"Create new",
-    "ai-agent": {
-      "title": "AI Agent",
-      "desc": "Write prompt"
-    },
-    "app": {
-      "title": "App",
-      "desc": "Build website"
-    }
-  },
-  "marketplace-type": {
-    "ai-agent": "AI Agent",
-    "app": "ILLA App"
-  },
-  "status": {
-    "404": {
-      "des": "It seems that the page you were looking for could not be found.",
-      "again": "Refresh"
-    },
-    "403": {
-      "des": "Access denied"
-    },
-    "back": "Back to homepage",
-    "blank": "No result"
-  },
-  "load": {
-    "before": "Load more",
-    "after": "Load more"
-  },
-  "dashboard": {
-    "list-type": {
-      "ai-agent": "AI Agents",
-      "app": "ILLA Apps"
-    },
-    "sort-type": {
-      "popular": "Popular",
-      "recent": "Latest",
-      "star": "Starred"
-    },
-    "search": "Search",
-    "no-result": "No result here. Please refresh or change your search terms.",
-    "message": {
-      "next-page-error": "Failed to load next page. Please try again. ",
-      "create-failed": "Failed to create agent. Please try again. ",
-      "sort-failed": "Failed to change the filter type. Please try again.",
-      "fork-failed": "Failed to fork, please try again.",
-      "create-suc": "Failed to create, please try again.",
-      "fork-suc": "Successfully forked.",
-      "star-failed": "Failed to operate, please try again.",
-      "star-suc": "Successfully operated.",
-      "mobile-fork-suc":"Forked successfully. Please edit on desktop."
-    },
-    "detail-load-failed": "Failed to retrieve details, please try again."
-  },
-  "team": {
-    "select_team": {
-      "title": {
-        "create": "Select a team to create",
-        "run": "Select a team to run"
-      },
-      "create_button": "Create new team",
-      "select_button": "Select"
-    },
-    "create_team": {
-      "team_name": "Team name",
-      "team_identifier": "Team identifier",
-      "create": "Create team",
-      "message": {
-        "team_create": {
-          "suc": "Successfully created. ",
-          "failed": {
-            "failed": "Failed to create. ",
-            "identifier_duplicate": "The identifier already exists. Please change it and try again."
-          }
-        }
-      }
-    },
-    "create": {
-      "fail_invite_code_used": "The invite code has been used. ",
-      "fail_same_identifier": "The identifier is already taken. Please change it and try again.",
-      "fail": "Failed to create",
-      "fail_network": "Network error, please try again later.",
-      "error_invite_code": "Incorrect invitation code"
-    }
-  },
-  "homepage": {
-    "team_modal": {
-      "title": "Create team",
-      "team_name": "Team name",
-      "team_domain": "Team identifier",
-      "domain": ".illacloud.com",
-      "save": "Save",
-      "cancel": "Cancel",
-      "existed": "Already existed",
-      "available": "Available.",
-      "invite_code": "Invitation code",
-      "invite_code_description": "Optional. If you have an invitation code, fill it out here.",
-      "contact": "Need an invitation code? <0>Contact ILLA</0>",
-      "team_name_empty": "Please enter the team name",
-      "create": "Create",
-      "team_domain_invalid": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number. Cannot exceed 200 characters in length. ",
-      "team_identifier": "Team identifier",
-      "team_identifier_empty": "Please enter the team identifier",
-      "team_domain_empty": "Please enter the team identifier",
-      "team_id_invalid": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number. Cannot exceed 200 characters in length. ",
-      "invite_code_empty": "Please enter the invitation code.",
-      "team_domain_invalid_character": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number.",
-      "team_domain_invalid_length": "Cannot exceed 200 characters in length.",
-      "tip": {
-        "team_identifier": "This will be added to your team's URL. Please use letters or numbers within 200 characters(e.g. illa)"
-      },
-      "get_invite_code": "Get an invitation code",
-      "invite_code_tips": "(Optional)"
-    },
-    "mes": {
-      "team_create_suc": "Create successfully."
-    },
-    "create_new_team": "Create a new team",
-    "no_team": "You have no teams"
-  },
-  "detail": {
-    "operation": {
-      "run": "Run",
-      "fork": "Fork {{ operationNum }}",
-      "star": "Star {{ operationNum }}",
-      "share": "Share"
-    },
-    "label": {
-      "prompt": "Prompt",
-      "variable": "Variable",
-      "model": "Model"
-    },
-    "contributor": "Contributor",
-    "contributor-name": "{{ userName }}, etc",
-    "contributed_team":"Contributed by {{ teamName }}",
-    "contributed_team_app":"Team",
-    "components": {
-      "title": "Components",
-      "list": {
-        "input": "Input",
-        "number-input": "Number Input",
-        "editable-text": "Editable Text",
-        "textarea-input": "Textarea Input",
-        "upload": "Upload",
-        "slider": "Slider",
-        "range-slider": "Range Slider",
-        "recording": "Recording",
-        "json-editor": "JSON Editor",
-        "rich-text-editor": "Rich Text Editor",
-        "json-schema-form": "Json Schema Form",
-        "drive-file-picker": "Drive File Picker",
-        "switch": "Switch",
-        "switch-group": "Switch Group",
-        "select": "Select",
-        "multiselect": "Multiselect",
-        "checkbox-group": "Checkbox Group",
-        "cascader": "Cascader",
-        "radio-group": "Radio Group",
-        "radio-button": "Radio Button",
-        "event-calendar": "Event Calendar",
-        "date": "Date",
-        "date-range": "Date Range",
-        "date-time": "Date Time",
-        "time-picker": "Time Picker",
-        "time-range": "Time Range",
-        "chart": "Chart",
-        "table": "Table",
-        "container": "Container",
-        "form": "Form",
-        "modal": "Modal",
-        "list": "List",
-        "menu": "Menu",
-        "tabs": "Tabs",
-        "steps": "Steps",
-        "text": "Text",
-        "image": "Image",
-        "button": "Button",
-        "chat": "Chat",
-        "icon": "Icon",
-        "statistics": "Statistics",
-        "rate": "Rate",
-        "bar-progress": "Bar Progress",
-        "circle-progress": "Circle Progress",
-        "timeline": "Timeline",
-        "divider": "Divider",
-        "pdf": "PDF",
-        "video": "Video",
-        "audio": "Audio",
-        "carousel": "Carousel",
-        "map": "Map"
-      }
-    },
-    "resources": {
-      "title": "Resources"
-    },
-    "ai-agents": {
-      "title": "AI Agents"
-    }
-  },
-  "new_share": {
-    "title": "Share",
-    "label": {
-      "link": "Share with link",
-      "social-media": "Share on"
-    },
-    "options": {
-      "social-media": {
-        "twitter": "Twitter",
-        "reddit": "Reddit",
-        "linkedin": "LinkedIn",
-        "hackernews": "Hacker News",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp"
-      }
-    },
-    "default-text": {
-      "social-media": {
-        "twitter": "Hey there! I just discovered this amazing AI Agent. You might be interested in giving it a try too! Check it out! {{promptName}}:{{promptLink}} #AIwriting #PromptManagement #ProductivityBoost",
-        "reddit": "Check out this amazing AI Agent [{{promptName}}]",
-        "linkedin": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
-        "hackernews": "Simplify Your Workload with [{{promptName}}] - The AI Agent That Gets the Job Done",
-        "facebook": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
-        "whatsapp": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
-      },
-      "contribute": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
-    },
-    "default-text-apps": {
-      "social-media": {
-        "twitter": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "reddit": "Check out this amazing app [{{appName}}]",
-        "linkedin": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "hackernews": "Easy-to-use web app template [{{appName}}]",
-        "facebook": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "whatsapp": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
-      },
-      "contribute": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
-    }
-  },
-  "user_management": {
-    "role": {
-      "owner": "Owner",
-      "admin": "Administer",
-      "editor": "Editor",
-      "viewer": "Viewer",
-      "tips": {
-        "admin": "The member who can manage all members except Owner, edit APPs, and view APPs",
-        "editor": "The member who can manage editor and viewer members, edit APPs, and view APPs",
-        "viewer": "The member who can manage viewer members and view APPs"
-      }
-    },
-    "modal": {
-      "title": {
-        "invite_members": "Invite members",
-        "invite_to_use": "Invite to use",
-        "invite_to_edit": "Invite to edit",
-        "contribute": "Marketplace"
-      },
-      "link": {
-        "invite_title": "Invite link",
-        "copy": "Copy",
-        "turn_off": "Turn off invite links",
-        "update": "Update invite links",
-        "description": "Turn on and invite members via link. ",
-        "turn_on": "Turn on invite links",
-        "fail": "Failed to obtain the link, please try again later",
-        "copied_suc": "Copied!",
-        "failed_to_copy": "Failed to copy",
-        "turn_off_fail": "Failed to turn off",
-        "turn_on_fail": "Failed to turn on",
-        "make_public_title": "Make the app public",
-        "make_public_copy": "Copy",
-        "marketplace": {
-          "label": "Share with link"
-        }
-      },
-      "email": {
-        "invite_title": "Invite by email",
-        "invite": "Invite",
-        "placeholder": "Enter email address",
-        "invited": "Have invited",
-        "in_list": "This user is already in your team.",
-        "duplicate": "{{ email }} is duplicated",
-        "not_mail": "{{ email }} is not an email"
-      },
-      "invalid_email": "Please enter a valid email",
-      "message": {
-        "make_public_suc": "Set successfully",
-        "make_public_failed": "Failed to set",
-        "app_share_in_team": "{{ email }} is already in your team, please share the link with him. "
-      },
-      "tab": {
-        "invite": "Invite",
-        "public": "Public",
-        "with_team": "Share with team members"
-      },
-      "custom_copy_text_app_invite": "{{userName}} shared you an app of 「{{teamName}}」. Click the link to join the team and check the APP: {{inviteLink}}",
-      "custom_copy_text_public": "{{userName}} shared an app with you from 「{{teamName}}」 . Click the link to check the APP: {{inviteLink}}",
-      "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
-      "tips": {
-        "license_insufficient": "Remaining licenses"
-      },
-      "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
-      "contribute": {
-        "label": "Contribute to marketplace",
-        "default_text": {
-          "app": "I just discovered an impressive app called {{ appName }}. Check it: {{ appLink }}",
-          "agent": "I just discovered an impressive AI Agent called {{ agentName }}. Check it: {{ agentLink }}"
+    "title": {
+        "ai-agent": {
+            "title-1": "Open source",
+            "title-2": "community",
+            "feature": "AI Agent"
         },
-        "desc": "After contributing to the Marketplace, all users can run, star, and fork your Agent. When users from other teams run this Agent, it will not consume your resources."
-      },
-      "social_media": {
-        "label": "Share on",
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "reddit": "Reddit",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp",
-        "hackernews": "Hacker News",
-        "default_text": {
-          "app": "I just discovered an impressive app called {{ appName }}",
-          "agent": "I just discovered an impressive AI Agent called {{ agentName }}"
+        "app": {
+            "title-1": "ILLA",
+            "title-2": "community",
+            "feature": "AI Native App"
         }
-      },
-      "custom_copy_text_agent_invite": "{{ userName }} share you an AI Agent from 「{{ teamName }}」. Join team and check it: {{ inviteLink }}"
     },
-    "mes": {
-      "invite_suc": "Invited successfully",
-      "invite_fail": "Failed to invite",
-      "update_suc": "Updated successfully",
-      "update_fail": "Failed to update",
-      "transfer_suc": "Successfully transferred",
-      "transfer_fail": "Failed to transfer",
-      "remove_suc": "Successfully removed",
-      "remove_fail": "Failed to remove",
-      "change_role_fail": "Failed to update",
-      "change_role_suc": "Updated successfully"
+    "team_create_suc": "Create successfully.",
+    "team_create_fail": "Failed to create, please try again later. ",
+    "network_error": "Network error, please try again later. ",
+    "create_fail": "Failed to create. Please try again later",
+    "create_agent": "Create AI Agent",
+    "create_app": "Create App",
+    "new_dashboard": {
+        "desc": {
+            "no_description": "No description"
+        }
+    },
+    "contribute": {
+        "tag": {
+            "recommended": "Recommended",
+            "add_tag": "Add tags",
+            "failed_to_save": "Failed to save",
+            "tag": "Tag"
+        },
+        "update": "Edit tags",
+        "copy_link": "Copy link"
+    },
+    "description": {
+        "ai-agent": "Open-source AI Agents provided by experts in the field of machine learning, professional prompt engineers and enthusiasts, can be run with 1 click and modified based on these Agents.",
+        "app": "Built by outstanding contributors of ILLA, including ready-to-use tools and web templates that can be easily modified and published, which can significantly enhance your work efficiency."
+    },
+    "meta": {
+        "meta-title": {
+            "ai-agent": "Open source AI Agent community",
+            "app": "AI Native App community"
+        },
+        "meta-description": {
+            "ai-agent": "Explore open-source AI Agents developed by machine learning experts. Effortlessly run and customize them with one-click simplicity",
+            "app": "Boost your productivity with ILLA's exceptional tools and customizable web templates. Save time and effort with easy modification and publishing."
+        }
+    },
+    "free": "Free",
+    "login": "Login",
+    "sign-up": "Sign up for free",
+    "settings": "Settings",
+    "logout": "Log out",
+    "logout_failed": "Failed to logout. Please try again later.",
+    "create": "Create new",
+    "copied": "Copied",
+    "empty_copied_tips": "The content to be copied is empty",
+    "size_exceed_copied_tips": "The content is too long to copy.  (current size: {{current_size}} bytes, limit: {{limit_size}} bytes)",
+    "keywords_agent": "ILLA Cloud, AI Agent, chat gpt prompt, write prompt, prompt engineering, open source prompt, openai, stable diffusion, midjourney",
+    "keywords_app": "ILLA Cloud, template, crud app, sql database, no code, low code, internal tools, dashboard, admin panel, website builder",
+    "back": "Back",
+    "create-type": {
+        "title": "Create new",
+        "ai-agent": {
+            "title": "AI Agent",
+            "desc": "Write prompt"
+        },
+        "app": {
+            "title": "App",
+            "desc": "Build website"
+        }
+    },
+    "marketplace-type": {
+        "ai-agent": "AI Agent",
+        "app": "ILLA App"
     },
     "status": {
-      "pending": "Pending",
-      "current-user": "You"
+        "404": {
+            "des": "It seems that the page you were looking for could not be found.",
+            "again": "Refresh"
+        },
+        "403": {
+            "des": "Access denied"
+        },
+        "back": "Back to homepage",
+        "blank": "No result"
+    },
+    "load": {
+        "before": "Load more",
+        "after": "Load more"
+    },
+    "dashboard": {
+        "list-type": {
+            "ai-agent": "AI Agents",
+            "app": "ILLA Apps"
+        },
+        "sort-type": {
+            "popular": "Popular",
+            "recent": "Latest",
+            "star": "Starred"
+        },
+        "search": "Search",
+        "no-result": "No result here. Please refresh or change your search terms.",
+        "message": {
+            "next-page-error": "Failed to load next page. Please try again. ",
+            "create-failed": "Failed to create agent. Please try again. ",
+            "sort-failed": "Failed to change the filter type. Please try again.",
+            "fork-failed": "Failed to fork, please try again.",
+            "create-suc": "Failed to create, please try again.",
+            "fork-suc": "Successfully forked.",
+            "star-failed": "Failed to operate, please try again.",
+            "star-suc": "Successfully operated.",
+            "mobile-fork-suc": "Forked successfully. Please edit on desktop."
+        },
+        "detail-load-failed": "Failed to retrieve details, please try again."
+    },
+    "team": {
+        "select_team": {
+            "title": {
+                "create": "Select a team to create",
+                "run": "Select a team to run"
+            },
+            "create_button": "Create new team",
+            "select_button": "Select"
+        },
+        "create_team": {
+            "team_name": "Team name",
+            "team_identifier": "Team identifier",
+            "create": "Create team",
+            "message": {
+                "team_create": {
+                    "suc": "Successfully created. ",
+                    "failed": {
+                        "failed": "Failed to create. ",
+                        "identifier_duplicate": "The identifier already exists. Please change it and try again."
+                    }
+                }
+            }
+        },
+        "create": {
+            "fail_invite_code_used": "The invite code has been used. ",
+            "fail_same_identifier": "The identifier is already taken. Please change it and try again.",
+            "fail": "Failed to create",
+            "fail_network": "Network error, please try again later.",
+            "error_invite_code": "Incorrect invitation code"
+        }
+    },
+    "homepage": {
+        "team_modal": {
+            "title": "Create team",
+            "team_name": "Team name",
+            "team_domain": "Team identifier",
+            "domain": ".illacloud.com",
+            "save": "Save",
+            "cancel": "Cancel",
+            "existed": "Already existed",
+            "available": "Available.",
+            "invite_code": "Invitation code",
+            "invite_code_description": "Optional. If you have an invitation code, fill it out here.",
+            "contact": "Need an invitation code? <0>Contact ILLA</0>",
+            "team_name_empty": "Please enter the team name",
+            "create": "Create",
+            "team_domain_invalid": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number. Cannot exceed 200 characters in length. ",
+            "team_identifier": "Team identifier",
+            "team_identifier_empty": "Please enter the team identifier",
+            "team_domain_empty": "Please enter the team identifier",
+            "team_id_invalid": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number. Cannot exceed 200 characters in length. ",
+            "invite_code_empty": "Please enter the invitation code.",
+            "team_domain_invalid_character": "Only letters, numbers, and \"_\" are allowed. Must begin and end with a letter or number.",
+            "team_domain_invalid_length": "Cannot exceed 200 characters in length.",
+            "tip": {
+                "team_identifier": "This will be added to your team's URL. Please use letters or numbers within 200 characters(e.g. illa)"
+            },
+            "get_invite_code": "Get an invitation code",
+            "invite_code_tips": "(Optional)"
+        },
+        "mes": {
+            "team_create_suc": "Create successfully."
+        },
+        "create_new_team": "Create a new team",
+        "no_team": "You have no teams"
+    },
+    "detail": {
+        "tag": "Tag",
+        "hacktober": {
+            "banner": "Let's go 👉",
+            "submit": {
+                "desc": "Submit PR to win the prize",
+                "button": "Submit PR"
+            }
+        },
+        "operation": {
+            "run": "Run",
+            "fork": "Fork",
+            "star": "Star",
+            "share": "Share"
+        },
+        "label": {
+            "prompt": "Prompt",
+            "variable": "Variable",
+            "model": "Model"
+        },
+        "contributor": "Contributor",
+        "contributor-name": "{{ userName }}, etc",
+        "contributed_team": "Contributed by {{ teamName }}",
+        "contributed_team_app": "Team",
+        "components": {
+            "title": "Components",
+            "list": {
+                "input": "Input",
+                "number-input": "Number Input",
+                "editable-text": "Editable Text",
+                "textarea-input": "Textarea Input",
+                "upload": "Upload",
+                "slider": "Slider",
+                "range-slider": "Range Slider",
+                "recording": "Recording",
+                "json-editor": "JSON Editor",
+                "rich-text-editor": "Rich Text Editor",
+                "json-schema-form": "Json Schema Form",
+                "drive-file-picker": "Drive File Picker",
+                "switch": "Switch",
+                "switch-group": "Switch Group",
+                "select": "Select",
+                "multi-select": "Multiselect",
+                "checkbox-group": "Checkbox Group",
+                "cascader": "Cascader",
+                "radio-group": "Radio Group",
+                "radio-button": "Radio Button",
+                "event-calendar": "Event Calendar",
+                "date": "Date",
+                "date-range": "Date Range",
+                "date-time": "Date Time",
+                "time-picker": "Time Picker",
+                "time-range": "Time Range",
+                "chart": "Chart",
+                "table": "Table",
+                "container": "Container",
+                "form": "Form",
+                "modal": "Modal",
+                "list": "List",
+                "menu": "Menu",
+                "tabs": "Tabs",
+                "steps": "Steps",
+                "text": "Text",
+                "image": "Image",
+                "button": "Button",
+                "chat": "Chat",
+                "icon": "Icon",
+                "statistics": "Statistics",
+                "rate": "Rate",
+                "bar-progress": "Bar Progress",
+                "circle-progress": "Circle Progress",
+                "timeline": "Timeline",
+                "divider": "Divider",
+                "pdf": "PDF",
+                "video": "Video",
+                "audio": "Audio",
+                "carousel": "Carousel",
+                "map": "Map"
+            }
+        },
+        "resources": {
+            "title": "Resources"
+        },
+        "ai-agents": {
+            "title": "AI Agents"
+        }
+    },
+    "new_share": {
+        "title": "Share",
+        "label": {
+            "link": "Share with link",
+            "social-media": "Share on"
+        },
+        "options": {
+            "social-media": {
+                "twitter": "Twitter",
+                "reddit": "Reddit",
+                "linkedin": "LinkedIn",
+                "hackernews": "Hacker News",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp"
+            }
+        },
+        "default-text": {
+            "social-media": {
+                "twitter": "Hey there! I just discovered this amazing AI Agent. You might be interested in giving it a try too! Check it out! {{promptName}}:{{promptLink}} #AIwriting #PromptManagement #ProductivityBoost",
+                "reddit": "Check out this amazing AI Agent [{{promptName}}]",
+                "linkedin": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
+                "hackernews": "Simplify Your Workload with [{{promptName}}] - The AI Agent That Gets the Job Done",
+                "facebook": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
+                "whatsapp": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
+            },
+            "contribute": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
+        },
+        "default-text-apps": {
+            "social-media": {
+                "twitter": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "reddit": "Check out this amazing app [{{appName}}]",
+                "linkedin": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "hackernews": "Easy-to-use web app template [{{appName}}]",
+                "facebook": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "whatsapp": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
+            },
+            "contribute": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
+        }
+    },
+    "user_management": {
+        "role": {
+            "owner": "Owner",
+            "admin": "Administer",
+            "editor": "Editor",
+            "viewer": "Viewer",
+            "tips": {
+                "admin": "The member who can manage all members except Owner, edit APPs, and view APPs",
+                "editor": "The member who can manage editor and viewer members, edit APPs, and view APPs",
+                "viewer": "The member who can manage viewer members and view APPs"
+            }
+        },
+        "modal": {
+            "title": {
+                "invite_members": "Invite members",
+                "invite_to_use": "Invite to use",
+                "invite_to_edit": "Invite to edit",
+                "contribute": "Community"
+            },
+            "link": {
+                "invite_title": "Invite link",
+                "copy": "Copy",
+                "turn_off": "Turn off invite links",
+                "update": "Update invite links",
+                "description": "Turn on and invite members via link. ",
+                "turn_on": "Turn on invite links",
+                "fail": "Failed to obtain the link, please try again later",
+                "copied_suc": "Copied!",
+                "failed_to_copy": "Failed to copy",
+                "turn_off_fail": "Failed to turn off",
+                "turn_on_fail": "Failed to turn on",
+                "make_public_title": "Make the app public",
+                "make_public_copy": "Copy",
+                "marketplace": {
+                    "label": "Share with link"
+                }
+            },
+            "email": {
+                "invite_title": "Invite by email",
+                "invite": "Invite",
+                "placeholder": "Enter email address",
+                "invited": "Have invited",
+                "in_list": "This user is already in your team.",
+                "duplicate": "{{ email }} is duplicated",
+                "not_mail": "{{ email }} is not an email"
+            },
+            "invalid_email": "Please enter a valid email",
+            "message": {
+                "make_public_suc": "Set successfully",
+                "make_public_failed": "Failed to set",
+                "app_share_in_team": "{{ email }} is already in your team, please share the link with him. "
+            },
+            "tab": {
+                "invite": "Invite",
+                "public": "Public",
+                "with_team": "Share with team"
+            },
+            "custom_copy_text_app_invite": "{{userName}} shared you an app of 「{{teamName}}」. Click the link to join the team and check the APP: {{inviteLink}}",
+            "custom_copy_text_public": "{{userName}} shared an app with you from 「{{teamName}}」 . Click the link to check the APP: {{inviteLink}}",
+            "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
+            "tips": {
+                "license_insufficient": "Remaining licenses"
+            },
+            "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
+            "contribute": {
+                "label": "Link",
+                "app": {
+                    "desc": "Anyone can access the app via this link"
+                },
+                "default_text": {
+                    "app": "I just discovered an impressive app called {{ appName }}. Check it: {{ appLink }}",
+                    "agent": "I just discovered an impressive AI Agent called {{ agentName }}. Check it: {{ agentLink }}"
+                },
+                "desc": "After contributing to the community, all users can run, star, and fork your Agent. When users from other teams run this Agent, it will not consume your resources."
+            },
+            "social_media": {
+                "label": "Share on",
+                "twitter": "Twitter",
+                "linkedin": "LinkedIn",
+                "reddit": "Reddit",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp",
+                "hackernews": "Hacker News",
+                "default_text": {
+                    "app": "I just discovered an impressive app called {{ appName }}",
+                    "agent": "I just discovered an impressive AI Agent called {{ agentName }}"
+                }
+            },
+            "custom_copy_text_agent_invite": "{{ userName }} share you an AI Agent from 「{{ teamName }}」. Join team and check it: {{ inviteLink }}"
+        },
+        "mes": {
+            "invite_suc": "Invited successfully",
+            "invite_fail": "Failed to invite",
+            "update_suc": "Updated successfully",
+            "update_fail": "Failed to update",
+            "transfer_suc": "Successfully transferred",
+            "transfer_fail": "Failed to transfer",
+            "remove_suc": "Successfully removed",
+            "remove_fail": "Failed to remove",
+            "change_role_fail": "Failed to update",
+            "change_role_suc": "Updated successfully"
+        },
+        "status": {
+            "pending": "Pending",
+            "current-user": "You"
+        }
+    },
+    "customer": {
+        "title": "Trusted by thousands of teams"
     }
-  }
 }

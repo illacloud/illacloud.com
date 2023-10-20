@@ -63,7 +63,7 @@ När ILLA CLI har installerats kan du köra en egen värd eller [cloud installat
 Snabbstart
 
 ```
-> illa distribuera --self --port=10000
+> illa deploy --self --port=10000
 ```
 
 Du kan helt enkelt distribuera en egen värd ILA Builder genom att köra följande kommando:
@@ -71,37 +71,37 @@ Du kan helt enkelt distribuera en egen värd ILA Builder genom att köra följan
 ```
 # den port som ILLA Builder kan nås på kan ändras
 # den <MOUNT_PATH> är den anpassade monteringssökvägen för ILLA Builder, standardvärdet är en sökväg under användarens hemkatalog om den inte är ifylld
-> illa distribuera --self --port=10000 --mount=<MOUNT_PATH>
+> illa deploy --self --port=10000 --mount=<MOUNT_PATH>
 ```
 
 Nu kan du komma åt ILLA Builder: http://localhost:10000
 
-## Uppdaterar ILLA Builder
+## Uppdatera ILLA Builder
 
 För att uppdatera ILLA Builder med de senaste dockerbilderna, använd följande kommando:
 
 ```
-> illa uppdatering --själv
+> illa update --själv
 ```
 
-## Övrig verksamhet
+## Övriga operationer
 
 ```
-# lista ILLA Builder
+# Lista ILLA Builder
 > illa list --self
 
-# stop the ILLA Builder
+# Stoppa ILLA Builder
 > illa stop --self
 
-# ta bort ILLA Builder
-> illa ta bort --self
+# Ta bort ILLA Builder
+> illa remove --self
 
-# tvingad borttagning av den körande ILLA Builder och ihållande data
-> sudo illa ta bort --force --self --data
+# Tvingad borttagning av den körande ILLA Builder och ihållande data
+> sudo illa remove --force --self --data
 
-# starta om ILLA Builder
-> illa starta om --self
+# Starta om ILLA Builder
+> illa restart --self
 
-# hjälp information
-> illa hjälp
+# Hjälp information
+> illa help
 ```

@@ -15,7 +15,7 @@ postPriority: 1
 
 ### 説明
 
-illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts)フォルダにあるスクリプトファイルをご覧ください。
+illaはオールインワンのイメージをユーティリティーで構築し、マシン上で実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts)フォルダにあるスクリプトファイルをご覧ください。
 
 メモ:
 
@@ -54,7 +54,7 @@ illaのオールインワンイメージを構築して実行するには、次�
 ポッドマンの場合は
 
 ```jsx
-ポッドマンを作る
+make run-by-podman
 ```
 
 またはスクリプトフォルダに `run-by-podman.sh` シェルスクリプトを実行します。
@@ -62,7 +62,7 @@ illaのオールインワンイメージを構築して実行するには、次�
 ### コンテナを停止して削除
 
 ```jsx
-stop-and-remove-container にする
+make stop-and-remove-container
 ```
 
 ### Postgres データベースファイルを消去
@@ -74,7 +74,7 @@ stop-and-remove-container にする
 次のコマンドを実行して削除します。
 
 ```jsx
-clean-postgres-database-file を作成
+make clean-postgres-database-file
 ```
 
 ### Configランタイム環境変数
