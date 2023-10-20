@@ -1,383 +1,419 @@
 {
-  "title": {
-    "ai-agent": {
-      "title-1": "Avoin lähdekoodi",
-      "title-2": "yhteisö",
-      "feature": "AI Agent"
-    },
-    "app": {
-      "title-1": "Luova",
-      "title-2": "pohjat",
-      "feature": "ILLA App"
-    }
-  },
-  "description": {
-    "ai-agent": "Koneoppimisen alan asiantuntijoiden tarjoama avoimen lähdekoodin tekoälyn agentti, ammattimainen nopea insinöörit ja harrastajat, voidaan ajaa yhdellä napsautuksella ja muokata näiden agenttien perusteella.",
-    "app": "ILLAn erinomaisten osallistujien rakentama, mukaan lukien käyttövalmiit työkalut ja web-mallit, joita voidaan helposti muokata ja julkaista, joka voi merkittävästi parantaa työn tehokkuutta."
-  },
-  "meta": {
-    "meta-title": {
-      "ai-agent": "Avoimen lähdekoodin AI Agent yhteisö",
-      "app": "Creative ILLA App templates"
-    },
-    "meta-description": {
-      "ai-agent": "Koneoppimisen alan asiantuntijoiden tarjoama avoimen lähdekoodin tekoälyn agentti, ammattimainen nopea insinöörit ja harrastajat, voidaan ajaa yhdellä napsautuksella ja muokata näiden agenttien perusteella.",
-      "app": "ILLAn erinomaisten osallistujien rakentama, mukaan lukien käyttövalmiit työkalut ja web-mallit, joita voidaan helposti muokata ja julkaista, joka voi merkittävästi parantaa työn tehokkuutta."
-    }
-  },
-  "login": "Kirjaudu",
-  "sign-up": "Kirjaudu sisään ilmaiseksi",
-  "settings": "Asetukset",
-  "logout": "Kirjaudu ulos",
-  "logout_failed": "Kirjautuminen epäonnistui. Yritä myöhemmin uudelleen.",
-  "create": "Luo uusi",
-  "copied": "Kopioitu",
-  "empty_copied_tips": "Kopioitava sisältö on tyhjä",
-  "size_exceed_copied_tips": "The content is too long to copy.  (current size: {{current_size}} bytes, limit: {{limit_size}} bytes)",
-  "keywords_agent": "ILLA Cloud, AI Agent, chat gpt prompt, kirjoittaa prompt, prompt engineering, avoimen lähdekoodin kehotus, openai, vakaa diffusion, midjourney",
-  "keywords_app": "ILLA Cloud, malli, raaka sovellus, sql tietokanta, ei koodia, alhainen koodi, sisäiset työkalut, kojelauta, admin paneeli, verkkosivuilla rakentaja",
-  "back": "Takaisin",
-  "create-type": {
-    "title": "Luo uusi",
-    "ai-agent": {
-      "title": "AI Agent",
-      "desc": "Kirjoita kehotus"
-    },
-    "app": {
-      "title": "Sovellus",
-      "desc": "Koosta sivusto"
-    }
-  },
-  "marketplace-type": {
-    "ai-agent": "AI Agent",
-    "app": "ILLA App"
-  },
-  "status": {
-    "404": {
-      "des": "Näyttää siltä, että sivua, jota etsit ei löytynyt.",
-      "again": "Päivitä"
-    },
-    "403": {
-      "des": "Pääsy estetty"
-    },
-    "back": "Takaisin kotisivulle",
-    "blank": "Ei tuloksia"
-  },
-  "load": {
-    "before": "Lataa lisää",
-    "after": "Lataa lisää"
-  },
-  "dashboard": {
-    "list-type": {
-      "ai-agent": "AI Agents",
-      "app": "ILLA Apps"
-    },
-    "sort-type": {
-      "popular": "Suosittu",
-      "recent": "Viimeisimmät",
-      "star": "Tähdelliset"
-    },
-    "search": "Etsi",
-    "no-result": "Ei tuloksia. Ole hyvä ja päivitä tai vaihda hakuehtoja.",
-    "message": {
-      "next-page-error": "Seuraavan sivun lataaminen epäonnistui. Yritä uudelleen. ",
-      "create-failed": "Agentin luonti epäonnistui. Yritä uudelleen. ",
-      "sort-failed": "Suodattimen tyyppiä ei voitu muuttaa. Yritä uudelleen.",
-      "fork-failed": "Ei voitu forkata, yritä uudelleen.",
-      "create-suc": "Ei voitu luoda, yritä uudelleen.",
-      "fork-suc": "Onnistuneesti väärennetty.",
-      "star-failed": "Toiminta epäonnistui, yritä uudelleen.",
-      "star-suc": "Toiminto onnistui.",
-      "mobile-fork-suc": "forkattu onnistuneesti. Ole hyvä ja muokkaa työpöydällä."
-    },
-    "detail-load-failed": "Tietojen noutaminen epäonnistui, yritä uudelleen."
-  },
-  "team": {
-    "select_team": {
-      "title": {
-        "create": "Valitse luoma tiimi",
-        "run": "Valitse suoritettava joukkue"
-      },
-      "create_button": "Luo uusi tiimi",
-      "select_button": "Valitse"
-    },
-    "create_team": {
-      "team_name": "Tiimin nimi",
-      "team_identifier": "Tiimin tunniste",
-      "create": "Luo tiimi",
-      "message": {
-        "team_create": {
-          "suc": "Onnistuneesti luotu. ",
-          "failed": {
-            "failed": "Ei voitu luoda. ",
-            "identifier_duplicate": "Tunniste on jo olemassa. Vaihda se ja yritä uudelleen."
-          }
-        }
-      }
-    },
-    "create": {
-      "fail_invite_code_used": "Kutsun koodi on käytetty. ",
-      "fail_same_identifier": "Tunniste on jo käytössä. Vaihda se ja yritä uudelleen.",
-      "fail": "Ei voitu luoda",
-      "fail_network": "Verkkovirhe, yritä myöhemmin uudelleen.",
-      "error_invite_code": "Virheellinen kutsu koodi"
-    }
-  },
-  "homepage": {
-    "team_modal": {
-      "title": "Luo tiimi",
-      "team_name": "Tiimin nimi",
-      "team_domain": "Tiimin tunniste",
-      "domain": ".illacloud.com",
-      "save": "Tallenna",
-      "cancel": "Peruuta",
-      "existed": "Jo olemassa",
-      "available": "Saatavissa.",
-      "invite_code": "Kutsu koodi",
-      "invite_code_description": "Valinnainen. Jos sinulla on kutsukoodi, täytä se tähän.",
-      "contact": "Tarvitsetko kutsukoodin? <0>Ota yhteyttä ILLA</0>",
-      "team_name_empty": "Syötä tiimin nimi",
-      "create": "Luo",
-      "team_domain_invalid": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla. Pituudeltaan ei voi ylittää 200 merkkiä. ",
-      "team_identifier": "Tiimin tunniste",
-      "team_identifier_empty": "Ole hyvä ja syötä tiimin tunniste",
-      "team_domain_empty": "Ole hyvä ja syötä tiimin tunniste",
-      "team_id_invalid": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla. Pituudeltaan ei voi ylittää 200 merkkiä. ",
-      "invite_code_empty": "Ole hyvä ja syötä kutsukoodi.",
-      "team_domain_invalid_character": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla.",
-      "team_domain_invalid_length": "Ei voi olla yli 200 merkkiä pitkä.",
-      "tip": {
-        "team_identifier": "Tämä lisätään tiimisi osoitteeseen. Käytä kirjaimia tai numeroita 200 merkin sisällä (esim. illa)"
-      },
-      "get_invite_code": "Hanki kutsukoodi",
-      "invite_code_tips": "(Vapaaehtoinen)"
-    },
-    "mes": {
-      "team_create_suc": "Luonti onnistui."
-    },
-    "create_new_team": "Luo uusi tiimi",
-    "no_team": "Sinulla ei ole joukkueita"
-  },
-  "detail": {
-    "operation": {
-      "run": "Suorita",
-      "fork": "Fork {{ operationNum }}",
-      "star": "Tähti {{ operationNum }}",
-      "share": "Jaa"
-    },
-    "label": {
-      "prompt": "Prompt",
-      "variable": "Muuttuja",
-      "model": "Malli"
-    },
-    "contributor": "Avustaja",
-    "contributor-name": "{{ userName }}jne",
-    "contributed_team": "Kehittäjä {{ teamName }}",
-    "contributed_team_app": "Tiimi",
-    "components": {
-      "title": "Komponentit",
-      "list": {
-        "input": "Input",
-        "number-input": "Number Input",
-        "editable-text": "Muokattava Teksti",
-        "textarea-input": "Textarea Input",
-        "upload": "Lähetä",
-        "slider": "Liukusäädin",
-        "range-slider": "Range Slider",
-        "recording": "Nauhoitetaan",
-        "json-editor": "JSON Editor",
-        "rich-text-editor": "Rich Text Editor",
-        "json-schema-form": "Json Schema -lomake",
-        "drive-file-picker": "Drive File Picker (Automatic Copy)",
-        "switch": "Vaihda",
-        "switch-group": "Vaihda Ryhmää",
-        "select": "Valitse",
-        "multiselect": "Monivalinta",
-        "checkbox-group": "Valintaruutu Ryhmä",
-        "cascader": "Cascader",
-        "radio-group": "Radion Ryhmä",
-        "radio-button": "Radion Painike",
-        "event-calendar": "Tapahtuma Kalenteri",
-        "date": "Päivämäärä",
-        "date-range": "Date Range",
-        "date-time": "Päivämäärä Aika",
-        "time-picker": "Aika Valitsija",
-        "time-range": "Aikaväli",
-        "chart": "Kaavio",
-        "table": "Taulukko",
-        "container": "Säiliö",
-        "form": "Lomake",
-        "modal": "Modaali",
-        "list": "Lista",
-        "menu": "Valikko",
-        "tabs": "Tabs",
-        "steps": "Vaiheet",
-        "text": "Teksti",
-        "image": "Kuva",
-        "button": "Painike",
-        "chat": "Keskustelu",
-        "icon": "Kuvake",
-        "statistics": "Tilastot",
-        "rate": "Arvostele",
-        "bar-progress": "Palkin Edistyminen",
-        "circle-progress": "Ympyrän Edistyminen",
-        "timeline": "Aikajana",
-        "divider": "Jakaja",
-        "pdf": "PDF",
-        "video": "Video",
-        "audio": "Ääni",
-        "carousel": "Carousel",
-        "map": "Kartta"
-      }
-    },
-    "resources": {
-      "title": "Resurssit"
-    },
-    "ai-agents": {
-      "title": "AI Agents"
-    }
-  },
-  "new_share": {
-    "title": "Jaa",
-    "label": {
-      "link": "Jaa linkin kanssa",
-      "social-media": "Jaa päällä"
-    },
-    "options": {
-      "social-media": {
-        "twitter": "Twitter",
-        "reddit": "Reddit",
-        "linkedin": "LinkedIn",
-        "hackernews": "Hakkerit Uutiset",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp"
-      }
-    },
-    "default-text": {
-      "social-media": {
-        "twitter": "Hei siellä! Löysin juuri tämän hämmästyttävän tekoälyn agentin. Sinua saattaa kiinnostaa myös kokeilla sitä! Tarkista tämä! {{promptName}}:{{promptLink}} #AIwriting #PromptManagement #ProductivityBoost",
-        "reddit": "Tutustu tähän hämmästyttävään tekoälyn Agent [{{promptName}}]",
-        "linkedin": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
-        "hackernews": "Yksinkertaista työtaakkaa [{{promptName}}] - tekoälyn agentti, joka saa tehtävän valmiiksi.",
-        "facebook": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
-        "whatsapp": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
-      },
-      "contribute": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
-    },
-    "default-text-apps": {
-      "social-media": {
-        "twitter": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "reddit": "Tutustu tähän hämmästyttävään sovellukseen [{{appName}}]",
-        "linkedin": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "hackernews": "Easy-to-use web app template [{{appName}}]",
-        "facebook": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
-        "whatsapp": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
-      },
-      "contribute": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
-    }
-  },
-  "user_management": {
-    "role": {
-      "owner": "Omistaja",
-      "admin": "Administer",
-      "editor": "Muokkain",
-      "viewer": "Katsoja",
-      "tips": {
-        "admin": "Jäsen, joka voi hallita kaikkia jäseniä paitsi Owner, muokkaa APP:eja ja tarkastella APP:ia",
-        "editor": "Jäsen, joka voi hallita editoria ja katsojan jäseniä, muokata APP:eja ja tarkastella APP:eja",
-        "viewer": "Jäsen, joka voi hallita katsojan jäseniä ja tarkastella APP:ia"
-      }
-    },
-    "modal": {
-      "title": {
-        "invite_members": "Kutsu jäseniä",
-        "invite_to_use": "Kutsu käyttämään",
-        "invite_to_edit": "Kutsu muokattavaksi",
-        "contribute": "Kauppapaikka"
-      },
-      "link": {
-        "invite_title": "Kutsu linkki",
-        "copy": "Kopioi",
-        "turn_off": "Poista kutsulinkit käytöstä",
-        "update": "Päivitä kutsulinkit",
-        "description": "Käynnistä ja kutsu jäseniä linkin kautta. ",
-        "turn_on": "Ota kutsulinkit käyttöön",
-        "fail": "Linkin hankkiminen epäonnistui, yritä myöhemmin uudelleen",
-        "copied_suc": "Kopioitu!",
-        "failed_to_copy": "Kopiointi epäonnistui",
-        "turn_off_fail": "Ei voitu poistaa käytöstä",
-        "turn_on_fail": "Ei voitu ottaa käyttöön",
-        "make_public_title": "Tee sovellus julkiseksi",
-        "make_public_copy": "Kopioi",
-        "marketplace": {
-          "label": "Jaa linkin kanssa"
-        }
-      },
-      "email": {
-        "invite_title": "Kutsu sähköpostitse",
-        "invite": "Kutsu",
-        "placeholder": "Syötä sähköpostiosoite",
-        "invited": "Kutsuttu",
-        "in_list": "Tämä käyttäjä on jo tiimissäsi.",
-        "duplicate": "{{ email }} on kopioitu",
-        "not_mail": "{{ email }} ei ole sähköposti"
-      },
-      "invalid_email": "Syötä voimassa oleva sähköpostiosoite",
-      "message": {
-        "make_public_suc": "Aseta onnistuneesti",
-        "make_public_failed": "Ei voitu asettaa",
-        "app_share_in_team": "{{ email }} on jo tiimissäsi, ole hyvä ja jaa linkki hänen kanssaan. "
-      },
-      "tab": {
-        "invite": "Kutsu",
-        "public": "Julkinen",
-        "with_team": "Jaa tiimin jäsenten kanssa"
-      },
-      "custom_copy_text_app_invite": "{{userName}} shared you an app of 「{{teamName}}」. Click the link to join the team and check the APP: {{inviteLink}}",
-      "custom_copy_text_public": "{{userName}} shared an app with you from 「{{teamName}}」 . Click the link to check the APP: {{inviteLink}}",
-      "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
-      "tips": {
-        "license_insufficient": "Jäljellä olevat lisenssit"
-      },
-      "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
-      "contribute": {
-        "label": "Osallistu markkinapaikkaan",
-        "default_text": {
-          "app": "I just discovered an impressive app called {{ appName }}. Check it: {{ appLink }}",
-          "agent": "I just discovered an impressive AI Agent called {{ agentName }}. Check it: {{ agentLink }}"
+    "title": {
+        "ai-agent": {
+            "title-1": "Avoin lähdekoodi",
+            "title-2": "yhteisö",
+            "feature": "AI Agent"
         },
-        "desc": "Kun olet osallistunut markkinapaikalle, kaikki käyttäjät voivat jatkaa, tähden ja haarata Agentin. Kun muut tiimit käyttävät tätä agenttia, se ei kuluta resursseja."
-      },
-      "social_media": {
-        "label": "Jaa päällä",
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "reddit": "Reddit",
-        "facebook": "Facebook",
-        "whatsapp": "WhatsApp",
-        "hackernews": "Hakkerit Uutiset",
-        "default_text": {
-          "app": "Löysin juuri vaikuttavan sovelluksen nimeltä {{ appName }}",
-          "agent": "Löysin juuri vaikuttavan tekoälyagentin nimeltä {{ agentName }}"
+        "app": {
+            "title-1": "ILLA",
+            "title-2": "yhteisö",
+            "feature": "AI Natiivi Sovellus"
         }
-      },
-      "custom_copy_text_agent_invite": "{{ userName }} share you an AI Agent from 「{{ teamName }}」. Join team and check it: {{ inviteLink }}"
     },
-    "mes": {
-      "invite_suc": "Kutsuttu onnistuneesti",
-      "invite_fail": "Kutsuminen epäonnistui",
-      "update_suc": "Päivitetty onnistuneesti",
-      "update_fail": "Päivitys epäonnistui",
-      "transfer_suc": "Siirretty onnistuneesti",
-      "transfer_fail": "Siirto epäonnistui",
-      "remove_suc": "Poistettu onnistuneesti",
-      "remove_fail": "Poistaminen epäonnistui",
-      "change_role_fail": "Päivitys epäonnistui",
-      "change_role_suc": "Päivitetty onnistuneesti"
+    "team_create_suc": "Luonti onnistui.",
+    "team_create_fail": "Ei voitu luoda, yritä myöhemmin uudelleen. ",
+    "network_error": "Verkkovirhe, yritä myöhemmin uudelleen. ",
+    "create_fail": "Ei voitu luoda. Yritä myöhemmin uudelleen",
+    "create_agent": "Luo AI Agentti",
+    "create_app": "Luo Sovellus",
+    "new_dashboard": {
+        "desc": {
+            "no_description": "Ei kuvausta"
+        }
+    },
+    "contribute": {
+        "tag": {
+            "recommended": "Suositeltu",
+            "add_tag": "Lisää tunnisteita",
+            "failed_to_save": "Tallennus epäonnistui",
+            "tag": "Tunniste"
+        },
+        "update": "Muokkaa tageja",
+        "copy_link": "Kopioi linkki"
+    },
+    "description": {
+        "ai-agent": "Koneoppimisen alan asiantuntijoiden tarjoama avoimen lähdekoodin tekoälyn agentti, ammattimainen nopea insinöörit ja harrastajat, voidaan ajaa yhdellä napsautuksella ja muokata näiden agenttien perusteella.",
+        "app": "ILLAn erinomaisten osallistujien rakentama, mukaan lukien käyttövalmiit työkalut ja web-mallit, joita voidaan helposti muokata ja julkaista, joka voi merkittävästi parantaa työn tehokkuutta."
+    },
+    "meta": {
+        "meta-title": {
+            "ai-agent": "Avoimen lähdekoodin AI Agent yhteisö",
+            "app": "AI Native App yhteisö"
+        },
+        "meta-description": {
+            "ai-agent": "Tutustu avoimen lähdekoodin AI Agents kehittämä koneoppimisen asiantuntijat. Toimi ja muokata niitä yhdellä napsautuksella yksinkertaisuus",
+            "app": "Paranna tuottavuuttasi ILLAn poikkeuksellisilla työkaluilla ja muokattavilla web-malleilla. Säästä aikaa ja vaivaa helposti muokattaessa ja julkaistaessa."
+        }
+    },
+    "free": "Ilmainen",
+    "login": "Kirjaudu",
+    "sign-up": "Kirjaudu sisään ilmaiseksi",
+    "settings": "Asetukset",
+    "logout": "Kirjaudu ulos",
+    "logout_failed": "Kirjautuminen epäonnistui. Yritä myöhemmin uudelleen.",
+    "create": "Luo uusi",
+    "copied": "Kopioitu",
+    "empty_copied_tips": "Kopioitava sisältö on tyhjä",
+    "size_exceed_copied_tips": "The content is too long to copy.  (current size: {{current_size}} bytes, limit: {{limit_size}} bytes)",
+    "keywords_agent": "ILLA Cloud, AI Agent, chat gpt prompt, kirjoittaa prompt, prompt engineering, avoimen lähdekoodin kehotus, openai, vakaa diffusion, midjourney",
+    "keywords_app": "ILLA Cloud, malli, raaka sovellus, sql tietokanta, ei koodia, alhainen koodi, sisäiset työkalut, kojelauta, admin paneeli, verkkosivuilla rakentaja",
+    "back": "Takaisin",
+    "create-type": {
+        "title": "Luo uusi",
+        "ai-agent": {
+            "title": "AI Agent",
+            "desc": "Kirjoita kehotus"
+        },
+        "app": {
+            "title": "Sovellus",
+            "desc": "Koosta sivusto"
+        }
+    },
+    "marketplace-type": {
+        "ai-agent": "AI Agent",
+        "app": "ILLA App"
     },
     "status": {
-      "pending": "Odottaa",
-      "current-user": "Sinä"
+        "404": {
+            "des": "Näyttää siltä, että sivua, jota etsit ei löytynyt.",
+            "again": "Päivitä"
+        },
+        "403": {
+            "des": "Pääsy estetty"
+        },
+        "back": "Takaisin kotisivulle",
+        "blank": "Ei tuloksia"
+    },
+    "load": {
+        "before": "Lataa lisää",
+        "after": "Lataa lisää"
+    },
+    "dashboard": {
+        "list-type": {
+            "ai-agent": "AI Agents",
+            "app": "ILLA Apps"
+        },
+        "sort-type": {
+            "popular": "Suosittu",
+            "recent": "Viimeisimmät",
+            "star": "Tähdelliset"
+        },
+        "search": "Etsi",
+        "no-result": "Ei tuloksia. Ole hyvä ja päivitä tai vaihda hakuehtoja.",
+        "message": {
+            "next-page-error": "Seuraavan sivun lataaminen epäonnistui. Yritä uudelleen. ",
+            "create-failed": "Agentin luonti epäonnistui. Yritä uudelleen. ",
+            "sort-failed": "Suodattimen tyyppiä ei voitu muuttaa. Yritä uudelleen.",
+            "fork-failed": "Ei voitu forkata, yritä uudelleen.",
+            "create-suc": "Ei voitu luoda, yritä uudelleen.",
+            "fork-suc": "Onnistuneesti väärennetty.",
+            "star-failed": "Toiminta epäonnistui, yritä uudelleen.",
+            "star-suc": "Toiminto onnistui.",
+            "mobile-fork-suc": "forkattu onnistuneesti. Ole hyvä ja muokkaa työpöydällä."
+        },
+        "detail-load-failed": "Tietojen noutaminen epäonnistui, yritä uudelleen."
+    },
+    "team": {
+        "select_team": {
+            "title": {
+                "create": "Valitse luoma tiimi",
+                "run": "Valitse suoritettava joukkue"
+            },
+            "create_button": "Luo uusi tiimi",
+            "select_button": "Valitse"
+        },
+        "create_team": {
+            "team_name": "Tiimin nimi",
+            "team_identifier": "Tiimin tunniste",
+            "create": "Luo tiimi",
+            "message": {
+                "team_create": {
+                    "suc": "Onnistuneesti luotu. ",
+                    "failed": {
+                        "failed": "Ei voitu luoda. ",
+                        "identifier_duplicate": "Tunniste on jo olemassa. Vaihda se ja yritä uudelleen."
+                    }
+                }
+            }
+        },
+        "create": {
+            "fail_invite_code_used": "Kutsun koodi on käytetty. ",
+            "fail_same_identifier": "Tunniste on jo käytössä. Vaihda se ja yritä uudelleen.",
+            "fail": "Ei voitu luoda",
+            "fail_network": "Verkkovirhe, yritä myöhemmin uudelleen.",
+            "error_invite_code": "Virheellinen kutsu koodi"
+        }
+    },
+    "homepage": {
+        "team_modal": {
+            "title": "Luo tiimi",
+            "team_name": "Tiimin nimi",
+            "team_domain": "Tiimin tunniste",
+            "domain": ".illacloud.com",
+            "save": "Tallenna",
+            "cancel": "Peruuta",
+            "existed": "Jo olemassa",
+            "available": "Saatavissa.",
+            "invite_code": "Kutsu koodi",
+            "invite_code_description": "Valinnainen. Jos sinulla on kutsukoodi, täytä se tähän.",
+            "contact": "Tarvitsetko kutsukoodin? <0>Ota yhteyttä ILLA</0>",
+            "team_name_empty": "Syötä tiimin nimi",
+            "create": "Luo",
+            "team_domain_invalid": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla. Pituudeltaan ei voi ylittää 200 merkkiä. ",
+            "team_identifier": "Tiimin tunniste",
+            "team_identifier_empty": "Ole hyvä ja syötä tiimin tunniste",
+            "team_domain_empty": "Ole hyvä ja syötä tiimin tunniste",
+            "team_id_invalid": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla. Pituudeltaan ei voi ylittää 200 merkkiä. ",
+            "invite_code_empty": "Ole hyvä ja syötä kutsukoodi.",
+            "team_domain_invalid_character": "Vain kirjaimet, numerot ja \"_\" ovat sallittuja. On aloitettava ja lopetettava kirjaimella tai numerolla.",
+            "team_domain_invalid_length": "Ei voi olla yli 200 merkkiä pitkä.",
+            "tip": {
+                "team_identifier": "Tämä lisätään tiimisi osoitteeseen. Käytä kirjaimia tai numeroita 200 merkin sisällä (esim. illa)"
+            },
+            "get_invite_code": "Hanki kutsukoodi",
+            "invite_code_tips": "(Vapaaehtoinen)"
+        },
+        "mes": {
+            "team_create_suc": "Luonti onnistui."
+        },
+        "create_new_team": "Luo uusi tiimi",
+        "no_team": "Sinulla ei ole joukkueita"
+    },
+    "detail": {
+        "tag": "Tunniste",
+        "hacktober": {
+            "banner": "Mennään 👉",
+            "submit": {
+                "desc": "Lähetä PR voittaaksesi palkinnon",
+                "button": "Lähetä PR"
+            }
+        },
+        "operation": {
+            "run": "Suorita",
+            "fork": "Fork",
+            "star": "Tähti",
+            "share": "Jaa"
+        },
+        "label": {
+            "prompt": "Prompt",
+            "variable": "Muuttuja",
+            "model": "Malli"
+        },
+        "contributor": "Avustaja",
+        "contributor-name": "{{ userName }}jne",
+        "contributed_team": "Kehittäjä {{ teamName }}",
+        "contributed_team_app": "Tiimi",
+        "components": {
+            "title": "Komponentit",
+            "list": {
+                "input": "Input",
+                "number-input": "Number Input",
+                "editable-text": "Muokattava Teksti",
+                "textarea-input": "Textarea Input",
+                "upload": "Lähetä",
+                "slider": "Liukusäädin",
+                "range-slider": "Range Slider",
+                "recording": "Nauhoitetaan",
+                "json-editor": "JSON Editor",
+                "rich-text-editor": "Rich Text Editor",
+                "json-schema-form": "Json Schema -lomake",
+                "drive-file-picker": "Drive File Picker (Automatic Copy)",
+                "switch": "Vaihda",
+                "switch-group": "Vaihda Ryhmää",
+                "select": "Valitse",
+                "multi-select": "Monivalinta",
+                "checkbox-group": "Valintaruutu Ryhmä",
+                "cascader": "Cascader",
+                "radio-group": "Radion Ryhmä",
+                "radio-button": "Radion Painike",
+                "event-calendar": "Tapahtuma Kalenteri",
+                "date": "Päivämäärä",
+                "date-range": "Date Range",
+                "date-time": "Päivämäärä Aika",
+                "time-picker": "Aika Valitsija",
+                "time-range": "Aikaväli",
+                "chart": "Kaavio",
+                "table": "Taulukko",
+                "container": "Säiliö",
+                "form": "Lomake",
+                "modal": "Modaali",
+                "list": "Lista",
+                "menu": "Valikko",
+                "tabs": "Tabs",
+                "steps": "Vaiheet",
+                "text": "Teksti",
+                "image": "Kuva",
+                "button": "Painike",
+                "chat": "Keskustelu",
+                "icon": "Kuvake",
+                "statistics": "Tilastot",
+                "rate": "Arvostele",
+                "bar-progress": "Palkin Edistyminen",
+                "circle-progress": "Ympyrän Edistyminen",
+                "timeline": "Aikajana",
+                "divider": "Jakaja",
+                "pdf": "PDF",
+                "video": "Video",
+                "audio": "Ääni",
+                "carousel": "Carousel",
+                "map": "Kartta"
+            }
+        },
+        "resources": {
+            "title": "Resurssit"
+        },
+        "ai-agents": {
+            "title": "AI Agents"
+        }
+    },
+    "new_share": {
+        "title": "Jaa",
+        "label": {
+            "link": "Jaa linkin kanssa",
+            "social-media": "Jaa päällä"
+        },
+        "options": {
+            "social-media": {
+                "twitter": "Twitter",
+                "reddit": "Reddit",
+                "linkedin": "LinkedIn",
+                "hackernews": "Hakkerit Uutiset",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp"
+            }
+        },
+        "default-text": {
+            "social-media": {
+                "twitter": "Hei siellä! Löysin juuri tämän hämmästyttävän tekoälyn agentin. Sinua saattaa kiinnostaa myös kokeilla sitä! Tarkista tämä! {{promptName}}:{{promptLink}} #AIwriting #PromptManagement #ProductivityBoost",
+                "reddit": "Tutustu tähän hämmästyttävään tekoälyn Agent [{{promptName}}]",
+                "linkedin": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
+                "hackernews": "Yksinkertaista työtaakkaa [{{promptName}}] - tekoälyn agentti, joka saa tehtävän valmiiksi.",
+                "facebook": "Attention all AI enthusiasts and professionals looking to increase their productivity! I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!",
+                "whatsapp": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
+            },
+            "contribute": "I came across an AI Agent platform that offers cutting-edge solutions for simplifying complex tasks and integrating with your internal tools. I personally tried out [{{promptName}}] and was blown away by its capabilities. It's a game-changer for anyone looking to stay ahead of the curve. Check it out for yourself at {{promptLink}} and let me know what you think!"
+        },
+        "default-text-apps": {
+            "social-media": {
+                "twitter": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "reddit": "Tutustu tähän hämmästyttävään sovellukseen [{{appName}}]",
+                "linkedin": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "hackernews": "Easy-to-use web app template [{{appName}}]",
+                "facebook": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}",
+                "whatsapp": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
+            },
+            "contribute": "I just found an interesting app. Check it out! {{appName}}:{{appLink}}"
+        }
+    },
+    "user_management": {
+        "role": {
+            "owner": "Omistaja",
+            "admin": "Administer",
+            "editor": "Muokkain",
+            "viewer": "Katsoja",
+            "tips": {
+                "admin": "Jäsen, joka voi hallita kaikkia jäseniä paitsi Owner, muokkaa APP:eja ja tarkastella APP:ia",
+                "editor": "Jäsen, joka voi hallita editoria ja katsojan jäseniä, muokata APP:eja ja tarkastella APP:eja",
+                "viewer": "Jäsen, joka voi hallita katsojan jäseniä ja tarkastella APP:ia"
+            }
+        },
+        "modal": {
+            "title": {
+                "invite_members": "Kutsu jäseniä",
+                "invite_to_use": "Kutsu käyttämään",
+                "invite_to_edit": "Kutsu muokattavaksi",
+                "contribute": "Yhteisö"
+            },
+            "link": {
+                "invite_title": "Kutsu linkki",
+                "copy": "Kopioi",
+                "turn_off": "Poista kutsulinkit käytöstä",
+                "update": "Päivitä kutsulinkit",
+                "description": "Käynnistä ja kutsu jäseniä linkin kautta. ",
+                "turn_on": "Ota kutsulinkit käyttöön",
+                "fail": "Linkin hankkiminen epäonnistui, yritä myöhemmin uudelleen",
+                "copied_suc": "Kopioitu!",
+                "failed_to_copy": "Kopiointi epäonnistui",
+                "turn_off_fail": "Ei voitu poistaa käytöstä",
+                "turn_on_fail": "Ei voitu ottaa käyttöön",
+                "make_public_title": "Tee sovellus julkiseksi",
+                "make_public_copy": "Kopioi",
+                "marketplace": {
+                    "label": "Jaa linkin kanssa"
+                }
+            },
+            "email": {
+                "invite_title": "Kutsu sähköpostitse",
+                "invite": "Kutsu",
+                "placeholder": "Syötä sähköpostiosoite",
+                "invited": "Kutsuttu",
+                "in_list": "Tämä käyttäjä on jo tiimissäsi.",
+                "duplicate": "{{ email }} on kopioitu",
+                "not_mail": "{{ email }} ei ole sähköposti"
+            },
+            "invalid_email": "Syötä voimassa oleva sähköpostiosoite",
+            "message": {
+                "make_public_suc": "Aseta onnistuneesti",
+                "make_public_failed": "Ei voitu asettaa",
+                "app_share_in_team": "{{ email }} on jo tiimissäsi, ole hyvä ja jaa linkki hänen kanssaan. "
+            },
+            "tab": {
+                "invite": "Kutsu",
+                "public": "Julkinen",
+                "with_team": "Jaa tiimin kanssa"
+            },
+            "custom_copy_text_app_invite": "{{userName}} shared you an app of 「{{teamName}}」. Click the link to join the team and check the APP: {{inviteLink}}",
+            "custom_copy_text_public": "{{userName}} shared an app with you from 「{{teamName}}」 . Click the link to check the APP: {{inviteLink}}",
+            "custom_copy_text": "{{userName}} invites you to join 「{{teamName}}」 . Click the link to join the team: {{inviteLink}}",
+            "tips": {
+                "license_insufficient": "Jäljellä olevat lisenssit"
+            },
+            "custom-copy-ai-agent": "{{userName}} shared you an AI Agent of 「{{teamName}}」. Click the link to join the team and try the AI Agent: {{inviteLink}}",
+            "contribute": {
+                "label": "Linkki",
+                "app": {
+                    "desc": "Kuka tahansa voi käyttää sovellusta tämän linkin kautta"
+                },
+                "default_text": {
+                    "app": "I just discovered an impressive app called {{ appName }}. Check it: {{ appLink }}",
+                    "agent": "I just discovered an impressive AI Agent called {{ agentName }}. Check it: {{ agentLink }}"
+                },
+                "desc": "Kun olet osallistunut yhteisöön, kaikki käyttäjät voivat juosta, tähden ja haaraudu Agentin. Kun muut tiimit käyttävät tätä agenttia, se ei kuluta resursseja."
+            },
+            "social_media": {
+                "label": "Jaa päällä",
+                "twitter": "Twitter",
+                "linkedin": "LinkedIn",
+                "reddit": "Reddit",
+                "facebook": "Facebook",
+                "whatsapp": "WhatsApp",
+                "hackernews": "Hakkerit Uutiset",
+                "default_text": {
+                    "app": "Löysin juuri vaikuttavan sovelluksen nimeltä {{ appName }}",
+                    "agent": "Löysin juuri vaikuttavan tekoälyagentin nimeltä {{ agentName }}"
+                }
+            },
+            "custom_copy_text_agent_invite": "{{ userName }} share you an AI Agent from 「{{ teamName }}」. Join team and check it: {{ inviteLink }}"
+        },
+        "mes": {
+            "invite_suc": "Kutsuttu onnistuneesti",
+            "invite_fail": "Kutsuminen epäonnistui",
+            "update_suc": "Päivitetty onnistuneesti",
+            "update_fail": "Päivitys epäonnistui",
+            "transfer_suc": "Siirretty onnistuneesti",
+            "transfer_fail": "Siirto epäonnistui",
+            "remove_suc": "Poistettu onnistuneesti",
+            "remove_fail": "Poistaminen epäonnistui",
+            "change_role_fail": "Päivitys epäonnistui",
+            "change_role_suc": "Päivitetty onnistuneesti"
+        },
+        "status": {
+            "pending": "Odottaa",
+            "current-user": "Sinä"
+        }
+    },
+    "customer": {
+        "title": "Trusted by thousands of teams"
     }
-  }
 }
