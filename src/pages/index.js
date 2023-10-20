@@ -82,6 +82,7 @@ const Home = ({ starCounts, uri }) => {
           setPlayMaskShow={setPlayMaskShow}
           githubStarts={Math.floor(starCounts * step)}
         />
+
         <NewContent onChangeShow={() => setIsPartnerShow(true)} uri={uri} />
         <Modal
           isOpen={playMaskShow}
