@@ -28,18 +28,18 @@ Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
 Installera GNU make och typ:
 
 ```jsx
-gör run-officiell-bild
+make run-official-image
 ```
 
-eller bara exekvera:
+eller kör:
 
 ```jsx
-/bin/bash skript/run-official-image.sh
+/bin/bash scripts/run-official-image.sh
 ```
 
-detta kommando kommer att dra illasoft officiella bild och köra det på din docker miljö.
+detta kommando kommer att dra ner Illasoft's officiella bild och köra det i din Docker-miljö.
 
-Och logga in med standardnamnet **`root`** och lösenordet **`password`**.
+Och logga in med användarnamnet **`root`** och lösenordet **`password`**.
 
 ### Bygg bild manuellt och kör
 
@@ -48,13 +48,13 @@ Installera GNU göra (eller kör skalskript i skriptmappen manuellt).
 För att bygga illa allt-i-ett-bild och köra, skriv:
 
 ```jsx
-gör alla
+make all
 ```
 
 för podman, skriv:
 
 ```jsx
-gör run--by-podman
+make run-by-podman
 ```
 
 eller kör skalskript `run-by-podman.sh` i skriptmappen.
@@ -62,19 +62,19 @@ eller kör skalskript `run-by-podman.sh` i skriptmappen.
 ### Stoppa och ta bort behållare
 
 ```jsx
-gör stopp-och-ta bort behållare
+make stop-and-remove-container
 ```
 
 ### Rensa Postgres databasfil
 
-** DETTA KOMMAND DELET DATABASE FILE PÅ DINA RABATT!!! \*\*\*** BACKUP, OCH GÖRA DET KRÄFTILLT \*\*\*
+** DETTA KOMMANDO KOMMER TA BORT DATABAS-FILER PÅ ERAN HÅRDDISK!!! \*\*\*** BACKUP, OCH GÖRA DET FÖRSIKTIGT \*\*\*
 
 I standard kommer Postgres-databasen att lagras i mappen `/var/lib/illa/database/postgresql/`.
 
 Kör följande kommando för att ta bort det.
 
 ```jsx
-gör clean-postgres-database-fil
+make clean-postgres-database-file
 ```
 
 ### Variabler för Konfig Runtime Environment
