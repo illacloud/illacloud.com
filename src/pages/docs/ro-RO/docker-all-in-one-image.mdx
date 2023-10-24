@@ -15,80 +15,54 @@ postPriority: 1
 
 ### Descriere
 
-Construiește illa folosește o imagine all-in-one și rulează pe mașina ta. Puteți vizualiza fișierul scripts în folderul [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) pentru mai multe detalii.
+Build illa utils all-in-one image and run it on your machine. Please checkout this repo for more info [build-all-in-one-image](https://github.com/illacloud/build-all-in-one-image).
 
 Notă:
 
 Am recomandat implementarea cu instrumentele noastre de auto-implementare[illa-cli](https://github.com/illacloud/illa).
 
-Și deocamdată nu sprijinim Apple Silicon M1 (darwin-arm64 arch).
+### Run an Official Image
 
-### Rulează o imagine oficială
-
-Instalează GNU marca și tip:
+Just execute:
 
 ```jsx
-fă o imagine funcțională
+docker run illasoft/illa-builder:latest
 ```
 
-sau doar executa:
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
 
 ```jsx
-/bin/bash scripts/run-official-image.sh
+make build
 ```
 
-această comandă va trage o imagine oficială illasoft şi o va rula pe mediul de andocare.
-
-Și autentificați-vă cu numele de utilizator implicit **`root`** și parola **`parolă`**.
-
-### Construiește manual imaginea și rulează
-
-Instalați GNU creați (sau executați scripturi shell în directorul script-uri).
-
-Pentru a construi imaginea all-in-one illa și a rula, scrie:
+or execute command:
 
 ```jsx
-fă totul
+docker build ./ -f ./Dockerfile -t illa-builder:local
 ```
 
-pentru podman, tipul:
+Then run your local build image by:
 
 ```jsx
-fă alergător cu podman
+make run -test
 ```
 
-sau să execute script-uri `run-by-podman.sh` în folderul de script-uri.
+or 
+
+```jsx
+docker run -d -p 80:2022 --name illa_builder_local -v ~/illa-database:/opt/illa/database -v ~/illa-drive:/opt/illa/drive illa-builder:local
+```
 
 ### Opriți și eliminați containerul
 
 ```jsx
-fa containere stop-and-remove-container
-```
-
-### Curăță fișierul bazei de date Postgres
-
-** ACEASTĂ COMANDĂ ȘTERGE DATELE ÎN DISCURSUL DUMNEAVOASTRĂ!!! \*\*\*** BACKUP ȘI ADUNĂ CUMPĂRĂ \*\*\*
-
-În Implicit, baza de date Postgres va fi stocată în folderul `/var/lib/illa/bază de date/postgresql/`.
-
-Rulează următoarea comandă pentru a o șterge.
-
-```jsx
-fa fisierul-postgres-baza de date
-```
-
-### Configurare Variabile Mediu Runtime
-
-Editați `scripts/run.sh` atunci când este necesar:
-
-```jsx
-# parola pentru baza de date
-PG_PASS=mysecretpassword
-
-# repo home dir
-ILLA_HOME_DIR=/var/lib/illa
-
-# director pentru stocarea fişierului postgres
-PG_VOLUMN=${ILLA_HOME_DIR}/bază de date/postgresql
-DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+docker stop illa_builder_local
 ```
