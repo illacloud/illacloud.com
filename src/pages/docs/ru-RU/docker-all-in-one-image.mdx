@@ -15,80 +15,54 @@ postPriority: 1
 
 ### Описание
 
-Постройте образ все-в-одном и запустите его на вашей машине. Вы можете просмотреть файл скриптов в папке [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) для получения более подробной информации.
+Build illa utils all-in-one image and run it on your machine. Please checkout this repo for more info [build-all-in-one-image](https://github.com/illacloud/build-all-in-one-image).
 
 Примечание:
 
 Мы настоятельно рекомендуем установить с помощью наших утилит авторазвертывания[illa-cli](https://github.com/illacloud/illa).
 
-А пока мы не поддерживаем Apple Silicon M1 (арка darwin-arm64).
+### Run an Official Image
 
-### Запустить официальное изображение
-
-Установите GNU make и тип:
+Just execute:
 
 ```jsx
-сделать run-official-image
+docker run illasoft/illa-builder:latest
 ```
 
-или просто выполните:
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
 
 ```jsx
-/bin/bash scripts/run-official-image.sh
+make build
 ```
 
-эта команда выберет официальный образ illasoft и запустит его в консольной среде.
-
-И войдите по умолчанию с именем пользователя **root\`** и паролем **`password`**.
-
-### Создать изображение вручную и запустить
-
-Установите GNU make (или выполните сценарии оболочки в папке сценариев вручную).
-
-Для сборки illa all-in-one образа и запуска, наберите:
+or execute command:
 
 ```jsx
-все
+docker build ./ -f ./Dockerfile -t illa-builder:local
 ```
 
-для подмана, наберите:
+Then run your local build image by:
 
 ```jsx
-сделать бег за подман
+make run -test
 ```
 
-или выполнить сценарии оболочки `run-by-podman.sh` в папке скриптов.
+or 
+
+```jsx
+docker run -d -p 80:2022 --name illa_builder_local -v ~/illa-database:/opt/illa/database -v ~/illa-drive:/opt/illa/drive illa-builder:local
+```
 
 ### Остановить и удалить контейнер
 
 ```jsx
-сделать стоп-и-удалённый контейнер
-```
-
-### Очистить файл базы данных Postgres
-
-** ЭТО КОМАНДА УДАЛИТЬ ДАННЫЙ ФАЙЛ НА ВАШЕ ДИСКУС!!! \*\*\*** ПРИОБРЕТИТЕ И НАСТОЯТЬ ПРИЧИНУ \*\*\*
-
-По умолчанию база данных Postgres будет храниться в папке `/var/lib/illa/database/postgresql/`.
-
-Выполните следующую команду для удаления.
-
-```jsx
-создать файл очистки-postgres-базы данных
-```
-
-### Config Runtime Environment переменные
-
-Редактировать `scripts/run.sh` при необходимости:
-
-```jsx
-# postgres пароль базы данных
-PG_PASS=mysecretpassword
-
-# repo home dir
-ILLA_HOME_DIR=/var/lib/illa
-
-# postgres папка хранения файлов базы данных
-PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
-DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+docker stop illa_builder_local
 ```
