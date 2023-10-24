@@ -15,80 +15,54 @@ postPriority: 1
 
 ### Kuvaus
 
-Build illa utils all-in-one image ja suorita se koneellasi. Voit tarkistaa skriptit tiedostosta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) saadaksesi lisätietoja.
+Build illa utils all-in-one image and run it on your machine. Please checkout this repo for more info [build-all-in-one-image](https://github.com/illacloud/build-all-in-one-image).
 
 Huomautus:
 
 Suosittelemme, että otamme käyttöön automaattisesti käyttöön työkalujamme[illa-cli](https://github.com/illacloud/illa).
 
-Ja tällä hetkellä emme tue Apple Silicon M1 (darwin-arm64 arch).
+### Run an Official Image
 
-### Suorita virallinen kuva
-
-Asenna GNU-merkki ja tyyppi:
+Just execute:
 
 ```jsx
-tee run-official-image
+docker run illasoft/illa-builder:latest
 ```
 
-tai vain suorittaa:
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
 
 ```jsx
-/bin/bash skriptit/run-official-image.sh
+make build
 ```
 
-tämä komento vetää illasoft virallisen kuvan ja suorittaa sen telakkasi ympäristössä.
-
-Ja kirjaudu sisään oletuskäyttäjätunnuksella **`root`** ja salasanalla **`password`**.
-
-### Rakenna kuva käsin ja suorita
-
-Asenna GNU make (tai suorita komentosarjojen komentosarjat manuaalisesti).
-
-Rakenna kaikki yhdessä kuva ja juoksu tyyppi:
+or execute command:
 
 ```jsx
-tee kaikki
+docker build ./ -f ./Dockerfile -t illa-builder:local
 ```
 
-podman, tyyppi:
+Then run your local build image by:
 
 ```jsx
-tee run-by-podman
+make run -test
 ```
 
-tai suorita komentosarjat `run-by-podman.sh` skriptikansiossa.
+or 
+
+```jsx
+docker run -d -p 80:2022 --name illa_builder_local -v ~/illa-database:/opt/illa/database -v ~/illa-drive:/opt/illa/drive illa-builder:local
+```
 
 ### Pysäytä ja poista säiliö
 
 ```jsx
-tee pysäytys- ja irrotussäiliö
-```
-
-### Puhdista Postgres Tietokantatiedosto
-
-** TÄMÄ YHTEISÖN LÄHETTÄÄ TIETOA TIETOA DISKSI!!! \*\*\*** VARMUUS, JA ANNA SITÄ \*\*\*
-
-Oletusarvoisesti Postgresin tietokanta tallennetaan `/var/lib/illa/tietokannassa/postgresql/`-kansioon.
-
-Suorita seuraava komento poistaaksesi sen.
-
-```jsx
-tee puhdas tietokantatiedosto
-```
-
-### Config Runtime Environment Muuttujat
-
-Muokkaa tarvittaessa `scripts/run.sh`:
-
-```jsx
-# postgres tietokannan salasana
-PG_PASS=mysecretpassword
-
-# repo home dir
-ILLA_HOME_DIR=/var/lib/illa
-
-# postgres tietokannan tallennuskansio
-PG_VOLUMN =${ILLA_HOME_DIR}/database/postgresql
-DRIVE_VOLUMN =${ILLA_HOME_DIR}/drive
+docker stop illa_builder_local
 ```
