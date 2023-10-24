@@ -15,80 +15,54 @@ postPriority: 1
 
 ### Beskrivning
 
-Bygg illa utils en allt-i-ett-bild och kör den på din maskin. Du kan kolla in skriptfilen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) för mer information.
+Build illa utils all-in-one image and run it on your machine. Please checkout this repo for more info [build-all-in-one-image](https://github.com/illacloud/build-all-in-one-image).
 
 Notera:
 
 Vi rekommenderar starkt att distribuera med våra auto-distribuera verktyg[illa-cli](https://github.com/illacloud/illa).
 
-Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
+### Run an Official Image
 
-### Kör en officiell bild
-
-Installera GNU make och typ:
+Just execute:
 
 ```jsx
-make run-official-image
+docker run illasoft/illa-builder:latest
 ```
 
-eller kör:
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
 
 ```jsx
-/bin/bash scripts/run-official-image.sh
+make build
 ```
 
-detta kommando kommer att dra ner Illasoft's officiella bild och köra det i din Docker-miljö.
-
-Och logga in med användarnamnet **`root`** och lösenordet **`password`**.
-
-### Bygg bild manuellt och kör
-
-Installera GNU göra (eller kör skalskript i skriptmappen manuellt).
-
-För att bygga illa allt-i-ett-bild och köra, skriv:
+or execute command:
 
 ```jsx
-make all
+docker build ./ -f ./Dockerfile -t illa-builder:local
 ```
 
-för podman, skriv:
+Then run your local build image by:
 
 ```jsx
-make run-by-podman
+make run -test
 ```
 
-eller kör skalskript `run-by-podman.sh` i skriptmappen.
+or 
+
+```jsx
+docker run -d -p 80:2022 --name illa_builder_local -v ~/illa-database:/opt/illa/database -v ~/illa-drive:/opt/illa/drive illa-builder:local
+```
 
 ### Stoppa och ta bort behållare
 
 ```jsx
-make stop-and-remove-container
-```
-
-### Rensa Postgres databasfil
-
-** DETTA KOMMANDO KOMMER TA BORT DATABAS-FILER PÅ ERAN HÅRDDISK!!! \*\*\*** BACKUP, OCH GÖRA DET FÖRSIKTIGT \*\*\*
-
-I standard kommer Postgres-databasen att lagras i mappen `/var/lib/illa/database/postgresql/`.
-
-Kör följande kommando för att ta bort det.
-
-```jsx
-make clean-postgres-database-file
-```
-
-### Variabler för Konfig Runtime Environment
-
-Redigera `scripts/run.sh` vid behov:
-
-```jsx
-# postgres databaslösenord
-PG_PASS=mysecretpassword
-
-# repo home dir
-ILLA_HOME_DIR=/var/lib/illa
-
-# postgres databas fillagringsmapp
-PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
-DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+docker stop illa_builder_local
 ```
