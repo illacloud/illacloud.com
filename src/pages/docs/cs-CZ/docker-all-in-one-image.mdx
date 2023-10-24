@@ -15,80 +15,54 @@ postPriority: 1
 
 ### L 343, 22.12.2009, s. 1).
 
-Postav ilustruje všechen obrázek a spusť ho na tvém počítači. Můžete se podívat na soubor skriptů ve složce [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/docker/scripts) pro více informací.
+Build illa utils all-in-one image and run it on your machine. Please checkout this repo for more info [build-all-in-one-image](https://github.com/illacloud/build-all-in-one-image).
 
 Pozn.:
 
 Důrazně jsme doporučili nasazení našich nástrojů pro automatické nasazení[illa-cli](https://github.com/illacloud/illa).
 
-A pro tuto chvíli nepodporujeme Apple Silicon M1 (archu Darwin-arm64).
+### Run an Official Image
 
-### Spustit oficiální obrázek
-
-Nainstalujte GNU značku a typ:
+Just execute:
 
 ```jsx
-vytvořit run-Oficiální obrázek
+docker run illasoft/illa-builder:latest
 ```
 
-nebo jen provést:
+this command will pull illasoft official image and run it on your docker environment.
+
+And log in with the default username **`root`** and password **`password`**.
+
+### Build Image Manually and Run
+
+Install GNU make (or execute shell scripts in the scripts folder manually).
+
+For build illa all-in-one image and run, type:
 
 ```jsx
-/bin/bash skripts/run-official-image.sh
+make build
 ```
 
-tento příkaz natáhne illasoft oficiální obrázek a spustí ho na svém dokovacím prostředí.
-
-A přihlaste se pomocí výchozího uživatelského jména **`root`** a hesla **`password`**.
-
-### Vytvořit obrázek ručně a spustit
-
-Nainstalujte GNU make (nebo proveďte skripty ve složce skripty ručně).
-
-Pro sestavení illa all-in-one obrázku a běh typ:
+or execute command:
 
 ```jsx
-udělá vše
+docker build ./ -f ./Dockerfile -t illa-builder:local
 ```
 
-u podkožního tuku:
+Then run your local build image by:
 
 ```jsx
-udělá run-by-podmana
+make run -test
 ```
 
-nebo spustit skripty `run-by-podman.sh` ve složce skriptů.
+or 
+
+```jsx
+docker run -d -p 80:2022 --name illa_builder_local -v ~/illa-database:/opt/illa/database -v ~/illa-drive:/opt/illa/drive illa-builder:local
+```
 
 ### Zastavit a odebrat kontejner
 
 ```jsx
-vytvořit zastávku a odebrat kontejner
-```
-
-### Vyčistit soubor databáze Postgres
-
-** Tentokrát OBCHODUJTE DATABÁZE NA VAŠI DISKU!!! \*\*\*** BAKTUALIZOVÁNÍ, A ZOBRAZIT NÁHRADU \*\*\*
-
-Ve výchozím nastavení bude databáze Postgres uložena do složky `/var/lib/illa/database/postgresql/`.
-
-Spusťte následující příkaz pro jeho odstranění.
-
-```jsx
-vytvořit čistý soubor postgres-databáze
-```
-
-### Konfigurační proměnné prostředí běžného času
-
-Upravte `scripts/run.sh` v případě potřeby:
-
-```jsx
-# postgres database password
-PG_PASS=mysecretpassword
-
-# repo home dir
-ILLA_HOME_DIR=/var/lib/illa
-
-# postgres úložiště databázového souboru
-PG_VOLUMN=${ILLA_HOME_DIR}/database/postgresql
-DRIVE_VOLUMN=${ILLA_HOME_DIR}/drive
+docker stop illa_builder_local
 ```
