@@ -5,7 +5,7 @@ export const menuItems = [
     title: 'nav.pricing',
   },
   {
-    href: '/docs/about-illa',
+    href: 'https://docs.illacloud.com',
     category: 'homepage_menu_doc_click',
     title: 'nav.doc',
   },
@@ -17,7 +17,7 @@ export const menuItems = [
   {
     href: 'https://illa.ai',
     title: 'nav.marketplace',
-  }
+  },
 ]
 
 export const selectItems = [
@@ -40,7 +40,7 @@ export const selectItems = [
         category: 'homepage_menu_product_selfhost_click',
         title: 'sub_nav.product.selfhost',
       },
-    ]
+    ],
   },
   {
     title: 'nav.resource',
@@ -56,8 +56,8 @@ export const selectItems = [
         href: '/components',
         category: 'homepage_menu_resource_components_click',
         title: 'sub_nav.resource.components',
-        target: 'components'
+        target: 'components',
       },
-    ]
-  }
+    ],
+  },
 ]

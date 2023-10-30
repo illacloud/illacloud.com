@@ -4,7 +4,6 @@ import '@/components/home/Content/coverSwiper.css'
 import '@/components/selfHost/coverInnerHtml.css'
 import 'focus-visible'
 import { useState, useEffect, Fragment } from 'react'
-import { Header } from '@/components/Header'
 import { Title } from '@/components/Title'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
@@ -12,7 +11,6 @@ import Head from 'next/head'
 import socialCardLarge from '@/img/social-card-large.png'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
-import { SearchProvider } from '@/components/Search'
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import Script from 'next/script'
 
@@ -60,7 +58,6 @@ function App({ Component, pageProps, router }) {
   const layoutProps = Component.layoutProps?.Layout
     ? { layoutProps: Component.layoutProps, navIsOpen, setNavIsOpen }
     : {}
-  const showHeader = /docs/.test(router.pathname)
   const meta = Component.layoutProps?.meta || {}
   const description =
     meta.metaDescription || meta.description || t('meta.description')
@@ -151,20 +148,9 @@ function App({ Component, pageProps, router }) {
           referrerpolicy="strict-origin-when-cross-origin"
         ></Script>
       </Head>
-      <SearchProvider>
-        {showHeader && (
-          <Header
-            hasNav={Boolean(Component.layoutProps?.Layout?.nav)}
-            navIsOpen={navIsOpen}
-            onNavToggle={(isOpen) => setNavIsOpen(isOpen)}
-            title={meta.title}
-            section={section}
-          />
-        )}
-        <Layout {...layoutProps}>
-          <Component section={section} {...pageProps} />
-        </Layout>
-      </SearchProvider>
+      <Layout {...layoutProps}>
+        <Component section={section} {...pageProps} />
+      </Layout>
     </>
   )
 }
