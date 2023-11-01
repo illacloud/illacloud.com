@@ -155,7 +155,10 @@ export const Title = (props) => {
                   {t('illa-Cloud')}
                 </a>
               </Link>
-              <Link legacyBehavior href="/docs/illa-cli">
+              <Link
+                legacyBehavior
+                href="https://docs.illacloud.com/self-hosted-deployment"
+              >
                 <a
                   className="h-[19px] bg-blackAlpha-05 text-center leading-[19px] flex flex-row gap-[8px] items-center"
                   onClick={() => {

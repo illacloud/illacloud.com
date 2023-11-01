@@ -28,7 +28,10 @@ export const MobileTitle = (props) => {
           {t('description')}
         </div>
         <div className="w-full flex gap-[16px]">
-          <Link legacyBehavior href="/docs/illa-cli">
+          <Link
+            legacyBehavior
+            href="https://docs.illacloud.com/self-hosted-deployment"
+          >
             <a
               className="w-full border-white border-[1px] py-[12px] px-[16px] rounded-[8px] text-white-01 text-[16px] font-normal text-center"
               onClick={() => {

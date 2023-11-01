@@ -3,11 +3,13 @@ export const SelfHostContent = {
     title: 'product.title',
     desc: 'product.description',
     btnText: 'product.button',
-    btnLink: 'https://www.illacloud.com/docs/illa-cli',
-    image: 'https://cdn.illacloud.com/official-website/img/selfhost/selfhost.svg',
-    mobileImg: 'https://cdn.illacloud.com/official-website/img/mobile/selfhost/selfhost.png',
+    btnLink: 'https://docs.illacloud.com/self-hosted-deployment',
+    image:
+      'https://cdn.illacloud.com/official-website/img/selfhost/selfhost.svg',
+    mobileImg:
+      'https://cdn.illacloud.com/official-website/img/mobile/selfhost/selfhost.png',
     imageAlt: 'product.alt',
-    category: 'selfhost_button_click'
+    category: 'selfhost_button_click',
   },
   deploy: {
     title: 'how-to-deploy.title',
@@ -18,75 +20,77 @@ export const SelfHostContent = {
         icon: 'https://cdn.illacloud.com/official-website/img/selfhost/Docker.svg',
         title: 'how-to-deploy.docker.title',
         content: 'how-to-deploy.docker.desc',
-        moreLink: 'https://www.illacloud.com/docs/docker-all-in-one-image',
+        moreLink: 'https://docs.illacloud.com/self-hosted-deployment#docker',
         moreTitle: 'how-to-deploy.docker.button',
         clickCategory: 'selfhost_docker_click',
-        showCategory: 'selfhost_guide_first_show'
+        showCategory: 'selfhost_guide_first_show',
       },
       {
         icon: 'https://cdn.illacloud.com/official-website/img/selfhost/CLI.svg',
         title: 'how-to-deploy.ILLA-CLI.title',
         content: 'how-to-deploy.ILLA-CLI.desc',
-        moreLink: 'https://www.illacloud.com/docs/illa-cli',
+        moreLink: 'https://docs.illacloud.com/self-hosted-deployment#cli',
         moreTitle: 'how-to-deploy.ILLA-CLI.button',
-        clickCategory: 'selfhost_illa_cli_click'
+        clickCategory: 'selfhost_illa_cli_click',
       },
       {
         icon: 'https://cdn.illacloud.com/official-website/img/selfhost/Kubernetes.svg',
         title: 'how-to-deploy.Kubernetes.title',
-        moreLink: 'https://www.illacloud.com/docs/kubernetes',
+        moreLink:
+          'https://docs.illacloud.com/self-hosted-deployment#kubernetes',
         moreTitle: 'how-to-deploy.Kubernetes.button',
         clickCategory: 'selfhost_kubernetes_click',
-        showCategory: 'selfhost_guide_second_show'
+        showCategory: 'selfhost_guide_second_show',
       },
       {
         icon: 'https://cdn.illacloud.com/official-website/img/selfhost/ILLA.svg',
         title: 'how-to-deploy.quickly_deploy.title',
         content: 'how-to-deploy.quickly_deploy.desc',
-        moreLink: 'https://www.illacloud.com/docs/quickly-deploy',
+        moreLink:
+          'https://docs.illacloud.com/self-hosted-deployment#quickly-deployy',
         moreTitle: 'how-to-deploy.quickly_deploy.button',
-        clickCategory: 'selfhost_quick_click'
+        clickCategory: 'selfhost_quick_click',
       },
-    ]
+    ],
   },
   features: {
     title: 'features.title',
     items: [
       {
         label: 'features.drag-and-drop.title',
-        desc: 'features.drag-and-drop.desc'
+        desc: 'features.drag-and-drop.desc',
       },
       {
         label: 'features.fost.title',
-        desc: 'features.fost.desc'
+        desc: 'features.fost.desc',
       },
       {
         label: 'features.components.title',
-        desc: 'features.components.desc'
+        desc: 'features.components.desc',
       },
       {
         label: 'features.integrations.title',
-        desc: 'features.integrations.desc'
+        desc: 'features.integrations.desc',
       },
       {
         label: 'features.access.title',
-        desc: 'features.access.desc'
-      }
+        desc: 'features.access.desc',
+      },
     ],
   },
   compare: {
-    title: "compare.title",
+    title: 'compare.title',
     tableHeader: [
       {
         label: 'compare.sub-title-1',
         btnText: 'compare.button',
-        link: 'https://cloud.illacloud.com/'
+        link: 'https://cloud.illacloud.com/',
       },
       {
         label: 'compare.sub-title-2',
         btnText: 'compare.button',
-        link: 'https://www.illacloud.com/docs/illa-cli'
-      }
+        link: 'https://docs.illacloud.com/self-hosted-deployment',
+      },
     ],
     items: [
       {
@@ -141,6 +145,6 @@ export const SelfHostContent = {
         desc: 'compare.list.branding.desc',
         icons: [false, true],
       },
-    ]
-  }
+    ],
+  },
 }
