@@ -98,7 +98,6 @@ const Home = ({ starCounts, uri }) => {
           onChangeShow={() => setIsBookShow(false)}
         />
       </div>
-      <Campaign />
       <Footer scrollStart={0.939} scrollEnd={1} />
     </>
   )
