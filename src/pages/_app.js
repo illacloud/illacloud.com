@@ -141,12 +141,6 @@ function App({ Component, pageProps, router }) {
           title="JSON Feed"
           href="/feeds/feed.json"
         />
-
-        <Script
-          strategy="afterInteractive"
-          src="https://tag.clearbitscripts.com/v1/pk_f16327730ef3bdec6215360e27413581/tags.js"
-          referrerpolicy="strict-origin-when-cross-origin"
-        ></Script>
       </Head>
       <Layout {...layoutProps}>
         <Component section={section} {...pageProps} />

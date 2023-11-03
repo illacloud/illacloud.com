@@ -42,11 +42,6 @@ const Home = ({ starCounts, uri }) => {
           content="illa,illacloud,illa cloud,艾拉云科,Retool,Budibase,Tooljet,UIBakery, Low-code,open-source, developers, developer tool, internal, rust,illa, illabuilder, illa-builder, retool alternative, Appsmith, Appsmith alternative, open-source alternative, budibase alternative,ローコード,低代码,开发者工具,낮은 코드,오픈 소스,オープンソース"
         />
 
-        <script
-          async
-          src="https://tag.clearbitscripts.com/v1/pk_2f29e3957a45fd04b8f4c8fe8a98a7d1/tags.js"
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
         <link
           rel="canonical"
           href={`https://www.illacloud.com${
