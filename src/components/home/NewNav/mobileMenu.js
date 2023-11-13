@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { sendTagEvent } from '@/utils/gtag'
 import { generateLanguageOptions } from '@/constants/language'
-import { selectItems, menuItems } from '@/constants/navContents'
+import { selectItems, menuItems, CONTACT_US_URL } from '@/constants/navContents'
 import { MobileMenuSelect } from '@/components/home/NewNav/mobileMenuSelect'
 
 export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
@@ -65,7 +65,8 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
           </a>
         </Link>
       ))}
-      <span
+      <Link
+        href={CONTACT_US_URL}
         onClick={() => {
           sendTagEvent({
             action: 'click',
@@ -77,8 +78,8 @@ export const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
         }}
         className="w-full cursor-pointer flex flex-row flex-nowrap items-center h-[40px] gap-[8px]"
       >
-        {t('nav.contact')}
-      </span>
+        <span>{t('nav.contact')}</span>
+      </Link>
 
       <span
         onClick={() => {

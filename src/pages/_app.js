@@ -12,7 +12,6 @@ import socialCardLarge from '@/img/social-card-large.png'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import { appWithTranslation, useTranslation } from 'next-i18next'
-import Script from 'next/script'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver

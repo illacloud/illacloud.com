@@ -10,7 +10,6 @@ import { MobileTitle } from '@/components/home/mobileTitle'
 import { Modal } from '@/components/comm/player'
 import BecomePartner from '@/components/home/Form/BecomePartner'
 import { BookDemo } from '@/components/home/Form/BookDemo'
-import { Campaign } from '@/components/home/Content/campaign'
 import { useRaf } from 'react-use'
 import Script from 'next/script'
 import { getStars } from '@/utils/getStars'
@@ -22,7 +21,6 @@ const Home = ({ starCounts, uri }) => {
   const { t } = useTranslation('home')
   const [playMaskShow, setPlayMaskShow] = useState(false)
   const [isPartnerShow, setIsPartnerShow] = useState(false)
-  const [isBookShow, setIsBookShow] = useState(false)
   const step = useRaf(1000, 0)
   const router = useRouter()
 
@@ -51,7 +49,7 @@ const Home = ({ starCounts, uri }) => {
       </Head>
       <HomeSchemaData />
       <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
-        <Nav whiteTheme={false} onChangeShow={() => setIsBookShow(true)} />
+        <Nav whiteTheme={false} />
 
         <Script>
           {`(function (d, t) {
@@ -87,10 +85,6 @@ const Home = ({ starCounts, uri }) => {
         <BecomePartner
           visible={isPartnerShow}
           onChangeShow={() => setIsPartnerShow(false)}
-        />
-        <BookDemo
-          visible={isBookShow}
-          onChangeShow={() => setIsBookShow(false)}
         />
       </div>
       <Footer scrollStart={0.939} scrollEnd={1} />

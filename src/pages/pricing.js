@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Nav } from '@/components/home/NewNav'
 import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -8,7 +7,6 @@ import { PricingContent } from '@/components/pricing/PricingContent'
 import { PricingMask } from '@/components/pricing/PricingMask'
 import { OpenSource } from '@/components/pricing/OpenSource'
 import { CompareCard } from '@/components/pricing/CompareCard'
-import { BookDemo } from '@/components/home/Form/BookDemo'
 import { FAQ } from '@/components/comm/Faq'
 import style from '@/components/pricing/index.module.css'
 import { useRouter } from 'next/router'
@@ -18,7 +16,6 @@ import { PricingSchemaData } from '@/components/schemaData/pricingSchemaData'
 
 const Pricing = () => {
   const { t } = useTranslation('pricing')
-  const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
   const [ref, rect] = useMeasure()
 
@@ -44,23 +41,15 @@ const Pricing = () => {
       <PricingMask rect={rect} />
       <div ref={ref} className="w-full px-0">
         <div className={style.pricingContainer}>
-          <Nav
-            whiteTheme={false}
-            customStyle={customNavStyle}
-            onChangeShow={() => setIsBookShow(true)}
-          />
+          <Nav whiteTheme={false} customStyle={customNavStyle} />
           <div className="w-full text-white xl:pt-[120px] bg-transparent">
             <PricingContent />
-            <CompareCard onChangeShow={() => setIsBookShow(true)} />
+            <CompareCard />
             <OpenSource />
             <FAQ translationSpace="pricing" />
             <CommBottom scrollStart={0.88} scrollEnd={0.93} />
           </div>
         </div>
-        <BookDemo
-          visible={isBookShow}
-          onChangeShow={() => setIsBookShow(false)}
-        />
       </div>
       <Footer scrollStart={0.85} scrollEnd={1} />
     </>
