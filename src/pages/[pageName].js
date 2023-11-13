@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Nav } from '@/components/home/NewNav'
 import { Footer } from '@/components/home/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -17,7 +17,6 @@ import { ComponentsSchemaData } from '@/components/schemaData/componentsSchemaDa
 
 const LandingPageIndex = ({ pageName, uri }) => {
   const router = useRouter()
-  const [isBookShow, setIsBookShow] = useState(false)
 
   const { t } = useTranslation('landingPageIndex')
   const content = t(`${pageName}.classify`, {
@@ -71,7 +70,7 @@ const LandingPageIndex = ({ pageName, uri }) => {
         <ComponentsSchemaData />
       )}
       <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
-        <Nav whiteTheme onChangeShow={() => setIsBookShow(true)} />
+        <Nav whiteTheme />
         <div className={style.lpContainer}>
           <LpHeader
             title={t(`${pageName}.headerContent.title`)}
@@ -84,10 +83,6 @@ const LandingPageIndex = ({ pageName, uri }) => {
         </div>
         <CommBottom whiteTheme scrollStart={0.763} scrollEnd={0.81} uri={uri} />
       </div>
-      <BookDemo
-        visible={isBookShow}
-        onChangeShow={() => setIsBookShow(false)}
-      />
       <Footer whiteTheme scrollStart={0.81} scrollEnd={1} />
     </>
   )

@@ -7,6 +7,7 @@ import { CardList } from './CardList'
 import Link from 'next/link'
 import { SwitchPricing } from './SwitchPricing'
 import increase from '@/img/pricing/increase.svg'
+import { CONTACT_US_URL } from '@/constants/navContents'
 
 const Tooltip = ({ content, styles, isBound }) => {
   const ref = useRef()
@@ -42,7 +43,7 @@ const Tooltip = ({ content, styles, isBound }) => {
   )
 }
 
-export const CompareCard = ({ onChangeShow }) => {
+export const CompareCard = () => {
   const { t } = useTranslation('pricing')
   const [activeBtn, setActiveBtn] = useState(false)
   const [isBound, setIsBound] = useState(false)
@@ -187,9 +188,9 @@ export const CompareCard = ({ onChangeShow }) => {
                   </Link>
                 )}
                 {!href && (
-                  <span className={clsx(style.cardBtn)} onClick={onChangeShow}>
-                    {t(btnContent)}
-                  </span>
+                  <Link href={CONTACT_US_URL}>
+                    <span className={clsx(style.cardBtn)}>{t(btnContent)}</span>
+                  </Link>
                 )}
                 <div className="flex flex-col item-start w-full">
                   {list.map(({ name, values }) => {

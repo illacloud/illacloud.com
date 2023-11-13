@@ -8,11 +8,11 @@ import { CloseIcon, MenuIcon, MenuWhiteIcon } from '@/img/home/svg'
 import { useState } from 'react'
 import { Menu } from '@/components/home/NewNav/mobileMenu'
 import { sendTagEvent } from '@/utils/gtag'
-import { selectItems, menuItems } from '@/constants/navContents'
+import { selectItems, menuItems, CONTACT_US_URL } from '@/constants/navContents'
 import { useUtmParams } from '@/hooks/useUtmParams'
 
 export const Nav = (props) => {
-  const { whiteTheme = false, onChangeShow, customStyle } = props
+  const { whiteTheme = false, customStyle } = props
   const { t } = useTranslation('home')
 
   const [menuExpand, setMenuExpand] = useState(false)
@@ -74,21 +74,24 @@ export const Nav = (props) => {
           )}
         >
           <div className="flex flex-row items-center">
-            <span
-              className={clsx(
-                'h-[40px] border-0 rounded-[8px] backdrop-blur-[25px] px-[16px] py-[12px] cursor-pointer flex items-center justify-center',
-              )}
+            <Link
+              href={CONTACT_US_URL}
               onClick={() => {
                 sendTagEvent({
                   action: 'click',
                   category: 'homepage_menu_contact_click',
                   label: t('nav.contact'),
                 })
-                onChangeShow()
               }}
             >
-              {t('nav.contact')}
-            </span>
+              <span
+                className={clsx(
+                  'h-[40px] border-0 rounded-[8px] backdrop-blur-[25px] px-[16px] py-[12px] cursor-pointer flex items-center justify-center',
+                )}
+              >
+                {t('nav.contact')}
+              </span>
+            </Link>
             <Link legacyBehavior href={cloudUrl}>
               <a
                 className={clsx(
@@ -158,7 +161,6 @@ export const Nav = (props) => {
       {/* mobile menu */}
       <Menu
         menuExpand={menuExpand}
-        onChangeShow={onChangeShow}
         closeMenu={() => {
           sendTagEvent({
             action: 'click',
