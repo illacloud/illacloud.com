@@ -21,12 +21,10 @@ jobs:
         ${{ (github.ref == 'refs/heads/main') && 'production' || (github.ref ==
         'refs/heads/develop') && 'test' || (github.ref == 'refs/heads/beta') &&
         'beta' }}
+    env:
+      ILLA_APP_ENV: ${{ vars.ILLA_APP_ENV }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.20.2
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
