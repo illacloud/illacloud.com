@@ -61,6 +61,6 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          cd k8s-application-do/namespace-${{ ILLA_APP_ENV }}
-          kubectl delete pod -n ${{ ILLA_APP_ENV }} -l repo=illa-website-frontend
-          kubectl apply -f ./illa-website-frontend/ -n ${{ ILLA_APP_ENV }}
+          cd k8s-application-do/namespace-$ILLA_APP_ENV
+          kubectl delete pod -n $ILLA_APP_ENV -l repo=illa-website-frontend
+          kubectl apply -f ./illa-website-frontend/ -n $ILLA_APP_ENV
