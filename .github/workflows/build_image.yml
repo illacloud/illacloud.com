@@ -1,0 +1,68 @@
+name: Deploy to k8s
+
+on:
+  push:
+    branches:
+      - main
+      - beta
+      - develop
+
+env:
+  DO_CLUSTER: ${{ secrets.DO_CLUSTER }}
+  DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN }}
+  DOCKER_PWD: ${{ secrets.DOCKER_PWD }}
+
+jobs:
+  build:
+    name: Build website
+    runs-on: ubuntu-latest
+    environment:
+      name:
+        ${{ (github.ref == 'refs/heads/main') && 'production' || (github.ref ==
+        'refs/heads/develop') && 'test' || (github.ref == 'refs/heads/beta') &&
+        'beta' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.20.2
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN }}
+
+      - name: Install kubectl
+        run: |
+          sudo snap install kubectl --classic
+
+      - name: Setup kubectl
+        run: |
+          doctl kubernetes cluster kubeconfig save $DO_CLUSTER
+          kubectl version
+
+      - name: Build Docker
+        run: |
+          docker build --cache-from=illa-website-frontend -f Dockerfile -t illa-website-frontend .
+
+      - name: Push application Docker image
+        run: |
+          docker login -u $DOCKER_LOGIN -p $DOCKER_PWD
+          docker tag illa-website-frontend "illasoft/illa-website-frontend:$GITHUB_REF_NAME"
+          docker push "illasoft/illa-website-frontend:$GITHUB_REF_NAME"
+
+      - uses: actions/checkout@v4
+        with:
+          repository: illacloud/k8s-application-do
+          token: ${{ secrets.ILLA_BOT_TOKEN }}
+          path: k8s-application-do
+
+      - name: Deploy to Kubernetes
+        run: |
+          cd k8s-application-do/namespace-${{ job.environment.name }}
+          kubectl delete pod -n ${{ job.environment.name }} -l repo=illa-website-frontend
+          kubectl apply -f ./illa-website-frontend/ -n ${{ job.environment.name }}
