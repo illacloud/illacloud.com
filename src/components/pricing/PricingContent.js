@@ -1,8 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
-import { PremiumCard } from './premiumCard'
-import { CollaCard } from './collaCard'
+import Card from './Card'
 
 export const PricingContent = () => {
   const { t } = useTranslation('pricing')
@@ -17,8 +16,7 @@ export const PricingContent = () => {
         {t('page-desc')}
       </div>
       <div className={style.cardContainerStyle}>
-        <PremiumCard />
-        <CollaCard />
+        <Card />
       </div>
     </div>
   )

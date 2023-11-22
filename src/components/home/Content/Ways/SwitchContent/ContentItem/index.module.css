@@ -1,0 +1,29 @@
+.contentItemContainerStyle {
+  @apply relative;
+}
+.borderContainerStyle {
+  @apply p-[1px] rounded-[12px];
+  @apply xl:rounded-[20px];
+  background: linear-gradient(180deg, #1f1f1f 0%, #000 100%);
+}
+.ItemContainerStyle {
+  @apply flex py-[5px] px-[18px] items-center gap-[8px] rounded-[12px]  bg-[#141414];
+  @apply xl:py-[9px] xl:px-[32px] xl:rounded-[20px];
+  @apply text-white-01 text-[12px] font-[500] leading-[17px];
+  @apply xl:text-[14px] xl:leading-[22px];
+}
+
+.ItemIconStyle {
+  @apply w-[14px] h-[14px];
+  @apply xl:w-[24px] xl:h-[24px];
+}
+.joinItemStyle {
+  @apply w-[16px] h-[29px] absolute z-[1];
+  top: calc(100% - 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.joinItemIconStyle {
+  @apply w-[12px] xl:w-[16px] xl:h-[29px];
+}

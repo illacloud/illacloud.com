@@ -1,0 +1,24 @@
+.borderStyle {
+  @apply p-[1px] bg-white/[0.08] rounded-[32px];
+}
+
+.switchContainerStyle {
+  @apply p-[2px] flex items-center rounded-[32px] gap-[2px];
+  background: linear-gradient(180deg, #0f0f10 0%, #202021 100%);
+  backdrop-filter: blur(13.370903968811035px);
+}
+
+.baseSwitchItemStyle {
+  @apply flex w-[308px] px-[18px] py-[20px] justify-center items-center gap-[15px] rounded-[32px] cursor-pointer;
+  @apply text-white-01 text-[16px] font-[500] leading-[24px];
+}
+.activeItemStyle {
+  @apply bg-tech-purple-01;
+}
+.notActiveStyle {
+  box-shadow: 0px 3px 6px 0px rgba(26, 34, 51, 0.04);
+}
+
+.lineStyle {
+  @apply w-[1.5px] h-[18px] rounded-[1.5px];
+}

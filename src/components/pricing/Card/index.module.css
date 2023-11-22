@@ -1,0 +1,86 @@
+.premiumCardContainer {
+  @apply w-full flex flex-col items-start gap-[12px];
+  @apply xl:gap-[24px] xl:rounded-[16px];
+}
+.premiumHeaderStyle {
+  @apply flex flex-col;
+}
+.premiumTitleStyle {
+  @apply font-[700] text-[20px] leading-[30px] xl:text-[24px] xl:leading-[28px];
+  background: linear-gradient(90deg, #9037ff 0%, #f524ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premiumDescStyle {
+  @apply text-white-03 block text-[12px] font-[400] leading-[15px];
+  @apply xl:leading-[20px];
+}
+
+.premiumCardContainerStyle {
+  @apply w-full flex flex-col gap-[12px] bottom-[12px];
+  @apply xl:flex-row xl:gap-[24px] xl:bottom-0;
+}
+
+.cardBaseStyle {
+  @apply h-full  w-full p-[24px] relative rounded-[8px] z-[1] overflow-hidden;
+}
+
+.priceCardStyle {
+  @apply flex flex-col gap-[12px] xl:gap-[20px];
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.cardBgStyle {
+  @apply absolute top-0 left-0 bottom-0 right-0  w-full h-full z-[-1] object-cover object-top;
+}
+.priceListTitleContainerStyle {
+  @apply flex items-center gap-[8px];
+}
+
+.cardIconStyle {
+  @apply w-[16px] h-[16px] inline-flex;
+}
+
+.builderListTitleStyle {
+  @apply text-tech-purple-01;
+}
+.agentListTitleStyle {
+  @apply text-tech-pink-01;
+}
+.listIconStyle {
+  @apply self-start pt-[2px];
+}
+.priceListTitleStyle {
+  @apply font-[600] text-[16px] leading-[22px];
+}
+
+.priceListStyle {
+  @apply flex flex-col gap-[4px];
+}
+
+.listItemStyle {
+  @apply flex items-center gap-[8px] py-[4px];
+}
+
+.listItemNameStyle {
+  @apply text-[14px] font-[400] leading-[18px];
+}
+
+.operatingStyle {
+  @apply w-full flex flex-col items-center gap-[16px];
+  @apply xl:items-start xl:justify-start;
+}
+
+.priceNumStyle {
+  @apply text-[28px] font-[700];
+}
+
+.priceNumDescStyle {
+  @apply text-[12px] font-[400] leading-[16px] text-white-03;
+}
