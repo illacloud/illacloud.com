@@ -21,7 +21,7 @@ const BannerMobile = ({ content, translationName }) => {
         <div className="flex flex-col items-center justify-center gap-[16px] w-full  text-[16px] text-center">
           <Link href={btn1Link}>
             <span
-              className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[8px]"
+              className="w-full bg-tech-purple-01 py-[12px] px-[16px] rounded-[24px]"
               onClick={() => {
                 sendTagEvent({
                   action: 'click_try',
