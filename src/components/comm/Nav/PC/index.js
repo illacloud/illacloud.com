@@ -14,7 +14,6 @@ const NavPC = (props) => {
   const { t } = useTranslation('home')
 
   const cloudUrl = useUtmParams('https://cloud.illacloud.com')
-
   return (
     <div
       className={clsx(
@@ -96,7 +95,10 @@ const NavPC = (props) => {
         <Link legacyBehavior href={cloudUrl}>
           <span className={style.navSignUpButtonContainerStyle}>
             <a
-              className={style.navSignUpButtonStyle}
+              className={clsx(
+                style.navSignUpButtonStyle,
+                whiteTheme ? style.navSignUpWhiteStyle : '',
+              )}
               onClick={() => {
                 sendTagEvent({
                   action: 'click_signup',

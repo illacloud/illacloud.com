@@ -35,7 +35,14 @@ const SwitchPC = ({ activeIndex, onClick }) => {
             onClick={() => onClick(i)}
           />
           {i !== SWITCH_CONTENT.length - 1 && (
-            <div className={style.lineStyle} />
+            <div
+              className={clsx(
+                style.lineStyle,
+                activeIndex === i || activeIndex - 1 === i
+                  ? 'bg-transparent'
+                  : 'bg-white/[0.1]',
+              )}
+            />
           )}
         </Fragment>
       ))}

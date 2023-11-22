@@ -1,7 +1,9 @@
 .publicize {
-  @apply hidden xl:block bg-[#190F1E] rounded-[20px] cursor-pointer mx-auto;
+  @apply hidden xl:block bg-white/[0.04] rounded-[20px] cursor-pointer mx-auto;
   @apply text-white min-w-[400px] h-[40px] overflow-hidden px-[25px];
   @apply text-[14px] leading-[22px] font-[400] relative;
+  @apply border-[1px] border-solid border-white/[0.12];
+  backdrop-filter: blur(5px);
 }
 .publicizeStyle {
   @apply object-none object-center w-[402px] h-[124px] absolute top-[50%] left-[50%] z-[0] opacity-[0.16];
@@ -10,8 +12,8 @@
   transform: translate(-50%, -50%);
   background: linear-gradient(
     90deg,
-    #008b83 0%,
-    #002743 45.31%,
+    #ea984c 0%,
+    #5c9ac6 45.31%,
     #687100 91.49%
   );
 }

@@ -10,11 +10,10 @@ import Language from '@/img/home3/language.svg'
 import WhiteLanguage from '@/img/home/language.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import { FooterItems } from './FooterItem'
-import { useRouter } from 'next/router'
 import { sendTagEvent } from '@/utils/gtag'
 import { saveAs } from 'file-saver'
 import { useElementFirstShow } from '@/hooks/useElementFirstShow'
-import { useRef, useCallback, useMemo } from 'react'
+import { useRef, useCallback } from 'react'
 
 const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
   const { t } = useTranslation('home')
@@ -37,11 +36,6 @@ const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
     [scrollStart, scrollEnd],
     [-150, 0],
   )
-  const router = useRouter()
-  const curLanguage = router.locale
-  const showWeChat = useMemo(() => {
-    return curLanguage === 'zh-CN'
-  }, [curLanguage])
 
   return (
     <motion.div
@@ -147,23 +141,6 @@ const Footer = ({ whiteTheme = false, scrollStart, scrollEnd }) => {
                     }
                   },
                 )}
-              {showWeChat && items.some((item) => item.icon) && (
-                <div className="flex flex-col mt-[16px] gap-[8px] w-[70px] hidden xl:block">
-                  <img
-                    src="https://cdn.illacloud.com/official-website/img/home/wechat.png"
-                    className="w-full"
-                    alt=""
-                  />
-                  <span
-                    className={clsx(
-                      style.footerItem,
-                      whiteTheme ? 'text-[#1D2129]' : 'text-white-02',
-                    )}
-                  >
-                    加入微信群
-                  </span>
-                </div>
-              )}
             </div>
           </div>
         ))}

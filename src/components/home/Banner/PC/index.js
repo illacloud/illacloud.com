@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { usePaintBg } from '../hooks/usePaintBg'
 import style from './index.module.css'
+import tempBg from '@/img/home3/temp/tempBg.svg'
 
 const BannerPC = (props) => {
   const { setPlayMaskShow, githubStarts } = props
@@ -36,6 +37,7 @@ const BannerPC = (props) => {
       <div className={style.canvasContainerStyle}>
         <canvas ref={canvasRef} />
       </div>
+      <img src={tempBg} alt="" className={style.bgStyle} />
       <div
         className={clsx(style.bannerContentContainer, {
           'pointer-events-none': !canClick,

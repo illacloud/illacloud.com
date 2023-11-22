@@ -1,9 +1,13 @@
 .bannerContainerStyle {
-  @apply flex pt-[80px]  text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold;
+  @apply flex pt-[80px]  text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative;
 }
 
 .canvasContainerStyle {
   @apply w-full h-screen overflow-hidden absolute z-[-1];
+}
+
+.bgStyle {
+  @apply absolute top-[0px] z-[1] h-[382px];
 }
 
 .bannerContentContainer {
@@ -11,7 +15,7 @@
 }
 
 .bannerTextContainerStyle {
-  @apply w-full max-w-[1200px] flex justify-center flex-col items-center gap-[24px];
+  @apply relative z-[2] w-full max-w-[1200px] flex justify-center flex-col items-center gap-[24px];
 }
 
 .sloganStyle {
