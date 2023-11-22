@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/Footer'
+import Nav from '@/components/comm/Nav'
+import Footer from '@/components/comm/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -10,12 +10,13 @@ import { LpHeader } from '@/components/LandingPage/LpHeader'
 import { LpTemplate } from '@/components/LandingPage/LpTemplate'
 import { useRouter } from 'next/router'
 import { pageMap } from '@/constants/landingPage'
-import { CommBottom } from '@/components/comm/commBottom'
+import CommBottom from '@/components/comm/CommBottom'
 import { getGithubOauth } from '@/utils/getGithubOauth'
+import { InfoProvider } from '@/context/index'
+import { isMobile } from '@/utils/isMobile'
 
-const LandingPageSecond = ({ pageName, name, locale, uri }) => {
+const LandingPageSecond = ({ pageName, name, locale, uri, isMobile }) => {
   const { t } = useTranslation('landingPageDetails')
-  const [isBookShow, setIsBookShow] = useState(false)
   const router = useRouter()
   const content = t(`${pageName}.${name}`, {
     returnObjects: true,
@@ -57,36 +58,34 @@ const LandingPageSecond = ({ pageName, name, locale, uri }) => {
           }${pageName}/${name}`}
         />
       </Head>
-      <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
-        <Nav whiteTheme onChangeShow={() => setIsBookShow(true)} />
-        <div className={style.lpContainer}>
-          <LpHeader
-            title={t(`${pageName}.${name}.title`)}
-            description={t(`${pageName}.${name}.description`)}
-            btnText={t('build_with', { name })}
-            name={name}
-            isShowBack
-            backText={t(`back_to_${pageName}`)}
-            pageName={pageName}
+      <InfoProvider isMobile={isMobile}>
+        <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
+          <Nav whiteTheme />
+          <div className={style.lpContainer}>
+            <LpHeader
+              title={t(`${pageName}.${name}.title`)}
+              description={t(`${pageName}.${name}.description`)}
+              btnText={t('build_with', { name })}
+              name={name}
+              isShowBack
+              backText={t(`back_to_${pageName}`)}
+              pageName={pageName}
+            />
+            <LpTemplate />
+          </div>
+          <CommBottom
+            whiteTheme
+            scrollStart={0.724}
+            scrollEnd={0.777}
+            uri={uri}
           />
-          <LpTemplate />
         </div>
-        <CommBottom
-          whiteTheme
-          scrollStart={0.724}
-          scrollEnd={0.777}
-          uri={uri}
-        />
-      </div>
-      <BookDemo
-        visible={isBookShow}
-        onChangeShow={() => setIsBookShow(false)}
-      />
-      <Footer whiteTheme scrollStart={0.777} scrollEnd={1} />
+        <Footer whiteTheme scrollStart={0.777} scrollEnd={1} />
+      </InfoProvider>
     </>
   )
 }
-export const getServerSideProps = async ({ locale, params }) => {
+export const getServerSideProps = async ({ locale, params, req }) => {
   const { pageName, name } = params
   if (!pageMap[pageName]) {
     return {
@@ -108,6 +107,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       name,
       locale,
       uri,
+      isMobile: isMobile(req?.headers?.['user-agent'] || ''),
     },
   }
 }

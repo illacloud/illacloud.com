@@ -1,18 +1,17 @@
-import { useState } from 'react'
-import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/Footer'
+import Nav from '@/components/comm/Nav'
+import Footer from '@/components/comm/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import { MainContent } from '@/components/selfHost/mainContent'
 import { getGithubOauth } from '@/utils/getGithubOauth'
-import BecomePartner from '@/components/home/Form/BecomePartner'
 import { SelfHostSchemaData } from '@/components/schemaData/selfHostSchemaData'
+import { InfoProvider } from '@/context/index'
+import { isMobile } from '@/utils/isMobile'
 
-const Cloud = ({ uri }) => {
+const Cloud = ({ uri, isMobile }) => {
   const { t } = useTranslation('selfHost')
-  const [isPartnerShow, setIsPartnerShow] = useState(false)
   const router = useRouter()
 
   return (
@@ -34,19 +33,17 @@ const Cloud = ({ uri }) => {
         />
       </Head>
       <SelfHostSchemaData />
-      <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
-        <Nav whiteTheme={false} />
-        <MainContent uri={uri} />
-      </div>
-      <Footer scrollStart={0.866} scrollEnd={1} />
-      <BecomePartner
-        visible={isPartnerShow}
-        onChangeShow={() => setIsPartnerShow(false)}
-      />
+      <InfoProvider isMobile={isMobile}>
+        <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
+          <Nav whiteTheme={false} />
+          <MainContent uri={uri} />
+        </div>
+        <Footer scrollStart={0.866} scrollEnd={1} />
+      </InfoProvider>
     </>
   )
 }
-export const getServerSideProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale, req }) => {
   const uri = await getGithubOauth()
   return {
     props: {
@@ -57,6 +54,7 @@ export const getServerSideProps = async ({ locale }) => {
         'common',
       ])),
       uri,
+      isMobile: isMobile(req?.headers?.['user-agent'] || ''),
     },
   }
 }

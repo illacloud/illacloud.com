@@ -1,0 +1,26 @@
+.cardContainer {
+  @apply w-full flex flex-col items-start gap-[20px];
+  @apply xl:gap-[32px] xl:flex-row;
+}
+.cardContent {
+  @apply w-full flex flex-col items-start p-[16px] gap-[20px] rounded-[8px];
+  @apply xl:justify-between xl:items-center xl:p-[48px] xl:rounded-[16px] xl:h-[640px];
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.cardTextContent {
+  @apply flex flex-col items-start gap-[16px];
+}
+.cardTitle {
+  @apply font-[700] text-[20px] leading-[24px] text-white-01 overflow-ellipsis line-clamp-1;
+  @apply xl:text-[32px] xl:leading-[39px];
+}
+.cardDesc {
+  @apply font-[400] text-[12px] leading-[16px] text-white-02;
+  @apply xl:text-[14px] xl:leading-[22px];
+}
+.cardBg {
+  @apply w-full rounded-t-[10px] overflow-hidden min-h-[150px];
+  @apply xl:w-[488px] xl:h-[360px] xl:rounded-[0];
+  background: url('/img/cardBg.svg') no-repeat;
+  background-size: 100% auto;
+}

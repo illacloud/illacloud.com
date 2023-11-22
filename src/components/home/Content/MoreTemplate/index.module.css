@@ -1,0 +1,41 @@
+.templateContainerStyle {
+  @apply w-full flex flex-col gap-[24px];
+  @apply xl:gap-[48px];
+}
+
+.templateHeadContainerStyle {
+  @apply flex flex-col items-center gap-[8px];
+  @apply xl:gap-[16px];
+}
+
+.templateHeadContainerStyle h1 {
+  @apply text-center  text-white-01 font-[700] text-[20px] leading-[28px];
+  @apply xl:text-[40px] xl:leading-[56px];
+}
+.templateItemContainerStyle {
+  @apply w-screen  flex flex-nowrap gap-[24px] px-[20px] overflow-x-auto;
+  @apply xl:grid xl:grid-cols-3 xl:w-full xl:px-0;
+}
+
+.templateItemStyle {
+  @apply w-[224px] flex flex-none flex-col items-start gap-[24px] rounded-[16px]  text-white-01 h-full;
+  @apply xl:w-full xl:flex-auto;
+}
+
+.templateTextStyle {
+  @apply flex flex-col items-start gap-[8px];
+}
+
+.templateTextTitleStyle {
+  @apply font-[600] text-[16px] leading-[24px];
+}
+
+.templateTextDescStyle {
+  @apply font-[400] text-[12px] leading-[16px] overflow-ellipsis line-clamp-2;
+}
+
+@media screen and (max-width: 1280px) {
+  .templateItemContainerStyle {
+    transform: translateX(-20px);
+  }
+}

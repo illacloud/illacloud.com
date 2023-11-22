@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/Footer'
+import Nav from '@/components/comm/Nav'
+import Footer from '@/components/comm/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { Title } from '@/components/comm/title'
+import Banner from '@/components/comm/Banner'
 import { MainContent } from '@/components/drive/mainContent'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import { DriveTitle } from '@/constants/driveContent'
-import BecomePartner from '@/components/home/Form/BecomePartner'
 import { DriveSchemaData } from '@/components/schemaData/driveSchemaData'
+import { InfoProvider } from '@/context/index'
+import { isMobile } from '@/utils/isMobile'
 
-const Drive = ({ uri }) => {
+const Drive = ({ uri, isMobile }) => {
   const { t } = useTranslation('drive')
-  const [isPartnerShow, setIsPartnerShow] = useState(false)
   const router = useRouter()
 
   return (
@@ -36,25 +35,24 @@ const Drive = ({ uri }) => {
         />
       </Head>
       <DriveSchemaData />
-      <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
-        <Nav whiteTheme={false} />
-        <Title content={DriveTitle} translationName="drive" />
-        <MainContent uri={uri} />
-      </div>
-      <Footer scrollStart={0.866} scrollEnd={1} />
-      <BecomePartner
-        visible={isPartnerShow}
-        onChangeShow={() => setIsPartnerShow(false)}
-      />
+      <InfoProvider isMobile={isMobile}>
+        <div className="bg-gray-01 overflow-visible w-full z-[2] bg-mobileHeader bg-contain bg-no-repeat">
+          <Nav whiteTheme={false} />
+          <Banner content={DriveTitle} translationName="drive" />
+          <MainContent uri={uri} />
+        </div>
+        <Footer scrollStart={0.866} scrollEnd={1} />
+      </InfoProvider>
     </>
   )
 }
-export const getServerSideProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale, req }) => {
   const uri = await getGithubOauth()
   return {
     props: {
       ...(await serverSideTranslations(locale, ['drive', 'home', 'common'])),
       uri,
+      isMobile: isMobile(req?.headers?.['user-agent'] || ''),
     },
   }
 }

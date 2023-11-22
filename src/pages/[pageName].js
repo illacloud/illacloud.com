@@ -1,21 +1,22 @@
 import { useEffect } from 'react'
-import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/Footer'
+import Nav from '@/components/comm/Nav'
+import Footer from '@/components/comm/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { BookDemo } from '@/components/home/Form/BookDemo'
 import style from '@/components/LandingPage/index.module.css'
 import { LpHeader } from '@/components/LandingPage/LpHeader'
 import { AsyncIndexContent } from '@/components/LandingPage/AsyncIndexContent'
 import { pageMap } from '@/constants/landingPage'
-import { CommBottom } from '@/components/comm/commBottom'
+import CommBottom from '@/components/comm/CommBottom'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import { IntegrationSchemaData } from '@/components/schemaData/integrationSchemaData'
 import { ComponentsSchemaData } from '@/components/schemaData/componentsSchemaData'
+import { InfoProvider } from '@/context/index'
+import { isMobile } from '@/utils/isMobile'
 
-const LandingPageIndex = ({ pageName, uri }) => {
+const LandingPageIndex = ({ pageName, uri, isMobile }) => {
   const router = useRouter()
 
   const { t } = useTranslation('landingPageIndex')
@@ -69,25 +70,32 @@ const LandingPageIndex = ({ pageName, uri }) => {
       ) : (
         <ComponentsSchemaData />
       )}
-      <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
-        <Nav whiteTheme />
-        <div className={style.lpContainer}>
-          <LpHeader
-            title={t(`${pageName}.headerContent.title`)}
-            description={t(`${pageName}.headerContent.description`)}
-            btnText={t(`${pageName}.headerContent.btn_text`)}
-            name={pageName}
-            leftImage={t(`${pageName}.headerContent.left_image`)}
+      <InfoProvider isMobile={isMobile}>
+        <div className="w-full px-0 bg-white overflow-y-auto relative z-[1]">
+          <Nav whiteTheme />
+          <div className={style.lpContainer}>
+            <LpHeader
+              title={t(`${pageName}.headerContent.title`)}
+              description={t(`${pageName}.headerContent.description`)}
+              btnText={t(`${pageName}.headerContent.btn_text`)}
+              name={pageName}
+              leftImage={t(`${pageName}.headerContent.left_image`)}
+            />
+            <AsyncIndexContent content={content} pageName={pageName} />
+          </div>
+          <CommBottom
+            whiteTheme
+            scrollStart={0.763}
+            scrollEnd={0.81}
+            uri={uri}
           />
-          <AsyncIndexContent content={content} pageName={pageName} />
         </div>
-        <CommBottom whiteTheme scrollStart={0.763} scrollEnd={0.81} uri={uri} />
-      </div>
-      <Footer whiteTheme scrollStart={0.81} scrollEnd={1} />
+        <Footer whiteTheme scrollStart={0.81} scrollEnd={1} />
+      </InfoProvider>
     </>
   )
 }
-export const getServerSideProps = async ({ locale, params }) => {
+export const getServerSideProps = async ({ locale, params, req }) => {
   const { pageName } = params
   if (!pageMap[pageName]) {
     return {
@@ -108,6 +116,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       ])),
       pageName,
       uri,
+      isMobile: isMobile(req?.headers?.['user-agent'] || ''),
     },
   }
 }

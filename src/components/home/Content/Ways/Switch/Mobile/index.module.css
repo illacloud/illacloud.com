@@ -1,0 +1,16 @@
+.switchContainerStyle {
+  @apply flex flex-col w-full gap-[24px];
+}
+
+.baseSwitchItemStyle {
+  @apply flex w-full p-[12px] justify-center items-center gap-[15px] rounded-[24px] cursor-pointer;
+  @apply text-white-01 text-[14px] font-[500] leading-[17px];
+}
+.activeItemStyle {
+  @apply bg-tech-purple-01;
+}
+
+.notActionItemStyle {
+  @apply bg-white/[0.1];
+  box-shadow: 0px 6px 12px 0px rgba(26, 34, 51, 0.04);
+}
