@@ -1,0 +1,35 @@
+.bannerContainerStyle {
+  @apply flex pt-[80px]  text-title grow-0 text-[40px] text-white-01  flex flex-col  items-center font-bold relative;
+}
+
+.canvasContainerStyle {
+  @apply w-full h-screen overflow-hidden absolute z-[-1];
+}
+
+.bgStyle {
+  @apply absolute top-[0px] z-[1] w-full max-h-[382px] object-top object-cover;
+}
+
+.bannerContentContainer {
+  @apply w-full flex justify-center pt-[24px] flex-col items-center gap-[186px];
+}
+
+.bannerTextContainerStyle {
+  @apply relative z-[2] w-full max-w-[1200px] flex justify-center flex-col items-center gap-[24px];
+}
+
+.sloganStyle {
+  @apply px-[20px] text-center text-[64px] leading-[72px];
+}
+
+.descStyle {
+  @apply max-w-[800px] font-normal text-[20px] px-[20px] sm:px-0 text-center;
+}
+
+.buttonContainerStyle {
+  @apply flex items-center flex-col content-between gap-[24px] text-[16px] leading-[28px] font-[500];
+}
+
+.bannerImageStyle {
+  @apply w-full flex items-center justify-center pt-[64px];
+}

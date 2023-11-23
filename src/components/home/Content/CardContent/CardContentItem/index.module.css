@@ -1,0 +1,27 @@
+.borderStyle {
+  @apply p-[1px] rounded-[8px];
+  @apply xl:rounded-[16px];
+  background: linear-gradient(0deg, #000 0%, #242424 100%);
+}
+.cardIContentItemContainerStyle {
+  @apply flex p-[16px] items-start gap-[20px] bg-[#141414] rounded-[8px];
+  @apply xl:p-[40px] xl:rounded-[16px] xl:gap-[40px];
+}
+
+.imgStyle {
+  @apply w-full xl:w-[528px] xl:flex-none;
+}
+.textContainerStyle {
+  @apply flex flex-col items-start gap-[16px] xl:gap-[32px];
+}
+.textTitleStye {
+  @apply text-white-01 font-[700] text-[18px] xl:text-[36px];
+}
+
+.textTitleNumStyle {
+  @apply font-[400] text-[20px] xl:text-[40px] font-eurostile;
+}
+
+.textDescStyle {
+  @apply text-white-02 font-[400] text-[12px] xl:text-[14px] leading-[16px] xl:leading-[22px];
+}

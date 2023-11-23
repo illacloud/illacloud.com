@@ -1,5 +1,5 @@
-import { Nav } from '@/components/home/NewNav'
-import { Footer } from '@/components/home/Footer'
+import Nav from '@/components/common/Nav'
+import Footer from '@/components/common/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -7,14 +7,16 @@ import { PricingContent } from '@/components/pricing/PricingContent'
 import { PricingMask } from '@/components/pricing/PricingMask'
 import { OpenSource } from '@/components/pricing/OpenSource'
 import { CompareCard } from '@/components/pricing/CompareCard'
-import { FAQ } from '@/components/comm/Faq'
+import FAQ from '@/components/common/Faq'
 import style from '@/components/pricing/index.module.css'
 import { useRouter } from 'next/router'
-import { CommBottom } from '@/components/comm/commBottom'
+import CommBottom from '@/components/common/CommBottom'
 import useMeasure from 'react-use-measure'
 import { PricingSchemaData } from '@/components/schemaData/pricingSchemaData'
+import { InfoProvider } from '@/context/index'
+import { isMobile } from '@/utils/isMobile'
 
-const Pricing = () => {
+const Pricing = ({ isMobile }) => {
   const { t } = useTranslation('pricing')
   const router = useRouter()
   const [ref, rect] = useMeasure()
@@ -38,26 +40,29 @@ const Pricing = () => {
         />
       </Head>
       <PricingSchemaData />
-      <PricingMask rect={rect} />
-      <div ref={ref} className="w-full px-0">
-        <div className={style.pricingContainer}>
-          <Nav whiteTheme={false} customStyle={customNavStyle} />
-          <div className="w-full text-white xl:pt-[120px] bg-transparent">
-            <PricingContent />
-            <CompareCard />
-            <OpenSource />
-            <FAQ translationSpace="pricing" />
-            <CommBottom scrollStart={0.88} scrollEnd={0.93} />
+      <InfoProvider isMobile={isMobile}>
+        <PricingMask rect={rect} />
+        <div ref={ref} className="w-full px-0">
+          <div className={style.pricingContainer}>
+            <Nav whiteTheme={false} customStyle={customNavStyle} />
+            <div className="w-full text-white xl:pt-[120px] bg-transparent">
+              <PricingContent />
+              <CompareCard />
+              <OpenSource />
+              <FAQ translationSpace="pricing" />
+              <CommBottom scrollStart={0.88} scrollEnd={0.93} />
+            </div>
           </div>
         </div>
-      </div>
-      <Footer scrollStart={0.85} scrollEnd={1} />
+        <Footer scrollStart={0.85} scrollEnd={1} />
+      </InfoProvider>
     </>
   )
 }
-export const getServerSideProps = async ({ locale }) => ({
+export const getServerSideProps = async ({ locale, req }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['pricing', 'home', 'common'])),
+    isMobile: isMobile(req?.headers?.['user-agent'] || ''),
   },
 })
 
