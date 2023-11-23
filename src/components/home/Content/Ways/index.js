@@ -10,7 +10,7 @@ const Ways = () => {
   return (
     <div className={style.waysContainerStyle}>
       <h1 className={style.waysTitleStyle}>
-        {t('Ways customer are leveraging ILLA.AI')}
+        {t('solutions.title.how_illa_ai_improves')}
       </h1>
       <Switch onClick={(i) => setActiveIndex(i)} activeIndex={activeIndex} />
       <SwitchContent activeIndex={activeIndex} />

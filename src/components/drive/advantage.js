@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import style from './index.module.css'
 import clsx from 'clsx'
-import ProductContentTitle from '@/components/comm/ProductContentTitle'
+import ProductContentTitle from '@/components/common/ProductContentTitle'
 
 export const Advantage = ({ advantage }) => {
   const { t } = useTranslation('drive')

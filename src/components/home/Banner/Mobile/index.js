@@ -7,6 +7,7 @@ import { LinearDiscordIcon } from '@/img/public/linearDiscord'
 import { sendTagEvent } from '@/utils/gtag'
 import { useUtmParams } from '@/hooks/useUtmParams'
 import style from './index.module.css'
+import bannerBg from '@/img/home3/bannerBg.svg'
 
 const BannerMobile = (props) => {
   const { t } = useTranslation('home')
@@ -19,6 +20,7 @@ const BannerMobile = (props) => {
 
   return (
     <div className={style.bannerContainer}>
+      <img src={bannerBg} alt="" className={style.bgStyle} />
       <h1 className={style.sloganStyle}>{t('slogan-1')}</h1>
       <span className={style.descStyle}>{t('description')}</span>
       <Link legacyBehavior href={cloudUrl}>

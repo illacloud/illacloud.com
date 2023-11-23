@@ -1,35 +1,34 @@
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import LearnMore from '../LearnMore'
-import tempTemplate from '@/img/home3/temp/tempTemplate.svg'
 
 const MORE_TEMPLATE_CONTENT = {
-  title: 'Get started with more templates',
+  title: 'template.title.quickly_start_from_a',
   href: '',
-  moreTitle: 'Explore templates',
+  moreTitle: 'template.button.explore_more_templat',
   items: [
     {
-      templateTitle: 'ChatGPT Plugin1',
-      templateDesc:
-        'With the embedded Chatgpt Plugin, you can input natural language and get SQL statements that can be run directly.',
-      templateSrc: tempTemplate,
-      templateMoreTitle: 'learn more',
+      templateTitle: 'template.template1_title.car_rental_admin_pan',
+      templateDesc: 'template.template1_description.build_for_car_rental',
+      templateSrc:
+        'https://cdn.illacloud.com/official-website/img/home/ChatGPT%20Plugin.svg',
+      templateMoreTitle: 'template.template1_button.learn_more',
       templateMoreHref: '',
     },
     {
-      templateTitle: 'ChatGPT Plugin2',
-      templateDesc:
-        'With the embedded Chatgpt Plugin, you can input natural language and get SQL statements that can be run directly.',
-      templateSrc: tempTemplate,
-      templateMoreTitle: 'learn more',
+      templateTitle: 'template.template2_title.cms_with_content_gen',
+      templateDesc: 'template.template2_description.build_for_business_o',
+      templateSrc:
+        'https://cdn.illacloud.com/official-website/img/home/Builder%20for%20Developers.svg',
+      templateMoreTitle: 'template.template2_button.learn_more',
       templateMoreHref: '',
     },
     {
-      templateTitle: 'ChatGPT Plugin3',
-      templateDesc:
-        'With the embedded Chatgpt Plugin, you can input natural language and get SQL statements that can be run directly. With the embedded Chatgpt Plugin, you can input natural language and get SQL statements that can be run directly. With the embedded Chatgpt Plugin, you can input natural language and get SQL statements that can be run directly.',
-      templateSrc: tempTemplate,
-      templateMoreTitle: 'learn more',
+      templateTitle: 'template.template3_title.applicant_tracking',
+      templateDesc: 'template.template3_description.build_for_the_human',
+      templateSrc:
+        'https://cdn.illacloud.com/official-website/img/home/Integrate%20with%20Any%20data%20source.svg',
+      templateMoreTitle: 'template.template3_button.learn_more',
       templateMoreHref: '',
     },
   ],
@@ -59,10 +58,13 @@ const MoreTemplate = () => {
               <img src={templateSrc} className="w-full" alt="" />
               <div className={style.templateTextStyle}>
                 <h2 className={style.templateTextTitleStyle}>
-                  {templateTitle}
+                  {t(templateTitle)}
                 </h2>
-                <p className={style.templateTextDescStyle}>{templateDesc}</p>
-                <LearnMore href={templateMoreHref} title={templateMoreTitle} />
+                <p className={style.templateTextDescStyle}>{t(templateDesc)}</p>
+                <LearnMore
+                  href={templateMoreHref}
+                  title={t(templateMoreTitle)}
+                />
               </div>
             </div>
           ),

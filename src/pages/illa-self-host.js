@@ -1,5 +1,5 @@
-import Nav from '@/components/comm/Nav'
-import Footer from '@/components/comm/Footer'
+import Nav from '@/components/common/Nav'
+import Footer from '@/components/common/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'

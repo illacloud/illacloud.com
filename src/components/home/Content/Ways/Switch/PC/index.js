@@ -3,12 +3,6 @@ import style from './index.module.css'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 
-const SWITCH_CONTENT = [
-  'Resume screening',
-  'Customer message management',
-  'Content generate & ',
-]
-
 const SwitchItem = ({ text, isActive, onClick }) => {
   return (
     <span
@@ -23,18 +17,18 @@ const SwitchItem = ({ text, isActive, onClick }) => {
   )
 }
 
-const SwitchPC = ({ activeIndex, onClick }) => {
+const SwitchPC = ({ activeIndex, onClick, options }) => {
   const { t } = useTranslation('home')
   return (
     <div className={style.switchContainerStyle}>
-      {SWITCH_CONTENT.map((item, i) => (
+      {options.map((item, i) => (
         <Fragment key={item}>
           <SwitchItem
             text={t(item)}
             isActive={i === activeIndex}
             onClick={() => onClick(i)}
           />
-          {i !== SWITCH_CONTENT.length - 1 && (
+          {i !== options.length - 1 && (
             <div
               className={clsx(
                 style.lineStyle,

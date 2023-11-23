@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import clsx from 'clsx'
-import ProductContentTitle from '@/components/comm/ProductContentTitle'
+import ProductContentTitle from '@/components/common/ProductContentTitle'
 import { usePlatform } from '@/hooks/usePlatform'
 
 export const CloudFeature = ({ feature }) => {

@@ -1,11 +1,11 @@
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import { CloudContent } from '@/constants/cloudContent'
-import Benefits from '@/components/comm/Benefits'
-import FAQ from '@/components/comm/Faq'
-import CommBottom from '@/components/comm/CommBottom'
-import ProductContentTitle from '@/components/comm/ProductContentTitle'
-import Template from '@/components/comm/Template'
+import Benefits from '@/components/common/Benefits'
+import FAQ from '@/components/common/Faq'
+import CommBottom from '@/components/common/CommBottom'
+import ProductContentTitle from '@/components/common/ProductContentTitle'
+import Template from '@/components/common/Template'
 import { CloudFeature } from '@/components/cloud/cloudFeature'
 
 export const MainContent = ({ uri }) => {

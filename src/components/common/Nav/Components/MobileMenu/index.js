@@ -8,7 +8,7 @@ import { IllaLogoWhiteIcon } from '@/img/public/illa-logo-white'
 import { sendTagEvent } from '@/utils/gtag'
 import { generateLanguageOptions } from '@/constants/language'
 import { selectItems, menuItems, CONTACT_US_URL } from '@/constants/navContents'
-import MenuSelect from '@/components/comm/Nav/Components/MenuSelect'
+import MenuSelect from '@/components/common/Nav/Components/MenuSelect'
 
 const Menu = ({ menuExpand, closeMenu, onChangeShow }) => {
   const [languageListExpand, setLanguageListExpand] = useState(false)

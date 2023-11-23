@@ -1,42 +1,29 @@
 import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
-import jsIcon from '@/img/home3/jsIcon.svg'
 import ContentItem from '../ContentItem'
 
-const AI_CONTENT = [
-  {
-    icon: jsIcon,
-    text: 'Filter out job resumes in the mail.1',
-  },
-  {
-    icon: jsIcon,
-    text: 'Filter out job resumes in the mail.2',
-  },
-  {
-    icon: jsIcon,
-    text: 'Filter out job resumes in the mail.3',
-  },
-  {
-    icon: jsIcon,
-    text: 'Filter out job resumes in the mail.4',
-  },
-]
-
 const AIContent = ({ activeIndex }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('home')
+  const aiContent = t('solutions.AIContent', {
+    returnObjects: true,
+  })
+  if (!Array.isArray(aiContent)) return null
   return (
     <div className={style.borderContainerStyle}>
       <div className={style.aiContentContainerStyle}>
-        <span className={style.titleStyle}>{t('ILLA.AI')}</span>
+        <span className={style.titleStyle}>
+          {t('solutions.illa_title.illa_ai')}
+        </span>
         <div className={style.contentItemContainerStyle}>
-          {AI_CONTENT.map(({ icon, text }, i) => (
-            <ContentItem
-              key={text}
-              iconSrc={icon}
-              text={text}
-              isLast={i === AI_CONTENT.length - 1}
-            />
-          ))}
+          {Array.isArray(aiContent[activeIndex]) &&
+            aiContent[activeIndex].map(({ icon, desc }, i) => (
+              <ContentItem
+                key={desc}
+                iconSrc={icon}
+                text={desc}
+                isLast={i === aiContent[activeIndex].length - 1}
+              />
+            ))}
         </div>
       </div>
     </div>

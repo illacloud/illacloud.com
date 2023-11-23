@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Nav } from '@/components/hacktoberfest/nav'
-import Footer from '@/components/comm/Footer'
+import Footer from '@/components/common/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
@@ -11,8 +11,8 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import { getGithubOauth } from '@/utils/getGithubOauth'
-import { Modal } from '@/components/comm/Player'
-import CommBottom from '@/components/comm/CommBottom'
+import { Modal } from '@/components/common/Player'
+import CommBottom from '@/components/common/CommBottom'
 import socialHack from '@/img/social-hack.jpeg'
 
 dayjs.extend(utc)

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { IllaLogo } from '@/img/public/illa-logo'
 import { CloseIcon, MenuIcon, MenuWhiteIcon } from '@/img/home/svg'
 import { useState } from 'react'
-import Menu from '@/components/comm/Nav/Components/MobileMenu'
+import Menu from '@/components/common/Nav/Components/MobileMenu'
 import { sendTagEvent } from '@/utils/gtag'
 
 const NavMobile = (props) => {

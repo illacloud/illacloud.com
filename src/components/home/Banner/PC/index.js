@@ -2,14 +2,14 @@ import { useTranslation } from 'next-i18next'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useViewportScroll } from 'framer-motion'
-import Publicize from '@/components/comm/Publicize'
+import Publicize from '@/components/common/Publicize'
 import Image from 'next/image'
 import { useUtmParams } from '@/hooks/useUtmParams'
 import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { usePaintBg } from '../hooks/usePaintBg'
 import style from './index.module.css'
-import tempBg from '@/img/home3/temp/tempBg.svg'
+import bannerBg from '@/img/home3/bannerBg.svg'
 
 const BannerPC = (props) => {
   const { setPlayMaskShow, githubStarts } = props
@@ -37,7 +37,7 @@ const BannerPC = (props) => {
       <div className={style.canvasContainerStyle}>
         <canvas ref={canvasRef} />
       </div>
-      <img src={tempBg} alt="" className={style.bgStyle} />
+      <img src={bannerBg} alt="" className={style.bgStyle} />
       <div
         className={clsx(style.bannerContentContainer, {
           'pointer-events-none': !canClick,
@@ -50,7 +50,7 @@ const BannerPC = (props) => {
           <div className={style.buttonContainerStyle}>
             <Link legacyBehavior href={cloudUrl}>
               <a
-                className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[8px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
+                className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[24px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',

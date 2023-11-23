@@ -2,6 +2,8 @@ import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import LearnMore from '../../LearnMore'
 import clsx from 'clsx'
+import { InfoContext } from '@/context'
+import { useContext } from 'react'
 
 const CardContentItem = ({
   imageSrc,
@@ -13,12 +15,14 @@ const CardContentItem = ({
   reverse,
 }) => {
   const { t } = useTranslation('home')
+  const info = useContext(InfoContext)
   return (
     <div className={style.borderStyle}>
       <div
         className={clsx(
           style.cardIContentItemContainerStyle,
-          reverse ? 'xl:flex-row-reverse' : '',
+          info?.isMobile ? 'flex-col-reverse' : '',
+          !info?.isMobile && reverse ? 'flex-row-reverse' : 'flex-row',
         )}
       >
         <img src={imageSrc} className={style.imgStyle} alt="" />
