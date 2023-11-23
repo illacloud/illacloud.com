@@ -1,0 +1,27 @@
+.pricingMask {
+  @apply w-full overflow-hidden absolute z-[1] bg-black;
+}
+.pricingContainer {
+  @apply w-full relative z-[1];
+}
+.pricingMaskLeft {
+  @apply w-[1155px] h-[453px] left-[-525px] top-[-40px] opacity-50;
+  @apply hidden lg:block bg-tech-purple-01 absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskRight {
+  @apply w-[824px] h-[453px] left-[1004px] top-[109px] opacity-30;
+  @apply hidden lg:block bg-tech-purple-01 absolute;
+  filter: blur(238.125px);
+}
+.pricingMaskPhone {
+  @apply w-[630px] h-[415.69px] left-[-204px] top-[46.5px] opacity-30 z-[-1];
+  @apply block lg:hidden absolute;
+  filter: blur(50px);
+  transform: rotate(2.6deg);
+  background: radial-gradient(
+    37% 76.28% at 48.58% 50.06%,
+    #654aec 0%,
+    rgba(101, 74, 236, 0) 100%
+  );
+}

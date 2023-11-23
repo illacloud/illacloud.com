@@ -14,8 +14,8 @@ const AllContent = () => {
         <Image
           src={
             info?.isMobile
-              ? 'https://cdn.illacloud.com/official-website/img/mobile/homepage/first.png'
-              : 'https://cdn.illacloud.com/official-website/img/home/new/Frame%203376.svg'
+              ? 'https://cdn.illacloud.com/official-website/img/home/allContent.png'
+              : 'https://cdn.illacloud.com/official-website/img/home/allContent.svg'
           }
           width="1200"
           height="696"

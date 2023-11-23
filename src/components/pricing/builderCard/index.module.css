@@ -1,12 +1,6 @@
 .premiumCardContainer {
-  @apply w-full flex flex-col p-[24px] items-start gap-[12px] rounded-[8px] bg-white-03 border border-white-09;
+  @apply w-full flex flex-col items-start gap-[12px];
   @apply xl:gap-[24px] xl:rounded-[16px];
-  background: radial-gradient(
-      98.85% 129.62% at 6.76% 2.06%,
-      rgba(186, 193, 255, 0.03) 0%,
-      rgba(220, 223, 255, 0) 100%
-    ),
-    rgba(255, 255, 255, 0.06);
 }
 .premiumHeaderStyle {
   @apply flex flex-col;
@@ -30,7 +24,7 @@
 }
 
 .cardBaseStyle {
-  @apply w-full p-[24px] relative rounded-[8px] z-[1] overflow-hidden;
+  @apply h-full  w-full p-[24px] relative rounded-[8px] z-[1] overflow-hidden;
 }
 
 .priceCardStyle {
@@ -79,8 +73,8 @@
 }
 
 .operatingStyle {
-  @apply w-full flex flex-col items-center gap-[24px];
-  @apply xl:flex-row xl:items-end xl:justify-between;
+  @apply w-full flex flex-col items-center gap-[16px];
+  @apply xl:items-start xl:justify-start;
 }
 
 .priceNumStyle {

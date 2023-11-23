@@ -4,11 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { PricingContent } from '@/components/pricing/PricingContent'
-import { PricingMask } from '@/components/pricing/PricingMask'
-import { OpenSource } from '@/components/pricing/OpenSource'
-import { CompareCard } from '@/components/pricing/CompareCard'
+import { PricingMask } from '@/components/pricing/pricingMask/PricingMask'
 import FAQ from '@/components/common/Faq'
-import style from '@/components/pricing/index.module.css'
 import { useRouter } from 'next/router'
 import CommBottom from '@/components/common/CommBottom'
 import useMeasure from 'react-use-measure'
@@ -43,13 +40,13 @@ const Pricing = ({ isMobile }) => {
       <InfoProvider isMobile={isMobile}>
         <PricingMask rect={rect} />
         <div ref={ref} className="w-full px-0">
-          <div className={style.pricingContainer}>
+          <div className="w-full relative z-[1]">
             <Nav whiteTheme={false} customStyle={customNavStyle} />
-            <div className="w-full text-white xl:pt-[120px] bg-transparent">
+            <div className="w-full text-white flex flex-col xl:gap-[120px] gap-[60px] xl:pt-[120px] bg-transparent">
               <PricingContent />
-              <CompareCard />
-              <OpenSource />
-              <FAQ translationSpace="pricing" />
+              <div className="px-[20px]">
+                <FAQ translationSpace="pricing" />
+              </div>
               <CommBottom scrollStart={0.88} scrollEnd={0.93} />
             </div>
           </div>

@@ -53,7 +53,7 @@ const Comments = () => {
             key={userName}
             className={clsx(
               style.borderStyle,
-              info.isMobile ? 'mb-[8px]' : '',
+              info.isMobile ? style.mobileGap : '',
               !info.isMobile && index !== 0 ? 'xl:mt-[16px]' : '',
             )}
           >

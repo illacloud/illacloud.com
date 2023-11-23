@@ -1,0 +1,73 @@
+.collarContainerStyle {
+  @apply w-full flex flex-col p-[24px] items-start gap-[12px] rounded-[8px] bg-white-03 border border-white-09;
+  @apply xl:gap-[24px] xl:rounded-[16px];
+  background: radial-gradient(
+      98.85% 129.62% at 6.76% 2.06%,
+      rgba(186, 193, 255, 0.03) 0%,
+      rgba(220, 223, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.06);
+}
+
+.collarPriceHeaderStyle {
+  @apply flex w-full items-start flex-col gap-[24px];
+  @apply xl:items-center xl:flex-row xl:justify-between;
+}
+
+.collarPriceTitleStyle {
+  @apply inline-block font-[700] text-[20px] leading-[30px];
+  background: linear-gradient(90deg, #9037ff 0%, #f524ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.collarPriceDescStyle {
+  @apply block text-white-03 text-[12px] font-[400] leading-[15px] xl:leading-[20px];
+}
+
+.collarPriceHeaderDescStyle {
+  @apply flex flex-col gap-[12px] items-start text-[12px] font-[400] leading-[22px];
+  @apply xl:flex-row xl:items-center;
+}
+
+.collarPriceUnitDetailStyle {
+  @apply flex items-start gap-[12px]  text-[16px] font-[500];
+  @apply xl:text-[12px] xl:font-[400];
+}
+.collarPriceDescDetailStyle {
+  @apply flex items-start xl:items-center gap-[8px];
+}
+.orStyle {
+  @apply text-white-03;
+}
+
+.collarListStyle {
+  @apply flex flex-col gap-[4px];
+}
+
+.listItemStyle {
+  @apply flex items-center gap-[8px] py-[4px];
+}
+
+.listIconStyle {
+  @apply text-tech-pink-01 w-[16px] h-[16px] self-start;
+}
+
+.listItemNameStyle {
+  @apply text-[14px] font-[400] leading-[18px];
+}
+
+.operatingStyle {
+  @apply w-full flex flex-col items-center gap-[24px];
+  @apply xl:flex-row xl:items-end xl:justify-between;
+}
+
+.priceNumStyle {
+  @apply text-[28px] font-[700];
+}
+
+.priceNumDescStyle {
+  @apply text-[12px] font-[400] leading-[16px] text-white-03;
+}

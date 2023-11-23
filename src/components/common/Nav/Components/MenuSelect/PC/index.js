@@ -25,7 +25,7 @@ const MenuSelectPC = ({ buttonColorChange = true, options }) => {
       className="flex flex-col relative  bg-transparent  items-center h-[48px] cursor-pointer  justify-between "
     >
       <div
-        className="text-[16px] h-full w-full flex flex-row items-center justify-between px-[16px]"
+        className="text-[14px] h-full w-full flex flex-row items-center justify-between px-[16px]"
         onClick={() => {
           sendTagEvent({
             action: 'click',
