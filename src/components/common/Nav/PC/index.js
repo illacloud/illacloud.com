@@ -43,7 +43,7 @@ const NavPC = (props) => {
           {menuItems.map(({ href, category, title }) => (
             <Link legacyBehavior href={href} key={title}>
               <a
-                className="px-[16px] text-center cursor-pointer"
+                className="px-[16px] text-center cursor-pointer text-[14px]"
                 onClick={() => {
                   sendTagEvent({
                     action: 'click',
