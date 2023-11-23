@@ -4,7 +4,7 @@ import LearnMore from '../LearnMore'
 
 const MORE_TEMPLATE_CONTENT = {
   title: 'template.title.quickly_start_from_a',
-  href: '',
+  href: 'https://illa.ai',
   moreTitle: 'template.button.explore_more_templat',
   items: [
     {
@@ -13,7 +13,7 @@ const MORE_TEMPLATE_CONTENT = {
       templateSrc:
         'https://cdn.illacloud.com/official-website/img/home/ChatGPT%20Plugin.svg',
       templateMoreTitle: 'template.template1_button.learn_more',
-      templateMoreHref: '',
+      templateMoreHref: 'https://illa.ai/app/ILAcx4p1C7GP/detail',
     },
     {
       templateTitle: 'template.template2_title.cms_with_content_gen',
@@ -21,7 +21,7 @@ const MORE_TEMPLATE_CONTENT = {
       templateSrc:
         'https://cdn.illacloud.com/official-website/img/home/Builder%20for%20Developers.svg',
       templateMoreTitle: 'template.template2_button.learn_more',
-      templateMoreHref: '',
+      templateMoreHref: 'https://illa.ai/app/ILAcx4p1C7J0/detail',
     },
     {
       templateTitle: 'template.template3_title.applicant_tracking',
@@ -29,7 +29,7 @@ const MORE_TEMPLATE_CONTENT = {
       templateSrc:
         'https://cdn.illacloud.com/official-website/img/home/Integrate%20with%20Any%20data%20source.svg',
       templateMoreTitle: 'template.template3_button.learn_more',
-      templateMoreHref: '',
+      templateMoreHref: 'https://illa.ai/app/ILAcx4p1C7GO/detail',
     },
   ],
 }

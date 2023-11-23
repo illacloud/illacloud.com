@@ -8,8 +8,8 @@ import { Vector } from '@/img/public/vector'
 const LearnMore = ({ href, title, category, leftPadding = false }) => {
   const { t } = useTranslation('home')
   return (
-    <Link href={href}>
-      <div
+    <Link legacyBehavior href={href}>
+      <a
         className={clsx(style.swipeMore, leftPadding ? 'xl:pl-[30px]' : '')}
         onClick={() => {
           sendTagEvent({
@@ -21,7 +21,7 @@ const LearnMore = ({ href, title, category, leftPadding = false }) => {
       >
         <span className="underline">{t(title)}</span>
         <Vector />
-      </div>
+      </a>
     </Link>
   )
 }

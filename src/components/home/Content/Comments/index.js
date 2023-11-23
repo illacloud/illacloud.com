@@ -2,6 +2,8 @@ import { useTranslation } from 'next-i18next'
 import style from './index.module.css'
 import quote from '@/img/home3/quote.svg'
 import clsx from 'clsx'
+import { useContext } from 'react'
+import { InfoContext } from '@/context'
 
 const COMMENT_CONTENT = {
   title: 'testimonial.title.user_testimonials',
@@ -41,6 +43,7 @@ const COMMENT_CONTENT = {
 
 const Comments = () => {
   const { t } = useTranslation('home')
+  const info = useContext(InfoContext)
   return (
     <div className={style.commentsContainerStyle}>
       <h1 className={style.commentsTitleStyle}>{t(COMMENT_CONTENT.title)}</h1>
@@ -50,7 +53,8 @@ const Comments = () => {
             key={userName}
             className={clsx(
               style.borderStyle,
-              index !== 0 ? 'mt-[8px] xl:mt-[16px]' : '',
+              info.isMobile ? 'mb-[8px]' : '',
+              !info.isMobile && index !== 0 ? 'xl:mt-[16px]' : '',
             )}
           >
             <div className={style.commentsItemStyle}>
