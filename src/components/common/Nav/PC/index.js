@@ -8,20 +8,35 @@ import { sendTagEvent } from '@/utils/gtag'
 import { selectItems, menuItems, CONTACT_US_URL } from '@/constants/navContents'
 import { useUtmParams } from '@/hooks/useUtmParams'
 import style from './index.module.css'
+import { useViewportScroll } from 'framer-motion'
+import { useState } from 'react'
 
 const NavPC = (props) => {
   const { whiteTheme = false, customStyle } = props
   const { t } = useTranslation('home')
+  const [fixed, setFixed] = useState(false)
+
+  const { scrollYProgress } = useViewportScroll()
+
+  scrollYProgress.onChange((y) => {
+    if (y > 0.004 && !fixed) {
+      setFixed(true)
+    } else if (y < 0.004 && fixed) {
+      setFixed(false)
+    }
+  })
 
   const cloudUrl = useUtmParams('https://cloud.illacloud.com')
   return (
     <div
       className={clsx(
         style.navContainerStyle,
-        'backdrop-blur-[50px]',
-        whiteTheme
-          ? 'bg-[rgba(255,255,255,0.75)] text-garyBlue-02'
-          : 'bg-[rgba(0,0,0,0.75)] text-white-01',
+        whiteTheme ? 'text-garyBlue-02' : 'text-white-01',
+        fixed
+          ? whiteTheme
+            ? `${style.navWhiteThemeFixedStyle} backdrop-blur-[50px]`
+            : `${style.navBlackThemeFixedStyle} backdrop-blur-[50px]`
+          : '',
       )}
       style={customStyle || {}}
     >

@@ -1,5 +1,13 @@
 .navContainerStyle {
-  @apply fixed flex top-0 z-50 w-full  px-[40px] py-[16px] flex items-center justify-between text-[16px] leading-[24px] font-[500];
+  @apply flex w-full fixed top-0 z-50  bg-transparent px-[40px] py-[16px] flex items-center justify-between text-[16px] leading-[24px] font-[500];
+}
+
+.navWhiteThemeFixedStyle {
+  @apply bg-[rgba(255,255,255,0.75)] backdrop-blur-[50px];
+}
+
+.navBlackThemeFixedStyle {
+  @apply bg-[rgba(0,0,0,0.75)];
 }
 
 .menuContainerStyle {
