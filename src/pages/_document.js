@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 
 const FAVICON_VERSION = 3
 
@@ -157,7 +156,6 @@ export default class Document extends NextDocument {
               `,
             }}
           />
-          <Script>{``}</Script>
           <noscript>
             <img
               height="1"
