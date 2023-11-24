@@ -1,0 +1,54 @@
+.commentsContainerStyle {
+  @apply flex flex-col  items-center gap-[24px];
+  @apply xl:gap-[48px];
+}
+
+.commentsTitleStyle {
+  @apply text-center text-[20px] font-[700] leading-[28px];
+  @apply xl:text-[40px] xl:leading-[56px];
+}
+
+.commentsItemsContainerStyle {
+  @apply w-full  columns-2 gap-[8px];
+  @apply xl:columns-3 xl:gap-[16px];
+}
+
+.borderStyle {
+  @apply w-full p-[1px] rounded-[8px] break-inside-avoid;
+  background: linear-gradient(0deg, #000 0%, #242424 100%);
+}
+
+.commentsItemStyle {
+  @apply flex p-[24px] flex-col gap-[8px] bg-[#141414] rounded-[8px];
+}
+
+.commentContentStyle {
+  @apply flex flex-col gap-[8px] items-start;
+}
+
+.contentTextStyle {
+  @apply text-white-03 text-[12px] font-[500] leading-[16px];
+}
+
+.reverseQuoteStyle {
+  @apply self-end;
+  transform: rotate(180deg);
+}
+
+.userInfoContainerStyle img {
+  @apply flex-none w-[20px] h-[20px] xl:w-[32px] xl:h-[32px] rounded-[50%];
+}
+
+.commentUserNameStyle {
+  @apply text-white-01 text-[12px] font-[500] leading-[20px];
+}
+
+.commentUserCompanyStyle {
+  @apply text-white-03 text-[10px] font-[400] leading-[16px];
+}
+
+.mobileGap::after {
+  display: block;
+  content: '';
+  padding-bottom: 8px;
+}

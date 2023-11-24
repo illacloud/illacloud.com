@@ -1,0 +1,14 @@
+.mainContent {
+  @apply w-full flex flex-col justify-center items-center gap-[32px];
+  @apply xl:gap-[64px];
+}
+
+.templateContent {
+  @apply xl:flex flex-row items-start xl:gap-[48px] grid grid-cols-2 gap-x-[12px] gap-y-[32px] w-full;
+  grid-auto-rows: max-content;
+}
+@media screen and (min-width: 1536px) {
+  .mobileFooterContainer {
+    transform: translateY(0) !important;
+  }
+}

@@ -1,0 +1,25 @@
+.faqContainer {
+  @apply flex flex-col items-center gap-[24px] xl:gap-[48px] w-full;
+}
+.faqTitle {
+  @apply font-[700] text-[24px] leading-[28px] text-center xl:text-[48px] xl:leading-[56px];
+}
+.faqListContainer {
+  @apply w-full flex flex-col items-start lg:w-[800px];
+}
+.faqListQuestion {
+  @apply w-full flex flex-row justify-between items-center px-[24px] py-[12px] gap-[16px] rounded-[2px] cursor-pointer rounded-t-[8px];
+  @apply xl:rounded-t-[16px];
+  @apply font-[500] text-[14px] leading-[22px];
+  @apply xl:text-[16px];
+}
+.faqListAnswer {
+  @apply w-full font-[400] text-[12px] leading-[16px] xl:leading-[22px] xl:text-[14px] flex items-center rounded-[2px] px-[24px] pb-[12px] bg-white/[0.08] whitespace-pre-line rounded-b-[8px];
+  @apply xl:rounded-b-[16px];
+}
+.faqListAnswer a {
+  @apply underline;
+}
+.direction {
+  @apply w-[12px] h-[12px];
+}
