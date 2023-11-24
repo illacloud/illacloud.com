@@ -9,7 +9,9 @@ import clsx from 'clsx'
 import { sendTagEvent } from '@/utils/gtag'
 import { usePaintBg } from '../hooks/usePaintBg'
 import style from './index.module.css'
-import bannerBg from '@/img/home3/bannerBg.svg'
+import bannerBg from '@/img/home3/bannerBg.mp4'
+import bannerBg2 from '@/img/home3/bg2.mp4'
+import bannerSvg from '@/img/home3/bannerBg.svg'
 
 const BannerPC = (props) => {
   const { setPlayMaskShow, githubStarts } = props
@@ -37,7 +39,11 @@ const BannerPC = (props) => {
       <div className={style.canvasContainerStyle}>
         <canvas ref={canvasRef} />
       </div>
-      <img src={bannerBg} alt="" className={style.bgStyle} />
+      {/* <img src={bannerSvg} alt="" className={style.bgStyle} /> */}
+      <video className={style.bgStyle} loop autoPlay muted>
+        <source src={bannerBg2} type="video/webm" />
+        <source src={bannerBg2} type="video/mp4" />
+      </video>
       <div
         className={clsx(style.bannerContentContainer, {
           'pointer-events-none': !canClick,

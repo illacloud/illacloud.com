@@ -8,7 +8,6 @@ import Footer from '@/components/common/Footer'
 import Banner from '@/components/home/Banner'
 import { Modal } from '@/components/common/Player'
 import { useRaf } from 'react-use'
-import Script from 'next/script'
 import { getStars } from '@/utils/getStars'
 import { getGithubOauth } from '@/utils/getGithubOauth'
 import { useRouter } from 'next/router'
@@ -49,7 +48,7 @@ const Home = ({ starCounts, uri, isMobile }) => {
       <InfoProvider isMobile={isMobile}>
         <div className="bg-black overflow-visible w-full relative z-[1]">
           <Nav whiteTheme={false} />
-          <Script>
+          {/* <Script>
             {`(function (d, t) {
             var BASE_URL = "https://app.chatwoot.com";
             var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -64,7 +63,7 @@ const Home = ({ starCounts, uri, isMobile }) => {
               })
             }
           })(document, "script");`}
-          </Script>
+          </Script> */}
           <Banner
             setPlayMaskShow={setPlayMaskShow}
             githubStarts={Math.floor(starCounts * step)}

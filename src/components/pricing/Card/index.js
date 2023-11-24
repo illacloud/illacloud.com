@@ -13,7 +13,7 @@ import TitleCycle from '@/img/pricing/titleCycle'
 import { ReactComponent as PriceTip } from '@/img/pricing/priceTip.svg'
 import { UpgradeButton } from '../upgradeButton'
 
-export const BuilderCard = () => {
+const Card = () => {
   const { t } = useTranslation('pricing')
   return (
     <div className={style.premiumCardContainerStyle}>
@@ -109,3 +109,5 @@ export const BuilderCard = () => {
     </div>
   )
 }
+
+export default Card
