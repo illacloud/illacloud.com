@@ -1,9 +1,5 @@
 import fs from 'fs'
-import ReactDOMServer from 'react-dom/server'
-import { MDXProvider } from '@mdx-js/react'
 import { Feed } from 'feed'
-import { getAllPosts } from '@/utils/getAllPosts'
-import { mdxComponents } from '@/utils/mdxComponents'
 
 const baseUrl = 'https://illa.cloud'
 const blogUrl = `${baseUrl}/blog`
