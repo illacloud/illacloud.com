@@ -11,7 +11,7 @@ const LOGO_WALL = [
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo7.svg',
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo8.svg',
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo9.svg',
-  'https://cdn.illacloud.com/official-website/img/logo-wall/logo10.svg',
+  // 'https://cdn.illacloud.com/official-website/img/logo-wall/logo10.svg',
 ]
 
 function LogoWall() {
