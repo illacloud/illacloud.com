@@ -27,6 +27,7 @@ RUN adduser -S nextjs -u 1001
 
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/next-i18next.config.js ./
+COPY --from=builder /app/next-sitemap.config.js ./
 COPY --from=builder /app/redirects.json ./
 COPY --from=builder /app/src/constants/language.js ./src/constants/language.js
 COPY --from=builder /app/public ./public

@@ -1,6 +1,7 @@
 import style from './index.module.css'
 import { useTranslation } from 'next-i18next'
 const LOGO_WALL = [
+  'https://cdn.illacloud.com/official-website/img/logo-wall/logo11.svg',
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo1.svg',
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo2.svg',
   'https://cdn.illacloud.com/official-website/img/logo-wall/logo3.svg',
