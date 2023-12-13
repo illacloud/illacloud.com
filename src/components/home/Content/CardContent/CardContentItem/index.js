@@ -4,6 +4,7 @@ import LearnMore from '../../LearnMore'
 import clsx from 'clsx'
 import { InfoContext } from '@/context'
 import { useContext } from 'react'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 const CardContentItem = ({
   imageSrc,
@@ -15,6 +16,7 @@ const CardContentItem = ({
   reverse,
 }) => {
   const { t } = useTranslation('home')
+  const utmUrl = useUtmParams(moreHref)
   const info = useContext(InfoContext)
   return (
     <div className={style.borderStyle}>
@@ -33,7 +35,7 @@ const CardContentItem = ({
             <span>{t(title)}</span>
           </h2>
           <span className={style.textDescStyle}>{t(desc)}</span>
-          <LearnMore title={t(moreTitle)} href={moreHref ?? ''} />
+          <LearnMore title={t(moreTitle)} href={utmUrl ?? ''} />
         </div>
       </div>
     </div>

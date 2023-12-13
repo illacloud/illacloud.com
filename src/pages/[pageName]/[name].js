@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Nav from '@/components/common/Nav'
 import Footer from '@/components/common/Footer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
-import { BookDemo } from '@/components/home/Form/BookDemo'
 import style from '@/components/LandingPage/index.module.css'
 import { LpHeader } from '@/components/LandingPage/LpHeader'
 import { LpTemplate } from '@/components/LandingPage/LpTemplate'
@@ -85,7 +84,7 @@ const LandingPageSecond = ({ pageName, name, locale, uri, isMobile }) => {
     </>
   )
 }
-export const getServerSideProps = async ({ locale, params, req }) => {
+export const getServerSideProps = async ({ locale, params, req, query }) => {
   const { pageName, name } = params
   if (!pageMap[pageName]) {
     return {
@@ -95,7 +94,7 @@ export const getServerSideProps = async ({ locale, params, req }) => {
       },
     }
   }
-  const uri = await getGithubOauth()
+  const uri = await getGithubOauth(query)
   return {
     props: {
       ...(await serverSideTranslations(locale, [
