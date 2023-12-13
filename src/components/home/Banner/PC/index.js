@@ -55,7 +55,6 @@ const BannerPC = (props) => {
               <a
                 className="h-[48px] w-[400px] bg-tech-purple-01 rounded-[24px] px-[32px] py-[10px] font-normal text-white-01 text-center hover:bg-tech-purple-02 active:bg-tech-purple-n-01"
                 onClick={() => {
-                  console.log('debug_try', cloudUrl)
                   sendTagEvent({
                     action: 'click',
                     category: 'homepage_body_try_cloud_free_click',

@@ -53,7 +53,7 @@ const Home = ({ starCounts, uri, isMobile }) => {
             setPlayMaskShow={setPlayMaskShow}
             githubStarts={Math.floor(starCounts * step)}
           />
-          <NewContent />
+          <NewContent uri={uri} />
           <Modal
             isOpen={playMaskShow}
             onClose={() => setPlayMaskShow(false)}
