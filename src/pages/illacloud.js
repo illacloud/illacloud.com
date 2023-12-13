@@ -47,8 +47,8 @@ const Cloud = ({ uri, isMobile }) => {
   )
 }
 
-export const getServerSideProps = async ({ locale, req }) => {
-  const uri = await getGithubOauth()
+export const getServerSideProps = async ({ locale, req, query }) => {
+  const uri = await getGithubOauth(query)
   return {
     props: {
       ...(await serverSideTranslations(locale, [

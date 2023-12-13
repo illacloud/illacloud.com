@@ -3,6 +3,7 @@ import style from './index.module.css'
 import LearnMore from '../LearnMore'
 import { useContext } from 'react'
 import { InfoContext } from '@/context'
+import { useUtmParams } from '@/hooks/useUtmParams'
 
 const MORE_TEMPLATE_CONTENT = {
   title: 'template.title.quickly_start_from_a',
@@ -42,47 +43,52 @@ const MORE_TEMPLATE_CONTENT = {
   ],
 }
 
+const MoeTemplateItem = ({ content, isMobile }) => {
+  const {
+    templateDesc,
+    templateMoreHref,
+    templateMoreTitle,
+    templateSrc,
+    templateTitle,
+    mobileTemplateSrc,
+  } = content
+  const { t } = useTranslation('home')
+  const utmTemplateDetailUrl = useUtmParams(templateMoreHref)
+  return (
+    <div key={templateTitle} className={style.templateItemStyle}>
+      <img
+        src={isMobile ? mobileTemplateSrc : templateSrc}
+        className="w-full"
+        alt=""
+      />
+      <div className={style.templateTextStyle}>
+        <h2 className={style.templateTextTitleStyle}>{t(templateTitle)}</h2>
+        <p className={style.templateTextDescStyle}>{t(templateDesc)}</p>
+        <LearnMore href={utmTemplateDetailUrl} title={t(templateMoreTitle)} />
+      </div>
+    </div>
+  )
+}
+
 const MoreTemplate = () => {
   const { t } = useTranslation('home')
   const info = useContext(InfoContext)
+  const utmMoreUrl = useUtmParams(MORE_TEMPLATE_CONTENT.href)
+
   return (
     <div className={style.templateContainerStyle}>
       <div className={style.templateHeadContainerStyle}>
         <h1>{t(MORE_TEMPLATE_CONTENT.title)}</h1>
-        <LearnMore
-          href={MORE_TEMPLATE_CONTENT.href}
-          title={MORE_TEMPLATE_CONTENT.moreTitle}
-        />
+        <LearnMore href={utmMoreUrl} title={MORE_TEMPLATE_CONTENT.moreTitle} />
       </div>
       <div className={style.templateItemContainerStyle}>
-        {MORE_TEMPLATE_CONTENT.items.map(
-          ({
-            templateDesc,
-            templateMoreHref,
-            templateMoreTitle,
-            templateSrc,
-            templateTitle,
-            mobileTemplateSrc,
-          }) => (
-            <div key={templateTitle} className={style.templateItemStyle}>
-              <img
-                src={info?.isMobile ? mobileTemplateSrc : templateSrc}
-                className="w-full"
-                alt=""
-              />
-              <div className={style.templateTextStyle}>
-                <h2 className={style.templateTextTitleStyle}>
-                  {t(templateTitle)}
-                </h2>
-                <p className={style.templateTextDescStyle}>{t(templateDesc)}</p>
-                <LearnMore
-                  href={templateMoreHref}
-                  title={t(templateMoreTitle)}
-                />
-              </div>
-            </div>
-          ),
-        )}
+        {MORE_TEMPLATE_CONTENT.items.map((content) => (
+          <MoeTemplateItem
+            key={content.templateTitle}
+            content={content}
+            isMobile={info?.isMobile}
+          />
+        ))}
       </div>
     </div>
   )
