@@ -93,6 +93,7 @@ const NavPC = (props) => {
             <a
               className={style.navBaseButtonStyle}
               onClick={() => {
+                console.log('debug_login', cloudUrl)
                 sendTagEvent({
                   action: 'click_signin',
                 })
@@ -115,6 +116,7 @@ const NavPC = (props) => {
                 whiteTheme ? style.navSignUpWhiteStyle : '',
               )}
               onClick={() => {
+                console.log('debug_signup', cloudUrl)
                 sendTagEvent({
                   action: 'click_signup',
                 })
