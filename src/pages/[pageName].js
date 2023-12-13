@@ -95,7 +95,7 @@ const LandingPageIndex = ({ pageName, uri, isMobile }) => {
     </>
   )
 }
-export const getServerSideProps = async ({ locale, params, req }) => {
+export const getServerSideProps = async ({ locale, params, req, query }) => {
   const { pageName } = params
   if (!pageMap[pageName]) {
     return {
@@ -105,7 +105,7 @@ export const getServerSideProps = async ({ locale, params, req }) => {
       },
     }
   }
-  const uri = await getGithubOauth()
+  const uri = await getGithubOauth(query)
 
   return {
     props: {
