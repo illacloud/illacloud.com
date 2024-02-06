@@ -17,9 +17,9 @@ export const NavMobile = ({
     <div className={style.mobileNavContainer}>
       <div className={style.navTop}>
         <Link href={'/'}>
-          <span className="w-[42px] h-[20px] flex items-center">
+          <a className="w-[42px] h-[20px] flex items-center">
             <IllaLogoWhiteIcon />
-          </span>
+          </a>
         </Link>
         <div className={style.buttonList}>
           {leftButtonGroup.map((content) => (
